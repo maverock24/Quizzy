@@ -1,87 +1,7 @@
 [
     {
-        "name": "General Knowledge Quiz",
-            "questions": [
-                {
-                "question": "What is the capital of France?",
-                "answers": [
-                    {
-                        "answer": "Paris"
-                    },
-                    {
-                        "answer": "London"
-                    },
-                    {
-                        "answer": "Berlin"
-                    },
-                    {
-                        "answer": "Madrid"
-                    }
-                ]   ,
-                "answer": "Paris",
-                "explanation": "Paris is the capital of France. It is known for its art, fashion, and culture. The Eiffel Tower is the most famous landmark in Paris."
-                },
-                {
-                "question": "What is the capital of Germany?",
-                "answers": [
-                    {
-                        "answer": "Paris"
-                    },
-                    {
-                        "answer": "London"
-                    },
-                    {
-                        "answer": "Berlin"
-                    },
-                    {
-                        "answer": "Madrid"
-                    }
-                ]   ,
-                "answer": "Berlin",
-                "explanation": "Berlin is the capital of Germany. It is known for its history, art, and culture. The Berlin Wall is a famous landmark in Berlin."
-                },
-                {
-                "question": "What is the capital of the United Kingdom?",
-                "answers": [
-                    {
-                        "answer": "Paris"
-                    },
-                    {
-                        "answer": "London"
-                    },
-                    {
-                        "answer": "Berlin"
-                    },
-                    {
-                        "answer": "Madrid"
-                    }
-                ]   ,
-                "answer": "London",
-                "explanation": "London is the capital of the United Kingdom. It is known for its history, architecture, and culture. Big Ben is a famous landmark in London."
-                },
-                {
-                "question": "What is the capital of Spain?",
-                "answers": [
-                    {
-                        "answer": "Paris"
-                    },
-                    {
-                        "answer": "London"
-                    },
-                    {
-                        "answer": "Berlin"
-                    },
-                    {
-                        "answer": "Madrid"
-                    }
-                ]   ,
-                "answer": "Madrid",
-                "explanation": "Madrid is the capital of Spain. It is known for its art, culture, and food. The Prado Museum is a famous landmark in Madrid."
-                }
-            ]           
-    },
-    {
     "name": "AWS SaaS Deployment & Debugging Expert",
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
         {
             "question": "Which CLI command deploys a CloudFormation stack?",
@@ -713,167 +633,1561 @@
     ]
 },
     {
-        "name": "AWS Quiz",
-            "questions": [
-                {
-                "question": "What is EC2?",
+        "name": "Genetic Testing Developer Quiz",
+        "questions": [
+            {
+                "question": "What is a SNP?",
                 "answers": [
-                    {
-                        "answer": "Elastic Container Service"
-                    },
-                    {
-                        "answer": "Elastic Compute Cloud"
-                    },
-                    {
-                        "answer": "Elastic Container Registry"
-                    },
-                    {
-                        "answer": "Elastic Container Instance"
-                    }
-                ]   ,
-                "answer": "Elastic Compute Cloud",
-                "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can reduce capacity (scale down) again."
-                },
-                {
-                "question": "What is S3?",
+                    {"answer": "A protein-coding gene"},
+                    {"answer": "A single nucleotide polymorphism"},
+                    {"answer": "A chromosomal deletion"},
+                    {"answer": "A type of RNA molecule"}
+                ],
+                "answer": "A single nucleotide polymorphism",
+                "explanation": "SNPs are single-base variations used in ancestry and disease risk analysis. Developers handle SNP data in VCF files."
+            },
+            {
+                "question": "What does 'CLIA-certified lab' mean?",
                 "answers": [
-                    {
-                        "answer": "Simple Storage Service"
-                    },
-                    {
-                        "answer": "Simple Server Service"
-                    },
-                    {
-                        "answer": "Simple Storage System"
-                    },
-                    {
-                        "answer": "Simple Server System"
-                    }
-                ]   ,
-                "answer": "Simple Storage Service",
-                "explanation": "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. This means customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics."
-                },
-                {
-                "question": "What is RDS?",
+                    {"answer": "A lab compliant with Clinical Laboratory Improvement Amendments"},
+                    {"answer": "A cancer research lab"},
+                    {"answer": "A lab using CRISPR"},
+                    {"answer": "A veterinary genetics lab"}
+                ],
+                "answer": "A lab compliant with Clinical Laboratory Improvement Amendments",
+                "explanation": "CLIA ensures testing accuracy. Platforms must integrate with CLIA labs for valid clinical reports."
+            },
+            {
+                "question": "Which file format stores raw genetic variant data?",
                 "answers": [
-                    {
-                        "answer": "Relational Database Service"
-                    },
-                    {
-                        "answer": "Relational Database System"
-                    },
-                    {
-                        "answer": "Relational Database Storage"
-                    },
-                    {
-                        "answer": "Relational Database Server"
-                    }
-                ]   ,
-                "answer": "Relational Database Service",
-                "explanation": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching, and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security, and compatibility they need."
-
-                },
-                {
-                "question": "What is VPC?",
+                    {"answer": "VCF"},
+                    {"answer": "CSV"},
+                    {"answer": "JSON"},
+                    {"answer": "BAM"}
+                ],
+                "answer": "VCF",
+                "explanation": "VCF (Variant Call Format) is standard for SNPs/indels. Developers parse VCF files for test results."
+            },
+            {
+                "question": "What is a 'variant of uncertain significance' (VUS)?",
                 "answers": [
-                    {
-                        "answer": "Virtual Private Cloud"
-                    },
-                    {
-                        "answer": "Virtual Public Cloud"
-                    },
-                    {
-                        "answer": "Virtual Private Container"
-                    },
-                    {
-                        "answer": "Virtual Public Container"
-                    }
-                ]   ,
-                "answer": "Virtual Private Cloud",
-                "explanation": "Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your IP address range, creation of subnets, and configuration of route tables and network gateways. You can use both IPv4 and IPv6 in your VPC for secure and easy access to resources and applications."
-                }
-            ]
+                    {"answer": "A mutation with unclear clinical impact"},
+                    {"answer": "A harmless mutation"},
+                    {"answer": "A cancer-causing mutation"},
+                    {"answer": "An RNA-specific mutation"}
+                ],
+                "answer": "A mutation with unclear clinical impact",
+                "explanation": "VUS results require careful UI flagging and follow-up recommendations."
+            },
+            {
+                "question": "What does ACMG classify?",
+                "answers": [
+                    {"answer": "Pathogenicity of genetic variants"},
+                    {"answer": "Ethical guidelines"},
+                    {"answer": "Lab equipment standards"},
+                    {"answer": "Data encryption protocols"}
+                ],
+                "answer": "Pathogenicity of genetic variants",
+                "explanation": "ACMG guidelines (e.g., benign/likely pathogenic) are automated in reporting pipelines."
+            },
+            {
+                "question": "What is NGS?",
+                "answers": [
+                    {"answer": "Next-Generation Sequencing"},
+                    {"answer": "National Genetic Standard"},
+                    {"answer": "Non-Genetic Screening"},
+                    {"answer": "New Genome Sequencing"}
+                ],
+                "answer": "Next-Generation Sequencing",
+                "explanation": "NGS enables high-throughput sequencing. Developers optimize pipelines for FASTQ/BAM files."
+            },
+            {
+                "question": "What is the purpose of a BAM file?",
+                "answers": [
+                    {"answer": "Storing aligned sequencing reads"},
+                    {"answer": "Storing patient demographics"},
+                    {"answer": "Encrypting genetic data"},
+                    {"answer": "Visualizing chromosomes"}
+                ],
+                "answer": "Storing aligned sequencing reads",
+                "explanation": "BAM files require tools like SAMtools for processing."
+            },
+            {
+                "question": "Which API standard is used for healthcare data exchange?",
+                "answers": [
+                    {"answer": "FHIR"},
+                    {"answer": "GraphQL"},
+                    {"answer": "SOAP"},
+                    {"answer": "REST"}
+                ],
+                "answer": "FHIR",
+                "explanation": "FHIR integrates genetic data into EHRs (e.g., Epic, Cerner)."
+            },
+            {
+                "question": "What is 'sensitivity' in genetic testing?",
+                "answers": [
+                    {"answer": "Ability to detect true positives"},
+                    {"answer": "Avoiding false positives"},
+                    {"answer": "Data processing speed"},
+                    {"answer": "Cost per test"}
+                ],
+                "answer": "Ability to detect true positives",
+                "explanation": "High sensitivity reduces false negatives. Report these metrics in labs."
+            },
+            {
+                "question": "What does 'phasing' mean in genomics?",
+                "answers": [
+                    {"answer": "Determining parental origin of alleles"},
+                    {"answer": "Filtering low-quality variants"},
+                    {"answer": "Encrypting patient data"},
+                    {"answer": "Gene expression analysis"}
+                ],
+                "answer": "Determining parental origin of alleles",
+                "explanation": "Phased data improves ancestry and inheritance reports."
+            },
+            {
+                "question": "What is a 'PGx report'?",
+                "answers": [
+                    {"answer": "Pharmacogenomic drug response report"},
+                    {"answer": "Ancestry composition report"},
+                    {"answer": "Cancer risk report"},
+                    {"answer": "Carrier screening report"}
+                ],
+                "answer": "Pharmacogenomic drug response report",
+                "explanation": "PGx reports guide medication dosing for clinicians."
+            },
+            {
+                "question": "Which encryption is required for genetic data?",
+                "answers": [
+                    {"answer": "AES-256"},
+                    {"answer": "SHA-1"},
+                    {"answer": "MD5"},
+                    {"answer": "No encryption"}
+                ],
+                "answer": "AES-256",
+                "explanation": "Genetic data requires AES-256 encryption at rest/transit."
+            },
+            {
+                "question": "What does GINA regulate?",
+                "answers": [
+                    {"answer": "Genetic discrimination"},
+                    {"answer": "Lab accuracy"},
+                    {"answer": "Data formats"},
+                    {"answer": "Drug approvals"}
+                ],
+                "answer": "Genetic discrimination",
+                "explanation": "GINA prohibits misuse of genetic data in employment/insurance."
+            },
+            {
+                "question": "What is 'informed consent' in genetic testing?",
+                "answers": [
+                    {"answer": "Patient permission after understanding risks"},
+                    {"answer": "Lab billing agreement"},
+                    {"answer": "Data analysis protocol"},
+                    {"answer": "Software license"}
+                ],
+                "answer": "Patient permission after understanding risks",
+                "explanation": "Platforms must document digital consent and allow withdrawals."
+            },
+            {
+                "question": "What is a 'haplotype'?",
+                "answers": [
+                    {"answer": "A set of DNA variants inherited together"},
+                    {"answer": "A type of RNA"},
+                    {"answer": "A protein structure"},
+                    {"answer": "A lab instrument"}
+                ],
+                "answer": "A set of DNA variants inherited together",
+                "explanation": "Haplotypes are used in ancestry and disease linkage analysis."
+            },
+            {
+                "question": "What is a FASTQ file?",
+                "answers": [
+                    {"answer": "Raw sequencing reads with quality scores"},
+                    {"answer": "Aligned sequencing data"},
+                    {"answer": "Variant call data"},
+                    {"answer": "Encrypted patient data"}
+                ],
+                "answer": "Raw sequencing reads with quality scores",
+                "explanation": "FASTQ files are processed in NGS pipelines before alignment."
+            },
+            {
+                "question": "What does 'read depth' indicate?",
+                "answers": [
+                    {"answer": "Number of times a base is sequenced"},
+                    {"answer": "Length of DNA fragments"},
+                    {"answer": "Data storage size"},
+                    {"answer": "Error rate in sequencing"}
+                ],
+                "answer": "Number of times a base is sequenced",
+                "explanation": "Higher read depth improves variant detection accuracy."
+            },
+            {
+                "question": "What is 'variant annotation'?",
+                "answers": [
+                    {"answer": "Adding clinical/database info to variants"},
+                    {"answer": "Encrypting genetic data"},
+                    {"answer": "Visualizing chromosomes"},
+                    {"answer": "Filtering low-quality SNPs"}
+                ],
+                "answer": "Adding clinical/database info to variants",
+                "explanation": "Tools like ANNOVAR automate annotation for reports."
+            },
+            {
+                "question": "What is a 'BED file' used for?",
+                "answers": [
+                    {"answer": "Defining genomic regions of interest"},
+                    {"answer": "Storing patient demographics"},
+                    {"answer": "Encrypting data"},
+                    {"answer": "Aligning sequences"}
+                ],
+                "answer": "Defining genomic regions of interest",
+                "explanation": "BED files target exomes or specific genes in sequencing."
+            },
+            {
+                "question": "What is 'allele frequency' in a population?",
+                "answers": [
+                    {"answer": "How common an allele is in a population"},
+                    {"answer": "Speed of mutation occurrence"},
+                    {"answer": "Data transmission rate"},
+                    {"answer": "Error rate in sequencing"}
+                ],
+                "answer": "How common an allele is in a population",
+                "explanation": "Rare alleles may indicate pathogenic variants."
+            },
+            {
+                "question": "What does 'QC' stand for in NGS?",
+                "answers": [
+                    {"answer": "Quality Control"},
+                    {"answer": "Quantitative Comparison"},
+                    {"answer": "Quick Clone"},
+                    {"answer": "Query Command"}
+                ],
+                "answer": "Quality Control",
+                "explanation": "QC steps ensure sequencing data meets accuracy thresholds."
+            },
+            {
+                "question": "What is 'CRISPR' used for?",
+                "answers": [
+                    {"answer": "Gene editing"},
+                    {"answer": "Data encryption"},
+                    {"answer": "Variant annotation"},
+                    {"answer": "Lab certification"}
+                ],
+                "answer": "Gene editing",
+                "explanation": "CRISPR enables precise DNA modifications. Not directly used in testing platforms."
+            },
+            {
+                "question": "What is a 'pipeline' in bioinformatics?",
+                "answers": [
+                    {"answer": "A sequence of data processing steps"},
+                    {"answer": "A physical lab instrument"},
+                    {"answer": "A type of DNA"},
+                    {"answer": "A compliance standard"}
+                ],
+                "answer": "A sequence of data processing steps",
+                "explanation": "Pipelines process raw data (FASTQ) into reports (VCF/PDF)."
+            },
+            {
+                "question": "What is 'plink' used for?",
+                "answers": [
+                    {"answer": "Genome-wide association studies (GWAS)"},
+                    {"answer": "Encrypting data"},
+                    {"answer": "Variant annotation"},
+                    {"answer": "Lab billing"}
+                ],
+                "answer": "Genome-wide association studies (GWAS)",
+                "explanation": "Plink analyzes genetic associations with traits/diseases."
+            },
+            {
+                "question": "What is 'reference genome GRCh38'?",
+                "answers": [
+                    {"answer": "A standardized human genome assembly"},
+                    {"answer": "A type of RNA"},
+                    {"answer": "A lab protocol"},
+                    {"answer": "A data encryption method"}
+                ],
+                "answer": "A standardized human genome assembly",
+                "explanation": "Sequencing reads are aligned to GRCh38 for consistency."
+            },
+            {
+                "question": "What is 'Exome Sequencing'?",
+                "answers": [
+                    {"answer": "Sequencing protein-coding regions"},
+                    {"answer": "Sequencing the entire genome"},
+                    {"answer": "Sequencing mitochondrial DNA"},
+                    {"answer": "Sequencing RNA"}
+                ],
+                "answer": "Sequencing protein-coding regions",
+                "explanation": "Exome sequencing is cost-effective for clinical testing."
+            },
+            {
+                "question": "What is 'Sanger Sequencing'?",
+                "answers": [
+                    {"answer": "A method for validating NGS variants"},
+                    {"answer": "A high-throughput sequencing technology"},
+                    {"answer": "A data storage format"},
+                    {"answer": "A lab certification"}
+                ],
+                "answer": "A method for validating NGS variants",
+                "explanation": "Sanger confirms critical variants due to its high accuracy."
+            },
+            {
+                "question": "What is 'coverage' in sequencing?",
+                "answers": [
+                    {"answer": "The average number of reads covering a base"},
+                    {"answer": "Data encryption breadth"},
+                    {"answer": "Lab insurance policy"},
+                    {"answer": "Patient consent form"}
+                ],
+                "answer": "The average number of reads covering a base",
+                "explanation": "30x coverage is standard for clinical whole-genome sequencing."
+            },
+            {
+                "question": "What is 'CNV'?",
+                "answers": [
+                    {"answer": "Copy Number Variation"},
+                    {"answer": "Common Nucleotide Variant"},
+                    {"answer": "Clinical NGS Validation"},
+                    {"answer": "Consented Non-Variant"}
+                ],
+                "answer": "Copy Number Variation",
+                "explanation": "CNVs are large deletions/duplications detected in cancer tests."
+            },
+            {
+                "question": "What is 'LOINC' used for?",
+                "answers": [
+                    {"answer": "Standardizing lab test codes"},
+                    {"answer": "Encrypting data"},
+                    {"answer": "Annotating variants"},
+                    {"answer": "Storing sequencing reads"}
+                ],
+                "answer": "Standardizing lab test codes",
+                "explanation": "LOINC codes integrate genetic tests into EHR systems."
+            },
+            {
+                "question": "What should a genetic risk report include?",
+                "answers": [
+                    {"answer": "Risk score, confidence intervals, and recommendations"},
+                    {"answer": "Raw SNP data only"},
+                    {"answer": "Lab equipment details"},
+                    {"answer": "Patient’s social media history"}
+                ],
+                "answer": "Risk score, confidence intervals, and recommendations",
+                "explanation": "Use visualizations (e.g., risk meters) for patient comprehension."
+            },
+            {
+                "question": "What is a 'dynamic report'?",
+                "answers": [
+                    {"answer": "A report updating with new scientific data"},
+                    {"answer": "A printed PDF"},
+                    {"answer": "A lab billing invoice"},
+                    {"answer": "A consent form"}
+                ],
+                "answer": "A report updating with new scientific data",
+                "explanation": "Dynamic reports improve value as research evolves."
+            },
+            {
+                "question": "What is 'secondary findings' in genetic testing?",
+                "answers": [
+                    {"answer": "Unexpected medically actionable results"},
+                    {"answer": "Lab billing errors"},
+                    {"answer": "Data encryption keys"},
+                    {"answer": "Consent form typos"}
+                ],
+                "answer": "Unexpected medically actionable results",
+                "explanation": "Platforms must let users opt-in/out of secondary findings."
+            },
+            {
+                "question": "Which chart is best for displaying ancestry composition?",
+                "answers": [
+                    {"answer": "Pie chart"},
+                    {"answer": "Bar graph"},
+                    {"answer": "Scatter plot"},
+                    {"answer": "Heatmap"}
+                ],
+                "answer": "Pie chart",
+                "explanation": "Pie charts simplify regional ancestry percentages."
+            },
+            {
+                "question": "What is a 'PDF report watermark' used for?",
+                "answers": [
+                    {"answer": "Preventing unauthorized sharing"},
+                    {"answer": "Adding lab logos"},
+                    {"answer": "Encrypting data"},
+                    {"answer": "Annotating variants"}
+                ],
+                "answer": "Preventing unauthorized sharing",
+                "explanation": "Watermarks track leaked reports but don’t replace encryption."
+            },
+            {
+                "question": "What is 'BRCA1'?",
+                "answers": [
+                    {"answer": "A gene linked to breast cancer risk"},
+                    {"answer": "A lab instrument"},
+                    {"answer": "A data format"},
+                    {"answer": "A compliance law"}
+                ],
+                "answer": "A gene linked to breast cancer risk",
+                "explanation": "BRCA1 mutations are reported in hereditary cancer tests."
+            },
+            {
+                "question": "What does 'carrier screening' test for?",
+                "answers": [
+                    {"answer": "Recessive disease risk in offspring"},
+                    {"answer": "Cancer risk"},
+                    {"answer": "Drug responses"},
+                    {"answer": "Ancestry"}
+                ],
+                "answer": "Recessive disease risk in offspring",
+                "explanation": "Carrier reports guide family planning decisions."
+            },
+            {
+                "question": "What is a 'FHIR Genomics Resource'?",
+                "answers": [
+                    {"answer": "A standardized way to share genetic data"},
+                    {"answer": "A lab tool"},
+                    {"answer": "A sequencing method"},
+                    {"answer": "A consent form"}
+                ],
+                "answer": "A standardized way to share genetic data",
+                "explanation": "FHIR Genomics integrates data into EHRs for clinicians."
+            },
+            {
+                "question": "What is 'PGx' short for?",
+                "answers": [
+                    {"answer": "Pharmacogenomics"},
+                    {"answer": "Pathogenomics"},
+                    {"answer": "Polygenic risk"},
+                    {"answer": "Population genetics"}
+                ],
+                "answer": "Pharmacogenomics",
+                "explanation": "PGx reports predict drug metabolism (e.g., warfarin dosing)."
+            },
+            {
+                "question": "What is 'de-identified data'?",
+                "answers": [
+                    {"answer": "Data stripped of personal identifiers"},
+                    {"answer": "Encrypted data"},
+                    {"answer": "Raw sequencing data"},
+                    {"answer": "Annotated variants"}
+                ],
+                "answer": "Data stripped of personal identifiers",
+                "explanation": "De-identification reduces re-identification risks under HIPAA."
+            },
+            {
+                "question": "What is 'GDPR'?",
+                "answers": [
+                    {"answer": "EU data privacy regulation"},
+                    {"answer": "A lab certification"},
+                    {"answer": "A gene database"},
+                    {"answer": "A sequencing technology"}
+                ],
+                "answer": "EU data privacy regulation",
+                "explanation": "GDPR requires explicit consent for EU user data processing."
+            },
+            {
+                "question": "What is a 'Data Use Agreement' (DUA)?",
+                "answers": [
+                    {"answer": "A contract governing data sharing"},
+                    {"answer": "A lab report"},
+                    {"answer": "A consent form"},
+                    {"answer": "A variant classification"}
+                ],
+                "answer": "A contract governing data sharing",
+                "explanation": "DUAs ensure partners use data only for agreed purposes."
+            },
+            {
+                "question": "What is 'ISO 27001'?",
+                "answers": [
+                    {"answer": "Information security management standard"},
+                    {"answer": "Lab equipment standard"},
+                    {"answer": "Genetic testing protocol"},
+                    {"answer": "Variant annotation tool"}
+                ],
+                "answer": "Information security management standard",
+                "explanation": "ISO 27001 certification strengthens trust in data security."
+            },
+            {
+                "question": "What is 'incidental findings'?",
+                "answers": [
+                    {"answer": "Unexpected but actionable results"},
+                    {"answer": "Lab billing errors"},
+                    {"answer": "Data encryption failures"},
+                    {"answer": "Consent form oversights"}
+                ],
+                "answer": "Unexpected but actionable results",
+                "explanation": "Platforms must let users opt-in/out of receiving these."
+            },
+            {
+                "question": "What is 'audit logging'?",
+                "answers": [
+                    {"answer": "Tracking data access/modifications"},
+                    {"answer": "Sequencing quality control"},
+                    {"answer": "Variant annotation"},
+                    {"answer": "Report generation"}
+                ],
+                "answer": "Tracking data access/modifications",
+                "explanation": "Audit logs are critical for HIPAA compliance and breach investigations."
+            },
+            {
+                "question": "What is 'data minimization'?",
+                "answers": [
+                    {"answer": "Collecting only necessary data"},
+                    {"answer": "Encrypting all data"},
+                    {"answer": "Deleting old reports"},
+                    {"answer": "Anonymizing data"}
+                ],
+                "answer": "Collecting only necessary data",
+                "explanation": "Reduces liability and storage costs under GDPR/HIPAA."
+            },
+            {
+                "question": "What is 'break-the-glass' access?",
+                "answers": [
+                    {"answer": "Emergency access to restricted data"},
+                    {"answer": "Data decryption"},
+                    {"answer": "Lab equipment override"},
+                    {"answer": "Consent form bypass"}
+                ],
+                "answer": "Emergency access to restricted data",
+                "explanation": "Requires justification and triggers audit alerts."
+            },
+            {
+                "question": "What is 'tokenization'?",
+                "answers": [
+                    {"answer": "Replacing sensitive data with tokens"},
+                    {"answer": "Data encryption"},
+                    {"answer": "Variant annotation"},
+                    {"answer": "Data deletion"}
+                ],
+                "answer": "Replacing sensitive data with tokens",
+                "explanation": "Tokenization protects data during analysis/sharing."
+            }
+        ]
     },
     {
-        "name": "JavaScript Quiz",
-            "questions": [
-                {
-                "question": "What is JavaScript?",
+        "name": "Genetic Testing Basics Quiz",
+        "questions": [
+            {
+                "question": "What is genetic testing?",
                 "answers": [
-                    {
-                        "answer": "A programming language"
-                    },
-                    {
-                        "answer": "A markup language"
-                    },
-                    {
-                        "answer": "A styling language"
-                    },
-                    {
-                        "answer": "A database language"
-                    }
-                ]   ,
-                "answer": "A programming language" ,
-                "explanation": "JavaScript is a programming language that enables you to create dynamically updating content, control multimedia, animate images, and much more. JavaScript is used in web development to create interactive web pages and web applications."
-                },
-                {
-                "question": "What is the purpose of JavaScript?",
+                    {"answer": "Analyzing DNA to identify changes or mutations"},
+                    {"answer": "Testing blood sugar levels"},
+                    {"answer": "Measuring vitamin deficiencies"},
+                    {"answer": "Studying bacteria in the gut"}
+                ],
+                "answer": "Analyzing DNA to identify changes or mutations",
+                "explanation": "Genetic testing examines DNA to detect mutations linked to health, ancestry, or traits."
+            },
+            {
+                "question": "Which sample is commonly used for at-home DNA tests?",
                 "answers": [
-                    {
-                        "answer": "To style web pages"
-                    },
-                    {
-                        "answer": "To create databases"
-                    },
-                    {
-                        "answer": "To create interactive web pages and web applications"
-                    },
-                    {
-                        "answer": "To create markup"
-                    }
-                ]   ,
-                "answer": "To create interactive web pages",    
-                "explanation": "JavaScript is used in web development to create interactive web pages and web applications. It can be used to add functionality to websites, such as form validation, interactive maps, and dynamic content."
-                },
-                {
-                "question": "What is the syntax for a comment in JavaScript?",
+                    {"answer": "Saliva"},
+                    {"answer": "Blood"},
+                    {"answer": "Hair"},
+                    {"answer": "Urine"}
+                ],
+                "answer": "Saliva",
+                "explanation": "At-home kits often use saliva collected in a tube. Blood is used in clinical settings."
+            },
+            {
+                "question": "What is the purpose of carrier testing?",
                 "answers": [
-                    {
-                        "answer": "//"
-                    },
-                    {
-                        "answer": "<!-- -->"
-                    },
-                    {
-                        "answer": "/* */"
-                    },
-                    {
-                        "answer": "#"
-                    }
-                ]   ,
-                "answer": "//",
-                "explanation": "In JavaScript, you can use // to create a single-line comment. This allows you to add notes and explanations to your code without affecting the functionality of the program." 
-                },
-                {
-                "question": "What is the syntax for a variable in JavaScript?",
+                    {"answer": "To see if you carry a gene for a recessive disease"},
+                    {"answer": "To diagnose cancer"},
+                    {"answer": "To test for vitamin deficiencies"},
+                    {"answer": "To determine your ancestry"}
+                ],
+                "answer": "To see if you carry a gene for a recessive disease",
+                "explanation": "Carrier testing helps couples understand risks of passing genetic disorders to children."
+            },
+            {
+                "question": "What does 'VUS' mean in genetic test results?",
                 "answers": [
-                    {
-                        "answer": "var"
-                    },
-                    {
-                        "answer": "let"
-                    },
-                    {
-                        "answer": "const"
-                    },
-                    {
-                        "answer": "all of the above"
-                    }
-                ]   ,
-                "answer": "all of the above",
-                "explanation": "In JavaScript, you can declare variables using var, let, or const. var is used to declare variables that are function-scoped, let is used to declare variables that are block-scoped, and const is used to declare variables that cannot be reassigned. You can use all three types of variables in your JavaScript code."
-                }
-            ]
-    }
-   
+                    {"answer": "Variant of Uncertain Significance"},
+                    {"answer": "Very Urgent Situation"},
+                    {"answer": "Valuable Unique Sample"},
+                    {"answer": "Verified Unusual Symptom"}
+                ],
+                "answer": "Variant of Uncertain Significance",
+                "explanation": "A VUS is a DNA change with unknown health impact. More research is needed."
+            },
+            {
+                "question": "What is a genetic counselor?",
+                "answers": [
+                    {"answer": "A healthcare professional who explains genetic test results"},
+                    {"answer": "A scientist who sequences DNA"},
+                    {"answer": "A lawyer specializing in genetic privacy"},
+                    {"answer": "A lab technician drawing blood"}
+                ],
+                "answer": "A healthcare professional who explains genetic test results",
+                "explanation": "Genetic counselors help patients understand risks, testing options, and results."
+            },
+            {
+                "question": "What does prenatal testing check for?",
+                "answers": [
+                    {"answer": "Genetic conditions in a fetus"},
+                    {"answer": "A parent’s ancestry"},
+                    {"answer": "Newborn hearing loss"},
+                    {"answer": "Adult cancer risk"}
+                ],
+                "answer": "Genetic conditions in a fetus",
+                "explanation": "Prenatal tests (e.g., amniocentesis) screen for disorders like Down syndrome."
+            },
+            {
+                "question": "What is pharmacogenomic testing?",
+                "answers": [
+                    {"answer": "Testing how genes affect drug responses"},
+                    {"answer": "Testing for inherited cancers"},
+                    {"answer": "Testing athletic ability"},
+                    {"answer": "Testing vitamin levels"}
+                ],
+                "answer": "Testing how genes affect drug responses",
+                "explanation": "Pharmacogenomics helps doctors prescribe safer, more effective medications."
+            },
+            {
+                "question": "What is newborn screening?",
+                "answers": [
+                    {"answer": "Testing babies for treatable genetic disorders"},
+                    {"answer": "Predicting a baby’s future height"},
+                    {"answer": "Testing a mother’s DNA during pregnancy"},
+                    {"answer": "Analyzing a baby’s ancestry"}
+                ],
+                "answer": "Testing babies for treatable genetic disorders",
+                "explanation": "Newborn screening detects conditions like PKU early to prevent complications."
+            },
+            {
+                "question": "Which test identifies ancestry?",
+                "answers": [
+                    {"answer": "Autosomal DNA testing"},
+                    {"answer": "Carrier testing"},
+                    {"answer": "Newborn screening"},
+                    {"answer": "Cholesterol test"}
+                ],
+                "answer": "Autosomal DNA testing",
+                "explanation": "Autosomal tests analyze DNA inherited from both parents to estimate ethnic origins."
+            },
+            {
+                "question": "What is diagnostic genetic testing?",
+                "answers": [
+                    {"answer": "Confirming a suspected genetic condition"},
+                    {"answer": "Predicting future health risks"},
+                    {"answer": "Testing for carrier status"},
+                    {"answer": "Analyzing drug reactions"}
+                ],
+                "answer": "Confirming a suspected genetic condition",
+                "explanation": "Diagnostic testing identifies disorders like cystic fibrosis in symptomatic patients."
+            },
+            {
+                "question": "What is a buccal swab?",
+                "answers": [
+                    {"answer": "A cheek cell sample"},
+                    {"answer": "A blood test"},
+                    {"answer": "A hair sample"},
+                    {"answer": "A urine test"}
+                ],
+                "answer": "A cheek cell sample",
+                "explanation": "A buccal swab collects cells from the inside of the cheek for DNA analysis."
+            },
+            {
+                "question": "Why might a blood sample be used for genetic testing?",
+                "answers": [
+                    {"answer": "To obtain high-quality DNA"},
+                    {"answer": "It’s cheaper than saliva"},
+                    {"answer": "To test for infections"},
+                    {"answer": "To measure hormone levels"}
+                ],
+                "answer": "To obtain high-quality DNA",
+                "explanation": "Blood samples provide reliable DNA but require clinical collection."
+            },
+            {
+                "question": "What does a 'positive' genetic test result mean?",
+                "answers": [
+                    {"answer": "A disease-causing mutation was found"},
+                    {"answer": "No mutations were found"},
+                    {"answer": "The test failed"},
+                    {"answer": "The result is uncertain"}
+                ],
+                "answer": "A disease-causing mutation was found",
+                "explanation": "A positive result indicates a mutation linked to a specific condition."
+            },
+            {
+                "question": "Can a genetic test predict all future health problems?",
+                "answers": [
+                    {"answer": "No—it only assesses specific mutations"},
+                    {"answer": "Yes, with 100% accuracy"},
+                    {"answer": "Only for infectious diseases"},
+                    {"answer": "Only for mental health conditions"}
+                ],
+                "answer": "No—it only assesses specific mutations",
+                "explanation": "Most tests analyze predefined genes. Environment and lifestyle also affect health."
+            },
+            {
+                "question": "What is informed consent?",
+                "answers": [
+                    {"answer": "Agreeing to testing after understanding risks/benefits"},
+                    {"answer": "Signing up for a lab newsletter"},
+                    {"answer": "Paying for a test online"},
+                    {"answer": "Sharing DNA data on social media"}
+                ],
+                "answer": "Agreeing to testing after understanding risks/benefits",
+                "explanation": "Informed consent ensures patients know how results might impact them."
+            },
+            {
+                "question": "What law prohibits genetic discrimination in health insurance?",
+                "answers": [
+                    {"answer": "GINA (Genetic Information Nondiscrimination Act)"},
+                    {"answer": "HIPAA"},
+                    {"answer": "FDA"},
+                    {"answer": "CLIA"}
+                ],
+                "answer": "GINA (Genetic Information Nondiscrimination Act)",
+                "explanation": "GINA prevents insurers/employers from using genetic data against you."
+            },
+            {
+                "question": "What is DNA?",
+                "answers": [
+                    {"answer": "A molecule carrying genetic instructions"},
+                    {"answer": "A type of protein"},
+                    {"answer": "A blood cell"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A molecule carrying genetic instructions",
+                "explanation": "DNA contains the code for building and maintaining an organism."
+            },
+            {
+                "question": "What is a mutation?",
+                "answers": [
+                    {"answer": "A change in DNA sequence"},
+                    {"answer": "A type of blood test"},
+                    {"answer": "A vitamin deficiency"},
+                    {"answer": "A lab error"}
+                ],
+                "answer": "A change in DNA sequence",
+                "explanation": "Mutations can be harmless, beneficial, or cause disease."
+            },
+            {
+                "question": "What is a gene?",
+                "answers": [
+                    {"answer": "A segment of DNA that codes for a protein"},
+                    {"answer": "A type of blood cell"},
+                    {"answer": "A laboratory tool"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A segment of DNA that codes for a protein",
+                "explanation": "Genes determine traits like eye color and influence disease risk."
+            },
+            {
+                "question": "How many chromosomes do humans have?",
+                "answers": [
+                    {"answer": "46"},
+                    {"answer": "23"},
+                    {"answer": "32"},
+                    {"answer": "50"}
+                ],
+                "answer": "46",
+                "explanation": "Humans have 23 pairs of chromosomes (46 total) in most cells."
+            },
+            {
+                "question": "What is a chromosome?",
+                "answers": [
+                    {"answer": "A thread-like structure of DNA and protein"},
+                    {"answer": "A type of genetic test"},
+                    {"answer": "A blood disorder"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A thread-like structure of DNA and protein",
+                "explanation": "Chromosomes package DNA tightly to fit inside cells."
+            },
+            {
+                "question": "What is an allele?",
+                "answers": [
+                    {"answer": "A version of a gene"},
+                    {"answer": "A type of genetic test"},
+                    {"answer": "A lab instrument"},
+                    {"answer": "A blood sample"}
+                ],
+                "answer": "A version of a gene",
+                "explanation": "Alleles are variations of genes (e.g., blue vs. brown eyes)."
+            },
+            {
+                "question": "What does 'recessive' mean in genetics?",
+                "answers": [
+                    {"answer": "A trait that only appears with two copies of the allele"},
+                    {"answer": "A trait that always appears with one allele"},
+                    {"answer": "A type of DNA test"},
+                    {"answer": "A lab error"}
+                ],
+                "answer": "A trait that only appears with two copies of the allele",
+                "explanation": "Recessive traits (like cystic fibrosis) need two copies of the mutated gene."
+            },
+            {
+                "question": "What does 'dominant' mean in genetics?",
+                "answers": [
+                    {"answer": "A trait that appears with one copy of the allele"},
+                    {"answer": "A trait that never appears"},
+                    {"answer": "A type of blood test"},
+                    {"answer": "A lab certification"}
+                ],
+                "answer": "A trait that appears with one copy of the allele",
+                "explanation": "Dominant traits (like Huntington’s disease) require only one mutated gene."
+            },
+            {
+                "question": "What is a genome?",
+                "answers": [
+                    {"answer": "All the DNA in an organism"},
+                    {"answer": "A type of genetic test"},
+                    {"answer": "A blood cell"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "All the DNA in an organism",
+                "explanation": "The genome includes all genes and non-coding DNA."
+            },
+            {
+                "question": "What is a genetic disorder?",
+                "answers": [
+                    {"answer": "A disease caused by DNA changes"},
+                    {"answer": "A lab mistake"},
+                    {"answer": "A vitamin deficiency"},
+                    {"answer": "A bacterial infection"}
+                ],
+                "answer": "A disease caused by DNA changes",
+                "explanation": "Examples include sickle cell anemia and cystic fibrosis."
+            },
+            {
+                "question": "What is a false positive in genetic testing?",
+                "answers": [
+                    {"answer": "A result showing a mutation that isn’t there"},
+                    {"answer": "A correct result"},
+                    {"answer": "A lab equipment error"},
+                    {"answer": "A canceled test"}
+                ],
+                "answer": "A result showing a mutation that isn’t there",
+                "explanation": "False positives can cause unnecessary stress and testing."
+            },
+            {
+                "question": "What is a false negative in genetic testing?",
+                "answers": [
+                    {"answer": "A result missing a mutation that is present"},
+                    {"answer": "A correct result"},
+                    {"answer": "A lab accident"},
+                    {"answer": "A canceled test"}
+                ],
+                "answer": "A result missing a mutation that is present",
+                "explanation": "False negatives may delay needed medical care."
+            },
+            {
+                "question": "What is direct-to-consumer genetic testing?",
+                "answers": [
+                    {"answer": "Tests sold directly to the public without a doctor"},
+                    {"answer": "Tests done in hospitals"},
+                    {"answer": "Tests for newborns"},
+                    {"answer": "Tests for infectious diseases"}
+                ],
+                "answer": "Tests sold directly to the public without a doctor",
+                "explanation": "Examples include ancestry and wellness tests from companies like 23andMe."
+            },
+            {
+                "question": "What is a BRCA1 gene?",
+                "answers": [
+                    {"answer": "A gene linked to breast cancer risk"},
+                    {"answer": "A gene for eye color"},
+                    {"answer": "A gene for vitamin absorption"},
+                    {"answer": "A gene for height"}
+                ],
+                "answer": "A gene linked to breast cancer risk",
+                "explanation": "BRCA1 mutations increase the risk of breast and ovarian cancers."
+            },
+            {
+                "question": "What is genetic ancestry?",
+                "answers": [
+                    {"answer": "Estimating where your ancestors lived"},
+                    {"answer": "Testing for diseases"},
+                    {"answer": "Analyzing drug reactions"},
+                    {"answer": "Studying bacteria"}
+                ],
+                "answer": "Estimating where your ancestors lived",
+                "explanation": "Ancestry tests compare your DNA to global reference populations."
+            },
+            {
+                "question": "What is a genetic trait?",
+                "answers": [
+                    {"answer": "A characteristic influenced by genes"},
+                    {"answer": "A lab tool"},
+                    {"answer": "A blood test"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A characteristic influenced by genes",
+                "explanation": "Examples include eye color, height, and lactose intolerance."
+            },
+            {
+                "question": "What is a family health history?",
+                "answers": [
+                    {"answer": "A record of diseases in relatives"},
+                    {"answer": "A genetic test"},
+                    {"answer": "A lab report"},
+                    {"answer": "A DNA sample"}
+                ],
+                "answer": "A record of diseases in relatives",
+                "explanation": "Family history helps assess genetic disease risks."
+            },
+            {
+                "question": "What is a genetic risk score?",
+                "answers": [
+                    {"answer": "An estimate of disease risk based on DNA"},
+                    {"answer": "A lab certification"},
+                    {"answer": "A blood pressure reading"},
+                    {"answer": "A vitamin level"}
+                ],
+                "answer": "An estimate of disease risk based on DNA",
+                "explanation": "Polygenic risk scores combine multiple genetic variants."
+            },
+            {
+                "question": "What is a DNA match?",
+                "answers": [
+                    {"answer": "A relative identified through shared DNA"},
+                    {"answer": "A lab tool"},
+                    {"answer": "A blood type match"},
+                    {"answer": "A vitamin compatibility"}
+                ],
+                "answer": "A relative identified through shared DNA",
+                "explanation": "DNA matching helps build family trees in ancestry testing."
+            },
+            {
+                "question": "What is a genetic variant?",
+                "answers": [
+                    {"answer": "A difference in DNA sequence"},
+                    {"answer": "A lab error"},
+                    {"answer": "A blood disorder"},
+                    {"answer": "A vitamin deficiency"}
+                ],
+                "answer": "A difference in DNA sequence",
+                "explanation": "Variants can be harmless, beneficial, or harmful."
+            },
+            {
+                "question": "What is a DNA profile?",
+                "answers": [
+                    {"answer": "A unique set of genetic markers"},
+                    {"answer": "A lab report"},
+                    {"answer": "A blood type"},
+                    {"answer": "A vitamin chart"}
+                ],
+                "answer": "A unique set of genetic markers",
+                "explanation": "Used in forensics and paternity testing to identify individuals."
+            },
+            {
+                "question": "What is a genetic marker?",
+                "answers": [
+                    {"answer": "A DNA sequence with a known location"},
+                    {"answer": "A lab tool"},
+                    {"answer": "A blood sample"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A DNA sequence with a known location",
+                "explanation": "Markers help track genes in families or populations."
+            },
+            {
+                "question": "What is a genetic predisposition?",
+                "answers": [
+                    {"answer": "Increased risk of a disease due to genes"},
+                    {"answer": "Immunity to a disease"},
+                    {"answer": "A lab error"},
+                    {"answer": "A vitamin deficiency"}
+                ],
+                "answer": "Increased risk of a disease due to genes",
+                "explanation": "A predisposition doesn’t guarantee the disease will develop."
+            },
+            {
+                "question": "What is a spit kit?",
+                "answers": [
+                    {"answer": "A saliva collection kit for DNA testing"},
+                    {"answer": "A blood test kit"},
+                    {"answer": "A hair sample kit"},
+                    {"answer": "A urine test kit"}
+                ],
+                "answer": "A saliva collection kit for DNA testing",
+                "explanation": "Used in at-home tests to collect DNA from saliva."
+            },
+            {
+                "question": "What is a lab report?",
+                "answers": [
+                    {"answer": "A document explaining test results"},
+                    {"answer": "A blood sample"},
+                    {"answer": "A genetic mutation"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A document explaining test results",
+                "explanation": "Reports summarize findings and may include recommendations."
+            },
+            {
+                "question": "What is a DNA database?",
+                "answers": [
+                    {"answer": "A collection of genetic profiles"},
+                    {"answer": "A lab tool"},
+                    {"answer": "A blood bank"},
+                    {"answer": "A vitamin list"}
+                ],
+                "answer": "A collection of genetic profiles",
+                "explanation": "Used in research, forensics, and ancestry services."
+            },
+            {
+                "question": "What is a consent form?",
+                "answers": [
+                    {"answer": "A document agreeing to testing terms"},
+                    {"answer": "A lab report"},
+                    {"answer": "A blood sample"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A document agreeing to testing terms",
+                "explanation": "Ensures patients understand testing risks/benefits before proceeding."
+            },
+            {
+                "question": "What is de-identified data?",
+                "answers": [
+                    {"answer": "Data without personal identifiers"},
+                    {"answer": "Encrypted data"},
+                    {"answer": "Raw DNA data"},
+                    {"answer": "A lab tool"}
+                ],
+                "answer": "Data without personal identifiers",
+                "explanation": "Protects privacy by removing names, addresses, etc."
+            },
+            {
+                "question": "What is a genetic testing kit?",
+                "answers": [
+                    {"answer": "A package to collect and send DNA samples"},
+                    {"answer": "A lab instrument"},
+                    {"answer": "A blood pressure monitor"},
+                    {"answer": "A vitamin bottle"}
+                ],
+                "answer": "A package to collect and send DNA samples",
+                "explanation": "Includes instructions, tubes, and return packaging."
+            },
+            {
+                "question": "What is a raw DNA file?",
+                "answers": [
+                    {"answer": "A text file of genetic data"},
+                    {"answer": "A lab report"},
+                    {"answer": "A blood sample"},
+                    {"answer": "A vitamin list"}
+                ],
+                "answer": "A text file of genetic data",
+                "explanation": "Users can download this file for third-party analyses."
+            },
+            {
+                "question": "What is a third-party interpretation service?",
+                "answers": [
+                    {"answer": "A tool to analyze raw DNA data"},
+                    {"answer": "A lab certification"},
+                    {"answer": "A blood test"},
+                    {"answer": "A vitamin supplier"}
+                ],
+                "answer": "A tool to analyze raw DNA data",
+                "explanation": "Services like Promethease provide additional health insights."
+            },
+            {
+                "question": "What is a DNA relative match?",
+                "answers": [
+                    {"answer": "Identifying genetic relatives through shared DNA"},
+                    {"answer": "Matching blood types"},
+                    {"answer": "Finding vitamin compatibility"},
+                    {"answer": "A lab error"}
+                ],
+                "answer": "Identifying genetic relatives through shared DNA",
+                "explanation": "Common in ancestry testing platforms like AncestryDNA."
+            },
+            {
+                "question": "What is a genetic testing panel?",
+                "answers": [
+                    {"answer": "A test analyzing multiple genes at once"},
+                    {"answer": "A lab tool"},
+                    {"answer": "A blood collection method"},
+                    {"answer": "A vitamin chart"}
+                ],
+                "answer": "A test analyzing multiple genes at once",
+                "explanation": "Panels screen for conditions like hereditary cancer syndromes."
+            },
+            {
+                "question": "What is whole exome sequencing?",
+                "answers": [
+                    {"answer": "Sequencing all protein-coding genes"},
+                    {"answer": "Sequencing mitochondrial DNA"},
+                    {"answer": "A blood test"},
+                    {"answer": "A vitamin test"}
+                ],
+                "answer": "Sequencing all protein-coding genes",
+                "explanation": "Exome sequencing focuses on 1-2% of the genome but covers most disease-related genes."
+            },
+            {
+                "question": "What is a genetic testing result 'carrier'?",
+                "answers": [
+                    {"answer": "Someone with one copy of a recessive mutation"},
+                    {"answer": "Someone with two copies of a mutation"},
+                    {"answer": "Someone immune to a disease"},
+                    {"answer": "A lab technician"}
+                ],
+                "answer": "Someone with one copy of a recessive mutation",
+                "explanation": "Carriers don’t show symptoms but can pass the mutation to children."
+            },
+            {
+                "question": "What is a negative test result?",
+                "answers": [
+                    {"answer": "No mutations were found in tested genes"},
+                    {"answer": "A lab error occurred"},
+                    {"answer": "The test was canceled"},
+                    {"answer": "A vitamin deficiency was found"}
+                ],
+                "answer": "No mutations were found in tested genes",
+                "explanation": "A negative result reduces but doesn’t eliminate disease risk."
+            }
+        ]
+    },
+    {
+        "name": "Blueprint Genetics Comprehensive Quiz",
+        "questions": [
+            {
+                "question": "What is Blueprint Genetics' primary focus?",
+                "answers": [
+                    {"answer": "Diagnostic genetic testing for rare diseases"},
+                    {"answer": "Direct-to-consumer wellness reports"},
+                    {"answer": "Pharmacogenomic drug development"},
+                    {"answer": "Infectious disease diagnostics"}
+                ],
+                "answer": "Diagnostic genetic testing for rare diseases",
+                "explanation": "Blueprint Genetics specializes in clinical exome sequencing and targeted gene panels to diagnose rare inherited disorders, such as cardiomyopathies, metabolic disorders, and neurodevelopmental conditions."
+            },
+            {
+                "question": "Which certifications does Blueprint Genetics hold?",
+                "answers": [
+                    {"answer": "CLIA and CAP"},
+                    {"answer": "FDA and CE-IVD"},
+                    {"answer": "ISO 9001 only"},
+                    {"answer": "HIPAA and GDPR"}
+                ],
+                "answer": "CLIA and CAP",
+                "explanation": "Their lab is CLIA-certified (Clinical Laboratory Improvement Amendments) and CAP-accredited (College of American Pathologists), ensuring compliance with U.S. clinical testing standards."
+            },
+            {
+                "question": "What technology does Blueprint Genetics primarily use for sequencing?",
+                "answers": [
+                    {"answer": "Next-Generation Sequencing (NGS)"},
+                    {"answer": "Sanger Sequencing"},
+                    {"answer": "Microarray analysis"},
+                    {"answer": "PCR-based genotyping"}
+                ],
+                "answer": "Next-Generation Sequencing (NGS)",
+                "explanation": "NGS allows high-throughput, cost-effective analysis of hundreds to thousands of genes simultaneously, with high accuracy and coverage."
+            },
+            {
+                "question": "What is the 'Exome+Solution'?",
+                "answers": [
+                    {"answer": "Whole exome sequencing + CNV analysis"},
+                    {"answer": "Single-gene testing"},
+                    {"answer": "RNA sequencing"},
+                    {"answer": "Microbiome analysis"}
+                ],
+                "answer": "Whole exome sequencing + CNV analysis",
+                "explanation": "Exome+Solution sequences all protein-coding regions (~20,000 genes) and detects copy-number variations (CNVs), providing a comprehensive diagnostic approach."
+            },
+            {
+                "question": "Who can order a Blueprint Genetics test?",
+                "answers": [
+                    {"answer": "Licensed healthcare providers"},
+                    {"answer": "Patients directly"},
+                    {"answer": "Pharmacists"},
+                    {"answer": "Research scientists"}
+                ],
+                "answer": "Licensed healthcare providers",
+                "explanation": "Tests are clinically validated and require a provider’s order to ensure appropriate use and interpretation."
+            },
+            {
+                "question": "What is the 'Cardio Panel' used for?",
+                "answers": [
+                    {"answer": "Diagnosing inherited cardiovascular disorders"},
+                    {"answer": "Assessing cholesterol levels"},
+                    {"answer": "Monitoring blood pressure"},
+                    {"answer": "Testing for heart attacks"}
+                ],
+                "answer": "Diagnosing inherited cardiovascular disorders",
+                "explanation": "The Cardio Panel analyzes genes linked to conditions like hypertrophic cardiomyopathy, long QT syndrome, and familial hypercholesterolemia."
+            },
+            {
+                "question": "Which panel would a clinician order for a child with developmental delay?",
+                "answers": [
+                    {"answer": "Neuro Panel"},
+                    {"answer": "Cancer Panel"},
+                    {"answer": "Metabolic Panel"},
+                    {"answer": "Prenatal Panel"}
+                ],
+                "answer": "Neuro Panel",
+                "explanation": "The Neuro Panel focuses on genes associated with neurodevelopmental disorders, epilepsy, and intellectual disability."
+            },
+            {
+                "question": "What does the 'Rapid Exome' test prioritize?",
+                "answers": [
+                    {"answer": "Fast turnaround for critically ill patients"},
+                    {"answer": "Low-cost sequencing"},
+                    {"answer": "Carrier screening"},
+                    {"answer": "Ancestry analysis"}
+                ],
+                "answer": "Fast turnaround for critically ill patients",
+                "explanation": "Rapid Exome Sequencing (2-3 weeks) is used in neonatal ICUs or acute care settings to expedite diagnoses."
+            },
+            {
+                "question": "What is the 'Metabolic Panel' designed to detect?",
+                "answers": [
+                    {"answer": "Inborn errors of metabolism"},
+                    {"answer": "Diabetes risk"},
+                    {"answer": "Vitamin deficiencies"},
+                    {"answer": "Thyroid disorders"}
+                ],
+                "answer": "Inborn errors of metabolism",
+                "explanation": "This panel identifies mutations in genes like *PAH* (phenylketonuria) or *GALT* (galactosemia) to guide dietary or therapeutic interventions."
+            },
+            {
+                "question": "Which test is appropriate for a suspected chromosomal deletion?",
+                "answers": [
+                    {"answer": "Exome+Solution with CNV analysis"},
+                    {"answer": "Single-gene Sanger sequencing"},
+                    {"answer": "Carrier screening panel"},
+                    {"answer": "Pharmacogenomic testing"}
+                ],
+                "answer": "Exome+Solution with CNV analysis",
+                "explanation": "Exome+Solution includes CNV detection to identify large deletions/duplications missed by gene panels."
+            },
+            {
+                "question": "What does '30x coverage' mean in sequencing?",
+                "answers": [
+                    {"answer": "Each DNA base is read 30 times on average"},
+                    {"answer": "30 genes are analyzed"},
+                    {"answer": "The test costs $30"},
+                    {"answer": "30-day turnaround time"}
+                ],
+                "answer": "Each DNA base is read 30 times on average",
+                "explanation": "Higher coverage (e.g., 100x) improves accuracy by reducing errors and detecting low-level mosaicism."
+            },
+            {
+                "question": "How does Blueprint Genetics handle pseudogenes?",
+                "answers": [
+                    {"answer": "Uses probe design to avoid cross-hybridization"},
+                    {"answer": "Ignores them during analysis"},
+                    {"answer": "Reports them as pathogenic"},
+                    {"answer": "Uses Sanger sequencing exclusively"}
+                ],
+                "answer": "Uses probe design to avoid cross-hybridization",
+                "explanation": "Pseudogenes (non-functional gene copies) can cause false positives; specialized probes minimize this risk."
+            },
+            {
+                "question": "What is a 'BAM file'?",
+                "answers": [
+                    {"answer": "A file storing aligned sequencing reads"},
+                    {"answer": "A lab consent form"},
+                    {"answer": "A billing document"},
+                    {"answer": "A variant classification report"}
+                ],
+                "answer": "A file storing aligned sequencing reads",
+                "explanation": "BAM files map DNA sequences to a reference genome and are used for variant calling and quality control."
+            },
+            {
+                "question": "What does a 'Tier 1' variant classification indicate?",
+                "answers": [
+                    {"answer": "Pathogenic or likely pathogenic"},
+                    {"answer": "Benign"},
+                    {"answer": "Variant of Uncertain Significance (VUS)"},
+                    {"answer": "Technical artifact"}
+                ],
+                "answer": "Pathogenic or likely pathogenic",
+                "explanation": "Tier 1 variants have strong evidence linking them to disease, per ACMG guidelines."
+            },
+            {
+                "question": "What is a 'VUS'?",
+                "answers": [
+                    {"answer": "A variant with unclear clinical significance"},
+                    {"answer": "A confirmed benign variant"},
+                    {"answer": "A lab error"},
+                    {"answer": "A novel gene discovery"}
+                ],
+                "answer": "A variant with unclear clinical significance",
+                "explanation": "VUS results require follow-up, such as family studies or periodic reanalysis."
+            },
+            {
+                "question": "When is 'carrier screening' recommended?",
+                "answers": [
+                    {"answer": "Before or during pregnancy"},
+                    {"answer": "After a cancer diagnosis"},
+                    {"answer": "For ancestry analysis"},
+                    {"answer": "To diagnose infections"}
+                ],
+                "answer": "Before or during pregnancy",
+                "explanation": "Carrier screening identifies recessive mutations (e.g., cystic fibrosis) in prospective parents."
+            },
+            {
+                "question": "What is the clinical utility of the 'Cancer Panel'?",
+                "answers": [
+                    {"answer": "Identifying hereditary cancer syndromes"},
+                    {"answer": "Monitoring chemotherapy response"},
+                    {"answer": "Detecting tumor mutations"},
+                    {"answer": "Predicting cancer recurrence"}
+                ],
+                "answer": "Identifying hereditary cancer syndromes",
+                "explanation": "This panel tests genes like *BRCA1/2* or *TP53* to assess inherited cancer risks."
+            },
+            {
+                "question": "What does GINA protect against?",
+                "answers": [
+                    {"answer": "Genetic discrimination in health insurance"},
+                    {"answer": "Data breaches"},
+                    {"answer": "Lab errors"},
+                    {"answer": "Infectious diseases"}
+                ],
+                "answer": "Genetic discrimination in health insurance",
+                "explanation": "The Genetic Information Nondiscrimination Act (GINA) prohibits insurers from using genetic data to deny coverage."
+            },
+            {
+                "question": "What is included in informed consent for genetic testing?",
+                "answers": [
+                    {"answer": "Risks, benefits, and data usage"},
+                    {"answer": "Lab equipment details"},
+                    {"answer": "Insurance billing codes"},
+                    {"answer": "Pharmaceutical promotions"}
+                ],
+                "answer": "Risks, benefits, and data usage",
+                "explanation": "Patients must understand potential outcomes, privacy policies, and how results may impact family members."
+            },
+            {
+                "question": "A newborn with seizures and developmental delay undergoes Rapid Exome Sequencing. A *SCN1A* variant is found. What is the likely diagnosis?",
+                "answers": [
+                    {"answer": "Dravet syndrome"},
+                    {"answer": "Cystic fibrosis"},
+                    {"answer": "Huntington’s disease"},
+                    {"answer": "Marfan syndrome"}
+                ],
+                "answer": "Dravet syndrome",
+                "explanation": "*SCN1A* mutations cause Dravet syndrome, a severe epilepsy disorder. Early diagnosis guides treatment with sodium channel blockers."
+            }
+        ]
+    },
+    {
+        "name": "Genes and DNA Basics Quiz",
+        "questions": [
+            {
+                "question": "What is a gene?",
+                "answers": [
+                    {"answer": "A specific DNA sequence"},
+                    {"answer": "A type of protein"},
+                    {"answer": "A blood cell"},
+                    {"answer": "A vitamin"}
+                ],
+                "answer": "A specific DNA sequence",
+                "explanation": "A gene is a segment of DNA with a unique sequence of bases (A, T, C, G) that codes for a functional product."
+            },
+            {
+                "question": "What molecules make up the 'rungs' of the DNA ladder?",
+                "answers": [
+                    {"answer": "A, T, C, G bases"},
+                    {"answer": "Proteins"},
+                    {"answer": "Sugars"},
+                    {"answer": "Lipids"}
+                ],
+                "answer": "A, T, C, G bases",
+                "explanation": "DNA is made of two strands twisted into a double helix, with bases (A-T and C-G) forming the rungs."
+            },
+            {
+                "question": "Where are genes located?",
+                "answers": [
+                    {"answer": "On chromosomes"},
+                    {"answer": "In the cell membrane"},
+                    {"answer": "In mitochondria only"},
+                    {"answer": "In vitamins"}
+                ],
+                "answer": "On chromosomes",
+                "explanation": "Genes are arranged linearly on chromosomes, which are found in the cell nucleus."
+            },
+            {
+                "question": "Approximately how many genes do humans have?",
+                "answers": [
+                    {"answer": "~20,000"},
+                    {"answer": "~100,000"},
+                    {"answer": "~5,000"},
+                    {"answer": "~1,000"}
+                ],
+                "answer": "~20,000",
+                "explanation": "Humans have about 20,000 genes, making up only ~1-2% of total DNA."
+            },
+            {
+                "question": "What do genes code for?",
+                "answers": [
+                    {"answer": "Proteins or RNA molecules"},
+                    {"answer": "Carbohydrates"},
+                    {"answer": "Hormones"},
+                    {"answer": "Vitamins"}
+                ],
+                "answer": "Proteins or RNA molecules",
+                "explanation": "Genes provide instructions to build proteins (e.g., enzymes) or functional RNA (e.g., tRNA)."
+            },
+            {
+                "question": "Which gene is responsible for hemoglobin?",
+                "answers": [
+                    {"answer": "HBB"},
+                    {"answer": "BRCA1"},
+                    {"answer": "CFTR"},
+                    {"answer": "TP53"}
+                ],
+                "answer": "HBB",
+                "explanation": "The HBB gene codes for part of hemoglobin, the protein that carries oxygen in red blood cells."
+            },
+            {
+                "question": "What happens if the HBB gene is mutated?",
+                "answers": [
+                    {"answer": "Sickle cell anemia"},
+                    {"answer": "Cystic fibrosis"},
+                    {"answer": "Huntington’s disease"},
+                    {"answer": "Diabetes"}
+                ],
+                "answer": "Sickle cell anemia",
+                "explanation": "A single base change in HBB causes sickle-shaped red blood cells, leading to sickle cell anemia."
+            },
+            {
+                "question": "What is the relationship between a gene and DNA?",
+                "answers": [
+                    {"answer": "A gene is a functional unit of DNA"},
+                    {"answer": "DNA is a type of gene"},
+                    {"answer": "Genes are made of RNA"},
+                    {"answer": "DNA and genes are unrelated"}
+                ],
+                "answer": "A gene is a functional unit of DNA",
+                "explanation": "DNA is the entire molecule, while genes are specific segments that code for products."
+            },
+            {
+                "question": "What percentage of human DNA codes for genes?",
+                "answers": [
+                    {"answer": "1-2%"},
+                    {"answer": "50%"},
+                    {"answer": "25%"},
+                    {"answer": "99%"}
+                ],
+                "answer": "1-2%",
+                "explanation": "Most DNA is non-coding and includes regulatory regions or 'junk' DNA."
+            },
+            {
+                "question": "What is the purpose of genes?",
+                "answers": [
+                    {"answer": "Provide instructions for traits"},
+                    {"answer": "Store energy"},
+                    {"answer": "Fight infections"},
+                    {"answer": "Digest food"}
+                ],
+                "answer": "Provide instructions for traits",
+                "explanation": "Genes determine traits like eye color, height, and disease susceptibility."
+            },
+            {
+                "question": "How many chromosome pairs do humans have?",
+                "answers": [
+                    {"answer": "23"},
+                    {"answer": "46"},
+                    {"answer": "10"},
+                    {"answer": "32"}
+                ],
+                "answer": "23",
+                "explanation": "Humans have 23 pairs of chromosomes (46 total) in most cells."
+            },
+            {
+                "question": "What is the difference between a gene and a genome?",
+                "answers": [
+                    {"answer": "A gene is a DNA segment; a genome is all DNA in an organism"},
+                    {"answer": "A genome is a type of gene"},
+                    {"answer": "Genes are made of RNA; genomes are made of DNA"},
+                    {"answer": "There is no difference"}
+                ],
+                "answer": "A gene is a DNA segment; a genome is all DNA in an organism",
+                "explanation": "The genome includes all genes and non-coding DNA in an organism."
+            },
+            {
+                "question": "What role do non-coding DNA regions play?",
+                "answers": [
+                    {"answer": "Regulate gene activity"},
+                    {"answer": "Code for proteins"},
+                    {"answer": "Carry oxygen"},
+                    {"answer": "Digest food"}
+                ],
+                "answer": "Regulate gene activity",
+                "explanation": "Non-coding DNA controls when and where genes are expressed."
+            },
+            {
+                "question": "True or False: All DNA sequences are genes.",
+                "answers": [
+                    {"answer": "False"},
+                    {"answer": "True"}
+                ],
+                "answer": "False",
+                "explanation": "Only ~1-2% of DNA consists of genes; the rest includes regulatory and non-functional regions."
+            },
+            {
+                "question": "What is a gene best compared to?",
+                "answers": [
+                    {"answer": "A recipe in a cookbook"},
+                    {"answer": "A kitchen appliance"},
+                    {"answer": "A chef"},
+                    {"answer": "A meal"}
+                ],
+                "answer": "A recipe in a cookbook",
+                "explanation": "A gene provides step-by-step instructions to make a product, like a recipe."
+            },
+            {
+                "question": "Which part of DNA is NOT part of a gene?",
+                "answers": [
+                    {"answer": "Regulatory regions"},
+                    {"answer": "Coding sequence"},
+                    {"answer": "Promoter region"},
+                    {"answer": "Exons"}
+                ],
+                "answer": "Regulatory regions",
+                "explanation": "Regulatory regions control gene activity but aren’t part of the gene’s coding sequence."
+            },
+            {
+                "question": "What happens if a gene mutates?",
+                "answers": [
+                    {"answer": "It may alter the protein it codes for"},
+                    {"answer": "It becomes part of a chromosome"},
+                    {"answer": "It turns into RNA"},
+                    {"answer": "Nothing—mutations are always harmless"}
+                ],
+                "answer": "It may alter the protein it codes for",
+                "explanation": "Mutations can disrupt protein function, causing diseases like cystic fibrosis."
+            },
+            {
+                "question": "What is DNA?",
+                "answers": [
+                    {"answer": "A molecule storing genetic information"},
+                    {"answer": "A type of gene"},
+                    {"answer": "A protein"},
+                    {"answer": "A carbohydrate"}
+                ],
+                "answer": "A molecule storing genetic information",
+                "explanation": "DNA is the molecule that contains all genes and non-coding sequences."
+            },
+            {
+                "question": "What does hemoglobin do?",
+                "answers": [
+                    {"answer": "Carries oxygen in red blood cells"},
+                    {"answer": "Fights infections"},
+                    {"answer": "Digests food"},
+                    {"answer": "Stores energy"}
+                ],
+                "answer": "Carries oxygen in red blood cells",
+                "explanation": "Hemoglobin, coded by the HBB gene, binds oxygen for transport through the blood."
+            },
+            {
+                "question": "What is the entire set of DNA in an organism called?",
+                "answers": [
+                    {"answer": "Genome"},
+                    {"answer": "Chromosome"},
+                    {"answer": "Gene pool"},
+                    {"answer": "Proteome"}
+                ],
+                "answer": "Genome",
+                "explanation": "The genome includes all genes and non-coding DNA in an organism."
+            }
+        ]
+    }    
 ]

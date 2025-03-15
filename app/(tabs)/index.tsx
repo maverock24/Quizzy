@@ -1,5 +1,5 @@
 import { useQuiz } from '@/components/Quizprovider';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import {
   View,
   Text,
@@ -7,8 +7,11 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  SafeAreaView
+  SafeAreaView,
 } from 'react-native';
+import Sad from '../../assets/images/sad.svg';
+import Happy from '../../assets/images/happy.svg';
+import { AnalogClock } from '@/components/AnalogClock';
 
 const quizzes = require('../../assets/quizzes.json');
 
@@ -40,23 +43,22 @@ const shuffleArray = (array: any[]) => {
 
 export default function TabOneScreen() {
   const [selectedQuiz, setSelectedQuiz] = useState<Quiz>();
-  const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] = useState<number>(0);
+  const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] =
+    useState<number>(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [scoreVisible, setScoreVisible] = useState<boolean>(false);
 
-  const {selectedQuizName, setSelectedQuizName } = useQuiz();
+  const { selectedQuizName, setSelectedQuizName } = useQuiz();
   const [showExplanation, setShowExplanation] = useState<boolean>(false);
   const [anserIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
 
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
-  
 
   useEffect(() => {
     if (selectedQuiz && selectedQuiz.questions[currentQuestionIndex]) {
-    console.log(selectedQuiz.questions[currentQuestionIndex].answers);
       setRandomizedAnswers(
-        shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers)
+        shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
       );
     }
   }, [selectedQuiz, currentQuestionIndex]);
@@ -96,53 +98,59 @@ export default function TabOneScreen() {
     setShowExplanation(false);
     setCurrentQuestionIndex(currentQuestionIndex + 1);
     if (currentQuestionIndex === selectedQuiz?.questions.length! - 1) {
-    setScoreVisible(true);
-    setSelectedQuiz(undefined);
-    setSelectedQuizName(null);
-    setCurrentQuestionIndex(0);
-    setAnswerIsCorrect(false);
-    setShowExplanation(false);
+      setScoreVisible(true);
+      setSelectedQuiz(undefined);
+      setSelectedQuizName(null);
+      setCurrentQuestionIndex(0);
+      setAnswerIsCorrect(false);
+      setShowExplanation(false);
     }
-
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {!selectedQuiz && (
-          <FlatList
-            data={quizzes}
-            keyExtractor={(item) => item.name}
-            renderItem={({ item }) => (
-              <TouchableOpacity
-                style={styles.quizButton}
-                onPress={() => handleQuizSelection(item)}
-              >
-                <Text style={styles.buttonText} numberOfLines={1}>
-                  {item.name}
-                </Text>
-              </TouchableOpacity>
-            )}
-          />
+        {!selectedQuiz && !scoreVisible && (
+          <>
+            <Text style={styles.normalText}>Select a quiz:</Text>
+            <FlatList
+              data={quizzes}
+              keyExtractor={(item) => item.name}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  style={styles.answerButton}
+                  onPress={() => handleQuizSelection(item)}
+                >
+                  <Text style={styles.buttonText} numberOfLines={1}>
+                    {item.name}
+                  </Text>
+                </TouchableOpacity>
+              )}
+            />
+          </>
         )}
 
         {showExplanation && (
           <View style={styles.contentContainer}>
-            <View style={[
-              styles.card,
-              { backgroundColor: anserIsCorrect ? 'green' : 'red' }
-            ]}>
-              <Text style={styles.heading}>
-                Your answer is {anserIsCorrect ? 'correct' : 'incorrect'}
+            <View
+              style={[
+                styles.card,
+                {
+                  backgroundColor: anserIsCorrect
+                    ? 'rgb(73, 102, 70)'
+                    : 'rgb(150, 60, 60)',
+                },
+              ]}
+            >
+              <Text style={styles.questionHeading}>
+                {anserIsCorrect ? 'Correct!' : 'Wrong!'}
               </Text>
               <Text style={styles.normalText}>
-                {anserIsCorrect
-                  ? selectedQuiz?.questions[currentQuestionIndex].explanation
-                  : "Try again next time. Don't give up"}
+                {selectedQuiz?.questions[currentQuestionIndex].explanation}
               </Text>
             </View>
             <TouchableOpacity
-              style={[styles.button, { backgroundColor: '#1a73e8' }]}
+              style={styles.button}
               onPress={() => handleNext()}
             >
               <Text style={styles.buttonText}>Next</Text>
@@ -153,42 +161,47 @@ export default function TabOneScreen() {
         {selectedQuiz && !showExplanation && (
           <ScrollView style={styles.contentContainer}>
             <View style={[styles.card, styles.questionCard]}>
-              <Text style={[styles.heading, { color: 'white' }]}>
-                Question {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
+              <Text style={[styles.questionHeading, { color: 'white' }]}>
+                Question {currentQuestionIndex + 1} /{' '}
+                {selectedQuizAnswersAmount}
               </Text>
               <Text style={[styles.normalText, { color: 'white' }]}>
                 {selectedQuiz.questions[currentQuestionIndex].question}
               </Text>
             </View>
-            
-            {randomizedAnswers.map(
-              (answer, index) => (
-                <TouchableOpacity
-                  key={index}
-                  style={styles.answerButton}
-                  onPress={() => handleAnswerSelection(answer.answer)}
-                >
-                  <Text style={styles.answerButtonText} numberOfLines={4}>
-                    {answer.answer}
-                  </Text>
-                </TouchableOpacity>
-              )
-            )}
+
+            {randomizedAnswers.map((answer, index) => (
+              <TouchableOpacity
+                key={index}
+                style={styles.answerButton}
+                onPress={() => handleAnswerSelection(answer.answer)}
+              >
+                <Text style={styles.answerButtonText} numberOfLines={4}>
+                  {answer.answer}
+                </Text>
+              </TouchableOpacity>
+            ))}
           </ScrollView>
         )}
         {scoreVisible && (
           <View style={styles.scoreContainer}>
             <Text style={styles.heading}>
-              {score === selectedQuizAnswersAmount ? "Great! Well Done" : 'Try again'}
+              {score === selectedQuizAnswersAmount ? 'Well Done!' : 'Try again'}
             </Text>
+            {score !== selectedQuizAnswersAmount && (
+              <Sad width={150} height={150} />
+            )}
+            {score === selectedQuizAnswersAmount && (
+              <Happy width={150} height={150} />
+            )}
+
             <Text style={styles.scoreText}>
               Score: {score} / {selectedQuizAnswersAmount}
             </Text>
           </View>
-        
         )}
 
-        {selectedQuiz && !showExplanation &&(
+        {(selectedQuiz || scoreVisible) && !showExplanation && (
           <TouchableOpacity
             style={[styles.button, styles.backButton]}
             onPress={() => handleBack()}
@@ -196,6 +209,14 @@ export default function TabOneScreen() {
             <Text style={styles.buttonText}>Back</Text>
           </TouchableOpacity>
         )}
+        {/* <AnalogClock
+          size={190}
+          showSeconds={false}
+          showDigitalTime={false}
+          hour={8}
+          minute={15}
+          darkMode={true}
+        /> */}
       </View>
     </SafeAreaView>
   );
@@ -204,7 +225,13 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#000',
+    backgroundColor: 'rgb(26, 26, 26)',
+  },
+  questionHeading: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
+    color: 'white',
   },
   container: {
     padding: 20,
@@ -234,12 +261,14 @@ const styles = StyleSheet.create({
     paddingLeft: 36,
   },
   questionCard: {
-    backgroundColor: 'rgb(36, 36, 36)',
+    backgroundColor: 'rgb(90, 106, 146)',
+    borderColor: 'rgb(63, 65, 66)',
+    borderWidth: 1,
     padding: 24,
     borderRadius: 10,
   },
   heading: {
-    fontSize: 18,
+    fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 8,
     color: 'white',
@@ -266,18 +295,16 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   answerButton: {
-    backgroundColor: 'rgb(34, 84, 131)',
-    padding: 10,
+    backgroundColor: 'rgb(85, 101, 107)',
+    padding: 15,
     borderRadius: 8,
     marginVertical: 8,
-    borderWidth: 1,
-    borderColor: 'white',
+
     alignItems: 'center',
   },
   answerButtonText: {
     fontSize: 14,
-    fontWeight
-    : '600',
+    fontWeight: '400',
     color: 'white',
   },
   scoreContainer: {
@@ -289,5 +316,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: 'white',
+  },
+  animatedView: {
+    flex: 1,
   },
 });
