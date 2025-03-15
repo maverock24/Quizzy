@@ -1,0 +1,881 @@
+[
+    {
+        "name": "General Knowledge Quiz",
+            "questions": [
+                {
+                "question": "What is the capital of France?",
+                "answers": [
+                    {
+                        "answer": "Paris"
+                    },
+                    {
+                        "answer": "London"
+                    },
+                    {
+                        "answer": "Berlin"
+                    },
+                    {
+                        "answer": "Madrid"
+                    }
+                ]   ,
+                "answer": "Paris",
+                "explanation": "Paris is the capital of France. It is known for its art, fashion, and culture. The Eiffel Tower is the most famous landmark in Paris."
+                },
+                {
+                "question": "What is the capital of Germany?",
+                "answers": [
+                    {
+                        "answer": "Paris"
+                    },
+                    {
+                        "answer": "London"
+                    },
+                    {
+                        "answer": "Berlin"
+                    },
+                    {
+                        "answer": "Madrid"
+                    }
+                ]   ,
+                "answer": "Berlin",
+                "explanation": "Berlin is the capital of Germany. It is known for its history, art, and culture. The Berlin Wall is a famous landmark in Berlin."
+                },
+                {
+                "question": "What is the capital of the United Kingdom?",
+                "answers": [
+                    {
+                        "answer": "Paris"
+                    },
+                    {
+                        "answer": "London"
+                    },
+                    {
+                        "answer": "Berlin"
+                    },
+                    {
+                        "answer": "Madrid"
+                    }
+                ]   ,
+                "answer": "London",
+                "explanation": "London is the capital of the United Kingdom. It is known for its history, architecture, and culture. Big Ben is a famous landmark in London."
+                },
+                {
+                "question": "What is the capital of Spain?",
+                "answers": [
+                    {
+                        "answer": "Paris"
+                    },
+                    {
+                        "answer": "London"
+                    },
+                    {
+                        "answer": "Berlin"
+                    },
+                    {
+                        "answer": "Madrid"
+                    }
+                ]   ,
+                "answer": "Madrid",
+                "explanation": "Madrid is the capital of Spain. It is known for its art, culture, and food. The Prado Museum is a famous landmark in Madrid."
+                }
+            ]           
+    },
+    {
+    "name": "AWS SaaS Deployment & Debugging Expert",
+    "questions": [
+        {
+            "question": "Which CLI command deploys a CloudFormation stack?",
+            "answers": [
+                {"answer": "aws cloudformation deploy --template-file template.yaml"},
+                {"answer": "aws deploy create-stack template.yml"},
+                {"answer": "aws s3 cp template.yml stack-deploy"},
+                {"answer": "aws ec2 create-stack --template template.yaml"}
+            ],
+            "answer": "aws cloudformation deploy --template-file template.yaml",
+            "explanation": "The correct command uses the CloudFormation service's deploy command with the --template-file parameter. Other options either use incorrect service names (ec2) or invalid command syntax."
+        },
+        {
+            "question": "How to troubleshoot 'Lambda function timed out' error?",
+            "answers": [
+                {"answer": "Increase timeout value and check for infinite loops"},
+                {"answer": "Reduce memory allocation"},
+                {"answer": "Enable VPC configuration"},
+                {"answer": "Delete and recreate the function"}
+            ],
+            "answer": "Increase timeout value and check for infinite loops",
+            "explanation": "Lambda timeouts occur when execution exceeds configured duration. First increase timeout (up to 15min max), then analyze code for long-running processes or infinite loops using CloudWatch Logs."
+        },
+        {
+            "question": "Which command shows real-time Lambda logs?",
+            "answers": [
+                {"answer": "aws logs tail /aws/lambda/my-function"},
+                {"answer": "aws lambda get-log my-function"},
+                {"answer": "aws cloudwatch stream-logs lambda"},
+                {"answer": "aws lambda trace --function my-function"}
+            ],
+            "answer": "aws logs tail /aws/lambda/my-function",
+            "explanation": "The 'aws logs tail' command follows log streams in real-time. Other options use incorrect service names or non-existent commands."
+        },
+        {
+            "question": "What's the first step to debug '403 Forbidden' errors from S3?",
+            "answers": [
+                {"answer": "Check bucket policies and IAM permissions"},
+                {"answer": "Enable CORS configuration"},
+                {"answer": "Increase bucket storage capacity"},
+                {"answer": "Modify network ACLs"}
+            ],
+            "answer": "Check bucket policies and IAM permissions",
+            "explanation": "403 errors typically indicate permission issues. First verify bucket policies (public access) and IAM permissions of the requesting entity before investigating network rules."
+        },
+        {
+            "question": "Which service automatically retries failed database migrations?",
+            "answers": [
+                {"answer": "AWS DMS (Database Migration Service)"},
+                {"answer": "RDS Automated Backups"},
+                {"answer": "Lambda with exponential backoff"},
+                {"answer": "EC2 Spot Instances"}
+            ],
+            "answer": "AWS DMS (Database Migration Service)",
+            "explanation": "AWS DMS has built-in retry logic for database migrations. While Lambda can implement retries, DMS is purpose-built for database migration tasks with automatic recovery."
+        },
+        {
+            "question": "How to resolve 'Cold Start' issues in Lambda?",
+            "answers": [
+                {"answer": "Use Provisioned Concurrency"},
+                {"answer": "Increase memory allocation"},
+                {"answer": "Convert to EC2 instances"},
+                {"answer": "Enable X-Ray tracing"}
+            ],
+            "answer": "Use Provisioned Concurrency",
+            "explanation": "Provisioned Concurrency keeps functions initialized and ready to respond. Increasing memory helps but doesn't eliminate cold starts. X-Ray only helps diagnose, not prevent."
+        },
+        {
+            "question": "Which CLI command invokes a Lambda function for testing?",
+            "answers": [
+                {"answer": "aws lambda invoke --function-name my-function output.txt"},
+                {"answer": "aws lambda test my-function payload.json"},
+                {"answer": "aws function invoke my-function"},
+                {"answer": "aws lambda run --function my-function"}
+            ],
+            "answer": "aws lambda invoke --function-name my-function output.txt",
+            "explanation": "The invoke command requires specifying output file. Other options use incorrect command syntax or non-existent subcommands."
+        },
+        {
+            "question": "What's the best way to manage environment variables across stages?",
+            "answers": [
+                {"answer": "Use Parameter Store in Systems Manager"},
+                {"answer": "Store in GitHub Secrets"},
+                {"answer": "Hardcode in deployment scripts"},
+                {"answer": "Use S3 bucket configuration"}
+            ],
+            "answer": "Use Parameter Store in Systems Manager",
+            "explanation": "Parameter Store provides secure, versioned storage with IAM access control. GitHub Secrets only work in CI/CD, S3 isn't secure for credentials."
+        },
+        {
+            "question": "How to debug '502 Bad Gateway' in API Gateway?",
+            "answers": [
+                {"answer": "Check Lambda integration timeout values"},
+                {"answer": "Modify Route 53 DNS settings"},
+                {"answer": "Increase API Gateway cache size"},
+                {"answer": "Enable CloudFront distribution"}
+            ],
+            "answer": "Check Lambda integration timeout values",
+            "explanation": "502 errors often occur when backend services (like Lambda) timeout before responding. API Gateway has 29s max timeout, Lambda can be up to 15min."
+        },
+        {
+            "question": "Which command creates an ECS service?",
+            "answers": [
+                {"answer": "aws ecs create-service --cluster my-cluster --service-name my-service"},
+                {"answer": "aws ecs new service my-service"},
+                {"answer": "aws deploy create-ecs-service"},
+                {"answer": "aws ec2 create-ecs-service"}
+            ],
+            "answer": "aws ecs create-service --cluster my-cluster --service-name my-service",
+            "explanation": "ECS services are created through the ecs namespace. Other options use incorrect service names or non-existent commands."
+        },
+        {
+            "question": "How to troubleshoot 'No space left on device' in EC2?",
+            "answers": [
+                {"answer": "Resize EBS volume and modify filesystem"},
+                {"answer": "Reboot the instance"},
+                {"answer": "Increase instance type"},
+                {"answer": "Delete CloudWatch logs"}
+            ],
+            "answer": "Resize EBS volume and modify filesystem",
+            "explanation": "After resizing via AWS console/CLI, must extend filesystem using growpart or similar tools. Rebooting alone doesn't resolve storage issues."
+        },
+        {
+            "question": "Which command lists running containers in ECS?",
+            "answers": [
+                {"answer": "aws ecs list-container-instances --cluster my-cluster"},
+                {"answer": "aws ec2 describe-containers"},
+                {"answer": "aws docker ps"},
+                {"answer": "aws ecs get-containers"}
+            ],
+            "answer": "aws ecs list-container-instances --cluster my-cluster",
+            "explanation": "ECS manages container instances through its own API. The 'docker ps' command only works on local Docker installations."
+        },
+        {
+            "question": "What's the first step to diagnose high latency in API responses?",
+            "answers": [
+                {"answer": "Use CloudWatch Metrics and X-Ray tracing"},
+                {"answer": "Increase Lambda memory allocation"},
+                {"answer": "Add more API Gateway stages"},
+                {"answer": "Enable Auto Scaling"}
+            ],
+            "answer": "Use CloudWatch Metrics and X-Ray tracing",
+            "explanation": "X-Ray provides service maps and traces to identify bottlenecks. Scaling should only be done after identifying the root cause."
+        },
+        {
+            "question": "How to rollback a failed CloudFormation deployment?",
+            "answers": [
+                {"answer": "Use the AWS Console rollback option"},
+                {"answer": "Delete the stack and recreate"},
+                {"answer": "Modify template and redeploy"},
+                {"answer": "aws cloudformation rollback-stack --stack-name my-stack"}
+            ],
+            "answer": "Use the AWS Console rollback option",
+            "explanation": "The console provides one-click rollback for failed deployments. CLI requires more complex stack update operations."
+        },
+        {
+            "question": "Which command troubleshoots network connectivity in VPC?",
+            "answers": [
+                {"answer": "aws ec2 describe-network-interfaces"},
+                {"answer": "aws vpc test-connectivity"},
+                {"answer": "aws network diagnose"},
+                {"answer": "aws check-vpc-routes"}
+            ],
+            "answer": "aws ec2 describe-network-interfaces",
+            "explanation": "This command shows ENI status and configurations. Other options use non-existent commands."
+        },
+        {
+            "question": "How to debug 'Task failed to start' in ECS?",
+            "answers": [
+                {"answer": "Check task definition and container logs"},
+                {"answer": "Increase CPU allocation"},
+                {"answer": "Modify security groups"},
+                {"answer": "Rebuild Docker image"}
+            ],
+            "answer": "Check task definition and container logs",
+            "explanation": "Common issues include invalid container definitions, missing permissions, or resource constraints visible in ECS service event logs."
+        },
+        {
+            "question": "Which CLI command gets RDS slow query logs?",
+            "answers": [
+                {"answer": "aws rds describe-db-log-files"},
+                {"answer": "aws logs get rds-slow-queries"},
+                {"answer": "aws rds export-logs-to-s3"},
+                {"answer": "aws mysql show-slow-logs"}
+            ],
+            "answer": "aws rds describe-db-log-files",
+            "explanation": "First list available logs with describe-db-log-files, then download with download-db-log-file-portion. Other options use incorrect service names."
+        },
+        {
+            "question": "What's the best way to monitor Lambda memory usage?",
+            "answers": [
+                {"answer": "CloudWatch Lambda Insights"},
+                {"answer": "X-Ray segment annotations"},
+                {"answer": "S3 access logs"},
+                {"answer": "API Gateway metrics"}
+            ],
+            "answer": "CloudWatch Lambda Insights",
+            "explanation": "Lambda Insights provides detailed memory/cpu metrics. X-Ray focuses on tracing rather than resource monitoring."
+        },
+        {
+            "question": "How to resolve 'The specified bucket does not exist' during deployment?",
+            "answers": [
+                {"answer": "Verify S3 bucket name and region"},
+                {"answer": "Increase IAM permissions"},
+                {"answer": "Modify bucket ACLs"},
+                {"answer": "Enable versioning"}
+            ],
+            "answer": "Verify S3 bucket name and region",
+            "explanation": "Common causes include typos in bucket names or deploying to wrong region. S3 bucket names are global but region-specific in operations."
+        },
+        {
+            "question": "Which command tests API Gateway endpoints?",
+            "answers": [
+                {"answer": "aws apigateway test-invoke-method"},
+                {"answer": "curl -X POST https://api-id.execute-api.region.amazonaws.com/stage"},
+                {"answer": "aws lambda invoke api-test"},
+                {"answer": "aws api test-endpoint"}
+            ],
+            "answer": "aws apigateway test-invoke-method",
+            "explanation": "The test-invoke-method command validates integration without public exposure. Curl requires deployed stage and proper permissions."
+        },
+        {
+            "question": "How to diagnose high CPU utilization in EC2?",
+            "answers": [
+                {"answer": "Use CloudWatch Metrics and install the CloudWatch agent"},
+                {"answer": "Reboot the instance immediately"},
+                {"answer": "Upgrade to a larger instance type"},
+                {"answer": "Check S3 access patterns"}
+            ],
+            "answer": "Use CloudWatch Metrics and install the CloudWatch agent",
+            "explanation": "The agent provides detailed system metrics. Rebooting or scaling should only be done after identifying the root process."
+        },
+        {
+            "question": "Which command updates a Lambda function's environment variables?",
+            "answers": [
+                {"answer": "aws lambda update-function-configuration --environment Variables={KEY=VAL}"},
+                {"answer": "aws lambda set-env my-function KEY=VAL"},
+                {"answer": "aws update-lambda-env --function my-function KEY=VAL"},
+                {"answer": "aws function config update --env KEY=VAL"}
+            ],
+            "answer": "aws lambda update-function-configuration --environment Variables={KEY=VAL}",
+            "explanation": "Environment variables are part of function configuration. Other options use non-existent commands or incorrect syntax."
+        },
+        {
+            "question": "How to troubleshoot 'InvalidSignatureException' in API calls?",
+            "answers": [
+                {"answer": "Check AWS credentials expiration and region"},
+                {"answer": "Increase API Gateway timeout"},
+                {"answer": "Modify VPC security groups"},
+                {"answer": "Enable CloudTrail logging"}
+            ],
+            "answer": "Check AWS credentials expiration and region",
+            "explanation": "Invalid signatures usually indicate clock skew, expired credentials, or region mismatch. Always verify credentials with 'aws sts get-caller-identity'."
+        },
+        {
+            "question": "Which command exports DynamoDB table to S3?",
+            "answers": [
+                {"answer": "aws dynamodb export-table-to-point-in-time"},
+                {"answer": "aws s3 sync dynamodb://table s3://bucket"},
+                {"answer": "aws backup export-dynamodb-table"},
+                {"answer": "aws data-pipeline create-from-dynamodb"}
+            ],
+            "answer": "aws dynamodb export-table-to-point-in-time",
+            "explanation": "This native command performs point-in-time exports. Data Pipeline requires more complex setup for similar functionality."
+        },
+        {
+            "question": "How to debug 'Execution failed due to configuration error' in Lambda?",
+            "answers": [
+                {"answer": "Check function role permissions and resource policies"},
+                {"answer": "Increase function timeout"},
+                {"answer": "Redeploy function code"},
+                {"answer": "Enable VPC flow logs"}
+            ],
+            "answer": "Check function role permissions and resource policies",
+            "explanation": "Configuration errors often relate to IAM permissions or resource policies (like S3 bucket permissions). Check CloudTrail for access denied errors."
+        },
+        {
+            "question": "Which command lists all running EC2 instances?",
+            "answers": [
+                {"answer": "aws ec2 describe-instances --filters Name=instance-state-name,Values=running"},
+                {"answer": "aws list ec2-instances"},
+                {"answer": "aws ec2 get-running-instances"},
+                {"answer": "aws compute list-instances"}
+            ],
+            "answer": "aws ec2 describe-instances --filters Name=instance-state-name,Values=running",
+            "explanation": "The describe-instances command with filters is the correct approach. Other options use non-existent commands."
+        },
+        {
+            "question": "How to resolve 'TooManyRequestsException' in AWS API calls?",
+            "answers": [
+                {"answer": "Implement exponential backoff in client code"},
+                {"answer": "Increase IAM role permissions"},
+                {"answer": "Upgrade AWS support plan"},
+                {"answer": "Modify CloudWatch alarm thresholds"}
+            ],
+            "answer": "Implement exponential backoff in client code",
+            "explanation": "AWS services throttle API requests. Exponential backoff with jitter is the recommended retry strategy."
+        },
+        {
+            "question": "Which command checks CloudFormation stack drift?",
+            "answers": [
+                {"answer": "aws cloudformation detect-stack-drift"},
+                {"answer": "aws cfn check-drift --stack my-stack"},
+                {"answer": "aws cloudformation verify-stack"},
+                {"answer": "aws drift detection start"}
+            ],
+            "answer": "aws cloudformation detect-stack-drift",
+            "explanation": "Detect-stack-drift initiates drift detection. Results are checked with describe-stack-drift-detection-status."
+        },
+        {
+            "question": "How to troubleshoot 'Unable to import module' in Lambda?",
+            "answers": [
+                {"answer": "Verify deployment package includes dependencies"},
+                {"answer": "Increase function memory"},
+                {"answer": "Modify runtime version"},
+                {"answer": "Enable VPC configuration"}
+            ],
+            "answer": "Verify deployment package includes dependencies",
+            "explanation": "This error indicates missing Python/Node.js modules. Always test deployment packages with 'lambda-local' or SAM CLI before deployment."
+        },
+        {
+            "question": "Which command enables S3 bucket versioning?",
+            "answers": [
+                {"answer": "aws s3api put-bucket-versioning --bucket my-bucket --versioning-configuration Status=Enabled"},
+                {"answer": "aws s3 versioning enable my-bucket"},
+                {"answer": "aws s3 modify-bucket --versioning true"},
+                {"answer": "aws bucket-version enable s3://my-bucket"}
+            ],
+            "answer": "aws s3api put-bucket-versioning --bucket my-bucket --versioning-configuration Status=Enabled",
+            "explanation": "Versioning is managed through s3api subcommands. Other options use incorrect command syntax."
+        },
+        {
+            "question": "How to debug 'TaskMemoryExhausted' in ECS?",
+            "answers": [
+                {"answer": "Increase task memory limits and check for memory leaks"},
+                {"answer": "Add more CPU units"},
+                {"answer": "Modify network mode"},
+                {"answer": "Enable Fargate Spot"}
+            ],
+            "answer": "Increase task memory limits and check for memory leaks",
+            "explanation": "Memory limits are set in task definitions. Use CloudWatch Container Insights to monitor memory usage patterns."
+        },
+        {
+            "question": "Which command sets up CI/CD pipeline for Elastic Beanstalk?",
+            "answers": [
+                {"answer": "eb pipeline create"},
+                {"answer": "aws codepipeline create-beanstalk"},
+                {"answer": "aws deploy create-application"},
+                {"answer": "eb init --pipeline"}
+            ],
+            "answer": "eb pipeline create",
+            "explanation": "The Elastic Beanstalk CLI (eb) has pipeline-specific commands. Other options mix services incorrectly."
+        },
+        {
+            "question": "How to resolve 'The security group ID does not exist' error?",
+            "answers": [
+                {"answer": "Verify security group exists in current region"},
+                {"answer": "Create new IAM role"},
+                {"answer": "Modify network ACLs"},
+                {"answer": "Enable VPC flow logs"}
+            ],
+            "answer": "Verify security group exists in current region",
+            "explanation": "Security groups are region-specific. Cross-region references require separate SG creation in target region."
+        },
+        {
+            "question": "Which command rotates RDS database credentials?",
+            "answers": [
+                {"answer": "aws rds modify-db-instance --master-user-password new-password"},
+                {"answer": "aws secretsmanager rotate-secret --secret-id db-creds"},
+                {"answer": "aws iam update-login-profile"},
+                {"answer": "aws rotate-credentials rds"}
+            ],
+            "answer": "aws rds modify-db-instance --master-user-password new-password",
+            "explanation": "For RDS-managed credentials, use modify-db-instance. Secrets Manager is better for external credential management."
+        },
+        {
+            "question": "How to troubleshoot 'Host key verification failed' in CodeDeploy?",
+            "answers": [
+                {"answer": "Verify SSH key in deployment group configuration"},
+                {"answer": "Increase deployment timeout"},
+                {"answer": "Modify Auto Scaling group"},
+                {"answer": "Enable CloudWatch agent"}
+            ],
+            "answer": "Verify SSH key in deployment group configuration",
+            "explanation": "This error indicates SSH key mismatch between CodeDeploy and target instances. Regenerate or verify key pairs."
+        },
+        {
+            "question": "Which command checks EBS volume encryption status?",
+            "answers": [
+                {"answer": "aws ec2 describe-volumes --volume-ids vol-12345"},
+                {"answer": "aws ebs check-encryption vol-12345"},
+                {"answer": "aws encrypt status --volume vol-12345"},
+                {"answer": "aws volume info vol-12345"}
+            ],
+            "answer": "aws ec2 describe-volumes --volume-ids vol-12345",
+            "explanation": "Encryption status appears in volume details. Other options use non-existent commands."
+        },
+        {
+            "question": "How to debug 'Execution role is not authorized to call CreateNetworkInterface'",
+            "answers": [
+                {"answer": "Add AWSLambdaVPCAccessExecutionRole policy to role"},
+                {"answer": "Increase Lambda memory"},
+                {"answer": "Modify VPC route tables"},
+                {"answer": "Enable public IP assignment"}
+            ],
+            "answer": "Add AWSLambdaVPCAccessExecutionRole policy to role",
+            "explanation": "Lambda functions in VPC require specific permissions to manage ENIs. This managed policy provides necessary permissions."
+        },
+        {
+            "question": "Which command tests S3 bucket access permissions?",
+            "answers": [
+                {"answer": "aws s3 ls s3://bucket-name"},
+                {"answer": "aws s3 test-access bucket-name"},
+                {"answer": "aws check-s3-permissions bucket-name"},
+                {"answer": "aws s3 verify bucket-name"}
+            ],
+            "answer": "aws s3 ls s3://bucket-name",
+            "explanation": "Listing objects is the simplest access test. Requires s3:ListBucket permission. Other commands don't exist."
+        },
+        {
+            "question": "How to resolve 'DockerTimeoutError' in ECS deployments?",
+            "answers": [
+                {"answer": "Increase ECS task execution timeout"},
+                {"answer": "Reduce container image size"},
+                {"answer": "Modify security groups"},
+                {"answer": "Enable Fargate capacity provider"}
+            ],
+            "answer": "Increase ECS task execution timeout",
+            "explanation": "Large images or slow networks may require longer pull times. Adjust ECS service's deployment configuration timeouts."
+        },
+        {
+            "question": "Which command lists CloudFront distributions?",
+            "answers": [
+                {"answer": "aws cloudfront list-distributions"},
+                {"answer": "aws cf list"},
+                {"answer": "aws distributions list"},
+                {"answer": "aws list-cloudfront"}
+            ],
+            "answer": "aws cloudfront list-distributions",
+            "explanation": "CloudFront operations use the cloudfront namespace. Other options use incorrect service abbreviations."
+        },
+        {
+            "question": "How to troubleshoot 'NoSuchBucket' in CloudFormation?",
+            "answers": [
+                {"answer": "Verify S3 bucket exists in template's region"},
+                {"answer": "Increase template timeout"},
+                {"answer": "Modify IAM roles"},
+                {"answer": "Enable bucket versioning"}
+            ],
+            "answer": "Verify S3 bucket exists in template's region",
+            "explanation": "CloudFormation templates must reference existing buckets in the same region. Cross-region access requires special permissions."
+        },
+        {
+            "question": "Which command forces CloudFront cache invalidation?",
+            "answers": [
+                {"answer": "aws cloudfront create-invalidation --distribution-id ID --paths '/*'"},
+                {"answer": "aws cf invalidate-cache ID"},
+                {"answer": "aws s3 sync --cf-invalidate"},
+                {"answer": "aws invalidate-cloudfront ID"}
+            ],
+            "answer": "aws cloudfront create-invalidation --distribution-id ID --paths '/*'",
+            "explanation": "Proper cache invalidation requires creating a new invalidation request. Other options use incorrect command syntax."
+        },
+        {
+            "question": "How to debug 'Unable to assume role' errors?",
+            "answers": [
+                {"answer": "Verify trust relationship in IAM role"},
+                {"answer": "Increase role session duration"},
+                {"answer": "Modify security groups"},
+                {"answer": "Enable CloudTrail logging"}
+            ],
+            "answer": "Verify trust relationship in IAM role",
+            "explanation": "The assuming entity (user/role) must be in the trust policy. Use 'aws sts assume-role' to test role assumptions."
+        },
+        {
+            "question": "Which command checks Route 53 DNS propagation?",
+            "answers": [
+                {"answer": "dig +trace example.com"},
+                {"answer": "aws route53 get-dns-propagation"},
+                {"answer": "nslookup -type=soa example.com"},
+                {"answer": "aws dns verify example.com"}
+            ],
+            "answer": "dig +trace example.com",
+            "explanation": "The dig command provides detailed DNS resolution tracing. AWS CLI doesn't have DNS propagation checking commands."
+        },
+        {
+            "question": "How to troubleshoot 'AccessDenied' when uploading to S3?",
+            "answers": [
+                {"answer": "Check bucket policy and IAM permissions"},
+                {"answer": "Enable transfer acceleration"},
+                {"answer": "Modify CORS configuration"},
+                {"answer": "Increase bucket storage class"}
+            ],
+            "answer": "Check bucket policy and IAM permissions",
+            "explanation": "AccessDenied errors indicate permission issues. Verify s3:PutObject permissions in both bucket policies and IAM roles."
+        },
+        {
+            "question": "Which command updates an existing Lambda function code?",
+            "answers": [
+                {"answer": "aws lambda update-function-code --function-name my-function --zip-file fileb://deploy.zip"},
+                {"answer": "aws lambda deploy --function my-function --code deploy.zip"},
+                {"answer": "aws function update-code my-function deploy.zip"},
+                {"answer": "aws update-lambda --code-file deploy.zip"}
+            ],
+            "answer": "aws lambda update-function-code --function-name my-function --zip-file fileb://deploy.zip",
+            "explanation": "The update-function-code subcommand is used for code updates. Other options use incorrect syntax."
+        },
+        {
+            "question": "How to debug 'ELB-HealthChecker' failures in EC2?",
+            "answers": [
+                {"answer": "Verify security groups allow health check ports"},
+                {"answer": "Increase instance size"},
+                {"answer": "Modify Auto Scaling group"},
+                {"answer": "Enable detailed monitoring"}
+            ],
+            "answer": "Verify security groups allow health check ports",
+            "explanation": "Health checks fail when security groups block access to the instance's health check port (default: 80/tcp)."
+        },
+        {
+            "question": "Which command creates an ECR repository?",
+            "answers": [
+                {"answer": "aws ecr create-repository --repository-name my-repo"},
+                {"answer": "aws docker create-repo my-repo"},
+                {"answer": "aws ecs new-repository my-repo"},
+                {"answer": "aws container-registry create my-repo"}
+            ],
+            "answer": "aws ecr create-repository --repository-name my-repo",
+            "explanation": "ECR repositories are managed through the ecr namespace. Other options use incorrect service names."
+        },
+        {
+            "question": "How to resolve 'InvalidParameterException' in CloudFormation?",
+            "answers": [
+                {"answer": "Validate template with cfn-lint"},
+                {"answer": "Increase stack timeout"},
+                {"answer": "Modify IAM roles"},
+                {"answer": "Enable stack termination protection"}
+            ],
+            "answer": "Validate template with cfn-lint",
+            "explanation": "This error indicates template syntax issues. Use AWS CLI validate-template command or cfn-lint for detailed validation."
+        },
+        {
+            "question": "Which command lists all available AWS regions?",
+            "answers": [
+                {"answer": "aws ec2 describe-regions"},
+                {"answer": "aws list-regions"},
+                {"answer": "aws configure get-regions"},
+                {"answer": "aws global describe-regions"}
+            ],
+            "answer": "aws ec2 describe-regions",
+            "explanation": "Region information is managed through EC2 service. Other options use non-existent commands."
+        },
+        {
+            "question": "How to troubleshoot 'Connection timed out' to RDS?",
+            "answers": [
+                {"answer": "Check security groups and NACLs"},
+                {"answer": "Increase DB instance class"},
+                {"answer": "Modify parameter groups"},
+                {"answer": "Enable Multi-AZ deployment"}
+            ],
+            "answer": "Check security groups and NACLs",
+            "explanation": "Timeout errors typically indicate network connectivity issues. Verify security groups allow traffic on correct port (default: 3306 for MySQL)."
+        },
+        {
+            "question": "Which command enables S3 static website hosting?",
+            "answers": [
+                {"answer": "aws s3 website s3://my-bucket --index-document index.html"},
+                {"answer": "aws s3api put-bucket-website --bucket my-bucket --website-configuration file://config.json"},
+                {"answer": "aws s3 enable-static-hosting my-bucket"},
+                {"answer": "aws website create --bucket my-bucket"}
+            ],
+            "answer": "aws s3api put-bucket-website --bucket my-bucket --website-configuration file://config.json",
+            "explanation": "Website configuration requires JSON configuration. The s3api command is most precise, though other methods exist via Console."
+        },
+        {
+            "question": "How to debug 'Read timed out' in AWS CLI?",
+            "answers": [
+                {"answer": "Increase timeout with --cli-read-timeout parameter"},
+                {"answer": "Upgrade AWS CLI version"},
+                {"answer": "Modify IAM permissions"},
+                {"answer": "Enable debug logging"}
+            ],
+            "answer": "Increase timeout with --cli-read-timeout parameter",
+            "explanation": "For long-running operations, increase timeout values. Debug logging (--debug) helps diagnose but doesn't fix timeout issues."
+        },
+        {
+            "question": "Which command checks CloudTrail log integrity?",
+            "answers": [
+                {"answer": "aws cloudtrail validate-logs --trail-name my-trail"},
+                {"answer": "Use the validate-logfile-integrity.sh script"},
+                {"answer": "aws logs verify my-trail-logs"},
+                {"answer": "CloudTrail validation is automatic"}
+            ],
+            "answer": "Use the validate-logfile-integrity.sh script",
+            "explanation": "AWS provides a validation script using OpenSSL to verify CloudTrail log file integrity via digest files."
+        },
+        {
+            "question": "How to resolve 'ThrottlingException' in DynamoDB?",
+            "answers": [
+                {"answer": "Implement exponential backoff in application code"},
+                {"answer": "Increase provisioned capacity"},
+                {"answer": "Modify partition keys"},
+                {"answer": "Enable auto scaling"}
+            ],
+            "answer": "Implement exponential backoff in application code",
+            "explanation": "Immediate fix is adding retries. Long-term solution may require adjusting capacity or improving data distribution."
+        },
+        {
+            "question": "Which command monitors EC2 instance status checks?",
+            "answers": [
+                {"answer": "aws ec2 describe-instance-status"},
+                {"answer": "aws cloudwatch get-instance-health"},
+                {"answer": "aws health instance-checks"},
+                {"answer": "aws monitor ec2-status"}
+            ],
+            "answer": "aws ec2 describe-instance-status",
+            "explanation": "This command shows system/reachability status. CloudWatch alarms can be set up for automated monitoring."
+        },
+        {
+            "question": "How to troubleshoot 'InvalidClientTokenId' in CLI?",
+            "answers": [
+                {"answer": "Verify AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY"},
+                {"answer": "Increase IAM permissions"},
+                {"answer": "Modify region configuration"},
+                {"answer": "Enable MFA"}
+            ],
+            "answer": "Verify AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY",
+            "explanation": "This error indicates invalid or expired access keys. Always rotate credentials regularly and use temporary credentials when possible."
+        }
+    ]
+},
+    {
+        "name": "AWS Quiz",
+            "questions": [
+                {
+                "question": "What is EC2?",
+                "answers": [
+                    {
+                        "answer": "Elastic Container Service"
+                    },
+                    {
+                        "answer": "Elastic Compute Cloud"
+                    },
+                    {
+                        "answer": "Elastic Container Registry"
+                    },
+                    {
+                        "answer": "Elastic Container Instance"
+                    }
+                ]   ,
+                "answer": "Elastic Compute Cloud",
+                "explanation": "Amazon Elastic Compute Cloud (Amazon EC2) provides on-demand, scalable computing capacity in the Amazon Web Services (AWS) Cloud. Using Amazon EC2 reduces hardware costs so you can develop and deploy applications faster. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage. You can add capacity (scale up) to handle compute-heavy tasks, such as monthly or yearly processes, or spikes in website traffic. When usage decreases, you can reduce capacity (scale down) again."
+                },
+                {
+                "question": "What is S3?",
+                "answers": [
+                    {
+                        "answer": "Simple Storage Service"
+                    },
+                    {
+                        "answer": "Simple Server Service"
+                    },
+                    {
+                        "answer": "Simple Storage System"
+                    },
+                    {
+                        "answer": "Simple Server System"
+                    }
+                ]   ,
+                "answer": "Simple Storage Service",
+                "explanation": "Amazon Simple Storage Service (Amazon S3) is an object storage service that offers industry-leading scalability, data availability, security, and performance. This means customers of all sizes and industries can use it to store and protect any amount of data for a range of use cases, such as data lakes, websites, mobile applications, backup and restore, archive, enterprise applications, IoT devices, and big data analytics."
+                },
+                {
+                "question": "What is RDS?",
+                "answers": [
+                    {
+                        "answer": "Relational Database Service"
+                    },
+                    {
+                        "answer": "Relational Database System"
+                    },
+                    {
+                        "answer": "Relational Database Storage"
+                    },
+                    {
+                        "answer": "Relational Database Server"
+                    }
+                ]   ,
+                "answer": "Relational Database Service",
+                "explanation": "Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching, and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security, and compatibility they need."
+
+                },
+                {
+                "question": "What is VPC?",
+                "answers": [
+                    {
+                        "answer": "Virtual Private Cloud"
+                    },
+                    {
+                        "answer": "Virtual Public Cloud"
+                    },
+                    {
+                        "answer": "Virtual Private Container"
+                    },
+                    {
+                        "answer": "Virtual Public Container"
+                    }
+                ]   ,
+                "answer": "Virtual Private Cloud",
+                "explanation": "Amazon Virtual Private Cloud (Amazon VPC) lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define. You have complete control over your virtual networking environment, including selection of your IP address range, creation of subnets, and configuration of route tables and network gateways. You can use both IPv4 and IPv6 in your VPC for secure and easy access to resources and applications."
+                }
+            ]
+    },
+    {
+        "name": "JavaScript Quiz",
+            "questions": [
+                {
+                "question": "What is JavaScript?",
+                "answers": [
+                    {
+                        "answer": "A programming language"
+                    },
+                    {
+                        "answer": "A markup language"
+                    },
+                    {
+                        "answer": "A styling language"
+                    },
+                    {
+                        "answer": "A database language"
+                    }
+                ]   ,
+                "answer": "A programming language" ,
+                "explanation": "JavaScript is a programming language that enables you to create dynamically updating content, control multimedia, animate images, and much more. JavaScript is used in web development to create interactive web pages and web applications."
+                },
+                {
+                },
+                {
+                "question": "What is the purpose of JavaScript?",
+                "answers": [
+                    {
+                        "answer": "To style web pages"
+                    },
+                    {
+                        "answer": "To create databases"
+                    },
+                    {
+                        "answer": "To create interactive web pages and web applications"
+                    },
+                    {
+                        "answer": "To create markup"
+                    }
+                ]   ,
+                "answer": "To create interactive web pages",    
+                "explanation": "JavaScript is used in web development to create interactive web pages and web applications. It can be used to add functionality to websites, such as form validation, interactive maps, and dynamic content."
+                },
+                {
+                "question": "What is the syntax for a comment in JavaScript?",
+                "answers": [
+                    {
+                        "answer": "//"
+                    },
+                    {
+                        "answer": "<!-- -->"
+                    },
+                    {
+                        "answer": "/* */"
+                    },
+                    {
+                        "answer": "#"
+                    }
+                ]   ,
+                "answer": "//",
+                "explanation": "In JavaScript, you can use // to create a single-line comment. This allows you to add notes and explanations to your code without affecting the functionality of the program." 
+                },
+                {
+                "question": "What is the syntax for a variable in JavaScript?",
+                "answers": [
+                    {
+                        "answer": "var"
+                    },
+                    {
+                        "answer": "let"
+                    },
+                    {
+                        "answer": "const"
+                    },
+                    {
+                        "answer": "all of the above"
+                    }
+                ]   ,
+                "answer": "all of the above",
+                "explanation": "In JavaScript, you can declare variables using var, let, or const. var is used to declare variables that are function-scoped, let is used to declare variables that are block-scoped, and const is used to declare variables that cannot be reassigned. You can use all three types of variables in your JavaScript code."
+                }
+            ]
+    }
+   
+]
