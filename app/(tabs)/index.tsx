@@ -1,37 +1,19 @@
+import { Explanation } from '@/components/Explanation';
+import { Question } from '@/components/Question';
 import { useQuiz } from '@/components/Quizprovider';
-import { useEffect, useState, useRef } from 'react';
+import { QuizSelection } from '@/components/QuizSelection';
+import { Score } from '@/components/Score';
+import { Answer, Quiz } from '@/components/types';
+import { useEffect, useState } from 'react';
 import {
-  View,
-  Text,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
   SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import Sad from '../../assets/images/sad.svg';
-import Happy from '../../assets/images/happy.svg';
-import { AnalogClock } from '@/components/AnalogClock';
 
-const quizzes = require('../../assets/quizzes.json');
-
-type Quiz = {
-  name: string;
-  questions: Question[];
-};
-
-type Answer = {
-  answer: string;
-};
-
-type Question = {
-  question: string;
-  answers: Answer[];
-  answer: string;
-  explanation: string;
-};
-
-// Function to shuffle array (Fisher-Yates algorithm)
+// Function to shuffle array (Fi
 const shuffleArray = (array: any[]) => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -43,19 +25,28 @@ const shuffleArray = (array: any[]) => {
 
 export default function TabOneScreen() {
   const [selectedQuiz, setSelectedQuiz] = useState<Quiz>();
-  const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] =
-    useState<number>(0);
+  const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] = useState<
+    number
+  >(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [scoreVisible, setScoreVisible] = useState<boolean>(false);
 
-  const { selectedQuizName, setSelectedQuizName } = useQuiz();
-  const [showExplanation, setShowExplanation] = useState<boolean>(false);
-  const [anserIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
-
+  // Get quizzes from context
+  const {
+    setSelectedQuizName,
+    showExplanation,
+    quizzes,
+    checkForQuizzesUpdate,
+  } = useQuiz();
+  const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
+  const [explanationMode, setExplanationMode] = useState<boolean>(false);
 
   useEffect(() => {
+    // Check for quizzes update when component mounts
+    checkForQuizzesUpdate();
+
     if (selectedQuiz && selectedQuiz.questions[currentQuestionIndex]) {
       setRandomizedAnswers(
         shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
@@ -74,13 +65,17 @@ export default function TabOneScreen() {
 
   const handleAnswerSelection = (answer: string) => {
     if (selectedQuiz) {
+      setExplanationMode(true);
       const question = selectedQuiz.questions[currentQuestionIndex];
       if (question.answer === answer) {
         setAnswerIsCorrect(true);
         setScore(score + 1);
       } else {
+        setAnswerIsCorrect(false);
       }
-      setShowExplanation(true);
+      if (!showExplanation) {
+        handleNext();
+      }
     }
   };
 
@@ -90,134 +85,87 @@ export default function TabOneScreen() {
     setCurrentQuestionIndex(0);
     setScoreVisible(false);
     setAnswerIsCorrect(false);
-    setShowExplanation(false);
   };
 
   const handleNext = () => {
     setAnswerIsCorrect(false);
-    setShowExplanation(false);
-    setCurrentQuestionIndex(currentQuestionIndex + 1);
-    if (currentQuestionIndex === selectedQuiz?.questions.length! - 1) {
+    setExplanationMode(false);
+    if (currentQuestionIndex < selectedQuiz?.questions.length! - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    } else {
       setScoreVisible(true);
       setSelectedQuiz(undefined);
       setSelectedQuizName(null);
       setCurrentQuestionIndex(0);
-      setAnswerIsCorrect(false);
-      setShowExplanation(false);
     }
   };
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        {!selectedQuiz && !scoreVisible && (
-          <>
-            <Text style={styles.normalText}>Select a quiz:</Text>
-            <FlatList
-              data={quizzes}
-              keyExtractor={(item) => item.name}
-              renderItem={({ item }) => (
-                <TouchableOpacity
-                  style={styles.answerButton}
-                  onPress={() => handleQuizSelection(item)}
-                >
-                  <Text style={styles.buttonText} numberOfLines={1}>
-                    {item.name}
-                  </Text>
-                </TouchableOpacity>
-              )}
-            />
-          </>
-        )}
-
-        {showExplanation && (
-          <View style={styles.contentContainer}>
-            <View
-              style={[
-                styles.card,
-                {
-                  backgroundColor: anserIsCorrect
-                    ? 'rgb(73, 102, 70)'
-                    : 'rgb(150, 60, 60)',
-                },
-              ]}
-            >
-              <Text style={styles.questionHeading}>
-                {anserIsCorrect ? 'Correct!' : 'Wrong!'}
-              </Text>
-              <Text style={styles.normalText}>
-                {selectedQuiz?.questions[currentQuestionIndex].explanation}
-              </Text>
-            </View>
-            <TouchableOpacity
-              style={styles.button}
-              onPress={() => handleNext()}
-            >
-              <Text style={styles.buttonText}>Next</Text>
-            </TouchableOpacity>
-          </View>
-        )}
-
-        {selectedQuiz && !showExplanation && (
-          <ScrollView style={styles.contentContainer}>
-            <View style={[styles.card, styles.questionCard]}>
-              <Text style={[styles.questionHeading, { color: 'white' }]}>
-                Question {currentQuestionIndex + 1} /{' '}
-                {selectedQuizAnswersAmount}
-              </Text>
-              <Text style={[styles.normalText, { color: 'white' }]}>
-                {selectedQuiz.questions[currentQuestionIndex].question}
-              </Text>
-            </View>
-
-            {randomizedAnswers.map((answer, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.answerButton}
-                onPress={() => handleAnswerSelection(answer.answer)}
-              >
-                <Text style={styles.answerButtonText} numberOfLines={4}>
-                  {answer.answer}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        )}
-        {scoreVisible && (
-          <View style={styles.scoreContainer}>
-            <Text style={styles.heading}>
-              {score === selectedQuizAnswersAmount ? 'Well Done!' : 'Try again'}
-            </Text>
-            {score !== selectedQuizAnswersAmount && (
-              <Sad width={150} height={150} />
-            )}
-            {score === selectedQuizAnswersAmount && (
-              <Happy width={150} height={150} />
-            )}
-
-            <Text style={styles.scoreText}>
-              Score: {score} / {selectedQuizAnswersAmount}
-            </Text>
-          </View>
-        )}
-
-        {(selectedQuiz || scoreVisible) && !showExplanation && (
-          <TouchableOpacity
-            style={[styles.button, styles.backButton]}
-            onPress={() => handleBack()}
+        <View style={{ marginBottom: 20 }}>
+          <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>
+            Score board
+          </Text>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              marginTop: 10,
+              paddingTop: 10,
+            }}
           >
-            <Text style={styles.buttonText}>Back</Text>
-          </TouchableOpacity>
+            <Text style={{ color: 'white', fontSize: 12 }}>
+              Most popular quiz
+            </Text>
+            <Text style={{ color: 'white', fontSize: 12, marginLeft: 10 }}>
+              AWS Saas
+            </Text>
+          </View>
+        </View>
+
+        {!selectedQuiz && !scoreVisible && (
+          <QuizSelection
+            quizzes={quizzes}
+            handleQuizSelection={handleQuizSelection}
+          />
         )}
-        {/* <AnalogClock
-          size={190}
-          showSeconds={false}
-          showDigitalTime={false}
-          hour={8}
-          minute={15}
-          darkMode={true}
-        /> */}
+
+        {showExplanation && explanationMode && selectedQuiz && (
+          <Explanation
+            answerIsCorrect={answerIsCorrect}
+            explanation={
+              selectedQuiz.questions[currentQuestionIndex].explanation
+            }
+            handleNext={handleNext}
+          />
+        )}
+
+        {selectedQuiz && !explanationMode && (
+          <Question
+            question={selectedQuiz.questions[currentQuestionIndex].question}
+            answers={randomizedAnswers}
+            currentQuestionIndex={currentQuestionIndex}
+            selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+            handleAnswerSelection={handleAnswerSelection}
+          />
+        )}
+
+        {scoreVisible && (
+          <Score
+            score={score}
+            selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+          />
+        )}
       </View>
+      {(selectedQuiz || scoreVisible) && (
+        <TouchableOpacity
+          style={[styles.button, styles.backButton]}
+          onPress={handleBack}
+        >
+          <Text style={styles.buttonText}>Back</Text>
+        </TouchableOpacity>
+      )}
     </SafeAreaView>
   );
 }
@@ -227,56 +175,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgb(26, 26, 26)',
   },
-  questionHeading: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: 'white',
-  },
   container: {
     padding: 20,
     flex: 1,
-  },
-  contentContainer: {
-    marginVertical: 12,
-  },
-  quizButton: {
-    backgroundColor: 'rgb(46, 46, 46)',
-    padding: 16,
-    borderRadius: 8,
-    marginVertical: 8,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  card: {
-    padding: 20,
-    borderRadius: 8,
-    backgroundColor: 'white',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
-    marginBottom: 16,
-    paddingLeft: 36,
-  },
-  questionCard: {
-    backgroundColor: 'rgb(90, 106, 146)',
-    borderColor: 'rgb(63, 65, 66)',
-    borderWidth: 1,
-    padding: 24,
-    borderRadius: 10,
-  },
-  heading: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    marginBottom: 8,
-    color: 'white',
-  },
-  normalText: {
-    fontSize: 16,
-    lineHeight: 24,
-    color: 'white',
+    height: '100%',
   },
   button: {
     backgroundColor: 'rgb(86, 92, 99)',
@@ -288,36 +190,13 @@ const styles = StyleSheet.create({
   },
   backButton: {
     backgroundColor: 'rgb(63, 65, 66)',
+    marginBottom: 20,
+    marginLeft: 20,
+    marginRight: 20,
   },
   buttonText: {
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
-  },
-  answerButton: {
-    backgroundColor: 'rgb(85, 101, 107)',
-    padding: 15,
-    borderRadius: 8,
-    marginVertical: 8,
-
-    alignItems: 'center',
-  },
-  answerButtonText: {
-    fontSize: 14,
-    fontWeight: '400',
-    color: 'white',
-  },
-  scoreContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  scoreText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: 'white',
-  },
-  animatedView: {
-    flex: 1,
   },
 });

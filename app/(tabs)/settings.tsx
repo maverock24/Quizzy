@@ -1,34 +1,46 @@
+import { useQuiz } from '@/components/Quizprovider';
 import React from 'react';
-import { View, Text, StyleSheet, Switch } from 'react-native';
+import { StyleSheet, Switch, Text, View } from 'react-native';
 
 export default function SettingsScreen() {
-  const [isEnabled, setIsEnabled] = React.useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const { notificationsEnabled, setNotificationsEnabled } = useQuiz();
+  const { showExplanation, setShowExplanation } = useQuiz();
 
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Settings</Text>
       <View style={styles.settingItem}>
-        <Text style={styles.settingText}>Enable Notifications</Text>
+        <View style={styles.settingName}>
+          <Text style={styles.settingText}>Enable Notifications</Text>
+          <Text style={styles.settingDescription}>
+            Allows the user to switch on-/off reminder notifications
+          </Text>
+        </View>
+
         <Switch
           trackColor={{ false: 'gray', true: 'white' }}
-          thumbColor={isEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'}
+          thumbColor={
+            notificationsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+          }
           ios_backgroundColor="gray"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
+          onValueChange={setNotificationsEnabled}
+          value={notificationsEnabled}
         />
-        <Text style={styles.settingText}>{isEnabled ? 'On' : 'Off'}</Text>
       </View>
       <View style={styles.settingItem}>
-        <Text style={styles.settingText}>Dark Mode</Text>
+        <View style={styles.settingName}>
+          <Text style={styles.settingText}>Show Explanation</Text>
+          <Text style={styles.settingDescription}>
+            Allows the user to hide validation of answer
+          </Text>
+        </View>
         <Switch
           trackColor={{ false: 'gray', true: 'white' }}
-          thumbColor={isEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'}
+          thumbColor={showExplanation ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'}
           ios_backgroundColor="gray"
-          onValueChange={toggleSwitch}
-          value={isEnabled}
+          onValueChange={setShowExplanation}
+          value={showExplanation}
         />
-        <Text style={styles.settingText}>{isEnabled ? 'On' : 'Off'}</Text>
       </View>
     </View>
   );
@@ -54,8 +66,18 @@ const styles = StyleSheet.create({
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
   },
+  settingName: {
+    flexDirection: 'column',
+    maxWidth: '80%',
+    paddingVertical: 10,
+  },
   settingText: {
     fontSize: 18,
+    color: 'white',
+  },
+  settingDescription: {
+    marginTop: 10,
+    fontSize: 14,
     color: 'white',
   },
 });
