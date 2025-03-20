@@ -111,111 +111,125 @@ export default function TabOneScreen() {
   };
 
   return (
-    <SafeAreaLinearGradient
-      colors={[
-        'rgb(63, 82, 108)',
-        'rgb(29, 40, 54)',
-        'rgb(29, 40, 54)',
-        'rgb(29, 40, 54)',
-        'rgb(29, 40, 54)',
-      ]}
-      style={styles.safeArea}
-    >
-      <Text style={styles.scoreTitle}>Scores:</Text>
-      <View style={styles.container}>
-        {!selectedQuiz && (
-          <View style={styles.scoreBoard}>
-            <View style={styles.scoreItemRow}>
-              <View style={styles.scoreItemColumn}>
-                <View
-                  style={[
-                    styles.scoreItem,
-                    { backgroundColor: 'rgb(0, 123, 255)' },
-                  ]}
-                >
-                  <Text style={styles.scoreItemTitle}>Quiz wins:</Text>
-                  <Text style={styles.scoreItemText}>{totalWonGames}</Text>
+    <View style={styles.outerContainer}>
+      <SafeAreaLinearGradient
+        colors={[
+          'rgb(63, 82, 108)',
+          'rgb(29, 40, 54)',
+          'rgb(29, 40, 54)',
+          'rgb(29, 40, 54)',
+          'rgb(29, 40, 54)',
+        ]}
+        style={styles.safeArea}
+      >
+        <Text style={styles.scoreTitle}>Scores:</Text>
+        <View style={styles.container}>
+          {!selectedQuiz && (
+            <View style={styles.scoreBoard}>
+              <View style={styles.scoreItemRow}>
+                <View style={styles.scoreItemColumn}>
+                  <View
+                    style={[
+                      styles.scoreItem,
+                      { backgroundColor: 'rgb(0, 123, 255)' },
+                    ]}
+                  >
+                    <Text style={styles.scoreItemTitle}>Quiz wins:</Text>
+                    <Text style={styles.scoreItemText}>{totalWonGames}</Text>
+                  </View>
+                  <View
+                    style={[
+                      styles.scoreItem,
+                      { backgroundColor: 'rgb(239, 130, 22)' },
+                    ]}
+                  >
+                    <Text style={styles.scoreItemTitle}>Quiz losses:</Text>
+                    <Text style={styles.scoreItemText}>{totalLostGames}</Text>
+                  </View>
                 </View>
-                <View
-                  style={[
-                    styles.scoreItem,
-                    { backgroundColor: 'rgb(239, 130, 22)' },
-                  ]}
-                >
-                  <Text style={styles.scoreItemTitle}>Quiz losses:</Text>
-                  <Text style={styles.scoreItemText}>{totalLostGames}</Text>
-                </View>
-              </View>
-              <View style={styles.scoreItemColumn}>
-                <View style={[styles.scoreItem, { backgroundColor: 'green' }]}>
-                  <Text style={styles.scoreItemTitle}>Answers correct:</Text>
-                  <Text style={styles.scoreItemText}>
-                    {totalCorrectAnswers}
-                  </Text>
-                </View>
-                <View
-                  style={[
-                    styles.scoreItem,
-                    { backgroundColor: 'rgb(205, 57, 161)' },
-                  ]}
-                >
-                  <Text style={styles.scoreItemTitle}>Answer wrong:</Text>
-                  <Text style={styles.scoreItemText}>{totalWrongAnswers}</Text>
+                <View style={styles.scoreItemColumn}>
+                  <View
+                    style={[styles.scoreItem, { backgroundColor: 'green' }]}
+                  >
+                    <Text style={styles.scoreItemTitle}>Answers correct:</Text>
+                    <Text style={styles.scoreItemText}>
+                      {totalCorrectAnswers}
+                    </Text>
+                  </View>
+                  <View
+                    style={[
+                      styles.scoreItem,
+                      { backgroundColor: 'rgb(205, 57, 161)' },
+                    ]}
+                  >
+                    <Text style={styles.scoreItemTitle}>Answer wrong:</Text>
+                    <Text style={styles.scoreItemText}>
+                      {totalWrongAnswers}
+                    </Text>
+                  </View>
                 </View>
               </View>
             </View>
-          </View>
-        )}
-        {!selectedQuiz && !scoreVisible && (
-          <QuizSelection
-            quizzes={quizzes}
-            handleQuizSelection={handleQuizSelection}
-          />
-        )}
+          )}
+          {!selectedQuiz && !scoreVisible && (
+            <QuizSelection
+              quizzes={quizzes}
+              handleQuizSelection={handleQuizSelection}
+            />
+          )}
 
-        {showExplanation && explanationMode && selectedQuiz && (
-          <Explanation
-            answerIsCorrect={answerIsCorrect}
-            explanation={
-              selectedQuiz.questions[currentQuestionIndex].explanation
-            }
-            handleNext={handleNext}
-          />
-        )}
+          {showExplanation && explanationMode && selectedQuiz && (
+            <Explanation
+              answerIsCorrect={answerIsCorrect}
+              explanation={
+                selectedQuiz.questions[currentQuestionIndex].explanation
+              }
+              handleNext={handleNext}
+            />
+          )}
 
-        {selectedQuiz && !explanationMode && (
-          <Question
-            question={selectedQuiz.questions[currentQuestionIndex].question}
-            answers={randomizedAnswers}
-            currentQuestionIndex={currentQuestionIndex}
-            selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-            handleAnswerSelection={handleAnswerSelection}
-          />
-        )}
+          {selectedQuiz && !explanationMode && (
+            <Question
+              question={selectedQuiz.questions[currentQuestionIndex].question}
+              answers={randomizedAnswers}
+              currentQuestionIndex={currentQuestionIndex}
+              selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+              handleAnswerSelection={handleAnswerSelection}
+            />
+          )}
 
-        {scoreVisible && (
-          <Score
-            score={score}
-            selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-          />
+          {scoreVisible && (
+            <Score
+              score={score}
+              selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+            />
+          )}
+        </View>
+        {(selectedQuiz || scoreVisible) && (
+          <TouchableOpacity
+            style={[styles.button, styles.backButton]}
+            onPress={handleBack}
+          >
+            <Text style={styles.buttonText}>Back</Text>
+          </TouchableOpacity>
         )}
-      </View>
-      {(selectedQuiz || scoreVisible) && (
-        <TouchableOpacity
-          style={[styles.button, styles.backButton]}
-          onPress={handleBack}
-        >
-          <Text style={styles.buttonText}>Back</Text>
-        </TouchableOpacity>
-      )}
-    </SafeAreaLinearGradient>
+      </SafeAreaLinearGradient>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  outerContainer: {
+    flex: 1,
+    backgroundColor: 'rgb(26, 26, 26)',
+    alignItems: 'center',
+  },
   safeArea: {
     flex: 1,
     backgroundColor: 'rgb(26, 26, 26)',
+    maxWidth: 550,
+    maxHeight: 800,
+    width: '100%',
   },
   scoreTitle: {
     fontSize: 14,

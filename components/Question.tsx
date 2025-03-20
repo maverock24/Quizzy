@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -6,6 +6,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+
+import { Animated } from 'react-native';
 
 type Answer = {
   answer: string;
@@ -28,6 +30,23 @@ export const Question: React.FC<QuestionProps> = ({
 }) => {
   // Array of letter labels for answers
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
+  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const [answerSelected, setAnswerSelected] = React.useState(false);
+  useEffect(() => {
+    Animated.timing(fadeAnim, {
+      toValue: 1,
+      duration: 800,
+      useNativeDriver: true,
+    }).start();
+    return () => {
+      fadeAnim.setValue(0);
+    };
+  }, [answerSelected]);
+
+  const handleAnswer = (answer: string) => {
+    handleAnswerSelection(answer);
+    setAnswerSelected(!answerSelected);
+  };
 
   return (
     <ScrollView style={styles.contentContainer}>
@@ -39,18 +58,24 @@ export const Question: React.FC<QuestionProps> = ({
       </View>
 
       {answers.map((answer, index) => (
-        <TouchableOpacity
-          key={index}
-          style={styles.answerButton}
-          onPress={() => handleAnswerSelection(answer.answer)}
+        <Animated.View
+          style={{
+            opacity: fadeAnim,
+          }}
         >
-          <View style={styles.labelContainer}>
-            <Text style={styles.labelText}>{answerLabels[index]}</Text>
-          </View>
-          <Text style={styles.answerButtonText} numberOfLines={4}>
-            {answer.answer}
-          </Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            key={index}
+            style={styles.answerButton}
+            onPress={() => handleAnswer(answer.answer)}
+          >
+            <View style={styles.labelContainer}>
+              <Text style={styles.labelText}>{answerLabels[index]}</Text>
+            </View>
+            <Text style={styles.answerButtonText} numberOfLines={4}>
+              {answer.answer}
+            </Text>
+          </TouchableOpacity>
+        </Animated.View>
       ))}
     </ScrollView>
   );
