@@ -22,6 +22,16 @@ type QuizContextType = {
   setShowExplanation: (show: boolean) => void;
   quizzes: Quiz[]; // Add quizzes to the context
   checkForQuizzesUpdate: () => Promise<boolean>; // Function to check for updates
+  totalQuestionsAnswered: number;
+  setTotalQuestionsAnswered: (total: number) => void;
+  totalCorrectAnswers: number;
+  setTotalCorrectAnswers: (total: number) => void;
+  totalWrongAnswers: number;
+  setTotalWrongAnswers: (total: number) => void;
+  totalWonGames: number;
+  setTotalWonGames: (total: number) => void;
+  totalLostGames: number;
+  setTotalLostGames: (total: number) => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -35,6 +45,15 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   >(true);
   const [showExplanation, setShowExplanationState] = useState<boolean>(false);
   const [quizzes, setQuizzes] = useState<Quiz[]>(localQuizzes);
+  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] = useState<
+    number
+  >(0);
+  const [totalCorrectAnswers, setTotalCorrectAnswersState] = useState<number>(
+    0,
+  );
+  const [totalWrongAnswers, setTotalWrongAnswersState] = useState<number>(0);
+  const [totalWonGames, setTotalWonGamesState] = useState<number>(0);
+  const [totalLostGames, setTotalLostGamesState] = useState<number>(0);
 
   // Function to check for and download updated quizzes
   const checkForQuizzesUpdate = async (): Promise<boolean> => {
@@ -116,6 +135,56 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     }
   }, []);
 
+  const setTotalQuestionsAnswered = useCallback(async (total: number) => {
+    setTotalQuestionsAnsweredState(total);
+    try {
+      await AsyncStorage.setItem('totalQuestionsAnswered', String(total));
+      console.log('Total questions answered saved:', total);
+    } catch (error) {
+      console.error('Failed to save total questions answered', error);
+    }
+  }, []);
+
+  const setTotalCorrectAnswers = useCallback(async (total: number) => {
+    setTotalCorrectAnswersState(total);
+    try {
+      await AsyncStorage.setItem('totalCorrectAnswers', String(total));
+      console.log('Total correct answers saved:', total);
+    } catch (error) {
+      console.error('Failed to save total correct answers', error);
+    }
+  }, []);
+
+  const setTotalWrongAnswers = useCallback(async (total: number) => {
+    setTotalWrongAnswersState(total);
+    try {
+      await AsyncStorage.setItem('totalWrongAnswers', String(total));
+      console.log('Total wrong answers saved:', total);
+    } catch (error) {
+      console.error('Failed to save total wrong answers', error);
+    }
+  }, []);
+
+  const setTotalWonGames = useCallback(async (total: number) => {
+    setTotalWonGamesState(total);
+    try {
+      await AsyncStorage.setItem('totalWonGames', String(total));
+      console.log('Total won games saved:', total);
+    } catch (error) {
+      console.error('Failed to save total won games', error);
+    }
+  }, []);
+
+  const setTotalLostGames = useCallback(async (total: number) => {
+    setTotalLostGamesState(total);
+    try {
+      await AsyncStorage.setItem('totalLostGames', String(total));
+      console.log('Total lost games saved:', total);
+    } catch (error) {
+      console.error('Failed to save total lost games', error);
+    }
+  }, []);
+
   const loadSettings = async () => {
     try {
       const notificationsSetting = await AsyncStorage.getItem(
@@ -150,6 +219,16 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setShowExplanation,
         quizzes, // Expose quizzes through context
         checkForQuizzesUpdate, // Expose the update function
+        totalQuestionsAnswered,
+        setTotalQuestionsAnswered,
+        totalCorrectAnswers,
+        setTotalCorrectAnswers,
+        totalWrongAnswers,
+        setTotalWrongAnswers,
+        totalWonGames,
+        setTotalWonGames,
+        totalLostGames,
+        setTotalLostGames,
       }}
     >
       {children}

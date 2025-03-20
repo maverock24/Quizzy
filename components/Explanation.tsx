@@ -18,8 +18,8 @@ export const Explanation: React.FC<ExplanationProps> = ({
         styles.card,
         {
           backgroundColor: answerIsCorrect
-            ? 'rgb(73, 102, 70)'
-            : 'rgb(150, 60, 60)',
+            ? 'rgb(71, 155, 62)'
+            : 'rgb(161, 64, 64)',
         },
       ]}
     >
@@ -51,13 +51,13 @@ const styles = StyleSheet.create({
     paddingLeft: 36,
   },
   questionHeading: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 8,
     color: 'white',
   },
   normalText: {
-    fontSize: 14,
+    fontSize: 16,
     lineHeight: 24,
     color: 'white',
   },

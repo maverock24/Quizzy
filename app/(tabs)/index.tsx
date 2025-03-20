@@ -2,16 +2,11 @@ import { Explanation } from '@/components/Explanation';
 import { Question } from '@/components/Question';
 import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
+import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { Answer, Quiz } from '@/components/types';
 import { useEffect, useState } from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 // Function to shuffle array (Fi
 const shuffleArray = (array: any[]) => {
@@ -38,6 +33,14 @@ export default function TabOneScreen() {
     showExplanation,
     quizzes,
     checkForQuizzesUpdate,
+    totalCorrectAnswers,
+    setTotalCorrectAnswers,
+    totalWrongAnswers,
+    setTotalWrongAnswers,
+    totalWonGames,
+    setTotalWonGames,
+    totalLostGames,
+    setTotalLostGames,
   } = useQuiz();
   const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
@@ -69,8 +72,10 @@ export default function TabOneScreen() {
       const question = selectedQuiz.questions[currentQuestionIndex];
       if (question.answer === answer) {
         setAnswerIsCorrect(true);
+        setTotalCorrectAnswers(totalCorrectAnswers + 1);
         setScore(score + 1);
       } else {
+        setTotalWrongAnswers(totalWrongAnswers + 1);
         setAnswerIsCorrect(false);
       }
       if (!showExplanation) {
@@ -93,6 +98,11 @@ export default function TabOneScreen() {
     if (currentQuestionIndex < selectedQuiz?.questions.length! - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
+      if (score === selectedQuiz?.questions.length) {
+        setTotalWonGames(totalWonGames + 1);
+      } else {
+        setTotalLostGames(totalLostGames + 1);
+      }
       setScoreVisible(true);
       setSelectedQuiz(undefined);
       setSelectedQuizName(null);
@@ -101,29 +111,61 @@ export default function TabOneScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaLinearGradient
+      colors={[
+        'rgb(63, 82, 108)',
+        'rgb(29, 40, 54)',
+        'rgb(29, 40, 54)',
+        'rgb(29, 40, 54)',
+        'rgb(29, 40, 54)',
+      ]}
+      style={styles.safeArea}
+    >
+      <Text style={styles.scoreTitle}>Scores:</Text>
       <View style={styles.container}>
-        <View style={{ marginBottom: 20 }}>
-          <Text style={{ color: 'white', fontSize: 20, fontWeight: 'bold' }}>
-            Score board
-          </Text>
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginTop: 10,
-              paddingTop: 10,
-            }}
-          >
-            <Text style={{ color: 'white', fontSize: 12 }}>
-              Most popular quiz
-            </Text>
-            <Text style={{ color: 'white', fontSize: 12, marginLeft: 10 }}>
-              AWS Saas
-            </Text>
+        {!selectedQuiz && (
+          <View style={styles.scoreBoard}>
+            <View style={styles.scoreItemRow}>
+              <View style={styles.scoreItemColumn}>
+                <View
+                  style={[
+                    styles.scoreItem,
+                    { backgroundColor: 'rgb(0, 123, 255)' },
+                  ]}
+                >
+                  <Text style={styles.scoreItemTitle}>Quiz wins:</Text>
+                  <Text style={styles.scoreItemText}>{totalWonGames}</Text>
+                </View>
+                <View
+                  style={[
+                    styles.scoreItem,
+                    { backgroundColor: 'rgb(239, 130, 22)' },
+                  ]}
+                >
+                  <Text style={styles.scoreItemTitle}>Quiz losses:</Text>
+                  <Text style={styles.scoreItemText}>{totalLostGames}</Text>
+                </View>
+              </View>
+              <View style={styles.scoreItemColumn}>
+                <View style={[styles.scoreItem, { backgroundColor: 'green' }]}>
+                  <Text style={styles.scoreItemTitle}>Answers correct:</Text>
+                  <Text style={styles.scoreItemText}>
+                    {totalCorrectAnswers}
+                  </Text>
+                </View>
+                <View
+                  style={[
+                    styles.scoreItem,
+                    { backgroundColor: 'rgb(205, 57, 161)' },
+                  ]}
+                >
+                  <Text style={styles.scoreItemTitle}>Answer wrong:</Text>
+                  <Text style={styles.scoreItemText}>{totalWrongAnswers}</Text>
+                </View>
+              </View>
+            </View>
           </View>
-        </View>
-
+        )}
         {!selectedQuiz && !scoreVisible && (
           <QuizSelection
             quizzes={quizzes}
@@ -166,7 +208,7 @@ export default function TabOneScreen() {
           <Text style={styles.buttonText}>Back</Text>
         </TouchableOpacity>
       )}
-    </SafeAreaView>
+    </SafeAreaLinearGradient>
   );
 }
 
@@ -174,6 +216,45 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: 'rgb(26, 26, 26)',
+  },
+  scoreTitle: {
+    fontSize: 14,
+    margin: 20,
+    marginBottom: -10,
+    color: 'white',
+  },
+  scoreBoard: {
+    flex: 1,
+    width: '100%',
+    marginBottom: 140,
+  },
+  scoreItem: {
+    height: '50%',
+    margin: 3,
+    flexDirection: 'column',
+    padding: 5,
+    backgroundColor: 'rgb(209, 79, 170)',
+    borderRadius: 5,
+  },
+  scoreItemTitle: {
+    color: 'white',
+    fontSize: 14,
+    marginBottom: 5,
+  },
+  scoreItemRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  scoreItemColumn: {
+    width: '50%',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+  },
+  scoreItemText: {
+    color: 'white',
+    fontSize: 40,
+    justifyContent: 'center',
+    textAlign: 'center',
   },
   container: {
     padding: 20,
@@ -189,7 +270,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   backButton: {
-    backgroundColor: 'rgb(63, 65, 66)',
+    backgroundColor: 'rgb(86, 92, 99)',
     marginBottom: 20,
     marginLeft: 20,
     marginRight: 20,
