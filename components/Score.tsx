@@ -14,7 +14,7 @@ export const Score: React.FC<ScoreProps> = ({
 }) => (
   <View style={styles.scoreContainer}>
     <Text style={styles.heading}>
-      {score === selectedQuizAnswersAmount ? 'Well Done!' : 'Try again'}
+      {score === selectedQuizAnswersAmount ? 'Well Done!' : 'Try again!'}
     </Text>
     {score !== selectedQuizAnswersAmount && <Sad width={150} height={150} />}
     {score === selectedQuizAnswersAmount && <Happy width={150} height={150} />}
@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
   },
   scoreContainer: {
     flex: 1,
+    marginTop: -500,
+    flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
