@@ -36,15 +36,15 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   answerButton: {
-    backgroundColor: 'rgb(85, 101, 107)',
-    padding: 15,
+    backgroundColor: 'rgb(46, 150, 194)',
+    padding: 20,
     borderRadius: 8,
     marginVertical: 10,
     alignItems: 'center',
   },
   buttonText: {
     color: 'white',
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: '600',
   },
 });
