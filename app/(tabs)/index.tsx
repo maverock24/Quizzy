@@ -64,6 +64,7 @@ export default function TabOneScreen() {
     setScore(0);
     setScoreVisible(false);
     setSelectedQuizName(quiz.name);
+    setExplanationMode(false);
   };
 
   const handleAnswerSelection = (answer: string) => {
