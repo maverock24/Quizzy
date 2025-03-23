@@ -62,6 +62,16 @@ export const Question: React.FC<QuestionProps> = ({
     setTimeout(() => {
       handleAnswerSelection(answer);
       setAnswerSelected(!answerSelected);
+      // Reset the selected answer index
+      setSelectedAnswerIndex(null);
+      // Reset the fade out animation
+      fadeOutAnim.forEach((anim) => {
+        Animated.timing(anim, {
+          toValue: 1,
+          duration: 500,
+          useNativeDriver: true,
+        }).start();
+      } );
     }, 2000); // 2-second delay
   };
 
