@@ -31,7 +31,9 @@ export const Question: React.FC<QuestionProps> = ({
   // Array of letter labels for answers
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
   const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeOutAnim = useRef(answers.map(() => new Animated.Value(1))).current;
   const [answerSelected, setAnswerSelected] = React.useState(false);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = React.useState<number | null>(null);
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -43,9 +45,24 @@ export const Question: React.FC<QuestionProps> = ({
     };
   }, [answerSelected]);
 
-  const handleAnswer = (answer: string) => {
-    handleAnswerSelection(answer);
-    setAnswerSelected(!answerSelected);
+  const handleAnswer = (answer: string, index: number) => {
+    setSelectedAnswerIndex(index); // Highlight the selected button
+
+    // Fade out other buttons except the clicked one
+    fadeOutAnim.forEach((anim, i) => {
+      if (i !== index) {
+        Animated.timing(anim, {
+          toValue: 0,
+          duration: 500,
+          useNativeDriver: true,
+        }).start();
+      }
+    });
+
+    setTimeout(() => {
+      handleAnswerSelection(answer);
+      setAnswerSelected(!answerSelected);
+    }, 2000); // 2-second delay
   };
 
   return (
@@ -59,14 +76,17 @@ export const Question: React.FC<QuestionProps> = ({
 
       {answers.map((answer, index) => (
         <Animated.View
+          key={index}
           style={{
-            opacity: fadeAnim,
+            opacity: fadeOutAnim[index],
           }}
         >
           <TouchableOpacity
-            key={index}
-            style={styles.answerButton}
-            onPress={() => handleAnswer(answer.answer)}
+            style={[
+              styles.answerButton,
+              selectedAnswerIndex === index && styles.selectedAnswerButton,
+            ]}
+            onPress={() => handleAnswer(answer.answer, index)}
           >
             <View style={styles.labelContainer}>
               <Text style={styles.labelText}>{answerLabels[index]}</Text>
@@ -88,8 +108,6 @@ const styles = StyleSheet.create({
   card: {
     padding: 0,
     borderRadius: 8,
-    // backgroundColor: 'white',
-    // shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -98,9 +116,6 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
   },
   questionCard: {
-    // backgroundColor: 'rgb(38, 107, 176)',
-    // borderColor: 'rgb(63, 65, 66)',
-    // borderWidth: 1,
     height: 100,
     padding: 5,
     borderRadius: 10,
@@ -148,5 +163,9 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: 'white',
     flex: 1,
+  },
+  selectedAnswerButton: {
+    borderColor: 'white',
+    borderWidth: 1,
   },
 });
