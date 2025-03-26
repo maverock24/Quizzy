@@ -5,6 +5,7 @@ import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { Answer, Quiz } from '@/components/types';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -113,7 +114,7 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.outerContainer}>
-      <SafeAreaLinearGradient
+      <LinearGradient
         colors={[
           'rgb(63, 82, 108)',
           'rgb(29, 40, 54)',
@@ -121,6 +122,9 @@ export default function TabOneScreen() {
           'rgb(29, 40, 54)',
           'rgb(29, 40, 54)',
         ]}
+      />
+      <SafeAreaLinearGradient
+        colors={['rgb(63, 82, 108)', 'rgb(29, 40, 54)']}
         style={styles.safeArea}
       >
         <Text style={styles.scoreTitle}>Scores:</Text>
@@ -222,15 +226,23 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   outerContainer: {
     flex: 1,
-    backgroundColor: 'rgb(26, 26, 26)',
     alignItems: 'center',
+    //add gradient
+    backgroundColor: 'rgb(29, 40, 54)',
   },
   safeArea: {
     flex: 1,
     backgroundColor: 'rgb(26, 26, 26)',
     maxWidth: 550,
-    maxHeight: 800,
     width: '100%',
+    borderLeftColor: 'rgb(129, 129, 129)',
+    borderRightColor: 'rgb(141, 141, 141)',
+    borderTopColor: 'rgb(26, 26, 26)',
+    borderBottomColor: 'rgb(26, 26, 26)',
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderTopWidth: 1,
+    borderBottomWidth: 1,
   },
   scoreTitle: {
     fontSize: 14,
