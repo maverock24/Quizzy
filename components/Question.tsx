@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import {
   ScrollView,
   StyleSheet,
@@ -31,9 +31,20 @@ export const Question: React.FC<QuestionProps> = ({
   // Array of letter labels for answers
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
   const fadeAnim = useRef(new Animated.Value(0)).current;
-  const fadeOutAnim = useRef(answers.map(() => new Animated.Value(1))).current;
-  const [answerSelected, setAnswerSelected] = React.useState(false);
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = React.useState<number | null>(null);
+  // Instead of useRef, use useState to recreate animation values when answers change
+  const [fadeOutAnim, setFadeOutAnim] = useState<Animated.Value[]>([]);
+  const [answerSelected, setAnswerSelected] = useState(false);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
+    null,
+  );
+
+  // Initialize or reset fadeOutAnim whenever answers change
+  useEffect(() => {
+    setFadeOutAnim(answers.map(() => new Animated.Value(1)));
+    setSelectedAnswerIndex(null);
+    setAnswerSelected(false);
+  }, [answers, currentQuestionIndex]); // Dependency on answers and question index
+
   useEffect(() => {
     Animated.timing(fadeAnim, {
       toValue: 1,
@@ -61,7 +72,7 @@ export const Question: React.FC<QuestionProps> = ({
 
     setTimeout(() => {
       handleAnswerSelection(answer);
-      setAnswerSelected(!answerSelected);
+      setAnswerSelected(false); // Reset to false instead of toggling
       // Reset the selected answer index
       setSelectedAnswerIndex(null);
       // Reset the fade out animation
@@ -71,7 +82,7 @@ export const Question: React.FC<QuestionProps> = ({
           duration: 500,
           useNativeDriver: true,
         }).start();
-      } );
+      });
     }, 2000); // 2-second delay
   };
 
