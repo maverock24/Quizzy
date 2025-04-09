@@ -1,5 +1,11 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 
 type QuizSelectionProps = {
   quizzes: any[];
@@ -10,7 +16,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   quizzes,
   handleQuizSelection,
 }) => (
-  <>
+  <View style={styles.quizSelectionContainer}>
     <Text style={styles.normalText}>Select a quiz:</Text>
     <FlatList
       data={quizzes}
@@ -26,10 +32,13 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         </TouchableOpacity>
       )}
     />
-  </>
+  </View>
 );
 
 const styles = StyleSheet.create({
+  quizSelectionContainer: {
+    flexBasis: '65%',
+  },
   normalText: {
     fontSize: 14,
     lineHeight: 24,

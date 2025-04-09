@@ -5,7 +5,6 @@ import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { Answer, Quiz } from '@/components/types';
-import { LinearGradient } from 'expo-linear-gradient';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -114,67 +113,62 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.outerContainer}>
-      <LinearGradient
-        colors={[
-          'rgb(63, 82, 108)',
-          'rgb(29, 40, 54)',
-          'rgb(29, 40, 54)',
-          'rgb(29, 40, 54)',
-          'rgb(29, 40, 54)',
-        ]}
-      />
       <SafeAreaLinearGradient
         colors={['rgb(63, 82, 108)', 'rgb(29, 40, 54)']}
         style={styles.safeArea}
       >
-        <Text style={styles.scoreTitle}>Scores:</Text>
         <View style={styles.container}>
           {!selectedQuiz && (
-            <View style={styles.scoreBoard}>
-              <View style={styles.scoreItemRow}>
-                <View style={styles.scoreItemColumn}>
-                  <View
-                    style={[
-                      styles.scoreItem,
-                      { backgroundColor: 'rgb(0, 123, 255)' },
-                    ]}
-                  >
-                    <Text style={styles.scoreItemTitle}>Quiz wins:</Text>
-                    <Text style={styles.scoreItemText}>{totalWonGames}</Text>
+            <>
+              <Text style={styles.scoreTitle}>Scores:</Text>
+              <View style={styles.scoreBoard}>
+                <View style={styles.scoreItemRow}>
+                  <View style={styles.scoreItemColumn}>
+                    <View
+                      style={[
+                        styles.scoreItem,
+                        { backgroundColor: 'rgb(0, 123, 255)' },
+                      ]}
+                    >
+                      <Text style={styles.scoreItemTitle}>Quiz wins:</Text>
+                      <Text style={styles.scoreItemText}>{totalWonGames}</Text>
+                    </View>
+                    <View
+                      style={[
+                        styles.scoreItem,
+                        { backgroundColor: 'rgb(239, 130, 22)' },
+                      ]}
+                    >
+                      <Text style={styles.scoreItemTitle}>Quiz losses:</Text>
+                      <Text style={styles.scoreItemText}>{totalLostGames}</Text>
+                    </View>
                   </View>
-                  <View
-                    style={[
-                      styles.scoreItem,
-                      { backgroundColor: 'rgb(239, 130, 22)' },
-                    ]}
-                  >
-                    <Text style={styles.scoreItemTitle}>Quiz losses:</Text>
-                    <Text style={styles.scoreItemText}>{totalLostGames}</Text>
-                  </View>
-                </View>
-                <View style={styles.scoreItemColumn}>
-                  <View
-                    style={[styles.scoreItem, { backgroundColor: 'green' }]}
-                  >
-                    <Text style={styles.scoreItemTitle}>Answers correct:</Text>
-                    <Text style={styles.scoreItemText}>
-                      {totalCorrectAnswers}
-                    </Text>
-                  </View>
-                  <View
-                    style={[
-                      styles.scoreItem,
-                      { backgroundColor: 'rgb(205, 57, 161)' },
-                    ]}
-                  >
-                    <Text style={styles.scoreItemTitle}>Answer wrong:</Text>
-                    <Text style={styles.scoreItemText}>
-                      {totalWrongAnswers}
-                    </Text>
+                  <View style={styles.scoreItemColumn}>
+                    <View
+                      style={[styles.scoreItem, { backgroundColor: 'green' }]}
+                    >
+                      <Text style={styles.scoreItemTitle}>
+                        Answers correct:
+                      </Text>
+                      <Text style={styles.scoreItemText}>
+                        {totalCorrectAnswers}
+                      </Text>
+                    </View>
+                    <View
+                      style={[
+                        styles.scoreItem,
+                        { backgroundColor: 'rgb(205, 57, 161)' },
+                      ]}
+                    >
+                      <Text style={styles.scoreItemTitle}>Answer wrong:</Text>
+                      <Text style={styles.scoreItemText}>
+                        {totalWrongAnswers}
+                      </Text>
+                    </View>
                   </View>
                 </View>
               </View>
-            </View>
+            </>
           )}
           {!selectedQuiz && !scoreVisible && (
             <QuizSelection
@@ -194,13 +188,19 @@ export default function TabOneScreen() {
           )}
 
           {selectedQuiz && !explanationMode && (
-            <Question
-              question={selectedQuiz.questions[currentQuestionIndex].question}
-              answers={randomizedAnswers}
-              currentQuestionIndex={currentQuestionIndex}
-              selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-              handleAnswerSelection={handleAnswerSelection}
-            />
+            <>
+              <Text style={styles.quizTitle}>{selectedQuiz.name}</Text>
+              <Question
+                question={selectedQuiz.questions[currentQuestionIndex].question}
+                correctAnswer={
+                  selectedQuiz.questions[currentQuestionIndex].answer
+                }
+                answers={randomizedAnswers}
+                currentQuestionIndex={currentQuestionIndex}
+                selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+                handleAnswerSelection={handleAnswerSelection}
+              />
+            </>
           )}
 
           {scoreVisible && (
@@ -224,15 +224,23 @@ export default function TabOneScreen() {
 }
 
 const styles = StyleSheet.create({
+  quizTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: 'rgb(183, 183, 183)',
+  },
+  imageContainer: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+  },
   outerContainer: {
     flex: 1,
     alignItems: 'center',
-    //add gradient
-    backgroundColor: 'rgb(29, 40, 54)',
+    backgroundColor: 'transparent',
   },
   safeArea: {
     flex: 1,
-    backgroundColor: 'rgb(26, 26, 26)',
     maxWidth: 550,
     width: '100%',
     borderLeftColor: 'rgb(129, 129, 129)',
@@ -246,14 +254,14 @@ const styles = StyleSheet.create({
   },
   scoreTitle: {
     fontSize: 14,
-    margin: 20,
-    marginBottom: -10,
+    marginBottom: 10,
     color: 'white',
   },
   scoreBoard: {
     flex: 1,
     width: '100%',
-    marginBottom: 140,
+    marginBottom: 10,
+    justifyContent: 'flex-start',
   },
   scoreItem: {
     height: '50%',
@@ -286,7 +294,9 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     flex: 1,
+    flexDirection: 'column',
     height: '100%',
+    backgroundColor: 'transparent',
   },
   button: {
     backgroundColor: 'rgb(86, 92, 99)',

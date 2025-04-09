@@ -64,7 +64,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         'https://drive.google.com/uc?export=download&id=15uhq_YATQvPQ8QPlson-pUE_2_1OrShE';
 
       // Fetch the remote file
-      console.log('Checking for quizzes update...');
+
       const { status } = await FileSystem.downloadAsync(
         downloadUrl,
         FileSystem.documentDirectory + 'temp_quizzes.json',
