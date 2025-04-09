@@ -7,6 +7,8 @@ import {
   View,
 } from 'react-native';
 
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
 import { Animated } from 'react-native';
 
 type Answer = {
@@ -19,6 +21,7 @@ type QuestionProps = {
   currentQuestionIndex: number;
   selectedQuizAnswersAmount: number;
   handleAnswerSelection: (answer: string) => void;
+  correctAnswer: string;
 };
 
 export const Question: React.FC<QuestionProps> = ({
@@ -27,6 +30,7 @@ export const Question: React.FC<QuestionProps> = ({
   currentQuestionIndex,
   selectedQuizAnswersAmount,
   handleAnswerSelection,
+  correctAnswer,
 }) => {
   // Array of letter labels for answers
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
@@ -37,6 +41,8 @@ export const Question: React.FC<QuestionProps> = ({
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null,
   );
+  const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
+  const [answerIsWrong, setAnswerIsWrong] = useState(false);
 
   // Initialize or reset fadeOutAnim whenever answers change
   useEffect(() => {
@@ -58,7 +64,6 @@ export const Question: React.FC<QuestionProps> = ({
 
   const handleAnswer = (answer: string, index: number) => {
     setSelectedAnswerIndex(index); // Highlight the selected button
-
     // Fade out other buttons except the clicked one
     fadeOutAnim.forEach((anim, i) => {
       if (i !== index) {
@@ -69,6 +74,12 @@ export const Question: React.FC<QuestionProps> = ({
         }).start();
       }
     });
+
+    setTimeout(() => {
+      answer === correctAnswer
+        ? setAnswerIsCorrect(true)
+        : setAnswerIsWrong(true);
+    }, 800);
 
     setTimeout(() => {
       handleAnswerSelection(answer);
@@ -83,6 +94,8 @@ export const Question: React.FC<QuestionProps> = ({
           useNativeDriver: true,
         }).start();
       });
+      setAnswerIsCorrect(false);
+      setAnswerIsWrong(false);
     }, 2000); // 2-second delay
   };
 
@@ -115,6 +128,22 @@ export const Question: React.FC<QuestionProps> = ({
             <Text style={styles.answerButtonText} numberOfLines={4}>
               {answer.answer}
             </Text>
+            {answerIsCorrect && (
+              <FontAwesome
+                name="check"
+                size={20}
+                color="white"
+                style={styles.correct}
+              />
+            )}
+            {answerIsWrong && (
+              <FontAwesome
+                name="times"
+                size={20}
+                color="white"
+                style={styles.wrong}
+              />
+            )}
           </TouchableOpacity>
         </Animated.View>
       ))}
@@ -123,22 +152,37 @@ export const Question: React.FC<QuestionProps> = ({
 };
 
 const styles = StyleSheet.create({
+  wrong: {
+    paddingLeft: 5,
+    paddingTop: 3,
+    backgroundColor: 'rgb(255, 0, 0)',
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: 'rgb(255, 255, 255)',
+  },
+  correct: {
+    paddingLeft: 3,
+    paddingTop: 3,
+    backgroundColor: 'rgb(0, 216, 0)',
+    height: 30,
+    width: 30,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: 'rgb(255, 255, 255)',
+  },
   contentContainer: {
+    marginTop: 30,
     marginVertical: 12,
   },
   card: {
     padding: 0,
     borderRadius: 8,
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
     marginBottom: 16,
-    paddingLeft: 5,
   },
   questionCard: {
     height: 100,
-    padding: 5,
     borderRadius: 10,
   },
   questionHeading: {
@@ -152,8 +196,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   questionText: {
-    fontSize: 20,
-    lineHeight: 24,
+    fontSize: 22,
     fontWeight: '600',
     color: 'rgb(237, 237, 237)',
   },
