@@ -1,11 +1,11 @@
 import { useQuiz } from '@/components/Quizprovider';
 import { Button } from '@/components/ui/button';
+import { REMOTE_QUIZ } from '@/constants/Urls';
 import React from 'react';
 import { ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 
 export default function SettingsScreen() {
-  const { notificationsEnabled, setNotificationsEnabled } = useQuiz();
-  const { showExplanation, setShowExplanation } = useQuiz();
+  const { resetState, notificationsEnabled, setNotificationsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled, remoteUpdateEnabled, setRemoteUpdateEnabled, remoteAddress, setRemoteAdress } = useQuiz();
 
   return (
     <ScrollView>
@@ -58,8 +58,8 @@ export default function SettingsScreen() {
             trackColor={{ false: 'gray', true: 'white' }}
             thumbColor={'rgb(85, 101, 107)'}
             ios_backgroundColor="gray"
-            onValueChange={() => {}}
-            value={true}
+            onValueChange={setAudioEnabled}
+            value={audioEnabled}
           />
         </View>
         <View style={styles.settingItem}>
@@ -73,8 +73,8 @@ export default function SettingsScreen() {
             trackColor={{ false: 'gray', true: 'white' }}
             thumbColor={'rgb(85, 101, 107)'}
             ios_backgroundColor="gray"
-            onValueChange={() => {}}
-            value={true}
+            onValueChange={setRemoteUpdateEnabled}
+            value={remoteUpdateEnabled}
           />
         </View>
         <View style={[styles.settingItem, { flexDirection: 'column', alignItems: 'flex-start'}]}>
@@ -92,10 +92,9 @@ export default function SettingsScreen() {
               width: '100%',
               color: 'black',
             }}
-            placeholder="https://example.com/quiz.json"
             placeholderTextColor="gray"
-            onChangeText={() => {}}
-            value="https://example.com/quiz.json"
+            onChangeText={setRemoteAdress}
+            value={ remoteAddress ? remoteAddress : REMOTE_QUIZ }
           />
           <Button
             onPress={() => {}}
@@ -114,7 +113,7 @@ export default function SettingsScreen() {
             </Text>
           </View>
           <Button
-            onPress={() => {}}
+            onPress={resetState}
             style={[styles.button, { alignSelf: 'flex-end' }]}
           >
           <Text style={styles.buttonText}>
@@ -141,7 +140,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
   },
   outerContainer: {
