@@ -52,7 +52,6 @@ function RootLayoutNav() {
     colors: {
       ...DarkTheme.colors,
       background: 'transparent',
-      // Add any other custom colors you want to override
     },
   };
   return (
