@@ -1,6 +1,6 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { ThemeProvider } from '@react-navigation/native';
-import { CustomDarkTheme } from '@react-navigation/native/src/theming/DarkTheme';
+import { Theme, ThemeProvider } from '@react-navigation/native';
+import { DarkTheme } from '@react-navigation/native/src/theming/DarkTheme';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -47,6 +47,14 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
+  const CustomDarkTheme: Theme = {
+    ...DarkTheme,
+    colors: {
+      ...DarkTheme.colors,
+      background: 'transparent',
+      // Add any other custom colors you want to override
+    },
+  };
   return (
     <ThemeProvider value={CustomDarkTheme}>
       <QuizProvider>
