@@ -1,12 +1,14 @@
 import { useQuiz } from '@/components/Quizprovider';
+import { Button } from '@/components/ui/button';
 import React from 'react';
-import { StyleSheet, Switch, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 
 export default function SettingsScreen() {
   const { notificationsEnabled, setNotificationsEnabled } = useQuiz();
   const { showExplanation, setShowExplanation } = useQuiz();
 
   return (
+    <ScrollView>
     <View style={styles.outerContainer}>
       <View style={styles.container}>
         <Text style={styles.heading}>Settings</Text>
@@ -45,12 +47,103 @@ export default function SettingsScreen() {
             value={showExplanation}
           />
         </View>
+        <View style={styles.settingItem}>
+          <View style={styles.settingName}>
+            <Text style={styles.settingText}>Enable Sound</Text>
+            <Text style={styles.settingDescription}>
+              Allow to play sound when answering questions
+            </Text>
+          </View>
+          <Switch
+            trackColor={{ false: 'gray', true: 'white' }}
+            thumbColor={'rgb(85, 101, 107)'}
+            ios_backgroundColor="gray"
+            onValueChange={() => {}}
+            value={true}
+          />
+        </View>
+        <View style={styles.settingItem}>
+          <View style={styles.settingName}>
+            <Text style={styles.settingText}>Enable Remote Update</Text>
+            <Text style={styles.settingDescription}>
+              Allow to update quiz data from remote server
+            </Text>
+          </View>
+          <Switch
+            trackColor={{ false: 'gray', true: 'white' }}
+            thumbColor={'rgb(85, 101, 107)'}
+            ios_backgroundColor="gray"
+            onValueChange={() => {}}
+            value={true}
+          />
+        </View>
+        <View style={[styles.settingItem, { flexDirection: 'column', alignItems: 'flex-start'}]}>
+          <View style={styles.settingName}>
+            <Text style={styles.settingText}>Remote Address</Text>
+            <Text style={styles.settingDescription}>
+              Url to json file with quiz data
+            </Text>
+          </View>
+          <TextInput
+            style={{
+              backgroundColor: 'white',
+              borderRadius: 5,
+              padding: 10,
+              width: '100%',
+              color: 'black',
+            }}
+            placeholder="https://example.com/quiz.json"
+            placeholderTextColor="gray"
+            onChangeText={() => {}}
+            value="https://example.com/quiz.json"
+          />
+          <Button
+            onPress={() => {}}
+            style={[styles.button, { alignSelf: 'flex-end' }]}
+          >
+          <Text style={styles.buttonText}>
+            Save
+          </Text>
+        </Button>
+        </View>
+        <View style={[styles.settingItem, { flexDirection: 'column', alignItems: 'flex-start', borderBottomWidth: 0 }]}>
+          <View style={styles.settingName}>
+            <Text style={styles.settingText}>Reset Settings</Text>
+            <Text style={styles.settingDescription}>
+              Resets settings / quiz stats
+            </Text>
+          </View>
+          <Button
+            onPress={() => {}}
+            style={[styles.button, { alignSelf: 'flex-end' }]}
+          >
+          <Text style={styles.buttonText}>
+            Reset
+          </Text>
+        </Button>
+        </View>
       </View>
     </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'rgb(86, 92, 99)',
+    padding: 7,
+    paddingLeft: 10,
+    paddingRight: 10,
+    borderRadius: 8,
+    marginVertical: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
   outerContainer: {
     flex: 1,
     alignItems: 'center',
