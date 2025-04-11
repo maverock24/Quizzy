@@ -9,6 +9,8 @@ import React, {
   useState,
 } from 'react';
 import { Quiz } from './types';
+import { REMOTE_QUIZ } from '@/constants/Urls';
+import { Platform } from 'react-native';
 
 // Load local quizzes file
 const localQuizzes = require('../assets/quizzes.json');
@@ -32,6 +34,13 @@ type QuizContextType = {
   setTotalWonGames: (total: number) => void;
   totalLostGames: number;
   setTotalLostGames: (total: number) => void;
+  setAudioEnabled: (enabled: boolean) => void;
+  audioEnabled: boolean;
+  setRemoteUpdateEnabled: (enabled: boolean) => void;
+  remoteUpdateEnabled: boolean;
+  setRemoteAdress: (address: string) => void;
+  remoteAddress: string;
+  resetState: () => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -54,66 +63,175 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [totalWrongAnswers, setTotalWrongAnswersState] = useState<number>(0);
   const [totalWonGames, setTotalWonGamesState] = useState<number>(0);
   const [totalLostGames, setTotalLostGamesState] = useState<number>(0);
+  const [audioEnabled, setAudioEnabledState] = useState<boolean>(false);
+  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] =
+    useState<boolean>(false);
+  const [remoteAddress, setRemoteAddressState] = useState<string>('');
+  const setAudioEnabled = useCallback(async (enabled: boolean) => {
+    setAudioEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('audioEnabled', String(enabled));
+      console.log('Audio setting saved:', enabled);
+    } catch (error) {
+      console.error('Failed to save audio setting', error);
+    }
+  }
+  , []);
+  const setRemoteUpdateEnabled = useCallback(async (enabled: boolean) => {
+    setRemoteUpdateEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('remoteUpdateEnabled', String(enabled));
+      console.log('Remote update setting saved:', enabled);
+    } catch (error) {
+      console.error('Failed to save remote update setting', error);
+    }
+  }
+  , []);
+  const setRemoteAdress = useCallback(async (address: string) => {
+    setRemoteAddressState(address);
+    try {
+      await AsyncStorage.setItem('remoteAddress', address);
+      console.log('Remote address setting saved:', address);
+    } catch (error) {
+      console.error('Failed to save remote address setting', error);
+    }
+  }
+  , []);
+
+  // Function to reset state
+  const resetState = useCallback(() => {
+    setSelectedQuizName(null);
+    setNotificationsEnabledState(true);
+    setShowExplanationState(false);
+    setQuizzes(localQuizzes);
+    setTotalQuestionsAnsweredState(0);
+    setTotalCorrectAnswersState(0);
+    setTotalWrongAnswersState(0);
+    setTotalWonGamesState(0);
+    setTotalLostGamesState(0);
+    setAudioEnabledState(false);
+    setRemoteUpdateEnabledState(false);
+    setRemoteAddressState('');
+  }, []);
 
   // Function to check for and download updated quizzes
-  const checkForQuizzesUpdate = async (): Promise<boolean> => {
-    try {
-      // Google Drive direct download link
-      // Note: This link transformation might need adjustment based on your actual Google Drive setup
-      const downloadUrl =
-        'https://drive.google.com/uc?export=download&id=15uhq_YATQvPQ8QPlson-pUE_2_1OrShE';
+const checkForQuizzesUpdate = async (): Promise<boolean> => {
+  // Don't proceed if remote updates are disabled
+  console.log('Checking for quizzes update...');
+  if (!remoteUpdateEnabled) {
+    console.log('Remote updates are disabled');
+    return false;
+  }
+  
+  // Get the download URL with fallback to default
+  const downloadUrl = remoteAddress || REMOTE_QUIZ;
+  
+  try {
+    // Handle platform-specific update logic
+    if (Platform.OS === 'web') {
+      return await handleWebUpdate(downloadUrl);
+    } else {
+      return await handleNativeUpdate(downloadUrl);
+    }
+  } catch (error) {
+    console.error('Error checking for quizzes update:', error);
+    return false;
+  }
+};
 
-      // Fetch the remote file
-
-      const { status } = await FileSystem.downloadAsync(
-        downloadUrl,
-        FileSystem.documentDirectory + 'temp_quizzes.json',
-      );
-
-      if (status !== 200) {
-        console.log('Failed to download quizzes file');
-        return false;
-      }
-
-      // Read the downloaded temp file
-      const newQuizzesJson = await FileSystem.readAsStringAsync(
-        FileSystem.documentDirectory + 'temp_quizzes.json',
-      );
-      const newQuizzes = JSON.parse(newQuizzesJson);
-
-      // Check if new quizzes are different from current ones
-      const currentQuizzesJson = JSON.stringify(quizzes);
-      const isNewer = currentQuizzesJson !== JSON.stringify(newQuizzes);
-
-      if (isNewer) {
-        console.log('New quizzes version found, updating...');
-
-        // Save to assets directory (may require additional permissions)
-        const assetsPath = FileSystem.documentDirectory + 'quizzes.json';
-        await FileSystem.writeAsStringAsync(assetsPath, newQuizzesJson);
-
-        // Update the state with new quizzes
-        setQuizzes(newQuizzes);
-        console.log('Quizzes updated successfully');
-
-        // Clean up temp file
-        await FileSystem.deleteAsync(
-          FileSystem.documentDirectory + 'temp_quizzes.json',
-        );
-        return true;
-      }
-
-      console.log('Quizzes are already up to date');
-      // Clean up temp file
-      await FileSystem.deleteAsync(
-        FileSystem.documentDirectory + 'temp_quizzes.json',
-      );
-      return false;
-    } catch (error) {
-      console.error('Error checking for quizzes update:', error);
+// Handle updates for native platforms (iOS & Android)
+const handleNativeUpdate = async (downloadUrl: string): Promise<boolean> => {
+  try {
+    const tempPath = FileSystem.documentDirectory + 'temp_quizzes.json';
+    const permanentPath = FileSystem.documentDirectory + 'quizzes.json';
+    
+    // Platform-specific logging
+    console.log(`Downloading quizzes on ${Platform.OS}...`);
+    
+    // Download file - iOS has stricter sandbox rules than Android
+    const { status } = await FileSystem.downloadAsync(downloadUrl, tempPath);
+    
+    if (status !== 200) {
+      console.log(`Failed to download quizzes file on ${Platform.OS}`);
       return false;
     }
-  };
+    
+    // Read the downloaded temp file
+    const newQuizzesJson = await FileSystem.readAsStringAsync(tempPath);
+    const newQuizzes = JSON.parse(newQuizzesJson);
+    
+    // Check if new quizzes are different
+    const currentQuizzesJson = JSON.stringify(quizzes);
+    const isNewer = currentQuizzesJson !== JSON.stringify(newQuizzes);
+    
+    if (isNewer) {
+      console.log(`New quizzes found on ${Platform.OS}, updating...`);
+      
+      // iOS might need additional permissions for certain directories
+      if (Platform.OS === 'ios') {
+        await FileSystem.writeAsStringAsync(permanentPath, newQuizzesJson, {
+          encoding: FileSystem.EncodingType.UTF8
+        });
+      } else if (Platform.OS === 'android') {
+        // Android can use the same method but might have different permissions
+        await FileSystem.writeAsStringAsync(permanentPath, newQuizzesJson);
+      }
+      
+      // Update state
+      setQuizzes(newQuizzes);
+      console.log(`Quizzes updated successfully on ${Platform.OS}`);
+    } else {
+      console.log(`Quizzes are already up to date on ${Platform.OS}`);
+    }
+    
+    // Clean up temp file
+    await FileSystem.deleteAsync(tempPath);
+    return isNewer;
+    
+  } catch (error) {
+    console.error(`${Platform.OS} update error:`, error);
+    return false;
+  }
+};
+
+// Handle updates for web platform
+const handleWebUpdate = async (downloadUrl: string): Promise<boolean> => {
+  try {
+    console.log('Downloading quizzes in web browser...');
+    
+    // Web platforms need to use fetch API instead of FileSystem
+    const response = await fetch('/remote?remoteAddress=' + encodeURIComponent(downloadUrl));
+    if (!response.ok) {
+      console.log('Failed to download quizzes file in browser');
+      return false;
+    }
+    
+    const newQuizzesJson = await response.text();
+    const newQuizzes = JSON.parse(newQuizzesJson);
+    
+    // Check if new quizzes are different
+    const currentQuizzesJson = JSON.stringify(quizzes);
+    const isNewer = currentQuizzesJson !== JSON.stringify(newQuizzes);
+    
+    if (isNewer) {
+      console.log('New quizzes found in browser, updating...');
+      
+      // Save to localStorage for web
+      localStorage.setItem('quizzes', newQuizzesJson);
+      
+      // Update state
+      setQuizzes(newQuizzes);
+      console.log('Quizzes updated successfully in browser');
+      return true;
+    }
+    
+    console.log('Quizzes are already up to date in browser');
+    return false;
+  } catch (error) {
+    console.error('Web update error:', error);
+    return false;
+  }
+};
 
   const setNotificationsEnabled = useCallback(async (enabled: boolean) => {
     setNotificationsEnabledState(enabled);
@@ -185,28 +303,45 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     }
   }, []);
 
-  const loadSettings = async () => {
-    try {
-      const notificationsSetting = await AsyncStorage.getItem(
-        'notificationsEnabled',
-      );
-      const explanationSetting = await AsyncStorage.getItem('showExplanation');
+  // In your loadSettings function:
+const loadSettings = async () => {
+  try {
+    const notificationsSetting = await AsyncStorage.getItem('notificationsEnabled');
+    const explanationSetting = await AsyncStorage.getItem('showExplanation');
+    const audioSetting = await AsyncStorage.getItem('audioEnabled');
+    const remoteUpdateSetting = await AsyncStorage.getItem('remoteUpdateEnabled');
+    const remoteAddressSetting = await AsyncStorage.getItem('remoteAddress');
+    
+    console.log('remoteUpdateSetting', remoteUpdateSetting);
+    
+    // Update all state values
+    setNotificationsEnabledState(notificationsSetting === 'true');
+    setShowExplanationState(explanationSetting === 'true');
+    setAudioEnabledState(audioSetting === 'true');
+    setRemoteUpdateEnabledState(remoteUpdateSetting === 'true');
+    setRemoteAddressState(remoteAddressSetting || '');
 
-      setNotificationsEnabled(notificationsSetting === 'true');
-      setShowExplanation(explanationSetting === 'true');
+    // Create a separate effect to handle checking for updates
+  } catch (error) {
+    console.error('Failed to load settings', error);
+  }
+};
 
-      // Check for quizzes update on app load
-      await checkForQuizzesUpdate();
-    } catch (error) {
-      console.error('Failed to load settings', error);
-    }
-  };
+// Add a separate useEffect that watches remoteUpdateEnabled
+useEffect(() => {
+  // Only run checkForQuizzesUpdate after the initial load
+  // and when remoteUpdateEnabled changes to true
+  if (remoteUpdateEnabled) {
+    console.log('Remote updates enabled, checking for updates...');
+    checkForQuizzesUpdate();
+  }
+}, [remoteUpdateEnabled]); // This effect runs when remoteUpdateEnabled changes
 
-  // Load settings from AsyncStorage on component mount
-  useEffect(() => {
-    loadSettings();
-    console.log('Settings loaded');
-  }, []);
+// Load settings from AsyncStorage on component mount
+useEffect(() => {
+  loadSettings();
+  console.log('Settings loaded');
+}, []);
 
   return (
     <QuizContext.Provider
@@ -229,6 +364,13 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setTotalWonGames,
         totalLostGames,
         setTotalLostGames,
+        setAudioEnabled,
+        audioEnabled,
+        setRemoteUpdateEnabled,
+        remoteUpdateEnabled,
+        setRemoteAdress,
+        remoteAddress,
+        resetState, // Expose the reset function
       }}
     >
       {children}
