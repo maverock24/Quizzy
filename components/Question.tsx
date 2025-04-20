@@ -1,3 +1,4 @@
+import { Audio } from 'expo-av';
 import React, { useEffect, useRef, useState } from 'react';
 import {
   ScrollView,
@@ -10,6 +11,7 @@ import {
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import { Animated } from 'react-native';
+import { useQuiz } from './Quizprovider';
 
 type Answer = {
   answer: string;
@@ -43,6 +45,8 @@ export const Question: React.FC<QuestionProps> = ({
   );
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
   const [answerIsWrong, setAnswerIsWrong] = useState(false);
+  const [sound, setSound] = useState<Audio.Sound | null>(null);
+  const { audioEnabled } = useQuiz();
 
   // Initialize or reset fadeOutAnim whenever answers change
   useEffect(() => {
@@ -50,6 +54,50 @@ export const Question: React.FC<QuestionProps> = ({
     setSelectedAnswerIndex(null);
     setAnswerSelected(false);
   }, [answers, currentQuestionIndex]); // Dependency on answers and question index
+
+  // Clean up sound when component unmounts
+  useEffect(() => {
+    return sound
+      ? () => {
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
+  // Function to play sound
+  const playSound = async (isCorrect: boolean) => {
+    if (!audioEnabled) return; // Check if audio is enabled
+    // Unload any existing sound
+    if (sound) {
+      await sound.unloadAsync();
+    }
+
+    // Create and load new sound based on answer correctness
+    const soundFile = isCorrect
+      ? require('../assets/sounds/correct_answer.mp3')
+      : require('../assets/sounds/wrong_answer.mp3');
+
+    // Create and load new sound
+    const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
+    setSound(newSound);
+    // Play the sound
+    await newSound.playAsync();
+  };
+
+  const playSoundAnswerSelected = async () => {
+    if (!audioEnabled) return; // Check if audio is enabled
+    // Unload any existing sound
+    if (sound) {
+      await sound.unloadAsync();
+    }
+    // Create and load new sound based on answer correctness
+    const soundFile = require('../assets/sounds/answer_selected.mp3');
+    // Create and load new sound
+    const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
+    setSound(newSound);
+    // Play the sound
+    await newSound.playAsync();
+  };
 
   useEffect(() => {
     Animated.timing(fadeAnim, {
@@ -63,6 +111,7 @@ export const Question: React.FC<QuestionProps> = ({
   }, [answerSelected]);
 
   const handleAnswer = (answer: string, index: number) => {
+    playSoundAnswerSelected();
     setSelectedAnswerIndex(index); // Highlight the selected button
     // Fade out other buttons except the clicked one
     fadeOutAnim.forEach((anim, i) => {
@@ -76,6 +125,7 @@ export const Question: React.FC<QuestionProps> = ({
     });
 
     setTimeout(() => {
+      answer === correctAnswer ? playSound(true) : playSound(false);
       answer === correctAnswer
         ? setAnswerIsCorrect(true)
         : setAnswerIsWrong(true);
