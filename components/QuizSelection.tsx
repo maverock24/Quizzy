@@ -17,7 +17,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   handleQuizSelection,
 }) => (
   <View style={styles.quizSelectionContainer}>
-    <Text style={styles.normalText}>Select a quiz:</Text>
+    <Text style={styles.normalText}>Select Quiz:</Text>
     <FlatList
       data={quizzes}
       keyExtractor={(item) => item.name}
@@ -37,10 +37,10 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
 
 const styles = StyleSheet.create({
   quizSelectionContainer: {
-    flexBasis: '65%',
+    flex: 1,
   },
   normalText: {
-    fontSize: 14,
+    fontSize: 18,
     lineHeight: 24,
     color: 'white',
   },
