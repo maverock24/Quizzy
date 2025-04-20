@@ -229,11 +229,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'rgb(183, 183, 183)',
   },
-  imageContainer: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
   outerContainer: {
     flex: 1,
     alignItems: 'center',
