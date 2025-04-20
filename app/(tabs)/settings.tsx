@@ -83,9 +83,10 @@ export default function SettingsScreen() {
           </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Enable Remote Update</Text>
+              <Text style={styles.settingText}>Use custom remote data</Text>
               <Text style={styles.settingDescription}>
-                Allow to update quiz data from remote server
+                Use your own remote source for quiz data (requires Remote
+                Address)
               </Text>
             </View>
             <Switch
