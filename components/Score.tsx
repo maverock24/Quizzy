@@ -33,7 +33,6 @@ const styles = StyleSheet.create({
   },
   scoreContainer: {
     flex: 1,
-    marginTop: -500,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',

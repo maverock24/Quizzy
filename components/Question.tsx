@@ -1,6 +1,8 @@
 import { Audio } from 'expo-av';
 import React, { useEffect, useRef, useState } from 'react';
 import {
+  Animated,
+  Platform,
   ScrollView,
   StyleSheet,
   Text,
@@ -10,7 +12,6 @@ import {
 
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
-import { Animated } from 'react-native';
 import { useQuiz } from './Quizprovider';
 
 type Answer = {
@@ -48,12 +49,29 @@ export const Question: React.FC<QuestionProps> = ({
   const [sound, setSound] = useState<Audio.Sound | null>(null);
   const { audioEnabled } = useQuiz();
 
-  // Initialize or reset fadeOutAnim whenever answers change
+  // Update the useEffect that resets animations
   useEffect(() => {
+    // Make sure any ongoing animations are stopped
+    fadeOutAnim.forEach((anim) => {
+      anim.stopAnimation();
+      anim.setValue(1); // Explicitly reset to fully visible
+    });
+
+    // Create fresh animation values for new question
     setFadeOutAnim(answers.map(() => new Animated.Value(1)));
     setSelectedAnswerIndex(null);
     setAnswerSelected(false);
-  }, [answers, currentQuestionIndex]); // Dependency on answers and question index
+    setAnswerIsCorrect(false);
+    setAnswerIsWrong(false);
+
+    // Force immediate update on Android
+    Platform.OS === 'android' &&
+      setTimeout(() => {
+        setFadeOutAnim((prevAnims) =>
+          prevAnims.map(() => new Animated.Value(1)),
+        );
+      }, 0);
+  }, [answers, currentQuestionIndex]);
 
   // Clean up sound when component unmounts
   useEffect(() => {
@@ -115,6 +133,9 @@ export const Question: React.FC<QuestionProps> = ({
     setSelectedAnswerIndex(index); // Highlight the selected button
     // Fade out other buttons except the clicked one
     fadeOutAnim.forEach((anim, i) => {
+      // Stop any running animations first
+      anim.stopAnimation();
+
       if (i !== index) {
         Animated.timing(anim, {
           toValue: 0,

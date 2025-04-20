@@ -253,18 +253,18 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   scoreTitle: {
-    fontSize: 14,
+    fontSize: 20,
     marginBottom: 10,
     color: 'white',
   },
   scoreBoard: {
-    flex: 1,
+    height: 200,
     width: '100%',
-    marginBottom: 10,
     justifyContent: 'flex-start',
+    marginBottom: 30,
   },
   scoreItem: {
-    height: '50%',
+    height: 100,
     margin: 3,
     flexDirection: 'column',
     padding: 5,

@@ -159,17 +159,20 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   scrollView: {
     flexGrow: 1,
+    width: '100%',
   },
   outerContainer: {
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'transparent',
+    width: '100%',
   },
   container: {
     flex: 1,
     backgroundColor: 'rgb(26, 26, 26)',
     padding: 20,
     maxWidth: 550,
+    width: '100%',
   },
   button: {
     backgroundColor: 'rgb(86, 92, 99)',
@@ -199,19 +202,26 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
+    width: '100%',
   },
   settingName: {
     flexDirection: 'column',
-    maxWidth: '80%',
+    flex: 1,
     paddingVertical: 10,
+    marginRight: 10,
   },
   settingText: {
     fontSize: 18,
     color: 'white',
   },
   settingDescription: {
-    marginTop: 10,
-    fontSize: 14,
+    width: '80%',
+    marginTop: 5,
+    fontSize: 12,
     color: 'white',
+  },
+  switchContainer: {
+    minWidth: 50, // Ensure minimum width for switches
+    alignItems: 'flex-end',
   },
 });

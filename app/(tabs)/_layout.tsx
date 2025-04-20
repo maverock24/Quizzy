@@ -12,7 +12,13 @@ function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>['name'];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return (
+    <FontAwesome
+      size={35}
+      style={{ marginBottom: -15, marginRight: -10 }}
+      {...props}
+    />
+  );
 }
 
 export default function TabLayout() {
@@ -30,26 +36,24 @@ export default function TabLayout() {
       style={styles.imageContainer}
     >
       <Tabs
+        initialRouteName="index"
         screenOptions={{
+          tabBarLabelPosition: 'below-icon',
           animation: 'shift',
           transitionSpec: {
             animation: 'timing',
             config: { easing: Easing.linear },
           },
-          //show selected quiz name in the header if route is not settings
-
-          // to prevent a hydration error in React Navigation v6.
           headerShown: false,
-          headerStyle: {
-            backgroundColor: '#000',
-            borderBottomColor: 'white',
-            borderWidth: 1,
-          },
-          headerTitleStyle: {
-            color: 'white',
-          },
           tabBarStyle: {
+            height: 85,
             backgroundColor: '#000',
+          },
+          tabBarLabelStyle: {
+            marginTop: 10,
+            marginRight: -10,
+            padding: 0,
+            fontSize: 16,
           },
           tabBarActiveTintColor: 'white',
           tabBarInactiveTintColor: 'gray',
