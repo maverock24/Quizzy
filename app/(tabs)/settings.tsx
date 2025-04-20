@@ -109,13 +109,7 @@ export default function SettingsScreen() {
               </Text>
             </View>
             <TextInput
-              style={{
-                backgroundColor: 'white',
-                borderRadius: 5,
-                padding: 10,
-                width: '100%',
-                color: 'black',
-              }}
+              style={styles.textInput}
               placeholderTextColor="gray"
               onChangeText={setRemoteAdress}
               value={remoteAddress ? remoteAddress : REMOTE_QUIZ}
@@ -127,16 +121,7 @@ export default function SettingsScreen() {
               <Text style={styles.buttonText}>Save</Text>
             </Button>
           </View>
-          <View
-            style={[
-              styles.settingItem,
-              {
-                flexDirection: 'column',
-                alignItems: 'flex-start',
-                borderBottomWidth: 0,
-              },
-            ]}
-          >
+          <View style={[styles.settingItem, { borderBottomWidth: 0 }]}>
             <View style={styles.settingName}>
               <Text style={styles.settingText}>Reset Settings</Text>
               <Text style={styles.settingDescription}>
@@ -168,11 +153,10 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   container: {
-    flex: 1,
     backgroundColor: 'rgb(26, 26, 26)',
     padding: 20,
-    maxWidth: 550,
     width: '100%',
+    height: '100%',
   },
   button: {
     backgroundColor: 'rgb(86, 92, 99)',
@@ -203,6 +187,7 @@ const styles = StyleSheet.create({
     borderBottomColor: 'gray',
     borderBottomWidth: 1,
     width: '100%',
+    padding: 10,
   },
   settingName: {
     flexDirection: 'column',
@@ -215,13 +200,25 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   settingDescription: {
-    width: '80%',
+    width: '100%',
     marginTop: 5,
     fontSize: 12,
     color: 'white',
   },
-  switchContainer: {
-    minWidth: 50, // Ensure minimum width for switches
-    alignItems: 'flex-end',
+
+  textInput: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+    padding: 10,
+    marginVertical: 10,
+    height: 40,
+    borderColor: 'gray',
+    borderWidth: 1,
+    fontSize: 16,
+    fontWeight: '400',
+    color: 'black',
+    width: '100%', // Ensures the input fills its container width
+    alignSelf: 'stretch', // Helps with consistent stretching behavior
+    maxWidth: '100%', // Prevents overflow on small screens
   },
 });
