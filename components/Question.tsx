@@ -167,7 +167,7 @@ export const Question: React.FC<QuestionProps> = ({
       });
       setAnswerIsCorrect(false);
       setAnswerIsWrong(false);
-    }, 2000); // 2-second delay
+    }, 4000); // 2-second delay
   };
 
   return (
