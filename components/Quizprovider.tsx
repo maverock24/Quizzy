@@ -63,7 +63,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [totalWrongAnswers, setTotalWrongAnswersState] = useState<number>(0);
   const [totalWonGames, setTotalWonGamesState] = useState<number>(0);
   const [totalLostGames, setTotalLostGamesState] = useState<number>(0);
-  const [audioEnabled, setAudioEnabledState] = useState<boolean>(false);
+  const [audioEnabled, setAudioEnabledState] = useState<boolean>(true);
   const [remoteUpdateEnabled, setRemoteUpdateEnabledState] = useState<boolean>(
     false,
   );
@@ -378,7 +378,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
       setShowExplanationState(explanationSetting === 'true');
-      setAudioEnabledState(audioSetting === 'true');
+      setAudioEnabledState(audioSetting === null ? true : audioSetting === 'true');
       setRemoteUpdateEnabledState(remoteUpdateSetting === 'true');
       setRemoteAddressState(remoteAddressSetting || '');
       setLastUpdateDateState(lastUpdateDateSetting || null);
