@@ -22,7 +22,7 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
-  const image = require('../../assets/images/stars.jpg');
+  const image = require('../../assets/images/stars.jpeg');
   const colorScheme = useColorScheme();
   const { selectedQuizName } = useQuiz();
 
