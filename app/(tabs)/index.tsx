@@ -1,4 +1,6 @@
 import { Explanation } from '@/components/Explanation';
+import FlashcardCarousel from '@/components/Flashcards';
+import Flashcards from '@/components/Flashcards';
 import { Question } from '@/components/Question';
 import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
@@ -31,6 +33,7 @@ export default function TabOneScreen() {
   const {
     setSelectedQuizName,
     showExplanation,
+    flashcardsEnabled,
     quizzes,
     checkForQuizzesUpdate,
     totalCorrectAnswers,
@@ -111,6 +114,15 @@ export default function TabOneScreen() {
     }
   };
 
+  const quizQuestions = selectedQuiz?.questions.map((value, index) => {
+    return {
+      id: index.toString(),
+      question: value.question || '',
+      answers: value.answers || [],
+      correctAnswer: value.answer || '',
+    }
+  });
+
   return (
     <View style={styles.outerContainer}>
       <SafeAreaLinearGradient
@@ -190,7 +202,22 @@ export default function TabOneScreen() {
           {selectedQuiz && !explanationMode && (
             <>
               <Text style={styles.quizTitle}>{selectedQuiz.name}</Text>
-              <Question
+              {flashcardsEnabled ? (
+                <FlashcardCarousel 
+                  quizQuestions={quizQuestions}
+                  handleAnswerSelection={handleAnswerSelection}
+                  currentIndex={currentQuestionIndex}
+                  totalQuestionsInQuiz={selectedQuizAnswersAmount}
+                  onScrollIndexChange={(newIndex) => {
+                    setCurrentQuestionIndex(newIndex);
+                    setExplanationMode(false);
+                    setAnswerIsCorrect(false);
+                  }}
+                  itemHeight={400}
+                  itemWidth={500}
+                />
+              ) : (
+                <Question
                 question={selectedQuiz.questions[currentQuestionIndex].question}
                 correctAnswer={
                   selectedQuiz.questions[currentQuestionIndex].answer
@@ -200,6 +227,7 @@ export default function TabOneScreen() {
                 selectedQuizAnswersAmount={selectedQuizAnswersAmount}
                 handleAnswerSelection={handleAnswerSelection}
               />
+              )}
             </>
           )}
 
