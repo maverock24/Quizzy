@@ -18,6 +18,8 @@ const localQuizzes = require('../assets/quizzes.json');
 type QuizContextType = {
   selectedQuizName: string | null;
   setSelectedQuizName: (name: string | null) => void;
+  flashcardsEnabled: boolean;
+  setFlashcardsEnabled: (enabled: boolean) => void;
   notificationsEnabled: boolean;
   setNotificationsEnabled: (enabled: boolean) => void;
   showExplanation: boolean;
@@ -49,6 +51,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
+  const [flashcardsEnabled, setFlashcardsEnabledState] = useState<boolean>(false);
   const [notificationsEnabled, setNotificationsEnabledState] = useState<
     boolean
   >(true);
@@ -111,6 +114,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   // Function to reset state
   const resetState = useCallback(() => {
     setSelectedQuizName(null);
+    setFlashcardsEnabledState(false);
     setNotificationsEnabledState(true);
     setShowExplanationState(false);
     setQuizzes(localQuizzes);
@@ -277,6 +281,17 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     }
   };
 
+  const setFlashcardsEnabled = useCallback(async (enabled: boolean) => {
+    setFlashcardsEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('flashcardsEnabled', String(enabled));
+      console.log('Flashcards setting saved:', enabled);
+    } catch (error) {
+      console.error('Failed to save flashcards setting', error);
+    }
+  }
+  , []);
+
   const setNotificationsEnabled = useCallback(async (enabled: boolean) => {
     setNotificationsEnabledState(enabled);
     try {
@@ -363,6 +378,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const notificationsSetting = await AsyncStorage.getItem(
         'notificationsEnabled',
       );
+      const flashcardsSetting = await AsyncStorage.getItem(
+        'flashcardsEnabled',
+      );
       const explanationSetting = await AsyncStorage.getItem('showExplanation');
       const audioSetting = await AsyncStorage.getItem('audioEnabled');
       const remoteUpdateSetting = await AsyncStorage.getItem(
@@ -377,6 +395,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
+      setFlashcardsEnabledState(flashcardsSetting === 'true');
       setShowExplanationState(explanationSetting === 'true');
       setAudioEnabledState(audioSetting === null ? true : audioSetting === 'true');
       setRemoteUpdateEnabledState(remoteUpdateSetting === 'true');
@@ -415,6 +434,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       value={{
         selectedQuizName,
         setSelectedQuizName,
+        flashcardsEnabled,
+        setFlashcardsEnabled,
         notificationsEnabled,
         setNotificationsEnabled,
         showExplanation,
