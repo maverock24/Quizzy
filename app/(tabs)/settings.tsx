@@ -14,6 +14,8 @@ import {
 export default function SettingsScreen() {
   const {
     resetState,
+    flashcardsEnabled,
+    setFlashcardsEnabled,
     notificationsEnabled,
     setNotificationsEnabled,
     showExplanation,
@@ -47,6 +49,24 @@ export default function SettingsScreen() {
               ios_backgroundColor="gray"
               onValueChange={setNotificationsEnabled}
               value={notificationsEnabled}
+            />
+          </View>
+          <View style={styles.settingItem}>
+            <View style={styles.settingName}>
+              <Text style={styles.settingText}>Use Flashcards</Text>
+              <Text style={styles.settingDescription}>
+                Instead of multiple choice questions, use flashcards
+              </Text>
+            </View>
+
+            <Switch
+              trackColor={{ false: 'gray', true: 'white' }}
+              thumbColor={
+                notificationsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+              }
+              ios_backgroundColor="gray"
+              onValueChange={setFlashcardsEnabled}
+              value={flashcardsEnabled}
             />
           </View>
           <View style={styles.settingItem}>
