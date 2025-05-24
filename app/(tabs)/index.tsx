@@ -22,9 +22,8 @@ const shuffleArray = (array: any[]) => {
 
 export default function TabOneScreen() {
   const [selectedQuiz, setSelectedQuiz] = useState<Quiz>();
-  const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] = useState<
-    number
-  >(0);
+  const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] =
+    useState<number>(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [scoreVisible, setScoreVisible] = useState<boolean>(false);
@@ -120,7 +119,7 @@ export default function TabOneScreen() {
       question: value.question || '',
       answers: value.answers || [],
       correctAnswer: value.answer || '',
-    }
+    };
   });
 
   return (
@@ -202,31 +201,29 @@ export default function TabOneScreen() {
           {selectedQuiz && !explanationMode && (
             <>
               <Text style={styles.quizTitle}>{selectedQuiz.name}</Text>
-              {flashcardsEnabled ? (
-                <FlashcardCarousel 
-                  quizQuestions={quizQuestions}
-                  handleAnswerSelection={handleAnswerSelection}
-                  currentIndex={currentQuestionIndex}
-                  totalQuestionsInQuiz={selectedQuizAnswersAmount}
-                  onScrollIndexChange={(newIndex) => {
-                    setCurrentQuestionIndex(newIndex);
-                    setExplanationMode(false);
-                    setAnswerIsCorrect(false);
-                  }}
-                  itemHeight={400}
-                  itemWidth={500}
+              {flashcardsEnabled && !scoreVisible && (
+                <FlashcardCarousel
+                  questions={quizQuestions}
+                  handlerOnfinish={() => setScoreVisible(true)}
+                  currentIndex={0}
+                  totalQuestions={selectedQuizAnswersAmount}
+                  itemHeight={300}
+                  itemWidth={400}
                 />
-              ) : (
+              )}
+              {!flashcardsEnabled && !scoreVisible && (
                 <Question
-                question={selectedQuiz.questions[currentQuestionIndex].question}
-                correctAnswer={
-                  selectedQuiz.questions[currentQuestionIndex].answer
-                }
-                answers={randomizedAnswers}
-                currentQuestionIndex={currentQuestionIndex}
-                selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-                handleAnswerSelection={handleAnswerSelection}
-              />
+                  question={
+                    selectedQuiz.questions[currentQuestionIndex].question
+                  }
+                  correctAnswer={
+                    selectedQuiz.questions[currentQuestionIndex].answer
+                  }
+                  answers={randomizedAnswers}
+                  currentQuestionIndex={currentQuestionIndex}
+                  selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+                  handleAnswerSelection={handleAnswerSelection}
+                />
               )}
             </>
           )}
