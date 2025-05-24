@@ -1,4 +1,53 @@
-[
+[   {
+    "name": "Test Quiz",
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
+    "questions": [
+        {
+            "question": "What is the capital of France?",
+            "answers": [
+                {"answer": "Paris"},
+                {"answer": "London"},
+                {"answer": "Berlin"},
+                {"answer": "Madrid"}
+            ],
+            "answer": "Paris",
+            "explanation": "Paris is the capital city of France."
+        },
+        {
+            "question": "What is 2 + 2?",
+            "answers": [
+                {"answer": "3"},
+                {"answer": "4"},
+                {"answer": "5"},
+                {"answer": "6"}
+            ],
+            "answer": "4",  
+            "explanation": "2 + 2 equals 4."
+        },
+        {
+            "question": "What is the largest planet in our solar system?",
+            "answers": [
+                {"answer": "Earth"},
+                {"answer": "Mars"},
+                {"answer": "Jupiter"},
+                {"answer": "Saturn"}
+            ],
+            "answer": "Jupiter",
+            "explanation": "Jupiter is the largest planet in our solar system."
+        },
+        {
+            "question": "What is the boiling point of water?",
+            "answers": [
+                {"answer": "100 degrees Celsius"},
+                {"answer": "90 degrees Celsius"},
+                {"answer": "80 degrees Celsius"},
+                {"answer": "70 degrees Celsius"}
+            ],
+            "answer": "100 degrees Celsius",
+            "explanation": "Water boils at 100 degrees Celsius at sea level."
+        }
+    ]
+},
     {
     "name": "AWS SaaS Deployment & Debugging Expert",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
