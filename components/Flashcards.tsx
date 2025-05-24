@@ -261,12 +261,6 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
     );
   }
 
-  useEffect(() => {
-    console.log('Updating quiz questions:', questions);
-    // setQuizQuestions(questions || []);
-    setTotalQuestionsInQuiz(totalQuestions);
-  }, [questions, totalQuestions]);
-
   const flashCardsFinnished = () => {
     handlerOnfinish();
   };
@@ -283,8 +277,6 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
       setTotalQuestionsInQuiz(totalQuestionsInQuiz - 1);
     }
     if (keep) {
-      console.log('Keeping card:', quizQuestions[currentIndex]);
-      //remove the current card from the list and add it to the end of the list
       const currentCard = quizQuestions[currentIndex];
       setQuizQuestions((prevQuestions) => {
         const updatedQuestions = prevQuestions.filter(
