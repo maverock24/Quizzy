@@ -438,8 +438,17 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   };
 
   return (
-    <GestureHandlerRootView style={{ flex: 1 }}>
-      <View style={[carouselStyles.container, { width: itemWidth }]}>
+    <GestureHandlerRootView>
+      <View style={carouselStyles.dumpButton}>
+        <FontAwesome name="arrow-left" size={24} color="gray" />
+        <Text style={carouselStyles.keepButtonText}>dump</Text>
+      </View>
+      <View
+        style={[
+          carouselStyles.container,
+          { width: itemWidth, alignSelf: 'center' },
+        ]}
+      >
         {nextCardData && deckSize > 1 && (
           <Animated.View
             style={[
@@ -482,15 +491,10 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
           </Animated.View>
         </PanGestureHandler>
         {topCardData && (
-          <TouchableOpacity
-            style={carouselStyles.keepButton}
-            onPress={() =>
-              handleKeepActionAnimation(() => processCardChange(true))
-            }
-          >
+          <View style={carouselStyles.keepButton}>
             <FontAwesome name="arrow-down" size={24} color="gray" />
             <Text style={carouselStyles.keepButtonText}>Keep</Text>
-          </TouchableOpacity>
+          </View>
         )}
       </View>
     </GestureHandlerRootView>
@@ -502,7 +506,7 @@ const carouselStyles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'transparent',
     overflow: 'hidden',
     position: 'relative',
   },
@@ -516,6 +520,15 @@ const carouselStyles = StyleSheet.create({
     alignItems: 'center',
     padding: 20,
   },
+  dumpButton: {
+    position: 'absolute',
+    top: 30,
+    alignSelf: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+  },
   keepButton: {
     position: 'absolute',
     bottom: 30,
@@ -524,19 +537,12 @@ const carouselStyles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 12,
     paddingHorizontal: 24,
-    backgroundColor: 'white',
-    borderRadius: 30,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   keepButtonText: {
     marginLeft: 10,
     fontSize: 17,
     fontWeight: '600',
-    color: '#333',
+    color: 'gray',
   },
 });
 
