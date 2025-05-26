@@ -205,9 +205,6 @@ export default function TabOneScreen() {
                 <FlashcardCarousel
                   questions={quizQuestions}
                   handlerOnfinish={() => setScoreVisible(true)}
-                  currentIndex={0}
-                  totalQuestions={selectedQuizAnswersAmount}
-                  itemHeight={300}
                   itemWidth={400}
                 />
               )}
