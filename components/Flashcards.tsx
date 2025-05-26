@@ -16,7 +16,6 @@ import {
   State,
 } from 'react-native-gesture-handler';
 
-// --- FlashcardProps and Flashcard component (Assume it's the same as your latest working version) ---
 type Answer = {
   answer: string;
 };
@@ -207,12 +206,11 @@ type FlashcardCarouselProps = {
 };
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-// const SCREEN_HEIGHT = Dimensions.get('window').height; // Not directly needed here
 
 const NEXT_CARD_SCALE = 0.9;
-const NEXT_CARD_OPACITY = 0.6; // Slightly more transparent
+const NEXT_CARD_OPACITY = 0.6;
 const NEXT_CARD_Y_OFFSET =
-  (DEFAULT_CARD_HEIGHT * (1 - NEXT_CARD_SCALE)) / 1.5 + 15; // Adjusted for more pronounced stacking
+  (DEFAULT_CARD_HEIGHT * (1 - NEXT_CARD_SCALE)) / 1.5 + 15;
 
 const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   questions: initialQuestions,
@@ -269,8 +267,8 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
 
   const SWIPE_THRESHOLD_X = cardWidth * 0.4;
   const SWIPE_THRESHOLD_Y = cardHeight * 0.3;
-  const SWIPE_OUT_DURATION = 200; // ms
-  const SWIPE_DOWN_DURATION = 280; // Slightly longer for a more deliberate "tuck under"
+  const SWIPE_OUT_DURATION = 200;
+  const SWIPE_DOWN_DURATION = 280;
 
   const resetTopCardAnimatedProperties = (
     isNextCardBecomingTop: boolean = false,
@@ -299,7 +297,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
           toValue: 1,
           duration: SWIPE_OUT_DURATION,
           useNativeDriver: true,
-        }), // Faster opacity change
+        }),
         Animated.spring(nextCardY, {
           toValue: 0,
           friction: 7,
@@ -351,18 +349,18 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
     if (deckSize > 1) animateNextCardToTop();
     Animated.parallel([
       Animated.timing(pan, {
-        toValue: { x: 0, y: NEXT_CARD_Y_OFFSET + cardHeight * 0.2 }, // Move straight down, further than next card's initial offset
+        toValue: { x: 0, y: NEXT_CARD_Y_OFFSET + cardHeight * 0.2 },
         duration: SWIPE_DOWN_DURATION,
-        easing: Easing.out(Easing.quad), // Smoother easing
+        easing: Easing.out(Easing.quad),
         useNativeDriver: true,
       }),
       Animated.timing(topCardOpacity, {
-        toValue: NEXT_CARD_OPACITY * 0.7, // Fade more significantly
+        toValue: NEXT_CARD_OPACITY * 0.7,
         duration: SWIPE_DOWN_DURATION,
         useNativeDriver: true,
       }),
       Animated.timing(topCardScale, {
-        toValue: NEXT_CARD_SCALE * 0.9, // Scale down smaller
+        toValue: NEXT_CARD_SCALE * 0.9,
         duration: SWIPE_DOWN_DURATION,
         useNativeDriver: true,
       }),
@@ -381,7 +379,6 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
         translationX < -SWIPE_THRESHOLD_X ||
         (velocityX < -0.5 && translationX < -SWIPE_THRESHOLD_X / 2)
       ) {
-        // Swipe Left
         actionTaken = true;
         if (deckSize > 1) animateNextCardToTop();
         Animated.parallel([
@@ -401,7 +398,6 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
         translationY > SWIPE_THRESHOLD_Y ||
         (velocityY > 0.5 && translationY > SWIPE_THRESHOLD_Y / 2)
       ) {
-        // Swipe Down
         actionTaken = true;
         handleKeepActionAnimation(() => processCardChange(true));
       }
@@ -479,7 +475,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
               cardIsFlipped={false}
               keepCardAndGoToNext={() =>
                 handleKeepActionAnimation(() => processCardChange(true))
-              } // For internal button if any
+              }
               cardWidth={cardWidth}
               cardHeight={cardHeight}
             />
@@ -522,23 +518,23 @@ const carouselStyles = StyleSheet.create({
   },
   keepButton: {
     position: 'absolute',
-    bottom: 30, // Increased spacing from bottom
+    bottom: 30,
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 12, // Slightly larger button
+    paddingVertical: 12,
     paddingHorizontal: 24,
     backgroundColor: 'white',
-    borderRadius: 30, // More rounded
+    borderRadius: 30,
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 }, // More pronounced shadow
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
   },
   keepButtonText: {
     marginLeft: 10,
-    fontSize: 17, // Slightly larger text
+    fontSize: 17,
     fontWeight: '600',
     color: '#333',
   },
