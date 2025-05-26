@@ -327,13 +327,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
           onPress={() => goToNext(false)}
           style={carouselStyles.navButton}
         >
-          <FontAwesome
-            name="chevron-right"
-            size={30}
-            color={
-              currentIndex === quizQuestions.length - 1 ? 'transparent' : 'gray'
-            }
-          />
+          <FontAwesome name="chevron-right" size={30} color={'gray'} />
         </TouchableOpacity>
       </View>
     </View>
