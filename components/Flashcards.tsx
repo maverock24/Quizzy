@@ -25,11 +25,10 @@ type FlashcardProps = {
   cardIsFlipped: boolean;
   question: string;
   selectedQuizAnswersAmount: number;
-  keepCardAndGoToNext: () => void; // This might be simplified or removed if all interaction is via swipe
+  keepCardAndGoToNext: () => void;
   correctAnswer: string;
   cardWidth?: number;
   cardHeight?: number;
-  isTopCard?: boolean; // To differentiate styling/behavior if needed, though not used for now
 };
 
 const FALLBACK_CARD_WIDTH = 300;
@@ -83,16 +82,10 @@ const Flashcard: React.FC<FlashcardProps> = ({
     transform: [{ rotateY: backInterpolate }],
   };
 
-  function handleKeepCardViaButton(): void {
-    // This function is for the button press specifically
-    keepCardAndGoToNext();
-  }
-
   return (
-    // The main container for a single flashcard instance
     <View style={{ width: cardWidth, height: cardHeight }}>
       <TouchableOpacity
-        activeOpacity={1} // Gestures are handled by PanGestureHandler, allow flip on press
+        activeOpacity={1}
         onPress={handleLocalFlip}
         style={[flashcardStyles.touchableContainer]}
       >
@@ -120,7 +113,6 @@ const Flashcard: React.FC<FlashcardProps> = ({
             {question}
           </Text>
         </Animated.View>
-
         <Animated.View
           style={[
             flashcardStyles.card,
@@ -147,21 +139,18 @@ const Flashcard: React.FC<FlashcardProps> = ({
           </Text>
         </Animated.View>
       </TouchableOpacity>
-      {/* "Keep" button is now outside individual Flashcard, part of Carousel controls if needed */}
     </View>
   );
 };
 
 const flashcardStyles = StyleSheet.create({
   touchableContainer: {
-    // This now fills the passed cardWidth/cardHeight
     width: '100%',
     height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   card: {
-    // Dimensions are passed as style props now
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
@@ -170,7 +159,7 @@ const flashcardStyles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5, // For Android shadow
+    elevation: 5,
   },
   cardFace: {
     position: 'absolute',
@@ -204,7 +193,6 @@ const flashcardStyles = StyleSheet.create({
   },
 });
 
-// --- QuizQuestionData type ---
 type QuizQuestionData = {
   id: string;
   question: string;
@@ -215,42 +203,39 @@ type QuizQuestionData = {
 type FlashcardCarouselProps = {
   questions: QuizQuestionData[] | undefined;
   handlerOnfinish: () => void;
-  // totalQuestions: number; // Can be derived from initialQuestions.length
-  itemWidth?: number; // Width of the carousel area for one card
+  itemWidth?: number;
 };
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
-const SCREEN_HEIGHT = Dimensions.get('window').height;
+// const SCREEN_HEIGHT = Dimensions.get('window').height; // Not directly needed here
 
 const NEXT_CARD_SCALE = 0.9;
-const NEXT_CARD_OPACITY = 0.7;
+const NEXT_CARD_OPACITY = 0.6; // Slightly more transparent
 const NEXT_CARD_Y_OFFSET =
-  (DEFAULT_CARD_HEIGHT * (1 - NEXT_CARD_SCALE)) / 2 + 10; // For visual stacking
+  (DEFAULT_CARD_HEIGHT * (1 - NEXT_CARD_SCALE)) / 1.5 + 15; // Adjusted for more pronounced stacking
 
 const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   questions: initialQuestions,
   handlerOnfinish,
   itemWidth: propItemWidth,
 }) => {
-  const itemWidth = propItemWidth || SCREEN_WIDTH * 0.9; // Width of the area for one card
-  const cardWidth = itemWidth * 0.9; // Actual flashcard width, allowing for some side padding
+  const itemWidth = propItemWidth || SCREEN_WIDTH * 0.9;
+  const cardWidth = itemWidth * 0.9;
   const cardHeight = DEFAULT_CARD_HEIGHT;
 
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestionData[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0); // Index of the top card
-  const [deckSize, setDeckSize] = useState(0); // Total cards currently in the interactive deck
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [deckSize, setDeckSize] = useState(0);
 
-  // Animation values for the TOP card
   const pan = useRef(new Animated.ValueXY()).current;
   const topCardRotate = pan.x.interpolate({
     inputRange: [-cardWidth / 2, 0, cardWidth / 2],
-    outputRange: ['-8deg', '0deg', '8deg'], // Reduced rotation
+    outputRange: ['-8deg', '0deg', '8deg'],
     extrapolate: 'clamp',
   });
   const topCardOpacity = useRef(new Animated.Value(1)).current;
   const topCardScale = useRef(new Animated.Value(1)).current;
 
-  // Animation values for the NEXT card (the one visually underneath)
   const nextCardScale = useRef(new Animated.Value(NEXT_CARD_SCALE)).current;
   const nextCardOpacity = useRef(new Animated.Value(NEXT_CARD_OPACITY)).current;
   const nextCardY = useRef(new Animated.Value(NEXT_CARD_Y_OFFSET)).current;
@@ -260,11 +245,10 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
     setQuizQuestions(validQuestions);
     setDeckSize(validQuestions.length);
     setCurrentIndex(0);
-    // Reset all animated values for a new deck
     pan.setValue({ x: 0, y: 0 });
     topCardOpacity.setValue(1);
     topCardScale.setValue(1);
-    nextCardScale.setValue(validQuestions.length > 1 ? NEXT_CARD_SCALE : 1); // If only one card, next is not scaled
+    nextCardScale.setValue(validQuestions.length > 1 ? NEXT_CARD_SCALE : 1);
     nextCardOpacity.setValue(validQuestions.length > 1 ? NEXT_CARD_OPACITY : 1);
     nextCardY.setValue(validQuestions.length > 1 ? NEXT_CARD_Y_OFFSET : 0);
   }, [
@@ -283,9 +267,10 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   const nextCardData =
     nextCardVisualIndex !== null ? quizQuestions[nextCardVisualIndex] : null;
 
-  const SWIPE_THRESHOLD_X = cardWidth * 0.4; // Need to swipe further horizontally
+  const SWIPE_THRESHOLD_X = cardWidth * 0.4;
   const SWIPE_THRESHOLD_Y = cardHeight * 0.3;
-  const SWIPE_OUT_DURATION = 200;
+  const SWIPE_OUT_DURATION = 200; // ms
+  const SWIPE_DOWN_DURATION = 280; // Slightly longer for a more deliberate "tuck under"
 
   const resetTopCardAnimatedProperties = (
     isNextCardBecomingTop: boolean = false,
@@ -295,8 +280,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
     topCardScale.setValue(1);
 
     if (isNextCardBecomingTop) {
-      // The "next" card's animated values become the "top" card's initial values
-      nextCardScale.setValue(deckSize > 1 ? NEXT_CARD_SCALE : 1); // Reset for the new "next"
+      nextCardScale.setValue(deckSize > 1 ? NEXT_CARD_SCALE : 1);
       nextCardOpacity.setValue(deckSize > 1 ? NEXT_CARD_OPACITY : 1);
       nextCardY.setValue(deckSize > 1 ? NEXT_CARD_Y_OFFSET : 0);
     }
@@ -304,21 +288,22 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
 
   const animateNextCardToTop = () => {
     if (deckSize > 1) {
-      // Only animate if there was a next card
       Animated.parallel([
         Animated.spring(nextCardScale, {
           toValue: 1,
           friction: 7,
+          tension: 60,
           useNativeDriver: true,
         }),
         Animated.timing(nextCardOpacity, {
           toValue: 1,
-          duration: SWIPE_OUT_DURATION / 2,
+          duration: SWIPE_OUT_DURATION,
           useNativeDriver: true,
-        }),
+        }), // Faster opacity change
         Animated.spring(nextCardY, {
           toValue: 0,
           friction: 7,
+          tension: 60,
           useNativeDriver: true,
         }),
       ]).start();
@@ -327,17 +312,14 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
 
   const processCardChange = (keep: boolean) => {
     if (quizQuestions.length === 0) {
-      // Should be caught by deckSize check too
       handlerOnfinish();
       return;
     }
-
     let newQuestionsArray = [...quizQuestions];
     let newDeckSize = deckSize;
     let newCurrentIndex = currentIndex;
 
     if (!keep) {
-      // Discard
       newQuestionsArray.splice(currentIndex, 1);
       newDeckSize--;
       if (newDeckSize === 0) {
@@ -348,26 +330,44 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
       }
       newCurrentIndex = currentIndex >= newDeckSize ? 0 : currentIndex;
     } else {
-      // Keep
       const cardToKeep = newQuestionsArray.splice(currentIndex, 1)[0];
       newQuestionsArray.push(cardToKeep);
-      // Deck size remains the same
-      // Current index logic: if we kept the "last" card in sequence, next is 0. Otherwise, it's the same.
       newCurrentIndex =
         currentIndex >= newDeckSize - 1 && newDeckSize > 0 ? 0 : currentIndex;
-      if (newDeckSize === 1) newCurrentIndex = 0; // If only one card, it's always index 0
+      if (newDeckSize === 1) newCurrentIndex = 0;
     }
-
     setQuizQuestions(newQuestionsArray);
     setDeckSize(newDeckSize);
     setCurrentIndex(newCurrentIndex);
-    resetTopCardAnimatedProperties(true); // Reset for the new top card and setup next card visuals
+    resetTopCardAnimatedProperties(true);
   };
 
   const onGestureEvent = Animated.event(
     [{ nativeEvent: { translationX: pan.x, translationY: pan.y } }],
     { useNativeDriver: true },
   );
+
+  const handleKeepActionAnimation = (onComplete: () => void) => {
+    if (deckSize > 1) animateNextCardToTop();
+    Animated.parallel([
+      Animated.timing(pan, {
+        toValue: { x: 0, y: NEXT_CARD_Y_OFFSET + cardHeight * 0.2 }, // Move straight down, further than next card's initial offset
+        duration: SWIPE_DOWN_DURATION,
+        easing: Easing.out(Easing.quad), // Smoother easing
+        useNativeDriver: true,
+      }),
+      Animated.timing(topCardOpacity, {
+        toValue: NEXT_CARD_OPACITY * 0.7, // Fade more significantly
+        duration: SWIPE_DOWN_DURATION,
+        useNativeDriver: true,
+      }),
+      Animated.timing(topCardScale, {
+        toValue: NEXT_CARD_SCALE * 0.9, // Scale down smaller
+        duration: SWIPE_DOWN_DURATION,
+        useNativeDriver: true,
+      }),
+    ]).start(onComplete);
+  };
 
   const handleGestureStateChange = (
     event: PanGestureHandlerStateChangeEvent,
@@ -377,53 +377,33 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
         event.nativeEvent;
       let actionTaken = false;
 
-      // Swipe Left (Discard)
       if (
         translationX < -SWIPE_THRESHOLD_X ||
         (velocityX < -0.5 && translationX < -SWIPE_THRESHOLD_X / 2)
       ) {
+        // Swipe Left
         actionTaken = true;
-        if (deckSize > 1) animateNextCardToTop(); // Next card starts coming up
+        if (deckSize > 1) animateNextCardToTop();
         Animated.parallel([
           Animated.timing(pan, {
-            toValue: { x: -itemWidth * 1.1, y: translationY + velocityY * 30 }, // Move just beyond itemWidth
+            toValue: { x: -itemWidth * 1.1, y: translationY + velocityY * 30 },
             duration: SWIPE_OUT_DURATION,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
           Animated.timing(topCardOpacity, {
-            // Fade out as it exits
             toValue: 0,
             duration: SWIPE_OUT_DURATION * 0.8,
             useNativeDriver: true,
           }),
         ]).start(() => processCardChange(false));
-      }
-      // Swipe Down (Keep)
-      else if (
+      } else if (
         translationY > SWIPE_THRESHOLD_Y ||
         (velocityY > 0.5 && translationY > SWIPE_THRESHOLD_Y / 2)
       ) {
+        // Swipe Down
         actionTaken = true;
-        if (deckSize > 1) animateNextCardToTop(); // Next card starts coming up
-        Animated.parallel([
-          Animated.timing(pan, {
-            toValue: { x: translationX + velocityX * 30, y: cardHeight * 0.6 }, // Move down moderately
-            duration: SWIPE_OUT_DURATION * 1.2,
-            easing: Easing.out(Easing.ease),
-            useNativeDriver: true,
-          }),
-          Animated.timing(topCardOpacity, {
-            toValue: 0, // Fade out more completely
-            duration: SWIPE_OUT_DURATION * 1.2,
-            useNativeDriver: true,
-          }),
-          Animated.timing(topCardScale, {
-            toValue: 0.8, // Scale down
-            duration: SWIPE_OUT_DURATION * 1.2,
-            useNativeDriver: true,
-          }),
-        ]).start(() => processCardChange(true));
+        handleKeepActionAnimation(() => processCardChange(true));
       }
 
       if (!actionTaken) {
@@ -464,7 +444,6 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View style={[carouselStyles.container, { width: itemWidth }]}>
-        {/* Next Card (Visually Underneath) */}
         {nextCardData && deckSize > 1 && (
           <Animated.View
             style={[
@@ -476,16 +455,14 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
           >
             <Flashcard
               {...nextCardData}
-              selectedQuizAnswersAmount={deckSize} // Or adjust as needed
-              cardIsFlipped={false} // Next card should always be question side
-              keepCardAndGoToNext={() => {}} // Not interactive
+              selectedQuizAnswersAmount={deckSize}
+              cardIsFlipped={false}
+              keepCardAndGoToNext={() => {}}
               cardWidth={cardWidth}
               cardHeight={cardHeight}
             />
           </Animated.View>
         )}
-
-        {/* Top Card (Interactive) */}
         <PanGestureHandler
           onGestureEvent={onGestureEvent}
           onHandlerStateChange={handleGestureStateChange}
@@ -499,44 +476,21 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
             <Flashcard
               {...topCardData}
               selectedQuizAnswersAmount={deckSize}
-              cardIsFlipped={false} // Flip is internal to Flashcard
-              keepCardAndGoToNext={() => {
-                // For a potential button
-                if (deckSize > 1) animateNextCardToTop();
-                Animated.parallel([
-                  /* ... swipe down animation ... */
-                ]).start(() => processCardChange(true));
-              }}
+              cardIsFlipped={false}
+              keepCardAndGoToNext={() =>
+                handleKeepActionAnimation(() => processCardChange(true))
+              } // For internal button if any
               cardWidth={cardWidth}
               cardHeight={cardHeight}
             />
           </Animated.View>
         </PanGestureHandler>
-        {/* "Keep" button for the TOP card, positioned absolutely within the carousel container */}
         {topCardData && (
           <TouchableOpacity
             style={carouselStyles.keepButton}
-            onPress={() => {
-              if (deckSize > 1) animateNextCardToTop();
-              // Replicate swipe down animation for button press
-              Animated.parallel([
-                Animated.timing(pan, {
-                  toValue: { x: 0, y: cardHeight * 0.6 },
-                  duration: SWIPE_OUT_DURATION * 1.2,
-                  useNativeDriver: true,
-                }),
-                Animated.timing(topCardOpacity, {
-                  toValue: 0,
-                  duration: SWIPE_OUT_DURATION * 1.2,
-                  useNativeDriver: true,
-                }),
-                Animated.timing(topCardScale, {
-                  toValue: 0.8,
-                  duration: SWIPE_OUT_DURATION * 1.2,
-                  useNativeDriver: true,
-                }),
-              ]).start(() => processCardChange(true));
-            }}
+            onPress={() =>
+              handleKeepActionAnimation(() => processCardChange(true))
+            }
           >
             <FontAwesome name="arrow-down" size={24} color="gray" />
             <Text style={carouselStyles.keepButtonText}>Keep</Text>
@@ -549,25 +503,17 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
 
 const carouselStyles = StyleSheet.create({
   container: {
-    // This is the main carousel area
-    flex: 1, // Take up available space if parent allows, or set fixed height
-    justifyContent: 'center', // Center cards vertically if flex > 0
+    flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#f0f0f0',
-    overflow: 'hidden', // Important for swipe left animation boundary
-    position: 'relative', // For absolute positioning of next card and keep button
+    overflow: 'hidden',
+    position: 'relative',
   },
   cardWrapper: {
-    // Common wrapper for positioning cards in the center
-    position: 'absolute', // All cards are absolutely positioned to stack
-    // Centering will be handled by parent 'container' alignItems/justifyContent
-    // If parent container has fixed dimensions, cards will be centered within it.
+    position: 'absolute',
   },
-  nextCardPosition: {
-    // Specific styling for the card underneath
-    // It's already scaled and opacity set by Animated values
-    // zIndex: -1, // Could be used, but animation order should handle visual stacking
-  },
+  nextCardPosition: {},
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -576,23 +522,23 @@ const carouselStyles = StyleSheet.create({
   },
   keepButton: {
     position: 'absolute',
-    bottom: 20, // Position at the bottom of the carousel container
+    bottom: 30, // Increased spacing from bottom
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: 12, // Slightly larger button
+    paddingHorizontal: 24,
     backgroundColor: 'white',
-    borderRadius: 25,
+    borderRadius: 30, // More rounded
     shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.22,
-    shadowRadius: 2.22,
-    elevation: 3,
+    shadowOffset: { width: 0, height: 2 }, // More pronounced shadow
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   keepButtonText: {
-    marginLeft: 8,
-    fontSize: 16,
+    marginLeft: 10,
+    fontSize: 17, // Slightly larger text
     fontWeight: '600',
     color: '#333',
   },
