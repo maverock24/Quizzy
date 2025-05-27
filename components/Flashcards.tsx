@@ -446,7 +446,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
       <View
         style={[
           carouselStyles.container,
-          { width: itemWidth, alignSelf: 'center' },
+          { width: '100%', alignSelf: 'center' },
         ]}
       >
         {nextCardData && deckSize > 1 && (
