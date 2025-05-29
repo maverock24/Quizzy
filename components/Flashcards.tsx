@@ -26,6 +26,7 @@ type FlashcardProps = {
   selectedQuizAnswersAmount: number;
   keepCardAndGoToNext: () => void;
   correctAnswer: string;
+  explanation: string;
   cardWidth?: number;
   cardHeight?: number;
 };
@@ -39,6 +40,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
   selectedQuizAnswersAmount,
   keepCardAndGoToNext,
   correctAnswer,
+  explanation,
   cardWidth = FALLBACK_CARD_WIDTH,
   cardHeight = DEFAULT_CARD_HEIGHT,
 }) => {
@@ -128,13 +130,19 @@ const Flashcard: React.FC<FlashcardProps> = ({
           <Text style={flashcardStyles.questionNumberText}>
             {selectedQuizAnswersAmount}
           </Text>
-          <Text style={flashcardStyles.cardLabel}>Answer</Text>
           <Text
             style={flashcardStyles.cardText}
             numberOfLines={6}
             ellipsizeMode="tail"
           >
             {correctAnswer}
+          </Text>
+          <Text
+            style={flashcardStyles.cardTextExplanation}
+            numberOfLines={6}
+            ellipsizeMode="tail"
+          >
+            {explanation}
           </Text>
         </Animated.View>
       </TouchableOpacity>
@@ -182,6 +190,13 @@ const flashcardStyles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: '500',
   },
+  cardTextExplanation: {
+    marginTop: 10,
+    fontSize: 16,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontWeight: '500',
+  },
   questionNumberText: {
     position: 'absolute',
     top: 15,
@@ -197,6 +212,7 @@ type QuizQuestionData = {
   question: string;
   answers: Answer[];
   correctAnswer: string;
+  explanation: string;
 };
 
 type FlashcardCarouselProps = {

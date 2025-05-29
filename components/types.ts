@@ -1,13 +1,13 @@
 export type Quiz = {
   name: string;
-  questions: Question[];
+  questions: QuizQuestion[];
 };
 
 export type Answer = {
   answer: string;
 };
 
-export type Question = {
+export type QuizQuestion = {
   question: string;
   answers: Answer[];
   answer: string;
