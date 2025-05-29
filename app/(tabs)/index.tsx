@@ -6,7 +6,7 @@ import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
-import { Answer, Quiz } from '@/components/types';
+import { Answer, Quiz, QuizQuestion } from '@/components/types';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -119,6 +119,7 @@ export default function TabOneScreen() {
       question: value.question || '',
       answers: value.answers || [],
       correctAnswer: value.answer || '',
+      explanation: value.explanation || '',
     };
   });
 
