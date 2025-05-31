@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { CodeFormatter } from './CodeFormatter';
+import { ScrollView } from 'react-native-gesture-handler';
 
 type ExplanationProps = {
   answerIsCorrect: boolean;
@@ -13,6 +15,11 @@ export const Explanation: React.FC<ExplanationProps> = ({
   handleNext,
 }) => (
   <View style={styles.contentContainer}>
+    <Animated.ScrollView
+              style={styles.explanationScroll}
+              contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
+              showsVerticalScrollIndicator={true}
+            >
     <View
       style={[
         styles.card,
@@ -26,15 +33,28 @@ export const Explanation: React.FC<ExplanationProps> = ({
       <Text style={styles.questionHeading}>
         {answerIsCorrect ? 'Correct!' : 'Wrong!'}
       </Text>
-      <Text style={styles.normalText}>{explanation}</Text>
+      {/* <Text style={styles.normalText}>{explanation}</Text> */}
+      <CodeFormatter
+        text={explanation}
+        containerStyle={{ marginTop: 8 }}
+        textStyle={styles.normalText}
+        codeBlockContainerStyle={{ backgroundColor: 'rgb(46, 50, 54)' }}
+        codeBlockTextStyle={{ color: 'white' }}
+      />
     </View>
     <TouchableOpacity style={styles.button} onPress={handleNext}>
       <Text style={styles.buttonText}>Next</Text>
     </TouchableOpacity>
+    </Animated.ScrollView>
   </View>
 );
 
 const styles = StyleSheet.create({
+   explanationScroll: {
+    maxHeight: 800, // Adjust as needed for your card size
+    marginTop: 10,
+    marginBottom: 5,
+  },
   contentContainer: {
     marginVertical: 12,
   },

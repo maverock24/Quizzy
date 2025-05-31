@@ -172,6 +172,7 @@ export const Question: React.FC<QuestionProps> = ({
 
   return (
     <ScrollView style={styles.contentContainer}>
+      <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between'  }}>
       <View style={[styles.card, styles.questionCard]}>
         <Text style={styles.questionHeading}>
           Question {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
@@ -218,6 +219,7 @@ export const Question: React.FC<QuestionProps> = ({
           </TouchableOpacity>
         </Animated.View>
       ))}
+      </View>
     </ScrollView>
   );
 };
@@ -253,7 +255,6 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   questionCard: {
-    height: 100,
     borderRadius: 10,
   },
   questionHeading: {
@@ -267,7 +268,7 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   questionText: {
-    fontSize: 22,
+    fontSize: 16,
     fontWeight: '600',
     color: 'rgb(237, 237, 237)',
   },
@@ -291,10 +292,10 @@ const styles = StyleSheet.create({
   },
   labelText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
   },
   answerButtonText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
     color: 'white',
     flex: 1,

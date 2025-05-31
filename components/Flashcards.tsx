@@ -105,7 +105,6 @@ const Flashcard: React.FC<FlashcardProps> = ({
           <Text style={flashcardStyles.questionNumberText}>
             {selectedQuizAnswersAmount}
           </Text>
-          <Text style={flashcardStyles.cardLabel}>Question</Text>
           <Text
             style={flashcardStyles.cardText}
             numberOfLines={6}
@@ -185,7 +184,7 @@ const flashcardStyles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   cardText: {
-    fontSize: 20,
+    fontSize: 16,
     color: '#FFFFFF',
     textAlign: 'center',
     fontWeight: '500',
