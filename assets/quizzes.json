@@ -1,5 +1,231 @@
 [  
     {
+    "name": "TypeScript Array Manipulation Quiz",
+    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
+    "questions": [
+        {
+            "question": "Which array method adds one or more elements to the end of an array and returns the new length of the array, mutating the original array?",
+            "answers": [
+                {"answer": "concat()"},
+                {"answer": "push()"},
+                {"answer": "slice()"},
+                {"answer": "join()"}
+            ],
+            "answer": "push()",
+            "explanation": "The `push()` method adds one or more elements to the **end** of an array and **mutates** (changes) the original array. It returns the new `length` of the array.\n\n**Example (TypeScript):**\n```typescript\nlet fruits: string[] = [\"Apple\", \"Banana\"];\nconsole.log(\"Original array:\", fruits); // Output: [\"Apple\", \"Banana\"]\n\nconst newLength = fruits.push(\"Orange\", \"Mango\");\n\nconsole.log(\"New length:\", newLength); // Output: 4\nconsole.log(\"Mutated array:\", fruits);  // Output: [\"Apple\", \"Banana\", \"Orange\", \"Mango\"]\n```"
+        },
+        {
+            "question": "Which array method removes the last element from an array and returns that removed element, mutating the original array?",
+            "answers": [
+                {"answer": "shift()"},
+                {"answer": "slice(-1)"},
+                {"answer": "pop()"},
+                {"answer": "unshift()"}
+            ],
+            "answer": "pop()",
+            "explanation": "The `pop()` method removes the **last** element from an array. It **mutates** the original array and returns the element that was removed. If the array is empty, `pop()` returns `undefined`.\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [10, 20, 30, 40];\nconsole.log(\"Original array:\", numbers); // Output: [10, 20, 30, 40]\n\nconst lastElement = numbers.pop();\n\nconsole.log(\"Removed element:\", lastElement); // Output: 40\nconsole.log(\"Mutated array:\", numbers);    // Output: [10, 20, 30]\n\nconst emptyArray: number[] = [];\nconst removedFromEmpty = emptyArray.pop();\nconsole.log(\"Removed from empty:\", removedFromEmpty); // Output: undefined\n```"
+        },
+        {
+            "question": "Which array method removes the first element from an array and returns that removed element, mutating the original array?",
+            "answers": [
+                {"answer": "pop()"},
+                {"answer": "shift()"},
+                {"answer": "slice(0, 1)"},
+                {"answer": "splice(0, 1)"}
+            ],
+            "answer": "shift()",
+            "explanation": "The `shift()` method removes the **first** element from an array. It **mutates** the original array and returns the element that was removed. If the array is empty, `shift()` returns `undefined`.\n\n**Example (TypeScript):**\n```typescript\nlet colors: string[] = [\"Red\", \"Green\", \"Blue\"];\nconsole.log(\"Original array:\", colors); // Output: [\"Red\", \"Green\", \"Blue\"]\n\nconst firstColor = colors.shift();\n\nconsole.log(\"Removed element:\", firstColor); // Output: \"Red\"\nconsole.log(\"Mutated array:\", colors);    // Output: [\"Green\", \"Blue\"]\n\nconst emptyArray: string[] = [];\nconst removedFromEmpty = emptyArray.shift();\nconsole.log(\"Removed from empty:\", removedFromEmpty); // Output: undefined\n```"
+        },
+        {
+            "question": "Which array method adds one or more elements to the beginning of an array and returns the new length of the array, mutating the original array?",
+            "answers": [
+                {"answer": "push()"},
+                {"answer": "concat()"},
+                {"answer": "unshift()"},
+                {"answer": "splice(0, 0, ...items)"}
+            ],
+            "answer": "unshift()",
+            "explanation": "The `unshift()` method adds one or more elements to the **beginning** of an array. It **mutates** the original array and returns the new `length` of the array.\n\n**Example (TypeScript):**\n```typescript\nlet animals: string[] = [\"Dog\", \"Cat\"];\nconsole.log(\"Original array:\", animals); // Output: [\"Dog\", \"Cat\"]\n\nconst newLength = animals.unshift(\"Bird\", \"Fish\");\n\nconsole.log(\"New length:\", newLength);        // Output: 4\nconsole.log(\"Mutated array:\", animals); // Output: [\"Bird\", \"Fish\", \"Dog\", \"Cat\"]\n```"
+        },
+        {
+            "question": "Which array method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place, returning an array containing the deleted elements?",
+            "answers": [
+                {"answer": "slice()"},
+                {"answer": "concat()"},
+                {"answer": "map()"},
+                {"answer": "splice()"}
+            ],
+            "answer": "splice()",
+            "explanation": "The `splice()` method is a powerful way to change an array by removing, replacing, or adding elements. It **mutates** the original array. It returns an array containing the elements that were deleted. If no elements are deleted, it returns an empty array.\n\n**Syntax:** `array.splice(startIndex, deleteCount, ...itemsToAdd)`\n\n**Example (TypeScript):**\n```typescript\nlet months: string[] = [\"Jan\", \"March\", \"April\", \"June\"];\nconsole.log(\"Original array:\", months); // Output: [\"Jan\", \"March\", \"April\", \"June\"]\n\n// Remove 1 element at index 1 (\"March\") and insert \"Feb\"\nconst deletedItems = months.splice(1, 1, \"Feb\"); \nconsole.log(\"Deleted items:\", deletedItems); // Output: [\"March\"]\nconsole.log(\"Array after splice (insert & delete):\", months); // Output: [\"Jan\", \"Feb\", \"April\", \"June\"]\n\n// Insert \"May\" at index 3 without deleting any elements\nmonths.splice(3, 0, \"May\");\nconsole.log(\"Array after splice (insert only):\", months); // Output: [\"Jan\", \"Feb\", \"April\", \"May\", \"June\"]\n\n// Remove 2 elements starting from index 0\nconst removedAgain = months.splice(0, 2);\nconsole.log(\"Deleted again:\", removedAgain); // Output: [\"Jan\", \"Feb\"]\nconsole.log(\"Final array:\", months);       // Output: [\"April\", \"May\", \"June\"]\n```"
+        },
+        {
+            "question": "Which array method returns a shallow copy of a portion of an array into a new array object selected from `begin` to `end` (end not included), without modifying the original array?",
+            "answers": [
+                {"answer": "splice()"},
+                {"answer": "split()"},
+                {"answer": "slice()"},
+                {"answer": "copyWithin()"}
+            ],
+            "answer": "slice()",
+            "explanation": "The `slice()` method returns a **new array** containing a shallow copy of a portion of the original array. It does **not** mutate the original array.\n\n**Syntax:** `array.slice(startIndex, endIndex)`\n* `startIndex` (optional): The index at which to begin extraction. If negative, it indicates an offset from the end of the array.\n* `endIndex` (optional): The index at which to end extraction (the element at `endIndex` is **not** included). If omitted, slice extracts through the end of the array.\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [10, 20, 30, 40, 50];\nconsole.log(\"Original array:\", numbers); // Output: [10, 20, 30, 40, 50]\n\nconst subArray1 = numbers.slice(1, 4); // Elements from index 1 up to (but not including) index 4\nconsole.log(\"Sub-array 1:\", subArray1); // Output: [20, 30, 40]\n\nconst subArray2 = numbers.slice(2); // Elements from index 2 to the end\nconsole.log(\"Sub-array 2:\", subArray2); // Output: [30, 40, 50]\n\nconst subArray3 = numbers.slice(-2); // Last two elements\nconsole.log(\"Sub-array 3:\", subArray3); // Output: [40, 50]\n\nconsole.log(\"Original array unchanged:\", numbers); // Output: [10, 20, 30, 40, 50]\n```"
+        },
+        {
+            "question": "Which array method is used to merge two or more arrays, returning a new array without modifying the existing arrays?",
+            "answers": [
+                {"answer": "push()"},
+                {"answer": "join()"},
+                {"answer": "concat()"},
+                {"answer": "merge()"}
+            ],
+            "answer": "concat()",
+            "explanation": "The `concat()` method is used to merge two or more arrays. It does **not** change the existing arrays but instead returns a **new array** containing the elements of the original arrays joined together.\n\n**Example (TypeScript):**\n```typescript\nlet array1: number[] = [1, 2, 3];\nlet array2: number[] = [4, 5];\nlet array3: number[] = [6, 7, 8];\n\nconsole.log(\"Array 1:\", array1);\nconsole.log(\"Array 2:\", array2);\n\nconst newArray = array1.concat(array2, array3, 9, 10);\n\nconsole.log(\"Concatenated new array:\", newArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]\nconsole.log(\"Original array 1 unchanged:\", array1); // Output: [1, 2, 3]\nconsole.log(\"Original array 2 unchanged:\", array2); // Output: [4, 5]\n```\nYou can also pass individual values to `concat()`, not just arrays."
+        },
+        {
+            "question": "Which array method creates and returns a new string by concatenating all of the elements in an array, separated by commas or a specified separator string?",
+            "answers": [
+                {"answer": "toString()"},
+                {"answer": "concat()"},
+                {"answer": "join()"},
+                {"answer": "split()"}
+            ],
+            "answer": "join()",
+            "explanation": "The `join()` method creates and returns a **new string** by concatenating all of the elements in an array. It does **not** mutate the original array. You can specify a separator string; if omitted, a comma (`,`) is used by default.\n\n**Syntax:** `array.join(separator)`\n\n**Example (TypeScript):**\n```typescript\nlet elements: (string | number)[] = [\"Fire\", \"Air\", \"Water\", 2024];\nconsole.log(\"Original array:\", elements);\n\nconst joinedString1 = elements.join(); // Default separator (comma)\nconsole.log(\"Joined with comma:\", joinedString1); // Output: \"Fire,Air,Water,2024\"\n\nconst joinedString2 = elements.join(\" - \"); // Custom separator\nconsole.log(\"Joined with ' - ':\", joinedString2); // Output: \"Fire - Air - Water - 2024\"\n\nconst joinedString3 = elements.join(\"\"); // No separator (concatenates directly)\nconsole.log(\"Joined with no separator:\", joinedString3); // Output: \"FireAirWater2024\"\n\nconsole.log(\"Original array unchanged:\", elements);\n```"
+        },
+        {
+            "question": "Which array method executes a provided function once for each array element, without creating a new array or returning any meaningful value itself (it returns `undefined`)?",
+            "answers": [
+                {"answer": "map()"},
+                {"answer": "forEach()"},
+                {"answer": "filter()"},
+                {"answer": "reduce()"}
+            ],
+            "answer": "forEach()",
+            "explanation": "The `forEach()` method executes a provided callback function once for each element in an array in ascending order. It does **not** mutate the array on which it is called (though the callback function itself might). `forEach()` always returns `undefined` and is not chainable in the way `map()` or `filter()` are.\n\n**Syntax:** `array.forEach((element, index, array) => { /* ... */ })`\n\n**Example (TypeScript):**\n```typescript\nlet names: string[] = [\"Alice\", \"Bob\", \"Charlie\"];\nconsole.log(\"Original array:\", names);\n\nlet concatenatedNames = \"\";\nconst returnValue = names.forEach((name, index) => {\n  console.log(`Processing ${name} at index ${index}`);\n  concatenatedNames += name + (index < names.length - 1 ? \", \" : \"\");\n  // No explicit return value from callback needed for forEach's purpose\n});\n\nconsole.log(\"Return value of forEach:\", returnValue); // Output: undefined\nconsole.log(\"Concatenated names:\", concatenatedNames); // Output: \"Alice, Bob, Charlie\"\nconsole.log(\"Original array unchanged:\", names);\n```\n`forEach()` is primarily used for its side effects (e.g., logging to console, modifying external variables, DOM manipulation)."
+        },
+        {
+            "question": "Which array method creates a new array populated with the results of calling a provided function on every element in the calling array, without mutating the original array?",
+            "answers": [
+                {"answer": "forEach()"},
+                {"answer": "splice()"},
+                {"answer": "map()"},
+                {"answer": "reduce()"}
+            ],
+            "answer": "map()",
+            "explanation": "The `map()` method creates a **new array** by calling a provided function on every element in the original array. The return value of this function for each element becomes an element in the new array. It does **not** mutate the original array.\n\n**Syntax:** `newArray = array.map((element, index, array) => { /* return transformedElement */ })`\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [1, 2, 3, 4, 5];\nconsole.log(\"Original array:\", numbers);\n\nconst doubledNumbers: number[] = numbers.map((num) => {\n  return num * 2;\n});\n\nconsole.log(\"New (doubled) array:\", doubledNumbers); // Output: [2, 4, 6, 8, 10]\nconsole.log(\"Original array unchanged:\", numbers);   // Output: [1, 2, 3, 4, 5]\n\nconst numberObjects = numbers.map(num => ({ value: num, isEven: num % 2 === 0 }));\nconsole.log(\"Mapped to objects:\", numberObjects);\n// Output: \n// [ \n//   { value: 1, isEven: false }, \n//   { value: 2, isEven: true }, ...\n// ]\n```\n`map()` is very useful for transforming data from one shape to another."
+        },
+         {
+            "question": "Which array method creates a new array with all elements that pass the test implemented by the provided callback function, without mutating the original array?",
+            "answers": [
+                {"answer": "find()"},
+                {"answer": "some()"},
+                {"answer": "map()"},
+                {"answer": "filter()"}
+            ],
+            "answer": "filter()",
+            "explanation": "The `filter()` method creates a **new array** containing all elements from the original array for which the provided callback function returns `true` (or a truthy value). It does **not** mutate the original array.\n\n**Syntax:** `newArray = array.filter((element, index, array) => { /* return true or false */ })`\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [10, 25, 8, 42, 15, 30];\nconsole.log(\"Original array:\", numbers);\n\nconst evenNumbers: number[] = numbers.filter((num) => {\n  return num % 2 === 0; // Keep element if it's even\n});\n\nconsole.log(\"Filtered (even) array:\", evenNumbers); // Output: [10, 8, 42, 30]\nconsole.log(\"Original array unchanged:\", numbers);  // Output: [10, 25, 8, 42, 15, 30]\n\ninterface Product { name: string; price: number; }\nconst products: Product[] = [{name: 'A', price: 50}, {name: 'B', price: 150}, {name: 'C', price: 75}];\nconst expensiveProducts = products.filter(p => p.price > 100);\nconsole.log(\"Expensive products:\", expensiveProducts); // Output: [{name: 'B', price: 150}]\n```"
+        },
+        {
+            "question": "Which array method executes a 'reducer' function on each element of the array, resulting in a single output value (e.g., a sum, a flattened array, or a grouped object)?",
+            "answers": [
+                {"answer": "forEach()"},
+                {"answer": "map()"},
+                {"answer": "reduce()"},
+                {"answer": "aggregate()"}
+            ],
+            "answer": "reduce()",
+            "explanation": "The `reduce()` method applies a 'reducer' function against an accumulator and each element in the array (from left to right) to reduce it to a **single output value**. It does **not** mutate the original array.\n\n**Syntax:** `array.reduce((accumulator, currentValue, currentIndex, array) => { /* return newAccumulator */ }, initialValue)`\n* `accumulator`: The value resulting from the previous call to the callback function, or `initialValue` if supplied for the first call.\n* `currentValue`: The current element being processed in the array.\n* `initialValue` (optional): A value to use as the first argument to the first call of the callback. If no `initialValue` is supplied, the first element in the array will be used as the initial accumulator value, and iteration starts from the second element.\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [1, 2, 3, 4, 5];\nconsole.log(\"Original array:\", numbers);\n\n// Summing numbers\nconst sum: number = numbers.reduce((accumulator, currentValue) => {\n  console.log(`Acc: ${accumulator}, Current: ${currentValue}`);\n  return accumulator + currentValue;\n}, 0); // initialValue is 0\n\nconsole.log(\"Sum:\", sum); // Output: 15\n\n// Flattening an array of arrays\nlet arrayOfArrays: number[][] = [[1, 2], [3, 4], [5]];\nconst flattened: number[] = arrayOfArrays.reduce((acc, curr) => acc.concat(curr), []);\nconsole.log(\"Flattened:\", flattened); // Output: [1, 2, 3, 4, 5]\n\nconsole.log(\"Original array unchanged:\", numbers);\n```"
+        },
+        {
+            "question": "Which array method returns the first element in the provided array that satisfies the provided testing function? If no values satisfy the testing function, `undefined` is returned.",
+            "answers": [
+                {"answer": "filter()"},
+                {"answer": "findIndex()"},
+                {"answer": "find()"},
+                {"answer": "some()"}
+            ],
+            "answer": "find()",
+            "explanation": "The `find()` method returns the **first element** in an array that satisfies a provided testing function (callback). If no element satisfies the condition, `find()` returns `undefined`. It does **not** mutate the original array.\n\n**Syntax:** `element = array.find((element, index, array) => { /* return true if element matches */ })`\n\n**Example (TypeScript):**\n```typescript\ninterface User { id: number; name: string; age: number; }\nlet users: User[] = [\n  { id: 1, name: \"Alice\", age: 30 },\n  { id: 2, name: \"Bob\", age: 25 },\n  { id: 3, name: \"Charlie\", age: 30 },\n  { id: 4, name: \"Diana\", age: 20 }\n];\n\nconst userBob = users.find(user => user.name === \"Bob\");\nconsole.log(\"Found Bob:\", userBob); // Output: { id: 2, name: \"Bob\", age: 25 }\n\nconst firstUserAge30 = users.find(user => user.age === 30);\nconsole.log(\"First user aged 30:\", firstUserAge30); // Output: { id: 1, name: \"Alice\", age: 30 }\n\nconst userEve = users.find(user => user.name === \"Eve\");\nconsole.log(\"Found Eve:\", userEve); // Output: undefined\n```"
+        },
+        {
+            "question": "Which array method returns the index of the first element in an array that passes a test (provided as a function)? If no element passes the test, it returns -1.",
+            "answers": [
+                {"answer": "indexOf()"},
+                {"answer": "findIndex()"},
+                {"answer": "find()"},
+                {"answer": "lastIndexOf()"}
+            ],
+            "answer": "findIndex()",
+            "explanation": "The `findIndex()` method returns the **index** of the **first element** in an array that satisfies a provided testing function (callback). If no element satisfies the condition, `findIndex()` returns `-1`. It does **not** mutate the original array.\n\n**Syntax:** `index = array.findIndex((element, index, array) => { /* return true if element matches */ })`\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [5, 12, 8, 130, 44];\n\nconst isLargeNumber = (element: number) => element > 100;\nconst indexLargeNumber = numbers.findIndex(isLargeNumber);\nconsole.log(\"Index of first large number:\", indexLargeNumber); // Output: 3 (because 130 is at index 3)\n\nconst isNegativeNumber = (element: number) => element < 0;\nconst indexNegativeNumber = numbers.findIndex(isNegativeNumber);\nconsole.log(\"Index of first negative number:\", indexNegativeNumber); // Output: -1 (no negative numbers)\n```"
+        },
+        {
+            "question": "Which array method tests whether at least one element in the array passes the test implemented by the provided function, returning a boolean value?",
+            "answers": [
+                {"answer": "every()"},
+                {"answer": "includes()"},
+                {"answer": "some()"},
+                {"answer": "find()"}
+            ],
+            "answer": "some()",
+            "explanation": "The `some()` method tests whether **at least one element** in the array passes the test implemented by the provided callback function. It returns `true` if the callback function returns a truthy value for any array element; otherwise, it returns `false`. It does **not** mutate the original array. It stops iterating as soon as it finds such an element.\n\n**Syntax:** `booleanResult = array.some((element, index, array) => { /* return true or false */ })`\n\n**Example (TypeScript):**\n```typescript\nlet numbers: number[] = [1, 3, 5, 8, 9];\n\nconst hasEvenNumber = numbers.some(num => num % 2 === 0);\nconsole.log(\"Has at least one even number:\", hasEvenNumber); // Output: true (because of 8)\n\nconst hasNegativeNumber = numbers.some(num => num < 0);\nconsole.log(\"Has at least one negative number:\", hasNegativeNumber); // Output: false\n```"
+        },
+        {
+            "question": "Which array method tests whether all elements in the array pass the test implemented by the provided function, returning a boolean value?",
+            "answers": [
+                {"answer": "some()"},
+                {"answer": "every()"},
+                {"answer": "filter()"},
+                {"answer": "assertAll()"}
+            ],
+            "answer": "every()",
+            "explanation": "The `every()` method tests whether **all elements** in the array pass the test implemented by the provided callback function. It returns `true` if the callback function returns a truthy value for all elements; otherwise, it returns `false`. It does **not** mutate the original array. It stops iterating as soon as it finds an element for which the callback returns a falsy value.\n\n**Syntax:** `booleanResult = array.every((element, index, array) => { /* return true or false */ })`\n\n**Example (TypeScript):**\n```typescript\nlet numbers1: number[] = [2, 4, 6, 8];\nconst allAreEven1 = numbers1.every(num => num % 2 === 0);\nconsole.log(\"All numbers in numbers1 are even:\", allAreEven1); // Output: true\n\nlet numbers2: number[] = [2, 4, 7, 8];\nconst allAreEven2 = numbers2.every(num => num % 2 === 0);\nconsole.log(\"All numbers in numbers2 are even:\", allAreEven2); // Output: false (because of 7)\n```"
+        },
+        {
+            "question": "Which array method, introduced in ES2019, creates a new array with all sub-array elements concatenated into it recursively up to a specified depth?",
+            "answers": [
+                {"answer": "flatten()"},
+                {"answer": "flat()"},
+                {"answer": "concatAll()"},
+                {"answer": "reduce(arr => arr.concat())"}
+            ],
+            "answer": "flat()",
+            "explanation": "The `flat()` method creates a **new array** with all sub-array elements concatenated into it recursively up to a specified depth. It does **not** mutate the original array.\n\n**Syntax:** `newArray = array.flat(depth)`\n* `depth` (optional): The depth level specifying how deep a nested array structure should be flattened. Defaults to 1.\n\n**Example (TypeScript):**\n```typescript\nlet nestedArray: (number | number[])[] = [1, 2, [3, 4]];\nconst flat1 = nestedArray.flat(); // Default depth is 1\nconsole.log(\"Flat (depth 1):\", flat1); // Output: [1, 2, 3, 4]\n\nlet deeplyNestedArray: (number | (number | number[])[])[] = [1, [2, [3, [4, 5]]], 6];\nconst flat2 = deeplyNestedArray.flat(2);\nconsole.log(\"Flat (depth 2):\", flat2); // Output: [1, 2, 3, [4, 5], 6]\n\nconst flatInfinity = deeplyNestedArray.flat(Infinity); // Flatten all levels\nconsole.log(\"Flat (depth Infinity):\", flatInfinity); // Output: [1, 2, 3, 4, 5, 6]\n```"
+        },
+        {
+            "question": "Which array method first maps each element using a mapping function, then flattens the result into a new array? It is identical to `a.map(...args).flat()` but often more efficient.",
+            "answers": [
+                {"answer": "mapAndFlat()"},
+                {"answer": "reduceMap()"},
+                {"answer": "flatMap()"},
+                {"answer": "transform()"}
+            ],
+            "answer": "flatMap()",
+            "explanation": "The `flatMap()` method first maps each element using a mapping function, and then flattens the result into a **new array**. It's functionally equivalent to `array.map(callback).flat(1)`, but `flatMap()` can be more efficient as it doesn't create an intermediate array from the `map` operation before flattening. It does **not** mutate the original array.\n\n**Syntax:** `newArray = array.flatMap((element, index, array) => { /* return element or arrayOfElements */ })`\n The callback function can return either a single element or an array of elements. These returned arrays are then flattened by one level.\n\n**Example (TypeScript):**\n```typescript\nlet phrases: string[] = [\"hello world\", \"goodbye moon\"];\n\n// Split each phrase into words, then flatten\nconst words: string[] = phrases.flatMap(phrase => phrase.split(\" \"));\nconsole.log(\"Words:\", words); // Output: [\"hello\", \"world\", \"goodbye\", \"moon\"]\n\n// Example: map and conditionally include elements\nlet numbers: number[] = [1, 2, 3, 4];\nconst processedNumbers: number[] = numbers.flatMap(num => \n  num % 2 === 0 ? [num, num * 10] : [] // If even, include num and num*10; if odd, include nothing\n);\nconsole.log(\"Processed numbers:\", processedNumbers); // Output: [2, 20, 4, 40]\n```"
+        },
+        {
+            "question": "Which ES2022 array method allows you to access an element using a negative index to count from the end of the array, similar to Python or Ruby?",
+            "answers": [
+                {"answer": "getItem()"},
+                {"answer": "at()"},
+                {"answer": "last()"},
+                {"answer": "nth()"}
+            ],
+            "answer": "at()",
+            "explanation": "The `at()` method, introduced in ES2022, takes an integer value and returns the item at that index, allowing for positive and **negative integers**. Negative integers count back from the last item in the array. It does **not** mutate the original array.\n\n**Syntax:** `element = array.at(index)`\n\n**Example (TypeScript):**\n```typescript\nlet items: string[] = [\"a\", \"b\", \"c\", \"d\", \"e\"];\n\nconsole.log(\"Element at index 2:\", items.at(2));   // Output: \"c\"\nconsole.log(\"Element at index -1 (last element):\", items.at(-1)); // Output: \"e\"\nconsole.log(\"Element at index -2 (second to last):\", items.at(-2)); // Output: \"d\"\nconsole.log(\"Element at index 10 (out of bounds):\", items.at(10)); // Output: undefined\n\n// Compare with bracket notation:\n// console.log(items[-1]); // Output: undefined (bracket notation doesn't support negative indices directly this way)\n```\n`at()` provides a more convenient way to access elements from the end of an array without needing to calculate `array.length - offset`."
+        },
+        {
+            "question": "Which ES2023 array method returns a new array with the elements in reversed order, without mutating the original array?",
+            "answers": [
+                {"answer": "reverseImmutable()"},
+                {"answer": "reverse()"},
+                {"answer": "toReversed()"},
+                {"answer": "createReversed()"}
+            ],
+            "answer": "toReversed()",
+            "explanation": "The `toReversed()` method, introduced in ES2023, is the copying (immutable) counterpart of the `reverse()` method. It returns a **new array** with the elements in reversed order, leaving the original array **unchanged**.\n\n**Example (TypeScript):**\n```typescript\nconst originalArray: number[] = [1, 2, 3, 4, 5];\nconsole.log(\"Original array:\", originalArray); // Output: [1, 2, 3, 4, 5]\n\nconst reversedCopy: number[] = originalArray.toReversed();\nconsole.log(\"Reversed copy:\", reversedCopy); // Output: [5, 4, 3, 2, 1]\nconsole.log(\"Original array unchanged:\", originalArray); // Output: [1, 2, 3, 4, 5]\n\n// Contrast with the mutating reverse() method:\n// originalArray.reverse(); \n// console.log(\"Original array after reverse():\", originalArray); // Output: [5, 4, 3, 2, 1]\n```\n`toReversed()` is useful when you need a reversed version of an array but want to preserve the original array."
+        }
+    ]
+},
+    {
     "name": "TypeScript Array Methods with Promises (Beginner Quiz)",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
