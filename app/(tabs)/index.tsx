@@ -53,13 +53,13 @@ export default function TabOneScreen() {
 
   useEffect(() => {
     
-    if (selectedQuiz) {
+    if (selectedQuiz ) {
       console.log('selectedQuiz');
       setRandomizedQuestions(
       shuffleArray(selectedQuiz.questions),
       );
       setRandomizedAnswers(
-        shuffleArray(randomizedQuestions[0].answers),
+        shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
       );
     }
   }, [selectedQuiz]);
