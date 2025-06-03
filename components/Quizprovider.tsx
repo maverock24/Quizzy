@@ -78,7 +78,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setAudioEnabledState(enabled);
     try {
       await AsyncStorage.setItem('audioEnabled', String(enabled));
-      console.log('Audio setting saved:', enabled);
     } catch (error) {
       console.error('Failed to save audio setting', error);
     }
@@ -87,7 +86,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setRemoteUpdateEnabledState(enabled);
     try {
       await AsyncStorage.setItem('remoteUpdateEnabled', String(enabled));
-      console.log('Remote update setting saved:', enabled);
     } catch (error) {
       console.error('Failed to save remote update setting', error);
     }
@@ -96,7 +94,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setRemoteAddressState(address);
     try {
       await AsyncStorage.setItem('remoteAddress', address);
-      console.log('Remote address setting saved:', address);
     } catch (error) {
       console.error('Failed to save remote address setting', error);
     }
@@ -131,7 +128,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   // Function to check for and download updated quizzes
   const checkForQuizzesUpdate = async (): Promise<boolean> => {
     // Don't proceed if remote updates are disabled
-    console.log('Checking for quizzes update...');
     if (!remoteUpdateEnabled) {
       console.log('Remote updates are disabled');
       return false;
@@ -210,17 +206,12 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const handleWebUpdate = async (): Promise<boolean> => {
     // Inside handleWebUpdate function
     try {
-      console.log('Downloading quizzes in web browser...');
       const encodedRemoteAddress = encodeURIComponent(
         remoteAddress || REMOTE_QUIZ,
       ); // Use state or default
       const response = await fetch(
         `/remoteUpdate?remoteAddress=${encodedRemoteAddress}`,
       );
-      console.log('Address:', encodedRemoteAddress);
-
-      console.log('Response status:', response.status);
-
       if (!response.ok) {
         // Try to get error text from backend's JSON response
         let errorText = `Failed: ${response.status} ${response.statusText}`;
@@ -266,10 +257,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const isNewer = currentQuizzesJson !== JSON.stringify(newQuizzesData);
 
       if (isNewer) {
-        console.log('New quizzes found, updating...');
         localStorage.setItem('quizzes', JSON.stringify(newQuizzesData)); // Save updated data
         setQuizzes(newQuizzesData); // Update state
-        console.log('Quizzes updated successfully');
         return true;
       } else {
         console.log('Quizzes are already up to date');
@@ -285,7 +274,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setFlashcardsEnabledState(enabled);
     try {
       await AsyncStorage.setItem('flashcardsEnabled', String(enabled));
-      console.log('Flashcards setting saved:', enabled);
     } catch (error) {
       console.error('Failed to save flashcards setting', error);
     }
@@ -296,7 +284,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setNotificationsEnabledState(enabled);
     try {
       await AsyncStorage.setItem('notificationsEnabled', String(enabled));
-      console.log('Notifications setting saved:', enabled);
     } catch (error) {
       console.error('Failed to save notifications setting', error);
     }
@@ -391,8 +378,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         'lastUpdateDate',
       );
 
-      console.log('remoteUpdateSetting', remoteUpdateSetting);
-
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
       setFlashcardsEnabledState(flashcardsSetting === 'true');
@@ -413,11 +398,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     // Only run checkForQuizzesUpdate after the initial load
     // and when remoteUpdateEnabled changes to true
     if (remoteUpdateEnabled && lastUpdateDate !== getTodaysDate()) {
-      console.log('Remote updates enabled, checking for updates...');
       checkForQuizzesUpdate().then((updated) => {
         if (updated) {
           AsyncStorage.setItem('lastUpdateDate', getTodaysDate());
-          console.log('Quizzes updated successfully');
         }
       });
     }
@@ -426,7 +409,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   // Load settings from AsyncStorage on component mount
   useEffect(() => {
     loadSettings();
-    console.log('Settings loaded');
   }, []);
 
   return (
