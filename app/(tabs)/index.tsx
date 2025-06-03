@@ -22,6 +22,8 @@ const shuffleArray = (array: any[]) => {
 
 export default function TabOneScreen() {
   const [selectedQuiz, setSelectedQuiz] = useState<Quiz>();
+  //shuffle questions in selected quiz
+
   const [selectedQuizAnswersAmount, setSelectedQuizAnswersAmount] =
     useState<number>(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
@@ -46,18 +48,31 @@ export default function TabOneScreen() {
   } = useQuiz();
   const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
+  const [randomizedQuestions, setRandomizedQuestions] = useState<QuizQuestion[]>([]);
   const [explanationMode, setExplanationMode] = useState<boolean>(false);
 
   useEffect(() => {
-    // Check for quizzes update when component mounts
-    checkForQuizzesUpdate();
-
-    if (selectedQuiz && selectedQuiz.questions[currentQuestionIndex]) {
+    
+    if (selectedQuiz) {
+      console.log('selectedQuiz');
+      setRandomizedQuestions(
+      shuffleArray(selectedQuiz.questions),
+      );
       setRandomizedAnswers(
-        shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
+        shuffleArray(randomizedQuestions[0].answers),
       );
     }
-  }, [selectedQuiz, currentQuestionIndex]);
+  }, [selectedQuiz]);
+
+   useEffect(() => {
+    if (selectedQuiz && randomizedQuestions[currentQuestionIndex]) {
+      console.log('currentQuestionIndex');
+      setRandomizedAnswers(
+        shuffleArray(randomizedQuestions[currentQuestionIndex].answers),
+      );
+    }
+  
+  }, [currentQuestionIndex, randomizedQuestions]);
 
   const handleQuizSelection = (quiz: any) => {
     const selectedQuiz = quizzes.find((q: Quiz) => q.name === quiz.name);
@@ -72,7 +87,7 @@ export default function TabOneScreen() {
   const handleAnswerSelection = (answer: string) => {
     if (selectedQuiz) {
       setExplanationMode(true);
-      const question = selectedQuiz.questions[currentQuestionIndex];
+      const question = randomizedQuestions[currentQuestionIndex];
       if (question.answer === answer) {
         setAnswerIsCorrect(true);
         setTotalCorrectAnswers(totalCorrectAnswers + 1);
@@ -113,7 +128,7 @@ export default function TabOneScreen() {
     }
   };
 
-  const quizQuestions = selectedQuiz?.questions.map((value, index) => {
+  const quizQuestions = randomizedQuestions.map((value, index) => {
     return {
       id: index.toString(),
       question: value.question || '',
@@ -193,7 +208,7 @@ export default function TabOneScreen() {
             <Explanation
               answerIsCorrect={answerIsCorrect}
               explanation={
-                selectedQuiz.questions[currentQuestionIndex].explanation
+                randomizedQuestions[currentQuestionIndex].explanation
               }
               handleNext={handleNext}
             />
@@ -212,10 +227,11 @@ export default function TabOneScreen() {
               {!flashcardsEnabled && !scoreVisible && (
                 <Question
                   question={
-                    selectedQuiz.questions[currentQuestionIndex].question
+                    randomizedQuestions[currentQuestionIndex]?.question ||
+                    ''
                   }
                   correctAnswer={
-                    selectedQuiz.questions[currentQuestionIndex].answer
+                    randomizedQuestions[currentQuestionIndex]?.answer || ''
                   }
                   answers={randomizedAnswers}
                   currentQuestionIndex={currentQuestionIndex}

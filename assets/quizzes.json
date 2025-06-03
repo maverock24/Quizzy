@@ -1,6 +1,6 @@
 [  
     {
-    "name": "Basic Psychology Concepts Quiz",
+    "name": "Basic Psychology",
     "image": "https://images.unsplash.com/photo-1577896851231-70f144cf4f39",
     "questions": [
         {
@@ -116,7 +116,7 @@
     ]
 },
     {
-    "name": "Basic World History Quiz",
+    "name": "Basic World History",
     "image": "https://images.unsplash.com/photo-1569065389101-f855a0b2b4ca",
     "questions": [
         {
@@ -232,7 +232,7 @@
     ]
 },
     {
-    "name": "Basic Chemistry Concepts Quiz",
+    "name": "Basic Chemistry",
     "image": "https://images.unsplash.com/photo-1554475901-4538953918c7",
     "questions": [
         {
@@ -348,7 +348,7 @@
     ]
 },
     {
-    "name": "Basic Physics Concepts Quiz",
+    "name": "Basic Physics",
     "image": "https://images.unsplash.com/photo-1532187640901-595769011974",
     "questions": [
         {
@@ -464,7 +464,7 @@
     ]
 },
     {
-    "name": "Basic Biology Concepts Quiz",
+    "name": "Basic Biology",
     "image": "https://images.unsplash.com/photo-1532187863486-abf9db50b6aa",
     "questions": [
         {
@@ -580,7 +580,7 @@
     ]
 },
     {
-    "name": "Math Problem-Solving Approaches Quiz",
+    "name": "Math Problem-Solving Approaches",
     "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904",
     "questions": [
         {
@@ -685,7 +685,7 @@
     ]
 },
     {
-    "name": "TypeScript Array Manipulation Quiz",
+    "name": "TypeScript Array Manipulation",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
         {
@@ -911,7 +911,7 @@
     ]
 },
     {
-    "name": "TypeScript Array Methods with Promises (Beginner Quiz)",
+    "name": "TypeScript Array Methods with Promises",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
         {
@@ -1027,7 +1027,7 @@
     ]
 },
      {
-    "name": "Advanced TypeScript Features Quiz - Set 2",
+    "name": "Advanced TypeScript Features Part 2",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
         {
@@ -1143,7 +1143,7 @@
     ]
 },
     {
-    "name": "Advanced TypeScript Features Quiz - Set 1",
+    "name": "Advanced TypeScript Features Part 1",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
         {
@@ -1259,7 +1259,7 @@
     ]
 },
     {
-    "name": "Comprehensive AWS CI/CD with GitLab and CDK Quiz",
+    "name": "Comprehensive AWS CI/CD with GitLab and AWS CDK",
     "image": "https://images.unsplash.com/photo-1523961131990-5EA7c61b2107",
     "questions": [
       {
@@ -1881,7 +1881,7 @@
     ]
   },
     {
-    "name": "AWS Fullstack Developer Interview Quiz (Comprehensive)",
+    "name": "AWS Fullstack Developer Interview Quiz",
     "image": "https://images.unsplash.com/photo-1589149098258-3e9102cd63d3",
     "questions": [
         {
@@ -2547,56 +2547,6 @@
     ]
 },
     {
-    "name": "Test Quiz",
-    "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
-    "questions": [
-        {
-            "question": "What is the capital of France?",
-            "answers": [
-                {"answer": "Paris"},
-                {"answer": "London"},
-                {"answer": "Berlin"},
-                {"answer": "Madrid"}
-            ],
-            "answer": "Paris",
-            "explanation": "Paris is the capital city of France."
-        },
-        {
-            "question": "What is 2 + 2?",
-            "answers": [
-                {"answer": "3"},
-                {"answer": "4"},
-                {"answer": "5"},
-                {"answer": "6"}
-            ],
-            "answer": "4",  
-            "explanation": "2 + 2 equals 4."
-        },
-        {
-            "question": "What is the largest planet in our solar system?",
-            "answers": [
-                {"answer": "Earth"},
-                {"answer": "Mars"},
-                {"answer": "Jupiter"},
-                {"answer": "Saturn"}
-            ],
-            "answer": "Jupiter",
-            "explanation": "Jupiter is the largest planet in our solar system."
-        },
-        {
-            "question": "What is the boiling point of water?",
-            "answers": [
-                {"answer": "100 degrees Celsius"},
-                {"answer": "90 degrees Celsius"},
-                {"answer": "80 degrees Celsius"},
-                {"answer": "70 degrees Celsius"}
-            ],
-            "answer": "100 degrees Celsius",
-            "explanation": "Water boils at 100 degrees Celsius at sea level."
-        }
-    ]
-},
-    {
     "name": "AWS SaaS Deployment & Debugging Expert",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
@@ -3230,7 +3180,7 @@
     ]
 },
     {
-        "name": "Genetic Testing Developer Quiz",
+        "name": "Genetic Testing Developer",
         "questions": [
             {
                 "question": "What is a SNP?",
@@ -3763,7 +3713,7 @@
         ]
     },
     {
-        "name": "Genetic Testing Basics Quiz",
+        "name": "Genetic Testing Basics",
         "questions": [
             {
                 "question": "What is genetic testing?",
@@ -4340,7 +4290,7 @@
         ]
     },
     {
-        "name": "Blueprint Genetics Comprehensive Quiz",
+        "name": "Blueprint Genetics",
         "questions": [
             {
                 "question": "What is Blueprint Genetics' primary focus?",
@@ -4565,7 +4515,7 @@
         ]
     },
     {
-        "name": "Genes and DNA Basics Quiz",
+        "name": "Genes and DNA Basics",
         "questions": [
             {
                 "question": "What is a gene?",
