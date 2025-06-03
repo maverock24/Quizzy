@@ -276,25 +276,3 @@ const styles = StyleSheet.create({
     lineHeight: 21,     
   },
 });
-
-// To use this component:
-// import { CodeFormatter } from './CodeFormatter';
-//
-// const myStringWithCodeAndMath = `
-// This is some introductory text with a formula like $E = mc^2$.
-// And here is another formula: $\\alpha + \\beta = \\gamma$.
-// ```typescript
-// function greet(name: string): string {
-//   // $this is inside a code block, so it won't be rendered as math$
-//   return \`Hello, \${name}!\`;
-// }
-// console.log(greet("World"));
-// ```
-// And this is some concluding text with $\\sqrt{4} = \\pm 2$.
-// `;
-//
-// <CodeFormatter
-//   text={myStringWithCodeAndMath}
-//   textStyle={{ color: 'blue' }}
-//   mathTextStyle={{ color: 'red', fontWeight: 'bold' }}
-// />
