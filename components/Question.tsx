@@ -1,5 +1,6 @@
 import { Audio } from 'expo-av';
 import React, { useEffect, useRef, useState } from 'react';
+import { decode } from 'html-entities';
 import {
   Animated,
   Platform,
@@ -26,6 +27,108 @@ type QuestionProps = {
   handleAnswerSelection: (answer: string) => void;
   correctAnswer: string;
 };
+
+// Your improved renderRichText helper
+export function renderRichText(text: string): React.ReactNode[] { // Added return type
+  const decoded = decode(text); // Ensure 'html-entities' is imported if not global
+
+  const latexToUnicode: { [key: string]: string } = {
+    '\\times': '×',
+    '\\sqrt': '√', // For basic square root symbol, not the bar
+    '\\leq': '≤',
+    '\\geq': '≥',
+    '\\neq': '≠',
+    '\\pm': '±',
+    '\\div': '÷',
+    '\\cdot': '·',
+    '\\infty': '∞',
+    '\\rightarrow': '→',
+    '\\leftarrow': '←',
+    '\\degree': '°',
+    '\\%': '%', // If you need to escape % for LaTeX
+    // Common Greek letters (add as needed)
+    '\\alpha': 'α',
+    '\\beta': 'β',
+    '\\gamma': 'γ',
+    '\\delta': 'δ',
+    '\\pi': 'π',
+    '\\theta': 'θ',
+    // Simple superscripts (Unicode characters exist for 0-9, some letters)
+    // This is VERY limited. For general powers, you need a structural approach.
+    // e.g., you might need to detect specific patterns like x^2 and replace
+    // with 'x²' if your LaTeX source is simple enough.
+    // Example (very naive, only for single digit powers):
+    // '\\^2': '²',
+    // '\\^3': '³',
+  };
+
+  // Regex to find $...$ math (non-greedy)
+  const mathRegex = /\$(.+?)\$/g;
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  // Ensure text is a string
+  const inputText = String(decoded);
+
+  while ((match = mathRegex.exec(inputText))) {
+    // Text part before the math block
+    if (match.index > lastIndex) {
+      parts.push(
+        <Text key={`text-${lastIndex}`}>{inputText.substring(lastIndex, match.index)}</Text>
+      );
+    }
+
+    // Math part
+    let mathContent = match[1];
+
+    // Replace \text{...} with just the content inside
+    // This helps if your LaTeX source sometimes uses \text for non-math text within math mode.
+    mathContent = mathContent.replace(/\\text\s*{([^}]*)}/g, '$1');
+
+    mathContent = mathContent.replace(/\\frac\s*{([^}]*)}\s*{([^}]*)}/g, '$1/$2');
+
+    // Replace LaTeX commands with Unicode
+    // Iterate carefully to avoid issues with substrings (e.g. if one command is part of another)
+    // For simple cases, this is often fine. For more complex, a more robust parser is needed.
+    for (const [latex, uni] of Object.entries(latexToUnicode)) {
+      // Escape LaTeX command for use in RegExp
+      const escapedLatex = latex.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      mathContent = mathContent.replace(new RegExp(escapedLatex, 'g'), uni);
+    }
+
+    // Handle simple superscripts/subscripts if you choose to support them via Unicode
+    // This is a very basic example and won't cover all cases.
+    // E.g., x^2 becomes x²
+    // mathContent = mathContent.replace(/(\w)\^(\d)/g, (m, base, exp) => {
+    //   const superScripts: Record<string, string> = {'0': '⁰', '1': '¹', '2': '²', /* ... */ };
+    //   return base + (superScripts[exp] || `^${exp}`);
+    // });
+    // Subscripts would be similar with unicode subscript characters.
+
+    parts.push(
+      <Text
+        key={`math-${match.index}`}
+        style={styles.mathText} // Use a dedicated style from StyleSheet
+      >
+        {mathContent}
+      </Text>
+    );
+    lastIndex = mathRegex.lastIndex;
+  }
+
+  // Text part after the last math block (if any)
+  if (lastIndex < inputText.length) {
+    parts.push(<Text key={`text-${lastIndex}-end`}>{inputText.substring(lastIndex)}</Text>);
+  }
+
+  // If no math blocks were found, return the original text in a Text component
+  if (parts.length === 0 && inputText.length > 0) {
+    return [<Text key="full-text">{inputText}</Text>];
+  }
+
+  return parts;
+}
 
 export const Question: React.FC<QuestionProps> = ({
   question,
@@ -177,7 +280,7 @@ export const Question: React.FC<QuestionProps> = ({
         <Text style={styles.questionHeading}>
           Question {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
         </Text>
-        <Text style={styles.questionText}>{question}</Text>
+        <Text style={styles.questionText}>{renderRichText(question)}</Text>
       </View>
 
       {answers.map((answer, index) => (
@@ -198,7 +301,7 @@ export const Question: React.FC<QuestionProps> = ({
               <Text style={styles.labelText}>{answerLabels[index]}</Text>
             </View>
             <Text style={styles.answerButtonText} numberOfLines={4}>
-              {answer.answer}
+              {renderRichText(answer.answer)}
             </Text>
             {answerIsCorrect && (
               <FontAwesome
@@ -225,6 +328,16 @@ export const Question: React.FC<QuestionProps> = ({
 };
 
 const styles = StyleSheet.create({
+  mathText: { // Style for parts rendered as math
+    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', // Common monospace fonts
+    // backgroundColor: 'rgba(0,0,0,0.15)', // Slightly adjusted background
+    // color: '#58a6ff', // Adjusted blue for potentially better contrast
+    borderRadius: 4,
+    paddingHorizontal: 4,
+    paddingVertical: 1, // Small vertical padding
+    fontSize: 16, // Slightly smaller or same as questionText
+    fontWeight: '600',
+  },
   wrong: {
     paddingLeft: 5,
     paddingTop: 3,

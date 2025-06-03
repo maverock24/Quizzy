@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Platform, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Platform, ScrollView, TextStyle, StyleProp, ViewStyle } from 'react-native';
+import { decode } from 'html-entities'; // Ensure this is installed (npm install html-entities)
 
 /**
  * Defines the structure for a segment of text, which can either be
@@ -11,116 +12,191 @@ interface FormattedSegment {
   language?: string; // Optional language for the code block (e.g., "typescript")
 }
 
+// Default styles for math text segments if no custom style is provided
+const defaultMathRenderStyles = StyleSheet.create({
+  mathText: {
+    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', // Or your preferred math-friendly font
+    backgroundColor: 'rgba(220, 220, 220, 0.3)', // Subtle background for math
+    color: '#1a202c', // Darker color, adjust to your theme
+    borderRadius: 4,
+    paddingHorizontal: 5,
+    paddingVertical: 1,
+    // fontSize and lineHeight will ideally be inherited or explicitly set
+  },
+});
+
 /**
- * Parses a string to identify and separate regular text from fenced code blocks.
- * Code blocks are expected in the format: ```language\ncode\n``` or ```\ncode\n```
- *
- * @param text The input string to parse.
- * @returns An array of segments, each typed as 'text' or 'code'.
+ * Renders text, replacing simple LaTeX commands within $...$ delimiters
+ * with Unicode characters.
+ * @param text The string to render.
+ * @param baseTextStyle The base style to apply to non-math parts and as a base for math parts.
+ * @param customMathTextStyle Optional custom styles to merge specifically for math parts.
+ * @returns An array of React.ReactNode (Text components).
  */
+export function renderMathInText(
+  text: string,
+  baseTextStyle?: StyleProp<TextStyle>,
+  customMathTextStyle?: StyleProp<TextStyle>
+): React.ReactNode[] {
+  if (text === null || text === undefined) {
+    return [<Text key="empty-text" style={baseTextStyle}></Text>];
+  }
+  const decoded = decode(String(text)); // Ensure text is a string
+
+  const latexToUnicode: { [key: string]: string } = {
+    '\\times': '×', '\\sqrt': '√', '\\leq': '≤', '\\geq': '≥', '\\neq': '≠',
+    '\\pm': '±', '\\div': '÷', '\\cdot': '·', '\\infty': '∞', '\\rightarrow': '→',
+    '\\leftarrow': '←', '\\degree': '°', '\\%': '%',
+    '\\alpha': 'α', '\\beta': 'β', '\\gamma': 'γ', '\\delta': 'δ', '\\pi': 'π', '\\theta': 'θ',
+    // Add more simple Unicode mappings as needed
+  };
+
+  const mathRegex = /\$(.+?)\$/g; // Non-greedy match for content inside $...$
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+
+  while ((match = mathRegex.exec(decoded)) !== null) {
+    // Text part before the math block
+    if (match.index > lastIndex) {
+      parts.push(
+        <Text key={`text-${lastIndex}`} style={baseTextStyle}>
+          {decoded.substring(lastIndex, match.index)}
+        </Text>
+      );
+    }
+
+    // Math part
+    let mathContent = match[1];
+    // Replace \text{...} with just the content inside
+    mathContent = mathContent.replace(/\\text\s*{([^}]*)}/g, '$1');
+
+    mathContent = mathContent.replace(/\\frac\s*{([^}]*)}\s*{([^}]*)}/g, '$1/$2');
+
+    for (const [latex, uni] of Object.entries(latexToUnicode)) {
+      const escapedLatex = latex.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape for RegExp
+      mathContent = mathContent.replace(new RegExp(escapedLatex, 'g'), uni);
+    }
+
+    parts.push(
+      <Text
+        key={`math-${match.index}`}
+        style={StyleSheet.flatten([
+          baseTextStyle, // Inherit base styles (like fontSize, lineHeight, color)
+          defaultMathRenderStyles.mathText, // Apply default math-specific styles
+          customMathTextStyle, // Apply user-provided custom math styles (can override)
+        ])}
+      >
+        {mathContent}
+      </Text>
+    );
+    lastIndex = mathRegex.lastIndex;
+  }
+
+  // Text part after the last math block (if any)
+  if (lastIndex < decoded.length) {
+    parts.push(
+      <Text key={`text-${lastIndex}-end`} style={baseTextStyle}>
+        {decoded.substring(lastIndex)}
+      </Text>
+    );
+  }
+  
+  // If no math blocks were found, and the input text itself is not empty,
+  // return the original text wrapped in a single Text component with base style.
+  if (parts.length === 0 && decoded.length > 0) {
+     return [<Text key="full-text-segment" style={baseTextStyle}>{decoded}</Text>];
+  }
+
+  return parts;
+}
+
+interface FormattedSegment {
+  type: 'text' | 'code';
+  content: string;
+  language?: string;
+}
+
 const parseTextAndCode = (text: string): FormattedSegment[] => {
   const segments: FormattedSegment[] = [];
   let lastIndex = 0;
-  // Regex to find fenced code blocks: ```lang\ncode\n``` or ```\ncode\n```
-  // Captures: 1: language (optional), 2: code content
   const codeBlockRegex = /```([a-zA-Z]*)?\n([\s\S]*?)\n```/g;
+  let match: RegExpExecArray | null;
 
-  let match;80
   while ((match = codeBlockRegex.exec(text)) !== null) {
-    // Add text segment before the current code block
     if (match.index > lastIndex) {
       segments.push({ type: 'text', content: text.substring(lastIndex, match.index) });
     }
-
-    // Add code block segment
-    const language = match[1] || undefined; // Language (e.g., "typescript", "javascript")
-    const codeContent = match[2]; // The actual code content
+    const language = match[1] || undefined;
+    const codeContent = match[2];
     segments.push({ type: 'code', content: codeContent.trim(), language });
-
-    lastIndex = codeBlockRegex.lastIndex; // Update position for next search
+    lastIndex = codeBlockRegex.lastIndex;
   }
 
-  // Add any remaining text segment after the last code block
   if (lastIndex < text.length) {
     segments.push({ type: 'text', content: text.substring(lastIndex) });
   }
-
   return segments;
 };
 
-/**
- * Props for the CodeFormatter component.
- */
 interface CodeFormatterProps {
-  /** The text content which may include markdown-style fenced code blocks. */
   text: string;
-  /** Custom style for the root container of the formatter. */
-  containerStyle?: object;
-  /** Custom style for regular text segments. */
-  textStyle?: object;
-  /** Custom style for the code block container (the <View> wrapping code). */
-  codeBlockContainerStyle?: object;
-  /** Custom style for the text within code blocks. */
-  codeBlockTextStyle?: object;
+  containerStyle?: StyleProp<TextStyle>;
+  textStyle?: StyleProp<TextStyle>; // For non-math, non-code text parts
+  codeBlockContainerStyle?: StyleProp<ViewStyle>; // Corrected to ViewStyle
+  codeBlockTextStyle?: StyleProp<TextStyle>;
+  mathTextStyle?: StyleProp<TextStyle>; // Custom style for math segments
 }
 
-/**
- * A React Native component that formats a string containing markdown-style
- * fenced code blocks (e.g., ```typescript\ncode\n```). It renders regular
- * text normally and code blocks with a distinct style, similar to how
- * JIRA or Confluence display code.
- *
- * Note: This component formats fenced code blocks. Inline code (`like this`)
- * and other markdown (e.g., bold, italics) will be rendered as plain text.
- */
 export const CodeFormatter: React.FC<CodeFormatterProps> = ({
   text,
   containerStyle,
   textStyle,
   codeBlockContainerStyle,
   codeBlockTextStyle,
+  mathTextStyle, // This will be passed to renderMathInText
 }) => {
-  // If the input text is empty or only whitespace, render nothing.
   if (!text || !text.trim()) {
     return null;
   }
 
   const segments = parseTextAndCode(text);
+  const [fontSizes, setFontSizes] = useState<{ [key: string]: number }>({}); // For code block font adjustment
 
-  // State to track dynamic font size for each code block
- const [fontSizes, setFontSizes] = useState<{ [key: string]: number }>({});
-
-  // Helper to handle font size adjustment
+  // Dynamic font size logic for code blocks (remains unchanged)
   const handleContentSizeChange = (
     index: number,
     contentWidth: number,
     containerWidth: number
   ) => {
-    if (contentWidth > containerWidth) {
+    // This logic is for code blocks; math text is handled differently
+    if (contentWidth > containerWidth && containerWidth > 0) { // ensure containerWidth is positive
       setFontSizes((prev) => ({
         ...prev,
-        [index]: 12, // Decrease font size if overflow
+        [index]: Math.max(8, (prev[index] || 14) * 0.95 ), // Example adjustment
       }));
-    } else {
-      setFontSizes((prev) => ({
+    } else if (fontSizes[index] && fontSizes[index]! < 14 && containerWidth > contentWidth){
+       setFontSizes((prev) => ({
         ...prev,
-        [index]: 14, // Default font size
+        [index]: 14, 
       }));
     }
   };
+  
+  // Base style for regular text parts (non-code, non-math)
+  const combinedBaseTextStyle = StyleSheet.flatten([styles.regularText, textStyle]);
 
-  // If parsing results in no segments (e.g., error or unexpected case),
-  // or if text has content but no code blocks, it will be rendered as plain text.
-  if (segments.length === 0) {
+  // If no code blocks are found, process the entire text for math formulas
+  if (segments.length === 0 && text && text.trim()) {
      return (
-        <View style={containerStyle}>
-            <Text style={[styles.regularText, textStyle]}>{text}</Text>
+        <View style={[styles.defaultContainerStyle]}>
+            {renderMathInText(text, combinedBaseTextStyle, mathTextStyle)}
         </View>
      );
   }
 
   return (
-    <View style={containerStyle}>
+    <View style={[styles.defaultContainerStyle]}>
       {segments.map((segment, index) => {
         if (segment.type === 'code') {
           return (
@@ -128,7 +204,6 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
               key={`code-${index}`}
               style={[styles.codeBlockContainer, codeBlockContainerStyle]}
               onLayout={event => {
-                // Store container width for this code block
                 const { width } = event.nativeEvent.layout;
                 setFontSizes((prev) => ({
                   ...prev,
@@ -137,18 +212,22 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
               }}
             >
               <ScrollView
+                style={{ flex: 1, width: '100%' }} // Ensure ScrollView takes full width
                 horizontal
-                showsHorizontalScrollIndicator={false}
-                onContentSizeChange={(contentWidth) => {
+                showsHorizontalScrollIndicator={true} // Often useful for code
+                onContentSizeChange={(contentWidth, contentHeight) => { // contentHeight also available
                   const containerWidth = fontSizes[`container-${index}`] || 0;
-                  handleContentSizeChange(index, contentWidth, containerWidth);
+                  // Consider triggering handleContentSizeChange only if containerWidth is known
+                  if (containerWidth > 0) {
+                    handleContentSizeChange(index, contentWidth, containerWidth);
+                  }
                 }}
               >
                 <Text
                   style={[
                     styles.codeBlockText,
                     codeBlockTextStyle,
-                    { fontSize: fontSizes[index] || 14 },
+                    { fontSize: fontSizes[index] || 10 },
                   ]}
                 >
                   {segment.content}
@@ -156,53 +235,66 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
               </ScrollView>
             </View>
           );
+        } else { // segment.type === 'text'
+          // renderMathInText returns an array of <Text> nodes.
+          // React can render an array of elements.
+          // Provide a key for the React.Fragment that groups these text parts for this segment.
+          return (
+            <React.Fragment key={`text-segment-${index}`}>
+              {renderMathInText(segment.content, combinedBaseTextStyle, mathTextStyle)}
+            </React.Fragment>
+          );
         }
-        return (
-          <Text key={`text-${index}`} style={[styles.regularText, textStyle]}>
-            {segment.content}
-          </Text>
-        );
       })}
     </View>
   );
 };
 
+// Default styles for CodeFormatter
 const styles = StyleSheet.create({
+  defaultContainerStyle: {
+    marginVertical: 5,
+  },
   regularText: {
     fontSize: 16,
     lineHeight: 24,
     color: '#333333', // Default dark grey for text
-    marginVertical: 2, // Small vertical margin for text flow
+    marginVertical: 2, 
   },
   codeBlockContainer: {
-    backgroundColor: '#f5f5f5', // Light grey background for code blocks
-    paddingVertical: 10,
-    paddingHorizontal: 15,
-    borderRadius: 5,
-    marginVertical: 10,      // Vertical space around code blocks
+    backgroundColor: '#f0f0f0', // Slightly different shade for distinction
+    padding: 15, // Uniform padding
+    borderRadius: 6,
+    marginVertical: 8,      
     borderWidth: 1,
-    borderColor: '#e0e0e0', // Subtle border for the code block
+    borderColor: '#d1d1d1', 
   },
   codeBlockText: {
-    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', // Monospaced font
-    color: '#232323', // Darker text for code, for contrast
-    fontSize: 14,
-    lineHeight: 20,     // Specific line height for code readability
+    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', 
+    color: '#2d3748', // Darker text for code
+    fontSize: 14, // Default code font size
+    lineHeight: 21,     
   },
 });
 
 // To use this component:
-// import { CodeFormatter } from './CodeFormatter'; // Adjust path as needed
+// import { CodeFormatter } from './CodeFormatter';
 //
-// const myStringWithCode = `
-// This is some introductory text.
+// const myStringWithCodeAndMath = `
+// This is some introductory text with a formula like $E = mc^2$.
+// And here is another formula: $\\alpha + \\beta = \\gamma$.
 // ```typescript
 // function greet(name: string): string {
+//   // $this is inside a code block, so it won't be rendered as math$
 //   return \`Hello, \${name}!\`;
 // }
 // console.log(greet("World"));
 // ```
-// And this is some concluding text.
+// And this is some concluding text with $\\sqrt{4} = \\pm 2$.
 // `;
 //
-// <CodeFormatter text={myStringWithCode} />
+// <CodeFormatter
+//   text={myStringWithCodeAndMath}
+//   textStyle={{ color: 'blue' }}
+//   mathTextStyle={{ color: 'red', fontWeight: 'bold' }}
+// />

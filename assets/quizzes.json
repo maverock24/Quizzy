@@ -1,5 +1,585 @@
 [  
     {
+    "name": "Basic Psychology Concepts Quiz",
+    "image": "https://images.unsplash.com/photo-1577896851231-70f144cf4f39",
+    "questions": [
+        {
+            "question": "Which school of psychology, founded by Sigmund Freud, emphasizes the role of the unconscious mind in determining behavior and personality?",
+            "answers": [
+                {"answer": "Behaviorism"},
+                {"answer": "Humanistic Psychology"},
+                {"answer": "Psychoanalysis"},
+                {"answer": "Cognitive Psychology"}
+            ],
+            "answer": "Psychoanalysis",
+            "explanation": "Psychoanalysis, developed by Sigmund Freud, is a set of psychological theories and therapeutic techniques. The core idea of psychoanalysis is the belief that all people possess unconscious thoughts, feelings, desires, and memories. Freud believed that these unconscious elements could influence conscious behavior, and he developed techniques like dream analysis and free association to explore them."
+        },
+        {
+            "question": "In classical conditioning, what is a previously neutral stimulus that, after becoming associated with an unconditioned stimulus, eventually comes to trigger a conditioned response?",
+            "answers": [
+                {"answer": "Unconditioned Stimulus (UCS)"},
+                {"answer": "Conditioned Stimulus (CS)"},
+                {"answer": "Unconditioned Response (UCR)"},
+                {"answer": "Conditioned Response (CR)"}
+            ],
+            "answer": "Conditioned Stimulus (CS)",
+            "explanation": "In classical conditioning (famously demonstrated by Ivan Pavlov's experiments with dogs), a Conditioned Stimulus (CS) is initially a neutral stimulus that does not elicit a particular response. However, after being repeatedly paired with an Unconditioned Stimulus (UCS) – which naturally and automatically triggers an Unconditioned Response (UCR) – the previously neutral stimulus becomes a Conditioned Stimulus, capable of eliciting a Conditioned Response (CR) similar to the UCR. For example, Pavlov's dogs salivated (UCR) to food (UCS). A bell (initially neutral) when paired with food, eventually made the dogs salivate (CR) to the bell alone (CS)."
+        },
+        {
+            "question": "Which type of learning, associated with B.F. Skinner, involves changing behavior through the use of reinforcement (rewards) and punishment?",
+            "answers": [
+                {"answer": "Classical Conditioning"},
+                {"answer": "Observational Learning"},
+                {"answer": "Operant Conditioning"},
+                {"answer": "Latent Learning"}
+            ],
+            "answer": "Operant Conditioning",
+            "explanation": "Operant conditioning is a type of learning where behavior is controlled by its consequences. Key concepts in operant conditioning, largely developed by B.F. Skinner, are reinforcement and punishment. Reinforcement (e.g., giving a reward) increases the likelihood of a behavior being repeated, while punishment decreases its likelihood. For example, a child might learn to clean their room (behavior) if they receive praise or an allowance (reinforcement) for doing so."
+        },
+        {
+            "question": "According to Abraham Maslow's hierarchy of needs, which needs form the base of the pyramid and must be satisfied first before higher-level needs can be addressed?",
+            "answers": [
+                {"answer": "Esteem Needs (e.g., respect, self-esteem)"},
+                {"answer": "Self-Actualization Needs (e.g., achieving one's full potential)"},
+                {"answer": "Love and Belongingness Needs (e.g., friendship, intimacy)"},
+                {"answer": "Physiological Needs (e.g., air, food, water, shelter)"}
+            ],
+            "answer": "Physiological Needs (e.g., air, food, water, shelter)",
+            "explanation": "Maslow's hierarchy of needs is a theory of motivation that suggests five interdependent levels of basic human needs (motivators) must be satisfied in a strict sequence starting with the lowest level. The physiological needs are at the very base of the pyramid and include the most fundamental requirements for survival, such as air, food, water, shelter, sleep, and warmth. Maslow proposed that these basic needs must be met before an individual can move on to satisfy higher-level needs like safety, love/belonging, esteem, and finally self-actualization."
+        },
+        {
+            "question": "What is the name of the short-term memory system that allows us to temporarily hold and manipulate information for complex tasks like reasoning and learning?",
+            "answers": [
+                {"answer": "Sensory Memory"},
+                {"answer": "Long-Term Memory"},
+                {"answer": "Working Memory"},
+                {"answer": "Episodic Memory"}
+            ],
+            "answer": "Working Memory",
+            "explanation": "Working memory is a cognitive system with a limited capacity that is responsible for temporarily holding information available for processing. It's important for reasoning, decision-making, and the guidance of behavior. Think of it as the 'mental workspace' where you actively manipulate information. For example, when you are solving a math problem in your head or trying to remember a phone number while you dial it, you are using your working memory."
+        },
+        {
+            "question": "Which subfield of psychology focuses on how people's thoughts, feelings, and behaviors are influenced by the actual, imagined, or implied presence of others?",
+            "answers": [
+                {"answer": "Cognitive Psychology"},
+                {"answer": "Developmental Psychology"},
+                {"answer": "Clinical Psychology"},
+                {"answer": "Social Psychology"}
+            ],
+            "answer": "Social Psychology",
+            "explanation": "Social psychology is the scientific study of how individuals' thoughts, feelings, and behaviors are influenced by the actual, imagined, or implied presence of other human beings. It explores topics such as conformity, obedience, prejudice, attraction, aggression, group behavior, and social perception. Social psychologists aim to understand how social contexts shape our actions and our understanding of the world."
+        },
+        {
+            "question": "The famous 'Little Albert' experiment, conducted by John B. Watson and Rosalie Rayner, is a classic example of which type of learning?",
+            "answers": [
+                {"answer": "Operant Conditioning"},
+                {"answer": "Observational Learning"},
+                {"answer": "Classical Conditioning"},
+                {"answer": "Insight Learning"}
+            ],
+            "answer": "Classical Conditioning",
+            "explanation": "The 'Little Albert' experiment demonstrated that emotional responses, specifically fear, could be classically conditioned in humans. Initially, Little Albert showed no fear of a white rat (neutral stimulus). However, by repeatedly pairing the presentation of the rat with a loud, frightening noise (unconditioned stimulus that elicited fear, an unconditioned response), Albert eventually began to cry and show fear (conditioned response) at the sight of the rat alone (which had become a conditioned stimulus)."
+        },
+        {
+            "question": "What is the psychological defense mechanism where an individual attributes their own unacceptable thoughts, feelings, or motives to another person?",
+            "answers": [
+                {"answer": "Repression"},
+                {"answer": "Denial"},
+                {"answer": "Projection"},
+                {"answer": "Sublimation"}
+            ],
+            "answer": "Projection",
+            "explanation": "Projection is a defense mechanism proposed by Sigmund Freud in which an individual unconsciously attributes their own unwanted or unacceptable thoughts, feelings, or impulses to someone else. For example, a person who is feeling angry might accuse others of being angry with them. This helps the individual avoid dealing with their own uncomfortable feelings by externalizing them."
+        },
+        {
+            "question": "The debate over the relative contributions of genetic inheritance and environmental factors to human development is often referred to as what?",
+            "answers": [
+                {"answer": "Mind-Body Problem"},
+                {"answer": "Nature vs. Nurture"},
+                {"answer": "Cognitive Dissonance"},
+                {"answer": "The Placebo Effect"}
+            ],
+            "answer": "Nature vs. Nurture",
+            "explanation": "The 'nature vs. nurture' debate is one of the oldest issues in psychology. It concerns the extent to which particular aspects of behavior are a product of either inherited (i.e., genetic, or 'nature') or acquired (i.e., learned through environmental influences, or 'nurture') characteristics. Modern psychology generally recognizes that both nature and nurture interact to shape an individual's development and behavior, rather than one being solely responsible."
+        },
+        {
+            "question": "Which part of the human nervous system is responsible for the 'fight or flight' response, preparing the body for intense physical activity?",
+            "answers": [
+                {"answer": "Parasympathetic Nervous System"},
+                {"answer": "Somatic Nervous System"},
+                {"answer": "Central Nervous System"},
+                {"answer": "Sympathetic Nervous System"}
+            ],
+            "answer": "Sympathetic Nervous System",
+            "explanation": "The sympathetic nervous system is a division of the autonomic nervous system (which controls involuntary bodily functions). It is responsible for activating the 'fight or flight' response. When a person perceives a threat, the sympathetic nervous system triggers a cascade of physiological changes, such as increased heart rate, dilated pupils, and redirection of blood flow to muscles, all designed to prepare the body to either confront or flee from danger."
+        }
+    ]
+},
+    {
+    "name": "Basic World History Quiz",
+    "image": "https://images.unsplash.com/photo-1569065389101-f855a0b2b4ca",
+    "questions": [
+        {
+            "question": "Which ancient civilization, located between the Tigris and Euphrates rivers, is often called the 'cradle of civilization' and is credited with inventing writing (cuneiform)?",
+            "answers": [
+                {"answer": "Ancient Egypt"},
+                {"answer": "Ancient Greece"},
+                {"answer": "Mesopotamia"},
+                {"answer": "Indus Valley Civilization"}
+            ],
+            "answer": "Mesopotamia",
+            "explanation": "Mesopotamia, meaning 'land between the rivers,' was an ancient region located in the eastern Mediterranean, corresponding to today's Iraq, Kuwait, and parts of Syria and Turkey. It is often referred to as the cradle of civilization because it was here that complex urban centers first emerged. Sumerians in Mesopotamia are credited with inventing one of the earliest systems of writing, called cuneiform, around 3200 BCE."
+        },
+        {
+            "question": "Who was the first Roman Emperor, marking the end of the Roman Republic and the beginning of the Roman Empire?",
+            "answers": [
+                {"answer": "Julius Caesar"},
+                {"answer": "Augustus (Octavian)"},
+                {"answer": "Nero"},
+                {"answer": "Constantine the Great"}
+            ],
+            "answer": "Augustus (Octavian)",
+            "explanation": "Augustus, originally known as Octavian, was the first Roman Emperor. He came to power after a period of civil wars that led to the collapse of the Roman Republic. While Julius Caesar held immense power and effectively ended the Republic, he was never officially emperor; his assassination preceded the formal establishment of the Empire. Augustus's reign (27 BCE - 14 CE) initiated a long period of relative peace known as the Pax Romana."
+        },
+        {
+            "question": "What major historical period, following the fall of the Western Roman Empire, is characterized by feudalism, castles, and knights in Europe?",
+            "answers": [
+                {"answer": "The Renaissance"},
+                {"answer": "The Age of Enlightenment"},
+                {"answer": "The Middle Ages (Medieval Period)"},
+                {"answer": "The Industrial Revolution"}
+            ],
+            "answer": "The Middle Ages (Medieval Period)",
+            "explanation": "The Middle Ages, or Medieval Period, in European history traditionally dates from the fall of the Western Roman Empire in the 5th century CE to the beginning of the Renaissance in the 14th or 15th century. This era was characterized by the system of feudalism (a social and political system based on land ownership and loyalty), the prominence of knights and castles, and the strong influence of the Christian Church."
+        },
+        {
+            "question": "Which Italian city is often considered the birthplace of the Renaissance, a period of great cultural change and artistic development in Europe?",
+            "answers": [
+                {"answer": "Rome"},
+                {"answer": "Venice"},
+                {"answer": "Florence"},
+                {"answer": "Milan"}
+            ],
+            "answer": "Florence",
+            "explanation": "Florence, Italy, is widely regarded as the birthplace of the Renaissance. During the 14th to 16th centuries, Florence was a vibrant center of art, architecture, literature, and philosophy, home to influential figures like Leonardo da Vinci, Michelangelo, Botticelli, and Machiavelli. The wealth of its merchant families, like the Medici, fueled this cultural flourishing."
+        },
+        {
+            "question": "The storming of which prison on July 14, 1789, is considered a pivotal event at the beginning of the French Revolution?",
+            "answers": [
+                {"answer": "The Tower of London"},
+                {"answer": "The Bastille"},
+                {"answer": "Alcatraz"},
+                {"answer": "Château d'If"}
+            ],
+            "answer": "The Bastille",
+            "explanation": "The storming of the Bastille, a medieval fortress and prison in Paris, on July 14, 1789, was a symbolic and significant event in the early stages of the French Revolution. Although it held only a few prisoners at the time, the Bastille represented royal authority and tyranny. Its fall to the revolutionary crowd demonstrated the people's power and marked a turning point in the revolution. July 14th is now celebrated as Bastille Day, France's national holiday."
+        },
+        {
+            "question": "Who is credited with inventing the printing press with movable type in Europe around 1440, revolutionizing the spread of information?",
+            "answers": [
+                {"answer": "Leonardo da Vinci"},
+                {"answer": "Galileo Galilei"},
+                {"answer": "Johannes Gutenberg"},
+                {"answer": "Isaac Newton"}
+            ],
+            "answer": "Johannes Gutenberg",
+            "explanation": "Johannes Gutenberg, a German blacksmith, goldsmith, printer, and publisher, is credited with inventing the printing press with movable type in Europe around 1440. This invention was a major turning point in history, as it allowed for the mass production of books and other texts, making information much more accessible and contributing significantly to the Renaissance, Reformation, and the Scientific Revolution."
+        },
+        {
+            "question": "The American Declaration of Independence, primarily written by Thomas Jefferson, was adopted in which year?",
+            "answers": [
+                {"answer": "1765"},
+                {"answer": "1776"},
+                {"answer": "1783"},
+                {"answer": "1789"}
+            ],
+            "answer": "1776",
+            "explanation": "The American Declaration of Independence was adopted by the Second Continental Congress on July 4, 1776. This historic document, primarily drafted by Thomas Jefferson, announced that the thirteen American colonies regarded themselves as thirteen independent sovereign states, no longer under British rule. It outlined the philosophical principles of natural rights, liberty, and popular sovereignty that justified their separation from Great Britain."
+        },
+        {
+            "question": "Which global conflict, lasting from 1914 to 1918, was also known as the 'Great War'?",
+            "answers": [
+                {"answer": "The Napoleonic Wars"},
+                {"answer": "The Cold War"},
+                {"answer": "World War I"},
+                {"answer": "World War II"}
+            ],
+            "answer": "World War I",
+            "explanation": "World War I, also known as the Great War, was a global conflict that originated in Europe and lasted from July 28, 1914, to November 11, 1918. It involved most of the world's great powers, assembled in two opposing alliances: the Allies (based on the Triple Entente of the United Kingdom, France, and Russia) and the Central Powers (originally the Triple Alliance of Germany, Austria-Hungary, and Italy). It was one of the deadliest conflicts in history, paving the way for major political changes, including revolutions in many of the nations involved."
+        },
+        {
+            "question": "The period of geopolitical tension between the United States and the Soviet Union and their respective allies, which began after World War II, is known as what?",
+            "answers": [
+                {"answer": "The Roaring Twenties"},
+                {"answer": "The Great Depression"},
+                {"answer": "The Cold War"},
+                {"answer": "The Space Race"}
+            ],
+            "answer": "The Cold War",
+            "explanation": "The Cold War was a period of geopolitical tension between the Soviet Union and the United States and their respective allies, the Eastern Bloc and the Western Bloc. This period is generally considered to span from the end of World War II in 1945 until the dissolution of the Soviet Union in 1991. It was termed 'cold' because there was no large-scale direct fighting between the two superpowers, but it was characterized by proxy wars, an arms race (especially nuclear), and ideological, political, and economic competition."
+        },
+        {
+            "question": "Who was the principal leader of the Civil Rights Movement in the United States during the 1950s and 1960s, known for his advocacy of nonviolent protest?",
+            "answers": [
+                {"answer": "Malcolm X"},
+                {"answer": "Martin Luther King Jr."},
+                {"answer": "Rosa Parks"},
+                {"answer": "Thurgood Marshall"}
+            ],
+            "answer": "Martin Luther King Jr.",
+            "explanation": "Dr. Martin Luther King Jr. was an American Baptist minister and activist who became the most visible spokesperson and leader in the Civil Rights Movement from 1955 until his assassination in 1968. He is best known for advancing civil rights through nonviolence and civil disobedience, inspired by his Christian beliefs and the nonviolent activism of Mahatma Gandhi. His leadership was fundamental to the movement's success in ending legal segregation of African Americans in the South and other parts of the United States."
+        }
+    ]
+},
+    {
+    "name": "Basic Chemistry Concepts Quiz",
+    "image": "https://images.unsplash.com/photo-1554475901-4538953918c7",
+    "questions": [
+        {
+            "question": "What are the three fundamental particles that make up an atom?",
+            "answers": [
+                {"answer": "Protons, Neutrinos, Electrons"},
+                {"answer": "Protons, Neutrons, Electrons"},
+                {"answer": "Positrons, Neutrons, Electrons"},
+                {"answer": "Photons, Neutrons, Quarks"}
+            ],
+            "answer": "Protons, Neutrons, Electrons",
+            "explanation": "Atoms, the basic building blocks of matter, are composed of three main subatomic particles:\n1.  **Protons:** Positively charged particles found in the nucleus of an atom.\n2.  **Neutrons:** Neutral particles (no charge) also found in the nucleus.\n3.  **Electrons:** Negatively charged particles that orbit the nucleus in electron shells or clouds.\nThe number of protons determines an element's atomic number and its identity."
+        },
+        {
+            "question": "What does the atomic number of an element represent?",
+            "answers": [
+                {"answer": "The number of neutrons in an atom."},
+                {"answer": "The total number of protons and neutrons in an atom."},
+                {"answer": "The number of electrons in an atom's outermost shell."},
+                {"answer": "The number of protons in an atom's nucleus."}
+            ],
+            "answer": "The number of protons in an atom's nucleus.",
+            "explanation": "The atomic number (usually denoted by the symbol Z) of a chemical element is the number of protons found in the nucleus of every atom of that element. The atomic number uniquely identifies a chemical element. In a neutral atom, the atomic number is also equal to the number of electrons."
+        },
+        {
+            "question": "Which type of chemical bond involves the sharing of electron pairs between atoms?",
+            "answers": [
+                {"answer": "Ionic Bond"},
+                {"answer": "Covalent Bond"},
+                {"answer": "Metallic Bond"},
+                {"answer": "Hydrogen Bond"}
+            ],
+            "answer": "Covalent Bond",
+            "explanation": "A covalent bond is a chemical bond that involves the sharing of electron pairs between atoms. These shared pairs of electrons are known as shared pairs or bonding pairs, and the stable balance of attractive and repulsive forces between atoms when they share electrons is known as covalent bonding. This type of bonding typically occurs between nonmetal atoms. For example, in a water molecule ($H_2O$), oxygen shares electrons with two hydrogen atoms."
+        },
+        {
+            "question": "What is the chemical symbol for water?",
+            "answers": [
+                {"answer": "CO₂"},
+                {"answer": "O₂"},
+                {"answer": "H₂O"},
+                {"answer": "NaCl"}
+            ],
+            "answer": "H₂O",
+            "explanation": "The chemical symbol for water is $H_2O$. This indicates that one molecule of water is composed of two hydrogen (H) atoms and one oxygen (O) atom. Water is a vital substance for all known forms of life."
+        },
+        {
+            "question": "In which state of matter are particles packed tightly together in a fixed arrangement, often a crystalline lattice, and vibrate in place?",
+            "answers": [
+                {"answer": "Liquid"},
+                {"answer": "Gas"},
+                {"answer": "Plasma"},
+                {"answer": "Solid"}
+            ],
+            "answer": "Solid",
+            "explanation": "In the solid state, particles (atoms, molecules, or ions) are closely packed together and held in fixed positions, often in a regular geometric pattern known as a crystalline lattice. While they cannot move freely past one another, the particles in a solid vibrate about their fixed positions. Solids have a definite shape and volume."
+        },
+        {
+            "question": "What are the substances that are present at the start of a chemical reaction called?",
+            "answers": [
+                {"answer": "Products"},
+                {"answer": "Catalysts"},
+                {"answer": "Reactants"},
+                {"answer": "Solvents"}
+            ],
+            "answer": "Reactants",
+            "explanation": "In a chemical reaction, the starting substances are called reactants (or reagents). These are the substances that undergo a chemical change to form new substances. The new substances formed as a result of the chemical reaction are called products. For example, in the reaction $2H_2 + O_2 \\rightarrow 2H_2O$, hydrogen ($H_2$) and oxygen ($O_2$) are the reactants, and water ($H_2O$) is the product."
+        },
+        {
+            "question": "What does a pH value of 7 indicate about a solution?",
+            "answers": [
+                {"answer": "It is strongly acidic."},
+                {"answer": "It is strongly basic (alkaline)."},
+                {"answer": "It is neutral."},
+                {"answer": "It is a concentrated solution."}
+            ],
+            "answer": "It is neutral.",
+            "explanation": "The pH scale measures how acidic or basic (alkaline) a substance is. The scale typically ranges from 0 to 14.\n- A pH of **7 is neutral**. Pure water has a pH of 7.\n- A pH **less than 7** indicates acidity (e.g., lemon juice, vinegar).\n- A pH **greater than 7** indicates basicity or alkalinity (e.g., soap, bleach)."
+        },
+        {
+            "question": "Which of the following is an example of a chemical compound?",
+            "answers": [
+                {"answer": "Oxygen (O₂)"},
+                {"answer": "Gold (Au)"},
+                {"answer": "Salt (NaCl)"},
+                {"answer": "Air"}
+            ],
+            "answer": "Salt (NaCl)",
+            "explanation": "A chemical compound is a substance that is formed when two or more different chemical elements are chemically bonded together. \n- **Salt (NaCl)**, or sodium chloride, is a compound made from sodium (Na) and chlorine (Cl) atoms bonded ionically.\n- **Oxygen (O₂)** is an element (a molecule made of two atoms of the same element).\n- **Gold (Au)** is an element.\n- **Air** is a mixture of different gases (like nitrogen, oxygen, argon, etc.)."
+        },
+        {
+            "question": "What is the primary role of electrons in an atom's outermost shell (valence shell)?",
+            "answers": [
+                {"answer": "To determine the atom's mass number."},
+                {"answer": "To participate in chemical bonding with other atoms."},
+                {"answer": "To keep the protons and neutrons together in the nucleus."},
+                {"answer": "To absorb all incoming radiation."}
+            ],
+            "answer": "To participate in chemical bonding with other atoms.",
+            "explanation": "Electrons in the outermost shell of an atom are called valence electrons. These electrons are crucial because they are the ones primarily involved in chemical bonding. Atoms tend to gain, lose, or share valence electrons to achieve a more stable electron configuration, usually resembling that of a noble gas. The number of valence electrons largely determines the chemical properties of an element and how it will interact with other atoms."
+        },
+        {
+            "question": "What is a substance that dissolves in a solvent to form a solution called?",
+            "answers": [
+                {"answer": "Precipitate"},
+                {"answer": "Suspension"},
+                {"answer": "Solute"},
+                {"answer": "Emulsion"}
+            ],
+            "answer": "Solute",
+            "explanation": "In a solution, there are typically two main components:\n- **Solvent:** The substance that does the dissolving, usually present in the largest amount (e.g., water in saltwater).\n- **Solute:** The substance that is dissolved in the solvent (e.g., salt in saltwater).\nWhen a solute dissolves in a solvent, it forms a homogeneous mixture called a solution."
+        }
+    ]
+},
+    {
+    "name": "Basic Physics Concepts Quiz",
+    "image": "https://images.unsplash.com/photo-1532187640901-595769011974",
+    "questions": [
+        {
+            "question": "What is the tendency of an object to resist changes in its state of motion called?",
+            "answers": [
+                {"answer": "Acceleration"},
+                {"answer": "Velocity"},
+                {"answer": "Inertia"},
+                {"answer": "Force"}
+            ],
+            "answer": "Inertia",
+            "explanation": "Inertia is the resistance of any physical object to any change in its state of motion; this includes changes to its speed, direction, or state of rest. It's a fundamental property of matter. For example, if you're in a car that suddenly stops, your body continues to move forward due to inertia. This is also described by Newton's First Law of Motion."
+        },
+        {
+            "question": "Which of Newton's Laws of Motion is often stated as 'For every action, there is an equal and opposite reaction'?",
+            "answers": [
+                {"answer": "Newton's First Law"},
+                {"answer": "Newton's Second Law"},
+                {"answer": "Newton's Third Law"},
+                {"answer": "Newton's Law of Universal Gravitation"}
+            ],
+            "answer": "Newton's Third Law",
+            "explanation": "Newton's Third Law of Motion states that when one body exerts a force on a second body, the second body simultaneously exerts a force equal in magnitude and opposite in direction on the first body. So, for every action (force), there is an equal and opposite reaction (force). For example, when you jump, your legs apply a force to the ground, and the ground applies an equal and opposite force back on your legs, propelling you into the air."
+        },
+        {
+            "question": "What is the unit of measurement for force in the International System of Units (SI)?",
+            "answers": [
+                {"answer": "Joule (J)"},
+                {"answer": "Watt (W)"},
+                {"answer": "Newton (N)"},
+                {"answer": "Pascal (Pa)"}
+            ],
+            "answer": "Newton (N)",
+            "explanation": "The SI unit for force is the **Newton**, abbreviated as **N**. One Newton is defined as the force required to accelerate a mass of one kilogram by one meter per second squared ($1 \\text{ N} = 1 \\text{ kg} \\cdot \\text{m/s}^2$).\n- Joule (J) is the unit for energy or work.\n- Watt (W) is the unit for power.\n- Pascal (Pa) is the unit for pressure."
+        },
+        {
+            "question": "What type of energy does an object possess due to its motion?",
+            "answers": [
+                {"answer": "Potential Energy"},
+                {"answer": "Kinetic Energy"},
+                {"answer": "Chemical Energy"},
+                {"answer": "Thermal Energy"}
+            ],
+            "answer": "Kinetic Energy",
+            "explanation": "Kinetic energy is the energy that an object possesses due to its motion. If an object is moving, it has kinetic energy. The amount of kinetic energy depends on the object's mass and its speed. The formula for kinetic energy is $KE = \\frac{1}{2}mv^2$, where $m$ is mass and $v$ is velocity (speed).\n- **Potential Energy** is stored energy, often due to position (e.g., gravitational potential energy) or state (e.g., elastic potential energy)."
+        },
+        {
+            "question": "Which of the following is a common example of a lever?",
+            "answers": [
+                {"answer": "A bicycle wheel"},
+                {"answer": "A ramp"},
+                {"answer": "A seesaw"},
+                {"answer": "A screw"}
+            ],
+            "answer": "A seesaw",
+            "explanation": "A lever is a simple machine consisting of a rigid bar that pivots around a fixed point called a fulcrum. It's used to lift or move loads with less effort.\nA **seesaw** is a classic example of a first-class lever, where the fulcrum is between the effort (force applied by one person) and the load (the other person).\n- A ramp is an inclined plane.\n- A screw is a type of inclined plane wrapped around a cylinder.\n- A bicycle wheel is a wheel and axle."
+        },
+        {
+            "question": "What is the process by which heat is transferred through direct contact between particles of matter?",
+            "answers": [
+                {"answer": "Convection"},
+                {"answer": "Radiation"},
+                {"answer": "Conduction"},
+                {"answer": "Evaporation"}
+            ],
+            "answer": "Conduction",
+            "explanation": "Conduction is the transfer of heat energy through direct contact between particles. When one part of a material is heated, its particles gain energy and vibrate more vigorously. These particles then bump into nearby particles, transferring some of their energy. This process continues, transferring heat through the material. For example, when you touch a hot pan, heat is conducted from the pan to your hand. Metals are generally good conductors of heat."
+        },
+        {
+            "question": "What property of a wave is defined as the distance between two consecutive corresponding points of the same phase, such as two crests or two troughs?",
+            "answers": [
+                {"answer": "Frequency"},
+                {"answer": "Amplitude"},
+                {"answer": "Wavelength"},
+                {"answer": "Period"}
+            ],
+            "answer": "Wavelength",
+            "explanation": "The wavelength (often represented by the Greek letter lambda, $\\lambda$) of a wave is the spatial period of the wave—the distance over which the wave's shape repeats. It is the distance between consecutive corresponding points of the same phase on the wave, such as two adjacent crests (peaks), troughs (valleys), or zero crossings in the same direction.\n- **Amplitude** is the maximum displacement or distance moved by a point on a vibrating body or wave from its equilibrium position.\n- **Frequency** is the number of crests (or troughs) that pass a point per unit of time.\n- **Period** is the time it takes for one complete cycle of the wave to pass a point."
+        },
+        {
+            "question": "What happens when white light passes through a prism?",
+            "answers": [
+                {"answer": "It becomes brighter."},
+                {"answer": "It is absorbed completely."},
+                {"answer": "It reflects back as white light."},
+                {"answer": "It splits into its component colors (spectrum)."}
+            ],
+            "answer": "It splits into its component colors (spectrum).",
+            "explanation": "When white light passes through a prism, it undergoes **dispersion**. White light is actually a mixture of different colors of light (the colors of the rainbow: red, orange, yellow, green, blue, indigo, violet). Each color has a slightly different wavelength. Because the refractive index of the prism material varies slightly with the wavelength of light, different colors of light are bent (refracted) by different amounts. Violet light is bent the most, and red light is bent the least. This separation of white light into its constituent colors is called dispersion, forming a spectrum."
+        },
+        {
+            "question": "What type of electrical charge do electrons carry?",
+            "answers": [
+                {"answer": "Positive charge"},
+                {"answer": "Negative charge"},
+                {"answer": "Neutral charge"},
+                {"answer": "No charge"}
+            ],
+            "answer": "Negative charge",
+            "explanation": "Electrons are subatomic particles that orbit the nucleus of an atom. They carry a fundamental **negative** electric charge. Protons, found in the nucleus, carry a positive charge, and neutrons (also in the nucleus) have no charge (they are neutral). The flow of electrons is what constitutes an electric current in many materials."
+        },
+        {
+            "question": "According to Ohm's Law, if you increase the voltage in a simple circuit while keeping the resistance constant, what happens to the current?",
+            "answers": [
+                {"answer": "The current decreases."},
+                {"answer": "The current stays the same."},
+                {"answer": "The current increases."},
+                {"answer": "The current becomes zero."}
+            ],
+            "answer": "The current increases.",
+            "explanation": "Ohm's Law states that the current ($I$) flowing through a conductor between two points is directly proportional to the voltage ($V$) across the two points and inversely proportional to the resistance ($R$) between them. The formula is $V = IR$, or $I = \\frac{V}{R}$.\nIf the resistance ($R$) is kept constant and the voltage ($V$) is increased, then according to $I = \\frac{V}{R}$, the current ($I$) must also **increase** to maintain the relationship. Voltage is like the 'push' that makes current flow, so more push (voltage) results in more flow (current) if the opposition (resistance) doesn't change."
+        }
+    ]
+},
+    {
+    "name": "Basic Biology Concepts Quiz",
+    "image": "https://images.unsplash.com/photo-1532187863486-abf9db50b6aa",
+    "questions": [
+        {
+            "question": "What is often called the 'powerhouse of the cell' because it generates most of the cell's supply of adenosine triphosphate (ATP), used as a source of chemical energy?",
+            "answers": [
+                {"answer": "Nucleus"},
+                {"answer": "Ribosome"},
+                {"answer": "Mitochondrion"},
+                {"answer": "Endoplasmic Reticulum"}
+            ],
+            "answer": "Mitochondrion",
+            "explanation": "Mitochondria (singular: mitochondrion) are membrane-bound cell organelles that generate most of the chemical energy needed to power the cell's biochemical reactions. This chemical energy is stored in a small molecule called adenosine triphosphate (ATP). For this reason, mitochondria are often referred to as the 'powerhouses' of the cell. They achieve this through cellular respiration."
+        },
+        {
+            "question": "What is the process by which green plants and some other organisms use sunlight to synthesize foods with the help of chlorophyll pigment?",
+            "answers": [
+                {"answer": "Respiration"},
+                {"answer": "Photosynthesis"},
+                {"answer": "Fermentation"},
+                {"answer": "Transpiration"}
+            ],
+            "answer": "Photosynthesis",
+            "explanation": "Photosynthesis is a process used by plants, algae, and certain bacteria to convert light energy into chemical energy, through a process that uses sunlight, water, and carbon dioxide. The key ingredients are sunlight (as the energy source), water (absorbed through roots), carbon dioxide (taken from the air), and chlorophyll (the green pigment that captures light energy). The main products are glucose (sugar, used for energy and building material) and oxygen (released into the atmosphere)."
+        },
+        {
+            "question": "Which molecule carries the genetic instructions used in the growth, development, functioning, and reproduction of all known living organisms and many viruses?",
+            "answers": [
+                {"answer": "RNA (Ribonucleic Acid)"},
+                {"answer": "ATP (Adenosine Triphosphate)"},
+                {"answer": "Protein"},
+                {"answer": "DNA (Deoxyribonucleic Acid)"}
+            ],
+            "answer": "DNA (Deoxyribonucleic Acid)",
+            "explanation": "DNA, or Deoxyribonucleic Acid, is the hereditary material in humans and almost all other organisms. It contains the biological instructions that make each species unique. DNA is made up of two long strands that twist around each other to form a double helix. These instructions are passed from adult organisms to their offspring during reproduction."
+        },
+        {
+            "question": "What is the basic unit of heredity that is passed from parents to offspring and is held to determine some characteristic of the offspring?",
+            "answers": [
+                {"answer": "Chromosome"},
+                {"answer": "Gene"},
+                {"answer": "Allele"},
+                {"answer": "Gamete"}
+            ],
+            "answer": "Gene",
+            "explanation": "A gene is the basic physical and functional unit of heredity. Genes are made up of DNA and act as instructions to make molecules called proteins. In humans, genes vary in size from a few hundred DNA bases to more than 2 million bases. Each person has two copies of each gene, one inherited from each parent."
+        },
+        {
+            "question": "Which of these is the correct order in a typical food chain?",
+            "answers": [
+                {"answer": "Consumer → Producer → Decomposer"},
+                {"answer": "Producer → Decomposer → Consumer"},
+                {"answer": "Decomposer → Consumer → Producer"},
+                {"answer": "Producer → Consumer → Decomposer"}
+            ],
+            "answer": "Producer → Consumer → Decomposer",
+            "explanation": "A food chain shows how energy is transferred from one living organism to another through feeding.\n1.  **Producers:** These are typically plants or algae that produce their own food using sunlight (photosynthesis). They form the base of the food chain.\n2.  **Consumers:** These are organisms that eat other organisms. Primary consumers (herbivores) eat producers. Secondary consumers (carnivores or omnivores) eat primary consumers, and so on.\n3.  **Decomposers:** These are organisms like bacteria and fungi that break down dead organic matter (dead plants and animals), returning nutrients to the soil, which producers can then use. They are essential for nutrient cycling."
+        },
+        {
+            "question": "Which system in the human body is primarily responsible for breaking down food into smaller molecules that can be absorbed and used for energy and nutrients?",
+            "answers": [
+                {"answer": "Circulatory System"},
+                {"answer": "Respiratory System"},
+                {"answer": "Digestive System"},
+                {"answer": "Nervous System"}
+            ],
+            "answer": "Digestive System",
+            "explanation": "The digestive system is a group of organs working together to convert food into energy and basic nutrients to feed the entire body. It includes the mouth, esophagus, stomach, small intestine, large intestine, rectum, and anus, as well as accessory organs like the liver, pancreas, and gallbladder. Food is broken down mechanically (e.g., chewing) and chemically (e.g., by enzymes) into smaller components that can be absorbed into the bloodstream."
+        },
+        {
+            "question": "What gas do plants primarily take in from the atmosphere for photosynthesis?",
+            "answers": [
+                {"answer": "Oxygen"},
+                {"answer": "Nitrogen"},
+                {"answer": "Carbon Dioxide"},
+                {"answer": "Hydrogen"}
+            ],
+            "answer": "Carbon Dioxide",
+            "explanation": "During photosynthesis, plants absorb carbon dioxide ($CO_2$) from the atmosphere through small pores on their leaves called stomata. This carbon dioxide, along with water (absorbed by the roots) and light energy (captured by chlorophyll), is used to produce glucose (sugar) and oxygen. The oxygen is then released back into the atmosphere."
+        },
+        {
+            "question": "Which part of a plant cell is primarily responsible for photosynthesis?",
+            "answers": [
+                {"answer": "Mitochondria"},
+                {"answer": "Nucleus"},
+                {"answer": "Cell Wall"},
+                {"answer": "Chloroplast"}
+            ],
+            "answer": "Chloroplast",
+            "explanation": "Chloroplasts are organelles found in plant cells and eukaryotic algae that conduct photosynthesis. They capture light energy from the sun and convert it into chemical energy stored in molecules like ATP and NADPH, which are then used to make organic molecules from carbon dioxide in a process called the Calvin cycle. Chloroplasts contain chlorophyll, the green pigment that absorbs light."
+        },
+        {
+            "question": "What is the process by which organisms better adapted to their environment tend to survive and produce more offspring, leading to changes in species over time?",
+            "answers": [
+                {"answer": "Genetic Drift"},
+                {"answer": "Mutation"},
+                {"answer": "Natural Selection"},
+                {"answer": "Artificial Selection"}
+            ],
+            "answer": "Natural Selection",
+            "explanation": "Natural selection is the core mechanism of evolution, proposed by Charles Darwin. It's the process whereby organisms better adapted to their environment tend to survive and produce more offspring. Their advantageous traits are then passed on to the next generation. Over long periods, this can lead to significant changes in the characteristics of a species and the emergence of new species."
+        },
+        {
+            "question": "Which of the following best describes an ecosystem?",
+            "answers": [
+                {"answer": "All the plants in a specific area."},
+                {"answer": "All the animals in a specific area."},
+                {"answer": "A community of living organisms (biotic) interacting with their physical environment (abiotic)."},
+                {"answer": "The global sum of all biomes."}
+            ],
+            "answer": "A community of living organisms (biotic) interacting with their physical environment (abiotic).",
+            "explanation": "An ecosystem includes all of the living things (plants, animals, bacteria, fungi, etc. – the biotic factors) in a given area interacting with each other, and also with their physical environment (sunlight, soil, water, air, temperature, etc. – the abiotic factors). Ecosystems can vary greatly in size, from a small pond to a vast forest or an entire ocean."
+        }
+    ]
+},
+    {
     "name": "Math Problem-Solving Approaches Quiz",
     "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904",
     "questions": [
