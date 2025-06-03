@@ -86,6 +86,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
     <View style={styles.quizSelectionContainer}>
       <Text style={styles.normalText}>Select Quiz:</Text>
       <FlatList
+        style={{ padding: 10 }}
         data={quizzes}
         keyExtractor={(item) => item.name}
         renderItem={renderItem}
