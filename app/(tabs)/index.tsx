@@ -48,30 +48,26 @@ export default function TabOneScreen() {
   } = useQuiz();
   const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
-  const [randomizedQuestions, setRandomizedQuestions] = useState<QuizQuestion[]>([]);
+  const [randomizedQuestions, setRandomizedQuestions] = useState<
+    QuizQuestion[]
+  >([]);
   const [explanationMode, setExplanationMode] = useState<boolean>(false);
 
   useEffect(() => {
-    
-    if (selectedQuiz ) {
-      console.log('selectedQuiz');
-      setRandomizedQuestions(
-      shuffleArray(selectedQuiz.questions),
-      );
+    if (selectedQuiz) {
+      setRandomizedQuestions(shuffleArray(selectedQuiz.questions));
       setRandomizedAnswers(
         shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
       );
     }
   }, [selectedQuiz]);
 
-   useEffect(() => {
+  useEffect(() => {
     if (selectedQuiz && randomizedQuestions[currentQuestionIndex]) {
-      console.log('currentQuestionIndex');
       setRandomizedAnswers(
         shuffleArray(randomizedQuestions[currentQuestionIndex].answers),
       );
     }
-  
   }, [currentQuestionIndex, randomizedQuestions]);
 
   const handleQuizSelection = (quiz: any) => {
@@ -227,8 +223,7 @@ export default function TabOneScreen() {
               {!flashcardsEnabled && !scoreVisible && (
                 <Question
                   question={
-                    randomizedQuestions[currentQuestionIndex]?.question ||
-                    ''
+                    randomizedQuestions[currentQuestionIndex]?.question || ''
                   }
                   correctAnswer={
                     randomizedQuestions[currentQuestionIndex]?.answer || ''

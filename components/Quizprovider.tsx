@@ -12,9 +12,6 @@ import React, {
 import { Platform } from 'react-native';
 import { Quiz } from './types';
 
-// Load local quizzes file
-const localQuizzes = require('../assets/quizzes.json');
-
 type QuizContextType = {
   selectedQuizName: string | null;
   setSelectedQuizName: (name: string | null) => void;
@@ -51,25 +48,25 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
-  const [flashcardsEnabled, setFlashcardsEnabledState] = useState<boolean>(false);
-  const [notificationsEnabled, setNotificationsEnabledState] = useState<
-    boolean
-  >(true);
+  const [flashcardsEnabled, setFlashcardsEnabledState] =
+    useState<boolean>(false);
+  const [notificationsEnabled, setNotificationsEnabledState] =
+    useState<boolean>(true);
+  const localQuizzes = require('../assets/quizzes.json').sort(
+    (a: Quiz, b: Quiz) => a.name.localeCompare(b.name),
+  );
   const [showExplanation, setShowExplanationState] = useState<boolean>(false);
   const [quizzes, setQuizzes] = useState<Quiz[]>(localQuizzes);
-  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] = useState<
-    number
-  >(0);
-  const [totalCorrectAnswers, setTotalCorrectAnswersState] = useState<number>(
-    0,
-  );
+  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] =
+    useState<number>(0);
+  const [totalCorrectAnswers, setTotalCorrectAnswersState] =
+    useState<number>(0);
   const [totalWrongAnswers, setTotalWrongAnswersState] = useState<number>(0);
   const [totalWonGames, setTotalWonGamesState] = useState<number>(0);
   const [totalLostGames, setTotalLostGamesState] = useState<number>(0);
   const [audioEnabled, setAudioEnabledState] = useState<boolean>(true);
-  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] = useState<boolean>(
-    false,
-  );
+  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] =
+    useState<boolean>(false);
   const [remoteAddress, setRemoteAddressState] = useState<string>('');
   const [lastUpdateDate, setLastUpdateDateState] = useState<string | null>(
     null,
@@ -277,8 +274,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     } catch (error) {
       console.error('Failed to save flashcards setting', error);
     }
-  }
-  , []);
+  }, []);
 
   const setNotificationsEnabled = useCallback(async (enabled: boolean) => {
     setNotificationsEnabledState(enabled);
@@ -365,9 +361,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const notificationsSetting = await AsyncStorage.getItem(
         'notificationsEnabled',
       );
-      const flashcardsSetting = await AsyncStorage.getItem(
-        'flashcardsEnabled',
-      );
+      const flashcardsSetting = await AsyncStorage.getItem('flashcardsEnabled');
       const explanationSetting = await AsyncStorage.getItem('showExplanation');
       const audioSetting = await AsyncStorage.getItem('audioEnabled');
       const remoteUpdateSetting = await AsyncStorage.getItem(
@@ -382,7 +376,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setNotificationsEnabledState(notificationsSetting === 'true');
       setFlashcardsEnabledState(flashcardsSetting === 'true');
       setShowExplanationState(explanationSetting === 'true');
-      setAudioEnabledState(audioSetting === null ? true : audioSetting === 'true');
+      setAudioEnabledState(
+        audioSetting === null ? true : audioSetting === 'true',
+      );
       setRemoteUpdateEnabledState(remoteUpdateSetting === 'true');
       setRemoteAddressState(remoteAddressSetting || '');
       setLastUpdateDateState(lastUpdateDateSetting || null);
