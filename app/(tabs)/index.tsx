@@ -7,6 +7,7 @@ import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { Answer, Quiz, QuizQuestion } from '@/components/types';
+import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -143,7 +144,7 @@ export default function TabOneScreen() {
         <View style={styles.container}>
           {!selectedQuiz && (
             <>
-              <Text style={styles.scoreTitle}>Scores:</Text>
+              <Text style={styles.scoreTitle}>{t('scores')}</Text>
               <View style={styles.scoreBoard}>
                 <View style={styles.scoreItemRow}>
                   <View style={styles.scoreItemColumn}>
@@ -153,7 +154,9 @@ export default function TabOneScreen() {
                         { backgroundColor: 'rgb(0, 123, 255)' },
                       ]}
                     >
-                      <Text style={styles.scoreItemTitle}>Quiz wins:</Text>
+                      <Text style={styles.scoreItemTitle}>
+                        {t('Quiz_wins')}:
+                      </Text>
                       <Text style={styles.scoreItemText}>{totalWonGames}</Text>
                     </View>
                     <View
@@ -162,7 +165,9 @@ export default function TabOneScreen() {
                         { backgroundColor: 'rgb(239, 130, 22)' },
                       ]}
                     >
-                      <Text style={styles.scoreItemTitle}>Quiz losses:</Text>
+                      <Text style={styles.scoreItemTitle}>
+                        {t('Quiz_losses')}:
+                      </Text>
                       <Text style={styles.scoreItemText}>{totalLostGames}</Text>
                     </View>
                   </View>
@@ -171,7 +176,7 @@ export default function TabOneScreen() {
                       style={[styles.scoreItem, { backgroundColor: 'green' }]}
                     >
                       <Text style={styles.scoreItemTitle}>
-                        Answers correct:
+                        {t('Answers_right')}:
                       </Text>
                       <Text style={styles.scoreItemText}>
                         {totalCorrectAnswers}
@@ -183,7 +188,9 @@ export default function TabOneScreen() {
                         { backgroundColor: 'rgb(205, 57, 161)' },
                       ]}
                     >
-                      <Text style={styles.scoreItemTitle}>Answer wrong:</Text>
+                      <Text style={styles.scoreItemTitle}>
+                        {t('Answers_wrong')}:
+                      </Text>
                       <Text style={styles.scoreItemText}>
                         {totalWrongAnswers}
                       </Text>

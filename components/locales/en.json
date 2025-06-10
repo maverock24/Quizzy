@@ -8,6 +8,7 @@
   "show_explanation": "Show Explanation",
   "hide_explanation": "Hide Explanation",
   "score": "Score",
+  "scores": "Scores",
   "settings": "Settings",
   "language": "Language",
   "english": "English",
@@ -27,5 +28,9 @@
   "save": "Save",
   "reset_settings": "Reset Settings",
   "reset_settings_desc": "Resets settings / quiz stats",
-  "reset": "Reset"
+  "reset": "Reset",
+  "Quiz_wins": "Wins",
+  "Quiz_losses": "Losses",
+  "Answers_right": "Wrong Answers",
+  "Answers_wrong": "Correct Answers"
 }
