@@ -7,6 +7,7 @@ import {
   Animated,
   Pressable,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 type QuizSelectionProps = {
   quizzes: any[];
@@ -78,13 +79,14 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   quizzes,
   handleQuizSelection,
 }) => {
+  const { t } = useTranslation();
   const renderItem = ({ item }: { item: any }) => (
     <QuizButton item={item} onPress={handleQuizSelection} />
   );
 
   return (
     <View style={styles.quizSelectionContainer}>
-      <Text style={styles.normalText}>Select Quiz:</Text>
+      <Text style={styles.normalText}>{t('select_quiz')}</Text>
       <FlatList
         style={{ padding: 10 }}
         data={quizzes}

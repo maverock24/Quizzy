@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Happy from '../assets/images/happy.svg';
 import Sad from '../assets/images/sad.svg';
 import { useQuiz } from './Quizprovider';
+import { useTranslation } from 'react-i18next';
 
 type ScoreProps = {
   score: number;
@@ -13,6 +14,7 @@ export const Score: React.FC<ScoreProps> = ({
   score,
   selectedQuizAnswersAmount,
 }) => {
+  const { t } = useTranslation();
   const { flashcardsEnabled } = useQuiz();
   return (
     <View style={styles.scoreContainer}>
@@ -30,7 +32,7 @@ export const Score: React.FC<ScoreProps> = ({
           )}
 
           <Text style={styles.scoreText}>
-            Score: {score} / {selectedQuizAnswersAmount}
+            {t('score')}: {score} / {selectedQuizAnswersAmount}
           </Text>
         </>
       )}
