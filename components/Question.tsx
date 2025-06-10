@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
@@ -138,7 +139,7 @@ export const Question: React.FC<QuestionProps> = ({
   handleAnswerSelection,
   correctAnswer,
 }) => {
-  // Array of letter labels for answers
+  const { t } = useTranslation();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
   const fadeAnim = useRef(new Animated.Value(0)).current;
   // Instead of useRef, use useState to recreate animation values when answers change
@@ -278,7 +279,7 @@ export const Question: React.FC<QuestionProps> = ({
       <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between'  }}>
       <View style={[styles.card, styles.questionCard]}>
         <Text style={styles.questionHeading}>
-          Question {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
+          {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
         </Text>
         <Text style={styles.questionText}>{renderRichText(question)}</Text>
       </View>

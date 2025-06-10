@@ -6,8 +6,10 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import { I18nextProvider } from 'react-i18next';
 
 import { QuizProvider } from '@/components/Quizprovider';
+import i18n from '@/components/i18n';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -43,7 +45,11 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return (
+    <I18nextProvider i18n={i18n}>
+      <RootLayoutNav />
+    </I18nextProvider>
+  );
 }
 
 function RootLayoutNav() {

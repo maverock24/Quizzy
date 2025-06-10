@@ -1,6 +1,7 @@
 import { useQuiz } from '@/components/Quizprovider';
 import { Button } from '@/components/ui/button';
 import { REMOTE_QUIZ } from '@/constants/Urls';
+import { useTranslation } from 'react-i18next';
 import React from 'react';
 import {
   ScrollView,
@@ -10,6 +11,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import { Picker } from '@react-native-picker/picker';
 
 export default function SettingsScreen() {
   const {
@@ -28,16 +30,40 @@ export default function SettingsScreen() {
     setRemoteAdress,
   } = useQuiz();
 
+  const { t, i18n } = useTranslation();
+
   return (
     <View style={styles.outerContainer}>
       <ScrollView contentContainerStyle={styles.scrollView}>
         <View style={styles.container}>
-          <Text style={styles.heading}>Settings</Text>
+          <Text style={styles.heading}>{t('settings')}</Text>
+          {/* Language Switcher */}
+          <View style={styles.languageRow}>
+            <Text style={styles.label}>{t('language')}</Text>
+            <View
+              style={{
+                flex: 1,
+                marginLeft: 10,
+                backgroundColor: 'white',
+                borderRadius: 5,
+              }}
+            >
+              <Picker
+                selectedValue={i18n.language}
+                onValueChange={(lang: string) => i18n.changeLanguage(lang)}
+                style={{ height: 40, color: 'black' }}
+                dropdownIconColor="black"
+              >
+                <Picker.Item label={t('english')} value="en" />
+                <Picker.Item label={t('german')} value="de" />
+              </Picker>
+            </View>
+          </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Enable Notifications</Text>
+              <Text style={styles.settingText}>{t('enable_notifications')}</Text>
               <Text style={styles.settingDescription}>
-                Allows the user to switch on-/off reminder notifications
+                {t('enable_notifications_desc')}
               </Text>
             </View>
 
@@ -53,16 +79,16 @@ export default function SettingsScreen() {
           </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Use Flashcards</Text>
+              <Text style={styles.settingText}>{t('use_flashcards')}</Text>
               <Text style={styles.settingDescription}>
-                Instead of multiple choice questions, use flashcards
+                {t('use_flashcards_desc')}
               </Text>
             </View>
 
             <Switch
               trackColor={{ false: 'gray', true: 'white' }}
               thumbColor={
-                notificationsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+                flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
               }
               ios_backgroundColor="gray"
               onValueChange={setFlashcardsEnabled}
@@ -71,9 +97,9 @@ export default function SettingsScreen() {
           </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Show Explanation</Text>
+              <Text style={styles.settingText}>{t('show_explanation')}</Text>
               <Text style={styles.settingDescription}>
-                Allows the user to hide validation of answer
+                {t('show_explanation_desc')}
               </Text>
             </View>
             <Switch
@@ -88,9 +114,9 @@ export default function SettingsScreen() {
           </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Enable Sound</Text>
+              <Text style={styles.settingText}>{t('enable_sound')}</Text>
               <Text style={styles.settingDescription}>
-                Allow to play sound when answering questions
+                {t('enable_sound_desc')}
               </Text>
             </View>
             <Switch
@@ -103,10 +129,9 @@ export default function SettingsScreen() {
           </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Use custom remote data</Text>
+              <Text style={styles.settingText}>{t('use_custom_remote')}</Text>
               <Text style={styles.settingDescription}>
-                Use your own remote source for quiz data (requires Remote
-                Address)
+                {t('use_custom_remote_desc')}
               </Text>
             </View>
             <Switch
@@ -124,9 +149,9 @@ export default function SettingsScreen() {
             ]}
           >
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Remote Address</Text>
+              <Text style={styles.settingText}>{t('remote_address')}</Text>
               <Text style={styles.settingDescription}>
-                Url to json file with quiz data
+                {t('remote_address_desc')}
               </Text>
             </View>
             <TextInput
@@ -139,21 +164,21 @@ export default function SettingsScreen() {
               onPress={() => {}}
               style={[styles.button, { alignSelf: 'flex-end' }]}
             >
-              <Text style={styles.buttonText}>Save</Text>
+              <Text style={styles.buttonText}>{t('save')}</Text>
             </Button>
           </View>
           <View style={[styles.settingItem, { borderBottomWidth: 0 }]}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Reset Settings</Text>
+              <Text style={styles.settingText}>{t('reset_settings')}</Text>
               <Text style={styles.settingDescription}>
-                Resets settings / quiz stats
+                {t('reset_settings_desc')}
               </Text>
             </View>
             <Button
               onPress={resetState}
               style={[styles.button, { alignSelf: 'flex-end' }]}
             >
-              <Text style={styles.buttonText}>Reset</Text>
+              <Text style={styles.buttonText}>{t('reset')}</Text>
             </Button>
           </View>
         </View>
@@ -241,5 +266,16 @@ const styles = StyleSheet.create({
     width: '100%', // Ensures the input fills its container width
     alignSelf: 'stretch', // Helps with consistent stretching behavior
     maxWidth: '100%', // Prevents overflow on small screens
+  },
+  languageRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  label: {
+    color: 'white',
+    fontSize: 16,
+    marginRight: 10,
   },
 });
