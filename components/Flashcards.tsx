@@ -96,7 +96,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
             flashcardStyles.cardFace,
             animatedFrontStyle,
             {
-              backgroundColor: '#4A90E2',
+              backgroundColor: 'rgb(46, 150, 194)',
               width: cardWidth,
               height: cardHeight,
             },
@@ -120,7 +120,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
             flashcardStyles.cardBack,
             animatedBackStyle,
             {
-              backgroundColor: 'rgb(17, 205, 45)',
+              backgroundColor: 'rgb(0, 157, 23)',
               width: cardWidth,
               height: cardHeight,
             },
