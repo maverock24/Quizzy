@@ -1867,7 +1867,7 @@
     ]
   },
   {
-    "Name": "TypeScript-Generika",
+    "name": "TypeScript-Generika",
     "image": "https://images.unsplash.com/photo-1592609931095-54a2168ae893",
     "questions": [
       {
@@ -2023,7 +2023,7 @@
     ]
   },
   {
-    "Name": "TypeScript-Array-Manipulation",
+    "name": "TypeScript-Array-Manipulation",
     "image": "https://images.unsplash.com/photo-1612838320302-4b3b3b3b3b3b",
     "questions": [
       {
@@ -6494,7 +6494,7 @@
     ]
   },
   {
-    "Name": "Blaupausengenetik",
+    "name": "Blaupausengenetik",
     "questions": [
       {
         "question": "Worauf konzentriert sich Blueprint Genetics in erster Linie?",
