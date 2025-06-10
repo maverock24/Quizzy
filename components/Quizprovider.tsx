@@ -51,6 +51,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
+  const [isLanguageReady, setIsLanguageReady] = useState(false);
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
   const [flashcardsEnabled, setFlashcardsEnabledState] =
     useState<boolean>(false);
@@ -93,12 +94,11 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     i18n.changeLanguage(lang).catch((error) => {
       console.error('Failed to change language:', error);
     });
-    // Update quizzes when language changes
-    setQuizzes(getLocalQuizzes());
     // Save the language setting
     AsyncStorage.setItem('language', lang).catch((error) => {
       console.error('Failed to save language setting', error);
     });
+    // No need to call setQuizzes here, effect above will handle it
   }, []);
   const setAudioEnabled = useCallback(async (enabled: boolean) => {
     setAudioEnabledState(enabled);
@@ -401,6 +401,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const lastUpdateDateSetting = await AsyncStorage.getItem(
         'lastUpdateDate',
       );
+      const savedLanguage = await AsyncStorage.getItem('language');
 
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
@@ -412,10 +413,10 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setRemoteUpdateEnabledState(remoteUpdateSetting === 'true');
       setRemoteAddressState(remoteAddressSetting || '');
       setLastUpdateDateState(lastUpdateDateSetting || null);
-      setLanguageState(
-        (await AsyncStorage.getItem('language')) || i18n.language || 'en',
-      );
-
+      setLanguageState(savedLanguage || i18n.language || 'en');
+      if (savedLanguage && savedLanguage !== i18n.language) {
+        i18n.changeLanguage(savedLanguage);
+      }
       // Create a separate effect to handle checking for updates
     } catch (error) {
       console.error('Failed to load settings', error);
@@ -437,13 +438,22 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
   // Load settings from AsyncStorage on component mount
   useEffect(() => {
-    loadSettings();
+    (async () => {
+      await loadSettings();
+      setIsLanguageReady(true);
+    })();
   }, []);
 
-  // Add effect to update quizzes when language changes
-  useEffect(() => {
+  // Listen for i18n.language changes and update quizzes accordingly
+  React.useEffect(() => {
     setQuizzes(getLocalQuizzes());
+    setLanguageState(i18n.language);
   }, [i18n.language]);
+
+  if (!isLanguageReady) {
+    // Optionally, show a splash/loading screen or null
+    return null;
+  }
 
   return (
     <QuizContext.Provider

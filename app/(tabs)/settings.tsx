@@ -29,6 +29,7 @@ export default function SettingsScreen() {
     setRemoteUpdateEnabled,
     remoteAddress,
     setRemoteAdress,
+    setLanguage,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -51,7 +52,7 @@ export default function SettingsScreen() {
             >
               <Picker
                 selectedValue={i18n.language}
-                onValueChange={(lang: string) => i18n.changeLanguage(lang)}
+                onValueChange={(lang: string) => setLanguage(lang)}
                 style={{ height: 40, color: 'black' }}
                 dropdownIconColor="black"
               >
