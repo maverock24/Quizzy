@@ -8,6 +8,7 @@
   "show_explanation": "Näytä selitys",
   "hide_explanation": "Piilota selitys",
   "score": "Pisteet",
+  "scores": "Pisteet",
   "settings": "Asetukset",
   "language": "Kieli",
   "english": "Englanti",
@@ -27,5 +28,9 @@
   "save": "Tallenna",
   "reset_settings": "Palauta asetukset",
   "reset_settings_desc": "Palauttaa asetukset / tietovisan tilastot",
-  "reset": "Palauta"
+  "reset": "Palauta",
+  "Quiz_wins": "Voitettu",
+  "Quiz_losses": "Hävitty",
+  "Answers_right": "Oikeita vastauksia",
+  "Answers_wrong": "Vääriä vastauksia"
 }

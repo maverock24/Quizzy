@@ -8,6 +8,7 @@
   "show_explanation": "Erklärung anzeigen",
   "hide_explanation": "Erklärung verbergen",
   "score": "Punktzahl",
+  "scores": "Punkte",
   "settings": "Einstellungen",
   "language": "Sprache",
   "english": "Englisch",
@@ -27,5 +28,9 @@
   "save": "Speichern",
   "reset_settings": "Einstellungen zurücksetzen",
   "reset_settings_desc": "Setzt Einstellungen / Quiz-Statistiken zurück",
-  "reset": "Zurücksetzen"
+  "reset": "Zurücksetzen",
+  "Quiz_wins": "Gewonnen",
+  "Quiz_losses": "Verloren",
+  "Answers_right": "Richtige Antworten",
+  "Answers_wrong": "Falsche Antworten"
 }
