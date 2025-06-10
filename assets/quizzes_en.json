@@ -1,5 +1,837 @@
 [
   {
+    "name": "AI-Powered Search (Developer)",
+    "image": "https://images.unsplash.com/photo-1620712943543-95fc696293AE",
+    "questions": [
+      {
+        "question": "You're building a fraud detection model where only 0.1% of transactions are fraudulent. Why is 'accuracy' a poor metric for evaluating this model's performance?",
+        "answers": [
+          {
+            "answer": "Accuracy cannot be calculated on datasets with less than 1% positive cases."
+          },
+          {
+            "answer": "The model could be 99.9% accurate by simply predicting 'not fraud' for every transaction, yet it would be completely useless."
+          },
+          {
+            "answer": "Accuracy is only used for regression problems, not classification."
+          },
+          {
+            "answer": "The model will always overfit on such a dataset."
+          }
+        ],
+        "answer": "The model could be 99.9% accurate by simply predicting 'not fraud' for every transaction, yet it would be completely useless.",
+        "explanation": "This is a classic problem with **imbalanced datasets**. When one class is very rare, a model can achieve high accuracy by ignoring the rare class entirely. That's why for imbalanced problems, you must use other metrics like **Precision**, **Recall**, and the **F1-Score**, which provide a better picture of how well the model identifies the rare, positive cases (in this case, actual fraud)."
+      },
+      {
+        "question": "When is the F1-Score the most appropriate evaluation metric for a classification model?",
+        "answers": [
+          {
+            "answer": "When you only care about minimizing false positives."
+          },
+          {
+            "answer": "When you only care about minimizing false negatives."
+          },
+          {
+            "answer": "When you need a balance between Precision and Recall, especially when dealing with imbalanced classes."
+          },
+          {
+            "answer": "When you need to know the model's raw accuracy."
+          }
+        ],
+        "answer": "When you need a balance between Precision and Recall, especially when dealing with imbalanced classes.",
+        "explanation": "The **F1-Score** is the harmonic mean of Precision and Recall (`2 * (Precision * Recall) / (Precision + Recall)`). It provides a single score that balances both metrics. You would use it when the cost of false positives and false negatives are both significant. For example, in a medical diagnosis model, you want high **Recall** (to find all sick patients) but also reasonable **Precision** (to avoid treating healthy patients unnecessarily). The F1-score helps optimize for both goals simultaneously."
+      },
+      {
+        "question": "What is a practical business use case for an unsupervised clustering algorithm like K-Means?",
+        "answers": [
+          {
+            "answer": "Predicting next month's sales figures."
+          },
+          {
+            "answer": "Filtering spam emails from an inbox."
+          },
+          {
+            "answer": "Customer segmentation: grouping similar users together for targeted marketing campaigns."
+          },
+          {
+            "answer": "Transcribing spoken audio into text."
+          }
+        ],
+        "answer": "Customer segmentation: grouping similar users together for targeted marketing campaigns.",
+        "explanation": "**Clustering** is an unsupervised learning technique used to find natural groupings in data without pre-existing labels. **Customer segmentation** is a perfect use case. By feeding customer data (e.g., purchase history, Browse behavior) into a K-Means algorithm, you can identify distinct groups of customers (e.g., 'high-spending loyalists', 'bargain hunters', 'new visitors'). The business can then create different marketing strategies tailored to each segment."
+      },
+      {
+        "question": "What is 'shadow deployment' as a model release strategy?",
+        "answers": [
+          {
+            "answer": "Deploying a model that is hidden from all users and only used for internal testing."
+          },
+          {
+            "answer": "Running a new model in production alongside the old one, feeding it real traffic but not using its predictions to respond to users, only logging them for comparison."
+          },
+          {
+            "answer": "A deployment that only runs at night ('in the shadows')."
+          },
+          {
+            "answer": "Encrypting the model so its parameters are 'shadowed' from view."
+          }
+        ],
+        "answer": "Running a new model in production alongside the old one, feeding it real traffic but not using its predictions to respond to users, only logging them for comparison.",
+        "explanation": "**Shadow deployment** (or shadow mode) is a powerful, low-risk strategy for testing a new model with real-world data. The old model continues to handle all user-facing predictions. In the background, the new model receives the same requests, and its predictions are logged. This allows you to compare the new model's performance, latency, and error rates directly against the current model on live traffic without any risk to the user experience. It's a great way to build confidence before a full release or A/B test."
+      },
+      {
+        "question": "In an MLOps pipeline, what is the primary purpose of a 'model registry'?",
+        "answers": [
+          {
+            "answer": "A place to register user accounts for accessing the model."
+          },
+          {
+            "answer": "A central, versioned repository for trained model artifacts, linking them to training runs, metrics, and deployment status."
+          },
+          {
+            "answer": "A JavaScript registry like npm, but for ML models."
+          },
+          {
+            "answer": "A DNS service that resolves a model's name to its API endpoint."
+          }
+        ],
+        "answer": "A central, versioned repository for trained model artifacts, linking them to training runs, metrics, and deployment status.",
+        "explanation": "A **model registry** is a critical component for managing the model lifecycle. It acts as a central hub where you store your trained model files (e.g., `model.pkl`). More importantly, it versions these models and links them to crucial metadata: the code version used to train it, the dataset version it was trained on, its evaluation metrics, and its current deployment status (e.g., 'staging', 'production'). This provides traceability and governance, allowing you to easily manage, compare, and roll back model versions."
+      },
+      {
+        "question": "For many tabular data problems (like predicting customer churn), why are tree-based models like XGBoost or LightGBM often a better choice than a complex Deep Neural Network?",
+        "answers": [
+          {
+            "answer": "Neural networks cannot be used for tabular data."
+          },
+          {
+            "answer": "Tree-based models often perform better out-of-the-box, require less feature preprocessing (like scaling), and are more interpretable."
+          },
+          {
+            "answer": "Tree-based models are much larger and require more powerful GPUs."
+          },
+          {
+            "answer": "Neural networks can only be written in Python, while tree-based models can be written in any language."
+          }
+        ],
+        "answer": "Tree-based models often perform better out-of-the-box, require less feature preprocessing (like scaling), and are more interpretable.",
+        "explanation": "While Deep Neural Networks (DNNs) excel at unstructured data (images, text), **gradient-boosted trees** (like XGBoost, LightGBM, CatBoost) are often the state-of-the-art for structured, tabular data. They are highly effective at capturing complex non-linear interactions between features, typically require less meticulous feature scaling compared to DNNs, and often achieve top performance with less hyperparameter tuning. Their feature importance outputs also make them more interpretable than a deep neural network."
+      },
+      {
+        "question": "What does the principle 'garbage in, garbage out' (GIGO) mean in the context of machine learning?",
+        "answers": [
+          {
+            "answer": "If you use too much memory (garbage collection), the model will be slow."
+          },
+          {
+            "answer": "The performance and reliability of a machine learning model are fundamentally limited by the quality of its training data."
+          },
+          {
+            "answer": "The model's predictions should be considered temporary ('garbage') until verified by a human."
+          },
+          {
+            "answer": "Using an outdated programming language will result in a poor model."
+          }
+        ],
+        "answer": "The performance and reliability of a machine learning model are fundamentally limited by the quality of its training data.",
+        "explanation": "**GIGO** is a foundational concept in all of computer science, but it's especially critical in ML. A model can only learn the patterns present in the data it's given. If your training data is flawed—containing errors, biases, or irrelevant information—the model will learn those flaws and produce unreliable or biased predictions. Data cleaning, preprocessing, and ensuring data quality are often the most important steps in building a successful ML system."
+      },
+      {
+        "question": "Why is it important to implement rate limiting on a public-facing ML model API?",
+        "answers": [
+          {
+            "answer": "To ensure the model's predictions are always 100% accurate."
+          },
+          {
+            "answer": "To prevent abuse, manage server load, and control the costs associated with GPU/CPU computation."
+          },
+          {
+            "answer": "To force users to upgrade to a more expensive plan."
+          },
+          {
+            "answer": "Rate limiting is an outdated practice and not necessary for modern APIs."
+          }
+        ],
+        "answer": "To prevent abuse, manage server load, and control the costs associated with GPU/CPU computation.",
+        "explanation": "Implementing **rate limiting** is a standard practice for building robust APIs, and it's especially important for ML models. Each API call can consume significant computational resources (and therefore cost money). Rate limiting (e.g., allowing a user to make only 10 requests per minute) helps to: \n1. **Prevent Denial-of-Service (DoS) attacks** from a single user overwhelming your service.\n2. **Ensure fair usage** among all users.\n3. **Control costs** by capping the number of expensive inference calls a user can make in a given period."
+      },
+      {
+        "question": "You're predicting a numerical value like a house price. Your model has a Root Mean Square Error (RMSE) of $20,000. What does this metric mean in simple terms?",
+        "answers": [
+          {
+            "answer": "The model's predictions are, on average, within 20,000% of the true value."
+          },
+          {
+            "answer": "The model's average prediction is $20,000."
+          },
+          {
+            "answer": "The model's predictions are typically off from the actual house price by about $20,000."
+          },
+          {
+            "answer": "The model has processed 20,000 data points."
+          }
+        ],
+        "answer": "The model's predictions are typically off from the actual house price by about $20,000.",
+        "explanation": "**Root Mean Square Error (RMSE)** is a standard metric for evaluating regression models (models that predict a number). It measures the standard deviation of the prediction errors. A key benefit of RMSE is that its value is in the same units as the target you are predicting. So, an RMSE of $20,000 in a house price prediction model means that the model's predictions are, on average, about $20,000 away from the true sale price. It gives you a concrete idea of the typical error magnitude."
+      },
+      {
+        "question": "You are building a customer support chatbot using an LLM. Which of the following is an example of a 'negative constraint' you would implement as a guardrail?",
+        "answers": [
+          {
+            "answer": "Ensuring the bot always provides an answer, even if it's wrong."
+          },
+          {
+            "answer": "Instructing the bot to refuse to answer questions about competitors' pricing or provide legal advice."
+          },
+          {
+            "answer": "Making sure the bot's responses are always less than 500 characters long."
+          },
+          {
+            "answer": "Allowing the bot to access the user's entire purchase history."
+          }
+        ],
+        "answer": "Instructing the bot to refuse to answer questions about competitors' pricing or provide legal advice.",
+        "explanation": "**Guardrails** are safety controls applied to LLMs. A **negative constraint** is a rule that explicitly tells the bot what it *should not* do. Preventing the bot from speculating on competitor pricing or giving unqualified legal/financial advice is a crucial guardrail to reduce business risk and prevent misinformation. This is often implemented by checking the user's prompt against a list of forbidden topics or by having another model classify the user's intent before passing it to the main chatbot."
+      },
+      {
+        "question": "Your model for loan approvals shows high accuracy overall but performs poorly for a specific demographic group. What is this critical issue known as?",
+        "answers": [
+          { "answer": "Overfitting" },
+          { "answer": "Model Drift" },
+          { "answer": "A Software Bug" },
+          { "answer": "Algorithmic Bias" }
+        ],
+        "answer": "Algorithmic Bias",
+        "explanation": "**Algorithmic Bias** occurs when a system reflects the implicit biases of the data it was trained on or the developers who created it. If the training data was not representative of all demographic groups, the model will likely learn to be less accurate for the underrepresented groups. This is a major ethical and practical concern in AI, and mitigating it involves careful data collection, analysis, and fairness-aware training techniques."
+      },
+      {
+        "question": "Why might a bank choose a simpler, slightly less accurate model like Logistic Regression over a 'black box' Deep Learning model for credit scoring?",
+        "answers": [
+          { "answer": "Deep Learning models cannot be deployed as APIs." },
+          {
+            "answer": "Logistic Regression models require more data to train."
+          },
+          {
+            "answer": "For interpretability; the bank needs to explain its decisions (e.g., why a loan was denied) to customers and regulators."
+          },
+          { "answer": "Deep Learning models are only suitable for image data." }
+        ],
+        "answer": "For interpretability; the bank needs to explain its decisions (e.g., why a loan was denied) to customers and regulators.",
+        "explanation": "This comes down to **interpretability** and **explainability**. While a complex deep learning model might achieve slightly higher accuracy, its decisions can be very difficult to understand. For regulated industries like finance, it's often a legal and ethical requirement to be able to explain *why* a decision was made. A simpler model like Logistic Regression provides clear coefficients for each feature, making it easy to see which factors influenced the outcome."
+      },
+      {
+        "question": "When using a generative LLM API, what does decreasing the 'temperature' parameter typically do to the output?",
+        "answers": [
+          { "answer": "It makes the output longer and more detailed." },
+          {
+            "answer": "It makes the output more random, creative, and unpredictable."
+          },
+          {
+            "answer": "It makes the output more deterministic, focused, and less random."
+          },
+          { "answer": "It decreases the cost of the API call." }
+        ],
+        "answer": "It makes the output more deterministic, focused, and less random.",
+        "explanation": "The **temperature** parameter controls the randomness of the model's output. A higher temperature (e.g., 0.8) encourages the model to take more risks and be more creative by increasing the likelihood of less probable words being chosen. A lower temperature (e.g., 0.2) makes the model more confident and deterministic, causing it to pick the most likely words. For factual tasks like summarization, you'd use a low temperature; for creative writing, you might use a higher one."
+      },
+      {
+        "question": "What is the primary use case for a library like TensorFlow.js?",
+        "answers": [
+          {
+            "answer": "To run machine learning models directly in the user's browser or on a Node.js server."
+          },
+          {
+            "answer": "To define the backend infrastructure for training models in the cloud."
+          },
+          {
+            "answer": "It is a Python library for data cleaning and preparation."
+          },
+          { "answer": "To create 3D visualizations of neural networks." }
+        ],
+        "answer": "To run machine learning models directly in the user's browser or on a Node.js server.",
+        "explanation": "**TensorFlow.js** brings machine learning to the JavaScript ecosystem. Its main advantage is running models client-side in the browser. This is great for interactivity, personalization, and privacy (since user data doesn't have to leave their machine). It allows full-stack developers to build AI features without needing a separate Python backend for inference, which is ideal for smaller models and low-latency applications."
+      },
+      {
+        "question": "What is 'dynamic batching' on an ML inference server?",
+        "answers": [
+          {
+            "answer": "A method for training a model on different batches of data."
+          },
+          {
+            "answer": "Grouping multiple individual API requests together on the fly to run them through the model as a single batch, improving GPU throughput."
+          },
+          {
+            "answer": "A front-end technique for batching API calls to the model."
+          },
+          { "answer": "A way to version control batches of training data." }
+        ],
+        "answer": "Grouping multiple individual API requests together on the fly to run them through the model as a single batch, improving GPU throughput.",
+        "explanation": "**Dynamic batching** is a server-side optimization technique. GPUs are most efficient when they process data in large batches. In a real-time API, requests arrive one by one. An inference server with dynamic batching will collect requests that arrive within a very short time window (e.g., a few milliseconds) and group them into a single batch to send to the GPU. This significantly increases the overall throughput (predictions per second) of the server."
+      },
+      {
+        "question": "What primary role does a tool like Kubernetes play in deploying a large-scale, popular ML-powered application?",
+        "answers": [
+          { "answer": "It's a database used for storing model training logs." },
+          { "answer": "It's a Python library for building neural networks." },
+          {
+            "answer": "It automates the deployment, scaling, and management of the containerized model services."
+          },
+          {
+            "answer": "It's an integrated development environment (IDE) for data scientists."
+          }
+        ],
+        "answer": "It automates the deployment, scaling, and management of the containerized model services.",
+        "explanation": "Just as with other microservices, **Kubernetes** is a container orchestration platform that is crucial for running ML models in production at scale. After you package your model API into a Docker container, Kubernetes handles tasks like: \n- **Auto-scaling:** Automatically adding or removing container instances based on traffic.\n- **Self-healing:** Restarting containers if they crash.\n- **Rolling updates:** Deploying new model versions with zero downtime.\n- **Load balancing:** Distributing requests across multiple model instances."
+      },
+      {
+        "question": "You have a dataset for predicting user churn, but the 'last_login_date' column has many missing values. The simple data cleaning technique of filling in these missing values with the mean or median of the column is called what?",
+        "answers": [
+          { "answer": "Normalization" },
+          { "answer": "Standardization" },
+          { "answer": "Imputation" },
+          { "answer": "Binning" }
+        ],
+        "answer": "Imputation",
+        "explanation": "**Imputation** is the process of replacing missing data with substituted values. It's a common data preprocessing step. While simple methods include replacing missing values with the mean, median, or mode of the column, more advanced techniques can use machine learning models (like k-Nearest Neighbors) to predict the most likely value for the missing data based on other features."
+      },
+      {
+        "question": "You need to deploy a new version of your sentiment analysis model that returns a different JSON structure (e.g., it now includes 'emotion' in addition to 'sentiment'). What is the standard practice for releasing this without breaking existing client applications?",
+        "answers": [
+          {
+            "answer": "Overwrite the existing API endpoint and notify all clients to update their code immediately."
+          },
+          {
+            "answer": "Introduce a new versioned API endpoint, such as `/api/v2/analyze`."
+          },
+          { "answer": "Stop the old API server completely." },
+          {
+            "answer": "Ask the frontend to check for the 'emotion' key and adapt if it exists."
+          }
+        ],
+        "answer": "Introduce a new versioned API endpoint, such as `/api/v2/analyze`.",
+        "explanation": "This follows the same best practices as any web API development. When you make a **breaking change** to an API's contract (its inputs or outputs), you should introduce it as a new version. The old endpoint (`/api/v1/analyze`) should be kept running for existing clients. This allows you to deploy the new model without disrupting service. You can then create a plan to migrate clients to the new `v2` endpoint over time."
+      },
+      {
+        "question": "Your production model starts performing poorly. You analyze the live data and find that its statistical properties (e.g., the average age of users) have significantly changed from your training data. What is this specific problem called?",
+        "answers": [
+          { "answer": "Concept Drift" },
+          { "answer": "Data Drift" },
+          { "answer": "Overfitting" },
+          { "answer": "A Memory Leak" }
+        ],
+        "answer": "Data Drift",
+        "explanation": "**Data Drift** refers to changes in the input data's properties over time. The model itself might still be correct, but the data it's seeing in production is different from what it was trained on, causing performance to degrade. This is different from **Concept Drift**, where the relationship between the input features and the target variable changes. Monitoring for data drift is a key MLOps task."
+      },
+      {
+        "question": "For adding a semantic search feature to your application, what is the most common and practical approach for a development team to get text embeddings?",
+        "answers": [
+          {
+            "answer": "Train a new `word2vec` model from scratch on your company's documents."
+          },
+          { "answer": "Manually assign a unique ID vector to every word." },
+          {
+            "answer": "Use a state-of-the-art, pre-trained sentence-transformer model from a library like Hugging Face."
+          },
+          {
+            "answer": "Use a simple keyword-counting algorithm to generate the vectors."
+          }
+        ],
+        "answer": "Use a state-of-the-art, pre-trained sentence-transformer model from a library like Hugging Face.",
+        "explanation": "Training embedding models from scratch is a complex task that requires massive datasets and expertise. For nearly all practical applications, the best approach is to use a **pre-trained model**. Libraries like `sentence-transformers` (available on Hugging Face) provide access to powerful models that can convert sentences and paragraphs into meaningful vector embeddings with just a few lines of code. This is a classic example of leveraging transfer learning."
+      },
+      {
+        "question": "When a user searches for a term, the platform needs to return both structured company data (from a database) and semantically related documents (from an AI model). What is a robust architectural approach for this?",
+        "answers": [
+          {
+            "answer": "Perform a full-text search on the SQL database for both types of content."
+          },
+          {
+            "answer": "First, query a dedicated search index (like Elasticsearch or a vector database) for relevant documents, then enrich those results with structured data from a primary database (like PostgreSQL)."
+          },
+          {
+            "answer": "Have the frontend call two separate APIs and attempt to merge the results in the browser."
+          },
+          {
+            "answer": "Store all documents and structured data in a single large JSON file for fast reading."
+          }
+        ],
+        "answer": "First, query a dedicated search index (like Elasticsearch or a vector database) for relevant documents, then enrich those results with structured data from a primary database (like PostgreSQL).",
+        "explanation": "This is a standard pattern for complex search applications. Using a dedicated search index like **Elasticsearch** (for keyword search) or a **vector database** (for AI-powered semantic search) is highly optimized for fast lookups over millions of documents. The primary database (e.g., PostgreSQL) remains the source of truth for structured, relational data (like company profiles or user information). The backend API orchestrates the process: it gets a list of relevant document IDs from the search index and then uses those IDs to fetch the full, structured data from the primary database before sending the combined result to the client. This separates concerns and optimizes performance for each task."
+      },
+      {
+        "question": "How would you design a REST API endpoint (`GET /api/documents/{doc_id}`) to serve a company document along with AI-generated insights?",
+        "answers": [
+          {
+            "answer": "The endpoint should return only the raw text of the document."
+          },
+          {
+            "answer": "The endpoint should return the document text and a separate endpoint `/api/ai_insights/{doc_id}` should be called by the client."
+          },
+          {
+            "answer": "The endpoint should return a JSON object containing the document's content and a nested `insights` object with AI-generated data like sentiment, key topics, and named entities."
+          },
+          {
+            "answer": "The endpoint should return an HTML page with the document and insights already rendered."
+          }
+        ],
+        "answer": "The endpoint should return a JSON object containing the document's content and a nested `insights` object with AI-generated data like sentiment, key topics, and named entities.",
+        "explanation": "A well-designed API for a full-stack application should provide all necessary, related data in a single, predictable structure. Returning a nested `insights` object is ideal because it clearly separates the source content from the AI-generated metadata. This allows the frontend to easily access and display both the original document and its AI-powered analysis without needing to make multiple, separate API calls, which simplifies state management and improves performance.\n\n**Example Response Body:**\n```json\n{\n  \"doc_id\": \"12345\",\n  \"title\": \"Q2 Earnings Call Transcript\",\n  \"content\": \"The full text of the document...\",\n  \"insights\": {\n    \"sentiment\": \"positive\",\n    \"confidence\": 0.92,\n    \"topics\": [\"revenue_growth\", \"new_product_launch\"],\n    \"entities\": [\n      { \"text\": \"John Doe\", \"type\": \"PERSON\" }\n    ]\n  }\n}\n```"
+      },
+      {
+        "question": "Your platform ingests thousands of new analyst reports and company filings daily from various sources. What is a scalable architecture for processing these documents asynchronously?",
+        "answers": [
+          {
+            "answer": "A single cron job that runs a large script once a day to fetch and process everything."
+          },
+          {
+            "answer": "An API endpoint that the frontend calls, which processes the documents in the same request thread."
+          },
+          {
+            "answer": "A system using a message queue (like RabbitMQ or Kafka) where ingestion sources publish messages, and a fleet of worker services consumes these messages to process documents independently."
+          },
+          {
+            "answer": "Store all incoming files in a folder and have a developer manually trigger the processing script."
+          }
+        ],
+        "answer": "A system using a message queue (like RabbitMQ or Kafka) where ingestion sources publish messages, and a fleet of worker services consumes these messages to process documents independently.",
+        "explanation": "A message queue is essential for creating a **decoupled and scalable** data ingestion pipeline. When a new document arrives, a message (containing information like the file location) is placed on the queue. This is a very fast operation. A separate pool of 'worker' services listens to this queue. Whenever a new message appears, a worker picks it up and begins the time-consuming processing (e.g., text extraction, calling AI models for analysis, storing results). This architecture is robust, as a failure in one worker doesn't halt the entire system, and you can easily scale by adding more worker instances to handle higher loads."
+      },
+      {
+        "question": "The AI team provides a model that can find 'semantically similar' documents. What underlying AI concept are they most likely using?",
+        "answers": [
+          { "answer": "Boolean logic matching keywords." },
+          { "answer": "Regular expressions to find sentence patterns." },
+          {
+            "answer": "Text embeddings, which represent documents as numerical vectors in a high-dimensional space."
+          },
+          { "answer": "A simple keyword-counting algorithm (TF-IDF)." }
+        ],
+        "answer": "Text embeddings, which represent documents as numerical vectors in a high-dimensional space.",
+        "explanation": "**Text embeddings** are the foundation of modern semantic search. An AI model (like a Transformer) converts a document's text into a dense vector (an array of numbers). The key idea is that documents with similar meanings will have vectors that are 'close' to each other in this vector space. To find similar documents, the system takes the vector of the query document and searches a **vector database** to find the vectors with the smallest distance (e.g., using cosine similarity). This approach finds documents related by meaning and context, not just keywords."
+      },
+      {
+        "question": "A user requests an AI-powered summary of a 100-page research report, a task that takes the model 45 seconds to complete. How should you design the user experience?",
+        "answers": [
+          {
+            "answer": "Make the user wait on the page with a loading spinner for the full 45 seconds until the API responds."
+          },
+          {
+            "answer": "Show an error message that the document is too long to process."
+          },
+          {
+            "answer": "Implement an asynchronous task pattern: the API immediately returns a 'job accepted' response, and the frontend notifies the user when the summary is ready (e.g., via polling or a notification)."
+          },
+          {
+            "answer": "Run the summarization model directly in the user's browser using WebAssembly."
+          }
+        ],
+        "answer": "Implement an asynchronous task pattern: the API immediately returns a 'job accepted' response, and the frontend notifies the user when the summary is ready (e.g., via polling or a notification).",
+        "explanation": "Long-running tasks should never block the user interface. The standard solution is an **asynchronous job pattern**. \n1. The frontend sends the request to the backend API.\n2. The backend immediately starts the summarization job in the background (e.g., using a task queue like Celery or by spawning a separate process) and returns a `202 Accepted` response with a `jobId`.\n3. The frontend can now let the user continue Browse.\n4. The frontend can then periodically poll a status endpoint (`GET /api/jobs/{jobId}`) or listen on a WebSocket to be notified when the job is complete and the result is available to be fetched."
+      },
+      {
+        "question": "The platform needs to extract all mentioned company names, people, and locations from an earnings call transcript. What is this specific NLP task called?",
+        "answers": [
+          { "answer": "Sentiment Analysis" },
+          { "answer": "Text Summarization" },
+          { "answer": "Named Entity Recognition (NER)" },
+          { "answer": "Keyword Extraction" }
+        ],
+        "answer": "Named Entity Recognition (NER)",
+        "explanation": "**Named Entity Recognition (NER)** is a classic Natural Language Processing (NLP) task that involves identifying and categorizing key entities in text. An NER model would be trained to find and label spans of text as `ORGANIZATION`, `PERSON`, `LOCATION`, `DATE`, `MONEY`, etc. This is a core component of 'understanding' business information, as it allows the system to structure unstructured text and link it to known entities."
+      },
+      {
+        "question": "On the frontend, you need to display a data grid showing thousands of financial records with features like real-time updates, sorting, and filtering. What is a critical performance optimization technique for this?",
+        "answers": [
+          {
+            "answer": "Loading all records into the DOM at once for the fastest access."
+          },
+          {
+            "answer": "Using `setInterval` to re-render the entire table every second."
+          },
+          {
+            "answer": "Implementing 'virtualization' or 'windowing', where only the visible rows are rendered in the DOM."
+          },
+          { "answer": "Storing all the data in browser `localStorage`." }
+        ],
+        "answer": "Implementing 'virtualization' or 'windowing', where only the visible rows are rendered in the DOM.",
+        "explanation": "Rendering thousands of DOM nodes at once is a major cause of browser performance issues. **Virtualization** (or windowing) is a technique where you only render the small subset of items that can currently fit in the user's viewport. As the user scrolls, components are recycled and re-rendered with new data, creating the illusion of a seamless, massive list while keeping the number of actual DOM nodes low and the UI responsive. Libraries like `react-window`, `react-virtualized`, or built-in features in modern data grid components implement this pattern."
+      },
+      {
+        "question": "To ensure enterprise customers can only access their own private, uploaded content, what is the most fundamental security measure to implement in your backend API?",
+        "answers": [
+          { "answer": "Hiding the URLs so they are not guessable." },
+          {
+            "answer": "Using client-side JavaScript to check the user's company name before making an API call."
+          },
+          {
+            "answer": "Relying on the frontend to only request data for the correct user."
+          },
+          {
+            "answer": "Enforcing strict, server-side authorization checks on every request, ensuring the authenticated user's organization ID matches the organization ID of the requested resource."
+          }
+        ],
+        "answer": "Enforcing strict, server-side authorization checks on every request, ensuring the authenticated user's organization ID matches the organization ID of the requested resource.",
+        "explanation": "This is a critical aspect of multi-tenant security. **Client-side checks are never sufficient.** Every single API endpoint that accesses or modifies data must perform a server-side **authorization** check. After authenticating the user (e.g., via a JWT), the backend must verify that the `customer_id` associated with the user's session matches the `customer_id` of the document or data they are trying to access. Any request for data belonging to another customer must be rejected with a `403 Forbidden` or `404 Not Found` status."
+      },
+      {
+        "question": "When designing a system that uses AI, what is the concept of a 'human-in-the-loop'?",
+        "answers": [
+          {
+            "answer": "A system where humans must manually start the AI process every time."
+          },
+          {
+            "answer": "A system that requires a human to write the AI algorithm from scratch."
+          },
+          {
+            "answer": "A design pattern where human feedback is used to improve the AI model over time, especially by correcting its mistakes or validating low-confidence predictions."
+          },
+          {
+            "answer": "An AI that is designed to perfectly mimic human conversation."
+          }
+        ],
+        "answer": "A design pattern where human feedback is used to improve the AI model over time, especially by correcting its mistakes or validating low-confidence predictions.",
+        "explanation": "A **human-in-the-loop (HITL)** system combines machine and human intelligence to create a continuously improving cycle. For this company, it could work like this: if the AI model analyzes a document and its confidence score for a particular insight is low, it flags the document for review. A human expert then verifies or corrects the AI's output. This correction is then fed back into a dataset that can be used to **re-train or fine-tune** the model, making it more accurate in the future. It's a powerful way to handle edge cases and improve model performance over time."
+      },
+      {
+        "question": "Your company wants to offer a feature to 'chat with your documents'. A user uploads a 500-page PDF and asks questions about its contents. What is the modern AI architectural pattern for this?",
+        "answers": [
+          {
+            "answer": "Fine-tune a Large Language Model (LLM) on that single document, which takes several hours, then answer the question."
+          },
+          {
+            "answer": "Send the entire 500-page document to an LLM in the prompt along with the user's question."
+          },
+          {
+            "answer": "Use a Retrieval-Augmented Generation (RAG) system: chunk the document, store its embeddings in a vector database, retrieve relevant chunks based on the question, and feed only those chunks to an LLM as context."
+          },
+          {
+            "answer": "Use a regular expression to search for the user's question text within the document."
+          }
+        ],
+        "answer": "Use a Retrieval-Augmented Generation (RAG) system: chunk the document, store its embeddings in a vector database, retrieve relevant chunks based on the question, and feed only those chunks to an LLM as context.",
+        "explanation": "**Retrieval-Augmented Generation (RAG)** is the go-to pattern for this use case. It solves two major problems: the limited context window of LLMs (you can't fit 500 pages into a single prompt) and the need for the LLM to answer based on specific, provided information. The process is:\n1.  **Ingestion (done once per document):** The document is split into smaller, manageable chunks. An AI model creates a numerical vector embedding for each chunk. These embeddings are stored in a **vector database**.\n2.  **Retrieval:** When a user asks a question, the question is also converted into a vector embedding.\n3.  **Search:** The vector database is queried to find the document chunks whose embeddings are most similar to the question's embedding.\n4.  **Generation:** The original question plus the most relevant retrieved chunks are bundled together into a prompt and sent to an LLM, which then generates an answer based on the provided context."
+      },
+      {
+        "question": "In simple terms, what is the role of a 'loss function' during the training of a machine learning model?",
+        "answers": [
+          { "answer": "It is a security function to prevent data loss." },
+          {
+            "answer": "It measures how inaccurate the model's predictions are compared to the actual correct values."
+          },
+          {
+            "answer": "It is a function that determines how much memory the model is allowed to use."
+          },
+          { "answer": "It is a function that summarizes the training data." }
+        ],
+        "answer": "It measures how inaccurate the model's predictions are compared to the actual correct values.",
+        "explanation": "A **loss function** (or cost function) is crucial for training. After the model makes a prediction, the loss function calculates a 'penalty' or 'error score' based on how far off that prediction was from the true answer. The entire goal of training is to adjust the model's internal parameters to make the value from the loss function as low as possible."
+      },
+      {
+        "question": "What is the high-level goal of the 'gradient descent' optimization algorithm?",
+        "answers": [
+          {
+            "answer": "To randomly guess model parameters until the result is good enough."
+          },
+          {
+            "answer": "To iteratively adjust the model's parameters (weights) in the direction that most effectively minimizes the loss function."
+          },
+          { "answer": "To speed up the model's prediction time (inference)." },
+          {
+            "answer": "To decide which features from the dataset are most important."
+          }
+        ],
+        "answer": "To iteratively adjust the model's parameters (weights) in the direction that most effectively minimizes the loss function.",
+        "explanation": "Think of the loss function as a hilly landscape, and the goal is to find the lowest point (minimum loss). **Gradient descent** is the process of taking small steps downhill. It calculates the gradient (the slope of the loss function) and adjusts the model's parameters in the opposite direction of the gradient. This process is repeated thousands of times, iteratively guiding the model towards a state where it makes the fewest errors."
+      },
+      {
+        "question": "If your model performs perfectly on your training data but very poorly on new, unseen data from the test set, what problem is it most likely suffering from?",
+        "answers": [
+          { "answer": "Underfitting" },
+          { "answer": "Overfitting" },
+          { "answer": "A low learning rate" },
+          { "answer": "A data leak" }
+        ],
+        "answer": "Overfitting",
+        "explanation": "**Overfitting** occurs when a model learns the training data *too* well, including its noise and specific quirks, instead of the general underlying patterns. It's like a student who memorizes the answers to a practice exam but doesn't learn the concepts, so they fail the real exam. This model will have poor generalization to new data. The common solution is to use techniques like regularization, dropout, or get more diverse training data."
+      },
+      {
+        "question": "What is 'prompt engineering' in the context of working with Large Language Models (LLMs)?",
+        "answers": [
+          {
+            "answer": "A specific type of software engineering for building command-line tools."
+          },
+          {
+            "answer": "The process of optimizing the server infrastructure that hosts the LLM."
+          },
+          {
+            "answer": "The process of carefully crafting and refining the input text (the prompt) to guide the model toward generating the desired, accurate, and relevant output."
+          },
+          { "answer": "A method for training LLMs from scratch." }
+        ],
+        "answer": "The process of carefully crafting and refining the input text (the prompt) to guide the model toward generating the desired, accurate, and relevant output.",
+        "explanation": "**Prompt engineering** is a critical skill for any developer using modern LLMs. The quality and structure of your prompt dramatically affect the quality of the output. It involves techniques like providing clear instructions, giving few-shot examples (providing a few input/output examples in the prompt), and refining the wording to guide the model's behavior without having to retrain the model itself."
+      },
+      {
+        "question": "In a large organization with multiple teams using machine learning, what problem does a 'feature store' solve?",
+        "answers": [
+          {
+            "answer": "It's a marketplace for buying and selling new application features."
+          },
+          {
+            "answer": "It's a version control system for model code, similar to Git."
+          },
+          {
+            "answer": "It provides a central, consistent repository for features, preventing discrepancies between the data used for training and for real-time inference."
+          },
+          {
+            "answer": "It's a UI component library for displaying AI features to users."
+          }
+        ],
+        "answer": "It provides a central, consistent repository for features, preventing discrepancies between the data used for training and for real-time inference.",
+        "explanation": "A **feature store** is a central place to store, access, and manage curated features for machine learning models. It solves a critical problem called **training-serving skew**, where subtle differences in how features are calculated for training versus how they're generated for live predictions can degrade model performance. A feature store ensures that both processes use the exact same logic, improving consistency and reliability."
+      },
+      {
+        "question": "For a new ML model API where performance and automatic documentation are critical, what is a key advantage of using a modern Python framework like FastAPI over a more traditional one like Flask?",
+        "answers": [
+          {
+            "answer": "FastAPI can only be used for machine learning, making it more specialized."
+          },
+          {
+            "answer": "FastAPI is older and has more community support than Flask."
+          },
+          {
+            "answer": "FastAPI uses Python type hints for automatic data validation, serialization, and interactive API documentation (via Swagger UI/OpenAPI)."
+          },
+          {
+            "answer": "Flask does not support handling JSON data, while FastAPI does."
+          }
+        ],
+        "answer": "FastAPI uses Python type hints for automatic data validation, serialization, and interactive API documentation (via Swagger UI/OpenAPI).",
+        "explanation": "While Flask is very capable, **FastAPI** is built from the ground up to leverage modern Python features. By using standard Python type hints (e.g., `def predict(item: Item)`), FastAPI automatically provides: 1) **Data validation:** incoming requests are automatically validated against the specified types. 2) **Serialization:** it handles the conversion to and from JSON. 3) **Automatic API Docs:** It generates interactive documentation (like Swagger UI) where developers can see and test your API endpoints directly in their browser. This is extremely valuable for creating robust, well-documented ML services."
+      },
+      {
+        "question": "Why is it crucial to version control your datasets (e.g., using a tool like DVC - Data Version Control) alongside your model code in a production ML system?",
+        "answers": [
+          { "answer": "To reduce the file size of the dataset." },
+          {
+            "answer": "To ensure full reproducibility, allowing you to recreate a specific model version by knowing exactly which data it was trained on."
+          },
+          {
+            "answer": "To encrypt the dataset so only authorized users can access it."
+          },
+          {
+            "answer": "To host the dataset on a public website for others to download."
+          }
+        ],
+        "answer": "To ensure full reproducibility, allowing you to recreate a specific model version by knowing exactly which data it was trained on.",
+        "explanation": "Just as Git is essential for tracking changes in your code, data versioning is essential for tracking changes in your data. **Reproducibility** is key in ML. If a model in production behaves unexpectedly, you need to be able to go back to the exact code *and* the exact dataset that was used to create it. Tools like DVC work alongside Git to track large data files without bloating the Git repository, ensuring you can always reproduce a model and its results."
+      },
+      {
+        "question": "An LLM-powered chatbot for your service starts inventing plausible-sounding but factually incorrect details about financial reports that it was not trained on. What is this common AI behavior called?",
+        "answers": [
+          { "answer": "Hyper-parameterization" },
+          { "answer": "Hallucination" },
+          { "answer": "Regularization" },
+          { "answer": "Feature extraction" }
+        ],
+        "answer": "Hallucination",
+        "explanation": "**Hallucination** is the term used when an AI model, particularly an LLM, generates text that is nonsensical or factually incorrect, but presents it confidently as if it were true. This happens because the model is a generative system based on statistical patterns, not a knowledge retrieval system with a concept of truth. The RAG (Retrieval-Augmented Generation) pattern is a primary technique used to mitigate hallucinations by grounding the model with specific, factual information at the time of the request."
+      },
+      {
+        "question": "For your market intelligence search engine, which scenario describes a failure in model **Precision**?",
+        "answers": [
+          {
+            "answer": "A highly relevant document about 'Apple Inc. earnings' exists in the system, but the search results for that term fail to include it."
+          },
+          {
+            "answer": "A search for 'Apple Inc. earnings' returns many irrelevant documents about fruit farming and apple recipes in addition to the correct ones."
+          },
+          { "answer": "The time it takes to get search results is too slow." },
+          {
+            "answer": "The user interface for displaying search results is confusing."
+          }
+        ],
+        "answer": "A search for 'Apple Inc. earnings' returns many irrelevant documents about fruit farming and apple recipes in addition to the correct ones.",
+        "explanation": "**Precision** measures how many of the retrieved items are actually relevant. It answers the question: \"Of all the results I returned, how many were correct?\" A low precision means your search results are cluttered with irrelevant junk, even if all the correct documents are also present. A failure in **Recall**, on the other hand, would be not returning a relevant document at all (as described in the first option)."
+      },
+      {
+        "question": "What is a key step you would add to a CI/CD pipeline specifically for an ML model, which is not typically found in a standard web app deployment pipeline?",
+        "answers": [
+          { "answer": "Running unit tests on the API code." },
+          { "answer": "Building a Docker container." },
+          {
+            "answer": "An automated model evaluation step that checks the model's performance metrics (e.g., accuracy, precision, recall) against a holdout test dataset."
+          },
+          { "answer": "Deploying the application to a staging environment." }
+        ],
+        "answer": "An automated model evaluation step that checks the model's performance metrics (e.g., accuracy, precision, recall) against a holdout test dataset.",
+        "explanation": "While a standard CI/CD pipeline tests code functionality, an MLOps pipeline must also test the **model's performance**. After a new model is trained automatically, the pipeline should include a step to run it against a pre-defined test dataset. It then compares performance metrics (like F1-score, accuracy, etc.) against established thresholds or the performance of the currently deployed model. If the new model doesn't meet these criteria, the deployment is automatically rejected. This prevents deploying a model that is actually worse than the one in production."
+      },
+      {
+        "question": "What is the primary goal of 'model quantization' in the context of deploying a deep learning model?",
+        "answers": [
+          {
+            "answer": "To increase the model's accuracy by adding more training data."
+          },
+          {
+            "answer": "To reduce the model's file size and improve inference speed by converting its weights to a lower-precision format (e.g., from 32-bit floats to 8-bit integers)."
+          },
+          {
+            "answer": "To split a large model into smaller models that can run in parallel."
+          },
+          {
+            "answer": "To count the number of parameters ('quantify') in the model for documentation."
+          }
+        ],
+        "answer": "To reduce the model's file size and improve inference speed by converting its weights to a lower-precision format (e.g., from 32-bit floats to 8-bit integers).",
+        "explanation": "**Model quantization** is a crucial optimization technique for deployment. By reducing the precision of the model's weights (e.g., from a 4-byte float to a 1-byte integer), you can dramatically decrease the model's file size and memory footprint. This also allows for faster computations on compatible hardware (like CPUs or specialized mobile processors), making it essential for deploying models on edge devices like smartphones or IoT hardware."
+      },
+      {
+        "question": "In the context of Large Language Model (LLM) APIs, why is understanding 'tokenization' important for a developer?",
+        "answers": [
+          {
+            "answer": "It refers to the security token (JWT) needed to authenticate with the API."
+          },
+          {
+            "answer": "It's the process of training the model, and developers need to track it."
+          },
+          {
+            "answer": "Because API usage is often priced per token, and models have maximum token limits for their context windows."
+          },
+          { "answer": "It's a method for caching responses to reduce latency." }
+        ],
+        "answer": "Because API usage is often priced per token, and models have maximum token limits for their context windows.",
+        "explanation": "**Tokenization** is the process of breaking down a piece of text into smaller chunks (tokens), which can be words, sub-words, or characters. For a developer using an LLM API, this is critical for two practical reasons: 1) **Cost:** Most API providers bill based on the number of input and output tokens. 2) **Context Limits:** Every model has a maximum context window (e.g., 4,096 or 128,000 tokens). You cannot send a prompt that, once tokenized, exceeds this limit. Understanding how text translates to tokens is essential for managing costs and avoiding errors."
+      },
+      {
+        "question": "What is a tool like Apache Airflow or Prefect used for in a large-scale ML system?",
+        "answers": [
+          { "answer": "As a database for storing vector embeddings." },
+          { "answer": "As a real-time API server for model inference." },
+          {
+            "answer": "To programmatically author, schedule, and monitor complex data pipelines and workflows."
+          },
+          { "answer": "As a front-end framework for building dashboards." }
+        ],
+        "answer": "To programmatically author, schedule, and monitor complex data pipelines and workflows.",
+        "explanation": "Tools like **Apache Airflow** are workflow management platforms. In ML, you have complex, multi-step processes that need to run on a schedule (e.g., 'every night at 1 AM, fetch new data from Source A, preprocess it, use it to retrain Model B, evaluate the new model, and if it's better, deploy it'). Airflow allows you to define this entire workflow as a DAG (Directed Acyclic Graph) in Python code, and it handles the scheduling, retries, and monitoring, making your data pipelines robust and maintainable."
+      },
+      {
+        "question": "When would it be a good architectural choice to deploy a lightweight ML model on a serverless platform like AWS Lambda or Google Cloud Functions?",
+        "answers": [
+          {
+            "answer": "For training very large models that require powerful GPUs for weeks."
+          },
+          {
+            "answer": "For models with infrequent or spiky traffic, where you want to pay only for execution time without managing a dedicated server."
+          },
+          {
+            "answer": "When the model requires more than 15 minutes to process a single request."
+          },
+          {
+            "answer": "For applications requiring a persistent WebSocket connection to the model."
+          }
+        ],
+        "answer": "For models with infrequent or spiky traffic, where you want to pay only for execution time without managing a dedicated server.",
+        "explanation": "**Serverless platforms** like AWS Lambda are ideal for use cases where you don't need a server running 24/7. If your model is relatively small (fits within the platform's package size limits) and inference is fast (completes within the execution time limit), you can deploy it as a serverless function. This is extremely cost-effective for services that are called infrequently or have unpredictable traffic spikes, as you pay only when the code runs, and scaling is handled automatically."
+      },
+      {
+        "question": "How would you typically implement a caching layer for an ML API endpoint that performs expensive inference (e.g., analyzing a block of text)?",
+        "answers": [
+          {
+            "answer": "By storing the results in a global variable in the Python script."
+          },
+          {
+            "answer": "By using a browser cookie to store the last prediction."
+          },
+          {
+            "answer": "By using an in-memory datastore like Redis to store a hash of the input text as the key and the model's prediction as the value."
+          },
+          { "answer": "By logging every request and response to a text file." }
+        ],
+        "answer": "By using an in-memory datastore like Redis to store a hash of the input text as the key and the model's prediction as the value.",
+        "explanation": "This is a classic web development pattern applied to ML. For deterministic models, the same input will always produce the same output. To save on computation costs and reduce latency for repeated requests, you can use a fast in-memory cache like **Redis**. The workflow is: 1) When a request comes in, calculate a hash (e.g., SHA-256) of the input data. 2) Check if this hash exists as a key in Redis. 3) If it exists, return the cached prediction. 4) If not, send the data to the model for inference, then store the result in Redis with the hash as the key before returning it."
+      },
+      {
+        "question": "How would you safely A/B test a new, potentially better recommendation model against the current one in production?",
+        "answers": [
+          {
+            "answer": "Deploy the new model and immediately switch all users to it, then monitor the results."
+          },
+          {
+            "answer": "Deploy both models and let the user choose which one they want to use via a settings toggle."
+          },
+          {
+            "answer": "Route a small percentage of user traffic (e.g., 5%) to the new model and compare its key performance metrics against the old model's performance on the other 95% of traffic."
+          },
+          {
+            "answer": "Ask the marketing team to survey users about which model they think would be better."
+          }
+        ],
+        "answer": "Route a small percentage of user traffic (e.g., 5%) to the new model and compare its key performance metrics against the old model's performance on the other 95% of traffic.",
+        "explanation": "**A/B testing** (or canary releasing) is the standard practice for safely rolling out changes. A router or feature flag system directs a small, random portion of traffic to the new model (Variant B) while the majority continues to use the existing model (Variant A). You then collect data and compare business-relevant metrics (e.g., click-through rate, conversion rate, user engagement) for both groups. If the new model performs significantly better, you can gradually increase its traffic share until it serves 100% of users."
+      },
+      {
+        "question": "What is the purpose of implementing 'guardrails' around an LLM in a customer-facing application?",
+        "answers": [
+          {
+            "answer": "To increase the number of tokens the model can process."
+          },
+          {
+            "answer": "To ensure the model only uses a specific version of Python."
+          },
+          {
+            "answer": "To prevent the model from generating inappropriate, unsafe, off-topic, or factually incorrect responses by filtering inputs and outputs."
+          },
+          { "answer": "To connect the LLM to a vector database." }
+        ],
+        "answer": "To prevent the model from generating inappropriate, unsafe, off-topic, or factually incorrect responses by filtering inputs and outputs.",
+        "explanation": "**LLM guardrails** are a safety layer that sits between the user and the LLM. They are a set of programmatic rules and checks designed to control the model's behavior. For example, a guardrail might check if a user's input contains harmful language, or it might check the LLM's generated response to ensure it doesn't contain sensitive information, toxic content, or veer into topics you've defined as off-limits. This is crucial for maintaining brand safety and providing a reliable user experience."
+      },
+      {
+        "question": "What is the main purpose of performing 'error analysis' after training a model?",
+        "answers": [
+          { "answer": "To analyze syntax errors in the training script code." },
+          { "answer": "To count the total number of correct predictions." },
+          {
+            "answer": "To manually inspect the specific examples the model got wrong to identify patterns and weaknesses."
+          },
+          {
+            "answer": "To analyze network errors between the training server and the data source."
+          }
+        ],
+        "answer": "To manually inspect the specific examples the model got wrong to identify patterns and weaknesses.",
+        "explanation": "Simply knowing your model is '95% accurate' isn't enough. **Error analysis** is the process of digging into the 5% of cases where the model failed. By looking at the actual examples it got wrong, you can discover patterns. For example, you might find your image classifier consistently fails on blurry images or that your sentiment analyzer struggles with sarcastic text. These insights are invaluable because they tell you exactly how to improve your model, such as by adding more examples of blurry images to your training data."
+      },
+      {
+        "question": "What is a potential advantage of using GraphQL for an AI backend that serves highly interconnected data (e.g., companies, their executives, and related news articles)?",
+        "answers": [
+          {
+            "answer": "GraphQL is the only way to serve data from a Python backend."
+          },
+          {
+            "answer": "It allows the frontend to request the exact nested data it needs in a single query, reducing over-fetching."
+          },
+          { "answer": "It automatically authenticates all API requests." },
+          { "answer": "GraphQL APIs are always faster than REST APIs." }
+        ],
+        "answer": "It allows the frontend to request the exact nested data it needs in a single query, reducing over-fetching.",
+        "explanation": "In a traditional REST API, fetching this kind of nested data might require multiple requests (e.g., `GET /companies/123`, then `GET /executives?company_id=123`, then `GET /articles?company_id=123`). **GraphQL** allows the client to define the exact structure of the data it needs in a single query. The frontend can ask for a company, its list of executives, and the last 5 articles related to each executive all in one go. This prevents over-fetching (getting fields you don't need) and under-fetching (having to make multiple round trips to get all the data)."
+      },
+      {
+        "question": "Within your Python model API, you need to fetch user data from another internal microservice before making a prediction. Which standard, popular library would you typically use to make that HTTP request?",
+        "answers": [
+          { "answer": "Pandas" },
+          { "answer": "Flask" },
+          { "answer": "NumPy" },
+          { "answer": "requests" }
+        ],
+        "answer": "requests",
+        "explanation": "This is a fundamental practical skill. While `Flask` or `FastAPI` are used to *create* the API server, the `requests` library is the de facto standard in Python for *making* HTTP requests to other services. It provides a simple and clean API for sending `GET`, `POST`, and other requests. For example: `response = requests.get('http://user-service/api/users/123').json()`."
+      }
+    ]
+  },
+  {
     "name": "AI/ML for Developers",
     "image": "https://images.unsplash.com/photo-1620712943543-95fc696293AE",
     "questions": [
