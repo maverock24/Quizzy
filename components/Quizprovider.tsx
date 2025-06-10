@@ -11,6 +11,7 @@ import React, {
 } from 'react';
 import { Platform } from 'react-native';
 import { Quiz } from './types';
+import i18n from '@/components/i18n';
 
 type QuizContextType = {
   selectedQuizName: string | null;
@@ -52,11 +53,24 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     useState<boolean>(false);
   const [notificationsEnabled, setNotificationsEnabledState] =
     useState<boolean>(true);
-  const localQuizzes = require('../assets/quizzes.json').sort(
-    (a: Quiz, b: Quiz) => a.name.localeCompare(b.name),
-  );
+  // Dynamically require quizzes based on current language
+  const getLocalQuizzes = () => {
+    const lang = i18n.language || 'en';
+    const getQuizName = (quiz: any) => quiz.name || quiz.nimi || '';
+    let quizzes;
+    if (lang.startsWith('fi')) {
+      quizzes = require('../assets/quizzes_fi.json');
+    } else if (lang.startsWith('de')) {
+      quizzes = require('../assets/quizzes_de.json');
+    } else {
+      quizzes = require('../assets/quizzes_en.json');
+    }
+    return quizzes.sort((a: any, b: any) =>
+      getQuizName(a).localeCompare(getQuizName(b)),
+    );
+  };
   const [showExplanation, setShowExplanationState] = useState<boolean>(false);
-  const [quizzes, setQuizzes] = useState<Quiz[]>(localQuizzes);
+  const [quizzes, setQuizzes] = useState<Quiz[]>(getLocalQuizzes());
   const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] =
     useState<number>(0);
   const [totalCorrectAnswers, setTotalCorrectAnswersState] =
@@ -111,7 +125,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setFlashcardsEnabledState(false);
     setNotificationsEnabledState(true);
     setShowExplanationState(false);
-    setQuizzes(localQuizzes);
+    setQuizzes(getLocalQuizzes());
     setTotalQuestionsAnsweredState(0);
     setTotalCorrectAnswersState(0);
     setTotalWrongAnswersState(0);
@@ -406,6 +420,11 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   useEffect(() => {
     loadSettings();
   }, []);
+
+  // Add effect to update quizzes when language changes
+  useEffect(() => {
+    setQuizzes(getLocalQuizzes());
+  }, [i18n.language]);
 
   return (
     <QuizContext.Provider

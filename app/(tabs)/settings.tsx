@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { P } from '@expo/html-elements';
 
 export default function SettingsScreen() {
   const {
@@ -56,12 +57,15 @@ export default function SettingsScreen() {
               >
                 <Picker.Item label={t('english')} value="en" />
                 <Picker.Item label={t('german')} value="de" />
+                <Picker.Item label={t('finnish')} value="fi" />
               </Picker>
             </View>
           </View>
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>{t('enable_notifications')}</Text>
+              <Text style={styles.settingText}>
+                {t('enable_notifications')}
+              </Text>
               <Text style={styles.settingDescription}>
                 {t('enable_notifications_desc')}
               </Text>
