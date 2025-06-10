@@ -126,11 +126,11 @@ const Flashcard: React.FC<FlashcardProps> = ({
             },
           ]}
         >
-          <Text style={flashcardStyles.questionNumberText}>
+          {/* <Text style={flashcardStyles.questionNumberText}>
             {selectedQuizAnswersAmount}
-          </Text>
+          </Text> */}
           <Text
-            style={flashcardStyles.cardText}
+            style={flashcardStyles.cardTextAnswer}
             numberOfLines={6}
             ellipsizeMode="tail"
           >
@@ -138,7 +138,7 @@ const Flashcard: React.FC<FlashcardProps> = ({
           </Text>
           <Text
             style={flashcardStyles.cardTextExplanation}
-            numberOfLines={6}
+            numberOfLines={11}
             ellipsizeMode="tail"
           >
             {explanation}
@@ -160,7 +160,7 @@ const flashcardStyles = StyleSheet.create({
     borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20,
+    padding: 10,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
@@ -184,14 +184,21 @@ const flashcardStyles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   cardText: {
-    fontSize: 16,
+    fontSize: 14,
     color: '#FFFFFF',
     textAlign: 'center',
     fontWeight: '500',
   },
   cardTextExplanation: {
     marginTop: 10,
-    fontSize: 16,
+    fontSize: 12,
+    color: '#FFFFFF',
+    textAlign: 'center',
+    fontWeight: '500',
+  },
+  cardTextAnswer: {
+    marginTop: 0,
+    fontSize: 12,
     color: '#FFFFFF',
     textAlign: 'center',
     fontWeight: '500',
