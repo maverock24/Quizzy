@@ -1,19 +1,35 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import * as RNLocalize from 'react-native-localize';
+import { Platform } from 'react-native';
 import en from './locales/en.json';
 import de from './locales/de.json';
 
-// Add more languages as needed
+function getInitialLanguage() {
+  if (Platform.OS === 'web' && typeof navigator !== 'undefined') {
+    const lang = navigator.language || (navigator.languages && navigator.languages[0]) || 'en';
+    if (lang.startsWith('de')) return 'de';
+    return 'en';
+  } else {
+    const locales = RNLocalize.getLocales();
+    if (locales && locales.length > 0) {
+      const lang = locales[0].languageCode;
+      if (lang.startsWith('de')) return 'de';
+      return 'en';
+    }
+    return 'en';
+  }
+}
 
 i18n.use(initReactI18next).init({
-  lng: 'en', // default language
+  lng: getInitialLanguage(),
   fallbackLng: 'en',
   resources: {
     en: { translation: en },
     de: { translation: de },
   },
   interpolation: {
-    escapeValue: false, // react already safes from xss
+    escapeValue: false,
   },
 });
 
