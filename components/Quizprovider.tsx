@@ -14,6 +14,8 @@ import { Quiz } from './types';
 import i18n from '@/components/i18n';
 
 type QuizContextType = {
+  language: string;
+  setLanguage: (lang: string) => void;
   selectedQuizName: string | null;
   setSelectedQuizName: (name: string | null) => void;
   flashcardsEnabled: boolean;
@@ -48,6 +50,7 @@ const QuizContext = createContext<QuizContextType | undefined>(undefined);
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
   const [flashcardsEnabled, setFlashcardsEnabledState] =
     useState<boolean>(false);
@@ -85,6 +88,18 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [lastUpdateDate, setLastUpdateDateState] = useState<string | null>(
     null,
   );
+  const setLanguage = useCallback((lang: string) => {
+    setLanguageState(lang);
+    i18n.changeLanguage(lang).catch((error) => {
+      console.error('Failed to change language:', error);
+    });
+    // Update quizzes when language changes
+    setQuizzes(getLocalQuizzes());
+    // Save the language setting
+    AsyncStorage.setItem('language', lang).catch((error) => {
+      console.error('Failed to save language setting', error);
+    });
+  }, []);
   const setAudioEnabled = useCallback(async (enabled: boolean) => {
     setAudioEnabledState(enabled);
     try {
@@ -134,6 +149,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setAudioEnabledState(false);
     setRemoteUpdateEnabledState(false);
     setRemoteAddressState('');
+    setLanguageState(i18n.language || 'en');
   }, []);
 
   // Function to check for and download updated quizzes
@@ -396,6 +412,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setRemoteUpdateEnabledState(remoteUpdateSetting === 'true');
       setRemoteAddressState(remoteAddressSetting || '');
       setLastUpdateDateState(lastUpdateDateSetting || null);
+      setLanguageState(
+        (await AsyncStorage.getItem('language')) || i18n.language || 'en',
+      );
 
       // Create a separate effect to handle checking for updates
     } catch (error) {
@@ -456,6 +475,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setRemoteAdress,
         remoteAddress,
         resetState, // Expose the reset function
+        language,
+        setLanguage, // Expose the language setter
       }}
     >
       {children}

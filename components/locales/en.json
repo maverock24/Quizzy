@@ -12,6 +12,7 @@
   "language": "Language",
   "english": "English",
   "german": "German",
+  "finnish": "Finnish",
   "enable_notifications": "Enable Notifications",
   "enable_notifications_desc": "Allows the user to switch on-/off reminder notifications",
   "use_flashcards": "Use Flashcards",
