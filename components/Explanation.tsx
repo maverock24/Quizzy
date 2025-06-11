@@ -7,16 +7,14 @@ import { Ionicons } from '@expo/vector-icons';
 type ExplanationProps = {
   answerIsCorrect: boolean;
   explanation: string;
-  handleNext: () => void;
 };
 
 export const Explanation: React.FC<ExplanationProps> = ({
   answerIsCorrect,
   explanation,
-  handleNext,
 }) => (
   <View style={styles.contentContainer}>
-    <Animated.ScrollView
+    <ScrollView
               style={styles.explanationScroll}
               contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
               showsVerticalScrollIndicator={true}
@@ -43,19 +41,14 @@ export const Explanation: React.FC<ExplanationProps> = ({
         codeBlockTextStyle={{ color: 'white' }}
       />
     </View>
-    <TouchableOpacity onPress={handleNext}>
-    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-    <Text style={styles.buttonText}>Next</Text>
-    <Ionicons name="arrow-forward" size={20} color="white" style={{ marginRight: 6 }} />
-  </View>
-    </TouchableOpacity>
-    </Animated.ScrollView>
+    
+    </ScrollView>
   </View>
 );
 
 const styles = StyleSheet.create({
    explanationScroll: {
-    maxHeight: 800, // Adjust as needed for your card size
+    maxHeight: 600,
     marginTop: 10,
     marginBottom: 5,
   },
