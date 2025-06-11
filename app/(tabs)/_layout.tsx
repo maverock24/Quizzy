@@ -3,7 +3,6 @@ import { Link, Tabs, usePathname } from 'expo-router';
 import React from 'react';
 import { Easing, ImageBackground, Pressable, StyleSheet } from 'react-native';
 
-import { useQuiz } from '@/components/Quizprovider';
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors from '@/constants/Colors';
 
@@ -24,7 +23,6 @@ function TabBarIcon(props: {
 export default function TabLayout() {
   const image = require('../../assets/images/stars.jpeg');
   const colorScheme = useColorScheme();
-  const { selectedQuizName } = useQuiz();
 
   const pathName = usePathname();
   const isSettings = pathName === '/';
