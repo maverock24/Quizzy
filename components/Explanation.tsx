@@ -45,8 +45,8 @@ export const Explanation: React.FC<ExplanationProps> = ({
     </View>
     <TouchableOpacity onPress={handleNext}>
     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-    <Ionicons name="arrow-forward" size={20} color="white" style={{ marginRight: 6 }} />
     <Text style={styles.buttonText}>Next</Text>
+    <Ionicons name="arrow-forward" size={20} color="white" style={{ marginRight: 6 }} />
   </View>
     </TouchableOpacity>
     </Animated.ScrollView>
