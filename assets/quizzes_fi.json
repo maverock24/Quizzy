@@ -1,5 +1,457 @@
 [
   {
+    "name": "Suomen Historian Tietovisa",
+    "image": "https://images.unsplash.com/photo-1579563229278-6c83a713b1c4",
+    "questions": [
+        {
+            "question": "Minä päivänä Suomi julistautui itsenäiseksi?",
+            "answers": [
+                {"answer": "Juhannuspäivänä 1919"},
+                {"answer": "Vapunpäivänä 1918"},
+                {"answer": "6. joulukuuta 1917"},
+                {"answer": "Uudenvuodenpäivänä 1900"}
+            ],
+            "answer": "6. joulukuuta 1917",
+            "explanation": "Suomen senaatti, P. E. Svinhufvudin johdolla, antoi itsenäisyysjulistuksen 4. joulukuuta 1917, ja eduskunta hyväksyi sen 6. joulukuuta 1917. Tästä päivästä tuli Suomen kansallinen juhlapäivä, itsenäisyyspäivä."
+        },
+        {
+            "question": "Minkä sodan seurauksena Suomi liitettiin osaksi Venäjän keisarikuntaa autonomisena suuriruhtinaskuntana vuonna 1809?",
+            "answers": [
+                {"answer": "Suuren Pohjan sodan"},
+                {"answer": "Krimin sodan"},
+                {"answer": "Suomen sodan"},
+                {"answer": "Nuijasodan"}
+            ],
+            "answer": "Suomen sodan",
+            "explanation": "Suomen sota käytiin vuosina 1808–1809 Ruotsin ja Venäjän välillä. Sodan päätyttyä Haminan rauhaan Ruotsi joutui luovuttamaan Suomen alueen Venäjälle. Venäjän keisari Aleksanteri I antoi Suomelle laajan itsehallinnon eli autonomian, ja näin syntyi Suomen suuriruhtinaskunta."
+        },
+        {
+            "question": "Kuka lääkäri ja folkloristi kokosi ja julkaisi Suomen kansalliseepoksen, Kalevalan?",
+            "answers": [
+                {"answer": "J. V. Snellman"},
+                {"answer": "Aleksis Kivi"},
+                {"answer": "Elias Lönnrot"},
+                {"answer": "J. L. Runeberg"}
+            ],
+            "answer": "Elias Lönnrot",
+            "explanation": "Elias Lönnrot teki 1800-luvulla useita runonkeruumatkoja keräten kansanrunoja ja myyttejä. Tämän aineiston pohjalta hän kokosi ja toimitti Kalevalan, jonka ensimmäinen versio, ns. Vanha Kalevala, ilmestyi vuonna 1835. Kalevalalla oli valtava merkitys suomalaisen kansallisidentiteetin ja kulttuurin nousulle."
+        },
+        {
+            "question": "Ketä vastaan Suomi taisteli Talvisodassa vuosina 1939–1940?",
+            "answers": [
+                {"answer": "Ruotsia"},
+                {"answer": "Saksaa"},
+                {"answer": "Viroa"},
+                {"answer": "Neuvostoliittoa"}
+            ],
+            "answer": "Neuvostoliittoa",
+            "explanation": "Talvisota alkoi 30. marraskuuta 1939, kun Neuvostoliitto hyökkäsi Suomeen ilman sodanjulistusta. Suomi taisteli ylivoimaista vihollista vastaan 105 päivää. Sota päättyi Moskovan rauhaan maaliskuussa 1940, jossa Suomi joutui luovuttamaan alueita, mutta säilytti itsenäisyytensä. Suomalaisten puolustustahtoa sodan aikana kutsutaan 'talvisodan hengeksi'."
+        },
+        {
+            "question": "Osana mitä kuningaskuntaa Suomi oli yli 600 vuoden ajan ennen vuotta 1809?",
+            "answers": [
+                {"answer": "Norjan kuningaskuntaa"},
+                {"answer": "Tanskan kuningaskuntaa"},
+                {"answer": "Puolan kuningaskuntaa"},
+                {"answer": "Ruotsin kuningaskuntaa"}
+            ],
+            "answer": "Ruotsin kuningaskuntaa",
+            "explanation": "Suomi oli kiinteä osa Ruotsin kuningaskuntaa keskiajalta (noin 1100–1200-luvuilta) aina vuoteen 1809 asti. Tänä aikana Suomeen vakiintuivat länsimainen oikeusjärjestelmä, yhteiskuntarakenne ja luterilainen uskonto."
+        },
+        {
+            "question": "Kuka toimi Suomen presidenttinä poikkeuksellisen pitkän ajan, vuodesta 1956 vuoteen 1982, ja hänen aikakauttaan leimasi puolueettomuuspolitiikka Kylmän sodan aikana?",
+            "answers": [
+                {"answer": "Risto Ryti"},
+                {"answer": "Urho Kekkonen"},
+                {"answer": "C. G. E. Mannerheim"},
+                {"answer": "Mauno Koivisto"}
+            ],
+            "answer": "Urho Kekkonen",
+            "explanation": "Urho Kekkonen oli Suomen kahdeksas presidentti. Hänen 26-vuotinen virkakautensa on Suomen historian pisin. Kekkonen oli ulkopolitiikan keskeinen hahmo, ja hänen johdollaan Suomi harjoitti aktiivista puolueettomuuspolitiikkaa, ylläpitäen hyviä suhteita sekä Neuvostoliittoon että länsimaihin Kylmän sodan aikana."
+        },
+        {
+            "question": "Kuka 1800-luvun valtiomies, filosofi ja lehtimies teki merkittävää työtä suomen kielen aseman parantamiseksi ja kansallisen heräämisen eteen?",
+            "answers": [
+                {"answer": "Elias Lönnrot"},
+                {"answer": "J. L. Runeberg"},
+                {"answer": "J. V. Snellman"},
+                {"answer": "Aleksis Kivi"}
+            ],
+            "answer": "J. V. Snellman",
+            "explanation": "Johan Vilhelm Snellman oli suomalaisen kansallisaatteen ja -kulttuurin merkittävimpiä kehittäjiä. Hänen tunnetuin mottonsa oli \"Hengen jättiläinen, jonka yli kansakunta ei voi nousta, on sen oma kieli\". Hänen työnsä ansiosta suomen kielestä tuli tasaveroinen virallinen kieli ruotsin rinnalle vuonna 1863."
+        },
+        {
+            "question": "Mitkä kaksi osapuolta taistelivat toisiaan vastaan Suomen sisällissodassa vuonna 1918?",
+            "answers": [
+                {"answer": "Suomalaiset ja venäläiset"},
+                {"answer": "Punaiset ja valkoiset"},
+                {"answer": "Häme ja Savo"},
+                {"answer": "Monarkistit ja tasavaltalaiset"}
+            ],
+            "answer": "Punaiset ja valkoiset",
+            "explanation": "Suomen sisällissota käytiin pian itsenäistymisen jälkeen tammi-toukokuussa 1918. Sodan osapuolet olivat työväenliikkeestä koostuneet punaiset ja porvarillisen senaatin johtamat valkoiset. Sota oli traumaattinen kokemus kansakunnalle ja jätti syvät arvet suomalaiseen yhteiskuntaan vuosikymmeniksi."
+        },
+        {
+            "question": "Minä vuonna Suomi liittyi Euroopan unioniin (EU)?",
+            "answers": [
+                {"answer": "1991"},
+                {"answer": "1995"},
+                {"answer": "2000"},
+                {"answer": "2002"}
+            ],
+            "answer": "1995",
+            "explanation": "Suomi liittyi Euroopan unioniin 1. tammikuuta 1995 yhdessä Ruotsin ja Itävallan kanssa. Liittymisestä oli järjestetty neuvoa-antava kansanäänestys edellisenä vuonna (1994), jossa 56,9 % äänestäjistä kannatti jäsenyyttä."
+        },
+        {
+            "question": "Mikä oli C. G. E. Mannerheimin sotilaallinen rooli Talvisodan aikana?",
+            "answers": [
+                {"answer": "Presidentti"},
+                {"answer": "Pääministeri"},
+                {"answer": "Puolustusvoimain ylipäällikkö"},
+                {"answer": "Ulkoministeri"}
+            ],
+            "answer": "Puolustusvoimain ylipäällikkö",
+            "explanation": "Talvisodan sytyttyä presidentti Kyösti Kallio nimitti marsalkka Carl Gustaf Emil Mannerheimin Suomen puolustusvoimain ylipäälliköksi. Mannerheim johti Suomen sotilaallista puolustusta koko sodan ajan ja hänen johtajuudellaan oli erittäin suuri merkitys Suomen puolustustaistelun onnistumiselle."
+        },
+        {
+          "question": "Kuka Venäjän keisari teki Helsingistä Suomen suuriruhtinaskunnan pääkaupungin vuonna 1812 siirtäen sen Turusta?",
+          "answers": [
+              {"answer": "Nikolai I"},
+              {"answer": "Aleksanteri II"},
+              {"answer": "Katariina Suuri"},
+              {"answer": "Aleksanteri I"}
+          ],
+          "answer": "Aleksanteri I",
+          "explanation": "Keisari Aleksanteri I teki Helsingistä pääkaupungin vuonna 1812. Syynä oli Helsingin sijainti, joka oli lähempänä Pietaria ja kauempana Ruotsista kuin Turku. Tavoitteena oli vähentää Ruotsin vaikutusvaltaa ja integroida Suomi tiiviimmin osaksi Venäjän keisarikuntaa."
+      },
+      {
+          "question": "Mitä pidetään ensimmäisenä merkittävänä suomenkielisenä romaanina, ja kuka sen kirjoitti?",
+          "answers": [
+              {"answer": "Kalevala, Elias Lönnrot"},
+              {"answer": "Seitsemän veljestä, Aleksis Kivi"},
+              {"answer": "Sinuhe egyptiläinen, Mika Waltari"},
+              {"answer": "Vänrikki Stoolin tarinat, J. L. Runeberg"}
+          ],
+          "answer": "Seitsemän veljestä, Aleksis Kivi",
+          "explanation": "Aleksis Kiven kirjoittama 'Seitsemän veljestä', joka julkaistiin vuonna 1870, on suomalaisen kirjallisuuden merkkiteos ja sitä pidetään ensimmäisenä suomenkielisenä romaanina. Se kertoo Jukolan veljesten tarinan ja kuvaa realistisesti suomalaista kansanelämää."
+      },
+      {
+          "question": "Missä yhteiskunnallisessa asiassa Suomi oli edelläkävijä myöntäessään sen ensimmäisenä maana Euroopassa naisille vuonna 1906?",
+          "answers": [
+              {"answer": "Oikeus avioeroon"},
+              {"answer": "Yleinen oppivelvollisuus"},
+              {"answer": "Täysi äänioikeus ja vaalikelpoisuus"},
+              {"answer": "Oikeus yliopisto-opintoihin"}
+          ],
+          "answer": "Täysi äänioikeus ja vaalikelpoisuus",
+          "explanation": "Suomi myönsi naisille täyden poliittisen äänioikeuden ja vaalikelpoisuuden (oikeuden asettua ehdolle vaaleissa) ensimmäisenä maana Euroopassa ja kolmantena maana maailmassa vuonna 1906. Maailman ensimmäiset naiskansanedustajat valittiinkin Suomen eduskuntaan vuoden 1907 vaaleissa."
+      },
+      {
+          "question": "Minä vuonna Helsinki isännöi kesäolympialaisia?",
+          "answers": [
+              {"answer": "1940"},
+              {"answer": "1952"},
+              {"answer": "1968"},
+              {"answer": "1984"}
+          ],
+          "answer": "1952",
+          "explanation": "Helsingin kesäolympialaiset järjestettiin vuonna 1952. Kisat olivat Suomelle valtava ponnistus ja merkittävä tapahtuma sotien jälkeisessä jälleenrakennuksessa. Ne symboloivat Suomen paluuta kansainväliseen yhteisöön. Alun perin kisat oli myönnetty Helsingille jo vuodeksi 1940, mutta ne peruttiin toisen maailmansodan vuoksi."
+      },
+      {
+          "question": "Mikä oli Nuijasota vuosina 1596–1597?",
+          "answers": [
+              {"answer": "Sota Ruotsin ja Venäjän välillä"},
+              {"answer": "Talonpoikien kapina aatelistoa ja sotaväkeä vastaan"},
+              {"answer": "Uskonnollinen konflikti katolilaisten ja luterilaisten välillä"},
+              {"answer": "Suomen herttuan ja Ruotsin kuninkaan välinen valtataistelu"}
+          ],
+          "answer": "Talonpoikien kapina aatelistoa ja sotaväkeä vastaan",
+          "explanation": "Nuijasota oli suomalaisten talonpoikien aseellinen kapina, joka kohdistui aatelistoa ja sotilaita vastaan. Kapinan taustalla oli talonpoikien raskas verotus ja linnaleirijärjestelmän aiheuttama rasitus. Nimi tulee kapinallisten pääaseesta, nuijasta. Kapina kukistettiin verisesti."
+      },
+      {
+          "question": "Kenen kanssa Suomi oli liittoutunut (kanssasotijana) Jatkosodassa Neuvostoliittoa vastaan vuosina 1941–1944?",
+          "answers": [
+              {"answer": "Ruotsin"},
+              {"answer": "Natsi-Saksan"},
+              {"answer": "Viron"},
+              {"answer": "Yhdysvaltojen"}
+          ],
+          "answer": "Natsi-Saksan",
+          "explanation": "Jatkosodassa Suomi taisteli Neuvostoliittoa vastaan Saksan rinnalla. Suomen tavoitteena oli vallata takaisin Talvisodassa menetetyt alueet. Vaikka Suomi oli Saksan kanssasotija, se ei solminut virallista liittosopimusta ja kävi omaa erillissotaansa."
+      },
+      {
+          "question": "Minä vuonna Suomi liittyi Pohjois-Atlantin puolustusliitto NATOon?",
+          "answers": [
+              {"answer": "1995"},
+              {"answer": "2014"},
+              {"answer": "2023"},
+              {"answer": "2001"}
+          ],
+          "answer": "2023",
+          "explanation": "Suomesta tuli puolustusliitto NATOn 31. jäsenmaa 4. huhtikuuta 2023. Päätös hakea jäsenyyttä tehtiin Venäjän hyökättyä Ukrainaan vuonna 2022, mikä muutti Suomen turvallisuusympäristöä perustavanlaatuisesti ja päätti pitkän sotilaallisen liittoutumattomuuden kauden."
+      },
+      {
+          "question": "Mikä kaupunki toimi Suomen pääkaupunkina suurimman osan Ruotsin vallan ajasta ja autonomian alussa ennen Helsinkiä?",
+          "answers": [
+              {"answer": "Hämeenlinna"},
+              {"answer": "Viipuri"},
+              {"answer": "Turku"},
+              {"answer": "Porvoo"}
+          ],
+          "answer": "Turku",
+          "explanation": "Turku on Suomen vanhin kaupunki ja se toimi maan hallinnollisena keskuksena ja pääkaupunkina koko Ruotsin vallan ajan sekä autonomian ensimmäisinä vuosina. Pääkaupunki siirrettiin Helsinkiin vuonna 1812."
+      },
+      {
+          "question": "Kuka oli Suomen ensimmäinen naispresidentti?",
+          "answers": [
+              {"answer": "Elisabeth Rehn"},
+              {"answer": "Tarja Halonen"},
+              {"answer": "Riitta Uosukainen"},
+              {"answer": "Anneli Jäätteenmäki"}
+          ],
+          "answer": "Tarja Halonen",
+          "explanation": "Tarja Halonen toimi Suomen 11. presidenttinä ja oli ensimmäinen nainen virassa. Hänen virkakautensa kestivät vuodesta 2000 vuoteen 2012. Ennen presidenttiyttään hän toimi muun muassa kansanedustajana, oikeusministerinä ja ulkoministerinä."
+      },
+      {
+          "question": "Kuka kirjoitti Suomen kansallislaulun, Maamme-laulun, alkuperäiset ruotsinkieliset sanat?",
+          "answers": [
+              {"answer": "Elias Lönnrot"},
+              {"answer": "J. V. Snellman"},
+              {"answer": "Johan Ludvig Runeberg"},
+              {"answer": "Jean Sibelius"}
+          ],
+          "answer": "Johan Ludvig Runeberg",
+          "explanation": "Suomen kansallisrunoilija Johan Ludvig Runeberg kirjoitti runon 'Vårt land' (suom. 'Maamme'), joka julkaistiin osana 'Vänrikki Stoolin tarinoita' vuonna 1848. Fredrik Pacius sävelsi runon myöhemmin, ja siitä tuli Suomen kansallislaulu."
+      }
+    ]
+},
+  {
+    "name": "Suuri Muumitietovisa",
+    "image": "https://images.unsplash.com/photo-1629875375355-502a56762193",
+    "questions": [
+        {
+            "question": "Kuka on Muumien luoja, eli kirjailija ja taiteilija, joka kirjoitti ja kuvitti Muumi-kirjat?",
+            "answers": [
+                {"answer": "Astrid Lindgren"},
+                {"answer": "Tove Jansson"},
+                {"answer": "Kirsi Kunnas"},
+                {"answer": "Zachris Topelius"}
+            ],
+            "answer": "Tove Jansson",
+            "explanation": "Suomenruotsalainen kirjailija ja kuvataiteilija Tove Jansson (1914–2001) on Muumien luoja. Hän kirjoitti ja kuvitti kaikki alkuperäiset Muumi-romaanit, novellit ja sarjakuvat, jotka ovat saavuttaneet maailmanlaajuista suosiota."
+        },
+        {
+            "question": "Kuka on Muumipeikon paras ystävä, joka soittaa huuliharppua ja vaeltaa joka talveksi etelään?",
+            "answers": [
+                {"answer": "Nipsu"},
+                {"answer": "Nuuskamuikkunen"},
+                {"answer": "Hemuli"},
+                {"answer": "Haisuli"}
+            ],
+            "answer": "Nuuskamuikkunen",
+            "explanation": "Nuuskamuikkunen on Muumipeikon paras ystävä. Hän on vapaa sielu, joka rakastaa yksinoloa ja luontoa. Joka syksy, kun Muumit valmistautuvat talviunille, Nuuskamuikkunen jättää hyvästit ja matkustaa etelään palatakseen taas keväällä."
+        },
+        {
+            "question": "Mikä on sen pienen, mutta pippurisen ja päättäväisen hahmon nimi, jolla on punainen mekko ja tiukka nuttura päälaella?",
+            "answers": [
+                {"answer": "Mymmeli"},
+                {"answer": "Tiuhti"},
+                {"answer": "Pikku Myy"},
+                {"answer": "Vilijonkka"}
+            ],
+            "answer": "Pikku Myy",
+            "explanation": "Pikku Myy on pienikokoinen, mutta erittäin temperamenttinen ja suorapuheinen hahmo. Hänet tunnetaan punaisesta mekosta ja oranssista nutturasta. Vaikka hän voi olla ärhäkkä, hän on myös utelias ja peloton."
+        },
+        {
+            "question": "Mikä pelottava, yksinäinen olento jäädyttää maan kaikkialla missä hän kulkee?",
+            "answers": [
+                {"answer": "Mörkö"},
+                {"answer": "Haisuli"},
+                {"answer": "Drontti Edvard"},
+                {"answer": "Taikuri"}
+            ],
+            "answer": "Mörkö",
+            "explanation": "Mörkö on suuri, kummitusmainen ja pelottava hahmo, joka ei puhu ja jäädyttää maan jalkojensa alla. Vaikka Muumilaakson asukkaat pelkäävät häntä, Mörkö on pohjimmiltaan traagisen yksinäinen ja etsii vain lämpöä ja ystävyyttä."
+        },
+        {
+            "question": "Minkä niminen on Muumiperheen sininen, pyöreä ja tornimainen koti?",
+            "answers": [
+                {"answer": "Yksinäiset Vuoret"},
+                {"answer": "Majakka"},
+                {"answer": "Muumitalo"},
+                {"answer": "Uimahuone"}
+            ],
+            "answer": "Muumitalo",
+            "explanation": "Muumitalo on Muumiperheen ikoninen, korkea ja sylinterinmuotoinen koti. Muumipapan itse rakentama talo on aina avoin vieraille ja se on monien seikkailujen keskipiste."
+        },
+        {
+            "question": "Mitä tavaraa Muumimamma kantaa lähes aina mukanaan ja josta löytyy apu melkein mihin tahansa vaivaan?",
+            "answers": [
+                {"answer": "Punaista palloa"},
+                {"answer": "Esiliinaansa"},
+                {"answer": "Käsilaukkuaan"},
+                {"answer": "Onkivapaa"}
+            ],
+            "answer": "Käsilaukkuaan",
+            "explanation": "Muumimamman musta käsilaukku on legendaarinen. Se sisältää kaiken tarpeellisen kuivista sukista ja lääkkeistä karamelleihin ja rautalankaan. Laukku edustaa Muumimamman huolenpitoa ja kykyä ratkaista mikä tahansa ongelma."
+        },
+        {
+            "question": "Mitä ovat ne valkoiset, sähköiset ja ajelehtivat olennot, jotka vaeltavat suurissa laumoissa ja kerääntyvät ukkosella?",
+            "answers": [
+                {"answer": "Hemulit"},
+                {"answer": "Nipsut"},
+                {"answer": "Hattivatit"},
+                {"answer": "Tahmatassut"}
+            ],
+            "answer": "Hattivatteja",
+            "explanation": "Hattivatit ovat salaperäisiä olentoja, jotka eivät kuule eivätkä puhu, ja joiden ainoa tavoite tuntuu olevan horisontin saavuttaminen. Ne latautuvat sähköisesti ukkosilmalla ja voivat antaa sähköiskuja. Ne matkustavat usein pienillä veneillä suurissa laumoissa."
+        },
+        {
+            "question": "Mitä Niiskuneidin vasemmassa nilkassa on, josta hän on erityisen ylpeä?",
+            "answers": [
+                {"answer": "Timanttikoru"},
+                {"answer": "Kultainen nilkkarengas"},
+                {"answer": "Hopeinen kello"},
+                {"answer": "Kukkakuviotatuointi"}
+            ],
+            "answer": "Kultainen nilkkarengas",
+            "explanation": "Niiskuneidin yksi tunnusomaisimmista piirteistä on hänen vasemmassa jalassaan oleva kultainen nilkkarengas. Hän on hyvin turhamainen ja pitää korustaan suurta huolta."
+        },
+        {
+            "question": "Kirjassa 'Muumipeikko ja pyrstötähti', mitä uhkaavaa taivaankappaletta Muumipeikko ja Nipsu lähtevät tutkimaan?",
+            "answers": [
+                {"answer": "Kuunpimennystä"},
+                {"answer": "Tähdenlentoa"},
+                {"answer": "Pyrstötähteä (komeettaa)"},
+                {"answer": "Mustaa aukkoa"}
+            ],
+            "answer": "Pyrstötähteä (komeettaa)",
+            "explanation": "Tarinassa Muumilaaksoa uhkaa suuri pyrstötähti, joka on törmäämässä maahan. Muumipeikko ja Nipsu lähtevät yhdessä Nuuskamuikkusen kanssa matkalle Yksinäisten Vuorten tähtitorniin saadakseen lisätietoa uhasta."
+        },
+        {
+            "question": "Kuka Muumilaakson hahmoista on innokas keräilijä, joka keräilee ensin postimerkkejä ja myöhemmin kasveja?",
+            "answers": [
+                {"answer": "Muumipappa"},
+                {"answer": "Nipsu"},
+                {"answer": "Piisamirotta"},
+                {"answer": "Hemuli"}
+            ],
+            "answer": "Hemuli",
+            "explanation": "Hemulit ovat hahmoja, jotka suhtautuvat intohimoisesti ja järjestelmällisesti harrastuksiinsa. Tunnetuin Hemuli on kasvitieteilijä, joka pukeutuu mekkoon ja keräilee kasveja suurella antaumuksella. Aiemmin hän keräili postimerkkejä, mutta saatuaan kokoelmansa täyteen hän menetti mielenkiintonsa siihen."
+        },
+        {
+          "question": "Mikä on Muumipapan tunnusomaisin vaatekappale, jota hän pitää lähes aina päässään?",
+          "answers": [
+              {"answer": "Kaulahuivi"},
+              {"answer": "Silinterihattu"},
+              {"answer": "Monokkeli"},
+              {"answer": "Rokokoo-peruukki"}
+          ],
+          "answer": "Silinterihattu",
+          "explanation": "Muumipapan musta silinterihattu on hänen tärkein ja tunnistettavin ominaisuutensa. Hän on hyvin ylpeä hatustaan, eikä luovu siitä juuri koskaan. Hattu on myös tärkeä osa hänen identiteettiään seikkailijana ja perheenpäänä."
+      },
+      {
+          "question": "Mikä on Nipsun suurin heikkous ja intohimo?",
+          "answers": [
+              {"answer": "Herkkusienet"},
+              {"answer": "Kaikki kiiltävä ja arvokas"},
+              {"answer": "Uiminen kylmässä vedessä"},
+              {"answer": "Kirjojen lukeminen"}
+          ],
+          "answer": "Kaikki kiiltävä ja arvokas",
+          "explanation": "Nipsu on luonteeltaan hieman arka ja materialistinen. Hän rakastaa kaikkea, mikä on kiiltävää, kaunista ja arvokasta, kuten kultaa, helmiä ja jalokiviä. Hän haaveilee usein rikkauksista, mutta on myös uskollinen ystävä."
+      },
+      {
+          "question": "Mitä tapahtuu munankuorille, kun ne laitetaan Taikurin hattuun kirjassa 'Taikurin hattu'?",
+          "answers": [
+              {"answer": "Ne muuttuvat kultakolikoiksi."},
+              {"answer": "Ne katoavat kokonaan."},
+              {"answer": "Ne muuttuvat pieniksi pilviksi, joilla voi lentää."},
+              {"answer": "Ne muuttuvat pieniksi Hattivateiksi."}
+          ],
+          "answer": "Ne muuttuvat pieniksi pilviksi, joilla voi lentää.",
+          "explanation": "Taikurin hattu on maaginen esine, joka muuttaa asioita arvaamattomasti. Kun Muumipeikko laittaa munankuoria hattuun, ne muuttuvat viideksi pieneksi, kantavaksi pilveksi. Muumit ja heidän ystävänsä käyttävät pilviä leikkimiseen ja lentelyyn ympäri Muumilaaksoa."
+      },
+      {
+          "question": "Kuka on pieni, karvainen ja pahankurinen hahmo, joka tekee mielellään kepposia Muumilaakson asukkaille?",
+          "answers": [
+              {"answer": "Mörkö"},
+              {"answer": "Esi-isä"},
+              {"answer": "Piisamirotta"},
+              {"answer": "Haisuli"}
+          ],
+          "answer": "Haisuli",
+          "explanation": "Haisuli on pieni, ruskea ja haiseva olento, joka on tunnettu pahankurisuudestaan ja pienten varkauksien tekemisestä. Vaikka hän on usein riesana, hän ei ole pohjimmiltaan paha, vaan pikemminkin ilkikurinen ja omien etujensa ajaja."
+      },
+      {
+          "question": "Missä Muumi-kirjassa Muumiperhe on poissa ja Muumitaloon kokoontuu joukko muita hahmoja odottamaan heitä?",
+          "answers": [
+              {"answer": "Muumipappa ja meri"},
+              {"answer": "Vaarallinen juhannus"},
+              {"answer": "Muumilaakson marraskuu"},
+              {"answer": "Taikatalvi"}
+          ],
+          "answer": "Muumilaakson marraskuu",
+          "explanation": "'Muumilaakson marraskuu' on ainutlaatuinen Muumi-kirja, sillä Muumiperhe ei esiinny siinä lainkaan. Kirja kertoo Vilijonkasta, Hemulista, Rummusta, homssu Tuhtosta ja Nipsusta, jotka saapuvat Muumitaloon marraskuussa etsien Muumiperheen lohtua ja turvaa, mutta joutuvatkin löytämään sen toisistaan."
+      },
+      {
+          "question": "Mitä Muumit tekevät perinteisesti koko talven ajan?",
+          "answers": [
+              {"answer": "Matkustelevat etelässä"},
+              {"answer": "Nukkuvat talviunta"},
+              {"answer": "Rakentavat lumiukkoja"},
+              {"answer": "Järjestävät suuria juhlia"}
+          ],
+          "answer": "Nukkuvat talviunta",
+          "explanation": "Muumien perinteeseen kuuluu nukkua talviunta marraskuusta kevääseen. Ennen talviunille menoa he syövät vatsansa täyteen kuusenneulasia. Kirjassa 'Taikatalvi' Muumipeikko herää kesken talviunien ja joutuu kohtaamaan oudon ja kylmän talvisen maailman yksin."
+      },
+      {
+          "question": "Millä keinoin näkymätön lapsi, Ninni, tulee jälleen näkyväksi?",
+          "answers": [
+              {"answer": "Syömällä taikasientä"},
+              {"answer": "Pukeutumalla uusiin vaatteisiin"},
+              {"answer": "Uimalla taikalammessa"},
+              {"answer": "Tuntemalla voimakkaita tunteita, kuten nauramalla ja suuttumalla"}
+          ],
+          "answer": "Tuntemalla voimakkaita tunteita, kuten nauramalla ja suuttumalla",
+          "explanation": "Tarinassa 'Näkymätön lapsi' Ninni-tyttö on muuttunut näkymättömäksi, koska häntä on kohdeltu kylmästi ja ironisesti. Muumiperheen lämpimässä ja hyväksyvässä ilmapiirissä hän alkaa vähitellen tulla näkyväksi. Viimeinen silaus tapahtuu, kun hän suuttuu kunnolla Muumipapalle ja nauraa vapautuneesti, jolloin hänen omat voimakkaat tunteensa tekevät hänet kokonaan näkyväksi."
+      },
+      {
+          "question": "Kirjassa 'Muumipapan urotyöt', mitä Muumipappa tekee?",
+          "answers": [
+              {"answer": "Hän rakentaa uuden talon"},
+              {"answer": "Hän lähtee etsimään aarretta"},
+              {"answer": "Hän kirjoittaa muistelmiaan nuoruutensa seikkailuista"},
+              {"answer": "Hän perustaa siirtokunnan majakkasaarelle"}
+          ],
+          "answer": "Hän kirjoittaa muistelmiaan nuoruutensa seikkailuista",
+          "explanation": "'Muumipapan urotyöt' (nykyisin 'Muumipapan nuoruusvuodet') on kehyskertomus, jossa flunssainen Muumipeikko pyytää isäänsä kertomaan nuoruudestaan. Muumipappa kirjoittaa ja lukee ääneen muistelmiaan, jotka kertovat hänen myrskyisästä nuoruudestaan, seikkailuistaan ja ystäviensä tapaamisesta."
+      },
+      {
+          "question": "Mitä Tiuhti ja Viuhti kuljettavat suuressa, raskaassa matkalaukussaan?",
+          "answers": [
+              {"answer": "Muumimamman kadonnut käsilaukku"},
+              {"answer": "Kuningasrubiinia"},
+              {"answer": "Taikurin hattua"},
+              {"answer": "Hattivattien sähköä"}
+          ],
+          "answer": "Kuningasrubiinia",
+          "explanation": "Tiuhti ja Viuhti ovat pieniä olentoja, jotka saapuvat Muumitaloon kantaen suurta matkalaukkua, jota he vartioivat mustasukkaisesti. Lopulta paljastuu, että laukun sisällä on valtava ja hohtava Kuningasrubiini, jonka he ovat vieneet Möröltä. He palauttavat sen lopulta Taikurille."
+      },
+      {
+          "question": "Mikä on Niiskuneidin veljen, Niiskun, suurin intohimo ja taito?",
+          "answers": [
+              {"answer": "Ruoanlaitto"},
+              {"answer": "Maalaustaide"},
+              {"answer": "Asioiden ja laitteiden keksiminen ja rakentelu"},
+              {"answer": "Kalastus"}
+          ],
+          "answer": "Asioiden ja laitteiden keksiminen ja rakentelu",
+          "explanation": "Niisku on Niiskuneidin veli ja luonteeltaan hyvin järjestelmällinen, byrokraattinen ja teknisesti lahjakas. Hänen suurin intohimonsa on erilaisten asioiden, erityisesti lentävän laivan, suunnittelu ja rakentaminen. Hän pitää usein kokouksia ja tekee tarkkoja piirustuksia."
+      }
+    ]
+},
+  {
     "name": "AI/ML kehittäjille",
     "image": "https://images.unsplash.com/photo-1620712943543-95fc696293AE",
     "questions": [
