@@ -1,9 +1,12 @@
 import { useQuiz } from '@/components/Quizprovider';
 import { Button } from '@/components/ui/button';
-import { REMOTE_QUIZ } from '@/constants/Urls';
-import { useTranslation } from 'react-i18next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Picker } from '@react-native-picker/picker';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import {
+  Alert,
+  Modal,
   ScrollView,
   StyleSheet,
   Switch,
@@ -11,8 +14,6 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { Picker } from '@react-native-picker/picker';
-import { P } from '@expo/html-elements';
 
 export default function SettingsScreen() {
   const {
@@ -25,14 +26,78 @@ export default function SettingsScreen() {
     setShowExplanation,
     audioEnabled,
     setAudioEnabled,
-    remoteUpdateEnabled,
-    setRemoteUpdateEnabled,
-    remoteAddress,
-    setRemoteAdress,
     setLanguage,
+    userQuizLoadEnabled,
+    setUserQuizLoadEnabled,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
+
+  const [userQuizModalVisible, setUserQuizModalVisible] = React.useState(false);
+  const [userQuizJson, setUserQuizJson] = React.useState('');
+  const [isUserQuizLoadEnabled, setIsUserQuizLoadEnabled] = React.useState(
+    false,
+  );
+
+  // Load userQuizLoadEnabled from AsyncStorage on mount
+  React.useEffect(() => {
+    (async () => {
+      const enabled = await AsyncStorage.getItem('userQuizLoadEnabled');
+      setUserQuizLoadEnabled(enabled === 'true');
+    })();
+  }, []);
+
+  // Save userQuizLoadEnabled to AsyncStorage
+  const handleUserQuizLoadSwitch = async (val: boolean) => {
+    setUserQuizLoadEnabled(val);
+    await AsyncStorage.setItem('userQuizLoadEnabled', String(val));
+  };
+
+  // Open modal and load or create user quizzes from AsyncStorage
+  const handleOpenUserQuizModal = async () => {
+    let content = '';
+    try {
+      // Try to load from AsyncStorage
+      const stored = await AsyncStorage.getItem('userQuizzes');
+      if (stored) {
+        content = stored;
+      } else {
+        // If not found, use default quiz template
+        content = JSON.stringify(
+          [
+            {
+              name: 'User Quiz',
+              questions: [
+                {
+                  question: 'What is 2+2?',
+                  answers: [{ answer: '3' }, { answer: '4' }, { answer: '5' }],
+                  answer: '4',
+                  explanation: '2+2=4',
+                },
+              ],
+            },
+          ],
+          null,
+          2,
+        );
+        await AsyncStorage.setItem('userQuizzes', content);
+      }
+      setUserQuizJson(content);
+      setUserQuizModalVisible(true);
+    } catch (e) {
+      Alert.alert('Error', 'Failed to load or create user quizzes');
+    }
+  };
+
+  // Save user quiz JSON to AsyncStorage
+  const handleSaveUserQuizJson = async () => {
+    try {
+      await AsyncStorage.setItem('userQuizzes', userQuizJson);
+      setUserQuizModalVisible(false);
+    } catch (e) {
+      Alert.alert('Error', 'Failed to save user quizzes');
+    }
+  };
 
   return (
     <View style={styles.outerContainer}>
@@ -132,46 +197,40 @@ export default function SettingsScreen() {
               value={audioEnabled}
             />
           </View>
+          {/* User Quiz Load Switch */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>{t('use_custom_remote')}</Text>
+              <Text style={styles.settingText}>Enable User Quizzes</Text>
               <Text style={styles.settingDescription}>
-                {t('use_custom_remote_desc')}
+                Load quizzes from your own quizzes_user.json file in addition to
+                the language-specific quizzes.
               </Text>
             </View>
             <Switch
               trackColor={{ false: 'gray', true: 'white' }}
               thumbColor={'rgb(85, 101, 107)'}
               ios_backgroundColor="gray"
-              onValueChange={setRemoteUpdateEnabled}
-              value={remoteUpdateEnabled}
+              onValueChange={handleUserQuizLoadSwitch}
+              value={userQuizLoadEnabled}
             />
           </View>
-          <View
-            style={[
-              styles.settingItem,
-              { flexDirection: 'column', alignItems: 'flex-start' },
-            ]}
-          >
+
+          {/* User Quiz Editor Button */}
+          <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>{t('remote_address')}</Text>
+              <Text style={styles.settingText}>Edit User Quizzes</Text>
               <Text style={styles.settingDescription}>
-                {t('remote_address_desc')}
+                Open a dialog to edit your quizzes_user.json file.
               </Text>
             </View>
-            <TextInput
-              style={styles.textInput}
-              placeholderTextColor="gray"
-              onChangeText={setRemoteAdress}
-              value={remoteAddress ? remoteAddress : REMOTE_QUIZ}
-            />
             <Button
-              onPress={() => {}}
+              onPress={handleOpenUserQuizModal}
               style={[styles.button, { alignSelf: 'flex-end' }]}
             >
-              <Text style={styles.buttonText}>{t('save')}</Text>
+              <Text style={styles.buttonText}>Edit</Text>
             </Button>
           </View>
+
           <View style={[styles.settingItem, { borderBottomWidth: 0 }]}>
             <View style={styles.settingName}>
               <Text style={styles.settingText}>{t('reset_settings')}</Text>
@@ -188,6 +247,67 @@ export default function SettingsScreen() {
           </View>
         </View>
       </ScrollView>
+      {/* User Quiz Edit Modal */}
+      <Modal
+        visible={userQuizModalVisible}
+        animationType="slide"
+        onRequestClose={() => setUserQuizModalVisible(false)}
+        transparent={true}
+      >
+        <View
+          style={{
+            flex: 1,
+            backgroundColor: 'rgba(0,0,0,0.7)',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <View
+            style={{
+              backgroundColor: 'white',
+              padding: 20,
+              borderRadius: 10,
+              width: '90%',
+              maxWidth: 500,
+            }}
+          >
+            <Text
+              style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 10 }}
+            >
+              Edit quizzes_user.json
+            </Text>
+            <TextInput
+              style={{
+                height: 200,
+                borderColor: 'gray',
+                borderWidth: 1,
+                borderRadius: 5,
+                padding: 10,
+                color: 'black',
+                backgroundColor: 'white',
+                marginBottom: 10,
+                textAlignVertical: 'top',
+              }}
+              multiline
+              value={userQuizJson}
+              onChangeText={setUserQuizJson}
+              autoCapitalize="none"
+              autoCorrect={false}
+            />
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
+              <Button
+                onPress={() => setUserQuizModalVisible(false)}
+                style={[styles.button, { marginRight: 10 }]}
+              >
+                <Text style={styles.buttonText}>Cancel</Text>
+              </Button>
+              <Button onPress={handleSaveUserQuizJson} style={styles.button}>
+                <Text style={styles.buttonText}>Save</Text>
+              </Button>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 }

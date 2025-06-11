@@ -1,3 +1,4 @@
+import i18n from '@/components/i18n';
 import { REMOTE_QUIZ } from '@/constants/Urls';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as FileSystem from 'expo-file-system';
@@ -11,9 +12,10 @@ import React, {
 } from 'react';
 import { Platform } from 'react-native';
 import { Quiz } from './types';
-import i18n from '@/components/i18n';
 
 type QuizContextType = {
+  userQuizLoadEnabled: boolean; // Add userQuizLoadEnabled to the context
+  setUserQuizLoadEnabled: (enabled: boolean) => void; // Add setter for userQuizLoadEnabled
   language: string;
   setLanguage: (lang: string) => void;
   selectedQuizName: string | null;
@@ -47,48 +49,86 @@ type QuizContextType = {
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
+// Updated getLocalQuizzes to accept userQuizzes
+const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
+  console.log('getLocalQuizzes userQuizzes:', userQuizzes);
+  const lang = i18n.language || 'en';
+  const getQuizName = (quiz: any) => quiz.name || quiz.nimi || '';
+  let quizzes;
+  if (lang.startsWith('fi')) {
+    quizzes = require('../assets/quizzes_fi.json');
+  } else if (lang.startsWith('de')) {
+    quizzes = require('../assets/quizzes_de.json');
+  } else {
+    quizzes = require('../assets/quizzes_en.json');
+  }
+  let all = quizzes;
+  if (userQuizzes && userQuizzes.length > 0) {
+    all = quizzes.concat(userQuizzes);
+  }
+  return all.sort((a: any, b: any) =>
+    getQuizName(a).localeCompare(getQuizName(b)),
+  );
+};
+
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [isLanguageReady, setIsLanguageReady] = useState(false);
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
-  const [flashcardsEnabled, setFlashcardsEnabledState] =
-    useState<boolean>(false);
-  const [notificationsEnabled, setNotificationsEnabledState] =
-    useState<boolean>(true);
-  // Dynamically require quizzes based on current language
-  const getLocalQuizzes = () => {
-    const lang = i18n.language || 'en';
-    const getQuizName = (quiz: any) => quiz.name || quiz.nimi || '';
-    let quizzes;
-    if (lang.startsWith('fi')) {
-      quizzes = require('../assets/quizzes_fi.json');
-    } else if (lang.startsWith('de')) {
-      quizzes = require('../assets/quizzes_de.json');
-    } else {
-      quizzes = require('../assets/quizzes_en.json');
-    }
-    return quizzes.sort((a: any, b: any) =>
-      getQuizName(a).localeCompare(getQuizName(b)),
-    );
-  };
+  const [flashcardsEnabled, setFlashcardsEnabledState] = useState<boolean>(
+    false,
+  );
+  const [notificationsEnabled, setNotificationsEnabledState] = useState<
+    boolean
+  >(true);
   const [showExplanation, setShowExplanationState] = useState<boolean>(false);
   const [quizzes, setQuizzes] = useState<Quiz[]>(getLocalQuizzes());
-  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] =
-    useState<number>(0);
-  const [totalCorrectAnswers, setTotalCorrectAnswersState] =
-    useState<number>(0);
+  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] = useState<
+    number
+  >(0);
+  const [totalCorrectAnswers, setTotalCorrectAnswersState] = useState<number>(
+    0,
+  );
   const [totalWrongAnswers, setTotalWrongAnswersState] = useState<number>(0);
   const [totalWonGames, setTotalWonGamesState] = useState<number>(0);
   const [totalLostGames, setTotalLostGamesState] = useState<number>(0);
   const [audioEnabled, setAudioEnabledState] = useState<boolean>(true);
-  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] =
-    useState<boolean>(false);
+  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] = useState<boolean>(
+    false,
+  );
   const [remoteAddress, setRemoteAddressState] = useState<string>('');
   const [lastUpdateDate, setLastUpdateDateState] = useState<string | null>(
     null,
   );
+  const [userQuizLoadEnabled, setUserQuizLoadEnabledState] = useState<boolean>(
+    false,
+  );
+
+  const setUserQuizLoadEnabled = useCallback((enabled: boolean) => {
+    setUserQuizLoadEnabledState(enabled);
+    // Save the user quiz load setting
+    AsyncStorage.setItem('userQuizLoadEnabled', String(enabled)).catch(
+      (error) => {
+        console.error('Failed to save user quiz load setting', error);
+      },
+    );
+  }, []);
+
+  // Helper to load user quizzes (native or web)
+  const loadUserQuizzes = async (): Promise<Quiz[]> => {
+    try {
+      const stored = await AsyncStorage.getItem('userQuizzes');
+      if (stored) {
+        return JSON.parse(stored);
+      }
+      return [];
+    } catch (e) {
+      return [];
+    }
+  };
+
   const setLanguage = useCallback((lang: string) => {
     setLanguageState(lang);
     i18n.changeLanguage(lang).catch((error) => {
@@ -421,6 +461,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     } catch (error) {
       console.error('Failed to load settings', error);
     }
+    setUserQuizLoadEnabledState(
+      (await AsyncStorage.getItem('userQuizLoadEnabled')) === 'true',
+    );
   };
 
   // Add a separate useEffect that watches remoteUpdateEnabled
@@ -429,6 +472,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     // and when remoteUpdateEnabled changes to true
     if (remoteUpdateEnabled && lastUpdateDate !== getTodaysDate()) {
       checkForQuizzesUpdate().then((updated) => {
+        console.log('Quizzes updated:', updated);
         if (updated) {
           AsyncStorage.setItem('lastUpdateDate', getTodaysDate());
         }
@@ -444,11 +488,20 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     })();
   }, []);
 
-  // Listen for i18n.language changes and update quizzes accordingly
+  // Listen for i18n.language or userQuizLoadEnabled changes and update quizzes accordingly
   React.useEffect(() => {
-    setQuizzes(getLocalQuizzes());
-    setLanguageState(i18n.language);
-  }, [i18n.language]);
+    (async () => {
+      console.log('userQuizLoadEnabled:', userQuizLoadEnabled);
+      if (userQuizLoadEnabled) {
+        const userQuizzes = await loadUserQuizzes();
+        console.log('Loaded user quizzes:', userQuizzes);
+        setQuizzes(getLocalQuizzes(userQuizzes));
+      } else {
+        setQuizzes(getLocalQuizzes());
+      }
+      setLanguageState(i18n.language);
+    })();
+  }, [i18n.language, userQuizLoadEnabled]);
 
   if (!isLanguageReady) {
     // Optionally, show a splash/loading screen or null
@@ -487,6 +540,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         resetState, // Expose the reset function
         language,
         setLanguage, // Expose the language setter
+        userQuizLoadEnabled,
+        setUserQuizLoadEnabled, // Expose the user quiz load setter
       }}
     >
       {children}
