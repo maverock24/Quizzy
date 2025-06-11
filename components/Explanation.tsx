@@ -2,6 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { CodeFormatter } from './CodeFormatter';
 import { ScrollView } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
 
 type ExplanationProps = {
   answerIsCorrect: boolean;
@@ -42,8 +43,11 @@ export const Explanation: React.FC<ExplanationProps> = ({
         codeBlockTextStyle={{ color: 'white' }}
       />
     </View>
-    <TouchableOpacity style={styles.button} onPress={handleNext}>
-      <Text style={styles.buttonText}>Next</Text>
+    <TouchableOpacity onPress={handleNext}>
+    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+    <Ionicons name="arrow-forward" size={20} color="white" style={{ marginRight: 6 }} />
+    <Text style={styles.buttonText}>Next</Text>
+  </View>
     </TouchableOpacity>
     </Animated.ScrollView>
   </View>

@@ -147,7 +147,7 @@ export default function TabOneScreen() {
           <TouchableOpacity onPress={handleBack}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name="arrow-back" size={16} color="white" style={{ marginRight: 6 }} />
-            <Text style={styles.buttonText}>back</Text>
+            <Text style={styles.buttonText}>{t('back')}</Text>
           </View>
         </TouchableOpacity>
         )}
