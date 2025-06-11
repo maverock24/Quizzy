@@ -340,6 +340,9 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   wrong: {
+    zIndex: 999,
+    position: 'absolute',
+    right: 8,
     paddingLeft: 5,
     paddingTop: 3,
     backgroundColor: 'rgb(255, 0, 0)',
@@ -350,8 +353,11 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(255, 255, 255)',
   },
   correct: {
+    zIndex: 999,
+    position: 'absolute',
     paddingLeft: 3,
     paddingTop: 3,
+    right: 8,
     backgroundColor: 'rgb(0, 216, 0)',
     height: 30,
     width: 30,
