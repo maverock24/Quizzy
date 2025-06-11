@@ -10,6 +10,7 @@ import { Answer, Quiz, QuizQuestion } from '@/components/types';
 import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 // Function to shuffle array (Fi
 const shuffleArray = (array: any[]) => {
@@ -142,6 +143,14 @@ export default function TabOneScreen() {
         style={styles.safeArea}
       >
         <View style={styles.container}>
+        {(selectedQuiz || scoreVisible) && (
+          <TouchableOpacity onPress={handleBack}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Ionicons name="arrow-back" size={16} color="white" style={{ marginRight: 6 }} />
+            <Text style={styles.buttonText}>back</Text>
+          </View>
+        </TouchableOpacity>
+        )}
           {!selectedQuiz && (
             <>
               <Text style={styles.scoreTitle}>{t('scores')}</Text>
@@ -219,7 +228,6 @@ export default function TabOneScreen() {
 
           {selectedQuiz && !explanationMode && (
             <>
-              <Text style={styles.quizTitle}>{selectedQuiz.name}</Text>
               {flashcardsEnabled && !scoreVisible && (
                 <FlashcardCarousel
                   questions={quizQuestions}
@@ -251,14 +259,7 @@ export default function TabOneScreen() {
             />
           )}
         </View>
-        {(selectedQuiz || scoreVisible) && (
-          <TouchableOpacity
-            style={[styles.button, styles.backButton]}
-            onPress={handleBack}
-          >
-            <Text style={styles.buttonText}>Back</Text>
-          </TouchableOpacity>
-        )}
+        
       </SafeAreaLinearGradient>
     </View>
   );
@@ -294,13 +295,13 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   scoreBoard: {
-    height: 200,
+    height: 170,
     width: '100%',
     justifyContent: 'flex-start',
     marginBottom: 30,
   },
   scoreItem: {
-    height: 100,
+    height: 80,
     margin: 3,
     flexDirection: 'column',
     padding: 5,
@@ -342,15 +343,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  backButton: {
-    backgroundColor: 'rgb(86, 92, 99)',
-    marginBottom: 20,
-    marginLeft: 20,
-    marginRight: 20,
-  },
   buttonText: {
     color: 'white',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: '600',
   },
 });

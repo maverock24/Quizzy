@@ -360,7 +360,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(255, 255, 255)',
   },
   contentContainer: {
-    marginTop: 30,
+    marginTop: 20,
     marginVertical: 12,
   },
   card: {
@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: 'rgb(63, 65, 66)',
     borderWidth: 1,
-    marginVertical: 10,
+    marginVertical: 5,
     alignItems: 'center',
     flexDirection: 'row',
   },

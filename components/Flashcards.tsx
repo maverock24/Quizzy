@@ -239,8 +239,8 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   handlerOnfinish,
   itemWidth: propItemWidth,
 }) => {
-  const itemWidth = propItemWidth || SCREEN_WIDTH * 0.9;
-  const cardWidth = itemWidth * 0.9;
+  const itemWidth = propItemWidth || SCREEN_WIDTH * 0.8;
+  const cardWidth = itemWidth * 0.8;
   const cardHeight = DEFAULT_CARD_HEIGHT;
 
   const [quizQuestions, setQuizQuestions] = useState<QuizQuestionData[]>([]);
