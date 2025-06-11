@@ -74,6 +74,8 @@ const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
+  const GOOGLE_DRIVE_DIRECT_LINK = 'https://drive.google.com/uc?export=download&id=1Nr-9H-3z_8O0IafoUTjC9iJI9aZJQ_SH';
+  const [data, setData] = useState(null);
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [isLanguageReady, setIsLanguageReady] = useState(false);
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
@@ -480,12 +482,44 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     }
   }, [remoteUpdateEnabled]); // This effect runs when remoteUpdateEnabled changes
 
+  // --- Configuration ---
+// 1. This points to the local API route at app/remoteUpdate.ts
+const API_ENDPOINT_URL = '/api/remoteUpdate';
+const absoluteApiEndpointUrl = `${origin}${API_ENDPOINT_URL}`;
+// 2. Using the storage key from your provided snippet.
+const STORAGE_KEY = 'quizzes_de';
+
+const updateDataFromGoogleDrive = async () => {
+  
+  try {
+    // The fetch call targets the internal route.
+    const response = await fetch('https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json');
+    
+    if (!response.ok) {
+      throw new Error(`API route responded with an error: ${response.statusText}`);
+    }
+    
+    const jsonData = await response.json();
+console.log('Fetched data from API route:', jsonData);
+    // Save the fetched data to AsyncStorage for persistence.
+    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(jsonData));
+    
+    // Update the component's state to reflect the new data.
+    setData(jsonData);
+    console.log('Data successfully updated in AsyncStorage');
+
+  } catch (error) {
+    console.error('Error updating data:', error);
+  } 
+};
+
   // Load settings from AsyncStorage on component mount
   useEffect(() => {
     (async () => {
       await loadSettings();
       setIsLanguageReady(true);
     })();
+    updateDataFromGoogleDrive();
   }, []);
 
   // Listen for i18n.language or userQuizLoadEnabled changes and update quizzes accordingly
