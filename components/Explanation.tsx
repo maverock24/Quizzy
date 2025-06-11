@@ -3,11 +3,14 @@ import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native
 import { CodeFormatter } from './CodeFormatter';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
+import { Dimensions } from 'react-native';
 
 type ExplanationProps = {
   answerIsCorrect: boolean;
   explanation: string;
 };
+
+const { height } = Dimensions.get('window');
 
 export const Explanation: React.FC<ExplanationProps> = ({
   answerIsCorrect,
@@ -16,7 +19,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
   <View style={styles.contentContainer}>
     <ScrollView
               style={styles.explanationScroll}
-              contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
+              contentContainerStyle={{ flexGrow: 2, justifyContent: 'center' }}
               showsVerticalScrollIndicator={true}
             >
     <View
@@ -48,7 +51,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
 
 const styles = StyleSheet.create({
    explanationScroll: {
-    maxHeight: 600,
+    maxHeight: height * 0.7,
     marginTop: 10,
     marginBottom: 5,
   },
