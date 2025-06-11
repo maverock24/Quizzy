@@ -93,6 +93,8 @@ export default function SettingsScreen() {
   const handleSaveUserQuizJson = async () => {
     try {
       await AsyncStorage.setItem('userQuizzes', userQuizJson);
+      setUserQuizLoadEnabled(!userQuizLoadEnabled);
+      setUserQuizLoadEnabled(!userQuizLoadEnabled);
       setUserQuizModalVisible(false);
     } catch (e) {
       Alert.alert('Error', 'Failed to save user quizzes');
@@ -260,6 +262,8 @@ export default function SettingsScreen() {
             backgroundColor: 'rgba(0,0,0,0.7)',
             justifyContent: 'center',
             alignItems: 'center',
+            width: '100%',
+            height: '100%',
           }}
         >
           <View
@@ -268,7 +272,7 @@ export default function SettingsScreen() {
               padding: 20,
               borderRadius: 10,
               width: '90%',
-              maxWidth: 500,
+              height: '80%',
             }}
           >
             <Text
@@ -278,7 +282,7 @@ export default function SettingsScreen() {
             </Text>
             <TextInput
               style={{
-                height: 200,
+                height: '100%',
                 borderColor: 'gray',
                 borderWidth: 1,
                 borderRadius: 5,
