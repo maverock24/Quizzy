@@ -143,14 +143,6 @@ export default function TabOneScreen() {
         style={styles.safeArea}
       >
         <View style={styles.container}>
-        {(selectedQuiz || scoreVisible) && (
-          <TouchableOpacity onPress={handleBack}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Ionicons name="arrow-back" size={16} color="white" style={{ marginRight: 6 }} />
-            <Text style={styles.buttonText}>{t('back')}</Text>
-          </View>
-        </TouchableOpacity>
-        )}
           {!selectedQuiz && (
             <>
               <Text style={styles.scoreTitle}>{t('scores')}</Text>
@@ -258,6 +250,15 @@ export default function TabOneScreen() {
               )}
             </>
           )}
+
+           {(selectedQuiz || scoreVisible) && (
+          <TouchableOpacity onPress={handleBack}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Ionicons name="arrow-back" size={16} color="white" style={{ marginRight: 6 }} />
+            <Text style={styles.buttonText}>{t('back')}</Text>
+          </View>
+        </TouchableOpacity>
+        )}
 
           {scoreVisible && (
             <Score
