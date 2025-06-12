@@ -107,20 +107,21 @@ export default function SettingsScreen() {
         <View style={styles.container}>
           <Text style={styles.heading}>{t('settings')}</Text>
           {/* Language Switcher */}
-          <View style={styles.languageRow}>
-            <Text style={styles.label}>{t('language')}</Text>
+          <View style={styles.settingItem}>
+            <Text style={[styles.label, { flex: 1}]}>{t('language')}</Text>
             <View
               style={{
                 flex: 1,
                 marginLeft: 10,
                 backgroundColor: 'white',
                 borderRadius: 5,
+                width: '50%',
               }}
             >
               <Picker
                 selectedValue={i18n.language}
                 onValueChange={(lang: string) => setLanguage(lang)}
-                style={{ height: 40, color: 'black' }}
+                style={{ height: 30, color: 'black' }}
                 dropdownIconColor="black"
               >
                 <Picker.Item label={t('english')} value="en" />
@@ -397,9 +398,9 @@ const styles = StyleSheet.create({
     maxWidth: '100%', // Prevents overflow on small screens
   },
   languageRow: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginBottom: 20,
   },
   label: {
