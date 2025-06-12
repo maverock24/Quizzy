@@ -1,13 +1,18 @@
 import React from 'react';
-import { Animated, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
 import { CodeFormatter } from './CodeFormatter';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
+import { t } from 'i18next';
+import { useTranslation } from 'react-i18next';
+import { useQuiz } from './Quizprovider';
 
 type ExplanationProps = {
   answerIsCorrect: boolean;
   explanation: string;
+  currentQuestionIndex: number;
+  selectedQuizAnswersAmount: number;
 };
 
 const { height } = Dimensions.get('window');
@@ -15,13 +20,68 @@ const { height } = Dimensions.get('window');
 export const Explanation: React.FC<ExplanationProps> = ({
   answerIsCorrect,
   explanation,
-}) => (
+  currentQuestionIndex,
+  selectedQuizAnswersAmount,
+}) => {
+
+  const { flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled } = useQuiz();
+  const { t } = useTranslation();
+
+return (
   <View style={styles.contentContainer}>
     <ScrollView
               style={styles.explanationScroll}
               contentContainerStyle={{ flexGrow: 2, justifyContent: 'center' }}
               showsVerticalScrollIndicator={true}
             >
+               <View style={styles.header}>
+                          <Text style={styles.questionHeading}>
+                            {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
+                          </Text>
+                          <View style={{ marginBottom: 10, flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between', height: 50 }}>
+                            <View style={styles.settingItem}>
+                                          <Text style={styles.settingText}>{t('use_flashcards')}</Text>
+                                          
+                                        
+                            
+                                        <Switch
+                                          trackColor={{ false: 'gray', true: 'white' }}
+                                          thumbColor={
+                                            flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+                                          }
+                                          ios_backgroundColor="gray"
+                                          onValueChange={setFlashcardsEnabled}
+                                          value={flashcardsEnabled}
+                                        />
+                            </View>
+                            <View style={styles.settingItem}>
+              
+                            <Text style={styles.settingText}>{t('show_explanation')}</Text>
+              
+              
+                            <Switch
+                              trackColor={{ false: 'gray', true: 'white' }}
+                              thumbColor={'rgb(85, 101, 107)'}
+                              ios_backgroundColor="gray"
+                              onValueChange={setShowExplanation}
+                              value={showExplanation}
+                            />
+                          </View>
+                          <View style={styles.settingItem}>
+              
+                            <Text style={styles.settingText}>{t('enable_sound')}</Text>
+              
+              
+                            <Switch
+                              trackColor={{ false: 'gray', true: 'white' }}
+                              thumbColor={'rgb(85, 101, 107)'}
+                              ios_backgroundColor="gray"
+                              onValueChange={setAudioEnabled}
+                              value={audioEnabled}
+                            />
+                          </View>
+                          </View>
+                        </View>
     <View
       style={[
         styles.card,
@@ -48,15 +108,39 @@ export const Explanation: React.FC<ExplanationProps> = ({
     </ScrollView>
   </View>
 );
+}
 
 const styles = StyleSheet.create({
+    header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomColor: 'rgb(255, 255, 255)',
+    borderBottomWidth: 1,
+    marginBottom: 10,
+    paddingBottom: 18,
+  },
+  settingItem: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  settingName: {
+    flexDirection: 'column',
+    flex: 1,
+    paddingVertical: 10,
+    marginRight: 10,
+  },
+  settingText: {
+    marginRight: 10,
+    fontSize: 12,
+    color: 'white',
+  },
    explanationScroll: {
     maxHeight: height * 0.7,
-    marginTop: 10,
     marginBottom: 5,
   },
   contentContainer: {
-    marginVertical: 12,
   },
   card: {
     padding: 20,
@@ -71,10 +155,11 @@ const styles = StyleSheet.create({
     paddingLeft: 36,
   },
   questionHeading: {
-    fontSize: 20,
+    alignContent: 'flex-end',
+    marginBottom: 10,
+    fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: 8,
-    color: 'white',
+    color: 'rgb(212, 212, 212)',
   },
   normalText: {
     fontSize: 16,
