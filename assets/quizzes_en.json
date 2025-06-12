@@ -1,5 +1,1009 @@
 [
   {
+    "name": "Space and Space Flight",
+    "questions": [
+        {
+            "question": "Who was the first human to travel to space?",
+            "answers": [
+                {"answer": "Neil Armstrong"},
+                {"answer": "Yuri Gagarin"},
+                {"answer": "Alan Shepard"},
+                {"answer": "John Glenn"}
+            ],
+            "answer": "Yuri Gagarin",
+            "explanation": "Soviet cosmonaut Yuri Gagarin became the first human in space on April 12, 1961, aboard Vostok 1, completing one orbit around Earth in 108 minutes."
+        },
+        {
+            "question": "What is the closest planet to the Sun?",
+            "answers": [
+                {"answer": "Venus"},
+                {"answer": "Earth"},
+                {"answer": "Mercury"},
+                {"answer": "Mars"}
+            ],
+            "answer": "Mercury",
+            "explanation": "Mercury is the closest planet to the Sun, orbiting at an average distance of 58 million kilometers (36 million miles) from our star."
+        },
+        {
+            "question": "What does NASA stand for?",
+            "answers": [
+                {"answer": "National Aeronautics and Space Administration"},
+                {"answer": "North American Space Agency"},
+                {"answer": "National Aviation and Space Authority"},
+                {"answer": "National Aerospace and Satellite Administration"}
+            ],
+            "answer": "National Aeronautics and Space Administration",
+            "explanation": "NASA, established in 1958, stands for National Aeronautics and Space Administration and is the United States government agency responsible for civilian space program and aeronautics research."
+        },{
+    "name": "Space and Space Flight Developer Quiz",
+    "questions": [
+        {
+            "question": "Who was the first human to travel to space?",
+            "answers": [
+                {"answer": "Neil Armstrong"},
+                {"answer": "Yuri Gagarin"},
+                {"answer": "Alan Shepard"},
+                {"answer": "John Glenn"}
+            ],
+            "answer": "Yuri Gagarin",
+            "explanation": "Soviet cosmonaut Yuri Gagarin became the first human in space on April 12, 1961, aboard Vostok 1, completing one orbit around Earth in 108 minutes."
+        },
+        {
+            "question": "What is the closest planet to the Sun?",
+            "answers": [
+                {"answer": "Venus"},
+                {"answer": "Earth"},
+                {"answer": "Mercury"},
+                {"answer": "Mars"}
+            ],
+            "answer": "Mercury",
+            "explanation": "Mercury is the closest planet to the Sun, orbiting at an average distance of 58 million kilometers (36 million miles) from our star."
+        },
+        {
+            "question": "What does NASA stand for?",
+            "answers": [
+                {"answer": "National Aeronautics and Space Administration"},
+                {"answer": "North American Space Agency"},
+                {"answer": "National Aviation and Space Authority"},
+                {"answer": "National Aerospace and Satellite Administration"}
+            ],
+            "answer": "National Aeronautics and Space Administration",
+            "explanation": "NASA, established in 1958, stands for National Aeronautics and Space Administration and is the United States government agency responsible for civilian space program and aeronautics research."
+        },
+        {
+            "question": "How long does it take for light from the Sun to reach Earth?",
+            "answers": [
+                {"answer": "8 minutes"},
+                {"answer": "4 minutes"},
+                {"answer": "12 minutes"},
+                {"answer": "1 hour"}
+            ],
+            "answer": "8 minutes",
+            "explanation": "Light travels at approximately 300,000 kilometers per second, and the Sun is about 150 million kilometers away, so sunlight takes approximately 8 minutes and 20 seconds to reach Earth."
+        },
+        {
+            "question": "What is the largest planet in our solar system?",
+            "answers": [
+                {"answer": "Saturn"},
+                {"answer": "Neptune"},
+                {"answer": "Jupiter"},
+                {"answer": "Uranus"}
+            ],
+            "answer": "Jupiter",
+            "explanation": "Jupiter is the largest planet in our solar system, with a diameter of about 143,000 kilometers and a mass greater than all other planets combined."
+        },
+        {
+            "question": "What was the first artificial satellite launched into space?",
+            "answers": [
+                {"answer": "Explorer 1"},
+                {"answer": "Sputnik 1"},
+                {"answer": "Telstar 1"},
+                {"answer": "Vanguard 1"}
+            ],
+            "answer": "Sputnik 1",
+            "explanation": "Sputnik 1, launched by the Soviet Union on October 4, 1957, was the first artificial satellite to orbit Earth, marking the beginning of the Space Age."
+        },
+        {
+            "question": "What is escape velocity from Earth?",
+            "answers": [
+                {"answer": "7.9 km/s"},
+                {"answer": "11.2 km/s"},
+                {"answer": "15.5 km/s"},
+                {"answer": "9.8 km/s"}
+            ],
+            "answer": "11.2 km/s",
+            "explanation": "Earth's escape velocity is 11.2 kilometers per second (25,020 mph). This is the minimum speed needed for an object to escape Earth's gravitational pull without further propulsion."
+        },
+        {
+            "question": "Which moon landing mission was the first to successfully land humans on the Moon?",
+            "answers": [
+                {"answer": "Apollo 10"},
+                {"answer": "Apollo 11"},
+                {"answer": "Apollo 12"},
+                {"answer": "Apollo 8"}
+            ],
+            "answer": "Apollo 11",
+            "explanation": "Apollo 11, launched on July 16, 1969, was the first mission to successfully land humans on the Moon. Neil Armstrong and Buzz Aldrin landed on July 20, 1969."
+        },
+        {
+            "question": "What is the International Space Station's orbital speed?",
+            "answers": [
+                {"answer": "17,500 mph"},
+                {"answer": "12,000 mph"},
+                {"answer": "25,000 mph"},
+                {"answer": "8,000 mph"}
+            ],
+            "answer": "17,500 mph",
+            "explanation": "The ISS orbits Earth at approximately 17,500 mph (28,000 km/h), completing one orbit around Earth every 90-93 minutes at an altitude of about 400-420 kilometers."
+        },
+        {
+            "question": "What is the hottest planet in our solar system?",
+            "answers": [
+                {"answer": "Mercury"},
+                {"answer": "Venus"},
+                {"answer": "Mars"},
+                {"answer": "Jupiter"}
+            ],
+            "answer": "Venus",
+            "explanation": "Venus is the hottest planet with surface temperatures reaching 462°C (864°F) due to its thick atmosphere and extreme greenhouse effect, even though Mercury is closer to the Sun."
+        },
+        {
+            "question": "What type of rocket fuel combination is most commonly used in modern space launches?",
+            "answers": [
+                {"answer": "Liquid hydrogen and liquid oxygen"},
+                {"answer": "Kerosene and liquid oxygen"},
+                {"answer": "Solid rocket fuel"},
+                {"answer": "Methane and liquid oxygen"}
+            ],
+            "answer": "Kerosene and liquid oxygen",
+            "explanation": "RP-1 (refined kerosene) and liquid oxygen is the most commonly used propellant combination in first-stage rockets due to its high density, reliability, and relatively simple handling requirements."
+        },
+        {
+            "question": "How many people can the current SpaceX Dragon spacecraft carry?",
+            "answers": [
+                {"answer": "4"},
+                {"answer": "5"},
+                {"answer": "7"},
+                {"answer": "3"}
+            ],
+            "answer": "7",
+            "explanation": "The SpaceX Crew Dragon spacecraft is designed to carry up to 7 crew members, though NASA typically uses it for 4-person crews to provide more cargo space and comfort."
+        },
+        {
+            "question": "What is the name of the largest moon of Saturn?",
+            "answers": [
+                {"answer": "Europa"},
+                {"answer": "Ganymede"},
+                {"answer": "Titan"},
+                {"answer": "Io"}
+            ],
+            "answer": "Titan",
+            "explanation": "Titan is Saturn's largest moon and the second-largest moon in the solar system. It has a thick atmosphere and lakes of liquid methane and ethane on its surface."
+        },
+        {
+            "question": "What does EVA stand for in space missions?",
+            "answers": [
+                {"answer": "Extra Vehicular Activity"},
+                {"answer": "Emergency Vehicle Access"},
+                {"answer": "External Vehicle Assembly"},
+                {"answer": "Extended Vehicle Application"}
+            ],
+            "answer": "Extra Vehicular Activity",
+            "explanation": "EVA stands for Extra Vehicular Activity, commonly known as a spacewalk, where astronauts leave their spacecraft to work in the vacuum of space."
+        },
+        {
+            "question": "Which planet has the most moons?",
+            "answers": [
+                {"answer": "Jupiter"},
+                {"answer": "Saturn"},
+                {"answer": "Uranus"},
+                {"answer": "Neptune"}
+            ],
+            "answer": "Saturn",
+            "explanation": "Saturn currently holds the record with 146 confirmed moons, surpassing Jupiter's 95 moons. Many of these are small irregular moons discovered through advanced telescopic surveys."
+        },
+        {
+            "question": "What is the temperature of space?",
+            "answers": [
+                {"answer": "-270°C"},
+                {"answer": "-180°C"},
+                {"answer": "-100°C"},
+                {"answer": "0°C"}
+            ],
+            "answer": "-270°C",
+            "explanation": "The temperature of empty space is approximately -270°C (-454°F or 2.7 Kelvin), just slightly above absolute zero due to cosmic microwave background radiation."
+        },
+        {
+            "question": "What was the first space station?",
+            "answers": [
+                {"answer": "Skylab"},
+                {"answer": "Mir"},
+                {"answer": "Salyut 1"},
+                {"answer": "ISS"}
+            ],
+            "answer": "Salyut 1",
+            "explanation": "Salyut 1, launched by the Soviet Union on April 19, 1971, was the first space station. Though the initial crew mission failed, it marked the beginning of long-duration human spaceflight."
+        },
+        {
+            "question": "How long is a day on Mars?",
+            "answers": [
+                {"answer": "20 hours"},
+                {"answer": "24 hours 37 minutes"},
+                {"answer": "26 hours"},
+                {"answer": "22 hours 15 minutes"}
+            ],
+            "answer": "24 hours 37 minutes",
+            "explanation": "A Martian day, called a 'sol,' lasts 24 hours, 37 minutes, and 22 seconds, making it remarkably similar to Earth's 24-hour day."
+        },
+        {
+            "question": "What is the Van Allen radiation belt?",
+            "answers": [
+                {"answer": "Solar wind particles"},
+                {"answer": "Charged particles trapped by Earth's magnetic field"},
+                {"answer": "Cosmic background radiation"},
+                {"answer": "Aurora particles"}
+            ],
+            "answer": "Charged particles trapped by Earth's magnetic field",
+            "explanation": "The Van Allen radiation belts are zones of energetic charged particles trapped by Earth's magnetic field, discovered by Explorer 1 in 1958 and named after physicist James Van Allen."
+        },
+        {
+            "question": "Which spacecraft was the first to land on Mars successfully?",
+            "answers": [
+                {"answer": "Viking 1"},
+                {"answer": "Mars Pathfinder"},
+                {"answer": "Mars 3"},
+                {"answer": "Mariner 4"}
+            ],
+            "answer": "Mars 3",
+            "explanation": "Mars 3, launched by the Soviet Union in 1971, was the first spacecraft to successfully land on Mars, though it lost contact shortly after landing. Viking 1 was the first fully successful long-term Mars lander in 1976."
+        },
+        {
+            "question": "What is the Karman line?",
+            "answers": [
+                {"answer": "The boundary between Earth's atmosphere and space"},
+                {"answer": "The orbit of the ISS"},
+                {"answer": "The edge of the solar system"},
+                {"answer": "The asteroid belt boundary"}
+            ],
+            "answer": "The boundary between Earth's atmosphere and space",
+            "explanation": "The Karman line, at 100 kilometers (62 miles) above sea level, is internationally recognized as the boundary between Earth's atmosphere and outer space."
+        },
+        {
+            "question": "How many space shuttle missions were there in total?",
+            "answers": [
+                {"answer": "125"},
+                {"answer": "135"},
+                {"answer": "145"},
+                {"answer": "115"}
+            ],
+            "answer": "135",
+            "explanation": "NASA's Space Shuttle program completed 135 missions from 1981 to 2011, using five operational orbiters: Columbia, Challenger, Discovery, Atlantis, and Endeavour."
+        },
+        {
+            "question": "What is the Great Red Spot on Jupiter?",
+            "answers": [
+                {"answer": "A moon"},
+                {"answer": "A giant storm"},
+                {"answer": "A crater"},
+                {"answer": "A volcanic region"}
+            ],
+            "answer": "A giant storm",
+            "explanation": "Jupiter's Great Red Spot is a giant anticyclonic storm larger than Earth that has been raging for at least 350 years, with winds reaching up to 432 km/h (268 mph)."
+        },
+        {
+            "question": "Which planet rotates on its side?",
+            "answers": [
+                {"answer": "Neptune"},
+                {"answer": "Saturn"},
+                {"answer": "Uranus"},
+                {"answer": "Pluto"}
+            ],
+            "answer": "Uranus",
+            "explanation": "Uranus rotates on its side with an axial tilt of 98 degrees, likely caused by a collision with an Earth-sized object early in its formation, making its seasons extremely unusual."
+        },
+        {
+            "question": "What is specific impulse in rocketry?",
+            "answers": [
+                {"answer": "The thrust-to-weight ratio"},
+                {"answer": "The efficiency of rocket fuel"},
+                {"answer": "The acceleration of the rocket"},
+                {"answer": "The payload capacity"}
+            ],
+            "answer": "The efficiency of rocket fuel",
+            "explanation": "Specific impulse measures how efficiently a rocket uses propellant, expressed as seconds of thrust per unit weight of propellant. Higher specific impulse means more efficient fuel use."
+        },
+        {
+            "question": "What was the first privately-funded spacecraft to reach orbit?",
+            "answers": [
+                {"answer": "SpaceShipOne"},
+                {"answer": "Falcon 1"},
+                {"answer": "Dragon"},
+                {"answer": "New Shepard"}
+            ],
+            "answer": "Falcon 1",
+            "explanation": "SpaceX's Falcon 1 became the first privately-funded liquid-fueled rocket to reach orbit on September 28, 2008, on its fourth attempt, marking a milestone in commercial spaceflight."
+        },
+        {
+            "question": "How far is the Moon from Earth?",
+            "answers": [
+                {"answer": "284,000 km"},
+                {"answer": "384,400 km"},
+                {"answer": "450,000 km"},
+                {"answer": "320,000 km"}
+            ],
+            "answer": "384,400 km",
+            "explanation": "The Moon orbits Earth at an average distance of 384,400 kilometers (238,855 miles), though this distance varies from 356,500 km at perigee to 406,700 km at apogee."
+        },
+        {
+            "question": "What is the main component of rocket exhaust that provides thrust?",
+            "answers": [
+                {"answer": "Heat"},
+                {"answer": "Light"},
+                {"answer": "High-velocity gas"},
+                {"answer": "Electromagnetic radiation"}
+            ],
+            "answer": "High-velocity gas",
+            "explanation": "Rocket thrust is generated by Newton's third law: hot, high-velocity exhaust gases are expelled from the rocket nozzle, creating an equal and opposite reaction force that propels the rocket forward."
+        },
+        {
+            "question": "Which space agency successfully landed the Curiosity rover on Mars?",
+            "answers": [
+                {"answer": "ESA"},
+                {"answer": "NASA"},
+                {"answer": "Roscosmos"},
+                {"answer": "JAXA"}
+            ],
+            "answer": "NASA",
+            "explanation": "NASA's Curiosity rover successfully landed on Mars on August 5, 2012, using the innovative 'sky crane' landing system. It continues to explore Gale Crater and search for signs of past habitability."
+        },
+        {
+            "question": "What is the primary purpose of a heat shield on spacecraft?",
+            "answers": [
+                {"answer": "Protection from solar radiation"},
+                {"answer": "Protection during atmospheric re-entry"},
+                {"answer": "Thermal regulation in space"},
+                {"answer": "Protection from micrometeoroids"}
+            ],
+            "answer": "Protection during atmospheric re-entry",
+            "explanation": "Heat shields protect spacecraft during atmospheric re-entry by absorbing and dissipating the intense heat generated by friction with atmospheric particles at high speeds, preventing the spacecraft from burning up."
+        }
+    ]
+},
+        {
+            "question": "How long does it take for light from the Sun to reach Earth?",
+            "answers": [
+                {"answer": "8 minutes"},
+                {"answer": "4 minutes"},
+                {"answer": "12 minutes"},
+                {"answer": "1 hour"}
+            ],
+            "answer": "8 minutes",
+            "explanation": "Light travels at approximately 300,000 kilometers per second, and the Sun is about 150 million kilometers away, so sunlight takes approximately 8 minutes and 20 seconds to reach Earth."
+        },
+        {
+            "question": "What is the largest planet in our solar system?",
+            "answers": [
+                {"answer": "Saturn"},
+                {"answer": "Neptune"},
+                {"answer": "Jupiter"},
+                {"answer": "Uranus"}
+            ],
+            "answer": "Jupiter",
+            "explanation": "Jupiter is the largest planet in our solar system, with a diameter of about 143,000 kilometers and a mass greater than all other planets combined."
+        },
+        {
+            "question": "What was the first artificial satellite launched into space?",
+            "answers": [
+                {"answer": "Explorer 1"},
+                {"answer": "Sputnik 1"},
+                {"answer": "Telstar 1"},
+                {"answer": "Vanguard 1"}
+            ],
+            "answer": "Sputnik 1",
+            "explanation": "Sputnik 1, launched by the Soviet Union on October 4, 1957, was the first artificial satellite to orbit Earth, marking the beginning of the Space Age."
+        },
+        {
+            "question": "What is escape velocity from Earth?",
+            "answers": [
+                {"answer": "7.9 km/s"},
+                {"answer": "11.2 km/s"},
+                {"answer": "15.5 km/s"},
+                {"answer": "9.8 km/s"}
+            ],
+            "answer": "11.2 km/s",
+            "explanation": "Earth's escape velocity is 11.2 kilometers per second (25,020 mph). This is the minimum speed needed for an object to escape Earth's gravitational pull without further propulsion."
+        },
+        {
+            "question": "Which moon landing mission was the first to successfully land humans on the Moon?",
+            "answers": [
+                {"answer": "Apollo 10"},
+                {"answer": "Apollo 11"},
+                {"answer": "Apollo 12"},
+                {"answer": "Apollo 8"}
+            ],
+            "answer": "Apollo 11",
+            "explanation": "Apollo 11, launched on July 16, 1969, was the first mission to successfully land humans on the Moon. Neil Armstrong and Buzz Aldrin landed on July 20, 1969."
+        },
+        {
+            "question": "What is the International Space Station's orbital speed?",
+            "answers": [
+                {"answer": "17,500 mph"},
+                {"answer": "12,000 mph"},
+                {"answer": "25,000 mph"},
+                {"answer": "8,000 mph"}
+            ],
+            "answer": "17,500 mph",
+            "explanation": "The ISS orbits Earth at approximately 17,500 mph (28,000 km/h), completing one orbit around Earth every 90-93 minutes at an altitude of about 400-420 kilometers."
+        },
+        {
+            "question": "What is the hottest planet in our solar system?",
+            "answers": [
+                {"answer": "Mercury"},
+                {"answer": "Venus"},
+                {"answer": "Mars"},
+                {"answer": "Jupiter"}
+            ],
+            "answer": "Venus",
+            "explanation": "Venus is the hottest planet with surface temperatures reaching 462°C (864°F) due to its thick atmosphere and extreme greenhouse effect, even though Mercury is closer to the Sun."
+        },
+        {
+            "question": "What type of rocket fuel combination is most commonly used in modern space launches?",
+            "answers": [
+                {"answer": "Liquid hydrogen and liquid oxygen"},
+                {"answer": "Kerosene and liquid oxygen"},
+                {"answer": "Solid rocket fuel"},
+                {"answer": "Methane and liquid oxygen"}
+            ],
+            "answer": "Kerosene and liquid oxygen",
+            "explanation": "RP-1 (refined kerosene) and liquid oxygen is the most commonly used propellant combination in first-stage rockets due to its high density, reliability, and relatively simple handling requirements."
+        },
+        {
+            "question": "How many people can the current SpaceX Dragon spacecraft carry?",
+            "answers": [
+                {"answer": "4"},
+                {"answer": "5"},
+                {"answer": "7"},
+                {"answer": "3"}
+            ],
+            "answer": "7",
+            "explanation": "The SpaceX Crew Dragon spacecraft is designed to carry up to 7 crew members, though NASA typically uses it for 4-person crews to provide more cargo space and comfort."
+        },
+        {
+            "question": "What is the name of the largest moon of Saturn?",
+            "answers": [
+                {"answer": "Europa"},
+                {"answer": "Ganymede"},
+                {"answer": "Titan"},
+                {"answer": "Io"}
+            ],
+            "answer": "Titan",
+            "explanation": "Titan is Saturn's largest moon and the second-largest moon in the solar system. It has a thick atmosphere and lakes of liquid methane and ethane on its surface."
+        },
+        {
+            "question": "What does EVA stand for in space missions?",
+            "answers": [
+                {"answer": "Extra Vehicular Activity"},
+                {"answer": "Emergency Vehicle Access"},
+                {"answer": "External Vehicle Assembly"},
+                {"answer": "Extended Vehicle Application"}
+            ],
+            "answer": "Extra Vehicular Activity",
+            "explanation": "EVA stands for Extra Vehicular Activity, commonly known as a spacewalk, where astronauts leave their spacecraft to work in the vacuum of space."
+        },
+        {
+            "question": "Which planet has the most moons?",
+            "answers": [
+                {"answer": "Jupiter"},
+                {"answer": "Saturn"},
+                {"answer": "Uranus"},
+                {"answer": "Neptune"}
+            ],
+            "answer": "Saturn",
+            "explanation": "Saturn currently holds the record with 146 confirmed moons, surpassing Jupiter's 95 moons. Many of these are small irregular moons discovered through advanced telescopic surveys."
+        },
+        {
+            "question": "What is the temperature of space?",
+            "answers": [
+                {"answer": "-270°C"},
+                {"answer": "-180°C"},
+                {"answer": "-100°C"},
+                {"answer": "0°C"}
+            ],
+            "answer": "-270°C",
+            "explanation": "The temperature of empty space is approximately -270°C (-454°F or 2.7 Kelvin), just slightly above absolute zero due to cosmic microwave background radiation."
+        },
+        {
+            "question": "What was the first space station?",
+            "answers": [
+                {"answer": "Skylab"},
+                {"answer": "Mir"},
+                {"answer": "Salyut 1"},
+                {"answer": "ISS"}
+            ],
+            "answer": "Salyut 1",
+            "explanation": "Salyut 1, launched by the Soviet Union on April 19, 1971, was the first space station. Though the initial crew mission failed, it marked the beginning of long-duration human spaceflight."
+        },
+        {
+            "question": "How long is a day on Mars?",
+            "answers": [
+                {"answer": "20 hours"},
+                {"answer": "24 hours 37 minutes"},
+                {"answer": "26 hours"},
+                {"answer": "22 hours 15 minutes"}
+            ],
+            "answer": "24 hours 37 minutes",
+            "explanation": "A Martian day, called a 'sol,' lasts 24 hours, 37 minutes, and 22 seconds, making it remarkably similar to Earth's 24-hour day."
+        },
+        {
+            "question": "What is the Van Allen radiation belt?",
+            "answers": [
+                {"answer": "Solar wind particles"},
+                {"answer": "Charged particles trapped by Earth's magnetic field"},
+                {"answer": "Cosmic background radiation"},
+                {"answer": "Aurora particles"}
+            ],
+            "answer": "Charged particles trapped by Earth's magnetic field",
+            "explanation": "The Van Allen radiation belts are zones of energetic charged particles trapped by Earth's magnetic field, discovered by Explorer 1 in 1958 and named after physicist James Van Allen."
+        },
+        {
+            "question": "Which spacecraft was the first to land on Mars successfully?",
+            "answers": [
+                {"answer": "Viking 1"},
+                {"answer": "Mars Pathfinder"},
+                {"answer": "Mars 3"},
+                {"answer": "Mariner 4"}
+            ],
+            "answer": "Mars 3",
+            "explanation": "Mars 3, launched by the Soviet Union in 1971, was the first spacecraft to successfully land on Mars, though it lost contact shortly after landing. Viking 1 was the first fully successful long-term Mars lander in 1976."
+        },
+        {
+            "question": "What is the Karman line?",
+            "answers": [
+                {"answer": "The boundary between Earth's atmosphere and space"},
+                {"answer": "The orbit of the ISS"},
+                {"answer": "The edge of the solar system"},
+                {"answer": "The asteroid belt boundary"}
+            ],
+            "answer": "The boundary between Earth's atmosphere and space",
+            "explanation": "The Karman line, at 100 kilometers (62 miles) above sea level, is internationally recognized as the boundary between Earth's atmosphere and outer space."
+        },
+        {
+            "question": "How many space shuttle missions were there in total?",
+            "answers": [
+                {"answer": "125"},
+                {"answer": "135"},
+                {"answer": "145"},
+                {"answer": "115"}
+            ],
+            "answer": "135",
+            "explanation": "NASA's Space Shuttle program completed 135 missions from 1981 to 2011, using five operational orbiters: Columbia, Challenger, Discovery, Atlantis, and Endeavour."
+        },
+        {
+            "question": "What is the Great Red Spot on Jupiter?",
+            "answers": [
+                {"answer": "A moon"},
+                {"answer": "A giant storm"},
+                {"answer": "A crater"},
+                {"answer": "A volcanic region"}
+            ],
+            "answer": "A giant storm",
+            "explanation": "Jupiter's Great Red Spot is a giant anticyclonic storm larger than Earth that has been raging for at least 350 years, with winds reaching up to 432 km/h (268 mph)."
+        },
+        {
+            "question": "Which planet rotates on its side?",
+            "answers": [
+                {"answer": "Neptune"},
+                {"answer": "Saturn"},
+                {"answer": "Uranus"},
+                {"answer": "Pluto"}
+            ],
+            "answer": "Uranus",
+            "explanation": "Uranus rotates on its side with an axial tilt of 98 degrees, likely caused by a collision with an Earth-sized object early in its formation, making its seasons extremely unusual."
+        },
+        {
+            "question": "What is specific impulse in rocketry?",
+            "answers": [
+                {"answer": "The thrust-to-weight ratio"},
+                {"answer": "The efficiency of rocket fuel"},
+                {"answer": "The acceleration of the rocket"},
+                {"answer": "The payload capacity"}
+            ],
+            "answer": "The efficiency of rocket fuel",
+            "explanation": "Specific impulse measures how efficiently a rocket uses propellant, expressed as seconds of thrust per unit weight of propellant. Higher specific impulse means more efficient fuel use."
+        },
+        {
+            "question": "What was the first privately-funded spacecraft to reach orbit?",
+            "answers": [
+                {"answer": "SpaceShipOne"},
+                {"answer": "Falcon 1"},
+                {"answer": "Dragon"},
+                {"answer": "New Shepard"}
+            ],
+            "answer": "Falcon 1",
+            "explanation": "SpaceX's Falcon 1 became the first privately-funded liquid-fueled rocket to reach orbit on September 28, 2008, on its fourth attempt, marking a milestone in commercial spaceflight."
+        },
+        {
+            "question": "How far is the Moon from Earth?",
+            "answers": [
+                {"answer": "284,000 km"},
+                {"answer": "384,400 km"},
+                {"answer": "450,000 km"},
+                {"answer": "320,000 km"}
+            ],
+            "answer": "384,400 km",
+            "explanation": "The Moon orbits Earth at an average distance of 384,400 kilometers (238,855 miles), though this distance varies from 356,500 km at perigee to 406,700 km at apogee."
+        },
+        {
+            "question": "What is the main component of rocket exhaust that provides thrust?",
+            "answers": [
+                {"answer": "Heat"},
+                {"answer": "Light"},
+                {"answer": "High-velocity gas"},
+                {"answer": "Electromagnetic radiation"}
+            ],
+            "answer": "High-velocity gas",
+            "explanation": "Rocket thrust is generated by Newton's third law: hot, high-velocity exhaust gases are expelled from the rocket nozzle, creating an equal and opposite reaction force that propels the rocket forward."
+        },
+        {
+            "question": "Which space agency successfully landed the Curiosity rover on Mars?",
+            "answers": [
+                {"answer": "ESA"},
+                {"answer": "NASA"},
+                {"answer": "Roscosmos"},
+                {"answer": "JAXA"}
+            ],
+            "answer": "NASA",
+            "explanation": "NASA's Curiosity rover successfully landed on Mars on August 5, 2012, using the innovative 'sky crane' landing system. It continues to explore Gale Crater and search for signs of past habitability."
+        },
+        {
+            "question": "What is the primary purpose of a heat shield on spacecraft?",
+            "answers": [
+                {"answer": "Protection from solar radiation"},
+                {"answer": "Protection during atmospheric re-entry"},
+                {"answer": "Thermal regulation in space"},
+                {"answer": "Protection from micrometeoroids"}
+            ],
+            "answer": "Protection during atmospheric re-entry",
+            "explanation": "Heat shields protect spacecraft during atmospheric re-entry by absorbing and dissipating the intense heat generated by friction with atmospheric particles at high speeds, preventing the spacecraft from burning up."
+        }
+    ]
+},
+  {
+    "name": "Animal Kingdom",
+    "questions": [
+        {
+            "question": "Which animal is known as the largest mammal on Earth?",
+            "answers": [
+                {"answer": "African Elephant"},
+                {"answer": "Blue Whale"},
+                {"answer": "Sperm Whale"},
+                {"answer": "Giraffe"}
+            ],
+            "answer": "Blue Whale",
+            "explanation": "Blue whales can reach lengths of up to 100 feet and weigh as much as 200 tons, making them the largest animals ever known to have lived on Earth."
+        },
+        {
+            "question": "What is the fastest land animal?",
+            "answers": [
+                {"answer": "Lion"},
+                {"answer": "Cheetah"},
+                {"answer": "Leopard"},
+                {"answer": "Gazelle"}
+            ],
+            "answer": "Cheetah",
+            "explanation": "Cheetahs can reach speeds of up to 70 mph (112 km/h) in short bursts, making them the fastest land animal on the planet."
+        },
+        {
+            "question": "Which bird cannot fly?",
+            "answers": [
+                {"answer": "Eagle"},
+                {"answer": "Penguin"},
+                {"answer": "Hawk"},
+                {"answer": "Sparrow"}
+            ],
+            "answer": "Penguin",
+            "explanation": "Penguins are flightless birds that have evolved to be excellent swimmers instead. Their wings have adapted into flippers for underwater propulsion."
+        },
+        {
+            "question": "How many hearts does an octopus have?",
+            "answers": [
+                {"answer": "1"},
+                {"answer": "2"},
+                {"answer": "3"},
+                {"answer": "4"}
+            ],
+            "answer": "3",
+            "explanation": "Octopuses have three hearts: two pump blood to the gills, while the third pumps blood to the rest of the body. The main heart stops beating when they swim."
+        },
+        {
+            "question": "What is a group of lions called?",
+            "answers": [
+                {"answer": "Pack"},
+                {"answer": "Herd"},
+                {"answer": "Pride"},
+                {"answer": "Flock"}
+            ],
+            "answer": "Pride",
+            "explanation": "A group of lions is called a pride, typically consisting of related females, their cubs, and a few adult males who defend the territory."
+        },
+        {
+            "question": "Which animal sleeps the most per day?",
+            "answers": [
+                {"answer": "Cat"},
+                {"answer": "Sloth"},
+                {"answer": "Koala"},
+                {"answer": "Bear"}
+            ],
+            "answer": "Koala",
+            "explanation": "Koalas sleep 18-22 hours per day due to their low-energy eucalyptus diet, which requires significant energy to digest and provides minimal nutrition."
+        },
+        {
+            "question": "What is the only mammal capable of true flight?",
+            "answers": [
+                {"answer": "Flying squirrel"},
+                {"answer": "Sugar glider"},
+                {"answer": "Bat"},
+                {"answer": "Flying lemur"}
+            ],
+            "answer": "Bat",
+            "explanation": "Bats are the only mammals capable of sustained flight. Other 'flying' mammals actually glide using flaps of skin between their limbs."
+        },
+        {
+            "question": "Which animal has the longest lifespan?",
+            "answers": [
+                {"answer": "Elephant"},
+                {"answer": "Tortoise"},
+                {"answer": "Greenland Shark"},
+                {"answer": "Whale"}
+            ],
+            "answer": "Greenland Shark",
+            "explanation": "Greenland sharks can live over 400 years, with some estimated to be over 500 years old, making them the longest-living vertebrates known."
+        },
+        {
+            "question": "What do pandas primarily eat?",
+            "answers": [
+                {"answer": "Fish"},
+                {"answer": "Bamboo"},
+                {"answer": "Fruits"},
+                {"answer": "Insects"}
+            ],
+            "answer": "Bamboo",
+            "explanation": "Giant pandas eat almost exclusively bamboo, consuming 12-38 pounds per day. Despite being classified as carnivores, 99% of their diet consists of bamboo."
+        },
+        {
+            "question": "Which animal has the strongest bite force?",
+            "answers": [
+                {"answer": "Great White Shark"},
+                {"answer": "Crocodile"},
+                {"answer": "Hippo"},
+                {"answer": "Lion"}
+            ],
+            "answer": "Crocodile",
+            "explanation": "Saltwater crocodiles have the strongest bite force of any animal, measured at up to 3,700 pounds per square inch (PSI)."
+        },
+        {
+            "question": "What is the smallest mammal in the world?",
+            "answers": [
+                {"answer": "Shrew"},
+                {"answer": "Mouse"},
+                {"answer": "Bumblebee bat"},
+                {"answer": "Hamster"}
+            ],
+            "answer": "Bumblebee bat",
+            "explanation": "The bumblebee bat (Kitti's hog-nosed bat) weighs only 1.5-2 grams and has a wingspan of 5.1-5.7 inches, making it the world's smallest mammal."
+        },
+        {
+            "question": "Which animal can change its color?",
+            "answers": [
+                {"answer": "Lizard"},
+                {"answer": "Chameleon"},
+                {"answer": "Snake"},
+                {"answer": "Turtle"}
+            ],
+            "answer": "Chameleon",
+            "explanation": "Chameleons change color through specialized cells called chromatophores, which contain different colored pigments that can be manipulated to alter their appearance."
+        },
+        {
+            "question": "What is the largest species of bear?",
+            "answers": [
+                {"answer": "Grizzly Bear"},
+                {"answer": "Polar Bear"},
+                {"answer": "Brown Bear"},
+                {"answer": "Black Bear"}
+            ],
+            "answer": "Polar Bear",
+            "explanation": "Polar bears are the largest bear species, with adult males weighing 880-1,320 pounds. They are perfectly adapted to life in the Arctic."
+        },
+        {
+            "question": "Which animal has the best memory?",
+            "answers": [
+                {"answer": "Dolphin"},
+                {"answer": "Elephant"},
+                {"answer": "Chimpanzee"},
+                {"answer": "Dog"}
+            ],
+            "answer": "Elephant",
+            "explanation": "Elephants have exceptional memories and can remember other elephants they haven't seen for decades. They also remember drought locations and migration routes."
+        },
+        {
+            "question": "What is the most venomous animal in the world?",
+            "answers": [
+                {"answer": "King Cobra"},
+                {"answer": "Black Mamba"},
+                {"answer": "Box Jellyfish"},
+                {"answer": "Blue-ringed Octopus"}
+            ],
+            "answer": "Box Jellyfish",
+            "explanation": "Box jellyfish are considered the most venomous animals on Earth. Their venom can cause cardiac arrest and death within minutes of contact."
+        },
+        {
+            "question": "Which animal can live without water the longest?",
+            "answers": [
+                {"answer": "Camel"},
+                {"answer": "Kangaroo rat"},
+                {"answer": "Desert tortoise"},
+                {"answer": "Fennec fox"}
+            ],
+            "answer": "Kangaroo rat",
+            "explanation": "Kangaroo rats can survive their entire lives without drinking water, obtaining all necessary moisture from the seeds they eat and their efficient kidneys."
+        },
+        {
+            "question": "What is the largest bird in the world?",
+            "answers": [
+                {"answer": "Eagle"},
+                {"answer": "Ostrich"},
+                {"answer": "Emu"},
+                {"answer": "Condor"}
+            ],
+            "answer": "Ostrich",
+            "explanation": "Ostriches are the largest living birds, standing up to 9 feet tall and weighing up to 320 pounds. They can also run up to 45 mph."
+        },
+        {
+            "question": "Which animal has the most teeth?",
+            "answers": [
+                {"answer": "Shark"},
+                {"answer": "Crocodile"},
+                {"answer": "Snail"},
+                {"answer": "Dolphin"}
+            ],
+            "answer": "Snail",
+            "explanation": "Garden snails can have over 14,000 teeth arranged in rows on their tongue-like organ called a radula, which they use to scrape food."
+        },
+        {
+            "question": "What is the fastest marine animal?",
+            "answers": [
+                {"answer": "Dolphin"},
+                {"answer": "Tuna"},
+                {"answer": "Sailfish"},
+                {"answer": "Barracuda"}
+            ],
+            "answer": "Sailfish",
+            "explanation": "Sailfish can reach speeds of up to 68 mph (110 km/h), making them the fastest fish in the ocean. They use their speed to hunt schools of smaller fish."
+        },
+        {
+            "question": "Which animal has the thickest skin?",
+            "answers": [
+                {"answer": "Elephant"},
+                {"answer": "Rhinoceros"},
+                {"answer": "Hippopotamus"},
+                {"answer": "Whale"}
+            ],
+            "answer": "Whale",
+            "explanation": "Whales, particularly sperm whales, have the thickest skin of any animal, with some areas reaching up to 14 inches thick to provide insulation in cold ocean waters."
+        },
+        {
+            "question": "What is the only continent without native ants?",
+            "answers": [
+                {"answer": "Antarctica"},
+                {"answer": "Australia"},
+                {"answer": "Arctic"},
+                {"answer": "Greenland"}
+            ],
+            "answer": "Antarctica",
+            "explanation": "Antarctica is the only continent where ants are not naturally found due to the extreme cold temperatures that make it impossible for them to survive."
+        },
+        {
+            "question": "Which animal has the largest brain relative to body size?",
+            "answers": [
+                {"answer": "Human"},
+                {"answer": "Dolphin"},
+                {"answer": "Ant"},
+                {"answer": "Elephant"}
+            ],
+            "answer": "Ant",
+            "explanation": "Ants have the largest brain-to-body ratio of any animal, with their brain making up about 15% of their total body weight, compared to 2% in humans."
+        },
+        {
+            "question": "What is the loudest animal on Earth?",
+            "answers": [
+                {"answer": "Lion"},
+                {"answer": "Elephant"},
+                {"answer": "Blue Whale"},
+                {"answer": "Howler Monkey"}
+            ],
+            "answer": "Blue Whale",
+            "explanation": "Blue whales produce sounds that can reach up to 188 decibels, which can be heard by other whales from hundreds of miles away underwater."
+        },
+        {
+            "question": "Which animal can regrow lost body parts?",
+            "answers": [
+                {"answer": "Lizard"},
+                {"answer": "Starfish"},
+                {"answer": "Salamander"},
+                {"answer": "All of the above"}
+            ],
+            "answer": "All of the above",
+            "explanation": "Lizards can regrow tails, starfish can regrow arms and even their entire body from a single arm, and salamanders can regrow limbs, tails, and even parts of their heart and brain."
+        },
+        {
+            "question": "What is the most intelligent invertebrate?",
+            "answers": [
+                {"answer": "Bee"},
+                {"answer": "Octopus"},
+                {"answer": "Spider"},
+                {"answer": "Ant"}
+            ],
+            "answer": "Octopus",
+            "explanation": "Octopuses are considered the most intelligent invertebrates, capable of problem-solving, using tools, opening jars, and even displaying what appears to be playful behavior."
+        },
+        {
+            "question": "Which animal has the most powerful vision?",
+            "answers": [
+                {"answer": "Eagle"},
+                {"answer": "Hawk"},
+                {"answer": "Mantis Shrimp"},
+                {"answer": "Owl"}
+            ],
+            "answer": "Mantis Shrimp",
+            "explanation": "Mantis shrimp have the most complex eyes in the animal kingdom, with 16 types of photoreceptors (humans have 3) and can see ultraviolet, visible, and polarized light."
+        },
+        {
+            "question": "What is the smallest bird in the world?",
+            "answers": [
+                {"answer": "Wren"},
+                {"answer": "Hummingbird"},
+                {"answer": "Bee Hummingbird"},
+                {"answer": "Finch"}
+            ],
+            "answer": "Bee Hummingbird",
+            "explanation": "The bee hummingbird, found in Cuba, is the smallest bird in the world, weighing less than 2 grams and measuring only 2.25 inches long."
+        },
+        {
+            "question": "Which animal has the longest migration route?",
+            "answers": [
+                {"answer": "Monarch Butterfly"},
+                {"answer": "Gray Whale"},
+                {"answer": "Arctic Tern"},
+                {"answer": "Caribou"}
+            ],
+            "answer": "Arctic Tern",
+            "explanation": "Arctic terns have the longest migration of any animal, traveling roughly 44,000 miles annually from Arctic to Antarctic and back, seeing two summers per year."
+        },
+        {
+            "question": "What is the only mammal that lays eggs?",
+            "answers": [
+                {"answer": "Platypus"},
+                {"answer": "Echidna"},
+                {"answer": "Both A and B"},
+                {"answer": "Kangaroo"}
+            ],
+            "answer": "Both A and B",
+            "explanation": "Platypus and echidnas are monotremes, the only mammals that lay eggs instead of giving birth to live young. They are found exclusively in Australia and New Guinea."
+        },
+        {
+            "question": "Which animal has the strongest grip strength?",
+            "answers": [
+                {"answer": "Gorilla"},
+                {"answer": "Chimpanzee"},
+                {"answer": "Orangutan"},
+                {"answer": "Human"}
+            ],
+            "answer": "Orangutan",
+            "explanation": "Orangutans have the strongest grip strength of any primate, with the ability to grip with a force of up to 600 pounds per square inch, about 7 times stronger than humans."
+        }
+    ]
+},
+  {
     "name": "AI-Powered Search (Developer)",
     "image": "https://images.unsplash.com/photo-1620712943543-95fc696293AE",
     "questions": [
