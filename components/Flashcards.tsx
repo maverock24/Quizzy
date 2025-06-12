@@ -7,6 +7,7 @@ import {
   Animated,
   Dimensions,
   Easing,
+  Switch,
 } from 'react-native';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import {
@@ -15,6 +16,8 @@ import {
   PanGestureHandlerStateChangeEvent,
   State,
 } from 'react-native-gesture-handler';
+import { useQuiz } from './Quizprovider';
+import { t } from 'i18next';
 
 type Answer = {
   answer: string;
@@ -247,6 +250,8 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [deckSize, setDeckSize] = useState(0);
 
+  const { audioEnabled, setAudioEnabled, flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation } = useQuiz();
+
   const pan = useRef(new Animated.ValueXY()).current;
   const topCardRotate = pan.x.interpolate({
     inputRange: [-cardWidth / 2, 0, cardWidth / 2],
@@ -461,6 +466,25 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
 
   return (
     <GestureHandlerRootView>
+      <View style={carouselStyles.header}>
+                  <View style={{ marginBottom: 10,flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'flex-end', height: 20 }}>
+                    <View style={carouselStyles.settingItem}>
+                                  <Text style={carouselStyles.settingText}>{t('use_flashcards')}</Text>
+                                  
+                                
+                    
+                                <Switch
+                                  trackColor={{ false: 'gray', true: 'white' }}
+                                  thumbColor={
+                                    flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+                                  }
+                                  ios_backgroundColor="gray"
+                                  onValueChange={setFlashcardsEnabled}
+                                  value={flashcardsEnabled}
+                                />
+                    </View>
+                  </View>
+                </View>
       <View style={carouselStyles.dumpButton}>
         <FontAwesome name="arrow-left" size={24} color="gray" />
         <Text style={carouselStyles.keepButtonText}>dump</Text>
@@ -524,6 +548,28 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
 };
 
 const carouselStyles = StyleSheet.create({
+  settingItem: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  settingName: {
+    flexDirection: 'column',
+    flex: 1,
+    marginRight: 10,
+  },
+  settingText: {
+    marginRight: 10,
+    fontSize: 12,
+    color: 'white',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    borderBottomColor: 'rgb(255, 255, 255)',
+    borderBottomWidth: 1,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -544,7 +590,7 @@ const carouselStyles = StyleSheet.create({
   },
   dumpButton: {
     position: 'absolute',
-    top: 30,
+    top: 80,
     alignSelf: 'center',
     flexDirection: 'row',
     alignItems: 'center',

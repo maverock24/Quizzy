@@ -6,6 +6,7 @@ import {
   Platform,
   ScrollView,
   StyleSheet,
+  Switch,
   Text,
   TouchableOpacity,
   View,
@@ -139,6 +140,20 @@ export const Question: React.FC<QuestionProps> = ({
   handleAnswerSelection,
   correctAnswer,
 }) => {
+  const {
+    resetState,
+    flashcardsEnabled,
+    setFlashcardsEnabled,
+    notificationsEnabled,
+    setNotificationsEnabled,
+    showExplanation,
+    setShowExplanation,
+    audioEnabled,
+    setAudioEnabled,
+    setLanguage,
+    userQuizLoadEnabled,
+    setUserQuizLoadEnabled,
+  } = useQuiz();
   const { t } = useTranslation();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -151,7 +166,6 @@ export const Question: React.FC<QuestionProps> = ({
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
   const [answerIsWrong, setAnswerIsWrong] = useState(false);
   const [sound, setSound] = useState<Audio.Sound | null>(null);
-  const { audioEnabled } = useQuiz();
 
   // Update the useEffect that resets animations
   useEffect(() => {
@@ -181,8 +195,8 @@ export const Question: React.FC<QuestionProps> = ({
   useEffect(() => {
     return sound
       ? () => {
-          sound.unloadAsync();
-        }
+        sound.unloadAsync();
+      }
       : undefined;
   }, [sound]);
 
@@ -259,7 +273,7 @@ export const Question: React.FC<QuestionProps> = ({
     setTimeout(() => {
       handleAnswerSelection(answer);
       setAnswerSelected(false); // Reset to false instead of toggling
-      // Reset the selected answer index
+      // Reset the selected answer indexcenter
       setSelectedAnswerIndex(null);
       // Reset the fade out animation
       fadeOutAnim.forEach((anim) => {
@@ -276,59 +290,127 @@ export const Question: React.FC<QuestionProps> = ({
 
   return (
     <ScrollView style={styles.contentContainer}>
-      <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between'  }}>
-      <View style={[styles.card, styles.questionCard]}>
-        <Text style={styles.questionHeading}>
-          {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
-        </Text>
-        <Text style={styles.questionText}>{renderRichText(question)}</Text>
-      </View>
-
-      {answers.map((answer, index) => (
-        <Animated.View
-          key={index}
-          style={{
-            opacity: fadeOutAnim[index],
-          }}
-        >
-          <TouchableOpacity
-            style={[
-              styles.answerButton,
-              selectedAnswerIndex === index && styles.selectedAnswerButton,
-            ]}
-            onPress={() => handleAnswer(answer.answer, index)}
-          >
-            <View style={styles.labelContainer}>
-              <Text style={styles.labelText}>{answerLabels[index]}</Text>
-            </View>
-            <Text style={styles.answerButtonText} numberOfLines={4}>
-              {renderRichText(answer.answer)}
+      <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between' }}>
+        <View style={[styles.card, styles.questionCard]}>
+          <View style={styles.header}>
+            <Text style={styles.questionHeading}>
+              {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
             </Text>
-            {answerIsCorrect && (
-              <FontAwesome
-                name="check"
-                size={20}
-                color="white"
-                style={styles.correct}
+            <View style={{ marginBottom: 10, flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between', height: 50 }}>
+              <View style={styles.settingItem}>
+                            <Text style={styles.settingText}>{t('use_flashcards')}</Text>
+                            
+                          
+              
+                          <Switch
+                            trackColor={{ false: 'gray', true: 'white' }}
+                            thumbColor={
+                              flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+                            }
+                            ios_backgroundColor="gray"
+                            onValueChange={setFlashcardsEnabled}
+                            value={flashcardsEnabled}
+                          />
+              </View>
+              <View style={styles.settingItem}>
+
+              <Text style={styles.settingText}>{t('show_explanation')}</Text>
+
+
+              <Switch
+                trackColor={{ false: 'gray', true: 'white' }}
+                thumbColor={'rgb(85, 101, 107)'}
+                ios_backgroundColor="gray"
+                onValueChange={setShowExplanation}
+                value={showExplanation}
               />
-            )}
-            {answerIsWrong && (
-              <FontAwesome
-                name="times"
-                size={20}
-                color="white"
-                style={styles.wrong}
+            </View>
+            <View style={styles.settingItem}>
+
+              <Text style={styles.settingText}>{t('enable_sound')}</Text>
+
+
+              <Switch
+                trackColor={{ false: 'gray', true: 'white' }}
+                thumbColor={'rgb(85, 101, 107)'}
+                ios_backgroundColor="gray"
+                onValueChange={setAudioEnabled}
+                value={audioEnabled}
               />
-            )}
-          </TouchableOpacity>
-        </Animated.View>
-      ))}
+            </View>
+            </View>
+          </View>
+          <Text style={styles.questionText}>{renderRichText(question)}</Text>
+        </View>
+
+        {answers.map((answer, index) => (
+          <Animated.View
+            key={index}
+            style={{
+              opacity: fadeOutAnim[index],
+            }}
+          >
+            <TouchableOpacity
+              style={[
+                styles.answerButton,
+                selectedAnswerIndex === index && styles.selectedAnswerButton,
+              ]}
+              onPress={() => handleAnswer(answer.answer, index)}
+            >
+              <View style={styles.labelContainer}>
+                <Text style={styles.labelText}>{answerLabels[index]}</Text>
+              </View>
+              <Text style={styles.answerButtonText} numberOfLines={4}>
+                {renderRichText(answer.answer)}
+              </Text>
+              {answerIsCorrect && (
+                <FontAwesome
+                  name="check"
+                  size={20}
+                  color="white"
+                  style={styles.correct}
+                />
+              )}
+              {answerIsWrong && (
+                <FontAwesome
+                  name="times"
+                  size={20}
+                  color="white"
+                  style={styles.wrong}
+                />
+              )}
+            </TouchableOpacity>
+          </Animated.View>
+        ))}
       </View>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
+  settingItem: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  settingName: {
+    flexDirection: 'column',
+    flex: 1,
+    paddingVertical: 10,
+    marginRight: 10,
+  },
+  settingText: {
+    marginRight: 10,
+    fontSize: 12,
+    color: 'white',
+  },
+  settingDescription: {
+    width: '100%',
+    marginTop: 5,
+    fontSize: 12,
+    color: 'white',
+  },
   mathText: { // Style for parts rendered as math
     fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', // Common monospace fonts
     // backgroundColor: 'rgba(0,0,0,0.15)', // Slightly adjusted background
@@ -366,8 +448,6 @@ const styles = StyleSheet.create({
     borderColor: 'rgb(255, 255, 255)',
   },
   contentContainer: {
-    marginTop: 20,
-    marginVertical: 12,
   },
   card: {
     padding: 0,
@@ -377,15 +457,20 @@ const styles = StyleSheet.create({
   questionCard: {
     borderRadius: 10,
   },
-  questionHeading: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    color: 'rgb(212, 212, 212)',
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     borderBottomColor: 'rgb(255, 255, 255)',
     borderBottomWidth: 1,
-    paddingTop: 5,
-    paddingBottom: 5,
+    marginBottom: 10,
+    paddingBottom: 18,
+  },
+  questionHeading: {
+    alignContent: 'flex-end',
+    marginBottom: 10,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'rgb(212, 212, 212)',
   },
   questionText: {
     fontSize: 16,
