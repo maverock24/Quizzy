@@ -1,5 +1,1406 @@
 [
   {
+    "name": "AWS CDK (Cloud Development Kit) Basic Concepts Quiz",
+    "questions": [
+        {
+            "question": "What does AWS CDK stand for?",
+            "answers": [
+                {"answer": "Cloud Development Kit"},
+                {"answer": "Cloud Deployment Kit"},
+                {"answer": "Container Development Kit"},
+                {"answer": "Configuration Development Kit"}
+            ],
+            "answer": "Cloud Development Kit",
+            "explanation": "AWS CDK stands for Cloud Development Kit. It's an open-source software development framework that allows you to define cloud infrastructure using familiar programming languages like TypeScript, Python, Java, and C#."
+        },
+        {
+            "question": "Which programming language has the most comprehensive CDK support?",
+            "answers": [
+                {"answer": "Python"},
+                {"answer": "TypeScript"},
+                {"answer": "Java"},
+                {"answer": "C#"}
+            ],
+            "answer": "TypeScript",
+            "explanation": "TypeScript is the primary language for CDK development and has the most comprehensive support. While CDK supports TypeScript, JavaScript, Python, Java, and C#, TypeScript was the original language and receives features first."
+        },
+        {
+            "question": "What is a CDK App?",
+            "answers": [
+                {"answer": "A single AWS resource"},
+                {"answer": "The root construct that contains one or more stacks"},
+                {"answer": "A deployment unit"},
+                {"answer": "A configuration file"}
+            ],
+            "answer": "The root construct that contains one or more stacks",
+            "explanation": "A CDK App is the root construct in your CDK application. It serves as a container for one or more stacks and represents the entire CDK application. You create an App instance and then add stacks to it."
+        },
+        {
+            "question": "What is the correct command to initialize a new CDK app in TypeScript?",
+            "answers": [
+                {"answer": "cdk init app --language typescript"},
+                {"answer": "cdk create app typescript"},
+                {"answer": "cdk new typescript"},
+                {"answer": "npm create cdk-app"}
+            ],
+            "answer": "cdk init app --language typescript",
+            "explanation": "The correct command to initialize a new CDK app is 'cdk init app --language typescript'. This creates a new directory with the basic CDK app structure, package.json, and necessary files for TypeScript development."
+        },
+        {
+            "question": "What is a CDK Stack primarily used for?",
+            "answers": [
+                {"answer": "Storing configuration files"},
+                {"answer": "A deployment unit that maps to a CloudFormation stack"},
+                {"answer": "Managing user permissions"},
+                {"answer": "Monitoring AWS resources"}
+            ],
+            "answer": "A deployment unit that maps to a CloudFormation stack",
+            "explanation": "A CDK Stack is a deployment unit that groups AWS resources together and maps directly to an AWS CloudFormation stack. When you deploy a CDK stack, it creates or updates the corresponding CloudFormation stack."
+        },
+        {
+            "question": "What is the basic syntax for creating a Stack class in CDK TypeScript?",
+            "answers": [
+                {"answer": "class MyStack extends Stack {}"},
+                {"answer": "new Stack(app, 'MyStack')"},
+                {"answer": "createStack('MyStack')"},
+                {"answer": "Stack.create('MyStack')"}
+            ],
+            "answer": "class MyStack extends Stack {}",
+            "explanation": "You create a reusable stack by extending the Stack class: 'class MyStack extends Stack {}'. This approach is better for complex, reusable stacks compared to directly instantiating Stack objects."
+        },
+        {
+            "question": "What are CDK Constructs?",
+            "answers": [
+                {"answer": "Configuration files for AWS resources"},
+                {"answer": "Building blocks that represent cloud components"},
+                {"answer": "Deployment scripts"},
+                {"answer": "Monitoring tools"}
+            ],
+            "answer": "Building blocks that represent cloud components",
+            "explanation": "Constructs are the basic building blocks of CDK applications. They are reusable components that can represent anything from a single AWS resource to complex multi-resource patterns. They come in three levels: L1, L2, and L3."
+        },
+        {
+            "question": "What are L1 constructs in CDK?",
+            "answers": [
+                {"answer": "High-level patterns combining multiple resources"},
+                {"answer": "Direct CloudFormation resources with Cfn prefix"},
+                {"answer": "Curated constructs with sensible defaults"},
+                {"answer": "Custom user-defined constructs"}
+            ],
+            "answer": "Direct CloudFormation resources with Cfn prefix",
+            "explanation": "L1 constructs are direct CloudFormation resources that have a 'Cfn' prefix (like CfnBucket, CfnFunction). They provide a 1:1 mapping to CloudFormation resources with minimal abstraction."
+        },
+        {
+            "question": "How do you install the AWS CDK CLI?",
+            "answers": [
+                {"answer": "npm install -g aws-cdk"},
+                {"answer": "pip install aws-cdk"},
+                {"answer": "apt install aws-cdk"},
+                {"answer": "yarn global add aws-cdk"}
+            ],
+            "answer": "npm install -g aws-cdk",
+            "explanation": "The AWS CDK CLI is installed globally using npm: 'npm install -g aws-cdk'. After installation, you can use the 'cdk' command to interact with your CDK applications."
+        },
+        {
+            "question": "What command deploys a CDK stack to AWS?",
+            "answers": [
+                {"answer": "cdk deploy"},
+                {"answer": "cdk push"},
+                {"answer": "cdk apply"},
+                {"answer": "cdk create"}
+            ],
+            "answer": "cdk deploy",
+            "explanation": "The 'cdk deploy' command synthesizes your CDK app into CloudFormation templates and deploys them to AWS. You can specify a stack name like 'cdk deploy MyStack' or deploy all stacks with 'cdk deploy --all'."
+        },
+        {
+            "question": "What does the 'cdk synth' command do?",
+            "answers": [
+                {"answer": "Deploys the stack to AWS"},
+                {"answer": "Generates CloudFormation templates without deploying"},
+                {"answer": "Deletes the stack"},
+                {"answer": "Lists all available stacks"}
+            ],
+            "answer": "Generates CloudFormation templates without deploying",
+            "explanation": "'cdk synth' synthesizes your CDK application and generates CloudFormation templates without deploying them. This is useful for reviewing what will be created before deployment or for CI/CD pipelines."
+        },
+        {
+            "question": "How do you create an S3 bucket using CDK TypeScript?",
+            "answers": [
+                {"answer": "new s3.Bucket(this, 'MyBucket')"},
+                {"answer": "new aws.s3.Bucket(this, 'MyBucket')"},
+                {"answer": "s3.createBucket('MyBucket')"},
+                {"answer": "S3.newBucket('MyBucket')"}
+            ],
+            "answer": "new s3.Bucket(this, 'MyBucket')",
+            "explanation": "To create an S3 bucket, you use 'new s3.Bucket(this, 'MyBucket')' where 's3' is imported from 'aws-cdk-lib/aws-s3'. The first parameter is the scope (usually 'this' in a stack), and the second is the construct ID."
+        },
+        {
+            "question": "What is the primary purpose of the construct ID in CDK?",
+            "answers": [
+                {"answer": "Unique identifier within the scope"},
+                {"answer": "AWS resource name"},
+                {"answer": "CloudFormation template name"},
+                {"answer": "Deployment order specification"}
+            ],
+            "answer": "Unique identifier within the scope",
+            "explanation": "The construct ID is a unique identifier within its scope that's used to generate CloudFormation logical IDs and organize resources in the construct tree. It must be unique within the same scope."
+        },
+        {
+            "question": "How do you import an existing S3 bucket in CDK?",
+            "answers": [
+                {"answer": "s3.Bucket.fromBucketArn(this, 'ImportedBucket', bucketArn)"},
+                {"answer": "s3.importBucket('bucket-name')"},
+                {"answer": "new s3.ExistingBucket(this, 'bucket-name')"},
+                {"answer": "s3.existing('bucket-name')"}
+            ],
+            "answer": "s3.Bucket.fromBucketArn(this, 'ImportedBucket', bucketArn)",
+            "explanation": "CDK provides static methods like 'fromBucketArn', 'fromBucketName' to import existing AWS resources. These methods return construct objects that represent existing resources without managing their lifecycle."
+        },
+        {
+            "question": "What is CDK bootstrapping?",
+            "answers": [
+                {"answer": "Setting up initial CDK resources in an AWS account/region"},
+                {"answer": "Installing CDK CLI"},
+                {"answer": "Creating the first CDK app"},
+                {"answer": "Configuring AWS credentials"}
+            ],
+            "answer": "Setting up initial CDK resources in an AWS account/region",
+            "explanation": "CDK bootstrapping (using 'cdk bootstrap') sets up necessary resources in your AWS account/region, including an S3 bucket for storing assets and IAM roles for deployment. It's required before deploying CDK apps."
+        },
+        {
+            "question": "How do you add dependencies between stacks in CDK?",
+            "answers": [
+                {"answer": "stackA.addDependency(stackB)"},
+                {"answer": "stackA.dependsOn(stackB)"},
+                {"answer": "CDK.addDependency(stackA, stackB)"},
+                {"answer": "new Dependency(stackA, stackB)"}
+            ],
+            "answer": "stackA.addDependency(stackB)",
+            "explanation": "Stack dependencies are created using the addDependency() method. You can also create implicit dependencies by referencing outputs from one stack in another, and CDK will automatically manage the dependencies."
+        },
+        {
+            "question": "What is required to create a Lambda function in CDK?",
+            "answers": [
+                {"answer": "Only the function name"},
+                {"answer": "Runtime, handler, and code properties"},
+                {"answer": "Only the code property"},
+                {"answer": "Only runtime and handler"}
+            ],
+            "answer": "Runtime, handler, and code properties",
+            "explanation": "Lambda functions in CDK require three essential properties: runtime (e.g., Runtime.NODEJS_18_X), handler (entry point), and code (source code location). These are specified in the Function constructor."
+        },
+        {
+            "question": "How do you define environment variables for a Lambda function in CDK?",
+            "answers": [
+                {"answer": "environment: { KEY: 'value' }"},
+                {"answer": "env: { KEY: 'value' }"},
+                {"answer": "environmentVariables: { KEY: 'value' }"},
+                {"answer": "envVars: { KEY: 'value' }"}
+            ],
+            "answer": "environment: { KEY: 'value' }",
+            "explanation": "Environment variables for Lambda functions are defined using the 'environment' property as an object with key-value pairs: 'environment: { NODE_ENV: 'production', TABLE_NAME: table.tableName }'."
+        },
+        {
+            "question": "What is CDK context primarily used for?",
+            "answers": [
+                {"answer": "Storing authentication credentials"},
+                {"answer": "Runtime configuration and feature flags"},
+                {"answer": "Deployment logs"},
+                {"answer": "Error handling"}
+            ],
+            "answer": "Runtime configuration and feature flags",
+            "explanation": "CDK context includes runtime configuration, feature flags, and cached information about AWS resources (like AZ listings, AMI IDs). It's stored in cdk.context.json and helps ensure consistent deployments."
+        },
+        {
+            "question": "How do you create a VPC with default configuration in CDK?",
+            "answers": [
+                {"answer": "new ec2.Vpc(this, 'MyVpc')"},
+                {"answer": "new aws.ec2.Vpc(this, 'MyVpc')"},
+                {"answer": "ec2.createVpc('MyVpc')"},
+                {"answer": "VPC.create(this, 'MyVpc')"}
+            ],
+            "answer": "new ec2.Vpc(this, 'MyVpc')",
+            "explanation": "A VPC is created using 'new ec2.Vpc()'. By default, it creates public and private subnets across multiple Availability Zones. You can customize with properties like 'maxAzs', 'cidr', and subnet configurations."
+        },
+        {
+            "question": "What is the recommended way to grant S3 permissions to a Lambda function in CDK?",
+            "answers": [
+                {"answer": "bucket.grantRead(lambdaFunction)"},
+                {"answer": "Create IAM policy manually"},
+                {"answer": "Use AWS console after deployment"},
+                {"answer": "Add permissions in Lambda console"}
+            ],
+            "answer": "bucket.grantRead(lambdaFunction)",
+            "explanation": "CDK provides convenient grant methods like grantRead(), grantWrite(), grantReadWrite() that automatically create the necessary IAM policies and roles with least privilege principles."
+        },
+        {
+            "question": "How do you reference another construct's properties in CDK?",
+            "answers": [
+                {"answer": "Use public properties like bucket.bucketName"},
+                {"answer": "Use getProperty() method"},
+                {"answer": "Use ref() function"},
+                {"answer": "Use getAttribute() method"}
+            ],
+            "answer": "Use public properties like bucket.bucketName",
+            "explanation": "Constructs expose public properties that can be referenced directly, such as 'bucket.bucketName', 'table.tableArn', 'vpc.vpcId'. These properties return tokens that resolve to actual values during synthesis."
+        },
+        {
+            "question": "What are CDK Assets?",
+            "answers": [
+                {"answer": "Local files or directories bundled with CDK apps"},
+                {"answer": "AWS resources created by CDK"},
+                {"answer": "Configuration files"},
+                {"answer": "CloudFormation parameters"}
+            ],
+            "answer": "Local files or directories bundled with CDK apps",
+            "explanation": "CDK Assets are local files, directories, or Docker images that are bundled with your CDK app and uploaded to AWS during deployment. Examples include Lambda function code, Docker images, or files for S3."
+        },
+        {
+            "question": "What is required to create a DynamoDB table in CDK?",
+            "answers": [
+                {"answer": "At minimum, a partition key with name and type"},
+                {"answer": "Only table name"},
+                {"answer": "Table name and billing mode"},
+                {"answer": "Partition key and sort key"}
+            ],
+            "answer": "At minimum, a partition key with name and type",
+            "explanation": "DynamoDB tables require at minimum a partition key specified with a name and type (STRING, NUMBER, or BINARY). Other properties like sort key, billing mode, and indexes are optional."
+        },
+        {
+            "question": "What is the primary purpose of CDK Outputs?",
+            "answers": [
+                {"answer": "Export values for use by other stacks or external systems"},
+                {"answer": "Store deployment logs"},
+                {"answer": "Display error messages"},
+                {"answer": "Configure monitoring alerts"}
+            ],
+            "answer": "Export values for use by other stacks or external systems",
+            "explanation": "CDK Outputs export values from stacks that can be imported by other stacks or viewed after deployment. They're useful for sharing resource identifiers, endpoints, or other important values across stack boundaries."
+        },
+        {
+            "question": "How do you add an output to a CDK stack?",
+            "answers": [
+                {"answer": "new CfnOutput(this, 'OutputName', { value: bucket.bucketName })"},
+                {"answer": "this.addOutput('OutputName', bucket.bucketName)"},
+                {"answer": "output('OutputName', bucket.bucketName)"},
+                {"answer": "Output.create('OutputName', bucket.bucketName)"}
+            ],
+            "answer": "new CfnOutput(this, 'OutputName', { value: bucket.bucketName })",
+            "explanation": "Outputs are added using 'new CfnOutput()' with a construct ID and value. You can also provide optional description and exportName properties for cross-stack references."
+        },
+        {
+            "question": "How do you apply tags to all resources in a stack?",
+            "answers": [
+                {"answer": "Tags.of(this).add('Environment', 'Production')"},
+                {"answer": "this.addTags({ Environment: 'Production' })"},
+                {"answer": "setTags(this, { Environment: 'Production' })"},
+                {"answer": "this.tags = { Environment: 'Production' }"}
+            ],
+            "answer": "Tags.of(this).add('Environment', 'Production')",
+            "explanation": "Tags are applied using 'Tags.of(scope).add()' method which applies tags to all resources in the scope. This is the recommended way to apply consistent tagging across resources."
+        },
+        {
+            "question": "What is the recommended way to handle secrets in CDK?",
+            "answers": [
+                {"answer": "Use AWS Secrets Manager with secretsmanager.Secret"},
+                {"answer": "Store in environment variables"},
+                {"answer": "Hardcode in the source code"},
+                {"answer": "Use plain text files"}
+            ],
+            "answer": "Use AWS Secrets Manager with secretsmanager.Secret",
+            "explanation": "Secrets should be managed using AWS Secrets Manager ('new secretsmanager.Secret()') or SSM Parameter Store for non-sensitive configuration. Never hardcode secrets or store them in environment variables in the source code."
+        },
+        {
+            "question": "How do you create an API Gateway REST API in CDK?",
+            "answers": [
+                {"answer": "new apigateway.RestApi(this, 'MyApi')"},
+                {"answer": "new aws.apigateway.RestApi(this, 'MyApi')"},
+                {"answer": "apigateway.createApi('MyApi')"},
+                {"answer": "RestApi.create(this, 'MyApi')"}
+            ],
+            "answer": "new apigateway.RestApi(this, 'MyApi')",
+            "explanation": "API Gateway REST APIs are created using 'new apigateway.RestApi()'. You can then add resources, methods, and integrations to build your API structure using methods like addResource() and addMethod()."
+        },
+        {
+            "question": "How do you create a Lambda integration for API Gateway in CDK?",
+            "answers": [
+                {"answer": "new apigateway.LambdaIntegration(lambdaFunction)"},
+                {"answer": "lambdaFunction.addApiGateway(api)"},
+                {"answer": "api.integrateLambda(lambdaFunction)"},
+                {"answer": "new LambdaProxy(lambdaFunction)"}
+            ],
+            "answer": "new apigateway.LambdaIntegration(lambdaFunction)",
+            "explanation": "Lambda integrations are created using 'new apigateway.LambdaIntegration(lambdaFunction)' and then added to API methods using 'addMethod()'. The integration object handles the connection between API Gateway and Lambda."
+        },
+        {
+            "question": "What is CDK Pipelines primarily used for?",
+            "answers": [
+                {"answer": "CI/CD pipelines for CDK applications"},
+                {"answer": "Data processing pipelines"},
+                {"answer": "Network routing pipelines"},
+                {"answer": "Backup and recovery pipelines"}
+            ],
+            "answer": "CI/CD pipelines for CDK applications",
+            "explanation": "CDK Pipelines is a high-level construct library for building CI/CD pipelines that deploy CDK applications. It provides a declarative way to define build, test, and deployment stages for your CDK apps."
+        },
+        {
+            "question": "What is required to create an RDS database instance in CDK?",
+            "answers": [
+                {"answer": "Engine specification like DatabaseInstanceEngine.mysql()"},
+                {"answer": "Only database name"},
+                {"answer": "Only instance class"},
+                {"answer": "Only VPC configuration"}
+            ],
+            "answer": "Engine specification like DatabaseInstanceEngine.mysql()",
+            "explanation": "RDS database instances require an engine specification using DatabaseInstanceEngine methods like mysql(), postgres(), oracle(), etc. You also typically need instance class, VPC, and credentials for a complete setup."
+        },
+        {
+            "question": "What are CDK Aspects primarily used for?",
+            "answers": [
+                {"answer": "Visit and modify constructs across the entire construct tree"},
+                {"answer": "Create new constructs"},
+                {"answer": "Deploy stacks"},
+                {"answer": "Monitor applications"}
+            ],
+            "answer": "Visit and modify constructs across the entire construct tree",
+            "explanation": "CDK Aspects are a way to apply operations to all constructs in a scope. They can visit and modify constructs, add cross-cutting concerns like tagging, security policies, or compliance checks across your entire application."
+        },
+        {
+            "question": "How do you specify different configurations for different environments in CDK?",
+            "answers": [
+                {"answer": "Use CDK context and environment variables"},
+                {"answer": "Create separate AWS accounts only"},
+                {"answer": "Use only hardcoded values"},
+                {"answer": "Manually change code for each environment"}
+            ],
+            "answer": "Use CDK context and environment variables",
+            "explanation": "Environment-specific configurations are best handled using CDK context values, environment variables, and conditional logic within constructs based on environment parameters. This allows the same code to work across environments."
+        },
+        {
+            "question": "What is required to create an Auto Scaling Group in CDK?",
+            "answers": [
+                {"answer": "VPC, instance type, and machine image"},
+                {"answer": "Only instance type"},
+                {"answer": "Only VPC"},
+                {"answer": "Only machine image"}
+            ],
+            "answer": "VPC, instance type, and machine image",
+            "explanation": "Auto Scaling Groups require VPC for placement, instance type for compute resources, and machine image (AMI) for the instances. You can also specify min/max capacity, scaling policies, and other configuration options."
+        },
+        {
+            "question": "How do you add low-level CloudFormation resources in CDK?",
+            "answers": [
+                {"answer": "Use CfnResource class"},
+                {"answer": "Use CustomResource class"},
+                {"answer": "Use AwsCustomResource class"},
+                {"answer": "Use ResourceProvider class"}
+            ],
+            "answer": "Use CfnResource class",
+            "explanation": "Low-level CloudFormation resources are added using the CfnResource class, which provides direct access to CloudFormation resource properties. This is useful when L2 constructs don't exist for specific resources."
+        },
+        {
+            "question": "What is the main difference between CfnXxx and regular L2 constructs?",
+            "answers": [
+                {"answer": "CfnXxx are low-level with minimal abstraction"},
+                {"answer": "CfnXxx are higher-level with more features"},
+                {"answer": "CfnXxx are deprecated"},
+                {"answer": "CfnXxx are only for testing"}
+            ],
+            "answer": "CfnXxx are low-level with minimal abstraction",
+            "explanation": "CfnXxx constructs are L1 constructs that map directly to CloudFormation resources with minimal abstraction and require more manual configuration. L2 constructs provide higher-level abstractions with sensible defaults."
+        },
+        {
+            "question": "What is the primary testing approach for CDK applications?",
+            "answers": [
+                {"answer": "Unit tests with @aws-cdk/assertions module"},
+                {"answer": "Only manual testing"},
+                {"answer": "Only integration tests"},
+                {"answer": "Only performance tests"}
+            ],
+            "answer": "Unit tests with @aws-cdk/assertions module",
+            "explanation": "CDK testing primarily uses unit tests with the @aws-cdk/assertions module for template validation, checking resource properties, and ensuring the synthesized CloudFormation matches expectations."
+        },
+        {
+            "question": "What information does CDK Metadata track?",
+            "answers": [
+                {"answer": "CDK version and construct usage analytics"},
+                {"answer": "AWS billing information"},
+                {"answer": "User authentication details"},
+                {"answer": "Application performance metrics"}
+            ],
+            "answer": "CDK version and construct usage analytics",
+            "explanation": "CDK Metadata tracks information about CDK version, construct usage patterns, and deployment information. This data helps AWS improve CDK and provides analytics about usage patterns while maintaining privacy."
+        },
+        {
+            "question": "How do you create an Application Load Balancer in CDK?",
+            "answers": [
+                {"answer": "new elbv2.ApplicationLoadBalancer(this, 'ALB', { vpc })"},
+                {"answer": "new aws.elbv2.ApplicationLoadBalancer(this, 'ALB')"},
+                {"answer": "elbv2.createLoadBalancer('ALB')"},
+                {"answer": "ALB.create(this, 'ALB')"}
+            ],
+            "answer": "new elbv2.ApplicationLoadBalancer(this, 'ALB', { vpc })",
+            "explanation": "Application Load Balancers are created using 'new elbv2.ApplicationLoadBalancer()' with VPC configuration. You then add listeners and target groups to complete the load balancer setup."
+        },
+        {
+            "question": "How do you create an SNS topic in CDK?",
+            "answers": [
+                {"answer": "new sns.Topic(this, 'MyTopic')"},
+                {"answer": "new aws.sns.Topic(this, 'MyTopic')"},
+                {"answer": "sns.createTopic('MyTopic')"},
+                {"answer": "Topic.create(this, 'MyTopic')"}
+            ],
+            "answer": "new sns.Topic(this, 'MyTopic')",
+            "explanation": "SNS topics are created using 'new sns.Topic()'. You can then add subscriptions using the addSubscription() method with various subscription types like email, SMS, SQS, or Lambda."
+        },
+        {
+            "question": "How do you specify the AWS region for CDK deployment?",
+            "answers": [
+                {"answer": "In stack props: env: { region: 'us-east-1' }"},
+                {"answer": "Using --region flag only"},
+                {"answer": "In package.json only"},
+                {"answer": "In cdk.json only"}
+            ],
+            "answer": "In stack props: env: { region: 'us-east-1' }",
+            "explanation": "AWS region is specified in stack props using the 'env' property. You can also use AWS CLI configuration or environment variables, but explicit env props provide the most control and clarity."
+        },
+        {
+            "question": "What does CDK Watch mode do?",
+            "answers": [
+                {"answer": "Automatically redeploys when code changes are detected"},
+                {"answer": "Monitors AWS resources for changes"},
+                {"answer": "Watches CloudFormation stack events only"},
+                {"answer": "Monitors application logs only"}
+            ],
+            "answer": "Automatically redeploys when code changes are detected",
+            "explanation": "CDK Watch mode ('cdk deploy --watch') automatically monitors your source code for changes and redeploys the stack when changes are detected. It's useful for development workflows where you want rapid feedback."
+        },
+        {
+            "question": "How do you create an EventBridge rule with a schedule in CDK?",
+            "answers": [
+                {"answer": "new events.Rule(this, 'MyRule', { schedule: events.Schedule.rate(Duration.minutes(5)) })"},
+                {"answer": "new aws.events.Rule(this, 'MyRule')"},
+                {"answer": "events.createRule('MyRule')"},
+                {"answer": "Schedule.create(this, 'MyRule')"}
+            ],
+            "answer": "new events.Rule(this, 'MyRule', { schedule: events.Schedule.rate(Duration.minutes(5)) })",
+            "explanation": "EventBridge rules are created using 'new events.Rule()' with schedule configuration using events.Schedule methods like rate() or cron(). You then add targets using the addTarget() method."
+        },
+        {
+            "question": "What is the best practice for organizing CDK constructs?",
+            "answers": [
+                {"answer": "Create reusable construct modules for related resources"},
+                {"answer": "Put everything in a single file"},
+                {"answer": "Use only AWS provided constructs"},
+                {"answer": "Avoid creating custom constructs"}
+            ],
+            "answer": "Create reusable construct modules for related resources",
+            "explanation": "CDK best practices include creating reusable construct modules that group related resources together, following naming conventions, implementing proper testing strategies, and separating concerns into logical components."
+        },
+        {
+            "question": "How do you handle cross-region resources in CDK?",
+            "answers": [
+                {"answer": "Create separate stacks for each region"},
+                {"answer": "Use a single stack for all regions"},
+                {"answer": "Cross-region resources are not supported"},
+                {"answer": "Use only global services"}
+            ],
+            "answer": "Create separate stacks for each region",
+            "explanation": "Cross-region resources require creating separate stacks for each region, as CloudFormation stacks are region-specific. You can then reference resources across regions using ARNs and outputs rather than direct references."
+        }
+    ]
+},
+  {
+    "name": "AWS Solutions Architect",
+    "questions": [
+        {
+            "question": "Which AWS service provides scalable compute capacity in the cloud?",
+            "answers": [
+                {"answer": "Amazon S3"},
+                {"answer": "Amazon EC2"},
+                {"answer": "Amazon RDS"},
+                {"answer": "Amazon VPC"}
+            ],
+            "answer": "Amazon EC2",
+            "explanation": "Amazon Elastic Compute Cloud (EC2) provides scalable compute capacity in the AWS cloud. It allows you to launch virtual servers (instances) with various configurations to meet your application needs."
+        },
+        {
+            "question": "What is the maximum size of an object that can be stored in Amazon S3?",
+            "answers": [
+                {"answer": "5 GB"},
+                {"answer": "100 GB"},
+                {"answer": "5 TB"},
+                {"answer": "Unlimited"}
+            ],
+            "answer": "5 TB",
+            "explanation": "The maximum size for a single object in Amazon S3 is 5 TB. For objects larger than 100 MB, AWS recommends using multipart upload for better performance and reliability."
+        },
+        {
+            "question": "Which AWS service is designed for data warehousing and analytics?",
+            "answers": [
+                {"answer": "Amazon RDS"},
+                {"answer": "Amazon DynamoDB"},
+                {"answer": "Amazon Redshift"},
+                {"answer": "Amazon ElastiCache"}
+            ],
+            "answer": "Amazon Redshift",
+            "explanation": "Amazon Redshift is a fully managed data warehouse service designed for online analytical processing (OLAP) and business intelligence workloads. It's optimized for complex queries across large datasets."
+        },
+        {
+            "question": "What does the AWS Well-Architected Framework's 'Security' pillar focus on?",
+            "answers": [
+                {"answer": "Cost optimization"},
+                {"answer": "Protecting information and systems"},
+                {"answer": "Performance efficiency"},
+                {"answer": "Operational excellence"}
+            ],
+            "answer": "Protecting information and systems",
+            "explanation": "The Security pillar focuses on protecting information, systems, and assets while delivering business value through risk assessments and mitigation strategies. It includes identity and access management, detective controls, data protection, and incident response."
+        },
+        {
+            "question": "Which AWS service provides a content delivery network (CDN)?",
+            "answers": [
+                {"answer": "Amazon Route 53"},
+                {"answer": "Amazon CloudFront"},
+                {"answer": "AWS Direct Connect"},
+                {"answer": "Amazon API Gateway"}
+            ],
+            "answer": "Amazon CloudFront",
+            "explanation": "Amazon CloudFront is AWS's content delivery network (CDN) service that delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds."
+        },
+        {
+            "question": "What is the default maximum number of VPCs per AWS account per region?",
+            "answers": [
+                {"answer": "5"},
+                {"answer": "10"},
+                {"answer": "20"},
+                {"answer": "Unlimited"}
+            ],
+            "answer": "5",
+            "explanation": "By default, you can create up to 5 VPCs per region in your AWS account. This is a soft limit that can be increased by submitting a request to AWS Support if you need more VPCs."
+        },
+        {
+            "question": "Which AWS storage class is most cost-effective for long-term archival?",
+            "answers": [
+                {"answer": "S3 Standard"},
+                {"answer": "S3 Intelligent-Tiering"},
+                {"answer": "S3 Glacier Deep Archive"},
+                {"answer": "S3 One Zone-IA"}
+            ],
+            "answer": "S3 Glacier Deep Archive",
+            "explanation": "S3 Glacier Deep Archive is the lowest-cost storage class for long-term retention of data that is accessed once or twice per year. It provides retrieval times of 12-48 hours."
+        },
+        {
+            "question": "What is the purpose of an Internet Gateway in AWS VPC?",
+            "answers": [
+                {"answer": "Connect VPCs together"},
+                {"answer": "Provide internet access to VPC resources"},
+                {"answer": "Filter network traffic"},
+                {"answer": "Load balance traffic"}
+            ],
+            "answer": "Provide internet access to VPC resources",
+            "explanation": "An Internet Gateway enables communication between instances in your VPC and the internet. It provides a target for internet-routable traffic and performs network address translation (NAT) for instances with public IP addresses."
+        },
+        {
+            "question": "Which AWS service helps you monitor and troubleshoot applications?",
+            "answers": [
+                {"answer": "AWS CloudTrail"},
+                {"answer": "Amazon CloudWatch"},
+                {"answer": "AWS Config"},
+                {"answer": "AWS Inspector"}
+            ],
+            "answer": "Amazon CloudWatch",
+            "explanation": "Amazon CloudWatch is a monitoring and observability service that provides data and actionable insights for AWS resources and applications. It collects metrics, logs, and events to help monitor application performance."
+        },
+        {
+            "question": "What is the difference between vertical and horizontal scaling?",
+            "answers": [
+                {"answer": "Vertical scaling adds more instances, horizontal scaling increases instance size"},
+                {"answer": "Vertical scaling increases instance size, horizontal scaling adds more instances"},
+                {"answer": "No difference, they are the same"},
+                {"answer": "Vertical scaling is for databases, horizontal scaling is for web servers"}
+            ],
+            "answer": "Vertical scaling increases instance size, horizontal scaling adds more instances",
+            "explanation": "Vertical scaling (scaling up) means increasing the size/capacity of existing resources (like upgrading from t3.small to t3.large). Horizontal scaling (scaling out) means adding more instances to handle increased load."
+        },
+        {
+            "question": "Which AWS service provides managed message queuing?",
+            "answers": [
+                {"answer": "Amazon SNS"},
+                {"answer": "Amazon SQS"},
+                {"answer": "Amazon EventBridge"},
+                {"answer": "AWS Step Functions"}
+            ],
+            "answer": "Amazon SQS",
+            "explanation": "Amazon Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications."
+        },
+        {
+            "question": "What is the primary benefit of AWS Auto Scaling?",
+            "answers": [
+                {"answer": "Reduces costs by terminating unused instances"},
+                {"answer": "Automatically adjusts capacity to maintain performance"},
+                {"answer": "Provides load balancing"},
+                {"answer": "Encrypts data in transit"}
+            ],
+            "answer": "Automatically adjusts capacity to maintain performance",
+            "explanation": "AWS Auto Scaling automatically adjusts the number of EC2 instances in response to changing demand, helping maintain application performance while optimizing costs by scaling resources up or down as needed."
+        },
+        {
+            "question": "Which AWS database service is fully managed and serverless?",
+            "answers": [
+                {"answer": "Amazon RDS"},
+                {"answer": "Amazon DynamoDB"},
+                {"answer": "Amazon Aurora Serverless"},
+                {"answer": "Both B and C"}
+            ],
+            "answer": "Both B and C",
+            "explanation": "Both Amazon DynamoDB and Amazon Aurora Serverless are fully managed and serverless. DynamoDB is a NoSQL database service, while Aurora Serverless is an on-demand, auto-scaling configuration for Amazon Aurora relational database."
+        },
+        {
+            "question": "What is the purpose of AWS IAM?",
+            "answers": [
+                {"answer": "Monitor application performance"},
+                {"answer": "Manage user access and permissions"},
+                {"answer": "Store and retrieve data"},
+                {"answer": "Provide compute capacity"}
+            ],
+            "answer": "Manage user access and permissions",
+            "explanation": "AWS Identity and Access Management (IAM) enables you to securely control access to AWS services and resources. You can create and manage AWS users and groups and grant or deny permissions to AWS resources."
+        },
+        {
+            "question": "Which AWS service provides DNS resolution?",
+            "answers": [
+                {"answer": "Amazon CloudFront"},
+                {"answer": "Amazon Route 53"},
+                {"answer": "AWS Direct Connect"},
+                {"answer": "Amazon API Gateway"}
+            ],
+            "answer": "Amazon Route 53",
+            "explanation": "Amazon Route 53 is a scalable Domain Name System (DNS) web service designed to route end users to internet applications by translating domain names into IP addresses."
+        },
+        {
+            "question": "What is the difference between a security group and a Network ACL?",
+            "answers": [
+                {"answer": "Security groups are stateful, NACLs are stateless"},
+                {"answer": "Security groups are stateless, NACLs are stateful"},
+                {"answer": "They are the same thing"},
+                {"answer": "Security groups work at VPC level, NACLs work at instance level"}
+            ],
+            "answer": "Security groups are stateful, NACLs are stateless",
+            "explanation": "Security groups are stateful (return traffic is automatically allowed) and operate at the instance level. Network ACLs are stateless (return traffic must be explicitly allowed) and operate at the subnet level."
+        },
+        {
+            "question": "Which AWS service is best for real-time data streaming?",
+            "answers": [
+                {"answer": "Amazon S3"},
+                {"answer": "Amazon Kinesis"},
+                {"answer": "Amazon SQS"},
+                {"answer": "Amazon RDS"}
+            ],
+            "answer": "Amazon Kinesis",
+            "explanation": "Amazon Kinesis is designed for real-time data streaming and analytics. It can collect, process, and analyze real-time streaming data such as application logs, website clickstreams, and IoT telemetry data."
+        },
+        {
+            "question": "What is the purpose of AWS CloudFormation?",
+            "answers": [
+                {"answer": "Monitor cloud resources"},
+                {"answer": "Provision infrastructure using code"},
+                {"answer": "Analyze cost and usage"},
+                {"answer": "Secure applications"}
+            ],
+            "answer": "Provision infrastructure using code",
+            "explanation": "AWS CloudFormation is an Infrastructure as Code (IaC) service that allows you to model and provision AWS resources using templates. It helps automate the creation and management of AWS infrastructure."
+        },
+        {
+            "question": "Which EC2 pricing model offers the lowest cost for stable, predictable workloads?",
+            "answers": [
+                {"answer": "On-Demand"},
+                {"answer": "Reserved Instances"},
+                {"answer": "Spot Instances"},
+                {"answer": "Dedicated Hosts"}
+            ],
+            "answer": "Reserved Instances",
+            "explanation": "Reserved Instances provide the lowest cost for stable, predictable workloads with 1 or 3-year commitments. They offer up to 75% discount compared to On-Demand pricing in exchange for a capacity reservation."
+        },
+        {
+            "question": "What is the primary purpose of Amazon ElastiCache?",
+            "answers": [
+                {"answer": "File storage"},
+                {"answer": "In-memory caching"},
+                {"answer": "Data warehousing"},
+                {"answer": "Content delivery"}
+            ],
+            "answer": "In-memory caching",
+            "explanation": "Amazon ElastiCache is a fully managed in-memory caching service that supports Redis and Memcached. It improves application performance by storing frequently accessed data in memory for fast retrieval."
+        },
+        {
+            "question": "Which AWS service provides a virtual private cloud?",
+            "answers": [
+                {"answer": "Amazon VPC"},
+                {"answer": "AWS Direct Connect"},
+                {"answer": "Amazon CloudFront"},
+                {"answer": "AWS PrivateLink"}
+            ],
+            "answer": "Amazon VPC",
+            "explanation": "Amazon Virtual Private Cloud (VPC) enables you to launch AWS resources in a logically isolated virtual network that you define. You have complete control over the virtual networking environment."
+        },
+        {
+            "question": "What is the maximum number of Availability Zones in a single AWS Region?",
+            "answers": [
+                {"answer": "2"},
+                {"answer": "3"},
+                {"answer": "6"},
+                {"answer": "It varies by region"}
+            ],
+            "answer": "It varies by region",
+            "explanation": "The number of Availability Zones varies by region. Most regions have 3 or more AZs, with some having up to 6. Each AZ is a separate data center with independent power, cooling, and networking."
+        },
+        {
+            "question": "Which AWS service is used for serverless computing?",
+            "answers": [
+                {"answer": "Amazon EC2"},
+                {"answer": "AWS Lambda"},
+                {"answer": "Amazon ECS"},
+                {"answer": "AWS Batch"}
+            ],
+            "answer": "AWS Lambda",
+            "explanation": "AWS Lambda is a serverless computing service that runs your code in response to events without provisioning or managing servers. You pay only for the compute time you consume."
+        },
+        {
+            "question": "What is the difference between Amazon S3 and Amazon EBS?",
+            "answers": [
+                {"answer": "S3 is object storage, EBS is block storage"},
+                {"answer": "S3 is block storage, EBS is object storage"},
+                {"answer": "They are the same type of storage"},
+                {"answer": "S3 is for databases, EBS is for files"}
+            ],
+            "answer": "S3 is object storage, EBS is block storage",
+            "explanation": "Amazon S3 is object storage for storing files and data accessed via REST APIs. Amazon EBS provides block-level storage volumes that attach to EC2 instances, similar to traditional hard drives."
+        },
+        {
+            "question": "Which AWS service helps optimize costs?",
+            "answers": [
+                {"answer": "AWS Cost Explorer"},
+                {"answer": "AWS Trusted Advisor"},
+                {"answer": "AWS Budgets"},
+                {"answer": "All of the above"}
+            ],
+            "answer": "All of the above",
+            "explanation": "AWS Cost Explorer analyzes usage and costs, AWS Trusted Advisor provides cost optimization recommendations, and AWS Budgets helps track and control spending. All three services help optimize AWS costs."
+        },
+        {
+            "question": "What is the purpose of an Application Load Balancer?",
+            "answers": [
+                {"answer": "Distribute incoming traffic across multiple targets"},
+                {"answer": "Cache frequently accessed content"},
+                {"answer": "Monitor application performance"},
+                {"answer": "Encrypt data in transit"}
+            ],
+            "answer": "Distribute incoming traffic across multiple targets",
+            "explanation": "An Application Load Balancer (ALB) distributes incoming application traffic across multiple targets (EC2 instances, containers, IP addresses) in multiple Availability Zones, improving fault tolerance and availability."
+        },
+        {
+            "question": "Which AWS database is best for OLTP workloads?",
+            "answers": [
+                {"answer": "Amazon Redshift"},
+                {"answer": "Amazon RDS"},
+                {"answer": "Amazon EMR"},
+                {"answer": "Amazon Athena"}
+            ],
+            "answer": "Amazon RDS",
+            "explanation": "Amazon RDS (Relational Database Service) is designed for OLTP (Online Transaction Processing) workloads. It supports multiple database engines like MySQL, PostgreSQL, Oracle, and SQL Server for transactional applications."
+        },
+        {
+            "question": "What is AWS Global Infrastructure composed of?",
+            "answers": [
+                {"answer": "Regions and Availability Zones"},
+                {"answer": "Edge Locations and Regional Edge Caches"},
+                {"answer": "Local Zones and Wavelength Zones"},
+                {"answer": "All of the above"}
+            ],
+            "answer": "All of the above",
+            "explanation": "AWS Global Infrastructure includes Regions (geographic areas), Availability Zones (data centers), Edge Locations (for CloudFront), Regional Edge Caches, Local Zones, and Wavelength Zones for ultra-low latency applications."
+        },
+        {
+            "question": "Which AWS service provides publish/subscribe messaging?",
+            "answers": [
+                {"answer": "Amazon SQS"},
+                {"answer": "Amazon SNS"},
+                {"answer": "Amazon EventBridge"},
+                {"answer": "AWS Step Functions"}
+            ],
+            "answer": "Amazon SNS",
+            "explanation": "Amazon Simple Notification Service (SNS) is a pub/sub messaging service that enables you to send notifications to multiple subscribers through various protocols like email, SMS, HTTP, and SQS."
+        },
+        {
+            "question": "What is the purpose of AWS CloudTrail?",
+            "answers": [
+                {"answer": "Monitor application performance"},
+                {"answer": "Log API calls and user activity"},
+                {"answer": "Distribute content globally"},
+                {"answer": "Manage user permissions"}
+            ],
+            "answer": "Log API calls and user activity",
+            "explanation": "AWS CloudTrail records API calls and user activity across your AWS account, providing audit trails for compliance, security analysis, and troubleshooting. It helps track who did what, when, and where."
+        },
+        {
+            "question": "Which EC2 instance type is best for compute-intensive applications?",
+            "answers": [
+                {"answer": "General Purpose (T3, M5)"},
+                {"answer": "Compute Optimized (C5, C6i)"},
+                {"answer": "Memory Optimized (R5, X1)"},
+                {"answer": "Storage Optimized (I3, D3)"}
+            ],
+            "answer": "Compute Optimized (C5, C6i)",
+            "explanation": "Compute Optimized instances are designed for compute-intensive applications that benefit from high-performance processors. They're ideal for scientific modeling, batch processing, and high-performance web servers."
+        },
+        {
+            "question": "What is the difference between Amazon RDS and Amazon Aurora?",
+            "answers": [
+                {"answer": "Aurora is cloud-native and offers better performance"},
+                {"answer": "RDS is cloud-native and offers better performance"},
+                {"answer": "They are exactly the same"},
+                {"answer": "Aurora only supports MySQL"}
+            ],
+            "answer": "Aurora is cloud-native and offers better performance",
+            "explanation": "Amazon Aurora is a cloud-native relational database built for the cloud with up to 5x better performance than MySQL and 3x better than PostgreSQL. RDS is the traditional managed database service."
+        },
+        {
+            "question": "Which AWS service helps with disaster recovery planning?",
+            "answers": [
+                {"answer": "AWS Backup"},
+                {"answer": "AWS Storage Gateway"},
+                {"answer": "AWS Site-to-Site VPN"},
+                {"answer": "All of the above"}
+            ],
+            "answer": "All of the above",
+            "explanation": "AWS Backup provides centralized backup across AWS services, Storage Gateway connects on-premises to cloud storage, and Site-to-Site VPN enables secure connections for DR scenarios. All help with disaster recovery."
+        },
+        {
+            "question": "What is the shared responsibility model in AWS?",
+            "answers": [
+                {"answer": "AWS is responsible for security OF the cloud, customers for security IN the cloud"},
+                {"answer": "Customers are responsible for all security"},
+                {"answer": "AWS is responsible for all security"},
+                {"answer": "Security is split 50/50 between AWS and customers"}
+            ],
+            "answer": "AWS is responsible for security OF the cloud, customers for security IN the cloud",
+            "explanation": "In the shared responsibility model, AWS manages security OF the cloud (infrastructure, services), while customers are responsible for security IN the cloud (data, identity management, applications, operating systems)."
+        },
+        {
+            "question": "Which AWS service provides container orchestration?",
+            "answers": [
+                {"answer": "Amazon ECS"},
+                {"answer": "Amazon EKS"},
+                {"answer": "AWS Fargate"},
+                {"answer": "Both A and B"}
+            ],
+            "answer": "Both A and B",
+            "explanation": "Both Amazon ECS (Elastic Container Service) and Amazon EKS (Elastic Kubernetes Service) provide container orchestration. ECS is AWS-native, while EKS runs Kubernetes. Fargate is a serverless compute engine for both."
+        },
+        {
+            "question": "What is the purpose of AWS Systems Manager?",
+            "answers": [
+                {"answer": "Manage and configure AWS resources at scale"},
+                {"answer": "Monitor application performance"},
+                {"answer": "Store secrets and configuration"},
+                {"answer": "Provide DNS resolution"}
+            ],
+            "answer": "Manage and configure AWS resources at scale",
+            "explanation": "AWS Systems Manager provides a unified interface to view and control your AWS infrastructure. It includes capabilities for patch management, configuration management, automation, and operational insights."
+        },
+        {
+            "question": "Which S3 storage class automatically moves objects between access tiers?",
+            "answers": [
+                {"answer": "S3 Standard"},
+                {"answer": "S3 Intelligent-Tiering"},
+                {"answer": "S3 Glacier"},
+                {"answer": "S3 One Zone-IA"}
+            ],
+            "answer": "S3 Intelligent-Tiering",
+            "explanation": "S3 Intelligent-Tiering automatically moves objects between frequent and infrequent access tiers based on access patterns, optimizing costs without performance impact or operational overhead."
+        },
+        {
+            "question": "What is the maximum duration for a single AWS Lambda function execution?",
+            "answers": [
+                {"answer": "5 minutes"},
+                {"answer": "15 minutes"},
+                {"answer": "30 minutes"},
+                {"answer": "1 hour"}
+            ],
+            "answer": "15 minutes",
+            "explanation": "AWS Lambda functions have a maximum execution timeout of 15 minutes. For longer-running processes, consider using AWS Batch, EC2 instances, or breaking the task into smaller Lambda functions."
+        },
+        {
+            "question": "Which AWS service provides a managed Apache Spark service?",
+            "answers": [
+                {"answer": "Amazon EMR"},
+                {"answer": "AWS Glue"},
+                {"answer": "Amazon Kinesis Analytics"},
+                {"answer": "Both A and B"}
+            ],
+            "answer": "Both A and B",
+            "explanation": "Both Amazon EMR and AWS Glue provide managed Apache Spark. EMR is a broader big data platform, while Glue is specifically designed for ETL (Extract, Transform, Load) workloads using Spark."
+        },
+        {
+            "question": "What is the purpose of AWS Config?",
+            "answers": [
+                {"answer": "Monitor resource configurations and compliance"},
+                {"answer": "Manage user access and permissions"},
+                {"answer": "Analyze costs and usage"},
+                {"answer": "Distribute content globally"}
+            ],
+            "answer": "Monitor resource configurations and compliance",
+            "explanation": "AWS Config tracks resource configurations and changes over time, enabling compliance monitoring, security analysis, and change tracking. It helps maintain desired configurations and compliance standards."
+        },
+        {
+            "question": "Which AWS service is used for API management?",
+            "answers": [
+                {"answer": "Amazon CloudFront"},
+                {"answer": "Amazon API Gateway"},
+                {"answer": "AWS Lambda"},
+                {"answer": "Amazon Route 53"}
+            ],
+            "answer": "Amazon API Gateway",
+            "explanation": "Amazon API Gateway is a fully managed service for creating, publishing, maintaining, monitoring, and securing APIs at any scale. It acts as a front door for applications to access backend services."
+        },
+        {
+            "question": "What is the difference between EBS-backed and instance store-backed EC2 instances?",
+            "answers": [
+                {"answer": "EBS-backed instances persist data after termination, instance store-backed don't"},
+                {"answer": "Instance store-backed instances persist data after termination, EBS-backed don't"},
+                {"answer": "There is no difference"},
+                {"answer": "EBS-backed instances are faster"}
+            ],
+            "answer": "EBS-backed instances persist data after termination, instance store-backed don't",
+            "explanation": "EBS-backed instances store the root volume on EBS, which persists after instance termination. Instance store-backed instances use temporary storage that is lost when the instance is terminated or fails."
+        },
+        {
+            "question": "Which AWS service provides managed Elasticsearch?",
+            "answers": [
+                {"answer": "Amazon CloudSearch"},
+                {"answer": "Amazon OpenSearch Service"},
+                {"answer": "Amazon Kendra"},
+                {"answer": "AWS X-Ray"}
+            ],
+            "answer": "Amazon OpenSearch Service",
+            "explanation": "Amazon OpenSearch Service (formerly Amazon Elasticsearch Service) is a managed service that makes it easy to deploy, operate, and scale OpenSearch clusters for search and analytics use cases."
+        },
+        {
+            "question": "What is the purpose of AWS Direct Connect?",
+            "answers": [
+                {"answer": "Provide dedicated network connection from on-premises to AWS"},
+                {"answer": "Connect VPCs together"},
+                {"answer": "Load balance traffic"},
+                {"answer": "Cache content globally"}
+            ],
+            "answer": "Provide dedicated network connection from on-premises to AWS",
+            "explanation": "AWS Direct Connect provides a dedicated network connection from your on-premises environment to AWS, offering more consistent network performance and potentially lower costs than internet-based connections."
+        },
+        {
+            "question": "Which AWS service is best for batch processing workloads?",
+            "answers": [
+                {"answer": "AWS Lambda"},
+                {"answer": "AWS Batch"},
+                {"answer": "Amazon ECS"},
+                {"answer": "Amazon EC2"}
+            ],
+            "answer": "AWS Batch",
+            "explanation": "AWS Batch is specifically designed for running batch computing workloads. It automatically provisions optimal compute resources based on volume and requirements, and schedules jobs to run on Amazon EC2 instances."
+        },
+        {
+            "question": "What is the purpose of Amazon GuardDuty?",
+            "answers": [
+                {"answer": "Threat detection and monitoring"},
+                {"answer": "Identity and access management"},
+                {"answer": "Cost optimization"},
+                {"answer": "Performance monitoring"}
+            ],
+            "answer": "Threat detection and monitoring",
+            "explanation": "Amazon GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior across your AWS accounts and workloads, using machine learning and threat intelligence."
+        },
+        {
+            "question": "Which AWS service provides desktop as a service?",
+            "answers": [
+                {"answer": "Amazon EC2"},
+                {"answer": "Amazon WorkSpaces"},
+                {"answer": "AWS AppStream 2.0"},
+                {"answer": "Amazon Lightsail"}
+            ],
+            "answer": "Amazon WorkSpaces",
+            "explanation": "Amazon WorkSpaces is a managed Desktop as a Service (DaaS) solution that provides secure, persistent desktops in the cloud. It allows users to access applications and data from anywhere on supported devices."
+        },
+        {
+            "question": "What is the primary benefit of using multiple Availability Zones?",
+            "answers": [
+                {"answer": "Cost reduction"},
+                {"answer": "High availability and fault tolerance"},
+                {"answer": "Better performance"},
+                {"answer": "Easier management"}
+            ],
+            "answer": "High availability and fault tolerance",
+            "explanation": "Using multiple Availability Zones provides high availability and fault tolerance by distributing your applications across physically separate data centers. If one AZ fails, your application can continue running in other AZs."
+        },
+        {
+            "question": "Which AWS service helps with application deployment and management?",
+            "answers": [
+                {"answer": "AWS CodeDeploy"},
+                {"answer": "AWS Elastic Beanstalk"},
+                {"answer": "AWS OpsWorks"},
+                {"answer": "All of the above"}
+            ],
+            "answer": "All of the above",
+            "explanation": "AWS CodeDeploy automates application deployments, Elastic Beanstalk provides an easy way to deploy and manage applications, and OpsWorks provides configuration management using Chef and Puppet. All help with application deployment and management."
+        },
+        {
+            "question": "What is the difference between horizontal and vertical scaling in terms of cost?",
+            "answers": [
+                {"answer": "Horizontal scaling is always cheaper"},
+                {"answer": "Vertical scaling is always cheaper"},
+                {"answer": "Horizontal scaling can be more cost-effective for variable workloads"},
+                {"answer": "There is no cost difference"}
+            ],
+            "answer": "Horizontal scaling can be more cost-effective for variable workloads",
+            "explanation": "Horizontal scaling can be more cost-effective for variable workloads because you can add/remove instances based on demand. Vertical scaling might leave you paying for unused capacity during low-demand periods, but can be simpler to implement."
+        }
+    ]
+},
+  {
+    "name": "Go Programming Language",
+    "questions": [
+        {
+            "question": "What is the correct way to declare a variable in Go?",
+            "answers": [
+                {"answer": "var name string"},
+                {"answer": "string name"},
+                {"answer": "declare name string"},
+                {"answer": "name: string"}
+            ],
+            "answer": "var name string",
+            "explanation": "In Go, variables are declared using the 'var' keyword followed by the variable name and type. The syntax is 'var variableName type'. You can also use short declaration with ':=' for initialization."
+        },
+        {
+            "question": "Which of these is the correct way to define the main function in Go?",
+            "answers": [
+                {"answer": "function main() {}"},
+                {"answer": "func main() {}"},
+                {"answer": "def main(): {}"},
+                {"answer": "main() {}"}
+            ],
+            "answer": "func main() {}",
+            "explanation": "In Go, functions are declared using the 'func' keyword. The main function is the entry point of a Go program and must be declared as 'func main()' with no parameters or return values."
+        },
+        {
+            "question": "What is the zero value of an integer in Go?",
+            "answers": [
+                {"answer": "null"},
+                {"answer": "undefined"},
+                {"answer": "0"},
+                {"answer": "-1"}
+            ],
+            "answer": "0",
+            "explanation": "In Go, every type has a zero value. For integers (int, int8, int16, int32, int64), the zero value is 0. This means uninitialized integer variables automatically have the value 0."
+        },
+        {
+            "question": "How do you create a slice with initial capacity of 5 in Go?",
+            "answers": [
+                {"answer": "make([]int, 5)"},
+                {"answer": "new([]int, 5)"},
+                {"answer": "slice(int, 5)"},
+                {"answer": "[]int{5}"}
+            ],
+            "answer": "make([]int, 5)",
+            "explanation": "The make() function is used to create slices, maps, and channels. make([]int, 5) creates a slice of integers with length and capacity of 5. You can also specify capacity separately: make([]int, 0, 5)."
+        },
+        {
+            "question": "What does the := operator do in Go?",
+            "answers": [
+                {"answer": "Comparison"},
+                {"answer": "Assignment only"},
+                {"answer": "Declaration and initialization"},
+                {"answer": "Type conversion"}
+            ],
+            "answer": "Declaration and initialization",
+            "explanation": "The := operator is Go's short variable declaration syntax. It declares a new variable and initializes it in one step. For example: name := 'John' is equivalent to var name string = 'John'."
+        },
+        {
+            "question": "Which keyword is used to define a structure in Go?",
+            "answers": [
+                {"answer": "struct"},
+                {"answer": "class"},
+                {"answer": "object"},
+                {"answer": "interface"}
+            ],
+            "answer": "struct",
+            "explanation": "Go uses the 'struct' keyword to define custom types that group together fields. Example: type Person struct { Name string; Age int }. Structs are Go's way of creating custom data types."
+        },
+        {
+            "question": "How do you iterate over a slice in Go?",
+            "answers": [
+                {"answer": "for i in slice {}"},
+                {"answer": "for i, v := range slice {}"},
+                {"answer": "foreach(slice) {}"},
+                {"answer": "while i < len(slice) {}"}
+            ],
+            "answer": "for i, v := range slice {}",
+            "explanation": "The 'range' keyword is used to iterate over slices, arrays, maps, and channels. It returns the index and value for slices/arrays. You can ignore the index with '_' if not needed: for _, v := range slice {}."
+        },
+        {
+            "question": "What is the correct way to declare a function that returns an integer?",
+            "answers": [
+                {"answer": "func getName() -> int"},
+                {"answer": "func getName(): int"},
+                {"answer": "func getName() int"},
+                {"answer": "int func getName()"}
+            ],
+            "answer": "func getName() int",
+            "explanation": "In Go, the return type comes after the parameter list. The syntax is 'func functionName(parameters) returnType'. For multiple return values: func getName() (string, int)."
+        },
+        {
+            "question": "How do you handle errors in Go?",
+            "answers": [
+                {"answer": "try-catch blocks"},
+                {"answer": "Check if error != nil"},
+                {"answer": "throw/catch statements"},
+                {"answer": "exception handling"}
+            ],
+            "answer": "Check if error != nil",
+            "explanation": "Go doesn't have exceptions. Instead, functions return an error as the last return value. You explicitly check 'if err != nil' to handle errors. This makes error handling explicit and visible."
+        },
+        {
+            "question": "What is a goroutine in Go?",
+            "answers": [
+                {"answer": "A lightweight thread"},
+                {"answer": "A function pointer"},
+                {"answer": "A data structure"},
+                {"answer": "A package import"}
+            ],
+            "answer": "A lightweight thread",
+            "explanation": "A goroutine is a lightweight thread managed by the Go runtime. You start a goroutine by putting 'go' before a function call: go myFunction(). Goroutines are much cheaper than OS threads."
+        },
+        {
+            "question": "How do you import multiple packages in Go?",
+            "answers": [
+                {"answer": "import 'fmt', 'os'"},
+                {"answer": "import (\\n  'fmt'\\n  'os'\\n)"},
+                {"answer": "include fmt, os"},
+                {"answer": "using fmt, os"}
+            ],
+            "answer": "import (\\n  'fmt'\\n  'os'\\n)",
+            "explanation": "Multiple packages are imported using a factored import statement with parentheses. Each package is on its own line within the parentheses. Single imports can use import 'packagename'."
+        },
+        {
+            "question": "What is the difference between arrays and slices in Go?",
+            "answers": [
+                {"answer": "No difference"},
+                {"answer": "Arrays have fixed size, slices are dynamic"},
+                {"answer": "Slices are faster"},
+                {"answer": "Arrays can store more data"}
+            ],
+            "answer": "Arrays have fixed size, slices are dynamic",
+            "explanation": "Arrays have a fixed size determined at compile time [5]int. Slices are dynamic arrays that can grow and shrink []int. Slices are more commonly used and are built on top of arrays."
+        },
+        {
+            "question": "How do you create a map in Go?",
+            "answers": [
+                {"answer": "map[string]int{}"},
+                {"answer": "make(map[string]int)"},
+                {"answer": "Both A and B"},
+                {"answer": "new(map[string]int)"}
+            ],
+            "answer": "Both A and B",
+            "explanation": "Maps can be created using map literal syntax map[string]int{} or using make() function make(map[string]int). The make() function is preferred when creating empty maps, while literals are good for initialization with values."
+        },
+        {
+            "question": "What does the 'defer' keyword do in Go?",
+            "answers": [
+                {"answer": "Delays function execution until surrounding function returns"},
+                {"answer": "Creates a goroutine"},
+                {"answer": "Handles errors"},
+                {"answer": "Imports packages lazily"}
+            ],
+            "answer": "Delays function execution until surrounding function returns",
+            "explanation": "The 'defer' keyword postpones the execution of a function until the surrounding function returns. Deferred functions execute in LIFO order. Commonly used for cleanup operations like closing files."
+        },
+        {
+            "question": "How do you define a method on a struct in Go?",
+            "answers": [
+                {"answer": "func (p Person) getName() string"},
+                {"answer": "func Person.getName() string"},
+                {"answer": "method getName(p Person) string"},
+                {"answer": "Person.getName = func() string"}
+            ],
+            "answer": "func (p Person) getName() string",
+            "explanation": "Methods in Go are functions with a receiver. The receiver is specified between 'func' and the method name. The syntax is 'func (receiver Type) methodName() returnType'. This binds the method to the type."
+        },
+        {
+            "question": "What is an interface in Go?",
+            "answers": [
+                {"answer": "A collection of method signatures"},
+                {"answer": "A class definition"},
+                {"answer": "A data structure"},
+                {"answer": "A package import"}
+            ],
+            "answer": "A collection of method signatures",
+            "explanation": "An interface in Go is a type that specifies a set of method signatures. Types implement interfaces implicitly by implementing the required methods. Example: type Writer interface { Write([]byte) (int, error) }."
+        },
+        {
+            "question": "How do you check the type of a variable at runtime in Go?",
+            "answers": [
+                {"answer": "typeof(variable)"},
+                {"answer": "variable.(type)"},
+                {"answer": "reflect.TypeOf(variable)"},
+                {"answer": "Both B and C"}
+            ],
+            "answer": "Both B and C",
+            "explanation": "You can use type assertion variable.(type) in a type switch, or reflect.TypeOf(variable) from the reflect package. Type assertions are used with interfaces, while reflect works with any type."
+        },
+        {
+            "question": "What is the zero value of a slice in Go?",
+            "answers": [
+                {"answer": "[]"},
+                {"answer": "nil"},
+                {"answer": "empty slice"},
+                {"answer": "0"}
+            ],
+            "answer": "nil",
+            "explanation": "The zero value of a slice is nil. A nil slice has length and capacity of 0 and no underlying array. You can append to nil slices, and they behave like empty slices in most operations."
+        },
+        {
+            "question": "How do you create a buffered channel in Go?",
+            "answers": [
+                {"answer": "make(chan int, 10)"},
+                {"answer": "chan int{10}"},
+                {"answer": "buffer(chan int, 10)"},
+                {"answer": "make(chan int) with buffer 10"}
+            ],
+            "answer": "make(chan int, 10)",
+            "explanation": "Buffered channels are created using make(chan Type, bufferSize). The buffer size is the second argument. Buffered channels can hold that many values without a corresponding receiver being ready."
+        },
+        {
+            "question": "What does the 'go' keyword do?",
+            "answers": [
+                {"answer": "Starts a new goroutine"},
+                {"answer": "Compiles the program"},
+                {"answer": "Imports a package"},
+                {"answer": "Defines a function"}
+            ],
+            "answer": "Starts a new goroutine",
+            "explanation": "The 'go' keyword starts a new goroutine. When you put 'go' before a function call, that function runs concurrently in a new goroutine. Example: go myFunction() starts myFunction in a new goroutine."
+        },
+        {
+            "question": "How do you declare a constant in Go?",
+            "answers": [
+                {"answer": "const name = value"},
+                {"answer": "constant name = value"},
+                {"answer": "final name = value"},
+                {"answer": "static name = value"}
+            ],
+            "answer": "const name = value",
+            "explanation": "Constants are declared using the 'const' keyword. They can be character, string, boolean, or numeric values. Constants cannot be declared using := syntax and must be known at compile time."
+        },
+        {
+            "question": "What is the purpose of the 'select' statement in Go?",
+            "answers": [
+                {"answer": "Choose between multiple channel operations"},
+                {"answer": "Select elements from a slice"},
+                {"answer": "Conditional logic like switch"},
+                {"answer": "Database queries"}
+            ],
+            "answer": "Choose between multiple channel operations",
+            "explanation": "The select statement lets a goroutine wait on multiple channel operations. It blocks until one of the cases can run, then executes that case. If multiple cases are ready, it chooses one at random."
+        },
+        {
+            "question": "How do you convert a string to an integer in Go?",
+            "answers": [
+                {"answer": "int(string)"},
+                {"answer": "strconv.Atoi(string)"},
+                {"answer": "parse.Int(string)"},
+                {"answer": "convert.ToInt(string)"}
+            ],
+            "answer": "strconv.Atoi(string)",
+            "explanation": "Use strconv.Atoi() (ASCII to integer) to convert strings to integers. It returns two values: the integer and an error. Example: num, err := strconv.Atoi('123'). For other bases, use strconv.ParseInt()."
+        },
+        {
+            "question": "What is a pointer in Go and how do you declare one?",
+            "answers": [
+                {"answer": "var p *int"},
+                {"answer": "var p pointer int"},
+                {"answer": "var p &int"},
+                {"answer": "var p ref int"}
+            ],
+            "answer": "var p *int",
+            "explanation": "A pointer holds the memory address of a value. Declare with *Type. Use & to get the address of a variable and * to dereference a pointer. Example: var p *int; x := 42; p = &x; fmt.Println(*p) // prints 42."
+        },
+        {
+            "question": "How do you handle multiple return values in Go?",
+            "answers": [
+                {"answer": "result1, result2 := function()"},
+                {"answer": "result := function().get(0, 1)"},
+                {"answer": "[result1, result2] = function()"},
+                {"answer": "result = function()[0], function()[1]"}
+            ],
+            "answer": "result1, result2 := function()",
+            "explanation": "Go supports multiple return values. Assign them to multiple variables separated by commas. Use underscore _ to ignore unwanted return values. Example: value, err := someFunction(); or value, _ := someFunction()."
+        },
+        {
+            "question": "What is the correct way to define an empty interface in Go?",
+            "answers": [
+                {"answer": "interface{}"},
+                {"answer": "any"},
+                {"answer": "Both A and B"},
+                {"answer": "void"}
+            ],
+            "answer": "Both A and B",
+            "explanation": "An empty interface interface{} can hold values of any type. Go 1.18+ introduced 'any' as an alias for interface{}. Empty interfaces are commonly used when you need to work with values of unknown type."
+        },
+        {
+            "question": "How do you initialize a struct in Go?",
+            "answers": [
+                {"answer": "Person{Name: 'John', Age: 30}"},
+                {"answer": "Person{'John', 30}"},
+                {"answer": "Both A and B"},
+                {"answer": "new Person('John', 30)"}
+            ],
+            "answer": "Both A and B",
+            "explanation": "Structs can be initialized using field names Person{Name: 'John', Age: 30} or positional values Person{'John', 30}. Named initialization is preferred as it's more readable and order-independent."
+        },
+        {
+            "question": "What is the range of a 'for' loop in Go when used with a map?",
+            "answers": [
+                {"answer": "Returns key and value"},
+                {"answer": "Returns only values"},
+                {"answer": "Returns only keys"},
+                {"answer": "Returns index and value"}
+            ],
+            "answer": "Returns key and value",
+            "explanation": "When ranging over a map, you get the key and value: for key, value := range myMap {}. You can ignore either with underscore: for key := range myMap {} or for _, value := range myMap {}."
+        },
+        {
+            "question": "How do you close a channel in Go?",
+            "answers": [
+                {"answer": "close(channel)"},
+                {"answer": "channel.close()"},
+                {"answer": "delete(channel)"},
+                {"answer": "channel = nil"}
+            ],
+            "answer": "close(channel)",
+            "explanation": "Use the built-in close() function to close a channel. Only the sender should close channels. Closing indicates no more values will be sent. Receivers can test if a channel is closed: value, ok := <-channel."
+        },
+        {
+            "question": "What is the correct syntax for a switch statement in Go?",
+            "answers": [
+                {"answer": "switch variable { case value: }"},
+                {"answer": "switch (variable) { case value: break; }"},
+                {"answer": "select variable { case value: }"},
+                {"answer": "match variable { case value: }"}
+            ],
+            "answer": "switch variable { case value: }",
+            "explanation": "Go's switch statement doesn't require parentheses around the expression or break statements in each case. Cases break automatically unless you use 'fallthrough'. Syntax: switch expr { case value1: // code case value2: // code }."
+        }
+    ]
+},
+  {
     "name": "Space and Space Flight",
     "questions": [
         {

@@ -1,5 +1,1082 @@
 [
   {
+    "name": "Gartenbau",
+    "questions": [
+        {
+            "question": "Was ist der pH-Wert des Bodens?",
+            "answers": [
+                {"answer": "Ein Maß für die Bodenfeuchtigkeit"},
+                {"answer": "Ein Maß für den Säure- oder Basengehalt des Bodens"},
+                {"answer": "Ein Maß für die Bodentemperatur"},
+                {"answer": "Ein Maß für die Bodendichte"}
+            ],
+            "answer": "Ein Maß für den Säure- oder Basengehalt des Bodens",
+            "explanation": "Der pH-Wert misst den Säure- oder Basengehalt des Bodens auf einer Skala von 0-14. Ein pH-Wert von 7 ist neutral, unter 7 ist sauer und über 7 ist basisch/alkalisch. Die meisten Pflanzen bevorzugen einen leicht sauren bis neutralen pH-Wert zwischen 6,0 und 7,0."
+        },
+        {
+            "question": "Was bedeutet 'Kompostierung' im Gartenbau?",
+            "answers": [
+                {"answer": "Das Verbrennen von Gartenabfällen"},
+                {"answer": "Die kontrollierte Verrottung organischer Materialien zu Humus"},
+                {"answer": "Das Einpflanzen von Samen"},
+                {"answer": "Das Gießen von Pflanzen"}
+            ],
+            "answer": "Die kontrollierte Verrottung organischer Materialien zu Humus",
+            "explanation": "Kompostierung ist der biologische Abbau organischer Materialien wie Küchenabfälle, Laub und Gartenabfälle durch Mikroorganismen. Das Endprodukt ist nährstoffreicher Humus, der als natürlicher Dünger und Bodenverbesserer verwendet wird."
+        },
+        {
+            "question": "Wann ist die beste Zeit zum Pflanzen von Tomaten in Deutschland?",
+            "answers": [
+                {"answer": "Februar"},
+                {"answer": "Mitte bis Ende Mai nach den Eisheiligen"},
+                {"answer": "Juli"},
+                {"answer": "September"}
+            ],
+            "answer": "Mitte bis Ende Mai nach den Eisheiligen",
+            "explanation": "Tomaten sind frostempfindlich und sollten erst nach den Eisheiligen (Mitte Mai) ins Freie gepflanzt werden, wenn keine Frostgefahr mehr besteht. Die Bodentemperatur sollte konstant über 10°C liegen."
+        },
+        {
+            "question": "Was sind die Eisheiligen?",
+            "answers": [
+                {"answer": "Eine Krankheit bei Pflanzen"},
+                {"answer": "Bestimmte Frosttage Mitte Mai"},
+                {"answer": "Eine Art von Dünger"},
+                {"answer": "Spezielle Gartenwerkzeuge"}
+            ],
+            "answer": "Bestimmte Frosttage Mitte Mai",
+            "explanation": "Die Eisheiligen sind traditionelle Bezeichnungen für Frosttage zwischen dem 11. und 15. Mai (Mamertus, Pankratius, Servatius, Bonifatius und Kalte Sophie). Nach dieser Zeit gilt das Risiko für Spätfröste als gering."
+        },
+        {
+            "question": "Was ist Mulchen?",
+            "answers": [
+                {"answer": "Das Schneiden von Pflanzen"},
+                {"answer": "Das Abdecken des Bodens mit organischem oder anorganischem Material"},
+                {"answer": "Das Umpflanzen von Setzlingen"},
+                {"answer": "Das Düngen mit Kunstdünger"}
+            ],
+            "answer": "Das Abdecken des Bodens mit organischem oder anorganischem Material",
+            "explanation": "Mulchen bedeutet das Abdecken des Bodens um Pflanzen herum mit Materialien wie Stroh, Laub, Rindenmulch oder Kompost. Dies schützt vor Unkraut, hält Feuchtigkeit im Boden und verbessert die Bodenstruktur."
+        },
+        {
+            "question": "Welche drei Hauptnährstoffe benötigen Pflanzen in größeren Mengen?",
+            "answers": [
+                {"answer": "Stickstoff, Phosphor, Kalium"},
+                {"answer": "Eisen, Magnesium, Schwefel"},
+                {"answer": "Calcium, Bor, Zink"},
+                {"answer": "Mangan, Kupfer, Molybdän"}
+            ],
+            "answer": "Stickstoff, Phosphor, Kalium",
+            "explanation": "Die drei Hauptnährstoffe (NPK) sind Stickstoff (N) für Blattwachstum, Phosphor (P) für Wurzel- und Blütenentwicklung und Kalium (K) für die allgemeine Pflanzengesundheit und Widerstandsfähigkeit."
+        },
+        {
+            "question": "Was ist eine einjährige Pflanze?",
+            "answers": [
+                {"answer": "Eine Pflanze, die nur einen Monat lebt"},
+                {"answer": "Eine Pflanze, die ihren gesamten Lebenszyklus in einer Vegetationsperiode abschließt"},
+                {"answer": "Eine Pflanze, die jedes Jahr neu gekauft werden muss"},
+                {"answer": "Eine Pflanze, die nur einmal blüht"}
+            ],
+            "answer": "Eine Pflanze, die ihren gesamten Lebenszyklus in einer Vegetationsperiode abschließt",
+            "explanation": "Einjährige Pflanzen vollenden ihren gesamten Lebenszyklus - von der Keimung über Wachstum, Blüte, Samenbildung bis zum Absterben - in einer einzigen Vegetationsperiode. Beispiele sind Sonnenblumen, Bohnen und die meisten Gemüsepflanzen."
+        },
+        {
+            "question": "Was ist eine mehrjährige (Stauden-) Pflanze?",
+            "answers": [
+                {"answer": "Eine Pflanze, die mehrere Jahre lebt"},
+                {"answer": "Eine Pflanze, die nur zwei Jahre lebt"},
+                {"answer": "Eine Pflanze, die im Winter stirbt"},
+                {"answer": "Eine Pflanze, die keine Blüten produziert"}
+            ],
+            "answer": "Eine Pflanze, die mehrere Jahre lebt",
+            "explanation": "Mehrjährige Pflanzen oder Stauden leben mehrere Jahre und kommen jedes Jahr wieder. Ihre oberirdischen Teile können im Winter absterben, aber die Wurzeln überleben und treiben im Frühjahr neu aus."
+        },
+        {
+            "question": "Wann sollte Rasen am besten gemäht werden?",
+            "answers": [
+                {"answer": "Bei heißem, sonnigem Wetter"},
+                {"answer": "Bei trockenem Wetter am späten Nachmittag oder frühen Abend"},
+                {"answer": "Bei Regen"},
+                {"answer": "Nur morgens bei Tau"}
+            ],
+            "answer": "Bei trockenem Wetter am späten Nachmittag oder frühen Abend",
+            "explanation": "Rasen sollte bei trockenem Wetter gemäht werden, idealerweise am späten Nachmittag oder frühen Abend. Dadurch können sich die Grashalme über Nacht erholen, bevor sie der Morgensonne ausgesetzt sind."
+        },
+        {
+            "question": "Was ist Veredelung bei Pflanzen?",
+            "answers": [
+                {"answer": "Das Düngen mit teurem Dünger"},
+                {"answer": "Das Zusammenfügen zweier Pflanzenteile verschiedener Sorten"},
+                {"answer": "Das Beschneiden von Pflanzen"},
+                {"answer": "Das Verwenden von Pestiziden"}
+            ],
+            "answer": "Das Zusammenfügen zweier Pflanzenteile verschiedener Sorten",
+            "explanation": "Veredelung ist eine Technik, bei der ein Trieb (Edelreis) einer gewünschten Sorte auf eine Unterlage einer anderen, meist robusteren Pflanze gepfropft wird. Dies kombiniert die gewünschten Eigenschaften beider Pflanzen."
+        },
+        {
+            "question": "Was bedeutet 'Pikieren' beim Gärtnern?",
+            "answers": [
+                {"answer": "Das Ernten von Früchten"},
+                {"answer": "Das Vereinzeln und Umpflanzen von Sämlingen"},
+                {"answer": "Das Beschneiden von Ästen"},
+                {"answer": "Das Gießen von Pflanzen"}
+            ],
+            "answer": "Das Vereinzeln und Umpflanzen von Sämlingen",
+            "explanation": "Pikieren bedeutet das vorsichtige Vereinzeln und Umpflanzen junger Sämlinge in größere Töpfe oder mit mehr Abstand, damit sie sich besser entwickeln können. Dies geschieht meist, wenn die ersten echten Blätter erscheinen."
+        },
+        {
+            "question": "Welche Temperatur ist ideal für die Keimung der meisten Gemüsesamen?",
+            "answers": [
+                {"answer": "5-10°C"},
+                {"answer": "18-25°C"},
+                {"answer": "30-35°C"},
+                {"answer": "0-5°C"}
+            ],
+            "answer": "18-25°C",
+            "explanation": "Die meisten Gemüsesamen keimen optimal bei Temperaturen zwischen 18-25°C. Einige wärmeliebende Pflanzen wie Tomaten und Paprika benötigen höhere Temperaturen, während Kaltkeimer wie Möhren auch bei niedrigeren Temperaturen keimen."
+        },
+        {
+            "question": "Was ist eine Fruchtfolge im Gartenbau?",
+            "answers": [
+                {"answer": "Die Reihenfolge der Ernte"},
+                {"answer": "Der systematische Wechsel der angebauten Pflanzenarten auf einer Fläche"},
+                {"answer": "Die Größe der Früchte"},
+                {"answer": "Die Zeit zwischen Aussaat und Ernte"}
+            ],
+            "answer": "Der systematische Wechsel der angebauten Pflanzenarten auf einer Fläche",
+            "explanation": "Fruchtfolge bedeutet, dass auf derselben Fläche in aufeinanderfolgenden Jahren verschiedene Pflanzenarten angebaut werden. Dies verhindert Bodenmüdigkeit, reduziert Schädlinge und Krankheiten und erhält die Bodenfruchtbarkeit."
+        },
+        {
+            "question": "Zu welcher Pflanzenfamilie gehören Tomaten, Paprika und Kartoffeln?",
+            "answers": [
+                {"answer": "Kreuzblütler"},
+                {"answer": "Nachtschattengewächse"},
+                {"answer": "Hülsenfrüchtler"},
+                {"answer": "Doldenblütler"}
+            ],
+            "answer": "Nachtschattengewächse",
+            "explanation": "Tomaten, Paprika, Kartoffeln und Auberginen gehören alle zur Familie der Nachtschattengewächse (Solanaceae). Diese sollten nicht direkt nacheinander auf derselben Fläche angebaut werden, da sie ähnliche Nährstoffbedürfnisse haben und anfällig für die gleichen Krankheiten sind."
+        },
+        {
+            "question": "Was sind Gründüngerpflanzen?",
+            "answers": [
+                {"answer": "Pflanzen mit grünen Blättern"},
+                {"answer": "Pflanzen, die zur Bodenverbesserung angebaut und eingearbeitet werden"},
+                {"answer": "Pflanzen, die grüne Früchte tragen"},
+                {"answer": "Pflanzen, die nur im Gewächshaus wachsen"}
+            ],
+            "answer": "Pflanzen, die zur Bodenverbesserung angebaut und eingearbeitet werden",
+            "explanation": "Gründüngerpflanzen wie Phacelia, Senf oder Leguminosen werden speziell zur Bodenverbesserung angebaut. Sie werden vor der Blüte gemäht und in den Boden eingearbeitet, um Nährstoffe zu liefern und die Bodenstruktur zu verbessern."
+        },
+        {
+            "question": "Wann ist die beste Zeit für das Pflanzen von Obstbäumen?",
+            "answers": [
+                {"answer": "Im Hochsommer"},
+                {"answer": "Im Herbst oder frühen Frühjahr während der Ruhephase"},
+                {"answer": "Nur im Winter"},
+                {"answer": "Nur im Sommer"}
+            ],
+            "answer": "Im Herbst oder frühen Frühjahr während der Ruhephase",
+            "explanation": "Obstbäume werden am besten im Herbst (Oktober-November) oder frühen Frühjahr (März-April) gepflanzt, wenn sie sich in der Ruhephase befinden. Dies gibt den Wurzeln Zeit, sich vor der nächsten Wachstumsperiode zu etablieren."
+        },
+        {
+            "question": "Was ist Bodenverbesserung durch Kompost?",
+            "answers": [
+                {"answer": "Das Hinzufügen von organischem Material zur Verbesserung der Bodenstruktur und Fruchtbarkeit"},
+                {"answer": "Das Entfernen von Steinen aus dem Boden"},
+                {"answer": "Das Gießen des Bodens"},
+                {"answer": "Das Umgraben des Bodens"}
+            ],
+            "answer": "Das Hinzufügen von organischem Material zur Verbesserung der Bodenstruktur und Fruchtbarkeit",
+            "explanation": "Kompost verbessert die Bodenstruktur, erhöht die Wasserspeicherkapazität, fördert das Bodenleben und liefert langsam verfügbare Nährstoffe. Er macht schwere Böden durchlässiger und leichte Böden speicherfähiger."
+        },
+        {
+            "question": "Was sind Begleitpflanzen oder Mischkultur?",
+            "answers": [
+                {"answer": "Pflanzen, die zusammen reisen"},
+                {"answer": "Pflanzen, die sich gegenseitig positiv beeinflussen, wenn sie zusammen angebaut werden"},
+                {"answer": "Pflanzen derselben Art"},
+                {"answer": "Pflanzen, die zur gleichen Zeit blühen"}
+            ],
+            "answer": "Pflanzen, die sich gegenseitig positiv beeinflussen, wenn sie zusammen angebaut werden",
+            "explanation": "Begleitpflanzen oder Mischkultur bedeutet das gemeinsame Anbauen von Pflanzen, die sich gegenseitig fördern. Beispielsweise können Basilikum und Tomaten zusammen angebaut werden, da Basilikum Schädlinge abhält und das Aroma der Tomaten verbessert."
+        },
+        {
+            "question": "Was ist Staunässe und warum ist sie schädlich?",
+            "answers": [
+                {"answer": "Zu wenig Wasser im Boden"},
+                {"answer": "Wasseransammlung im Boden, die zu Sauerstoffmangel führt"},
+                {"answer": "Salzablagerungen im Boden"},
+                {"answer": "Zu viel Dünger im Boden"}
+            ],
+            "answer": "Wasseransammlung im Boden, die zu Sauerstoffmangel führt",
+            "explanation": "Staunässe entsteht, wenn Wasser nicht abfließen kann und sich im Boden sammelt. Dies führt zu Sauerstoffmangel, wodurch Wurzeln faulen können und Pflanzen absterben. Eine gute Drainage ist daher wichtig."
+        },
+        {
+            "question": "Welche Funktion haben Regenwürmer im Garten?",
+            "answers": [
+                {"answer": "Sie fressen Pflanzen"},
+                {"answer": "Sie lockern den Boden und produzieren wertvollen Wurmhumus"},
+                {"answer": "Sie übertragen Krankheiten"},
+                {"answer": "Sie haben keine nützliche Funktion"}
+            ],
+            "answer": "Sie lockern den Boden und produzieren wertvollen Wurmhumus",
+            "explanation": "Regenwürmer sind sehr nützlich für den Garten. Sie lockern den Boden durch ihre Gänge, verbessern die Drainage und produzieren durch ihre Verdauung wertvollen Wurmhumus, der reich an Nährstoffen ist."
+        },
+        {
+            "question": "Was bedeutet 'Abhärten' von Setzlingen?",
+            "answers": [
+                {"answer": "Setzlinge weniger gießen"},
+                {"answer": "Setzlinge schrittweise an Außenbedingungen gewöhnen"},
+                {"answer": "Setzlinge beschneiden"},
+                {"answer": "Setzlinge mehr düngen"}
+            ],
+            "answer": "Setzlinge schrittweise an Außenbedingungen gewöhnen",
+            "explanation": "Abhärten bedeutet, im Haus oder Gewächshaus vorgezogene Setzlinge schrittweise an die Außenbedingungen zu gewöhnen. Dies geschieht durch stundenweises Rausstellen über mehrere Tage, um Temperatur- und Lichtschock zu vermeiden."
+        },
+        {
+            "question": "Wann sollten Rosen geschnitten werden?",
+            "answers": [
+                {"answer": "Im Hochsommer"},
+                {"answer": "Im späten Winter oder frühen Frühjahr"},
+                {"answer": "Im Herbst"},
+                {"answer": "Gar nicht"}
+            ],
+            "answer": "Im späten Winter oder frühen Frühjahr",
+            "explanation": "Rosen werden am besten im späten Winter oder frühen Frühjahr geschnitten (Februar-März), wenn die stärksten Fröste vorbei sind, aber die Pflanzen noch in der Ruhephase sind. Dies fördert kräftiges Wachstum und reiche Blüte."
+        },
+        {
+            "question": "Was ist ein Kaltkeimer?",
+            "answers": [
+                {"answer": "Eine Pflanze, die nur bei kaltem Wetter wächst"},
+                {"answer": "Eine Pflanze, deren Samen eine Kälteperiode zur Keimung benötigen"},
+                {"answer": "Eine Pflanze aus kalten Ländern"},
+                {"answer": "Eine Pflanze, die keine Wärme verträgt"}
+            ],
+            "answer": "Eine Pflanze, deren Samen eine Kälteperiode zur Keimung benötigen",
+            "explanation": "Kaltkeimer sind Pflanzen, deren Samen eine längere Kälteperiode (Stratifikation) benötigen, um die Keimruhe zu brechen. Beispiele sind viele Stauden und Gehölze, deren Samen den Winter überdauern müssen."
+        },
+        {
+            "question": "Was versteht man unter 'Ausgeizen' bei Tomaten?",
+            "answers": [
+                {"answer": "Das Ernten der Tomaten"},
+                {"answer": "Das Entfernen von Seitentrieben"},
+                {"answer": "Das Gießen der Pflanzen"},
+                {"answer": "Das Düngen der Pflanzen"}
+            ],
+            "answer": "Das Entfernen von Seitentrieben",
+            "explanation": "Ausgeizen bedeutet das regelmäßige Entfernen der Seitentriebe (Geiztriebe), die in den Blattachseln von Tomatenpflanzen wachsen. Dies konzentriert die Energie der Pflanze auf die Haupttriebe und führt zu größeren, besseren Früchten."
+        },
+        {
+            "question": "Welche Pflanzen eignen sich gut als natürlicher Schneckenschutz?",
+            "answers": [
+                {"answer": "Rosen"},
+                {"answer": "Lavendel, Thymian, Salbei"},
+                {"answer": "Tomaten"},
+                {"answer": "Salat"}
+            ],
+            "answer": "Lavendel, Thymian, Salbei",
+            "explanation": "Stark duftende Kräuter wie Lavendel, Thymian und Salbei wirken als natürlicher Schneckenschutz, da Schnecken diese intensiven Gerüche meiden. Diese Pflanzen können als Barriere um gefährdete Kulturen gepflanzt werden."
+        },
+        {
+            "question": "Was ist der Unterschied zwischen Humus und Kompost?",
+            "answers": [
+                {"answer": "Es gibt keinen Unterschied"},
+                {"answer": "Humus ist das Endprodukt der vollständigen Zersetzung, Kompost ist teilweise zersetzt"},
+                {"answer": "Kompost ist teurer als Humus"},
+                {"answer": "Humus ist nur für Zimmerpflanzen"}
+            ],
+            "answer": "Humus ist das Endprodukt der vollständigen Zersetzung, Kompost ist teilweise zersetzt",
+            "explanation": "Humus ist das stabile Endprodukt der vollständigen Zersetzung organischer Materialien. Kompost ist in einem fortgeschrittenen Stadium der Zersetzung, aber noch nicht vollständig zu Humus umgewandelt."
+        },
+        {
+            "question": "Wann ist die beste Zeit für die Aussaat von Radieschen?",
+            "answers": [
+                {"answer": "Nur im Sommer"},
+                {"answer": "Frühjahr bis Herbst, alle 2-3 Wochen für kontinuierliche Ernte"},
+                {"answer": "Nur im Winter"},
+                {"answer": "Nur einmal im Jahr"}
+            ],
+            "answer": "Frühjahr bis Herbst, alle 2-3 Wochen für kontinuierliche Ernte",
+            "explanation": "Radieschen können von März bis September ausgesät werden. Für eine kontinuierliche Ernte sollte alle 2-3 Wochen neu gesät werden, da Radieschen schnell wachsen und zur Blüte neigen, wenn sie zu lange stehen."
+        },
+        {
+            "question": "Was ist Chlorose bei Pflanzen?",
+            "answers": [
+                {"answer": "Eine Pilzkrankheit"},
+                {"answer": "Gelbfärbung der Blätter durch Nährstoffmangel"},
+                {"answer": "Übermäßiges Wachstum"},
+                {"answer": "Schädlingsbefall"}
+            ],
+            "answer": "Gelbfärbung der Blätter durch Nährstoffmangel",
+            "explanation": "Chlorose ist die Gelbfärbung von Blättern, meist verursacht durch Eisenmangel oder anderen Nährstoffmangel. Die Blätter können ihre grüne Farbe nicht aufrechterhalten, weil die Chlorophyllproduktion gestört ist."
+        },
+        {
+            "question": "Welche Pflanzen sind gute Stickstoffsammler?",
+            "answers": [
+                {"answer": "Hülsenfrüchtler wie Bohnen und Erbsen"},
+                {"answer": "Nachtschattengewächse"},
+                {"answer": "Kreuzblütler"},
+                {"answer": "Gräser"}
+            ],
+            "answer": "Hülsenfrüchtler wie Bohnen und Erbsen",
+            "explanation": "Hülsenfrüchtler (Leguminosen) wie Bohnen, Erbsen und Lupinen können mit Hilfe von Knöllchenbakterien an ihren Wurzeln Luftstickstoff binden und im Boden anreichern. Dadurch verbessern sie die Bodenfruchtbarkeit."
+        },
+        {
+            "question": "Was ist eine Drainage im Gartenbau?",
+            "answers": [
+                {"answer": "Ein Bewässerungssystem"},
+                {"answer": "Ein System zur Ableitung überschüssigen Wassers"},
+                {"answer": "Ein Düngemittel"},
+                {"answer": "Ein Pflanzenschutzmittel"}
+            ],
+            "answer": "Ein System zur Ableitung überschüssigen Wassers",
+            "explanation": "Drainage ist ein System zur Ableitung überschüssigen Wassers aus dem Boden, um Staunässe zu verhindern. Dies kann durch Drainagerohre, Kies- oder Sandschichten erreicht werden."
+        },
+        {
+            "question": "Welche Temperatur sollte Kompost idealerweise erreichen?",
+            "answers": [
+                {"answer": "10-20°C"},
+                {"answer": "50-70°C"},
+                {"answer": "80-100°C"},
+                {"answer": "Unter 10°C"}
+            ],
+            "answer": "50-70°C",
+            "explanation": "Ein gut funktionierender Komposthaufen sollte in der aktiven Phase Temperaturen von 50-70°C erreichen. Diese Hitze entsteht durch den Abbau organischer Materialien und tötet Unkrautsamen und Krankheitserreger ab."
+        },
+        {
+            "question": "Was sind Zeigerpflanzen?",
+            "answers": [
+                {"answer": "Pflanzen mit auffälligen Blüten"},
+                {"answer": "Pflanzen, die bestimmte Bodenverhältnisse anzeigen"},
+                {"answer": "Pflanzen, die andere Pflanzen führen"},
+                {"answer": "Pflanzen aus dem Ausland"}
+            ],
+            "answer": "Pflanzen, die bestimmte Bodenverhältnisse anzeigen",
+            "explanation": "Zeigerpflanzen sind Pflanzen, die durch ihr Vorkommen bestimmte Standortbedingungen anzeigen. Brennnesseln zeigen beispielsweise stickstoffreichen Boden an, Sauerampfer deutet auf sauren Boden hin."
+        },
+        {
+            "question": "Wann sollten Zwiebeln geerntet werden?",
+            "answers": [
+                {"answer": "Wenn die Blätter noch grün sind"},
+                {"answer": "Wenn das Laub gelb wird und umfällt"},
+                {"answer": "Nur im Winter"},
+                {"answer": "Sofort nach der Blüte"}
+            ],
+            "answer": "Wenn das Laub gelb wird und umfällt",
+            "explanation": "Zwiebeln sind erntereif, wenn das Laub gelb wird und umfällt. Dies zeigt an, dass die Zwiebel ihre Wachstumsphase abgeschlossen hat und die Nährstoffe aus den Blättern in die Zwiebel eingezogen wurden."
+        },
+        {
+            "question": "Was ist Permakultur?",
+            "answers": [
+                {"answer": "Permanente Kultur ohne Veränderung"},
+                {"answer": "Ein nachhaltiges Gartenbausystem nach natürlichen Prinzipien"},
+                {"answer": "Kultur nur mit Kunstdünger"},
+                {"answer": "Gartenbau nur in Gewächshäusern"}
+            ],
+            "answer": "Ein nachhaltiges Gartenbausystem nach natürlichen Prinzipien",
+            "explanation": "Permakultur ist ein Gestaltungssystem für nachhaltige Landwirtschaft und Gartenbau, das natürliche Ökosysteme nachahmt. Ziel ist es, produktive und stabile Systeme zu schaffen, die sich selbst erhalten."
+        },
+        {
+            "question": "Welche Pflanzen gehören zu den Tiefwurzlern?",
+            "answers": [
+                {"answer": "Salat und Radieschen"},
+                {"answer": "Luzerne, Löwenzahn, Möhren"},
+                {"answer": "Erdbeeren und Thymian"},
+                {"answer": "Basilikum und Petersilie"}
+            ],
+            "answer": "Luzerne, Löwenzahn, Möhren",
+            "explanation": "Tiefwurzler wie Luzerne, Löwenzahn und Möhren haben lange Wurzeln, die tief in den Boden eindringen. Sie können Nährstoffe aus tieferen Bodenschichten holen und den Boden durch ihre Wurzelkanäle lockern."
+        },
+        {
+            "question": "Was ist der ideale Zeitpunkt für das Gießen von Pflanzen?",
+            "answers": [
+                {"answer": "Mittags bei heißem Sonnenschein"},
+                {"answer": "Früh morgens oder am späten Abend"},
+                {"answer": "Nur nachts"},
+                {"answer": "Zu jeder Tageszeit"}
+            ],
+            "answer": "Früh morgens oder am späten Abend",
+            "explanation": "Pflanzen sollten früh morgens oder am späten Abend gegossen werden, wenn die Temperaturen kühler sind. So verdunstet weniger Wasser und die Pflanzen können das Wasser besser aufnehmen. Mittagsgießen kann zu Verbrennungen durch Lupeneffekt führen."
+        },
+        {
+            "question": "Was sind Mykorrhiza?",
+            "answers": [
+                {"answer": "Schädliche Pilze"},
+                {"answer": "Nützliche Pilze, die mit Pflanzenwurzeln eine Symbiose eingehen"},
+                {"answer": "Eine Art von Dünger"},
+                {"answer": "Bodenwürmer"}
+            ],
+            "answer": "Nützliche Pilze, die mit Pflanzenwurzeln eine Symbiose eingehen",
+            "explanation": "Mykorrhiza sind Pilze, die eine symbiotische Beziehung mit Pflanzenwurzeln eingehen. Sie vergrößern die Wurzeloberfläche, helfen bei der Nährstoff- und Wasseraufnahme und schützen vor Krankheiten. Im Gegenzug erhalten sie Zucker von der Pflanze."
+        },
+        {
+            "question": "Welche Faktoren beeinflussen die Keimung von Samen?",
+            "answers": [
+                {"answer": "Nur die Temperatur"},
+                {"answer": "Temperatur, Feuchtigkeit, Sauerstoff und Licht"},
+                {"answer": "Nur die Feuchtigkeit"},
+                {"answer": "Nur das Licht"}
+            ],
+            "answer": "Temperatur, Feuchtigkeit, Sauerstoff und Licht",
+            "explanation": "Für die Keimung benötigen Samen die richtige Temperatur, ausreichend Feuchtigkeit, Sauerstoff für die Atmung und je nach Art Licht oder Dunkelheit. Alle diese Faktoren müssen optimal zusammenwirken."
+        },
+        {
+            "question": "Was ist Bodenbearbeitung?",
+            "answers": [
+                {"answer": "Das Bemalen des Bodens"},
+                {"answer": "Mechanische Lockerung und Vorbereitung des Bodens für die Bepflanzung"},
+                {"answer": "Das Entfernen aller Pflanzen"},
+                {"answer": "Das Hinzufügen von Steinen"}
+            ],
+            "answer": "Mechanische Lockerung und Vorbereitung des Bodens für die Bepflanzung",
+            "explanation": "Bodenbearbeitung umfasst alle mechanischen Maßnahmen zur Lockerung, Durchmischung und Vorbereitung des Bodens. Dazu gehören Umgraben, Hacken, Eggen und Fräsen, um optimale Bedingungen für das Pflanzenwachstum zu schaffen."
+        },
+        {
+            "question": "Was ist eine Monokultur und warum kann sie problematisch sein?",
+            "answers": [
+                {"answer": "Anbau einer einzigen Pflanzenart, kann zu Bodenmüdigkeit und Schädlingsproblemen führen"},
+                {"answer": "Anbau vieler verschiedener Pflanzen"},
+                {"answer": "Anbau nur in einem Monat"},
+                {"answer": "Anbau nur einer Pflanze pro Beet"}
+            ],
+            "answer": "Anbau einer einzigen Pflanzenart, kann zu Bodenmüdigkeit und Schädlingsproblemen führen",
+            "explanation": "Monokultur bedeutet den ausschließlichen Anbau einer Pflanzenart über längere Zeit. Dies kann zu Bodenmüdigkeit, Nährstoffverarmung, Anreicherung spezifischer Schädlinge und Krankheiten führen."
+        },
+        {
+            "question": "Welche Pflanzen sind besonders bienenfreundlich?",
+            "answers": [
+                {"answer": "Gefüllte Blumen ohne Pollen"},
+                {"answer": "Lavendel, Sonnenhut, Phacelia, heimische Wildblumen"},
+                {"answer": "Nur Gemüsepflanzen"},
+                {"answer": "Immergrüne Nadelbäume"}
+            ],
+            "answer": "Lavendel, Sonnenhut, Phacelia, heimische Wildblumen",
+            "explanation": "Bienenfreundliche Pflanzen haben ungefüllte Blüten mit gut zugänglichen Pollen und Nektar. Lavendel, Sonnenhut, Phacelia und viele heimische Wildblumen bieten Bienen und anderen Bestäubern reichlich Nahrung."
+        },
+        {
+            "question": "Was ist der Unterschied zwischen organischem und mineralischem Dünger?",
+            "answers": [
+                {"answer": "Organischer Dünger wirkt schneller"},
+                {"answer": "Organischer Dünger stammt aus lebenden Organismen und wirkt langsamer, mineralischer ist synthetisch und schnell verfügbar"},
+                {"answer": "Mineralischer Dünger ist immer besser"},
+                {"answer": "Es gibt keinen Unterschied"}
+            ],
+            "answer": "Organischer Dünger stammt aus lebenden Organismen und wirkt langsamer, mineralischer ist synthetisch und schnell verfügbar",
+            "explanation": "Organische Dünger (Kompost, Mist) stammen aus lebenden Organismen und geben Nährstoffe langsam frei, verbessern auch die Bodenstruktur. Mineralische Dünger sind synthetisch hergestellt und stellen Nährstoffe schnell zur Verfügung."
+        },
+        {
+            "question": "Wann sollten Kübelpflanzen ins Winterquartier gebracht werden?",
+            "answers": [
+                {"answer": "Bereits im September"},
+                {"answer": "Bei den ersten Nachtfrösten oder wenn Temperaturen dauerhaft unter 5°C fallen"},
+                {"answer": "Erst im Januar"},
+                {"answer": "Gar nicht, sie bleiben draußen"}
+            ],
+            "answer": "Bei den ersten Nachtfrösten oder wenn Temperaturen dauerhaft unter 5°C fallen",
+            "explanation": "Nicht winterharte Kübelpflanzen sollten ins Winterquartier, wenn die ersten Nachtfröste drohen oder die Temperaturen dauerhaft unter 5°C fallen. Der genaue Zeitpunkt hängt von der Frostverträglichkeit der jeweiligen Pflanze ab."
+        },
+        {
+            "question": "Was versteht man unter Bodenmüdigkeit?",
+            "answers": [
+                {"answer": "Wenn der Boden zu trocken ist"},
+                {"answer": "Erschöpfung des Bodens durch einseitigen Anbau derselben Pflanzenart"},
+                {"answer": "Wenn der Boden zu nass ist"},
+                {"answer": "Wenn der Boden zu hart ist"}
+            ],
+            "answer": "Erschöpfung des Bodens durch einseitigen Anbau derselben Pflanzenart",
+            "explanation": "Bodenmüdigkeit entsteht durch wiederholten Anbau derselben Pflanzenart oder -familie. Der Boden wird an spezifischen Nährstoffen verarmt, schädliche Organismen reichern sich an, und Ertrag sowie Pflanzengesundheit nehmen ab."
+        },
+        {
+            "question": "Welche Maßnahme hilft am besten gegen Unkraut?",
+            "answers": [
+                {"answer": "Nur chemische Unkrautvernichter"},
+                {"answer": "Regelmäßiges Hacken, Mulchen und dichte Bepflanzung"},
+                {"answer": "Gar nichts tun"},
+                {"answer": "Nur viel gießen"}
+            ],
+            "answer": "Regelmäßiges Hacken, Mulchen und dichte Bepflanzung",
+            "explanation": "Die beste Unkrautbekämpfung kombiniert mehrere Methoden: regelmäßiges Hacken stört das Unkrautwachstum, Mulchen unterdrückt Unkraut und dichte Bepflanzung lässt Unkraut wenig Platz und Licht."
+        },
+        {
+            "question": "Was ist Saatgutfestigkeit?",
+            "answers": [
+                {"answer": "Wie hart die Samen sind"},
+                {"answer": "Die Eigenschaft von Samen, sortenreine Nachkommen zu produzieren"},
+                {"answer": "Wie lange Samen lagerfähig sind"},
+                {"answer": "Die Größe der Samen"}
+            ],
+            "answer": "Die Eigenschaft von Samen, sortenreine Nachkommen zu produzieren",
+            "explanation": "Saatgutfestigkeit bedeutet, dass aus den Samen einer Pflanze wieder Pflanzen mit den gleichen Eigenschaften wachsen. Bei Hybridsorten (F1) ist dies nicht der Fall - ihre Nachkommen spalten in verschiedene Formen auf."
+        },
+        {
+            "question": "Welche Rolle spielt Humus im Boden?",
+            "answers": [
+                {"answer": "Er macht den Boden schwerer"},
+                {"answer": "Er verbessert Bodenstruktur, Wasserspeicherung und Nährstoffversorgung"},
+                {"answer": "Er verhindert das Pflanzenwachstum"},
+                {"answer": "Er hat keine wichtige Funktion"}
+            ],
+            "answer": "Er verbessert Bodenstruktur, Wasserspeicherung und Nährstoffversorgung",
+            "explanation": "Humus ist entscheidend für die Bodenfruchtbarkeit. Er verbessert die Bodenstruktur, erhöht die Wasserspeicherkapazität, dient als Nährstoffreservoir, fördert das Bodenleben und puffert pH-Schwankungen ab."
+        },
+        {
+            "question": "Was ist beim Anlegen eines Gemüsegartens besonders wichtig?",
+            "answers": [
+                {"answer": "Nur die richtige Farbe der Werkzeuge"},
+                {"answer": "Sonniger Standort, gute Bodenqualität, Wasserverfügbarkeit und Windschutz"},
+                {"answer": "Nur die Größe des Gartens"},
+                {"answer": "Nur teure Geräte"}
+            ],
+            "answer": "Sonniger Standort, gute Bodenqualität, Wasserverfügbarkeit und Windschutz",
+            "explanation": "Ein erfolgreicher Gemüsegarten braucht mindestens 6 Stunden Sonne täglich, fruchtbaren, gut durchlässigen Boden, einfachen Zugang zu Wasser und Schutz vor starken Winden. Die Lage und Bodenvorbereitung sind entscheidend für den Erfolg."
+        }
+    ]
+},
+  {
+    "name": "Brandschutz",
+    "questions": [
+        {
+            "question": "Welche drei Elemente bilden das Verbrennungsdreieck?",
+            "answers": [
+                {"answer": "Wärme, Brennstoff und Sauerstoff"},
+                {"answer": "Rauch, Flamme und Hitze"},
+                {"answer": "Wasser, Schaum und Gas"},
+                {"answer": "Vorbeugung, Erkennung und Löschung"}
+            ],
+            "answer": "Wärme, Brennstoff und Sauerstoff",
+            "explanation": "Das Verbrennungsdreieck besteht aus Wärme (Zündquelle), Brennstoff (brennbares Material) und Sauerstoff (Oxidationsmittel). Alle drei Elemente müssen vorhanden sein, damit ein Feuer entstehen kann. Die Entfernung eines Elements löscht das Feuer."
+        },
+        {
+            "question": "Was ist das vierte Element, das das Verbrennungstetraeder vervollständigt?",
+            "answers": [
+                {"answer": "Wasser"},
+                {"answer": "Chemische Kettenreaktion"},
+                {"answer": "Rauch"},
+                {"answer": "Kohlendioxid"}
+            ],
+            "answer": "Chemische Kettenreaktion",
+            "explanation": "Das Verbrennungstetraeder fügt die chemische Kettenreaktion zum traditionellen Verbrennungsdreieck hinzu. Dies stellt den selbsterhaltenden chemischen Prozess dar, der das Feuer nach der Entzündung am Brennen hält."
+        },
+        {
+            "question": "Was umfasst ein Brandklasse A Feuer?",
+            "answers": [
+                {"answer": "Gewöhnliche brennbare Materialien wie Holz und Papier"},
+                {"answer": "Brennbare Flüssigkeiten"},
+                {"answer": "Elektrische Anlagen"},
+                {"answer": "Speiseöle und Fette"}
+            ],
+            "answer": "Gewöhnliche brennbare Materialien wie Holz und Papier",
+            "explanation": "Brandklasse A Brände umfassen gewöhnliche brennbare Materialien wie Holz, Papier, Stoff, Gummi und viele Kunststoffe. Diese Materialien hinterlassen beim Verbrennen Asche und werden typischerweise mit Wasser gelöscht."
+        },
+        {
+            "question": "Welche Art von Materialien sind bei Brandklasse B Bränden beteiligt?",
+            "answers": [
+                {"answer": "Gewöhnliche Brennstoffe"},
+                {"answer": "Brennbare und entzündliche Flüssigkeiten"},
+                {"answer": "Elektrische Anlagen"},
+                {"answer": "Metalle"}
+            ],
+            "answer": "Brennbare und entzündliche Flüssigkeiten",
+            "explanation": "Brandklasse B Brände umfassen brennbare und entzündliche Flüssigkeiten wie Benzin, Öl, Fett, Farbe und Alkohol. Diese Brände werden typischerweise durch Sauerstoffentzug oder Unterbrechung der chemischen Kettenreaktion gelöscht."
+        },
+        {
+            "question": "Was charakterisiert Brandklasse C Brände?",
+            "answers": [
+                {"answer": "Sie umfassen Speiseöle"},
+                {"answer": "Sie umfassen unter Spannung stehende elektrische Anlagen"},
+                {"answer": "Sie umfassen Metalle"},
+                {"answer": "Sie treten nur im Freien auf"}
+            ],
+            "answer": "Sie umfassen unter Spannung stehende elektrische Anlagen",
+            "explanation": "Brandklasse C Brände umfassen unter Spannung stehende elektrische Anlagen wie Motoren, Transformatoren und Geräte. Die elektrische Gefahr erfordert die Verwendung nicht-leitender Löschmittel."
+        },
+        {
+            "question": "Was ist der häufigste tragbare Feuerlöscher für den allgemeinen Gebrauch?",
+            "answers": [
+                {"answer": "Wasserlöscher"},
+                {"answer": "ABC-Pulverlöscher"},
+                {"answer": "Kohlendioxidlöscher"},
+                {"answer": "Schaumlöscher"}
+            ],
+            "answer": "ABC-Pulverlöscher",
+            "explanation": "ABC-Pulverlöscher sind die vielseitigsten und häufigsten tragbaren Löscher. Sie können bei Brandklasse A (gewöhnliche Brennstoffe), Brandklasse B (brennbare Flüssigkeiten) und Brandklasse C (elektrische) Bränden verwendet werden."
+        },
+        {
+            "question": "Wofür steht das Akronym PASS bei der Bedienung von Feuerlöschern?",
+            "answers": [
+                {"answer": "Pull, Aim, Squeeze, Sweep (Ziehen, Zielen, Drücken, Schwenken)"},
+                {"answer": "Point, Activate, Spray, Stop (Zeigen, Aktivieren, Sprühen, Stoppen)"},
+                {"answer": "Prepare, Attack, Spray, Secure (Vorbereiten, Angreifen, Sprühen, Sichern)"},
+                {"answer": "Position, Activate, Squeeze, Spray (Positionieren, Aktivieren, Drücken, Sprühen)"}
+            ],
+            "answer": "Pull, Aim, Squeeze, Sweep (Ziehen, Zielen, Drücken, Schwenken)",
+            "explanation": "PASS ist das Standardverfahren für die Verwendung eines Feuerlöschers: Pull (Sicherungsstift ziehen), Aim (auf die Basis des Feuers zielen), Squeeze (Hebel drücken) und Sweep (von Seite zu Seite schwenken)."
+        },
+        {
+            "question": "Was ist die primäre Methode der Wärmeübertragung bei den meisten Gebäudebränden?",
+            "answers": [
+                {"answer": "Wärmeleitung"},
+                {"answer": "Konvektion"},
+                {"answer": "Wärmestrahlung"},
+                {"answer": "Direkter Kontakt"}
+            ],
+            "answer": "Konvektion",
+            "explanation": "Konvektion ist die primäre Methode der Wärmeübertragung bei Gebäudebränden. Heiße Gase und Rauch steigen auf und transportieren Wärme in die oberen Etagen, wodurch sich das Feuer vertikal durch Gebäude ausbreitet."
+        },
+        {
+            "question": "In welchem Temperaturbereich entzünden sich die meisten Gebäudeinhalte?",
+            "answers": [
+                {"answer": "100-200°C"},
+                {"answer": "300-500°C"},
+                {"answer": "600-1000°C"},
+                {"answer": "1200-1500°C"}
+            ],
+            "answer": "300-500°C",
+            "explanation": "Die meisten gewöhnlichen Gebäudeinhalte haben Entzündungstemperaturen im Bereich von 300-500°C. Einige Materialien können jedoch bei niedrigeren Temperaturen entzündet werden, wenn sie längerer Hitzeeinwirkung ausgesetzt sind."
+        },
+        {
+            "question": "Was ist ein Flashover im Brandverhalten?",
+            "answers": [
+                {"answer": "Wenn ein Feuerlöscher leer wird"},
+                {"answer": "Der schnelle Übergang zu einem voll entwickelten Brand in einem Raum"},
+                {"answer": "Wenn Rauchmelder aktiviert werden"},
+                {"answer": "Das Endstadium eines ausbrandenden Feuers"}
+            ],
+            "answer": "Der schnelle Übergang zu einem voll entwickelten Brand in einem Raum",
+            "explanation": "Flashover tritt auf, wenn Strahlungswärme dazu führt, dass alle brennbaren Oberflächen in einem Raum gleichzeitig ihre Entzündungstemperatur erreichen, was zu einer vollständigen Raumbeteiligung am Brand führt."
+        },
+        {
+            "question": "Was ist die Haupttodesursache bei Bränden?",
+            "answers": [
+                {"answer": "Verbrennungen"},
+                {"answer": "Rauchvergiftung"},
+                {"answer": "Herabfallende Trümmer"},
+                {"answer": "Panik"}
+            ],
+            "answer": "Rauchvergiftung",
+            "explanation": "Rauchvergiftung ist für die meisten Brandtodesfälle verantwortlich. Giftige Gase, insbesondere Kohlenmonoxid, können tödlich sein, noch bevor die Flammen die Opfer erreichen."
+        },
+        {
+            "question": "Wie oft sollten Rauchmelder-Batterien gewechselt werden?",
+            "answers": [
+                {"answer": "Jeden Monat"},
+                {"answer": "Alle 6 Monate"},
+                {"answer": "Jedes Jahr"},
+                {"answer": "Alle 2 Jahre"}
+            ],
+            "answer": "Jedes Jahr",
+            "explanation": "Rauchmelder-Batterien sollten mindestens einmal jährlich gewechselt werden. Viele Menschen nutzen die Zeitumstellung als Erinnerung: 'Zeitumstellung = Batteriewechsel'."
+        },
+        {
+            "question": "Wo sollten Rauchmelder NICHT installiert werden?",
+            "answers": [
+                {"answer": "Schlafzimmer"},
+                {"answer": "Flure"},
+                {"answer": "Innerhalb von 3 Metern von Kochgeräten"},
+                {"answer": "Wohnzimmer"}
+            ],
+            "answer": "Innerhalb von 3 Metern von Kochgeräten",
+            "explanation": "Rauchmelder sollten nicht innerhalb von 3 Metern von Kochgeräten installiert werden, um Fehlalarme durch Kochrauch zu vermeiden. Jedoch können Wärmemelder in Küchen verwendet werden."
+        },
+        {
+            "question": "Was ist die empfohlene maximale Fluchtweglänge in den meisten Gebäuden?",
+            "answers": [
+                {"answer": "15 Meter"},
+                {"answer": "30 Meter"},
+                {"answer": "45 Meter"},
+                {"answer": "60 Meter"}
+            ],
+            "answer": "45 Meter",
+            "explanation": "Bauvorschriften verlangen typischerweise, dass die maximale Fluchtweglänge zu einem Ausgang 45 Meter in den meisten Nutzungen nicht überschreitet, obwohl dies je nach Gebäudetyp und Sprinklerschutz variieren kann."
+        },
+        {
+            "question": "Wozu ist eine Brandschutztür konzipiert?",
+            "answers": [
+                {"answer": "Unbefugten Zutritt verhindern"},
+                {"answer": "Dem Durchgang von Feuer und Rauch für eine bestimmte Zeit widerstehen"},
+                {"answer": "Automatisch bei Notfällen öffnen"},
+                {"answer": "Lärmübertragung reduzieren"}
+            ],
+            "answer": "Dem Durchgang von Feuer und Rauch für eine bestimmte Zeit widerstehen",
+            "explanation": "Brandschutztüren sind darauf ausgelegt, dem Durchgang von Feuer und Rauch für einen bestimmten Zeitraum (typischerweise 20 Minuten bis 3 Stunden) zu widerstehen und helfen dabei, Gebäude zu unterteilen und Fluchtwege zu schützen."
+        },
+        {
+            "question": "Was bedeutet eine Feuerwiderstandsdauer von 90 Minuten?",
+            "answers": [
+                {"answer": "Das Bauteil kann Feuer für genau 90 Minuten widerstehen"},
+                {"answer": "Das Bauteil ist getestet, um Feuer für mindestens 90 Minuten zu widerstehen"},
+                {"answer": "Es dauert 90 Minuten zur Installation"},
+                {"answer": "Es kostet doppelt so viel wie 30-Minuten bewertete Materialien"}
+            ],
+            "answer": "Das Bauteil ist getestet, um Feuer für mindestens 90 Minuten zu widerstehen",
+            "explanation": "Eine Feuerwiderstandsbewertung gibt die Mindestzeit an, die ein Bauteil (Wand, Decke, etc.) während standardisierter Tests Feuereinwirkung widerstehen kann, während es seine strukturelle Integrität beibehält und den Durchgang von Flammen und heißen Gasen verhindert."
+        },
+        {
+            "question": "Was ist der Hauptzweck automatischer Sprinkleranlagen?",
+            "answers": [
+                {"answer": "Alle Brände vollständig zu löschen"},
+                {"answer": "Brandwachstum zu kontrollieren und den Personenschutz zu gewährleisten"},
+                {"answer": "Die Feuerwehr zu ersetzen"},
+                {"answer": "Gebäude im Sommer zu kühlen"}
+            ],
+            "answer": "Brandwachstum zu kontrollieren und den Personenschutz zu gewährleisten",
+            "explanation": "Der Hauptzweck automatischer Sprinkleranlagen ist es, das Brandwachstum zu kontrollieren, den Personenschutz zu gewährleisten und Zeit für die Evakuierung zu schaffen. Vollständige Löschung ist ein sekundärer Nutzen."
+        },
+        {
+            "question": "Bei welcher Temperatur lösen Standard-Sprinklerköpfe typischerweise aus?",
+            "answers": [
+                {"answer": "38°C"},
+                {"answer": "57-74°C"},
+                {"answer": "100°C"},
+                {"answer": "149°C"}
+            ],
+            "answer": "57-74°C",
+            "explanation": "Standard-Sprinklerköpfe lösen typischerweise bei Temperaturen zwischen 57-74°C aus. Die genaue Temperatur hängt von der spezifischen Anwendung und der erwarteten Umgebungstemperatur ab."
+        },
+        {
+            "question": "Welcher Sprinkleranlagentyp hat immer Wasser in den Rohren?",
+            "answers": [
+                {"answer": "Trockenanlage"},
+                {"answer": "Nassanlage"},
+                {"answer": "Deluge-Anlage"},
+                {"answer": "Vorgesteuerte Anlage"}
+            ],
+            "answer": "Nassanlage",
+            "explanation": "Nassanlagen haben immer Wasser unter Druck in den Rohren. Wenn ein Sprinklerkopf auslöst, fließt sofort Wasser. Dies sind die häufigsten und zuverlässigsten Sprinkleranlagen."
+        },
+        {
+            "question": "Wann würde eine Trocken-Sprinkleranlage verwendet werden?",
+            "answers": [
+                {"answer": "In Bereichen mit hoher Luftfeuchtigkeit"},
+                {"answer": "In Bereichen, die Frosttemperaturen ausgesetzt sind"},
+                {"answer": "In Bürogebäuden"},
+                {"answer": "In der Nähe von Schwimmbädern"}
+            ],
+            "answer": "In Bereichen, die Frosttemperaturen ausgesetzt sind",
+            "explanation": "Trockenanlagen werden in Bereichen verwendet, die Frosttemperaturen ausgesetzt sind, wie unbeheizten Lagerhallen oder Parkhäusern, wo Wasser in den Rohren gefrieren und das System platzen lassen könnte."
+        },
+        {
+            "question": "Was ist Brandabschottung im Brandschutz?",
+            "answers": [
+                {"answer": "Organisation von Brandschutzausrüstung in Abteilen"},
+                {"answer": "Unterteilung von Gebäuden in brandwiderstandsfähige Bereiche"},
+                {"answer": "Ausbildung von Feuerwehrleuten in verschiedenen Bereichen"},
+                {"answer": "Getrennte Lagerung brennbarer Materialien"}
+            ],
+            "answer": "Unterteilung von Gebäuden in brandwiderstandsfähige Bereiche",
+            "explanation": "Brandabschottung umfasst die Unterteilung von Gebäuden in Bereiche unter Verwendung brandwiderstandsfähiger Wände, Decken und Türen, um die Brandausbreitung zu begrenzen und sichere Evakuierungswege zu schaffen."
+        },
+        {
+            "question": "Was ist der Zweck einer Brandschutzklappe in Lüftungsanlagen?",
+            "answers": [
+                {"answer": "Luftstrom während Bränden zu erhöhen"},
+                {"answer": "Ausbreitung von Feuer und Rauch durch Lüftungskanäle zu verhindern"},
+                {"answer": "Das Gebäude zu kühlen"},
+                {"answer": "Frischluft für Feuerwehrleute bereitzustellen"}
+            ],
+            "answer": "Ausbreitung von Feuer und Rauch durch Lüftungskanäle zu verhindern",
+            "explanation": "Brandschutzklappen schließen automatisch bei Hitzeaktivierung, um die Ausbreitung von Feuer und Rauch durch Lüftungskanäle zu verhindern und die Integrität brandwiderstandsfähiger Barrieren zu erhalten."
+        },
+        {
+            "question": "Wofür steht NFPA?",
+            "answers": [
+                {"answer": "National Fire Prevention Association"},
+                {"answer": "National Fire Protection Association"},
+                {"answer": "National Firefighter Professional Association"},
+                {"answer": "National Fire Planning Agency"}
+            ],
+            "answer": "National Fire Protection Association",
+            "explanation": "NFPA steht für National Fire Protection Association, eine globale Organisation, die Brandschutzcodes und -standards entwickelt, einschließlich des Life Safety Code und des National Electrical Code."
+        },
+        {
+            "question": "Was ist die DIN 14096 allgemein bekannt als?",
+            "answers": [
+                {"answer": "Brandschutzordnung"},
+                {"answer": "Fluchtwegeplan"},
+                {"answer": "Feuerwehrplan"},
+                {"answer": "Sprinklercode"}
+            ],
+            "answer": "Brandschutzordnung",
+            "explanation": "DIN 14096 regelt die Brandschutzordnung für Gebäude und Anlagen. Sie definiert Maßnahmen zur Brandverhütung, Verhalten im Brandfall und organisatorische Brandschutzmaßnahmen."
+        },
+        {
+            "question": "Was ist die Mindestbreite für die meisten Ausgangstüren in Gewerbegebäuden?",
+            "answers": [
+                {"answer": "70 cm"},
+                {"answer": "80 cm"},
+                {"answer": "90 cm"},
+                {"answer": "100 cm"}
+            ],
+            "answer": "90 cm",
+            "explanation": "Die meisten Ausgangstüren in Gewerbegebäuden müssen eine Mindestlichtweite von 90 cm bei 90 Grad geöffneter Tür bieten, um ausreichend Platz für die Evakuierung zu gewährleisten."
+        },
+        {
+            "question": "In welche Richtung müssen Ausgangstüren in den meisten gewerblichen Nutzungen öffnen?",
+            "answers": [
+                {"answer": "Nach innen"},
+                {"answer": "Nach außen in Fluchtrichtung"},
+                {"answer": "In beide Richtungen"},
+                {"answer": "Horizontal schiebend"}
+            ],
+            "answer": "Nach außen in Fluchtrichtung",
+            "explanation": "Ausgangstüren in den meisten gewerblichen Nutzungen müssen nach außen in Fluchtrichtung öffnen, um zu verhindern, dass Türen durch Menschenmengen während der Notevakuierung blockiert werden."
+        },
+        {
+            "question": "Was ist ein Fluchtweg?",
+            "answers": [
+                {"answer": "Der Feuerwehreingang"},
+                {"answer": "Der ununterbrochene Weg von jedem Punkt zu einem öffentlichen Verkehrsweg"},
+                {"answer": "Das Notbeleuchtungssystem"},
+                {"answer": "Das Brandmeldeanlagensystem"}
+            ],
+            "answer": "Der ununterbrochene Weg von jedem Punkt zu einem öffentlichen Verkehrsweg",
+            "explanation": "Ein Fluchtweg ist der ununterbrochene Weg des vertikalen und horizontalen Fluchtweges von jedem bewohnten Teil eines Gebäudes zu einem öffentlichen Verkehrsweg, bestehend aus Fluchtwegebereich, Ausgang und Ausgangsbereich."
+        },
+        {
+            "question": "Was sind die drei Komponenten eines Fluchtweges?",
+            "answers": [
+                {"answer": "Tür, Flur, Treppenhaus"},
+                {"answer": "Fluchtwegebereich, Ausgang, Ausgangsbereich"},
+                {"answer": "Primär, Sekundär, Notfall"},
+                {"answer": "Innen, Außen, Öffentlich"}
+            ],
+            "answer": "Fluchtwegebereich, Ausgang, Ausgangsbereich",
+            "explanation": "Die drei Komponenten sind: Fluchtwegebereich (Weg zum Ausgang), Ausgang (geschützter Weg nach außen) und Ausgangsbereich (Weg vom Ausgang zu einem öffentlichen Verkehrsweg)."
+        },
+        {
+            "question": "Was ist der Zweck der Notbeleuchtung?",
+            "answers": [
+                {"answer": "Energie zu sparen"},
+                {"answer": "Beleuchtung bereitzustellen, wenn die normale Beleuchtung ausfällt"},
+                {"answer": "Die Feuerwehr zu signalisieren"},
+                {"answer": "Brandgefahren zu identifizieren"}
+            ],
+            "answer": "Beleuchtung bereitzustellen, wenn die normale Beleuchtung ausfällt",
+            "explanation": "Notbeleuchtung stellt automatisch Beleuchtung bereit, wenn normale Beleuchtungssysteme ausfallen, und gewährleistet, dass Menschen sicher durch Fluchtwege während Notfällen navigieren können."
+        },
+        {
+            "question": "Wie lange muss die Notbeleuchtung bei Aktivierung funktionieren?",
+            "answers": [
+                {"answer": "30 Minuten"},
+                {"answer": "90 Minuten"},
+                {"answer": "2 Stunden"},
+                {"answer": "4 Stunden"}
+            ],
+            "answer": "90 Minuten",
+            "explanation": "Notbeleuchtungssysteme müssen mindestens 90 Minuten Beleuchtung bei Aktivierung bereitstellen, was den Bewohnern ausreichend Zeit gibt, das Gebäude sicher zu evakuieren."
+        },
+        {
+            "question": "Was ist der Zweck von Fluchtwegschildern?",
+            "answers": [
+                {"answer": "Flure zu dekorieren"},
+                {"answer": "Den Weg zu Ausgängen deutlich zu markieren"},
+                {"answer": "Gebäudeeigentum zu identifizieren"},
+                {"answer": "Notfallkontaktinformationen bereitzustellen"}
+            ],
+            "answer": "Den Weg zu Ausgängen deutlich zu markieren",
+            "explanation": "Fluchtwegschilder markieren deutlich den Weg zu Ausgängen und müssen aus jeder Annäherungsrichtung sichtbar sein, um Bewohnern zu helfen, schnell Fluchtwege während Notfällen zu identifizieren."
+        },
+        {
+            "question": "Was ist ein Brandschutzkonzept?",
+            "answers": [
+                {"answer": "Architektonische Zeichnungen eines Gebäudes"},
+                {"answer": "Ein Dokument, das Brandverhütung und Notfallverfahren umreißt"},
+                {"answer": "Eine Liste der Feuerwehrausrüstung"},
+                {"answer": "Ein Zeitplan für Brandschutzübungen"}
+            ],
+            "answer": "Ein Dokument, das Brandverhütung und Notfallverfahren umreißt",
+            "explanation": "Ein Brandschutzkonzept ist ein Dokument, das Brandverhütungsmaßnahmen, Notfallverfahren, Evakuierungspläne und Verantwortlichkeiten der Gebäudebewohner während Brandnotfällen umreißt."
+        },
+        {
+            "question": "Wie oft sollten Brandschutzübungen in den meisten Bürogebäuden durchgeführt werden?",
+            "answers": [
+                {"answer": "Wöchentlich"},
+                {"answer": "Monatlich"},
+                {"answer": "Vierteljährlich"},
+                {"answer": "Jährlich"}
+            ],
+            "answer": "Jährlich",
+            "explanation": "Die meisten Bürogebäude sollten mindestens jährlich Brandschutzübungen durchführen, obwohl einige Gerichtsbarkeiten häufigere Übungen erfordern können. Schulen und Gesundheitseinrichtungen erfordern typischerweise häufigere Übungen."
+        },
+        {
+            "question": "Was ist die erste Priorität während eines Brandnotfalls?",
+            "answers": [
+                {"answer": "Eigentum retten"},
+                {"answer": "Personenschutz"},
+                {"answer": "Die Feuerwehr rufen"},
+                {"answer": "Das Feuer bekämpfen"}
+            ],
+            "answer": "Personenschutz",
+            "explanation": "Personenschutz ist immer die erste Priorität während eines Brandnotfalls. Eigentumsschutz ist sekundär, um sicherzustellen, dass alle Menschen das Gebäude sicher evakuieren können."
+        },
+        {
+            "question": "Was sollten Sie tun, wenn Sie ein Feuer entdecken?",
+            "answers": [
+                {"answer": "Zuerst versuchen es zu löschen"},
+                {"answer": "Alarm auslösen und evakuieren"},
+                {"answer": "Nach der Ursache suchen"},
+                {"answer": "Fenster zur Belüftung öffnen"}
+            ],
+            "answer": "Alarm auslösen und evakuieren",
+            "explanation": "Wenn Sie ein Feuer entdecken, lösen Sie sofort das Brandmeldesystem aus, evakuieren Sie den Bereich und rufen Sie die Feuerwehr. Versuchen Sie nur kleine Brände zu bekämpfen, wenn Sie ausgebildet sind und einen klaren Fluchtweg haben."
+        },
+        {
+            "question": "Was ist die häufigste Ursache für Hausbrände?",
+            "answers": [
+                {"answer": "Elektrische Probleme"},
+                {"answer": "Kochunfälle"},
+                {"answer": "Heizgeräte"},
+                {"answer": "Rauchmaterialien"}
+            ],
+            "answer": "Kochunfälle",
+            "explanation": "Kochen ist die häufigste Ursache für Hausbrände und macht etwa die Hälfte aller Wohnungsbrände aus. Unbeaufsichtigtes Kochen ist der häufigste Faktor bei Kochbränden."
+        },
+        {
+            "question": "Welcher Löschertyp sollte bei Fettbränden verwendet werden?",
+            "answers": [
+                {"answer": "Wasser"},
+                {"answer": "Fettbrandlöscher (Klasse F)"},
+                {"answer": "Klasse A Löscher"},
+                {"answer": "Klasse C Löscher"}
+            ],
+            "answer": "Fettbrandlöscher (Klasse F)",
+            "explanation": "Fettbrandlöscher (Klasse F) sind speziell für Speiseöl- und Fettbrände konzipiert. Sie verwenden Nasslöschmittel, die kühlen und eine Barriere über der Öloberfläche bilden."
+        },
+        {
+            "question": "Warum sollten Sie niemals Wasser bei einem Fettbrand verwenden?",
+            "answers": [
+                {"answer": "Es ist zu teuer"},
+                {"answer": "Wasser kann dazu führen, dass sich das Feuer heftig ausbreitet"},
+                {"answer": "Es kühlt das Öl nicht genug"},
+                {"answer": "Es erzeugt zu viel Dampf"}
+            ],
+            "answer": "Wasser kann dazu führen, dass sich das Feuer heftig ausbreitet",
+            "explanation": "Wasser bei einem Fettbrand kann heftiges Spritzen und Ausbreitung von brennendem Öl verursachen, weil Wasser unter das Öl sinkt und sofort verdampft, wodurch explosive Dampfexpansion entsteht."
+        },
+        {
+            "question": "Was ist die empfohlene Maßnahme, wenn Ihre Kleidung Feuer fängt?",
+            "answers": [
+                {"answer": "Rennen, um Hilfe zu holen"},
+                {"answer": "Stoppen, fallen lassen und rollen"},
+                {"answer": "Wasser über sich gießen"},
+                {"answer": "Mit den Armen wedeln, um Flammen zu löschen"}
+            ],
+            "answer": "Stoppen, fallen lassen und rollen",
+            "explanation": "Wenn Kleidung Feuer fängt, stoppen (nicht rennen), fallen lassen und rollen, um die Flammen zu ersticken. Bedecken Sie Ihr Gesicht mit den Händen, um die Atemwege zu schützen. Rennen wird die Flammen anfachen und das Feuer verschlimmern."
+        },
+        {
+            "question": "Was ist Kohlenmonoxid?",
+            "answers": [
+                {"answer": "Ein sichtbares Gas, das von Bränden produziert wird"},
+                {"answer": "Ein farbloses, geruchloses giftiges Gas"},
+                {"answer": "Eine Art Feuerlöschmittel"},
+                {"answer": "Eine Komponente von Rauchmeldern"}
+            ],
+            "answer": "Ein farbloses, geruchloses giftiges Gas",
+            "explanation": "Kohlenmonoxid (CO) ist ein farbloses, geruchloses giftiges Gas, das durch unvollständige Verbrennung entsteht. Es ist besonders gefährlich, weil Sie es ohne spezielle Ausrüstung nicht erkennen können und es in geschlossenen Räumen tödlich sein kann."
+        },
+        {
+            "question": "Wie sollten brennbare Flüssigkeiten gelagert werden?",
+            "answers": [
+                {"answer": "In jedem verfügbaren Behälter"},
+                {"answer": "In zugelassenen Behältern entfernt von Zündquellen"},
+                {"answer": "In der Nähe von Heizgeräten für Bequemlichkeit"},
+                {"answer": "Nur in Glasbehältern"}
+            ],
+            "answer": "In zugelassenen Behältern entfernt von Zündquellen",
+            "explanation": "Brennbare Flüssigkeiten sollten in zugelassenen Behältern gelagert werden, entfernt von Zündquellen, Hitze und Oxidationsmitteln. Lagerbereiche sollten gut belüftet und vor Temperaturextremen geschützt sein."
+        },
+        {
+            "question": "Was ist der Zweck von brandwiderstandsfähigen Bauteilen in Gebäuden?",
+            "answers": [
+                {"answer": "Gebäude besser aussehen zu lassen"},
+                {"answer": "Die Ausbreitung von Feuer zu verlangsamen und strukturelle Integrität zu erhalten"},
+                {"answer": "Baukosten zu reduzieren"},
+                {"answer": "Akustik zu verbessern"}
+            ],
+            "answer": "Die Ausbreitung von Feuer zu verlangsamen und strukturelle Integrität zu erhalten",
+            "explanation": "Brandwiderstandsfähige Bauteile (Wände, Decken, Türen) sind darauf ausgelegt, die Ausbreitung von Feuer zu verlangsamen und strukturelle Integrität für eine bestimmte Zeit zu erhalten, wodurch Schutz für Bewohner und Feuerwehrleute geboten wird."
+        },
+        {
+            "question": "Was ist eine Brandwache?",
+            "answers": [
+                {"answer": "Eine Art Zeitmesser, der von Feuerwehrleuten verwendet wird"},
+                {"answer": "Eine Person, die zur Überwachung von Bränden während heißer Arbeiten oder Systembeeinträchtigung eingesetzt wird"},
+                {"answer": "Ein Branderkennungsgerät"},
+                {"answer": "Eine geplante Brandinspektion"}
+            ],
+            "answer": "Eine Person, die zur Überwachung von Bränden während heißer Arbeiten oder Systembeeinträchtigung eingesetzt wird",
+            "explanation": "Eine Brandwache ist eine ausgebildete Person zur Überwachung von Bränden und Einleitung von Notfallmaßnahmen, wenn Brandschutzsysteme beeinträchtigt sind oder während Aktivitäten wie Schweißen, die erhöhtes Brandrisiko bergen."
+        },
+        {
+            "question": "Was sollte in einer Heißarbeits-Genehmigung enthalten sein?",
+            "answers": [
+                {"answer": "Nur Wetterbedingungen"},
+                {"answer": "Brandschutzmaßnahmen, Brandwache-Anforderungen und Bereichsvorbereitung"},
+                {"answer": "Nur die Qualifikationen des Arbeiters"},
+                {"answer": "Versicherungsinformationen"}
+            ],
+            "answer": "Brandschutzmaßnahmen, Brandwache-Anforderungen und Bereichsvorbereitung",
+            "explanation": "Heißarbeits-Genehmigungen sollten Brandschutzmaßnahmen, Brandwache-Anforderungen, Bereichsvorbereitungsverfahren, Notfallverfahren und Verifikation enthalten, dass brennbare Materialien entfernt oder geschützt wurden."
+        },
+        {
+            "question": "Was ist der Zweck einer Feuerlöschpumpe in einem Sprinklersystem?",
+            "answers": [
+                {"answer": "Wasser aus dem System abzulassen"},
+                {"answer": "Wasserdruck zu erhöhen, wenn die städtische Versorgung unzureichend ist"},
+                {"answer": "Die Wasserversorgung zu filtern"},
+                {"answer": "Das Wasser zu erhitzen"}
+            ],
+            "answer": "Wasserdruck zu erhöhen, wenn die städtische Versorgung unzureichend ist",
+            "explanation": "Feuerlöschpumpen erhöhen den Wasserdruck in Sprinklersystemen, wenn die städtische Wasserversorgung nicht ausreichend Druck und Durchfluss für ordnungsgemäßen Sprinklersystembetrieb liefern kann."
+        },
+        {
+            "question": "Was ist der Unterschied zwischen einem Rauchmelder und einem Rauchalarm?",
+            "answers": [
+                {"answer": "Es gibt keinen Unterschied"},
+                {"answer": "Rauchmelder erkennen nur, Rauchalarme erkennen und benachrichtigen"},
+                {"answer": "Rauchalarme sind teurer"},
+                {"answer": "Rauchmelder sind nur für gewerbliche Nutzung"}
+            ],
+            "answer": "Rauchmelder erkennen nur, Rauchalarme erkennen und benachrichtigen",
+            "explanation": "Rauchmelder erkennen nur Rauch und senden ein Signal an eine Zentrale. Rauchalarme erkennen sowohl Rauch als auch geben lokale akustische Benachrichtigung. Viele Wohneinheiten sind technisch Rauchalarme."
+        },
+        {
+            "question": "Was ist der empfohlene Ansatz bei der Evakuierung durch Rauch?",
+            "answers": [
+                {"answer": "Aufrecht stehen und schnell gehen"},
+                {"answer": "Niedrig unter dem Rauch kriechen"},
+                {"answer": "Atem anhalten und rennen"},
+                {"answer": "Ein nasses Handtuch über den Kopf verwenden"}
+            ],
+            "answer": "Niedrig unter dem Rauch kriechen",
+            "explanation": "Bei der Evakuierung durch Rauch kriechen Sie niedrig unter dem Rauch, wo die Luft sauberer und kühler ist. Rauch und giftige Gase steigen auf, daher ist die sicherste Luft in Bodennähe."
+        },
+        {
+            "question": "Was sollten Sie tun, bevor Sie eine Tür während eines Brandnotfalls öffnen?",
+            "answers": [
+                {"answer": "Bis zehn zählen"},
+                {"answer": "Prüfen, ob sie verschlossen ist"},
+                {"answer": "Die Tür und den Griff auf Hitze prüfen"},
+                {"answer": "Durch das Schlüsselloch schauen"}
+            ],
+            "answer": "Die Tür und den Griff auf Hitze prüfen",
+            "explanation": "Bevor Sie eine Tür während eines Brandnotfalls öffnen, prüfen Sie die Tür und den Griff auf Hitze. Wenn sie heiß sind, öffnen Sie die Tür nicht, da Feuer auf der anderen Seite sein kann. Finden Sie einen alternativen Fluchtweg."
+        },
+        {
+            "question": "Was ist der wichtigste Faktor bei der Brandverhütung?",
+            "answers": [
+                {"answer": "Viele Feuerlöscher haben"},
+                {"answer": "Gute Ordnung und Beseitigung von Zündquellen"},
+                {"answer": "Sprinkleranlagen überall installieren"},
+                {"answer": "Jeden zum Feuerwehrmann ausbilden"}
+            ],
+            "answer": "Gute Ordnung und Beseitigung von Zündquellen",
+            "explanation": "Gute Ordnungspraktiken und die Beseitigung potenzieller Zündquellen sind die wichtigsten Faktoren bei der Brandverhütung. Bereiche sauber halten, Materialien ordnungsgemäß lagern und Ausrüstung warten reduziert das Brandrisiko erheblich."
+        }
+    ]
+},
+  {
     "name": "Tierreich",
     "questions": [
         {
