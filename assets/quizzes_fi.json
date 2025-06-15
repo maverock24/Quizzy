@@ -1,4 +1,537 @@
 [
+    {
+    "name": "Ravitsemus",
+    "questions": [
+        {
+            "question": "Mitkä ovat kolme pääravintoainetta (makroravintoainetta)?",
+            "answers": [
+                {"answer": "Vitamiinit, kivennäisaineet, vesi"},
+                {"answer": "Hiilihydraatit, proteiinit, rasvat"},
+                {"answer": "Sokeri, suola, kuitu"},
+                {"answer": "Kalsium, rauta, magnesium"}
+            ],
+            "answer": "Hiilihydraatit, proteiinit, rasvat",
+            "explanation": "Kolme makroravintoainetta ovat hiilihydraatit (4 kcal/g), proteiinit (4 kcal/g) ja rasvat (9 kcal/g). Ne tarjoavat keholle energiaa ja ovat välttämättömiä eri kehon toiminnoille."
+        },
+        {
+            "question": "Kuinka monta kaloria antaa 1 gramma rasvaa?",
+            "answers": [
+                {"answer": "4 kaloria"},
+                {"answer": "7 kaloria"},
+                {"answer": "9 kaloria"},
+                {"answer": "2 kaloria"}
+            ],
+            "answer": "9 kaloria",
+            "explanation": "Rasva on energiarikkain makroravintoaine ja antaa 9 kaloria (kcal) grammaa kohti. Se on yli kaksinkertainen määrä verrattuna hiilihydraatteihin tai proteiineihin, jotka antavat kumpikin 4 kcal/g."
+        },
+        {
+            "question": "Mitä ovat välttämättömät aminohapot?",
+            "answers": [
+                {"answer": "Aminohappoja, joita keho voi itse valmistaa"},
+                {"answer": "Aminohappoja, jotka on saatava ravinnosta"},
+                {"answer": "Aminohappoja, joita esiintyy vain lihassa"},
+                {"answer": "Aminohappoja, jotka ovat haitallisia"}
+            ],
+            "answer": "Aminohappoja, jotka on saatava ravinnosta",
+            "explanation": "Välttämättömiä aminohappoja keho ei voi itse valmistaa, joten ne on saatava ravinnosta. On olemassa 9 välttämätöntä aminohappoa, jotka ovat tarpeellisia proteiinien synteesille."
+        },
+        {
+            "question": "Mikä vitamiini muodostuu pääasiassa auringonvalon avulla?",
+            "answers": [
+                {"answer": "C-vitamiini"},
+                {"answer": "A-vitamiini"},
+                {"answer": "D-vitamiini"},
+                {"answer": "K-vitamiini"}
+            ],
+            "answer": "D-vitamiini",
+            "explanation": "D-vitamiini muodostuu pääasiassa ihossa auringon UV-B-säteilyn vaikutuksesta. Se on tärkeä luuston terveydelle ja immuunijärjestelmälle. Vähäisen auringonvalon aikana lisäravinteiden käyttö voi olla järkevää."
+        },
+        {
+            "question": "Mitä ovat ravintokuidut?",
+            "answers": [
+                {"answer": "Haitallisia aineita ravinnossa"},
+                {"answer": "Sulamattomia kasvikunnan kuituja, jotka edistävät ruoansulatusta"},
+                {"answer": "Eräänlaista proteiinia"},
+                {"answer": "Keinotekoisia lisäaineita"}
+            ],
+            "answer": "Sulamattomia kasvikunnan kuituja, jotka edistävät ruoansulatusta",
+            "explanation": "Ravintokuidut ovat sulaamattomia hiilihydraatteja kasvikunnan elintarvikkeista. Ne edistävät ruoansulatusta, säätelevät verensokeria, alentavat kolesterolia ja tukevat tervettä suolistofloraa."
+        },
+        {
+            "question": "Kuinka paljon vettä aikuisen tulisi juoda päivässä?",
+            "answers": [
+                {"answer": "0,5 litraa"},
+                {"answer": "1 litra"},
+                {"answer": "1,5-2 litraa"},
+                {"answer": "3-4 litraa"}
+            ],
+            "answer": "1,5-2 litraa",
+            "explanation": "Suomalainen ravitsemussuositus suosittelee aikuisille päivittäistä nesteen saantia noin 1,5-2 litraa. Urheilun, kuumuuden tai sairauden aikana tarve voi olla suurempi."
+        },
+        {
+            "question": "Mikä ravintoaine on pääasiassa vastuussa lihasten kasvusta?",
+            "answers": [
+                {"answer": "Hiilihydraatit"},
+                {"answer": "Rasvat"},
+                {"answer": "Proteiinit"},
+                {"answer": "Vitamiinit"}
+            ],
+            "answer": "Proteiinit",
+            "explanation": "Proteiinit ovat lihasten rakennusaineita. Ne koostuvat aminohapoista, jotka ovat välttämättömiä lihasten korjaamiselle ja kasvattamiselle. Riittävä proteiinin saanti on erityisen tärkeää fyysisen aktiivisuuden yhteydessä."
+        },
+        {
+            "question": "Mikä on glykeminen indeksi?",
+            "answers": [
+                {"answer": "Vitamiinipitoisuuden mitta"},
+                {"answer": "Mitta sille, kuinka nopeasti hiilihydraatit nostavat verensokeria"},
+                {"answer": "Kaloripitoisuuden mitta"},
+                {"answer": "Rasvapitoisuuden mitta"}
+            ],
+            "answer": "Mitta sille, kuinka nopeasti hiilihydraatit nostavat verensokeria",
+            "explanation": "Glykeminen indeksi (GI) kertoo, kuinka nopeasti ja voimakkaasti hiilihydraattipitoinen elintarvike nostaa verensokeria. Matalan GI:n elintarvikkeet aiheuttavat hitaamman, tasaisemman nousun."
+        },
+        {
+            "question": "Mitkä rasvahapot katsotaan erityisen terveellisiksi?",
+            "answers": [
+                {"answer": "Tyydyttyneet rasvahapot"},
+                {"answer": "Trans-rasvahapot"},
+                {"answer": "Omega-3-rasvahapot"},
+                {"answer": "Lyhytketjuiset rasvahapot"}
+            ],
+            "answer": "Omega-3-rasvahapot",
+            "explanation": "Omega-3-rasvahapot ovat välttämättömiä tyydyttymättömiä rasvahappoja, jotka vaikuttavat tulehduksia vähentävästi ja ovat tärkeitä sydämelle, aivoille ja silmille. Niitä on erityisesti rasvaisessa kalassa, pellavansiemenissä ja saksanpähkinöissä."
+        },
+        {
+            "question": "Mitä BMI tarkoittaa?",
+            "answers": [
+                {"answer": "Body Mass Index"},
+                {"answer": "Basic Metabolic Index"},
+                {"answer": "Blood Mineral Index"},
+                {"answer": "Bone Muscle Index"}
+            ],
+            "answer": "Body Mass Index",
+            "explanation": "BMI (Body Mass Index) eli painoindeksi on tunnusluku kehon painon arvioimiseksi suhteessa pituuteen. Se lasketaan jakamalla paino kilogrammoina pituuden neliöllä metreinä (kg/m²)."
+        },
+        {
+            "question": "Mikä kivennäisaine on erityisen tärkeä vahvoille luille?",
+            "answers": [
+                {"answer": "Rauta"},
+                {"answer": "Kalsium"},
+                {"answer": "Sinkki"},
+                {"answer": "Jodi"}
+            ],
+            "answer": "Kalsium",
+            "explanation": "Kalsium on tärkein kivennäisaine vahvojen luiden ja hampaiden rakentamiselle ja ylläpitämiselle. Sitä on erityisesti maitotuotteissa, vihreissä kasviksissa ja kalsiumrikkaissa kivennäisvesissä."
+        },
+        {
+            "question": "Mitä ovat antioksidantit?",
+            "answers": [
+                {"answer": "Haitallisia kemikaaleja"},
+                {"answer": "Aineita, jotka neutraloivat vapaita radikaaleja ja suojaavat soluja"},
+                {"answer": "Keinotekoisia väriäin"},
+                {"answer": "Säilöntäaineita"}
+            ],
+            "answer": "Aineita, jotka neutraloivat vapaita radikaaleja ja suojaavat soluja",
+            "explanation": "Antioksidantit suojaavat soluja vapaiden radikaalien aiheuttamilta vaurioilta ja voivat vähentää eri sairauksien riskiä. Tärkeitä antioksidantteja ovat C- ja E-vitamiini, beetakaroteeni ja kasvien sekundaariset aineenvaihduntatuotteet."
+        },
+        {
+            "question": "Kuinka monta annosta hedelmiä ja vihanneksia suositellaan päivässä?",
+            "answers": [
+                {"answer": "2 annosta"},
+                {"answer": "3 annosta"},
+                {"answer": "5 annosta"},
+                {"answer": "7 annosta"}
+            ],
+            "answer": "5 annosta",
+            "explanation": "Suomalaiset ravitsemussuositukset suosittelevat päivittäin 5 annosta hedelmiä ja vihanneksia - mieluiten 3 annosta vihanneksia ja 2 annosta hedelmiä. Yksi annos vastaa noin kourallista."
+        },
+        {
+            "question": "Mikä on foolihappo ja miksi se on tärkeä?",
+            "answers": [
+                {"answer": "Kivennäisaine luuston terveydelle"},
+                {"answer": "B-vitamiini, tärkeä solujen jakautumiselle ja raskaudelle"},
+                {"answer": "Rasva aivoille"},
+                {"answer": "Sokeri energiaksi"}
+            ],
+            "answer": "B-vitamiini, tärkeä solujen jakautumiselle ja raskaudelle",
+            "explanation": "Foolihappo (B9-vitamiini) on välttämätön DNA:n synteesille ja solujen jakautumiselle. Erityisen tärkeä on riittävä saanti raskauden aikana sikiön hermostoputken kehityshäiriöiden ehkäisemiseksi."
+        },
+        {
+            "question": "Mitkä elintarvikkeet sisältävät monimutkaisia hiilihydraatteja?",
+            "answers": [
+                {"answer": "Makeiset ja virvoitusjuomat"},
+                {"answer": "Täysjyvätuotteet, palkokasvit, vihannekset"},
+                {"answer": "Voi ja öljy"},
+                {"answer": "Liha ja kala"}
+            ],
+            "answer": "Täysjyvätuotteet, palkokasvit, vihannekset",
+            "explanation": "Monimutkaiset hiilihydraatit koostuvat pitkistä sokeriketjuista ja sulavat hitaasti. Niitä on täysjyvätuotteissa, palkokasveissa, perunoissa ja vihanneksissa, ja ne takaavat tasaisen verensokerin."
+        },
+        {
+            "question": "Mikä on kolesteroli?",
+            "answers": [
+                {"answer": "Vitamiini"},
+                {"answer": "Rasvankaltainen aine, tärkeä solukalvoille"},
+                {"answer": "Kivennäisaine"},
+                {"answer": "Proteiini"}
+            ],
+            "answer": "Rasvankaltainen aine, tärkeä solukalvoille",
+            "explanation": "Kolesteroli on rasvankaltainen aine, joka on tärkeä solukalvoille ja hormonien tuotannolle. Keho valmistaa suurimman osan itse. Liian korkeat veriarvot voivat kuitenkin lisätä sydän- ja verisuonisairauksien riskiä."
+        },
+        {
+            "question": "Mikä vitamiini on tärkeä veren hyytymiselle?",
+            "answers": [
+                {"answer": "A-vitamiini"},
+                {"answer": "C-vitamiini"},
+                {"answer": "D-vitamiini"},
+                {"answer": "K-vitamiini"}
+            ],
+            "answer": "K-vitamiini",
+            "explanation": "K-vitamiini on välttämätön veren hyytymiselle ja luuston aineenvaihdunnalle. Sitä on erityisesti vihreissä lehtivihanneksissa, ja suolistobakteerit tuottavat sitä osittain."
+        },
+        {
+            "question": "Mitä ovat probiootit?",
+            "answers": [
+                {"answer": "Haitallisia bakteereja"},
+                {"answer": "Eläviä mikro-organismeja, jotka edistävät suoliston terveyttä"},
+                {"answer": "Keinotekoisia vitamiineja"},
+                {"answer": "Säilöntäaineita"}
+            ],
+            "answer": "Eläviä mikro-organismeja, jotka edistävät suoliston terveyttä",
+            "explanation": "Probiootit ovat eläviä mikro-organismeja (useimmiten maitohappobakteereita), joilla on riittävässä määrässä myönteisiä terveysvaikutuksia. Ne tukevat tervettä suolistofloraa ja voivat vahvistaa immuunijärjestelmää."
+        },
+        {
+            "question": "Mikä ravintoaine on erityisen tärkeä hapen kuljettamiselle veressä?",
+            "answers": [
+                {"answer": "Kalsium"},
+                {"answer": "Rauta"},
+                {"answer": "Magnesium"},
+                {"answer": "Sinkki"}
+            ],
+            "answer": "Rauta",
+            "explanation": "Rauta on osa punasolujen hemoglobiinia ja välttämätön hapen kuljetukselle veressä. Raudan puutos voi johtaa anemiaan (veripuutokseen) ja väsymykseen."
+        },
+        {
+            "question": "Mitä ovat tyydyttyneet rasvahapot?",
+            "answers": [
+                {"answer": "Rasvahappoja ilman kaksoisidoksia, yleensä kiinteitä huoneenlämmössä"},
+                {"answer": "Rasvahappoja, joissa on monta kaksoisidosta"},
+                {"answer": "Keinotekoisesti valmistettuja rasvoja"},
+                {"answer": "Rasvoja, joita esiintyy vain kasveissa"}
+            ],
+            "answer": "Rasvahappoja ilman kaksoisidoksia, yleensä kiinteitä huoneenlämmössä",
+            "explanation": "Tyydyttyneissä rasvahapoissa ei ole kaksoisidoksia hiiliketjussa ja ne ovat yleensä kiinteitä huoneenlämmössä. Niitä on pääasiassa eläinperäisissä tuotteissa ja niitä tulisi nauttia kohtuudella."
+        },
+        {
+            "question": "Mikä rooli jodilla on kehossa?",
+            "answers": [
+                {"answer": "Luuston rakentaminen"},
+                {"answer": "Kilpirauhasen toiminta"},
+                {"answer": "Lihasten supistuminen"},
+                {"answer": "Veren hyytyminen"}
+            ],
+            "answer": "Kilpirauhasen toiminta",
+            "explanation": "Jodi on välttämätön kilpirauhashormonien muodostukselle, jotka säätelevät aineenvaihduntaa. Suomi on jodinpuutosaluetta, joten jodioitua ruokasuolaa suositellaan."
+        },
+        {
+            "question": "Mikä on ero nälän ja ruokahalun välillä?",
+            "answers": [
+                {"answer": "Ei ole eroa"},
+                {"answer": "Nälkä on fyysinen tarve, ruokahalu on psyykkisesti motivoitunut"},
+                {"answer": "Ruokahalu on voimakkaampi kuin nälkä"},
+                {"answer": "Nälkä esiintyy vain sairauden yhteydessä"}
+            ],
+            "answer": "Nälkä on fyysinen tarve, ruokahalu on psyykkisesti motivoitunut",
+            "explanation": "Nälkä on fysiologinen signaali keholta tyhjän vatsanpohjan ja matalan verensokerin yhteydessä. Ruokahalu on psyykkinen halu tiettyihin elintarvikkeisiin ja voi esiintyä myös kylläisenä ollessa."
+        },
+        {
+            "question": "Mitkä elintarvikkeet ovat rikkaita omega-3-rasvahappoja?",
+            "answers": [
+                {"answer": "Vaalea leipä ja pasta"},
+                {"answer": "Rasvainen kala, pellavansiemen, saksanpähkinät"},
+                {"answer": "Makeiset ja kakut"},
+                {"answer": "Liha ja munat"}
+            ],
+            "answer": "Rasvainen kala, pellavansiemen, saksanpähkinät",
+            "explanation": "Omega-3-rasvahappoja on erityisesti rasvaisessa kalassa (lohi, maksa, silli), pellavansiemenissä, chiasiemenissä, saksanpähkinöissä ja rypsiöljyssä. Ne ovat tärkeitä sydämelle, aivoille ja tulehduksen vähentämiselle."
+        },
+        {
+            "question": "Mitä tarkoittaa 'täysipainoinen ravitsemus'?",
+            "answers": [
+                {"answer": "Vain kalliiden elintarvikkeiden syöminen"},
+                {"answer": "Monipuolinen, tarpeenmukainen ravitsemus kaikilla ravintoaineilla"},
+                {"answer": "Vain täysjyvätuotteiden syöminen"},
+                {"answer": "Paljon syöminen"}
+            ],
+            "answer": "Monipuolinen, tarpeenmukainen ravitsemus kaikilla ravintoaineilla",
+            "explanation": "Täysipainoinen ravitsemus tarkoittaa monipuolista, tarpeenmukaista elintarvikkeiden valintaa ja valmistusta, joka antaa kaikki tarvittavat ravintoaineet riittävässä määrässä ja oikeassa suhteessa."
+        },
+        {
+            "question": "Mikä vitamiini voi puutteen vuoksi johtaa keripukkiin?",
+            "answers": [
+                {"answer": "A-vitamiini"},
+                {"answer": "B12-vitamiini"},
+                {"answer": "C-vitamiini"},
+                {"answer": "D-vitamiini"}
+            ],
+            "answer": "C-vitamiini",
+            "explanation": "C-vitamiinin puutos johtaa keripukkiin, sairauteen, jonka oireita ovat ikenien verenvuoto, huono haavojen paraneminen ja väsymys. C-vitamiini on tärkeä immuunijärjestelmälle ja kollageenin muodostukselle."
+        },
+        {
+            "question": "Mitä ovat kasvien sekundaariset aineenvaihduntatuotteet?",
+            "answers": [
+                {"answer": "Lisäaineita jalostetuissa elintarvikkeissa"},
+                {"answer": "Bioaktiivisia aineita kasveissa, joilla on terveyttä edistäviä ominaisuuksia"},
+                {"answer": "Haitallisia aineita kasveissa"},
+                {"answer": "Keinotekoisia väriäin"}
+            ],
+            "answer": "Bioaktiivisia aineita kasveissa, joilla on terveyttä edistäviä ominaisuuksia",
+            "explanation": "Kasvien sekundaariset aineenvaihduntatuotteet ovat bioaktiivisia aineita, joita kasvit tuottavat suojautuakseen tuholaisilta ja UV-säteilyltä. Niillä on usein antioksidantti-, tulehdusta ehkäiseviä ja ennaltaehkäiseviä ominaisuuksia ihmisen terveydelle."
+        },
+        {
+            "question": "Kuinka korkea on suositeltu päivittäinen suolan kulutus?",
+            "answers": [
+                {"answer": "Alle 5 grammaa"},
+                {"answer": "10-15 grammaa"},
+                {"answer": "20 grammaa"},
+                {"answer": "Rajattomasti"}
+            ],
+            "answer": "Alle 5 grammaa",
+            "explanation": "WHO suosittelee päivittäistä suolan saantia alle 5 grammaa (noin teelusikallinen). Liika suola voi nostaa verenpainetta ja lisätä sydän- ja verisuonisairauksien riskiä."
+        },
+        {
+            "question": "Mikä on laktoosi?",
+            "answers": [
+                {"answer": "Proteiini maidossa"},
+                {"answer": "Sokeri maidossa ja maitotuotteissa"},
+                {"answer": "Rasva maidossa"},
+                {"answer": "Vitamiini maidossa"}
+            ],
+            "answer": "Sokeri maidossa ja maitotuotteissa",
+            "explanation": "Laktoosi on maitosokeri, joka esiintyy maidossa ja maitotuotteissa. Laktoosin sietämättömyydestä kärsivät ihmiset eivät voi pilkkoa tätä sokeria kunnolla, mikä aiheuttaa vatsakipuja ja ruoansulatusongelmia."
+        },
+        {
+            "question": "Mitkä ravintoaineet ovat erityisesti huomioitavia kasvisruokavaliossa?",
+            "answers": [
+                {"answer": "C-vitamiini ja foolihappo"},
+                {"answer": "B12-vitamiini, rauta, kalsium, omega-3"},
+                {"answer": "Hiilihydraatit ja ravintokuidut"},
+                {"answer": "A- ja E-vitamiini"}
+            ],
+            "answer": "B12-vitamiini, rauta, kalsium, omega-3",
+            "explanation": "Kasvisruokavaliossa tulee kiinnittää erityistä huomiota B12-vitamiiniin (vain eläinperäisissä tuotteissa), rautaan, kalsiumiin, omega-3-rasvahappoihin, sinkkiin ja D-vitamiiniin. B12-vitamiinin täydennys on yleensä tarpeen."
+        },
+        {
+            "question": "Mikä on perusaineenvaihdunta?",
+            "answers": [
+                {"answer": "Urheilussa kulutettu energia"},
+                {"answer": "Energia, jonka keho tarvitsee levossa elintärkeitä toimintoja varten"},
+                {"answer": "Energia ravinnosta"},
+                {"answer": "Energia ruoansulatukseen"}
+            ],
+            "answer": "Energia, jonka keho tarvitsee levossa elintärkeitä toimintoja varten",
+            "explanation": "Perusaineenvaihdunta on energiamäärä, jonka keho tarvitsee täydessä levossa elintärkeitä toimintoja kuten hengitystä, sydämen sykettä ja aineenvaihduntaa varten. Se muodostaa noin 60-70% kokonaiseneriankulutuksesta."
+        },
+        {
+            "question": "Mikä rooli elektrolyyteillä on kehossa?",
+            "answers": [
+                {"answer": "Ne antavat energiaa"},
+                {"answer": "Ne säätelevät nestetasapainoa ja hermotoimintaa"},
+                {"answer": "Ne rakentavat lihaksia"},
+                {"answer": "Ne tuottavat hormoneita"}
+            ],
+            "answer": "Ne säätelevät nestetasapainoa ja hermotoimintaa",
+            "explanation": "Elektrolyytit kuten natrium, kalium ja kloridi säätelevät nestetasapainoa, hermotoimintaa ja lihasten supistumista. Epätasapaino voi johtaa kramppeihin ja muihin ongelmiin."
+        },
+        {
+            "question": "Mikä on gluteeni?",
+            "answers": [
+                {"answer": "Sokeri vehnässä"},
+                {"answer": "Liimavalkuaisaine viljoissa"},
+                {"answer": "Rasva pähkinöissä"},
+                {"answer": "Vitamiini täysjyvässä"}
+            ],
+            "answer": "Liimavalkuaisaine viljoissa",
+            "explanation": "Gluteeni on liimavalkuaisaine, jota esiintyy vehnässä, rukiissa, ohrassa ja muissa viljoissa. Keliakiaa sairastavien on syötävä gluteenittomasti, koska heidän immuunijärjestelmänsä reagoi gluteeniin."
+        },
+        {
+            "question": "Miten säännöllinen alkoholin käyttö vaikuttaa ravitsemukseen?",
+            "answers": [
+                {"answer": "Se parantaa ravintoaineiden imeytymistä"},
+                {"answer": "Se estää tärkeiden ravintoaineiden imeytymistä ja antaa tyhjiä kaloreita"},
+                {"answer": "Sillä ei ole vaikutuksia"},
+                {"answer": "Se lisää vitamiinipitoisuutta"}
+            ],
+            "answer": "Se estää tärkeiden ravintoaineiden imeytymistä ja antaa tyhjiä kaloreita",
+            "explanation": "Alkoholi estää tärkeiden ravintoaineiden kuten B-vitamiinien, foolihapon ja magnesiumin imeytymistä. Samaan aikaan se antaa 7 kcal/g ilman ravintoaineita ('tyhjiä kaloreita') ja voi johtaa puutosoireisiin."
+        },
+        {
+            "question": "Mitä ovat trans-rasvahapot ja miksi ne ovat ongelmallisia?",
+            "answers": [
+                {"answer": "Terveellisiä rasvoja kalasta"},
+                {"answer": "Teollisesti kovennettuja rasvoja, jotka lisäävät sydän- ja verisuonisairauksien riskiä"},
+                {"answer": "Luonnollisia rasvoja pähkinöistä"},
+                {"answer": "Rasvoja, jotka syntyvät ruoanlaitossa"}
+            ],
+            "answer": "Teollisesti kovennettuja rasvoja, jotka lisäävät sydän- ja verisuonisairauksien riskiä",
+            "explanation": "Trans-rasvahapot syntyvät kasviöljyjen teollisessa kovetuksessa ja nostavat LDL-kolesterolia samalla kun laskevat HDL-kolesterolia. Niitä tulisi välttää mahdollisimman paljon."
+        },
+        {
+            "question": "Mitkä tekijät vaikuttavat ravinnontarpeeseen?",
+            "answers": [
+                {"answer": "Ikä, sukupuoli, paino, aktiivisuus, terveydentila"},
+                {"answer": "Vain ikä"},
+                {"answer": "Vain paino"},
+                {"answer": "Vain fyysinen aktiivisuus"}
+            ],
+            "answer": "Ikä, sukupuoli, paino, aktiivisuus, terveydentila",
+            "explanation": "Yksilöllinen ravinnontarve riippuu monista tekijöistä: iästä, sukupuolesta, painosta, fyysisestä aktiivisuudesta, terveydentilasta, raskaudesta/imetyksestä ja erityisistä elämäntilanteista."
+        },
+        {
+            "question": "Mikä on ero vesi- ja rasvaliukoisten vitamiinien välillä?",
+            "answers": [
+                {"answer": "Vesiliukoiset varastoituvat kehoon, rasvoissa liukenevat eivät"},
+                {"answer": "Rasvoissa liukenevat varastoituvat kehoon, vesiliukoiset yleensä erittyvät"},
+                {"answer": "Ei ole eroa"},
+                {"answer": "Vesiliukoiset ovat vaarallisempia"}
+            ],
+            "answer": "Rasvoissa liukenevat varastoituvat kehoon, vesiliukoiset yleensä erittyvät",
+            "explanation": "Rasvoissa liukenevat vitamiinit (A, D, E, K) varastoituvat kehoon ja niistä voi saada yliannostuksen. Vesiliukoiset vitamiinit (B-kompleksi, C) erittyvät yleensä virtsan mukana ja ne on saatava säännöllisesti."
+        },
+        {
+            "question": "Mitä tarkoittaa 'intuitiivinen syöminen'?",
+            "answers": [
+                {"answer": "Syöminen ilman sääntöjä"},
+                {"answer": "Kehon omien nälkä- ja kylläisyyssignaalien kuunteleminen"},
+                {"answer": "Vain terveellisten elintarvikkeiden syöminen"},
+                {"answer": "Hyvin vähän syöminen"}
+            ],
+            "answer": "Kehon omien nälkä- ja kylläisyyssignaalien kuunteleminen",
+            "explanation": "Intuitiivinen syöminen tarkoittaa kehon luonnollisten nälkä- ja kylläisyyssignaalien kuuntelemista ilman tiukkoja dieettisääntöjä. Se edistää rentoa suhdetta ruokaan."
+        },
+        {
+            "question": "Mikä rooli magnesiumilla on kehossa?",
+            "answers": [
+                {"answer": "Vain luuston terveydelle"},
+                {"answer": "Lihas- ja hermotoiminta, energiaaineenvaihdunta"},
+                {"answer": "Vain veren terveydelle"},
+                {"answer": "Vain ruoansulatukselle"}
+            ],
+            "answer": "Lihas- ja hermotoiminta, energiaaineenvaihdunta",
+            "explanation": "Magnesium osallistuu yli 300 entsyymijärjestelmään ja on tärkeä lihas- ja hermotoiminnalle, energiaaineenvaihdunnalle, luuston rakentamiselle ja proteiinien synteesille. Puutos voi aiheuttaa kramppeja."
+        },
+        {
+            "question": "Mitä ovat prebiootit?",
+            "answers": [
+                {"answer": "Eläviä bakteereja jogurtissa"},
+                {"answer": "Ravintoa terveille suolistobakteereille (sulamattomat ravintokuidut)"},
+                {"answer": "Vitamiineja immuunijärjestelmälle"},
+                {"answer": "Lääkkeitä baktereita vastaan"}
+            ],
+            "answer": "Ravintoa terveille suolistobakteereille (sulamattomat ravintokuidut)",
+            "explanation": "Prebiootit ovat sulaamattomia ravintokuituja, jotka toimivat ravintona terveille suolistobakteereille. Ne edistävät hyödyllisten bakteerien kasvua ja aktiivisuutta suolistossa ja esiintyvät esim. sipulissa, valkosipulissa ja latvoissa."
+        },
+        {
+            "question": "Miten stressi vaikuttaa ravitsemukseen?",
+            "answers": [
+                {"answer": "Stressi voi johtaa tunnesyömiseen ja muuttuneisiin ravinnontarpeisiin"},
+                {"answer": "Stressillä ei ole vaikutusta"},
+                {"answer": "Stressi parantaa aina ruoansulatusta"},
+                {"answer": "Stressi vähentää kalorintarvetta"}
+            ],
+            "answer": "Stressi voi johtaa tunnesyömiseen ja muuttuneisiin ravinnontarpeisiin",
+            "explanation": "Krooninen stressi voi johtaa tunnesyömiseen, himoon epäterveellisten elintarvikkeiden suhteen ja lisääntyneeseen tiettyjen ravintoaineiden (B-vitamiinit, magnesium, C-vitamiini) tarpeeseen."
+        },
+        {
+            "question": "Mikä on ero nälän ja himo ruoan suhteen?",
+            "answers": [
+                {"answer": "Ei ole eroa"},
+                {"answer": "Nälkä kehittyy hitaasti, himo tulee äkillisesti ja on usein spesifistä"},
+                {"answer": "Himo on terveellisempää"},
+                {"answer": "Nälkä esiintyy vain yöllä"}
+            ],
+            "answer": "Nälkä kehittyy hitaasti, himo tulee äkillisesti ja on usein spesifistä",
+            "explanation": "Aito nälkä kehittyy vähitellen ja voidaan tyydyttää erilaisilla elintarvikkeilla. Himo tulee äkillisesti, on usein suunnattu tiettyihin elintarvikkeisiin ja voi johtua verensokerin heilahteluista tai tunteista."
+        },
+        {
+            "question": "Mitkä elintarvikkeet ovat erityisen rikkaita C-vitamiinista?",
+            "answers": [
+                {"answer": "Liha ja kala"},
+                {"answer": "Sitrushedelmät, paprika, parsakaali, tyrni"},
+                {"answer": "Viljat ja pasta"},
+                {"answer": "Maito ja juusto"}
+            ],
+            "answer": "Sitrushedelmät, paprika, parsakaali, tyrni",
+            "explanation": "C-vitamiinia on pääasiassa tuoreissa hedelmissä ja vihanneksissa. Erityisen rikkaita ovat sitrushedelmät, paprika, parsakaali, ruusukaali, tyrni, acerola ja kiivi. C-vitamiini on lämpö- ja valoherkkä."
+        },
+        {
+            "question": "Mikä on metabolinen oireyhtymä?",
+            "answers": [
+                {"answer": "Yksittäinen sairaus"},
+                {"answer": "Yhdistelmä ylipainoa, verenpainetautia, häiriintynyttä sokeriaineenvaihduntaa ja rasva-aineenvaihdunnan häiriöitä"},
+                {"answer": "Vitamiinin puutos"},
+                {"answer": "Allergia tiettyjä elintarvikkeita kohtaan"}
+            ],
+            "answer": "Yhdistelmä ylipainoa, verenpainetautia, häiriintynyttä sokeriaineenvaihduntaa ja rasva-aineenvaihdunnan häiriöitä",
+            "explanation": "Metabolinen oireyhtymä on yhdistelmä vatsaperäistä lihavuutta, verenpainetautia, häiriintynyttä glukoosiaineenvaihduntaa ja dyslipidemiiaa. Se lisää huomattavasti diabeteksen ja sydän- ja verisuonisairauksien riskiä."
+        },
+        {
+            "question": "Mikä ravitsemusmuoto voi olla hyödyllinen diabeteksessa?",
+            "answers": [
+                {"answer": "Paljon sokeria syöminen"},
+                {"answer": "Hiilihydraattipitoinen ruokavalio matalalla glykeemisellä indeksillä, runsaskuituinen"},
+                {"answer": "Vain lihan syöminen"},
+                {"answer": "Ei hiilihydraatteja lainkaan"}
+            ],
+            "answer": "Hiilihydraattipitoinen ruokavalio matalalla glykeemisellä indeksillä, runsaskuituinen",
+            "explanation": "Diabeteksessa suositellaan elintarvikkeita matalalla glykeemisellä indeksillä, paljon ravintokuituja ja monimutkaisia hiilihydraatteja. Ne johtavat hitaampaan verensokerin nousuun ja auttavat verensokerin hallinnassa."
+        },
+        {
+            "question": "Mikä on energiatiheys ravitsemuksessa?",
+            "answers": [
+                {"answer": "Vitamiinien määrä grammaa kohti"},
+                {"answer": "Kalorit grammaa kohti tai 100g elintarviketta kohti"},
+                {"answer": "Veden määrä elintarvikkeessa"},
+                {"answer": "Aterioiden määrä päivässä"}
+            ],
+            "answer": "Kalorit grammaa kohti tai 100g elintarviketta kohti",
+            "explanation": "Energiatiheys kertoo kalorimäärän painoyksikköä kohti. Matalan energiatiheyden elintarvikkeet (paljon vettä, kuituja) kylläistävät paremmin vähemmillä kaloireilla, kun taas energiatiheät elintarvikkeet antavat paljon kaloreita pienessä tilavuudessa."
+        },
+        {
+            "question": "Mikä rooli sinkillä on immuunijärjestelmässä?",
+            "answers": [
+                {"answer": "Sinkki heikentää immuunijärjestelmää"},
+                {"answer": "Sinkki on tärkeä immuunitoiminnalle ja haavojen paranemiselle"},
+                {"answer": "Sinkillä ei ole vaikutusta immuunijärjestelmään"},
+                {"answer": "Sinkki on tärkeä vain ruoansulatukselle"}
+            ],
+            "answer": "Sinkki on tärkeä immuunitoiminnalle ja haavojen paranemiselle",
+            "explanation": "Sinkki on välttämätön toimivalle immuunijärjestelmälle, haavojen paranemiselle, solujen jakautumiselle ja monille entsyymijärjestelmille. Sinkin puutos voi johtaa lisääntyneeseen infektioalttiuteen ja huonoon haavojen paranemiseen."
+        },
+        {
+            "question": "Mitä tarkoittaa 'puhdas syöminen'?",
+            "answers": [
+                {"answer": "Elintarvikkeiden peseminen ennen syömistä"},
+                {"answer": "Keskittyminen käsittelemättömiin, luonnollisiin elintarvikkeisiin ilman keinotekoisia lisäaineita"},
+                {"answer": "Vain valkoisten elintarvikkeiden syöminen"},
+                {"answer": "Hyvin vähän syöminen"}
+            ],
+            "answer": "Keskittyminen käsittelemättömiin, luonnollisiin elintarvikkeisiin ilman keinotekoisia lisäaineita",
+            "explanation": "Puhdas syöminen tarkoittaa pääasiassa käsittelemättömien, luonnollisten elintarvikkeiden nauttimista ja voimakkaasti jalostettujen tuotteiden, joissa on paljon lisäaineita, sokeria ja keinotekoisia ainesosia, välttämistä."
+        },
+        {
+            "question": "Kuinka tärkeä aamiainen on terveydelle?",
+            "answers": [
+                {"answer": "Aamiainen on aina tärkein ateria"},
+                {"answer": "Merkitys riippuu yksilöllisestä rytmistä ja nälän tunteesta"},
+                {"answer": "Aamiainen on täysin merkityksetön"},
+                {"answer": "Ei pitäisi koskaan syödä aamiaista"}
+            ],
+            "answer": "Merkitys riippuu yksilöllisestä rytmistä ja nälän tunteesta",
+            "explanation": "Aamiaisen tärkeys on yksilöllistä. Vaikka jotkut ihmiset ovat aamulla nälkäisiä ja hyötyvät tasapainoisesta aamiaisesta, toiset pärjäävät hyvin ilman. Tärkeää on koko päivän ravitsemuksen kokonaistasapaino."
+        }
+    ]
+},
   {
     "name": "Maailmanhistoria",
     "questions": [
