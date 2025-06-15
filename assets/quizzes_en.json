@@ -1,5 +1,560 @@
 [
   {
+    "name": "Geometry Fundamentals Quiz",
+    "questions": [
+        {
+            "question": "What is the sum of interior angles in a triangle?",
+            "answers": [
+                {"answer": "90 degrees"},
+                {"answer": "180 degrees"},
+                {"answer": "270 degrees"},
+                {"answer": "360 degrees"}
+            ],
+            "answer": "180 degrees",
+            "explanation": "The sum of interior angles in any triangle is always 180 degrees. This is a fundamental theorem in Euclidean geometry that applies to all triangles regardless of their shape or size."
+        },
+        {
+            "question": "What is a polygon with 5 sides called?",
+            "answers": [
+                {"answer": "Quadrilateral"},
+                {"answer": "Pentagon"},
+                {"answer": "Hexagon"},
+                {"answer": "Octagon"}
+            ],
+            "answer": "Pentagon",
+            "explanation": "A pentagon is a polygon with exactly 5 sides and 5 vertices. The prefix 'penta-' means five in Greek. A regular pentagon has all sides equal and all angles equal."
+        },
+        {
+            "question": "What is the formula for the area of a circle?",
+            "answers": [
+                {"answer": "πr²"},
+                {"answer": "2πr"},
+                {"answer": "πd"},
+                {"answer": "r²"}
+            ],
+            "answer": "πr²",
+            "explanation": "The area of a circle is calculated using the formula A = πr², where r is the radius of the circle and π (pi) is approximately 3.14159. This formula shows that area increases with the square of the radius."
+        },
+        {
+            "question": "What is the circumference formula for a circle?",
+            "answers": [
+                {"answer": "πr²"},
+                {"answer": "2πr"},
+                {"answer": "πr"},
+                {"answer": "4πr"}
+            ],
+            "answer": "2πr",
+            "explanation": "The circumference (perimeter) of a circle is calculated using C = 2πr, where r is the radius. Alternatively, it can be written as C = πd, where d is the diameter (d = 2r)."
+        },
+        {
+            "question": "What type of triangle has all three sides equal?",
+            "answers": [
+                {"answer": "Isosceles triangle"},
+                {"answer": "Scalene triangle"},
+                {"answer": "Equilateral triangle"},
+                {"answer": "Right triangle"}
+            ],
+            "answer": "Equilateral triangle",
+            "explanation": "An equilateral triangle has all three sides equal in length and all three angles equal to 60 degrees. It is also called a regular triangle and is the most symmetrical type of triangle."
+        },
+        {
+            "question": "What is the Pythagorean theorem?",
+            "answers": [
+                {"answer": "a² + b² = c²"},
+                {"answer": "a + b = c"},
+                {"answer": "a² - b² = c²"},
+                {"answer": "ab = c²"}
+            ],
+            "answer": "a² + b² = c²",
+            "explanation": "The Pythagorean theorem states that in a right triangle, the square of the hypotenuse (c) equals the sum of squares of the other two sides (a and b). This fundamental relationship applies only to right triangles."
+        },
+        {
+            "question": "How many degrees are in a complete circle?",
+            "answers": [
+                {"answer": "180 degrees"},
+                {"answer": "270 degrees"},
+                {"answer": "360 degrees"},
+                {"answer": "90 degrees"}
+            ],
+            "answer": "360 degrees",
+            "explanation": "A complete circle contains 360 degrees. This division comes from ancient Babylonian mathematics and provides a convenient way to measure angles and rotations."
+        },
+        {
+            "question": "What is a quadrilateral with opposite sides parallel called?",
+            "answers": [
+                {"answer": "Trapezoid"},
+                {"answer": "Parallelogram"},
+                {"answer": "Rhombus"},
+                {"answer": "Kite"}
+            ],
+            "answer": "Parallelogram",
+            "explanation": "A parallelogram is a quadrilateral where both pairs of opposite sides are parallel. This property also means that opposite sides are equal in length and opposite angles are equal."
+        },
+        {
+            "question": "What is the area formula for a rectangle?",
+            "answers": [
+                {"answer": "length × width"},
+                {"answer": "½ × base × height"},
+                {"answer": "side²"},
+                {"answer": "perimeter ÷ 4"}
+            ],
+            "answer": "length × width",
+            "explanation": "The area of a rectangle is calculated by multiplying its length by its width (A = l × w). This formula works because a rectangle can be divided into unit squares, and area represents the total number of unit squares."
+        },
+        {
+            "question": "What is the area formula for a triangle?",
+            "answers": [
+                {"answer": "base × height"},
+                {"answer": "½ × base × height"},
+                {"answer": "base + height"},
+                {"answer": "2 × base × height"}
+            ],
+            "answer": "½ × base × height",
+            "explanation": "The area of a triangle is ½ × base × height. This formula works because a triangle is exactly half of a parallelogram with the same base and height."
+        },
+        {
+            "question": "What is an angle less than 90 degrees called?",
+            "answers": [
+                {"answer": "Right angle"},
+                {"answer": "Obtuse angle"},
+                {"answer": "Acute angle"},
+                {"answer": "Straight angle"}
+            ],
+            "answer": "Acute angle",
+            "explanation": "An acute angle measures less than 90 degrees. The word 'acute' comes from Latin meaning 'sharp,' referring to the sharp point formed by the two rays."
+        },
+        {
+            "question": "What is an angle greater than 90 degrees but less than 180 degrees called?",
+            "answers": [
+                {"answer": "Acute angle"},
+                {"answer": "Right angle"},
+                {"answer": "Obtuse angle"},
+                {"answer": "Reflex angle"}
+            ],
+            "answer": "Obtuse angle",
+            "explanation": "An obtuse angle measures more than 90 degrees but less than 180 degrees. The word 'obtuse' means 'blunt' or 'not sharp,' referring to the wider opening between the rays."
+        },
+        {
+            "question": "What is the sum of interior angles in a quadrilateral?",
+            "answers": [
+                {"answer": "180 degrees"},
+                {"answer": "270 degrees"},
+                {"answer": "360 degrees"},
+                {"answer": "450 degrees"}
+            ],
+            "answer": "360 degrees",
+            "explanation": "The sum of interior angles in any quadrilateral is 360 degrees. This can be proven by dividing the quadrilateral into two triangles, each contributing 180 degrees."
+        },
+        {
+            "question": "What is a line segment that connects the center of a circle to any point on the circle?",
+            "answers": [
+                {"answer": "Diameter"},
+                {"answer": "Chord"},
+                {"answer": "Radius"},
+                {"answer": "Tangent"}
+            ],
+            "answer": "Radius",
+            "explanation": "A radius is a line segment from the center of a circle to any point on the circumference. All radii of a circle are equal in length, and the radius is half the length of the diameter."
+        },
+        {
+            "question": "What is a line segment that passes through the center of a circle and connects two points on the circle?",
+            "answers": [
+                {"answer": "Radius"},
+                {"answer": "Chord"},
+                {"answer": "Diameter"},
+                {"answer": "Secant"}
+            ],
+            "answer": "Diameter",
+            "explanation": "A diameter is a chord that passes through the center of the circle, making it the longest possible chord. The diameter is twice the length of the radius."
+        },
+        {
+            "question": "What is the perimeter of a square with side length 5 units?",
+            "answers": [
+                {"answer": "20 units"},
+                {"answer": "25 units"},
+                {"answer": "10 units"},
+                {"answer": "15 units"}
+            ],
+            "answer": "20 units",
+            "explanation": "The perimeter of a square is 4 times the side length. With a side length of 5 units, the perimeter is 4 × 5 = 20 units."
+        },
+        {
+            "question": "What is the area of a square with side length 6 units?",
+            "answers": [
+                {"answer": "24 square units"},
+                {"answer": "12 square units"},
+                {"answer": "36 square units"},
+                {"answer": "30 square units"}
+            ],
+            "answer": "36 square units",
+            "explanation": "The area of a square is the side length squared. With a side length of 6 units, the area is 6² = 36 square units."
+        },
+        {
+            "question": "What are two lines that never intersect called?",
+            "answers": [
+                {"answer": "Perpendicular lines"},
+                {"answer": "Parallel lines"},
+                {"answer": "Intersecting lines"},
+                {"answer": "Skew lines"}
+            ],
+            "answer": "Parallel lines",
+            "explanation": "Parallel lines are lines in the same plane that never intersect, no matter how far they are extended. They maintain a constant distance from each other."
+        },
+        {
+            "question": "What are two lines that intersect at a 90-degree angle called?",
+            "answers": [
+                {"answer": "Parallel lines"},
+                {"answer": "Perpendicular lines"},
+                {"answer": "Oblique lines"},
+                {"answer": "Skew lines"}
+            ],
+            "answer": "Perpendicular lines",
+            "explanation": "Perpendicular lines are two lines that intersect at a right angle (90 degrees). The symbol ⊥ is used to denote perpendicularity."
+        },
+        {
+            "question": "What is a polygon with 6 sides called?",
+            "answers": [
+                {"answer": "Pentagon"},
+                {"answer": "Hexagon"},
+                {"answer": "Heptagon"},
+                {"answer": "Octagon"}
+            ],
+            "answer": "Hexagon",
+            "explanation": "A hexagon is a polygon with 6 sides and 6 vertices. The prefix 'hexa-' means six in Greek. A regular hexagon has all sides and angles equal."
+        },
+        {
+            "question": "What is the volume formula for a cube?",
+            "answers": [
+                {"answer": "side³"},
+                {"answer": "6 × side²"},
+                {"answer": "side × side"},
+                {"answer": "4 × side²"}
+            ],
+            "answer": "side³",
+            "explanation": "The volume of a cube is calculated by cubing the side length (V = s³). This represents the number of unit cubes that can fit inside the cube."
+        },
+        {
+            "question": "What is a triangle with two equal sides called?",
+            "answers": [
+                {"answer": "Equilateral triangle"},
+                {"answer": "Scalene triangle"},
+                {"answer": "Isosceles triangle"},
+                {"answer": "Right triangle"}
+            ],
+            "answer": "Isosceles triangle",
+            "explanation": "An isosceles triangle has exactly two sides of equal length. The angles opposite the equal sides are also equal. If all three sides are equal, it becomes an equilateral triangle."
+        },
+        {
+            "question": "What is the surface area formula for a cube?",
+            "answers": [
+                {"answer": "side³"},
+                {"answer": "6 × side²"},
+                {"answer": "4 × side²"},
+                {"answer": "side²"}
+            ],
+            "answer": "6 × side²",
+            "explanation": "A cube has 6 faces, each with area equal to side². Therefore, the total surface area is 6 × side². This represents the total area of all faces of the cube."
+        },
+        {
+            "question": "What is the name for a quadrilateral with all sides equal but angles not necessarily 90 degrees?",
+            "answers": [
+                {"answer": "Rectangle"},
+                {"answer": "Square"},
+                {"answer": "Rhombus"},
+                {"answer": "Trapezoid"}
+            ],
+            "answer": "Rhombus",
+            "explanation": "A rhombus is a quadrilateral with all four sides equal in length. If the angles are also 90 degrees, it becomes a square. A rhombus is also a special type of parallelogram."
+        },
+        {
+            "question": "What is the diagonal of a square with side length 4 units?",
+            "answers": [
+                {"answer": "4 units"},
+                {"answer": "4√2 units"},
+                {"answer": "8 units"},
+                {"answer": "16 units"}
+            ],
+            "answer": "4√2 units",
+            "explanation": "Using the Pythagorean theorem on a square with side 4: diagonal² = 4² + 4² = 32, so diagonal = √32 = 4√2 ≈ 5.66 units."
+        },
+        {
+            "question": "What is an angle of exactly 180 degrees called?",
+            "answers": [
+                {"answer": "Right angle"},
+                {"answer": "Acute angle"},
+                {"answer": "Straight angle"},
+                {"answer": "Reflex angle"}
+            ],
+            "answer": "Straight angle",
+            "explanation": "A straight angle measures exactly 180 degrees and forms a straight line. It's essentially two right angles placed together."
+        },
+        {
+            "question": "What is the area of a parallelogram?",
+            "answers": [
+                {"answer": "base × height"},
+                {"answer": "½ × base × height"},
+                {"answer": "side × side"},
+                {"answer": "2 × (base + height)"}
+            ],
+            "answer": "base × height",
+            "explanation": "The area of a parallelogram is base × height, where height is the perpendicular distance between parallel sides. This is the same formula as for a rectangle."
+        },
+        {
+            "question": "What is a polygon with 8 sides called?",
+            "answers": [
+                {"answer": "Hexagon"},
+                {"answer": "Heptagon"},
+                {"answer": "Octagon"},
+                {"answer": "Nonagon"}
+            ],
+            "answer": "Octagon",
+            "explanation": "An octagon is a polygon with 8 sides and 8 vertices. The prefix 'octa-' means eight in Greek. A stop sign is a common example of a regular octagon."
+        },
+        {
+            "question": "What is the volume formula for a rectangular prism?",
+            "answers": [
+                {"answer": "length × width × height"},
+                {"answer": "½ × length × width × height"},
+                {"answer": "length × width"},
+                {"answer": "2 × (length + width + height)"}
+            ],
+            "answer": "length × width × height",
+            "explanation": "The volume of a rectangular prism (box) is length × width × height. This represents the number of unit cubes that fit inside the prism."
+        },
+        {
+            "question": "What is a line that touches a circle at exactly one point called?",
+            "answers": [
+                {"answer": "Secant"},
+                {"answer": "Chord"},
+                {"answer": "Tangent"},
+                {"answer": "Diameter"}
+            ],
+            "answer": "Tangent",
+            "explanation": "A tangent line touches a circle at exactly one point. At the point of tangency, the tangent line is perpendicular to the radius drawn to that point."
+        },
+        {
+            "question": "What is the sum of exterior angles of any polygon?",
+            "answers": [
+                {"answer": "180 degrees"},
+                {"answer": "360 degrees"},
+                {"answer": "720 degrees"},
+                {"answer": "It depends on the number of sides"}
+            ],
+            "answer": "360 degrees",
+            "explanation": "The sum of exterior angles of any polygon is always 360 degrees, regardless of the number of sides. This is because walking around the polygon involves one complete turn."
+        },
+        {
+            "question": "What is a triangle with no equal sides called?",
+            "answers": [
+                {"answer": "Equilateral triangle"},
+                {"answer": "Isosceles triangle"},
+                {"answer": "Scalene triangle"},
+                {"answer": "Right triangle"}
+            ],
+            "answer": "Scalene triangle",
+            "explanation": "A scalene triangle has all three sides of different lengths and all three angles of different measures. It is the most general type of triangle."
+        },
+        {
+            "question": "What is the area of a trapezoid?",
+            "answers": [
+                {"answer": "½ × (base₁ + base₂) × height"},
+                {"answer": "base₁ × base₂ × height"},
+                {"answer": "base × height"},
+                {"answer": "½ × base × height"}
+            ],
+            "answer": "½ × (base₁ + base₂) × height",
+            "explanation": "The area of a trapezoid is ½ × (sum of parallel bases) × height. This formula works because a trapezoid can be seen as the average of its two bases multiplied by the height."
+        },
+        {
+            "question": "What is the measure of each interior angle in a regular hexagon?",
+            "answers": [
+                {"answer": "60 degrees"},
+                {"answer": "90 degrees"},
+                {"answer": "120 degrees"},
+                {"answer": "108 degrees"}
+            ],
+            "answer": "120 degrees",
+            "explanation": "Using the formula (n-2) × 180° ÷ n for a regular polygon, where n = 6: (6-2) × 180° ÷ 6 = 720° ÷ 6 = 120°."
+        },
+        {
+            "question": "What is a quadrilateral with exactly one pair of parallel sides called?",
+            "answers": [
+                {"answer": "Parallelogram"},
+                {"answer": "Rhombus"},
+                {"answer": "Trapezoid"},
+                {"answer": "Rectangle"}
+            ],
+            "answer": "Trapezoid",
+            "explanation": "A trapezoid (or trapezium in some countries) is a quadrilateral with exactly one pair of parallel sides. The parallel sides are called bases, and the non-parallel sides are called legs."
+        },
+        {
+            "question": "What is the circumference of a circle with radius 7 units? (Use π ≈ 3.14)",
+            "answers": [
+                {"answer": "21.98 units"},
+                {"answer": "43.96 units"},
+                {"answer": "153.86 units"},
+                {"answer": "14 units"}
+            ],
+            "answer": "43.96 units",
+            "explanation": "Using C = 2πr with r = 7 and π ≈ 3.14: C = 2 × 3.14 × 7 = 43.96 units."
+        },
+        {
+            "question": "What is the longest side of a right triangle called?",
+            "answers": [
+                {"answer": "Base"},
+                {"answer": "Height"},
+                {"answer": "Hypotenuse"},
+                {"answer": "Leg"}
+            ],
+            "answer": "Hypotenuse",
+            "explanation": "The hypotenuse is the longest side of a right triangle and is always opposite the right angle. It's the side that the Pythagorean theorem solves for."
+        },
+        {
+            "question": "What is a polygon with 10 sides called?",
+            "answers": [
+                {"answer": "Nonagon"},
+                {"answer": "Decagon"},
+                {"answer": "Undecagon"},
+                {"answer": "Dodecagon"}
+            ],
+            "answer": "Decagon",
+            "explanation": "A decagon is a polygon with 10 sides and 10 vertices. The prefix 'deca-' means ten in Greek."
+        },
+        {
+            "question": "What is the area of a circle with radius 5 units? (Use π ≈ 3.14)",
+            "answers": [
+                {"answer": "31.4 square units"},
+                {"answer": "78.5 square units"},
+                {"answer": "15.7 square units"},
+                {"answer": "25 square units"}
+            ],
+            "answer": "78.5 square units",
+            "explanation": "Using A = πr² with r = 5 and π ≈ 3.14: A = 3.14 × 5² = 3.14 × 25 = 78.5 square units."
+        },
+        {
+            "question": "What is the volume formula for a cylinder?",
+            "answers": [
+                {"answer": "πr²h"},
+                {"answer": "2πrh"},
+                {"answer": "πr²"},
+                {"answer": "⅓πr²h"}
+            ],
+            "answer": "πr²h",
+            "explanation": "The volume of a cylinder is π × radius² × height. This is because the cylinder consists of circular cross-sections stacked to the given height."
+        },
+        {
+            "question": "What is the measure of each interior angle in a regular pentagon?",
+            "answers": [
+                {"answer": "72 degrees"},
+                {"answer": "108 degrees"},
+                {"answer": "120 degrees"},
+                {"answer": "90 degrees"}
+            ],
+            "answer": "108 degrees",
+            "explanation": "Using the formula (n-2) × 180° ÷ n for a regular polygon, where n = 5: (5-2) × 180° ÷ 5 = 540° ÷ 5 = 108°."
+        },
+        {
+            "question": "What is an angle greater than 180 degrees called?",
+            "answers": [
+                {"answer": "Obtuse angle"},
+                {"answer": "Straight angle"},
+                {"answer": "Reflex angle"},
+                {"answer": "Complete angle"}
+            ],
+            "answer": "Reflex angle",
+            "explanation": "A reflex angle measures more than 180 degrees but less than 360 degrees. It's larger than a straight angle but smaller than a complete rotation."
+        },
+        {
+            "question": "What is the distance around a polygon called?",
+            "answers": [
+                {"answer": "Area"},
+                {"answer": "Perimeter"},
+                {"answer": "Circumference"},
+                {"answer": "Diameter"}
+            ],
+            "answer": "Perimeter",
+            "explanation": "The perimeter is the distance around the outside of a polygon, calculated by adding up the lengths of all sides. For circles, this distance is called circumference."
+        },
+        {
+            "question": "What is the volume formula for a sphere?",
+            "answers": [
+                {"answer": "⁴⁄₃πr³"},
+                {"answer": "πr²"},
+                {"answer": "2πr³"},
+                {"answer": "πr³"}
+            ],
+            "answer": "⁴⁄₃πr³",
+            "explanation": "The volume of a sphere is ⁴⁄₃ × π × radius³. This formula gives the amount of space inside a perfectly round ball."
+        },
+        {
+            "question": "What is the surface area formula for a sphere?",
+            "answers": [
+                {"answer": "πr²"},
+                {"answer": "2πr²"},
+                {"answer": "4πr²"},
+                {"answer": "⁴⁄₃πr³"}
+            ],
+            "answer": "4πr²",
+            "explanation": "The surface area of a sphere is 4πr², which is exactly four times the area of a great circle of the sphere."
+        },
+        {
+            "question": "What is a line segment connecting two non-adjacent vertices of a polygon called?",
+            "answers": [
+                {"answer": "Side"},
+                {"answer": "Diagonal"},
+                {"answer": "Radius"},
+                {"answer": "Chord"}
+            ],
+            "answer": "Diagonal",
+            "explanation": "A diagonal is a line segment that connects two non-adjacent vertices of a polygon. Diagonals help divide polygons into triangles for area calculations."
+        },
+        {
+            "question": "In a 30-60-90 triangle, if the shortest side is 1, what is the length of the hypotenuse?",
+            "answers": [
+                {"answer": "1"},
+                {"answer": "√3"},
+                {"answer": "2"},
+                {"answer": "√2"}
+            ],
+            "answer": "2",
+            "explanation": "In a 30-60-90 triangle, the sides are in the ratio 1 : √3 : 2. If the shortest side (opposite the 30° angle) is 1, then the hypotenuse is 2."
+        },
+        {
+            "question": "What is the area formula for a regular polygon?",
+            "answers": [
+                {"answer": "½ × perimeter × apothem"},
+                {"answer": "perimeter × apothem"},
+                {"answer": "side × apothem"},
+                {"answer": "½ × side × perimeter"}
+            ],
+            "answer": "½ × perimeter × apothem",
+            "explanation": "The area of a regular polygon is ½ × perimeter × apothem, where the apothem is the distance from the center to the middle of any side. This formula works by dividing the polygon into triangles."
+        },
+        {
+            "question": "What is the volume formula for a cone?",
+            "answers": [
+                {"answer": "πr²h"},
+                {"answer": "⅓πr²h"},
+                {"answer": "²⁄₃πr²h"},
+                {"answer": "2πr²h"}
+            ],
+            "answer": "⅓πr²h",
+            "explanation": "The volume of a cone is ⅓ × π × radius² × height. This is exactly one-third the volume of a cylinder with the same base and height."
+        },
+        {
+            "question": "What is the name for the point where two sides of an angle meet?",
+            "answers": [
+                {"answer": "Endpoint"},
+                {"answer": "Vertex"},
+                {"answer": "Intersection"},
+                {"answer": "Corner"}
+            ],
+            "answer": "Vertex",
+            "explanation": "The vertex is the point where two rays meet to form an angle. In polygons, vertices are the corner points where sides meet."
+        }
+    ]
+},
+  {
     "name": "AWS CDK (Cloud Development Kit) Basic Concepts Quiz",
     "questions": [
         {
