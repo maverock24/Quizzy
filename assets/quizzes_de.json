@@ -1,5 +1,1093 @@
 [
   {
+    "name": "Deutschland",
+    "questions": [
+        {
+            "question": "Wie viele Bundesländer hat Deutschland?",
+            "answers": [
+                {"answer": "14"},
+                {"answer": "15"},
+                {"answer": "16"},
+                {"answer": "17"}
+            ],
+            "answer": "16",
+            "explanation": "Deutschland besteht aus 16 Bundesländern: Baden-Württemberg, Bayern, Berlin, Brandenburg, Bremen, Hamburg, Hessen, Mecklenburg-Vorpommern, Niedersachsen, Nordrhein-Westfalen, Rheinland-Pfalz, Saarland, Sachsen, Sachsen-Anhalt, Schleswig-Holstein und Thüringen."
+        },
+        {
+            "question": "Was ist die Hauptstadt von Deutschland?",
+            "answers": [
+                {"answer": "München"},
+                {"answer": "Hamburg"},
+                {"answer": "Berlin"},
+                {"answer": "Frankfurt am Main"}
+            ],
+            "answer": "Berlin",
+            "explanation": "Berlin ist seit der Wiedervereinigung 1990 die Hauptstadt der Bundesrepublik Deutschland und zugleich ein eigenständiges Bundesland. Die Stadt hat etwa 3,7 Millionen Einwohner."
+        },
+        {
+            "question": "Welcher Fluss fließt durch Berlin?",
+            "answers": [
+                {"answer": "Die Elbe"},
+                {"answer": "Die Spree"},
+                {"answer": "Der Rhein"},
+                {"answer": "Die Donau"}
+            ],
+            "answer": "Die Spree",
+            "explanation": "Die Spree fließt durch Berlin und ist der Hauptfluss der deutschen Hauptstadt. Sie entspringt in der Lausitz und mündet in die Havel, die wiederum in die Elbe fließt."
+        },
+        {
+            "question": "Wann fiel die Berliner Mauer?",
+            "answers": [
+                {"answer": "9. Oktober 1989"},
+                {"answer": "9. November 1989"},
+                {"answer": "3. Oktober 1990"},
+                {"answer": "12. September 1989"}
+            ],
+            "answer": "9. November 1989",
+            "explanation": "Die Berliner Mauer fiel am 9. November 1989. Dieses Datum markiert einen entscheidenden Moment in der deutschen Geschichte und den Beginn der deutschen Wiedervereinigung."
+        },
+        {
+            "question": "Welches ist das flächengrößte Bundesland Deutschlands?",
+            "answers": [
+                {"answer": "Nordrhein-Westfalen"},
+                {"answer": "Niedersachsen"},
+                {"answer": "Bayern"},
+                {"answer": "Baden-Württemberg"}
+            ],
+            "answer": "Bayern",
+            "explanation": "Bayern ist mit etwa 70.550 km² das flächengrößte Bundesland Deutschlands. Es macht etwa ein Fünftel der Gesamtfläche Deutschlands aus."
+        },
+        {
+            "question": "Welches Bundesland hat die meisten Einwohner?",
+            "answers": [
+                {"answer": "Bayern"},
+                {"answer": "Baden-Württemberg"},
+                {"answer": "Nordrhein-Westfalen"},
+                {"answer": "Niedersachsen"}
+            ],
+            "answer": "Nordrhein-Westfalen",
+            "explanation": "Nordrhein-Westfalen ist mit etwa 18 Millionen Einwohnern das bevölkerungsreichste Bundesland Deutschlands. Etwa jeder fünfte Deutsche lebt in NRW."
+        },
+        {
+            "question": "Welcher Berg ist der höchste in Deutschland?",
+            "answers": [
+                {"answer": "Brocken"},
+                {"answer": "Feldberg"},
+                {"answer": "Zugspitze"},
+                {"answer": "Watzmann"}
+            ],
+            "answer": "Zugspitze",
+            "explanation": "Die Zugspitze in Bayern ist mit 2.962 Metern der höchste Berg Deutschlands. Sie liegt an der Grenze zu Österreich in den Bayerischen Alpen."
+        },
+        {
+            "question": "An wie viele Nachbarländer grenzt Deutschland?",
+            "answers": [
+                {"answer": "7"},
+                {"answer": "8"},
+                {"answer": "9"},
+                {"answer": "10"}
+            ],
+            "answer": "9",
+            "explanation": "Deutschland grenzt an 9 Nachbarländer: Dänemark, Polen, Tschechien, Österreich, Schweiz, Frankreich, Luxemburg, Belgien und die Niederlande."
+        },
+        {
+            "question": "Welche Farben hat die deutsche Flagge?",
+            "answers": [
+                {"answer": "Schwarz, Rot, Gold"},
+                {"answer": "Schwarz, Rot, Gelb"},
+                {"answer": "Schwarz, Weiß, Rot"},
+                {"answer": "Rot, Weiß, Blau"}
+            ],
+            "answer": "Schwarz, Rot, Gold",
+            "explanation": "Die deutsche Flagge besteht aus drei horizontalen Streifen in den Farben Schwarz, Rot und Gold. Diese Farben haben eine lange Tradition in der deutschen Geschichte."
+        },
+        {
+            "question": "Wann wurde die Bundesrepublik Deutschland gegründet?",
+            "answers": [
+                {"answer": "1945"},
+                {"answer": "1949"},
+                {"answer": "1989"},
+                {"answer": "1990"}
+            ],
+            "answer": "1949",
+            "explanation": "Die Bundesrepublik Deutschland wurde am 23. Mai 1949 gegründet. Das Grundgesetz trat an diesem Tag in Kraft und begründete den westdeutschen Staat."
+        },
+        {
+            "question": "Wie heißt die deutsche Nationalhymne?",
+            "answers": [
+                {"answer": "Die Wacht am Rhein"},
+                {"answer": "Das Lied der Deutschen"},
+                {"answer": "Deutschland über alles"},
+                {"answer": "Einigkeit und Recht und Freiheit"}
+            ],
+            "answer": "Das Lied der Deutschen",
+            "explanation": "Die deutsche Nationalhymne heißt 'Das Lied der Deutschen', wurde von August Heinrich Hoffmann von Fallersleben 1841 gedichtet und hat die Melodie von Joseph Haydn. Gesungen wird heute die dritte Strophe."
+        },
+        {
+            "question": "Welcher Fluss ist der längste in Deutschland?",
+            "answers": [
+                {"answer": "Die Elbe"},
+                {"answer": "Der Rhein"},
+                {"answer": "Die Weser"},
+                {"answer": "Die Donau"}
+            ],
+            "answer": "Der Rhein",
+            "explanation": "Der Rhein ist mit 1.233 Kilometern der längste Fluss in Deutschland. Er entspringt in der Schweiz, fließt durch Deutschland und mündet in den Niederlanden in die Nordsee."
+        },
+        {
+            "question": "In welchem Jahr wurde Deutschland wiedervereinigt?",
+            "answers": [
+                {"answer": "1989"},
+                {"answer": "1990"},
+                {"answer": "1991"},
+                {"answer": "1992"}
+            ],
+            "answer": "1990",
+            "explanation": "Die deutsche Wiedervereinigung fand am 3. Oktober 1990 statt. Dieser Tag wird seither als Tag der Deutschen Einheit gefeiert und ist ein nationaler Feiertag."
+        },
+        {
+            "question": "Wer war der erste Bundeskanzler der Bundesrepublik Deutschland?",
+            "answers": [
+                {"answer": "Willy Brandt"},
+                {"answer": "Konrad Adenauer"},
+                {"answer": "Ludwig Erhard"},
+                {"answer": "Helmut Schmidt"}
+            ],
+            "answer": "Konrad Adenauer",
+            "explanation": "Konrad Adenauer (CDU) war von 1949 bis 1963 der erste Bundeskanzler der Bundesrepublik Deutschland. Er prägte die Nachkriegszeit und die Westintegration Deutschlands."
+        },
+        {
+            "question": "Welche Stadt wird auch 'Elbflorenz' genannt?",
+            "answers": [
+                {"answer": "Hamburg"},
+                {"answer": "Dresden"},
+                {"answer": "Leipzig"},
+                {"answer": "Magdeburg"}
+            ],
+            "answer": "Dresden",
+            "explanation": "Dresden wird wegen seiner barocken Architektur und kulturellen Bedeutung 'Elbflorenz' oder 'Florenz an der Elbe' genannt. Die Stadt ist bekannt für die Frauenkirche und die Semperoper."
+        },
+        {
+            "question": "Welches Meer grenzt im Norden an Deutschland?",
+            "answers": [
+                {"answer": "Ostsee und Nordsee"},
+                {"answer": "Nur die Nordsee"},
+                {"answer": "Nur die Ostsee"},
+                {"answer": "Mittelmeer"}
+            ],
+            "answer": "Ostsee und Nordsee",
+            "explanation": "Deutschland grenzt im Norden sowohl an die Nordsee als auch an die Ostsee. Die Nordseeküste liegt in Schleswig-Holstein und Niedersachsen, die Ostseeküste in Schleswig-Holstein und Mecklenburg-Vorpommern."
+        },
+        {
+            "question": "Wie nennt man das deutsche Parlament?",
+            "answers": [
+                {"answer": "Reichstag"},
+                {"answer": "Bundestag"},
+                {"answer": "Bundesrat"},
+                {"answer": "Landtag"}
+            ],
+            "answer": "Bundestag",
+            "explanation": "Der Deutsche Bundestag ist das Parlament der Bundesrepublik Deutschland. Er wird alle vier Jahre gewählt und hat seinen Sitz im Reichstagsgebäude in Berlin."
+        },
+        {
+            "question": "Welche deutsche Stadt ist bekannt für das Oktoberfest?",
+            "answers": [
+                {"answer": "Berlin"},
+                {"answer": "München"},
+                {"answer": "Hamburg"},
+                {"answer": "Köln"}
+            ],
+            "answer": "München",
+            "explanation": "München ist die Heimat des weltberühmten Oktoberfests, des größten Volksfests der Welt. Es findet jährlich im September und Oktober statt und zieht Millionen von Besuchern an."
+        },
+        {
+            "question": "Welcher deutsche Komponist schrieb die 9. Symphonie?",
+            "answers": [
+                {"answer": "Johann Sebastian Bach"},
+                {"answer": "Ludwig van Beethoven"},
+                {"answer": "Wolfgang Amadeus Mozart"},
+                {"answer": "Richard Wagner"}
+            ],
+            "answer": "Ludwig van Beethoven",
+            "explanation": "Ludwig van Beethoven komponierte die 9. Symphonie mit der berühmten 'Ode an die Freude' von Friedrich Schiller. Diese Melodie ist heute die Hymne der Europäischen Union."
+        },
+        {
+            "question": "Welche Währung hatte Deutschland vor dem Euro?",
+            "answers": [
+                {"answer": "Deutsche Mark"},
+                {"answer": "Reichsmark"},
+                {"answer": "Ostmark"},
+                {"answer": "Pfennig"}
+            ],
+            "answer": "Deutsche Mark",
+            "explanation": "Die Deutsche Mark (DM) war von 1948 bis 2001 die Währung der Bundesrepublik Deutschland. Sie wurde 2002 durch den Euro ersetzt."
+        },
+        {
+            "question": "Welche deutsche Automarke hat ihren Hauptsitz in Stuttgart?",
+            "answers": [
+                {"answer": "BMW"},
+                {"answer": "Volkswagen"},
+                {"answer": "Mercedes-Benz"},
+                {"answer": "Audi"}
+            ],
+            "answer": "Mercedes-Benz",
+            "explanation": "Mercedes-Benz hat seinen Hauptsitz in Stuttgart, Baden-Württemberg. Das Unternehmen wurde 1926 durch die Fusion von Daimler und Benz gegründet."
+        },
+        {
+            "question": "Wie heißt der größte See Deutschlands?",
+            "answers": [
+                {"answer": "Chiemsee"},
+                {"answer": "Bodensee"},
+                {"answer": "Müritz"},
+                {"answer": "Starnberger See"}
+            ],
+            "answer": "Bodensee",
+            "explanation": "Der Bodensee ist mit 536 km² der größte See Deutschlands. Er liegt im Dreiländereck Deutschland-Österreich-Schweiz und wird vom Rhein durchflossen."
+        },
+        {
+            "question": "Welche Stadt ist die größte im Ruhrgebiet?",
+            "answers": [
+                {"answer": "Essen"},
+                {"answer": "Dortmund"},
+                {"answer": "Duisburg"},
+                {"answer": "Bochum"}
+            ],
+            "answer": "Dortmund",
+            "explanation": "Dortmund ist mit etwa 590.000 Einwohnern die größte Stadt im Ruhrgebiet. Die Stadt war früher ein Zentrum des Kohle- und Stahlbergbaus und ist heute ein Technologie- und Dienstleistungszentrum."
+        },
+        {
+            "question": "Welches Gebirge liegt zwischen Bayern und Österreich?",
+            "answers": [
+                {"answer": "Schwarzwald"},
+                {"answer": "Harz"},
+                {"answer": "Bayerische Alpen"},
+                {"answer": "Eifel"}
+            ],
+            "answer": "Bayerische Alpen",
+            "explanation": "Die Bayerischen Alpen erstrecken sich entlang der deutsch-österreichischen Grenze in Bayern. Hier liegt auch die Zugspitze, Deutschlands höchster Berg."
+        },
+        {
+            "question": "Welche deutsche Stadt wurde 2010 Kulturhauptstadt Europas?",
+            "answers": [
+                {"answer": "Dresden"},
+                {"answer": "Essen"},
+                {"answer": "Weimar"},
+                {"answer": "Nürnberg"}
+            ],
+            "answer": "Essen",
+            "explanation": "Essen war 2010 gemeinsam mit Istanbul und Pécs Kulturhauptstadt Europas. Die Stadt im Ruhrgebiet steht symbolisch für den Strukturwandel von der Industrie- zur Kulturstadt."
+        },
+        {
+            "question": "Welcher deutsche Dichter schrieb 'Faust'?",
+            "answers": [
+                {"answer": "Friedrich Schiller"},
+                {"answer": "Johann Wolfgang von Goethe"},
+                {"answer": "Heinrich Heine"},
+                {"answer": "Gotthold Ephraim Lessing"}
+            ],
+            "answer": "Johann Wolfgang von Goethe",
+            "explanation": "Johann Wolfgang von Goethe schrieb das berühmte Drama 'Faust'. Es gilt als eines der bedeutendsten Werke der deutschen Literatur und Weltliteratur."
+        },
+        {
+            "question": "In welcher Stadt steht das Brandenburger Tor?",
+            "answers": [
+                {"answer": "Brandenburg an der Havel"},
+                {"answer": "Berlin"},
+                {"answer": "Potsdam"},
+                {"answer": "Dresden"}
+            ],
+            "answer": "Berlin",
+            "explanation": "Das Brandenburger Tor steht in Berlin und ist eines der bekanntesten Wahrzeichen Deutschlands. Es wurde 1791 erbaut und war während der Teilung Berlins ein Symbol der Trennung."
+        },
+        {
+            "question": "Welches Bundesland ist als 'Freistaat' bekannt?",
+            "answers": [
+                {"answer": "Nur Bayern"},
+                {"answer": "Bayern, Sachsen und Thüringen"},
+                {"answer": "Nur Sachsen"},
+                {"answer": "Bayern und Baden-Württemberg"}
+            ],
+            "answer": "Bayern, Sachsen und Thüringen",
+            "explanation": "Bayern, Sachsen und Thüringen bezeichnen sich als 'Freistaat'. Dies ist eine historische Bezeichnung, die rechtlich keinen Unterschied zu anderen Bundesländern macht."
+        },
+        {
+            "question": "Welche deutsche Universität ist die älteste?",
+            "answers": [
+                {"answer": "Universität Heidelberg"},
+                {"answer": "Universität Wien"},
+                {"answer": "Universität Bologna"},
+                {"answer": "Universität Prag"}
+            ],
+            "answer": "Universität Heidelberg",
+            "explanation": "Die Ruprecht-Karls-Universität Heidelberg wurde 1386 gegründet und ist die älteste Universität auf dem Gebiet des heutigen Deutschland."
+        },
+        {
+            "question": "Wie heißt der deutsche Nationalpark in der Ostsee?",
+            "answers": [
+                {"answer": "Nationalpark Wattenmeer"},
+                {"answer": "Nationalpark Vorpommersche Boddenlandschaft"},
+                {"answer": "Nationalpark Jasmund"},
+                {"answer": "Nationalpark Müritz"}
+            ],
+            "answer": "Nationalpark Vorpommersche Boddenlandschaft",
+            "explanation": "Der Nationalpark Vorpommersche Boddenlandschaft liegt an der Ostseeküste Mecklenburg-Vorpommerns. Auch der Nationalpark Jasmund auf Rügen liegt an der Ostsee."
+        },
+        {
+            "question": "Welches deutsche Gericht gilt als Nationalgericht?",
+            "answers": [
+                {"answer": "Sauerbraten"},
+                {"answer": "Schnitzel"},
+                {"answer": "Currywurst"},
+                {"answer": "Es gibt kein offizielles Nationalgericht"}
+            ],
+            "answer": "Es gibt kein offizielles Nationalgericht",
+            "explanation": "Deutschland hat kein offizielles Nationalgericht. Regional beliebte Gerichte sind Sauerbraten, Schweinshaxe, Currywurst und verschiedene Wurstspezialitäten, aber diese variieren stark je nach Region."
+        },
+        {
+            "question": "Welche Stadt wird als 'Medienstadt' Deutschlands bezeichnet?",
+            "answers": [
+                {"answer": "München"},
+                {"answer": "Köln"},
+                {"answer": "Hamburg"},
+                {"answer": "Berlin"}
+            ],
+            "answer": "Köln",
+            "explanation": "Köln gilt als Medienstadt Deutschlands. Hier haben viele Fernseh- und Radiosender ihren Sitz, darunter der WDR, RTL und andere private Medienunternehmen."
+        },
+        {
+            "question": "Welcher deutsche Physiker entwickelte die Relativitätstheorie?",
+            "answers": [
+                {"answer": "Max Planck"},
+                {"answer": "Albert Einstein"},
+                {"answer": "Werner Heisenberg"},
+                {"answer": "Niels Bohr"}
+            ],
+            "answer": "Albert Einstein",
+            "explanation": "Albert Einstein, geboren in Ulm, entwickelte die spezielle und allgemeine Relativitätstheorie. Er erhielt 1921 den Nobelpreis für Physik und gilt als einer der bedeutendsten Physiker aller Zeiten."
+        },
+        {
+            "question": "Welches deutsche Fest findet traditionell vor Ostern statt?",
+            "answers": [
+                {"answer": "Oktoberfest"},
+                {"answer": "Karneval/Fasching"},
+                {"answer": "Schützenfest"},
+                {"answer": "Kirchweih"}
+            ],
+            "answer": "Karneval/Fasching",
+            "explanation": "Karneval (im Rheinland) oder Fasching (in Bayern) findet traditionell in der Zeit vor Ostern statt, genauer in der Faschingszeit vor Aschermittwoch. Höhepunkte sind Rosenmontag und Faschingsdienstag."
+        },
+        {
+            "question": "Welche Insel ist die größte deutsche Insel?",
+            "answers": [
+                {"answer": "Sylt"},
+                {"answer": "Usedom"},
+                {"answer": "Rügen"},
+                {"answer": "Fehmarn"}
+            ],
+            "answer": "Rügen",
+            "explanation": "Rügen ist mit 926 km² die größte deutsche Insel. Sie liegt in der Ostsee vor der Küste Mecklenburg-Vorpommerns und ist bekannt für ihre Kreidefelsen und Seebäder."
+        },
+        {
+            "question": "Welches Bauwerk ist das Wahrzeichen von Köln?",
+            "answers": [
+                {"answer": "Rathaus"},
+                {"answer": "Kölner Dom"},
+                {"answer": "Rheinturm"},
+                {"answer": "Hohenzollernbrücke"}
+            ],
+            "answer": "Kölner Dom",
+            "explanation": "Der Kölner Dom ist das Wahrzeichen Kölns und eine der bekanntesten Kirchen der Welt. Der gotische Dom wurde über 600 Jahre gebaut und 1880 vollendet."
+        },
+        {
+            "question": "Welches deutsche Mittelgebirge ist bekannt für den Brocken?",
+            "answers": [
+                {"answer": "Schwarzwald"},
+                {"answer": "Harz"},
+                {"answer": "Eifel"},
+                {"answer": "Rhön"}
+            ],
+            "answer": "Harz",
+            "explanation": "Der Harz ist ein Mittelgebirge in Mitteldeutschland. Der Brocken mit 1.141 Metern ist der höchste Berg des Harzes und von Norddeutschland."
+        },
+        {
+            "question": "Welche Stadt war die erste Hauptstadt der Bundesrepublik Deutschland?",
+            "answers": [
+                {"answer": "Berlin"},
+                {"answer": "Frankfurt am Main"},
+                {"answer": "Bonn"},
+                {"answer": "München"}
+            ],
+            "answer": "Bonn",
+            "explanation": "Bonn war von 1949 bis 1990 provisorische Hauptstadt der Bundesrepublik Deutschland. Nach der Wiedervereinigung wurde Berlin wieder zur Hauptstadt erklärt."
+        },
+        {
+            "question": "Welcher deutsche Erfinder entwickelte das Automobil?",
+            "answers": [
+                {"answer": "Rudolf Diesel"},
+                {"answer": "Carl Benz"},
+                {"answer": "Gottlieb Daimler"},
+                {"answer": "Ferdinand Porsche"}
+            ],
+            "answer": "Carl Benz",
+            "explanation": "Carl Benz gilt als Erfinder des Automobils. Er baute 1885/86 das erste praxistaugliche Automobil mit Verbrennungsmotor, den Benz Patent-Motorwagen Nummer 1."
+        },
+        {
+            "question": "Welches Bundesland grenzt sowohl an Frankreich als auch an die Schweiz?",
+            "answers": [
+                {"answer": "Bayern"},
+                {"answer": "Baden-Württemberg"},
+                {"answer": "Rheinland-Pfalz"},
+                {"answer": "Saarland"}
+            ],
+            "answer": "Baden-Württemberg",
+            "explanation": "Baden-Württemberg grenzt im Westen an Frankreich und im Süden an die Schweiz. Es ist das einzige deutsche Bundesland, das an beide Länder grenzt."
+        },
+        {
+            "question": "Welche deutsche Biermarke ist weltweit am bekanntesten?",
+            "answers": [
+                {"answer": "Augustiner"},
+                {"answer": "Beck's"},
+                {"answer": "Löwenbräu"},
+                {"answer": "Warsteiner"}
+            ],
+            "answer": "Beck's",
+            "explanation": "Beck's aus Bremen ist eine der weltweit bekanntesten deutschen Biermarken und wird in über 100 Länder exportiert. Das Bier wird seit 1873 gebraut."
+        },
+        {
+            "question": "Welche deutsche Stadt ist berühmt für ihre Porzellanmanufaktur?",
+            "answers": [
+                {"answer": "Dresden"},
+                {"answer": "Meißen"},
+                {"answer": "Leipzig"},
+                {"answer": "Chemnitz"}
+            ],
+            "answer": "Meißen",
+            "explanation": "Meißen ist berühmt für seine Porzellanmanufaktur, die 1710 gegründet wurde. Das Meißner Porzellan mit den gekreuzten blauen Schwertern ist weltberühmt."
+        },
+        {
+            "question": "Welcher deutsche Fußballverein hat die meisten Bundesliga-Titel gewonnen?",
+            "answers": [
+                {"answer": "Borussia Dortmund"},
+                {"answer": "FC Bayern München"},
+                {"answer": "FC Schalke 04"},
+                {"answer": "Hamburger SV"}
+            ],
+            "answer": "FC Bayern München",
+            "explanation": "Der FC Bayern München ist deutscher Rekordmeister mit über 30 Bundesliga-Titeln. Der Verein aus München dominiert den deutschen Fußball seit den 1970er Jahren."
+        },
+        {
+            "question": "Welches deutsche Märchen stammt von den Brüdern Grimm?",
+            "answers": [
+                {"answer": "Alle genannten Märchen"},
+                {"answer": "Aschenputtel"},
+                {"answer": "Hänsel und Gretel"},
+                {"answer": "Rotkäppchen"}
+            ],
+            "answer": "Alle genannten Märchen",
+            "explanation": "Die Brüder Jacob und Wilhelm Grimm sammelten deutsche Volksmärchen. Aschenputtel, Hänsel und Gretel, Rotkäppchen und viele andere bekannte Märchen stammen aus ihrer Sammlung."
+        },
+        {
+            "question": "Welche deutsche Erfindung revolutionierte den Buchdruck?",
+            "answers": [
+                {"answer": "Die Schreibmaschine"},
+                {"answer": "Der Buchdruck mit beweglichen Lettern"},
+                {"answer": "Die Buchbindung"},
+                {"answer": "Das Papier"}
+            ],
+            "answer": "Der Buchdruck mit beweglichen Lettern",
+            "explanation": "Johannes Gutenberg erfand um 1450 den Buchdruck mit beweglichen Metalllettern. Diese Erfindung revolutionierte die Verbreitung von Wissen und gilt als Beginn des Informationszeitalters."
+        },
+        {
+            "question": "Welche deutsche Stadt wird 'Klein-Venedig' genannt?",
+            "answers": [
+                {"answer": "Hamburg"},
+                {"answer": "Bremen"},
+                {"answer": "Bamberg"},
+                {"answer": "Lübeck"}
+            ],
+            "answer": "Bamberg",
+            "explanation": "Bamberg wird wegen seiner vielen Kanäle und der malerischen Altstadt auf Inseln 'Klein-Venedig' oder 'Fränkisches Venedig' genannt. Die Stadt ist UNESCO-Weltkulturerbe."
+        },
+        {
+            "question": "Welches Volksfest ist das zweitgrößte in Deutschland nach dem Oktoberfest?",
+            "answers": [
+                {"answer": "Cannstatter Volksfest"},
+                {"answer": "Rheinkirmes Düsseldorf"},
+                {"answer": "Cranger Kirmes"},
+                {"answer": "Dom Hamburg"}
+            ],
+            "answer": "Cannstatter Volksfest",
+            "explanation": "Das Cannstatter Volksfest in Stuttgart ist nach dem Oktoberfest das zweitgrößte Volksfest in Deutschland. Es findet jährlich im Herbst statt und zieht Millionen von Besuchern an."
+        },
+        {
+            "question": "Welcher deutsche Wissenschaftler formulierte die Evolutionstheorie?",
+            "answers": [
+                {"answer": "Charles Darwin war Brite, nicht Deutscher"},
+                {"answer": "Alexander von Humboldt"},
+                {"answer": "Ernst Haeckel"},
+                {"answer": "Gregor Mendel"}
+            ],
+            "answer": "Charles Darwin war Brite, nicht Deutscher",
+            "explanation": "Charles Darwin war Brite und formulierte die Evolutionstheorie. Deutsche Wissenschaftler wie Ernst Haeckel trugen zur Verbreitung und Weiterentwicklung der Evolutionstheorie bei."
+        },
+        {
+            "question": "Welches deutsche Weihnachtslied ist international bekannt?",
+            "answers": [
+                {"answer": "O Tannenbaum"},
+                {"answer": "Stille Nacht, heilige Nacht"},
+                {"answer": "Alle Jahre wieder"},
+                {"answer": "Leise rieselt der Schnee"}
+            ],
+            "answer": "O Tannenbaum",
+            "explanation": "'O Tannenbaum' ist ein deutsches Weihnachtslied, das international bekannt ist. 'Stille Nacht, heilige Nacht' stammt ursprünglich aus Österreich, ist aber auch in Deutschland sehr beliebt."
+        },
+        {
+            "question": "Welche deutsche Erfindung machte das Fernsehen möglich?",
+            "answers": [
+                {"answer": "Die Braunsche Röhre"},
+                {"answer": "Die Bildröhre"},
+                {"answer": "Das Nipkow-Scheiben-System"},
+                {"answer": "Die Elektronik"}
+            ],
+            "answer": "Die Braunsche Röhre",
+            "explanation": "Die Braunsche Röhre, erfunden von Ferdinand Braun 1897, war eine wichtige Grundlage für die Entwicklung des Fernsehens. Braun erhielt 1909 den Nobelpreis für Physik."
+        }
+    ]
+},
+  {
+    "name": "Ernährung",
+    "questions": [
+        {
+            "question": "Was sind die drei Hauptnährstoffe (Makronährstoffe)?",
+            "answers": [
+                {"answer": "Vitamine, Mineralstoffe, Wasser"},
+                {"answer": "Kohlenhydrate, Proteine, Fette"},
+                {"answer": "Zucker, Salz, Ballaststoffe"},
+                {"answer": "Calcium, Eisen, Magnesium"}
+            ],
+            "answer": "Kohlenhydrate, Proteine, Fette",
+            "explanation": "Die drei Makronährstoffe sind Kohlenhydrate (4 kcal/g), Proteine (4 kcal/g) und Fette (9 kcal/g). Sie liefern dem Körper Energie und sind für verschiedene Körperfunktionen essentiell."
+        },
+        {
+            "question": "Wie viele Kalorien liefert 1 Gramm Fett?",
+            "answers": [
+                {"answer": "4 Kalorien"},
+                {"answer": "7 Kalorien"},
+                {"answer": "9 Kalorien"},
+                {"answer": "2 Kalorien"}
+            ],
+            "answer": "9 Kalorien",
+            "explanation": "Fett ist der energiereichste Makronährstoff und liefert 9 Kalorien (kcal) pro Gramm. Das ist mehr als doppelt so viel wie Kohlenhydrate oder Proteine, die jeweils 4 kcal/g liefern."
+        },
+        {
+            "question": "Was sind essentielle Aminosäuren?",
+            "answers": [
+                {"answer": "Aminosäuren, die der Körper selbst herstellen kann"},
+                {"answer": "Aminosäuren, die über die Nahrung aufgenommen werden müssen"},
+                {"answer": "Aminosäuren, die nur in Fleisch vorkommen"},
+                {"answer": "Aminosäuren, die schädlich sind"}
+            ],
+            "answer": "Aminosäuren, die über die Nahrung aufgenommen werden müssen",
+            "explanation": "Essentielle Aminosäuren kann der Körper nicht selbst herstellen und müssen daher über die Nahrung zugeführt werden. Es gibt 9 essentielle Aminosäuren, die für die Proteinsynthese notwendig sind."
+        },
+        {
+            "question": "Welches Vitamin wird hauptsächlich durch Sonnenlicht gebildet?",
+            "answers": [
+                {"answer": "Vitamin C"},
+                {"answer": "Vitamin A"},
+                {"answer": "Vitamin D"},
+                {"answer": "Vitamin K"}
+            ],
+            "answer": "Vitamin D",
+            "explanation": "Vitamin D wird hauptsächlich in der Haut durch UV-B-Strahlung der Sonne gebildet. Es ist wichtig für die Knochengesundheit und das Immunsystem. In sonnenarmen Monaten kann eine Supplementierung sinnvoll sein."
+        },
+        {
+            "question": "Was sind Ballaststoffe?",
+            "answers": [
+                {"answer": "Schädliche Stoffe in der Nahrung"},
+                {"answer": "Unverdauliche Pflanzenfasern, die die Verdauung fördern"},
+                {"answer": "Eine Art von Protein"},
+                {"answer": "Künstliche Zusatzstoffe"}
+            ],
+            "answer": "Unverdauliche Pflanzenfasern, die die Verdauung fördern",
+            "explanation": "Ballaststoffe sind unverdauliche Kohlenhydrate aus pflanzlichen Lebensmitteln. Sie fördern die Verdauung, regulieren den Blutzucker, senken den Cholesterinspiegel und unterstützen eine gesunde Darmflora."
+        },
+        {
+            "question": "Wie viel Wasser sollte ein Erwachsener täglich trinken?",
+            "answers": [
+                {"answer": "0,5 Liter"},
+                {"answer": "1 Liter"},
+                {"answer": "1,5-2 Liter"},
+                {"answer": "3-4 Liter"}
+            ],
+            "answer": "1,5-2 Liter",
+            "explanation": "Die Deutsche Gesellschaft für Ernährung empfiehlt Erwachsenen eine tägliche Flüssigkeitszufuhr von etwa 1,5-2 Litern. Bei Sport, Hitze oder Krankheit kann der Bedarf höher sein."
+        },
+        {
+            "question": "Welcher Nährstoff ist hauptsächlich für den Muskelaufbau verantwortlich?",
+            "answers": [
+                {"answer": "Kohlenhydrate"},
+                {"answer": "Fette"},
+                {"answer": "Proteine"},
+                {"answer": "Vitamine"}
+            ],
+            "answer": "Proteine",
+            "explanation": "Proteine sind die Bausteine der Muskeln. Sie bestehen aus Aminosäuren, die für die Muskelreparatur und den Muskelaufbau essentiell sind. Eine ausreichende Proteinzufuhr ist besonders wichtig bei körperlicher Aktivität."
+        },
+        {
+            "question": "Was ist der glykämische Index?",
+            "answers": [
+                {"answer": "Ein Maß für den Vitamingehalt"},
+                {"answer": "Ein Maß dafür, wie schnell Kohlenhydrate den Blutzucker ansteigen lassen"},
+                {"answer": "Ein Maß für den Kaloriengehalt"},
+                {"answer": "Ein Maß für den Fettgehalt"}
+            ],
+            "answer": "Ein Maß dafür, wie schnell Kohlenhydrate den Blutzucker ansteigen lassen",
+            "explanation": "Der glykämische Index (GI) gibt an, wie schnell und stark kohlenhydrathaltige Lebensmittel den Blutzuckerspiegel ansteigen lassen. Lebensmittel mit niedrigem GI führen zu einem langsameren, gleichmäßigeren Anstieg."
+        },
+        {
+            "question": "Welche Fettsäuren gelten als besonders gesund?",
+            "answers": [
+                {"answer": "Gesättigte Fettsäuren"},
+                {"answer": "Trans-Fettsäuren"},
+                {"answer": "Omega-3-Fettsäuren"},
+                {"answer": "Kurzkettige Fettsäuren"}
+            ],
+            "answer": "Omega-3-Fettsäuren",
+            "explanation": "Omega-3-Fettsäuren sind essentielle ungesättigte Fettsäuren, die entzündungshemmend wirken und wichtig für Herz, Gehirn und Augen sind. Sie kommen vor allem in fettem Fisch, Leinsamen und Walnüssen vor."
+        },
+        {
+            "question": "Was bedeutet BMI?",
+            "answers": [
+                {"answer": "Body Mass Index"},
+                {"answer": "Basic Metabolic Index"},
+                {"answer": "Blood Mineral Index"},
+                {"answer": "Bone Muscle Index"}
+            ],
+            "answer": "Body Mass Index",
+            "explanation": "Der Body Mass Index (BMI) ist eine Kennzahl zur Bewertung des Körpergewichts in Relation zur Körpergröße. Er wird berechnet als Gewicht in kg geteilt durch das Quadrat der Körpergröße in Metern (kg/m²)."
+        },
+        {
+            "question": "Welches Mineral ist besonders wichtig für starke Knochen?",
+            "answers": [
+                {"answer": "Eisen"},
+                {"answer": "Calcium"},
+                {"answer": "Zink"},
+                {"answer": "Jod"}
+            ],
+            "answer": "Calcium",
+            "explanation": "Calcium ist der wichtigste Mineralstoff für den Aufbau und Erhalt starker Knochen und Zähne. Es kommt vor allem in Milchprodukten, grünem Gemüse und calciumreichen Mineralwässern vor."
+        },
+        {
+            "question": "Was sind Antioxidantien?",
+            "answers": [
+                {"answer": "Schädliche Chemikalien"},
+                {"answer": "Stoffe, die freie Radikale neutralisieren und Zellen schützen"},
+                {"answer": "Künstliche Farbstoffe"},
+                {"answer": "Konservierungsmittel"}
+            ],
+            "answer": "Stoffe, die freie Radikale neutralisieren und Zellen schützen",
+            "explanation": "Antioxidantien schützen die Zellen vor Schäden durch freie Radikale und können das Risiko für verschiedene Krankheiten reduzieren. Wichtige Antioxidantien sind Vitamin C, E, Beta-Carotin und sekundäre Pflanzenstoffe."
+        },
+        {
+            "question": "Wie viele Portionen Obst und Gemüse empfiehlt die DGE täglich?",
+            "answers": [
+                {"answer": "2 Portionen"},
+                {"answer": "3 Portionen"},
+                {"answer": "5 Portionen"},
+                {"answer": "7 Portionen"}
+            ],
+            "answer": "5 Portionen",
+            "explanation": "Die Deutsche Gesellschaft für Ernährung empfiehlt täglich 5 Portionen Obst und Gemüse ('5 am Tag') - idealerweise 3 Portionen Gemüse und 2 Portionen Obst. Eine Portion entspricht etwa einer Handvoll."
+        },
+        {
+            "question": "Was ist Folsäure und warum ist sie wichtig?",
+            "answers": [
+                {"answer": "Ein Mineral für die Knochen"},
+                {"answer": "Ein B-Vitamin, wichtig für Zellteilung und Schwangerschaft"},
+                {"answer": "Ein Fett für das Gehirn"},
+                {"answer": "Ein Zucker für Energie"}
+            ],
+            "answer": "Ein B-Vitamin, wichtig für Zellteilung und Schwangerschaft",
+            "explanation": "Folsäure (Vitamin B9) ist essentiell für die DNA-Synthese und Zellteilung. Besonders wichtig ist eine ausreichende Versorgung in der Schwangerschaft zur Vorbeugung von Neuralrohrdefekten beim ungeborenen Kind."
+        },
+        {
+            "question": "Welche Lebensmittel enthalten komplexe Kohlenhydrate?",
+            "answers": [
+                {"answer": "Süßigkeiten und Limonaden"},
+                {"answer": "Vollkornprodukte, Hülsenfrüchte, Gemüse"},
+                {"answer": "Butter und Öl"},
+                {"answer": "Fleisch und Fisch"}
+            ],
+            "answer": "Vollkornprodukte, Hülsenfrüchte, Gemüse",
+            "explanation": "Komplexe Kohlenhydrate bestehen aus langen Zuckerketten und werden langsamer verdaut. Sie kommen in Vollkornprodukten, Hülsenfrüchten, Kartoffeln und Gemüse vor und sorgen für einen stabilen Blutzuckerspiegel."
+        },
+        {
+            "question": "Was ist Cholesterin?",
+            "answers": [
+                {"answer": "Ein Vitamin"},
+                {"answer": "Ein fettähnlicher Stoff, wichtig für Zellmembranen"},
+                {"answer": "Ein Mineral"},
+                {"answer": "Ein Protein"}
+            ],
+            "answer": "Ein fettähnlicher Stoff, wichtig für Zellmembranen",
+            "explanation": "Cholesterin ist ein fettähnlicher Stoff, der für Zellmembranen und die Hormonproduktion wichtig ist. Der Körper produziert den größten Teil selbst. Zu hohe Blutwerte können jedoch das Herz-Kreislauf-Risiko erhöhen."
+        },
+        {
+            "question": "Welches Vitamin ist wichtig für die Blutgerinnung?",
+            "answers": [
+                {"answer": "Vitamin A"},
+                {"answer": "Vitamin C"},
+                {"answer": "Vitamin D"},
+                {"answer": "Vitamin K"}
+            ],
+            "answer": "Vitamin K",
+            "explanation": "Vitamin K ist essentiell für die Blutgerinnung und den Knochenstoffwechsel. Es kommt vor allem in grünem Blattgemüse vor und wird teilweise von Darmbakterien produziert."
+        },
+        {
+            "question": "Was sind Probiotika?",
+            "answers": [
+                {"answer": "Schädliche Bakterien"},
+                {"answer": "Lebende Mikroorganismen, die die Darmgesundheit fördern"},
+                {"answer": "Künstliche Vitamine"},
+                {"answer": "Konservierungsmittel"}
+            ],
+            "answer": "Lebende Mikroorganismen, die die Darmgesundheit fördern",
+            "explanation": "Probiotika sind lebende Mikroorganismen (meist Milchsäurebakterien), die in ausreichender Menge positive Auswirkungen auf die Gesundheit haben. Sie unterstützen eine gesunde Darmflora und können das Immunsystem stärken."
+        },
+        {
+            "question": "Welcher Nährstoff ist besonders wichtig für die Sauerstoffversorgung im Blut?",
+            "answers": [
+                {"answer": "Calcium"},
+                {"answer": "Eisen"},
+                {"answer": "Magnesium"},
+                {"answer": "Zink"}
+            ],
+            "answer": "Eisen",
+            "explanation": "Eisen ist Bestandteil des roten Blutfarbstoffs Hämoglobin und essentiell für den Sauerstofftransport im Blut. Eisenmangel kann zu Anämie (Blutarmut) und Müdigkeit führen."
+        },
+        {
+            "question": "Was sind gesättigte Fettsäuren?",
+            "answers": [
+                {"answer": "Fettsäuren ohne Doppelbindungen, meist fest bei Raumtemperatur"},
+                {"answer": "Fettsäuren mit vielen Doppelbindungen"},
+                {"answer": "Künstlich hergestellte Fette"},
+                {"answer": "Fette, die nur in Pflanzen vorkommen"}
+            ],
+            "answer": "Fettsäuren ohne Doppelbindungen, meist fest bei Raumtemperatur",
+            "explanation": "Gesättigte Fettsäuren haben keine Doppelbindungen in der Kohlenstoffkette und sind meist fest bei Raumtemperatur. Sie kommen vor allem in tierischen Produkten vor und sollten in Maßen konsumiert werden."
+        },
+        {
+            "question": "Welche Rolle spielt Jod im Körper?",
+            "answers": [
+                {"answer": "Knochenaufbau"},
+                {"answer": "Schilddrüsenfunktion"},
+                {"answer": "Muskelkontraktion"},
+                {"answer": "Blutgerinnung"}
+            ],
+            "answer": "Schilddrüsenfunktion",
+            "explanation": "Jod ist essentiell für die Bildung von Schilddrüsenhormonen, die den Stoffwechsel regulieren. Deutschland gilt als Jodmangelgebiet, daher wird jodiertes Speisesalz empfohlen."
+        },
+        {
+            "question": "Was ist der Unterschied zwischen Hunger und Appetit?",
+            "answers": [
+                {"answer": "Es gibt keinen Unterschied"},
+                {"answer": "Hunger ist ein körperliches Bedürfnis, Appetit ist psychisch bedingt"},
+                {"answer": "Appetit ist stärker als Hunger"},
+                {"answer": "Hunger tritt nur bei Krankheit auf"}
+            ],
+            "answer": "Hunger ist ein körperliches Bedürfnis, Appetit ist psychisch bedingt",
+            "explanation": "Hunger ist ein physiologisches Signal des Körpers bei leerem Magen und niedrigem Blutzucker. Appetit ist das psychische Verlangen nach bestimmten Lebensmitteln und kann auch bei Sättigung auftreten."
+        },
+        {
+            "question": "Welche Lebensmittel sind reich an Omega-3-Fettsäuren?",
+            "answers": [
+                {"answer": "Weißbrot und Pasta"},
+                {"answer": "Fetter Fisch, Leinsamen, Walnüsse"},
+                {"answer": "Süßigkeiten und Kuchen"},
+                {"answer": "Fleisch und Eier"}
+            ],
+            "answer": "Fetter Fisch, Leinsamen, Walnüsse",
+            "explanation": "Omega-3-Fettsäuren kommen vor allem in fettem Fisch (Lachs, Makrele, Hering), Leinsamen, Chiasamen, Walnüssen und Rapsöl vor. Sie sind wichtig für Herz, Gehirn und Entzündungshemmung."
+        },
+        {
+            "question": "Was bedeutet 'vollwertige Ernährung'?",
+            "answers": [
+                {"answer": "Nur teure Lebensmittel essen"},
+                {"answer": "Abwechslungsreiche, bedarfsgerechte Ernährung mit allen Nährstoffen"},
+                {"answer": "Nur Vollkornprodukte essen"},
+                {"answer": "Sehr viel essen"}
+            ],
+            "answer": "Abwechslungsreiche, bedarfsgerechte Ernährung mit allen Nährstoffen",
+            "explanation": "Vollwertige Ernährung bedeutet eine abwechslungsreiche, bedarfsgerechte Auswahl und Zubereitung von Lebensmitteln, die alle notwendigen Nährstoffe in ausreichender Menge und im richtigen Verhältnis liefert."
+        },
+        {
+            "question": "Welches Vitamin kann bei Mangel zu Skorbut führen?",
+            "answers": [
+                {"answer": "Vitamin A"},
+                {"answer": "Vitamin B12"},
+                {"answer": "Vitamin C"},
+                {"answer": "Vitamin D"}
+            ],
+            "answer": "Vitamin C",
+            "explanation": "Vitamin C-Mangel führt zu Skorbut, einer Krankheit mit Symptomen wie Zahnfleischbluten, schlechter Wundheilung und Müdigkeit. Vitamin C ist wichtig für das Immunsystem und die Kollagenbildung."
+        },
+        {
+            "question": "Was sind sekundäre Pflanzenstoffe?",
+            "answers": [
+                {"answer": "Zusatzstoffe in verarbeiteten Lebensmitteln"},
+                {"answer": "Bioaktive Substanzen in Pflanzen mit gesundheitsfördernden Eigenschaften"},
+                {"answer": "Schädliche Stoffe in Pflanzen"},
+                {"answer": "Künstliche Farbstoffe"}
+            ],
+            "answer": "Bioaktive Substanzen in Pflanzen mit gesundheitsfördernden Eigenschaften",
+            "explanation": "Sekundäre Pflanzenstoffe sind bioaktive Substanzen, die Pflanzen zum Schutz vor Schädlingen und UV-Strahlung bilden. Sie haben oft antioxidative, entzündungshemmende und präventive Eigenschaften für die menschliche Gesundheit."
+        },
+        {
+            "question": "Wie hoch ist der empfohlene tägliche Salzkonsum?",
+            "answers": [
+                {"answer": "Unter 6 Gramm"},
+                {"answer": "10-15 Gramm"},
+                {"answer": "20 Gramm"},
+                {"answer": "Beliebig viel"}
+            ],
+            "answer": "Unter 6 Gramm",
+            "explanation": "Die WHO empfiehlt eine tägliche Salzaufnahme von weniger als 6 Gramm (etwa ein Teelöffel). Zu viel Salz kann den Blutdruck erhöhen und das Risiko für Herz-Kreislauf-Erkrankungen steigern."
+        },
+        {
+            "question": "Was ist Lactose?",
+            "answers": [
+                {"answer": "Ein Protein in Milch"},
+                {"answer": "Ein Zucker in Milch und Milchprodukten"},
+                {"answer": "Ein Fett in Milch"},
+                {"answer": "Ein Vitamin in Milch"}
+            ],
+            "answer": "Ein Zucker in Milch und Milchprodukten",
+            "explanation": "Lactose ist der natürliche Zucker in Milch und Milchprodukten. Menschen mit Lactoseintoleranz können diesen Zucker nicht richtig verdauen, was zu Bauchschmerzen und Verdauungsproblemen führen kann."
+        },
+        {
+            "question": "Welche Nährstoffe sind bei einer rein pflanzlichen Ernährung besonders zu beachten?",
+            "answers": [
+                {"answer": "Vitamin C und Folsäure"},
+                {"answer": "Vitamin B12, Eisen, Calcium, Omega-3"},
+                {"answer": "Kohlenhydrate und Ballaststoffe"},
+                {"answer": "Vitamin A und E"}
+            ],
+            "answer": "Vitamin B12, Eisen, Calcium, Omega-3",
+            "explanation": "Bei veganer Ernährung sollten besonders Vitamin B12 (nur in tierischen Produkten), Eisen, Calcium, Omega-3-Fettsäuren, Zink und Vitamin D beachtet werden. Eine Supplementierung von B12 ist meist notwendig."
+        },
+        {
+            "question": "Was ist der Grundumsatz?",
+            "answers": [
+                {"answer": "Die Energie, die beim Sport verbraucht wird"},
+                {"answer": "Die Energie, die der Körper in Ruhe für lebenswichtige Funktionen benötigt"},
+                {"answer": "Die Energie aus der Nahrung"},
+                {"answer": "Die Energie für die Verdauung"}
+            ],
+            "answer": "Die Energie, die der Körper in Ruhe für lebenswichtige Funktionen benötigt",
+            "explanation": "Der Grundumsatz ist die Energiemenge, die der Körper in völliger Ruhe für lebenswichtige Funktionen wie Atmung, Herzschlag und Stoffwechsel benötigt. Er macht etwa 60-70% des Gesamtenergieverbrauchs aus."
+        },
+        {
+            "question": "Welche Rolle spielen Elektrolyte im Körper?",
+            "answers": [
+                {"answer": "Sie liefern Energie"},
+                {"answer": "Sie regulieren Wasserhaushalt und Nervenfunktion"},
+                {"answer": "Sie bauen Muskeln auf"},
+                {"answer": "Sie produzieren Hormone"}
+            ],
+            "answer": "Sie regulieren Wasserhaushalt und Nervenfunktion",
+            "explanation": "Elektrolyte wie Natrium, Kalium und Chlorid regulieren den Wasserhaushalt, die Nervenfunktion und Muskelkontraktion. Ein Ungleichgewicht kann zu Krämpfen und anderen Problemen führen."
+        },
+        {
+            "question": "Was ist Gluten?",
+            "answers": [
+                {"answer": "Ein Zucker in Weizen"},
+                {"answer": "Ein Klebereiweiß in Getreide"},
+                {"answer": "Ein Fett in Nüssen"},
+                {"answer": "Ein Vitamin in Vollkorn"}
+            ],
+            "answer": "Ein Klebereiweiß in Getreide",
+            "explanation": "Gluten ist ein Klebereiweiß, das in Weizen, Roggen, Gerste und anderen Getreidesorten vorkommt. Menschen mit Zöliakie müssen glutenfrei essen, da ihr Immunsystem auf Gluten reagiert."
+        },
+        {
+            "question": "Wie wirkt sich regelmäßiger Alkoholkonsum auf die Ernährung aus?",
+            "answers": [
+                {"answer": "Er verbessert die Nährstoffaufnahme"},
+                {"answer": "Er hemmt die Aufnahme wichtiger Nährstoffe und liefert leere Kalorien"},
+                {"answer": "Er hat keine Auswirkungen"},
+                {"answer": "Er erhöht den Vitamingehalt"}
+            ],
+            "answer": "Er hemmt die Aufnahme wichtiger Nährstoffe und liefert leere Kalorien",
+            "explanation": "Alkohol hemmt die Aufnahme wichtiger Nährstoffe wie B-Vitamine, Folsäure und Magnesium. Gleichzeitig liefert er 7 kcal/g ohne Nährstoffe ('leere Kalorien') und kann zu Mangelerscheinungen führen."
+        },
+        {
+            "question": "Was sind Transfettsäuren und warum sind sie problematisch?",
+            "answers": [
+                {"answer": "Gesunde Fette aus Fisch"},
+                {"answer": "Industriell gehärtete Fette, die das Herz-Kreislauf-Risiko erhöhen"},
+                {"answer": "Natürliche Fette aus Nüssen"},
+                {"answer": "Fette, die beim Kochen entstehen"}
+            ],
+            "answer": "Industriell gehärtete Fette, die das Herz-Kreislauf-Risiko erhöhen",
+            "explanation": "Transfettsäuren entstehen bei der industriellen Härtung von Pflanzenölen und erhöhen das LDL-Cholesterin während sie das HDL-Cholesterin senken. Sie sollten weitestgehend vermieden werden."
+        },
+        {
+            "question": "Welche Faktoren beeinflussen den Nährstoffbedarf?",
+            "answers": [
+                {"answer": "Nur das Alter"},
+                {"answer": "Alter, Geschlecht, Körpergewicht, Aktivität, Gesundheitszustand"},
+                {"answer": "Nur das Körpergewicht"},
+                {"answer": "Nur die körperliche Aktivität"}
+            ],
+            "answer": "Alter, Geschlecht, Körpergewicht, Aktivität, Gesundheitszustand",
+            "explanation": "Der individuelle Nährstoffbedarf hängt von vielen Faktoren ab: Alter, Geschlecht, Körpergewicht, körperliche Aktivität, Gesundheitszustand, Schwangerschaft/Stillzeit und besonderen Lebenssituationen."
+        },
+        {
+            "question": "Was ist der Unterschied zwischen wasserlöslichen und fettlöslichen Vitaminen?",
+            "answers": [
+                {"answer": "Wasserlösliche werden im Körper gespeichert, fettlösliche nicht"},
+                {"answer": "Fettlösliche werden im Körper gespeichert, wasserlösliche meist ausgeschieden"},
+                {"answer": "Es gibt keinen Unterschied"},
+                {"answer": "Wasserlösliche sind gefährlicher"}
+            ],
+            "answer": "Fettlösliche werden im Körper gespeichert, wasserlösliche meist ausgeschieden",
+            "explanation": "Fettlösliche Vitamine (A, D, E, K) werden im Körper gespeichert und können überdosiert werden. Wasserlösliche Vitamine (B-Komplex, C) werden meist mit dem Urin ausgeschieden und müssen regelmäßig zugeführt werden."
+        },
+        {
+            "question": "Was bedeutet 'intuitive Ernährung'?",
+            "answers": [
+                {"answer": "Essen ohne Regeln"},
+                {"answer": "Auf die körpereigenen Hunger- und Sättigungssignale hören"},
+                {"answer": "Nur gesunde Lebensmittel essen"},
+                {"answer": "Sehr wenig essen"}
+            ],
+            "answer": "Auf die körpereigenen Hunger- und Sättigungssignale hören",
+            "explanation": "Intuitive Ernährung bedeutet, wieder auf die natürlichen Körpersignale von Hunger und Sättigung zu hören, ohne strenge Diätregeln. Es fördert eine entspannte Beziehung zum Essen."
+        },
+        {
+            "question": "Welche Rolle spielt Magnesium im Körper?",
+            "answers": [
+                {"answer": "Nur für die Knochen"},
+                {"answer": "Muskel- und Nervenfunktion, Energiestoffwechsel"},
+                {"answer": "Nur für das Blut"},
+                {"answer": "Nur für die Verdauung"}
+            ],
+            "answer": "Muskel- und Nervenfunktion, Energiestoffwechsel",
+            "explanation": "Magnesium ist an über 300 Enzymsystemen beteiligt und wichtig für Muskel- und Nervenfunktion, Energiestoffwechsel, Knochenaufbau und Proteinbiosynthese. Mangel kann zu Krämpfen führen."
+        },
+        {
+            "question": "Was sind Präbiotika?",
+            "answers": [
+                {"answer": "Lebende Bakterien in Joghurt"},
+                {"answer": "Nahrung für gesunde Darmbakterien (unverdauliche Ballaststoffe)"},
+                {"answer": "Vitamine für das Immunsystem"},
+                {"answer": "Medikamente gegen Bakterien"}
+            ],
+            "answer": "Nahrung für gesunde Darmbakterien (unverdauliche Ballaststoffe)",
+            "explanation": "Präbiotika sind unverdauliche Ballaststoffe, die als Nahrung für gesunde Darmbakterien dienen. Sie fördern das Wachstum und die Aktivität nützlicher Bakterien im Darm und kommen z.B. in Zwiebeln, Knoblauch und Artischocken vor."
+        },
+        {
+            "question": "Wie beeinflusst Stress die Ernährung?",
+            "answers": [
+                {"answer": "Stress hat keinen Einfluss"},
+                {"answer": "Stress kann zu emotionalem Essen und veränderten Nährstoffbedürfnissen führen"},
+                {"answer": "Stress verbessert immer die Verdauung"},
+                {"answer": "Stress reduziert den Kalorienbedarf"}
+            ],
+            "answer": "Stress kann zu emotionalem Essen und veränderten Nährstoffbedürfnissen führen",
+            "explanation": "Chronischer Stress kann zu emotionalem Essen, Heißhunger auf ungesunde Lebensmittel und erhöhtem Bedarf an bestimmten Nährstoffen (B-Vitamine, Magnesium, Vitamin C) führen."
+        },
+        {
+            "question": "Was ist der Unterschied zwischen Hunger und Heißhunger?",
+            "answers": [
+                {"answer": "Es gibt keinen Unterschied"},
+                {"answer": "Hunger entwickelt sich langsam, Heißhunger kommt plötzlich und ist oft spezifisch"},
+                {"answer": "Heißhunger ist gesünder"},
+                {"answer": "Hunger tritt nur nachts auf"}
+            ],
+            "answer": "Hunger entwickelt sich langsam, Heißhunger kommt plötzlich und ist oft spezifisch",
+            "explanation": "Echter Hunger entwickelt sich allmählich und kann mit verschiedenen Lebensmitteln gestillt werden. Heißhunger kommt plötzlich, ist oft auf bestimmte Lebensmittel gerichtet und kann durch Blutzuckerschwankungen oder Emotionen ausgelöst werden."
+        },
+        {
+            "question": "Welche Lebensmittel sind besonders reich an Vitamin C?",
+            "answers": [
+                {"answer": "Fleisch und Fisch"},
+                {"answer": "Zitrusfrüchte, Paprika, Brokkoli, Sanddorn"},
+                {"answer": "Getreide und Nudeln"},
+                {"answer": "Milch und Käse"}
+            ],
+            "answer": "Zitrusfrüchte, Paprika, Brokkoli, Sanddorn",
+            "explanation": "Vitamin C ist hauptsächlich in frischem Obst und Gemüse enthalten. Besonders reich sind Zitrusfrüchte, Paprika, Brokkoli, Rosenkohl, Sanddorn, Acerola und Kiwi. Vitamin C ist hitze- und lichtempfindlich."
+        },
+        {
+            "question": "Was ist Metabolisches Syndrom?",
+            "answers": [
+                {"answer": "Eine einzelne Krankheit"},
+                {"answer": "Eine Kombination aus Übergewicht, Bluthochdruck, gestörtem Zuckerstoffwechsel und Fettstoffwechselstörungen"},
+                {"answer": "Ein Vitaminmangel"},
+                {"answer": "Eine Allergie gegen bestimmte Lebensmittel"}
+            ],
+            "answer": "Eine Kombination aus Übergewicht, Bluthochdruck, gestörtem Zuckerstoffwechsel und Fettstoffwechselstörungen",
+            "explanation": "Das Metabolische Syndrom ist eine Kombination aus abdominaler Adipositas, Bluthochdruck, gestörtem Glukosestoffwechsel und Dyslipidämie. Es erhöht das Risiko für Diabetes und Herz-Kreislauf-Erkrankungen erheblich."
+        },
+        {
+            "question": "Welche Ernährungsweise kann bei Diabetes mellitus hilfreich sein?",
+            "answers": [
+                {"answer": "Sehr viel Zucker essen"},
+                {"answer": "Kohlenhydratreiche Kost mit niedrigem glykämischen Index, ballaststoffreich"},
+                {"answer": "Nur Fleisch essen"},
+                {"answer": "Gar keine Kohlenhydrate essen"}
+            ],
+            "answer": "Kohlenhydratreiche Kost mit niedrigem glykämischen Index, ballaststoffreich",
+            "explanation": "Bei Diabetes sind Lebensmittel mit niedrigem glykämischen Index, viel Ballaststoffen und komplexen Kohlenhydraten empfehlenswert. Sie führen zu einem langsameren Blutzuckeranstieg und helfen bei der Blutzuckerkontrolle."
+        },
+        {
+            "question": "Was ist der Energiedichtebegriff in der Ernährung?",
+            "answers": [
+                {"answer": "Die Anzahl der Vitamine pro Gramm"},
+                {"answer": "Die Kalorien pro Gramm oder pro 100g Lebensmittel"},
+                {"answer": "Die Menge an Wasser im Lebensmittel"},
+                {"answer": "Die Anzahl der Mahlzeiten pro Tag"}
+            ],
+            "answer": "Die Kalorien pro Gramm oder pro 100g Lebensmittel",
+            "explanation": "Energiedichte gibt den Kaloriengehalt pro Gewichtseinheit an. Lebensmittel mit niedriger Energiedichte (viel Wasser, Ballaststoffe) sättigen besser bei weniger Kalorien, während energiedichte Lebensmittel mehr Kalorien auf kleinem Volumen liefern."
+        },
+        {
+            "question": "Welche Rolle spielt Zink im Immunsystem?",
+            "answers": [
+                {"answer": "Zink schwächt das Immunsystem"},
+                {"answer": "Zink ist wichtig für die Immunfunktion und Wundheilung"},
+                {"answer": "Zink hat keinen Einfluss auf das Immunsystem"},
+                {"answer": "Zink ist nur für die Verdauung wichtig"}
+            ],
+            "answer": "Zink ist wichtig für die Immunfunktion und Wundheilung",
+            "explanation": "Zink ist essentiell für ein funktionierendes Immunsystem, die Wundheilung, Zellteilung und viele Enzymsysteme. Zinkmangel kann zu erhöhter Infektanfälligkeit und schlechter Wundheilung führen."
+        },
+        {
+            "question": "Was versteht man unter 'Clean Eating'?",
+            "answers": [
+                {"answer": "Lebensmittel vor dem Essen waschen"},
+                {"answer": "Fokus auf unverarbeitete, natürliche Lebensmittel ohne künstliche Zusatzstoffe"},
+                {"answer": "Nur weiße Lebensmittel essen"},
+                {"answer": "Sehr wenig essen"}
+            ],
+            "answer": "Fokus auf unverarbeitete, natürliche Lebensmittel ohne künstliche Zusatzstoffe",
+            "explanation": "Clean Eating bedeutet, hauptsächlich unverarbeitete, natürliche Lebensmittel zu konsumieren und stark verarbeitete Produkte mit vielen Zusatzstoffen, Zucker und künstlichen Inhaltsstoffen zu meiden."
+        },
+        {
+            "question": "Wie wichtig ist das Frühstück für die Gesundheit?",
+            "answers": [
+                {"answer": "Frühstück ist immer die wichtigste Mahlzeit"},
+                {"answer": "Die Bedeutung hängt vom individuellen Rhythmus und Hungergefühl ab"},
+                {"answer": "Frühstück ist völlig unwichtig"},
+                {"answer": "Man sollte nie frühstücken"}
+            ],
+            "answer": "Die Bedeutung hängt vom individuellen Rhythmus und Hungergefühl ab",
+            "explanation": "Die Wichtigkeit des Frühstücks ist individuell unterschiedlich. Während manche Menschen morgens Hunger haben und von einem ausgewogenen Frühstück profitieren, kommen andere gut ohne aus. Wichtig ist die Gesamtbilanz der Ernährung über den Tag."
+        }
+    ]
+},
+  {
     "name": "Gartenbau",
     "questions": [
         {

@@ -93,7 +93,7 @@ return (
       ]}
     >
       <Text style={styles.questionHeading}>
-        {answerIsCorrect ? 'Correct!' : 'Wrong!'}
+        {answerIsCorrect ? t('correct') : t('wrong')}
       </Text>
       {/* <Text style={styles.normalText}>{explanation}</Text> */}
       <CodeFormatter
