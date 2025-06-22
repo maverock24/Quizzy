@@ -1,5 +1,1166 @@
 [
   {
+    "name": "Travel Destinations",
+    "questions": [
+        {
+            "question": "Which natural wonder in Northern Ireland consists of over 40,000 hexagonal basalt columns?",
+            "answers": [
+                {"answer": "Cliffs of Moher"},
+                {"answer": "Giant's Causeway"},
+                {"answer": "Ring of Kerry"},
+                {"answer": "Skellig Michael"}
+            ],
+            "answer": "Giant's Causeway",
+            "explanation": "The Giant's Causeway is a coastal formation of about 40,000 interlocking basalt columns of volcanic origin. The hexagonal columns were formed 50-60 million years ago through volcanic activity and are now a UNESCO World Heritage Site.",
+            "image": "https://images.unsplash.com/photo-1551426163-b8e5233d5aad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the famous Tiger's Nest Monastery (Paro Taktsang) located?",
+            "answers": [
+                {"answer": "Nepal"},
+                {"answer": "Tibet"},
+                {"answer": "Bhutan"},
+                {"answer": "Myanmar"}
+            ],
+            "answer": "Bhutan",
+            "explanation": "Tiger's Nest Monastery (Paro Taktsang) is a Buddhist monastery in Bhutan that clings spectacularly to a cliff face at 3,120 meters elevation. It's one of the holiest sites in Bhutan and a popular pilgrimage destination as well as tourist attraction.",
+            "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which island group is famous for its unique wildlife that inspired Charles Darwin's theory of evolution?",
+            "answers": [
+                {"answer": "Maldives"},
+                {"answer": "Galápagos Islands"},
+                {"answer": "Seychelles"},
+                {"answer": "Canary Islands"}
+            ],
+            "answer": "Galápagos Islands",
+            "explanation": "The Galápagos Islands off the coast of Ecuador are famous for their unique wildlife including giant tortoises, marine iguanas, and Darwin's finches. Charles Darwin developed key insights for his theory of evolution here. The islands are a UNESCO World Heritage Site.",
+            "image": "https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which ancient city in Jordan is famous for its facades carved into pink sandstone?",
+            "answers": [
+                {"answer": "Jerash"},
+                {"answer": "Amman"},
+                {"answer": "Petra"},
+                {"answer": "Aqaba"}
+            ],
+            "answer": "Petra",
+            "explanation": "Petra, the 'Rose City', is an ancient Nabataean city in Jordan famous for its spectacular facades and tombs carved into pink sandstone. The Treasury (Al-Khazneh) is the most famous structure of this UNESCO World Heritage Site.",
+            "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which waterfall on the border between Zambia and Zimbabwe is considered one of the largest in the world?",
+            "answers": [
+                {"answer": "Iguazu Falls"},
+                {"answer": "Victoria Falls"},
+                {"answer": "Niagara Falls"},
+                {"answer": "Angel Falls"}
+            ],
+            "answer": "Victoria Falls",
+            "explanation": "Victoria Falls on the Zambezi River between Zambia and Zimbabwe is one of the largest waterfalls in the world. At 1,708 meters wide and 108 meters high, it creates a spectacular sight and is locally called 'Mosi-oa-Tunya' (the smoke that thunders).",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the famous Salar de Uyuni salt flat located?",
+            "answers": [
+                {"answer": "Chile"},
+                {"answer": "Bolivia"},
+                {"answer": "Peru"},
+                {"answer": "Argentina"}
+            ],
+            "answer": "Bolivia",
+            "explanation": "Salar de Uyuni in Bolivia is the world's largest salt flat covering over 10,000 km². During the rainy season, it transforms into a giant mirror reflecting the sky, creating one of the most spectacular natural phenomena on Earth.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which Greek island is famous for its white houses with blue domes?",
+            "answers": [
+                {"answer": "Mykonos"},
+                {"answer": "Santorini"},
+                {"answer": "Crete"},
+                {"answer": "Rhodes"}
+            ],
+            "answer": "Santorini",
+            "explanation": "Santorini (Thira) is famous for its characteristic white houses with blue domes perched above the caldera. The island was formed by a massive volcanic eruption and offers spectacular sunsets and unique volcanic landscapes.",
+            "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which is the highest free-standing mountain in the world?",
+            "answers": [
+                {"answer": "Mount Everest"},
+                {"answer": "Kilimanjaro"},
+                {"answer": "Mount McKinley"},
+                {"answer": "Mont Blanc"}
+            ],
+            "answer": "Kilimanjaro",
+            "explanation": "Mount Kilimanjaro in Tanzania is the world's highest free-standing mountain at 5,895 meters. As Africa's highest peak, it's a popular trekking destination offering different climate zones from tropical to arctic.",
+            "image": "https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which Croatian national park is famous for its 16 terraced lakes?",
+            "answers": [
+                {"answer": "Istria"},
+                {"answer": "Plitvice Lakes"},
+                {"answer": "Kornati"},
+                {"answer": "Brijuni"}
+            ],
+            "answer": "Plitvice Lakes",
+            "explanation": "Plitvice Lakes National Park in Croatia consists of 16 terraced lakes connected by natural travertine barriers. The UNESCO World Heritage Site is known for its turquoise lakes and numerous waterfalls.",
+            "image": "https://images.unsplash.com/photo-1551225576-7ad26e4adb42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the ancient temple complex of Angkor Wat located?",
+            "answers": [
+                {"answer": "Thailand"},
+                {"answer": "Vietnam"},
+                {"answer": "Cambodia"},
+                {"answer": "Laos"}
+            ],
+            "answer": "Cambodia",
+            "explanation": "Angkor Wat in Cambodia is the world's largest religious monument and a masterpiece of Khmer architecture from the 12th century. The temple complex near Siem Reap is a UNESCO World Heritage Site attracting millions of visitors.",
+            "image": "https://images.unsplash.com/photo-1539967644574-45a9a48e8770?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which rock formation in Australia is sacred to Aboriginal people and changes color throughout the day?",
+            "answers": [
+                {"answer": "Twelve Apostles"},
+                {"answer": "Uluru (Ayers Rock)"},
+                {"answer": "Kata Tjuta"},
+                {"answer": "Blue Mountains"}
+            ],
+            "answer": "Uluru (Ayers Rock)",
+            "explanation": "Uluru, also known as Ayers Rock, is a 348-meter-high monolith in the heart of Australia. The rock is sacred to Aboriginal people and changes color from reddish-brown to glowing red depending on the sun's position.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which island is famous for its mysterious stone statues called Moai?",
+            "answers": [
+                {"answer": "Tahiti"},
+                {"answer": "Easter Island"},
+                {"answer": "Fiji"},
+                {"answer": "Cook Islands"}
+            ],
+            "answer": "Easter Island",
+            "explanation": "Easter Island (Rapa Nui) in the Pacific is famous for its nearly 1,000 monumental stone statues called Moai. These were created between 1250 and 1500 CE by the Polynesians and are a UNESCO World Heritage Site.",
+            "image": "https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the famous Inca citadel of Machu Picchu located?",
+            "answers": [
+                {"answer": "Ecuador"},
+                {"answer": "Bolivia"},
+                {"answer": "Peru"},
+                {"answer": "Colombia"}
+            ],
+            "answer": "Peru",
+            "explanation": "Machu Picchu, the 'Lost City of the Incas', sits at 2,430 meters elevation in the Peruvian Andes. The well-preserved 15th-century citadel is a UNESCO World Heritage Site and one of the New Seven Wonders of the World.",
+            "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which canyon in the USA is up to 1,800 meters deep and was carved by the Colorado River?",
+            "answers": [
+                {"answer": "Bryce Canyon"},
+                {"answer": "Zion Canyon"},
+                {"answer": "Grand Canyon"},
+                {"answer": "Antelope Canyon"}
+            ],
+            "answer": "Grand Canyon",
+            "explanation": "The Grand Canyon in Arizona is one of the world's most impressive natural formations. The canyon is up to 1,800 meters deep and 450 kilometers long, carved over millions of years by the Colorado River.",
+            "image": "https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which country is famous for its spectacular fjords and Northern Lights?",
+            "answers": [
+                {"answer": "Sweden"},
+                {"answer": "Norway"},
+                {"answer": "Iceland"},
+                {"answer": "Denmark"}
+            ],
+            "answer": "Norway",
+            "explanation": "Norway is world-famous for its dramatic fjords like Geirangerfjord and Nærøyfjord, as well as the Aurora Borealis (Northern Lights), which are particularly well-observed in the polar regions. The country offers spectacular landscapes and natural phenomena.",
+            "image": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which is the world's largest continuous sand desert?",
+            "answers": [
+                {"answer": "Sahara"},
+                {"answer": "Rub' al Khali"},
+                {"answer": "Gobi"},
+                {"answer": "Kalahari"}
+            ],
+            "answer": "Rub' al Khali",
+            "explanation": "The Rub' al Khali (Empty Quarter) on the Arabian Peninsula is the world's largest continuous sand desert. It covers 650,000 km² and features endless sand dunes that can reach up to 250 meters in height.",
+            "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the Strokkur geyser, one of the world's most active geysers?",
+            "answers": [
+                {"answer": "Iceland"},
+                {"answer": "USA"},
+                {"answer": "New Zealand"},
+                {"answer": "Chile"}
+            ],
+            "answer": "Iceland",
+            "explanation": "Strokkur is an active geyser in Iceland that erupts water up to 40 meters high every 8-10 minutes. Iceland, the 'Land of Fire and Ice', is famous for its geysers, hot springs, volcanoes, and glaciers.",
+            "image": "https://images.unsplash.com/photo-1551191023-55e703ac4490?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which temple complex in Myanmar is famous for its over 2,000 pagodas?",
+            "answers": [
+                {"answer": "Shwedagon"},
+                {"answer": "Bagan"},
+                {"answer": "Mandalay"},
+                {"answer": "Yangon"}
+            ],
+            "answer": "Bagan",
+            "explanation": "Bagan in Myanmar is one of the world's largest archaeological sites with over 2,000 preserved pagodas and temples from an original 10,000 structures. The 11th-13th century complex offers particularly spectacular views at sunrise.",
+            "image": "https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which region in Turkey is famous for its fairy chimneys and underground cities?",
+            "answers": [
+                {"answer": "Gallipoli"},
+                {"answer": "Cappadocia"},
+                {"answer": "Bodrum"},
+                {"answer": "Antalya"}
+            ],
+            "answer": "Cappadocia",
+            "explanation": "Cappadocia in central Anatolia is famous for its unique landscape of fairy chimneys (hoodoos), cave churches, and underground cities. The region also offers spectacular hot air balloon rides over the surreal volcanic landscape.",
+            "image": "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the famous Arashiyama Bamboo Forest located?",
+            "answers": [
+                {"answer": "China"},
+                {"answer": "Japan"},
+                {"answer": "Korea"},
+                {"answer": "Vietnam"}
+            ],
+            "answer": "Japan",
+            "explanation": "The Arashiyama Bamboo Forest in Kyoto, Japan, is a mystical place with thousands of towering bamboo stalks creating natural green light effects and unique sounds. It's considered one of Japan's most beautiful places.",
+            "image": "https://images.unsplash.com/photo-1550492910-7ad65b9fab8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which atoll is famous as an underwater paradise for divers in the Indian Ocean?",
+            "answers": [
+                {"answer": "Bora Bora"},
+                {"answer": "Maldives"},
+                {"answer": "Seychelles"},
+                {"answer": "Mauritius"}
+            ],
+            "answer": "Maldives",
+            "explanation": "The Maldives is an island nation in the Indian Ocean with 1,192 coral islands, known for crystal-clear water, coral reefs, and exceptional underwater life. It's considered one of the world's best diving and snorkeling destinations.",
+            "image": "https://images.unsplash.com/photo-1506544777-64cfbe1142df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which US state is the Valley of Fire with its red sandstone formations located?",
+            "answers": [
+                {"answer": "Utah"},
+                {"answer": "Arizona"},
+                {"answer": "Nevada"},
+                {"answer": "New Mexico"}
+            ],
+            "answer": "Nevada",
+            "explanation": "Valley of Fire State Park is located in Nevada, USA, and is famous for its spectacular red sandstone formations that were formed 150 million years ago. The park features dramatic rock formations and Native American petroglyphs.",
+            "image": "https://images.unsplash.com/photo-1551955903-6d195b4cda5a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which mountain range in South America extends over 7,000 kilometers along the western coast?",
+            "answers": [
+                {"answer": "Rocky Mountains"},
+                {"answer": "Andes"},
+                {"answer": "Appalachian Mountains"},
+                {"answer": "Sierra Nevada"}
+            ],
+            "answer": "Andes",
+            "explanation": "The Andes are the world's longest continental mountain range, extending over 7,000 kilometers along South America's western coast through seven countries. They host spectacular landscapes, ancient cultures, and unique ecosystems.",
+            "image": "https://images.unsplash.com/photo-1544550285-f813152fb2fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which city in India is famous for the iconic Taj Mahal?",
+            "answers": [
+                {"answer": "Delhi"},
+                {"answer": "Mumbai"},
+                {"answer": "Agra"},
+                {"answer": "Jaipur"}
+            ],
+            "answer": "Agra",
+            "explanation": "The Taj Mahal in Agra, India, is a white marble mausoleum considered one of the world's most beautiful buildings. Built in the 17th century by Shah Jahan for his deceased wife Mumtaz Mahal, it's a UNESCO World Heritage Site.",
+            "image": "https://images.unsplash.com/photo-1564507592333-c60657eea523?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which lagoon in Antarctica is famous for its extraordinary blue color?",
+            "answers": [
+                {"answer": "Blue Lagoon Island"},
+                {"answer": "Crater Lake"},
+                {"answer": "Blue Lagoon Iceland"},
+                {"answer": "Antarctic blue icebergs"}
+            ],
+            "answer": "Antarctic blue icebergs",
+            "explanation": "Antarctica is famous for its spectacular blue icebergs and ice formations. The intense blue color results from ice compression over thousands of years, which squeezes out air bubbles and allows the ice to reflect only blue light.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is Hwange National Park, one of Africa's largest?",
+            "answers": [
+                {"answer": "Botswana"},
+                {"answer": "Zimbabwe"},
+                {"answer": "South Africa"},
+                {"answer": "Namibia"}
+            ],
+            "answer": "Zimbabwe",
+            "explanation": "Hwange National Park in Zimbabwe is the country's largest national park and one of Africa's largest. It hosts one of the world's largest elephant populations and offers spectacular wildlife viewing.",
+            "image": "https://images.unsplash.com/photo-1549366021-9f761d040fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which caves in Mexico are famous for their giant gypsum crystals?",
+            "answers": [
+                {"answer": "Carlsbad Caverns"},
+                {"answer": "Cave of Crystals (Naica)"},
+                {"answer": "Mammoth Cave"},
+                {"answer": "Postojna Cave"}
+            ],
+            "answer": "Cave of Crystals (Naica)",
+            "explanation": "The Cave of Crystals in Mexico's Naica Mine contains some of the world's largest natural crystals. The selenite crystals can reach up to 12 meters in length and formed over 500,000 years in the hot, mineral-rich environment.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is Kruger National Park, one of Africa's most famous wildlife parks?",
+            "answers": [
+                {"answer": "Kenya"},
+                {"answer": "Tanzania"},
+                {"answer": "South Africa"},
+                {"answer": "Botswana"}
+            ],
+            "answer": "South Africa",
+            "explanation": "Kruger National Park in South Africa is one of Africa's largest and most famous wildlife parks. It hosts the 'Big Five' (lion, leopard, elephant, rhinoceros, buffalo) and offers excellent safari opportunities across nearly 20,000 km².",
+            "image": "https://images.unsplash.com/photo-1539650116574-75c0c6d73ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which region in Thailand is famous for its spectacular limestone cliffs rising from the sea?",
+            "answers": [
+                {"answer": "Phuket"},
+                {"answer": "Koh Phi Phi"},
+                {"answer": "Koh Samui"},
+                {"answer": "Krabi"}
+            ],
+            "answer": "Krabi",
+            "explanation": "Krabi in Thailand is famous for its dramatic limestone cliffs rising from turquoise waters. The Railay Peninsula and James Bond Island are particularly famous formations that attract climbers and photographers from around the world.",
+            "image": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which glacier in Argentina is famous for allowing visitors to observe calving?",
+            "answers": [
+                {"answer": "Upsala Glacier"},
+                {"answer": "Perito Moreno Glacier"},
+                {"answer": "Spegazzini Glacier"},
+                {"answer": "Viedma Glacier"}
+            ],
+            "answer": "Perito Moreno Glacier",
+            "explanation": "The Perito Moreno Glacier in Patagonia, Argentina, is one of the few glaciers worldwide that's still growing. Visitors can observe spectacular calving from viewing platforms as massive ice chunks crash into the water.",
+            "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is Zhangjiajie National Park with its pillar-like rock formations?",
+            "answers": [
+                {"answer": "Japan"},
+                {"answer": "China"},
+                {"answer": "Vietnam"},
+                {"answer": "Thailand"}
+            ],
+            "answer": "China",
+            "explanation": "Zhangjiajie National Park in China's Hunan Province is famous for its over 3,000 sandstone pillars rising up to 200 meters high. These spectacular pillar rocks served as inspiration for the floating mountains in the movie Avatar.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which cave in Vietnam is one of the world's largest and was only opened to tourists in 2009?",
+            "answers": [
+                {"answer": "Son Tra Cave"},
+                {"answer": "Hang Son Doong Cave"},
+                {"answer": "Phong Nha Cave"},
+                {"answer": "Paradise Cave"}
+            ],
+            "answer": "Hang Son Doong Cave",
+            "explanation": "Hang Son Doong Cave in Vietnam is the world's largest known cave. It's so large that entire skyscrapers could fit inside. The cave was only discovered in 2009 and is accessible to only a few visitors per year.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which valley in Pakistan is known as 'Shangri-La' for its spectacular beauty?",
+            "answers": [
+                {"answer": "Swat Valley"},
+                {"answer": "Hunza Valley"},
+                {"answer": "Chitral Valley"},
+                {"answer": "Kaghan Valley"}
+            ],
+            "answer": "Hunza Valley",
+            "explanation": "Hunza Valley in Pakistan is often called 'Shangri-La' due to its breathtaking mountain scenery with views of Rakaposhi and other Karakoram peaks. The valley is famous for its apricot blossoms and the longevity of its inhabitants.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is Socotra Island with its unique flora and fauna?",
+            "answers": [
+                {"answer": "Somalia"},
+                {"answer": "Yemen"},
+                {"answer": "Oman"},
+                {"answer": "Eritrea"}
+            ],
+            "answer": "Yemen",
+            "explanation": "Socotra Island belongs to Yemen and is famous for its unique biodiversity. One-third of its plant species are endemic, including the famous Dragon Blood Tree. The island is often called the 'Galápagos of the Indian Ocean'.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which mountain range in Romania is famous for its connection to the Dracula legend?",
+            "answers": [
+                {"answer": "Carpathians"},
+                {"answer": "Apuseni"},
+                {"answer": "Rodna"},
+                {"answer": "Parâng"}
+            ],
+            "answer": "Carpathians",
+            "explanation": "The Carpathians in Romania, particularly the Transylvania region, are famous for their connection to the Dracula legend. Bran Castle is often called 'Dracula's Castle', though its historical connection to Vlad the Impaler is limited.",
+            "image": "https://images.unsplash.com/photo-1551225576-7ad26e4adb42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the Dallol volcano with its colorful salt formations?",
+            "answers": [
+                {"answer": "Kenya"},
+                {"answer": "Ethiopia"},
+                {"answer": "Djibouti"},
+                {"answer": "Eritrea"}
+            ],
+            "answer": "Ethiopia",
+            "explanation": "The Dallol volcano in Ethiopia's Danakil Desert sits 125 meters below sea level and is famous for its surreal, colorful salt formations, sulfur springs, and acid pools. It's one of the hottest places on Earth.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which slot canyon in Arizona is famous for its wave-like sandstone formations?",
+            "answers": [
+                {"answer": "Grand Canyon"},
+                {"answer": "Antelope Canyon"},
+                {"answer": "Canyon de Chelly"},
+                {"answer": "Havasu Canyon"}
+            ],
+            "answer": "Antelope Canyon",
+            "explanation": "Antelope Canyon in Arizona is a slot canyon famous for its wave-like sandstone walls and spectacular light effects. The narrow passages and incoming sunlight create magical photographic opportunities.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is Lake Hillier, famous for its pink color?",
+            "answers": [
+                {"answer": "New Zealand"},
+                {"answer": "Australia"},
+                {"answer": "Canada"},
+                {"answer": "Norway"}
+            ],
+            "answer": "Australia",
+            "explanation": "Lake Hillier on Middle Island off the coast of Western Australia is famous for its intense pink color caused by algae and bacteria. The lake retains its color even when water is collected in a container.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which cave in New Zealand is famous for its glowworms?",
+            "answers": [
+                {"answer": "Te Papa Cave"},
+                {"answer": "Waitomo Caves"},
+                {"answer": "Franz Josef Caves"},
+                {"answer": "Milford Caves"}
+            ],
+            "answer": "Waitomo Caves",
+            "explanation": "Waitomo Caves on New Zealand's North Island are world-famous for their glowworms (Arachnocampa luminosa). The Glowworm Grotto offers a spectacular natural light show when thousands of glowworms illuminate the ceiling like a starry sky.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is Wadi Rum desert, also known as the 'Valley of the Moon'?",
+            "answers": [
+                {"answer": "Saudi Arabia"},
+                {"answer": "Jordan"},
+                {"answer": "Israel"},
+                {"answer": "Syria"}
+            ],
+            "answer": "Jordan",
+            "explanation": "Wadi Rum in Jordan is a spectacular desert landscape with red sandstone rocks that has been used as a filming location for Mars movies due to its moon-like landscape. The desert is also famous for Bedouin culture and stargazing.",
+            "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which Caribbean island is famous for its swimming pigs?",
+            "answers": [
+                {"answer": "Barbados"},
+                {"answer": "Bahamas"},
+                {"answer": "Jamaica"},
+                {"answer": "Cuba"}
+            ],
+            "answer": "Bahamas",
+            "explanation": "Pig Beach (Big Major Cay) in the Bahamas is famous for its swimming pigs. These friendly pigs live wild on the uninhabited island and swim out to tourist boats to receive food.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the Blue Mountains National Park with the Three Sisters rock formation?",
+            "answers": [
+                {"answer": "New Zealand"},
+                {"answer": "Australia"},
+                {"answer": "South Africa"},
+                {"answer": "Canada"}
+            ],
+            "answer": "Australia",
+            "explanation": "The Blue Mountains west of Sydney, Australia, are famous for the Three Sisters - three distinctive sandstone rock formations. The national park offers spectacular views, hiking trails, and is famous for the blue haze created by eucalyptus oil.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which geothermal spa in Iceland is famous for its milky blue color and healing properties?",
+            "answers": [
+                {"answer": "Geysir"},
+                {"answer": "Blue Lagoon"},
+                {"answer": "Gullfoss"},
+                {"answer": "Strokkur"}
+            ],
+            "answer": "Blue Lagoon",
+            "explanation": "The Blue Lagoon on Iceland's Reykjanes Peninsula is a geothermal spa with milky blue water rich in silica and other minerals. The water is said to have healing properties for skin conditions.",
+            "image": "https://images.unsplash.com/photo-1551191023-55e703ac4490?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country are the Fairy Pools with crystal-clear mountain streams and waterfalls?",
+            "answers": [
+                {"answer": "Ireland"},
+                {"answer": "Scotland"},
+                {"answer": "Wales"},
+                {"answer": "Iceland"}
+            ],
+            "answer": "Scotland",
+            "explanation": "The Fairy Pools on the Isle of Skye in Scotland are a series of crystal-clear mountain streams and waterfalls at the foot of the Cuillin Mountains. The turquoise pools and dramatic landscapes make them a popular hiking destination.",
+            "image": "https://images.unsplash.com/photo-1551225576-7ad26e4adb42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which place in Brazil is famous for its massive sand dunes and lagoons?",
+            "answers": [
+                {"answer": "Fernando de Noronha"},
+                {"answer": "Lençóis Maranhenses"},
+                {"answer": "Chapada Diamantina"},
+                {"answer": "Pantanal"}
+            ],
+            "answer": "Lençóis Maranhenses",
+            "explanation": "Lençóis Maranhenses National Park in Brazil consists of massive white sand dunes that during the rainy season are interspersed with crystal-clear freshwater lagoons. This unique landscape covers 1,500 km².",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which countries can you find Rainbow Mountains with colorful rock layers?",
+            "answers": [
+                {"answer": "Peru"},
+                {"answer": "China"},
+                {"answer": "Iran"},
+                {"answer": "All of the above"}
+            ],
+            "answer": "All of the above",
+            "explanation": "Rainbow Mountains with colorful rock layers exist in several locations: Zhangye Danxia in China, Vinicunca in Peru, and Aladaglar in Iran. These spectacular formations were created by different minerals and geological processes over millions of years.",
+            "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which caves in Malaysia are famous for their massive chambers and Hindu temples?",
+            "answers": [
+                {"answer": "Mulu Caves"},
+                {"answer": "Batu Caves"},
+                {"answer": "Gomantong Caves"},
+                {"answer": "Clearwater Cave"}
+            ],
+            "answer": "Batu Caves",
+            "explanation": "Batu Caves north of Kuala Lumpur are a series of limestone caves housing Hindu temples and shrines. The Temple Cave with its 100-meter-high ceiling and the 272 steps to the main cave are particularly famous.",
+            "image": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "In which country is the Door to Hell, a natural gas crater burning since 1971?",
+            "answers": [
+                {"answer": "Kazakhstan"},
+                {"answer": "Turkmenistan"},
+                {"answer": "Uzbekistan"},
+                {"answer": "Tajikistan"}
+            ],
+            "answer": "Turkmenistan",
+            "explanation": "The 'Door to Hell' (Darvaza gas crater) in Turkmenistan's Karakum Desert is a natural gas crater that has been burning continuously since 1971. The 70-meter-wide crater was created by a drilling accident and has been burning day and night ever since.",
+            "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which location in Japan is famous for both bamboo groves and hot spring bathing monkeys?",
+            "answers": [
+                {"answer": "Miyajima"},
+                {"answer": "Arashiyama (near Kyoto)"},
+                {"answer": "Jigokudani Monkey Park"},
+                {"answer": "Both Arashiyama and Jigokudani"}
+            ],
+            "answer": "Both Arashiyama and Jigokudani",
+            "explanation": "Arashiyama near Kyoto is famous for its magical bamboo forest, while Jigokudani (Monkey Park) is famous for its snow monkeys that bathe in hot springs. Both locations offer unique nature experiences in Japan.",
+            "image": "https://images.unsplash.com/photo-1550492910-7ad65b9fab8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which European country is home to the famous white cliffs and prehistoric stone circle?",
+            "answers": [
+                {"answer": "France"},
+                {"answer": "England"},
+                {"answer": "Ireland"},
+                {"answer": "Scotland"}
+            ],
+            "answer": "England",
+            "explanation": "England is home to the famous White Cliffs of Dover and the prehistoric stone circle of Stonehenge. Both are iconic landmarks representing England's natural beauty and ancient history.",
+            "image": "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        },
+        {
+            "question": "Which African country is famous for the largest intact volcanic caldera in the world?",
+            "answers": [
+                {"answer": "Kenya"},
+                {"answer": "Tanzania"},
+                {"answer": "Rwanda"},
+                {"answer": "Uganda"}
+            ],
+            "answer": "Tanzania",
+            "explanation": "The Ngorongoro Crater in Tanzania is the world's largest intact volcanic caldera, often called 'Africa's Eden'. This UNESCO World Heritage Site hosts an incredible concentration of wildlife in its 260 km² crater floor.",
+            "image": "https://images.unsplash.com/photo-1549366021-9f761d040fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        }
+    ]
+},
+  {
+    "name": "Health & Wellbeing",
+    "questions": [
+        {
+            "question": "How many hours of sleep do most adults need per night for optimal health?",
+            "answers": [
+                {"answer": "5-6 hours"},
+                {"answer": "7-9 hours"},
+                {"answer": "10-12 hours"},
+                {"answer": "4-5 hours"}
+            ],
+            "answer": "7-9 hours",
+            "explanation": "Most adults need 7-9 hours of sleep per night for optimal physical and mental health. Adequate sleep is crucial for immune function, cognitive performance, emotional regulation, and physical recovery."
+        },
+        {
+            "question": "What is the recommended amount of moderate aerobic exercise per week for adults?",
+            "answers": [
+                {"answer": "75 minutes"},
+                {"answer": "150 minutes"},
+                {"answer": "300 minutes"},
+                {"answer": "30 minutes"}
+            ],
+            "answer": "150 minutes",
+            "explanation": "The World Health Organization recommends at least 150 minutes of moderate-intensity aerobic exercise per week, or 75 minutes of vigorous-intensity exercise, plus muscle-strengthening activities on 2 or more days per week."
+        },
+        {
+            "question": "What is stress?",
+            "answers": [
+                {"answer": "Always harmful to health"},
+                {"answer": "The body's natural response to challenges or demands"},
+                {"answer": "Only caused by work pressure"},
+                {"answer": "A sign of weakness"}
+            ],
+            "answer": "The body's natural response to challenges or demands",
+            "explanation": "Stress is the body's natural physiological and psychological response to challenges, changes, or demands. While acute stress can be beneficial for performance, chronic stress can negatively impact health."
+        },
+        {
+            "question": "Which vitamin is primarily produced when skin is exposed to sunlight?",
+            "answers": [
+                {"answer": "Vitamin C"},
+                {"answer": "Vitamin A"},
+                {"answer": "Vitamin D"},
+                {"answer": "Vitamin B12"}
+            ],
+            "answer": "Vitamin D",
+            "explanation": "Vitamin D is synthesized in the skin when exposed to UVB radiation from sunlight. It's essential for bone health, immune function, and may help prevent various diseases. Many people have insufficient vitamin D, especially in winter months."
+        },
+        {
+            "question": "What is the difference between mental health and mental illness?",
+            "answers": [
+                {"answer": "They are the same thing"},
+                {"answer": "Mental health is a state of wellbeing; mental illness refers to diagnosable conditions"},
+                {"answer": "Mental health only affects thoughts"},
+                {"answer": "Mental illness is temporary, mental health is permanent"}
+            ],
+            "answer": "Mental health is a state of wellbeing; mental illness refers to diagnosable conditions",
+            "explanation": "Mental health refers to our overall psychological wellbeing and ability to cope with life's challenges. Mental illness refers to specific diagnosable conditions that significantly impact thinking, emotions, or behavior. You can have good mental health while managing a mental illness."
+        },
+        {
+            "question": "What is the primary benefit of regular physical exercise?",
+            "answers": [
+                {"answer": "Weight loss only"},
+                {"answer": "Improved cardiovascular health, mental wellbeing, and overall fitness"},
+                {"answer": "Building muscle mass only"},
+                {"answer": "Increased appetite"}
+            ],
+            "answer": "Improved cardiovascular health, mental wellbeing, and overall fitness",
+            "explanation": "Regular exercise provides numerous benefits including improved cardiovascular health, stronger muscles and bones, better mental health, enhanced cognitive function, improved sleep quality, and reduced risk of chronic diseases."
+        },
+        {
+            "question": "What is mindfulness?",
+            "answers": [
+                {"answer": "Thinking about the future"},
+                {"answer": "The practice of being present and fully engaged in the current moment"},
+                {"answer": "Remembering past events"},
+                {"answer": "Multitasking effectively"}
+            ],
+            "answer": "The practice of being present and fully engaged in the current moment",
+            "explanation": "Mindfulness is the practice of purposefully paying attention to the present moment without judgment. It can reduce stress, improve focus, enhance emotional regulation, and promote overall wellbeing."
+        },
+        {
+            "question": "How much water should the average adult drink per day?",
+            "answers": [
+                {"answer": "1 liter"},
+                {"answer": "2-3 liters"},
+                {"answer": "5 liters"},
+                {"answer": "500ml"}
+            ],
+            "answer": "2-3 liters",
+            "explanation": "Adults should aim for about 2-3 liters (8-12 cups) of water daily, though needs vary based on climate, activity level, and individual factors. Proper hydration supports all bodily functions and helps maintain energy levels."
+        },
+        {
+            "question": "What are the main components of emotional wellbeing?",
+            "answers": [
+                {"answer": "Only happiness"},
+                {"answer": "Self-awareness, emotional regulation, resilience, and healthy relationships"},
+                {"answer": "Avoiding all negative emotions"},
+                {"answer": "Being constantly optimistic"}
+            ],
+            "answer": "Self-awareness, emotional regulation, resilience, and healthy relationships",
+            "explanation": "Emotional wellbeing involves understanding and managing emotions effectively, building resilience to cope with challenges, maintaining healthy relationships, and developing self-awareness and emotional intelligence."
+        },
+        {
+            "question": "What is the recommended limit for alcohol consumption for adults?",
+            "answers": [
+                {"answer": "No limit"},
+                {"answer": "Up to 14 units per week with alcohol-free days"},
+                {"answer": "Daily consumption is fine"},
+                {"answer": "Only on weekends"}
+            ],
+            "answer": "Up to 14 units per week with alcohol-free days",
+            "explanation": "Health guidelines recommend no more than 14 units of alcohol per week for both men and women, spread over at least 3 days with several alcohol-free days. One unit equals about half a pint of beer or a small glass of wine."
+        },
+        {
+            "question": "What is the purpose of a balanced diet?",
+            "answers": [
+                {"answer": "Weight loss only"},
+                {"answer": "To provide all necessary nutrients for optimal body function"},
+                {"answer": "To eliminate all fats"},
+                {"answer": "To eat only organic foods"}
+            ],
+            "answer": "To provide all necessary nutrients for optimal body function",
+            "explanation": "A balanced diet provides the right proportions of carbohydrates, proteins, fats, vitamins, minerals, and water needed for optimal body function, energy, growth, repair, and disease prevention."
+        },
+        {
+            "question": "What is the fight-or-flight response?",
+            "answers": [
+                {"answer": "A learned behavior"},
+                {"answer": "The body's automatic physiological reaction to perceived threats"},
+                {"answer": "A type of exercise"},
+                {"answer": "A breathing technique"}
+            ],
+            "answer": "The body's automatic physiological reaction to perceived threats",
+            "explanation": "The fight-or-flight response is an automatic physiological reaction to stress or danger, involving the release of hormones like adrenaline that prepare the body to either confront or flee from a threat."
+        },
+        {
+            "question": "What is the recommended frequency for health check-ups for healthy adults?",
+            "answers": [
+                {"answer": "Every month"},
+                {"answer": "Annually or as recommended by healthcare provider"},
+                {"answer": "Only when sick"},
+                {"answer": "Every 5 years"}
+            ],
+            "answer": "Annually or as recommended by healthcare provider",
+            "explanation": "Healthy adults should have annual check-ups or follow their healthcare provider's recommendations. Regular check-ups help detect health issues early, monitor existing conditions, and update preventive care like vaccinations."
+        },
+        {
+            "question": "What is social wellbeing?",
+            "answers": [
+                {"answer": "Having many social media followers"},
+                {"answer": "The quality of relationships and sense of connection with others"},
+                {"answer": "Being popular at work"},
+                {"answer": "Attending many social events"}
+            ],
+            "answer": "The quality of relationships and sense of connection with others",
+            "explanation": "Social wellbeing involves having meaningful relationships, feeling connected to others, having social support, and contributing to community. Quality of relationships matters more than quantity."
+        },
+        {
+            "question": "What are common signs of burnout?",
+            "answers": [
+                {"answer": "Increased energy and motivation"},
+                {"answer": "Chronic exhaustion, cynicism, and reduced sense of accomplishment"},
+                {"answer": "Better work performance"},
+                {"answer": "Improved sleep quality"}
+            ],
+            "answer": "Chronic exhaustion, cynicism, and reduced sense of accomplishment",
+            "explanation": "Burnout is characterized by chronic physical and emotional exhaustion, increased cynicism or detachment, and a reduced sense of personal accomplishment. It often results from prolonged workplace stress."
+        },
+        {
+            "question": "What is the body mass index (BMI) used for?",
+            "answers": [
+                {"answer": "Measuring muscle mass"},
+                {"answer": "A screening tool to categorize weight status"},
+                {"answer": "Measuring bone density"},
+                {"answer": "Calculating metabolism"}
+            ],
+            "answer": "A screening tool to categorize weight status",
+            "explanation": "BMI is a screening tool that uses height and weight to categorize individuals into weight status categories (underweight, normal, overweight, obese). However, it doesn't account for muscle mass, bone density, or fat distribution."
+        },
+        {
+            "question": "What is the importance of work-life balance?",
+            "answers": [
+                {"answer": "It's not important for success"},
+                {"answer": "Helps prevent burnout and promotes overall wellbeing"},
+                {"answer": "Only matters for parents"},
+                {"answer": "Reduces work productivity"}
+            ],
+            "answer": "Helps prevent burnout and promotes overall wellbeing",
+            "explanation": "Work-life balance helps prevent burnout, reduces stress, improves mental and physical health, enhances relationships, and can actually improve work productivity and job satisfaction."
+        },
+        {
+            "question": "What are endorphins?",
+            "answers": [
+                {"answer": "Harmful chemicals"},
+                {"answer": "Natural 'feel-good' chemicals produced by the body"},
+                {"answer": "External supplements"},
+                {"answer": "Types of vitamins"}
+            ],
+            "answer": "Natural 'feel-good' chemicals produced by the body",
+            "explanation": "Endorphins are natural chemicals produced by the body that act as pain relievers and mood elevators. They're released during exercise, laughter, stress, and other activities, contributing to feelings of wellbeing."
+        },
+        {
+            "question": "What is the difference between acute and chronic stress?",
+            "answers": [
+                {"answer": "There is no difference"},
+                {"answer": "Acute stress is short-term; chronic stress is long-term and ongoing"},
+                {"answer": "Acute stress is worse than chronic stress"},
+                {"answer": "Chronic stress only affects the mind"}
+            ],
+            "answer": "Acute stress is short-term; chronic stress is long-term and ongoing",
+            "explanation": "Acute stress is short-term and can be beneficial for performance and motivation. Chronic stress persists over time and can lead to serious health problems including cardiovascular disease, immune dysfunction, and mental health issues."
+        },
+        {
+            "question": "What is preventive healthcare?",
+            "answers": [
+                {"answer": "Only treating diseases"},
+                {"answer": "Measures taken to prevent diseases before they occur"},
+                {"answer": "Emergency medical care"},
+                {"answer": "Surgery procedures"}
+            ],
+            "answer": "Measures taken to prevent diseases before they occur",
+            "explanation": "Preventive healthcare includes measures like vaccinations, screenings, healthy lifestyle choices, and regular check-ups designed to prevent diseases and detect health issues early when they're most treatable."
+        },
+        {
+            "question": "What role does sleep play in immune function?",
+            "answers": [
+                {"answer": "Sleep weakens immunity"},
+                {"answer": "Sleep strengthens immune system and helps fight infections"},
+                {"answer": "Sleep has no effect on immunity"},
+                {"answer": "Only affects immunity in children"}
+            ],
+            "answer": "Sleep strengthens immune system and helps fight infections",
+            "explanation": "Quality sleep is crucial for immune function. During sleep, the body produces infection-fighting cells and antibodies, and lack of sleep can make you more susceptible to illness and slower to recover."
+        },
+        {
+            "question": "What is meditation?",
+            "answers": [
+                {"answer": "Sleeping during the day"},
+                {"answer": "A practice of focused attention to achieve mental clarity and emotional calm"},
+                {"answer": "Daydreaming"},
+                {"answer": "Physical exercise"}
+            ],
+            "answer": "A practice of focused attention to achieve mental clarity and emotional calm",
+            "explanation": "Meditation is a practice that involves techniques to focus attention and achieve a mentally clear and emotionally calm state. Regular meditation can reduce stress, improve focus, and enhance overall wellbeing."
+        },
+        {
+            "question": "What are the benefits of maintaining strong social connections?",
+            "answers": [
+                {"answer": "No significant benefits"},
+                {"answer": "Improved mental health, longevity, and resilience"},
+                {"answer": "Only financial benefits"},
+                {"answer": "Increased stress levels"}
+            ],
+            "answer": "Improved mental health, longevity, and resilience",
+            "explanation": "Strong social connections are linked to better mental health, increased longevity, improved immune function, reduced risk of depression and anxiety, and greater resilience during challenging times."
+        },
+        {
+            "question": "What is the recommended approach to goal setting for health improvements?",
+            "answers": [
+                {"answer": "Set unrealistic goals for motivation"},
+                {"answer": "Use SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound)"},
+                {"answer": "Avoid setting goals"},
+                {"answer": "Only set short-term goals"}
+            ],
+            "answer": "Use SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound)",
+            "explanation": "SMART goals are specific, measurable, achievable, relevant, and time-bound. This approach increases the likelihood of success by making goals clear and realistic while providing a framework for tracking progress."
+        },
+        {
+            "question": "What is the importance of regular dental care?",
+            "answers": [
+                {"answer": "Only for appearance"},
+                {"answer": "Prevents oral diseases and supports overall health"},
+                {"answer": "Not important for health"},
+                {"answer": "Only necessary when problems arise"}
+            ],
+            "answer": "Prevents oral diseases and supports overall health",
+            "explanation": "Regular dental care prevents gum disease, tooth decay, and other oral health problems. Poor oral health is linked to cardiovascular disease, diabetes, and other systemic health issues, making dental care crucial for overall wellbeing."
+        },
+        {
+            "question": "What is emotional intelligence?",
+            "answers": [
+                {"answer": "Academic intelligence"},
+                {"answer": "The ability to understand, use, and manage emotions effectively"},
+                {"answer": "Being emotional all the time"},
+                {"answer": "Avoiding emotions"}
+            ],
+            "answer": "The ability to understand, use, and manage emotions effectively",
+            "explanation": "Emotional intelligence involves self-awareness, self-regulation, empathy, and social skills. It helps in understanding and managing your own emotions and those of others, leading to better relationships and wellbeing."
+        },
+        {
+            "question": "What is the recommended way to manage chronic conditions?",
+            "answers": [
+                {"answer": "Ignore them until they worsen"},
+                {"answer": "Work with healthcare providers to develop a comprehensive management plan"},
+                {"answer": "Only use natural remedies"},
+                {"answer": "Avoid medical treatment"}
+            ],
+            "answer": "Work with healthcare providers to develop a comprehensive management plan",
+            "explanation": "Chronic conditions are best managed through collaboration with healthcare providers to develop a comprehensive plan that may include medication, lifestyle changes, regular monitoring, and support systems."
+        },
+        {
+            "question": "What is the impact of technology on sleep?",
+            "answers": [
+                {"answer": "Technology always improves sleep"},
+                {"answer": "Blue light from screens can disrupt sleep patterns"},
+                {"answer": "Technology has no effect on sleep"},
+                {"answer": "Only affects children's sleep"}
+            ],
+            "answer": "Blue light from screens can disrupt sleep patterns",
+            "explanation": "Blue light from electronic devices can suppress melatonin production and disrupt circadian rhythms, making it harder to fall asleep. It's recommended to avoid screens 1-2 hours before bedtime for better sleep quality."
+        },
+        {
+            "question": "What is resilience in the context of mental health?",
+            "answers": [
+                {"answer": "Never experiencing difficulties"},
+                {"answer": "The ability to bounce back from adversity and adapt to challenges"},
+                {"answer": "Being tough and unemotional"},
+                {"answer": "Avoiding all stressful situations"}
+            ],
+            "answer": "The ability to bounce back from adversity and adapt to challenges",
+            "explanation": "Resilience is the capacity to recover from setbacks, adapt to change, and grow stronger through challenges. It can be developed through practices like building social connections, maintaining perspective, and developing coping skills."
+        },
+        {
+            "question": "What is the role of nutrition in mental health?",
+            "answers": [
+                {"answer": "Nutrition has no impact on mental health"},
+                {"answer": "Good nutrition supports brain function and mood regulation"},
+                {"answer": "Only affects physical health"},
+                {"answer": "Mental health only depends on genetics"}
+            ],
+            "answer": "Good nutrition supports brain function and mood regulation",
+            "explanation": "Nutrition significantly impacts mental health. A balanced diet supports brain function, neurotransmitter production, and mood regulation. Nutrient deficiencies can contribute to depression, anxiety, and cognitive problems."
+        },
+        {
+            "question": "What is the importance of setting boundaries for wellbeing?",
+            "answers": [
+                {"answer": "Boundaries are selfish"},
+                {"answer": "Healthy boundaries protect mental health and prevent burnout"},
+                {"answer": "Boundaries damage relationships"},
+                {"answer": "Only introverts need boundaries"}
+            ],
+            "answer": "Healthy boundaries protect mental health and prevent burnout",
+            "explanation": "Healthy boundaries help protect your time, energy, and emotional wellbeing. They prevent burnout, reduce stress, improve relationships, and help maintain work-life balance. Setting boundaries is an act of self-care, not selfishness."
+        },
+        {
+            "question": "What is the connection between physical activity and mental health?",
+            "answers": [
+                {"answer": "No connection exists"},
+                {"answer": "Exercise improves mood, reduces anxiety and depression"},
+                {"answer": "Exercise only affects physical health"},
+                {"answer": "Exercise worsens mental health"}
+            ],
+            "answer": "Exercise improves mood, reduces anxiety and depression",
+            "explanation": "Physical activity has powerful mental health benefits. Exercise releases endorphins, reduces stress hormones, improves self-esteem, and can be as effective as medication for mild to moderate depression and anxiety."
+        },
+        {
+            "question": "What is the importance of routine in maintaining wellbeing?",
+            "answers": [
+                {"answer": "Routines are unnecessary"},
+                {"answer": "Healthy routines provide structure and reduce decision fatigue"},
+                {"answer": "Routines prevent creativity"},
+                {"answer": "Only children benefit from routines"}
+            ],
+            "answer": "Healthy routines provide structure and reduce decision fatigue",
+            "explanation": "Healthy routines provide structure, reduce decision fatigue, create predictability, and can improve sleep, nutrition, exercise habits, and overall mental wellbeing. They help automate healthy behaviors."
+        },
+        {
+            "question": "What is the role of hobbies and leisure activities in wellbeing?",
+            "answers": [
+                {"answer": "They are a waste of time"},
+                {"answer": "They provide stress relief, joy, and personal fulfillment"},
+                {"answer": "Only for retired people"},
+                {"answer": "They increase stress levels"}
+            ],
+            "answer": "They provide stress relief, joy, and personal fulfillment",
+            "explanation": "Hobbies and leisure activities are crucial for wellbeing. They provide stress relief, opportunities for creativity and learning, social connection, sense of accomplishment, and contribute to work-life balance and overall life satisfaction."
+        },
+        {
+            "question": "What is the difference between self-care and being selfish?",
+            "answers": [
+                {"answer": "They are the same thing"},
+                {"answer": "Self-care maintains wellbeing to better care for others; selfishness prioritizes self at others' expense"},
+                {"answer": "Self-care is always selfish"},
+                {"answer": "There is no such thing as self-care"}
+            ],
+            "answer": "Self-care maintains wellbeing to better care for others; selfishness prioritizes self at others' expense",
+            "explanation": "Self-care involves maintaining your physical, mental, and emotional health so you can function well and care for others. Selfishness involves prioritizing yourself at the expense of others' wellbeing. Self-care is necessary and healthy."
+        },
+        {
+            "question": "What is cognitive behavioral therapy (CBT)?",
+            "answers": [
+                {"answer": "A type of medication"},
+                {"answer": "A therapy approach that focuses on changing negative thought patterns and behaviors"},
+                {"answer": "A surgical procedure"},
+                {"answer": "A fitness program"}
+            ],
+            "answer": "A therapy approach that focuses on changing negative thought patterns and behaviors",
+            "explanation": "CBT is an evidence-based psychotherapy that helps people identify and change negative thought patterns and behaviors. It's effective for treating depression, anxiety, and many other mental health conditions by teaching practical coping skills."
+        },
+        {
+            "question": "What is the importance of gratitude for wellbeing?",
+            "answers": [
+                {"answer": "Gratitude has no measurable benefits"},
+                {"answer": "Practicing gratitude improves mood, relationships, and overall life satisfaction"},
+                {"answer": "Gratitude is only for religious people"},
+                {"answer": "Gratitude makes people complacent"}
+            ],
+            "answer": "Practicing gratitude improves mood, relationships, and overall life satisfaction",
+            "explanation": "Research shows that practicing gratitude can improve mood, increase life satisfaction, strengthen relationships, improve sleep, boost immune function, and reduce symptoms of depression and anxiety."
+        },
+        {
+            "question": "What is the impact of posture on health and wellbeing?",
+            "answers": [
+                {"answer": "Posture only affects appearance"},
+                {"answer": "Good posture supports musculoskeletal health and can improve mood and confidence"},
+                {"answer": "Posture has no health implications"},
+                {"answer": "Only affects elderly people"}
+            ],
+            "answer": "Good posture supports musculoskeletal health and can improve mood and confidence",
+            "explanation": "Good posture supports spinal health, reduces strain on muscles and joints, can improve breathing and circulation, and may positively affect mood and confidence. Poor posture can lead to pain and other health issues."
+        },
+        {
+            "question": "What is the role of purpose and meaning in wellbeing?",
+            "answers": [
+                {"answer": "Purpose is not important for wellbeing"},
+                {"answer": "Having a sense of purpose contributes to better mental health and longevity"},
+                {"answer": "Only affects career success"},
+                {"answer": "Purpose creates unnecessary pressure"}
+            ],
+            "answer": "Having a sense of purpose contributes to better mental health and longevity",
+            "explanation": "Having a sense of purpose and meaning in life is associated with better mental health, increased resilience, improved physical health, and even longer lifespan. Purpose provides motivation and direction during challenging times."
+        },
+        {
+            "question": "What is the importance of regular health screenings?",
+            "answers": [
+                {"answer": "Only necessary if you feel sick"},
+                {"answer": "Help detect diseases early when they're most treatable"},
+                {"answer": "Waste of time and money"},
+                {"answer": "Only for elderly people"}
+            ],
+            "answer": "Help detect diseases early when they're most treatable",
+            "explanation": "Regular health screenings can detect diseases like cancer, diabetes, and heart disease in their early stages when treatment is most effective and outcomes are better. Prevention and early detection save lives and reduce healthcare costs."
+        },
+        {
+            "question": "What is the impact of chronic inflammation on health?",
+            "answers": [
+                {"answer": "Inflammation is always beneficial"},
+                {"answer": "Chronic inflammation contributes to many diseases including heart disease and cancer"},
+                {"answer": "Inflammation only affects injuries"},
+                {"answer": "Chronic inflammation is not a real concern"}
+            ],
+            "answer": "Chronic inflammation contributes to many diseases including heart disease and cancer",
+            "explanation": "While acute inflammation is a normal immune response, chronic inflammation contributes to many serious diseases including cardiovascular disease, cancer, diabetes, arthritis, and neurodegenerative conditions. Lifestyle factors can help reduce chronic inflammation."
+        },
+        {
+            "question": "What is the role of vitamin deficiencies in mental health?",
+            "answers": [
+                {"answer": "Vitamins don't affect mental health"},
+                {"answer": "Certain vitamin deficiencies can contribute to depression and cognitive problems"},
+                {"answer": "Only affects physical symptoms"},
+                {"answer": "Mental health only depends on therapy"}
+            ],
+            "answer": "Certain vitamin deficiencies can contribute to depression and cognitive problems",
+            "explanation": "Deficiencies in vitamins B12, D, folate, and others can contribute to depression, anxiety, cognitive problems, and other mental health issues. Maintaining adequate vitamin levels through diet or supplements can support mental wellbeing."
+        },
+        {
+            "question": "What is the importance of environmental factors for health?",
+            "answers": [
+                {"answer": "Environment has no impact on health"},
+                {"answer": "Clean air, water, and safe living conditions are essential for health"},
+                {"answer": "Only genetics matter for health"},
+                {"answer": "Environment only affects allergies"}
+            ],
+            "answer": "Clean air, water, and safe living conditions are essential for health",
+            "explanation": "Environmental factors like air and water quality, noise levels, access to green spaces, and safe housing significantly impact physical and mental health. Poor environmental conditions can contribute to respiratory disease, cancer, and mental health problems."
+        },
+        {
+            "question": "What is the concept of health equity?",
+            "answers": [
+                {"answer": "Everyone should have identical health outcomes"},
+                {"answer": "Everyone should have fair opportunity to achieve optimal health"},
+                {"answer": "Healthcare should only be for the wealthy"},
+                {"answer": "Health is entirely individual responsibility"}
+            ],
+            "answer": "Everyone should have fair opportunity to achieve optimal health",
+            "explanation": "Health equity means that everyone has a fair and just opportunity to achieve optimal health, regardless of race, gender, socioeconomic status, or other social factors. It involves addressing systemic barriers and social determinants of health."
+        },
+        {
+            "question": "What is the importance of sexual health for overall wellbeing?",
+            "answers": [
+                {"answer": "Sexual health is not important"},
+                {"answer": "Sexual health is an important component of overall physical and mental wellbeing"},
+                {"answer": "Only affects younger people"},
+                {"answer": "Should never be discussed"}
+            ],
+            "answer": "Sexual health is an important component of overall physical and mental wellbeing",
+            "explanation": "Sexual health is a fundamental aspect of overall health and wellbeing. It involves physical, emotional, mental and social wellbeing related to sexuality. Good sexual health requires access to information, education, and healthcare services."
+        },
+        {
+            "question": "What is the role of community and social support in health?",
+            "answers": [
+                {"answer": "Community has no impact on individual health"},
+                {"answer": "Strong communities and social support improve individual and population health"},
+                {"answer": "Only family relationships matter"},
+                {"answer": "Social support creates dependency"}
+            ],
+            "answer": "Strong communities and social support improve individual and population health",
+            "explanation": "Strong communities and social support networks improve both individual and population health outcomes. Social connection reduces stress, provides practical help during difficulties, encourages healthy behaviors, and contributes to mental wellbeing and longevity."
+        },
+        {
+            "question": "What is health literacy and why is it important?",
+            "answers": [
+                {"answer": "Ability to read medical journals"},
+                {"answer": "The ability to find, understand, and use health information to make informed decisions"},
+                {"answer": "Only important for healthcare workers"},
+                {"answer": "Memorizing medical terminology"}
+            ],
+            "answer": "The ability to find, understand, and use health information to make informed decisions",
+            "explanation": "Health literacy is the ability to access, understand, evaluate, and use health information to make informed decisions about health and healthcare. Low health literacy is associated with poorer health outcomes and higher healthcare costs."
+        },
+        {
+            "question": "What is the importance of addressing mental health stigma?",
+            "answers": [
+                {"answer": "Stigma doesn't really exist"},
+                {"answer": "Reducing stigma encourages people to seek help and improves outcomes"},
+                {"answer": "Stigma only affects certain groups"},
+                {"answer": "Mental health problems should be hidden"}
+            ],
+            "answer": "Reducing stigma encourages people to seek help and improves outcomes",
+            "explanation": "Mental health stigma prevents many people from seeking help, leads to discrimination, and worsens outcomes. Reducing stigma through education and open conversations encourages treatment-seeking and creates more supportive communities."
+        },
+        {
+            "question": "What is the holistic approach to health and wellbeing?",
+            "answers": [
+                {"answer": "Only focusing on physical symptoms"},
+                {"answer": "Considering physical, mental, emotional, social, and spiritual aspects of health"},
+                {"answer": "Only using alternative medicine"},
+                {"answer": "Avoiding conventional healthcare"}
+            ],
+            "answer": "Considering physical, mental, emotional, social, and spiritual aspects of health",
+            "explanation": "A holistic approach recognizes that health and wellbeing involve multiple interconnected aspects including physical, mental, emotional, social, and spiritual dimensions. This comprehensive view leads to more effective and personalized healthcare and wellness strategies."
+        }
+    ]
+},
+  {
     "name": "Geometry",
     "questions": [
         {

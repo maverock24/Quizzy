@@ -1,5 +1,582 @@
 [
   {
+    "name": "Reiseziele der Welt",
+    "questions": [
+        {
+            "question": "Welches Naturwunder besteht aus über 40.000 sechseckigen Basaltsäulen in Nordirland?",
+            "answers": [
+                {"answer": "Cliffs of Moher"},
+                {"answer": "Giant's Causeway"},
+                {"answer": "Ring of Kerry"},
+                {"answer": "Skellig Michael"}
+            ],
+            "answer": "Giant's Causeway",
+            "explanation": "Der Giant's Causeway (Damm der Riesen) ist eine Küstenformation aus etwa 40.000 ineinandergreifenden Basaltsäulen vulkanischen Ursprungs. Die sechseckigen Säulen entstanden vor 50-60 Millionen Jahren durch Vulkanaktivität und sind heute ein UNESCO-Weltkulturerbe."
+        },
+        {
+            "question": "In welchem Land befindet sich das berühmte Kloster Tiger's Nest (Paro Taktsang)?",
+            "answers": [
+                {"answer": "Nepal"},
+                {"answer": "Tibet"},
+                {"answer": "Bhutan"},
+                {"answer": "Myanmar"}
+            ],
+            "answer": "Bhutan",
+            "explanation": "Das Tiger's Nest Kloster (Paro Taktsang) ist ein buddhistisches Kloster in Bhutan, das spektakulär an einer Felswand in 3.120 Metern Höhe hängt. Es ist eines der heiligsten Orte in Bhutan und ein beliebtes Pilgerziel sowie Touristenattraktion."
+        },
+        {
+            "question": "Welche Inselgruppe ist bekannt für ihre einzigartige Tierwelt, die Charles Darwin zu seiner Evolutionstheorie inspirierte?",
+            "answers": [
+                {"answer": "Malediven"},
+                {"answer": "Galápagos-Inseln"},
+                {"answer": "Seychellen"},
+                {"answer": "Kanarische Inseln"}
+            ],
+            "answer": "Galápagos-Inseln",
+            "explanation": "Die Galápagos-Inseln vor der Küste Ecuadors sind berühmt für ihre einzigartige Tierwelt mit Riesenschildkröten, Meerechsen und Darwinfinken. Charles Darwin entwickelte hier wichtige Erkenntnisse für seine Evolutionstheorie. Die Inseln sind UNESCO-Weltnaturerbe."
+        },
+        {
+            "question": "Welche antike Stadt in Jordanien ist berühmt für ihre in rosa Sandstein gehauenen Fassaden?",
+            "answers": [
+                {"answer": "Jerash"},
+                {"answer": "Amman"},
+                {"answer": "Petra"},
+                {"answer": "Aqaba"}
+            ],
+            "answer": "Petra",
+            "explanation": "Petra, die 'Rosa Stadt', ist eine antike nabatäische Stadt in Jordanien, berühmt für ihre spektakulären, in rosa Sandstein gehauenen Fassaden und Gräber. Das Schatzhaus (Treasury) ist das bekannteste Bauwerk dieser UNESCO-Weltkulturerbestätte."
+        },
+        {
+            "question": "Welcher Wasserfall an der Grenze zwischen Sambia und Simbabwe wird als einer der größten der Welt bezeichnet?",
+            "answers": [
+                {"answer": "Iguazú-Wasserfälle"},
+                {"answer": "Victoriafälle"},
+                {"answer": "Niagarafälle"},
+                {"answer": "Angel Falls"}
+            ],
+            "answer": "Victoriafälle",
+            "explanation": "Die Victoriafälle am Sambesi-Fluss zwischen Sambia und Simbabwe sind einer der größten Wasserfälle der Welt. Mit 1.708 Metern Breite und 108 Metern Höhe schaffen sie einen spektakulären Anblick und werden lokal 'Mosi-oa-Tunya' (donnernder Rauch) genannt."
+        },
+        {
+            "question": "In welchem Land befindet sich die berühmte Salzwüste Salar de Uyuni?",
+            "answers": [
+                {"answer": "Chile"},
+                {"answer": "Bolivien"},
+                {"answer": "Peru"},
+                {"answer": "Argentinien"}
+            ],
+            "answer": "Bolivien",
+            "explanation": "Der Salar de Uyuni in Bolivien ist die größte Salzwüste der Welt mit über 10.000 km². Während der Regenzeit verwandelt sie sich in einen riesigen Spiegel, der den Himmel reflektiert und eines der spektakulärsten Naturschauspiele der Erde bietet."
+        },
+        {
+            "question": "Welche Insel in der Ägäis ist bekannt für ihre weißen Häuser mit blauen Kuppeln?",
+            "answers": [
+                {"answer": "Mykonos"},
+                {"answer": "Santorini"},
+                {"answer": "Kreta"},
+                {"answer": "Rhodos"}
+            ],
+            "answer": "Santorini",
+            "explanation": "Santorini (Thira) ist berühmt für die charakteristischen weißen Häuser mit blauen Kuppeln, die über der Caldera thronen. Die Insel entstand durch einen gewaltigen Vulkanausbruch und bietet spektakuläre Sonnenuntergänge sowie einzigartige vulkanische Landschaften."
+        },
+        {
+            "question": "Welches ist das höchste freistehende Bergmassiv der Welt?",
+            "answers": [
+                {"answer": "Mount Everest"},
+                {"answer": "Kilimandscharo"},
+                {"answer": "Mount McKinley"},
+                {"answer": "Mont Blanc"}
+            ],
+            "answer": "Kilimandscharo",
+            "explanation": "Der Kilimandscharo in Tansania ist mit 5.895 Metern das höchste freistehende Bergmassiv der Welt. Als höchster Berg Afrikas ist er ein beliebtes Trekkingziel und bietet verschiedene Klimazonen von tropisch bis arktisch."
+        },
+        {
+            "question": "Welche Halbinsel in Kroatien ist bekannt für ihre 16 terrassenförmig angeordneten Seen?",
+            "answers": [
+                {"answer": "Istrien"},
+                {"answer": "Plitvicer Seen"},
+                {"answer": "Kornaten"},
+                {"answer": "Brijuni"}
+            ],
+            "answer": "Plitvicer Seen",
+            "explanation": "Die Plitvicer Seen in Kroatien bestehen aus 16 terrassenförmig angeordneten Seen, die durch natürliche Travertinbarrieren verbunden sind. Der Nationalpark ist UNESCO-Weltkulturerbe und bekannt für seine türkisblauen Seen und zahlreichen Wasserfälle."
+        },
+        {
+            "question": "In welchem Land befindet sich die antike Tempelanlage Angkor Wat?",
+            "answers": [
+                {"answer": "Thailand"},
+                {"answer": "Vietnam"},
+                {"answer": "Kambodscha"},
+                {"answer": "Laos"}
+            ],
+            "answer": "Kambodscha",
+            "explanation": "Angkor Wat in Kambodscha ist die größte religiöse Bauwerk der Welt und ein Meisterwerk der Khmer-Architektur aus dem 12. Jahrhundert. Die Tempelanlage bei Siem Reap ist UNESCO-Weltkulturerbe und zieht Millionen von Besuchern an."
+        },
+        {
+            "question": "Welche Felsformation in Australien ist den Aborigines heilig und ändert ihre Farbe je nach Tageszeit?",
+            "answers": [
+                {"answer": "Twelve Apostles"},
+                {"answer": "Uluru (Ayers Rock)"},
+                {"answer": "Kata Tjuta"},
+                {"answer": "Blue Mountains"}
+            ],
+            "answer": "Uluru (Ayers Rock)",
+            "explanation": "Uluru, auch als Ayers Rock bekannt, ist ein 348 Meter hoher Monolith im Herzen Australiens. Der Felsen ist den Aborigines heilig und verändert seine Farbe von rötlich-braun bis zu leuchtendem Rot je nach Sonnenstand."
+        },
+        {
+            "question": "Welche Insel ist bekannt für ihre mysteriösen Steinstatuen namens Moai?",
+            "answers": [
+                {"answer": "Tahiti"},
+                {"answer": "Osterinsel"},
+                {"answer": "Fiji"},
+                {"answer": "Cook-Inseln"}
+            ],
+            "answer": "Osterinsel",
+            "explanation": "Die Osterinsel (Rapa Nui) im Pazifik ist berühmt für ihre fast 1.000 monumentalen Steinstatuen namens Moai. Diese wurden zwischen 1250 und 1500 n. Chr. von den Polynesiern erschaffen und sind ein UNESCO-Weltkulturerbe."
+        },
+        {
+            "question": "In welchem Land befindet sich die berühmte Felsenstadt Machu Picchu?",
+            "answers": [
+                {"answer": "Ecuador"},
+                {"answer": "Bolivien"},
+                {"answer": "Peru"},
+                {"answer": "Kolumbien"}
+            ],
+            "answer": "Peru",
+            "explanation": "Machu Picchu, die 'verlorene Stadt der Inka', liegt auf 2.430 Metern Höhe in den peruanischen Anden. Die gut erhaltene Ruinenstadt aus dem 15. Jahrhundert ist UNESCO-Weltkulturerbe und eines der neuen sieben Weltwunder."
+        },
+        {
+            "question": "Welche Schlucht in den USA ist bis zu 1.800 Meter tief und wurde vom Colorado River geformt?",
+            "answers": [
+                {"answer": "Bryce Canyon"},
+                {"answer": "Zion Canyon"},
+                {"answer": "Grand Canyon"},
+                {"answer": "Antelope Canyon"}
+            ],
+            "answer": "Grand Canyon",
+            "explanation": "Der Grand Canyon in Arizona ist eine der beeindruckendsten Naturformationen der Welt. Die bis zu 1.800 Meter tiefe und 450 Kilometer lange Schlucht wurde über Millionen Jahre vom Colorado River in das Gestein geschnitten."
+        },
+        {
+            "question": "Welches Land ist bekannt für seine spektakulären Fjorde und Nordlichter?",
+            "answers": [
+                {"answer": "Schweden"},
+                {"answer": "Norwegen"},
+                {"answer": "Island"},
+                {"answer": "Dänemark"}
+            ],
+            "answer": "Norwegen",
+            "explanation": "Norwegen ist weltberühmt für seine dramatischen Fjorde wie den Geirangerfjord und Nærøyfjord, sowie für die Aurora Borealis (Nordlichter), die besonders gut in der Polarregion zu beobachten sind. Das Land bietet spektakuläre Landschaften und Naturphänomene."
+        },
+        {
+            "question": "Welche Wüste ist die größte Sandwüste der Welt?",
+            "answers": [
+                {"answer": "Sahara"},
+                {"answer": "Rub al-Khali"},
+                {"answer": "Gobi"},
+                {"answer": "Kalahari"}
+            ],
+            "answer": "Rub al-Khali",
+            "explanation": "Die Rub al-Khali (Leeres Viertel) auf der Arabischen Halbinsel ist die größte zusammenhängende Sandwüste der Welt. Sie erstreckt sich über 650.000 km² und bietet endlose Sanddünen, die bis zu 250 Meter hoch werden können."
+        },
+        {
+            "question": "In welchem Land befindet sich der größte Geysir der Welt, der Strokkur?",
+            "answers": [
+                {"answer": "Island"},
+                {"answer": "USA"},
+                {"answer": "Neuseeland"},
+                {"answer": "Chile"}
+            ],
+            "answer": "Island",
+            "explanation": "Der Strokkur ist ein aktiver Geysir in Island, der alle 8-10 Minuten Wasser bis zu 40 Meter hoch schleudert. Island, das 'Land aus Feuer und Eis', ist bekannt für seine Geysire, heißen Quellen, Vulkane und Gletscher."
+        },
+        {
+            "question": "Welche Tempelanlage in Myanmar ist bekannt für ihre über 2.000 Pagoden?",
+            "answers": [
+                {"answer": "Shwedagon"},
+                {"answer": "Bagan"},
+                {"answer": "Mandalay"},
+                {"answer": "Yangon"}
+            ],
+            "answer": "Bagan",
+            "explanation": "Bagan in Myanmar ist eine der größten archäologischen Stätten der Welt mit über 2.000 erhaltenen Pagoden und Tempeln aus ursprünglich 10.000 Bauwerken. Die Anlage aus dem 11.-13. Jahrhundert bietet besonders bei Sonnenaufgang spektakuläre Anblicke."
+        },
+        {
+            "question": "Welche Halbinsel in der Türkei ist bekannt für ihre Feenkamine und unterirdischen Städte?",
+            "answers": [
+                {"answer": "Gallipoli"},
+                {"answer": "Kappadokien"},
+                {"answer": "Bodrum"},
+                {"answer": "Antalya"}
+            ],
+            "answer": "Kappadokien",
+            "explanation": "Kappadokien in Zentralanatolien ist berühmt für seine einzigartige Landschaft mit Feenkaminen (Hoodoos), Höhlenkirchen und unterirdischen Städten. Die Region bietet auch spektakuläre Heißluftballonfahrten über die surreale Vulkanlandschaft."
+        },
+        {
+            "question": "In welchem Land befindet sich der berühmte Bambuswald von Arashiyama?",
+            "answers": [
+                {"answer": "China"},
+                {"answer": "Japan"},
+                {"answer": "Korea"},
+                {"answer": "Vietnam"}
+            ],
+            "answer": "Japan",
+            "explanation": "Der Bambuswald von Arashiyama in Kyoto, Japan, ist ein mystischer Ort mit tausenden hohen Bambusrohren, die ein natürliches grünes Lichtspiel und einzigartige Geräusche erzeugen. Er gilt als einer der schönsten Orte Japans."
+        },
+        {
+            "question": "Welche Insel in Griechenland ist bekannt für ihre rot-schwarzen Vulkanstrände?",
+            "answers": [
+                {"answer": "Mykonos"},
+                {"answer": "Santorini"},
+                {"answer": "Korfu"},
+                {"answer": "Zakynthos"}
+            ],
+            "answer": "Santorini",
+            "explanation": "Santorini hat aufgrund seiner vulkanischen Entstehung einzigartige Strände mit rotem und schwarzem Sand. Der Red Beach und Kamari Beach sind besonders bekannt für ihre ungewöhnlichen Farben, die von vulkanischen Materialien stammen."
+        },
+        {
+            "question": "Welches Atoll ist bekannt als Unterwasserparadies für Taucher und liegt im Indischen Ozean?",
+            "answers": [
+                {"answer": "Bora Bora"},
+                {"answer": "Malediven"},
+                {"answer": "Seychellen"},
+                {"answer": "Mauritius"}
+            ],
+            "answer": "Malediven",
+            "explanation": "Die Malediven sind ein Inselstaat im Indischen Ozean mit 1.192 Koralleninseln, bekannt für kristallklares Wasser, Korallenriffe und außergewöhnliche Unterwasserwelt. Sie gelten als eines der besten Tauch- und Schnorchelziele der Welt."
+        },
+        {
+            "question": "In welchem Land befindet sich das Valley of Fire mit seinen roten Sandsteinformationen?",
+            "answers": [
+                {"answer": "Utah"},
+                {"answer": "Arizona"},
+                {"answer": "Nevada"},
+                {"answer": "New Mexico"}
+            ],
+            "answer": "Nevada",
+            "explanation": "Das Valley of Fire liegt in Nevada, USA, und ist bekannt für seine spektakulären roten Sandsteinformationen, die vor 150 Millionen Jahren entstanden. Der State Park bietet dramatische Felsformationen und Petroglyphen der Ureinwohner."
+        },
+        {
+            "question": "Welche Bergkette in Südamerika erstreckt sich über 7.000 Kilometer entlang der Westküste?",
+            "answers": [
+                {"answer": "Rocky Mountains"},
+                {"answer": "Anden"},
+                {"answer": "Appalachen"},
+                {"answer": "Sierra Nevada"}
+            ],
+            "answer": "Anden",
+            "explanation": "Die Anden sind die längste kontinentale Gebirgskette der Welt und erstrecken sich über 7.000 Kilometer entlang der Westküste Südamerikas durch sieben Länder. Sie beherbergen spektakuläre Landschaften, antike Kulturen und einzigartige Ökosysteme."
+        },
+        {
+            "question": "Welche Stadt in Indien ist bekannt für das berühmte Taj Mahal?",
+            "answers": [
+                {"answer": "Delhi"},
+                {"answer": "Mumbai"},
+                {"answer": "Agra"},
+                {"answer": "Jaipur"}
+            ],
+            "answer": "Agra",
+            "explanation": "Das Taj Mahal in Agra, Indien, ist ein Mausoleum aus weißem Marmor, das als eines der schönsten Bauwerke der Welt gilt. Es wurde im 17. Jahrhundert von Shah Jahan für seine verstorbene Frau Mumtaz Mahal erbaut und ist UNESCO-Weltkulturerbe."
+        },
+        {
+            "question": "Welche Lagune in der Antarktis ist bekannt für ihre außergewöhnliche blaue Farbe?",
+            "answers": [
+                {"answer": "Blue Lagoon Island"},
+                {"answer": "Crater Lake"},
+                {"answer": "Blue Lagoon Iceland"},
+                {"answer": "Antarktische blaue Eisberge"}
+            ],
+            "answer": "Antarktische blaue Eisberge",
+            "explanation": "Die Antarktis ist bekannt für ihre spektakulären blauen Eisberge und Eisformationen. Das intensive Blau entsteht durch die Kompression des Eises über tausende Jahre, wodurch Luftbläschen herausgepresst werden und das Eis nur noch blaues Licht reflektiert."
+        },
+        {
+            "question": "In welchem Land befindet sich der Hwange-Nationalpark, einer der größten Afrikas?",
+            "answers": [
+                {"answer": "Botswana"},
+                {"answer": "Simbabwe"},
+                {"answer": "Südafrika"},
+                {"answer": "Namibia"}
+            ],
+            "answer": "Simbabwe",
+            "explanation": "Der Hwange-Nationalpark in Simbabwe ist der größte Nationalpark des Landes und einer der größten in Afrika. Er beherbergt eine der größten Elefantenpopulationen der Welt und bietet spektakuläre Wildbeobachtungen."
+        },
+        {
+            "question": "Welche Höhlen in Mexiko sind bekannt für ihre riesigen Gipskristalle?",
+            "answers": [
+                {"answer": "Carlsbad Caverns"},
+                {"answer": "Höhle der Kristalle (Naica)"},
+                {"answer": "Mammoth Cave"},
+                {"answer": "Postojna-Höhle"}
+            ],
+            "answer": "Höhle der Kristalle (Naica)",
+            "explanation": "Die Höhle der Kristalle in der Naica-Mine in Mexiko enthält einige der größten natürlichen Kristalle der Welt. Die bis zu 12 Meter langen Selenitkristalle entstanden über 500.000 Jahre in der heißen, mineralreichen Umgebung."
+        },
+        {
+            "question": "Welches Archipel ist bekannt für seine einzigartige Biodiversität und liegt vor der Küste Ecuadors?",
+            "answers": [
+                {"answer": "Azoren"},
+                {"answer": "Galápagos-Inseln"},
+                {"answer": "Kanaren"},
+                {"answer": "Madeira"}
+            ],
+            "answer": "Galápagos-Inseln",
+            "explanation": "Die Galápagos-Inseln sind ein vulkanisches Archipel 1.000 km vor der Küste Ecuadors, bekannt für ihre außergewöhnliche Biodiversität und endemische Arten. Sie inspirieren Charles Darwin zu seiner Evolutionstheorie und sind UNESCO-Weltnaturerbe."
+        },
+        {
+            "question": "In welchem Land befindet sich der Kruger-Nationalpark, einer der berühmtesten Wildparks Afrikas?",
+            "answers": [
+                {"answer": "Kenia"},
+                {"answer": "Tansania"},
+                {"answer": "Südafrika"},
+                {"answer": "Botswana"}
+            ],
+            "answer": "Südafrika",
+            "explanation": "Der Kruger-Nationalpark in Südafrika ist einer der größten und bekanntesten Wildparks Afrikas. Er beherbergt die 'Big Five' (Löwe, Leopard, Elefant, Nashorn, Büffel) und bietet ausgezeichnete Safari-Möglichkeiten auf fast 20.000 km²."
+        },
+        {
+            "question": "Welche Insel in Thailand ist bekannt für ihre spektakulären Kalksteinfelsen im Meer?",
+            "answers": [
+                {"answer": "Phuket"},
+                {"answer": "Koh Phi Phi"},
+                {"answer": "Koh Samui"},
+                {"answer": "Krabi"}
+            ],
+            "answer": "Krabi",
+            "explanation": "Krabi in Thailand ist berühmt für seine dramatischen Kalksteinfelsen, die aus dem türkisblauen Meer ragen. Die Railay-Halbinsel und die James-Bond-Insel sind besonders bekannte Formationen, die Kletterer und Fotografen aus aller Welt anziehen."
+        },
+        {
+            "question": "Welcher Gletscher in Argentinien ist bekannt dafür, dass Besucher das Kalben beobachten können?",
+            "answers": [
+                {"answer": "Upsala-Gletscher"},
+                {"answer": "Perito-Moreno-Gletscher"},
+                {"answer": "Spegazzini-Gletscher"},
+                {"answer": "Viedma-Gletscher"}
+            ],
+            "answer": "Perito-Moreno-Gletscher",
+            "explanation": "Der Perito-Moreno-Gletscher in Patagonien, Argentinien, ist einer der wenigen Gletscher weltweit, der noch wächst. Besucher können vom Aussichtspunkt aus spektakuläre Kalben beobachten, wenn riesige Eisstücke ins Wasser stürzen."
+        },
+        {
+            "question": "In welchem Land befindet sich der Zhangjiajie-Nationalpark mit seinen Pilzfelsen?",
+            "answers": [
+                {"answer": "Japan"},
+                {"answer": "China"},
+                {"answer": "Vietnam"},
+                {"answer": "Thailand"}
+            ],
+            "answer": "China",
+            "explanation": "Der Zhangjiajie-Nationalpark in der chinesischen Provinz Hunan ist bekannt für seine über 3.000 Sandsteinsäulen, die bis zu 200 Meter hoch sind. Diese spektakulären Pilzfelsen dienten als Inspiration für die schwebenden Berge im Film Avatar."
+        },
+        {
+            "question": "Welche Höhle in Vietnam ist eine der größten der Welt und wurde erst 2009 für Touristen zugänglich?",
+            "answers": [
+                {"answer": "Son-Tra-Höhle"},
+                {"answer": "Hang-Son-Doong-Höhle"},
+                {"answer": "Phong-Nha-Höhle"},
+                {"answer": "Paradise-Höhle"}
+            ],
+            "answer": "Hang-Son-Doong-Höhle",
+            "explanation": "Die Hang-Son-Doong-Höhle in Vietnam ist die größte bekannte Höhle der Welt. Sie ist so groß, dass ganze Wolkenkratzer hineinpassen würden. Die Höhle wurde erst 2009 entdeckt und ist nur für wenige Besucher pro Jahr zugänglich."
+        },
+        {
+            "question": "Welches Tal in Pakistan ist bekannt als 'Shangri-La' wegen seiner spektakulären Schönheit?",
+            "answers": [
+                {"answer": "Swat-Tal"},
+                {"answer": "Hunza-Tal"},
+                {"answer": "Chitral-Tal"},
+                {"answer": "Kaghan-Tal"}
+            ],
+            "answer": "Hunza-Tal",
+            "explanation": "Das Hunza-Tal in Pakistan wird oft als 'Shangri-La' bezeichnet wegen seiner atemberaubenden Berglandschaft mit Blick auf Rakaposhi und andere Gipfel des Karakorum. Das Tal ist bekannt für seine Aprikosenblüte und die Langlebigkeit seiner Bewohner."
+        },
+        {
+            "question": "In welchem Land befindet sich die Socotra-Insel mit ihrer einzigartigen Flora und Fauna?",
+            "answers": [
+                {"answer": "Somalia"},
+                {"answer": "Jemen"},
+                {"answer": "Oman"},
+                {"answer": "Eritrea"}
+            ],
+            "answer": "Jemen",
+            "explanation": "Die Socotra-Insel gehört zum Jemen und ist bekannt für ihre einzigartige Biodiversität. Ein Drittel ihrer Pflanzenarten ist endemisch, darunter der berühmte Drachenblutbaum. Die Insel wird oft als 'Galápagos des Indischen Ozeans' bezeichnet."
+        },
+        {
+            "question": "Welcher Ort in Chile ist bekannt für seine mehr als 1.000 Moai-ähnlichen Statuen?",
+            "answers": [
+                {"answer": "Atacama-Wüste"},
+                {"answer": "Easter Island (gehört zu Chile)"},
+                {"answer": "Chiloé"},
+                {"answer": "Torres del Paine"}
+            ],
+            "answer": "Easter Island (gehört zu Chile)",
+            "explanation": "Die Osterinsel (Rapa Nui) gehört zu Chile und ist berühmt für ihre fast 1.000 monumentalen Moai-Statuen. Diese wurden zwischen 1250 und 1500 n. Chr. von den Polynesiern geschaffen und sind ein UNESCO-Weltkulturerbe."
+        },
+        {
+            "question": "Welche Bergkette in Rumänien ist bekannt für ihre Verbindung zur Dracula-Legende?",
+            "answers": [
+                {"answer": "Karpaten"},
+                {"answer": "Apuseni"},
+                {"answer": "Rodna"},
+                {"answer": "Parâng"}
+            ],
+            "answer": "Karpaten",
+            "explanation": "Die Karpaten in Rumänien, besonders die Region Transsylvanien, sind bekannt für ihre Verbindung zur Dracula-Legende. Schloss Bran wird oft als 'Draculas Schloss' bezeichnet, obwohl die historische Verbindung zu Vlad dem Pfähler begrenzt ist."
+        },
+        {
+            "question": "In welchem Land befindet sich der Dallol-Vulkan mit seinen bunten Salzformationen?",
+            "answers": [
+                {"answer": "Kenia"},
+                {"answer": "Äthiopien"},
+                {"answer": "Dschibuti"},
+                {"answer": "Eritrea"}
+            ],
+            "answer": "Äthiopien",
+            "explanation": "Der Dallol-Vulkan in der Danakil-Wüste Äthiopiens liegt 125 Meter unter dem Meeresspiegel und ist bekannt für seine surrealen, bunten Salzformationen, Schwefelquellen und Säurepools. Es ist einer der heißesten Orte der Erde."
+        },
+        {
+            "question": "Welche Schlucht in Arizona ist bekannt für ihre wellenartigen Sandsteinformationen?",
+            "answers": [
+                {"answer": "Grand Canyon"},
+                {"answer": "Antelope Canyon"},
+                {"answer": "Canyon de Chelly"},
+                {"answer": "Havasu Canyon"}
+            ],
+            "answer": "Antelope Canyon",
+            "explanation": "Der Antelope Canyon in Arizona ist eine Slot-Schlucht, die für ihre wellenartigen Sandsteinwände und spektakulären Lichteffekte berühmt ist. Die schmalen Durchgänge und das einfallende Sonnenlicht schaffen magische Fotomotive."
+        },
+        {
+            "question": "In welchem Land befindet sich der Lake Hillier, der für seine rosa Farbe bekannt ist?",
+            "answers": [
+                {"answer": "Neuseeland"},
+                {"answer": "Australien"},
+                {"answer": "Kanada"},
+                {"answer": "Norwegen"}
+            ],
+            "answer": "Australien",
+            "explanation": "Der Lake Hillier auf Middle Island vor der Küste Westaustraliens ist berühmt für seine intensive rosa Farbe, die durch Algen und Bakterien verursacht wird. Der See behält seine Farbe sogar, wenn das Wasser in einem Behälter gesammelt wird."
+        },
+        {
+            "question": "Welche Höhle in Neuseeland ist bekannt für ihre Glühwürmchen?",
+            "answers": [
+                {"answer": "Te Papa Cave"},
+                {"answer": "Waitomo Caves"},
+                {"answer": "Franz Josef Caves"},
+                {"answer": "Milford Caves"}
+            ],
+            "answer": "Waitomo Caves",
+            "explanation": "Die Waitomo Caves auf der Nordinsel Neuseelands sind weltberühmt für ihre Glühwürmchen (Arachnocampa luminosa). Die Grotto-Höhle bietet ein spektakuläres Naturschauspiel, wenn tausende Glühwürmchen die Decke wie einen Sternenhimmel erleuchten."
+        },
+        {
+            "question": "In welchem Land befindet sich die Wadi Rum Wüste, auch bekannt als 'Tal des Mondes'?",
+            "answers": [
+                {"answer": "Saudi-Arabien"},
+                {"answer": "Jordanien"},
+                {"answer": "Israel"},
+                {"answer": "Syrien"}
+            ],
+            "answer": "Jordanien",
+            "explanation": "Wadi Rum in Jordanien ist eine spektakuläre Wüstenlandschaft mit roten Sandsteinfelsen und wurde aufgrund ihrer mondähnlichen Landschaft als Drehort für Mars-Filme verwendet. Die Wüste ist auch für ihre Beduinenkultur und Sternenbeobachtung bekannt."
+        },
+        {
+            "question": "Welche Insel in der Karibik ist bekannt für ihre schwimmenden Schweine?",
+            "answers": [
+                {"answer": "Barbados"},
+                {"answer": "Bahamas"},
+                {"answer": "Jamaica"},
+                {"answer": "Kuba"}
+            ],
+            "answer": "Bahamas",
+            "explanation": "Pig Beach (Big Major Cay) auf den Bahamas ist berühmt für seine schwimmenden Schweine. Diese freundlichen Schweine leben wild auf der unbewohnten Insel und schwimmen zu den Booten der Touristen, um Futter zu erhalten."
+        },
+        {
+            "question": "In welchem Land befindet sich der Blue Mountains Nationalpark mit dem Three Sisters Felsen?",
+            "answers": [
+                {"answer": "Neuseeland"},
+                {"answer": "Australien"},
+                {"answer": "Südafrika"},
+                {"answer": "Kanada"}
+            ],
+            "answer": "Australien",
+            "explanation": "Die Blue Mountains westlich von Sydney, Australien, sind bekannt für die Three Sisters - drei markante Sandsteinfelsen. Der Nationalpark bietet spektakuläre Aussichten, Wanderwege und ist berühmt für den bläulichen Dunst, der von Eukalyptusöl stammt."
+        },
+        {
+            "question": "Welche Thermalquelle in Island ist bekannt für ihre milchig-blaue Farbe und heilende Eigenschaften?",
+            "answers": [
+                {"answer": "Geysir"},
+                {"answer": "Blue Lagoon"},
+                {"answer": "Gullfoss"},
+                {"answer": "Strokkur"}
+            ],
+            "answer": "Blue Lagoon",
+            "explanation": "Die Blue Lagoon (Blaue Lagune) auf der Reykjanes-Halbinsel in Island ist eine geothermale Spa-Anlage mit milchig-blauem Wasser, das reich an Kieselsäure und anderen Mineralien ist. Das Wasser soll heilende Eigenschaften für Hautkrankheiten haben."
+        },
+        {
+            "question": "In welchem Land befindet sich der Fairy Pools mit kristallklaren Bergbächen und Wasserfällen?",
+            "answers": [
+                {"answer": "Irland"},
+                {"answer": "Schottland"},
+                {"answer": "Wales"},
+                {"answer": "Island"}
+            ],
+            "answer": "Schottland",
+            "explanation": "Die Fairy Pools auf der Isle of Skye in Schottland sind eine Serie von kristallklaren Bergbächen und Wasserfällen am Fuße der Cuillin Mountains. Die türkisfarbenen Pools und dramatischen Landschaften machen sie zu einem beliebten Wanderziel."
+        },
+        {
+            "question": "Welcher Ort in Brasilien ist bekannt für seine riesigen Sanddünen und Lagunen?",
+            "answers": [
+                {"answer": "Fernando de Noronha"},
+                {"answer": "Lençóis Maranhenses"},
+                {"answer": "Chapada Diamantina"},
+                {"answer": "Pantanal"}
+            ],
+            "answer": "Lençóis Maranhenses",
+            "explanation": "Der Lençóis Maranhenses Nationalpark in Brasilien besteht aus riesigen weißen Sanddünen, die während der Regenzeit von kristallklaren Süßwasserlagunen durchzogen werden. Diese einzigartige Landschaft erstreckt sich über 1.500 km²."
+        },
+        {
+            "question": "In welchem Land befinden sich die Rainbow Mountains mit ihren bunten Gesteinsschichten?",
+            "answers": [
+                {"answer": "Peru"},
+                {"answer": "China"},
+                {"answer": "Iran"},
+                {"answer": "Alle der genannten"}
+            ],
+            "answer": "Alle der genannten",
+            "explanation": "Rainbow Mountains mit bunten Gesteinsschichten gibt es an mehreren Orten: Zhangye Danxia in China, Vinicunca in Peru und Aladaglar in Iran. Diese spektakulären Formationen entstanden durch verschiedene Mineralien und geologische Prozesse über Millionen von Jahren."
+        },
+        {
+            "question": "Welche Höhlen in Malaysia sind bekannt für ihre riesigen Kammern und Hindu-Tempel?",
+            "answers": [
+                {"answer": "Mulu Caves"},
+                {"answer": "Batu Caves"},
+                {"answer": "Gomantong Caves"},
+                {"answer": "Clearwater Cave"}
+            ],
+            "answer": "Batu Caves",
+            "explanation": "Die Batu Caves nördlich von Kuala Lumpur sind eine Serie von Kalksteinhöhlen mit Hindu-Tempeln und Schreinen. Die Temple Cave mit ihrer 100 Meter hohen Decke und die 272 Stufen zur Haupthöhle sind besonders bekannt."
+        },
+        {
+            "question": "In welchem Land befindet sich die Door to Hell, ein seit 1971 brennendes Erdgasloch?",
+            "answers": [
+                {"answer": "Kasachstan"},
+                {"answer": "Turkmenistan"},
+                {"answer": "Usbekistan"},
+                {"answer": "Tadschikistan"}
+            ],
+            "answer": "Turkmenistan",
+            "explanation": "Die 'Tür zur Hölle' (Darvaza-Gaskrater) in der Karakum-Wüste Turkmenistans ist ein natürlicher Erdgaskrater, der seit 1971 kontinuierlich brennt. Der 70 Meter breite Krater entstand durch einen Bohrungsunfall und brennt seither Tag und Nacht."
+        },
+        {
+            "question": "Welche Insel in Japan ist bekannt für ihre Bambushaine und Affenpopulation?",
+            "answers": [
+                {"answer": "Miyajima"},
+                {"answer": "Arashiyama (bei Kyoto)"},
+                {"answer": "Monkey Island (Jigokudani)"},
+                {"answer": "Yakushima"}
+            ],
+            "answer": "Arashiyama (bei Kyoto)",
+            "explanation": "Arashiyama bei Kyoto ist berühmt für seinen magischen Bambuswald, während Jigokudani (Monkey Park) für seine Schneeaffen bekannt ist, die in heißen Quellen baden. Beide Orte bieten einzigartige Naturerlebnisse in Japan."
+        }
+    ]
+},
+  {
     "name": "Deutschland",
     "questions": [
         {
