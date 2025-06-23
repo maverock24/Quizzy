@@ -1,5 +1,329 @@
 [
     {
+        "name": "Suomalainen Metsä, Syötävät Yrtit ja Sienet",
+        "questions": [
+          {
+            "question": "Kuinka suuri prosentti Suomen maa-alasta on metsää?",
+            "answers": [
+              {"answer": "Noin 30%"},
+              {"answer": "Noin 50%"},
+              {"answer": "Noin 75%"},
+              {"answer": "Noin 90%"}
+            ],
+            "answer": "Noin 75%",
+            "explanation": "Suomi on yksi maailman metsäisimmistä maista, noin 75% maa-alasta on metsien peitossa. Nämä metsät ovat pääasiassa boreaalisia metsiä (taigaa), joissa vallitsevat havupuut kuten mänty ja kuusi, ja eteläisemmillä alueilla on myös lehtipuita. Metsämaisema vaihtelee tiheistä aarniometsistä taloudellisesti hoidettuihin talousmetsiin, ja lukuisat järvet, suot ja kosteikot luovat monimuotoisia ekosysteemejä kautta maan."
+          },
+          {
+            "question": "Mikä puulaji on yleisin Suomen metsissä?",
+            "answers": [
+              {"answer": "Koivu (Betula)"},
+              {"answer": "Mänty (Pinus sylvestris)"},
+              {"answer": "Kuusi (Picea abies)"},
+              {"answer": "Haapa (Populus tremula)"}
+            ],
+            "answer": "Mänty (Pinus sylvestris)",
+            "explanation": "Mänty (Pinus sylvestris) on yleisin puu Suomen metsissä, peittäen noin 50% metsäalasta. Tunnistaminen: Männyllä on punertavan ruskea, hilseilevä kaarna ylärungossa ja oksissa, ja harmahtavan ruskea kaarna tyven lähellä. Neulaset kasvavat pareittain, ovat 3-5 cm pitkiä, kiertyneitä ja sinivihreän värisiä. Kävyt ovat pieniä (3-7 cm), kartiomaisia ja harmaanruskeita kypsinä. Männyt voivat elää 250-400 vuotta ja kasvavat vaihtelevilla maaperillä, erityisesti kuivilla, hiekkaisilla alueilla, muodostaen tyypillisiä maisemia kautta Suomen."
+          },
+          {
+            "question": "Mikä perinteinen oikeus antaa kaikille Suomessa mahdollisuuden poimia luonnonvaraisia marjoja ja sieniä metsistä?",
+            "answers": [
+              {"answer": "Metsäetuoikeus"},
+              {"answer": "Jokamiehenoikeus"},
+              {"answer": "Keräilyoikeus"},
+              {"answer": "Pohjoismainen metsälaki"}
+            ],
+            "answer": "Jokamiehenoikeus",
+            "explanation": "Jokamiehenoikeus on perinteinen oikeuskäsite Suomessa, joka antaa jokaiselle vapauden liikkua metsissä ja poimia luonnonvaraisia marjoja, sieniä ja yrttejä riippumatta siitä, kuka maan omistaa. Tämä oikeus mahdollistaa keräilijöiden kerätä luonnontuotteita henkilökohtaiseen käyttöön ilman maanomistajan lupaa, mikä tekee Suomesta paratiisin sieni- ja marja-harrastajille. Tähän oikeuteen liittyy kuitenkin vastuita: et saa vahingoittaa luontoa, häiritä muita tai tunkeutua yksityispihoille tai viljellyille alueille. Et myöskään saa kaataa puita tai kerätä sammalta ja jäkälää ilman lupaa."
+          },
+          {
+            "question": "Mikä Suomen metsissä yleinen syötävä sieni tunnetaan nimellä 'keltavahvero'?",
+            "answers": [
+              {"answer": "Herkkutatti (Boletus edulis)"},
+              {"answer": "Keltavahvero (Cantharellus cibarius)"},
+              {"answer": "Haaparousku (Russula vesca)"},
+              {"answer": "Musta torvisieni (Craterellus cornucopioides)"}
+            ],
+            "answer": "Keltavahvero (Cantharellus cibarius)",
+            "explanation": "Keltavahvero (Cantharellus cibarius) on arvostettu syötävä sieni Suomessa. Tunnistaminen: Keltavahverolla on tunnusomainen kultaisen keltainen tai oranssi suppilomainen lakki (3-10 cm leveä) aaltoilevin reunoin. Todellisten helttarakenteiden sijaan sillä on tylppiä, harjumaisia helttapoimuja, jotka kulkevat alas jalkaa pitkin. Nämä poimut ovat samanvärisiä kuin lakki eikä niitä voi erottaa maltosta. Jalka on kiinteä, kapenee alaspäin ja on samanvärinen kuin lakki. Sienellä on hedelmäinen, aprikoosimainen tuoksu. Keltavahveroja kasvaa heinäkuusta lokakuuhun, tyypillisesti sammaleessa koivujen ja muiden lehtipuiden alla, usein ryhmissä. Pääasiallinen varottava näköislaji on valevahvero (Hygrophoropsis aurantiaca), jolla on todelliset heltat, tasaisempi oranssi väri ja pehmeämpi malto."
+          },
+          {
+            "question": "Millä syötävällä luonnonmarjalla Suomen metsissä on sininen väri ja se värjää sormesi ja suusi syötäessä?",
+            "answers": [
+              {"answer": "Puolukka"},
+              {"answer": "Mustikka"},
+              {"answer": "Lakka"},
+              {"answer": "Variksenmarja"}
+            ],
+            "answer": "Mustikka",
+            "explanation": "Mustikka (Vaccinium myrtillus) on matalana kasvava pensas, jonka siniset marjat värjäävät sormet ja suun syötäessä. Tunnistaminen: Kasvi kasvaa 20-60 cm korkeaksi, ja sillä on pienet, soikeat, hammastetut kirkkaan vihreät lehdet, jotka muuttuvat punertaviksi syksyllä. Marjat ovat 5-8 mm halkaisijaltaan, sinimustia valkoisella härmällä ja niillä on litistynyt yläosa, jossa on tunnusomainen 'tähti'-kuvio kukan jäänteistä. Toisin kuin viljellyissä mustikoissa, metsämustikoissa on sininen malto läpikotaisin. Ne kasvavat havumetsissä ja sekametsissä, erityisesti happamassa maaperässä ja osittaisessa varjossa, muodostaen tiheän maton. Mustikat kypsyvät heinäkuusta syyskuuhun sijainnista riippuen. Ne eroavat samankaltaisista, mutta syömäkelvottomista kielojen sinisistä marjoista kasvutavallaan (pensas vs. yksi varsi) ja marjan päällä olevalla tähtikuviolla."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä yrtillä on sydämenmuotoiset lehdet ja hapan, sitruunainen maku?",
+            "answers": [
+              {"answer": "Nokkonen (Urtica dioica)"},
+              {"answer": "Käenkaali (Oxalis acetosella)"},
+              {"answer": "Vuohenputki (Aegopodium podagraria)"},
+              {"answer": "Pihatähtimö (Stellaria media)"}
+            ],
+            "answer": "Käenkaali (Oxalis acetosella)",
+            "explanation": "Käenkaali (Oxalis acetosella, tunnetaan myös nimellä ketunleipä) on yleinen metsäyrtti, jolla on virkistävä sitruunainen maku. Tunnistaminen: Käenkaali kasvaa 5-10 cm korkeaksi ja sillä on tunnusomaiset apilan kaltaiset lehdet, jotka koostuvat kolmesta sydämenmuotoisesta lehdykästä. Lehdykät taittuvat alaspäin keskisuonen molemmin puolin yöllä tai voimakkaassa auringonvalossa. Kukat ovat valkoisia, joissa on purppuraisia suonia, 1-1,5 cm leveitä, viisiterälehtisiä, ja ilmestyvät huhtikuusta kesäkuuhun. Käenkaali kasvaa varjoisissa havu- ja sekametsissä ravinteikkaassa maaperässä, muodostaen usein tiheitä kasvustoja metsänpohjalle. Hapan maku tulee oksaalihaposta, joka antaa sille virkistävän maun. Se eroaa helposti apilasta sydämenmuotoisilla lehdyköillään, valkoisilla kukillaan ja metsäisellä kasvupaikallaan. Sitä tulisi kuitenkin nauttia kohtuudella sen oksaalihappopitoisuuden vuoksi."
+          },
+          {
+            "question": "Mikä on vaarallisin sieni Suomen metsissä, jota tulisi aina välttää?",
+            "answers": [
+              {"answer": "Valevahvero (Hygrophoropsis aurantiaca)"},
+              {"answer": "Kavalakärpässieni (Amanita phalloides)"},
+              {"answer": "Punakärpässieni (Amanita muscaria)"},
+              {"answer": "Korvasieni (Gyromitra esculenta)"}
+            ],
+            "answer": "Kavalakärpässieni (Amanita phalloides)",
+            "explanation": "Kavalakärpässieni (Amanita phalloides) on erittäin myrkyllinen ja mahdollisesti tappava nautittuna. Tunnistaminen: Kavalakärpässienellä on 5-15 cm leveä lakki, joka alkaa pallomaisena ja laajenee litteäksi. Väri vaihtelee oliivinvihreästä kellertävään tai vaaleaan, usein tummempi keskeltä. Heltat ovat valkoiset, irti jalasta ja tiheästi järjestäytyneet. Jalka on 8-15 cm korkea, valkoinen hieman vihreään vivahtaen, ja siinä on rengasmainen heltta. Jalan tyvessä on kuppimainen tuppi (usein maahan hautautuneena). Itiöpöly valkoista. Se kasvaa heinäkuusta lokakuuhun lehtimetsissä, erityisesti tammi- ja pyökkimetsissä. Kriittisiä tunnistuspiirteitä ovat valkoiset heltat, rengasmainen heltta jalassa ja kuppimainen tuppi jalan tyvessä. Se voidaan sekoittaa syötäviin sieniin kuten peltoherkkusieneen tai vihreä-itiöiseen parasollisieneen, mikä tekee siitä erityisen vaarallisen. Jopa pieni pala voi olla tappava. Älä koskaan kerää mitään Amanita-lajeja aloittelijana."
+          },
+          {
+            "question": "Mikä syötävä luonnonmarja, joka kasvaa Suomen metsissä, sisältää runsaasti C-vitamiinia ja tunnetaan nimellä 'puolukka'?",
+            "answers": [
+              {"answer": "Mustikka"},
+              {"answer": "Lakka"},
+              {"answer": "Puolukka"},
+              {"answer": "Karpalo"}
+            ],
+            "answer": "Puolukka",
+            "explanation": "Puolukka (Vaccinium vitis-idaea) on yleinen luonnonmarja, joka on rikas C-vitamiinista. Tunnistaminen: Puolukka on ainavihanta varpukasvi, joka kasvaa 10-30 cm korkeaksi ja jolla on pienet, soikeat, nahkeat lehdet, jotka ovat päältä tummanvihreät ja kiiltävät, ja alapuolella on pieniä tummia pisteitä. Lehtien reunat ovat hieman alaspäin kääntyneet. Pienet, kellomaiset valkoisen ja vaaleanpunaisen väliset kukat kasvavat pieninä ryppäinä. Marjat ovat kirkkaan punaisia, 6-10 mm halkaisijaltaan, ja niillä on pieni 'kruunu' pohjassa. Ne kasvavat havumetsissä, kankailla ja soilla, erityisesti happamassa maaperässä. Puolukat kypsyvät elokuun lopusta lokakuuhun ja voivat säilyä kasveissa läpi talven. Ne eroavat samankaltaisista mutta kitkerimmistä juolukasta makeamman makunsa ja lehtien alapinnalla olevien pisteiden perusteella, sekä kielon marjoista varpumaisen kasvutapansa ja pysyvien vihreiden lehtiensä perusteella."
+          },
+          {
+            "question": "Millä arvostetussa syötävässä sienessä Suomen metsissä on ruskea lakki ja se tunnetaan nimellä 'herkkutatti'?",
+            "answers": [
+              {"answer": "Keltavahvero"},
+              {"answer": "Herkkutatti (Boletus edulis)"},
+              {"answer": "Lehmäntatti (Leccinum scabrum)"},
+              {"answer": "Haaparousku"}
+            ],
+            "answer": "Herkkutatti (Boletus edulis)",
+            "explanation": "Herkkutatti (Boletus edulis) on erittäin arvostettu syötävä sieni. Tunnistaminen: Herkkutatilla on pyöreä lakki (5-25 cm leveä), joka alkaa pallomaisena ja sitten litistyy, väriltään vaalean- tai tummanruskea (kuin sämpylä). Lakin pinta on sileä ja hieman tahmea märkänä. Alapuolella on valkoinen tai vihertävän keltainen pillistö heltojen sijaan, joka ei muutu painettaessa. Jalka (8-20 cm korkea, 2-6 cm paksu) on tyvestä pullea ja kapenee ylöspäin, ja siinä on hieno valkoinen verkkomainen kuvio (verkkosuoninen) yläosassa. Malto on valkoista eikä muuta väriä leikattaessa. Herkkutatti kasvaa heinäkuusta lokakuuhun havu- ja lehtimetsissä muodostaen mykorritsan puiden kanssa. Se voidaan erottaa samankaltaisista Boletus-lajeista ruskean lakkinsa, valkean/vaalean verkkosuonisen jalkansa ja muuttumattoman maltonsa värin perusteella, kun se leikataan. Varo sekoittamasta sitä saatanantattiin, jossa on punaista/oranssia väriä, tai karvaslajehin, joissa on pinkki tai punainen pillistö."
+          },
+          {
+            "question": "Mitä syötävää yrttiä Suomen metsissä käytetään usein perinneruoissa ja jolla on voimakas valkosipulimainen tuoksu?",
+            "answers": [
+              {"answer": "Käenkaali"},
+              {"answer": "Karhunlaukka (villisipuli)"},
+              {"answer": "Vuohenputki"},
+              {"answer": "Pihatähtimö"}
+            ],
+            "answer": "Karhunlaukka (villisipuli)",
+            "explanation": "Karhunlaukka tai villisipuli (Allium ursinum) on herkullinen syötävä yrtti. Tunnistaminen: Karhunlaukka kasvaa 20-40 cm korkeaksi, ja sillä on 2-3 leveää, litteää, elliptistä lehteä (10-25 cm pitkiä, 2-7 cm leveitä), jotka nousevat suoraan maasta. Lehdet ovat kirkkaan vihreitä, ohuita ja pehmeitä, joilla on voimakas valkosipulin tuoksu murskattaessa. Valkoiset tähtimäiset kukat ilmestyvät sateenvarjomaisina rykelminä touko-kesäkuussa. Kasvi kasvaa lehtimetsissä ravinteikkaassa, kosteassa maaperässä, usein muodostaen suuria kasvustoja. VAROITUS: Se voidaan sekoittaa myrkylliseen kieloon (Convallaria majalis) ja syksykelloon (Colchicum autumnale). Keskeiset erot: karhunlaukka lehdet kasvavat yksitellen vartta kohti (ei pareittain), niillä on selvä valkosipulin haju murskattaessa, ja lehtien vartalo on puoliympyrän muotoinen poikkileikkauksessa (ei pyöreä). Murskaa ja haista lehtiä aina varmistaaksesi valkosipulin tuoksun ennen keräämistä."
+          },
+          {
+            "question": "Millä suositulla syötävällä Suomen metsän sienellä on oranssinpunainen lakki vihertävällä vivahteella, eikä sillä ole todellisia helttoja?",
+            "answers": [
+              {"answer": "Karvarousku (Lactarius torminosus)"},
+              {"answer": "Keltavahvero (Cantharellus cibarius)"},
+              {"answer": "Punikkitatti (Leccinum versipelle)"},
+              {"answer": "Punakiiltotatti (Leccinum aurantiacum)"}
+            ],
+            "answer": "Punikkitatti (Leccinum versipelle)",
+            "explanation": "Punikkitatti (Leccinum versipelle) on suosittu syötävä sieni. Tunnistaminen: Sillä on oranssinpunainen tai oranssinruskea lakki (5-15 cm leveä), joka on kupera nuorena, litistyen iän myötä, ja siinä saattaa olla hieman vihertävä vivahde. Helttarakenteen sijasta sillä on sienimäinen pillikerros alapuolella, joka on valkean harmaa, tummuen painettaessa. Jalka (8-15 cm korkea) on valkoinen, jossa on selvästi erottuvat tummanruskeat tai mustat suomut, jotka korostuvat iän myötä. Leikattaessa malto muuttuu hitaasti vaaleanpunaisen harmaaksi, sitten siniharmaan mustaksi. Se muodostaa mykorritsasuhteen yksinomaan koivupuiden kanssa, kasvaen heinäkuusta lokakuuhun. Se erottuu muista Leccinum-lajeista oranssinpunertavalla lakillaan, kasvamalla yksinomaan koivujen lähellä, sekä tunnusomaisen värimuutoksen perusteella leikattaessa. Punakiiltotatti (L. aurantiacum) on hyvin samanlainen, mutta sillä on tyypillisesti kirkkaamman punainen lakki ja se kasvaa haavan tai poppelin lähellä."
+          },
+          {
+            "question": "Mikä arvokas luonnonmarja kasvaa suomalaisissa soissa ja on kullanvärinen kypsänä?",
+            "answers": [
+              {"answer": "Puolukka"},
+              {"answer": "Lakka"},
+              {"answer": "Mustikka"},
+              {"answer": "Karpalo"}
+            ],
+            "answer": "Lakka",
+            "explanation": "Lakka (Rubus chamaemorus, tunnetaan myös nimellä hilla) on erittäin arvostettu luonnonmarja. Tunnistaminen: Lakka-kasvi kasvaa 10-25 cm korkeaksi ja sillä on rypistyneet, vaahteran kaltaiset lehdet, joissa on 5-7 pyöristynyttä liuskaa. Kukin kasvi tuottaa tyypillisesti yhden valkoisen kukan, jossa on viisi terälehteä. Marjat kehittyvät ainutlaatuisen väriprogression kautta: aluksi punaisia, sitten meripihkan värisiä, lopulta kullankellan värisiä täysin kypsinä. Kypsät marjat muistuttavat vadelmia rakenteeltaan mutta ovat pehmeämpiä, ja niissä on vähemmän mutta suurempia luumumaisia osia. Kukin marja on 1-1,5 cm halkaisijaltaan. Lakat kasvavat turvesoissa ja kosteikkoalueilla, erityisen yleisiä Pohjois-Suomessa. Ne kukkivat kesäkuussa ja kypsyvät heinäkuun lopulta elokuuhun. Kasvi on kaksikotinen (erilliset uros- ja naaraskasvit). Niitä ei voi sekoittaa mihinkään myrkyllisiin marjoihin, mutta raa'at punaiset lakat ovat happamia, eikä niitä tulisi kerätä."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on lakki, jossa on sisäänpäin kääntynyt karvainen reuna ja joka tuottaa maitiaisnestettä leikattaessa?",
+            "answers": [
+              {"answer": "Keltavahvero"},
+              {"answer": "Karvarousku (Lactarius torminosus)"},
+              {"answer": "Herkkutatti"},
+              {"answer": "Haaparousku"}
+            ],
+            "answer": "Karvarousku (Lactarius torminosus)",
+            "explanation": "Karvarousku (Lactarius torminosus) on syötävä sieni asianmukaisen valmistuksen jälkeen. Tunnistaminen: Lakki (4-15 cm leveä) on vaaleanpunertava tai vaalean oranssi tummempine konsentrisine vyöhykkeineen ja selvän karvaisen, ripsureunaisen, sisäänrullatun reunan kanssa. Heltat ovat tiheät, vaalean kerma- tai lohenpunaiset, ja kulkevat hieman alaspäin jalkaa pitkin. Jalka (3-8 cm korkea) on lieriömäinen, ontto iän myötä, ja samanvärinen kuin lakki tai vaaleampi. Leikattaessa kaikista osista erittyy valkoista maitiaisnestettä, joka on aluksi mietoa mutta muuttuu kitkerän makuiseksi. Se kasvaa heinäkuusta lokakuuhun symbioosissa koivupuiden kanssa. TÄRKEÄÄ: Tämä sieni täytyy keittää 5-10 minuuttia ja keitinvesi kaataa pois ennen ruoanlaittoa, sillä se sisältää ärsyttäviä yhdisteitä. Se voidaan sekoittaa muihin Lactarius-lajeihin, mutta karvainen reuna ja yhteys koivuihin ovat tunnusomaisia piirteitä. Samalla tavoin syötävä (keittämisen jälkeen) kangasrousku (L. rufus) on tumman punaruskea eikä sillä ole karvaista reunaa."
+          },
+          {
+            "question": "Mikä yleinen syötävä yrtti Suomen metsäaukeilla on sahalaitaisia lehtiä ja polttavia karvoja?",
+            "answers": [
+              {"answer": "Nokkonen (Urtica dioica)"},
+              {"answer": "Vuohenputki"},
+              {"answer": "Käenkaali"},
+              {"answer": "Ahomansikka"}
+            ],
+            "answer": "Nokkonen (Urtica dioica)",
+            "explanation": "Nokkonen (Urtica dioica) on ravinteikas syötävä yrtti. Tunnistaminen: Nokkonen kasvaa 30-150 cm korkeaksi, ja sillä on vastakkaiset, tummanvihreät, soikeat tai sydämenmuotoiset lehdet, joissa on voimakkaasti hampaiset reunat ja suipot kärjet. Lehdet ja varret ovat peittyneet pienillä polttavilla karvoilla, jotka vapauttavat ärsyttäviä yhdisteitä kosketettaessa. Kasvilla on pieniä vihertäviä kukkia roikkuvissa ryppäissä lehtien hangassa. Nokkonen kasvaa typpipitoisissa maaperissä, metsänreunoilla, aukeilla ja häirityillä alueilla, muodostaen usein suuria kasvustoja. Nuoret versot ilmestyvät huhti-toukokuussa, ja kerättäviä lehtiä on tarjolla koko kesän. Älä koskaan syö raakana - keittäminen tai kuivaaminen neutraloi poltteen. Käytä käsineitä kerättäessä. Se voidaan erottaa samankaltaisesta valkovalekukasta (Lamium album) polttavien karvojen avulla ja valkoisten kukkien puuttumisella. Kerää nuoret versot ja lehdet ennen kukintaa parhaan maun ja ravintopitoisuuden saamiseksi."
+          },
+          {
+            "question": "Millä myrkyllisellä sienellä Suomen metsissä on punainen lakki valkoisin pilkuin ja sitä kuvataan usein saduissa?",
+            "answers": [
+              {"answer": "Kavalakärpässieni"},
+              {"answer": "Punakärpässieni (Amanita muscaria)"},
+              {"answer": "Korvasieni"},
+              {"answer": "Valkokärpässieni"}
+            ],
+            "answer": "Punakärpässieni (Amanita muscaria)",
+            "explanation": "Punakärpässieni (Amanita muscaria) on myrkyllinen sieni, joka esiintyy usein saduissa. Tunnistaminen: Sillä on tunnusomainen kirkkaanpunainen tai oranssinpunainen lakki (5-20 cm leveä), joka on peittynyt valkoisilla laikuilla (yleisvaipan jäänteet). Lakki alkaa pallomaisena, muuttuen litteämmäksi iän myötä. Heltat ovat valkoiset ja irti jalasta. Jalka (5-20 cm korkea) on valkoinen, siinä on hameenmuotoinen rengas ja pullistunut tyvi, jossa on konsentrisesti järjestetyt suomut. Malto on valkoista kauttaaltaan. Se kasvaa symbioosissa koivun, männyn ja kuusen kanssa heinäkuusta marraskuuhun. Lakin valkoiset laikut voivat huuhtoutua pois sateessa. Se sisältää psykoaktiivisia yhdisteitä ja myrkkyjä, jotka aiheuttavat pahoinvointia, sekavuutta ja visuaalisia häiriöitä. Jotkut kulttuurit ovat käyttäneet sitä rituaaleissa erityisen valmistuksen jälkeen, mutta sitä tulisi pitää myrkyllisenä. Se erottuu tappavista Amanita-lajeista kirkkaanpunaisella lakillaan; kuitenkin tappavilla Amanita phalloides- ja A. virosa-sienillä on myös tunnusomaiset renkaat ja pullistuneet tyvet, joten kaikkia Amanita-lajeja tulisi välttää aloittelijoiden."
+          },
+          {
+            "question": "Mikä maukas luonnonmarja, joka kasvaa Suomen metsissä, muistuttaa vadelmaa mutta on meripihkan värinen?",
+            "answers": [
+              {"answer": "Lakka"},
+              {"answer": "Ahomansikka"},
+              {"answer": "Mesimarja"},
+              {"answer": "Lillukka"}
+            ],
+            "answer": "Mesimarja",
+            "explanation": "Mesimarja (Rubus arcticus) on herkullinen luonnonmarja. Tunnistaminen: Kasvi kasvaa 10-25 cm korkeaksi, ja sillä on kolmesta hammaslaitaisesta lehdykästä koostuvat yhdislehdet. Se tuottaa tunnusomaisia vaaleanpunaisenvioletteja kukkia, joissa on viisi terälehteä. Marjat muistuttavat pieniä vadelmia (1-1,5 cm), mutta ovat meripihkan tai tummanpunaisia kypsinä, ja niissä on vähemmän mutta suurempia luumarjoja kuin vadelmissa. Niillä on ainutlaatuinen aromi, jota kuvaillaan vadelman, vaniljan ja hunajan sekoitukseksi. Mesimarja kasvaa kosteilla alueilla kuten ojissa, märillä niityillä ja kosteilla metsänreunoilla, erityisesti Keski- ja Pohjois-Suomessa. Kukat ilmestyvät kesäkuussa ja marjat kypsyvät heinä-elokuussa. Ne eroavat lakasta punertavan meripihkan värillään (ei kultainen) ja ahomansikoista pienemmällä koollaan ja erilaisella kasvupaikallaan. Samankaltainen lillukka (R. saxatilis) on kirkkaamman punainen, happamampi ja siinä on lukuisampia luumarjoja."
+          },
+          {
+            "question": "Millä syötävällä sienellä Suomen metsissä on tumma torvimainen muoto ja se tunnetaan nimellä 'mustatorvisieni'?",
+            "answers": [
+              {"answer": "Keltavahvero"},
+              {"answer": "Mustatorvisieni (Craterellus cornucopioides)"},
+              {"answer": "Herkkutatti"},
+              {"answer": "Lampaankääpä"}
+            ],
+            "answer": "Mustatorvisieni (Craterellus cornucopioides)",
+            "explanation": "Mustatorvisieni (Craterellus cornucopioides) on erittäin maukas syötävä sieni. Tunnistaminen: Sillä on tunnusomainen torvi- tai suppilomainen muoto, 3-12 cm korkea ja 2-7 cm leveä yläosasta. Koko sieni on tumman harmaa tai musta, ja siinä on syvälle painunut keskusta, joka jatkuu alas onttoon jalkaan. Ulkopinta on sileä tai hieman ryppyinen, kun taas sisempi itiöitä tuottava pinta voi vaihdella sileästä hieman ryppyiseen. Todellisia helttoja ei ole. Jalka on ontto ja tyypillisesti tumman harmaa tai musta. Mustatorvisieni kasvaa elokuusta lokakuuhun lehti- ja sekametsissä, erityisesti tammi- ja pyökkimetsissa, usein osittain lehtikarikkeen alla piilossa. Ne kasvavat usein ryhmissä, joskus muodostaen linjoja tai kaaria. Niiden tumma väri ja ohut malto tekevät niistä vaikeita havaita kuolleiden lehtien joukosta. Niillä on rikas, pähkinäinen, lähes savuinen maku. Pääasialliset näköislajit ovat syötävä suppilovahvero (Craterellus tubaeformis), joka on pienempi ja jolla on kellertävä jalka, sekä Craterellus cinereus, joka on myös syötävä."
+          },
+          {
+            "question": "Mitä Suomen metsissä kasvavaa villiä yrttiä voidaan käyttää teenä ja jolla on aromaattiset, höyhenmäiset lehdet?",
+            "answers": [
+              {"answer": "Vuohenputki"},
+              {"answer": "Nokkonen"},
+              {"answer": "Siankärsämö (Achillea millefolium)"},
+              {"answer": "Käenkaali"}
+            ],
+            "answer": "Siankärsämö (Achillea millefolium)",
+            "explanation": "Siankärsämö (Achillea millefolium) on monipuolinen lääkinnällinen yrtti. Tunnistaminen: Siankärsämö kasvaa 15-90 cm korkeaksi, ja sillä on vuorottaiset, höyhenmäiset, saniaisenmaiset lehdet, jotka ovat hienojakoisesti jakautuneet moniin pieniin segmentteihin, luoden tunnusomaisen höyhenmäisen tai pitsimaisen ulkonäön. Lehdet ovat 5-20 cm pitkiä, keihäänmuotoisia yleisilmeeltään mutta jakautuneet kymmeniin pieniin lehdyköihin. Kasvi tuottaa litteitä ryhmiä pieniä valkoisia tai vaalean pinkkejä kukkia (kukin 4-6 mm) varren latvassa, muodostaen litteän huipun kukinnon 5-15 cm levyisen. Murskattuna lehdillä on voimakas aromaattinen, jokseenkin lääkemäinen tuoksu. Siankärsämö kasvaa niityillä, laitumilla ja metsäaukeamilla kautta Suomen. Se kukkii kesäkuusta syyskuuhun. Se voidaan erottaa samankaltaisista kasveista kuten villistä porkkanasta sen höyhenmäisillä lehdillä ja litteillä, tiheillä kukkaklustereilla. Vaikka yleisesti turvallinen, sitä tulisi käyttää kohtuudella teenä tai tinkturana. Historiallisesti käytetty haavojen parantamiseen ja kuumeen alentamiseen."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on lakissa suomuja, jotka muistuttavat käpykuvioita?",
+            "answers": [
+              {"answer": "Akansieni (Chlorophyllum rhacodes)"},
+              {"answer": "Suomumustesieni (Coprinus comatus)"},
+              {"answer": "Huhtasieni (Morchella esculenta)"},
+              {"answer": "Keltavahvero"}
+            ],
+            "answer": "Akansieni (Chlorophyllum rhacodes)",
+            "explanation": "Akansieni (Chlorophyllum rhacodes) on syötävä sieni, jolla on tunnusomainen kuvioitu lakki. Tunnistaminen: Lakki (5-20 cm leveä) alkaa pallomaisena, laajentuen litteäksi, jossa on keskeinen kohouma. Siinä on valkoinen tai vaaleanruskea tausta, joka on peittynyt ruskeilla, karheilla suomuilla, jotka ovat järjestetty konsentrisiin ympyröihin, muistuttaen käpykuviota. Heltat ovat valkoiset, irti jalasta ja tiheät. Jalka (10-20 cm korkea) on näyttävä, liikkuva rengas ja pullistunut tyvi. Jalan pinta on sileä renkaan yläpuolelta ja suomuinen sen alapuolelta. Leikattaessa valkoinen malto muuttuu punaoranssiksi, sitten tumman punaruskeaksi. Se kasvaa heinäkuusta lokakuuhun niityillä, puistoissa, puutarhoissa ja metsänreunoilla, muodostaen usein keijurenkaita. Kaksinkertainen rengas jalassa ja punertuvat malto leikattaessa ovat keskeisiä tunnistuspiirteitä. Se voidaan sekoittaa samankaltaiseen ukonsieneen (Macrolepiota procera), joka on suurempi ja jolla on käärmeihomainen kuvio jalassa, tai myrkyllisiin Chlorophyllum-lajeihin. Tulisi kypsentää perusteellisesti ennen syömistä, sillä se voi aiheuttaa ruoansulatusvaivoja raakana tai alikypsennettynä."
+          },
+          {
+            "question": "Mikä Suomen metsissä kasvava syötävä luonnonmarja kasvaa matalana ja muistuttaa viljeltyjä mansikoita mutta on pienempi?",
+            "answers": [
+              {"answer": "Lakka"},
+              {"answer": "Ahomansikka (Fragaria vesca)"},
+              {"answer": "Puolukka"},
+              {"answer": "Mesimarja"}
+            ],
+            "answer": "Ahomansikka (Fragaria vesca)",
+            "explanation": "Ahomansikka (Fragaria vesca) on herkullinen metsämarja. Tunnistaminen: Kasvi kasvaa 5-20 cm korkeaksi, ja sillä on kolmesta hammaslaitaisesta lehdykästä koostuvat yhdislehdet. Lehdet ovat järjestäytyneet tyviruusukkeeseen ja niissä on silkkimäisiä karvoja. Valkoiset kukat, joissa on viisi terälehteä ja keltainen keskus, kukkivat erillisillä varsilla. Marjat ovat pieniä (1-2 cm), kartiomaisia tai pyöreitä, kirkkaanpunaisia, ja niiden pinnalla on pieniä siemeniä. Toisin kuin viljellyt mansikat, ahomansikat eivät ole onttoja sisältä. Ne kasvavat metsäaukioilla, reunoilla, niityillä ja polkujen varsilla, suosien hyvin kuivuvaa maaperää ja osittaista auringonvaloa. Ne kukkivat touko-kesäkuussa, ja marjat kypsyvät kesäkuusta elokuuhun. Ahomansikoilla on voimakas aromi ja maku, paljon vahvempi kuin viljellyillä lajikkeilla. Ne voidaan erottaa syömäkelvottomista ukrainanmansikoista (Potentilla indica) valkoisilla kukillaan (ei keltaisia) ja marjoillaan, jotka roikkuvat alaspäin eivätkä osoita ylöspäin."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on hampaita helttarakenteiden tai itiöpillistön sijaan lakin alapuolella?",
+            "answers": [
+              {"answer": "Keltavahvero"},
+              {"answer": "Vaaleaorakas (Hydnum repandum)"},
+              {"answer": "Herkkutatti"},
+              {"answer": "Mustatorvisieni"}
+            ],
+            "answer": "Vaaleaorakas (Hydnum repandum)",
+            "explanation": "Vaaleaorakas (Hydnum repandum) on selvästi tunnistettava syötävä sieni. Tunnistaminen: Lakki (3-15 cm leveä) on kupera, muuttuen litteämmäksi, ja siinä on epäsäännöllinen, aaltoileva reuna. Väri vaihtelee vaaleasta beigeen tai oranssinruskeaan. Helttarakenteiden tai itiöpillistön sijaan alapuolella on hauraita, murtuvia, kerman tai vaalean beigen värisiä piikkejä tai hampaita (2-5 mm pitkiä), jotka roikkuvat alaspäin. Jalka (3-8 cm korkea) on usein keskikohdasta poikkeava, kiinteä, sileä ja samanvärinen kuin lakki tai vaaleampi. Malto on kiinteää, valkoista tai vaalean beigeä, eikä muuta väriä leikattaessa. Se kasvaa elokuusta marraskuuhun havu- ja lehtimetsissä, usein osittain pudonneiden lehtien tai sammalen peittämänä. Se voi muodostaa keijurenkaita tai linjoja. Hammasrakenteet lakin alapuolella tekevät sen helposti tunnistettavaksi vähäisillä näköislajeilla. Se voidaan sekoittaa lähisukulaiseen Hydnum rufescensiin, joka on myös syötävä mutta pienempi ja jolla on tummempi, oranssimpi lakki. Kummallakaan ei ole myrkyllisiä näköislajeja, tehden niistä erinomaisia aloittelijoille."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla yrtillä on lehdet, jotka maistuvat kurkuilta murskattaessa?",
+            "answers": [
+              {"answer": "Käenkaali"},
+              {"answer": "Purasruoho (Borago officinalis)"},
+              {"answer": "Ahomansikka"},
+              {"answer": "Vuohenputki"}
+            ],
+            "answer": "Purasruoho (Borago officinalis)",
+            "explanation": "Purasruoho (Borago officinalis, tunnetaan myös nimellä kurkkuyrtti) on yrtti, jolla on kurkun makuiset lehdet. Tunnistaminen: Purasruoho kasvaa 30-80 cm korkeaksi, ja sillä on soikeat tai keihäänmuotoiset lehdet (5-15 cm pitkiä), jotka ovat ryppyiset, tummanvihreät ja peittyneet jäykillä, valkoisilla karheilla karvoilla, antaen niille karkean tekstuurin. Kirkkaan siniset, tähtimäiset kukat (2-3 cm leveitä) roikkuvat löyhinä ryhminä, ja niissä on näkyvät mustat heteet, jotka muodostavat kartion kukan keskellä. Sekä varret että lehdet ovat peittyneet piikikkäillä karvoilla. Murskattuna lehdillä on selvästi kurkun kaltainen maku ja tuoksu. Vaikka purasruoho ei ole alkuperäinen Suomen metsille, se on kotiutunut joillekin alueille ja sitä löytyy joskus niityiltä, puutarhakarkulaisina ja häirityiltä alueilta. Se kukkii kesäkuusta syyskuuhun. Kurkun maku ja kirkkaansiniset kukat tekevät siitä helposti tunnistettavan. Lehtien karhea rakenne erottaa sen muista sinisistä kukista. Kukat ovat myös syötäviä ja tekevät kauniita koristeita."
+          },
+          {
+            "question": "Millä syötävällä sienellä Suomen metsissä on keltainen 'torvi' muoto ja se tunnetaan nimellä 'suppilovahvero'?",
+            "answers": [
+              {"answer": "Keltavahvero"},
+              {"answer": "Mustatorvisieni"},
+              {"answer": "Suppilovahvero (Craterellus tubaeformis)"},
+              {"answer": "Herkkutatti"}
+            ],
+            "answer": "Suppilovahvero (Craterellus tubaeformis)",
+            "explanation": "Suppilovahvero (Craterellus tubaeformis) on suosittu syötävä sieni. Tunnistaminen: Sillä on suppilomainen lakki (2-6 cm leveä) aaltoilevalla, epäsäännöllisellä reunalla ja keskellä olevan syvennyksen, joka jatkuu onttoon jalkaan. Lakin väri vaihtelee kellanruskeasta harmaanruskeaan, usein tummempi keskeltä. Alapuolella on hyvin kehittyneet heltanmaiset poimut, jotka ovat harmaan tai kellertävän värisiä ja kulkevat alas jalkaa pitkin. Jalka (3-10 cm korkea) on ontto, sileä ja selvästi keltainen tai oranssi, kontrastina tummemmalle lakille. Se kasvaa elokuun lopusta marraskuuhun (joskus säilyen talveen) havu- ja sekametsissä, usein suurina ryhminä sammalen ja lahoavan puun seassa. Se suosii hapanta maaperää ja löytyy usein kuusimetsistä, joissa on mustikka-aluskasvustoa. Yhdistelmä suppilomaista muotoa, keltaista jalkaa ja harmaan-ruskeaa lakkia tekee siitä tunnistettavan. Se voidaan sekoittaa mustatorvisieneen (myös syötävä), mutta erottuu keltaisella jalallaan ja selkeämmillä heltanmaisilla poimuillaan. Sillä on aprikoosimainen tuoksu kuivattuna."
+          },
+          {
+            "question": "Mikä Suomen metsissä kasvava syötävä villikasvi tuottaa pieniä punaisia marjoja ja on ryömivä ikivihreä pensas?",
+            "answers": [
+              {"answer": "Puolukka"},
+              {"answer": "Ahomansikka"},
+              {"answer": "Sianpuolukka (Arctostaphylos uva-ursi)"},
+              {"answer": "Variksenmarja"}
+            ],
+            "answer": "Sianpuolukka (Arctostaphylos uva-ursi)",
+            "explanation": "Sianpuolukka (Arctostaphylos uva-ursi) on syötävä villikasvi. Tunnistaminen: Sianpuolukka on matalana kasvava, ryömivä ikivihreä pensas (10-30 cm korkea), joka muodostaa tiheitä mattoja maahan. Lehdet ovat pieniä (1-3 cm), nahkaisia, lusikanmuotoisia ja pyöreäkärkisiä, tummanvihreitä ja kiiltäviä päältä. Lehdet kasvavat vuorottain varressa, eikä niissä ole hammaslaitoja. Pienet, kellomaiset valkoiset tai vaaleanpunaiset kukat ilmestyvät ryhmissä keväällä. Marjat ovat kirkkaanpunaisia, 6-10 mm halkaisijaltaan, jauhomaisia rakenteeltaan ja niiden sisällä on 5 kovaa siementä. Sianpuolukka kasvaa kuivilla, hiekkaisilla alueilla, erityisesti mäntymetsissa, kankailla ja kallioilla. Se suosii täyttä aurinkoa tai osittaista varjoa ja hyvin kuivuvaa maaperää. Marjat kypsyvät loppukesästä syksyyn ja voivat säilyä läpi talven. Vaikka syötäviä, marjat ovat melko mauttomia ja jauhomaisia raakana, parhaiten käytettynä hilloissa tai säilykkeissä. Kasvi voidaan erottaa puolukasta sen suurempien, lusikanmuotoisten lehtien perusteella, joiden alapuolella ei ole pisteitä, ja myrkyllisestä kielosta sen puumaisten varsien ja erilaisen kasvutavan perusteella."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on hunajakennomainen lakki ja se täytyy kypsentää perusteellisesti?",
+            "answers": [
+              {"answer": "Mustatorvisieni"},
+              {"answer": "Korvasieni (Morchella spp.)"},
+              {"answer": "Keltavahvero"},
+              {"answer": "Herkkutatti"}
+            ],
+            "answer": "Korvasieni (Morchella spp.)",
+            "explanation": "Korvasienet (Morchella-lajit, 'huhtasieni' tai 'korvasieni' suomeksi) ovat arvostettuja syötäviä sieniä. Tunnistaminen: Korvasienillä on tunnusomainen kartiomainen tai soikea lakki (3-15 cm korkea), jossa on hunajakennomainen pinta, jossa on harjanteita ja koloja. Lakki on kiinnittynyt jalkaan tyvestä. Värit vaihtelevat kellanruskeasta tummanruskeaan lajista riippuen. Jalka on valkoinen tai vaalean kerma, ontto, ja usein hieman turvonnut tyvestä. Koko sieni on sisältä ontto. Ne kasvavat huhtikuun lopusta kesäkuuhun (vuoden aikaisimpia sieniä) lehti- ja sekametsissä, palaneilla alueilla ja häirityillä mailla. Ne ilmestyvät usein tiettyjen puulajien lähelle, erityisesti saarnin, jalavan ja omenapuiden. TÄRKEÄÄ: Korvasienet täytyy kypsentää perusteellisesti (vähintään 10 minuuttia) ennen kulutusta, sillä ne sisältävät pieniä määriä myrkkyjä, jotka tuhoutuvat kunnollisessa kypsennyksessä. Ne voidaan sekoittaa myrkyllisiin korvasieniksi (Gyromitra-lajit), mutta todelliset korvasienet ovat onttoja sisältä, ja niiden lakit ovat kiinnittyneet jalkaan tyvestä, kun taas vääriä korvasieniä on aivomaisesti poimuttunut lakki, joka on jalkaan vapaasti kiinnittynyt, eivätkä ne ole täysin onttoja."
+          },
+          {
+            "question": "Millä Suomen metsäniityillä kasvavalla syötävällä yrtillä on lehdet, jotka maistuvat lakritsilta?",
+            "answers": [
+              {"answer": "Saksankirveli (Myrrhis odorata)"},
+              {"answer": "Siankärsämö"},
+              {"answer": "Nokkonen"},
+              {"answer": "Vuohenputki"}
+            ],
+            "answer": "Saksankirveli (Myrrhis odorata)",
+            "explanation": "Saksankirveli (Myrrhis odorata) on aromaattinen yrtti, jolla on lakritsin maku. Tunnistaminen: Saksankirveli on korkea monivuotinen yrtti (60-180 cm), jolla on hienot, saniaisenmaiset lehdet, jotka ovat jakautuneet useita kertoja (kolmesti pariliuskaiset) pieniksi, hammaslaitaisiksi, vaaleaanvihreiksi lehdyköiksi. Lehdet ovat pehmeitä, hieman karvaisia, ja niillä on selvä aniksen tai lakritsin haju ja maku murskattaessa. Kasvi tuottaa sarjakukintoja pieniä valkoisia kukkia (2-4 mm) litteän kattomaisissa ryhmissä (8-15 cm leveitä). Uurteiset siemenet ovat pitkänomaisia (15-25 mm), kiiltäviä ja tumman ruskeita kypsinä. Se kasvaa ravinteikkaassa, kosteassa maaperässä osittaisessa varjossa, usein metsänreunoilla, niityillä ja vanhoissa puutarhoissa. Se kukkii toukokuusta heinäkuuhun. Saksankirveli voidaan erottaa samankaltaisista (ja mahdollisesti tappavista) myrkkykeisosta tai hukanputkesta sen aniksen tuoksun, pehmeämpien lehtien pyöristettyjen kärkien (ei teräviä) ja varsien purppurapilkkujen puuttumisen perusteella. Koko kasvi on syötävä, ja lehdillä sekä nuorilla siemenillä on voimakkain lakritsin maku."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on ruskea lakki ja se on nimetty yleensä punertavan puun mukaan?",
+            "answers": [
+              {"answer": "Lehmäntatti (Leccinum scabrum)"},
+              {"answer": "Männynherkkutatti (Boletus pinophilus)"},
+              {"answer": "Haavantatti (Leccinum aurantiacum)"},
+              {"answer": "Ruskotatti (Boletus badius)"}
+            ],
+            "answer": "Lehmäntatti (Leccinum scabrum)",
+            "explanation": "Lehmäntatti (Leccinum scabrum, tunnetaan myös nimellä koivunpunikkitatti) on syötävä sieni, joka kasvaa koivupuiden yhteydessä. Tunnistaminen: Lakki (5-15 cm leveä) on kupera, litistyen iän myötä, väriltään vaalean- tai tummanruskea. Lakin pinta ulottuu hieman reunan yli. Alapuolella on kerros pieniä pillejä (ei helttoja), jotka ovat valkoisia tai harmahtavia, tummuen iän myötä ja muuttuen ruskeaksi vaurioituessa. Jalka (8-15 cm korkea) on valkoinen, jossa on tunnusomaisia tummia harmaan tai mustan suomuja (karheita asteikkoja) pinnallaan. Leikattaessa malto on valkoinen ja saattaa muuttua hieman vaaleanpunertavan harmaaksi, mutta yleensä ei muuta väriä dramaattisesti. Se kasvaa yksinomaan koivupuiden yhteydessä heinäkuusta lokakuuhun. Yhdistelmä ruskeaa lakkia, mustasuomuista jalkaa ja yksinomaista yhteyttä koivupuihin tekee sen helposti tunnistettavaksi. Se voidaan sekoittaa muihin Leccinum-lajeihin, joilla on myös suomuiset jalat, mutta monet niistä ovat syötäviä oikein kypsennettynä. Jotkut ihmiset saattavat kokea ruoansulatusvaivoja Leccinum-lajeista, joten perusteellinen kypsennys on suositeltavaa."
+          },
+          {
+            "question": "Mitä Suomen metsissä kasvavaa luonnonvaraista syötävää kasvia käytettiin perinteisesti 'hätäleivän' valmistukseen?",
+            "answers": [
+              {"answer": "Männyn kuori (Pinus sylvestris)"},
+              {"answer": "Nokkonen"},
+              {"answer": "Ahomansikka"},
+              {"answer": "Käenkaali"}
+            ],
+            "answer": "Männyn kuori (Pinus sylvestris)",
+            "explanation": "Männyn kuorta (Pinus sylvestris, 'mänty' tai 'petäjä' suomeksi) käytettiin perinteisesti hätäleivän raaka-aineena. Tunnistaminen: Mänty kasvaa 30-40 metriä korkeaksi, suorarunkoiseksi puuksi, jolla on pyöreä latvus. Rungon yläosa ja oksat ovat tunnusomaisen punertavan oranssin tai kanelin värisiä ja paperin ohuita, hilseileviä, kun taas alarunko on paksu, syvästi uurtunut harmaan ruskea. Neulaset kasvavat pareittain, ovat sinivihreät, hieman kiertyneet ja 3-5 cm pitkiä. Kävyt ovat 3-7 cm pitkiä, kartiomaisia ja harmaan ruskeita kypsinä. Ravintotarkoituksiin perinteisesti nilakerros (nila) kerättiin keväällä nuorista puista. Tämä kerros löytyy ulkokuoren ja puuaineksen väliltä, ollen ohut, kostea, valkoinen tai kellertävä kerros. Nälkäaikoina tämä nilakerros kuivattiin ja jauhettiin jauhoksi tavallisen jauhon jatkeeksi. Käytäntö ei ole enää yleinen, mutta se on edelleen osa kulttuuriperintöä. TÄRKEÄÄ: Kuoren poistaminen voi tappaa puut, joten tätä käytäntöä ei nykyään yleensä suositella. Männyn neulasia voidaan kuitenkin turvallisesti kerätä C-vitamiinipitoiseen teehen."
+          },
+          {
+            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on punertava lakki ja se muodostaa symbioottisen suhteen kuusipuiden kanssa?",
+            "answers": [
+              {"answer": "Lehmäntatti"},
+              {"answer": "Punakiiltotatti (Leccinum aurantiacum)"},
+              {"answer": "Punikkitatti (Leccinum versipelle)"},
+              {"answer": "Männynherkkutatti (Boletus pinophilus)"}
+            ],
+            "answer": "Männynherkkutatti (Boletus pinophilus)",
+            "explanation": "Männynherkkutatti (Boletus pinophilus, tunnetaan myös nimellä B. pinicola) on arvostettu syötävä sieni. Tunnistaminen: Lakki (5-20 cm leveä) on kupera, myöhemmin litistyen, punertavan-ruskea tai mahonginpunainen, joka voi olla kirkkaampi nuorissa yksilöissä. Lakin pinta on sileä ja hieman tahmea märkänä. Pillikerros (alapuoli) on valkoinen tai kermainen nuorissa yksilöissä, muuttuen vihertävän keltaiseksi iän myötä, eikä muutu voimakkaasti painettaessa. Jalka (8-15 cm korkea, 2-5 cm paksu) on pullistunut tyvestä, kaventuen ylöspäin, ja väriltään kermainen tai vaalean ruskea, jossa on hieno verkkomainen kuvio (verkkosuoninen) yläosassa. Malto on valkoista eikä muutu väriltään merkittävästi leikattaessa. Se kasvaa havumetsissä muodostaen sienijuuria pääasiassa männyn ja kuusen kanssa heinäkuusta lokakuuhun. Se voidaan erottaa samankaltaisesta Boletus edulis -sienestä (herkkutatti) punaisemmalla lakillaan ja yhteydellään havupuihin lehtipuiden sijaan. Molemmat ovat erinomaisia syötäviä sieniä, joilla on samanlaiset kulinaariset ominaisuudet. Punainen väri, verkkosuoninen jalka ja havupuuympäristö ovat keskeisiä tunnistuspiirteitä."
+          }
+        ]
+        },
+    {
     "name": "Ravitsemus",
     "questions": [
         {
