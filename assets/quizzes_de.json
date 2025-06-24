@@ -1,6 +1,1182 @@
 
 [
     {
+  "name": "Der menschliche Körper",
+  "questions": [
+    {
+      "question": "Wie viele Knochen hat ein erwachsener Mensch normalerweise?",
+      "answers": [
+        {"answer": "180"},
+        {"answer": "206"},
+        {"answer": "230"},
+        {"answer": "260"}
+      ],
+      "answer": "206",
+      "explanation": "Der menschliche Körper eines Erwachsenen hat in der Regel 206 Knochen."
+    },
+    {
+      "question": "Welches Organ ist das größte im menschlichen Körper?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Haut"},
+        {"answer": "Lunge"}
+      ],
+      "answer": "Haut",
+      "explanation": "Die Haut ist das größte Organ und schützt den Körper."
+    },
+    {
+      "question": "Wie viel Liter Blut hat ein erwachsener Mensch ungefähr?",
+      "answers": [
+        {"answer": "2-3 Liter"},
+        {"answer": "4-6 Liter"},
+        {"answer": "8-10 Liter"},
+        {"answer": "12-14 Liter"}
+      ],
+      "answer": "4-6 Liter",
+      "explanation": "Ein Erwachsener hat etwa 4 bis 6 Liter Blut, abhängig von Körpergröße und Gewicht."
+    },
+    {
+      "question": "Welches Organ produziert Insulin?",
+      "answers": [
+        {"answer": "Niere"},
+        {"answer": "Leber"},
+        {"answer": "Pankreas (Bauchspeicheldrüse)"},
+        {"answer": "Milz"}
+      ],
+      "answer": "Pankreas (Bauchspeicheldrüse)",
+      "explanation": "Die Bauchspeicheldrüse (Pankreas) produziert das Hormon Insulin."
+    },
+    {
+      "question": "Wie viele Zähne hat ein Erwachsener mit vollständigem Gebiss?",
+      "answers": [
+        {"answer": "28"},
+        {"answer": "30"},
+        {"answer": "32"},
+        {"answer": "36"}
+      ],
+      "answer": "32",
+      "explanation": "Mit Weisheitszähnen hat ein Erwachsener 32 Zähne."
+    },
+    {
+      "question": "Wie heißt der längste Knochen im menschlichen Körper?",
+      "answers": [
+        {"answer": "Wadenbein"},
+        {"answer": "Schienbein"},
+        {"answer": "Oberschenkelknochen"},
+        {"answer": "Wirbelsäule"}
+      ],
+      "answer": "Oberschenkelknochen",
+      "explanation": "Der Oberschenkelknochen (Femur) ist der längste Knochen des Körpers."
+    },
+    {
+      "question": "Wo liegt die Schilddrüse?",
+      "answers": [
+        {"answer": "Im Kopf"},
+        {"answer": "Im Brustkorb"},
+        {"answer": "Am Hals"},
+        {"answer": "Im Bauch"}
+      ],
+      "answer": "Am Hals",
+      "explanation": "Die Schilddrüse liegt vor der Luftröhre am Hals."
+    },
+    {
+      "question": "Wie viele Lungenflügel hat der Mensch?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Der Mensch hat zwei Lungenflügel: einen rechten und einen linken."
+    },
+    {
+      "question": "Wie heißt das Organ, das für die Entgiftung des Körpers zuständig ist?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Magen"},
+        {"answer": "Milz"}
+      ],
+      "answer": "Leber",
+      "explanation": "Die Leber ist das wichtigste Entgiftungsorgan im Körper."
+    },
+    {
+      "question": "Wie viele Chromosomen hat ein gesunder Mensch?",
+      "answers": [
+        {"answer": "23"},
+        {"answer": "46"},
+        {"answer": "48"},
+        {"answer": "44"}
+      ],
+      "answer": "46",
+      "explanation": "Menschen haben normalerweise 46 Chromosomen (23 Paare)."
+    },
+    {
+      "question": "Welcher Muskel ist der stärkste im menschlichen Körper (bezogen auf seine Größe)?",
+      "answers": [
+        {"answer": "Herzmuskel"},
+        {"answer": "Zunge"},
+        {"answer": "Kaumuskel (Musculus masseter)"},
+        {"answer": "Bizeps"}
+      ],
+      "answer": "Kaumuskel (Musculus masseter)",
+      "explanation": "Der Kaumuskel ist gemessen an seiner Größe der kräftigste Muskel."
+    },
+    {
+      "question": "Wie viele Rippen hat ein normaler Mensch?",
+      "answers": [
+        {"answer": "10"},
+        {"answer": "12"},
+        {"answer": "24"},
+        {"answer": "26"}
+      ],
+      "answer": "24",
+      "explanation": "Ein Mensch hat 12 Rippenpaare, zusammen 24 Rippen."
+    },
+    {
+      "question": "Welches Organ ist für die Blutfilterung und Urinproduktion zuständig?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Niere"},
+        {"answer": "Lunge"},
+        {"answer": "Milz"}
+      ],
+      "answer": "Niere",
+      "explanation": "Die Nieren filtern das Blut und produzieren den Urin."
+    },
+    {
+      "question": "Wie viele Hauptkammern hat das Herz?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "4",
+      "explanation": "Das Herz besteht aus vier Hauptkammern: zwei Vorhöfen und zwei Herzkammern."
+    },
+    {
+      "question": "Wofür steht die medizinische Abkürzung 'DNA'?",
+      "answers": [
+        {"answer": "Doppelter Nervenaufbau"},
+        {"answer": "Desoxyribonukleinsäure"},
+        {"answer": "Dauerhafte Nährstoffaufnahme"},
+        {"answer": "Dendritische Nervenaktivität"}
+      ],
+      "answer": "Desoxyribonukleinsäure",
+      "explanation": "DNA steht für Desoxyribonukleinsäure."
+    },
+    {
+      "question": "Wie viele Liter Luft atmet ein Erwachsener durchschnittlich pro Tag ein und aus?",
+      "answers": [
+        {"answer": "1000"},
+        {"answer": "5000"},
+        {"answer": "10.000"},
+        {"answer": "ca. 10.000 bis 20.000"}
+      ],
+      "answer": "ca. 10.000 bis 20.000",
+      "explanation": "Je nach Aktivität atmet ein Mensch pro Tag etwa 10.000 bis 20.000 Liter Luft."
+    },
+    {
+      "question": "Wie heißt das Organ, das für die Produktion von Galle verantwortlich ist?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Bauchspeicheldrüse"},
+        {"answer": "Magen"},
+        {"answer": "Milz"}
+      ],
+      "answer": "Leber",
+      "explanation": "Galle wird in der Leber produziert und in der Gallenblase gespeichert."
+    },
+    {
+      "question": "In welchem Organ findet die Hauptverdauung der Nahrung statt?",
+      "answers": [
+        {"answer": "Dünndarm"},
+        {"answer": "Magen"},
+        {"answer": "Dickdarm"},
+        {"answer": "Leber"}
+      ],
+      "answer": "Dünndarm",
+      "explanation": "Die Hauptverdauung und Nährstoffaufnahme findet im Dünndarm statt."
+    },
+    {
+      "question": "Wie viele Sinnesorgane hat der Mensch klassisch?",
+      "answers": [
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "5"},
+        {"answer": "6"}
+      ],
+      "answer": "5",
+      "explanation": "Die fünf Sinne sind Sehen, Hören, Riechen, Schmecken und Tasten."
+    },
+    {
+      "question": "Wie nennt man den farbigen Teil des Auges?",
+      "answers": [
+        {"answer": "Netzhaut"},
+        {"answer": "Iris"},
+        {"answer": "Linse"},
+        {"answer": "Hornhaut"}
+      ],
+      "answer": "Iris",
+      "explanation": "Die Iris ist der farbige Teil des Auges."
+    },
+    {
+      "question": "Was ist der medizinische Begriff für das Brustbein?",
+      "answers": [
+        {"answer": "Femur"},
+        {"answer": "Sternum"},
+        {"answer": "Scapula"},
+        {"answer": "Patella"}
+      ],
+      "answer": "Sternum",
+      "explanation": "'Sternum' ist der Fachausdruck für Brustbein."
+    },
+    {
+      "question": "Wie heißt der kleinste Knochen im menschlichen Körper?",
+      "answers": [
+        {"answer": "Steigbügel"},
+        {"answer": "Hammer"},
+        {"answer": "Amboss"},
+        {"answer": "Speiche"}
+      ],
+      "answer": "Steigbügel",
+      "explanation": "Der Steigbügel im Ohr ist der kleinste Knochen."
+    },
+    {
+      "question": "Wie nennt man die Verbindung zwischen zwei Knochen?",
+      "answers": [
+        {"answer": "Muskeln"},
+        {"answer": "Gelenk"},
+        {"answer": "Sehne"},
+        {"answer": "Knorpel"}
+      ],
+      "answer": "Gelenk",
+      "explanation": "Knochen sind durch Gelenke miteinander verbunden."
+    },
+    {
+      "question": "Wie heißt das Organ, das für das Denken verantwortlich ist?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Gehirn"},
+        {"answer": "Magen"}
+      ],
+      "answer": "Gehirn",
+      "explanation": "Das Gehirn ist für Denken, Erinnern und Steuern zuständig."
+    },
+    {
+      "question": "Wie viele Halswirbel hat der Mensch?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"}
+      ],
+      "answer": "7",
+      "explanation": "Die menschliche Wirbelsäule hat 7 Halswirbel."
+    },
+    {
+      "question": "Wie nennt man die Blutgefäße, die Blut vom Herzen weg transportieren?",
+      "answers": [
+        {"answer": "Venen"},
+        {"answer": "Arterien"},
+        {"answer": "Kapillaren"},
+        {"answer": "Lymphgefäße"}
+      ],
+      "answer": "Arterien",
+      "explanation": "Arterien führen das Blut vom Herzen weg."
+    },
+    {
+      "question": "Wie viele Muskeln hat ein Mensch ungefähr?",
+      "answers": [
+        {"answer": "200"},
+        {"answer": "400"},
+        {"answer": "600"},
+        {"answer": "800"}
+      ],
+      "answer": "600",
+      "explanation": "Der menschliche Körper hat mehr als 600 Muskeln."
+    },
+    {
+      "question": "Welcher Teil des Gehirns ist für das Gleichgewicht hauptsächlich verantwortlich?",
+      "answers": [
+        {"answer": "Kleinhirn"},
+        {"answer": "Großhirn"},
+        {"answer": "Hirnstamm"},
+        {"answer": "Zwischenhirn"}
+      ],
+      "answer": "Kleinhirn",
+      "explanation": "Das Kleinhirn reguliert Bewegungen und das Gleichgewicht."
+    },
+    {
+      "question": "Wie nennt man die Enden der Nervenzellen?",
+      "answers": [
+        {"answer": "Synapsen"},
+        {"answer": "Hormone"},
+        {"answer": "Axone"},
+        {"answer": "Mitochondrien"}
+      ],
+      "answer": "Synapsen",
+      "explanation": "Synapsen sind die Verbindungsstellen zwischen Nervenzellen."
+    },
+    {
+      "question": "Welcher Teil des Verdauungstraktes folgt direkt auf den Magen?",
+      "answers": [
+        {"answer": "Dickdarm"},
+        {"answer": "Zwölffingerdarm"},
+        {"answer": "Leber"},
+        {"answer": "Speiseröhre"}
+      ],
+      "answer": "Zwölffingerdarm",
+      "explanation": "Der Zwölffingerdarm (Duodenum) schließt direkt an den Magen an."
+    },
+    {
+      "question": "Wie heißt das Hormon, das Stress auslöst?",
+      "answers": [
+        {"answer": "Insulin"},
+        {"answer": "Adrenalin"},
+        {"answer": "Cortisol"},
+        {"answer": "Thyroxin"}
+      ],
+      "answer": "Adrenalin",
+      "explanation": "Adrenalin ist das bekannteste Stresshormon."
+    },
+    {
+      "question": "Wie viele Liter Blut pumpt das Herz pro Tag etwa durch den Körper?",
+      "answers": [
+        {"answer": "1.000"},
+        {"answer": "5.000"},
+        {"answer": "7.000"},
+        {"answer": "10.000"}
+      ],
+      "answer": "7.000",
+      "explanation": "Das Herz pumpt täglich rund 7.000 Liter Blut durch den Körper."
+    },
+    {
+      "question": "Welches Organ produziert die meisten Verdauungsenzyme?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Magen"},
+        {"answer": "Pankreas (Bauchspeicheldrüse)"},
+        {"answer": "Dünndarm"}
+      ],
+      "answer": "Pankreas (Bauchspeicheldrüse)",
+      "explanation": "Die Bauchspeicheldrüse stellt viele Verdauungsenzyme her."
+    },
+    {
+      "question": "Wie viele Wirbel hat die menschliche Wirbelsäule?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "26"},
+        {"answer": "33-34"},
+        {"answer": "40"}
+      ],
+      "answer": "33-34",
+      "explanation": "Die menschliche Wirbelsäule besteht aus 33-34 Wirbeln."
+    },
+    {
+      "question": "Wie nennt man die Zellen, die Sauerstoff transportieren?",
+      "answers": [
+        {"answer": "Leukozyten"},
+        {"answer": "Lymphozyten"},
+        {"answer": "Erythrozyten"},
+        {"answer": "Thrombozyten"}
+      ],
+      "answer": "Erythrozyten",
+      "explanation": "Erythrozyten (rote Blutkörperchen) transportieren Sauerstoff."
+    },
+    {
+      "question": "Wie heißt die Flüssigkeit im Auge, die für den Druck sorgt?",
+      "answers": [
+        {"answer": "Tränenflüssigkeit"},
+        {"answer": "Kammerwasser"},
+        {"answer": "Glaskörper"},
+        {"answer": "Lymphe"}
+      ],
+      "answer": "Kammerwasser",
+      "explanation": "Das Kammerwasser hält den Augeninnendruck aufrecht."
+    },
+    {
+      "question": "Welcher Teil des Ohres ist für das Gleichgewicht verantwortlich?",
+      "answers": [
+        {"answer": "Trommelfell"},
+        {"answer": "Gehörknöchelchen"},
+        {"answer": "Bogengänge"},
+        {"answer": "Paukenhöhle"}
+      ],
+      "answer": "Bogengänge",
+      "explanation": "Die Bogengänge im Innenohr sind für das Gleichgewicht wichtig."
+    },
+    {
+      "question": "Wie nennt man den ersten Halswirbel?",
+      "answers": [
+        {"answer": "Axis"},
+        {"answer": "Atlas"},
+        {"answer": "Cervix"},
+        {"answer": "Occiput"}
+      ],
+      "answer": "Atlas",
+      "explanation": "Der erste Halswirbel heißt Atlas."
+    },
+    {
+      "question": "Wie viele Hauptbestandteile hat das Blut?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "5"}
+      ],
+      "answer": "4",
+      "explanation": "Blut besteht aus Plasma, Erythrozyten, Leukozyten und Thrombozyten."
+    },
+    {
+      "question": "Welcher Teil des Gehirns steuert die Atmung?",
+      "answers": [
+        {"answer": "Großhirn"},
+        {"answer": "Kleinhirn"},
+        {"answer": "Hirnstamm"},
+        {"answer": "Limbisches System"}
+      ],
+      "answer": "Hirnstamm",
+      "explanation": "Der Hirnstamm steuert automatische Funktionen wie die Atmung."
+    },
+    {
+      "question": "Wie nennt man das Gelenk zwischen Oberarm und Schulterblatt?",
+      "answers": [
+        {"answer": "Ellenbogengelenk"},
+        {"answer": "Schultergelenk"},
+        {"answer": "Handgelenk"},
+        {"answer": "Kniegelenk"}
+      ],
+      "answer": "Schultergelenk",
+      "explanation": "Das Schultergelenk verbindet Oberarmknochen und Schulterblatt."
+    },
+    {
+      "question": "Wo wird das Vitamin D im Körper hauptsächlich gebildet?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Lunge"},
+        {"answer": "Haut"},
+        {"answer": "Niere"}
+      ],
+      "answer": "Haut",
+      "explanation": "Vitamin D wird unter Sonneneinstrahlung in der Haut gebildet."
+    },
+    {
+      "question": "Wie nennt man die Verdickung am Ende langer Knochen?",
+      "answers": [
+        {"answer": "Epiphyse"},
+        {"answer": "Diaphyse"},
+        {"answer": "Metaphyse"},
+        {"answer": "Apophyse"}
+      ],
+      "answer": "Epiphyse",
+      "explanation": "Die Epiphyse ist das Knochenende langer Röhrenknochen."
+    },
+    {
+      "question": "Wie heißt das Hormon, das den Blutzuckerspiegel senkt?",
+      "answers": [
+        {"answer": "Insulin"},
+        {"answer": "Adrenalin"},
+        {"answer": "Testosteron"},
+        {"answer": "Östrogen"}
+      ],
+      "answer": "Insulin",
+      "explanation": "Insulin senkt den Blutzuckerspiegel."
+    },
+    {
+      "question": "Was ist die Funktion der Milz?",
+      "answers": [
+        {"answer": "Produktion von Insulin"},
+        {"answer": "Speicherung und Abbau von Blutzellen"},
+        {"answer": "Verdauung von Fetten"},
+        {"answer": "Regulation des Wasserhaushalts"}
+      ],
+      "answer": "Speicherung und Abbau von Blutzellen",
+      "explanation": "Die Milz speichert Blutzellen und baut alte Blutzellen ab."
+    },
+    {
+      "question": "Wie nennt man die Hautschicht unter der Oberhaut?",
+      "answers": [
+        {"answer": "Lederhaut (Dermis)"},
+        {"answer": "Unterhaut"},
+        {"answer": "Knochenhaut"},
+        {"answer": "Bindehaut"}
+      ],
+      "answer": "Lederhaut (Dermis)",
+      "explanation": "Die Lederhaut liegt unter der Oberhaut (Epidermis)."
+    },
+    {
+      "question": "Wie viele Chromosomen hat eine menschliche Keimzelle (Ei- oder Samenzelle)?",
+      "answers": [
+        {"answer": "23"},
+        {"answer": "46"},
+        {"answer": "32"},
+        {"answer": "22"}
+      ],
+      "answer": "23",
+      "explanation": "Keimzellen haben 23 Chromosomen, damit nach der Befruchtung wieder 46 entstehen."
+    },
+    {
+      "question": "Wie nennt man den wissenschaftlichen Begriff für den 'Adamsapfel'?",
+      "answers": [
+        {"answer": "Kehlkopf"},
+        {"answer": "Schilddrüse"},
+        {"answer": "Zäpfchen"},
+        {"answer": "Epiglottis"}
+      ],
+      "answer": "Kehlkopf",
+      "explanation": "Der Adamsapfel ist eine Vorwölbung des Kehlkopfes."
+    },
+    {
+      "question": "Wie viele Liter Speichel produziert ein Mensch etwa pro Tag?",
+      "answers": [
+        {"answer": "0,5 Liter"},
+        {"answer": "1 bis 1,5 Liter"},
+        {"answer": "2 bis 3 Liter"},
+        {"answer": "4 bis 5 Liter"}
+      ],
+      "answer": "1 bis 1,5 Liter",
+      "explanation": "Ein Mensch produziert täglich etwa 1 bis 1,5 Liter Speichel."
+    },
+    {
+      "question": "Welches Organ ist für die Produktion von Insulin zuständig?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Pankreas (Bauchspeicheldrüse)"},
+        {"answer": "Milz"},
+        {"answer": "Niere"}
+      ],
+      "answer": "Pankreas (Bauchspeicheldrüse)",
+      "explanation": "Das Insulin wird in der Bauchspeicheldrüse produziert."
+    },
+    {
+      "question": "Wie nennt man die kleinsten Blutgefäße?",
+      "answers": [
+        {"answer": "Arterien"},
+        {"answer": "Venen"},
+        {"answer": "Kapillaren"},
+        {"answer": "Lymphgefäße"}
+      ],
+      "answer": "Kapillaren",
+      "explanation": "Kapillaren sind die feinsten Blutgefäße."
+    }
+  ]
+},
+    {
+  "name": "Der menschliche Körper für Kinder",
+  "questions": [
+    {
+      "question": "Wie viele Finger hat ein Mensch an einer Hand?",
+      "answers": [
+        {"answer": "4"},
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"}
+      ],
+      "answer": "5",
+      "explanation": "Jede Hand hat normalerweise fünf Finger."
+    },
+    {
+      "question": "Wie viele Knochen hat ein erwachsener Mensch ungefähr?",
+      "answers": [
+        {"answer": "50"},
+        {"answer": "100"},
+        {"answer": "200"},
+        {"answer": "300"}
+      ],
+      "answer": "200",
+      "explanation": "Ein erwachsener Mensch hat etwa 206 Knochen."
+    },
+    {
+      "question": "Wie heißt das Körperteil, mit dem wir hören?",
+      "answers": [
+        {"answer": "Auge"},
+        {"answer": "Ohr"},
+        {"answer": "Hand"},
+        {"answer": "Nase"}
+      ],
+      "answer": "Ohr",
+      "explanation": "Mit den Ohren können wir hören."
+    },
+    {
+      "question": "Mit welchem Körperteil riechst du?",
+      "answers": [
+        {"answer": "Mund"},
+        {"answer": "Auge"},
+        {"answer": "Nase"},
+        {"answer": "Hand"}
+      ],
+      "answer": "Nase",
+      "explanation": "Die Nase ist zum Riechen da."
+    },
+    {
+      "question": "Wie heißt das Organ, das das Blut durch den Körper pumpt?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Herz"},
+        {"answer": "Magen"},
+        {"answer": "Lunge"}
+      ],
+      "answer": "Herz",
+      "explanation": "Das Herz pumpt das Blut durch den Körper."
+    },
+    {
+      "question": "Wie viele Augen hat ein Mensch?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Menschen haben zwei Augen."
+    },
+    {
+      "question": "Wie viele Ohren hat ein Mensch?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Jeder Mensch hat zwei Ohren."
+    },
+    {
+      "question": "Womit kannst du schmecken?",
+      "answers": [
+        {"answer": "Auge"},
+        {"answer": "Mund"},
+        {"answer": "Fuß"},
+        {"answer": "Nase"}
+      ],
+      "answer": "Mund",
+      "explanation": "Mit der Zunge im Mund schmeckst du."
+    },
+    {
+      "question": "Wie viele Zähne hat ein Erwachsener meistens?",
+      "answers": [
+        {"answer": "20"},
+        {"answer": "28"},
+        {"answer": "32"},
+        {"answer": "24"}
+      ],
+      "answer": "32",
+      "explanation": "Erwachsene haben meistens 32 Zähne."
+    },
+    {
+      "question": "Was schützt das Gehirn?",
+      "answers": [
+        {"answer": "Rippeknochen"},
+        {"answer": "Schädel"},
+        {"answer": "Haut"},
+        {"answer": "Wirbelsäule"}
+      ],
+      "answer": "Schädel",
+      "explanation": "Der Schädel schützt das Gehirn."
+    },
+    {
+      "question": "Wie heißt das größte Organ des Menschen?",
+      "answers": [
+        {"answer": "Lunge"},
+        {"answer": "Herz"},
+        {"answer": "Haut"},
+        {"answer": "Leber"}
+      ],
+      "answer": "Haut",
+      "explanation": "Die Haut ist das größte Organ des Menschen."
+    },
+    {
+      "question": "Wie heißt das Körperteil, mit dem man greift?",
+      "answers": [
+        {"answer": "Fuß"},
+        {"answer": "Hand"},
+        {"answer": "Ohr"},
+        {"answer": "Nase"}
+      ],
+      "answer": "Hand",
+      "explanation": "Mit den Händen kann man greifen."
+    },
+    {
+      "question": "Wie viele Beine hat ein Mensch?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Menschen haben zwei Beine."
+    },
+    {
+      "question": "Womit kannst du sehen?",
+      "answers": [
+        {"answer": "Nase"},
+        {"answer": "Auge"},
+        {"answer": "Mund"},
+        {"answer": "Ohr"}
+      ],
+      "answer": "Auge",
+      "explanation": "Mit den Augen kannst du sehen."
+    },
+    {
+      "question": "Wie viele Zehen hast du an einem Fuß?",
+      "answers": [
+        {"answer": "4"},
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"}
+      ],
+      "answer": "5",
+      "explanation": "Jeder Fuß hat normalerweise fünf Zehen."
+    },
+    {
+      "question": "Wie heißt das Organ, mit dem du atmest?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Lunge"},
+        {"answer": "Magen"}
+      ],
+      "answer": "Lunge",
+      "explanation": "Mit den Lungen atmest du ein und aus."
+    },
+    {
+      "question": "Wie nennt man die Knochen im Rücken?",
+      "answers": [
+        {"answer": "Schädel"},
+        {"answer": "Wirbelsäule"},
+        {"answer": "Rippen"},
+        {"answer": "Arm"}
+      ],
+      "answer": "Wirbelsäule",
+      "explanation": "Die Wirbelsäule besteht aus vielen kleinen Knochen im Rücken."
+    },
+    {
+      "question": "Wie heißt das Gelenk zwischen Ober- und Unterarm?",
+      "answers": [
+        {"answer": "Knie"},
+        {"answer": "Ellenbogen"},
+        {"answer": "Schulter"},
+        {"answer": "Handgelenk"}
+      ],
+      "answer": "Ellenbogen",
+      "explanation": "Der Ellenbogen ist das Gelenk zwischen Ober- und Unterarm."
+    },
+    {
+      "question": "Wie viele Rippen hat ein Mensch ungefähr?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "12"},
+        {"answer": "24"},
+        {"answer": "36"}
+      ],
+      "answer": "24",
+      "explanation": "Der Mensch hat 12 Rippenpaare, also 24 Rippen."
+    },
+    {
+      "question": "Was schützt die Lunge?",
+      "answers": [
+        {"answer": "Schädel"},
+        {"answer": "Rippen"},
+        {"answer": "Haut"},
+        {"answer": "Wirbelsäule"}
+      ],
+      "answer": "Rippen",
+      "explanation": "Die Rippen schützen die Lunge."
+    },
+    {
+      "question": "Wie heißt das Gelenk zwischen Oberschenkel und Unterschenkel?",
+      "answers": [
+        {"answer": "Ellenbogen"},
+        {"answer": "Knie"},
+        {"answer": "Knöchel"},
+        {"answer": "Handgelenk"}
+      ],
+      "answer": "Knie",
+      "explanation": "Das Knie ist das Gelenk zwischen Ober- und Unterschenkel."
+    },
+    {
+      "question": "Wie nennt man das Ende des Arms?",
+      "answers": [
+        {"answer": "Fuß"},
+        {"answer": "Hand"},
+        {"answer": "Kopf"},
+        {"answer": "Bein"}
+      ],
+      "answer": "Hand",
+      "explanation": "Am Ende des Arms ist die Hand."
+    },
+    {
+      "question": "Wie heißt das Organ, das Nahrung verdaut?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Magen"},
+        {"answer": "Lunge"}
+      ],
+      "answer": "Magen",
+      "explanation": "Der Magen verdaut die Nahrung."
+    },
+    {
+      "question": "Wie heißt das Organ, das für das Denken zuständig ist?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Gehirn"},
+        {"answer": "Magen"}
+      ],
+      "answer": "Gehirn",
+      "explanation": "Das Gehirn ist für das Denken zuständig."
+    },
+    {
+      "question": "Wie viele Milchzähne hat ein Kind?",
+      "answers": [
+        {"answer": "10"},
+        {"answer": "16"},
+        {"answer": "20"},
+        {"answer": "32"}
+      ],
+      "answer": "20",
+      "explanation": "Kinder haben 20 Milchzähne."
+    },
+    {
+      "question": "Wie heißt das Körperteil, mit dem du läufst?",
+      "answers": [
+        {"answer": "Hand"},
+        {"answer": "Knie"},
+        {"answer": "Bein"},
+        {"answer": "Mund"}
+      ],
+      "answer": "Bein",
+      "explanation": "Mit den Beinen läufst du."
+    },
+    {
+      "question": "Wie viele Arme hat ein Mensch?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Jeder Mensch hat zwei Arme."
+    },
+    {
+      "question": "Welches Sinnesorgan brauchst du zum Sehen?",
+      "answers": [
+        {"answer": "Ohr"},
+        {"answer": "Auge"},
+        {"answer": "Hand"},
+        {"answer": "Nase"}
+      ],
+      "answer": "Auge",
+      "explanation": "Mit den Augen siehst du."
+    },
+    {
+      "question": "Wie nennt man das, was Blut durch den Körper transportiert?",
+      "answers": [
+        {"answer": "Nerven"},
+        {"answer": "Blutgefäße"},
+        {"answer": "Knochen"},
+        {"answer": "Muskeln"}
+      ],
+      "answer": "Blutgefäße",
+      "explanation": "Blutgefäße transportieren das Blut."
+    },
+    {
+      "question": "Wie nennt man die kleinen Röhrchen in der Lunge?",
+      "answers": [
+        {"answer": "Adern"},
+        {"answer": "Bronchien"},
+        {"answer": "Knochen"},
+        {"answer": "Nerven"}
+      ],
+      "answer": "Bronchien",
+      "explanation": "Die Bronchien verzweigen sich in der Lunge."
+    },
+    {
+      "question": "Wie viele Muskeln hat der Mensch ungefähr?",
+      "answers": [
+        {"answer": "50"},
+        {"answer": "100"},
+        {"answer": "200"},
+        {"answer": "600"}
+      ],
+      "answer": "600",
+      "explanation": "Der Mensch hat über 600 Muskeln."
+    },
+    {
+      "question": "Wie nennt man das Körperteil, mit dem man schmeckt?",
+      "answers": [
+        {"answer": "Nase"},
+        {"answer": "Ohr"},
+        {"answer": "Zunge"},
+        {"answer": "Hand"}
+      ],
+      "answer": "Zunge",
+      "explanation": "Mit der Zunge schmeckst du."
+    },
+    {
+      "question": "Was ist die Aufgabe der Haut?",
+      "answers": [
+        {"answer": "Sie schützt den Körper."},
+        {"answer": "Sie denkt."},
+        {"answer": "Sie pumpt Blut."},
+        {"answer": "Sie verdaut Essen."}
+      ],
+      "answer": "Sie schützt den Körper.",
+      "explanation": "Die Haut schützt unseren Körper."
+    },
+    {
+      "question": "Mit welchem Sinnesorgan hörst du?",
+      "answers": [
+        {"answer": "Ohr"},
+        {"answer": "Auge"},
+        {"answer": "Hand"},
+        {"answer": "Nase"}
+      ],
+      "answer": "Ohr",
+      "explanation": "Mit den Ohren hörst du."
+    },
+    {
+      "question": "Wie viele Finger hast du insgesamt an beiden Händen?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "10"},
+        {"answer": "12"},
+        {"answer": "14"}
+      ],
+      "answer": "10",
+      "explanation": "Jede Hand hat 5 Finger, zusammen 10."
+    },
+    {
+      "question": "Wie heißt das Körperteil zwischen Kopf und Rumpf?",
+      "answers": [
+        {"answer": "Arm"},
+        {"answer": "Bein"},
+        {"answer": "Hals"},
+        {"answer": "Knie"}
+      ],
+      "answer": "Hals",
+      "explanation": "Der Hals verbindet Kopf und Rumpf."
+    },
+    {
+      "question": "Wie viele Zehen hast du insgesamt?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "10"},
+        {"answer": "12"},
+        {"answer": "14"}
+      ],
+      "answer": "10",
+      "explanation": "Du hast an jedem Fuß 5 Zehen, insgesamt 10."
+    },
+    {
+      "question": "Wie heißt der Knochen, der im Oberschenkel liegt?",
+      "answers": [
+        {"answer": "Schienbein"},
+        {"answer": "Oberschenkelknochen"},
+        {"answer": "Rippe"},
+        {"answer": "Wirbel"}
+      ],
+      "answer": "Oberschenkelknochen",
+      "explanation": "Der Oberschenkelknochen ist der längste Knochen."
+    },
+    {
+      "question": "Wie viele Nasenlöcher hast du?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Die Nase hat zwei Nasenlöcher."
+    },
+    {
+      "question": "Wie viele Augenlider hat ein Mensch?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "4"},
+        {"answer": "6"},
+        {"answer": "8"}
+      ],
+      "answer": "4",
+      "explanation": "Jedes Auge hat ein oberes und ein unteres Augenlid, insgesamt 4."
+    },
+    {
+      "question": "Wie nennt man das Ende des Beines?",
+      "answers": [
+        {"answer": "Fuß"},
+        {"answer": "Hand"},
+        {"answer": "Kopf"},
+        {"answer": "Bauch"}
+      ],
+      "answer": "Fuß",
+      "explanation": "Am Ende des Beines ist der Fuß."
+    },
+    {
+      "question": "Was ist die Aufgabe der Knochen?",
+      "answers": [
+        {"answer": "Sie geben dem Körper Halt."},
+        {"answer": "Sie denken."},
+        {"answer": "Sie schmecken."},
+        {"answer": "Sie riechen."}
+      ],
+      "answer": "Sie geben dem Körper Halt.",
+      "explanation": "Knochen stützen den Körper."
+    },
+    {
+      "question": "Wie nennt man das Körperteil, mit dem du Dinge trägst?",
+      "answers": [
+        {"answer": "Hand"},
+        {"answer": "Fuß"},
+        {"answer": "Ohr"},
+        {"answer": "Auge"}
+      ],
+      "answer": "Hand",
+      "explanation": "Mit der Hand trägst du Dinge."
+    },
+    {
+      "question": "Wie nennt man die kleinen Blutgefäße?",
+      "answers": [
+        {"answer": "Kapillaren"},
+        {"answer": "Bronchien"},
+        {"answer": "Muskeln"},
+        {"answer": "Nerven"}
+      ],
+      "answer": "Kapillaren",
+      "explanation": "Kapillaren sind die kleinsten Blutgefäße."
+    },
+    {
+      "question": "Wie nennt man das Organ, das den Körper entgiftet?",
+      "answers": [
+        {"answer": "Leber"},
+        {"answer": "Lunge"},
+        {"answer": "Herz"},
+        {"answer": "Magen"}
+      ],
+      "answer": "Leber",
+      "explanation": "Die Leber entgiftet den Körper."
+    },
+    {
+      "question": "Wie nennt man die Verbindung zwischen Knochen?",
+      "answers": [
+        {"answer": "Gelenk"},
+        {"answer": "Muskeln"},
+        {"answer": "Adern"},
+        {"answer": "Nerven"}
+      ],
+      "answer": "Gelenk",
+      "explanation": "Gelenke verbinden Knochen miteinander."
+    },
+    {
+      "question": "Was ist die Aufgabe der Muskeln?",
+      "answers": [
+        {"answer": "Sie bewegen den Körper."},
+        {"answer": "Sie denken."},
+        {"answer": "Sie hören."},
+        {"answer": "Sie schützen den Körper."}
+      ],
+      "answer": "Sie bewegen den Körper.",
+      "explanation": "Muskeln helfen uns, uns zu bewegen."
+    },
+    {
+      "question": "Wie nennt man die kleinen Härchen auf der Haut?",
+      "answers": [
+        {"answer": "Haare"},
+        {"answer": "Fingernägel"},
+        {"answer": "Wimpern"},
+        {"answer": "Nerven"}
+      ],
+      "answer": "Haare",
+      "explanation": "Die kleinen Härchen auf der Haut heißen Haare."
+    },
+    {
+      "question": "Wie nennt man das Körperteil, das das Gesicht umgibt?",
+      "answers": [
+        {"answer": "Kopf"},
+        {"answer": "Bauch"},
+        {"answer": "Bein"},
+        {"answer": "Hand"}
+      ],
+      "answer": "Kopf",
+      "explanation": "Das Gesicht ist Teil des Kopfes."
+    },
+    {
+      "question": "Wie heißt der Knochen im Arm zwischen Schulter und Ellenbogen?",
+      "answers": [
+        {"answer": "Oberarmknochen"},
+        {"answer": "Speiche"},
+        {"answer": "Schlüsselbein"},
+        {"answer": "Handknochen"}
+      ],
+      "answer": "Oberarmknochen",
+      "explanation": "Der Oberarmknochen ist zwischen Schulter und Ellenbogen."
+    },
+    {
+      "question": "Wie nennt man die weißen Teile im Mund, mit denen du kaust?",
+      "answers": [
+        {"answer": "Zähne"},
+        {"answer": "Lippen"},
+        {"answer": "Zunge"},
+        {"answer": "Backen"}
+      ],
+      "answer": "Zähne",
+      "explanation": "Mit den Zähnen kaust du das Essen."
+    },
+    {
+      "question": "Wie nennt man die dünne Schicht, die die Augen schützt?",
+      "answers": [
+        {"answer": "Augenlid"},
+        {"answer": "Wimper"},
+        {"answer": "Haut"},
+        {"answer": "Nagel"}
+      ],
+      "answer": "Augenlid",
+      "explanation": "Das Augenlid schützt das Auge."
+    },
+    {
+      "question": "Wie nennt man das Körperteil, das das Gehirn schützt?",
+      "answers": [
+        {"answer": "Schädel"},
+        {"answer": "Rippen"},
+        {"answer": "Wirbelsäule"},
+        {"answer": "Bauch"}
+      ],
+      "answer": "Schädel",
+      "explanation": "Der Schädel schützt das Gehirn."
+    },
+    {
+      "question": "Wie nennt man das Körperteil, mit dem du sprechen kannst?",
+      "answers": [
+        {"answer": "Zunge"},
+        {"answer": "Nase"},
+        {"answer": "Ohr"},
+        {"answer": "Auge"}
+      ],
+      "answer": "Zunge",
+      "explanation": "Mit der Zunge und dem Mund kannst du sprechen."
+    },
+    {
+      "question": "Wie nennt man das Gelenk, das den Fuß mit dem Bein verbindet?",
+      "answers": [
+        {"answer": "Knöchel"},
+        {"answer": "Knie"},
+        {"answer": "Hüfte"},
+        {"answer": "Handgelenk"}
+      ],
+      "answer": "Knöchel",
+      "explanation": "Der Knöchel verbindet Fuß und Bein."
+    }
+  ]
+},
+    {
   "name": "Geschichte-Quiz für Kinder",
   "questions": [
     {
