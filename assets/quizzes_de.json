@@ -1,4 +1,1093 @@
+
 [
+    {
+  "name": "Geschichte-Quiz für Kinder",
+  "questions": [
+    {
+      "question": "Wie heißt der berühmte Turm in Pisa, der schief ist?",
+      "answers": [
+        {"answer": "Eiffelturm"},
+        {"answer": "Schiefer Turm von Pisa"},
+        {"answer": "Big Ben"},
+        {"answer": "Kölner Dom"}
+      ],
+      "answer": "Schiefer Turm von Pisa",
+      "explanation": "Der Schiefe Turm von Pisa steht in Italien und ist berühmt, weil er schief ist."
+    },
+    {
+      "question": "Wer war die erste Bundeskanzlerin von Deutschland?",
+      "answers": [
+        {"answer": "Angela Merkel"},
+        {"answer": "Elisabeth II."},
+        {"answer": "Claudia Roth"},
+        {"answer": "Ursula von der Leyen"}
+      ],
+      "answer": "Angela Merkel",
+      "explanation": "Angela Merkel war die erste Frau, die Bundeskanzlerin von Deutschland wurde."
+    },
+    {
+      "question": "Wie hieß der berühmte Entdecker von Amerika?",
+      "answers": [
+        {"answer": "Christoph Kolumbus"},
+        {"answer": "Julius Caesar"},
+        {"answer": "Johann Gutenberg"},
+        {"answer": "Leonardo da Vinci"}
+      ],
+      "answer": "Christoph Kolumbus",
+      "explanation": "Christoph Kolumbus entdeckte Amerika 1492 für Europa."
+    },
+    {
+      "question": "Wer war der erste Mensch auf dem Mond?",
+      "answers": [
+        {"answer": "Neil Armstrong"},
+        {"answer": "Albert Einstein"},
+        {"answer": "Thomas Edison"},
+        {"answer": "Galileo Galilei"}
+      ],
+      "answer": "Neil Armstrong",
+      "explanation": "Neil Armstrong betrat 1969 als erster Mensch den Mond."
+    },
+    {
+      "question": "Wie hieß der berühmte König mit dem Sonnenkönig-Spitznamen?",
+      "answers": [
+        {"answer": "Ludwig XIV."},
+        {"answer": "Karl der Große"},
+        {"answer": "Friedrich der Große"},
+        {"answer": "Wilhelm II."}
+      ],
+      "answer": "Ludwig XIV.",
+      "explanation": "Ludwig XIV. wurde der Sonnenkönig genannt und herrschte in Frankreich."
+    },
+    {
+      "question": "Wie nannten die Römer ihr großes Bad?",
+      "answers": [
+        {"answer": "Therme"},
+        {"answer": "Sauna"},
+        {"answer": "Dusche"},
+        {"answer": "Badezimmer"}
+      ],
+      "answer": "Therme",
+      "explanation": "Die Römer gingen zum Baden in die Thermen."
+    },
+    {
+      "question": "Wie heißt der berühmte Turm in Paris?",
+      "answers": [
+        {"answer": "Eiffelturm"},
+        {"answer": "Fernsehturm"},
+        {"answer": "Big Ben"},
+        {"answer": "Schiefer Turm von Pisa"}
+      ],
+      "answer": "Eiffelturm",
+      "explanation": "Der Eiffelturm ist das Wahrzeichen von Paris."
+    },
+    {
+      "question": "In welchem Land lebten die Pharaonen?",
+      "answers": [
+        {"answer": "Griechenland"},
+        {"answer": "Ägypten"},
+        {"answer": "Deutschland"},
+        {"answer": "Italien"}
+      ],
+      "answer": "Ägypten",
+      "explanation": "Die Pharaonen waren die Herrscher des alten Ägypten."
+    },
+    {
+      "question": "Wer erfand den Buchdruck?",
+      "answers": [
+        {"answer": "Johannes Gutenberg"},
+        {"answer": "Albert Einstein"},
+        {"answer": "Nikola Tesla"},
+        {"answer": "Galileo Galilei"}
+      ],
+      "answer": "Johannes Gutenberg",
+      "explanation": "Johannes Gutenberg erfand um 1450 den Buchdruck."
+    },
+    {
+      "question": "Wie hieß die berühmte Königin von England, die sehr lange regierte?",
+      "answers": [
+        {"answer": "Elisabeth II."},
+        {"answer": "Maria Stuart"},
+        {"answer": "Victoria"},
+        {"answer": "Anne"}
+      ],
+      "answer": "Elisabeth II.",
+      "explanation": "Königin Elisabeth II. regierte von 1952 bis 2022 in Großbritannien."
+    },
+    {
+      "question": "Welcher Fluss fließt durch Rom?",
+      "answers": [
+        {"answer": "Thames"},
+        {"answer": "Tiber"},
+        {"answer": "Donau"},
+        {"answer": "Nil"}
+      ],
+      "answer": "Tiber",
+      "explanation": "Der Tiber fließt durch die Stadt Rom in Italien."
+    },
+    {
+      "question": "Wer war der erste Bundeskanzler der Bundesrepublik Deutschland?",
+      "answers": [
+        {"answer": "Helmut Kohl"},
+        {"answer": "Konrad Adenauer"},
+        {"answer": "Willy Brandt"},
+        {"answer": "Gerhard Schröder"}
+      ],
+      "answer": "Konrad Adenauer",
+      "explanation": "Konrad Adenauer war der erste Bundeskanzler nach dem Zweiten Weltkrieg."
+    },
+    {
+      "question": "Wie heißt das große Bauwerk in China, das man sogar aus dem Weltall sehen kann?",
+      "answers": [
+        {"answer": "Kölner Dom"},
+        {"answer": "Chinesische Mauer"},
+        {"answer": "Eiffelturm"},
+        {"answer": "Big Ben"}
+      ],
+      "answer": "Chinesische Mauer",
+      "explanation": "Die Chinesische Mauer ist sehr lang und alt."
+    },
+    {
+      "question": "Wie hieß die berühmte Krankenschwester aus der Geschichte?",
+      "answers": [
+        {"answer": "Florence Nightingale"},
+        {"answer": "Marie Curie"},
+        {"answer": "Angela Merkel"},
+        {"answer": "Anne Frank"}
+      ],
+      "answer": "Florence Nightingale",
+      "explanation": "Florence Nightingale wird auch als Begründerin der modernen Krankenpflege angesehen."
+    },
+    {
+      "question": "Wer malte die Mona Lisa?",
+      "answers": [
+        {"answer": "Vincent van Gogh"},
+        {"answer": "Leonardo da Vinci"},
+        {"answer": "Pablo Picasso"},
+        {"answer": "Michelangelo"}
+      ],
+      "answer": "Leonardo da Vinci",
+      "explanation": "Die Mona Lisa wurde vom berühmten Künstler Leonardo da Vinci gemalt."
+    },
+    {
+      "question": "Wie heißt das berühmte alte Amphitheater in Rom?",
+      "answers": [
+        {"answer": "Kolossäum"},
+        {"answer": "Arena"},
+        {"answer": "Olympiastadion"},
+        {"answer": "Circus Maximus"}
+      ],
+      "answer": "Kolossäum",
+      "explanation": "Das Kolosseum ist ein römisches Amphitheater in Rom."
+    },
+    {
+      "question": "Wer war der berühmte Physiker, der die Relativitätstheorie erfand?",
+      "answers": [
+        {"answer": "Isaac Newton"},
+        {"answer": "Albert Einstein"},
+        {"answer": "Thomas Edison"},
+        {"answer": "Marie Curie"}
+      ],
+      "answer": "Albert Einstein",
+      "explanation": "Albert Einstein ist einer der bekanntesten Wissenschaftler."
+    },
+    {
+      "question": "Wie heißt die berühmte Freiheitsstatue in New York?",
+      "answers": [
+        {"answer": "Statue of Liberty"},
+        {"answer": "Eiffelturm"},
+        {"answer": "Big Ben"},
+        {"answer": "Brandenburger Tor"}
+      ],
+      "answer": "Statue of Liberty",
+      "explanation": "Die Freiheitsstatue steht in New York, USA."
+    },
+    {
+      "question": "Wie nennt man die Zeit, als die Dinosaurier lebten?",
+      "answers": [
+        {"answer": "Steinzeit"},
+        {"answer": "Mittelalter"},
+        {"answer": "Kreidezeit"},
+        {"answer": "Antike"}
+      ],
+      "answer": "Kreidezeit",
+      "explanation": "In der Kreidezeit lebten viele Dinosaurierarten."
+    },
+    {
+      "question": "Welcher berühmte Komponist wurde in Salzburg geboren?",
+      "answers": [
+        {"answer": "Beethoven"},
+        {"answer": "Bach"},
+        {"answer": "Mozart"},
+        {"answer": "Haydn"}
+      ],
+      "answer": "Mozart",
+      "explanation": "Wolfgang Amadeus Mozart wurde 1756 in Salzburg geboren."
+    },
+    {
+      "question": "Wie heißt der berühmte Tempel in Athen?",
+      "answers": [
+        {"answer": "Kolosseum"},
+        {"answer": "Akropolis"},
+        {"answer": "Pantheon"},
+        {"answer": "Pyramiden"}
+      ],
+      "answer": "Akropolis",
+      "explanation": "Die Akropolis ist eine berühmte Tempelanlage in Athen, Griechenland."
+    },
+    {
+      "question": "Wie nennt man die Zeit, in der Ritter lebten?",
+      "answers": [
+        {"answer": "Mittelalter"},
+        {"answer": "Steinzeit"},
+        {"answer": "Renaissance"},
+        {"answer": "Neuzeit"}
+      ],
+      "answer": "Mittelalter",
+      "explanation": "Im Mittelalter lebten Ritter und Burgen wurden gebaut."
+    },
+    {
+      "question": "Wer schrieb die berühmten Märchen wie 'Hänsel und Gretel'?",
+      "answers": [
+        {"answer": "Gebrüder Grimm"},
+        {"answer": "Wilhelm Busch"},
+        {"answer": "Astrid Lindgren"},
+        {"answer": "Erich Kästner"}
+      ],
+      "answer": "Gebrüder Grimm",
+      "explanation": "Jacob und Wilhelm Grimm sammelten viele Märchen."
+    },
+    {
+      "question": "Wie hieß der erste Präsident der USA?",
+      "answers": [
+        {"answer": "Thomas Jefferson"},
+        {"answer": "George Washington"},
+        {"answer": "Abraham Lincoln"},
+        {"answer": "John Adams"}
+      ],
+      "answer": "George Washington",
+      "explanation": "George Washington war der erste Präsident der Vereinigten Staaten."
+    },
+    {
+      "question": "Wer war die berühmte Heldin aus Frankreich, die Jeanne d’Arc genannt wurde?",
+      "answers": [
+        {"answer": "Kleopatra"},
+        {"answer": "Maria Theresia"},
+        {"answer": "Jeanne d’Arc"},
+        {"answer": "Victoria"}
+      ],
+      "answer": "Jeanne d’Arc",
+      "explanation": "Jeanne d’Arc kämpfte im Mittelalter für Frankreich."
+    },
+    {
+      "question": "Wie nennt man die alten Steingräber in England?",
+      "answers": [
+        {"answer": "Stonehenge"},
+        {"answer": "Akropolis"},
+        {"answer": "Pyramiden"},
+        {"answer": "Kolossäum"}
+      ],
+      "answer": "Stonehenge",
+      "explanation": "Stonehenge ist ein berühmtes Steingrab in England."
+    },
+    {
+      "question": "Was ist die Hauptstadt des alten Römischen Reiches?",
+      "answers": [
+        {"answer": "Berlin"},
+        {"answer": "Rom"},
+        {"answer": "Athen"},
+        {"answer": "Paris"}
+      ],
+      "answer": "Rom",
+      "explanation": "Rom war die Hauptstadt des Römischen Reiches."
+    },
+    {
+      "question": "Wie nennt man die Zeit, als die Menschen noch in Höhlen lebten?",
+      "answers": [
+        {"answer": "Steinzeit"},
+        {"answer": "Mittelalter"},
+        {"answer": "Antike"},
+        {"answer": "Neuzeit"}
+      ],
+      "answer": "Steinzeit",
+      "explanation": "In der Steinzeit lebten die Menschen in Höhlen."
+    },
+    {
+      "question": "Wer war der berühmte deutsche Erfinder der ersten funktionierenden Glühbirne?",
+      "answers": [
+        {"answer": "Heinrich Hertz"},
+        {"answer": "Werner von Siemens"},
+        {"answer": "Heinrich Göbel"},
+        {"answer": "Robert Koch"}
+      ],
+      "answer": "Heinrich Göbel",
+      "explanation": "Heinrich Göbel erfand die Glühbirne vor Edison."
+    },
+    {
+      "question": "Wie hieß der berühmte König von Bayern, der viele Schlösser baute?",
+      "answers": [
+        {"answer": "Ludwig II."},
+        {"answer": "Franz Josef"},
+        {"answer": "Friedrich der Große"},
+        {"answer": "Wilhelm I."}
+      ],
+      "answer": "Ludwig II.",
+      "explanation": "Ludwig II. baute Schloss Neuschwanstein."
+    },
+    {
+      "question": "Wie nennt man das große alte Bauwerk in Ägypten, in dem Pharaonen begraben wurden?",
+      "answers": [
+        {"answer": "Kathedrale"},
+        {"answer": "Pyramide"},
+        {"answer": "Kolosseum"},
+        {"answer": "Schloss"}
+      ],
+      "answer": "Pyramide",
+      "explanation": "Pyramiden wurden in Ägypten als Grabstätten gebaut."
+    },
+    {
+      "question": "Wie heißt die berühmte Mauer, die Berlin teilte?",
+      "answers": [
+        {"answer": "Berliner Mauer"},
+        {"answer": "Chinesische Mauer"},
+        {"answer": "Hadrianswall"},
+        {"answer": "Rheinbrücke"}
+      ],
+      "answer": "Berliner Mauer",
+      "explanation": "Die Berliner Mauer teilte die Stadt von 1961 bis 1989."
+    },
+    {
+      "question": "Wer war ein berühmter deutscher Dichter und schrieb 'Faust'?",
+      "answers": [
+        {"answer": "Friedrich Schiller"},
+        {"answer": "Johann Wolfgang von Goethe"},
+        {"answer": "Heinrich Heine"},
+        {"answer": "Erich Kästner"}
+      ],
+      "answer": "Johann Wolfgang von Goethe",
+      "explanation": "Goethe schrieb das Werk 'Faust'."
+    },
+    {
+      "question": "Wie hieß der berühmte Erfinder des Telefons?",
+      "answers": [
+        {"answer": "Thomas Edison"},
+        {"answer": "Alexander Graham Bell"},
+        {"answer": "Nikola Tesla"},
+        {"answer": "Albert Einstein"}
+      ],
+      "answer": "Alexander Graham Bell",
+      "explanation": "Bell erfand das Telefon im 19. Jahrhundert."
+    },
+    {
+      "question": "Wie heißt das berühmte Tor in Berlin?",
+      "answers": [
+        {"answer": "Kölner Dom"},
+        {"answer": "Brandenburger Tor"},
+        {"answer": "Rotes Rathaus"},
+        {"answer": "Münchner Tor"}
+      ],
+      "answer": "Brandenburger Tor",
+      "explanation": "Das Brandenburger Tor ist ein bekanntes Wahrzeichen Berlins."
+    },
+    {
+      "question": "Wie nennt man die Menschen, die vor langer Zeit in Deutschland lebten und Hörnerhelme trugen?",
+      "answers": [
+        {"answer": "Wikinger"},
+        {"answer": "Römer"},
+        {"answer": "Germanen"},
+        {"answer": "Ritter"}
+      ],
+      "answer": "Wikinger",
+      "explanation": "Wikinger waren Seefahrer aus Skandinavien, die auch nach Deutschland kamen."
+    },
+    {
+      "question": "Wie hieß die berühmte Krankenschwester im Zweiten Weltkrieg?",
+      "answers": [
+        {"answer": "Florence Nightingale"},
+        {"answer": "Clara Barton"},
+        {"answer": "Marie Curie"},
+        {"answer": "Edith Cavell"}
+      ],
+      "answer": "Edith Cavell",
+      "explanation": "Edith Cavell half vielen Soldaten im Krieg."
+    },
+    {
+      "question": "Wie hieß der Entdecker, der als Erster um die Welt segelte?",
+      "answers": [
+        {"answer": "James Cook"},
+        {"answer": "Ferdinand Magellan"},
+        {"answer": "Marco Polo"},
+        {"answer": "Vasco da Gama"}
+      ],
+      "answer": "Ferdinand Magellan",
+      "explanation": "Magellan war der erste, dessen Schiff die Erde umsegelte."
+    },
+    {
+      "question": "Wie nennt man die berühmten Ritterspiele im Mittelalter?",
+      "answers": [
+        {"answer": "Turnier"},
+        {"answer": "Fußball"},
+        {"answer": "Olympiade"},
+        {"answer": "Triathlon"}
+      ],
+      "answer": "Turnier",
+      "explanation": "Im Mittelalter gab es Ritterturniere."
+    },
+    {
+      "question": "Wer war ein berühmter Maler aus den Niederlanden?",
+      "answers": [
+        {"answer": "Vincent van Gogh"},
+        {"answer": "Leonardo da Vinci"},
+        {"answer": "Pablo Picasso"},
+        {"answer": "Michelangelo"}
+      ],
+      "answer": "Vincent van Gogh",
+      "explanation": "Van Gogh ist für seine Sonnenblumen bekannt."
+    },
+    {
+      "question": "Wie nennt man die Zeit, als die Menschen begannen, Maschinen zu erfinden?",
+      "answers": [
+        {"answer": "Industrialisierung"},
+        {"answer": "Mittelalter"},
+        {"answer": "Steinzeit"},
+        {"answer": "Antike"}
+      ],
+      "answer": "Industrialisierung",
+      "explanation": "Die Industrialisierung begann im 18. Jahrhundert."
+    },
+    {
+      "question": "Wie hieß die berühmte Frau, die bei den Olympischen Spielen viele Medaillen gewann?",
+      "answers": [
+        {"answer": "Steffi Graf"},
+        {"answer": "Katarina Witt"},
+        {"answer": "Birgit Fischer"},
+        {"answer": "Heike Drechsler"}
+      ],
+      "answer": "Birgit Fischer",
+      "explanation": "Birgit Fischer gewann viele Medaillen im Kanu."
+    },
+    {
+      "question": "Wie nennt man die Zeit, bevor es Schrift gab?",
+      "answers": [
+        {"answer": "Urgeschichte"},
+        {"answer": "Antike"},
+        {"answer": "Neuzeit"},
+        {"answer": "Mittelalter"}
+      ],
+      "answer": "Urgeschichte",
+      "explanation": "Die Urgeschichte ist die Zeit vor der Schrift."
+    },
+    {
+      "question": "Wie nennt man die berühmten alten Steine, die in England im Kreis stehen?",
+      "answers": [
+        {"answer": "Stonehenge"},
+        {"answer": "Akropolis"},
+        {"answer": "Pyramiden"},
+        {"answer": "Kolossäum"}
+      ],
+      "answer": "Stonehenge",
+      "explanation": "Stonehenge ist ein berühmter Steinkreis in England."
+    },
+    {
+      "question": "Welches Land wurde früher von Pharaonen regiert?",
+      "answers": [
+        {"answer": "Griechenland"},
+        {"answer": "Ägypten"},
+        {"answer": "Italien"},
+        {"answer": "Spanien"}
+      ],
+      "answer": "Ägypten",
+      "explanation": "Ägypten war das Land der Pharaonen."
+    },
+    {
+      "question": "Wie hieß der berühmte Märchenkönig von Bayern?",
+      "answers": [
+        {"answer": "Ludwig II."},
+        {"answer": "Wilhelm II."},
+        {"answer": "Friedrich der Große"},
+        {"answer": "Karl der Große"}
+      ],
+      "answer": "Ludwig II.",
+      "explanation": "Ludwig II. wird oft als Märchenkönig bezeichnet."
+    },
+    {
+      "question": "Wie nannte man die ersten Menschen, die Werkzeuge aus Stein herstellten?",
+      "answers": [
+        {"answer": "Steinzeitmenschen"},
+        {"answer": "Römer"},
+        {"answer": "Ritter"},
+        {"answer": "Pharaonen"}
+      ],
+      "answer": "Steinzeitmenschen",
+      "explanation": "In der Steinzeit stellten Menschen Werkzeuge aus Stein her."
+    },
+    {
+      "question": "Wer war der berühmte Erfinder des ersten Autos?",
+      "answers": [
+        {"answer": "Carl Benz"},
+        {"answer": "Henry Ford"},
+        {"answer": "Gottlieb Daimler"},
+        {"answer": "Nikola Tesla"}
+      ],
+      "answer": "Carl Benz",
+      "explanation": "Carl Benz erfand das erste Auto mit Motor."
+    },
+    {
+      "question": "Wie heißt das große alte Bauwerk in Rom, wo Gladiatoren kämpften?",
+      "answers": [
+        {"answer": "Kolosseum"},
+        {"answer": "Pantheon"},
+        {"answer": "Akropolis"},
+        {"answer": "Tempel"}
+      ],
+      "answer": "Kolosseum",
+      "explanation": "Im Kolosseum in Rom fanden Gladiatorenkämpfe statt."
+    },
+    {
+      "question": "Wer schrieb die berühmte Musik zum Lied 'Ode an die Freude'?",
+      "answers": [
+        {"answer": "Ludwig van Beethoven"},
+        {"answer": "Johann Sebastian Bach"},
+        {"answer": "Wolfgang Amadeus Mozart"},
+        {"answer": "Franz Schubert"}
+      ],
+      "answer": "Ludwig van Beethoven",
+      "explanation": "Beethoven komponierte die 'Ode an die Freude'."
+    }
+  ]
+},
+    {
+  "name": "Englisch-Quiz für Kinder",
+  "questions": [
+    {
+      "question": "Wie sagt man ‚Hund‘ auf Englisch?",
+      "answers": [
+        {"answer": "Cat"},
+        {"answer": "Dog"},
+        {"answer": "Mouse"},
+        {"answer": "Bird"}
+      ],
+      "answer": "Dog",
+      "explanation": "'Dog' ist das englische Wort für 'Hund'."
+    },
+    {
+      "question": "Wie heißt 'Katze' auf Englisch?",
+      "answers": [
+        {"answer": "Car"},
+        {"answer": "Cat"},
+        {"answer": "Cot"},
+        {"answer": "Cut"}
+      ],
+      "answer": "Cat",
+      "explanation": "'Cat' bedeutet auf Deutsch 'Katze'."
+    },
+    {
+      "question": "Was bedeutet das englische Wort 'red'?",
+      "answers": [
+        {"answer": "Blau"},
+        {"answer": "Rot"},
+        {"answer": "Grün"},
+        {"answer": "Gelb"}
+      ],
+      "answer": "Rot",
+      "explanation": "'Red' heißt auf Deutsch 'Rot'."
+    },
+    {
+      "question": "Wie heißt 'Haus' auf Englisch?",
+      "answers": [
+        {"answer": "Horse"},
+        {"answer": "House"},
+        {"answer": "Hand"},
+        {"answer": "Hat"}
+      ],
+      "answer": "House",
+      "explanation": "'House' ist das englische Wort für 'Haus'."
+    },
+    {
+      "question": "Was ist die englische Zahl für 'drei'?",
+      "answers": [
+        {"answer": "one"},
+        {"answer": "three"},
+        {"answer": "two"},
+        {"answer": "five"}
+      ],
+      "answer": "three",
+      "explanation": "'Three' bedeutet 'drei'."
+    },
+    {
+      "question": "Wie sagt man ‚Apfel‘ auf Englisch?",
+      "answers": [
+        {"answer": "Banana"},
+        {"answer": "Apple"},
+        {"answer": "Orange"},
+        {"answer": "Pear"}
+      ],
+      "answer": "Apple",
+      "explanation": "‚Apple‘ ist das englische Wort für ‚Apfel‘."
+    },
+    {
+      "question": "Wie sagt man ‚grün‘ auf Englisch?",
+      "answers": [
+        {"answer": "Blue"},
+        {"answer": "Green"},
+        {"answer": "Yellow"},
+        {"answer": "Red"}
+      ],
+      "answer": "Green",
+      "explanation": "'Green' heißt auf Deutsch 'grün'."
+    },
+    {
+      "question": "Wie heißt 'Auto' auf Englisch?",
+      "answers": [
+        {"answer": "Car"},
+        {"answer": "Bus"},
+        {"answer": "Train"},
+        {"answer": "Bike"}
+      ],
+      "answer": "Car",
+      "explanation": "'Car' ist das englische Wort für 'Auto'."
+    },
+    {
+      "question": "Was heißt 'school' auf Deutsch?",
+      "answers": [
+        {"answer": "Schule"},
+        {"answer": "Stuhl"},
+        {"answer": "Schaf"},
+        {"answer": "Schlüssel"}
+      ],
+      "answer": "Schule",
+      "explanation": "'School' bedeutet 'Schule'."
+    },
+    {
+      "question": "Wie sagt man ‚Buch‘ auf Englisch?",
+      "answers": [
+        {"answer": "Book"},
+        {"answer": "Back"},
+        {"answer": "Bag"},
+        {"answer": "Bike"}
+      ],
+      "answer": "Book",
+      "explanation": "'Book' ist das englische Wort für 'Buch'."
+    },
+    {
+      "question": "Wie sagt man 'Sonne' auf Englisch?",
+      "answers": [
+        {"answer": "Sun"},
+        {"answer": "Son"},
+        {"answer": "Sand"},
+        {"answer": "Snow"}
+      ],
+      "answer": "Sun",
+      "explanation": "'Sun' heißt auf Deutsch 'Sonne'."
+    },
+    {
+      "question": "Was bedeutet das englische Wort 'blue'?",
+      "answers": [
+        {"answer": "Blau"},
+        {"answer": "Rot"},
+        {"answer": "Grün"},
+        {"answer": "Gelb"}
+      ],
+      "answer": "Blau",
+      "explanation": "'Blue' heißt auf Deutsch 'Blau'."
+    },
+    {
+      "question": "Wie sagt man ‚Baum‘ auf Englisch?",
+      "answers": [
+        {"answer": "Bush"},
+        {"answer": "Tree"},
+        {"answer": "Flower"},
+        {"answer": "Grass"}
+      ],
+      "answer": "Tree",
+      "explanation": "'Tree' ist das englische Wort für 'Baum'."
+    },
+    {
+      "question": "Wie sagt man ‚Wasser‘ auf Englisch?",
+      "answers": [
+        {"answer": "Milk"},
+        {"answer": "Juice"},
+        {"answer": "Water"},
+        {"answer": "Tea"}
+      ],
+      "answer": "Water",
+      "explanation": "'Water' bedeutet auf Deutsch 'Wasser'."
+    },
+    {
+      "question": "Was bedeutet das englische Wort 'yellow'?",
+      "answers": [
+        {"answer": "Gelb"},
+        {"answer": "Grün"},
+        {"answer": "Blau"},
+        {"answer": "Rot"}
+      ],
+      "answer": "Gelb",
+      "explanation": "'Yellow' bedeutet 'Gelb' auf Deutsch."
+    },
+    {
+      "question": "Wie sagt man ‚Mädchen‘ auf Englisch?",
+      "answers": [
+        {"answer": "Boy"},
+        {"answer": "Girl"},
+        {"answer": "Lady"},
+        {"answer": "Baby"}
+      ],
+      "answer": "Girl",
+      "explanation": "'Girl' ist das englische Wort für 'Mädchen'."
+    },
+    {
+      "question": "Wie heißt der englische Name für ‚Tisch‘?",
+      "answers": [
+        {"answer": "Chair"},
+        {"answer": "Table"},
+        {"answer": "Desk"},
+        {"answer": "Window"}
+      ],
+      "answer": "Table",
+      "explanation": "'Table' heißt auf Deutsch 'Tisch'."
+    },
+    {
+      "question": "Wie sagt man 'Fenster' auf Englisch?",
+      "answers": [
+        {"answer": "Window"},
+        {"answer": "Wind"},
+        {"answer": "Winter"},
+        {"answer": "Wall"}
+      ],
+      "answer": "Window",
+      "explanation": "'Window' ist das englische Wort für 'Fenster'."
+    },
+    {
+      "question": "Was bedeutet das englische Wort 'mother'?",
+      "answers": [
+        {"answer": "Vater"},
+        {"answer": "Mutter"},
+        {"answer": "Schwester"},
+        {"answer": "Bruder"}
+      ],
+      "answer": "Mutter",
+      "explanation": "'Mother' heißt 'Mutter'."
+    },
+    {
+      "question": "Wie heißt der englische Name für 'Freund'?",
+      "answers": [
+        {"answer": "Father"},
+        {"answer": "Friend"},
+        {"answer": "Brother"},
+        {"answer": "Boy"}
+      ],
+      "answer": "Friend",
+      "explanation": "'Friend' ist das englische Wort für 'Freund'."
+    },
+    {
+      "question": "Was bedeutet das englische Wort 'milk'?",
+      "answers": [
+        {"answer": "Milch"},
+        {"answer": "Wasser"},
+        {"answer": "Saft"},
+        {"answer": "Kaffee"}
+      ],
+      "answer": "Milch",
+      "explanation": "'Milk' bedeutet auf Deutsch 'Milch'."
+    },
+    {
+      "question": "Wie sagt man 'Lehrer' auf Englisch?",
+      "answers": [
+        {"answer": "Doctor"},
+        {"answer": "Teacher"},
+        {"answer": "Student"},
+        {"answer": "Worker"}
+      ],
+      "answer": "Teacher",
+      "explanation": "'Teacher' ist das englische Wort für 'Lehrer'."
+    },
+    {
+      "question": "Wie sagt man 'Brot' auf Englisch?",
+      "answers": [
+        {"answer": "Bread"},
+        {"answer": "Butter"},
+        {"answer": "Bean"},
+        {"answer": "Beer"}
+      ],
+      "answer": "Bread",
+      "explanation": "'Bread' heißt auf Deutsch 'Brot'."
+    },
+    {
+      "question": "Wie sagt man 'Vater' auf Englisch?",
+      "answers": [
+        {"answer": "Mother"},
+        {"answer": "Brother"},
+        {"answer": "Father"},
+        {"answer": "Friend"}
+      ],
+      "answer": "Father",
+      "explanation": "'Father' heißt auf Deutsch 'Vater'."
+    },
+    {
+      "question": "Wie sagt man 'Fisch' auf Englisch?",
+      "answers": [
+        {"answer": "Fox"},
+        {"answer": "Fish"},
+        {"answer": "Frog"},
+        {"answer": "Fly"}
+      ],
+      "answer": "Fish",
+      "explanation": "'Fish' ist das englische Wort für 'Fisch'."
+    },
+    {
+      "question": "Wie sagt man ‚klein‘ auf Englisch?",
+      "answers": [
+        {"answer": "Small"},
+        {"answer": "Tall"},
+        {"answer": "Big"},
+        {"answer": "Long"}
+      ],
+      "answer": "Small",
+      "explanation": "'Small' bedeutet auf Deutsch 'klein'."
+    },
+    {
+      "question": "Wie sagt man ‚groß‘ auf Englisch?",
+      "answers": [
+        {"answer": "Short"},
+        {"answer": "Big"},
+        {"answer": "Small"},
+        {"answer": "Little"}
+      ],
+      "answer": "Big",
+      "explanation": "'Big' heißt auf Deutsch 'groß'."
+    },
+    {
+      "question": "Was heißt 'Hello' auf Deutsch?",
+      "answers": [
+        {"answer": "Tschüss"},
+        {"answer": "Hallo"},
+        {"answer": "Danke"},
+        {"answer": "Bitte"}
+      ],
+      "answer": "Hallo",
+      "explanation": "'Hello' heißt 'Hallo'."
+    },
+    {
+      "question": "Wie sagt man 'Tschüss' auf Englisch?",
+      "answers": [
+        {"answer": "Hello"},
+        {"answer": "Bye"},
+        {"answer": "Please"},
+        {"answer": "Thank you"}
+      ],
+      "answer": "Bye",
+      "explanation": "'Bye' heißt auf Deutsch 'Tschüss'."
+    },
+    {
+      "question": "Was bedeutet 'please' auf Deutsch?",
+      "answers": [
+        {"answer": "Danke"},
+        {"answer": "Bitte"},
+        {"answer": "Hallo"},
+        {"answer": "Guten Tag"}
+      ],
+      "answer": "Bitte",
+      "explanation": "'Please' heißt 'Bitte'."
+    },
+    {
+      "question": "Wie sagt man ‚Danke‘ auf Englisch?",
+      "answers": [
+        {"answer": "Please"},
+        {"answer": "Sorry"},
+        {"answer": "Thank you"},
+        {"answer": "Goodbye"}
+      ],
+      "answer": "Thank you",
+      "explanation": "'Thank you' bedeutet 'Danke'."
+    },
+    {
+      "question": "Wie sagt man 'Schwester' auf Englisch?",
+      "answers": [
+        {"answer": "Brother"},
+        {"answer": "Sister"},
+        {"answer": "Mother"},
+        {"answer": "Daughter"}
+      ],
+      "answer": "Sister",
+      "explanation": "'Sister' heißt auf Deutsch 'Schwester'."
+    },
+    {
+      "question": "Wie sagt man 'Morgen' auf Englisch?",
+      "answers": [
+        {"answer": "Night"},
+        {"answer": "Evening"},
+        {"answer": "Morning"},
+        {"answer": "Afternoon"}
+      ],
+      "answer": "Morning",
+      "explanation": "'Morning' bedeutet 'Morgen'."
+    },
+    {
+      "question": "Wie sagt man 'Nacht' auf Englisch?",
+      "answers": [
+        {"answer": "Night"},
+        {"answer": "Morning"},
+        {"answer": "Evening"},
+        {"answer": "Afternoon"}
+      ],
+      "answer": "Night",
+      "explanation": "'Night' heißt auf Deutsch 'Nacht'."
+    },
+    {
+      "question": "Was ist das englische Wort für 'Straße'?",
+      "answers": [
+        {"answer": "Street"},
+        {"answer": "Bridge"},
+        {"answer": "Car"},
+        {"answer": "Tree"}
+      ],
+      "answer": "Street",
+      "explanation": "'Street' ist das englische Wort für 'Straße'."
+    },
+    {
+      "question": "Wie sagt man 'Blume' auf Englisch?",
+      "answers": [
+        {"answer": "Flower"},
+        {"answer": "Flour"},
+        {"answer": "Floor"},
+        {"answer": "Flow"}
+      ],
+      "answer": "Flower",
+      "explanation": "'Flower' ist das englische Wort für 'Blume'."
+    },
+    {
+      "question": "Wie heißt 'Vogel' auf Englisch?",
+      "answers": [
+        {"answer": "Bear"},
+        {"answer": "Bird"},
+        {"answer": "Boat"},
+        {"answer": "Bee"}
+      ],
+      "answer": "Bird",
+      "explanation": "'Bird' heißt 'Vogel'."
+    },
+    {
+      "question": "Wie sagt man 'Stuhl' auf Englisch?",
+      "answers": [
+        {"answer": "Chair"},
+        {"answer": "Table"},
+        {"answer": "Shoe"},
+        {"answer": "Bed"}
+      ],
+      "answer": "Chair",
+      "explanation": "'Chair' ist das englische Wort für 'Stuhl'."
+    },
+    {
+      "question": "Was bedeutet das englische Wort 'family'?",
+      "answers": [
+        {"answer": "Familie"},
+        {"answer": "Freund"},
+        {"answer": "Lehrer"},
+        {"answer": "Kind"}
+      ],
+      "answer": "Familie",
+      "explanation": "'Family' bedeutet 'Familie'."
+    },
+    {
+      "question": "Wie sagt man 'Kleid' auf Englisch?",
+      "answers": [
+        {"answer": "Dress"},
+        {"answer": "Skirt"},
+        {"answer": "Shoe"},
+        {"answer": "Shirt"}
+      ],
+      "answer": "Dress",
+      "explanation": "'Dress' heißt 'Kleid'."
+    },
+    {
+      "question": "Wie heißt 'Schuh' auf Englisch?",
+      "answers": [
+        {"answer": "Skirt"},
+        {"answer": "Shoe"},
+        {"answer": "Shirt"},
+        {"answer": "Dress"}
+      ],
+      "answer": "Shoe",
+      "explanation": "'Shoe' heißt 'Schuh'."
+    },
+    {
+      "question": "Wie sagt man 'klein' auf Englisch?",
+      "answers": [
+        {"answer": "Small"},
+        {"answer": "Tall"},
+        {"answer": "Big"},
+        {"answer": "Long"}
+      ],
+      "answer": "Small",
+      "explanation": "'Small' bedeutet 'klein'."
+    },
+    {
+      "question": "Wie heißt 'groß' auf Englisch?",
+      "answers": [
+        {"answer": "Tall"},
+        {"answer": "Short"},
+        {"answer": "Small"},
+        {"answer": "Long"}
+      ],
+      "answer": "Tall",
+      "explanation": "'Tall' heißt 'groß' (im Sinn von 'hoch')."
+    },
+    {
+      "question": "Wie sagt man 'spielen' auf Englisch?",
+      "answers": [
+        {"answer": "play"},
+        {"answer": "sleep"},
+        {"answer": "eat"},
+        {"answer": "run"}
+      ],
+      "answer": "play",
+      "explanation": "'play' heißt 'spielen'."
+    },
+    {
+      "question": "Wie sagt man 'laufen' auf Englisch?",
+      "answers": [
+        {"answer": "run"},
+        {"answer": "walk"},
+        {"answer": "jump"},
+        {"answer": "sit"}
+      ],
+      "answer": "run",
+      "explanation": "'run' heißt 'laufen'."
+    },
+    {
+      "question": "Wie sagt man 'essen' auf Englisch?",
+      "answers": [
+        {"answer": "eat"},
+        {"answer": "drink"},
+        {"answer": "sleep"},
+        {"answer": "sit"}
+      ],
+      "answer": "eat",
+      "explanation": "'eat' heißt 'essen'."
+    },
+    {
+      "question": "Was ist das englische Wort für 'Freundin'?",
+      "answers": [
+        {"answer": "Girlfriend"},
+        {"answer": "Boyfriend"},
+        {"answer": "Mother"},
+        {"answer": "Sister"}
+      ],
+      "answer": "Girlfriend",
+      "explanation": "'Girlfriend' heißt 'Freundin'."
+    },
+    {
+      "question": "Wie sagt man 'spielen' im Englischen?",
+      "answers": [
+        {"answer": "play"},
+        {"answer": "sleep"},
+        {"answer": "eat"},
+        {"answer": "run"}
+      ],
+      "answer": "play",
+      "explanation": "'play' heißt 'spielen'."
+    }
+  ]
+},
     {
   "name": "Allgemeinwissen für Kinder",
   "questions": [
