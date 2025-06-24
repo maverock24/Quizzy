@@ -1,6 +1,473 @@
 
 [
     {
+  "name": "Weltgeschichte",
+  "questions": [
+    {
+      "question": "In welchem Jahr entdeckte Christoph Kolumbus Amerika?",
+      "answers": [
+        {"answer": "1492"},
+        {"answer": "1498"},
+        {"answer": "1510"},
+        {"answer": "1476"}
+      ],
+      "answer": "1492",
+      "explanation": "Kolumbus erreichte am 12. Oktober 1492 die Bahamas, nachdem er im Auftrag der spanischen Krone losgesegelt war, um einen westlichen Seeweg nach Indien zu finden. Er starb im Glauben, Asien erreicht zu haben, ohne je zu erkennen, dass er einen neuen Kontinent entdeckt hatte. Seine Reise wurde durch die Reconquista und den Fall von Granada im selben Jahr ermöglicht, was Spaniens Ressourcen für Entdeckungsreisen freisetzte."
+    },
+    {
+      "question": "Wann begann der Erste Weltkrieg?",
+      "answers": [
+        {"answer": "1914"},
+        {"answer": "1916"},
+        {"answer": "1912"},
+        {"answer": "1918"}
+      ],
+      "answer": "1914",
+      "explanation": "Der Erste Weltkrieg begann am 28. Juli 1914 mit der Kriegserklärung Österreich-Ungarns an Serbien nach dem Attentat auf Erzherzog Franz Ferdinand in Sarajevo am 28. Juni 1914. Durch das komplexe Bündnissystem wurden bald alle europäischen Großmächte hineingezogen. Bis November 1918 forderte der Krieg etwa 17 Millionen Tote und gilt als erster industrieller und globaler Krieg der Geschichte."
+    },
+    {
+      "question": "Welcher deutsche Kanzler wird mit der Ostpolitik und der Aussöhnung mit Osteuropa verbunden?",
+      "answers": [
+        {"answer": "Konrad Adenauer"},
+        {"answer": "Helmut Schmidt"},
+        {"answer": "Willy Brandt"},
+        {"answer": "Helmut Kohl"}
+      ],
+      "answer": "Willy Brandt",
+      "explanation": "Willy Brandt, Bundeskanzler von 1969 bis 1974, revolutionierte die deutsche Außenpolitik mit seiner Ostpolitik (Neue Ostpolitik). Sein symbolträchtiger Kniefall von Warschau 1970 am Denkmal für die Opfer des Warschauer Ghettos wurde zum Symbol für deutsche Versöhnung. Mit der Sowjetunion und Polen schloss er Verträge, die die Oder-Neiße-Linie als Grenze anerkannten, und leitete eine Entspannung im Kalten Krieg ein. 1971 erhielt er dafür den Friedensnobelpreis."
+    },
+    {
+      "question": "Welches antike Reich wurde vom Pharao Ramses II. regiert?",
+      "answers": [
+        {"answer": "Mesopotamien"},
+        {"answer": "Römisches Reich"},
+        {"answer": "Altes Ägypten"},
+        {"answer": "Persisches Reich"}
+      ],
+      "answer": "Altes Ägypten",
+      "explanation": "Ramses II. (ca. 1303-1213 v. Chr.) regierte das Ägyptische Reich etwa 66 Jahre lang während der 19. Dynastie des Neuen Reichs. Er führte wichtige Kriege gegen die Hethiter, darunter die berühmte Schlacht von Kadesch (1274 v. Chr.), und schloss danach den ersten dokumentierten Friedensvertrag der Geschichte. Unter seiner Herrschaft entstanden zahlreiche monumentale Bauwerke wie die Tempel von Abu Simbel, der Ramesseum-Totentempel und Teile des Karnak-Tempels. Er gilt als einer der bedeutendsten und langlebigsten Pharaonen der ägyptischen Geschichte."
+    },
+    {
+      "question": "Welches Ereignis löste den Zweiten Weltkrieg in Europa aus?",
+      "answers": [
+        {"answer": "Die Bombardierung von Pearl Harbor"},
+        {"answer": "Die Machtergreifung Hitlers"},
+        {"answer": "Der deutsche Überfall auf Polen"},
+        {"answer": "Der Anschluss Österreichs"}
+      ],
+      "answer": "Der deutsche Überfall auf Polen",
+      "explanation": "Der deutsche Überfall auf Polen am 1. September 1939 gilt als Beginn des Zweiten Weltkriegs in Europa. Nach diesem Angriff erklärten Großbritannien und Frankreich Deutschland am 3. September den Krieg. Der Überfall wurde durch den Hitler-Stalin-Pakt vom 23. August 1939 ermöglicht, der einen gegenseitigen Nichtangriff vorsah und in einem geheimen Zusatzprotokoll die Aufteilung Polens zwischen Deutschland und der Sowjetunion regelte. Der inszenierte Überfall auf den Sender Gleiwitz diente als Vorwand für den deutschen Angriff."
+    },
+    {
+      "question": "In welchem Jahr fiel die Berliner Mauer?",
+      "answers": [
+        {"answer": "1987"},
+        {"answer": "1989"},
+        {"answer": "1991"},
+        {"answer": "1993"}
+      ],
+      "answer": "1989",
+      "explanation": "Die Berliner Mauer fiel am 9. November 1989 nach massiven Protesten in der DDR. Die Mauer, seit 1961 Symbol der deutschen Teilung und des Kalten Krieges, wurde nach einer missverständlichen Pressekonferenz des SED-Politbüromitglieds Günter Schabowski geöffnet, der neue Reiseregelungen verkündete. Seine Aussage, die Grenzöffnung gelte 'sofort, unverzüglich', führte noch am selben Abend zu einem Massenansturm auf die Grenzübergänge. Die friedliche Revolution in der DDR, Gorbatschows Reformpolitik und der Druck der osteuropäischen Bevölkerungen auf ihre kommunistischen Regierungen hatten den Fall der Mauer vorbereitet."
+    },
+    {
+      "question": "Welcher französische Kaiser führte umfangreiche Kriege in Europa im frühen 19. Jahrhundert?",
+      "answers": [
+        {"answer": "Ludwig XVI."},
+        {"answer": "Napoleon Bonaparte"},
+        {"answer": "Karl der Große"},
+        {"answer": "Ludwig XIV."}
+      ],
+      "answer": "Napoleon Bonaparte",
+      "explanation": "Napoleon Bonaparte (1769-1821) regierte Frankreich zunächst als Erster Konsul (1799-1804) und dann als Kaiser der Franzosen (1804-1814/15). Er führte zahlreiche Feldzüge, die als Napoleonische Kriege bekannt sind, und kontrollierte zeitweise weite Teile Kontinentaleuropas. Seine militärische Genialität manifestierte sich in Schlachten wie Austerlitz (1805) und Jena-Auerstedt (1806). Er reformierte die französische Verwaltung grundlegend und führte den Code Napoléon ein. Nach der verheerenden Niederlage im Russlandfeldzug 1812 und der Völkerschlacht bei Leipzig 1813 wurde er 1814 abgesetzt und nach Elba verbannt. Nach seiner kurzen Rückkehr (Herrschaft der Hundert Tage) wurde er 1815 nach Waterloo endgültig besiegt und nach St. Helena verbannt."
+    },
+    {
+      "question": "Wer schrieb 'Das Kapital', eines der einflussreichsten Werke über Wirtschaftstheorie und Kapitalismuskritik?",
+      "answers": [
+        {"answer": "Friedrich Engels"},
+        {"answer": "Vladimir Lenin"},
+        {"answer": "Karl Marx"},
+        {"answer": "Adam Smith"}
+      ],
+      "answer": "Karl Marx",
+      "explanation": "Karl Marx (1818-1883) schrieb 'Das Kapital' (Band I erschien 1867), ein grundlegendes Werk der Kritik der politischen Ökonomie. Darin analysierte er den Kapitalismus und seine Produktionsweisen, entwickelte die Mehrwerttheorie und sagte den unvermeidlichen Zusammenbruch des kapitalistischen Systems voraus. Die Bände II und III wurden nach seinem Tod von Friedrich Engels herausgegeben. Marx' Theorien bildeten die Grundlage für den Marxismus und beeinflussten zahlreiche politische Bewegungen, revolutionäre Ideologien und die Entwicklung der Sozialwissenschaften. Zusammen mit dem bereits 1848 mit Engels verfassten 'Kommunistischen Manifest' gehört 'Das Kapital' zu den einflussreichsten politischen und wirtschaftlichen Schriften der Geschichte."
+    },
+    {
+      "question": "In welchem Jahr endete der Dreißigjährige Krieg?",
+      "answers": [
+        {"answer": "1618"},
+        {"answer": "1635"},
+        {"answer": "1648"},
+        {"answer": "1659"}
+      ],
+      "answer": "1648",
+      "explanation": "Der Dreißigjährige Krieg endete 1648 mit dem Westfälischen Frieden, der durch die Verträge von Münster und Osnabrück besiegelt wurde. Dieser verheerende Konflikt begann 1618 mit dem Prager Fenstersturz und entwickelte sich vom böhmisch-pfälzischen Religionskrieg zu einem europaweiten Machtkonflikt, in den fast alle europäischen Großmächte verwickelt waren. Der Krieg führte zu enormen Bevölkerungsverlusten (in einigen deutschen Gebieten bis zu zwei Drittel der Bevölkerung) und verwüstete weite Teile Mitteleuropas. Der Westfälische Frieden etablierte wichtige Prinzipien des Völkerrechts, darunter die Souveränität der Staaten, und beeinflusste die europäische Ordnung für Jahrhunderte."
+    },
+    {
+      "question": "Wer war der erste Präsident der Vereinigten Staaten von Amerika?",
+      "answers": [
+        {"answer": "Thomas Jefferson"},
+        {"answer": "Benjamin Franklin"},
+        {"answer": "George Washington"},
+        {"answer": "John Adams"}
+      ],
+      "answer": "George Washington",
+      "explanation": "George Washington (1732-1799) war der erste Präsident der USA von 1789 bis 1797. Als Oberbefehlshaber der Kontinentalarmee im Amerikanischen Unabhängigkeitskrieg (1775-1783) führte er die dreizehn Kolonien zum Sieg gegen Großbritannien. Bei der ersten Präsidentschaftswahl 1789 wurde er einstimmig gewählt und 1792 wiedergewählt. Washington prägte das Amt des Präsidenten entscheidend, indem er auf eine dritte Amtszeit verzichtete (was bis 1951 Tradition blieb), das Kabinett einführte und den Grundstein für die amerikanische Neutralitätspolitik legte. Als Präsident bekämpfte er die hohe Staatsverschuldung, gründete die erste Nationalbank und leitete den Bau der neuen Hauptstadt Washington, D.C. ein."
+    },
+    {
+      "question": "Welches Reich wurde vom mongolischen Herrscher Dschingis Khan gegründet?",
+      "answers": [
+        {"answer": "Das Osmanische Reich"},
+        {"answer": "Das Mongolenreich"},
+        {"answer": "Das Mughal-Reich"},
+        {"answer": "Das Sassanidenreich"}
+      ],
+      "answer": "Das Mongolenreich",
+      "explanation": "Dschingis Khan (ca. 1162-1227), geboren als Temüdschin, einigte die nomadischen Stämme der mongolischen Steppe und gründete das Mongolenreich, das größte zusammenhängende Landimperium der Geschichte. Nach seiner Ernennung zum Großkhan 1206 führte er militärische Kampagnen gegen das Jin-Reich, das Kara-Kitai-Khanat und das Choresmien-Reich. Seine Nachfolger setzten die Expansion fort, sodass das Reich schließlich von Korea bis Osteuropa reichte. Die Mongolen revolutionierten die Kriegsführung mit ihrer Mobilität, Bogenschützen zu Pferd und ausgeklügelter Kriegstaktik. Das Reich förderte den Handel entlang der Seidenstraße, etablierte ein Postsystem und praktizierte religiöse Toleranz, was zur kulturellen und wirtschaftlichen Blüte in vielen eroberten Gebieten führte."
+    },
+    {
+      "question": "Was war die Renaissance?",
+      "answers": [
+        {"answer": "Eine religiöse Bewegung gegen die katholische Kirche"},
+        {"answer": "Ein kultureller Aufbruch in Europa, der antikes Wissen wiederbelebte"},
+        {"answer": "Ein Bauernaufstand im mittelalterlichen Deutschland"},
+        {"answer": "Das Zeitalter der industriellen Revolution"}
+      ],
+      "answer": "Ein kultureller Aufbruch in Europa, der antikes Wissen wiederbelebte",
+      "explanation": "Die Renaissance (14. bis 17. Jahrhundert) war eine kulturelle Bewegung, die in Italien begann und sich über Europa ausbreitete. Der Begriff bedeutet 'Wiedergeburt' und bezieht sich auf das Wiederaufleben des Interesses an antiker griechischer und römischer Kultur, Philosophie und Wissenschaft. Charakteristisch war der Humanismus, der den Menschen ins Zentrum des Denkens stellte, und die Entwicklung der Perspektive in der Kunst. Zu den bedeutenden Künstlern gehörten Leonardo da Vinci, Michelangelo und Raffael. Die Renaissance wurde durch den wachsenden Wohlstand italienischer Stadtstaaten, den Buchdruck und den Fall Konstantinopels 1453 begünstigt, wodurch viele byzantinische Gelehrte nach Italien flohen. Diese Epoche markierte den Übergang vom Mittelalter zur Neuzeit und legte Grundlagen für die wissenschaftliche Revolution und die Aufklärung."
+    },
+    {
+      "question": "Welche antike Stadt wurde 79 n. Chr. durch einen Vulkanausbruch verschüttet?",
+      "answers": [
+        {"answer": "Athen"},
+        {"answer": "Pompeji"},
+        {"answer": "Alexandria"},
+        {"answer": "Karthago"}
+      ],
+      "answer": "Pompeji",
+      "explanation": "Pompeji wurde am 24. August 79 n. Chr. durch den Ausbruch des Vesuvs vollständig unter Asche und Bimsstein begraben. Die wohlhabende römische Stadt in Kampanien hatte etwa 20.000 Einwohner und war ein bedeutendes Handelszentrum. Der plötzliche Ausbruch tötete Tausende Menschen, deren Körper in Asche eingeschlossen wurden und heute als Hohlräume mit Gipsabgüssen zu sehen sind. Die Stadt wurde erst 1748 durch systematische Ausgrabungen wiederentdeckt und gilt heute als einzigartiges archäologisches Fenster in das antike römische Alltagsleben. Besonders gut erhalten sind Fresken, Mosaiken, Gebäude und sogar Graffiti. Der jüngere Plinius berichtete in zwei Briefen von der Katastrophe, die auch die Nachbarstädte Herculaneum und Stabiae zerstörte."
+    },
+    {
+      "question": "Wann wurde die Unabhängigkeitserklärung der Vereinigten Staaten unterzeichnet?",
+      "answers": [
+        {"answer": "1776"},
+        {"answer": "1789"},
+        {"answer": "1812"},
+        {"answer": "1756"}
+      ],
+      "answer": "1776",
+      "explanation": "Die Unabhängigkeitserklärung der Vereinigten Staaten wurde am 4. Juli 1776 vom Kontinentalkongress in Philadelphia verabschiedet. Der Hauptautor des Dokuments war Thomas Jefferson, unterstützt von John Adams, Benjamin Franklin, Robert Livingston und Roger Sherman. Die Erklärung proklamierte die Unabhängigkeit der 13 amerikanischen Kolonien von Großbritannien und begründete diesen Schritt mit unveräußerlichen Menschenrechten und einer Liste von Beschwerden gegen König Georg III. Die Erklärung wurde während des bereits seit 1775 laufenden Amerikanischen Unabhängigkeitskriegs verfasst und gilt als Gründungsdokument der USA. Ihre Ideen von natürlichen Rechten, Volkssouveränität und dem Recht auf Revolution beeinflussten spätere demokratische Bewegungen weltweit, insbesondere die Französische Revolution."
+    },
+    {
+      "question": "Welche europäische Stadt war der Ausgangspunkt der Industriellen Revolution?",
+      "answers": [
+        {"answer": "Paris"},
+        {"answer": "London"},
+        {"answer": "Manchester"},
+        {"answer": "Berlin"}
+      ],
+      "answer": "Manchester",
+      "explanation": "Manchester in England gilt als die erste Industriestadt der Welt und war das Epizentrum der Industriellen Revolution im späten 18. und frühen 19. Jahrhundert. Die Stadt wurde zum Synonym für die Textilproduktion, insbesondere für Baumwolle. Faktoren für Manchesters Aufstieg waren die Nähe zu Liverpool (Hafen für Baumwollimporte), Kohlevorkommen in Lancashire, ein gut ausgebautes Kanalsystem und technische Innovationen wie die Dampfmaschine und mechanische Webstühle. Die Bevölkerung wuchs explosionsartig von 75.000 (1801) auf über 300.000 (1851). Friedrich Engels beschrieb 1845 in 'Die Lage der arbeitenden Klasse in England' die katastrophalen Lebensbedingungen der Arbeiter in Manchester. Die Stadt erhielt den Beinamen 'Cottonopolis' und symbolisierte den Übergang von der Agrar- zur Industriegesellschaft."
+    },
+    {
+      "question": "Welcher deutsche Kaiser rief das Deutsche Reich 1871 aus?",
+      "answers": [
+        {"answer": "Wilhelm I."},
+        {"answer": "Friedrich III."},
+        {"answer": "Wilhelm II."},
+        {"answer": "Friedrich Wilhelm IV."}
+      ],
+      "answer": "Wilhelm I.",
+      "explanation": "Wilhelm I. (1797-1888) aus dem Haus Hohenzollern wurde am 18. Januar 1871 im Spiegelsaal von Versailles zum Deutschen Kaiser proklamiert, nachdem Preußen unter Führung des Reichskanzlers Otto von Bismarck den Deutsch-Französischen Krieg gewonnen hatte. Zuvor war Wilhelm seit 1861 König von Preußen. Die Reichsgründung erfolgte durch den Zusammenschluss des Norddeutschen Bundes mit den süddeutschen Staaten Bayern, Württemberg, Baden und Hessen-Darmstadt. Das neu gegründete Kaiserreich vereinte 25 Bundesstaaten und das Reichsland Elsaß-Lothringen unter preußischer Führung. Wilhelm I. blieb bis zu seinem Tod 1888 Kaiser, wobei die eigentliche politische Macht bei Bismarck lag, der die Reichseinigung durch drei Einigungskriege (gegen Dänemark 1864, Österreich 1866 und Frankreich 1870/71) verwirklicht hatte."
+    },
+    {
+      "question": "Welcher französische König wurde während der Französischen Revolution hingerichtet?",
+      "answers": [
+        {"answer": "Ludwig XIV."},
+        {"answer": "Ludwig XV."},
+        {"answer": "Ludwig XVI."},
+        {"answer": "Ludwig XVIII."}
+      ],
+      "answer": "Ludwig XVI.",
+      "explanation": "Ludwig XVI. (1754-1793) wurde am 21. Januar 1793 auf der Place de la Révolution (heute Place de la Concorde) in Paris öffentlich mit der Guillotine hingerichtet. Nach dem Sturm auf die Bastille 1789 hatte er zunächst einer konstitutionellen Monarchie zugestimmt, versuchte aber 1791 mit seiner Familie zu fliehen (Flucht nach Varennes), wurde jedoch gefangen genommen. Nach der Abschaffung der Monarchie und der Ausrufung der Republik am 21. September 1792 wurde er als 'Bürger Louis Capet' vor das Revolutionstribunal gestellt. Der radikale Nationalkonvent verurteilte ihn wegen Hochverrats und Verschwörung gegen die öffentliche Freiheit zum Tod. Seine Ehefrau Marie Antoinette wurde neun Monate später ebenfalls hingerichtet. Die Exekution des Königs markierte eine Radikalisierung der Revolution und führte zur Schreckensherrschaft unter Robespierre."
+    },
+    {
+      "question": "Welcher deutsche Kaiser dankte nach dem Ersten Weltkrieg ab?",
+      "answers": [
+        {"answer": "Wilhelm I."},
+        {"answer": "Wilhelm II."},
+        {"answer": "Friedrich III."},
+        {"answer": "Karl I."}
+      ],
+      "answer": "Wilhelm II.",
+      "explanation": "Wilhelm II. (1859-1941) dankte am 9. November 1918 als deutscher Kaiser und König von Preußen ab, nachdem Reichskanzler Max von Baden bereits seine Abdankung verkündet hatte. Er floh ins niederländische Exil nach Doorn, wo er bis zu seinem Tod lebte. Die Abdankung war das Ergebnis der Novemberrevolution, die in Deutschland ausbrach, als der Erste Weltkrieg verloren war und die deutsche Marine in Kiel meuterte. Am selben Tag rief Philipp Scheidemann die Republik aus. Wilhelm II. hatte Deutschland seit 1888 regiert und durch seine unberechenbare 'persönliche Regierung' und aggressive Außenpolitik zur internationalen Isolation des Landes beigetragen. Seine Rolle im Kriegsausbruch 1914 ist umstritten, doch die Alliierten forderten seine Auslieferung als Kriegsverbrecher, was die Niederlande jedoch verweigerten."
+    },
+    {
+      "question": "Wer war der griechische Philosoph, der als Lehrer von Alexander dem Großen bekannt ist?",
+      "answers": [
+        {"answer": "Sokrates"},
+        {"answer": "Platon"},
+        {"answer": "Aristoteles"},
+        {"answer": "Epikur"}
+      ],
+      "answer": "Aristoteles",
+      "explanation": "Aristoteles (384-322 v. Chr.) unterrichtete Alexander den Großen von 343-340 v. Chr. in Mieza, nachdem er von König Philipp II. von Makedonien als Privatlehrer für seinen damals 13-jährigen Sohn angestellt worden war. Aristoteles selbst war zuvor Schüler Platons an der Akademie in Athen gewesen. Er vermittelte Alexander umfassende Kenntnisse in Politik, Ethik, Literatur und Naturwissenschaften. Alexander behielt sein Leben lang Respekt für seinen Lehrer und soll sogar Pflanzen- und Tierproben von seinen Feldzügen zur Unterstützung von Aristoteles' Forschungen nach Griechenland geschickt haben. Aristoteles' universelle Bildung und sein Interesse an empirischer Beobachtung beeinflussten vermutlich Alexanders Weltoffenheit und sein Interesse an fremden Kulturen, die charakteristisch für seine späteren Eroberungen waren."
+    },
+    {
+      "question": "In welcher Schlacht wurde Napoleon Bonaparte endgültig besiegt?",
+      "answers": [
+        {"answer": "Schlacht bei Austerlitz"},
+        {"answer": "Schlacht bei Waterloo"},
+        {"answer": "Schlacht bei Leipzig"},
+        {"answer": "Schlacht bei Borodino"}
+      ],
+      "answer": "Schlacht bei Waterloo",
+      "explanation": "Die Schlacht bei Waterloo am 18. Juni 1815 bedeutete Napoleons endgültige Niederlage. Nach seiner Verbannung auf Elba war Napoleon im März 1815 nach Frankreich zurückgekehrt und hatte während der 'Herrschaft der Hundert Tage' erneut die Macht übernommen. Bei Waterloo (heute in Belgien) trafen Napoleons Truppen auf eine alliierte Armee unter dem britischen Feldmarschall Wellington und ein preußisches Heer unter Feldmarschall Blücher. Die Schlacht begann um 11:30 Uhr und endete mit einer vernichtenden Niederlage der Franzosen nach dem entscheidenden Eingreifen der Preußen. Von etwa 73.000 französischen Soldaten wurden 25.000 getötet, verwundet oder gefangen genommen. Nach der Niederlage dankte Napoleon endgültig ab und wurde auf die abgelegene Insel St. Helena im Südatlantik verbannt, wo er 1821 starb."
+    },
+    {
+      "question": "Welcher Friedensschluss beendete den Ersten Weltkrieg mit Deutschland?",
+      "answers": [
+        {"answer": "Vertrag von Versailles"},
+        {"answer": "Vertrag von Saint-Germain"},
+        {"answer": "Vertrag von Brest-Litowsk"},
+        {"answer": "Vertrag von Trianon"}
+      ],
+      "answer": "Vertrag von Versailles",
+      "explanation": "Der Versailler Vertrag wurde am 28. Juni 1919 im Spiegelsaal des Schlosses von Versailles unterzeichnet und beendete offiziell den Ersten Weltkrieg zwischen Deutschland und den Alliierten. Deutschland war bei den Verhandlungen nicht beteiligt und musste den Vertrag unter Protest annehmen. Der Vertrag erklärte Deutschland und seine Verbündeten als allein schuldig am Kriegsausbruch (Kriegsschuldklausel, Artikel 231) und verpflichtete es zu hohen Reparationszahlungen. Deutschland verlor etwa 13% seines Territoriums, alle Kolonien, musste sein Heer auf 100.000 Mann reduzieren und seine Flotte ausliefern. Das Rheinland wurde entmilitarisiert und das Saargebiet unter Völkerbundverwaltung gestellt. Die harten Bedingungen führten in Deutschland zu Verbitterung und wurden von vielen als 'Diktat von Versailles' wahrgenommen, was später von den Nationalsozialisten propagandistisch ausgenutzt wurde."
+    },
+    {
+      "question": "Welches Ereignis löste den Ersten Weltkrieg aus?",
+      "answers": [
+        {"answer": "Die Ermordung von Erzherzog Franz Ferdinand in Sarajevo"},
+        {"answer": "Der deutsche Einmarsch in Belgien"},
+        {"answer": "Die Mobilmachung der russischen Armee"},
+        {"answer": "Die Versenkung der Lusitania"}
+      ],
+      "answer": "Die Ermordung von Erzherzog Franz Ferdinand in Sarajevo",
+      "explanation": "Am 28. Juni 1914 wurden der österreichisch-ungarische Thronfolger Erzherzog Franz Ferdinand und seine Gemahlin Sophie Chotek in Sarajevo vom bosnisch-serbischen Nationalisten Gavrilo Princip erschossen. Das Attentat löste die Julikrise aus: Österreich-Ungarn stellte Serbien ein Ultimatum, das bewusst unannehmbar formuliert war. Nach Serbiens unvollständiger Annahme erklärte Österreich-Ungarn am 28. Juli Serbien den Krieg. Durch das europäische Bündnissystem eskalierten die Ereignisse schnell: Russland mobilisierte zur Unterstützung Serbiens, Deutschland erklärte Russland und Frankreich den Krieg und marschierte in Belgien ein, woraufhin Großbritannien Deutschland den Krieg erklärte. Das komplexe Geflecht aus Nationalismus, Imperialismus, Militarismus und Bündnissen hatte Europa an den Rand des Krieges geführt, das Attentat war nur der Funke, der das Pulverfass explodieren ließ."
+    },
+    {
+      "question": "Wer gründete das Osmanische Reich?",
+      "answers": [
+        {"answer": "Selim I."},
+        {"answer": "Mehmed II."},
+        {"answer": "Osman I."},
+        {"answer": "Süleyman der Prächtige"}
+      ],
+      "answer": "Osman I.",
+      "explanation": "Osman I. (ca. 1258-1324/26) gründete das Osmanische Reich, das nach ihm benannt wurde (osmanisch: Devlet-i ʿAlīye-i ʿOsmānīye). Als Anführer eines türkischen Stammesverbandes im nordwestlichen Anatolien nutzte er das Machtvakuum nach dem Niedergang der Seldschuken und dem Mongolensturm. Etwa ab 1299 begann er, sein Herrschaftsgebiet auf Kosten des Byzantinischen Reiches zu erweitern. Seine Nachfolger bauten das Reich kontinuierlich aus, bis es unter Mehmed II. 1453 mit der Eroberung Konstantinopels zur Großmacht aufstieg. Das Osmanische Reich existierte bis 1922 und erstreckte sich auf dem Höhepunkt seiner Macht unter Süleyman dem Prächtigen im 16. Jahrhundert über drei Kontinente: von Südosteuropa über Nordafrika bis zum Nahen Osten. Es war eines der mächtigsten und langlebigsten Reiche der islamischen Geschichte."
+    },
+    {
+      "question": "Welcher römische Feldherr und Staatsmann überquerte mit seinen Truppen 49 v. Chr. den Rubikon?",
+      "answers": [
+        {"answer": "Augustus"},
+        {"answer": "Julius Cäsar"},
+        {"answer": "Marcus Antonius"},
+        {"answer": "Pompeius"}
+      ],
+      "answer": "Julius Cäsar",
+      "explanation": "Julius Cäsar (100-44 v. Chr.) überschritt am 10. Januar 49 v. Chr. mit seinen Truppen den Fluss Rubikon, der die Grenze zwischen seiner Provinz Gallia cisalpina und Italien markierte. Diese Handlung war illegal, da kein römischer General mit Truppen nach Italien einmarschieren durfte, und bedeutete eine offene Rebellion gegen den Senat und seinen ehemaligen Verbündeten Pompeius. Beim Überschreiten soll Cäsar den berühmten Ausspruch 'alea iacta est' (der Würfel ist geworfen) getätigt haben. Diese Entscheidung löste den Römischen Bürgerkrieg aus, der mit Cäsars Sieg endete. Der Ausdruck 'den Rubikon überschreiten' ist bis heute sprichwörtlich für eine folgenschwere, unwiderrufliche Entscheidung. Cäsar wurde in Rom zum Diktator auf Lebenszeit ernannt, aber 44 v. Chr. von Senatoren unter Führung von Brutus und Cassius ermordet."
+    },
+    {
+      "question": "In welchem Land begann 1917 die Oktoberrevolution?",
+      "answers": [
+        {"answer": "Deutschland"},
+        {"answer": "Russland"},
+        {"answer": "Frankreich"},
+        {"answer": "China"}
+      ],
+      "answer": "Russland",
+      "explanation": "Die Oktoberrevolution (nach dem julianischen Kalender am 25. Oktober, nach dem gregorianischen Kalender am 7. November 1917) fand in Russland statt. Unter der Führung von Wladimir Lenin stürzten die Bolschewiki die provisorische Regierung, die nach der Februarrevolution und der Abdankung des Zaren Nikolaus II. entstanden war. Die revolutionären Soldaten und Arbeiter besetzten strategische Punkte in Petrograd (St. Petersburg), darunter den Winterpalast. Die Revolution führte zur Gründung der Russischen Sozialistischen Föderativen Sowjetrepublik, dem ersten kommunistischen Staat der Welt. Es folgten ein blutiger Bürgerkrieg (1918-1922) zwischen den 'Roten' (Bolschewiki) und den 'Weißen' (Anti-Bolschewiki) und die Gründung der Sowjetunion 1922. Die Oktoberrevolution veränderte die Weltgeschichte grundlegend und prägte die geopolitische Landschaft des 20. Jahrhunderts durch den Aufstieg des Kommunismus."
+    },
+    {
+      "question": "Welche antiken Philosophen waren Lehrer und Schüler?",
+      "answers": [
+        {"answer": "Sokrates und Aristoteles"},
+        {"answer": "Sokrates und Platon"},
+        {"answer": "Platon und Epikur"},
+        {"answer": "Aristoteles und Heraklit"}
+      ],
+      "answer": "Sokrates und Platon",
+      "explanation": "Sokrates (469-399 v. Chr.) war der Lehrer von Platon (428/427-348/347 v. Chr.) im antiken Athen. Sokrates hinterließ selbst keine Schriften; sein Denken und seine Methode des philosophischen Dialogs (sokratische Methode) sind hauptsächlich durch Platons Dialoge überliefert, in denen Sokrates oft als Hauptfigur auftritt. Nach Sokrates' Tod durch den Schierlingsbecher (Verurteilung wegen 'Gottlosigkeit' und 'Verführung der Jugend') gründete Platon die Akademie in Athen, die erste höhere Lehranstalt der westlichen Welt. Platon entwickelte Sokrates' Ideen weiter und schuf mit seiner Ideenlehre ein umfassendes philosophisches System. Die Lehrer-Schüler-Kette setzte sich fort, da Platon wiederum der Lehrer von Aristoteles wurde, der später Alexander den Großen unterrichtete. Diese Weitergabe des Wissens hatte enormen Einfluss auf die gesamte westliche Philosophiegeschichte."
+    },
+    {
+      "question": "Welches antike Weltwunder stand in Alexandria?",
+      "answers": [
+        {"answer": "Die Hängenden Gärten der Semiramis"},
+        {"answer": "Der Koloss von Rhodos"},
+        {"answer": "Der Leuchtturm von Alexandria"},
+        {"answer": "Der Tempel der Artemis"}
+      ],
+      "answer": "Der Leuchtturm von Alexandria",
+      "explanation": "Der Leuchtturm von Alexandria (Pharos) wurde zwischen 299 und 279 v. Chr. auf der Insel Pharos im Hafen von Alexandria errichtet. Er war mit einer geschätzten Höhe von 115-135 Metern eines der höchsten Bauwerke der Antike und diente über 1.500 Jahre lang als Navigationshilfe für Schiffe. Der Architekt Sostratos von Knidos erbaute ihn im Auftrag des Ptolemaios I. Im oberen Teil wurde nachts ein Feuer unterhalten, dessen Licht durch Metallspiegel verstärkt und weithin sichtbar war. Der Leuchtturm war nach der Cheops-Pyramide und dem Mausoleum von Halikarnassos das dritte Weltwunder, das auf ägyptischem Boden stand. Er wurde durch mehrere Erdbeben zwischen dem 10. und 14. Jahrhundert zerstört. Seine Ruinen wurden 1994 von Unterwasserarchäologen im Hafen von Alexandria entdeckt. Der Leuchtturm ist der Namensgeber für die Wissenschaft der Leuchtfeuertechnik: Pharologie."
+    },
+    {
+      "question": "Welches war der erste Weltkrieg, in dem Atomwaffen eingesetzt wurden?",
+      "answers": [
+        {"answer": "Erster Weltkrieg"},
+        {"answer": "Zweiter Weltkrieg"},
+        {"answer": "Kalter Krieg"},
+        {"answer": "Vietnamkrieg"}
+      ],
+      "answer": "Zweiter Weltkrieg",
+      "explanation": "Im Zweiten Weltkrieg wurden erstmals und bisher einmalig in der Geschichte Atomwaffen militärisch eingesetzt. Die USA warfen am 6. August 1945 die Uranbombe 'Little Boy' auf die japanische Stadt Hiroshima und am 9. August die Plutoniumbombe 'Fat Man' auf Nagasaki. Bei den Angriffen starben sofort etwa 70.000 Menschen in Hiroshima und 40.000 in Nagasaki; bis Ende 1945 erhöhte sich die Zahl der Todesopfer auf etwa 140.000 bzw. 70.000. Viele weitere starben in den folgenden Jahren an Strahlenschäden und Krebserkrankungen. Die Atombombenabwürfe erfolgten nach der deutschen Kapitulation und sollten Japan zur Aufgabe zwingen, was am 15. August mit der Kapitulation Japans geschah. Die Entscheidung zum Einsatz der Bomben durch US-Präsident Truman ist bis heute umstritten. Die verheerenden Folgen der Atomwaffen führten zu weltweiten Bemühungen um nukleare Abrüstung und dem Bewusstsein, dass ein umfassender Atomkrieg die menschliche Zivilisation zerstören könnte."
+    },
+    {
+      "question": "Welche Stadt war das Zentrum des Byzantinischen Reiches?",
+      "answers": [
+        {"answer": "Athen"},
+        {"answer": "Rom"},
+        {"answer": "Alexandria"},
+        {"answer": "Konstantinopel"}
+      ],
+      "answer": "Konstantinopel",
+      "explanation": "Konstantinopel (heute Istanbul) war die Hauptstadt des Byzantinischen Reiches von seiner Gründung 330 n. Chr. bis zu seinem Fall 1453. Die Stadt wurde von Kaiser Konstantin dem Großen als 'Neues Rom' auf dem Gebiet der alten griechischen Kolonie Byzantion gegründet und nach ihm benannt. Strategisch günstig auf einer Halbinsel zwischen Marmarameer und Goldenem Horn gelegen, kontrollierte sie die Meerenge zwischen Europa und Asien (Bosporus). Als eine der größten und reichsten Städte des Mittelalters hatte Konstantinopel bis zu 500.000 Einwohner und war Zentrum von Handel, Kultur und orthodoxem Christentum. Die Stadt war durch massive Theodosianische Mauern geschützt und widerstand zahlreichen Belagerungen, bis sie 1204 von Kreuzfahrern und 1453 endgültig vom osmanischen Sultan Mehmed II. erobert wurde. Die Hagia Sophia, einst größte Kirche der Christenheit, symbolisiert bis heute den Glanz des byzantinischen Konstantinopel."
+    },
+    {
+      "question": "Wann wurde Rom gegründet (der Legende nach)?",
+      "answers": [
+        {"answer": "753 v. Chr."},
+        {"answer": "500 v. Chr."},
+        {"answer": "1000 v. Chr."},
+        {"answer": "250 v. Chr."}
+      ],
+      "answer": "753 v. Chr.",
+      "explanation": "Nach der römischen Gründungslegende wurde Rom am 21. April 753 v. Chr. von den Zwillingsbrüdern Romulus und Remus gegründet. Der Legende nach waren sie die Söhne des Kriegsgottes Mars und der Priesterin Rhea Silvia, wurden als Babys ausgesetzt, von einer Wölfin gesäugt und später von einem Hirten aufgezogen. Bei der Gründung der Stadt soll Romulus seinen Bruder Remus im Streit getötet haben und wurde so zum ersten König Roms. Diese traditionelle Datierung wurde vom römischen Gelehrten Marcus Terentius Varro im 1. Jahrhundert v. Chr. festgelegt und bildete die Grundlage für die römische Zeitrechnung 'ab urbe condita' (seit Gründung der Stadt). Archäologische Funde bestätigen, dass das Gebiet des späteren Roms seit dem 10. Jahrhundert v. Chr. besiedelt war, mit einer nachweisbaren Siedlungsverdichtung im 8. Jahrhundert v. Chr., was die traditionelle Datierung ungefähr stützt."
+    },
+    {
+      "question": "Welcher Kontinent wurde von europäischen Mächten im 19. Jahrhundert kolonisiert und aufgeteilt?",
+      "answers": [
+        {"answer": "Nordamerika"},
+        {"answer": "Südamerika"},
+        {"answer": "Afrika"},
+        {"answer": "Australien"}
+      ],
+      "answer": "Afrika",
+      "explanation": "Afrika wurde im 19. Jahrhundert während des 'Wettlaufs um Afrika' (Scramble for Africa) von europäischen Kolonialmächten aufgeteilt. Vor 1870 beschränkte sich die europäische Präsenz hauptsächlich auf Küstenstationen, danach begannen die Europäer ins Innere vorzudringen. Die Berliner Konferenz 1884/85 legte Regeln für die Aufteilung fest und beschleunigte den Prozess. Bis 1914 war fast ganz Afrika kolonisiert: Frankreich kontrollierte Westafrika und Madagaskar, Großbritannien Gebiete von Ägypten bis Südafrika, Deutschland Togo, Kamerun, Deutsch-Südwestafrika und Deutsch-Ostafrika, Belgien den Kongo, Portugal Angola und Mosambik, Italien Libyen und Teile des Horns von Afrika, Spanien Teile Marokkos und Äquatorialguinea. Nur Äthiopien und Liberia blieben unabhängig. Die Kolonialisierung führte zur willkürlichen Grenzziehung ohne Rücksicht auf ethnische Gruppen, zur Ausbeutung von Ressourcen und zu kulturellen Traumata, deren Folgen bis heute spürbar sind."
+    },
+    {
+      "question": "Welcher US-Präsident setzte sich für die Abschaffung der Sklaverei ein und führte die Union im Amerikanischen Bürgerkrieg?",
+      "answers": [
+        {"answer": "George Washington"},
+        {"answer": "Abraham Lincoln"},
+        {"answer": "Thomas Jefferson"},
+        {"answer": "Andrew Jackson"}
+      ],
+      "answer": "Abraham Lincoln",
+      "explanation": "Abraham Lincoln (1809-1865), der 16. US-Präsident (1861-1865), führte die Union im Amerikanischen Bürgerkrieg (1861-1865) gegen die Konföderierten Südstaaten, die sich nach seiner Wahl von der Union abgespalten hatten. Obwohl Lincoln anfänglich erklärte, sein Hauptziel sei die Erhaltung der Union, nicht die Abschaffung der Sklaverei, erließ er 1863 die Emanzipationsproklamation, die alle Sklaven in den rebellierenden Staaten für frei erklärte. Dies veränderte den Charakter des Krieges und machte die Sklavenbefreiung zu einem zentralen Kriegsziel. Nach dem Sieg der Nordstaaten wurde 1865 der 13. Zusatzartikel zur Verfassung verabschiedet, der die Sklaverei in den gesamten USA abschaffte. Lincolns Präsidentschaft endete tragisch mit seiner Ermordung durch den Südstaaten-Sympathisanten John Wilkes Booth am 14. April 1865, nur fünf Tage nach dem Ende des Bürgerkriegs. Lincoln gilt als einer der bedeutendsten Präsidenten der USA und Symbol für Freiheit und Einheit."
+    },
+    {
+      "question": "Welcher deutsche Kanzler war maßgeblich an der deutschen Wiedervereinigung beteiligt?",
+      "answers": [
+        {"answer": "Willy Brandt"},
+        {"answer": "Konrad Adenauer"},
+        {"answer": "Gerhard Schröder"},
+        {"answer": "Helmut Kohl"}
+      ],
+      "answer": "Helmut Kohl",
+      "explanation": "Helmut Kohl (1930-2017), Bundeskanzler von 1982 bis 1998, spielte eine entscheidende Rolle bei der deutschen Wiedervereinigung 1990. Nach dem Fall der Berliner Mauer am 9. November 1989 ergriff er sofort die Initiative und stellte am 28. November sein Zehn-Punkte-Programm zur Überwindung der deutschen Teilung vor. Gegen erhebliche internationale Skepsis, besonders von Großbritannien und Frankreich, sicherte er die Unterstützung des US-Präsidenten George H. W. Bush und überzeugte schließlich auch den sowjetischen Präsidenten Michail Gorbatschow von der Notwendigkeit einer Wiedervereinigung. In den Zwei-plus-Vier-Verhandlungen (beiden deutschen Staaten plus USA, Sowjetunion, Großbritannien, Frankreich) erreichte er die außenpolitische Absicherung. Der Einigungsvertrag zwischen BRD und DDR trat am 3. Oktober 1990 in Kraft. Kohl wird oft als 'Kanzler der Einheit' bezeichnet und nutzte das historische Zeitfenster geschickt für die Wiedervereinigung innerhalb der NATO und der Europäischen Gemeinschaft."
+    },
+    {
+      "question": "Welcher chinesische Herrscher ließ die Terrakotta-Armee errichten?",
+      "answers": [
+        {"answer": "Mao Zedong"},
+        {"answer": "Qin Shi Huangdi"},
+        {"answer": "Sun Yat-sen"},
+        {"answer": "Yongle"}
+      ],
+      "answer": "Qin Shi Huangdi",
+      "explanation": "Qin Shi Huangdi (259-210 v. Chr.), der erste Kaiser des geeinten China, ließ die berühmte Terrakotta-Armee als Teil seines gigantischen Mausoleums errichten. Nachdem er als König von Qin die sechs rivalisierenden Staaten der Streitenden Reiche besiegt hatte, vereinte er 221 v. Chr. China und nannte sich selbst 'Erster Erhabener Gottkaiser von Qin'. Seine 8.000 lebensgroßen Terrakotta-Krieger, die 1974 von Bauern in der Nähe von Xi'an entdeckt wurden, sollten ihn im Jenseits beschützen. Jede Figur hat individuelle Gesichtszüge und wurde mit echten Waffen ausgestattet. Das gesamte Grabmal erstreckt sich über 56 Quadratkilometer und enthält zahlreiche weitere Grabbeigaben. Qin Shi Huangdi standardisierte während seiner Herrschaft Schrift, Gewichte, Maße und Währung, ließ ein umfangreiches Straßennetz bauen und verband bestehende Befestigungsanlagen zur ersten Version der Chinesischen Mauer. Sein autoritärer Regierungsstil und die Verbrennung von Büchern machten ihn jedoch auch zu einer kontroversen Figur."
+    },
+    {
+      "question": "Wie hieß das britische Passagierschiff, das 1912 auf seiner Jungfernfahrt nach dem Zusammenstoß mit einem Eisberg sank?",
+      "answers": [
+        {"answer": "Queen Mary"},
+        {"answer": "Titanic"},
+        {"answer": "Lusitania"},
+        {"answer": "Britannic"}
+      ],
+      "answer": "Titanic",
+      "explanation": "Die RMS Titanic der White Star Line sank in der Nacht vom 14. auf den 15. April 1912 auf ihrer Jungfernfahrt von Southampton nach New York, nachdem sie mit einem Eisberg im Nordatlantik kollidiert war. Das Schiff galt als 'unsinkbar' und war mit 269 Metern Länge, 46.000 Bruttoregistertonnen und einer Kapazität von 2.400 Passagieren eines der größten und luxuriösesten Passagierschiffe seiner Zeit. Von den etwa 2.200 Menschen an Bord kamen über 1.500 ums Leben, was die Katastrophe zu einer der folgenreichsten Schiffsunglücke der Geschichte machte. Der Untergang offenbarte gravierende Sicherheitsmängel: zu wenige Rettungsboote, mangelnde Notfallübungen, keine 24-Stunden-Funkwache auf allen Schiffen. In der Folge wurden internationale Sicherheitsstandards für die Schifffahrt grundlegend verbessert, darunter die Verpflichtung zu ausreichend Rettungsbooten für alle Passagiere und Besatzungsmitglieder und die Einrichtung der Internationalen Eispatrouille."
+    },
+    {
+      "question": "Welches war das größte Kolonialreich der Geschichte?",
+      "answers": [
+        {"answer": "Französisches Kolonialreich"},
+        {"answer": "Spanisches Kolonialreich"},
+        {"answer": "Britisches Empire"},
+        {"answer": "Portugiesisches Kolonialreich"}
+      ],
+      "answer": "Britisches Empire",
+      "explanation": "Das Britische Empire war das größte Kolonialreich der Geschichte. Auf seinem Höhepunkt um 1920 umfasste es etwa ein Viertel der Landmasse der Erde (33,7 Millionen km²) und beherrschte ein Viertel der Weltbevölkerung (etwa 458 Millionen Menschen). Der Slogan 'Die Sonne geht im britischen Empire niemals unter' verdeutlichte seine globale Ausdehnung. Die Expansion begann im 16. Jahrhundert und beschleunigte sich nach dem Sieg über Frankreich in den Kolonialkriegen des 18. Jahrhunderts. Das Empire umfasste Kolonien, Protektorate, Dominions und andere Territorien in Amerika, Afrika, Asien, Australien und Ozeanien, darunter Kanada, Australien, Indien, große Teile Afrikas und strategische Stützpunkte wie Gibraltar und Singapur. Nach dem Zweiten Weltkrieg führten Unabhängigkeitsbewegungen und schwindende britische Ressourcen zur 'Dekolonisierung'. Die Übergabe Hongkongs an China 1997 markierte das Ende des Empire. Das Commonwealth of Nations verbindet heute viele ehemalige Kolonien mit Großbritannien."
+    },
+    {
+      "question": "Wer war Jeanne d'Arc?",
+      "answers": [
+        {"answer": "Eine französische Königin"},
+        {"answer": "Eine französische Heilige und Heerführerin im Hundertjährigen Krieg"},
+        {"answer": "Eine bedeutende französische Schriftstellerin"},
+        {"answer": "Eine französische Revolutionärin"}
+      ],
+      "answer": "Eine französische Heilige und Heerführerin im Hundertjährigen Krieg",
+      "explanation": "Jeanne d'Arc (etwa 1412-1431), auch als Jungfrau von Orleans bekannt, war eine französische Heerführerin und Heilige. Als einfaches Bauernmädchen aus Domrémy behauptete sie, göttliche Stimmen zu hören, die ihr befahlen, Frankreich im Hundertjährigen Krieg gegen England zu befreien und den nicht gekrönten Karl VII. zum König zu führen. Mit erstaunlichem Charisma überzeugte sie den Dauphin, ihr ein Heer anzuvertrauen, mit dem sie 1429 den Sieg bei der Belagerung von Orléans errang. Dieser Wendepunkt im Krieg verhalf den Franzosen zu neuem Selbstbewusstsein. Nach weiteren militärischen Erfolgen geleitete sie Karl VII. zur Krönungskathedrale in Reims. 1430 wurde sie von Burgundern gefangen genommen und an die Engländer ausgeliefert. In einem manipulierten kirchlichen Prozess wurde sie als Ketzerin und Hexe verurteilt und am 30. Mai 1431 in Rouen auf dem Scheiterhaufen verbrannt. 1456 wurde sie rehabilitiert und 1920 heiliggesprochen. Sie ist heute französische Nationalheldin und gilt als Symbol für Frankreichs nationale Identität."
+    },
+    {
+      "question": "Welche Zivilisation baute die Pyramiden von Gizeh?",
+      "answers": [
+        {"answer": "Die Babylonier"},
+        {"answer": "Die alten Ägypter"},
+        {"answer": "Die Phönizier"},
+        {"answer": "Die Sumerer"}
+      ],
+      "answer": "Die alten Ägypter",
+      "explanation": "Die Pyramiden von Gizeh wurden von den alten Ägyptern während der 4. Dynastie des Alten Reiches zwischen 2620 und 2500 v. Chr. erbaut. Der Pyramidenkomplex besteht aus drei Hauptpyramiden für die Pharaonen Cheops (Große Pyramide), Chephren und Mykerinos, der Sphinx sowie mehreren kleineren Pyramiden und Gräbern. Die Große Pyramide des Cheops war mit ursprünglich 146,6 Metern Höhe das höchste von Menschen errichtete Bauwerk für fast 4.000 Jahre und ist das einzige erhaltene der sieben Weltwunder der Antike. Die Pyramiden wurden als monumentale Grabmäler für die Pharaonen errichtet, die als Götter auf Erden galten und deren Grabstätten ihre ewige Existenz sichern sollten. Die präzise Bauweise mit riesigen Kalksteinblöcken (teilweise bis zu 80 Tonnen schwer), die exakte Ausrichtung nach den Himmelsrichtungen und die hoch entwickelte Mathematik dahinter zeugen von der außergewöhnlichen technischen und organisatorischen Leistungsfähigkeit der ägyptischen Zivilisation vor mehr als 4.500 Jahren."
+    },
+    {
+      "question": "Wer war der erste Mensch im Weltraum?",
+      "answers": [
+        {"answer": "Neil Armstrong"},
+        {"answer": "Juri Gagarin"},
+        {"answer": "Alan Shepard"},
+        {"answer": "John Glenn"}
+      ],
+      "answer": "Juri Gagarin",
+      "explanation": "Juri Alexejewitsch Gagarin (1934-1968) wurde am 12. April 1961 der erste Mensch im Weltraum. Der sowjetische Kosmonaut umkreiste in seiner Raumkapsel Wostok 1 einmal die Erde in 108 Minuten auf einer elliptischen Umlaufbahn in 169-315 km Höhe. Nach seinem Rückfall in die Erdatmosphäre landete er mit dem Fallschirm nahe dem Dorf Smelowka bei Engels an der Wolga. Sein historischer Flug war ein bedeutender Erfolg für das sowjetische Raumfahrtprogramm im Wettlauf mit den USA um die Vorherrschaft im All während des Kalten Krieges. Gagarin wurde nach seiner Rückkehr weltweit gefeiert und erhielt zahlreiche Auszeichnungen, darunter 'Held der Sowjetunion', die höchste Auszeichnung der UdSSR. Seine Mission bewies, dass Menschen im Weltraum überleben können, und ebnete den Weg für alle nachfolgenden bemannten Raumfahrtmissionen. Tragischerweise starb Gagarin bereits 1968 bei einem Trainingsflug mit einem Kampfjet."
+    },
+    {
+      "question": "Welcher deutsche Reformator veröffentlichte 1517 seine 95 Thesen?",
+      "answers": [
+        {"answer": "Johannes Calvin"},
+        {"answer": "Martin Luther"},
+        {"answer": "Thomas Müntzer"},
+        {"answer": "Ulrich Zwingli"}
+      ],
+      "answer": "Martin Luther",
+      "explanation": "Martin Luther (1483-1546) veröffentlichte am 31. Oktober 1517 seine 95 Thesen gegen den Ablasshandel, indem er sie gemäß akademischer Tradition an die Tür der Schlosskirche zu Wittenberg schlug (oder möglicherweise nur versandte). Die Thesen, verfasst in lateinischer Sprache für eine akademische Diskussion, kritisierten vor allem den von der katholischen Kirche praktizierten Verkauf von Ablassbriefen, mit denen Gläubige angeblich ihre Sündenstrafen verkürzen konnten. Luther widersprach der Vorstellung, dass Erlösung käuflich sei, und betonte stattdessen die Rechtfertigung allein durch den Glauben (sola fide). Die Thesen verbreiteten sich durch den neuen Buchdruck schnell in ganz Deutschland und Europa. Luthers Weigerung, seine Schriften zu widerrufen, führte zu seiner Exkommunikation durch Papst Leo X. (1521) und zum Wormser Edikt, das ihn zur Reichsacht erklärte. Dies markierte den Beginn der Reformation und führte letztlich zur Spaltung der westlichen Christenheit in katholische und protestantische Konfessionen."
+    },
+    {
+      "question": "Wie nannte man die wirtschaftliche Krise, die 1929 mit dem New Yorker Börsenkrach begann?",
+      "answers": [
+        {"answer": "Große Inflation"},
+        {"answer": "Große Depression"},
+        {"answer": "Große Rezession"},
+        {"answer": "Schwarzer Donnerstag"}
+      ],
+      "answer": "Große Depression",
+      "explanation": "Die Große Depression (Great Depression) war die schwerste Weltwirtschaftskrise des 20. Jahrhunderts, die mit dem Börsenkrach an der New Yorker Wall Street am 'Schwarzen Donnerstag' (24. Oktober 1929) und dem darauf folgenden 'Schwarzen Dienstag' (29. Oktober) begann. Sie dauerte in den USA bis etwa 1939 und in anderen Ländern unterschiedlich lange. Die Krise begann mit dem Zusammenbruch überbewerteter Aktienkurse nach einer spekulativen Blase und entwickelte sich zu einer umfassenden Banken-, Währungs- und Wirtschaftskrise. In den USA fielen die Industrieproduktion um 47%, die Großhandelspreise um 33% und die Außenhandelsgeschäfte um 70%. Die Arbeitslosigkeit stieg auf 25%. Ähnlich dramatische Entwicklungen gab es weltweit, besonders in Deutschland, wo die Massenarbeitslosigkeit zum Aufstieg der NSDAP beitrug. Als Reaktion führte US-Präsident Roosevelt den 'New Deal' ein, der staatliche Interventionen, Sozialversicherungsprogramme und öffentliche Arbeitsprogramme umfasste und die Grundlagen des modernen Wohlfahrtsstaates legte."
+    },
+    {
+      "question": "Wer war der erste Kaiser des Heiligen Römischen Reiches?",
+      "answers": [
+        {"answer": "Karl der Große"},
+        {"answer": "Otto I."},
+        {"answer": "Friedrich Barbarossa"},
+        {"answer": "Heinrich IV."}
+      ],
+      "answer": "Otto I.",
+      "explanation": "Otto I. 'der Große' (912-973) gilt offiziell als erster Kaiser des Heiligen Römischen Reiches. Er wurde am 2. Februar 962 von Papst Johannes XII. in Rom zum Kaiser gekrönt. Als ostfränkischer König (ab 936) hatte Otto zuvor die Reichseinheit gegen aufständische Herzöge gesichert, die Ungarn 955 in der Schlacht auf dem Lechfeld besiegt und die königliche Macht durch die Einsetzung loyaler Bischöfe und Äbte als Reichsfürsten (Reichskirchensystem) gestärkt. Seine Kaiserkrönung erneuerte die Tradition des weströmischen Kaisertums, die 476 geendet und unter Karl dem Großen kurzzeitig wieder aufgelebt war. Obwohl Karl der Große bereits 800 zum Kaiser gekrönt wurde, wird sein Reich nicht als Heiliges Römisches Reich bezeichnet, sondern als Karolingerreich. Erst mit Otto I. begann die kontinuierliche Geschichte des Heiligen Römischen Reiches, das bis 1806 bestand. Ottos Kaisertum begründete die enge Verbindung zwischen deutschen Königen und dem römischen Kaisertitel, die namensgebend für das Reich wurde (seit dem 13. Jahrhundert mit dem Zusatz 'deutscher Nation')."
+    }
+]
+    },
+    {
   "name": "Der menschliche Körper",
   "questions": [
     {
@@ -8784,125 +9251,372 @@
     ]
   },
   {
-    "name": "Weltgeschichte (Grundlagen)",
-    "image": "https://images.unsplash.com/photo-1569065389101-f855a0b2b4ca",
-    "questions": [
-      {
-        "question": "Welche antike Zivilisation zwischen den Flüssen Tigris und Euphrat wird oft als „Wiege der Zivilisation“ bezeichnet und gilt als Erfinder der Schrift (Keilschrift)?",
-        "answers": [
-          { "answer": "Altes Ägypten" },
-          { "answer": "Antikes Griechenland" },
-          { "answer": "Mesopotamien" },
-          { "answer": "Industal-Zivilisation" }
-        ],
-        "answer": "Mesopotamien",
-        "explanation": "Mesopotamien, was so viel wie ‚Land zwischen den Flüssen‘ bedeutet, war eine antike Region im östlichen Mittelmeerraum, die dem heutigen Irak, Kuwait sowie Teilen Syriens und der Türkei entspricht. Sie wird oft als Wiege der Zivilisation bezeichnet, da hier erstmals komplexe urbane Zentren entstanden. Den Sumerern in Mesopotamien wird die Erfindung eines der frühesten Schriftsysteme, der Keilschrift, um 3200 v. Chr. zugeschrieben."
-      },
-      {
-        "question": "Wer war der erste römische Kaiser, der das Ende der Römischen Republik und den Beginn des Römischen Reiches markierte?",
-        "answers": [
-          { "answer": "Julius Caesar" },
-          { "answer": "Augustus (Octavian)" },
-          { "answer": "Nero" },
-          { "answer": "Konstantin der Große" }
-        ],
-        "answer": "Augustus (Octavian)",
-        "explanation": "Augustus, ursprünglich Octavian genannt, war der erste römische Kaiser. Er kam nach einer Zeit der Bürgerkriege an die Macht, die zum Zusammenbruch der Römischen Republik führten. Obwohl Julius Cäsar über immense Macht verfügte und die Republik faktisch beendete, war er nie offiziell Kaiser; seine Ermordung ging der formellen Gründung des Reiches voraus. Augustus' Herrschaft (27 v. Chr. – 14 n. Chr.) leitete eine lange Periode relativen Friedens ein, die als Pax Romana bekannt ist."
-      },
-      {
-        "question": "Welche bedeutende historische Periode in Europa ist nach dem Untergang des Weströmischen Reiches durch Feudalismus, Burgen und Rittertum gekennzeichnet?",
-        "answers": [
-          { "answer": "Die Renaissance" },
-          { "answer": "Das Zeitalter der Aufklärung" },
-          { "answer": "Das Mittelalter (Mittelalterliche Periode)" },
-          { "answer": "Die industrielle Revolution" }
-        ],
-        "answer": "Das Mittelalter",
-        "explanation": "Das Mittelalter, oder die mittelalterliche Periode, reicht in der europäischen Geschichte traditionell vom Untergang des Weströmischen Reiches im 5. Jahrhundert n. Chr. bis zum Beginn der Renaissance im 14. oder 15. Jahrhundert. Diese Ära war geprägt vom System des Feudalismus (ein soziales und politisches System, das auf Landbesitz und Loyalität basierte), der Bedeutung von Rittern und Burgen sowie dem starken Einfluss der christlichen Kirche."
-      },
-      {
-        "question": "Welche italienische Stadt wird oft als Geburtsort der Renaissance angesehen, einer Zeit großer kultureller Veränderungen und künstlerischer Entwicklung in Europa?",
-        "answers": [
-          { "answer": "Rom" },
-          { "answer": "Venedig" },
-          { "answer": "Florenz" },
-          { "answer": "Mailand" }
-        ],
-        "answer": "Florenz",
-        "explanation": "Florenz, Italien, gilt als Geburtsort der Renaissance. Vom 14. bis 16. Jahrhundert war Florenz ein pulsierendes Zentrum der Kunst, Architektur, Literatur und Philosophie und Heimat einflussreicher Persönlichkeiten wie Leonardo da Vinci, Michelangelo, Botticelli und Machiavelli. Der Reichtum seiner Kaufmannsfamilien, wie der Medici, befeuerte diese kulturelle Blüte."
-      },
-      {
-        "question": "Der Sturm auf welches Gefängnis am 14. Juli 1789 gilt als Schlüsselereignis zu Beginn der Französischen Revolution?",
-        "answers": [
-          { "answer": "Der Tower von London" },
-          { "answer": "Die Bastille" },
-          { "answer": "Alcatraz" },
-          { "answer": "Château d'If" }
-        ],
-        "answer": "Die Bastille",
-        "explanation": "Der Sturm auf die Bastille, eine mittelalterliche Festung und ein Gefängnis in Paris, am 14. Juli 1789 war ein symbolträchtiges und bedeutendes Ereignis in der frühen Phase der Französischen Revolution. Obwohl die Bastille damals nur wenige Gefangene beherbergte, verkörperte sie königliche Autorität und Tyrannei. Ihr Fall durch die revolutionäre Menge demonstrierte die Macht des Volkes und markierte einen Wendepunkt in der Revolution. Der 14. Juli wird heute als Nationalfeiertag Frankreichs gefeiert."
-      },
-      {
-        "question": "Wem wird die Erfindung des Buchdrucks mit beweglichen Lettern in Europa um 1440 zugeschrieben, die die Verbreitung von Informationen revolutionierte?",
-        "answers": [
-          { "answer": "Leonardo da Vinci" },
-          { "answer": "Galileo Galilei" },
-          { "answer": "Johannes Gutenberg" },
-          { "answer": "Isaac Newton" }
-        ],
-        "answer": "Johannes Gutenberg",
-        "explanation": "Johannes Gutenberg, ein deutscher Schmied, Goldschmied, Drucker und Verleger, gilt als Erfinder des Buchdrucks mit beweglichen Lettern in Europa um 1440. Diese Erfindung markierte einen wichtigen Wendepunkt in der Geschichte, da sie die Massenproduktion von Büchern und anderen Texten ermöglichte, Informationen deutlich zugänglicher machte und maßgeblich zur Renaissance, Reformation und der wissenschaftlichen Revolution beitrug."
-      },
-      {
-        "question": "In welchem ​​Jahr wurde die amerikanische Unabhängigkeitserklärung, die hauptsächlich von Thomas Jefferson verfasst wurde, verabschiedet?",
-        "answers": [
-          { "answer": "1765" },
-          { "answer": "1776" },
-          { "answer": "1783" },
-          { "answer": "1789" }
-        ],
-        "answer": "1776",
-        "explanation": "Die amerikanische Unabhängigkeitserklärung wurde am 4. Juli 1776 vom Zweiten Kontinentalkongress verabschiedet. Dieses historische Dokument, maßgeblich verfasst von Thomas Jefferson, verkündete, dass sich die dreizehn amerikanischen Kolonien als dreizehn unabhängige, souveräne Staaten betrachteten, die nicht länger unter britischer Herrschaft standen. Es skizzierte die philosophischen Prinzipien der natürlichen Rechte, der Freiheit und der Volkssouveränität, die ihre Trennung von Großbritannien rechtfertigten."
-      },
-      {
-        "question": "Welcher globale Konflikt, der von 1914 bis 1918 dauerte, wurde auch als ‚Großer Krieg‘ bezeichnet?",
-        "answers": [
-          { "answer": "Die Napoleonischen Kriege" },
-          { "answer": "Der Kalte Krieg" },
-          { "answer": "Erster Weltkrieg" },
-          { "answer": "Zweiter Weltkrieg" }
-        ],
-        "answer": "Erster Weltkrieg",
-        "explanation": "Der Erste Weltkrieg, auch bekannt als der Große Krieg, war ein globaler Konflikt, der in Europa seinen Ursprung hatte und vom 28. Juli 1914 bis zum 11. November 1918 andauerte. Die meisten Großmächte der Welt waren in zwei gegnerischen Bündnissen beteiligt: ​​die Alliierten (basierend auf der Triple Entente aus Großbritannien, Frankreich und Russland) und die Mittelmächte (ursprünglich der Dreibund aus Deutschland, Österreich-Ungarn und Italien). Es war einer der tödlichsten Konflikte der Geschichte und ebnete den Weg für große politische Veränderungen, darunter Revolutionen in vielen der beteiligten Nationen."
-      },
-      {
-        "question": "Wie wird die Zeit der geopolitischen Spannungen zwischen den Vereinigten Staaten und der Sowjetunion sowie ihren jeweiligen Verbündeten bezeichnet, die nach dem Zweiten Weltkrieg begann?",
-        "answers": [
-          { "answer": "Die Goldenen Zwanziger" },
-          { "answer": "Die Große Depression" },
-          { "answer": "Der Kalte Krieg" },
-          { "answer": "Das Wettrennen im Weltraum" }
-        ],
-        "answer": "Der Kalte Krieg",
-        "explanation": "Der Kalte Krieg war eine Zeit geopolitischer Spannungen zwischen der Sowjetunion und den Vereinigten Staaten sowie ihren jeweiligen Verbündeten, dem Ostblock und dem Westblock. Dieser Zeitraum erstreckt sich allgemein vom Ende des Zweiten Weltkriegs 1945 bis zur Auflösung der Sowjetunion 1991. Er wurde als ‚kalt‘ bezeichnet, weil es keine groß angelegten direkten Kampfhandlungen zwischen den beiden Supermächten gab, sondern von Stellvertreterkriegen, einem Wettrüsten (insbesondere im Atomwaffenbereich) sowie ideologischer, politischer und wirtschaftlicher Konkurrenz geprägt war."
-      },
-      {
-        "question": "Wer war der wichtigste Anführer der Bürgerrechtsbewegung in den Vereinigten Staaten in den 1950er und 1960er Jahren, der für sein Eintreten für gewaltlosen Protest bekannt war?",
-        "answers": [
-          { "answer": "Malcolm X" },
-          { "answer": "Martin Luther King Jr." },
-          { "answer": "Rosa Parks" },
-          { "answer": "Thurgood Marshall" }
-        ],
-        "answer": "Martin Luther King Jr.",
-        "explanation": "Dr. Martin Luther King Jr. war ein amerikanischer Baptistenprediger und Aktivist. Von 1955 bis zu seiner Ermordung 1968 war er der bekannteste Sprecher und Anführer der Bürgerrechtsbewegung. Er ist vor allem für seinen Einsatz für Bürgerrechte durch Gewaltlosigkeit und zivilen Ungehorsam bekannt, inspiriert von seinem christlichen Glauben und dem gewaltlosen Aktivismus Mahatma Gandhis. Seine Führung war entscheidend für den Erfolg der Bewegung bei der Beendigung der Rassentrennung von Afroamerikanern im Süden und anderen Teilen der Vereinigten Staaten."
-      }
-    ]
-  },
-  {
     "name": "Chemie (Grundlagen)",
     "image": "https://images.unsplash.com/photo-1554475901-4538953918c7",
     "questions": [
+            {
+      "question": "Wie viele Elemente enthält das Periodensystem aktuell?",
+      "answers": [
+        {"answer": "92"},
+        {"answer": "108"},
+        {"answer": "118"},
+        {"answer": "126"}
+      ],
+      "answer": "118",
+      "explanation": "Das Periodensystem umfasst derzeit 118 Elemente. Die Elemente 1-94 kommen natürlich vor oder können in signifikanten Mengen künstlich hergestellt werden, während die Elemente 95-118 synthetisch in Teilchenbeschleunigern erzeugt wurden. Das letzte bestätigte Element, Oganesson (Og, Element 118), wurde 2006 erstmals synthetisiert und 2016 offiziell von der IUPAC anerkannt. Die Synthese noch schwererer Elemente wird durch die extreme Instabilität und extrem kurze Halbwertszeiten zunehmend schwieriger."
+    },
+    {
+      "question": "Was ist ein Isotop?",
+      "answers": [
+        {"answer": "Ein Element mit veränderter Elektronenanzahl"},
+        {"answer": "Ein Element mit veränderter Neutronenanzahl"},
+        {"answer": "Ein Element mit veränderter Protonenanzahl"},
+        {"answer": "Eine chemische Verbindung mit gleicher Atomanzahl"}
+      ],
+      "answer": "Ein Element mit veränderter Neutronenanzahl",
+      "explanation": "Isotope sind Atome desselben Elements (gleiche Protonenzahl/Ordnungszahl), die sich in ihrer Neutronenanzahl unterscheiden. Dies führt zu unterschiedlichen Massenzahlen, aber identischen chemischen Eigenschaften, da diese von der Elektronenkonfiguration bestimmt werden. Beispielsweise hat Kohlenstoff-12 sechs Neutronen, während Kohlenstoff-14 (wichtig für die Radiokarbondatierung) acht Neutronen besitzt. Viele Elemente haben sowohl stabile als auch instabile (radioaktive) Isotope. Die Existenz von Isotopen wurde erstmals 1913 von Frederick Soddy erkannt, wofür er 1921 den Nobelpreis für Chemie erhielt."
+    },
+    {
+      "question": "Was ist der pH-Wert einer neutralen Lösung bei 25°C?",
+      "answers": [
+        {"answer": "0"},
+        {"answer": "7"},
+        {"answer": "10"},
+        {"answer": "14"}
+      ],
+      "answer": "7",
+      "explanation": "Eine neutrale Lösung hat bei 25°C einen pH-Wert von 7. Der pH-Wert ist definiert als der negative dekadische Logarithmus der Wasserstoffionenkonzentration: pH = -log[H⁺]. In reinem Wasser bei 25°C beträgt die Konzentration der H⁺-Ionen (genauer: H₃O⁺, Hydroniumionen) 10⁻⁷ mol/l, woraus sich ein pH-Wert von 7 ergibt. Lösungen mit pH < 7 sind sauer, solche mit pH > 7 basisch. Wichtig ist, dass die Neutralität temperaturabhängig ist: Bei 100°C liegt der neutrale pH-Wert bei etwa 6,14, da die Autoprotolyse von Wasser mit steigender Temperatur zunimmt."
+    },
+    {
+      "question": "Was ist eine Redoxreaktion?",
+      "answers": [
+        {"answer": "Eine Reaktion zwischen Säuren und Basen"},
+        {"answer": "Eine Reaktion mit gleichzeitigem Elektronen-Übergang"},
+        {"answer": "Eine Reaktion unter Wasserstoffabspaltung"},
+        {"answer": "Eine Reaktion, die zu Fällungen führt"}
+      ],
+      "answer": "Eine Reaktion mit gleichzeitigem Elektronen-Übergang",
+      "explanation": "Eine Redoxreaktion (Reduktions-Oxidations-Reaktion) ist ein chemischer Vorgang, bei dem Elektronen von einer Substanz zu einer anderen übertragen werden. Der Elektronendonator wird oxidiert (gibt Elektronen ab, Erhöhung der Oxidationszahl), während der Elektronenakzeptor reduziert wird (nimmt Elektronen auf, Verringerung der Oxidationszahl). Ein klassisches Beispiel ist die Reaktion von Eisen mit Sauerstoff zu Eisenoxid (Rost), wobei Eisen Elektronen an Sauerstoff abgibt. Redoxreaktionen sind fundamentale Prozesse in der Natur und Technik und spielen eine zentrale Rolle in der Energiegewinnung (z.B. Verbrennungsprozesse, Batterien), bei biochemischen Vorgängen (z.B. Zellatmung) und in der industriellen Chemie (z.B. Metallgewinnung)."
+    },
+    {
+      "question": "Welches Teilchen trägt eine negative Ladung und befindet sich außerhalb des Atomkerns?",
+      "answers": [
+        {"answer": "Proton"},
+        {"answer": "Neutron"},
+        {"answer": "Elektron"},
+        {"answer": "Meson"}
+      ],
+      "answer": "Elektron",
+      "explanation": "Das Elektron ist das negativ geladene Elementarteilchen, das sich außerhalb des Atomkerns in der Elektronenhülle bewegt. Es wurde 1897 von J.J. Thomson entdeckt und trägt eine Elementarladung von -1,602 × 10⁻¹⁹ Coulomb. Mit einer Masse von nur 9,109 × 10⁻³¹ kg ist es etwa 1836-mal leichter als ein Proton. Die Elektronen sind in Schalen oder Orbitalen um den Kern angeordnet, deren Besetzung und Energieniveaus durch die Quantenmechanik beschrieben werden. Die chemischen Eigenschaften eines Elements werden maßgeblich durch die Anzahl und Anordnung der Elektronen in der äußersten Schale (Valenzelektronen) bestimmt. Elektronen sind zudem verantwortlich für elektrischen Strom, chemische Bindungen und die meisten makroskopisch beobachtbaren Eigenschaften der Materie."
+    },
+    {
+      "question": "Welche Bindungsart liegt vor, wenn Elektronen zwischen Atomen vollständig übertragen werden?",
+      "answers": [
+        {"answer": "Kovalente Bindung"},
+        {"answer": "Ionenbindung"},
+        {"answer": "Metallische Bindung"},
+        {"answer": "Van-der-Waals-Kräfte"}
+      ],
+      "answer": "Ionenbindung",
+      "explanation": "Bei der Ionenbindung werden Elektronen von einem Atom vollständig auf ein anderes übertragen, wodurch positiv geladene Kationen und negativ geladene Anionen entstehen. Diese entgegengesetzt geladenen Ionen ziehen sich elektrostatisch an und bilden ein Ionengitter. Die Ionenbindung tritt typischerweise zwischen Metallen (Elektronendonatoren) und Nichtmetallen (Elektronenakzeptoren) auf, wie bei Natriumchlorid (NaCl), wo Natrium ein Elektron an Chlor abgibt. Substanzen mit Ionenbindung haben charakteristische Eigenschaften: hohe Schmelz- und Siedepunkte, Sprödigkeit im festen Zustand, elektrische Leitfähigkeit in geschmolzener Form oder in wässriger Lösung sowie gute Löslichkeit in polaren Lösungsmitteln wie Wasser. Im Gegensatz dazu werden bei der kovalenten Bindung Elektronenpaare zwischen Atomen geteilt statt übertragen."
+    },
+    {
+      "question": "Was beschreibt das Aufbauprinzip (Madelung-Regel) in der Chemie?",
+      "answers": [
+        {"answer": "Die Reihenfolge der Entstehung der Elemente im Universum"},
+        {"answer": "Die Reihenfolge des Aufbaus der Elektronenschalen in Atomen"},
+        {"answer": "Die Anordnung der Elemente im Periodensystem"},
+        {"answer": "Die Reihenfolge, in der sich Moleküle bilden"}
+      ],
+      "answer": "Die Reihenfolge des Aufbaus der Elektronenschalen in Atomen",
+      "explanation": "Das Aufbauprinzip (auch als Madelung-Regel oder (n+l)-Regel bekannt) beschreibt die Reihenfolge, in der die Orbitale in Mehrelektronenatomen mit Elektronen befüllt werden. Nach diesem Prinzip werden Orbitale in der Reihenfolge steigender Energiewerte besetzt, beginnend mit dem energieärmsten Zustand. Die Reihenfolge wird durch die Summe der Hauptquantenzahl n und der Nebenquantenzahl l bestimmt, wobei Orbitale mit niedrigerem (n+l)-Wert zuerst besetzt werden. Bei gleichem (n+l)-Wert wird das Orbital mit niedrigerem n zuerst gefüllt. Dies führt zur Besetzungsreihenfolge: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d, 7p usw. Diese Regel erklärt die Elektronenkonfiguration der Elemente und damit viele ihrer chemischen Eigenschaften sowie die Struktur des Periodensystems."
+    },
+    {
+      "question": "Was ist ein chirales Molekül?",
+      "answers": [
+        {"answer": "Ein Molekül mit einem oder mehreren Doppelbindungen"},
+        {"answer": "Ein Molekül, das mit seinem Spiegelbild nicht zur Deckung gebracht werden kann"},
+        {"answer": "Ein ringförmiges Molekül"},
+        {"answer": "Ein Molekül, das mehr als ein Element enthält"}
+      ],
+      "answer": "Ein Molekül, das mit seinem Spiegelbild nicht zur Deckung gebracht werden kann",
+      "explanation": "Ein chirales Molekül besitzt keine Drehspiegelachse und kann nicht mit seinem Spiegelbild zur Deckung gebracht werden. Diese Eigenschaft wird als Chiralität bezeichnet und entsteht typischerweise, wenn ein Kohlenstoffatom (chirales Zentrum) vier verschiedene Substituenten trägt. Die beiden spiegelbildlichen Formen eines chiralen Moleküls werden als Enantiomere bezeichnet und verhalten sich zueinander wie die linke und rechte Hand (daher der Begriff 'Chiralität' vom griechischen 'cheir' für Hand). Obwohl Enantiomere identische physikalische Eigenschaften aufweisen, unterscheiden sie sich in ihrer optischen Aktivität: Sie drehen die Ebene von linear polarisiertem Licht in entgegengesetzte Richtungen. In biologischen Systemen kann die Chiralität entscheidend sein, da Enzyme oft nur ein Enantiomer als Substrat erkennen, was beispielsweise für die Wirksamkeit und Sicherheit von Medikamenten bedeutsam ist."
+    },
+    {
+      "question": "Welches der folgenden ist KEIN Edelgas?",
+      "answers": [
+        {"answer": "Neon"},
+        {"answer": "Krypton"},
+        {"answer": "Brom"},
+        {"answer": "Xenon"}
+      ],
+      "answer": "Brom",
+      "explanation": "Brom ist kein Edelgas, sondern ein Halogen in der 17. Gruppe (7. Hauptgruppe) des Periodensystems. Bei Raumtemperatur ist es eine rotbraune, flüssige und leicht flüchtige Substanz mit stechendem Geruch. Die Edelgase hingegen befinden sich in der 18. Gruppe (8. Hauptgruppe) und umfassen Helium (He), Neon (Ne), Argon (Ar), Krypton (Kr), Xenon (Xe) und Radon (Rn). Edelgase zeichnen sich durch ihre vollständig gefüllte äußere Elektronenschale aus, was ihnen eine außerordentliche chemische Stabilität verleiht. Brom hat dagegen sieben Valenzelektronen und ist hochreaktiv, da es leicht ein Elektron aufnimmt, um die Edelgaskonfiguration zu erreichen. Es bildet unter anderem Bromide mit Metallen und kann kovalente Bindungen mit anderen Nichtmetallen eingehen."
+    },
+    {
+      "question": "Was ist ein Katalysator?",
+      "answers": [
+        {"answer": "Ein Stoff, der eine chemische Reaktion beschleunigt, ohne selbst verbraucht zu werden"},
+        {"answer": "Ein Stoff, der eine chemische Reaktion verlangsamt"},
+        {"answer": "Ein Stoff, der bei einer Reaktion vollständig verbraucht wird"},
+        {"answer": "Ein Stoff, der die Ausbeute einer Reaktion verringert"}
+      ],
+      "answer": "Ein Stoff, der eine chemische Reaktion beschleunigt, ohne selbst verbraucht zu werden",
+      "explanation": "Ein Katalysator ist eine Substanz, die die Reaktionsgeschwindigkeit einer chemischen Reaktion erhöht, indem sie die Aktivierungsenergie herabsetzt, ohne dabei selbst chemisch verändert oder verbraucht zu werden. Nach der Reaktion liegt der Katalysator wieder in seiner ursprünglichen Form vor und kann erneut wirken. Katalysatoren beeinflussen nur die Kinetik einer Reaktion (wie schnell sie abläuft), nicht jedoch die Thermodynamik (Gleichgewichtslage oder Energiebilanz). Sie ermöglichen alternative Reaktionswege mit niedrigerer Aktivierungsenergie. Katalysatoren sind in der industriellen Chemie von enormer Bedeutung, da sie Reaktionen bei niedrigeren Temperaturen und Drücken ermöglichen, was Energie spart und die Prozesseffizienz steigert. In biologischen Systemen übernehmen Enzyme die Rolle von Katalysatoren und ermöglichen die komplexen biochemischen Reaktionen des Lebens. Ein bekanntes Beispiel für einen technischen Katalysator ist der Drei-Wege-Katalysator in Kraftfahrzeugen, der Schadstoffe im Abgas in weniger schädliche Substanzen umwandelt."
+    },
+    {
+      "question": "Was besagt die Oktettregel?",
+      "answers": [
+        {"answer": "Atome streben nach 8 kovalenten Bindungen"},
+        {"answer": "Atome streben nach 8 Neutronen"},
+        {"answer": "Atome streben nach 8 Elektronen in ihrer Valenzschale"},
+        {"answer": "Atome streben nach 8 Protonen"}
+      ],
+      "answer": "Atome streben nach 8 Elektronen in ihrer Valenzschale",
+      "explanation": "Die Oktettregel (auch Lewis-Oktettregel) besagt, dass Atome in chemischen Verbindungen dazu tendieren, ihre Valenzschale mit acht Elektronen zu füllen, um die stabile Elektronenkonfiguration eines Edelgases zu erreichen. Diese Regel wurde 1916 von Gilbert N. Lewis formuliert und erklärt viele Bindungsmuster von Hauptgruppenelementen. Atome können diese Oktettstruktur durch Elektronenübertragung (Ionenbindung) oder Elektronenteilung (kovalente Bindung) erreichen. Die Oktettregel gilt besonders für Elemente der zweiten Periode, während Elemente ab der dritten Periode durch die Verfügbarkeit von d-Orbitalen auch erweiterte Oktette bilden können. Es gibt auch wichtige Ausnahmen wie Wasserstoff und Helium, die bereits mit zwei Elektronen eine volle Schale haben, oder Bor, das in manchen Verbindungen mit sechs Valenzelektronen (unvollständiges Oktett) stabil ist. Trotz dieser Einschränkungen ist die Oktettregel ein fundamentales Konzept zum Verständnis chemischer Bindungen und molekularer Strukturen."
+    },
+    {
+      "question": "Was ist eine Lewis-Säure?",
+      "answers": [
+        {"answer": "Ein Protonendonator"},
+        {"answer": "Ein Protonenakzeptor"},
+        {"answer": "Ein Elektronenpaarakzeptor"},
+        {"answer": "Ein Elektronenpaardonator"}
+      ],
+      "answer": "Ein Elektronenpaarakzeptor",
+      "explanation": "Nach der Lewis-Säure-Base-Theorie (1923 von Gilbert N. Lewis entwickelt) ist eine Lewis-Säure ein Molekül oder Ion, das ein freies Elektronenpaar aufnehmen kann, also ein Elektronenpaarakzeptor. Diese Definition erweitert das Säure-Base-Konzept über die klassische Brønsted-Säure (Protonendonator) hinaus. Typische Lewis-Säuren sind Moleküle mit unvollständigem Oktett wie BF₃, AlCl₃ oder FeCl₃, Metallkationen (z.B. Cu²⁺, Fe³⁺), oder auch Verbindungen mit mehrfach gebundenen Atomen wie CO₂. Bei einer Lewis-Säure-Base-Reaktion bildet sich eine koordinative Bindung (auch Donor-Akzeptor-Bindung genannt), wobei beide Elektronen des bindenden Elektronenpaars von der Lewis-Base stammen. Das Konzept der Lewis-Säuren und -Basen erklärt viele Reaktionen, die nicht über Protonenübertragung ablaufen, wie Metallkomplexbildung, katalytische Prozesse und zahlreiche organische Reaktionen."
+    },
+    {
+      "question": "Woraus bestehen Protonen und Neutronen?",
+      "answers": [
+        {"answer": "Aus Elektronen"},
+        {"answer": "Aus Photonen"},
+        {"answer": "Aus Quarks"},
+        {"answer": "Aus Bosonen"}
+      ],
+      "answer": "Aus Quarks",
+      "explanation": "Protonen und Neutronen, die zusammen als Nukleonen bezeichnet werden, bestehen aus noch kleineren Teilchen namens Quarks. Nach dem Standardmodell der Teilchenphysik besteht ein Proton aus zwei Up-Quarks (jeweils Ladung +⅔) und einem Down-Quark (Ladung -⅓), was zur Gesamtladung +1 führt. Ein Neutron besteht aus einem Up-Quark und zwei Down-Quarks, was eine Nettoladung von 0 ergibt. Diese Quarks werden durch die starke Kernkraft zusammengehalten, die durch den Austausch von Gluonen vermittelt wird. Quarks und Gluonen können nicht isoliert beobachtet werden (Confinement), sondern existieren nur in gebundenen Zuständen wie Hadronen. Die Entdeckung der Quark-Substruktur der Nukleonen in den 1960er Jahren durch Experimente am Stanford Linear Accelerator Center (SLAC) revolutionierte unser Verständnis der Kernphysik und führte zur Entwicklung der Quantenchromodynamik, der Theorie der starken Wechselwirkung."
+    },
+    {
+      "question": "Welcher Wert entspricht etwa dem absoluten Nullpunkt auf der Celsius-Skala?",
+      "answers": [
+        {"answer": "0°C"},
+        {"answer": "-100°C"},
+        {"answer": "-273,15°C"},
+        {"answer": "-459,67°C"}
+      ],
+      "answer": "-273,15°C",
+      "explanation": "Der absolute Nullpunkt liegt bei -273,15°C (oder exakt -273,15 Grad Celsius). Er entspricht 0 Kelvin (0 K) und stellt die theoretisch niedrigste mögliche Temperatur dar, bei der Teilchen keine thermische Bewegungsenergie mehr besitzen. Der absolute Nullpunkt kann gemäß dem dritten Hauptsatz der Thermodynamik niemals vollständig erreicht werden, sondern nur angenähert werden. Die tiefste im Labor erreichte Temperatur liegt bei etwa 38 Pikokelvins (38 × 10⁻¹² K). Der Begriff des absoluten Nullpunkts wurde im 18. Jahrhundert von Guillaume Amontons theoretisch postuliert und später von Lord Kelvin (William Thomson) formalisiert, der die nach ihm benannte Temperaturskala einführte, die beim absoluten Nullpunkt beginnt und die gleichen Intervalle wie die Celsius-Skala verwendet. Die Umrechnung zwischen Kelvin und Celsius erfolgt durch die Formel T(K) = T(°C) + 273,15."
+    },
+    {
+      "question": "Was beschreibt das Pauli-Prinzip in der Quantenmechanik?",
+      "answers": [
+        {"answer": "Die Unschärferelation"},
+        {"answer": "Die Formänderung von Orbitalen"},
+        {"answer": "Die Unmöglichkeit, dass zwei Elektronen exakt dieselben Quantenzahlen haben"},
+        {"answer": "Die Dualität von Welle und Teilchen"}
+      ],
+      "answer": "Die Unmöglichkeit, dass zwei Elektronen exakt dieselben Quantenzahlen haben",
+      "explanation": "Das Pauli-Prinzip (oder Pauli-Verbot) wurde 1925 von Wolfgang Pauli formuliert und ist ein fundamentales Prinzip der Quantenmechanik. Es besagt, dass zwei Fermionen (Teilchen mit halbzahligem Spin, wie Elektronen) in einem System niemals alle Quantenzahlen gemeinsam haben können. Für Elektronen in Atomen bedeutet dies, dass sich zwei Elektronen nur dann im selben Orbital aufhalten können, wenn sie sich in ihrem Spin unterscheiden. Jedes Elektron wird durch vier Quantenzahlen beschrieben: Hauptquantenzahl n (Energieniveau), Nebenquantenzahl l (Orbitalform), magnetische Quantenzahl m_l (Orbitalorientierung) und Spin-Quantenzahl m_s (Eigendrehimpuls). Das Pauli-Prinzip erklärt die Elektronenkonfiguration der Elemente, die Struktur des Periodensystems und grundlegende Eigenschaften der Materie wie die mechanische Stabilität. Es ist auch verantwortlich für den Entartungsdruck in Neutronensternen. Für diese Entdeckung erhielt Pauli 1945 den Nobelpreis für Physik."
+    },
+    {
+      "question": "Was ist Ozon?",
+      "answers": [
+        {"answer": "Eine Verbindung aus drei Sauerstoffatomen"},
+        {"answer": "Eine Verbindung aus drei Wasserstoffatomen"},
+        {"answer": "Eine Verbindung aus Sauerstoff und Stickstoff"},
+        {"answer": "Ein einatomiges Gas in der Atmosphäre"}
+      ],
+      "answer": "Eine Verbindung aus drei Sauerstoffatomen",
+      "explanation": "Ozon (O₃) ist ein Molekül, bestehend aus drei Sauerstoffatomen. Es ist eine allotrope Form des Sauerstoffs, die sich strukturell und in ihren Eigenschaften vom gewöhnlichen Sauerstoff (O₂) unterscheidet. Ozon ist ein bläuliches Gas mit charakteristischem, stechendem Geruch, der oft nach Gewittern wahrnehmbar ist. In der Stratosphäre (15-30 km Höhe) bildet Ozon die lebenswichtige Ozonschicht, die die Erdoberfläche vor schädlicher UV-Strahlung schützt, indem es UV-B und UV-C absorbiert. Diese Ozonbildung erfolgt durch die Spaltung von O₂ durch UV-Strahlung (Chapman-Zyklus). In der Troposphäre (Bodennähe) hingegen ist Ozon ein Bestandteil von Smog und wirkt als Reizgas auf Atemwege und Schleimhäute. Dort entsteht es hauptsächlich durch photochemische Reaktionen zwischen Stickoxiden und flüchtigen organischen Verbindungen unter Sonneneinstrahlung. Ozon ist ein starkes Oxidationsmittel und wird technisch zur Wasserdesinfektion, Geruchsbeseitigung und in der chemischen Synthese eingesetzt."
+    },
+    {
+      "question": "Was ist eine Puffersubstanz?",
+      "answers": [
+        {"answer": "Ein Stoff, der Säuren neutralisiert"},
+        {"answer": "Ein Stoff, der Basen neutralisiert"},
+        {"answer": "Ein Stoff, der Temperaturschwankungen ausgleicht"},
+        {"answer": "Ein System, das pH-Wert-Änderungen bei Zugabe von Säuren oder Basen minimiert"}
+      ],
+      "answer": "Ein System, das pH-Wert-Änderungen bei Zugabe von Säuren oder Basen minimiert",
+      "explanation": "Eine Puffersubstanz oder ein Puffersystem ist eine Mischung aus einer schwachen Säure und ihrer konjugierten Base (oder umgekehrt), die in der Lage ist, den pH-Wert einer Lösung relativ konstant zu halten, wenn Säuren oder Basen zugegeben werden. Ein typisches Puffersystem besteht beispielsweise aus Essigsäure (CH₃COOH) und Natriumacetat (CH₃COONa). Bei Zugabe einer starken Säure reagieren die Acetat-Ionen als Base und binden die hinzugefügten Protonen. Bei Zugabe einer starken Base fungiert die Essigsäure als Protonendonator. Die Pufferkapazität ist am größten, wenn das Verhältnis von Säure zu konjugierter Base etwa 1:1 ist, was gemäß der Henderson-Hasselbalch-Gleichung (pH = pKₛ + log([Base]/[Säure])) einem pH-Wert entspricht, der dem pKₛ-Wert der Säure gleicht. Puffersysteme sind in biologischen Organismen lebenswichtig, wo sie den pH-Wert in engen Grenzen halten, z.B. das Bicarbonat-Puffersystem im Blut. In der Chemie werden Puffer bei Reaktionen eingesetzt, die einen konstanten pH-Wert erfordern."
+    },
+    {
+      "question": "Was besagt die Hundsche Regel?",
+      "answers": [
+        {"answer": "Elektronen besetzen zuerst alle Orbitale einer Unterschale einzeln, bevor sie sich paaren"},
+        {"answer": "Elektronen besetzen immer zuerst die energieärmsten Orbitale"},
+        {"answer": "Elektronen bewegen sich immer paarweise"},
+        {"answer": "Elektronen können nie dasselbe Orbital besetzen"}
+      ],
+      "answer": "Elektronen besetzen zuerst alle Orbitale einer Unterschale einzeln, bevor sie sich paaren",
+      "explanation": "Die Hundsche Regel, benannt nach dem deutschen Physiker Friedrich Hund, ist ein Grundprinzip der Atomphysik und besagt, dass Elektronen bei der Besetzung entarteter Orbitale (Orbitale gleicher Energie) zunächst jedes Orbital einzeln mit parallelem Spin besetzen, bevor sie sich paaren. Diese Regel leitet sich aus der Coulomb-Abstoßung zwischen Elektronen und dem Pauli-Prinzip ab. Die Einzelbesetzung minimiert die elektrostatische Abstoßung zwischen den Elektronen, und die parallele Ausrichtung der Spins (meist als Pfeile nach oben dargestellt) maximiert die Austauschwechselwirkung, was energetisch günstiger ist. Ein typisches Beispiel ist die Elektronenkonfiguration von Stickstoff (7 Elektronen): 1s² 2s² 2p³, wobei die drei p-Elektronen jeweils ein px-, py- und pz-Orbital besetzen, statt sich im px-Orbital zu paaren. Diese Regel erklärt unter anderem den Paramagnetismus vieler Übergangsmetallverbindungen und ist entscheidend für das Verständnis der Elektronenstruktur von Atomen und Molekülen sowie der chemischen Bindungen."
+    },
+    {
+      "question": "Was ist ein Mol?",
+      "answers": [
+        {"answer": "Eine Einheit für elektrische Ladungen"},
+        {"answer": "Ein anderer Name für ein Molekül"},
+        {"answer": "Eine Stoffmenge, die 6,022 × 10²³ Teilchen enthält"},
+        {"answer": "Die chemische Bezeichnung für ein Gemisch"}
+      ],
+      "answer": "Eine Stoffmenge, die 6,022 × 10²³ Teilchen enthält",
+      "explanation": "Das Mol ist die SI-Basiseinheit der Stoffmenge und entspricht einer Teilchenzahl von exakt 6,02214076 × 10²³ (Avogadro-Konstante, N_A). Ein Mol einer Substanz enthält also genauso viele Teilchen (Atome, Moleküle, Ionen etc.) wie 12 Gramm des Kohlenstoffisotops ¹²C Atome enthalten. Die Masse eines Mols einer Substanz in Gramm entspricht ihrer relativen Atommasse (für Elemente) oder Molekülmasse (für Verbindungen). Beispielsweise wiegt ein Mol Sauerstoffgas (O₂) etwa 32 g, weil die relative Molekülmasse von O₂ 32 u beträgt. Diese Beziehung zwischen mikroskopischen Eigenschaften (Teilchen) und makroskopischen Größen (wägbare Mengen) macht das Mol zu einem zentralen Konzept in der Chemie, das Berechnungen zu chemischen Reaktionen und Stoffumwandlungen ermöglicht. Die Definition des Mols wurde 2019 im Rahmen der SI-Reform präzisiert, indem die Avogadro-Konstante auf den oben genannten Wert festgelegt wurde."
+    },
+    {
+      "question": "Was beschreibt der erste Hauptsatz der Thermodynamik?",
+      "answers": [
+        {"answer": "Jeder Prozess strebt einen Zustand maximaler Entropie an"},
+        {"answer": "Energie kann weder erzeugt noch vernichtet, sondern nur umgewandelt werden"},
+        {"answer": "Es ist unmöglich, den absoluten Nullpunkt zu erreichen"},
+        {"answer": "Wärme fließt immer vom wärmeren zum kälteren Körper"}
+      ],
+      "answer": "Energie kann weder erzeugt noch vernichtet, sondern nur umgewandelt werden",
+      "explanation": "Der erste Hauptsatz der Thermodynamik ist eine fundamentale Formulierung des Energieerhaltungssatzes und besagt, dass die Gesamtenergie eines abgeschlossenen Systems konstant bleibt – Energie kann weder erschaffen noch vernichtet, sondern nur in andere Energieformen umgewandelt werden. Mathematisch wird er oft als ΔU = Q + W ausgedrückt, wobei ΔU die Änderung der inneren Energie des Systems, Q die zugeführte Wärmemenge und W die am System verrichtete Arbeit ist. Dieser Satz, der im 19. Jahrhundert von Julius Robert Mayer, James Prescott Joule und Hermann von Helmholtz formuliert wurde, widerlegt die Möglichkeit eines Perpetuum mobile erster Art (einer Maschine, die ohne Energiezufuhr Arbeit verrichten könnte). Der erste Hauptsatz definiert Energie als eine Erhaltungsgröße, macht aber keine Aussage über die Richtung thermodynamischer Prozesse oder die Nutzbarkeit von Energie – diese Aspekte werden durch den zweiten Hauptsatz abgedeckt, der die Entropie einführt."
+    },
+    {
+      "question": "Was ist eine funktionelle Gruppe in der organischen Chemie?",
+      "answers": [
+        {"answer": "Ein bestimmtes Molekülteil innerhalb einer Verbindung, das ihre chemischen Eigenschaften maßgeblich bestimmt"},
+        {"answer": "Eine koordinierte Gruppe von Atomen, die gemeinsam arbeiten"},
+        {"answer": "Die Gesamtheit aller Atome in einem Molekül"},
+        {"answer": "Ein Teil eines organischen Moleküls, der keine Kohlenstoffatome enthält"}
+      ],
+      "answer": "Ein bestimmtes Molekülteil innerhalb einer Verbindung, das ihre chemischen Eigenschaften maßgeblich bestimmt",
+      "explanation": "Eine funktionelle Gruppe in der organischen Chemie ist eine spezifische Anordnung von Atomen innerhalb eines Moleküls, die charakteristische chemische Eigenschaften aufweist und das Reaktionsverhalten der Verbindung maßgeblich bestimmt. Diese Gruppen bestehen oft aus Heteroatomen (wie O, N, S, Halogene) und/oder ungesättigten Bindungen. Wichtige funktionelle Gruppen sind z.B. Hydroxylgruppe (-OH) in Alkoholen, Carbonylgruppe (C=O) in Aldehyden und Ketonen, Carboxylgruppe (-COOH) in Carbonsäuren, Aminogruppe (-NH₂) in Aminen oder Doppelbindungen (C=C) in Alkenen. Funktionelle Gruppen ermöglichen eine systematische Klassifizierung organischer Verbindungen nach ihren chemischen Eigenschaften statt nach ihrer vollständigen Struktur, was besonders in der organischen Synthesechemie nützlich ist. Ihre Reaktivität basiert oft auf Unterschieden in der Elektronendichte (elektrophile/nukleophile Zentren) oder auf der Fähigkeit, als Säure oder Base zu wirken. Die Kenntnis funktioneller Gruppen erlaubt Vorhersagen über Reaktionsmechanismen und physikalische Eigenschaften wie Löslichkeit oder Siedepunkt."
+    },
+    {
+      "question": "Welche Teilchen sind verantwortlich für die Übertragung der starken Kernkraft?",
+      "answers": [
+        {"answer": "Photonen"},
+        {"answer": "W- und Z-Bosonen"},
+        {"answer": "Gluonen"},
+        {"answer": "Gravitonen"}
+      ],
+      "answer": "Gluonen",
+      "explanation": "Gluonen sind die Austauschteilchen (Bosonen) der starken Kernkraft, einer der vier Grundkräfte der Physik. Sie vermitteln die Wechselwirkung zwischen Quarks, den elementaren Bausteinen von Protonen und Neutronen. Gluonen sind elektrisch neutral, masselos und tragen selbst eine als 'Farbe' bezeichnete Ladung, die sich aus der Quantenchromodynamik (QCD) ergibt. Diese Farbeigenschaft unterscheidet sie von Photonen (den Austauschteilchen der elektromagnetischen Kraft) und führt dazu, dass Gluonen miteinander wechselwirken können. Theoretisch gibt es acht verschiedene Gluonen, entsprechend den möglichen Farbzuständen. Die starke Wechselwirkung hat zwei bemerkenswerte Eigenschaften: 'Confinement' (Quarks können nicht isoliert beobachtet werden) und 'asymptotische Freiheit' (die Kraft wird schwächer bei kleineren Abständen). Die Existenz von Gluonen wurde 1979 in Elektron-Positron-Kollisionen am PETRA-Beschleuniger des DESY in Hamburg durch die Beobachtung von 'Drei-Jet-Ereignissen' experimentell bestätigt."
+    },
+    {
+      "question": "Was ist die Reaktionsgeschwindigkeitskonstante k?",
+      "answers": [
+        {"answer": "Ein Maß für die Gleichgewichtslage einer Reaktion"},
+        {"answer": "Ein Proportionalitätsfaktor, der angibt, wie schnell eine Reaktion bei bestimmten Bedingungen abläuft"},
+        {"answer": "Die Zeit, die eine Reaktion bis zum Gleichgewicht benötigt"},
+        {"answer": "Die Energie, die für eine Reaktion benötigt wird"}
+      ],
+      "answer": "Ein Proportionalitätsfaktor, der angibt, wie schnell eine Reaktion bei bestimmten Bedingungen abläuft",
+      "explanation": "Die Reaktionsgeschwindigkeitskonstante k ist ein Proportionalitätsfaktor, der die spezifische Geschwindigkeit einer chemischen Reaktion unter bestimmten Bedingungen quantifiziert. Sie ist abhängig von der Temperatur, nicht aber von den Konzentrationen der Reaktanden. In der Reaktionskinetik beschreibt sie, wie die Reaktionsgeschwindigkeit mit den Konzentrationen der Reaktanten zusammenhängt, gemäß dem Geschwindigkeitsgesetz: v = k · [A]^m · [B]^n ..., wobei [A], [B] die Konzentrationen der Reaktanten und m, n die Reaktionsordnungen sind. Die Temperaturabhängigkeit von k wird durch die Arrhenius-Gleichung beschrieben: k = A · e^(-Ea/RT), wobei A der präexponentielle Faktor, Ea die Aktivierungsenergie, R die Gaskonstante und T die absolute Temperatur ist. Eine höhere Reaktionsgeschwindigkeitskonstante bedeutet eine schnellere Reaktion. Die Einheit von k hängt von der Gesamtordnung der Reaktion ab und kann beispielsweise s⁻¹ (für eine Reaktion erster Ordnung) oder L·mol⁻¹·s⁻¹ (für eine Reaktion zweiter Ordnung) sein."
+    },
+    {
+      "question": "Welches ist das schwerste natürlich vorkommende Element im Periodensystem?",
+      "answers": [
+        {"answer": "Blei (Pb)"},
+        {"answer": "Uran (U)"},
+        {"answer": "Radium (Ra)"},
+        {"answer": "Plutonium (Pu)"}
+      ],
+      "answer": "Uran (U)",
+      "explanation": "Uran (U) mit der Ordnungszahl 92 ist das schwerste natürlich vorkommende Element im Periodensystem. Alle Elemente mit höherer Ordnungszahl (Transurane, 93-118) sind ausschließlich künstlich erzeugt und kommen in der Natur nicht in nennenswerten Mengen vor. Uran ist ein radioaktives Metall, dessen häufigstes Isotop ²³⁸U eine Halbwertszeit von etwa 4,5 Milliarden Jahren hat, was etwa dem Alter der Erde entspricht. Es kommt in der Erdkruste mit einer durchschnittlichen Konzentration von etwa 3 ppm vor, hauptsächlich in Mineralien wie Uraninit (Pechblende). Die wichtigsten Isotope sind ²³⁸U (99,27%) und ²³⁵U (0,72%), wobei letzteres in Kernreaktoren und Kernwaffen genutzt wird, da es spaltbar ist. Obwohl manchmal behauptet wird, dass Spuren von Plutonium in der Natur gefunden wurden (entstanden durch natürliche Kernreaktionen in Uranerzen), sind diese Mengen so minimal, dass Uran als das schwerste Element gilt, das in messbaren Mengen natürlich vorkommt."
+    },
+    {
+      "question": "Welches ist KEINE Kohlenstoff-Allotropie?",
+      "answers": [
+        {"answer": "Diamant"},
+        {"answer": "Graphit"},
+        {"answer": "Fullerene"},
+        {"answer": "Germanium"}
+      ],
+      "answer": "Germanium",
+      "explanation": "Germanium ist kein Allotrop des Kohlenstoffs, sondern ein eigenständiges chemisches Element mit dem Symbol Ge und der Ordnungszahl 32. Es gehört zur Kohlenstoffgruppe (14. Gruppe) des Periodensystems, steht aber eine Periode tiefer als Kohlenstoff. Germanium ist ein Halbmetall mit ähnlichen chemischen Eigenschaften wie Silicium und wird in der Halbleitertechnik verwendet. Kohlenstoff-Allotrope sind verschiedene strukturelle Formen, die ausschließlich aus Kohlenstoffatomen bestehen, aber unterschiedliche räumliche Anordnungen aufweisen. Die wichtigsten natürlichen Allotrope sind Diamant (sp³-hybridisierte Kohlenstoffatome in tetraedrischer Anordnung) und Graphit (sp²-hybridisierte Atome in Schichtstrukturen). Weitere bekannte Allotrope sind Fullerene (kugelartige Moleküle wie C₆₀, 'Buckyballs'), Kohlenstoffnanoröhren (zylindrische Strukturen), Graphen (einatomige Schichten aus Kohlenstoff) und amorphe Kohlenstoffe wie Kohle oder Ruß. Die unterschiedliche Bindungsstruktur der Allotrope führt zu stark variierenden physikalischen Eigenschaften, vom extrem harten Diamant bis zum weichen, schmierfähigen Graphit."
+    },
+    {
+      "question": "Was ist die Autoprotolyse des Wassers?",
+      "answers": [
+        {"answer": "Der Zerfall von Wasser in Wasserstoff und Sauerstoff"},
+        {"answer": "Die chemische Reaktion, bei der Wassermoleküle Protonen übertragen und H₃O⁺ und OH⁻ bilden"},
+        {"answer": "Die Verbindung von Wasser mit Kohlenstoffdioxid"},
+        {"answer": "Die Oxidation von Wasser"}
+      ],
+      "answer": "Die chemische Reaktion, bei der Wassermoleküle Protonen übertragen und H₃O⁺ und OH⁻ bilden",
+      "explanation": "Die Autoprotolyse (oder Eigendissoziation) des Wassers ist ein Gleichgewichtsprozess, bei dem Wassermoleküle miteinander reagieren, indem ein Molekül ein Proton (H⁺) an ein anderes abgibt. Die Reaktionsgleichung lautet: 2 H₂O ⇌ H₃O⁺ + OH⁻. Dabei fungiert ein Wassermolekül als Säure (Protonendonator) und das andere als Base (Protonenakzeptor), was die amphotere Natur des Wassers demonstriert. Bei 25°C beträgt die Gleichgewichtskonstante K_w = [H₃O⁺] · [OH⁻] = 10⁻¹⁴ mol²/L². In reinem Wasser sind die Konzentrationen von H₃O⁺ und OH⁻ gleich, jeweils 10⁻⁷ mol/L, was zu einem neutralen pH-Wert von 7 führt. Die Autoprotolyse erklärt, warum auch destilliertes Wasser elektrisch leitfähig ist, wenn auch nur schwach. Die Autoprotolyse ist temperaturabhängig: Bei höheren Temperaturen steigt K_w, wodurch der neutrale pH-Wert unter 7 sinkt. Das Konzept der Autoprotolyse ist grundlegend für das Verständnis von Säure-Base-Reaktionen in wässrigen Lösungen und das Verhalten von Puffersystemen."
+    },
+    {
+      "question": "Was beschreibt die VSEPR-Theorie?",
+      "answers": [
+        {"answer": "Die räumliche Anordnung von Elektronenpaaren um ein Zentralatom zur Minimierung elektrostatischer Abstoßung"},
+        {"answer": "Die Berechnung der Bindungsenergie zwischen Atomen"},
+        {"answer": "Die Verteilung von Ladungen in Metallkomplexen"},
+        {"answer": "Die Quantenmechanische Beschreibung von Molekülschwingungen"}
+      ],
+      "answer": "Die räumliche Anordnung von Elektronenpaaren um ein Zentralatom zur Minimierung elektrostatischer Abstoßung",
+      "explanation": "Die VSEPR-Theorie (Valence Shell Electron Pair Repulsion) wurde in den 1940er Jahren von Nevil Sidgwick und Herbert Powell entwickelt und von Ronald Gillespie und Ronald Nyholm verfeinert. Sie erklärt die Molekülgeometrie basierend auf der Abstoßung zwischen Elektronenpaaren in der Valenzschale eines Zentralatoms. Laut dieser Theorie ordnen sich Elektronenpaare (bindende und nichtbindende) so an, dass der Abstand zwischen ihnen maximal ist, was die elektrostatische Abstoßung minimiert. Die räumliche Anordnung hängt von der Anzahl der Elektronenpaare ab: 2 Paare führen zu einer linearen, 3 zu einer trigonal-planaren, 4 zu einer tetraedrischen, 5 zu einer trigonal-bipyramidalen und 6 zu einer oktaedrischen Geometrie. Nichtbindende Elektronenpaare (freie Elektronenpaare) beanspruchen mehr Raum als bindende Paare, was zu Verzerrungen führt. Beispielsweise hat NH₃ eine pyramidale Form statt einer tetraedrischen, weil das freie Elektronenpaar mehr Raum beansprucht. Die VSEPR-Theorie kann die Strukturen vieler Moleküle erfolgreich vorhersagen, hat aber Grenzen bei Übergangsmetallkomplexen und bei Molekülen, wo andere Faktoren wie d-Orbital-Beteiligung oder π-Bindungen wichtig sind."
+    },
+    {
+      "question": "Was ist die Elektrophile Aromatische Substitution?",
+      "answers": [
+        {"answer": "Eine Reaktion, bei der ein Wasserstoffatom eines Aromaten durch ein Nukleophil ersetzt wird"},
+        {"answer": "Eine Reaktion, bei der ein Wasserstoffatom eines Aromaten durch ein Elektrophil ersetzt wird"},
+        {"answer": "Eine Reaktion, bei der ein Elektron von einem Aromaten auf ein Elektrophil übertragen wird"},
+        {"answer": "Eine Oxidationsreaktion von aromatischen Verbindungen"}
+      ],
+      "answer": "Eine Reaktion, bei der ein Wasserstoffatom eines Aromaten durch ein Elektrophil ersetzt wird",
+      "explanation": "Die elektrophile aromatische Substitution (S_E-Reaktion) ist ein fundamentaler Reaktionstyp in der organischen Chemie, bei dem ein Wasserstoffatom an einem aromatischen Ring durch ein elektrophiles Teilchen ersetzt wird. Der Mechanismus verläuft in zwei Schritten: Zunächst greift das Elektrophil (E⁺) das π-Elektronensystem des Aromaten an und bildet einen kationischen σ-Komplex (Wheland-Komplex), wobei die Aromatizität temporär aufgehoben wird. Im zweiten Schritt wird ein Proton abgespalten, wodurch die Aromatizität wiederhergestellt wird. Wichtige Beispiele für elektrophile aromatische Substitutionen sind Nitrierung (mit HNO₃/H₂SO₄), Halogenierung (z.B. mit Br₂/FeBr₃), Sulfonierung (mit SO₃/H₂SO₄), Friedel-Crafts-Alkylierung (mit RX/AlCl₃) und Friedel-Crafts-Acylierung (mit RCOCl/AlCl₃). Die Reaktivität und Regioselektivität werden stark durch bereits vorhandene Substituenten beeinflusst: Elektronenschiebende Gruppen (-OH, -NH₂, -R) aktivieren den Ring und fördern die ortho/para-Substitution, während elektronenziehende Gruppen (-NO₂, -CO₂H, -CN) desaktivierend wirken und die meta-Substitution begünstigen."
+    },
+    {
+      "question": "Was ist ein Keton?",
+      "answers": [
+        {"answer": "Eine organische Verbindung mit einer Carbonylgruppe zwischen zwei Kohlenstoffatomen"},
+        {"answer": "Eine organische Verbindung mit einer Hydroxylgruppe"},
+        {"answer": "Eine organische Verbindung mit einer Carbonylgruppe am Ende der Kohlenstoffkette"},
+        {"answer": "Eine cyclische Verbindung mit mindestens einem Sauerstoffatom im Ring"}
+      ],
+      "answer": "Eine organische Verbindung mit einer Carbonylgruppe zwischen zwei Kohlenstoffatomen",
+      "explanation": "Ein Keton ist eine organische Verbindung, die durch eine Carbonylgruppe (C=O) gekennzeichnet ist, die an zwei Kohlenstoffatome gebunden ist. Die allgemeine Struktur lautet R-CO-R', wobei R und R' Alkyl- oder Arylgruppen sein können. Im Unterschied dazu hat ein Aldehyd die Carbonylgruppe am Ende der Kohlenstoffkette, gebunden an mindestens ein Wasserstoffatom (R-CHO). Ketone werden nach der IUPAC-Nomenklatur benannt, indem die Endung '-on' an den Namen des entsprechenden Alkans angehängt wird, z.B. Propanon (Aceton) für CH₃-CO-CH₃. Ketone sind polare Verbindungen mit einem partiell positiven Kohlenstoff und einem partiell negativen Sauerstoff in der Carbonylgruppe. Sie sind reaktive funktionelle Gruppen und können Nukleophile Addition, Reduktion zu Alkoholen, Oxidation zu Estern oder Säuren, Kondensationsreaktionen und Enolisierung eingehen. Wichtige Ketone sind Aceton (ein häufiges Lösungsmittel), Butanon (MEK) und Cyclohexanon, sowie natürlich vorkommende Ketone wie Steroide und Terpene."
+    },
+    {
+      "question": "Was sind Isomere?",
+      "answers": [
+        {"answer": "Chemische Verbindungen mit gleicher Summenformel aber unterschiedlicher Struktur oder räumlicher Anordnung"},
+        {"answer": "Chemische Verbindungen mit gleicher Struktur aber unterschiedlicher Summenformel"},
+        {"answer": "Verbindungen, die sich in ihrem Isotopenverhältnis unterscheiden"},
+        {"answer": "Elemente mit gleicher Ordnungszahl aber unterschiedlicher Massenzahl"}
+      ],
+      "answer": "Chemische Verbindungen mit gleicher Summenformel aber unterschiedlicher Struktur oder räumlicher Anordnung",
+      "explanation": "Isomere sind chemische Verbindungen, die die gleiche Summenformel (gleiche Anzahl und Art von Atomen) haben, sich aber in der Struktur oder räumlichen Anordnung ihrer Atome unterscheiden, was zu unterschiedlichen physikalischen und chemischen Eigenschaften führt. Es gibt verschiedene Arten von Isomerie: 1) Strukturisomerie (Konstitutionsisomerie): Die Atome sind durch unterschiedliche kovalente Bindungen verknüpft, z.B. Butan und Isobutan (beide C₄H₁₀). 2) Stereoisomerie: Gleiche Bindungsstruktur, aber unterschiedliche räumliche Anordnung der Atome, unterteilt in: a) Geometrische Isomerie (cis-trans/E-Z): unterschiedliche Anordnung von Substituenten an einer Doppelbindung oder in einem Ring, z.B. cis-2-Buten und trans-2-Buten. b) Optische Isomerie (Enantiomere): Moleküle, die Spiegelbilder voneinander sind und nicht zur Deckung gebracht werden können, z.B. D- und L-Milchsäure. 3) Konfigurations- und Konformationsisomerie: Unterschiede in der räumlichen Anordnung durch Rotation um Einfachbindungen. Isomere spielen eine entscheidende Rolle in der organischen Chemie und Biochemie, da selbst kleine strukturelle Unterschiede große Auswirkungen auf biologische Aktivität haben können, wie bei Medikamenten oder Enzymen."
+    },
+    {
+      "question": "Was ist das Massenwirkungsgesetz (MWG)?",
+      "answers": [
+        {"answer": "Die Beschreibung der Proportionalität zwischen Masse und Beschleunigung"},
+        {"answer": "Die Beschreibung der Gleichgewichtslage einer reversiblen Reaktion durch das konstante Verhältnis der Konzentrationen von Produkten zu Edukten"},
+        {"answer": "Die mathematische Beschreibung des Zusammenhangs zwischen Masse und Energie"},
+        {"answer": "Ein Gesetz zur Berechnung der Gravitationskraft zwischen zwei Massen"}
+      ],
+      "answer": "Die Beschreibung der Gleichgewichtslage einer reversiblen Reaktion durch das konstante Verhältnis der Konzentrationen von Produkten zu Edukten",
+      "explanation": "Das Massenwirkungsgesetz (MWG) wurde 1864 von Cato Maximilian Guldberg und Peter Waage formuliert und beschreibt quantitativ die Gleichgewichtslage chemischer Reaktionen. Für eine allgemeine Reaktion aA + bB ⇌ cC + dD ist die Gleichgewichtskonstante K definiert als K = [C]ᶜ·[D]ᵈ/([A]ᵃ·[B]ᵇ), wobei [X] die Gleichgewichtskonzentrationen (genauer: Aktivitäten) der Stoffe sind und die Exponenten den stöchiometrischen Koeffizienten entsprechen. K ist bei konstanter Temperatur eine charakteristische Konstante der Reaktion. Ein großer K-Wert (K >> 1) bedeutet, dass das Gleichgewicht auf der Produktseite liegt, während ein kleiner K-Wert (K << 1) ein Gleichgewicht auf der Eduktseite anzeigt. Das MWG erlaubt die Berechnung von Gleichgewichtskonzentrationen und die Vorhersage, wie Änderungen der Reaktionsbedingungen das Gleichgewicht beeinflussen, gemäß dem Prinzip von Le Chatelier: Das System reagiert auf Störungen so, dass die Störung minimiert wird. Die Temperaturabhängigkeit der Gleichgewichtskonstante wird durch die van't-Hoff-Gleichung beschrieben und hängt von der Reaktionsenthalpie ab. Das MWG ist fundamental für das Verständnis chemischer Gleichgewichte in Bereichen wie Säure-Base-Chemie, Löslichkeit und industrieller Prozessoptimierung."
+    },
+    {
+      "question": "Was besagt das Aufbauprinzip in der Quantenmechanik?",
+      "answers": [
+        {"answer": "Die Energie von Elektronen in einem Atom nimmt mit dem Abstand zum Kern zu"},
+        {"answer": "Elektronen besetzen die verfügbaren Orbitale in der Reihenfolge steigender Energie"},
+        {"answer": "Elektronen kreisen auf festen Bahnen um den Atomkern"},
+        {"answer": "Die Gesamtenergie eines Atoms ist immer konstant"}
+      ],
+      "answer": "Elektronen besetzen die verfügbaren Orbitale in der Reihenfolge steigender Energie",
+      "explanation": "Das Aufbauprinzip (auch Aufbauregel oder Pauling-Prinzip genannt) ist ein grundlegendes Prinzip der Quantenmechanik und besagt, dass Elektronen in einem Atom die verfügbaren Orbitale in der Reihenfolge steigender Energie besetzen. Die Reihenfolge wird durch die Hauptquantenzahl n (Energieniveau) und die Nebenquantenzahl l (Unterschale: s, p, d, f) bestimmt und folgt generell dem Muster: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p, 6s, 4f, 5d, 6p, 7s, 5f, 6d... Diese Reihenfolge kann mit der (n+l)-Regel angenähert werden: Orbitale mit niedrigerem (n+l)-Wert werden zuerst gefüllt; bei gleichem (n+l)-Wert wird das Orbital mit niedrigerem n zuerst besetzt. Zusammen mit dem Pauli-Prinzip (maximal zwei Elektronen pro Orbital mit entgegengesetztem Spin) und der Hundschen Regel (maximale Anzahl ungepaarter Elektronen in Orbitalen gleicher Energie) bestimmt das Aufbauprinzip die Elektronenkonfigurationen der Elemente und erklärt damit die periodischen Trends in den chemischen Eigenschaften und die Struktur des Periodensystems."
+    },
+    {
+      "question": "Was ist eine chemische Gleichgewichtsreaktion?",
+      "answers": [
+        {"answer": "Eine Reaktion, die sofort zum Stillstand kommt"},
+        {"answer": "Eine Reaktion, die nur in eine Richtung abläuft"},
+        {"answer": "Eine Reaktion, bei der Hin- und Rückreaktion mit gleicher Geschwindigkeit ablaufen"},
+        {"answer": "Eine Reaktion, die nur unter bestimmten Bedingungen stattfindet"}
+      ],
+      "answer": "Eine Reaktion, bei der Hin- und Rückreaktion mit gleicher Geschwindigkeit ablaufen",
+      "explanation": "Eine chemische Gleichgewichtsreaktion ist ein reversibler Prozess, bei dem die Hin- und Rückreaktion simultan ablaufen und im Gleichgewichtszustand genau gleiche Reaktionsgeschwindigkeiten haben. Dies wird oft durch Doppelpfeile dargestellt: A + B ⇌ C + D. Im Gleichgewicht ändern sich die Konzentrationen der beteiligten Stoffe nicht mehr, obwohl die Reaktion auf molekularer Ebene kontinuierlich in beide Richtungen stattfindet (dynamisches Gleichgewicht). Das Verhältnis der Konzentrationen wird durch die Gleichgewichtskonstante K gemäß dem Massenwirkungsgesetz beschrieben. Wichtig ist, dass das Gleichgewicht von jeder Seite erreicht werden kann, unabhängig davon, ob man mit Edukten oder Produkten beginnt. Externe Faktoren können das Gleichgewicht beeinflussen: Nach dem Prinzip von Le Chatelier verschiebt sich das Gleichgewicht bei Änderung der Konzentration, Temperatur oder des Drucks so, dass die Störung teilweise aufgehoben wird. Beispielsweise verschiebt eine Temperaturerhöhung das Gleichgewicht in Richtung der endothermen Reaktion. Katalysatoren beschleunigen das Erreichen des Gleichgewichts, ändern aber nicht dessen Lage. Chemische Gleichgewichte sind zentral für viele natürliche und industrielle Prozesse, von Säure-Base-Reaktionen bis zur Ammoniaksynthese."
+    },
       {
         "question": "Aus welchen drei Elementarteilchen besteht ein Atom?",
         "answers": [
@@ -9252,7 +9966,271 @@
         ],
         "answer": "Eine Gemeinschaft lebender Organismen (biotisch), die mit ihrer physischen Umgebung interagieren (abiotisch).",
         "explanation": "Ein Ökosystem umfasst alle Lebewesen (Pflanzen, Tiere, Bakterien, Pilze usw. – die biotischen Faktoren) in einem bestimmten Gebiet, die miteinander und mit ihrer physischen Umgebung (Sonnenlicht, Boden, Wasser, Luft, Temperatur usw. – die abiotischen Faktoren) interagieren. Ökosysteme können sehr unterschiedlich groß sein, vom kleinen Teich bis hin zu einem riesigen Wald oder einem ganzen Ozean."
-      }
+      },
+          {
+      "question": "Was ist der grundlegende Unterschied zwischen prokaryotischen und eukaryotischen Zellen?",
+      "answers": [
+        {"answer": "Prokaryoten haben keine DNA"},
+        {"answer": "Eukaryoten haben keinen Zellkern"},
+        {"answer": "Prokaryoten haben keinen membranumschlossenen Zellkern"},
+        {"answer": "Eukaryoten haben keine Zellmembran"}
+      ],
+      "answer": "Prokaryoten haben keinen membranumschlossenen Zellkern",
+      "explanation": "Der fundamentale Unterschied zwischen prokaryotischen und eukaryotischen Zellen liegt in der Zellorganisation. Prokaryoten (Bakterien und Archaeen) besitzen keinen vom Rest der Zelle durch eine Membran abgetrennten Zellkern; ihre DNA liegt frei im Cytoplasma als zirkuläres Chromosom vor. Eukaryoten (Tiere, Pflanzen, Pilze, Protisten) haben dagegen einen membranumschlossenen Zellkern, der das Erbgut auf mehrere lineare Chromosomen verteilt enthält. Weitere Unterschiede: Prokaryoten fehlen die meisten Zellorganellen wie Mitochondrien, endoplasmatisches Retikulum oder Golgi-Apparat. Sie sind generell kleiner (0,1-5 µm vs. 10-100 µm bei Eukaryoten), haben eine einfachere Organisation und vermehren sich meist durch Binärteilung statt durch Mitose. Diese fundamentale Unterscheidung entstand vor etwa 1,8 Milliarden Jahren und markiert einen der wichtigsten evolutionären Schritte in der Geschichte des Lebens."
+    },
+    {
+      "question": "Welcher Prozess wird bei der Zellatmung beschrieben?",
+      "answers": [
+        {"answer": "Umwandlung von Lichtenergie in chemische Energie"},
+        {"answer": "Umwandlung chemischer Energie aus Nährstoffen in ATP durch kontrollierte Oxidation"},
+        {"answer": "Umwandlung von ATP in Wärmeenergie"},
+        {"answer": "Synthese organischer Moleküle aus anorganischen Verbindungen"}
+      ],
+      "answer": "Umwandlung chemischer Energie aus Nährstoffen in ATP durch kontrollierte Oxidation",
+      "explanation": "Die Zellatmung ist ein zentraler Stoffwechselprozess, bei dem chemische Energie aus Nährstoffen (hauptsächlich Glukose) durch kontrollierte Oxidation freigesetzt und zur Synthese von ATP (Adenosintriphosphat), dem universellen Energieträger der Zelle, genutzt wird. Der Gesamtprozess lässt sich in drei Hauptphasen unterteilen: 1) Glykolyse im Cytoplasma, bei der Glukose zu Pyruvat abgebaut wird und 2 ATP-Moleküle entstehen, 2) Citratzyklus in der Mitochondrienmatrix, der Acetyl-CoA vollständig zu CO₂ oxidiert und Reduktionsäquivalente (NADH, FADH₂) erzeugt, und 3) Atmungskette in der inneren Mitochondrienmembran, wo durch oxidative Phosphorylierung der Großteil des ATP (etwa 30-32 Moleküle pro Glukose) produziert wird. Die Gesamtreaktion C₆H₁₂O₆ + 6 O₂ → 6 CO₂ + 6 H₂O setzt etwa 2870 kJ/mol Energie frei, wovon etwa 38% in ATP gespeichert werden. Die Zellatmung ist bei fast allen Eukaryoten und vielen Prokaryoten der Hauptweg zur Energiegewinnung und unterscheidet sich grundlegend von der Photosynthese, die Lichtenergie in chemische Energie umwandelt."
+    },
+    {
+      "question": "Was versteht man unter Homöostase?",
+      "answers": [
+        {"answer": "Die Evolution von morphologisch ähnlichen Strukturen bei nicht verwandten Arten"},
+        {"answer": "Die Aufrechterhaltung eines stabilen inneren Milieus trotz wechselnder Umweltbedingungen"},
+        {"answer": "Die Fähigkeit eines Organismus, sich an neue Umgebungen anzupassen"},
+        {"answer": "Die strukturelle Ähnlichkeit zwischen verschiedenen Arten durch gemeinsame Abstammung"}
+      ],
+      "answer": "Die Aufrechterhaltung eines stabilen inneren Milieus trotz wechselnder Umweltbedingungen",
+      "explanation": "Homöostase (von griechisch 'homoios' = ähnlich und 'stasis' = Stand) bezeichnet die aktive Aufrechterhaltung eines relativ konstanten inneren Milieus eines Organismus trotz sich ändernder äußerer Bedingungen. Dieser Begriff wurde 1932 von Walter Cannon geprägt, während das Konzept auf Claude Bernard zurückgeht, der von 'milieu intérieur' sprach. Homöostatische Mechanismen regulieren wichtige Körperparameter wie Körpertemperatur, pH-Wert, Blutdruck, Blutzuckerspiegel, Wasser- und Elektrolythaushalt durch negative Rückkopplungssysteme: Eine Abweichung vom Sollwert löst eine Gegenregulation aus, die den Parameter zum Normalwert zurückführt. Diese Regulation erfolgt durch das Zusammenspiel von Sensoren (z.B. Thermorezeptoren), Integrationszentren (meist im Gehirn, z.B. Hypothalamus) und Effektoren (z.B. Muskeln, Drüsen). Die Homöostase ist essentiell für die optimale Funktion biochemischer Prozesse und damit für das Überleben komplexer Organismen. Störungen der homöostatischen Mechanismen führen zu Krankheiten wie Diabetes mellitus (gestörte Glukoseregulation) oder Hypertonie (gestörte Blutdruckregulation)."
+    },
+    {
+      "question": "Was sind Mitochondrien?",
+      "answers": [
+        {"answer": "Organellen, die für die Produktion von Proteinen zuständig sind"},
+        {"answer": "Struktur, die DNA im Zellkern organisiert"},
+        {"answer": "Energieproduzierende Organellen, die ATP durch oxidative Phosphorylierung erzeugen"},
+        {"answer": "Teil des Endomembransystems, der für den Abbau von Zellbestandteilen zuständig ist"}
+      ],
+      "answer": "Energieproduzierende Organellen, die ATP durch oxidative Phosphorylierung erzeugen",
+      "explanation": "Mitochondrien sind membranumschlossene Organellen in eukaryotischen Zellen, die oft als 'Kraftwerke der Zelle' bezeichnet werden. Sie produzieren den Großteil des zellulären ATPs durch oxidative Phosphorylierung. Strukturell besitzen Mitochondrien eine äußere und eine stark gefaltete innere Membran (Cristae), die den Intermembranraum und die Matrix umschließen. In der Matrix finden der Citratzyklus und die β-Oxidation statt, während die Atmungskette in der inneren Membran lokalisiert ist. Mitochondrien haben ihre eigene zirkuläre DNA (mtDNA), Ribosomen und können sich unabhängig vom Zellzyklus teilen. Diese Eigenschaften stützen die Endosymbiontentheorie, nach der Mitochondrien ursprünglich freie Bakterien waren, die von frühen eukaryotischen Zellen aufgenommen wurden (vor etwa 1,5-2 Milliarden Jahren). Die humane mtDNA codiert 37 Gene und wird ausschließlich maternal vererbt. Mitochondriale Dysfunktionen sind mit zahlreichen Erkrankungen verbunden, darunter neurodegenerative Erkrankungen, bestimmte Myopathien und das Altern. Neben der Energieproduktion sind Mitochondrien an der Calcium-Homöostase, der Apoptose und der Biosynthese von Häm und Steroidhormonen beteiligt."
+    },
+    {
+      "question": "Was versteht man unter Gendrift?",
+      "answers": [
+        {"answer": "Die gerichtete Veränderung von Allelhäufigkeiten durch natürliche Selektion"},
+        {"answer": "Der Genfluss zwischen verschiedenen Populationen"},
+        {"answer": "Die zufällige Veränderung von Allelhäufigkeiten in einer Population"},
+        {"answer": "Die Entstehung neuer Allele durch Mutation"}
+      ],
+      "answer": "Die zufällige Veränderung von Allelhäufigkeiten in einer Population",
+      "explanation": "Gendrift (genetische Drift) bezeichnet die zufällige Veränderung der Allelhäufigkeiten in einer Population von Generation zu Generation durch Stichprobeneffekte. Im Gegensatz zur natürlichen Selektion ist Gendrift ein rein zufälliger Prozess ohne adaptive Bedeutung. Besonders stark wirkt Gendrift in kleinen Populationen, wo Zufallsereignisse einen größeren relativen Einfluss haben. Zwei wichtige Spezialfälle sind der Flaschenhalseffekt (starke Reduktion der Populationsgröße, z.B. durch Katastrophen) und der Gründereffekt (Etablierung einer neuen Population durch wenige Individuen). Gendrift kann zur Fixierung oder zum Verlust von Allelen führen und somit die genetische Vielfalt reduzieren. In kleinen, isolierten Populationen kann Gendrift sogar die Wirkung der natürlichen Selektion überlagern. Der mathematische Zusammenhang zwischen Populationsgröße N und Intensität der Gendrift wurde von Sewall Wright und R.A. Fisher beschrieben. Gendrift ist neben Mutation, Selektion, Genfluss und nicht-zufälliger Paarung einer der fünf Hauptmechanismen, die die Evolution beeinflussen, und spielt eine wichtige Rolle bei Artbildungsprozessen und der Entstehung genetischer Unterschiede zwischen isolierten Populationen."
+    },
+    {
+      "question": "Welche der folgenden Aussagen beschreibt die Rolle von mRNA im Prozess der Proteinbiosynthese am besten?",
+      "answers": [
+        {"answer": "mRNA transportiert Aminosäuren zu den Ribosomen"},
+        {"answer": "mRNA dient als Matrize für die Proteinsynthese, indem sie genetische Information vom Zellkern zu den Ribosomen trägt"},
+        {"answer": "mRNA ist für die Faltung der synthetisierten Proteine verantwortlich"},
+        {"answer": "mRNA ist ein Enzym, das die Verknüpfung von Aminosäuren katalysiert"}
+      ],
+      "answer": "mRNA dient als Matrize für die Proteinsynthese, indem sie genetische Information vom Zellkern zu den Ribosomen trägt",
+      "explanation": "Die messenger-RNA (mRNA) spielt eine zentrale Rolle in der Genexpression als Informationsträger zwischen DNA und Protein. Im Prozess der Transkription wird ein Gen (DNA-Abschnitt) im Zellkern in mRNA umgeschrieben. Bei Eukaryoten wird die prä-mRNA durch Spleißen, Capping und Polyadenylierung prozessiert, bevor sie als reife mRNA ins Cytoplasma exportiert wird. Dort dient sie bei der Translation als Matrize für die Proteinbiosynthese an den Ribosomen. Die Nukleotidsequenz der mRNA wird dabei in Dreiergruppen (Codons) gelesen, wobei jedes Codon für eine spezifische Aminosäure oder ein Stopsignal codiert (genetischer Code). Die tRNA (Transfer-RNA) – nicht die mRNA – transportiert die Aminosäuren zu den Ribosomen. Die mRNA ist temporär; ihre Halbwertszeit variiert je nach Organismus und Gen zwischen Minuten und Stunden, bevor sie durch Ribonukleasen abgebaut wird. Bei Prokaryoten erfolgt keine räumliche Trennung zwischen Transkription und Translation; beide Prozesse können simultan ablaufen. Die zentrale Rolle der mRNA in der Genexpression bildet auch die Grundlage für mRNA-basierte Impfstoffe wie die COVID-19-Vakzine von Pfizer/BioNTech und Moderna."
+    },
+    {
+      "question": "Was ist Apoptose?",
+      "answers": [
+        {"answer": "Ein Prozess der Zellteilung"},
+        {"answer": "Der programmierte Zelltod, ein kontrollierter Mechanismus zur Elimination von Zellen"},
+        {"answer": "Die Fusion zweier Zellen"},
+        {"answer": "Eine pathologische Zellveränderung, die zu Krebs führt"}
+      ],
+      "answer": "Der programmierte Zelltod, ein kontrollierter Mechanismus zur Elimination von Zellen",
+      "explanation": "Apoptose, erstmals 1972 von Kerr, Wyllie und Currie beschrieben, bezeichnet den programmierten Zelltod – einen genetisch gesteuerten, energieabhängigen Prozess, durch den Zellen kontrolliert absterben, ohne Entzündungsreaktionen auszulösen. Im Gegensatz zur Nekrose (unkontrollierter Zelltod) bleibt bei der Apoptose die Zellmembran intakt, das Zellvolumen schrumpft, das Chromatin kondensiert, und die DNA wird fragmentiert. Die Zelle zerfällt schließlich in membranumschlossene Vesikel ('apoptotische Körperchen'), die von Makrophagen phagozytiert werden. Die Apoptose wird durch zwei Hauptwege initiiert: den extrinsischen Weg (über Todesrezeptoren wie Fas oder TNF-Rezeptoren) und den intrinsischen oder mitochondrialen Weg (ausgelöst durch DNA-Schäden, oxidativen Stress oder andere zelluläre Stresssignale). Beide Wege aktivieren Caspasen – Proteasen, die zelluläre Strukturen systematisch abbauen. Die Apoptose ist essentiell für die Embryonalentwicklung (z.B. Bildung von Fingern durch Abbau des Zwischengewebes), die Gewebehomöostase (Balance zwischen Zellproliferation und -elimination) und die Immunfunktion (Elimination von autoreaktiven T-Zellen). Fehlregulationen der Apoptose sind an zahlreichen Erkrankungen beteiligt: Eine übermäßige Apoptose führt zu neurodegenerativen Erkrankungen oder Immundefizienzen, während eine unzureichende Apoptose zu Autoimmunerkrankungen oder Krebs beitragen kann."
+    },
+    {
+      "question": "Was versteht man unter epigenetischer Regulation?",
+      "answers": [
+        {"answer": "Veränderungen in der DNA-Sequenz durch Mutation"},
+        {"answer": "Vererbbare Änderungen der Genexpression ohne Veränderung der DNA-Sequenz"},
+        {"answer": "Der Prozess der Proteinfaltung nach der Translation"},
+        {"answer": "Die Regulation der Genexpression ausschließlich während der Embryonalentwicklung"}
+      ],
+      "answer": "Vererbbare Änderungen der Genexpression ohne Veränderung der DNA-Sequenz",
+      "explanation": "Epigenetik (wörtlich 'über der Genetik') umfasst vererbbare Änderungen der Genexpression, die nicht auf Veränderungen der zugrundeliegenden DNA-Sequenz basieren. Diese Mechanismen beeinflussen, welche Gene aktiviert oder deaktiviert werden, ohne die genetische Information selbst zu ändern. Zu den wichtigsten epigenetischen Mechanismen gehören: 1) DNA-Methylierung: Hinzufügen von Methylgruppen an Cytosin-Basen (besonders in CpG-Inseln), was typischerweise zur Genrepression führt; 2) Histonmodifikationen: chemische Veränderungen (wie Acetylierung, Methylierung, Phosphorylierung) an Histon-Proteinen, die die Chromatinstruktur und damit die Zugänglichkeit der DNA beeinflussen; 3) RNA-basierte Mechanismen: nicht-kodierende RNAs wie microRNAs können die Genexpression post-transkriptional regulieren. Epigenetische Muster werden während der Zellteilung weitergegeben (mitotisches Erbe) und können in manchen Fällen sogar transgenerational vererbt werden. Die epigenetische Regulation spielt eine entscheidende Rolle bei der Zelldifferenzierung (verschiedene Zelltypen mit identischem Genom), der Genomprägung (Imprinting), der X-Chromosom-Inaktivierung und der Anpassung an Umwelteinflüsse. Störungen der epigenetischen Regulation stehen im Zusammenhang mit zahlreichen Erkrankungen, darunter Krebs, neurodegenerative Erkrankungen und Autoimmunerkrankungen. Die Erforschung der Epigenetik hat unser Verständnis der Genregulation revolutioniert und zeigt, wie Umweltfaktoren, Ernährung und Lebensstil die Genexpression beeinflussen können."
+    },
+    {
+      "question": "Welches der folgenden Organe ist NICHT Teil des menschlichen Verdauungssystems?",
+      "answers": [
+        {"answer": "Gallenblase"},
+        {"answer": "Pankreas"},
+        {"answer": "Milz"},
+        {"answer": "Dünndarm"}
+      ],
+      "answer": "Milz",
+      "explanation": "Die Milz gehört nicht zum Verdauungssystem, sondern ist ein sekundäres lymphatisches Organ, das eine wichtige Rolle im Immunsystem und im Blutsystem spielt. Sie liegt im linken Oberbauch unter dem Zwerchfell und besteht aus roter Pulpa (für den Abbau alter Erythrozyten und die Eisenrückgewinnung) und weißer Pulpa (für die Immunfunktion). Das Verdauungssystem besteht hingegen aus dem Gastrointestinaltrakt (Mund, Speiseröhre, Magen, Dünndarm, Dickdarm, Rektum und Anus) sowie den akzessorischen Organen (Speicheldrüsen, Leber, Gallenblase und Pankreas), die für die mechanische und chemische Zerkleinerung der Nahrung, die Nährstoffaufnahme und die Ausscheidung unverdaulicher Reste verantwortlich sind. Die Gallenblase speichert und konzentriert die von der Leber produzierte Galle, die für die Fettverdauung essentiell ist. Das Pankreas produziert wichtige Verdauungsenzyme sowie die Hormone Insulin und Glucagon zur Regulation des Blutzuckerspiegels. Der Dünndarm ist der Hauptort der Nährstoffabsorption und besteht aus Duodenum, Jejunum und Ileum. Die Milz hingegen ist für die Filterung des Blutes, die Beseitigung alter roter Blutkörperchen, die Speicherung von Blutplättchen und die Immunabwehr verantwortlich und steht nur indirekt mit dem Verdauungssystem in Verbindung (über das Pfortadersystem, das Blut vom Verdauungstrakt zur Leber transportiert)."
+    },
+    {
+      "question": "Was ist ein Neurotransmitter?",
+      "answers": [
+        {"answer": "Ein spezialisierter Nerventyp, der elektrische Impulse weiterleitet"},
+        {"answer": "Ein chemischer Botenstoff, der Signale zwischen Nervenzellen übermittelt"},
+        {"answer": "Ein Enzym, das Nervenzellen bei der Energiegewinnung hilft"},
+        {"answer": "Eine spezielle Art von Gliazelle, die Nervenzellen unterstützt"}
+      ],
+      "answer": "Ein chemischer Botenstoff, der Signale zwischen Nervenzellen übermittelt",
+      "explanation": "Neurotransmitter sind chemische Botenstoffe, die an Synapsen die Signalübertragung zwischen Nervenzellen (Neuronen) oder zwischen Neuronen und Effektorzellen (z.B. Muskel- oder Drüsenzellen) vermitteln. Wenn ein Aktionspotential am präsynaptischen Axonende eintrifft, führt der Calciumeinstrom zur Exozytose von Neurotransmittern aus synaptischen Vesikeln in den synaptischen Spalt. Die Transmitter diffundieren zur postsynaptischen Membran und binden dort an spezifische Rezeptoren, was entweder zu einer Erregung (exzitatorische Neurotransmitter wie Glutamat) oder Hemmung (inhibitorische Neurotransmitter wie GABA) der postsynaptischen Zelle führt. Die Neurotransmission wird beendet durch: enzymatischen Abbau, Wiederaufnahme in die präsynaptische Zelle oder Diffusion aus dem synaptischen Spalt. Wichtige Neurotransmitter sind: Acetylcholin (neuromuskuläre Übertragung), Monoamine (Dopamin, Serotonin, Noradrenalin - Stimmung, Bewegung, Belohnung), Aminosäuren (Glutamat, GABA, Glycin), Neuropeptide (Endorphine) und unkonventionelle Transmitter (Stickstoffmonoxid, Endocannabinoide). Störungen des Neurotransmittergleichgewichts sind an zahlreichen neurologischen und psychiatrischen Erkrankungen beteiligt, z.B. Parkinson (Dopaminmangel), Depression (Serotonin-/Noradrenalinmangel) oder Alzheimer (Acetylcholinmangel). Viele Psychopharmaka wirken durch Modulation des Neurotransmittersystems."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen dem angeborenen und dem adaptiven Immunsystem?",
+      "answers": [
+        {"answer": "Das angeborene Immunsystem entwickelt sich nach der Geburt, während das adaptive bereits bei der Geburt vorhanden ist"},
+        {"answer": "Das angeborene Immunsystem bekämpft nur Bakterien, während das adaptive nur gegen Viren wirkt"},
+        {"answer": "Das angeborene Immunsystem bietet eine schnelle, unspezifische erste Abwehr, während das adaptive eine spezifische, verzögerte Antwort mit Gedächtnisbildung entwickelt"},
+        {"answer": "Das angeborene Immunsystem wird durch T-Zellen vermittelt, das adaptive durch Makrophagen"}
+      ],
+      "answer": "Das angeborene Immunsystem bietet eine schnelle, unspezifische erste Abwehr, während das adaptive eine spezifische, verzögerte Antwort mit Gedächtnisbildung entwickelt",
+      "explanation": "Das Immunsystem der Wirbeltiere besteht aus zwei komplementären Teilen: dem angeborenen (innaten) und dem adaptiven (erworbenen) Immunsystem. Das angeborene Immunsystem bildet die erste Verteidigungslinie und reagiert schnell (innerhalb von Minuten bis Stunden) aber unspezifisch auf konservierte molekulare Muster von Pathogenen (PAMPs - Pathogen Associated Molecular Patterns). Es umfasst physische Barrieren (Haut, Schleimhäute), humorale Komponenten (Komplementsystem, antimikrobielle Peptide) und zelluläre Bestandteile (Neutrophile, Makrophagen, Dendritische Zellen, NK-Zellen). Seine Reaktion ist genetisch determiniert, ohne Gedächtnisbildung. Das adaptive Immunsystem hingegen reagiert langsamer (Tage bis Wochen), aber hochspezifisch auf einzelne Antigene durch Antigen-Rezeptoren auf B- und T-Lymphozyten. B-Zellen produzieren Antikörper (humorale Immunität), während T-Zellen die zelluläre Immunität vermitteln. Zentrale Eigenschaften des adaptiven Immunsystems sind: Antigenspezifität, Diversität (10^9-10^11 verschiedene Rezeptoren), klonale Expansion, Differenzierung und immunologisches Gedächtnis, wodurch bei erneutem Kontakt mit demselben Pathogen eine schnellere und stärkere Immunantwort erfolgt. Beide Systeme kooperieren eng: das angeborene System aktiviert das adaptive System und dieses verstärkt wiederum Komponenten der angeborenen Immunität. Diese Zweiteilung entstand vor etwa 500 Millionen Jahren mit dem Auftreten der Kieferlosen Fische (Agnatha) und stellt eine evolutionäre Innovation dar, die dem adaptiven Druck durch Pathogene begegnet."
+    },
+    {
+      "question": "Was versteht man unter Symbiose?",
+      "answers": [
+        {"answer": "Eine parasitäre Beziehung, bei der ein Organismus auf Kosten eines anderen lebt"},
+        {"answer": "Die Konkurrenz zwischen Arten um begrenzte Ressourcen"},
+        {"answer": "Eine enge Lebensgemeinschaft verschiedener Arten, die für mindestens einen Partner vorteilhaft ist"},
+        {"answer": "Der Prozess der sexuellen Fortpflanzung zwischen verschiedenen Arten"}
+      ],
+      "answer": "Eine enge Lebensgemeinschaft verschiedener Arten, die für mindestens einen Partner vorteilhaft ist",
+      "explanation": "Symbiose (von griechisch 'syn' = zusammen und 'bios' = Leben) bezeichnet das dauerhafte Zusammenleben von Organismen verschiedener Arten in einer engen Beziehung. Der Begriff wurde 1879 von Anton de Bary geprägt. Je nach Nutzenverteilung unterscheidet man: 1) Mutualismus: beide Partner profitieren (z.B. Flechten als Symbiose aus Pilzen und Algen/Cyanobakterien); 2) Kommensalismus: ein Partner profitiert, während der andere weder Vor- noch Nachteile hat (z.B. Epiphyten auf Bäumen); 3) Parasitismus: ein Partner (Parasit) profitiert auf Kosten des anderen (Wirt). Die traditionelle Definition von Symbiose umfasste nur den Mutualismus, während moderne Definitionen alle drei Typen einschließen. Symbiotische Beziehungen können obligat (lebensnotwendig) oder fakultativ (optional) sein. Bedeutende Beispiele für Symbiosen sind: Darmbakterien in Tieren (ermöglichen Verdauung komplexer Nahrungsbestandteile), Mykorrhiza (Pilz-Wurzel-Symbiose bei über 90% aller Landpflanzen), Korallen und Zooxanthellen, Leguminosen und stickstofffixierende Bakterien sowie die endosymbiotische Entstehung von Mitochondrien und Chloroplasten. Symbiosen waren und sind treibende Kräfte in der Evolution und haben die Entstehung komplexer Lebensformen ermöglicht."
+    },
+    {
+      "question": "Was versteht man unter Kladistik?",
+      "answers": [
+        {"answer": "Die Klassifikation von Organismen nach ihrem Lebensraum"},
+        {"answer": "Ein System zur Benennung neuer Arten"},
+        {"answer": "Die Rekonstruktion der Verwandtschaftsbeziehungen von Organismen basierend auf gemeinsamen abgeleiteten Merkmalen"},
+        {"answer": "Die Untersuchung von Fossilien zur Bestimmung des Alters von Gesteinsschichten"}
+      ],
+      "answer": "Die Rekonstruktion der Verwandtschaftsbeziehungen von Organismen basierend auf gemeinsamen abgeleiteten Merkmalen",
+      "explanation": "Die Kladistik (oder phylogenetische Systematik) ist eine Methode zur Rekonstruktion der Verwandtschaftsverhältnisse zwischen Organismen, die in den 1950er Jahren von Willi Hennig entwickelt wurde. Sie basiert auf dem Konzept der Monophylie: Eine taxonomische Gruppe muss alle Nachkommen eines gemeinsamen Vorfahren umfassen. Zentral für die kladistische Analyse ist die Unterscheidung zwischen plesiomorphen (ursprünglichen) und apomorphen (abgeleiteten) Merkmalen sowie zwischen Homologie (Ähnlichkeit durch gemeinsame Abstammung) und Homoplasie (unabhängig entstandene Ähnlichkeit, z.B. durch konvergente Evolution). Nur gemeinsame abgeleitete Merkmale (Synapomorphien) sind informativ für die Rekonstruktion phylogenetischer Beziehungen. Das Ergebnis kladistischer Analysen wird als Kladogramm dargestellt – ein verzweigter Baum, der die Verwandtschaftsbeziehungen visualisiert. Mit der Entwicklung der DNA-Sequenzierungstechnologien wurde die molekulare Kladistik möglich, die DNA- oder Proteinsequenzen anstelle morphologischer Merkmale analysiert. Moderne phylogenetische Methoden nutzen Maximum-Parsimony, Maximum-Likelihood oder Bayessche Inferenz, um die wahrscheinlichsten evolutionären Beziehungen zu ermitteln. Die Kladistik revolutionierte die biologische Systematik und führte zur Revision vieler traditioneller Klassifikationen, da sie objektive, testbare Kriterien für die Klassifikation liefert und die Evolution als organisierendes Prinzip der biologischen Vielfalt anerkennt."
+    },
+    {
+      "question": "Was ist die Funktion des endoplasmatischen Retikulums (ER)?",
+      "answers": [
+        {"answer": "Energieproduktion durch oxidative Phosphorylierung"},
+        {"answer": "Verdauung zellulärer Bestandteile"},
+        {"answer": "Proteinsynthese, -faltung und -transport sowie Lipidsynthese"},
+        {"answer": "Speicherung genetischer Information"}
+      ],
+      "answer": "Proteinsynthese, -faltung und -transport sowie Lipidsynthese",
+      "explanation": "Das endoplasmatische Retikulum (ER) ist ein ausgedehntes Membransystem in eukaryotischen Zellen, das aus miteinander verbundenen abgeflachten Säckchen (Zisternen) und Röhrchen besteht. Es wird in zwei funktionell unterschiedliche Regionen unterteilt: Das raue ER (rER) ist mit Ribosomen besetzt und hauptsächlich für die Proteinsynthese, -faltung und -modifikation zuständig. Hier werden Proteine synthetisiert, die für Sekretion, Einbau in Membranen oder Transport in andere Zellkompartimente bestimmt sind. Im rER beginnt die N-Glykosylierung von Proteinen und Qualitätskontrollmechanismen wie die 'Unfolded Protein Response' (UPR) überwachen die korrekte Proteinfaltung. Das glatte ER (gER) hat keine Ribosomen und ist für die Lipidsynthese (Phospholipide, Steroide), Entgiftungsprozesse (durch Cytochrom P450-Enzyme), Calcium-Speicherung und -Freisetzung sowie den Abbau von Glykogen verantwortlich. In Leberzellen ist das gER besonders ausgeprägt für die Entgiftungsfunktion, während in steroidproduzierenden Zellen (z.B. in Nebennieren, Gonaden) die Steroidsynthese dominiert. Das ER steht in enger Verbindung mit anderen Zellorganellen: Neu synthetisierte Proteine werden vom ER zum Golgi-Apparat transportiert, das ER bildet Kontaktstellen mit Mitochondrien für den Lipid- und Calcium-Austausch, und die äußere Kernmembran ist mit dem ER kontinuierlich. Störungen der ER-Funktion sind mit zahlreichen Erkrankungen verbunden, darunter neurodegenerative Erkrankungen, Diabetes und bestimmte Formen von Krebs."
+    },
+    {
+      "question": "Welche Aussage beschreibt den Krebs-Zyklus (Citratzyklus) am besten?",
+      "answers": [
+        {"answer": "Ein Wachstumsregulationsmechanismus, der bei Krebserkrankungen gestört ist"},
+        {"answer": "Ein zyklischer Stoffwechselprozess in den Mitochondrien, der Acetyl-CoA vollständig zu CO₂ oxidiert und Reduktionsäquivalente liefert"},
+        {"answer": "Der Prozess der DNA-Replikation während des Zellzyklus"},
+        {"answer": "Ein biochemischer Zyklus, der in Chloroplasten zur CO₂-Fixierung dient"}
+      ],
+      "answer": "Ein zyklischer Stoffwechselprozess in den Mitochondrien, der Acetyl-CoA vollständig zu CO₂ oxidiert und Reduktionsäquivalente liefert",
+      "explanation": "Der Krebs-Zyklus (auch Citratzyklus oder Tricarbonsäurezyklus genannt) ist ein zentraler Stoffwechselweg in der Mitochondrienmatrix aerober Organismen. Er wurde 1937 von Hans Adolf Krebs entdeckt, der dafür 1953 den Nobelpreis erhielt. Im Krebs-Zyklus wird Acetyl-CoA, das hauptsächlich aus dem Pyruvat der Glykolyse stammt, vollständig zu CO₂ oxidiert. Der Zyklus beginnt mit der Kondensation von Acetyl-CoA mit Oxalacetat zu Citrat und umfasst acht Reaktionen, die letztlich Oxalacetat regenerieren. Pro Durchlauf werden zwei CO₂-Moleküle abgespalten und wichtige Reduktionsäquivalente in Form von NADH+H⁺ (3×) und FADH₂ (1×) sowie ein GTP/ATP erzeugt. Diese Reduktionsäquivalente werden in der Atmungskette zur ATP-Synthese genutzt. Neben seiner Rolle im Energiestoffwechsel dient der Krebs-Zyklus als Drehscheibe des Stoffwechsels, indem er Verbindungen für biosynthetische Prozesse bereitstellt (anaplerotische Reaktionen) und Abbauwege verschiedener Biomoleküle integriert. Die Regulation erfolgt hauptsächlich über die Enzyme Citrat-Synthase, Isocitrat-Dehydrogenase und α-Ketoglutarat-Dehydrogenase, die durch das ATP/ADP-Verhältnis, NADH/NAD⁺-Verhältnis und Calcium moduliert werden. Der Krebs-Zyklus ist evolutionär hochkonserviert und spielt eine zentrale Rolle im Energiestoffwechsel aller Eukaryoten und vieler Bakterien."
+    },
+    {
+      "question": "Was sind Protoonkogene und wie unterscheiden sie sich von Onkogenen?",
+      "answers": [
+        {"answer": "Protoonkogene sind frühe Krebsvorstufen; Onkogene sind fortgeschrittene Krebsstadien"},
+        {"answer": "Protoonkogene sind normale Gene, die Zellwachstum und -differenzierung regulieren; Onkogene sind ihre mutierten Formen, die unkontrolliertes Wachstum fördern können"},
+        {"answer": "Protoonkogene unterdrücken Tumorwachstum; Onkogene stimulieren es"},
+        {"answer": "Es gibt keinen Unterschied; beide Begriffe bezeichnen dieselben Gene"}
+      ],
+      "answer": "Protoonkogene sind normale Gene, die Zellwachstum und -differenzierung regulieren; Onkogene sind ihre mutierten Formen, die unkontrolliertes Wachstum fördern können",
+      "explanation": "Protoonkogene sind normale zelluläre Gene (c-onc), die essentielle Funktionen bei der Regulation von Zellwachstum, Zellteilung und Zelldifferenzierung übernehmen. Sie codieren typischerweise für Wachstumsfaktoren, Wachstumsfaktorrezeptoren, Signaltransduktoren, Transkriptionsfaktoren oder Zellzyklusregulatoren. Durch bestimmte Veränderungen (Mutation, Überexpression, Genamplifikation oder chromosomale Translokation) können Protoonkogene zu Onkogenen (v-onc) werden. Onkogene sind also aktivierte Formen von Protoonkogenen, die zur malignen Transformation einer Zelle beitragen können, indem sie unkontrolliertes Wachstum und verminderte Apoptose fördern. Die Transformation von Protoonkogenen zu Onkogenen kann durch verschiedene Mechanismen erfolgen: 1) Punktmutationen, die zu konstitutiv aktiven Proteinen führen (z.B. RAS); 2) Chromosomale Translokationen, die zur Überexpression oder zu Fusionsproteinen führen (z.B. BCR-ABL in der chronischen myeloischen Leukämie); 3) Genamplifikationen, die zur erhöhten Genexpression führen (z.B. HER2/neu bei Brustkrebs); 4) Virales Onkogen-Einbringen (z.B. durch HPV). Im Gegensatz zu Tumorsuppressorgenen, deren Funktionsverlust zur Krebsentstehung beiträgt (rezessive Wirkung), wirken Onkogene dominant – eine Mutation in einem Allel reicht aus, um zur Krebsentstehung beizutragen. Die Entdeckung von Protoonkogenen und Onkogenen begann in den 1970er Jahren mit der Arbeit von Michael Bishop und Harold Varmus an Rous-Sarkom-Virus, wofür sie 1989 den Nobelpreis erhielten."
+    },
+    {
+      "question": "Was ist der evolutionäre Vorteil der sexuellen Fortpflanzung gegenüber der asexuellen?",
+      "answers": [
+        {"answer": "Sexuelle Fortpflanzung ermöglicht eine schnellere Vermehrungsrate"},
+        {"answer": "Sexuelle Fortpflanzung ist energetisch effizienter"},
+        {"answer": "Sexuelle Fortpflanzung erhöht die genetische Vielfalt und beschleunigt die Evolution durch Rekombination"},
+        {"answer": "Sexuelle Fortpflanzung reduziert die Mutationsrate in der DNA"}
+      ],
+      "answer": "Sexuelle Fortpflanzung erhöht die genetische Vielfalt und beschleunigt die Evolution durch Rekombination",
+      "explanation": "Die sexuelle Fortpflanzung, die mit der Verschmelzung von Gameten zweier Individuen einhergeht, scheint auf den ersten Blick evolutionär nachteilig: Sie ist energetisch aufwendig (Produktion von Gameten, Partnersuche), langsamer (der sogenannte 'zweifache Kostenfaktor', da nur Weibchen Nachkommen produzieren) und zerbricht vorteilhafte Genkombinationen. Dennoch hat sie sich in fast allen Eukaryoten durchgesetzt, was auf bedeutende evolutionäre Vorteile hinweist: 1) Erhöhung der genetischen Vielfalt durch Rekombination während der Meiose und Vereinigung unterschiedlicher Genome, was die Anpassungsfähigkeit an veränderte Umweltbedingungen verbessert; 2) Beseitigung schädlicher Mutationen: Die sexuelle Fortpflanzung kann durch Rekombination schädliche Mutationen aus der Population entfernen (Muller's ratchet); 3) Beschleunigte Evolution durch die Kombination vorteilhafter Mutationen aus verschiedenen Abstammungslinien; 4) Schutz vor Parasiten durch die 'Red Queen'-Hypothese: In einem evolutionären Wettrüsten mit Parasiten verschafft die genetische Rekombination den Wirten einen Vorteil, da Parasiten sich oft an spezifische Genotypen anpassen. Die vorteilhaften Aspekte der sexuellen Fortpflanzung erklären, warum sie trotz ihrer Kosten so weit verbreitet ist. Viele Organismen nutzen jedoch beide Fortpflanzungsstrategien flexibel, je nach Umweltbedingungen – ein Phänomen, das als 'fakultative Sexualität' bekannt ist."
+    },
+    {
+      "question": "Was sind Stammzellen und wodurch zeichnen sie sich aus?",
+      "answers": [
+        {"answer": "Hochspezialisierte Zellen, die spezifische Funktionen im Körper übernehmen"},
+        {"answer": "Zellen, die keine weitere Teilungsfähigkeit besitzen"},
+        {"answer": "Undifferenzierte Zellen mit Selbsterneuerungsfähigkeit und dem Potenzial, sich in verschiedene Zelltypen zu differenzieren"},
+        {"answer": "Zellen, die ausschließlich in der Embryonalentwicklung vorkommen"}
+      ],
+      "answer": "Undifferenzierte Zellen mit Selbsterneuerungsfähigkeit und dem Potenzial, sich in verschiedene Zelltypen zu differenzieren",
+      "explanation": "Stammzellen sind undifferenzierte Zellen, die zwei wesentliche Eigenschaften besitzen: 1) Selbsterneuerungsfähigkeit – sie können sich durch symmetrische Teilung vermehren und dadurch ihren Stammzellpool aufrechterhalten; 2) Differenzierungspotenzial – sie können sich durch asymmetrische Teilung in spezialisierte Zelltypen entwickeln. Je nach Differenzierungspotenzial unterscheidet man: Totipotente Stammzellen (können einen kompletten Organismus bilden, z.B. befruchtete Eizelle), pluripotente Stammzellen (können zu allen Zelltypen der drei Keimblätter differenzieren, z.B. embryonale Stammzellen), multipotente Stammzellen (können zu mehreren Zelltypen innerhalb eines Gewebes differenzieren, z.B. hämatopoetische Stammzellen), oligopotente und unipotente Stammzellen (stark eingeschränktes Differenzierungspotenzial). Im adulten Organismus existieren gewebespezifische Stammzellen in bestimmten Nischen (z.B. Knochenmark, Darmepithel, Haut), die für die Gewebehomöostase und -regeneration verantwortlich sind. Ein bedeutender Fortschritt war die Entwicklung induzierter pluripotenter Stammzellen (iPSCs) durch Shinya Yamanaka (Nobelpreis 2012), wobei differenzierte Zellen durch Expression bestimmter Transkriptionsfaktoren in einen stammzellähnlichen Zustand zurückprogrammiert werden. Stammzellen haben großes Potenzial in der regenerativen Medizin für Zellersatztherapien, Gewebezüchtung und Erkrankungsmodellierung, werfen aber auch ethische Fragen auf, insbesondere bezüglich embryonaler Stammzellen."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Exozytose und Endozytose?",
+      "answers": [
+        {"answer": "Exozytose ist der Transport innerhalb der Zelle, Endozytose zwischen verschiedenen Zellen"},
+        {"answer": "Exozytose ist die Ausschüttung von Substanzen aus der Zelle, Endozytose die Aufnahme von Substanzen in die Zelle"},
+        {"answer": "Exozytose findet nur in Tierzellen statt, Endozytose nur in Pflanzenzellen"},
+        {"answer": "Exozytose ist ATP-unabhängig, Endozytose benötigt ATP"}
+      ],
+      "answer": "Exozytose ist die Ausschüttung von Substanzen aus der Zelle, Endozytose die Aufnahme von Substanzen in die Zelle",
+      "explanation": "Exozytose und Endozytose sind komplementäre Membrantransportprozesse in eukaryotischen Zellen, die den kontrollierten Austausch von Stoffen mit der Umgebung ermöglichen. Bei der Exozytose werden intrazelluläre Vesikel (z.B. Sekretgranula, Transportvesikel) zur Plasmamembran transportiert und verschmelzen mit ihr, wodurch ihr Inhalt in den extrazellulären Raum freigesetzt wird. Dieser Prozess dient der Sekretion von Proteinen, Hormonen, Neurotransmittern und anderen Botenstoffen sowie dem Einbau von Membranproteinen und -lipiden in die Plasmamembran. Die Exozytose wird oft durch Ca²⁺-Signale ausgelöst und durch den SNARE-Proteinkomplex vermittelt, der die Fusion der Membranen katalysiert. Die Endozytose ist der umgekehrte Prozess, bei dem Teile der Plasmamembran eingestülpt werden und sich als Vesikel abschnüren, um extrazelluläre Moleküle oder Partikel ins Zellinnere zu transportieren. Es gibt verschiedene Formen der Endozytose: Phagozytose (Aufnahme größerer Partikel), Pinozytose (Aufnahme flüssiger Substanzen), rezeptorvermittelte Endozytose (selektive Aufnahme spezifischer Liganden) und Caveolae-vermittelte Endozytose. Die Clathrin-vermittelte Endozytose ist besonders gut charakterisiert, wobei das Protein Clathrin eine Gitterhülle um die sich bildende Einstülpung formt. Beide Prozesse sind für die Zellhomöostase essentiell und spielen wichtige Rollen in der Signaltransduktion, Nährstoffaufnahme, Antigenpräsentation, synaptischen Übertragung und bei der Abwehr von Pathogenen."
+    },
+    {
+      "question": "Was ist der zentrale Unterschied zwischen DNA und RNA?",
+      "answers": [
+        {"answer": "DNA ist doppelsträngig, RNA ist immer einzelsträngig"},
+        {"answer": "DNA enthält die Base Thymin, RNA enthält stattdessen Uracil"},
+        {"answer": "DNA kommt nur im Zellkern vor, RNA nur im Cytoplasma"},
+        {"answer": "DNA dient der Energiespeicherung, RNA der Informationsübertragung"}
+      ],
+      "answer": "DNA enthält die Base Thymin, RNA enthält stattdessen Uracil",
+      "explanation": "Der fundamentale chemische Unterschied zwischen DNA (Desoxyribonukleinsäure) und RNA (Ribonukleinsäure) liegt in der Zusammensetzung ihrer Nukleotide: 1) Im Zuckeranteil: DNA enthält 2'-Desoxyribose, während RNA Ribose enthält (mit einer zusätzlichen OH-Gruppe am 2'-Kohlenstoffatom); 2) Bei den Nukleinbasen: DNA verwendet die Basen Adenin (A), Guanin (G), Cytosin (C) und Thymin (T), während RNA statt Thymin die Base Uracil (U) enthält. Weitere bedeutende Unterschiede: DNA liegt typischerweise als rechtsgängige Doppelhelix vor (Watson-Crick-Modell), während RNA meist einzelsträngig ist, aber komplexe Sekundärstrukturen bilden kann. DNA ist stabiler als RNA durch das Fehlen der 2'-OH-Gruppe (daher besser für Langzeitspeicherung genetischer Information geeignet) und dient primär als Träger des Erbguts. RNA hat vielfältigere Funktionen: mRNA überträgt die genetische Information aus dem Zellkern zu den Ribosomen, tRNA transportiert Aminosäuren bei der Proteinsynthese, rRNA bildet den Hauptbestandteil der Ribosomen, und diverse nicht-kodierende RNAs (miRNA, lncRNA, siRNA etc.) erfüllen regulatorische Funktionen. Diese Unterschiede spiegeln die evolutionäre Entwicklung wider: Die 'RNA-Welt-Hypothese' postuliert, dass RNA die erste selbstreplizierende Biomolekül war und sowohl genetische als auch katalytische Funktionen hatte, bevor DNA die stabilere Speicherung genetischer Information übernahm."
+    },
+    {
+      "question": "Was beschreibt das Hardy-Weinberg-Gleichgewicht?",
+      "answers": [
+        {"answer": "Das ökologische Gleichgewicht zwischen Räubern und Beute"},
+        {"answer": "Das chemische Gleichgewicht in biologischen Reaktionen"},
+        {"answer": "Die konstanten Allelfrequenzen in einer idealen Population, in der keine Evolution stattfindet"},
+        {"answer": "Das Verhältnis zwischen dominanten und rezessiven Allelen in einer Art"}
+      ],
+      "answer": "Die konstanten Allelfrequenzen in einer idealen Population, in der keine Evolution stattfindet",
+      "explanation": "Das Hardy-Weinberg-Gleichgewicht (HWG) ist ein fundamentales populationsgenetisches Prinzip, das 1908 unabhängig voneinander von Godfrey Hardy und Wilhelm Weinberg formuliert wurde. Es beschreibt den Zustand einer idealen Population, in der die Allelfrequenzen und Genotypfrequenzen über Generationen hinweg konstant bleiben. Die mathematische Formulierung für einen Genort mit zwei Allelen A und a mit den Frequenzen p und q (wobei p + q = 1) lautet: p² + 2pq + q² = 1, wobei p² die Häufigkeit des homozygoten Genotyps AA, 2pq die des heterozygoten Genotyps Aa und q² die des homozygoten Genotyps aa darstellt. Das HWG gilt nur unter bestimmten Annahmen: 1) Keine Mutation; 2) Zufällige Paarung (Panmixie); 3) Keine natürliche Selektion; 4) Keine Migration; 5) Unendlich große Population (keine genetische Drift); 6) Zufällige Verteilung der Gameten. In der Realität werden diese Bedingungen selten vollständig erfüllt, daher dient das HWG hauptsächlich als theoretisches Nullmodell, gegen das reale Populationen verglichen werden können. Abweichungen vom HWG können auf evolutionäre Prozesse wie Selektion, Gendrift, nicht-zufällige Paarung oder Migration hinweisen. Das HWG ist ein wichtiges Werkzeug in der Populationsgenetik, forensischen Genetik und medizinischen Genetik, um z.B. die Häufigkeit von Erbkrankheiten zu schätzen."
+    },
+    {
+      "question": "Was unterscheidet die Leitbündel von Gymnospermen und Angiospermen?",
+      "answers": [
+        {"answer": "Gymnospermen haben keine Leitbündel, Angiospermen haben welche"},
+        {"answer": "Gymnospermen haben primäre Phloem- und Xylem-Elemente, Angiospermen haben sekundäre"},
+        {"answer": "Gymnospermen haben Tracheiden als wasserleitende Elemente, während Angiospermen zusätzlich Tracheen (Gefäße) besitzen"},
+        {"answer": "Leitbündel der Gymnospermen transportieren nur Wasser, während die der Angiospermen auch Nährstoffe transportieren"}
+      ],
+      "answer": "Gymnospermen haben Tracheiden als wasserleitende Elemente, während Angiospermen zusätzlich Tracheen (Gefäße) besitzen",
+      "explanation": "Ein wesentlicher Unterschied im Leitbündelsystem zwischen Gymnospermen (Nacktsamer) und Angiospermen (Bedecktsamer) liegt in der Struktur ihrer wasserleitenden Elemente im Xylem. Gymnospermen besitzen als Leitgewebe ausschließlich Tracheiden – längliche Zellen mit verdickten, lignifizierten Wänden und schrägen Endwänden, die durch Tüpfel miteinander verbunden sind. Angiospermen haben dagegen eine evolutionäre Innovation entwickelt: Neben Tracheiden besitzen sie Tracheen (Gefäße). Diese bestehen aus toten, röhrenförmigen Zellen (Gefäßgliedern), deren Endwände teilweise oder vollständig aufgelöst sind, wodurch kontinuierliche Röhren entstehen. Tracheen ermöglichen einen effizienteren Wassertransport mit geringerem Strömungswiderstand, was besonders für krautige Pflanzen und Laubgehölze mit hohem Wasserbedarf vorteilhaft ist. Diese strukturelle Unterscheidung spiegelt die evolutionäre Entwicklung wider: Gymnospermen sind eine ältere Gruppe der Samenpflanzen, während Angiospermen die modernere, artenreichere Gruppe darstellen. Beide Gruppen unterscheiden sich auch in anderen Merkmalen: Gymnospermen haben offene Samenanlagen auf Zapfenschuppen und einfachere Reproduktionsstrukturen, während Angiospermen ihre Samenanlagen in einem Fruchtknoten einschließen, komplexere Blüten entwickelt haben und eine doppelte Befruchtung durchführen. Die effizienteren Leitungssysteme der Angiospermen haben zu ihrer ökologischen Dominanz in den meisten terrestrischen Ökosystemen beigetragen."
+    },
+    {
+      "question": "Was ist die Funktion der Mitose?",
+      "answers": [
+        {"answer": "Produktion haploider Keimzellen für die sexuelle Fortpflanzung"},
+        {"answer": "Genetische Rekombination zur Erhöhung der genetischen Vielfalt"},
+        {"answer": "Wachstum, Entwicklung und Erneuerung von Geweben durch Produktion genetisch identischer Zellen"},
+        {"answer": "Abbau geschädigter oder überalterter Zellen"}
+      ],
+      "answer": "Wachstum, Entwicklung und Erneuerung von Geweben durch Produktion genetisch identischer Zellen",
+      "explanation": "Die Mitose ist ein fundamentaler Prozess der Zellreproduktion, bei dem eine Mutterzelle präzise duplizierte Chromosomen gleichmäßig auf zwei genetisch identische Tochterzellen verteilt. Sie ist essentiell für das Wachstum mehrzelligen Organismen (Entwicklung vom Embryo zum adulten Organismus), die Geweberegeneration und -erneuerung (z.B. Hauterneuerung, Wundheilung) sowie die asexuelle Vermehrung bei einigen Organismen. Im Gegensatz zur Meiose, die haploide Gameten für die sexuelle Fortpflanzung produziert, erhält die Mitose den Chromosomensatz (diploid in somatischen Zellen) konstant. Der mitotische Zellzyklus umfasst die Interphase (G1, S, G2), in der die Zelle wächst und ihre DNA verdoppelt, und die M-Phase (Mitose und Cytokinese). Die eigentliche Mitose wird in Prophase, (Pro)Metaphase, Anaphase und Telophase unterteilt: In der Prophase kondensieren die Chromosomen und die Kernmembran beginnt sich aufzulösen; in der (Pro)Metaphase bildet sich der Spindelapparat und die Chromosomen ordnen sich in der Äquatorialebene an; in der Anaphase werden die Schwesterchromatiden getrennt und zu den entgegengesetzten Polen gezogen; in der Telophase dekondensieren die Chromosomen und neue Kernmembranen bilden sich. Die anschließende Cytokinese teilt das Cytoplasma. Die Mitose wird durch komplexe Mechanismen reguliert, insbesondere durch Cyclin-abhängige Kinasen (CDKs) und Kontrollpunkte, die die ordnungsgemäße Durchführung des Prozesses überwachen."
+    },
+    {
+      "question": "Was ist die zentrale Funktion der Chloroplasten in Pflanzenzellen?",
+      "answers": [
+        {"answer": "Energiegewinnung durch Zellatmung"},
+        {"answer": "Proteinsynthese"},
+        {"answer": "Speicherung genetischer Information"},
+        {"answer": "Durchführung der Photosynthese, bei der Lichtenergie in chemische Energie umgewandelt wird"}
+      ],
+      "answer": "Durchführung der Photosynthese, bei der Lichtenergie in chemische Energie umgewandelt wird",
+      "explanation": "Chloroplasten sind spezialisierte Zellorganellen in Pflanzen, Algen und einigen Protisten, deren Hauptfunktion die Durchführung der Photosynthese ist – der Prozess, bei dem Lichtenergie in chemische Energie umgewandelt wird. Dieser fundamentale biochemische Prozess liegt der Produktion fast aller Biomasse und atmosphärischen Sauerstoffs auf der Erde zugrunde. Strukturell bestehen Chloroplasten aus einer äußeren und einer inneren Hüllmembran, dem Stroma (flüssigkeitsgefüllte Matrix) und dem Thylakoidmembransystem, das zu Stapeln (Grana) zusammengelagert sein kann. In den Thylakoidmembranen sind Photosysteme, Cytochrom-b6f-Komplexe und ATP-Synthasen lokalisiert, die die Lichtreaktionen durchführen: Absorption von Lichtenergie durch Chlorophyll, Elektronentransport, Erzeugung eines Protonengradienten und ATP-Synthese sowie Produktion von NADPH. Im Stroma finden die Dunkelreaktionen (Calvin-Zyklus) statt, bei denen CO₂ unter Verbrauch von ATP und NADPH in Kohlenhydrate umgewandelt wird. Neben der Photosynthese sind Chloroplasten an weiteren wichtigen Stoffwechselwegen beteiligt, darunter die Biosynthese von Fettsäuren, Aminosäuren und sekundären Pflanzenstoffen. Chloroplasten besitzen ihre eigene DNA (cpDNA) und Ribosomen, was die Endosymbiontentheorie stützt, nach der sie sich aus photosynthetischen Cyanobakterien entwickelten, die von eukaryotischen Zellen aufgenommen wurden. Die meisten Chloroplastenproteine werden jedoch im Zellkern codiert und posttranslational in die Chloroplasten importiert, was die enge Integration dieser Organellen in den Zellstoffwechsel zeigt."
+    }
     ]
   },
   {
