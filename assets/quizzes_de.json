@@ -1,4 +1,2856 @@
 [
+    {
+  "name": "Allgemeinwissen für Kinder",
+  "questions": [
+    {
+      "question": "Wie viele Kontinente gibt es auf der Erde?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"}
+      ],
+      "answer": "7",
+      "explanation": "Die Erde hat sieben Kontinente: Europa, Asien, Afrika, Nordamerika, Südamerika, Australien und Antarktis."
+    },
+    {
+      "question": "Wie heißt die Hauptstadt von Deutschland?",
+      "answers": [
+        {"answer": "München"},
+        {"answer": "Hamburg"},
+        {"answer": "Berlin"},
+        {"answer": "Köln"}
+      ],
+      "answer": "Berlin",
+      "explanation": "Die Hauptstadt von Deutschland ist Berlin."
+    },
+    {
+      "question": "Welches Tier brüllt und ist als 'König der Tiere' bekannt?",
+      "answers": [
+        {"answer": "Elefant"},
+        {"answer": "Löwe"},
+        {"answer": "Tiger"},
+        {"answer": "Bär"}
+      ],
+      "answer": "Löwe",
+      "explanation": "Der Löwe wird oft als 'König der Tiere' bezeichnet."
+    },
+    {
+      "question": "Wie viele Beine hat eine Spinne?",
+      "answers": [
+        {"answer": "6"},
+        {"answer": "8"},
+        {"answer": "10"},
+        {"answer": "12"}
+      ],
+      "answer": "8",
+      "explanation": "Spinnen haben immer acht Beine."
+    },
+    {
+      "question": "Wie viele Tage hat eine Woche?",
+      "answers": [
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"},
+        {"answer": "10"}
+      ],
+      "answer": "7",
+      "explanation": "Eine Woche hat Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag und Sonntag – also 7 Tage."
+    },
+    {
+      "question": "Welches dieser Tiere kann fliegen?",
+      "answers": [
+        {"answer": "Hund"},
+        {"answer": "Katze"},
+        {"answer": "Vogel"},
+        {"answer": "Maus"}
+      ],
+      "answer": "Vogel",
+      "explanation": "Von diesen Tieren kann nur der Vogel fliegen."
+    },
+    {
+      "question": "Wie heißt der Fluss, der durch Köln fließt?",
+      "answers": [
+        {"answer": "Elbe"},
+        {"answer": "Donau"},
+        {"answer": "Rhein"},
+        {"answer": "Main"}
+      ],
+      "answer": "Rhein",
+      "explanation": "Der Rhein fließt durch Köln."
+    },
+    {
+      "question": "Welcher Planet ist der Sonne am nächsten?",
+      "answers": [
+        {"answer": "Venus"},
+        {"answer": "Merkur"},
+        {"answer": "Erde"},
+        {"answer": "Mars"}
+      ],
+      "answer": "Merkur",
+      "explanation": "Merkur ist der sonnennächste Planet."
+    },
+    {
+      "question": "Wie viele Monate hat ein Jahr?",
+      "answers": [
+        {"answer": "10"},
+        {"answer": "11"},
+        {"answer": "12"},
+        {"answer": "13"}
+      ],
+      "answer": "12",
+      "explanation": "Ein Jahr hat 12 Monate."
+    },
+    {
+      "question": "Wie heißt das größte Land der Erde?",
+      "answers": [
+        {"answer": "China"},
+        {"answer": "Russland"},
+        {"answer": "USA"},
+        {"answer": "Kanada"}
+      ],
+      "answer": "Russland",
+      "explanation": "Russland ist das flächenmäßig größte Land der Erde."
+    },
+    {
+      "question": "Welcher Vogel legt das größte Ei?",
+      "answers": [
+        {"answer": "Huhn"},
+        {"answer": "Ente"},
+        {"answer": "Strauß"},
+        {"answer": "Pinguin"}
+      ],
+      "answer": "Strauß",
+      "explanation": "Der Strauß legt die größten Eier aller Vögel."
+    },
+    {
+      "question": "Wie nennt man ein Baby-Schaf?",
+      "answers": [
+        {"answer": "Fohlen"},
+        {"answer": "Kalb"},
+        {"answer": "Lamm"},
+        {"answer": "Kitz"}
+      ],
+      "answer": "Lamm",
+      "explanation": "Das Baby eines Schafs heißt Lamm."
+    },
+    {
+      "question": "Wie viele Zähne hat ein Erwachsener normalerweise?",
+      "answers": [
+        {"answer": "20"},
+        {"answer": "24"},
+        {"answer": "28"},
+        {"answer": "32"}
+      ],
+      "answer": "32",
+      "explanation": "Ein Erwachsener hat meist 32 Zähne."
+    },
+    {
+      "question": "Welcher Kontinent ist am kleinsten?",
+      "answers": [
+        {"answer": "Afrika"},
+        {"answer": "Europa"},
+        {"answer": "Australien"},
+        {"answer": "Südamerika"}
+      ],
+      "answer": "Australien",
+      "explanation": "Australien ist der kleinste Kontinent."
+    },
+    {
+      "question": "Wie heißt das Tier mit dem längsten Hals?",
+      "answers": [
+        {"answer": "Elefant"},
+        {"answer": "Giraffe"},
+        {"answer": "Kamel"},
+        {"answer": "Pferd"}
+      ],
+      "answer": "Giraffe",
+      "explanation": "Die Giraffe hat den längsten Hals."
+    },
+    {
+      "question": "Wie nennt man das Haus, in dem ein König wohnt?",
+      "answers": [
+        {"answer": "Burg"},
+        {"answer": "Villa"},
+        {"answer": "Schloss"},
+        {"answer": "Hütte"}
+      ],
+      "answer": "Schloss",
+      "explanation": "Ein König wohnt meist in einem Schloss."
+    },
+    {
+      "question": "Wer ist der Erfinder der Glühbirne?",
+      "answers": [
+        {"answer": "Albert Einstein"},
+        {"answer": "Thomas Edison"},
+        {"answer": "Isaac Newton"},
+        {"answer": "Alexander Bell"}
+      ],
+      "answer": "Thomas Edison",
+      "explanation": "Thomas Edison gilt als Erfinder der Glühbirne."
+    },
+    {
+      "question": "Wie viele Farben hat ein Regenbogen?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"}
+      ],
+      "answer": "7",
+      "explanation": "Ein Regenbogen hat sieben Farben."
+    },
+    {
+      "question": "Was isst ein Panda am liebsten?",
+      "answers": [
+        {"answer": "Bambus"},
+        {"answer": "Fleisch"},
+        {"answer": "Obst"},
+        {"answer": "Fische"}
+      ],
+      "answer": "Bambus",
+      "explanation": "Pandas fressen am liebsten Bambus."
+    },
+    {
+      "question": "Welcher ist der längste Fluss der Welt?",
+      "answers": [
+        {"answer": "Nil"},
+        {"answer": "Amazonas"},
+        {"answer": "Donau"},
+        {"answer": "Rhein"}
+      ],
+      "answer": "Nil",
+      "explanation": "Der Nil ist der längste Fluss der Welt."
+    },
+    {
+      "question": "Welcher Planet wird auch 'Roter Planet' genannt?",
+      "answers": [
+        {"answer": "Venus"},
+        {"answer": "Mars"},
+        {"answer": "Jupiter"},
+        {"answer": "Saturn"}
+      ],
+      "answer": "Mars",
+      "explanation": "Mars wird wegen seiner Farbe 'Roter Planet' genannt."
+    },
+    {
+      "question": "Welches dieser Tiere lebt im Wasser?",
+      "answers": [
+        {"answer": "Zebra"},
+        {"answer": "Wal"},
+        {"answer": "Känguru"},
+        {"answer": "Löwe"}
+      ],
+      "answer": "Wal",
+      "explanation": "Der Wal ist ein Meerestier."
+    },
+    {
+      "question": "Wie viele Bundesländer hat Deutschland?",
+      "answers": [
+        {"answer": "12"},
+        {"answer": "14"},
+        {"answer": "15"},
+        {"answer": "16"}
+      ],
+      "answer": "16",
+      "explanation": "Deutschland hat 16 Bundesländer."
+    },
+    {
+      "question": "Welches ist kein Obst?",
+      "answers": [
+        {"answer": "Apfel"},
+        {"answer": "Birne"},
+        {"answer": "Karotte"},
+        {"answer": "Kirsche"}
+      ],
+      "answer": "Karotte",
+      "explanation": "Karotte ist ein Gemüse."
+    },
+    {
+      "question": "Wie heißt der größte Ozean der Erde?",
+      "answers": [
+        {"answer": "Atlantischer Ozean"},
+        {"answer": "Indischer Ozean"},
+        {"answer": "Pazifischer Ozean"},
+        {"answer": "Arktischer Ozean"}
+      ],
+      "answer": "Pazifischer Ozean",
+      "explanation": "Der Pazifik ist der größte Ozean."
+    },
+    {
+      "question": "Welches Tier legt Eier?",
+      "answers": [
+        {"answer": "Huhn"},
+        {"answer": "Hund"},
+        {"answer": "Katze"},
+        {"answer": "Pferd"}
+      ],
+      "answer": "Huhn",
+      "explanation": "Hühner legen Eier."
+    },
+    {
+      "question": "Wie viele Minuten hat eine Stunde?",
+      "answers": [
+        {"answer": "60"},
+        {"answer": "100"},
+        {"answer": "30"},
+        {"answer": "24"}
+      ],
+      "answer": "60",
+      "explanation": "Eine Stunde hat 60 Minuten."
+    },
+    {
+      "question": "Was ist das größte Organ des Menschen?",
+      "answers": [
+        {"answer": "Herz"},
+        {"answer": "Leber"},
+        {"answer": "Haut"},
+        {"answer": "Lunge"}
+      ],
+      "answer": "Haut",
+      "explanation": "Die Haut ist das größte Organ."
+    },
+    {
+      "question": "Wie viele Kontinente berührt das Mittelmeer?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "3",
+      "explanation": "Das Mittelmeer berührt Europa, Asien und Afrika."
+    },
+    {
+      "question": "Welcher ist der schwerste Planet im Sonnensystem?",
+      "answers": [
+        {"answer": "Saturn"},
+        {"answer": "Jupiter"},
+        {"answer": "Uranus"},
+        {"answer": "Neptun"}
+      ],
+      "answer": "Jupiter",
+      "explanation": "Jupiter ist der größte und schwerste Planet."
+    },
+    {
+      "question": "Welcher Planet hat Ringe?",
+      "answers": [
+        {"answer": "Mars"},
+        {"answer": "Venus"},
+        {"answer": "Saturn"},
+        {"answer": "Merkur"}
+      ],
+      "answer": "Saturn",
+      "explanation": "Saturn ist für seine Ringe bekannt."
+    },
+    {
+      "question": "Was ist die Hauptstadt von Frankreich?",
+      "answers": [
+        {"answer": "London"},
+        {"answer": "Rom"},
+        {"answer": "Madrid"},
+        {"answer": "Paris"}
+      ],
+      "answer": "Paris",
+      "explanation": "Paris ist die Hauptstadt von Frankreich."
+    },
+    {
+      "question": "Welche Farbe erhält man, wenn man Blau und Gelb mischt?",
+      "answers": [
+        {"answer": "Rot"},
+        {"answer": "Grün"},
+        {"answer": "Orange"},
+        {"answer": "Lila"}
+      ],
+      "answer": "Grün",
+      "explanation": "Blau und Gelb ergibt Grün."
+    },
+    {
+      "question": "Welcher Tag ist zwischen Dienstag und Donnerstag?",
+      "answers": [
+        {"answer": "Montag"},
+        {"answer": "Mittwoch"},
+        {"answer": "Freitag"},
+        {"answer": "Samstag"}
+      ],
+      "answer": "Mittwoch",
+      "explanation": "Mittwoch ist zwischen Dienstag und Donnerstag."
+    },
+    {
+      "question": "Wie viele Augen hat ein Mensch normalerweise?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Der Mensch hat zwei Augen."
+    },
+    {
+      "question": "Wie viele Jahreszeiten gibt es?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "5"}
+      ],
+      "answer": "4",
+      "explanation": "Frühling, Sommer, Herbst und Winter."
+    },
+    {
+      "question": "Was ist ein anderes Wort für 'Auto'?",
+      "answers": [
+        {"answer": "Fahrrad"},
+        {"answer": "Wagen"},
+        {"answer": "Bus"},
+        {"answer": "Zug"}
+      ],
+      "answer": "Wagen",
+      "explanation": "Ein anderes Wort für Auto ist Wagen."
+    },
+    {
+      "question": "Wie viele Finger hat eine Hand?",
+      "answers": [
+        {"answer": "4"},
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "8"}
+      ],
+      "answer": "5",
+      "explanation": "Eine Hand hat fünf Finger."
+    },
+    {
+      "question": "Wie viele Planeten hat unser Sonnensystem?",
+      "answers": [
+        {"answer": "7"},
+        {"answer": "8"},
+        {"answer": "9"},
+        {"answer": "10"}
+      ],
+      "answer": "8",
+      "explanation": "Es gibt 8 Planeten im Sonnensystem."
+    },
+    {
+      "question": "Welcher Kontinent ist kein Land?",
+      "answers": [
+        {"answer": "Europa"},
+        {"answer": "China"},
+        {"answer": "Russland"},
+        {"answer": "Brasilien"}
+      ],
+      "answer": "Europa",
+      "explanation": "Europa ist ein Kontinent, kein Land."
+    },
+    {
+      "question": "Was ist ein Quadrat?",
+      "answers": [
+        {"answer": "Eine Figur mit vier gleich langen Seiten"},
+        {"answer": "Eine Figur mit drei Ecken"},
+        {"answer": "Eine runde Form"},
+        {"answer": "Eine Figur mit fünf Seiten"}
+      ],
+      "answer": "Eine Figur mit vier gleich langen Seiten",
+      "explanation": "Das Quadrat hat vier gleich lange Seiten."
+    },
+    {
+      "question": "Wie heißt der Hauptcharakter aus den Märchen der Gebrüder Grimm, der im Wald auf die Großmutter trifft?",
+      "answers": [
+        {"answer": "Hänsel"},
+        {"answer": "Gretel"},
+        {"answer": "Rotkäppchen"},
+        {"answer": "Rapunzel"}
+      ],
+      "answer": "Rotkäppchen",
+      "explanation": "Rotkäppchen besucht die Großmutter im Wald."
+    },
+    {
+      "question": "Welches Land hat die meisten Einwohner?",
+      "answers": [
+        {"answer": "Indien"},
+        {"answer": "Russland"},
+        {"answer": "China"},
+        {"answer": "USA"}
+      ],
+      "answer": "China",
+      "explanation": "China hat die meisten Einwohner der Welt."
+    },
+    {
+      "question": "Was ist das Gegenteil von 'hell'?",
+      "answers": [
+        {"answer": "dunkel"},
+        {"answer": "weiß"},
+        {"answer": "lang"},
+        {"answer": "schnell"}
+      ],
+      "answer": "dunkel",
+      "explanation": "'dunkel' ist das Gegenteil von 'hell'."
+    },
+    {
+      "question": "Wie viele Beine hat ein Marienkäfer?",
+      "answers": [
+        {"answer": "6"},
+        {"answer": "8"},
+        {"answer": "4"},
+        {"answer": "2"}
+      ],
+      "answer": "6",
+      "explanation": "Marienkäfer sind Insekten und haben 6 Beine."
+    },
+    {
+      "question": "Welcher Monat hat die wenigsten Tage?",
+      "answers": [
+        {"answer": "Januar"},
+        {"answer": "Februar"},
+        {"answer": "März"},
+        {"answer": "April"}
+      ],
+      "answer": "Februar",
+      "explanation": "Der Februar hat nur 28 oder 29 Tage."
+    },
+    {
+      "question": "Wie nennt man jemanden, der Bücher schreibt?",
+      "answers": [
+        {"answer": "Leser"},
+        {"answer": "Autor"},
+        {"answer": "Drucker"},
+        {"answer": "Lehrer"}
+      ],
+      "answer": "Autor",
+      "explanation": "Ein Autor schreibt Bücher."
+    },
+    {
+      "question": "Welcher Baum verliert im Herbst seine Blätter?",
+      "answers": [
+        {"answer": "Tanne"},
+        {"answer": "Kiefer"},
+        {"answer": "Eiche"},
+        {"answer": "Fichte"}
+      ],
+      "answer": "Eiche",
+      "explanation": "Die Eiche ist ein Laubbaum und verliert im Herbst die Blätter."
+    },
+    {
+      "question": "Wie nennt man das Ergebnis einer Plusrechnung?",
+      "answers": [
+        {"answer": "Differenz"},
+        {"answer": "Produkt"},
+        {"answer": "Summe"},
+        {"answer": "Quotient"}
+      ],
+      "answer": "Summe",
+      "explanation": "Das Ergebnis einer Addition heißt Summe."
+    },
+    {
+      "question": "Wie heißt das größte Säugetier der Welt?",
+      "answers": [
+        {"answer": "Elefant"},
+        {"answer": "Blauwal"},
+        {"answer": "Nashorn"},
+        {"answer": "Giraffe"}
+      ],
+      "answer": "Blauwal",
+      "explanation": "Der Blauwal ist das größte Säugetier."
+    },
+    {
+      "question": "Welcher Feiertag ist immer am 25. Dezember?",
+      "answers": [
+        {"answer": "Ostern"},
+        {"answer": "Silvester"},
+        {"answer": "Weihnachten"},
+        {"answer": "Nikolaus"}
+      ],
+      "answer": "Weihnachten",
+      "explanation": "Weihnachten ist am 25. Dezember."
+    },
+    {
+      "question": "Wie viele Ohren hat ein Mensch?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "Menschen haben zwei Ohren."
+    }
+  ]
+},
+{
+  "name": "Mathe für Kinder",
+  "questions": [
+    {
+      "question": "Was ist 12 + 7?",
+      "answers": [
+        {"answer": "17"},
+        {"answer": "19"},
+        {"answer": "21"},
+        {"answer": "15"}
+      ],
+      "answer": "19",
+      "explanation": "12 plus 7 ergibt 19."
+    },
+    {
+      "question": "Wie viel ist 25 - 9?",
+      "answers": [
+        {"answer": "14"},
+        {"answer": "16"},
+        {"answer": "18"},
+        {"answer": "15"}
+      ],
+      "answer": "16",
+      "explanation": "25 minus 9 ergibt 16."
+    },
+    {
+      "question": "Was ist das Ergebnis von 5 × 6?",
+      "answers": [
+        {"answer": "11"},
+        {"answer": "30"},
+        {"answer": "25"},
+        {"answer": "35"}
+      ],
+      "answer": "30",
+      "explanation": "5 mal 6 ergibt 30."
+    },
+    {
+      "question": "Wie viel ist 42 : 7?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "7"},
+        {"answer": "6"},
+        {"answer": "8"}
+      ],
+      "answer": "6",
+      "explanation": "42 geteilt durch 7 ergibt 6."
+    },
+    {
+      "question": "Welches Ergebnis hat 9 + 8?",
+      "answers": [
+        {"answer": "16"},
+        {"answer": "17"},
+        {"answer": "18"},
+        {"answer": "19"}
+      ],
+      "answer": "17",
+      "explanation": "9 plus 8 ergibt 17."
+    },
+    {
+      "question": "Wie viel ist 50 - 27?",
+      "answers": [
+        {"answer": "23"},
+        {"answer": "21"},
+        {"answer": "27"},
+        {"answer": "17"}
+      ],
+      "answer": "23",
+      "explanation": "50 minus 27 ergibt 23."
+    },
+    {
+      "question": "Was ist das Doppelte von 14?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "28"},
+        {"answer": "18"},
+        {"answer": "32"}
+      ],
+      "answer": "28",
+      "explanation": "Das Doppelte von 14 ist 28."
+    },
+    {
+      "question": "Was ist die Hälfte von 36?",
+      "answers": [
+        {"answer": "16"},
+        {"answer": "20"},
+        {"answer": "18"},
+        {"answer": "12"}
+      ],
+      "answer": "18",
+      "explanation": "36 geteilt durch 2 ergibt 18."
+    },
+    {
+      "question": "Wie viel ist 8 × 7?",
+      "answers": [
+        {"answer": "54"},
+        {"answer": "56"},
+        {"answer": "63"},
+        {"answer": "48"}
+      ],
+      "answer": "56",
+      "explanation": "8 mal 7 ergibt 56."
+    },
+    {
+      "question": "Was ist 100 - 45?",
+      "answers": [
+        {"answer": "65"},
+        {"answer": "55"},
+        {"answer": "45"},
+        {"answer": "60"}
+      ],
+      "answer": "55",
+      "explanation": "100 minus 45 ergibt 55."
+    },
+    {
+      "question": "Wie viel ist 6 × 6?",
+      "answers": [
+        {"answer": "36"},
+        {"answer": "24"},
+        {"answer": "18"},
+        {"answer": "42"}
+      ],
+      "answer": "36",
+      "explanation": "6 mal 6 ergibt 36."
+    },
+    {
+      "question": "Wie viel ist 81 : 9?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "9"},
+        {"answer": "7"},
+        {"answer": "6"}
+      ],
+      "answer": "9",
+      "explanation": "81 geteilt durch 9 ergibt 9."
+    },
+    {
+      "question": "Wie viel ist 72 : 8?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "9"},
+        {"answer": "7"},
+        {"answer": "6"}
+      ],
+      "answer": "9",
+      "explanation": "72 geteilt durch 8 ergibt 9."
+    },
+    {
+      "question": "Was ist 15 + 28?",
+      "answers": [
+        {"answer": "43"},
+        {"answer": "41"},
+        {"answer": "45"},
+        {"answer": "42"}
+      ],
+      "answer": "43",
+      "explanation": "15 plus 28 ergibt 43."
+    },
+    {
+      "question": "Was ist 49 - 36?",
+      "answers": [
+        {"answer": "13"},
+        {"answer": "15"},
+        {"answer": "11"},
+        {"answer": "12"}
+      ],
+      "answer": "13",
+      "explanation": "49 minus 36 ergibt 13."
+    },
+    {
+      "question": "Was ist 7 × 7?",
+      "answers": [
+        {"answer": "49"},
+        {"answer": "56"},
+        {"answer": "63"},
+        {"answer": "42"}
+      ],
+      "answer": "49",
+      "explanation": "7 mal 7 ergibt 49."
+    },
+    {
+      "question": "Wie viel ist 24 + 15?",
+      "answers": [
+        {"answer": "39"},
+        {"answer": "41"},
+        {"answer": "37"},
+        {"answer": "40"}
+      ],
+      "answer": "39",
+      "explanation": "24 plus 15 ergibt 39."
+    },
+    {
+      "question": "Wie viel ist 90 - 44?",
+      "answers": [
+        {"answer": "54"},
+        {"answer": "46"},
+        {"answer": "48"},
+        {"answer": "56"}
+      ],
+      "answer": "46",
+      "explanation": "90 minus 44 ergibt 46."
+    },
+    {
+      "question": "Was ist das Ergebnis von 9 × 5?",
+      "answers": [
+        {"answer": "40"},
+        {"answer": "45"},
+        {"answer": "35"},
+        {"answer": "55"}
+      ],
+      "answer": "45",
+      "explanation": "9 mal 5 ergibt 45."
+    },
+    {
+      "question": "Wie viel ist 64 : 8?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "7"},
+        {"answer": "9"},
+        {"answer": "6"}
+      ],
+      "answer": "8",
+      "explanation": "64 geteilt durch 8 ergibt 8."
+    },
+    {
+      "question": "Wie viel ist 32 : 4?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "7"},
+        {"answer": "6"},
+        {"answer": "9"}
+      ],
+      "answer": "8",
+      "explanation": "32 geteilt durch 4 ergibt 8."
+    },
+    {
+      "question": "Was ist 18 + 9?",
+      "answers": [
+        {"answer": "27"},
+        {"answer": "26"},
+        {"answer": "25"},
+        {"answer": "28"}
+      ],
+      "answer": "27",
+      "explanation": "18 plus 9 ergibt 27."
+    },
+    {
+      "question": "Wie viel ist 5 × 9?",
+      "answers": [
+        {"answer": "45"},
+        {"answer": "40"},
+        {"answer": "35"},
+        {"answer": "50"}
+      ],
+      "answer": "45",
+      "explanation": "5 mal 9 ergibt 45."
+    },
+    {
+      "question": "Was ist das Ergebnis von 48 : 6?",
+      "answers": [
+        {"answer": "7"},
+        {"answer": "8"},
+        {"answer": "9"},
+        {"answer": "6"}
+      ],
+      "answer": "8",
+      "explanation": "48 geteilt durch 6 ergibt 8."
+    },
+    {
+      "question": "Was ist das Ergebnis von 3 × 11?",
+      "answers": [
+        {"answer": "33"},
+        {"answer": "21"},
+        {"answer": "13"},
+        {"answer": "31"}
+      ],
+      "answer": "33",
+      "explanation": "3 mal 11 ergibt 33."
+    },
+    {
+      "question": "Was ist 27 + 15?",
+      "answers": [
+        {"answer": "42"},
+        {"answer": "41"},
+        {"answer": "43"},
+        {"answer": "40"}
+      ],
+      "answer": "42",
+      "explanation": "27 plus 15 ergibt 42."
+    },
+    {
+      "question": "Wie viel ist 56 - 29?",
+      "answers": [
+        {"answer": "25"},
+        {"answer": "27"},
+        {"answer": "26"},
+        {"answer": "28"}
+      ],
+      "answer": "27",
+      "explanation": "56 minus 29 ergibt 27."
+    },
+    {
+      "question": "Was ist 8 × 8?",
+      "answers": [
+        {"answer": "56"},
+        {"answer": "64"},
+        {"answer": "72"},
+        {"answer": "48"}
+      ],
+      "answer": "64",
+      "explanation": "8 mal 8 ergibt 64."
+    },
+    {
+      "question": "Was ist 100 : 4?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "25"},
+        {"answer": "20"},
+        {"answer": "30"}
+      ],
+      "answer": "25",
+      "explanation": "100 geteilt durch 4 ergibt 25."
+    },
+    {
+      "question": "Was ist 13 + 17?",
+      "answers": [
+        {"answer": "30"},
+        {"answer": "28"},
+        {"answer": "29"},
+        {"answer": "31"}
+      ],
+      "answer": "30",
+      "explanation": "13 plus 17 ergibt 30."
+    },
+    {
+      "question": "Was ist das Ergebnis von 45 : 5?",
+      "answers": [
+        {"answer": "10"},
+        {"answer": "8"},
+        {"answer": "9"},
+        {"answer": "7"}
+      ],
+      "answer": "9",
+      "explanation": "45 geteilt durch 5 ergibt 9."
+    },
+    {
+      "question": "Wie viel ist 54 - 28?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "26"},
+        {"answer": "25"},
+        {"answer": "28"}
+      ],
+      "answer": "26",
+      "explanation": "54 minus 28 ergibt 26."
+    },
+    {
+      "question": "Was ist das Ergebnis von 6 × 9?",
+      "answers": [
+        {"answer": "54"},
+        {"answer": "56"},
+        {"answer": "48"},
+        {"answer": "49"}
+      ],
+      "answer": "54",
+      "explanation": "6 mal 9 ergibt 54."
+    },
+    {
+      "question": "Wie viel ist 20 + 25?",
+      "answers": [
+        {"answer": "45"},
+        {"answer": "44"},
+        {"answer": "43"},
+        {"answer": "46"}
+      ],
+      "answer": "45",
+      "explanation": "20 plus 25 ergibt 45."
+    },
+    {
+      "question": "Wie viel ist 42 : 6?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "7"},
+        {"answer": "6"},
+        {"answer": "9"}
+      ],
+      "answer": "7",
+      "explanation": "42 geteilt durch 6 ergibt 7."
+    },
+    {
+      "question": "Was ist das Ergebnis von 7 × 8?",
+      "answers": [
+        {"answer": "54"},
+        {"answer": "56"},
+        {"answer": "48"},
+        {"answer": "63"}
+      ],
+      "answer": "56",
+      "explanation": "7 mal 8 ergibt 56."
+    },
+    {
+      "question": "Wie viel ist 36 : 6?",
+      "answers": [
+        {"answer": "8"},
+        {"answer": "7"},
+        {"answer": "6"},
+        {"answer": "9"}
+      ],
+      "answer": "6",
+      "explanation": "36 geteilt durch 6 ergibt 6."
+    },
+    {
+      "question": "Was ist das Ergebnis von 11 + 22?",
+      "answers": [
+        {"answer": "33"},
+        {"answer": "32"},
+        {"answer": "31"},
+        {"answer": "30"}
+      ],
+      "answer": "33",
+      "explanation": "11 plus 22 ergibt 33."
+    },
+    {
+      "question": "Wie viel ist 15 × 2?",
+      "answers": [
+        {"answer": "30"},
+        {"answer": "25"},
+        {"answer": "35"},
+        {"answer": "20"}
+      ],
+      "answer": "30",
+      "explanation": "15 mal 2 ergibt 30."
+    },
+    {
+      "question": "Was ist 45 - 19?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "26"},
+        {"answer": "27"},
+        {"answer": "28"}
+      ],
+      "answer": "26",
+      "explanation": "45 minus 19 ergibt 26."
+    },
+    {
+      "question": "Wie viel ist 36 + 17?",
+      "answers": [
+        {"answer": "52"},
+        {"answer": "53"},
+        {"answer": "54"},
+        {"answer": "55"}
+      ],
+      "answer": "53",
+      "explanation": "36 plus 17 ergibt 53."
+    },
+    {
+      "question": "Was ist 48 : 8?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"}
+      ],
+      "answer": "6",
+      "explanation": "48 geteilt durch 8 ergibt 6."
+    },
+    {
+      "question": "Wie viel ist 12 × 3?",
+      "answers": [
+        {"answer": "36"},
+        {"answer": "33"},
+        {"answer": "38"},
+        {"answer": "35"}
+      ],
+      "answer": "36",
+      "explanation": "12 mal 3 ergibt 36."
+    },
+    {
+      "question": "Wie viel ist 13 × 2?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "25"},
+        {"answer": "26"},
+        {"answer": "27"}
+      ],
+      "answer": "26",
+      "explanation": "13 mal 2 ergibt 26."
+    },
+    {
+      "question": "Was ist 29 + 14?",
+      "answers": [
+        {"answer": "43"},
+        {"answer": "42"},
+        {"answer": "44"},
+        {"answer": "41"}
+      ],
+      "answer": "43",
+      "explanation": "29 plus 14 ergibt 43."
+    },
+    {
+      "question": "Wie viel ist 32 - 15?",
+      "answers": [
+        {"answer": "18"},
+        {"answer": "17"},
+        {"answer": "16"},
+        {"answer": "15"}
+      ],
+      "answer": "17",
+      "explanation": "32 minus 15 ergibt 17."
+    },
+    {
+      "question": "Wie viel ist 40 : 5?",
+      "answers": [
+        {"answer": "6"},
+        {"answer": "8"},
+        {"answer": "7"},
+        {"answer": "9"}
+      ],
+      "answer": "8",
+      "explanation": "40 geteilt durch 5 ergibt 8."
+    },
+    {
+      "question": "Was ist das Ergebnis von 2 × 12?",
+      "answers": [
+        {"answer": "22"},
+        {"answer": "24"},
+        {"answer": "26"},
+        {"answer": "28"}
+      ],
+      "answer": "24",
+      "explanation": "2 mal 12 ergibt 24."
+    },
+    {
+      "question": "Wie viel ist 9 × 4?",
+      "answers": [
+        {"answer": "35"},
+        {"answer": "36"},
+        {"answer": "32"},
+        {"answer": "38"}
+      ],
+      "answer": "36",
+      "explanation": "9 mal 4 ergibt 36."
+    },
+    {
+      "question": "Was ist 25 + 8?",
+      "answers": [
+        {"answer": "33"},
+        {"answer": "32"},
+        {"answer": "34"},
+        {"answer": "31"}
+      ],
+      "answer": "33",
+      "explanation": "25 plus 8 ergibt 33."
+    },
+    {
+      "question": "Wie viel ist 60 : 10?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"}
+      ],
+      "answer": "6",
+      "explanation": "60 geteilt durch 10 ergibt 6."
+    }
+  ]
+},
+{
+  "name": "Deutsch-Quiz",
+  "questions": [
+    {
+      "question": "Wie viele Buchstaben hat das Wort 'Tisch'?",
+      "answers": [
+        {"answer": "4"},
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"}
+      ],
+      "answer": "5",
+      "explanation": "Das Wort 'Tisch' besteht aus den Buchstaben T-I-S-C-H."
+    },
+    {
+      "question": "Welches Wort ist ein Nomen?",
+      "answers": [
+        {"answer": "laufen"},
+        {"answer": "rot"},
+        {"answer": "Buch"},
+        {"answer": "schnell"}
+      ],
+      "answer": "Buch",
+      "explanation": "Nomen sind Dinge, Lebewesen oder Namenwörter. 'Buch' ist ein Nomen."
+    },
+    {
+      "question": "Wie schreibt man das Gegenteil von 'heiß'?",
+      "answers": [
+        {"answer": "kalt"},
+        {"answer": "warm"},
+        {"answer": "dunkel"},
+        {"answer": "hell"}
+      ],
+      "answer": "kalt",
+      "explanation": "Das Gegenteil von 'heiß' ist 'kalt'."
+    },
+    {
+      "question": "Welcher Satzanfang ist richtig?",
+      "answers": [
+        {"answer": "gestern habe ich gespielt."},
+        {"answer": "Gestern habe ich gespielt."},
+        {"answer": "gestern Habe ich gespielt."},
+        {"answer": "Gestern habe Ich gespielt."}
+      ],
+      "answer": "Gestern habe ich gespielt.",
+      "explanation": "Sätze beginnen immer mit einem großen Buchstaben."
+    },
+    {
+      "question": "Welches Wort passt: Der Hund ___ laut.",
+      "answers": [
+        {"answer": "bellt"},
+        {"answer": "laufen"},
+        {"answer": "liest"},
+        {"answer": "fliegt"}
+      ],
+      "answer": "bellt",
+      "explanation": "Der Hund bellt laut. Das ist das richtige Verb."
+    },
+    {
+      "question": "Wie lautet der Plural von 'Auto'?",
+      "answers": [
+        {"answer": "Autos"},
+        {"answer": "Autoen"},
+        {"answer": "Auto's"},
+        {"answer": "Auten"}
+      ],
+      "answer": "Autos",
+      "explanation": "Im Deutschen hängt man meist ein -s an das Wort: 'Autos'."
+    },
+    {
+      "question": "Welches Wort ist ein Verb?",
+      "answers": [
+        {"answer": "laufen"},
+        {"answer": "Haus"},
+        {"answer": "grün"},
+        {"answer": "Freund"}
+      ],
+      "answer": "laufen",
+      "explanation": "Verben sind 'Tuwörter', also Tätigkeiten. 'laufen' ist ein Verb."
+    },
+    {
+      "question": "Wie heißt der bestimmte Artikel für 'Blume'?",
+      "answers": [
+        {"answer": "der"},
+        {"answer": "die"},
+        {"answer": "das"},
+        {"answer": "dem"}
+      ],
+      "answer": "die",
+      "explanation": "'die Blume' ist richtig, Blume ist weiblich."
+    },
+    {
+      "question": "Welches Wort ist richtig geschrieben?",
+      "answers": [
+        {"answer": "Kuh"},
+        {"answer": "kuh"},
+        {"answer": "cuh"},
+        {"answer": "Küh"}
+      ],
+      "answer": "Kuh",
+      "explanation": "Nomen werden groß geschrieben. 'Kuh' ist richtig."
+    },
+    {
+      "question": "Wie schreibt man das Gegenteil von 'langsam'?",
+      "answers": [
+        {"answer": "schnell"},
+        {"answer": "kurz"},
+        {"answer": "klein"},
+        {"answer": "hoch"}
+      ],
+      "answer": "schnell",
+      "explanation": "Das Gegenteil von 'langsam' ist 'schnell'."
+    },
+    {
+      "question": "Was ist das Gegenteil von 'Tag'?",
+      "answers": [
+        {"answer": "Nacht"},
+        {"answer": "Morgen"},
+        {"answer": "Abend"},
+        {"answer": "Woche"}
+      ],
+      "answer": "Nacht",
+      "explanation": "Tag und Nacht sind Gegensätze."
+    },
+    {
+      "question": "Welches Wort passt: Die Katze klettert ___ Baum.",
+      "answers": [
+        {"answer": "auf den"},
+        {"answer": "im"},
+        {"answer": "aus der"},
+        {"answer": "unten"}
+      ],
+      "answer": "auf den",
+      "explanation": "Die richtige Präposition ist 'auf den Baum'."
+    },
+    {
+      "question": "Was ist ein Adjektiv?",
+      "answers": [
+        {"answer": "schnell"},
+        {"answer": "laufen"},
+        {"answer": "Buch"},
+        {"answer": "Hund"}
+      ],
+      "answer": "schnell",
+      "explanation": "Adjektive beschreiben wie etwas ist, z.B. schnell."
+    },
+    {
+      "question": "Wie schreibt man das Wort 'Apfel' richtig?",
+      "answers": [
+        {"answer": "apfel"},
+        {"answer": "Apfel"},
+        {"answer": "Äpfel"},
+        {"answer": "appfel"}
+      ],
+      "answer": "Apfel",
+      "explanation": "Nomen werden groß geschrieben, also 'Apfel'."
+    },
+    {
+      "question": "Welcher Satz ist richtig?",
+      "answers": [
+        {"answer": "Wir gehen ins kino."},
+        {"answer": "wir gehen ins Kino."},
+        {"answer": "Wir gehen ins Kino."},
+        {"answer": "Wir Gehen ins kino."}
+      ],
+      "answer": "Wir gehen ins Kino.",
+      "explanation": "Satzanfang und Nomen werden groß geschrieben."
+    },
+    {
+      "question": "Welches Wort ist ein Tier?",
+      "answers": [
+        {"answer": "Haus"},
+        {"answer": "Hund"},
+        {"answer": "laufen"},
+        {"answer": "grün"}
+      ],
+      "answer": "Hund",
+      "explanation": "'Hund' ist ein Tier."
+    },
+    {
+      "question": "Wie heißt der Plural von 'Blume'?",
+      "answers": [
+        {"answer": "Blumen"},
+        {"answer": "Blumes"},
+        {"answer": "Blume"},
+        {"answer": "Blumens"}
+      ],
+      "answer": "Blumen",
+      "explanation": "Der Plural ist 'Blumen'."
+    },
+    {
+      "question": "Welches Wort ist ein Adjektiv?",
+      "answers": [
+        {"answer": "schnell"},
+        {"answer": "Hund"},
+        {"answer": "laufen"},
+        {"answer": "Buch"}
+      ],
+      "answer": "schnell",
+      "explanation": "'schnell' beschreibt etwas, also ist es ein Adjektiv."
+    },
+    {
+      "question": "Wie schreibt man das Wort 'Schule' richtig?",
+      "answers": [
+        {"answer": "schule"},
+        {"answer": "Schule"},
+        {"answer": "schuhle"},
+        {"answer": "Schuhle"}
+      ],
+      "answer": "Schule",
+      "explanation": "Nomen werden groß geschrieben, richtig ist 'Schule'."
+    },
+    {
+      "question": "Wie heißt der bestimmte Artikel für 'Ball'?",
+      "answers": [
+        {"answer": "die"},
+        {"answer": "das"},
+        {"answer": "der"},
+        {"answer": "den"}
+      ],
+      "answer": "der",
+      "explanation": "Es heißt 'der Ball'."
+    },
+    {
+      "question": "Was ist das Gegenteil von 'hoch'?",
+      "answers": [
+        {"answer": "tief"},
+        {"answer": "lang"},
+        {"answer": "dick"},
+        {"answer": "breit"}
+      ],
+      "answer": "tief",
+      "explanation": "Das Gegenteil von 'hoch' ist 'tief'."
+    },
+    {
+      "question": "Welches Wort ist ein Verb?",
+      "answers": [
+        {"answer": "schwimmen"},
+        {"answer": "Auto"},
+        {"answer": "blau"},
+        {"answer": "Apfel"}
+      ],
+      "answer": "schwimmen",
+      "explanation": "'schwimmen' ist eine Tätigkeit, also ein Verb."
+    },
+    {
+      "question": "Wie heißt der Plural von 'Kind'?",
+      "answers": [
+        {"answer": "Kindern"},
+        {"answer": "Kindes"},
+        {"answer": "Kinder"},
+        {"answer": "Kinds"}
+      ],
+      "answer": "Kinder",
+      "explanation": "'Kinder' ist der Plural von 'Kind'."
+    },
+    {
+      "question": "Welches Wort ist richtig geschrieben?",
+      "answers": [
+        {"answer": "Vogel"},
+        {"answer": "vogel"},
+        {"answer": "Fogel"},
+        {"answer": "Voggel"}
+      ],
+      "answer": "Vogel",
+      "explanation": "'Vogel' ist richtig, Nomen groß und mit V geschrieben."
+    },
+    {
+      "question": "Wie nennt man das Wort 'spielen'?",
+      "answers": [
+        {"answer": "Nomen"},
+        {"answer": "Verb"},
+        {"answer": "Adjektiv"},
+        {"answer": "Artikel"}
+      ],
+      "answer": "Verb",
+      "explanation": "'spielen' ist ein Verb (Tuwort)."
+    },
+    {
+      "question": "Welches Wort passt: Der Apfel ist ___ als die Birne.",
+      "answers": [
+        {"answer": "roter"},
+        {"answer": "rot"},
+        {"answer": "rötlich"},
+        {"answer": "am rotesten"}
+      ],
+      "answer": "roter",
+      "explanation": "Vergleiche mit 'als' bilden den Komparativ: roter."
+    },
+    {
+      "question": "Wie heißt das Gegenteil von 'hell'?",
+      "answers": [
+        {"answer": "dunkel"},
+        {"answer": "weiß"},
+        {"answer": "leicht"},
+        {"answer": "klein"}
+      ],
+      "answer": "dunkel",
+      "explanation": "Das Gegenteil von 'hell' ist 'dunkel'."
+    },
+    {
+      "question": "Welcher Satz ist richtig?",
+      "answers": [
+        {"answer": "ich mag Schokolade."},
+        {"answer": "Ich mag schokolade."},
+        {"answer": "Ich mag Schokolade."},
+        {"answer": "ich Mag Schokolade."}
+      ],
+      "answer": "Ich mag Schokolade.",
+      "explanation": "Satzanfang und Nomen groß."
+    },
+    {
+      "question": "Welches Wort ist ein Nomen?",
+      "answers": [
+        {"answer": "laufen"},
+        {"answer": "blau"},
+        {"answer": "Katze"},
+        {"answer": "schwimmen"}
+      ],
+      "answer": "Katze",
+      "explanation": "'Katze' ist ein Nomen."
+    },
+    {
+      "question": "Wie schreibt man das Wort 'Freund' richtig im Plural?",
+      "answers": [
+        {"answer": "Freunde"},
+        {"answer": "Freunden"},
+        {"answer": "Freunds"},
+        {"answer": "Freundes"}
+      ],
+      "answer": "Freunde",
+      "explanation": "Der Plural lautet 'Freunde'."
+    },
+    {
+      "question": "Welches Wort ist ein Adjektiv?",
+      "answers": [
+        {"answer": "rot"},
+        {"answer": "laufen"},
+        {"answer": "Hund"},
+        {"answer": "Blume"}
+      ],
+      "answer": "rot",
+      "explanation": "'rot' beschreibt eine Farbe, ist ein Adjektiv."
+    },
+    {
+      "question": "Was ist der richtige Artikel für 'Mädchen'?",
+      "answers": [
+        {"answer": "die"},
+        {"answer": "das"},
+        {"answer": "der"},
+        {"answer": "den"}
+      ],
+      "answer": "das",
+      "explanation": "'das Mädchen' ist korrekt."
+    },
+    {
+      "question": "Wie heißt das Gegenteil von 'früh'?",
+      "answers": [
+        {"answer": "spät"},
+        {"answer": "schnell"},
+        {"answer": "müde"},
+        {"answer": "wach"}
+      ],
+      "answer": "spät",
+      "explanation": "früh - spät sind Gegenteile."
+    },
+    {
+      "question": "Welches Wort ist ein Verb?",
+      "answers": [
+        {"answer": "fliegen"},
+        {"answer": "Pferd"},
+        {"answer": "schnell"},
+        {"answer": "rot"}
+      ],
+      "answer": "fliegen",
+      "explanation": "'fliegen' ist eine Tätigkeit, also ein Verb."
+    },
+    {
+      "question": "Wie viele Silben hat das Wort 'Banane'?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "5"}
+      ],
+      "answer": "3",
+      "explanation": "Ba-na-ne hat drei Silben."
+    },
+    {
+      "question": "Was ist das Gegenteil von 'oben'?",
+      "answers": [
+        {"answer": "unten"},
+        {"answer": "hinten"},
+        {"answer": "vorne"},
+        {"answer": "seitlich"}
+      ],
+      "answer": "unten",
+      "explanation": "Das Gegenteil von oben ist unten."
+    },
+    {
+      "question": "Wie schreibt man das Wort 'Tiere' richtig im Singular?",
+      "answers": [
+        {"answer": "Tier"},
+        {"answer": "Tiern"},
+        {"answer": "Tiers"},
+        {"answer": "Tieren"}
+      ],
+      "answer": "Tier",
+      "explanation": "Der Singular von 'Tiere' ist 'Tier'."
+    },
+    {
+      "question": "Welches Wort ist ein Nomen?",
+      "answers": [
+        {"answer": "laufen"},
+        {"answer": "Freundin"},
+        {"answer": "grün"},
+        {"answer": "essen"}
+      ],
+      "answer": "Freundin",
+      "explanation": "'Freundin' ist ein Nomen."
+    },
+    {
+      "question": "Wie schreibt man das Wort 'groß' im Komparativ?",
+      "answers": [
+        {"answer": "größer"},
+        {"answer": "großer"},
+        {"answer": "größter"},
+        {"answer": "großest"}
+      ],
+      "answer": "größer",
+      "explanation": "Vergleiche: groß – größer."
+    },
+    {
+      "question": "Wie heißt das Gegenteil von 'laut'?",
+      "answers": [
+        {"answer": "leise"},
+        {"answer": "schnell"},
+        {"answer": "langsam"},
+        {"answer": "klein"}
+      ],
+      "answer": "leise",
+      "explanation": "Das Gegenteil von 'laut' ist 'leise'."
+    },
+    {
+      "question": "Welches Wort ist richtig geschrieben?",
+      "answers": [
+        {"answer": "Fenster"},
+        {"answer": "fenster"},
+        {"answer": "Fenstar"},
+        {"answer": "Fenstär"}
+      ],
+      "answer": "Fenster",
+      "explanation": "'Fenster' ist das richtige Wort und muss groß geschrieben werden."
+    },
+    {
+      "question": "Welches Wort ist ein Adjektiv?",
+      "answers": [
+        {"answer": "klein"},
+        {"answer": "Maus"},
+        {"answer": "springen"},
+        {"answer": "Auto"}
+      ],
+      "answer": "klein",
+      "explanation": "'klein' beschreibt etwas und ist ein Adjektiv."
+    },
+    {
+      "question": "Welches Wort passt: Die Sonne ___ am Himmel.",
+      "answers": [
+        {"answer": "scheint"},
+        {"answer": "schwimmt"},
+        {"answer": "rennt"},
+        {"answer": "liest"}
+      ],
+      "answer": "scheint",
+      "explanation": "'Die Sonne scheint' ist richtig."
+    },
+    {
+      "question": "Welcher Satzanfang ist richtig?",
+      "answers": [
+        {"answer": "mein Hund spielt."},
+        {"answer": "Mein hund spielt."},
+        {"answer": "Mein Hund spielt."},
+        {"answer": "mein Hund Spielt."}
+      ],
+      "answer": "Mein Hund spielt.",
+      "explanation": "Satzanfang und Nomen groß geschrieben."
+    },
+    {
+      "question": "Wie heißt der Plural von 'Buch'?",
+      "answers": [
+        {"answer": "Buchs"},
+        {"answer": "Büche"},
+        {"answer": "Bücher"},
+        {"answer": "Buchen"}
+      ],
+      "answer": "Bücher",
+      "explanation": "Der Plural von 'Buch' ist 'Bücher'."
+    },
+    {
+      "question": "Wie schreibt man das Wort 'Apfelbaum' richtig?",
+      "answers": [
+        {"answer": "apfelbaum"},
+        {"answer": "Apfelbaum"},
+        {"answer": "Apfellbaum"},
+        {"answer": "apfelBaum"}
+      ],
+      "answer": "Apfelbaum",
+      "explanation": "Nomen und zusammengesetzte Hauptwörter werden groß geschrieben."
+    },
+    {
+      "question": "Welches Wort ist ein Verb?",
+      "answers": [
+        {"answer": "lesen"},
+        {"answer": "Haus"},
+        {"answer": "blau"},
+        {"answer": "Tisch"}
+      ],
+      "answer": "lesen",
+      "explanation": "'lesen' ist ein Verb (Tuwort)."
+    }
+  ]
+},
+{
+  "name": "Kalender, Monate und Jahreszeiten",
+  "questions": [
+    {
+      "question": "Wie viele Monate hat ein Jahr?",
+      "answers": [
+        {"answer": "10"},
+        {"answer": "12"},
+        {"answer": "6"},
+        {"answer": "24"}
+      ],
+      "answer": "12",
+      "explanation": "Ein Jahr hat immer 12 Monate."
+    },
+    {
+      "question": "Wie viele Tage hat eine Woche?",
+      "answers": [
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "10"}
+      ],
+      "answer": "7",
+      "explanation": "Eine Woche besteht aus Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag und Sonntag."
+    },
+    {
+      "question": "Welcher Monat beginnt das Jahr?",
+      "answers": [
+        {"answer": "Januar"},
+        {"answer": "Februar"},
+        {"answer": "März"},
+        {"answer": "Dezember"}
+      ],
+      "answer": "Januar",
+      "explanation": "Das Jahr beginnt immer mit dem Januar."
+    },
+    {
+      "question": "Welcher Monat kommt nach März?",
+      "answers": [
+        {"answer": "April"},
+        {"answer": "Mai"},
+        {"answer": "Februar"},
+        {"answer": "Juni"}
+      ],
+      "answer": "April",
+      "explanation": "Nach März kommt der April."
+    },
+    {
+      "question": "Wie heißt der siebte Monat des Jahres?",
+      "answers": [
+        {"answer": "Juni"},
+        {"answer": "Juli"},
+        {"answer": "August"},
+        {"answer": "Mai"}
+      ],
+      "answer": "Juli",
+      "explanation": "Juli ist der siebte Monat."
+    },
+    {
+      "question": "Wie viele Jahreszeiten gibt es?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "12"}
+      ],
+      "answer": "4",
+      "explanation": "Es gibt Frühling, Sommer, Herbst und Winter."
+    },
+    {
+      "question": "Welcher Monat hat nur 28 oder manchmal 29 Tage?",
+      "answers": [
+        {"answer": "Januar"},
+        {"answer": "Februar"},
+        {"answer": "März"},
+        {"answer": "April"}
+      ],
+      "answer": "Februar",
+      "explanation": "Der Februar ist der kürzeste Monat."
+    },
+    {
+      "question": "An welchem Tag beginnt die Woche?",
+      "answers": [
+        {"answer": "Samstag"},
+        {"answer": "Montag"},
+        {"answer": "Mittwoch"},
+        {"answer": "Donnerstag"}
+      ],
+      "answer": "Montag",
+      "explanation": "Die Woche beginnt mit dem Montag."
+    },
+    {
+      "question": "Wie heißt der letzte Monat im Jahr?",
+      "answers": [
+        {"answer": "Oktober"},
+        {"answer": "November"},
+        {"answer": "Dezember"},
+        {"answer": "Januar"}
+      ],
+      "answer": "Dezember",
+      "explanation": "Dezember ist der zwölfte und letzte Monat."
+    },
+    {
+      "question": "Welcher Tag folgt auf Freitag?",
+      "answers": [
+        {"answer": "Samstag"},
+        {"answer": "Sonntag"},
+        {"answer": "Donnerstag"},
+        {"answer": "Montag"}
+      ],
+      "answer": "Samstag",
+      "explanation": "Nach Freitag kommt Samstag."
+    },
+    {
+      "question": "Wie viele Tage hat der Monat Juni?",
+      "answers": [
+        {"answer": "31"},
+        {"answer": "30"},
+        {"answer": "28"},
+        {"answer": "29"}
+      ],
+      "answer": "30",
+      "explanation": "Juni hat 30 Tage."
+    },
+    {
+      "question": "Welcher Monat ist der erste Frühlingsmonat?",
+      "answers": [
+        {"answer": "Februar"},
+        {"answer": "März"},
+        {"answer": "April"},
+        {"answer": "Mai"}
+      ],
+      "answer": "März",
+      "explanation": "Der Frühling beginnt im März."
+    },
+    {
+      "question": "Wie heißt der Monat, in dem Weihnachten gefeiert wird?",
+      "answers": [
+        {"answer": "November"},
+        {"answer": "Dezember"},
+        {"answer": "Oktober"},
+        {"answer": "Januar"}
+      ],
+      "answer": "Dezember",
+      "explanation": "Weihnachten ist im Dezember."
+    },
+    {
+      "question": "Welche Jahreszeit kommt nach dem Sommer?",
+      "answers": [
+        {"answer": "Winter"},
+        {"answer": "Herbst"},
+        {"answer": "Frühling"},
+        {"answer": "Sommer"}
+      ],
+      "answer": "Herbst",
+      "explanation": "Nach Sommer kommt Herbst."
+    },
+    {
+      "question": "Wie viele Tage hat ein Schaltjahr?",
+      "answers": [
+        {"answer": "365"},
+        {"answer": "366"},
+        {"answer": "360"},
+        {"answer": "364"}
+      ],
+      "answer": "366",
+      "explanation": "Ein Schaltjahr hat 366 Tage, weil der Februar dann 29 Tage hat."
+    },
+    {
+      "question": "Welcher Monat liegt zwischen Juli und September?",
+      "answers": [
+        {"answer": "Juni"},
+        {"answer": "August"},
+        {"answer": "Mai"},
+        {"answer": "Oktober"}
+      ],
+      "answer": "August",
+      "explanation": "August liegt zwischen Juli und September."
+    },
+    {
+      "question": "Wie heißt der Tag nach Mittwoch?",
+      "answers": [
+        {"answer": "Montag"},
+        {"answer": "Dienstag"},
+        {"answer": "Donnerstag"},
+        {"answer": "Freitag"}
+      ],
+      "answer": "Donnerstag",
+      "explanation": "Donnerstag folgt auf Mittwoch."
+    },
+    {
+      "question": "Welcher Monat hat 31 Tage?",
+      "answers": [
+        {"answer": "April"},
+        {"answer": "Juni"},
+        {"answer": "Mai"},
+        {"answer": "November"}
+      ],
+      "answer": "Mai",
+      "explanation": "Mai hat 31 Tage."
+    },
+    {
+      "question": "Welche Monate sind Sommermonate in Deutschland?",
+      "answers": [
+        {"answer": "Juni, Juli, August"},
+        {"answer": "September, Oktober, November"},
+        {"answer": "März, April, Mai"},
+        {"answer": "Dezember, Januar, Februar"}
+      ],
+      "answer": "Juni, Juli, August",
+      "explanation": "Sommer ist im Juni, Juli und August."
+    },
+    {
+      "question": "Wie viele Monate haben 31 Tage?",
+      "answers": [
+        {"answer": "4"},
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "5"}
+      ],
+      "answer": "7",
+      "explanation": "Januar, März, Mai, Juli, August, Oktober und Dezember haben 31 Tage."
+    },
+    {
+      "question": "Welcher Monat kommt nach Oktober?",
+      "answers": [
+        {"answer": "November"},
+        {"answer": "Dezember"},
+        {"answer": "Januar"},
+        {"answer": "September"}
+      ],
+      "answer": "November",
+      "explanation": "Nach Oktober kommt November."
+    },
+    {
+      "question": "Wie heißt der Monat vor März?",
+      "answers": [
+        {"answer": "Mai"},
+        {"answer": "Februar"},
+        {"answer": "April"},
+        {"answer": "Januar"}
+      ],
+      "answer": "Februar",
+      "explanation": "Vor März ist immer der Februar."
+    },
+    {
+      "question": "Welcher Wochentag ist oft schulfrei?",
+      "answers": [
+        {"answer": "Dienstag"},
+        {"answer": "Samstag"},
+        {"answer": "Mittwoch"},
+        {"answer": "Donnerstag"}
+      ],
+      "answer": "Samstag",
+      "explanation": "Samstag ist meist schulfrei."
+    },
+    {
+      "question": "In welchem Monat beginnt der Herbst?",
+      "answers": [
+        {"answer": "September"},
+        {"answer": "Oktober"},
+        {"answer": "August"},
+        {"answer": "November"}
+      ],
+      "answer": "September",
+      "explanation": "Im September beginnt der Herbst."
+    },
+    {
+      "question": "Wie viele Tage hat der Februar in einem normalen Jahr?",
+      "answers": [
+        {"answer": "29"},
+        {"answer": "30"},
+        {"answer": "28"},
+        {"answer": "27"}
+      ],
+      "answer": "28",
+      "explanation": "Im normalen Jahr hat der Februar 28 Tage."
+    },
+    {
+      "question": "Wie heißt der Monat nach Mai?",
+      "answers": [
+        {"answer": "Juni"},
+        {"answer": "Juli"},
+        {"answer": "März"},
+        {"answer": "August"}
+      ],
+      "answer": "Juni",
+      "explanation": "Juni folgt auf Mai."
+    },
+    {
+      "question": "Welche Monate gehören zum Winter?",
+      "answers": [
+        {"answer": "Dezember, Januar, Februar"},
+        {"answer": "September, Oktober, November"},
+        {"answer": "März, April, Mai"},
+        {"answer": "Juni, Juli, August"}
+      ],
+      "answer": "Dezember, Januar, Februar",
+      "explanation": "Wintermonate sind Dezember, Januar und Februar."
+    },
+    {
+      "question": "Wie viele Tage hat der April?",
+      "answers": [
+        {"answer": "31"},
+        {"answer": "30"},
+        {"answer": "29"},
+        {"answer": "28"}
+      ],
+      "answer": "30",
+      "explanation": "April hat 30 Tage."
+    },
+    {
+      "question": "Welcher Monat ist der kürzeste im Jahr?",
+      "answers": [
+        {"answer": "Februar"},
+        {"answer": "März"},
+        {"answer": "Dezember"},
+        {"answer": "Mai"}
+      ],
+      "answer": "Februar",
+      "explanation": "Februar hat nur 28 oder 29 Tage."
+    },
+    {
+      "question": "Nach welchem Monat kommt der Juli?",
+      "answers": [
+        {"answer": "August"},
+        {"answer": "September"},
+        {"answer": "Juni"},
+        {"answer": "Mai"}
+      ],
+      "answer": "August",
+      "explanation": "Nach Juli kommt August."
+    },
+    {
+      "question": "Welcher Wochentag folgt auf Dienstag?",
+      "answers": [
+        {"answer": "Montag"},
+        {"answer": "Mittwoch"},
+        {"answer": "Donnerstag"},
+        {"answer": "Freitag"}
+      ],
+      "answer": "Mittwoch",
+      "explanation": "Mittwoch kommt nach Dienstag."
+    },
+    {
+      "question": "In welchem Monat beginnen die Sommerferien meistens?",
+      "answers": [
+        {"answer": "August"},
+        {"answer": "Juli"},
+        {"answer": "Juni"},
+        {"answer": "Mai"}
+      ],
+      "answer": "Juli",
+      "explanation": "In Deutschland starten die Sommerferien oft im Juli."
+    },
+    {
+      "question": "Welcher Monat ist kein Frühlingsmonat?",
+      "answers": [
+        {"answer": "März"},
+        {"answer": "April"},
+        {"answer": "Mai"},
+        {"answer": "Juni"}
+      ],
+      "answer": "Juni",
+      "explanation": "Der Juni gehört zum Sommer."
+    },
+    {
+      "question": "Wie viele Tage hat der Monat November?",
+      "answers": [
+        {"answer": "31"},
+        {"answer": "30"},
+        {"answer": "29"},
+        {"answer": "28"}
+      ],
+      "answer": "30",
+      "explanation": "November hat 30 Tage."
+    },
+    {
+      "question": "Welcher Monat beginnt mit einem O?",
+      "answers": [
+        {"answer": "Oktober"},
+        {"answer": "August"},
+        {"answer": "April"},
+        {"answer": "Mai"}
+      ],
+      "answer": "Oktober",
+      "explanation": "Oktober beginnt mit O."
+    },
+    {
+      "question": "Wie viele Tage hat der Monat Januar?",
+      "answers": [
+        {"answer": "31"},
+        {"answer": "30"},
+        {"answer": "29"},
+        {"answer": "28"}
+      ],
+      "answer": "31",
+      "explanation": "Januar hat 31 Tage."
+    },
+    {
+      "question": "Wie viele Monate haben 30 Tage?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "4"},
+        {"answer": "6"},
+        {"answer": "5"}
+      ],
+      "answer": "4",
+      "explanation": "April, Juni, September und November haben 30 Tage."
+    },
+    {
+      "question": "Welcher Monat hat den längsten Namen?",
+      "answers": [
+        {"answer": "September"},
+        {"answer": "November"},
+        {"answer": "Dezember"},
+        {"answer": "Februar"}
+      ],
+      "answer": "September",
+      "explanation": "September hat neun Buchstaben."
+    },
+    {
+      "question": "Welcher Wochentag ist der fünfte in der Woche?",
+      "answers": [
+        {"answer": "Freitag"},
+        {"answer": "Donnerstag"},
+        {"answer": "Mittwoch"},
+        {"answer": "Samstag"}
+      ],
+      "answer": "Freitag",
+      "explanation": "Freitag ist der fünfte Tag, wenn man mit Montag beginnt."
+    },
+    {
+      "question": "Welcher Monat hat den ersten Buchstaben wie März?",
+      "answers": [
+        {"answer": "Mai"},
+        {"answer": "Juni"},
+        {"answer": "Januar"},
+        {"answer": "April"}
+      ],
+      "answer": "Mai",
+      "explanation": "Mai und März beginnen beide mit M."
+    },
+    {
+      "question": "Welcher Monat ist nach dem August?",
+      "answers": [
+        {"answer": "September"},
+        {"answer": "Oktober"},
+        {"answer": "Juli"},
+        {"answer": "November"}
+      ],
+      "answer": "September",
+      "explanation": "Nach August kommt September."
+    },
+    {
+      "question": "Wie heißt der Monat, in dem Ostern oft gefeiert wird?",
+      "answers": [
+        {"answer": "März oder April"},
+        {"answer": "Juni"},
+        {"answer": "Mai"},
+        {"answer": "Dezember"}
+      ],
+      "answer": "März oder April",
+      "explanation": "Ostern fällt meist in den März oder April."
+    },
+    {
+      "question": "Welche Monate gehören zum Herbst?",
+      "answers": [
+        {"answer": "September, Oktober, November"},
+        {"answer": "Juni, Juli, August"},
+        {"answer": "Dezember, Januar, Februar"},
+        {"answer": "März, April, Mai"}
+      ],
+      "answer": "September, Oktober, November",
+      "explanation": "Der Herbst sind September, Oktober und November."
+    },
+    {
+      "question": "Wie heißt der Monat mit Muttertag?",
+      "answers": [
+        {"answer": "Mai"},
+        {"answer": "März"},
+        {"answer": "April"},
+        {"answer": "Juni"}
+      ],
+      "answer": "Mai",
+      "explanation": "Muttertag ist im Mai."
+    },
+    {
+      "question": "Welcher Monat kommt nach Januar?",
+      "answers": [
+        {"answer": "Februar"},
+        {"answer": "März"},
+        {"answer": "Dezember"},
+        {"answer": "April"}
+      ],
+      "answer": "Februar",
+      "explanation": "Februar folgt auf Januar."
+    },
+    {
+      "question": "Welcher Tag kommt vor Sonntag?",
+      "answers": [
+        {"answer": "Montag"},
+        {"answer": "Samstag"},
+        {"answer": "Freitag"},
+        {"answer": "Donnerstag"}
+      ],
+      "answer": "Samstag",
+      "explanation": "Vor Sonntag ist Samstag."
+    },
+    {
+      "question": "Welcher Monat beginnt mit D?",
+      "answers": [
+        {"answer": "Dezember"},
+        {"answer": "Donnerstag"},
+        {"answer": "Dienstag"},
+        {"answer": "Mai"}
+      ],
+      "answer": "Dezember",
+      "explanation": "Dezember ist der einzige Monat mit D am Anfang."
+    },
+    {
+      "question": "Wie viele Buchstaben hat das Wort \"Februar\"?",
+      "answers": [
+        {"answer": "6"},
+        {"answer": "7"},
+        {"answer": "8"},
+        {"answer": "9"}
+      ],
+      "answer": "7",
+      "explanation": "Februar hat sieben Buchstaben."
+    },
+    {
+      "question": "Wie viele Monate haben einen Namen mit A am Anfang?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "April und August beginnen mit A."
+    },
+    {
+      "question": "Welcher Wochentag ist der dritte Wochentag?",
+      "answers": [
+        {"answer": "Mittwoch"},
+        {"answer": "Dienstag"},
+        {"answer": "Montag"},
+        {"answer": "Donnerstag"}
+      ],
+      "answer": "Mittwoch",
+      "explanation": "Montag, Dienstag, Mittwoch – Mittwoch ist der dritte."
+    },
+    {
+      "question": "Wie viele Monate enden mit dem Buchstaben \"r\"?",
+      "answers": [
+        {"answer": "4"},
+        {"answer": "5"},
+        {"answer": "6"},
+        {"answer": "7"}
+      ],
+      "answer": "8",
+      "explanation": "Januar, Februar, März, April, September, Oktober, November, Dezember."
+    },
+    {
+      "question": "Welcher Monat kommt nach dem Monat April?",
+      "answers": [
+        {"answer": "Mai"},
+        {"answer": "Juni"},
+        {"answer": "März"},
+        {"answer": "Juli"}
+      ],
+      "answer": "Mai",
+      "explanation": "Mai kommt nach April."
+    },
+    {
+      "question": "Wie heißt der Tag nach Donnerstag?",
+      "answers": [
+        {"answer": "Dienstag"},
+        {"answer": "Freitag"},
+        {"answer": "Samstag"},
+        {"answer": "Sonntag"}
+      ],
+      "answer": "Freitag",
+      "explanation": "Freitag folgt auf Donnerstag."
+    },
+    {
+      "question": "Wie viele Jahreszeiten gibt es?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "5"}
+      ],
+      "answer": "4",
+      "explanation": "Frühling, Sommer, Herbst und Winter."
+    },
+    {
+      "question": "In welchem Monat feiern wir Neujahr?",
+      "answers": [
+        {"answer": "Dezember"},
+        {"answer": "Januar"},
+        {"answer": "Februar"},
+        {"answer": "März"}
+      ],
+      "answer": "Januar",
+      "explanation": "Neujahr ist am 1. Januar."
+    }
+  ]
+},
+{
+  "name": "Uhrenlesen",
+  "questions": [
+    {
+      "question": "Wie spät ist es, wenn der kleine Zeiger auf der 3 und der große Zeiger auf der 12 steht?",
+      "answers": [
+        {"answer": "3 Uhr"},
+        {"answer": "12 Uhr"},
+        {"answer": "6 Uhr"},
+        {"answer": "9 Uhr"}
+      ],
+      "answer": "3 Uhr",
+      "explanation": "Steht der kleine Zeiger auf der 3 und der große Zeiger auf der 12, ist es genau 3 Uhr."
+    },
+    {
+      "question": "Wie nennt man die Uhrzeit, wenn der große Zeiger auf der 6 steht?",
+      "answers": [
+        {"answer": "Viertel"},
+        {"answer": "Halb"},
+        {"answer": "Viertel nach"},
+        {"answer": "Viertel vor"}
+      ],
+      "answer": "Halb",
+      "explanation": "Wenn der große Zeiger auf der 6 steht, ist es immer „halb“, also eine halbe Stunde nach der vollen Stunde."
+    },
+    {
+      "question": "Der kleine Zeiger steht auf der 7 und der große Zeiger auf der 12. Wie spät ist es?",
+      "answers": [
+        {"answer": "7 Uhr"},
+        {"answer": "12 Uhr"},
+        {"answer": "5 Uhr"},
+        {"answer": "2 Uhr"}
+      ],
+      "answer": "7 Uhr",
+      "explanation": "Der kleine Zeiger zeigt die Stunden, der große die Minuten an. 7 Uhr ist richtig."
+    },
+    {
+      "question": "Was bedeutet es, wenn der große Zeiger auf der 3 steht?",
+      "answers": [
+        {"answer": "Viertel nach"},
+        {"answer": "Halb"},
+        {"answer": "Viertel vor"},
+        {"answer": "Dreiviertel"}
+      ],
+      "answer": "Viertel nach",
+      "explanation": "Steht der große Zeiger auf der 3, ist es Viertel nach der vollen Stunde."
+    },
+    {
+      "question": "Wie lautet die Uhrzeit: Der kleine Zeiger steht zwischen 4 und 5, der große Zeiger auf der 6?",
+      "answers": [
+        {"answer": "5 Uhr"},
+        {"answer": "4 Uhr"},
+        {"answer": "Halb 5"},
+        {"answer": "Halb 4"}
+      ],
+      "answer": "Halb 5",
+      "explanation": "Der kleine Zeiger steht zwischen 4 und 5, der große Zeiger auf der 6, das ist halb 5."
+    },
+    {
+      "question": "Wie spät ist es, wenn der kleine Zeiger auf der 9 und der große Zeiger auf der 12 steht?",
+      "answers": [
+        {"answer": "12 Uhr"},
+        {"answer": "9 Uhr"},
+        {"answer": "6 Uhr"},
+        {"answer": "3 Uhr"}
+      ],
+      "answer": "9 Uhr",
+      "explanation": "Kleiner Zeiger auf der 9, großer auf der 12: Das ist genau 9 Uhr."
+    },
+    {
+      "question": "Der große Zeiger zeigt auf die 9. Wie nennt man diese Zeit?",
+      "answers": [
+        {"answer": "Viertel nach"},
+        {"answer": "Viertel vor"},
+        {"answer": "Halb"},
+        {"answer": "Dreiviertel"}
+      ],
+      "answer": "Viertel vor",
+      "explanation": "Steht der große Zeiger auf der 9, ist es Viertel vor der nächsten vollen Stunde."
+    },
+    {
+      "question": "Wie spät ist es, wenn der kleine Zeiger auf der 11 und der große Zeiger auf der 3 steht?",
+      "answers": [
+        {"answer": "Viertel nach 11"},
+        {"answer": "Viertel vor 11"},
+        {"answer": "Halb 12"},
+        {"answer": "11 Uhr"}
+      ],
+      "answer": "Viertel nach 11",
+      "explanation": "Großer Zeiger auf der 3 bedeutet Viertel nach, also Viertel nach 11."
+    },
+    {
+      "question": "Wie nennt man es, wenn der große Zeiger auf der 12 und der kleine Zeiger auf der 6 steht?",
+      "answers": [
+        {"answer": "6 Uhr"},
+        {"answer": "12 Uhr"},
+        {"answer": "Halb 7"},
+        {"answer": "Viertel nach 6"}
+      ],
+      "answer": "6 Uhr",
+      "explanation": "Beide Zeiger auf einer Zahl: Es ist eine volle Stunde, hier 6 Uhr."
+    },
+    {
+      "question": "Der große Zeiger steht auf der 6 und der kleine zwischen 1 und 2. Wie spät ist es?",
+      "answers": [
+        {"answer": "1 Uhr"},
+        {"answer": "Halb 2"},
+        {"answer": "2 Uhr"},
+        {"answer": "Viertel nach 1"}
+      ],
+      "answer": "Halb 2",
+      "explanation": "Der große Zeiger auf der 6 heißt immer „halb“, also halb 2."
+    },
+    {
+      "question": "Wenn der große Zeiger auf der 3 und der kleine auf der 8 steht, wie heißt die Uhrzeit?",
+      "answers": [
+        {"answer": "Acht Uhr"},
+        {"answer": "Halb neun"},
+        {"answer": "Viertel nach acht"},
+        {"answer": "Viertel vor acht"}
+      ],
+      "answer": "Viertel nach acht",
+      "explanation": "Viertel nach acht, weil der große Zeiger auf der 3 und der kleine auf der 8 steht."
+    },
+    {
+      "question": "Wie heißt es, wenn der große Zeiger auf der 9 steht und der kleine auf der 2?",
+      "answers": [
+        {"answer": "Viertel vor zwei"},
+        {"answer": "Viertel vor drei"},
+        {"answer": "Halb zwei"},
+        {"answer": "Viertel nach zwei"}
+      ],
+      "answer": "Viertel vor drei",
+      "explanation": "Großer Zeiger auf 9 bedeutet Viertel vor nächste volle Stunde, also Viertel vor drei."
+    },
+    {
+      "question": "Der kleine Zeiger steht auf der 5, der große auf der 6. Wie spät ist es?",
+      "answers": [
+        {"answer": "6 Uhr"},
+        {"answer": "Halb 6"},
+        {"answer": "Halb 5"},
+        {"answer": "5 Uhr"}
+      ],
+      "answer": "Halb 6",
+      "explanation": "Halb 6, denn der große Zeiger steht auf der 6."
+    },
+    {
+      "question": "Wie nennt man es, wenn der große Zeiger auf der 3 und der kleine auf der 10 steht?",
+      "answers": [
+        {"answer": "Viertel nach zehn"},
+        {"answer": "Halb zehn"},
+        {"answer": "Viertel vor zehn"},
+        {"answer": "Zehn Uhr"}
+      ],
+      "answer": "Viertel nach zehn",
+      "explanation": "Viertel nach zehn, weil der große Zeiger auf der 3 und der kleine auf der 10 steht."
+    },
+    {
+      "question": "Welcher Zeiger zeigt die Minuten an?",
+      "answers": [
+        {"answer": "Der kleine Zeiger"},
+        {"answer": "Der große Zeiger"},
+        {"answer": "Beide Zeiger"},
+        {"answer": "Keiner"}
+      ],
+      "answer": "Der große Zeiger",
+      "explanation": "Der große Zeiger zeigt die Minuten an, der kleine die Stunden."
+    },
+    {
+      "question": "Wenn der große Zeiger auf der 12 und der kleine zwischen 2 und 3 steht, wie spät ist es?",
+      "answers": [
+        {"answer": "2 Uhr"},
+        {"answer": "3 Uhr"},
+        {"answer": "Halb 3"},
+        {"answer": "Viertel nach 2"}
+      ],
+      "answer": "2 Uhr",
+      "explanation": "Großer Zeiger auf 12 bedeutet immer volle Stunde."
+    },
+    {
+      "question": "Wie viele Minuten zeigt der große Zeiger pro Zahl an?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "5"},
+        {"answer": "10"}
+      ],
+      "answer": "5",
+      "explanation": "Jede Zahl steht für 5 Minuten auf der Uhr."
+    },
+    {
+      "question": "Wenn der große Zeiger auf der 6 und der kleine auf der 12 steht, wie spät ist es?",
+      "answers": [
+        {"answer": "Halb 1"},
+        {"answer": "12 Uhr"},
+        {"answer": "6 Uhr"},
+        {"answer": "1 Uhr"}
+      ],
+      "answer": "Halb 1",
+      "explanation": "Der große Zeiger auf 6 heißt immer halb, also halb 1."
+    },
+    {
+      "question": "Was zeigt der kleine Zeiger an?",
+      "answers": [
+        {"answer": "Die Minuten"},
+        {"answer": "Die Stunden"},
+        {"answer": "Die Sekunden"},
+        {"answer": "Die Viertel"}
+      ],
+      "answer": "Die Stunden",
+      "explanation": "Der kleine Zeiger zeigt immer die Stunde an."
+    },
+    {
+      "question": "Wie heißt die Uhrzeit, wenn der große Zeiger auf der 9 und der kleine auf der 5 steht?",
+      "answers": [
+        {"answer": "Viertel nach 5"},
+        {"answer": "Halb 6"},
+        {"answer": "Viertel vor 6"},
+        {"answer": "Fünf Uhr"}
+      ],
+      "answer": "Viertel vor 6",
+      "explanation": "Viertel vor 6, weil der große Zeiger auf der 9 steht."
+    },
+    {
+      "question": "Der große Zeiger zeigt auf die 3, der kleine steht auf der 12. Wie spät ist es?",
+      "answers": [
+        {"answer": "Viertel nach 12"},
+        {"answer": "Viertel vor 12"},
+        {"answer": "Halb 1"},
+        {"answer": "12 Uhr"}
+      ],
+      "answer": "Viertel nach 12",
+      "explanation": "Viertel nach 12, weil der große Zeiger auf der 3 steht."
+    },
+    {
+      "question": "Wie viele Minuten sind eine halbe Stunde?",
+      "answers": [
+        {"answer": "10 Minuten"},
+        {"answer": "20 Minuten"},
+        {"answer": "30 Minuten"},
+        {"answer": "60 Minuten"}
+      ],
+      "answer": "30 Minuten",
+      "explanation": "Eine halbe Stunde sind immer 30 Minuten."
+    },
+    {
+      "question": "Wie viele Minuten sind ein Viertelstunde?",
+      "answers": [
+        {"answer": "5 Minuten"},
+        {"answer": "10 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "20 Minuten"}
+      ],
+      "answer": "15 Minuten",
+      "explanation": "Ein Viertelstunde sind 15 Minuten."
+    },
+    {
+      "question": "Wie viele Stunden zeigt die Uhr am Tag an?",
+      "answers": [
+        {"answer": "6"},
+        {"answer": "12"},
+        {"answer": "24"},
+        {"answer": "60"}
+      ],
+      "answer": "12",
+      "explanation": "Eine Uhr hat meistens 12 Stunden auf dem Zifferblatt."
+    },
+    {
+      "question": "Wenn der große Zeiger auf der 6 und der kleine auf der 4 steht, wie spät ist es?",
+      "answers": [
+        {"answer": "Halb 5"},
+        {"answer": "4 Uhr"},
+        {"answer": "Viertel nach 4"},
+        {"answer": "5 Uhr"}
+      ],
+      "answer": "Halb 5",
+      "explanation": "Großer Zeiger auf 6 heißt immer halb, also halb 5."
+    },
+    {
+      "question": "Was bedeutet es, wenn beide Zeiger auf der gleichen Zahl stehen?",
+      "answers": [
+        {"answer": "Halbe Stunde"},
+        {"answer": "Ganze Stunde"},
+        {"answer": "Viertel nach"},
+        {"answer": "Viertel vor"}
+      ],
+      "answer": "Ganze Stunde",
+      "explanation": "Wenn beide Zeiger auf der gleichen Zahl stehen, ist es eine volle Stunde."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf der 3 und der kleine zwischen 2 und 3 steht?",
+      "answers": [
+        {"answer": "Viertel nach 2"},
+        {"answer": "Halb 3"},
+        {"answer": "Viertel vor 3"},
+        {"answer": "3 Uhr"}
+      ],
+      "answer": "Viertel nach 2",
+      "explanation": "Viertel nach 2, weil der große Zeiger auf der 3 steht."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf der 12 und der kleine auf der 1 steht?",
+      "answers": [
+        {"answer": "1 Uhr"},
+        {"answer": "12 Uhr"},
+        {"answer": "Halb 2"},
+        {"answer": "Viertel nach 1"}
+      ],
+      "answer": "1 Uhr",
+      "explanation": "Voller Stunde bedeutet der große Zeiger auf 12, also 1 Uhr."
+    },
+    {
+      "question": "Wie viele Minuten sind es, wenn der große Zeiger von der 12 zur 3 wandert?",
+      "answers": [
+        {"answer": "10 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "20 Minuten"},
+        {"answer": "5 Minuten"}
+      ],
+      "answer": "15 Minuten",
+      "explanation": "Von 12 zur 3 ist ein Viertel der Uhr, also 15 Minuten."
+    },
+    {
+      "question": "Wie viele Minuten sind es, wenn der große Zeiger von der 12 zur 6 wandert?",
+      "answers": [
+        {"answer": "10 Minuten"},
+        {"answer": "30 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "20 Minuten"}
+      ],
+      "answer": "30 Minuten",
+      "explanation": "Von 12 zur 6 ist eine halbe Umdrehung, also 30 Minuten."
+    },
+    {
+      "question": "Wie viele Minuten sind es, wenn der große Zeiger von der 6 zur 9 wandert?",
+      "answers": [
+        {"answer": "10 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "30 Minuten"},
+        {"answer": "5 Minuten"}
+      ],
+      "answer": "15 Minuten",
+      "explanation": "Von 6 zur 9 sind drei Zahlen, jede für 5 Minuten, also 15 Minuten."
+    },
+    {
+      "question": "Wenn der große Zeiger auf der 9 und der kleine auf der 8 steht, wie spät ist es?",
+      "answers": [
+        {"answer": "Viertel nach 8"},
+        {"answer": "Halb 9"},
+        {"answer": "Viertel vor 9"},
+        {"answer": "8 Uhr"}
+      ],
+      "answer": "Viertel vor 9",
+      "explanation": "Viertel vor 9, weil der große Zeiger auf der 9 steht."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf der 6 und der kleine zwischen 10 und 11 steht?",
+      "answers": [
+        {"answer": "10 Uhr"},
+        {"answer": "Halb 11"},
+        {"answer": "11 Uhr"},
+        {"answer": "Halb 10"}
+      ],
+      "answer": "Halb 11",
+      "explanation": "Halb 11, großer Zeiger auf 6."
+    },
+    {
+      "question": "Wie nennt man die Uhrzeit, wenn der große Zeiger auf der 12 und der kleine auf der 8 steht?",
+      "answers": [
+        {"answer": "8 Uhr"},
+        {"answer": "Halb 9"},
+        {"answer": "Viertel nach 8"},
+        {"answer": "Viertel vor 8"}
+      ],
+      "answer": "8 Uhr",
+      "explanation": "Voller Stunde, also 8 Uhr."
+    },
+    {
+      "question": "Wie nennt man die Uhrzeit, wenn der große Zeiger auf der 3 und der kleine zwischen 11 und 12 steht?",
+      "answers": [
+        {"answer": "Viertel nach 11"},
+        {"answer": "Halb 12"},
+        {"answer": "Viertel vor 12"},
+        {"answer": "12 Uhr"}
+      ],
+      "answer": "Viertel nach 11",
+      "explanation": "Viertel nach 11, großer Zeiger auf 3."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf der 9 und der kleine zwischen 10 und 11 steht?",
+      "answers": [
+        {"answer": "Viertel vor 11"},
+        {"answer": "Viertel vor 10"},
+        {"answer": "Halb 11"},
+        {"answer": "11 Uhr"}
+      ],
+      "answer": "Viertel vor 11",
+      "explanation": "Viertel vor 11, großer Zeiger auf 9."
+    },
+    {
+      "question": "Wie viele Minuten sind es, wenn der große Zeiger von der 12 zur 2 wandert?",
+      "answers": [
+        {"answer": "10 Minuten"},
+        {"answer": "5 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "20 Minuten"}
+      ],
+      "answer": "10 Minuten",
+      "explanation": "Jede Zahl steht für 5 Minuten, also 2 Zahlen = 10 Minuten."
+    },
+    {
+      "question": "Wie viele Minuten braucht der große Zeiger für einen ganzen Kreis?",
+      "answers": [
+        {"answer": "60 Minuten"},
+        {"answer": "120 Minuten"},
+        {"answer": "30 Minuten"},
+        {"answer": "24 Minuten"}
+      ],
+      "answer": "60 Minuten",
+      "explanation": "Ein kompletter Kreis = eine Stunde = 60 Minuten."
+    },
+    {
+      "question": "Wenn der große Zeiger auf der 6 und der kleine auf der 8 steht, wie spät ist es?",
+      "answers": [
+        {"answer": "Halb 8"},
+        {"answer": "Halb 9"},
+        {"answer": "8 Uhr"},
+        {"answer": "9 Uhr"}
+      ],
+      "answer": "Halb 9",
+      "explanation": "Halb 9, großer Zeiger auf 6."
+    },
+    {
+      "question": "Wie nennt man die Uhrzeit, wenn großer Zeiger auf 12 und kleiner auf 4?",
+      "answers": [
+        {"answer": "4 Uhr"},
+        {"answer": "Halb 5"},
+        {"answer": "Viertel nach 4"},
+        {"answer": "5 Uhr"}
+      ],
+      "answer": "4 Uhr",
+      "explanation": "Voller Stunde, also 4 Uhr."
+    },
+    {
+      "question": "Der kleine Zeiger steht zwischen 6 und 7, der große Zeiger auf der 6. Wie spät ist es?",
+      "answers": [
+        {"answer": "6 Uhr"},
+        {"answer": "Halb 7"},
+        {"answer": "7 Uhr"},
+        {"answer": "Halb 6"}
+      ],
+      "answer": "Halb 7",
+      "explanation": "Halb 7, großer Zeiger auf 6."
+    },
+    {
+      "question": "Wie viele Minuten sind es von 3 Uhr bis Viertel nach 3?",
+      "answers": [
+        {"answer": "5 Minuten"},
+        {"answer": "10 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "20 Minuten"}
+      ],
+      "answer": "15 Minuten",
+      "explanation": "Viertel nach heißt 15 Minuten nach der vollen Stunde."
+    },
+    {
+      "question": "Wie viele Minuten sind es von halb 2 bis 2 Uhr?",
+      "answers": [
+        {"answer": "60 Minuten"},
+        {"answer": "30 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "10 Minuten"}
+      ],
+      "answer": "30 Minuten",
+      "explanation": "Von halb zur vollen Stunde sind es 30 Minuten."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf der 3 steht und der kleine zwischen 5 und 6?",
+      "answers": [
+        {"answer": "Viertel nach 5"},
+        {"answer": "Viertel nach 6"},
+        {"answer": "Halb 6"},
+        {"answer": "5 Uhr"}
+      ],
+      "answer": "Viertel nach 5",
+      "explanation": "Viertel nach 5, großer Zeiger auf 3."
+    },
+    {
+      "question": "Wie nennt man es, wenn der große Zeiger auf der 6 und der kleine auf der 3 steht?",
+      "answers": [
+        {"answer": "3 Uhr"},
+        {"answer": "Halb 4"},
+        {"answer": "Halb 3"},
+        {"answer": "4 Uhr"}
+      ],
+      "answer": "Halb 4",
+      "explanation": "Halb 4, großer Zeiger auf 6."
+    },
+    {
+      "question": "Wie viele Zahlen hat ein normales Uhr-Zifferblatt?",
+      "answers": [
+        {"answer": "10"},
+        {"answer": "12"},
+        {"answer": "24"},
+        {"answer": "60"}
+      ],
+      "answer": "12",
+      "explanation": "Ein Uhr-Zifferblatt hat normalerweise 12 Zahlen."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf 9 und der kleine auf 7 steht?",
+      "answers": [
+        {"answer": "Viertel vor 7"},
+        {"answer": "Viertel vor 8"},
+        {"answer": "Halb 8"},
+        {"answer": "7 Uhr"}
+      ],
+      "answer": "Viertel vor 8",
+      "explanation": "Viertel vor 8, großer Zeiger auf 9."
+    },
+    {
+      "question": "Wie viele Minuten sind es von 12 Uhr bis halb 1?",
+      "answers": [
+        {"answer": "15 Minuten"},
+        {"answer": "20 Minuten"},
+        {"answer": "30 Minuten"},
+        {"answer": "45 Minuten"}
+      ],
+      "answer": "30 Minuten",
+      "explanation": "Von voller Stunde bis halb = 30 Minuten."
+    },
+    {
+      "question": "Wie nennt man es, wenn der große Zeiger auf 3 und der kleine auf 1 steht?",
+      "answers": [
+        {"answer": "Viertel nach 1"},
+        {"answer": "Viertel nach 3"},
+        {"answer": "Halb 2"},
+        {"answer": "1 Uhr"}
+      ],
+      "answer": "Viertel nach 1",
+      "explanation": "Viertel nach 1, großer Zeiger auf 3."
+    },
+    {
+      "question": "Wie spät ist es, wenn der große Zeiger auf der 6 und der kleine auf der 12 steht?",
+      "answers": [
+        {"answer": "Halb 1"},
+        {"answer": "12 Uhr"},
+        {"answer": "1 Uhr"},
+        {"answer": "Halb 12"}
+      ],
+      "answer": "Halb 1",
+      "explanation": "Halb 1, großer Zeiger auf 6."
+    },
+    {
+      "question": "Wie viele Minuten sind es von 9 Uhr bis Viertel vor 10?",
+      "answers": [
+        {"answer": "55 Minuten"},
+        {"answer": "45 Minuten"},
+        {"answer": "15 Minuten"},
+        {"answer": "50 Minuten"}
+      ],
+      "answer": "45 Minuten",
+      "explanation": "Viertel vor 10 ist 45 Minuten nach 9 Uhr."
+    },
+    {
+      "question": "Wie nennt man es, wenn der große Zeiger auf der 3 steht und der kleine auf der 4?",
+      "answers": [
+        {"answer": "Viertel nach 4"},
+        {"answer": "Halb 5"},
+        {"answer": "Viertel vor 5"},
+        {"answer": "4 Uhr"}
+      ],
+      "answer": "Viertel nach 4",
+      "explanation": "Viertel nach 4, großer Zeiger auf 3."
+    }
+  ]
+},
   {
     "name": "Reiseziele der Welt",
     "questions": [
