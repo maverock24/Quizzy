@@ -33,5 +33,6 @@
   "Quiz_wins": "Wins",
   "Quiz_losses": "Losses",
   "Answers_right": "Wrong Answers",
-  "Answers_wrong": "Correct Answers"
+  "Answers_wrong": "Correct Answers",
+  "read_aloud": "Read Aloud"
 }

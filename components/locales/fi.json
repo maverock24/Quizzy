@@ -33,5 +33,6 @@
   "Quiz_wins": "Voitettu",
   "Quiz_losses": "Hävitty",
   "Answers_right": "Oikeita vastauksia",
-  "Answers_wrong": "Vääriä vastauksia"
+  "Answers_wrong": "Vääriä vastauksia",
+  "read_aloud": "Lue ääneen"
 }
