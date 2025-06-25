@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animated, StyleSheet, Switch, Text, TouchableOpacity, View } from 'react-native';
+import { Animated, StyleSheet, Switch, Text, TouchableOpacity, View, Platform } from 'react-native';
 import { CodeFormatter } from './CodeFormatter';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
@@ -7,6 +7,7 @@ import { Dimensions } from 'react-native';
 import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useQuiz } from './Quizprovider';
+import Tts from 'react-native-tts';
 
 type ExplanationProps = {
   answerIsCorrect: boolean;
@@ -25,7 +26,65 @@ export const Explanation: React.FC<ExplanationProps> = ({
 }) => {
 
   const { flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled } = useQuiz();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const righOrWrong = answerIsCorrect ? t('correct') : t('wrong')
+
+  const handleReadAloud = () => {
+    // Get current language code (e.g., 'en', 'fi', 'de')
+    const lang = i18n.language || 'en';
+    // Map to BCP-47 for TTS (e.g., 'en-US', 'fi-FI', 'de-DE')
+    const langMap: Record<string, string> = {
+      en: 'en-US',
+      fi: 'fi-FI',
+      de: 'de-DE',
+    };
+    const ttsLang = langMap[lang] || 'en-US';
+    if (Platform.OS === 'web') {
+      if ('speechSynthesis' in window) {
+        // Improved chunking: only split at sentence boundaries, unless a sentence is very long
+        const splitIntoChunks = (text: string, maxLen = 220) => {
+          const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+          let chunks: string[] = [];
+          for (let sentence of sentences) {
+            sentence = sentence.trim();
+            if (sentence.length <= maxLen) {
+              chunks.push(sentence);
+            } else {
+              for (let i = 0; i < sentence.length; i += maxLen) {
+                chunks.push(sentence.slice(i, i + maxLen));
+              }
+            }
+          }
+          return chunks.filter(Boolean);
+        };
+        const chunks = splitIntoChunks(righOrWrong + explanation, 220);
+        let idx = 0;
+        const speakChunk = (i: number) => {
+          if (i >= chunks.length) return;
+          const utterance = new window.SpeechSynthesisUtterance(chunks[i]);
+          utterance.lang = ttsLang;
+          utterance.rate = 1.0;
+          utterance.onend = () => {
+            setTimeout(() => speakChunk(i + 1), 80);
+          };
+          utterance.onerror = () => {
+            setTimeout(() => speakChunk(i + 1), 80);
+          };
+          window.speechSynthesis.speak(utterance);
+        };
+        window.speechSynthesis.cancel();
+        speakChunk(0);
+      } else {
+        alert('Text-to-speech is not supported in this browser.');
+      }
+      return;
+    }
+    // Native (iOS/Android)
+    Tts.setDefaultLanguage(ttsLang);
+    Tts.stop();
+    Tts.speak(explanation);
+  };
 
 return (
   <View style={styles.contentContainer}>
@@ -82,6 +141,7 @@ return (
                           </View>
                           </View>
                         </View>
+                        
     <View
       style={[
         styles.card,
@@ -92,10 +152,16 @@ return (
         },
       ]}
     >
+       <TouchableOpacity
+      onPress={handleReadAloud}
+      style={{ right:10, top: 10, marginLeft: 8, marginBottom: 8, position: 'absolute', backgroundColor: 'rgb(86, 92, 99)', borderRadius: 8, padding: 8,  }}
+      accessibilityLabel="Read explanation aloud"
+    >
+      <Text style={{ color: 'white', fontSize: 14 }}>{t('read_aloud') || '🔊 Read Aloud'}</Text>
+    </TouchableOpacity>
       <Text style={styles.questionHeading}>
-        {answerIsCorrect ? t('correct') : t('wrong')}
+        {righOrWrong}
       </Text>
-      {/* <Text style={styles.normalText}>{explanation}</Text> */}
       <CodeFormatter
         text={explanation}
         containerStyle={{ marginTop: 8 }}
