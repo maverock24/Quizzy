@@ -14,6 +14,7 @@ type ExplanationProps = {
   explanation: string;
   currentQuestionIndex: number;
   selectedQuizAnswersAmount: number;
+  handleNext: () => void;
 };
 
 const { height } = Dimensions.get('window');
@@ -23,14 +24,28 @@ export const Explanation: React.FC<ExplanationProps> = ({
   explanation,
   currentQuestionIndex,
   selectedQuizAnswersAmount,
+  handleNext,
 }) => {
 
   const { flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled } = useQuiz();
   const { t, i18n } = useTranslation();
 
-  const righOrWrong = answerIsCorrect ? t('correct') : t('wrong')
+  const righOrWrong = answerIsCorrect ? t('correct') : t('wrong');
+
+ 
+   // Utility to stop TTS on both web and native
+  let ttsCancelled = false;
+  const stopTTS = () => {
+    if (Platform.OS === 'web' && 'speechSynthesis' in window) {
+      ttsCancelled = true;
+      window.speechSynthesis.cancel();
+    } else {
+      Tts.stop();
+    }
+  };
 
   const handleReadAloud = () => {
+     ttsCancelled = false; // Reset flag when starting new TTS
     // Get current language code (e.g., 'en', 'fi', 'de')
     const lang = i18n.language || 'en';
     // Map to BCP-47 for TTS (e.g., 'en-US', 'fi-FI', 'de-DE')
@@ -61,6 +76,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
         const chunks = splitIntoChunks(righOrWrong + explanation, 220);
         let idx = 0;
         const speakChunk = (i: number) => {
+          if (ttsCancelled) return;
           if (i >= chunks.length) return;
           const utterance = new window.SpeechSynthesisUtterance(chunks[i]);
           utterance.lang = ttsLang;
@@ -84,6 +100,11 @@ export const Explanation: React.FC<ExplanationProps> = ({
     Tts.setDefaultLanguage(ttsLang);
     Tts.stop();
     Tts.speak(explanation);
+  };
+
+   const handlerNextQuestion = () => {
+      stopTTS(); // Stop TTS before moving to next question
+      handleNext();
   };
 
 return (
@@ -178,6 +199,12 @@ return (
     </View>
     
     </ScrollView>
+    <TouchableOpacity onPress={handlerNextQuestion}>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                {/* <Text style={styles.buttonText}>Next </Text> */}
+                <Ionicons name="arrow-forward" size={35} color="white" style={{ marginRight: 6 }} />
+              </View>
+                </TouchableOpacity>
   </View>
 );
 }
