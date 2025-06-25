@@ -220,8 +220,8 @@ export default function TabOneScreen() {
             />
             <TouchableOpacity onPress={handleNext}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={styles.buttonText}>Next </Text>
-                <Ionicons name="arrow-forward" size={20} color="white" style={{ marginRight: 6 }} />
+                {/* <Text style={styles.buttonText}>Next </Text> */}
+                <Ionicons name="arrow-forward" size={35} color="white" style={{ marginRight: 6 }} />
               </View>
                 </TouchableOpacity>
                 </>
@@ -265,8 +265,8 @@ export default function TabOneScreen() {
          {(selectedQuiz || scoreVisible) && (
           <TouchableOpacity onPress={handleBack} style={{ marginLeft: 18, marginBottom: 20 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Ionicons name="arrow-back" size={16} color="white" style={{ marginRight: 6 }} />
-            <Text style={styles.buttonText}>{t('back')}</Text>
+            <Ionicons name="arrow-back" size={35} color="white" style={{ marginRight: 6 }} />
+            {/* <Text style={styles.buttonText}>{t('back')}</Text> */}
           </View>
         </TouchableOpacity>
         )}
