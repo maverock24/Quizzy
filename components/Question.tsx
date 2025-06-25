@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import Tts from 'react-native-tts';
 
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
@@ -154,7 +155,7 @@ export const Question: React.FC<QuestionProps> = ({
     userQuizLoadEnabled,
     setUserQuizLoadEnabled,
   } = useQuiz();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
   const fadeAnim = useRef(new Animated.Value(0)).current;
   // Instead of useRef, use useState to recreate animation values when answers change
@@ -288,6 +289,70 @@ export const Question: React.FC<QuestionProps> = ({
     }, 4000); // 2-second delay
   };
 
+  // TTS: Read aloud question and answers
+  const handleReadAloud = () => {
+    const questionText = typeof question === 'string' ? question : '';
+    const answersText = answers.map((a, i) => `${answerLabels[i]} ${a.answer}`).join('. ');
+    const fullText = `${t('question')} ${currentQuestionIndex + 1} of ${selectedQuizAnswersAmount}. ${questionText}. ${t('answers')}: ${answersText}`;
+
+    // Get current language code (e.g., 'en', 'fi', 'de')
+    const lang = i18n.language || 'en';
+    // Map to BCP-47 for TTS (e.g., 'en-US', 'fi-FI', 'de-DE')
+    const langMap: Record<string, string> = {
+      en: 'en-US',
+      fi: 'fi-FI',
+      de: 'de-DE',
+    };
+    const ttsLang = langMap[lang] || 'en-US';
+
+    if (Platform.OS === 'web') {
+      if ('speechSynthesis' in window) {
+        // Improved chunking: only split at sentence boundaries, unless a sentence is very long
+        const splitIntoChunks = (text: string, maxLen = 220) => {
+          // Split on . or ? or !, but keep the delimiter
+          const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
+          let chunks: string[] = [];
+          for (let sentence of sentences) {
+            sentence = sentence.trim();
+            if (sentence.length <= maxLen) {
+              chunks.push(sentence);
+            } else {
+              // Only split mid-sentence if absolutely necessary
+              for (let i = 0; i < sentence.length; i += maxLen) {
+                chunks.push(sentence.slice(i, i + maxLen));
+              }
+            }
+          }
+          return chunks.filter(Boolean);
+        };
+        const chunks = splitIntoChunks(fullText, 220);
+        let idx = 0;
+        const speakChunk = (i: number) => {
+          if (i >= chunks.length) return;
+          const utterance = new window.SpeechSynthesisUtterance(chunks[i]);
+          utterance.lang = ttsLang;
+          utterance.rate = 1.0;
+          utterance.onend = () => {
+            setTimeout(() => speakChunk(i + 1), 80);
+          };
+          utterance.onerror = () => {
+            setTimeout(() => speakChunk(i + 1), 80);
+          };
+          window.speechSynthesis.speak(utterance);
+        };
+        window.speechSynthesis.cancel();
+        speakChunk(0);
+      } else {
+        alert('Text-to-speech is not supported in this browser.');
+      }
+      return;
+    }
+    // Native (iOS/Android)
+    Tts.setDefaultLanguage(ttsLang);
+    Tts.stop();
+    Tts.speak(fullText);
+  };
+
   return (
     <ScrollView style={styles.contentContainer}>
       <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between' }}>
@@ -340,8 +405,17 @@ export const Question: React.FC<QuestionProps> = ({
             </View>
             </View>
           </View>
-          <Text style={styles.questionText}>{renderRichText(question)}</Text>
-        </View>
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+            <Text style={styles.questionText}>{renderRichText(question)}</Text>
+            <TouchableOpacity
+                onPress={handleReadAloud}
+                style={{ marginLeft: 8, marginBottom: 8, alignSelf: 'flex-start', backgroundColor: 'rgb(86, 92, 99)', borderRadius: 8, padding: 8 }}
+                accessibilityLabel="Read question and answers aloud"
+              >
+                <Text style={{ color: 'white', fontSize: 14 }}>{t('read_aloud') || '🔊 Read Aloud'}</Text>
+              </TouchableOpacity>
+                    </View>
+          </View>
 
         {answers.map((answer, index) => (
           <Animated.View

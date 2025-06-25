@@ -33,5 +33,6 @@
   "Quiz_wins": "Gewonnen",
   "Quiz_losses": "Verloren",
   "Answers_right": "Richtige Antworten",
-  "Answers_wrong": "Falsche Antworten"
+  "Answers_wrong": "Falsche Antworten",
+  "read_aloud": "Vorlesen"
 }
