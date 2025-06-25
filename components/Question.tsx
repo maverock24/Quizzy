@@ -247,7 +247,19 @@ export const Question: React.FC<QuestionProps> = ({
     };
   }, [answerSelected]);
 
+  // Utility to stop TTS on both web and native
+  let ttsCancelled = false;
+  const stopTTS = () => {
+    if (Platform.OS === 'web' && 'speechSynthesis' in window) {
+      ttsCancelled = true;
+      window.speechSynthesis.cancel();
+    } else {
+      Tts.stop();
+    }
+  };
+
   const handleAnswer = (answer: string, index: number) => {
+    stopTTS(); // Stop TTS when moving to next question
     playSoundAnswerSelected();
     setSelectedAnswerIndex(index); // Highlight the selected button
     // Fade out other buttons except the clicked one
@@ -291,6 +303,7 @@ export const Question: React.FC<QuestionProps> = ({
 
   // TTS: Read aloud question and answers
   const handleReadAloud = () => {
+    ttsCancelled = false; // Reset flag when starting new TTS
     const questionText = typeof question === 'string' ? question : '';
     const answersText = answers.map((a, i) => `${answerLabels[i]} ${a.answer}`).join('. ');
     const fullText = `${questionText}.${answersText}`;
@@ -328,6 +341,7 @@ export const Question: React.FC<QuestionProps> = ({
         const chunks = splitIntoChunks(fullText, 220);
         let idx = 0;
         const speakChunk = (i: number) => {
+          if (ttsCancelled) return;
           if (i >= chunks.length) return;
           const utterance = new window.SpeechSynthesisUtterance(chunks[i]);
           utterance.lang = ttsLang;

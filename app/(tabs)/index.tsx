@@ -209,7 +209,7 @@ export default function TabOneScreen() {
           )}
 
           {showExplanation && explanationMode && selectedQuiz && (
-            <>
+            
             <Explanation
               answerIsCorrect={answerIsCorrect}
               explanation={
@@ -217,14 +217,10 @@ export default function TabOneScreen() {
               }
               currentQuestionIndex={currentQuestionIndex}
               selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+              handleNext={handleNext}
             />
-            <TouchableOpacity onPress={handleNext}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                {/* <Text style={styles.buttonText}>Next </Text> */}
-                <Ionicons name="arrow-forward" size={35} color="white" style={{ marginRight: 6 }} />
-              </View>
-                </TouchableOpacity>
-                </>
+            
+                
           )}
 
           {selectedQuiz && !explanationMode && (
