@@ -11,6 +11,7 @@ import { t } from 'i18next';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useReadAloud } from '@/components/useReadAloud';
 
 // Function to shuffle array (Fi
 const shuffleArray = (array: any[]) => {
@@ -31,6 +32,8 @@ export default function TabOneScreen() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [score, setScore] = useState<number>(0);
   const [scoreVisible, setScoreVisible] = useState<boolean>(false);
+
+  const { stopTTS } = useReadAloud();
 
   // Get quizzes from context
   const {
@@ -101,6 +104,7 @@ export default function TabOneScreen() {
   };
 
   const handleBack = () => {
+    stopTTS();
     setSelectedQuiz(undefined);
     setSelectedQuizName(null);
     setCurrentQuestionIndex(0);

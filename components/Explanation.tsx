@@ -7,7 +7,7 @@ import { Dimensions } from 'react-native';
 import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useQuiz } from './Quizprovider';
-import Tts from 'react-native-tts';
+import { useReadAloud } from './useReadAloud';
 
 type ExplanationProps = {
   answerIsCorrect: boolean;
@@ -26,85 +26,19 @@ export const Explanation: React.FC<ExplanationProps> = ({
   selectedQuizAnswersAmount,
   handleNext,
 }) => {
-
   const { flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled } = useQuiz();
   const { t, i18n } = useTranslation();
+  const { readAloud, stopTTS } = useReadAloud();
 
   const righOrWrong = answerIsCorrect ? t('correct') : t('wrong');
 
- 
-   // Utility to stop TTS on both web and native
-  let ttsCancelled = false;
-  const stopTTS = () => {
-    if (Platform.OS === 'web' && 'speechSynthesis' in window) {
-      ttsCancelled = true;
-      window.speechSynthesis.cancel();
-    } else {
-      Tts.stop();
-    }
-  };
-
   const handleReadAloud = () => {
-     ttsCancelled = false; // Reset flag when starting new TTS
-    // Get current language code (e.g., 'en', 'fi', 'de')
-    const lang = i18n.language || 'en';
-    // Map to BCP-47 for TTS (e.g., 'en-US', 'fi-FI', 'de-DE')
-    const langMap: Record<string, string> = {
-      en: 'en-US',
-      fi: 'fi-FI',
-      de: 'de-DE',
-    };
-    const ttsLang = langMap[lang] || 'en-US';
-    if (Platform.OS === 'web') {
-      if ('speechSynthesis' in window) {
-        // Improved chunking: only split at sentence boundaries, unless a sentence is very long
-        const splitIntoChunks = (text: string, maxLen = 220) => {
-          const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g) || [text];
-          let chunks: string[] = [];
-          for (let sentence of sentences) {
-            sentence = sentence.trim();
-            if (sentence.length <= maxLen) {
-              chunks.push(sentence);
-            } else {
-              for (let i = 0; i < sentence.length; i += maxLen) {
-                chunks.push(sentence.slice(i, i + maxLen));
-              }
-            }
-          }
-          return chunks.filter(Boolean);
-        };
-        const chunks = splitIntoChunks(righOrWrong + explanation, 220);
-        let idx = 0;
-        const speakChunk = (i: number) => {
-          if (ttsCancelled) return;
-          if (i >= chunks.length) return;
-          const utterance = new window.SpeechSynthesisUtterance(chunks[i]);
-          utterance.lang = ttsLang;
-          utterance.rate = 1.0;
-          utterance.onend = () => {
-            setTimeout(() => speakChunk(i + 1), 80);
-          };
-          utterance.onerror = () => {
-            setTimeout(() => speakChunk(i + 1), 80);
-          };
-          window.speechSynthesis.speak(utterance);
-        };
-        window.speechSynthesis.cancel();
-        speakChunk(0);
-      } else {
-        alert('Text-to-speech is not supported in this browser.');
-      }
-      return;
-    }
-    // Native (iOS/Android)
-    Tts.setDefaultLanguage(ttsLang);
-    Tts.stop();
-    Tts.speak(explanation);
+    readAloud(righOrWrong + explanation);
   };
 
-   const handlerNextQuestion = () => {
-      stopTTS(); // Stop TTS before moving to next question
-      handleNext();
+  const handlerNextQuestion = () => {
+    stopTTS(); // Stop TTS before moving to next question
+    handleNext();
   };
 
 return (
