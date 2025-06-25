@@ -8328,336 +8328,358 @@
   {
     "name": "Tierreich",
     "questions": [
-        {
-            "question": "Welches Tier ist als das größte Säugetier der Erde bekannt?",
-            "answers": [
-                {"answer": "Afrikanischer Elefant"},
-                {"answer": "Blauwal"},
-                {"answer": "Pottwal"},
-                {"answer": "Giraffe"}
-            ],
-            "answer": "Blauwal",
-            "explanation": "Blauwale können Längen von bis zu 30 Metern erreichen und bis zu 200 Tonnen wiegen, was sie zu den größten Tieren macht, die jemals auf der Erde gelebt haben."
-        },
-        {
-            "question": "Was ist das schnellste Landtier?",
-            "answers": [
-                {"answer": "Löwe"},
-                {"answer": "Gepard"},
-                {"answer": "Leopard"},
-                {"answer": "Gazelle"}
-            ],
-            "answer": "Gepard",
-            "explanation": "Geparden können Geschwindigkeiten von bis zu 112 km/h in kurzen Sprints erreichen, was sie zum schnellsten Landtier des Planeten macht."
-        },
-        {
-            "question": "Welcher Vogel kann nicht fliegen?",
-            "answers": [
-                {"answer": "Adler"},
-                {"answer": "Pinguin"},
-                {"answer": "Falke"},
-                {"answer": "Spatz"}
-            ],
-            "answer": "Pinguin",
-            "explanation": "Pinguine sind flugunfähige Vögel, die sich stattdessen zu ausgezeichneten Schwimmern entwickelt haben. Ihre Flügel haben sich zu Flossen für den Unterwasserantrieb entwickelt."
-        },
-        {
-            "question": "Wie viele Herzen hat ein Tintenfisch?",
-            "answers": [
-                {"answer": "1"},
-                {"answer": "2"},
-                {"answer": "3"},
-                {"answer": "4"}
-            ],
-            "answer": "3",
-            "explanation": "Tintenfische haben drei Herzen: zwei pumpen Blut zu den Kiemen, während das dritte Blut zum Rest des Körpers pumpt. Das Hauptherz hört auf zu schlagen, wenn sie schwimmen."
-        },
-        {
-            "question": "Wie nennt man eine Gruppe von Löwen?",
-            "answers": [
-                {"answer": "Rudel"},
-                {"answer": "Herde"},
-                {"answer": "Stolz"},
-                {"answer": "Schwarm"}
-            ],
-            "answer": "Rudel",
-            "explanation": "Eine Gruppe von Löwen wird Rudel genannt, das typischerweise aus verwandten Weibchen, ihren Jungen und einigen erwachsenen Männchen besteht, die das Territorium verteidigen."
-        },
-        {
-            "question": "Welches Tier schläft am meisten pro Tag?",
-            "answers": [
-                {"answer": "Katze"},
-                {"answer": "Faultier"},
-                {"answer": "Koala"},
-                {"answer": "Bär"}
-            ],
-            "answer": "Koala",
-            "explanation": "Koalas schlafen 18-22 Stunden pro Tag aufgrund ihrer energiearmen Eukalyptus-Diät, die viel Energie zur Verdauung benötigt und minimale Nährstoffe liefert."
-        },
-        {
-            "question": "Was ist das einzige Säugetier, das zu echtem Flug fähig ist?",
-            "answers": [
-                {"answer": "Flughörnchen"},
-                {"answer": "Gleithörnchen"},
-                {"answer": "Fledermaus"},
-                {"answer": "Flugbeutler"}
-            ],
-            "answer": "Fledermaus",
-            "explanation": "Fledermäuse sind die einzigen Säugetiere, die zu anhaltendem Flug fähig sind. Andere 'fliegende' Säugetiere gleiten tatsächlich mit Hautlappen zwischen ihren Gliedmaßen."
-        },
-        {
-            "question": "Welches Tier hat die längste Lebensspanne?",
-            "answers": [
-                {"answer": "Elefant"},
-                {"answer": "Schildkröte"},
-                {"answer": "Grönlandhai"},
-                {"answer": "Wal"}
-            ],
-            "answer": "Grönlandhai",
-            "explanation": "Grönlandhaie können über 400 Jahre leben, einige werden auf über 500 Jahre geschätzt, was sie zu den langlebigsten bekannten Wirbeltieren macht."
-        },
-        {
-            "question": "Was fressen Pandas hauptsächlich?",
-            "answers": [
-                {"answer": "Fisch"},
-                {"answer": "Bambus"},
-                {"answer": "Früchte"},
-                {"answer": "Insekten"}
-            ],
-            "answer": "Bambus",
-            "explanation": "Große Pandas ernähren sich fast ausschließlich von Bambus und verzehren 12-38 Pfund pro Tag. Obwohl sie als Fleischfresser klassifiziert sind, besteht 99% ihrer Ernährung aus Bambus."
-        },
-        {
-            "question": "Welches Tier hat die stärkste Bisskraft?",
-            "answers": [
-                {"answer": "Weißer Hai"},
-                {"answer": "Krokodil"},
-                {"answer": "Nilpferd"},
-                {"answer": "Löwe"}
-            ],
-            "answer": "Krokodil",
-            "explanation": "Salzwasserkrokodile haben die stärkste Bisskraft aller Tiere, gemessen mit bis zu 1680 kg pro Quadratzentimeter."
-        },
-        {
-            "question": "Was ist das kleinste Säugetier der Welt?",
-            "answers": [
-                {"answer": "Spitzmaus"},
-                {"answer": "Maus"},
-                {"answer": "Hummelfledermaus"},
-                {"answer": "Hamster"}
-            ],
-            "answer": "Hummelfledermaus",
-            "explanation": "Die Hummelfledermaus (Kitts Schweinsnasenfledermaus) wiegt nur 1,5-2 Gramm und hat eine Flügelspannweite von 13-14,5 cm, was sie zum kleinsten Säugetier der Welt macht."
-        },
-        {
-            "question": "Welches Tier kann seine Farbe ändern?",
-            "answers": [
-                {"answer": "Echse"},
-                {"answer": "Chamäleon"},
-                {"answer": "Schlange"},
-                {"answer": "Schildkröte"}
-            ],
-            "answer": "Chamäleon",
-            "explanation": "Chamäleons ändern ihre Farbe durch spezialisierte Zellen namens Chromatophoren, die verschiedenfarbige Pigmente enthalten, die manipuliert werden können, um ihr Aussehen zu verändern."
-        },
-        {
-            "question": "Was ist die größte Bärenart?",
-            "answers": [
-                {"answer": "Grizzlybär"},
-                {"answer": "Eisbär"},
-                {"answer": "Braunbär"},
-                {"answer": "Schwarzbär"}
-            ],
-            "answer": "Eisbär",
-            "explanation": "Eisbären sind die größte Bärenart, erwachsene Männchen wiegen 400-600 Kilogramm. Sie sind perfekt an das Leben in der Arktis angepasst."
-        },
-        {
-            "question": "Welches Tier hat das beste Gedächtnis?",
-            "answers": [
-                {"answer": "Delfin"},
-                {"answer": "Elefant"},
-                {"answer": "Schimpanse"},
-                {"answer": "Hund"}
-            ],
-            "answer": "Elefant",
-            "explanation": "Elefanten haben außergewöhnliche Erinnerungen und können sich an andere Elefanten erinnern, die sie jahrzehntelang nicht gesehen haben. Sie erinnern sich auch an Dürregebiete und Wanderrouten."
-        },
-        {
-            "question": "Was ist das giftigste Tier der Welt?",
-            "answers": [
-                {"answer": "Königskobra"},
-                {"answer": "Schwarze Mamba"},
-                {"answer": "Würfelqualle"},
-                {"answer": "Blaugeringelter Krake"}
-            ],
-            "answer": "Würfelqualle",
-            "explanation": "Würfelquallen gelten als die giftigsten Tiere der Erde. Ihr Gift kann Herzstillstand und Tod innerhalb von Minuten nach Kontakt verursachen."
-        },
-        {
-            "question": "Welches Tier kann am längsten ohne Wasser leben?",
-            "answers": [
-                {"answer": "Kamel"},
-                {"answer": "Kängururatte"},
-                {"answer": "Wüstenschildkröte"},
-                {"answer": "Wüstenfuchs"}
-            ],
-            "answer": "Kängururatte",
-            "explanation": "Kängururratten können ihr ganzes Leben ohne Trinkwasser überleben und gewinnen alle notwendige Feuchtigkeit aus den Samen, die sie fressen, und ihren effizienten Nieren."
-        },
-        {
-            "question": "Was ist der größte Vogel der Welt?",
-            "answers": [
-                {"answer": "Adler"},
-                {"answer": "Strauß"},
-                {"answer": "Emu"},
-                {"answer": "Kondor"}
-            ],
-            "answer": "Strauß",
-            "explanation": "Strauße sind die größten lebenden Vögel, werden bis zu 2,7 Meter hoch und wiegen bis zu 145 Kilogramm. Sie können auch bis zu 72 km/h laufen."
-        },
-        {
-            "question": "Welches Tier hat die meisten Zähne?",
-            "answers": [
-                {"answer": "Hai"},
-                {"answer": "Krokodil"},
-                {"answer": "Schnecke"},
-                {"answer": "Delfin"}
-            ],
-            "answer": "Schnecke",
-            "explanation": "Gartenschnecken können über 14.000 Zähne in Reihen auf ihrem zungenähnlichen Organ namens Radula haben, das sie zum Schaben von Nahrung verwenden."
-        },
-        {
-            "question": "Was ist das schnellste Meerestier?",
-            "answers": [
-                {"answer": "Delfin"},
-                {"answer": "Thunfisch"},
-                {"answer": "Segelfisch"},
-                {"answer": "Barrakuda"}
-            ],
-            "answer": "Segelfisch",
-            "explanation": "Segelfische können Geschwindigkeiten von bis zu 110 km/h erreichen, was sie zu den schnellsten Fischen im Ozean macht. Sie nutzen ihre Geschwindigkeit, um Schwärme kleinerer Fische zu jagen."
-        },
-        {
-            "question": "Welches Tier hat die dickste Haut?",
-            "answers": [
-                {"answer": "Elefant"},
-                {"answer": "Nashorn"},
-                {"answer": "Nilpferd"},
-                {"answer": "Wal"}
-            ],
-            "answer": "Wal",
-            "explanation": "Wale, insbesondere Pottwale, haben die dickste Haut aller Tiere, wobei einige Bereiche bis zu 35 cm dick sind, um Isolation in kalten Ozeangewässern zu bieten."
-        },
-        {
-            "question": "Welcher ist der einzige Kontinent ohne einheimische Ameisen?",
-            "answers": [
-                {"answer": "Antarktis"},
-                {"answer": "Australien"},
-                {"answer": "Arktis"},
-                {"answer": "Grönland"}
-            ],
-            "answer": "Antarktis",
-            "explanation": "Die Antarktis ist der einzige Kontinent, auf dem Ameisen nicht natürlich vorkommen, aufgrund der extremen Kälte, die ihr Überleben unmöglich macht."
-        },
-        {
-            "question": "Welches Tier hat das größte Gehirn-Körper-Verhältnis?",
-            "answers": [
-                {"answer": "Mensch"},
-                {"answer": "Delfin"},
-                {"answer": "Ameise"},
-                {"answer": "Elefant"}
-            ],
-            "answer": "Ameise",
-            "explanation": "Ameisen haben das größte Gehirn-Körper-Verhältnis aller Tiere, wobei ihr Gehirn etwa 15% ihres Gesamtkörpergewichts ausmacht, verglichen mit 2% beim Menschen."
-        },
-        {
-            "question": "Was ist das lauteste Tier der Erde?",
-            "answers": [
-                {"answer": "Löwe"},
-                {"answer": "Elefant"},
-                {"answer": "Blauwal"},
-                {"answer": "Brüllaffe"}
-            ],
-            "answer": "Blauwal",
-            "explanation": "Blauwale produzieren Geräusche, die bis zu 188 Dezibel erreichen können und von anderen Walen aus hunderten von Kilometern Entfernung unter Wasser gehört werden können."
-        },
-        {
-            "question": "Welches Tier kann verlorene Körperteile nachwachsen lassen?",
-            "answers": [
-                {"answer": "Echse"},
-                {"answer": "Seestern"},
-                {"answer": "Salamander"},
-                {"answer": "Alle oben genannten"}
-            ],
-            "answer": "Alle oben genannten",
-            "explanation": "Echsen können Schwänze nachwachsen lassen, Seesterne können Arme und sogar ihren ganzen Körper aus einem einzigen Arm nachwachsen lassen, und Salamander können Gliedmaßen, Schwänze und sogar Teile ihres Herzens und Gehirns regenerieren."
-        },
-        {
-            "question": "Was ist das intelligenteste wirbellose Tier?",
-            "answers": [
-                {"answer": "Biene"},
-                {"answer": "Tintenfisch"},
-                {"answer": "Spinne"},
-                {"answer": "Ameise"}
-            ],
-            "answer": "Tintenfisch",
-            "explanation": "Tintenfische gelten als die intelligentesten wirbellosen Tiere, fähig zur Problemlösung, Werkzeugnutzung, Öffnen von Gläsern und zeigen sogar spielerisches Verhalten."
-        },
-        {
-            "question": "Welches Tier hat das stärkste Sehvermögen?",
-            "answers": [
-                {"answer": "Adler"},
-                {"answer": "Falke"},
-                {"answer": "Fangschreckenkrebs"},
-                {"answer": "Eule"}
-            ],
-            "answer": "Fangschreckenkrebs",
-            "explanation": "Fangschreckenkrebse haben die komplexesten Augen im Tierreich mit 16 Arten von Photorezeptoren (Menschen haben 3) und können ultraviolettes, sichtbares und polarisiertes Licht sehen."
-        },
-        {
-            "question": "Was ist der kleinste Vogel der Welt?",
-            "answers": [
-                {"answer": "Zaunkönig"},
-                {"answer": "Kolibri"},
-                {"answer": "Bienenkolibri"},
-                {"answer": "Fink"}
-            ],
-            "answer": "Bienenkolibri",
-            "explanation": "Der in Kuba vorkommende Bienenkolibri ist der kleinste Vogel der Welt, wiegt weniger als 2 Gramm und misst nur 5,7 Zentimeter in der Länge."
-        },
-        {
-            "question": "Welches Tier hat die längste Wanderroute?",
-            "answers": [
-                {"answer": "Monarchfalter"},
-                {"answer": "Grauwal"},
-                {"answer": "Küstenseeschwalbe"},
-                {"answer": "Karibu"}
-            ],
-            "answer": "Küstenseeschwalbe",
-            "explanation": "Küstenseeschwalben haben die längste Wanderung aller Tiere und reisen jährlich etwa 70.800 Kilometer von der Arktis zur Antarktis und zurück, wobei sie zwei Sommer pro Jahr erleben."
-        },
-        {
-            "question": "Was ist das einzige Säugetier, das Eier legt?",
-            "answers": [
-                {"answer": "Schnabeltier"},
-                {"answer": "Ameisenigel"},
-                {"answer": "Sowohl A als auch B"},
-                {"answer": "Känguru"}
-            ],
-            "answer": "Sowohl A als auch B",
-            "explanation": "Schnabeltiere und Ameisenigel sind Kloakentiere, die einzigen Säugetiere, die Eier legen, anstatt lebende Junge zu gebären. Sie kommen ausschließlich in Australien und Neuguinea vor."
-        },
-        {
-            "question": "Welches Tier hat die stärkste Griffkraft?",
-            "answers": [
-                {"answer": "Gorilla"},
-                {"answer": "Schimpanse"},
-                {"answer": "Orang-Utan"},
-                {"answer": "Mensch"}
-            ],
-            "answer": "Orang-Utan",
-            "explanation": "Orang-Utans haben die stärkste Griffkraft aller Primaten mit der Fähigkeit, mit einer Kraft von bis zu 272 kg pro Quadratzentimeter zu greifen, etwa 7-mal stärker als Menschen."
-        }
+          {
+      "question": "Welches Tier ist das größte lebende Säugetier der Welt?",
+      "answers": [
+        {"answer": "Afrikanischer Elefant"},
+        {"answer": "Blauwal"},
+        {"answer": "Giraffe"},
+        {"answer": "Weißer Hai"}
+      ],
+      "answer": "Blauwal",
+      "explanation": "Der Blauwal (Balaenoptera musculus) ist nicht nur das größte lebende Säugetier, sondern das größte Tier, das jemals auf der Erde gelebt hat. Erwachsene Blauwale erreichen Längen von bis zu 30 Metern und ein Gewicht von bis zu 200 Tonnen. Ihr Herz allein wiegt etwa 600 kg und ist so groß wie ein kleines Auto. Trotz ihrer enormen Größe ernähren sich Blauwale hauptsächlich von winzigen Krebstieren (Krill). Sie können bis zu 4 Tonnen Krill pro Tag fressen. Blauwale sind Bartenwale und nutzen ihre Barten (hornige Filterplatten) zum Filtern des Krills aus dem Meerwasser. Sie sind in allen Ozeanen zu finden, wandern aber saisonal zwischen Nahrungs- und Fortpflanzungsgebieten. Aufgrund der intensiven Bejagung im 20. Jahrhundert war die Art vom Aussterben bedroht, hat sich aber langsam erholt. Heute wird der Bestand auf etwa 10.000-25.000 Individuen weltweit geschätzt."
+    },
+    {
+      "question": "Zu welcher Tierkategorie gehören Spinnen?",
+      "answers": [
+        {"answer": "Insekten"},
+        {"answer": "Spinnentiere (Arachnida)"},
+        {"answer": "Krebstiere"},
+        {"answer": "Tausendfüßer"}
+      ],
+      "answer": "Spinnentiere (Arachnida)",
+      "explanation": "Spinnen gehören zu den Spinnentieren (Arachnida), einer Klasse der Gliederfüßer (Arthropoda). Sie unterscheiden sich von Insekten durch mehrere wichtige Merkmale: Spinnen haben acht Beine (Insekten haben sechs), ihr Körper ist in zwei Segmente unterteilt (Cephalothorax und Abdomen, während Insekten drei Segmente haben: Kopf, Thorax und Abdomen), und sie haben keine Flügel oder Fühler. Spinnen besitzen Cheliceren (Kieferklauen) mit Giftdrüsen, die sie zum Töten ihrer Beute verwenden. Die meisten der etwa 48.000 bekannten Spinnenarten sind Raubtiere, die andere Arthropoden jagen. Viele Spinnen produzieren Seide aus speziellen Drüsen, die sie zum Bau von Netzen, als Sicherheitsleine oder zur Eiablage verwenden. Spinnenarten reichen von winzigen Vertretern mit wenigen Millimetern Körperlänge bis zu großen Vogelspinnen mit einer Beinspannweite von über 25 cm."
+    },
+    {
+      "question": "Welche Eigenschaft unterscheidet Säugetiere von allen anderen Wirbeltieren?",
+      "answers": [
+        {"answer": "Sie legen Eier"},
+        {"answer": "Sie haben warmes Blut"},
+        {"answer": "Sie produzieren Milch für ihre Jungen"},
+        {"answer": "Sie haben vier Gliedmaßen"}
+      ],
+      "answer": "Sie produzieren Milch für ihre Jungen",
+      "explanation": "Die Milchproduktion ist das charakteristischste und einzigartigste Merkmal der Säugetiere (Mammalia). Alle weiblichen Säugetiere besitzen Milchdrüsen (Mammae), die eine nährstoffreiche Flüssigkeit produzieren, um ihre Nachkommen zu ernähren. Diese Milch enthält alle notwendigen Nährstoffe, Antikörper und andere bioaktive Substanzen, die für das Wachstum und die Entwicklung der Jungtiere essentiell sind. Während andere Merkmale wie Warmblütigkeit auch bei Vögeln vorkommen und nicht alle Säugetiere vier Gliedmaßen haben (z.B. Wale und Seekühe), ist die Laktation einzigartig für Säugetiere. Weitere charakteristische Merkmale der Säugetiere sind: Haare oder Fell (auch wenn bei einigen Arten wie Walen nur in der Embryonalentwicklung vorhanden), drei Gehörknöchelchen im Mittelohr, ein vierkammeriges Herz und ein Zwerchfell. Die etwa 5.400 Säugetierarten reichen von winzigen Fledermäusen bis zu den gigantischen Walen."
+    },
+    {
+      "question": "Welches Insekt führt einen der längsten Wanderungen im Tierreich durch?",
+      "answers": [
+        {"answer": "Monarchfalter"},
+        {"answer": "Wanderheuschrecke"},
+        {"answer": "Libelle"},
+        {"answer": "Marienkäfer"}
+      ],
+      "answer": "Monarchfalter",
+      "explanation": "Der Monarchfalter (Danaus plexippus) unternimmt eine der bemerkenswertesten Wanderungen im Tierreich. Diese orange-schwarzen Schmetterlinge fliegen jährlich bis zu 4.000 Kilometer von ihren Brutgebieten in Kanada und den nördlichen USA zu ihren Überwinterungsgebieten in den Bergen Zentralmexikos. Das Erstaunliche ist, dass es bis zu vier Generationen dauert, bis die Falter wieder in ihre nördlichen Brutgebiete zurückkehren. Die Generation, die die Wanderung nach Süden antritt, lebt 6-8 Monate (im Gegensatz zu den 2-6 Wochen der anderen Generationen) und überwintert in dichten Kolonien in Oyamel-Tannenwäldern. Im Frühjahr beginnen diese Falter die Wanderung nach Norden, pflanzen sich unterwegs fort und sterben. Ihre Nachkommen setzen die Wanderung fort. Die Navigation erfolgt durch eine Kombination aus Sonnenkompass, Magnetfeld der Erde und genetisch programmierten Verhaltensmustern. Diese außergewöhnliche Wanderung ist durch Habitatverlust und Klimawandel bedroht."
+    },
+    {
+      "question": "Was ist das charakteristische Merkmal der Hohltiere (Cnidaria)?",
+      "answers": [
+        {"answer": "Sie haben ein Außenskelett"},
+        {"answer": "Sie besitzen Nesselzellen (Cnidozyten)"},
+        {"answer": "Sie haben segmentierte Körper"},
+        {"answer": "Sie besitzen ein zentrales Nervensystem"}
+      ],
+      "answer": "Sie besitzen Nesselzellen (Cnidozyten)",
+      "explanation": "Hohltiere (Cnidaria) zeichnen sich durch den Besitz spezieller Zellen aus, die Nesselzellen oder Cnidozyten genannt werden. Diese einzigartigen Zellen enthalten Nematocysten - winzige, harpunenartige Strukturen, die bei Berührung explosionsartig ausgeschossen werden können. Sie dienen dem Beutefang und der Verteidigung, da sie Gift injizieren oder die Beute mechanisch verletzen können. Cnidaria umfassen etwa 11.000 Arten, darunter Quallen, Korallen, Seeanemonen und Süßwasserpolypen (Hydra). Sie haben einen radialsymmetrischen Körperbau und bestehen aus nur zwei Zellschichten (Ektoderm und Entoderm), getrennt durch eine gelartige Substanz namens Mesoglea. Ihr Körper hat eine zentrale Gastrovaskularhöhle mit nur einer Öffnung, die sowohl als Mund als auch als After fungiert. Viele Cnidaria zeigen einen Generationswechsel zwischen einer sessilen Polypenform und einer schwimmenden Quallenform (Medusen). Korallen sind besonders wichtig für marine Ökosysteme und bilden die Grundlage der Korallenriffe."
+    },
+    {
+      "question": "Welcher Vogel ist flugunfähig und der größte lebende Vogel der Welt?",
+      "answers": [
+        {"answer": "Pinguin"},
+        {"answer": "Strauß"},
+        {"answer": "Emu"},
+        {"answer": "Kasuar"}
+      ],
+      "answer": "Strauß",
+      "explanation": "Der Afrikanische Strauß (Struthio camelus) ist der größte und schwerste lebende Vogel der Welt. Männchen können eine Höhe von bis zu 2,8 Metern erreichen und bis zu 160 kg wiegen. Obwohl Strauße flugunfähig sind, sind sie außergewöhnliche Läufer und können Geschwindigkeiten von bis zu 70 km/h erreichen. Ihre kräftigen Beine mit nur zwei Zehen pro Fuß sind perfekt an das Laufen angepasst. Strauße leben in den Savannen und Halbwüsten Afrikas und sind Allesfresser, die Pflanzen, Samen, Früchte und gelegentlich kleine Tiere fressen. Sie haben den größten Augapfel aller Landtiere (etwa 5 cm Durchmesser), was ihnen eine ausgezeichnete Fernsicht ermöglicht. Straußeneier sind die größten Vogeleier der Welt und wiegen etwa 1,5 kg. Ein interessanter Fakt ist, dass entgegen dem Mythos Strauße bei Gefahr nicht den Kopf in den Sand stecken, sondern entweder wegrennen oder sich flach auf den Boden legen, um weniger sichtbar zu sein."
+    },
+    {
+      "question": "Was ist das definierenden Merkmal der Wirbeltiere (Vertebrata)?",
+      "answers": [
+        {"answer": "Sie haben vier Gliedmaßen"},
+        {"answer": "Sie besitzen eine Wirbelsäule oder Chorda dorsalis"},
+        {"answer": "Sie haben warmes Blut"},
+        {"answer": "Sie leben nur im Wasser"}
+      ],
+      "answer": "Sie besitzen eine Wirbelsäule oder Chorda dorsalis",
+      "explanation": "Das definierende Merkmal der Wirbeltiere ist der Besitz einer Wirbelsäule oder zumindest einer Chorda dorsalis (Rückensaite) während ihrer Entwicklung. Die Wirbelsäule besteht aus einzelnen Wirbeln, die das Rückenmark schützen und dem Körper strukturelle Unterstützung bieten. Primitive Wirbeltiere wie Neunaugen und Rundmäuler haben eine knorpelige Chorda dorsalis, während höhere Wirbeltiere eine echte Wirbelsäule aus Knochen oder Knorpel entwickelt haben. Wirbeltiere gehören zum Stamm der Chordatiere (Chordata) und umfassen etwa 70.000 beschriebene Arten, darunter Fische, Amphibien, Reptilien, Vögel und Säugetiere. Weitere charakteristische Merkmale sind: ein geschlossenes Kreislaufsystem, ein zentrales Nervensystem mit Gehirn und Rückenmark, ein Endoskelett und eine bilaterale Symmetrie. Trotz ihrer relativ geringen Artenzahl im Vergleich zu wirbellosen Tieren dominieren Wirbeltiere viele Ökosysteme und zeigen eine bemerkenswerte Vielfalt in Größe, Form und Lebensweise."
+    },
+    {
+      "question": "Welches Meerestier kann sein Geschlecht im Laufe seines Lebens ändern?",
+      "answers": [
+        {"answer": "Clownfisch"},
+        {"answer": "Hai"},
+        {"answer": "Delfin"},
+        {"answer": "Seestern"}
+      ],
+      "answer": "Clownfisch",
+      "explanation": "Clownfische (Amphiprion spp.) zeigen einen faszinierenden Fall von sequentiellem Hermaphroditismus, bei dem sie ihr Geschlecht im Laufe ihres Lebens ändern können. Alle Clownfische werden als Männchen geboren und leben in einer strengen sozialen Hierarchie in Seeanemonen. In einer Anemone gibt es typischerweise ein großes, dominantes Weibchen, ein kleineres Männchen (ihr Partner) und mehrere noch kleinere, nicht-geschlechtsreife Juvenilen. Wenn das Weibchen stirbt, verwandelt sich das größte Männchen innerhalb weniger Wochen in ein Weibchen – ein Prozess, der irreversibel ist. Dies ist ein Beispiel für Protandrie (männlich zu weiblich). Diese Strategie ist evolutionär vorteilhaft, da größere Weibchen mehr Eier produzieren können. Die Geschlechtsumwandlung wird durch hormonelle Veränderungen gesteuert und umfasst sowohl Verhaltens- als auch physische Änderungen. Clownfische leben in symbiotischer Beziehung mit Seeanemonen und sind immun gegen deren Nesselgift durch eine spezielle Schleimschicht."
+    },
+    {
+      "question": "Welche Tiere gehören zu den Beuteltieren (Metatheria)?",
+      "answers": [
+        {"answer": "Nur Kängurus"},
+        {"answer": "Alle Säugetiere Australiens"},
+        {"answer": "Kängurus, Koalas, Opossums und verwandte Arten"},
+        {"answer": "Nur fleischfressende Säugetiere"}
+      ],
+      "answer": "Kängurus, Koalas, Opossums und verwandte Arten",
+      "explanation": "Beuteltiere (Metatheria oder Marsupialia) sind eine einzigartige Gruppe von Säugetieren, die ihre Jungen in einem sehr frühen Entwicklungsstadium zur Welt bringen und sie dann in einem Beutel (Marsupium) oder an Zitzen weiterentwickeln lassen. Zu den etwa 330 Beuteltierarten gehören nicht nur die bekannten australischen Arten wie Kängurus, Koalas, Wombats und Tasmanische Teufel, sondern auch Opossums in Nord- und Südamerika. Die Jungtiere sind bei der Geburt nur wenige Millimeter groß und praktisch embryonal. Sie krabbeln selbstständig zum Beutel oder zu den Zitzen der Mutter, wo sie sich festsaugen und ihre Entwicklung fortsetzen. Beuteltiere haben eine kürzere Tragzeit als Plazentatiere, aber eine längere Säugezeit. Interessanterweise haben weibliche Beuteltiere oft zwei Uteri und können gleichzeitig Embryonen in verschiedenen Entwicklungsstadien haben. Die größte Vielfalt an Beuteltieren findet sich in Australien und Neuguinea, wo sie fast alle ökologischen Nischen besetzen – von Pflanzenfressern bis zu Raubtieren."
+    },
+    {
+      "question": "Was macht Vögel zu einzigartigen Wirbeltieren?",
+      "answers": [
+        {"answer": "Sie haben Flügel"},
+        {"answer": "Sie sind warmblütig"},
+        {"answer": "Sie besitzen Federn"},
+        {"answer": "Sie legen Eier"}
+      ],
+      "answer": "Sie besitzen Federn",
+      "explanation": "Federn sind das einzigartige und charakteristische Merkmal der Vögel (Aves) – kein anderes Wirbeltier besitzt echte Federn. Diese komplexen Strukturen bestehen aus Keratin (dem gleichen Protein wie in Haaren und Nägeln) und haben sich aus Reptilienschuppen entwickelt. Federn erfüllen mehrere wichtige Funktionen: Flug (Schwung- und Steuerfedern), Thermoregulation (Isolierung durch Daunenfedern), Kommunikation und Partnerwerbung (Prachtfedern), Tarnung und Schutz. Es gibt verschiedene Federtypen: Konturfedern bilden die äußere Körperform, Daunenfedern isolieren, und spezialisierte Federn dienen sensorischen Funktionen. Während Flügel auch bei Fledermäusen und ausgestorbenen Pterosauriern vorkommen, Warmblütigkeit auch Säugetiere zeigen, und viele Wirbeltiere Eier legen, sind Federn ausschließlich bei Vögeln zu finden. Die etwa 10.000 Vogelarten zeigen eine erstaunliche Vielfalt in Größe (vom 5g schweren Bienenkolibri bis zum 150kg schweren Strauß), Lebensweise und Anpassungen. Moderne Vögel sind die letzten lebenden Dinosaurier, da sie sich aus theropoden Dinosauriern entwickelt haben."
+    },
+    {
+      "question": "Welches ist das giftigste Tier der Welt?",
+      "answers": [
+        {"answer": "Königskobra"},
+        {"answer": "Pfeilgiftfrosch"},
+        {"answer": "Seewespe (Chironex fleckeri)"},
+        {"answer": "Blauringkrake"}
+      ],
+      "answer": "Seewespe (Chironex fleckeri)",
+      "explanation": "Die Seewespe (Chironex fleckeri), auch Kasten-Qualle genannt, gilt als das giftigste Tier der Welt. Diese Würfelqualle aus den Gewässern Nordaustraliens und Südostasiens besitzt ein Gift, das stark genug ist, um binnen wenigen Minuten einen erwachsenen Menschen zu töten. Ihre bis zu 3 Meter langen Tentakel sind mit Millionen von Nesselzellen besetzt, die bei Berührung Gift injizieren. Das Gift enthält verschiedene Toxine, die das Herz-Kreislauf-System, das Nervensystem und die Haut angreifen. Es verursacht extreme Schmerzen, Herzkammerflimmern und kann zu Herzstillstand führen. Opfer beschreiben die Schmerzen als so intensiv, dass sie oft das Bewusstsein verlieren oder vor Schock sterben, bevor das Gift tödlich wirkt. Die Tentakel können auch nach dem Tod der Qualle noch stunden- oder sogar tagelang giftig bleiben. Trotz ihrer Gefährlichkeit sind Begegnungen mit Menschen relativ selten, da sie meist in flachen, warmen Küstengewässern leben. Ein wirksames Gegengift wurde entwickelt, muss aber sehr schnell verabreicht werden."
+    },
+    {
+      "question": "Welche Tiere bilden den Stamm der Gliederfüßer (Arthropoda)?",
+      "answers": [
+        {"answer": "Nur Insekten"},
+        {"answer": "Insekten, Spinnentiere, Krebstiere und Tausendfüßer"},
+        {"answer": "Nur Meerestiere"},
+        {"answer": "Nur Landtiere"}
+      ],
+      "answer": "Insekten, Spinnentiere, Krebstiere und Tausendfüßer",
+      "explanation": "Gliederfüßer (Arthropoda) bilden den artenreichsten Stamm im Tierreich mit über 1,2 Millionen beschriebenen Arten – das sind etwa 80% aller bekannten Tierarten. Sie umfassen vier Hauptgruppen: 1) Insekten (Hexapoda) - die größte Gruppe mit über 1 Million Arten, 2) Spinnentiere (Arachnida) - Spinnen, Skorpione, Milben und Zecken, 3) Krebstiere (Crustacea) - Krabben, Hummer, Garnelen, Asseln, 4) Tausendfüßer (Myriapoda) - Hundert- und Tausendfüßer. Alle Arthropoden teilen charakteristische Merkmale: einen segmentierten Körper, gegliederte Extremitäten, ein Außenskelett (Exoskelett) aus Chitin, und ein offenes Kreislaufsystem. Sie haben paarweise angeordnete Gliedmaßen erobert praktisch jeden Lebensraum der Erde – von den Tiefen der Ozeane bis zu den höchsten Bergen. Ihr Erfolg liegt in ihrer Anpassungsfähigkeit, der schützenden Chitinpanzer, ihrer effizienten Fortbewegung und bei Insekten der Fähigkeit zu fliegen. Viele sind ökologisch und wirtschaftlich wichtig als Bestäuber, Zersetzer oder als Nahrungsquelle für andere Tiere."
+    },
+    {
+      "question": "Welches Säugetier hat die längste Tragzeit?",
+      "answers": [
+        {"answer": "Wal"},
+        {"answer": "Elefant"},
+        {"answer": "Giraffe"},
+        {"answer": "Nashorn"}
+      ],
+      "answer": "Elefant",
+      "explanation": "Elefanten haben mit etwa 22 Monaten (660-680 Tage) die längste Tragzeit aller Säugetiere. Diese außergewöhnlich lange Schwangerschaft ist notwendig, damit das Kalb vollständig entwickelt zur Welt kommt. Neugeborene Elefanten wiegen bereits 100-120 kg und sind etwa einen Meter hoch. Sie müssen bei der Geburt bereits laufen können, um mit der Herde mithalten zu können. Das lange intrauterine Wachstum ermöglicht es, dass das Gehirn – das bei der Geburt bereits etwa 35% der Größe eines erwachsenen Elefantenhirns hat – ausreichend entwickelt ist. Elefanten haben auch eine der komplexesten Sozialstrukturen im Tierreich, und die neugeborenen Kälber müssen schnell lernen, sich in diese einzufügen. Die lange Tragzeit ist auch mit der enormen Körpergröße verbunden – Afrikanische Elefanten sind die größten Landtiere und können bis zu 7 Tonnen wiegen. Interessanterweise können Elefantenkühe die Entwicklung des Embryos bei Nahrungsknappheit verlangsamen, was die Tragzeit noch weiter verlängern kann."
+    },
+    {
+      "question": "Welche Anpassung ermöglicht es Pinguinen, in der Antarktis zu überleben?",
+      "answers": [
+        {"answer": "Warmes Blut"},
+        {"answer": "Dicke Fettschicht und dichte Federkleidung"},
+        {"answer": "Große Körpergröße"},
+        {"answer": "Schneller Stoffwechsel"}
+      ],
+      "answer": "Dicke Fettschicht und dichte Federkleidung",
+      "explanation": "Pinguine haben eine Reihe bemerkenswerte Anpassungen entwickelt, um in den extremen Kältebedingungen der Antarktis zu überleben. Die wichtigste ist ihr hochentwickeltes Isolationssystem aus einer dicken Fettschicht (bis zu 3 cm) und einem mehrschichtigen Federsystem. Pinguine haben etwa 100 Federn pro Quadratzentimeter – dreimal mehr als fliegende Vögel. Diese Federn bilden drei Schichten: äußere Deckfedern, die wasserabweisend sind, mittlere Isolierfedern und innere Daunenfedern. Zusätzlich haben sie ein spezielles Gegenstrom-Wärmetauschsystem in ihren Blutgefäßen: warmes arterielles Blut erwärmt das kalte venöse Blut, das von den Extremitäten zurückfließt. Dies verhindert Wärmeverlust und Erfrierungen. Pinguine können auch ihre Körpertemperatur in verschiedenen Körperregionen unterschiedlich regulieren und sich zu wärmenden Gruppen zusammenschließen. Kaiserpinguine, die extremsten Bedingungen ausgesetzt sind, können Temperaturen von -40°C und Windgeschwindigkeiten von 200 km/h überstehen."
+    },
+    {
+      "question": "Was ist eine Metamorphose bei Insekten?",
+      "answers": [
+        {"answer": "Der Wechsel des Lebensraums"},
+        {"answer": "Die Verwandlung von der Larve zum erwachsenen Tier"},
+        {"answer": "Der Paarungsvorgang"},
+        {"answer": "Die Winterruhe"}
+      ],
+      "answer": "Die Verwandlung von der Larve zum erwachsenen Tier",
+      "explanation": "Metamorphose ist der dramatische Entwicklungsprozess, bei dem sich Insekten von ihrer Larvenform zur erwachsenen Form (Imago) verwandeln. Es gibt zwei Haupttypen: 1) Vollständige Metamorphose (Holometabolie) - durchlaufen von etwa 60% aller Insektenarten wie Schmetterlingen, Käfern, Fliegen und Bienen. Sie haben vier Stadien: Ei → Larve → Puppe → Adult. Die Larve (z.B. Raupe) unterscheidet sich völlig vom Erwachsenen und verpuppt sich, wobei eine komplette Neuorganisation der Körperstrukturen stattfindet. 2) Unvollständige Metamorphose (Hemimetabolie) - bei Heuschrecken, Libellen und Wanzen. Sie haben drei Stadien: Ei → mehrere Nymphenstadien → Adult. Die Nymphen ähneln bereits den Erwachsenen, entwickeln aber erst bei der letzten Häutung Flügel und Geschlechtsorgane. Die Metamorphose wird durch Hormone gesteuert, hauptsächlich Ecdyson (Häutungshormon) und Juvenilhormon. Dieser Prozess ermöglicht es Insekten, verschiedene ökologische Nischen zu nutzen: Larven und Erwachsene können unterschiedliche Nahrung fressen und Lebensräume bewohnen, wodurch innerartliche Konkurrenz reduziert wird."
+    },
+    {
+      "question": "Welches Tier ist bekannt für seine Fähigkeit zur Echoortung?",
+      "answers": [
+        {"answer": "Adler"},
+        {"answer": "Fledermaus"},
+        {"answer": "Eule"},
+        {"answer": "Falke"}
+      ],
+      "answer": "Fledermaus",
+      "explanation": "Fledermäuse sind die bekanntesten Wirbeltiere für ihre ausgeprägte Echoortung (Biosonar), obwohl nicht alle der etwa 1.400 Fledermausarten diese Fähigkeit nutzen. Die Echoortung funktioniert, indem Fledermäuse Ultraschallrufe aussenden (meist 20-200 kHz, oberhalb der menschlichen Hörgrenze) und die Echos interpretieren, die von Objekten in ihrer Umgebung zurückgeworfen werden. Diese Biosonar-Systeme sind so präzise, dass Fledermäuse dünne Drähte erkennen, zwischen dicht stehenden Bäumen navigieren und winzige Insekten in völliger Dunkelheit fangen können. Es gibt zwei Haupttypen der Echoortung: konstante Frequenz (CF) und frequenzmodulierte (FM) Rufe. Jede Art hat ihre charakteristischen Rufmuster. Das Gehirn der Fledermäuse verarbeitet diese akustischen Informationen zu einem dreidimensionalen 'Hörbild' ihrer Umgebung. Interessanterweise haben auch Zahnwale (Delfine, Pottwale) und einige Vögel wie Salanganen ähnliche Echoortungsfähigkeiten entwickelt, was ein Beispiel für konvergente Evolution ist."
+    },
+    {
+      "question": "Welches Wirbeltier kann seine Haut komplett regenerieren?",
+      "answers": [
+        {"answer": "Salamander"},
+        {"answer": "Echse"},
+        {"answer": "Schlange"},
+        {"answer": "Frosch"}
+      ],
+      "answer": "Salamander",
+      "explanation": "Salamander, besonders Arten wie der Axolotl (Ambystoma mexicanum), besitzen außergewöhnliche Regenerationsfähigkeiten, die weit über die anderer Wirbeltiere hinausgehen. Sie können nicht nur ihre Haut, sondern ganze Gliedmaßen, Teile des Herzens, des Gehirns, der Augen und sogar des Rückenmarks vollständig regenerieren. Diese Regeneration erfolgt durch die Bildung eines Blastem – einer Masse undifferenzierter Zellen am Verletzungsort, die sich dann zu den verlorenen Strukturen entwickeln. Der Prozess kann Wochen bis Monate dauern, abhängig von der Größe der regenerierten Struktur. Was Salamander besonders macht, ist, dass sie als Erwachsene diese Fähigkeiten behalten, während die meisten anderen Wirbeltiere (einschließlich Menschen) diese nur in frühen Entwicklungsstadien haben. Die regenerierten Körperteile sind vollständig funktionsfähig und von den ursprünglichen nicht zu unterscheiden. Diese Fähigkeit macht Salamander zu wichtigen Modellorganismen in der Regenerationsforschung, da Wissenschaftler hoffen, diese Mechanismen zu verstehen und möglicherweise auf die medizinische Behandlung von Menschen zu übertragen."
+    },
+    {
+      "question": "Welches Merkmal charakterisiert alle Reptilien (Reptilia)?",
+      "answers": [
+        {"answer": "Sie legen immer Eier"},
+        {"answer": "Sie haben eine schuppenbedeckte Haut"},
+        {"answer": "Sie sind alle Fleischfresser"},
+        {"answer": "Sie leben nur an Land"}
+      ],
+      "answer": "Sie haben eine schuppenbedeckte Haut",
+      "explanation": "Das charakteristische Merkmal aller Reptilien ist ihre schuppenbedeckte Haut aus Keratin, die wasserdicht und trocken ist. Diese Anpassung war evolutionär entscheidend, da sie Reptilien ermöglichte, sich vollständig vom Wasser zu lösen und trockene Landlebensräume zu erobern. Die Schuppen verhindern Wasserverlust und schützen vor Verletzungen und UV-Strahlung. Reptilien häuten sich regelmäßig, um zu wachsen und ihre Haut zu erneuern. Nicht alle Reptilien legen Eier (viele Schlangen und Echsen sind lebendgebärend), sie sind nicht alle Fleischfresser (viele sind Pflanzenfresser oder Allesfresser), und sie leben nicht nur an Land (Meeresschildkröten, Seeschlangen). Die etwa 10.000 Reptilienarten umfassen vier Hauptgruppen: Schildkröten, Schuppenkriechtiere (Schlangen und Echsen), Krokodile und Brückenechsen. Sie sind ektotherm (wechselwarm), haben ein dreikammeriges Herz (außer Krokodilen mit vier Kammern) und typischerweise eine interne Befruchtung. Viele Reptilien zeigen bemerkenswerte Anpassungen wie die Fähigkeit von Geckos, an glatten Oberflächen zu laufen, oder die Wärmeortung von Grubenottern."
+    },
+    {
+      "question": "Welches Tier hat das größte Gehirn im Verhältnis zur Körpergröße?",
+      "answers": [
+        {"answer": "Delfin"},
+        {"answer": "Mensch"},
+        {"answer": "Spitzmaus"},
+        {"answer": "Kolibri"}
+      ],
+      "answer": "Spitzmaus",
+      "explanation": "Spitzmäuse haben das größte Gehirn-zu-Körpergewicht-Verhältnis aller Säugetiere. Ihr Gehirn macht etwa 10% ihres Körpergewichts aus – das ist mehr als doppelt so viel wie beim Menschen (etwa 2%). Diese winzigen Säugetiere (2-5 cm Körperlänge) haben ein extrem schnellen Stoffwechsel und müssen alle 2-3 Stunden fressen, um zu überleben. Ihr großes Gehirn ermöglicht es ihnen, komplexe Echoortung zu nutzen (ähnlich wie Fledermäuse), schnelle Reaktionen zu zeigen und ihre Umgebung präzise zu navigieren. Bei Kolibris ist das Verhältnis sogar noch extremer – ihr Gehirn kann bis zu 4,2% ihres Körpergewichts ausmachen, was für ihre komplexen Flugmanöver und Navigation notwendig ist. Dieses hohe Gehirn-zu-Körper-Verhältnis bei kleinen Tieren erklärt sich teilweise durch Skalierungseffekte: Gehirne schrumpfen nicht proportional mit der Körpergröße, da eine Mindestanzahl von Neuronen für grundlegende Funktionen erforderlich ist. Allerdings bedeutet die relative Gehirngröße nicht automatisch höhere Intelligenz, da auch die Gehirnorganisation und Neuronendichte wichtig sind."
+    },
+    {
+      "question": "Welche Tiere gehören zu den Stachelhäutern (Echinodermata)?",
+      "answers": [
+        {"answer": "Igel und Stachelschweine"},
+        {"answer": "Seesterne, Seeigel und Seegurken"},
+        {"answer": "Kaktusarten im Meer"},
+        {"answer": "Stachelige Fische"}
+      ],
+      "answer": "Seesterne, Seeigel und Seegurken",
+      "explanation": "Stachelhäuter (Echinodermata) sind ausschließlich marine Wirbelloser mit etwa 7.000 lebenden Arten. Zu ihnen gehören fünf Hauptklassen: Seesterne (Asteroidea), Seeigel (Echinoidea), Seegurken (Holothuroidea), Schlangensterne (Ophiuroidea) und Haarsterne/Seelilien (Crinoidea). Charakteristische Merkmale sind: ein Endoskelett aus Kalkplatten mit Stacheln oder Warzen, ein einzigartiges Wassergefäßsystem mit Ambulacralfüßchen für Fortbewegung und Nahrungsaufnahme, und als Erwachsene meist eine fünfstrahlige Radiärsymmetrie. Das Wassergefäßsystem ist ein hydraulisches System, das es ihnen ermöglicht, ihre röhrenförmigen Füßchen auszustrecken und einzuziehen. Viele Stachelhäuter haben bemerkenswerte Regenerationsfähigkeiten – Seesterne können verlorene Arme nachwachsen lassen, und einige Arten können sich durch Teilung fortpflanzen. Sie sind ökologisch wichtig als Räuber (viele Seesterne fressen Muscheln), Weidegänger (Seeigel) und Filtrierer (Seegurken). Fossil sind Stachelhäuter seit dem Kambrium bekannt und zeigten in der Vergangenheit eine noch größere Formenvielfalt."
+    },
+    {
+      "question": "Was ist das besondere an der Fortpflanzung der Seepferdchen?",
+      "answers": [
+        {"answer": "Sie legen die größten Eier im Meer"},
+        {"answer": "Die Männchen werden 'schwanger' und gebären die Jungen"},
+        {"answer": "Sie pflanzen sich asexuell fort"},
+        {"answer": "Sie leben nur einen Tag"}
+      ],
+      "answer": "Die Männchen werden 'schwanger' und gebären die Jungen",
+      "explanation": "Seepferdchen (Hippocampus) sind einzigartig im Tierreich, da bei ihnen die Männchen 'schwanger' werden und die Jungen zur Welt bringen. Während der Paarung überträgt das Weibchen ihre Eier in eine spezielle Bruttasche am Bauch des Männchens. Das Männchen befruchtet die Eier intern und trägt sie in seiner Bruttasche, wo sie 2-4 Wochen lang entwickeln. Die Bruttasche versorgt die entwickelnden Embryonen mit Nährstoffen und Sauerstoff, ähnlich wie eine Plazenta. Wenn die Jungen vollständig entwickelt sind, presst das Männchen sie in rhythmischen Kontraktionen aus der Bruttasche heraus. Je nach Art können 5-1500 winzige, vollständig entwickelte Seepferdchen geboren werden. Seepferdchen sind auch für ihre monogame Partnerschaft bekannt – viele Arten haben den gleichen Partner für die gesamte Fortpflanzungszeit oder sogar das ganze Leben. Sie begrüßen sich täglich mit rituellen Tänzen. Diese ungewöhnliche Rollenverteilung ermöglicht es den Weibchen, sich auf die Produktion energiereicher Eier zu konzentrieren, während die Männchen für die Brutpflege sorgen."
+    },
+    {
+      "question": "Welche Gruppe von Tieren entwickelte als erste die Fähigkeit zu fliegen?",
+      "answers": [
+        {"answer": "Vögel"},
+        {"answer": "Insekten"},
+        {"answer": "Fledermäuse"},
+        {"answer": "Fliegende Reptilien"}
+      ],
+      "answer": "Insekten",
+      "explanation": "Insekten waren die ersten Tiere, die die Fähigkeit zum aktiven Flug entwickelten, etwa 400 Millionen Jahre vor den ersten fliegenden Wirbeltieren. Ihre Flügel entstanden als Modifikationen der Tracheenkiemen oder als Erweiterungen der Körperwand und sind nicht homolog zu den Flügeln der Wirbeltiere. Die ersten flugfähigen Insekten gehörten zu primitiven Gruppen wie den Palaeodictyoptera im Karbon. Insektenflügel bestehen aus dünnen Chitinmembranen, die von Adern durchzogen sind. Im Gegensatz zu Vögeln und Fledermäusen, deren Flügel modifizierte Gliedmaßen sind, sind Insektenflügel zusätzliche Anhänge, sodass Insekten sowohl Flügel als auch sechs Beine behalten konnten. Die Evolution des Flugs war ein Schlüsselfaktor für den enormen evolutionären Erfolg der Insekten. Flug ermöglichte es ihnen, neue Lebensräume zu erschließen, Feinden zu entkommen, Nahrungsquellen zu finden und Partner zu treffen. Heute können über 75% aller Insektenarten fliegen. Insektenflug ist aerodynamisch hochentwickelt und umfasst komplexe Bewegungsmuster mit bis zu 1000 Flügelschlägen pro Sekunde bei manchen Mücken."
+    },
+    {
+      "question": "Was charakterisiert die Amphibien (Lurche)?",
+      "answers": [
+        {"answer": "Sie leben nur im Wasser"},
+        {"answer": "Sie haben ihre Metamorphose von aquatischen Larven zu terrestrischen Erwachsenen"},
+        {"answer": "Sie sind alle giftig"},
+        {"answer": "Sie haben Schuppen"}
+      ],
+      "answer": "Sie haben ihre Metamorphose von aquatischen Larven zu terrestrischen Erwachsenen",
+      "explanation": "Amphibien (Lurche) sind durch ihre charakteristische biphasische Lebensweise definiert: Sie beginnen ihr Leben als aquatische Larven (z.B. Kaulquappen) mit Kiemen und verwandeln sich durch Metamorphose zu lungenatmenden, meist terrestrischen Erwachsenen. Dieser doppelte Lebenszyklus gab ihnen ihren Namen (griechisch 'amphi' = doppelt, 'bios' = Leben). Die drei Hauptgruppen sind: Frösche und Kröten (Anura), Salamander und Molche (Caudata), und Schleichenlurche (Gymnophiona). Charakteristische Merkmale umfassen: feuchte, schleimige Haut ohne Schuppen, die bei der Hautatmung hilft; meist externe Befruchtung; Eier ohne harte Schale, die in feuchter Umgebung gelegt werden müssen. Amphibien waren die ersten Wirbeltiere, die das Land eroberten (vor etwa 365 Millionen Jahren), aber die meisten sind immer noch an feuchte Umgebungen gebunden. Sie sind ektotherm und nutzen Verhaltensthermoregulation. Viele haben Giftdrüsen in der Haut für den Schutz vor Räubern. Amphibien sind besonders empfindlich gegenüber Umweltverschmutzung und Klimawandel, da sie über ihre durchlässige Haut Schadstoffe aufnehmen können."
+    },
+    {
+      "question": "Welches Tier hat den stärksten Biss im Tierreich?",
+      "answers": [
+        {"answer": "Löwe"},
+        {"answer": "Salzwasserkrokodil"},
+        {"answer": "Weißer Hai"},
+        {"answer": "T-Rex (ausgestorben)"}
+      ],
+      "answer": "Salzwasserkrokodil",
+      "explanation": "Das Salzwasserkrokodil (Crocodylus porosus) hat mit gemessenen 16.460 Newton (etwa 1.700 kg Druckkraft) pro Quadratzentimeter die stärkste Bisskraft aller heute lebenden Tiere. Diese enorme Kraft wird durch massive Kiefermuskeln erzeugt, die bis zu 25% der Körpermasse ausmachen können. Die konischen Zähne sind perfekt dafür ausgelegt, Beute zu packen und festzuhalten, während die immense Bisskraft Knochen zermalmt. Interessant ist, dass die Muskeln zum Öffnen des Mauls relativ schwach sind – ein Mensch kann das Maul eines Krokodils mit den Händen geschlossen halten. Salzwasserkrokodile sind die größten lebenden Reptilien und können über 6 Meter lang und mehr als 1000 kg schwer werden. Ihre Bisskraft übertrifft die von Löwen (ca. 4.500 N), Weißen Haien (ca. 18.000 N, aber diese Zahl ist umstritten) und sogar vielen ausgestorbenen Raubtieren. Krokodile haben diese Kraft über 200 Millionen Jahre Evolution entwickelt und verwenden sie, um große Beutetiere zu überwältigen, einschließlich Wasserbüffel und sogar kleinerer Krokodile."
+    },
+    {
+      "question": "Was macht Plattwürmer (Platyhelminthes) besonders?",
+      "answers": [
+        {"answer": "Sie sind die einzigen Würmer mit Beinen"},
+        {"answer": "Sie haben kein Verdauungssystem"},
+        {"answer": "Sie sind bilateral symmetrisch und haben ein einfaches Gehirn"},
+        {"answer": "Sie leben nur in heißen Quellen"}
+      ],
+      "answer": "Sie sind bilateral symmetrisch und haben ein einfaches Gehirn",
+      "explanation": "Plattwürmer (Platyhelminthes) sind evolutionär bedeutsam als die einfachsten Tiere mit bilateraler Symmetrie und einem zentralisierten Nervensystem. Mit etwa 25.000 Arten umfassen sie drei Hauptgruppen: Strudelwürmer (Turbellaria, meist freilebend), Saugwürmer (Trematoda, Parasiten) und Bandwürmer (Cestoda, Darmparasiten). Ihr flacher Körper ist eine Anpassung an das Fehlen eines Kreislaufsystems – Sauerstoff und Nährstoffe müssen durch Diffusion zu allen Zellen gelangen, was nur bei geringer Körperdicke möglich ist. Sie besitzen ein 'Gehirn' in Form von Ganglien am Kopfende und ein leiterförmiges Nervensystem. Viele haben einfache Augenflecken (Ocelli) zur Lichtwahrnehmung. Das Verdauungssystem ist bei den meisten Arten vorhanden, aber es gibt nur eine Öffnung, die sowohl als Mund als auch als After fungiert. Plattwürmer zeigen bemerkenswerte Regenerationsfähigkeiten – manche Arten können aus einem Körperfragment einen kompletten neuen Wurm bilden. Diese Fähigkeit macht sie zu wichtigen Modellorganismen in der Regenerationsforschung."
+    },
+    {
+      "question": "Welches Tier kann am tiefsten tauchen?",
+      "answers": [
+        {"answer": "Blauwal"},
+        {"answer": "Cuvier-Schnabelwal"},
+        {"answer": "Seeelefant"},
+        {"answer": "Kaiserpinguin"}
+      ],
+      "answer": "Cuvier-Schnabelwal",
+      "explanation": "Der Cuvier-Schnabelwal (Ziphius cavirostris) hält den Rekord für die tiefsten und längsten Tauchgänge aller Säugetiere. Satelliten-Tagging hat Tauchgänge bis zu 2.992 Meter Tiefe und Tauchzeiten von bis zu 222 Minuten dokumentiert. Diese außergewöhnlichen Fähigkeiten ermöglichen es ihnen, in den Tiefseeregionen nach Tintenfischen und Tiefseefischen zu jagen, wo es kaum Konkurrenz gibt. Ihre Anpassungen an das Tieftauchen umfassen: eine sehr hohe Konzentration von Myoglobin in den Muskeln (ein Protein, das Sauerstoff speichert), kollabierbare Lungen, die bei hohem Druck nicht implodieren, flexible Rippen, ein verlangsamter Herzschlag (Bradykardie) und die Fähigkeit, große Teile des Gehirns und anderer Organe während des Tauchens 'abzuschalten'. Sie haben auch eine hohe Toleranz gegenüber Kohlendioxid und Milchsäure. Cuvier-Schnabelwale sind schwer zu studieren, da sie selten an der Oberfläche gesehen werden und in entlegenen Tiefseebereichen leben. Andere bemerkenswerte Tieftaucher sind Pott-Wale (bis zu 2.000 m) und Südliche See-Elefanten (bis zu 1.500 m)."
+    },
+    {
+      "question": "Was ist das Besondere an der Sozialisierung von Bienen?",
+      "answers": [
+        {"answer": "Sie leben einzeln"},
+        {"answer": "Sie bilden hochorganisierte Staaten mit verschiedenen Kasten"},
+        {"answer": "Sie wechseln täglich ihren Partner"},
+        {"answer": "Sie kommunizieren nur durch Pheromone"}
+      ],
+      "answer": "Sie bilden hochorganisierte Staaten mit verschiedenen Kasten",
+      "explanation": "Honigbienen (Apis mellifera) zeigen eine der komplexesten Sozialstrukturen im Tierreich, bekannt als Eusozialität. Ein Bienenvolk kann 20.000-80.000 Individuen umfassen, die in drei Kasten organisiert sind: 1) Eine Königin - das einzige fortpflanzungsfähige Weibchen, das bis zu 2.000 Eier pro Tag legen kann und bis zu 5 Jahre lebt. 2) Arbeiterinnen - sterile Weibchen, die alle Tätigkeiten des Stocks übernehmen: Brutpflege, Nestbau, Nahrungssuche, Verteidigung. Sie leben nur wenige Wochen. 3) Drohnen - Männchen, die nur zur Begattung der Königin dienen und im Herbst aus dem Stock vertrieben werden. Die Arbeitsteilung ist altersbasiert: junge Bienen arbeiten im Stock (Pflege, Wabenbau), ältere werden zu Sammlerinnen. Bienen kommunizieren durch den berühmten 'Schwänzeltanz', der andere Arbeiterinnen über Entfernung und Richtung von Nahrungsquellen informiert. Sie verwenden auch komplexe chemische Kommunikation durch Pheromone. Diese Sozialstruktur ermöglicht es Bienenvölkern, effizient zu funktionieren und extreme Umweltbedingungen zu überstehen."
+    },
+    {
+      "question": "Welches Merkmal unterscheidet Knochenfische von Knorpelfischen?",
+      "answers": [
+        {"answer": "Knochenfische leben nur im Süßwasser"},
+        {"answer": "Knochenfische haben ein Skelett aus Knochen, Knorpelfische aus Knorpel"},
+        {"answer": "Knochenfische haben keine Flossen"},
+        {"answer": "Knorpelfische sind alle Pflanzenfresser"}
+      ],
+      "answer": "Knochenfische haben ein Skelett aus Knochen, Knorpelfische aus Knorpel",
+      "explanation": "Der fundamentale Unterschied zwischen Knochenfischen (Osteichthyes) und Knorpelfischen (Chondrichthyes) liegt in der Zusammensetzung ihres Skeletts. Knochenfische haben ein Endoskelett aus echtem Knochen (Calciumphosphat), während Knorpelfische ein Skelett aus Knorpel (verstärkt mit Calciumcarbonat) besitzen. Weitere wichtige Unterschiede: Knochenfische haben meist eine Schwimmblase zur Auftriebsregulierung, Knorpelfische nicht (sie müssen kontinuierlich schwimmen oder sinken). Knochenfische haben Kiemendeckel (Operculum), die ihre Kiemen schützen, während Knorpelfische 5-7 offene Kiemenspalten haben. Die Haut der Knorpelfische ist mit Placoidschuppen (zahnähnliche Dentikeln) bedeckt, während Knochenfische meist Cycloid- oder Ctenoidschuppen haben. Knochenfische (etwa 28.000 Arten) umfassen die meisten bekannten Fischarten und leben in allen aquatischen Lebensräumen. Knorpelfische (etwa 1.000 Arten) umfassen Haie, Rochen und Chimären, die meist marin sind. Beide Gruppen haben verschiedene Fortpflanzungsstrategien und ökologische Anpassungen entwickelt."
+    },
+    {
+      "question": "Was ist ein charakteristisches Merkmal der Weichtiere (Mollusca)?",
+      "answers": [
+        {"answer": "Alle haben eine harte Schale"},
+        {"answer": "Sie besitzen einen muskulösen Fuß und meist eine Schale"},
+        {"answer": "Sie leben nur im Wasser"},
+        {"answer": "Sie haben immer acht Arme"}
+      ],
+      "answer": "Sie besitzen einen muskulösen Fuß und meist eine Schale",
+      "explanation": "Weichtiere (Mollusca) sind mit etwa 85.000 Arten der zweitgrößte Tierstamm und zeigen eine enorme Vielfalt, von winzigen Schnecken bis zu riesigen Kalmaren. Charakteristische Merkmale sind: ein weicher, ungesegmentierter Körper, ein muskulöser Fuß (zur Fortbewegung oder als Greiforgane modifiziert), ein Mantel, der meist eine Kalkschale absondert, und eine Raspelzunge (Radula) bei vielen Arten. Die acht Hauptklassen umfassen: 1) Schnecken (Gastropoda) - größte Gruppe mit asymmetrischem Körper, 2) Muscheln (Bivalvia) - mit zweiklappiger Schale, 3) Kopffüßer (Cephalopoda) - Kraken, Kalmare, Tintenfische mit tentakelartig modifizierten Füßen, 4) Käferschnecken (Polyplacophora) - mit acht Schalenplatten. Nicht alle haben Schalen (Nacktschnecken, die meisten Kraken), und sie bewohnen verschiedenste Lebensräume von Tiefsee bis Hochgebirge. Kopffüßer zeigen bemerkenswerte Intelligenz mit komplexem Verhalten, Problemlösungsfähigkeiten und Farbwechsel. Weichtiere sind ökonomisch wichtig als Nahrung, Perlenproduzenten und haben große ökologische Bedeutung als Filtrierer und in Nahrungsnetzen."
+    },
+    {
+      "question": "Welches Säugetier legt Eier?",
+      "answers": [
+        {"answer": "Fledermaus"},
+        {"answer": "Schnabeltier"},
+        {"answer": "Gürteltier"},
+        {"answer": "Wombat"}
+      ],
+      "answer": "Schnabeltier",
+      "explanation": "Das Schnabeltier (Ornithorhynchus anatinus) gehört zusammen mit den Ameisenigeln (Echidna) zu den Kloakentieren (Monotremata), den einzigen eierlegenden Säugetieren. Diese primitiven Säugetiere haben viele reptilienähnliche Merkmale beibehalten, darunter die Eiablage und eine Kloake (gemeinsame Öffnung für Verdauungs-, Harn- und Fortpflanzungsorgane). Schnabeltiere legen 1-2 ledrige, etwa 17mm große Eier, die nach 10 Tagen schlüpfen. Die winzigen, nur 2,5 cm großen Jungen werden dann mit Milch gesäugt, die aus Poren in der Haut austritt (Monotreme haben keine Zitzen). Schnabeltiere haben weitere einzigartige Eigenschaften: einen entenschnabelähnlichen Schnabel mit Elektrorezeptoren zur Ortung von Beutetieren unter Wasser, Giftsporne an den Hinterbeinen der Männchen, und sie sind semi-aquatisch mit wasserdichten Fell und Schwimmhäuten. Sie sind in Australien und Tasmanien heimisch und jagen in Flüssen und Seen nach wirbellosen Beutetieren. Als lebende Fossilien geben sie Einblicke in die frühe Evolution der Säugetiere vor etwa 200 Millionen Jahren."
+    },
+    {
+      "question": "Was charakterisiert die Rundwürmer (Nematoda)?",
+      "answers": [
+        {"answer": "Sie haben einen runden Querschnitt und eine komplette Verdauungsröhre"},
+        {"answer": "Sie sind alle Parasiten"},
+        {"answer": "Sie haben keine Körperhöhle"},
+        {"answer": "Sie können nur in heißem Wasser leben"}
+      ],
+      "answer": "Sie haben einen runden Querschnitt und eine komplette Verdauungsröhre",
+      "explanation": "Rundwürmer (Nematoda) sind eine der artenreichsten Tiergruppen mit schätzungsweise über 1 Million Arten (nur etwa 25.000 beschrieben). Sie zeichnen sich durch ihren runden, zylindrischen Körperquerschnitt und eine vollständige Verdauungsröhre mit separatem Mund und After aus. Im Gegensatz zu Plattwürmern haben sie eine Körperhöhle (Pseudocoelom), aber kein echtes Coelom. Ihr Körper ist von einer flexiblen, aber robusten Cuticula umgeben, die regelmäßig gehäutet wird. Sie besitzen Längsmuskulatur, die ihre charakteristischen peitschenschlagartigen Bewegungen ermöglicht. Nematoden sind überall zu finden: in marinen und Süßwasserumgebungen, Böden, als Parasiten in Pflanzen, Tieren und Menschen. Viele sind winzig (Mikrometersbereich), andere können mehrere Meter lang werden. Wichtige Parasiten sind Spulwürmer, Hakenwürmer und Trichinen. Freilebende Arten spielen wichtige Rollen in Ökosystemen als Zersetzer und Räuber von Bakterien und anderen Mikroorganismen. Der Modellorganismus Caenorhabditis elegans hat wesentlich zur Entwicklungsbiologie und Genetik beigetragen."
+    },
+    {
+      "question": "Welches Tier kann am längsten ohne Wasser überleben?",
+      "answers": [
+        {"answer": "Kamel"},
+        {"answer": "Wüstenratte"},
+        {"answer": "Bärtierchen"},
+        {"answer": "Skorpion"}
+      ],
+      "answer": "Bärtierchen",
+      "explanation": "Bärtierchen (Tardigrada), auch Wasserbärchen genannt, sind mikroskopisch kleine (0,05-1,5 mm) Tiere, die als die widerstandsfähigsten Lebewesen der Erde gelten. Sie können in einen Zustand namens Kryptobiose eintreten, in dem alle metabolischen Prozesse praktisch zum Stillstand kommen. In diesem dehydrierten Zustand können sie Jahrzehnte, möglicherweise über 100 Jahre ohne Wasser überleben. Sie überstehen extreme Bedingungen: Temperaturen von -273°C bis +151°C, Strahlungsdosen, die für Menschen tödlich wären, komplette Dehydration (Wasserverlust bis zu 99%), extremen Druck und sogar das Vakuum des Weltraums. Bei der Kryptobiose verlieren sie fast ihr gesamtes Körperwasser und bilden protektive Proteine und Zucker. Wenn Wasser verfügbar wird, können sie binnen Minuten wieder 'zum Leben erwachen'. Diese etwa 1.300 Arten besiedeln fast alle Lebensräume, von Tiefsee bis Hochgebirge. Sie haben acht Stummelbeinen mit Krallen und ernähren sich von Pflanzensäften, Algen oder anderen Mikroorganismen. Ihre Extremtoleranz macht sie zu wichtigen Forschungsobjekten für Astrobiologie und Biotechnologie."
+    }
     ]
 },
   {

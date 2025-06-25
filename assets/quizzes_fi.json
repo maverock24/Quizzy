@@ -1,328 +1,537 @@
 [
     {
-        "name": "Suomalainen Metsä, Syötävät Yrtit ja Sienet",
-        "questions": [
-          {
-            "question": "Kuinka suuri prosentti Suomen maa-alasta on metsää?",
-            "answers": [
-              {"answer": "Noin 30%"},
-              {"answer": "Noin 50%"},
-              {"answer": "Noin 75%"},
-              {"answer": "Noin 90%"}
-            ],
-            "answer": "Noin 75%",
-            "explanation": "Suomi on yksi maailman metsäisimmistä maista, noin 75% maa-alasta on metsien peitossa. Nämä metsät ovat pääasiassa boreaalisia metsiä (taigaa), joissa vallitsevat havupuut kuten mänty ja kuusi, ja eteläisemmillä alueilla on myös lehtipuita. Metsämaisema vaihtelee tiheistä aarniometsistä taloudellisesti hoidettuihin talousmetsiin, ja lukuisat järvet, suot ja kosteikot luovat monimuotoisia ekosysteemejä kautta maan."
-          },
-          {
-            "question": "Mikä puulaji on yleisin Suomen metsissä?",
-            "answers": [
-              {"answer": "Koivu (Betula)"},
-              {"answer": "Mänty (Pinus sylvestris)"},
-              {"answer": "Kuusi (Picea abies)"},
-              {"answer": "Haapa (Populus tremula)"}
-            ],
-            "answer": "Mänty (Pinus sylvestris)",
-            "explanation": "Mänty (Pinus sylvestris) on yleisin puu Suomen metsissä, peittäen noin 50% metsäalasta. Tunnistaminen: Männyllä on punertavan ruskea, hilseilevä kaarna ylärungossa ja oksissa, ja harmahtavan ruskea kaarna tyven lähellä. Neulaset kasvavat pareittain, ovat 3-5 cm pitkiä, kiertyneitä ja sinivihreän värisiä. Kävyt ovat pieniä (3-7 cm), kartiomaisia ja harmaanruskeita kypsinä. Männyt voivat elää 250-400 vuotta ja kasvavat vaihtelevilla maaperillä, erityisesti kuivilla, hiekkaisilla alueilla, muodostaen tyypillisiä maisemia kautta Suomen."
-          },
-          {
-            "question": "Mikä perinteinen oikeus antaa kaikille Suomessa mahdollisuuden poimia luonnonvaraisia marjoja ja sieniä metsistä?",
-            "answers": [
-              {"answer": "Metsäetuoikeus"},
-              {"answer": "Jokamiehenoikeus"},
-              {"answer": "Keräilyoikeus"},
-              {"answer": "Pohjoismainen metsälaki"}
-            ],
-            "answer": "Jokamiehenoikeus",
-            "explanation": "Jokamiehenoikeus on perinteinen oikeuskäsite Suomessa, joka antaa jokaiselle vapauden liikkua metsissä ja poimia luonnonvaraisia marjoja, sieniä ja yrttejä riippumatta siitä, kuka maan omistaa. Tämä oikeus mahdollistaa keräilijöiden kerätä luonnontuotteita henkilökohtaiseen käyttöön ilman maanomistajan lupaa, mikä tekee Suomesta paratiisin sieni- ja marja-harrastajille. Tähän oikeuteen liittyy kuitenkin vastuita: et saa vahingoittaa luontoa, häiritä muita tai tunkeutua yksityispihoille tai viljellyille alueille. Et myöskään saa kaataa puita tai kerätä sammalta ja jäkälää ilman lupaa."
-          },
-          {
-            "question": "Mikä Suomen metsissä yleinen syötävä sieni tunnetaan nimellä 'keltavahvero'?",
-            "answers": [
-              {"answer": "Herkkutatti (Boletus edulis)"},
-              {"answer": "Keltavahvero (Cantharellus cibarius)"},
-              {"answer": "Haaparousku (Russula vesca)"},
-              {"answer": "Musta torvisieni (Craterellus cornucopioides)"}
-            ],
-            "answer": "Keltavahvero (Cantharellus cibarius)",
-            "explanation": "Keltavahvero (Cantharellus cibarius) on arvostettu syötävä sieni Suomessa. Tunnistaminen: Keltavahverolla on tunnusomainen kultaisen keltainen tai oranssi suppilomainen lakki (3-10 cm leveä) aaltoilevin reunoin. Todellisten helttarakenteiden sijaan sillä on tylppiä, harjumaisia helttapoimuja, jotka kulkevat alas jalkaa pitkin. Nämä poimut ovat samanvärisiä kuin lakki eikä niitä voi erottaa maltosta. Jalka on kiinteä, kapenee alaspäin ja on samanvärinen kuin lakki. Sienellä on hedelmäinen, aprikoosimainen tuoksu. Keltavahveroja kasvaa heinäkuusta lokakuuhun, tyypillisesti sammaleessa koivujen ja muiden lehtipuiden alla, usein ryhmissä. Pääasiallinen varottava näköislaji on valevahvero (Hygrophoropsis aurantiaca), jolla on todelliset heltat, tasaisempi oranssi väri ja pehmeämpi malto."
-          },
-          {
-            "question": "Millä syötävällä luonnonmarjalla Suomen metsissä on sininen väri ja se värjää sormesi ja suusi syötäessä?",
-            "answers": [
-              {"answer": "Puolukka"},
-              {"answer": "Mustikka"},
-              {"answer": "Lakka"},
-              {"answer": "Variksenmarja"}
-            ],
-            "answer": "Mustikka",
-            "explanation": "Mustikka (Vaccinium myrtillus) on matalana kasvava pensas, jonka siniset marjat värjäävät sormet ja suun syötäessä. Tunnistaminen: Kasvi kasvaa 20-60 cm korkeaksi, ja sillä on pienet, soikeat, hammastetut kirkkaan vihreät lehdet, jotka muuttuvat punertaviksi syksyllä. Marjat ovat 5-8 mm halkaisijaltaan, sinimustia valkoisella härmällä ja niillä on litistynyt yläosa, jossa on tunnusomainen 'tähti'-kuvio kukan jäänteistä. Toisin kuin viljellyissä mustikoissa, metsämustikoissa on sininen malto läpikotaisin. Ne kasvavat havumetsissä ja sekametsissä, erityisesti happamassa maaperässä ja osittaisessa varjossa, muodostaen tiheän maton. Mustikat kypsyvät heinäkuusta syyskuuhun sijainnista riippuen. Ne eroavat samankaltaisista, mutta syömäkelvottomista kielojen sinisistä marjoista kasvutavallaan (pensas vs. yksi varsi) ja marjan päällä olevalla tähtikuviolla."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä yrtillä on sydämenmuotoiset lehdet ja hapan, sitruunainen maku?",
-            "answers": [
-              {"answer": "Nokkonen (Urtica dioica)"},
-              {"answer": "Käenkaali (Oxalis acetosella)"},
-              {"answer": "Vuohenputki (Aegopodium podagraria)"},
-              {"answer": "Pihatähtimö (Stellaria media)"}
-            ],
-            "answer": "Käenkaali (Oxalis acetosella)",
-            "explanation": "Käenkaali (Oxalis acetosella, tunnetaan myös nimellä ketunleipä) on yleinen metsäyrtti, jolla on virkistävä sitruunainen maku. Tunnistaminen: Käenkaali kasvaa 5-10 cm korkeaksi ja sillä on tunnusomaiset apilan kaltaiset lehdet, jotka koostuvat kolmesta sydämenmuotoisesta lehdykästä. Lehdykät taittuvat alaspäin keskisuonen molemmin puolin yöllä tai voimakkaassa auringonvalossa. Kukat ovat valkoisia, joissa on purppuraisia suonia, 1-1,5 cm leveitä, viisiterälehtisiä, ja ilmestyvät huhtikuusta kesäkuuhun. Käenkaali kasvaa varjoisissa havu- ja sekametsissä ravinteikkaassa maaperässä, muodostaen usein tiheitä kasvustoja metsänpohjalle. Hapan maku tulee oksaalihaposta, joka antaa sille virkistävän maun. Se eroaa helposti apilasta sydämenmuotoisilla lehdyköillään, valkoisilla kukillaan ja metsäisellä kasvupaikallaan. Sitä tulisi kuitenkin nauttia kohtuudella sen oksaalihappopitoisuuden vuoksi."
-          },
-          {
-            "question": "Mikä on vaarallisin sieni Suomen metsissä, jota tulisi aina välttää?",
-            "answers": [
-              {"answer": "Valevahvero (Hygrophoropsis aurantiaca)"},
-              {"answer": "Kavalakärpässieni (Amanita phalloides)"},
-              {"answer": "Punakärpässieni (Amanita muscaria)"},
-              {"answer": "Korvasieni (Gyromitra esculenta)"}
-            ],
-            "answer": "Kavalakärpässieni (Amanita phalloides)",
-            "explanation": "Kavalakärpässieni (Amanita phalloides) on erittäin myrkyllinen ja mahdollisesti tappava nautittuna. Tunnistaminen: Kavalakärpässienellä on 5-15 cm leveä lakki, joka alkaa pallomaisena ja laajenee litteäksi. Väri vaihtelee oliivinvihreästä kellertävään tai vaaleaan, usein tummempi keskeltä. Heltat ovat valkoiset, irti jalasta ja tiheästi järjestäytyneet. Jalka on 8-15 cm korkea, valkoinen hieman vihreään vivahtaen, ja siinä on rengasmainen heltta. Jalan tyvessä on kuppimainen tuppi (usein maahan hautautuneena). Itiöpöly valkoista. Se kasvaa heinäkuusta lokakuuhun lehtimetsissä, erityisesti tammi- ja pyökkimetsissä. Kriittisiä tunnistuspiirteitä ovat valkoiset heltat, rengasmainen heltta jalassa ja kuppimainen tuppi jalan tyvessä. Se voidaan sekoittaa syötäviin sieniin kuten peltoherkkusieneen tai vihreä-itiöiseen parasollisieneen, mikä tekee siitä erityisen vaarallisen. Jopa pieni pala voi olla tappava. Älä koskaan kerää mitään Amanita-lajeja aloittelijana."
-          },
-          {
-            "question": "Mikä syötävä luonnonmarja, joka kasvaa Suomen metsissä, sisältää runsaasti C-vitamiinia ja tunnetaan nimellä 'puolukka'?",
-            "answers": [
-              {"answer": "Mustikka"},
-              {"answer": "Lakka"},
-              {"answer": "Puolukka"},
-              {"answer": "Karpalo"}
-            ],
-            "answer": "Puolukka",
-            "explanation": "Puolukka (Vaccinium vitis-idaea) on yleinen luonnonmarja, joka on rikas C-vitamiinista. Tunnistaminen: Puolukka on ainavihanta varpukasvi, joka kasvaa 10-30 cm korkeaksi ja jolla on pienet, soikeat, nahkeat lehdet, jotka ovat päältä tummanvihreät ja kiiltävät, ja alapuolella on pieniä tummia pisteitä. Lehtien reunat ovat hieman alaspäin kääntyneet. Pienet, kellomaiset valkoisen ja vaaleanpunaisen väliset kukat kasvavat pieninä ryppäinä. Marjat ovat kirkkaan punaisia, 6-10 mm halkaisijaltaan, ja niillä on pieni 'kruunu' pohjassa. Ne kasvavat havumetsissä, kankailla ja soilla, erityisesti happamassa maaperässä. Puolukat kypsyvät elokuun lopusta lokakuuhun ja voivat säilyä kasveissa läpi talven. Ne eroavat samankaltaisista mutta kitkerimmistä juolukasta makeamman makunsa ja lehtien alapinnalla olevien pisteiden perusteella, sekä kielon marjoista varpumaisen kasvutapansa ja pysyvien vihreiden lehtiensä perusteella."
-          },
-          {
-            "question": "Millä arvostetussa syötävässä sienessä Suomen metsissä on ruskea lakki ja se tunnetaan nimellä 'herkkutatti'?",
-            "answers": [
-              {"answer": "Keltavahvero"},
-              {"answer": "Herkkutatti (Boletus edulis)"},
-              {"answer": "Lehmäntatti (Leccinum scabrum)"},
-              {"answer": "Haaparousku"}
-            ],
-            "answer": "Herkkutatti (Boletus edulis)",
-            "explanation": "Herkkutatti (Boletus edulis) on erittäin arvostettu syötävä sieni. Tunnistaminen: Herkkutatilla on pyöreä lakki (5-25 cm leveä), joka alkaa pallomaisena ja sitten litistyy, väriltään vaalean- tai tummanruskea (kuin sämpylä). Lakin pinta on sileä ja hieman tahmea märkänä. Alapuolella on valkoinen tai vihertävän keltainen pillistö heltojen sijaan, joka ei muutu painettaessa. Jalka (8-20 cm korkea, 2-6 cm paksu) on tyvestä pullea ja kapenee ylöspäin, ja siinä on hieno valkoinen verkkomainen kuvio (verkkosuoninen) yläosassa. Malto on valkoista eikä muuta väriä leikattaessa. Herkkutatti kasvaa heinäkuusta lokakuuhun havu- ja lehtimetsissä muodostaen mykorritsan puiden kanssa. Se voidaan erottaa samankaltaisista Boletus-lajeista ruskean lakkinsa, valkean/vaalean verkkosuonisen jalkansa ja muuttumattoman maltonsa värin perusteella, kun se leikataan. Varo sekoittamasta sitä saatanantattiin, jossa on punaista/oranssia väriä, tai karvaslajehin, joissa on pinkki tai punainen pillistö."
-          },
-          {
-            "question": "Mitä syötävää yrttiä Suomen metsissä käytetään usein perinneruoissa ja jolla on voimakas valkosipulimainen tuoksu?",
-            "answers": [
-              {"answer": "Käenkaali"},
-              {"answer": "Karhunlaukka (villisipuli)"},
-              {"answer": "Vuohenputki"},
-              {"answer": "Pihatähtimö"}
-            ],
-            "answer": "Karhunlaukka (villisipuli)",
-            "explanation": "Karhunlaukka tai villisipuli (Allium ursinum) on herkullinen syötävä yrtti. Tunnistaminen: Karhunlaukka kasvaa 20-40 cm korkeaksi, ja sillä on 2-3 leveää, litteää, elliptistä lehteä (10-25 cm pitkiä, 2-7 cm leveitä), jotka nousevat suoraan maasta. Lehdet ovat kirkkaan vihreitä, ohuita ja pehmeitä, joilla on voimakas valkosipulin tuoksu murskattaessa. Valkoiset tähtimäiset kukat ilmestyvät sateenvarjomaisina rykelminä touko-kesäkuussa. Kasvi kasvaa lehtimetsissä ravinteikkaassa, kosteassa maaperässä, usein muodostaen suuria kasvustoja. VAROITUS: Se voidaan sekoittaa myrkylliseen kieloon (Convallaria majalis) ja syksykelloon (Colchicum autumnale). Keskeiset erot: karhunlaukka lehdet kasvavat yksitellen vartta kohti (ei pareittain), niillä on selvä valkosipulin haju murskattaessa, ja lehtien vartalo on puoliympyrän muotoinen poikkileikkauksessa (ei pyöreä). Murskaa ja haista lehtiä aina varmistaaksesi valkosipulin tuoksun ennen keräämistä."
-          },
-          {
-            "question": "Millä suositulla syötävällä Suomen metsän sienellä on oranssinpunainen lakki vihertävällä vivahteella, eikä sillä ole todellisia helttoja?",
-            "answers": [
-              {"answer": "Karvarousku (Lactarius torminosus)"},
-              {"answer": "Keltavahvero (Cantharellus cibarius)"},
-              {"answer": "Punikkitatti (Leccinum versipelle)"},
-              {"answer": "Punakiiltotatti (Leccinum aurantiacum)"}
-            ],
-            "answer": "Punikkitatti (Leccinum versipelle)",
-            "explanation": "Punikkitatti (Leccinum versipelle) on suosittu syötävä sieni. Tunnistaminen: Sillä on oranssinpunainen tai oranssinruskea lakki (5-15 cm leveä), joka on kupera nuorena, litistyen iän myötä, ja siinä saattaa olla hieman vihertävä vivahde. Helttarakenteen sijasta sillä on sienimäinen pillikerros alapuolella, joka on valkean harmaa, tummuen painettaessa. Jalka (8-15 cm korkea) on valkoinen, jossa on selvästi erottuvat tummanruskeat tai mustat suomut, jotka korostuvat iän myötä. Leikattaessa malto muuttuu hitaasti vaaleanpunaisen harmaaksi, sitten siniharmaan mustaksi. Se muodostaa mykorritsasuhteen yksinomaan koivupuiden kanssa, kasvaen heinäkuusta lokakuuhun. Se erottuu muista Leccinum-lajeista oranssinpunertavalla lakillaan, kasvamalla yksinomaan koivujen lähellä, sekä tunnusomaisen värimuutoksen perusteella leikattaessa. Punakiiltotatti (L. aurantiacum) on hyvin samanlainen, mutta sillä on tyypillisesti kirkkaamman punainen lakki ja se kasvaa haavan tai poppelin lähellä."
-          },
-          {
-            "question": "Mikä arvokas luonnonmarja kasvaa suomalaisissa soissa ja on kullanvärinen kypsänä?",
-            "answers": [
-              {"answer": "Puolukka"},
-              {"answer": "Lakka"},
-              {"answer": "Mustikka"},
-              {"answer": "Karpalo"}
-            ],
-            "answer": "Lakka",
-            "explanation": "Lakka (Rubus chamaemorus, tunnetaan myös nimellä hilla) on erittäin arvostettu luonnonmarja. Tunnistaminen: Lakka-kasvi kasvaa 10-25 cm korkeaksi ja sillä on rypistyneet, vaahteran kaltaiset lehdet, joissa on 5-7 pyöristynyttä liuskaa. Kukin kasvi tuottaa tyypillisesti yhden valkoisen kukan, jossa on viisi terälehteä. Marjat kehittyvät ainutlaatuisen väriprogression kautta: aluksi punaisia, sitten meripihkan värisiä, lopulta kullankellan värisiä täysin kypsinä. Kypsät marjat muistuttavat vadelmia rakenteeltaan mutta ovat pehmeämpiä, ja niissä on vähemmän mutta suurempia luumumaisia osia. Kukin marja on 1-1,5 cm halkaisijaltaan. Lakat kasvavat turvesoissa ja kosteikkoalueilla, erityisen yleisiä Pohjois-Suomessa. Ne kukkivat kesäkuussa ja kypsyvät heinäkuun lopulta elokuuhun. Kasvi on kaksikotinen (erilliset uros- ja naaraskasvit). Niitä ei voi sekoittaa mihinkään myrkyllisiin marjoihin, mutta raa'at punaiset lakat ovat happamia, eikä niitä tulisi kerätä."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on lakki, jossa on sisäänpäin kääntynyt karvainen reuna ja joka tuottaa maitiaisnestettä leikattaessa?",
-            "answers": [
-              {"answer": "Keltavahvero"},
-              {"answer": "Karvarousku (Lactarius torminosus)"},
-              {"answer": "Herkkutatti"},
-              {"answer": "Haaparousku"}
-            ],
-            "answer": "Karvarousku (Lactarius torminosus)",
-            "explanation": "Karvarousku (Lactarius torminosus) on syötävä sieni asianmukaisen valmistuksen jälkeen. Tunnistaminen: Lakki (4-15 cm leveä) on vaaleanpunertava tai vaalean oranssi tummempine konsentrisine vyöhykkeineen ja selvän karvaisen, ripsureunaisen, sisäänrullatun reunan kanssa. Heltat ovat tiheät, vaalean kerma- tai lohenpunaiset, ja kulkevat hieman alaspäin jalkaa pitkin. Jalka (3-8 cm korkea) on lieriömäinen, ontto iän myötä, ja samanvärinen kuin lakki tai vaaleampi. Leikattaessa kaikista osista erittyy valkoista maitiaisnestettä, joka on aluksi mietoa mutta muuttuu kitkerän makuiseksi. Se kasvaa heinäkuusta lokakuuhun symbioosissa koivupuiden kanssa. TÄRKEÄÄ: Tämä sieni täytyy keittää 5-10 minuuttia ja keitinvesi kaataa pois ennen ruoanlaittoa, sillä se sisältää ärsyttäviä yhdisteitä. Se voidaan sekoittaa muihin Lactarius-lajeihin, mutta karvainen reuna ja yhteys koivuihin ovat tunnusomaisia piirteitä. Samalla tavoin syötävä (keittämisen jälkeen) kangasrousku (L. rufus) on tumman punaruskea eikä sillä ole karvaista reunaa."
-          },
-          {
-            "question": "Mikä yleinen syötävä yrtti Suomen metsäaukeilla on sahalaitaisia lehtiä ja polttavia karvoja?",
-            "answers": [
-              {"answer": "Nokkonen (Urtica dioica)"},
-              {"answer": "Vuohenputki"},
-              {"answer": "Käenkaali"},
-              {"answer": "Ahomansikka"}
-            ],
-            "answer": "Nokkonen (Urtica dioica)",
-            "explanation": "Nokkonen (Urtica dioica) on ravinteikas syötävä yrtti. Tunnistaminen: Nokkonen kasvaa 30-150 cm korkeaksi, ja sillä on vastakkaiset, tummanvihreät, soikeat tai sydämenmuotoiset lehdet, joissa on voimakkaasti hampaiset reunat ja suipot kärjet. Lehdet ja varret ovat peittyneet pienillä polttavilla karvoilla, jotka vapauttavat ärsyttäviä yhdisteitä kosketettaessa. Kasvilla on pieniä vihertäviä kukkia roikkuvissa ryppäissä lehtien hangassa. Nokkonen kasvaa typpipitoisissa maaperissä, metsänreunoilla, aukeilla ja häirityillä alueilla, muodostaen usein suuria kasvustoja. Nuoret versot ilmestyvät huhti-toukokuussa, ja kerättäviä lehtiä on tarjolla koko kesän. Älä koskaan syö raakana - keittäminen tai kuivaaminen neutraloi poltteen. Käytä käsineitä kerättäessä. Se voidaan erottaa samankaltaisesta valkovalekukasta (Lamium album) polttavien karvojen avulla ja valkoisten kukkien puuttumisella. Kerää nuoret versot ja lehdet ennen kukintaa parhaan maun ja ravintopitoisuuden saamiseksi."
-          },
-          {
-            "question": "Millä myrkyllisellä sienellä Suomen metsissä on punainen lakki valkoisin pilkuin ja sitä kuvataan usein saduissa?",
-            "answers": [
-              {"answer": "Kavalakärpässieni"},
-              {"answer": "Punakärpässieni (Amanita muscaria)"},
-              {"answer": "Korvasieni"},
-              {"answer": "Valkokärpässieni"}
-            ],
-            "answer": "Punakärpässieni (Amanita muscaria)",
-            "explanation": "Punakärpässieni (Amanita muscaria) on myrkyllinen sieni, joka esiintyy usein saduissa. Tunnistaminen: Sillä on tunnusomainen kirkkaanpunainen tai oranssinpunainen lakki (5-20 cm leveä), joka on peittynyt valkoisilla laikuilla (yleisvaipan jäänteet). Lakki alkaa pallomaisena, muuttuen litteämmäksi iän myötä. Heltat ovat valkoiset ja irti jalasta. Jalka (5-20 cm korkea) on valkoinen, siinä on hameenmuotoinen rengas ja pullistunut tyvi, jossa on konsentrisesti järjestetyt suomut. Malto on valkoista kauttaaltaan. Se kasvaa symbioosissa koivun, männyn ja kuusen kanssa heinäkuusta marraskuuhun. Lakin valkoiset laikut voivat huuhtoutua pois sateessa. Se sisältää psykoaktiivisia yhdisteitä ja myrkkyjä, jotka aiheuttavat pahoinvointia, sekavuutta ja visuaalisia häiriöitä. Jotkut kulttuurit ovat käyttäneet sitä rituaaleissa erityisen valmistuksen jälkeen, mutta sitä tulisi pitää myrkyllisenä. Se erottuu tappavista Amanita-lajeista kirkkaanpunaisella lakillaan; kuitenkin tappavilla Amanita phalloides- ja A. virosa-sienillä on myös tunnusomaiset renkaat ja pullistuneet tyvet, joten kaikkia Amanita-lajeja tulisi välttää aloittelijoiden."
-          },
-          {
-            "question": "Mikä maukas luonnonmarja, joka kasvaa Suomen metsissä, muistuttaa vadelmaa mutta on meripihkan värinen?",
-            "answers": [
-              {"answer": "Lakka"},
-              {"answer": "Ahomansikka"},
-              {"answer": "Mesimarja"},
-              {"answer": "Lillukka"}
-            ],
-            "answer": "Mesimarja",
-            "explanation": "Mesimarja (Rubus arcticus) on herkullinen luonnonmarja. Tunnistaminen: Kasvi kasvaa 10-25 cm korkeaksi, ja sillä on kolmesta hammaslaitaisesta lehdykästä koostuvat yhdislehdet. Se tuottaa tunnusomaisia vaaleanpunaisenvioletteja kukkia, joissa on viisi terälehteä. Marjat muistuttavat pieniä vadelmia (1-1,5 cm), mutta ovat meripihkan tai tummanpunaisia kypsinä, ja niissä on vähemmän mutta suurempia luumarjoja kuin vadelmissa. Niillä on ainutlaatuinen aromi, jota kuvaillaan vadelman, vaniljan ja hunajan sekoitukseksi. Mesimarja kasvaa kosteilla alueilla kuten ojissa, märillä niityillä ja kosteilla metsänreunoilla, erityisesti Keski- ja Pohjois-Suomessa. Kukat ilmestyvät kesäkuussa ja marjat kypsyvät heinä-elokuussa. Ne eroavat lakasta punertavan meripihkan värillään (ei kultainen) ja ahomansikoista pienemmällä koollaan ja erilaisella kasvupaikallaan. Samankaltainen lillukka (R. saxatilis) on kirkkaamman punainen, happamampi ja siinä on lukuisampia luumarjoja."
-          },
-          {
-            "question": "Millä syötävällä sienellä Suomen metsissä on tumma torvimainen muoto ja se tunnetaan nimellä 'mustatorvisieni'?",
-            "answers": [
-              {"answer": "Keltavahvero"},
-              {"answer": "Mustatorvisieni (Craterellus cornucopioides)"},
-              {"answer": "Herkkutatti"},
-              {"answer": "Lampaankääpä"}
-            ],
-            "answer": "Mustatorvisieni (Craterellus cornucopioides)",
-            "explanation": "Mustatorvisieni (Craterellus cornucopioides) on erittäin maukas syötävä sieni. Tunnistaminen: Sillä on tunnusomainen torvi- tai suppilomainen muoto, 3-12 cm korkea ja 2-7 cm leveä yläosasta. Koko sieni on tumman harmaa tai musta, ja siinä on syvälle painunut keskusta, joka jatkuu alas onttoon jalkaan. Ulkopinta on sileä tai hieman ryppyinen, kun taas sisempi itiöitä tuottava pinta voi vaihdella sileästä hieman ryppyiseen. Todellisia helttoja ei ole. Jalka on ontto ja tyypillisesti tumman harmaa tai musta. Mustatorvisieni kasvaa elokuusta lokakuuhun lehti- ja sekametsissä, erityisesti tammi- ja pyökkimetsissa, usein osittain lehtikarikkeen alla piilossa. Ne kasvavat usein ryhmissä, joskus muodostaen linjoja tai kaaria. Niiden tumma väri ja ohut malto tekevät niistä vaikeita havaita kuolleiden lehtien joukosta. Niillä on rikas, pähkinäinen, lähes savuinen maku. Pääasialliset näköislajit ovat syötävä suppilovahvero (Craterellus tubaeformis), joka on pienempi ja jolla on kellertävä jalka, sekä Craterellus cinereus, joka on myös syötävä."
-          },
-          {
-            "question": "Mitä Suomen metsissä kasvavaa villiä yrttiä voidaan käyttää teenä ja jolla on aromaattiset, höyhenmäiset lehdet?",
-            "answers": [
-              {"answer": "Vuohenputki"},
-              {"answer": "Nokkonen"},
-              {"answer": "Siankärsämö (Achillea millefolium)"},
-              {"answer": "Käenkaali"}
-            ],
-            "answer": "Siankärsämö (Achillea millefolium)",
-            "explanation": "Siankärsämö (Achillea millefolium) on monipuolinen lääkinnällinen yrtti. Tunnistaminen: Siankärsämö kasvaa 15-90 cm korkeaksi, ja sillä on vuorottaiset, höyhenmäiset, saniaisenmaiset lehdet, jotka ovat hienojakoisesti jakautuneet moniin pieniin segmentteihin, luoden tunnusomaisen höyhenmäisen tai pitsimaisen ulkonäön. Lehdet ovat 5-20 cm pitkiä, keihäänmuotoisia yleisilmeeltään mutta jakautuneet kymmeniin pieniin lehdyköihin. Kasvi tuottaa litteitä ryhmiä pieniä valkoisia tai vaalean pinkkejä kukkia (kukin 4-6 mm) varren latvassa, muodostaen litteän huipun kukinnon 5-15 cm levyisen. Murskattuna lehdillä on voimakas aromaattinen, jokseenkin lääkemäinen tuoksu. Siankärsämö kasvaa niityillä, laitumilla ja metsäaukeamilla kautta Suomen. Se kukkii kesäkuusta syyskuuhun. Se voidaan erottaa samankaltaisista kasveista kuten villistä porkkanasta sen höyhenmäisillä lehdillä ja litteillä, tiheillä kukkaklustereilla. Vaikka yleisesti turvallinen, sitä tulisi käyttää kohtuudella teenä tai tinkturana. Historiallisesti käytetty haavojen parantamiseen ja kuumeen alentamiseen."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on lakissa suomuja, jotka muistuttavat käpykuvioita?",
-            "answers": [
-              {"answer": "Akansieni (Chlorophyllum rhacodes)"},
-              {"answer": "Suomumustesieni (Coprinus comatus)"},
-              {"answer": "Huhtasieni (Morchella esculenta)"},
-              {"answer": "Keltavahvero"}
-            ],
-            "answer": "Akansieni (Chlorophyllum rhacodes)",
-            "explanation": "Akansieni (Chlorophyllum rhacodes) on syötävä sieni, jolla on tunnusomainen kuvioitu lakki. Tunnistaminen: Lakki (5-20 cm leveä) alkaa pallomaisena, laajentuen litteäksi, jossa on keskeinen kohouma. Siinä on valkoinen tai vaaleanruskea tausta, joka on peittynyt ruskeilla, karheilla suomuilla, jotka ovat järjestetty konsentrisiin ympyröihin, muistuttaen käpykuviota. Heltat ovat valkoiset, irti jalasta ja tiheät. Jalka (10-20 cm korkea) on näyttävä, liikkuva rengas ja pullistunut tyvi. Jalan pinta on sileä renkaan yläpuolelta ja suomuinen sen alapuolelta. Leikattaessa valkoinen malto muuttuu punaoranssiksi, sitten tumman punaruskeaksi. Se kasvaa heinäkuusta lokakuuhun niityillä, puistoissa, puutarhoissa ja metsänreunoilla, muodostaen usein keijurenkaita. Kaksinkertainen rengas jalassa ja punertuvat malto leikattaessa ovat keskeisiä tunnistuspiirteitä. Se voidaan sekoittaa samankaltaiseen ukonsieneen (Macrolepiota procera), joka on suurempi ja jolla on käärmeihomainen kuvio jalassa, tai myrkyllisiin Chlorophyllum-lajeihin. Tulisi kypsentää perusteellisesti ennen syömistä, sillä se voi aiheuttaa ruoansulatusvaivoja raakana tai alikypsennettynä."
-          },
-          {
-            "question": "Mikä Suomen metsissä kasvava syötävä luonnonmarja kasvaa matalana ja muistuttaa viljeltyjä mansikoita mutta on pienempi?",
-            "answers": [
-              {"answer": "Lakka"},
-              {"answer": "Ahomansikka (Fragaria vesca)"},
-              {"answer": "Puolukka"},
-              {"answer": "Mesimarja"}
-            ],
-            "answer": "Ahomansikka (Fragaria vesca)",
-            "explanation": "Ahomansikka (Fragaria vesca) on herkullinen metsämarja. Tunnistaminen: Kasvi kasvaa 5-20 cm korkeaksi, ja sillä on kolmesta hammaslaitaisesta lehdykästä koostuvat yhdislehdet. Lehdet ovat järjestäytyneet tyviruusukkeeseen ja niissä on silkkimäisiä karvoja. Valkoiset kukat, joissa on viisi terälehteä ja keltainen keskus, kukkivat erillisillä varsilla. Marjat ovat pieniä (1-2 cm), kartiomaisia tai pyöreitä, kirkkaanpunaisia, ja niiden pinnalla on pieniä siemeniä. Toisin kuin viljellyt mansikat, ahomansikat eivät ole onttoja sisältä. Ne kasvavat metsäaukioilla, reunoilla, niityillä ja polkujen varsilla, suosien hyvin kuivuvaa maaperää ja osittaista auringonvaloa. Ne kukkivat touko-kesäkuussa, ja marjat kypsyvät kesäkuusta elokuuhun. Ahomansikoilla on voimakas aromi ja maku, paljon vahvempi kuin viljellyillä lajikkeilla. Ne voidaan erottaa syömäkelvottomista ukrainanmansikoista (Potentilla indica) valkoisilla kukillaan (ei keltaisia) ja marjoillaan, jotka roikkuvat alaspäin eivätkä osoita ylöspäin."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on hampaita helttarakenteiden tai itiöpillistön sijaan lakin alapuolella?",
-            "answers": [
-              {"answer": "Keltavahvero"},
-              {"answer": "Vaaleaorakas (Hydnum repandum)"},
-              {"answer": "Herkkutatti"},
-              {"answer": "Mustatorvisieni"}
-            ],
-            "answer": "Vaaleaorakas (Hydnum repandum)",
-            "explanation": "Vaaleaorakas (Hydnum repandum) on selvästi tunnistettava syötävä sieni. Tunnistaminen: Lakki (3-15 cm leveä) on kupera, muuttuen litteämmäksi, ja siinä on epäsäännöllinen, aaltoileva reuna. Väri vaihtelee vaaleasta beigeen tai oranssinruskeaan. Helttarakenteiden tai itiöpillistön sijaan alapuolella on hauraita, murtuvia, kerman tai vaalean beigen värisiä piikkejä tai hampaita (2-5 mm pitkiä), jotka roikkuvat alaspäin. Jalka (3-8 cm korkea) on usein keskikohdasta poikkeava, kiinteä, sileä ja samanvärinen kuin lakki tai vaaleampi. Malto on kiinteää, valkoista tai vaalean beigeä, eikä muuta väriä leikattaessa. Se kasvaa elokuusta marraskuuhun havu- ja lehtimetsissä, usein osittain pudonneiden lehtien tai sammalen peittämänä. Se voi muodostaa keijurenkaita tai linjoja. Hammasrakenteet lakin alapuolella tekevät sen helposti tunnistettavaksi vähäisillä näköislajeilla. Se voidaan sekoittaa lähisukulaiseen Hydnum rufescensiin, joka on myös syötävä mutta pienempi ja jolla on tummempi, oranssimpi lakki. Kummallakaan ei ole myrkyllisiä näköislajeja, tehden niistä erinomaisia aloittelijoille."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla yrtillä on lehdet, jotka maistuvat kurkuilta murskattaessa?",
-            "answers": [
-              {"answer": "Käenkaali"},
-              {"answer": "Purasruoho (Borago officinalis)"},
-              {"answer": "Ahomansikka"},
-              {"answer": "Vuohenputki"}
-            ],
-            "answer": "Purasruoho (Borago officinalis)",
-            "explanation": "Purasruoho (Borago officinalis, tunnetaan myös nimellä kurkkuyrtti) on yrtti, jolla on kurkun makuiset lehdet. Tunnistaminen: Purasruoho kasvaa 30-80 cm korkeaksi, ja sillä on soikeat tai keihäänmuotoiset lehdet (5-15 cm pitkiä), jotka ovat ryppyiset, tummanvihreät ja peittyneet jäykillä, valkoisilla karheilla karvoilla, antaen niille karkean tekstuurin. Kirkkaan siniset, tähtimäiset kukat (2-3 cm leveitä) roikkuvat löyhinä ryhminä, ja niissä on näkyvät mustat heteet, jotka muodostavat kartion kukan keskellä. Sekä varret että lehdet ovat peittyneet piikikkäillä karvoilla. Murskattuna lehdillä on selvästi kurkun kaltainen maku ja tuoksu. Vaikka purasruoho ei ole alkuperäinen Suomen metsille, se on kotiutunut joillekin alueille ja sitä löytyy joskus niityiltä, puutarhakarkulaisina ja häirityiltä alueilta. Se kukkii kesäkuusta syyskuuhun. Kurkun maku ja kirkkaansiniset kukat tekevät siitä helposti tunnistettavan. Lehtien karhea rakenne erottaa sen muista sinisistä kukista. Kukat ovat myös syötäviä ja tekevät kauniita koristeita."
-          },
-          {
-            "question": "Millä syötävällä sienellä Suomen metsissä on keltainen 'torvi' muoto ja se tunnetaan nimellä 'suppilovahvero'?",
-            "answers": [
-              {"answer": "Keltavahvero"},
-              {"answer": "Mustatorvisieni"},
-              {"answer": "Suppilovahvero (Craterellus tubaeformis)"},
-              {"answer": "Herkkutatti"}
-            ],
-            "answer": "Suppilovahvero (Craterellus tubaeformis)",
-            "explanation": "Suppilovahvero (Craterellus tubaeformis) on suosittu syötävä sieni. Tunnistaminen: Sillä on suppilomainen lakki (2-6 cm leveä) aaltoilevalla, epäsäännöllisellä reunalla ja keskellä olevan syvennyksen, joka jatkuu onttoon jalkaan. Lakin väri vaihtelee kellanruskeasta harmaanruskeaan, usein tummempi keskeltä. Alapuolella on hyvin kehittyneet heltanmaiset poimut, jotka ovat harmaan tai kellertävän värisiä ja kulkevat alas jalkaa pitkin. Jalka (3-10 cm korkea) on ontto, sileä ja selvästi keltainen tai oranssi, kontrastina tummemmalle lakille. Se kasvaa elokuun lopusta marraskuuhun (joskus säilyen talveen) havu- ja sekametsissä, usein suurina ryhminä sammalen ja lahoavan puun seassa. Se suosii hapanta maaperää ja löytyy usein kuusimetsistä, joissa on mustikka-aluskasvustoa. Yhdistelmä suppilomaista muotoa, keltaista jalkaa ja harmaan-ruskeaa lakkia tekee siitä tunnistettavan. Se voidaan sekoittaa mustatorvisieneen (myös syötävä), mutta erottuu keltaisella jalallaan ja selkeämmillä heltanmaisilla poimuillaan. Sillä on aprikoosimainen tuoksu kuivattuna."
-          },
-          {
-            "question": "Mikä Suomen metsissä kasvava syötävä villikasvi tuottaa pieniä punaisia marjoja ja on ryömivä ikivihreä pensas?",
-            "answers": [
-              {"answer": "Puolukka"},
-              {"answer": "Ahomansikka"},
-              {"answer": "Sianpuolukka (Arctostaphylos uva-ursi)"},
-              {"answer": "Variksenmarja"}
-            ],
-            "answer": "Sianpuolukka (Arctostaphylos uva-ursi)",
-            "explanation": "Sianpuolukka (Arctostaphylos uva-ursi) on syötävä villikasvi. Tunnistaminen: Sianpuolukka on matalana kasvava, ryömivä ikivihreä pensas (10-30 cm korkea), joka muodostaa tiheitä mattoja maahan. Lehdet ovat pieniä (1-3 cm), nahkaisia, lusikanmuotoisia ja pyöreäkärkisiä, tummanvihreitä ja kiiltäviä päältä. Lehdet kasvavat vuorottain varressa, eikä niissä ole hammaslaitoja. Pienet, kellomaiset valkoiset tai vaaleanpunaiset kukat ilmestyvät ryhmissä keväällä. Marjat ovat kirkkaanpunaisia, 6-10 mm halkaisijaltaan, jauhomaisia rakenteeltaan ja niiden sisällä on 5 kovaa siementä. Sianpuolukka kasvaa kuivilla, hiekkaisilla alueilla, erityisesti mäntymetsissa, kankailla ja kallioilla. Se suosii täyttä aurinkoa tai osittaista varjoa ja hyvin kuivuvaa maaperää. Marjat kypsyvät loppukesästä syksyyn ja voivat säilyä läpi talven. Vaikka syötäviä, marjat ovat melko mauttomia ja jauhomaisia raakana, parhaiten käytettynä hilloissa tai säilykkeissä. Kasvi voidaan erottaa puolukasta sen suurempien, lusikanmuotoisten lehtien perusteella, joiden alapuolella ei ole pisteitä, ja myrkyllisestä kielosta sen puumaisten varsien ja erilaisen kasvutavan perusteella."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on hunajakennomainen lakki ja se täytyy kypsentää perusteellisesti?",
-            "answers": [
-              {"answer": "Mustatorvisieni"},
-              {"answer": "Korvasieni (Morchella spp.)"},
-              {"answer": "Keltavahvero"},
-              {"answer": "Herkkutatti"}
-            ],
-            "answer": "Korvasieni (Morchella spp.)",
-            "explanation": "Korvasienet (Morchella-lajit, 'huhtasieni' tai 'korvasieni' suomeksi) ovat arvostettuja syötäviä sieniä. Tunnistaminen: Korvasienillä on tunnusomainen kartiomainen tai soikea lakki (3-15 cm korkea), jossa on hunajakennomainen pinta, jossa on harjanteita ja koloja. Lakki on kiinnittynyt jalkaan tyvestä. Värit vaihtelevat kellanruskeasta tummanruskeaan lajista riippuen. Jalka on valkoinen tai vaalean kerma, ontto, ja usein hieman turvonnut tyvestä. Koko sieni on sisältä ontto. Ne kasvavat huhtikuun lopusta kesäkuuhun (vuoden aikaisimpia sieniä) lehti- ja sekametsissä, palaneilla alueilla ja häirityillä mailla. Ne ilmestyvät usein tiettyjen puulajien lähelle, erityisesti saarnin, jalavan ja omenapuiden. TÄRKEÄÄ: Korvasienet täytyy kypsentää perusteellisesti (vähintään 10 minuuttia) ennen kulutusta, sillä ne sisältävät pieniä määriä myrkkyjä, jotka tuhoutuvat kunnollisessa kypsennyksessä. Ne voidaan sekoittaa myrkyllisiin korvasieniksi (Gyromitra-lajit), mutta todelliset korvasienet ovat onttoja sisältä, ja niiden lakit ovat kiinnittyneet jalkaan tyvestä, kun taas vääriä korvasieniä on aivomaisesti poimuttunut lakki, joka on jalkaan vapaasti kiinnittynyt, eivätkä ne ole täysin onttoja."
-          },
-          {
-            "question": "Millä Suomen metsäniityillä kasvavalla syötävällä yrtillä on lehdet, jotka maistuvat lakritsilta?",
-            "answers": [
-              {"answer": "Saksankirveli (Myrrhis odorata)"},
-              {"answer": "Siankärsämö"},
-              {"answer": "Nokkonen"},
-              {"answer": "Vuohenputki"}
-            ],
-            "answer": "Saksankirveli (Myrrhis odorata)",
-            "explanation": "Saksankirveli (Myrrhis odorata) on aromaattinen yrtti, jolla on lakritsin maku. Tunnistaminen: Saksankirveli on korkea monivuotinen yrtti (60-180 cm), jolla on hienot, saniaisenmaiset lehdet, jotka ovat jakautuneet useita kertoja (kolmesti pariliuskaiset) pieniksi, hammaslaitaisiksi, vaaleaanvihreiksi lehdyköiksi. Lehdet ovat pehmeitä, hieman karvaisia, ja niillä on selvä aniksen tai lakritsin haju ja maku murskattaessa. Kasvi tuottaa sarjakukintoja pieniä valkoisia kukkia (2-4 mm) litteän kattomaisissa ryhmissä (8-15 cm leveitä). Uurteiset siemenet ovat pitkänomaisia (15-25 mm), kiiltäviä ja tumman ruskeita kypsinä. Se kasvaa ravinteikkaassa, kosteassa maaperässä osittaisessa varjossa, usein metsänreunoilla, niityillä ja vanhoissa puutarhoissa. Se kukkii toukokuusta heinäkuuhun. Saksankirveli voidaan erottaa samankaltaisista (ja mahdollisesti tappavista) myrkkykeisosta tai hukanputkesta sen aniksen tuoksun, pehmeämpien lehtien pyöristettyjen kärkien (ei teräviä) ja varsien purppurapilkkujen puuttumisen perusteella. Koko kasvi on syötävä, ja lehdillä sekä nuorilla siemenillä on voimakkain lakritsin maku."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on ruskea lakki ja se on nimetty yleensä punertavan puun mukaan?",
-            "answers": [
-              {"answer": "Lehmäntatti (Leccinum scabrum)"},
-              {"answer": "Männynherkkutatti (Boletus pinophilus)"},
-              {"answer": "Haavantatti (Leccinum aurantiacum)"},
-              {"answer": "Ruskotatti (Boletus badius)"}
-            ],
-            "answer": "Lehmäntatti (Leccinum scabrum)",
-            "explanation": "Lehmäntatti (Leccinum scabrum, tunnetaan myös nimellä koivunpunikkitatti) on syötävä sieni, joka kasvaa koivupuiden yhteydessä. Tunnistaminen: Lakki (5-15 cm leveä) on kupera, litistyen iän myötä, väriltään vaalean- tai tummanruskea. Lakin pinta ulottuu hieman reunan yli. Alapuolella on kerros pieniä pillejä (ei helttoja), jotka ovat valkoisia tai harmahtavia, tummuen iän myötä ja muuttuen ruskeaksi vaurioituessa. Jalka (8-15 cm korkea) on valkoinen, jossa on tunnusomaisia tummia harmaan tai mustan suomuja (karheita asteikkoja) pinnallaan. Leikattaessa malto on valkoinen ja saattaa muuttua hieman vaaleanpunertavan harmaaksi, mutta yleensä ei muuta väriä dramaattisesti. Se kasvaa yksinomaan koivupuiden yhteydessä heinäkuusta lokakuuhun. Yhdistelmä ruskeaa lakkia, mustasuomuista jalkaa ja yksinomaista yhteyttä koivupuihin tekee sen helposti tunnistettavaksi. Se voidaan sekoittaa muihin Leccinum-lajeihin, joilla on myös suomuiset jalat, mutta monet niistä ovat syötäviä oikein kypsennettynä. Jotkut ihmiset saattavat kokea ruoansulatusvaivoja Leccinum-lajeista, joten perusteellinen kypsennys on suositeltavaa."
-          },
-          {
-            "question": "Mitä Suomen metsissä kasvavaa luonnonvaraista syötävää kasvia käytettiin perinteisesti 'hätäleivän' valmistukseen?",
-            "answers": [
-              {"answer": "Männyn kuori (Pinus sylvestris)"},
-              {"answer": "Nokkonen"},
-              {"answer": "Ahomansikka"},
-              {"answer": "Käenkaali"}
-            ],
-            "answer": "Männyn kuori (Pinus sylvestris)",
-            "explanation": "Männyn kuorta (Pinus sylvestris, 'mänty' tai 'petäjä' suomeksi) käytettiin perinteisesti hätäleivän raaka-aineena. Tunnistaminen: Mänty kasvaa 30-40 metriä korkeaksi, suorarunkoiseksi puuksi, jolla on pyöreä latvus. Rungon yläosa ja oksat ovat tunnusomaisen punertavan oranssin tai kanelin värisiä ja paperin ohuita, hilseileviä, kun taas alarunko on paksu, syvästi uurtunut harmaan ruskea. Neulaset kasvavat pareittain, ovat sinivihreät, hieman kiertyneet ja 3-5 cm pitkiä. Kävyt ovat 3-7 cm pitkiä, kartiomaisia ja harmaan ruskeita kypsinä. Ravintotarkoituksiin perinteisesti nilakerros (nila) kerättiin keväällä nuorista puista. Tämä kerros löytyy ulkokuoren ja puuaineksen väliltä, ollen ohut, kostea, valkoinen tai kellertävä kerros. Nälkäaikoina tämä nilakerros kuivattiin ja jauhettiin jauhoksi tavallisen jauhon jatkeeksi. Käytäntö ei ole enää yleinen, mutta se on edelleen osa kulttuuriperintöä. TÄRKEÄÄ: Kuoren poistaminen voi tappaa puut, joten tätä käytäntöä ei nykyään yleensä suositella. Männyn neulasia voidaan kuitenkin turvallisesti kerätä C-vitamiinipitoiseen teehen."
-          },
-          {
-            "question": "Millä Suomen metsissä kasvavalla syötävällä sienellä on punertava lakki ja se muodostaa symbioottisen suhteen kuusipuiden kanssa?",
-            "answers": [
-              {"answer": "Lehmäntatti"},
-              {"answer": "Punakiiltotatti (Leccinum aurantiacum)"},
-              {"answer": "Punikkitatti (Leccinum versipelle)"},
-              {"answer": "Männynherkkutatti (Boletus pinophilus)"}
-            ],
-            "answer": "Männynherkkutatti (Boletus pinophilus)",
-            "explanation": "Männynherkkutatti (Boletus pinophilus, tunnetaan myös nimellä B. pinicola) on arvostettu syötävä sieni. Tunnistaminen: Lakki (5-20 cm leveä) on kupera, myöhemmin litistyen, punertavan-ruskea tai mahonginpunainen, joka voi olla kirkkaampi nuorissa yksilöissä. Lakin pinta on sileä ja hieman tahmea märkänä. Pillikerros (alapuoli) on valkoinen tai kermainen nuorissa yksilöissä, muuttuen vihertävän keltaiseksi iän myötä, eikä muutu voimakkaasti painettaessa. Jalka (8-15 cm korkea, 2-5 cm paksu) on pullistunut tyvestä, kaventuen ylöspäin, ja väriltään kermainen tai vaalean ruskea, jossa on hieno verkkomainen kuvio (verkkosuoninen) yläosassa. Malto on valkoista eikä muutu väriltään merkittävästi leikattaessa. Se kasvaa havumetsissä muodostaen sienijuuria pääasiassa männyn ja kuusen kanssa heinäkuusta lokakuuhun. Se voidaan erottaa samankaltaisesta Boletus edulis -sienestä (herkkutatti) punaisemmalla lakillaan ja yhteydellään havupuihin lehtipuiden sijaan. Molemmat ovat erinomaisia syötäviä sieniä, joilla on samanlaiset kulinaariset ominaisuudet. Punainen väri, verkkosuoninen jalka ja havupuuympäristö ovat keskeisiä tunnistuspiirteitä."
-          }
-        ]
-        },
+  "name": "Suomen Metsät, Sienet ja Yrtit (edistyneille)",
+  "questions": [
+    {
+      "question": "Metsälaki määrittelee 'avainbiotoopit', jotka on säilytettävä talousmetsissä. Mikä seuraavista EI tyypillisesti ole lakisääteinen avainbiotooppi?",
+      "answers": [
+        {"answer": "Lähdeletto"},
+        {"answer": "Pähkinälehto"},
+        {"answer": "Kuiva kanervakangas"},
+        {"answer": "Jyrkänteenaluslehto"}
+      ],
+      "answer": "Kuiva kanervakangas",
+      "explanation": "Vaikka kaikilla metsillä on ekologinen arvonsa, Suomen metsälaki (1093/1996) suojelee erityisesti pienialaisia, ekologisesti merkittäviä elinympäristöjä, jotka tunnetaan 'avainbiotooppeina' niiden luonnon monimuotoisuudelle suuren merkityksen vuoksi. Lähdeletot, pähkinälehdot ja jyrkänteenaluslehdot ovat esimerkkejä suojelluista kohteista, koska ne ylläpitävät harvinaisia tai vaativia lajeja. Kuiva kanervakangas sen sijaan on yksi Suomen yleisimmistä ja laajimmalle levinneistä metsätyypeistä. Vaikka se on olennainen osa suomalaista maisemaa, sitä ei yleensä luokitella lakisääteiseksi avainbiotoopiksi, ellei siihen liity muita erityispiirteitä, kuten runsasta lahopuustoa tai uhanalaisten lajien esiintymiä."
+    },
+    {
+      "question": "Korvasienen (Gyromitra esculenta) sisältämä gyromitriini hydrolysoituu elimistössä erääksi erittäin reaktiiviseksi yhdisteeksi, joka aiheuttaa myrkytyksen. Mikä tämä yhdiste on?",
+      "answers": [
+        {"answer": "Amatoksiini"},
+        {"answer": "Orellaniini"},
+        {"answer": "Muskariini"},
+        {"answer": "Monometyylihydratsiini (MMH)"}
+      ],
+      "answer": "Monometyylihydratsiini (MMH)",
+      "explanation": "Gyromitriini itsessään ei ole ensisijainen myrkky. Nautittuna se hydrolysoituu vatsan happamissa olosuhteissa monometyylihydratsiiniksi (MMH). MMH on erittäin haihtuva ja reaktiivinen yhdiste, jota käytetään kuuluisasti myös rakettipolttoaineena. Se aiheuttaa laajaa soluvauriota, vaikuttaen erityisesti keskushermostoon ja maksaan. Se häiritsee GABA-välittäjäaineen (gamma-aminovoihappo) toimintaa, mikä johtaa kouristuksiin. Lisäksi se aiheuttaa oksidatiivista stressiä ja kuluttaa glutationivarastoja, johtaen maksanekroosiin. Amatoksiineja löytyy mm. valkokärpässienestä, orellaniinia seitikeistä ja muskariinia mm. risakkaista ja malikoista."
+    },
+    {
+      "question": "Kansanperinteessä kuukkeli (Perisoreus infaustus) tunnetaan 'sielulintuna'. Tämä uskomus liittyy usein sen opportunistiseen suhteeseen minkä toisen metsän asukkaan kanssa?",
+      "answers": [
+        {"answer": "Karhu"},
+        {"answer": "Ahma"},
+        {"answer": "Susilaumat ja muut suurpedot"},
+        {"answer": "Metso"}
+      ],
+      "answer": "Susilaumat ja muut suurpedot",
+      "explanation": "Kuukkeli on älykäs opportunisti. Sen on havaittu seuraavan suurpetoja, kuten susia ja ilveksiä, syödäkseen niiden saaliiden tähteitä. Tämä käyttäytyminen, jossa lintu ilmestyy kuin tyhjästä pedon kaadettua saaliin, on todennäköisesti ruokkinut kansanuskomusta siitä, että se on 'sielulintu' tai 'metsänhenki', joka liittyy metsän elämän ja kuoleman tapahtumiin. Lintu hyötyy pedon metsästysonnesta, ja joidenkin tulkintojen mukaan sen äänet saattoivat jopa hälyttää petoja saaliin läsnäolosta, muodostaen löyhän, opportunistisen symbioosin."
+    },
+    {
+      "question": "Mikä on erittäin arvostetun matsutaken eli tuoksuvalmuskan (Tricholoma matsutake) ensisijainen mykorritsakumppani Suomessa?",
+      "answers": [
+        {"answer": "Kuusi (Picea abies)"},
+        {"answer": "Rauduskoivu (Betula pendula)"},
+        {"answer": "Mänty (Pinus sylvestris)"},
+        {"answer": "Haapa (Populus tremula)"}
+      ],
+      "answer": "Mänty (Pinus sylvestris)",
+      "explanation": "Matsutake muodostaa spesifisen ektomykorritsan eli sienijuuren männyn juuriston kanssa. Se viihtyy vanhoissa, karuissa ja hiekkapohjaisissa männiköissä, joissa on vain ohut humuskerros, mikä mahdollistaa sienen pääsyn puun juuriin. Perinteisten metsänkäyttötapojen, kuten laidunnuksen ja vähäisten kulotusten, väheneminen on johtanut metsien tihentymiseen ja humuskerroksen paksuuntumiseen, mikä on haitallista matsutakekannoille sekä Suomessa että Japanissa. Tämä erityinen elinympäristövaatimus tekee siitä harvinaisen ja erittäin arvostetun."
+    },
+    {
+      "question": "Mikä seuraavista villiyrteistä sisältää tuoreena huomattavan määrän protoanemoniinia, myrkyllistä yhdistettä, joka voi ärsyttää ihoa mutta neutraloituu kuivattaessa tai kypsennettäessä?",
+      "answers": [
+        {"answer": "Siankärsämö (Achillea millefolium)"},
+        {"answer": "Valkovuokko (Anemone nemorosa)"},
+        {"answer": "Vuohenputki (Aegopodium podagraria)"},
+        {"answer": "Nokkonen (Urtica dioica)"}
+      ],
+      "answer": "Valkovuokko (Anemone nemorosa)",
+      "explanation": "Valkovuokko kuuluu leinikkikasvien (Ranunculaceae) heimoon, joista monet sisältävät ärsyttävää protoanemoniinia. Kun kasvi murskautuu, sen sisältämä glykosidi ranunkuliini hajoaa protoanemoniiniksi, joka voi aiheuttaa kosketusihottumaa ja suun ärsytystä raakana syötynä. Tämä yhdiste on kuitenkin epävakaa ja polymeroituu myrkyttömäksi anemoniiiniksi kuivattaessa tai kuumennettaessa, minkä vuoksi joitakin sukulaiskasveja voidaan käyttää käsittelyn jälkeen. Tästä huolimatta valkovuokkoa pidetään yleisesti syömäkelvottomana."
+    },
+    {
+      "question": "Sukkessio kuvaa metsäekosysteemin kehitystä ajan myötä. Mikä on tyypillisessä suomalaisessa boreaalisessa metsässä yleisin pioneeripuulaji, joka asuttaa alueen suuren häiriön, kuten metsäpalon, jälkeen?",
+      "answers": [
+        {"answer": "Kuusi (Picea abies)"},
+        {"answer": "Mänty (Pinus sylvestris)"},
+        {"answer": "Hieskoivu (Betula pubescens) tai rauduskoivu (Betula pendula)"},
+        {"answer": "Haapa (Populus tremula)"}
+      ],
+      "answer": "Hieskoivu (Betula pubescens) tai rauduskoivu (Betula pendula)",
+      "explanation": "Koivut ovat klassisia pioneerilajeja boreaalisissa ekosysteemeissä. Niiden siemenet ovat pieniä, kevyitä ja leviävät tuulen mukana pitkiä matkoja, mikä mahdollistaa avoimien, häirittyjen alueiden nopean valtaamisen. Ne ovat nopeakasvuisia ja vaativat paljon valoa. Myös haapa on pioneeri, mutta se uusiutuu usein juurivesoista. Mänty voi olla pioneeri erityisesti palon jälkeen, joka raivaa kilpailijat ja paljastaa kivennäismaan, mutta koivu saapuu usein ensimmäisenä suurina määrinä. Kuusi on myöhäisen sukkession laji, joka sietää varjoa ja kasvaa tyypillisesti pioneeri-koivikon tai -männikön alle, lopulta nousten vallitsevaksi puulajiksi kliimaksivaiheessa."
+    },
+    {
+      "question": "Aapasuo on Pohjois-Suomelle tyypillinen suoyhdistymätyyppi. Mikä on sen määrittelevä hydrologinen ja morfologinen piirre?",
+      "answers": [
+        {"answer": "Kupera, kohollaan oleva keskusta, joka on reunojaan korkeammalla (ombrotrofinen)"},
+        {"answer": "Kovera keskusta, jossa on märkiä rimpialueita ja kuivempia jänteitä, ja joka saa vetensä ympäröiviltä kankailta (minerotrofinen)"},
+        {"answer": "Metsäinen suo, jossa on ohut turvekerros kivennäismaan päällä"},
+        {"answer": "Kelluva kasvillisuusmatto järven tai lammen päällä"}
+      ],
+      "answer": "Kovera keskusta, jossa on märkiä rimpialueita ja kuivempia jänteitä, ja joka saa vetensä ympäröiviltä kankailta (minerotrofinen)",
+      "explanation": "Aapasuot ovat suuria, avoimia suoyhdistymiä, jotka ovat tyypillisiä pohjoiselle boreaaliselle vyöhykkeelle. Niiden määrittävä piirre on hydrologia: ne ovat minerotrofisia, eli ne saavat vettä ja ravinteita paitsi sateesta, myös ympäröiviltä kivennäismailta. Tämä johtaa tunnusomaiseen rakenteeseen, jossa vetiset, ravinteikkaat painanteet ('rimmet') vuorottelevat kuivempien, turpeen peittämien kohoumien ('jänteiden') kanssa, jotka ovat asettuneet kohtisuoraan veden virtaussuuntaan nähden. Tämä eroaa keidassoista, jotka ovat ombotrofisia (saderavinteisia) ja muodoltaan kuperia."
+    },
+    {
+      "question": "Mikä pihlajanmarjojen (Sorbus aucuparia) sisältämä yhdiste aiheuttaa niiden karvauden ja toimii laksatiivina raakana, mutta muuntuu vaarattomaksi sorbiinihapoksi jäätyessään tai kuumennettaessa?",
+      "answers": [
+        {"answer": "Amygdaliini"},
+        {"answer": "Parasorbiinihappo"},
+        {"answer": "Omenahappo"},
+        {"answer": "Kiinihappo"}
+      ],
+      "answer": "Parasorbiinihappo",
+      "explanation": "Raakana pihlajanmarjat sisältävät parasorbiinihappoa, laktonia, joka ärsyttää ruoansulatuskanavaa ja maistuu kitkerältä. Tämä yhdiste on epävakaa. Pakastaminen ja sulattaminen tai kypsentäminen rikkoo laktonirenkaan, muuttaen sen sorbiinihapoksi. Sorbiinihappo ei ole kitkerää, se on myrkytöntä ja sitä käytetään laajalti elintarvikkeiden säilöntäaineena sen antimikrobisten ominaisuuksien vuoksi. Tämä kemiallinen muutos on syy perimätietoon, jonka mukaan pihlajanmarjat tulisi kerätä ensimmäisten pakkasten jälkeen tai pakastaa ennen käyttöä."
+    },
+    {
+      "question": "Poronjäkälä (Cladonia rangiferina) on porojen elintärkeä talviravinto. Mikä on tämän jäkälän ensisijainen varastohiilihydraatti, jota poro pystyy hyödyntämään erityisten entsyymiensä avulla?",
+      "answers": [
+        {"answer": "Tärkkelys"},
+        {"answer": "Selluloosa"},
+        {"answer": "Likeniini (lisenaani)"},
+        {"answer": "Fruktoosi"}
+      ],
+      "answer": "Likeniini (lisenaani)",
+      "explanation": "Jäkälät eivät varastoi energiaa tärkkelyksenä kuten kasvit. Niiden ensisijainen varastohiilihydraatti on likeniini, monimutkainen polysakkaridi (eräs beetaglukaanin muoto). Useimmat eläimet eivät pysty sulattamaan likeniiniä, mutta poron pötsissä on erityinen entsyymi, likenaasi, joka mahdollistaa sen hajottamisen ja energian hyödyntämisen. Tämä sopeutuma on ratkaisevan tärkeä niiden selviytymiselle arktisessa talvessa, kun muut ravinnonlähteet ovat lumen alla."
+    },
+    {
+      "question": "Karhun (Ursus arctos) ruokavalio Suomessa on kaikkiruokainen. Mikä ravinnonlähde on kuitenkin kaikkein kriittisin rasvavarastojen keräämiselle talviunta varten ja sen syksyisen ravinnonhaun pääkohde?",
+      "answers": [
+        {"answer": "Hirvenvasat"},
+        {"answer": "Haaskat"},
+        {"answer": "Villimarjat, erityisesti mustikat ja puolukat"},
+        {"answer": "Kalat joista"}
+      ],
+      "answer": "Villimarjat, erityisesti mustikat ja puolukat",
+      "explanation": "Vaikka karhut ovat opportunisteja ja syövät lihaa aina tilaisuuden tullen, loppukesän ja syksyn marjojen valtava määrä ja energiapitoisuus tekevät niistä tärkeimmän ravinnonlähteen ennen talviunta tapahtuvaa painonnostoa varten. Karhu voi syödä kymmeniä tuhansia marjoja päivässä, muuttaen niiden sokerit tehokkaasti rasvaksi, jota tarvitaan pitkästä talvesta selviytymiseen. Marjasadon onnistuminen voi suoraan vaikuttaa karhun lisääntymismenestykseen ja talviselviytymiseen."
+    },
+    {
+      "question": "Mikä on pakurikäävän (Inonotus obliquus), koivuissa kasvavan steriilin muodostelman, ensisijainen ekologinen rooli?",
+      "answers": [
+        {"answer": "Se on symbioottinen kumppani, joka antaa puulle ravinteita sokereita vastaan."},
+        {"answer": "Se on loiseliö, joka aiheuttaa sydänlahoa, heikentäen ja lopulta tappaen isäntäpuunsa."},
+        {"answer": "Se on päällyskasvi, joka käyttää puuta tukenaan vahingoittamatta sitä."},
+        {"answer": "Se on puun tuottama puolustusmekanismi hyönteishyökkäyksiä vastaan."}
+      ],
+      "answer": "Se on loiseliö, joka aiheuttaa sydänlahoa, heikentäen ja lopulta tappaen isäntäpuunsa.",
+      "explanation": "Huolimatta maineestaan lääkinnällisenä 'sienenä', musta, hiilimäinen pakuri ei ole itiöemä vaan steriili massa sienirihmastoa ja puuainesta (sklerootio). Sieni Inonotus obliquus on parasiittinen patogeeni, joka infektoi koivun sydänpuun, tyypillisesti haavan kautta. Se aiheuttaa valkolahoa, joka tuhoaa puuta hitaasti sisältäpäin vuosien ajan. Sienen varsinainen suvullinen itiöemä ilmestyy vasta isäntäpuun kuoltua, muodostaen kuoren alle levymäisen rakenteen."
+    },
+    {
+      "question": "Jatkuva kasvatus on vaihtoehto yleisemmälle jaksolliseen kasvatukseen perustuvalle metsänhoidolle Suomessa. Mikä on tämän menetelmän pääperiaate?",
+      "answers": [
+        {"answer": "Koko alueen avohakkuu ja uuden, tasaisen puuston istutus."},
+        {"answer": "Kaikkien puiden korjuu kerralla, mutta siemenpuiden jättäminen uudistamaan alue luontaisesti."},
+        {"answer": "Jatkuvan metsäpeitteen ylläpitäminen korjaamalla vain yksittäisiä tai pieniä puuryhmiä kerrallaan."},
+        {"answer": "Vain yli 100-vuotiaiden puiden korjuu vanhojen metsien jäljittelemiseksi."}
+      ],
+      "answer": "Jatkuvan metsäpeitteen ylläpitäminen korjaamalla vain yksittäisiä tai pieniä puuryhmiä kerrallaan.",
+      "explanation": "Jatkuva kasvatus välttää avohakkuita. Sen sijaan se käsittää kypsien puiden poimintahakkuita, joko yksittäin tai pienaukkoina, säännöllisin väliajoin. Tämä varmistaa, että metsä säilyttää jatkuvasti latvuspeitteen ja eri-ikäisten puiden sekoituksen. Tavoitteena on edistää luontaista uudistumista, parantaa luonnon monimuotoisuutta, ylläpitää maaperän terveyttä sekä säilyttää metsän maisemalliset ja virkistykselliset arvot, samalla kun se tuottaa tasaista, vaikkakin erilaista, puuvirtaa."
+    },
+    {
+      "question": "Mikä näistä EI ole kuusenpihkan tunnustettu perinteinen käyttötapa suomalaisessa kansanlääkinnässä?",
+      "answers": [
+        {"answer": "Paikallisesti käytettävänä antiseptisenä voiteena haavoihin ja tulehduksiin."},
+        {"answer": "Purukumina hampaiden ja ikenien vahvistamiseksi."},
+        {"answer": "Keskeisenä ainesosana hengitystievaivoihin tarkoitetussa keitetyssä teessä."},
+        {"answer": "Ihon sieni-infektioiden hoitona."}
+      ],
+      "answer": "Keskeisenä ainesosana hengitystievaivoihin tarkoitetussa keitetyssä teessä.",
+      "explanation": "Kuusenpihkalla on voimakkaita, tieteellisesti vahvistettuja antimikrobisia ja parantavia ominaisuuksia, mikä tekee sen käytöstä haavasalvana (pihkasalva) sen tunnetuimman ja tehokkaimman sovelluksen. Sitä myös pureskeltiin purukumin tavoin. Vaikka kuusen*neulaset* ovat C-vitamiinipitoisia ja niistä tehtiin teetä keripukin ja yskän hoitoon, itse pihka ei ole vesiliukoista eikä sitä tyypillisesti keitetty teeksi sisäisesti nautittavaksi. Sen käyttö oli ylivoimaisesti ulkoista."
+    },
+    {
+      "question": "Suomalaista maisemaa leimaa jälkijääkautinen maankohoaminen. Millaiseen ekosysteemiin tämä prosessi vaikuttaa kaikkein suorimmin?",
+      "answers": [
+        {"answer": "Lapin tunturipaljakoihin"},
+        {"answer": "Rannikon ekosysteemeihin ja uuden maan muodostumiseen"},
+        {"answer": "Suurten järvien harppauskerroksen syvyyteen"},
+        {"answer": "Vanhojen metsien lajikoostumukseen"}
+      ],
+      "answer": "Rannikon ekosysteemeihin ja uuden maan muodostumiseen",
+      "explanation": "Viimeisimmän jääkauden valtava jäämassa painoi maankuorta alas. Jään sulamisen jälkeen maa on noussut, prosessi tunnetaan isostaattisena maankohoamisena. Vaikutus on dramaattisin rannikolla, erityisesti Merenkurkun saaristossa, jossa uutta maata nousee merestä jopa senttimetrin vuosivauhdilla. Tämä luo ainutlaatuisen, nopeasti muuttuvan ympäristön ja rannikkoekosysteemien sukkession matalista lahdista tervaleppämetsiköihin alueilla, jotka olivat merenpohjaa vain muutama vuosisata sitten."
+    },
+    {
+      "question": "Käenkaalin (Oxalis acetosella) eli ketunleivän maku on tyypillisen hapan. Mistä kemiallisesta yhdisteestä tämä johtuu?",
+      "answers": [
+        {"answer": "Sitruunahaposta"},
+        {"answer": "Etikkahaposta"},
+        {"answer": "Oksaalihaposta"},
+        {"answer": "Muurahaishaposta"}
+      ],
+      "answer": "Oksaalihaposta",
+      "explanation": "Käenkaalin erottuva, kirpeä ja virkistävä happamuus tulee oksaalihaposta ja sen suoloista (oksalaateista). Suku Oxalis on saanut nimensä tästä. Vaikka se on miellyttävää pieninä määrinä, oksaalihappo voi olla ongelmallista suurina annoksina, koska se voi sitoutua kalsiumiin ja mahdollisesti johtaa munuaiskivien muodostumiseen alttiilla henkilöillä. Tämän vuoksi käenkaalia suositellaan nautittavaksi retkieväänä tai koristeena, ei suurina määrinä vihanneksena."
+    },
+    {
+      "question": "Mikä on haavan (Populus tremula) ekologinen merkitys Suomen metsissä, ja miksi sitä kutsutaan usein 'avainlajiksi'?",
+      "answers": [
+        {"answer": "Sen puuaines on Suomen metsäteollisuuden arvokkainta raaka-ainetta."},
+        {"answer": "Se ylläpitää suhteettoman suurta määrää muita lajeja, mukaan lukien monia harvinaisia hyönteisiä ja sieniä."},
+        {"answer": "Se on ainoa puulaji, joka voi kasvaa arktisella tundravyöhykkeellä."},
+        {"answer": "Sen syvä juuristo estää maaperän eroosiota jyrkillä rinteillä."}
+      ],
+      "answer": "Se ylläpitää suhteettoman suurta määrää muita lajeja, mukaan lukien monia harvinaisia hyönteisiä ja sieniä.",
+      "explanation": "Avainlajilla on ympäristöönsä paljon suurempi vaikutus kuin sen runsaus antaisi olettaa. Haapa on tästä loistava esimerkki boreaalisissa metsissä. Sen pehmeään puuhun tikat kaivertavat helposti koloja, joita sitten käyttävät lukuisat muut linnut ja nisäkkäät. Sen kuori on ravintoa monille eläimille, ja valtava määrä erikoistuneita ja usein uhanalaisia hyönteisiä, jäkäliä ja sieniä on riippuvaisia elävästä tai lahoavasta haavasta. Suurten, vanhojen haapojen läsnäolo on keskeinen indikaattori metsän korkeasta monimuotoisuusarvosta."
+    },
+    {
+      "question": "Sienitauti Heterobasidion annosum, eli juurikääpä, on merkittävä patogeeni Suomen metsissä. Mikä on sen ensisijainen infektointitapa ja aiheuttama vahinko?",
+      "answers": [
+        {"answer": "Se infektoi lehdet aiheuttaen lehtikatoa."},
+        {"answer": "Se infektoi jälkikerroksen, rengastaen puun kuoliaaksi."},
+        {"answer": "Se infektoi juuret ja tyven, aiheuttaen laajaa juuri- ja tyvilahoa."},
+        {"answer": "Se infektoi kävyt, estäen lisääntymisen."}
+      ],
+      "answer": "Se infektoi juuret ja tyven, aiheuttaen laajaa juuri- ja tyvilahoa.",
+      "explanation": "Juurikääpä on Suomen taloudellisesti merkittävin metsäpatogeeni. Se leviää tuulen mukana kulkevien itiöiden kautta, jotka infektoivat tuoreita kantoja ja puun haavoja, ja leviää sitten juuriston kautta terveisiin naapuripuihin. Se aiheuttaa laajaa lahoa juurissa ja rungon tyvessä, mikä heikentää merkittävästi puutavaran arvoa, hidastaa kasvua ja tekee puista erittäin alttiita tuulenkaadoille. Se on suuri huolenaihe erityisesti kuusi- ja mäntyviljelmillä."
+    },
+    {
+      "question": "Missä näistä Suomessa tavattavista marjoista on tunnetusti korkein pitoisuus antosyaaneja, pigmenttejä, jotka antavat niille tumman värin ja antioksidanttiominaisuudet?",
+      "answers": [
+        {"answer": "Puolukka (Vaccinium vitis-idaea)"},
+        {"answer": "Mustikka (Vaccinium myrtillus)"},
+        {"answer": "Hilla/Lakka (Rubus chamaemorus)"},
+        {"answer": "Variksenmarja (Empetrum nigrum)"}
+      ],
+      "answer": "Variksenmarja (Empetrum nigrum)",
+      "explanation": "Vaikka mustikka on kuuluisa runsaasta antosyaanipitoisuudestaan, tutkimukset ovat osoittaneet, että usein unohdetussa variksenmarjassa on vieläkin korkeammat pitoisuudet näitä voimakkaita antioksidanttiyhdisteitä. Variksenmarjan syvä mustanvioletti väri on suora seuraus näistä pigmenteistä. Vaikka sen maku on jokseenkin mieto tai karvas verrattuna muihin marjoihin, sen poikkeuksellinen ravitsemusprofiili on lisännyt kiinnostusta sen käyttöön terveysruokana."
+    },
+    {
+      "question": "METSO-ohjelma on vapaaehtoisuuteen perustuva metsien suojeluohjelma Suomessa. Mikä on sen päätavoite?",
+      "answers": [
+        {"answer": "Hävittää kaikki vierasperäiset puulajit Suomen metsistä."},
+        {"answer": "Rahoittaa vaellusreittien ja laavujen rakentamista kaikkiin talousmetsiin."},
+        {"answer": "Suojella ja monipuolistaa metsäluontoa korvaamalla yksityisille maanomistajille suojelutoimista."},
+        {"answer": "Edistää suomalaisen puun käyttöä kansainvälisillä markkinoilla."}
+      ],
+      "answer": "Suojella ja monipuolistaa metsäluontoa korvaamalla yksityisille maanomistajille suojelutoimista.",
+      "explanation": "METSO (Etelä-Suomen metsien monimuotoisuuden toimintaohjelma) on keskeinen valtion hanke, jonka tavoitteena on pysäyttää metsäluonnon monimuotoisuuden heikkeneminen. Se toimii vapaaehtoispohjalta tarjoten yksityisille metsänomistajille oikeudenmukaisen taloudellisen korvauksen pysyvien suojelualueiden perustamisesta mailleen tai luonnonhoitotöiden toteuttamisesta. Se on yhteistyömalli, joka on onnistuneesti suojellut arvokkaita elinympäristöjä valtion omistamien suojelualueiden ulkopuolella."
+    },
+    {
+      "question": "Maitohorsma (Chamerion angustifolium) on pioneerikasvi, joka valtaa nopeasti häirityt alueet. Mikä on sen tehokkaan siementen leviämisen ensisijainen mekanismi?",
+      "answers": [
+        {"answer": "Siemenet ovat raskaita ja putoavat suoraan emokasvin alle."},
+        {"answer": "Siemenet ovat tahmeassa takiaisessa, joka tarttuu eläinten turkkiin."},
+        {"answer": "Siemenissä on silkkimäisten haivenien muodostama lenninhaiven, joka mahdollistaa tuulilevinnän pitkien matkojen päähän."},
+        {"answer": "Linnut syövät kukkia ja levittävät siemeniä."}
+      ],
+      "answer": "Siemenissä on silkkimäisten haivenien muodostama lenninhaiven, joka mahdollistaa tuulilevinnän pitkien matkojen päähän.",
+      "explanation": "Maitohorsma tuottaa valtavan määrän hyvin pieniä siemeniä, joista jokaisessa on kiinni valkoinen, pörröinen haiventupsu. Tämä rakenne toimii laskuvarjon tavoin, antaen siementen kulkeutua tuulen mukana useita kilometrejä. Tämä erittäin tehokas leviämisstrategia mahdollistaa kasvin nopean leviämisen avoimille, aurinkoisille paikoille, jotka ovat syntyneet häiriöiden, kuten metsäpalojen tai avohakkuiden, seurauksena, minkä vuoksi se on niin menestyksekäs pioneerilaji."
+    },
+    {
+      "question": "Mikä seuraavista toiminnoista EI yleensä ole sallittua jokamiehenoikeudella ilman maanomistajan lupaa?",
+      "answers": [
+        {"answer": "Rauhoittamattomien luonnonkukkien poimiminen kimppuun."},
+        {"answer": "Tilapäinen yöpyminen ja telttailu kohtuullisen etäisyyden päässä asutuksesta."},
+        {"answer": "Kuivien oksien ja risujen kerääminen maasta nuotiota varten."},
+        {"answer": "Yleisten ruokasienien, kuten herkkutattien ja kantarellien, kerääminen."}
+      ],
+      "answer": "Kuivien oksien ja risujen kerääminen maasta nuotiota varten.",
+      "explanation": "Tämä on yleinen sekaannuksen aihe. Vaikka marjojen, sienten ja rauhoittamattomien kukkien kerääminen on sallittua, minkäänlaisen puuaineksen, edes kuolleiden ja maahan pudonneiden risujen, kerääminen ei kuulu jokamiehenoikeuksiin. Puuaines kaikissa muodoissaan katsotaan maanomistajan omaisuudeksi. Siksi tulentekoon tarvitaan paitsi lupa itse tulen sytyttämiseen (ellei kyseessä ole merkitty tulentekopaikka), myös lupa käyttää polttopuita, tai on käytettävä omia puita."
+    },
+    {
+      "question": "Mikä on 'terva', historiallisesti tärkeä tuote Suomessa, erityisesti puulaivojen aikakaudella?",
+      "answers": [
+        {"answer": "Eräänlainen vedenpitävä rasva, joka on valmistettu karhunrasvasta."},
+        {"answer": "Vahva köysi, joka on valmistettu nokkosen kuiduista."},
+        {"answer": "Mäntypuusta kuivatislauksella valmistettu puunsuoja-aine."},
+        {"answer": "Tumma leipä, joka on valmistettu rukiista ja jauhetusta petäjästä."}
+      ],
+      "answer": "Mäntypuusta kuivatislauksella valmistettu puunsuoja-aine.",
+      "explanation": "Terva on viskoosi, musta neste, jota tuotetaan kuumentamalla pihkaista mäntypuuta (erityisesti kantoja ja juuria) vähähappisessa ympäristössä, prosessissa, jota kutsutaan kuivatislaukseksi tai tervanpoltoksi. Vuosisatojen ajan se oli Suomen tärkeimpiä vientituotteita ja välttämätön aine puulaivojen, köysien ja kattojen suojaamisessa laholta ja vedeltä. Tervan tuoksua pidetään usein nostalgisena, perinteisenä suomalaisena tuoksuna."
+    },
+    {
+      "question": "Saimaannorppa (Pusa hispida saimensis) on Suomessa elävä äärimmäisen uhanalainen alalaji. Mikä on sen selviytymisen suurin uhka, joka liittyy sen pesimäympäristöön?",
+      "answers": [
+        {"answer": "Sen pääravinnon, muikun, ylikalastus."},
+        {"answer": "Teollisuuden päästöistä johtuva veden saastuminen."},
+        {"answer": "Ilmastonmuutos, joka johtaa riittävän lumen ja jään puutteeseen pesäkinosten rakentamista varten."},
+        {"answer": "Veneily ja melusaaste kesäkuukausina."}
+      ],
+      "answer": "Ilmastonmuutos, joka johtaa riittävän lumen ja jään puutteeseen pesäkinosten rakentamista varten.",
+      "explanation": "Saimaannorppa on kriittisesti riippuvainen riittävästä lumipeitteestä Saimaan jäällä. Naaras kaivaa monimutkaisen pesäluolan jäällä oleviin lumikinoksiin suojatakseen kuuttiaan pedoilta ja kylmältä. Lauhat, vähälumiset talvet, jotka yleistyvät ilmastonmuutoksen myötä, tarkoittavat, että sopivia kinoksia ei muodostu. Ilman näitä pesiä kuuttien kuolleisuus on erittäin korkea. Suojelutoimiin kuuluu nykyään ihmisen tekemien apukinosten kasaaminen norppien auttamiseksi."
+    },
+    {
+      "question": "Mikä erottaa tappavan myrkyllisten seitikkien (Cortinarius-suku) itiöt monista muista ruskeaitiöisistä sienistä?",
+      "answers": [
+        {"answer": "Ne ovat täysin pallomaisia."},
+        {"answer": "Ne ovat väriltään ruosteenruskeita ja niiden pinta on nystermäinen."},
+        {"answer": "Ne ovat sysimustia ja sileitä."},
+        {"answer": "Ne ovat amyloideja, muuttuen sinimustiksi Melzerin reagenssissa."}
+      ],
+      "answer": "Ne ovat väriltään ruosteenruskeita ja niiden pinta on nystermäinen.",
+      "explanation": "Valtavan Cortinarius-suvun keskeinen tuntomerkki on sen itiöpöly, joka on väriltään tunnusomaisen ruosteen- tai kanelinruskea. Mikroskoopilla tarkasteltuna itiöt ovat tyypillisesti mantelinmuotoisia tai elliptisiä ja niiden pinnalla on karkea, nystermäinen koristekuvio. Tämä ruosteenruskea itiöväri on ratkaiseva vihje, joka auttaa erottamaan ne muista suvuista, vaikkakin lajintunnistus seitikkien sisällä on tunnetusti vaikeaa. Jotkut Suomen myrkyllisimmistä sienistä, kuten suippumyrkkyseitikki (Cortinarius rubellus), kuuluvat tähän sukuun."
+    },
+    {
+      "question": "Mikä on vihdan tai vastan ensisijainen tehtävä suomalaisessa saunaperinteessä?",
+      "answers": [
+        {"answer": "Saunan lauteiden peseminen käytön jälkeen."},
+        {"answer": "Toimia symbolisena uhrilahjana saunatontulle."},
+        {"answer": "Ihon hellävarainen vihtominen, joka vilkastuttaa verenkiertoa ja vapauttaa miellyttävän tuoksun."},
+        {"answer": "Kiukaan vieressä roikottaminen ilman kosteuttamiseksi."}
+      ],
+      "answer": "Ihon hellävarainen vihtominen, joka vilkastuttaa verenkiertoa ja vapauttaa miellyttävän tuoksun.",
+      "explanation": "Vihtominen on keskeinen osa perinteistä suomalaista saunakokemusta. Ihon hellävaraisella läiskimisellä lehtevällä koivunoksakimpulla on useita vaikutuksia: se stimuloi verenkiertoa, toimii kevyenä hierontana, puhdistaa ihoa ja vapauttaa koivunlehdistä tuoksuvia eteerisiä öljyjä, luoden saunaan luonnollisen ja miellyttävän tuoksun. Se on aistillinen kokemus, joka syventää saunan, kehon ja metsän välistä yhteyttä."
+    },
+    {
+      "question": "Suomenkielinen termi 'kangas' viittaa tiettyyn metsäekosysteemityyppiin. Mikä on sen määrittelevä ominaisuus?",
+      "answers": [
+        {"answer": "Se on vetinen, soistunut metsä, tyypillisesti kuusen tai koivun dominoima."},
+        {"answer": "Se on kuiva, kivennäismaapohjainen metsä, jota tyypillisesti hallitsee mänty tai kuusi ja jonka aluskasvillisuus on varpukasveja."},
+        {"answer": "Se on rehevä, ruohottunut lehto, jossa on ravinteikas maaperä ja lehtipuita."},
+        {"answer": "Se on kivikkoinen, puuton tunturipaljakka."}
+      ],
+      "answer": "Se on kuiva, kivennäismaapohjainen metsä, jota tyypillisesti hallitsee mänty tai kuusi ja jonka aluskasvillisuus on varpukasveja.",
+      "explanation": "Suomalaisessa metsätyyppiluokituksessa 'kangas' viittaa kivennäismaalla (podsolimaannos) kasvavaan kangasmetsään. Se on Suomen yleisin metsätyyppi. Nämä metsät luokitellaan edelleen niiden viljavuuden ja vallitsevan aluskasvillisuuden perusteella, kuten kanervatyyppi (CT), puolukkatyyppi (VT) ja mustikkatyyppi (MT). Tämä eroaa 'lehdoista' (rehevät metsät) ja 'korvista' tai 'rämeistä' (metsäisiä suotyyppejä)."
+    },
+    {
+      "question": "Kantokääpä (Fomitopsis pinicola) on erittäin yleinen Suomen metsissä. Mikä on sen ensisijainen ekologinen rooli?",
+      "answers": [
+        {"answer": "Se on mykorritsasieni, joka auttaa puita imemään ravinteita."},
+        {"answer": "Se on ensisijainen havupuun hajottaja, joka aiheuttaa ruskolahoa."},
+        {"answer": "Se on loissieni, joka infektoi vain eläviä koivuja."},
+        {"answer": "Se on herkullinen ruokasieni, jota arvostetaan hienon makunsa vuoksi."}
+      ],
+      "answer": "Se on ensisijainen havupuun hajottaja, joka aiheuttaa ruskolahoa.",
+      "explanation": "Kantokääpä on yksi boreaalisen ekosysteemin tärkeimmistä puunlahottajasienistä. Se on saprotrofi, joka aiheuttaa ruskolahoa pääasiassa kuolleissa havupuissa (vaikka se voi infektoida myös eläviä). Ruskolahossa sieni hajottaa valikoivasti puun selluloosan ja hemiselluloosan, jättäen jäljelle ruskean, hauraan ligniinin kuutiomaisina palasina. Tämä prosessi on ratkaisevan tärkeä ravinnekierrolle ja luo elinympäristöjä monille hyönteisille ja muille metsän eliöille."
+    },
+    {
+      "question": "Mikä seuraavista on männyn (Pinus sylvestris) keskeinen sopeutuma metsäpaloista selviytymiseen?",
+      "answers": [
+        {"answer": "Sen neulaset ovat tulenkestäviä."},
+        {"answer": "Sillä on paksu, eristävä kaarna alarungossa ja kävyt, jotka voivat aueta kuumuudesta."},
+        {"answer": "Se voi uusiutua juuristostaan pää rungon tuhouduttua."},
+        {"answer": "Se tuottaa kemiallista vaahtoa, joka sammuttaa liekkejä."}
+      ],
+      "answer": "Sillä on paksu, eristävä kaarna alarungossa ja kävyt, jotka voivat aueta kuumuudesta.",
+      "explanation": "Mänty on paloon sopeutunut laji. Vanhoille puille kehittyy erittäin paksu, kilpimäinen kaarna rungon alaosaan, joka tarjoaa erinomaisen eristyksen pintapalojen kuumuutta vastaan ja suojaa elävää jälkikerrosta. Lisäksi jotkut männynkävyt ovat serotiinisia, eli ne ovat pihkan sinetöimiä ja aukeavat vapauttaakseen siemenensä vasta altistuttuaan palon korkeille lämpötiloille. Tämä antaa männylle mahdollisuuden uusiutua tehokkaasti palon jälkeisellä raivatulla ja ravinteikkaalla tuhkakerroksella."
+    },
+    {
+      "question": "Kalevalassa iso tammi kasvaa niin suureksi, että se peittää auringon. Mikä merkitys on sen lastuista tehdyillä esineillä puun kaatamisen jälkeen?",
+      "answers": [
+        {"answer": "Niistä rakennetaan ensimmäinen sauna."},
+        {"answer": "Niistä tulee kirottuja esineitä, jotka tuovat epäonnea."},
+        {"answer": "Niistä tulee nuolia Väinämöiselle, mutta yksi lastu tuo ikuisen onnen."},
+        {"answer": "Ne poltetaan rituaalissa estämään talven paluun."}
+      ],
+      "answer": "Niistä tulee nuolia Väinämöiselle, mutta yksi lastu tuo ikuisen onnen.",
+      "explanation": "Kun merestä noussut pieni mies kaataa jättimäisen tammen, sen runko ja oksat jaetaan. Rungon saaja saa ikuisen taian, latvan saaja ikuisen suosion ja oksan saaja ikuisen lemmen. Lastut leviävät, ja niistä noita tekee kateellisia nuolia. Kuitenkin Väinämöinen löytää rantaan ajautuneen sinihohtoisen lastun, josta hän veistää iloa ja vaurautta tuottavan esineen (usein tulkittu kanteleeksi tai onnen lähteeksi), korostaen kosmisen puun antaman vallan kaksijakoista luonnetta."
+    },
+    {
+      "question": "Mikä seuraavista on 'podsoliksi' kutsutun maannoksen tunnusomainen piirre, joka on yleisin Suomen metsien maaperätyyppi?",
+      "answers": [
+        {"answer": "Syvä, yhtenäinen kerros tummaa, hedelmällistä humusta."},
+        {"answer": "Paksu savikerros heti pintamaan alla."},
+        {"answer": "Selvä, tuhkanharmaa huuhtoutumiskerros (E-horisontti) orgaanisen kerroksen alla ja punertava rikastumiskerros (B-horisontti) sen alapuolella."},
+        {"answer": "Maannos, jossa on hyvin vähän horisonttien kehitystä ikiroudan vuoksi."}
+      ],
+      "answer": "Selvä, tuhkanharmaa huuhtoutumiskerros (E-horisontti) orgaanisen kerroksen alla ja punertava rikastumiskerros (B-horisontti) sen alapuolella.",
+      "explanation": "Podsolisaatio on hallitseva maannostumisprosessi boreaalisen metsän viileässä, kosteassa ilmastossa. Hajoavista havunneulasista tuleva hapan vesi suotautuu alaspäin, huuhtoen (eluviaatio) rautaa, alumiinia ja orgaanista ainetta ylemmästä kivennäismaakerroksesta. Tämä jättää jälkeensä vaalean, tuhkanharmaan, ravinneköyhän E-horisontin. Nämä huuhdotut aineet kerrostuvat (illuviaatio) alemmaksi, muodostaen punaruskean tai tumman B-horisontin. Tämä selkeä, kerroksellinen profiili on podsolimaannoksen tunnusmerkki."
+    },
+    {
+      "question": "Pökkelökääpää (Piptoporus betulinus) tavataan yleisesti kuolleissa tai kuolevissa koivuissa. Sitä kantoi mukanaan kuuluisa 'jäämies Ötzi'. Mitkä olivat sen kaksi pääasiallista perinteistä käyttötarkoitusta?",
+      "answers": [
+        {"answer": "Ravinnonlähteenä ja vedensuodattimena."},
+        {"answer": "Tulen sytykkeenä (taulana) ja lääkinnällisiin tarkoituksiin (verenvuodon tyrehdyttäjänä ja antimikrobisena aineena)."},
+        {"answer": "Villan värjäykseen ja kalliomaalausten pigmenttinä."},
+        {"answer": "Hallusinogeenina ja kalanmyrkkynä."}
+      ],
+      "answer": "Tulen sytykkeenä (taulana) ja lääkinnällisiin tarkoituksiin (verenvuodon tyrehdyttäjänä ja antimikrobisena aineena).",
+      "explanation": "Pökkelökäävällä on pitkä käyttöhistoria. Sienen huokoinen, korkkimainen malto, jota kutsutaan taulaksi, on erinomainen sytyke tulen tekoon. Lääkinnällisesti se sisältää yhdisteitä, joilla on antiseptisiä ja tulehdusta ehkäiseviä ominaisuuksia. Ohuita siivuja sienestä käytettiin perinteisesti haavatyynynä tyrehdyttämään verenvuotoa. Ötzi todennäköisesti kantoi sitä mukanaan jommankumman tai molempien näiden tarkoitusten vuoksi viimeisellä matkallaan."
+    },
+    {
+      "question": "Mikä on ensisijainen puutiaisaivokuumeviruksen (TBE-virus) levittäjä Suomessa?",
+      "answers": [
+        {"answer": "Hyttyset (Culicidae-heimo)"},
+        {"answer": "Hirvikärpäset (Lipoptena cervi)"},
+        {"answer": "Ixodes ricinus- ja Ixodes persulcatus -punkit"},
+        {"answer": "Paarmat (Tabanidae-heimo)"}
+      ],
+      "answer": "Ixodes ricinus- ja Ixodes persulcatus -punkit",
+      "explanation": "Puutiaisaivokuume (TBE) on vakava keskushermoston virusinfektio. Suomessa ja koko Euroopassa sen pääasiallisia levittäjiä eli vektoreita ovat kovat Ixodes-suvun punkit. Yleinen puutiainen (Ixodes ricinus) on yleinen Etelä-Suomessa, kun taas taigapuutiainen (Ixodes persulcatus) on päävektori idempänä ja pohjoisempana. Virus kiertää luonnossa punkkien ja niiden isäntäeläinten (pääasiassa pienten jyrsijöiden) välillä, ja ihminen voi saada tartunnan tullessaan infektoituneen punkin puremaksi."
+    },
+    {
+      "question": "Minkä suomalaisen luonnonkasvin tärkkelyspitoisia juurakoita on historiallisesti kuivattu ja jauhettu 'pettujauhoksi' leivän jatkeeksi nälkäaikoina?",
+      "answers": [
+        {"answer": "Järviruoko (Phragmites australis)"},
+        {"answer": "Piharatamo (Plantago major)"},
+        {"answer": "Lumme (Nymphaea-lajit)"},
+        {"answer": "Mänty (Pinus sylvestris)"}
+      ],
+      "answer": "Mänty (Pinus sylvestris)",
+      "explanation": "Tämä on kompaan rakennettu, historialliseen tarkkuuteen keskittyvä kysymys. Vaikka joitakin juurakoita on käytetty, Suomen historian tärkein ja laajimmin käytetty nälkäajan ruoka oli 'pettu', jota tehtiin männyn jälsi- eli nilakerroksesta, ei juurakosta. Keväällä ravinteikas jälsi kuorittiin puista, kuivattiin, nuijittiin ja jauhettiin jauhoksi. Sitä sekoitettiin tavalliseen ruis- tai ohrajauhoon ruokavarastojen riittävyyden parantamiseksi katovuosina ja nälänhädän aikana. Tämä tapa pelasti monia ihmishenkiä, mutta oli raskas sekä ihmisille että puille."
+    },
+    {
+      "question": "Sammon tuhoaminen Kalevalassa johtaa sen kappaleiden ajautumiseen rantaan, tuoden vaurautta Väinölän maille. Mikä Sampo oli?",
+      "answers": [
+        {"answer": "Maaginen miekka, joka takaa voiton taistelussa."},
+        {"answer": "Suuri laiva, joka voi purjehtia maalla ja vedellä."},
+        {"answer": "Myyttinen esine, usein tulkittu maagiseksi myllyksi, joka tuottaa loputtomasti viljaa, suolaa ja kultaa."},
+        {"answer": "Voimakas kantele, jolla voi hallita luontoa."}
+      ],
+      "answer": "Myyttinen esine, usein tulkittu maagiseksi myllyksi, joka tuottaa loputtomasti viljaa, suolaa ja kultaa.",
+      "explanation": "Sampo on Kalevalan keskeinen kiistakapula. Seppä Ilmarisen takoma esine morsiamen hintana Pohjolan emännälle, se on maaginen laite, joka jauhaa ehtymätöntä vaurautta. Sen tarkka luonne on monitulkintainen, mutta useimmiten se nähdään kolmisivuisena myllynä: yksi sivu jauhaa viljaa, toinen suolaa ja kolmas kultarahoja. Sen varastaminen Kalevan sankareiden toimesta ja sitä seurannut taistelu sen hallinnasta on eepoksen keskeinen juonikaari. Sen lopullinen tuhoutuminen ja sirpaleiden leviäminen symboloivat vaurauden jakautumista ja Suomen hyvinvoinnin lähteitä."
+    },
+    {
+      "question": "Mikä on 'Hiidenkäärme' tai 'Kääret-pässi' suomalaisessa mytologiassa, metsään liittyvä olento?",
+      "answers": [
+        {"answer": "Pahansuopa metsänhenki, joka eksyttää matkailijoita."},
+        {"answer": "Karhujen suojelushenki."},
+        {"answer": "Valtava, tulinen käärme, joka vartioi piilotettua aarretta."},
+        {"answer": "Jättiläismäinen metso, joka toimii metsänjumala Tapion ratsuna."}
+      ],
+      "answer": "Valtava, tulinen käärme, joka vartioi piilotettua aarretta.",
+      "explanation": "Hiidenkäärme tai Kääret-pässi on suomalaisen mytologian hahmo, jota kuvataan usein suureksi käärmeeksi tai lohikäärmemäiseksi olennoksi, jolla on pässin pää ja joka syöksee tulta. Se esitetään tyypillisesti piilotetun aarteen, usein jättiläisten tai merirosvojen hautaaman aarteen, vartijana. Se edustaa syvän, kesyttämättömän erämaan vaaroja ja piilotettuja rikkauksia."
+    },
+    {
+      "question": "Luulajäkälällä (Letharia vulpina) on kirkkaan keltavihreä väri ja se kasvaa vanhoilla puilla. Mistä sen myrkyllisyys ja perinteinen käyttö juontuvat?",
+      "answers": [
+        {"answer": "Se sisältää korkeita pitoisuuksia maaperästä imeytynyttä arseenia."},
+        {"answer": "Se sisältää vulpiinihappoa, jota käytettiin suden- ja ketunmyrkkynä."},
+        {"answer": "Se ei ole myrkyllinen, vaan sitä käytettiin mausteena ruoanlaitossa."},
+        {"answer": "Se tuottaa voimakasta hallusinogeenia, jota käytettiin shamaanien rituaaleissa."}
+      ],
+      "answer": "Se sisältää vulpiinihappoa, jota käytettiin suden- ja ketunmyrkkynä.",
+      "explanation": "Luulajäkälän kirkas väri ja myrkyllisyys johtuvat vulpiinihaposta. Tämä yhdiste on myrkyllistä kaikille lihansyöjäeläimille, mutta ei kasvinsyöjille kuten hiirille ja jäniksille. Historiallisesti Skandinaviassa jauhettua jäkälää sekoitettiin lihaan ja jätettiin syötiksi susien ja kettujen myrkyttämiseksi, mistä sen englanninkielinen nimi 'Wolf Lichen' juontuu. Sitä käytettiin myös kirkkaankeltaisena väriaineena villan värjäykseen."
+    },
+    {
+      "question": "Itämeri on murtovesiallas. Miten tämä alhainen suolapitoisuus vaikuttaa Suomen rannikon kalalajeihin verrattuna Pohjois-Atlanttiin?",
+      "answers": [
+        {"answer": "Se mahdollistaa paljon suuremman valikoiman suuria valtamerikaloja, kuten tonnikaloja ja haita."},
+        {"answer": "Sillä ei ole merkittävää vaikutusta; lajisto on identtinen Pohjois-Atlantin kanssa."},
+        {"answer": "Se pakottaa kaikki kalat olemaan paljon pienempiä kuin niiden valtamerisukulaiset (kääpiöityminen)."},
+        {"answer": "Se luo ainutlaatuisen sekoituksen makean veden lajeja (kuten ahven ja hauki) elämässä rinnakkain merilajien (kuten silakka ja turska) kanssa."}
+      ],
+      "answer": "Se luo ainutlaatuisen sekoituksen makean veden lajeja (kuten ahven ja hauki) elämässä rinnakkain merilajien (kuten silakka ja turska) kanssa.",
+      "explanation": "Itämeren murtovesi on fysiologisesti haastava ympäristö. Se on liian suolaista monille makean veden lajeille ja liian vähäsuolaista monille merilajeille. Tuloksena on ainutlaatuinen, vähälajinen ekosysteemi, jossa sitkeät makean veden lajit, jotka sietävät jonkin verran suolaa (esim. ahven, hauki, kuha), elävät samoissa elinympäristöissä kuin merilajit, jotka sietävät alhaista suolapitoisuutta (esim. silakka, turska, kilohaili). Tämä sekoitus on Itämeren ekologian määrittelevä piirre."
+    },
+    {
+      "question": "Mikä on 'riekko' suomeksi, ja mikä on sen merkittävin vuodenaikainen sopeutuma?",
+      "answers": [
+        {"answer": "Se on ahma, ja se varastoi ruokaa lumen alle talveksi."},
+        {"answer": "Se on riekko (kanalintu), ja sen höyhenpeite muuttuu kirjavanruskeasta kesällä puhtaanvalkoiseksi talvella."},
+        {"answer": "Se on metsäjänis, ja sille kasvaa talveksi suuremmat käpälät toimimaan lumikenkinä."},
+        {"answer": "Se on naali, ja se muuttaa etelään talven ankarimmaksi ajaksi."}
+      ],
+      "answer": "Se on riekko (kanalintu), ja sen höyhenpeite muuttuu kirjavanruskeasta kesällä puhtaanvalkoiseksi talvella.",
+      "explanation": "Riekko (Lagopus lagopus) on kanalintu, jota tavataan Pohjois-Suomen tuntureilla ja koivumetsissä. Sen silmiinpistävin sopeutuma on vuodenaikainen suojaväri. Kesällä sen höyhenpuku on ruskean, mustan ja valkoisen kirjava, sulautuen täydellisesti maakasvillisuuteen. Talven lähestyessä se vaihtaa höyhenpukunsa täysin valkoiseksi, mikä tarjoaa erinomaisen naamioinnin lunta vasten. Jopa sen jalat ovat höyhenpeitteiset auttaakseen sitä kävelemään lumella."
+    },
+    {
+      "question": "Männyntuhoojakehrääjä (Thaumetopoea pinivora) on tuholainen Suomen metsissä. Minkälaista pääasiallista vahinkoa se aiheuttaa?",
+      "answers": [
+        {"answer": "Tuholaisen toukat kaivautuvat puuhun, heikentäen puutavaran laatua."},
+        {"answer": "Aikuiset yksilöt syövät puiden nilaosaa, heikentäen niitä."},
+        {"answer": "Tuholaisen toukat syövät ahnaasti männynneulasia, aiheuttaen vakavaa lehtikatoa."},
+        {"answer": "Tuholaisen toukat hyökkäävät juuriin, tehden puusta epävakaan."}
+      ],
+      "answer": "Tuholaisen toukat syövät ahnaasti männynneulasia, aiheuttaen vakavaa lehtikatoa.",
+      "explanation": "Männyntuhoojakehrääjän pääasiallinen vahinko johtuu sen toukista. Ne elävät yhteispesissä ja marssivat 'kulkueina' syömään mäntyjen neulasia. Joukkoesiintymisvuosina ne voivat aiheuttaa laajaa ja vakavaa neulaskatoa, mikä stressaa puita, vähentää niiden kasvua ja voi tehdä ne alttiimmiksi muille tuholaisille ja taudeille. Toukilla on myös poltinkarvoja, jotka voivat aiheuttaa voimakasta ihoärsytystä ihmisille ja eläimille."
+    },
+    {
+      "question": "Mikä seuraavista on perinteinen suomalainen pinta-alan mittayksikkö, joka historiallisesti liittyi kotitalouden elättämiseen tarvittavaan maamäärään ja jota käytettiin vanhoissa verokirjoissa?",
+      "answers": [
+        {"answer": "Tynnyrinala"},
+        {"answer": "Hektaari"},
+        {"answer": "Motti"},
+        {"answer": "Pannunalusta"}
+      ],
+      "answer": "Tynnyrinala",
+      "explanation": "Tynnyrinala oli historiallinen pinta-alan yksikkö Suomessa ja Ruotsissa. Se määriteltiin alun perin maa-alaksi, joka voitiin kylvää yhdellä tynnyrillisellä siemeniä. Sen tarkka koko vaihteli ajan ja alueen mukaan, mutta se vastasi suunnilleen puolta hehtaaria. Hektaari on nykyaikainen metrinen yksikkö. Motti on kuutiometri pinottua polttopuuta, ja pannunalusta on keittoastian alunen."
+    },
+    {
+      "question": "Korvasieni (Gyromitra esculenta) ja huhtasienet (Morchella spp.) voidaan sekoittaa keskenään. Mikä on varmin tapa erottaa ne maastossa?",
+      "answers": [
+        {"answer": "Huhtasienillä on tummempi lakki."},
+        {"answer": "Korvasienet kasvavat vain keväällä."},
+        {"answer": "Leikkaamalla ne pystysuunnassa auki: aito huhtasieni on täysin ontto ylhäältä alas, kun taas korvasieni on lokeroinen tai täynnä kudosta."},
+        {"answer": "Korvasieni sinistyy ruhjottaessa, kun taas huhtasieni ei."}
+      ],
+      "answer": "Leikkaamalla ne pystysuunnassa auki: aito huhtasieni on täysin ontto ylhäältä alas, kun taas korvasieni on lokeroinen tai täynnä kudosta.",
+      "explanation": "Tämä on luotettavin ja kriittisin erottava tekijä. Aidolla huhtasienellä (Morchella spp.) on yhtenäinen, ontto tila, joka ulottuu lakin kärjestä jalan tyveen saakka. Lakki on myös täysin kiinni jalassa. Korvasieni (Gyromitra spp.) sen sijaan ei ole ontto. Sen sisus on täynnä pumpulimaista kudosta tai se on poimuinen ja täynnä lokeroita. Korvasienen lakki roikkuu usein vapaammin jalan ympärillä. Ottaen huomioon korvasienen tappavan myrkyllisyyden, tämä ero on elintärkeä."
+    },
+    {
+      "question": "Mihin paikkaan suomen kielen sana 'hiisi' alun perin viittasi, ennen kuin sen merkitys siirtyi tarkoittamaan pahansuopaa peikkoa tai jättiläistä?",
+      "answers": [
+        {"answer": "Kauppapaikkaan tai toriin."},
+        {"answer": "Pyhään lehtoon tai kalmistoon, esikristilliseen palvontapaikkaan."},
+        {"answer": "Järven tai joen syvänteeseen."},
+        {"answer": "Päärakennuksesta erillään olevaan saunaan."}
+      ],
+      "answer": "Pyhään lehtoon tai kalmistoon, esikristilliseen palvontapaikkaan.",
+      "explanation": "Alun perin, esikristillisessä suomalaisessa uskomusjärjestelmässä, 'hiisi' oli pyhä luonnonpaikka, usein puulehto, suuri siirtolohkare tai kalmisto, joka oli uskonnollisten rituaalien ja palvonnan keskus. Kristinuskon saapumisen myötä nämä pakanalliset paikat demonisoitiin, ja sanan 'hiisi' merkitys siirtyi vähitellen viittaamaan pahoihin henkiin, jättiläisiin tai peikkoihin, joiden uskottiin asuttavan tällaisia paikkoja. Tämä kielellinen muutos heijastaa kulttuurinmuutosta ja vanhan uskon demonisointia."
+    },
+    {
+      "question": "Mikä on metson (Tetrao urogallus) poikasten ensisijainen ravinnonlähde niiden ensimmäisten elinviikkojen aikana?",
+      "answers": [
+        {"answer": "Männynneulaset"},
+        {"answer": "Mustikanlehdet"},
+        {"answer": "Hyönteiset ja muut selkärangattomat"},
+        {"answer": "Pienet siemenet"}
+      ],
+      "answer": "Hyönteiset ja muut selkärangattomat",
+      "explanation": "Vaikka aikuiset metsot ovat kasvinsyöjiä, vastakuoriutuneet poikaset ovat kriittisesti riippuvaisia proteiinirikkaasta ravinnosta nopean kasvunsa turvaamiseksi. Ensimmäisten elinviikkojensa ajan niiden ruokavalio koostuu lähes yksinomaan hyönteisistä, hämähäkeistä ja muista pienistä selkärangattomista. Koppelo johdattaa poikueensa hyönteisrikkaille alueille, kuten soiden laitamille ja kosteille kankaille. Tämän hyönteisravinnon saatavuus on merkittävä tekijä poikasten selviytymisasteessa."
+    },
+    {
+      "question": "Karhunköynnös (Calystegia sepium) on yleinen Etelä-Suomessa. Mikä on sen ekologinen strategia?",
+      "answers": [
+        {"answer": "Se on loiskasvi, joka imee ravinteita suoraan isäntäpuun johtojänteistä."},
+        {"answer": "Se on kiipeilevä köynnös, joka käyttää muita kasveja tukena päästäkseen auringonvaloon."},
+        {"answer": "Se on lihansyöjäkasvi, joka pyydystää hyönteisiä kukillaan."},
+        {"answer": "Se on typensitojakasvi, joka rikastaa maaperää juurinystyröidensä avulla."}
+      ],
+      "answer": "Se on kiipeilevä köynnös, joka käyttää muita kasveja tukena päästäkseen auringonvaloon.",
+      "explanation": "Karhunköynnös on klassinen kiipeilevä kasvi eli liaani. Sillä ei ole vahvaa, itsekantavaa vartta. Sen sijaan se käyttää kiertyvää kasvutapaa kietoutuakseen muiden, tukevampien kasvien (tai aitojen ja muiden rakenteiden) ympärille kiivetäkseen ylöspäin. Tämä on kilpailustrategia, jolla päästään auringonvaloon tiheissä kasviyhteisöissä ilman energian tuhlaamista paksun, puisen varren rakentamiseen. Se ei ole loinen; sillä on omat juuret ja se yhteyttää normaalisti, mutta se voi joskus tukahduttaa pienempiä kasveja estämällä niiden pääsyn valoon."
+    },
+    {
+      "question": "Mikä seuraavista on Pohjois-Suomen vallitsevalle suotyypille, aapasuolle, tunnusomainen piirre?",
+      "answers": [
+        {"answer": "Ne ovat ombrotrofisia, eli ne saavat vetensä ja ravinteensa vain sateesta."},
+        {"answer": "Niillä on kupera, kupolimainen muoto, jossa keskusta on reunoja korkeammalla."},
+        {"answer": "Ne ovat minerotrofisia, ja niillä on vetinen, kovera keskusta, joka saa vettä ympäröiviltä kivennäismailta."},
+        {"answer": "Ne ovat yksinomaan kuusien ja mäntyjen metsittämiä."}
+      ],
+      "answer": "Ne ovat minerotrofisia, ja niillä on vetinen, kovera keskusta, joka saa vettä ympäröiviltä kivennäismailta.",
+      "explanation": "Aapasuot määritellään niiden hydrologian perusteella. Ne ovat minerotrofisia, mikä tarkoittaa, että niiden vesi- ja ravinnevarasto tulee sateen lisäksi myös ympäröiviltä, korkeammalla sijaitsevilta kivennäismailta valuvista vesistä. Tämä johtaa tunnusomaiseen kuviolliseen maisemaan, jossa on vetinen, ravinteikkaampi keskusta ('keskusneva'), joka koostuu märistä painanteista ('rimpi') ja kuivemmista turveharjanteista ('jänne'). Tämä on vastakohta keidassoille, jotka ovat ombrotrofisia (saderavinteisia) ja muodoltaan kuperia."
+    },
+    {
+      "question": "Valkokärpässieni (Amanita virosa ja sen sukulaiset) on tappavan myrkyllinen. Mikä on sen päämyrkkyjen, amatoksiinien, vaikutusmekanismi?",
+      "answers": [
+        {"answer": "Ne aiheuttavat massiivisen punasolujen tuhoutumisen (hemolyysi)."},
+        {"answer": "Ne estävät hermoimpulsseja, aiheuttaen hengityshalvauksen."},
+        {"answer": "Ne estävät RNA-polymeraasi II -entsyymin toiminnan, pysäyttäen proteiinisynteesin ja aiheuttaen solukuoleman erityisesti maksassa ja munuaisissa."},
+        {"answer": "Ne ovat voimakkaita psykoaktiivisia yhdisteitä, jotka aiheuttavat kuolettavia hallusinaatioita."}
+      ],
+      "answer": "Ne estävät RNA-polymeraasi II -entsyymin toiminnan, pysäyttäen proteiinisynteesin ja aiheuttaen solukuoleman erityisesti maksassa ja munuaisissa.",
+      "explanation": "Amatoksiinit ovat erittäin voimakkaita syklisiä peptidimyrkkyjä. Niiden pääkohde soluissa on RNA-polymeraasi II -entsyymi. Tämä entsyymi on välttämätön DNA:n transkriptiolle lähetti-RNA:ksi, mikä on ensimmäinen askel proteiinien tuotannossa. Estämällä peruuttamattomasti tämän entsyymin toiminnan amatoksiinit pysäyttävät kaiken proteiinisynteesin solussa. Solut, joilla on korkea aineenvaihduntanopeus, kuten maksan hepatosyytit ja munuaistiehyiden solut, kärsivät eniten. Tämä johtaa massiiviseen solunekroosiin, elinten pettämiseen ja usein kuolemaan ilman maksansiirtoa. Oireiden viivästynyt ilmaantuminen on erityisen vaarallista, koska myrkky on jo imeytynyt ja aiheuttanut peruuttamatonta vahinkoa ennen kuin uhri tuntee itsensä sairaaksi."
+    },
+    {
+      "question": "Mihin suomenkielinen sana 'ikimetsä' viittaa ja mitä se kirjaimellisesti tarkoittaa?",
+      "answers": [
+        {"answer": "Se tarkoittaa 'talvimetsää' ja viittaa lumen peittämään metsään."},
+        {"answer": "Se tarkoittaa 'ikuista metsää' ja viittaa vanhaan, lähes luonnontilaiseen metsään, jossa ei ole juurikaan ollut ihmistoimintaa."},
+        {"answer": "Se tarkoittaa 'pimeää metsää' ja viittaa tiheään, varjoisaan kuusikkoon."},
+        {"answer": "Se tarkoittaa 'pyhää metsää' ja viittaa esikristilliseen palvontapaikkaan."}
+      ],
+      "answer": "Se tarkoittaa 'ikuista metsää' ja viittaa vanhaan, lähes luonnontilaiseen metsään, jossa ei ole juurikaan ollut ihmistoimintaa.",
+      "explanation": "'Ikimetsä' ('iki-' tarkoittaa ikuista, muinaista; 'metsä' tarkoittaa metsää) on suomenkielinen sana vanhalle metsälle. Se kuvaa metsää, joka on saavuttanut korkean iän ilman merkittäviä ihmistoiminnan, kuten hakkuiden, aiheuttamia häiriöitä. Näille metsille on ominaista monimutkainen rakenne, jossa on eri-ikäisiä ja -kokoisia puita, suuri määrä pystyssä olevaa ja kaatunutta lahopuuta sekä rikas lajisto, joka on riippuvainen näistä erityisistä olosuhteista."
+    },
+    {
+      "question": "Kataja (Juniperus communis) on yleinen havupensas Suomessa. Miten sen 'marjat' luokitellaan kasvitieteellisesti?",
+      "answers": [
+        {"answer": "Ne ovat aitoja marjoja."},
+        {"answer": "Ne ovat luumarjoja, kuten kirsikat."},
+        {"answer": "Ne ovat pohjushedelmiä."},
+        {"answer": "Ne ovat meheviä emikäpyjä, eivät aitoja hedelmiä."}
+      ],
+      "answer": "Ne ovat meheviä emikäpyjä, eivät aitoja hedelmiä.",
+      "explanation": "Vaikka katajanmarjoiksi yleisesti kutsutaan, katajan sinimustat muodostelmat eivät ole kasvitieteellisessä mielessä aitoja marjoja. Kataja on havupuu, paljassiemeninen kasvi, ja paljassiemeniset eivät tuota kukkia tai hedelmiä. 'Marja' on itse asiassa pitkälle erikoistunut emikäpy. Sen suomut ovat epätavallisen meheviä ja ovat sulautuneet yhteen muodostaen marjamaisen rakenteen, joka kätkee siemenet sisäänsä. Tämä on esimerkki konvergentista evoluutiosta, jossa rakenne kehittyy muistuttamaan hedelmää houkutellakseen eläimiä siementen levittäjiksi."
+    }
+  ]
+},
     {
     "name": "Ravitsemus",
     "questions": [
