@@ -1,4 +1,1125 @@
 [
+{
+  "name": "Kirjasto- ja tietopalvelualan perusteet",
+  "questions": [
+  {
+  "question": "Mikä on kirjastokortin päätarkoitus?",
+  "answers": [
+  {"answer": "Se on alennuskortti kirjaston kahvilaan."},
+  {"answer": "Se toimii henkilöllisyystodistuksena kaikissa virastoissa."},
+  {"answer": "Sillä todistetaan, että olet kirjaston asiakas ja voit lainata aineistoa."},
+  {"answer": "Se on pääsylippu kirjaston erikoistapahtumiin."}
+  ],
+  "answer": "Sillä todistetaan, että olet kirjaston asiakas ja voit lainata aineistoa.",
+  "explanation": "Kirjastokortti on henkilökohtainen tunniste, jonka avulla kirjasto tietää, kuka olet. Kun lainaat kirjoja tai muita aineistoja, lainat rekisteröidään korttisi tietoihin. Näin kirjasto pystyy seuraamaan, missä aineistot ovat ja kuka on vastuussa niistä. Se on siis avain kirjaston palveluiden, kuten lainaamisen, käyttöön."
+  },
+  {
+  "question": "Mitä tarkoitetaan, kun puhutaan kirjaston 'kokoelmasta'?",
+  "answers": [
+  {"answer": "Kirjaston henkilökunnan muodostamaa tiimiä."},
+  {"answer": "Kaikkia niitä kirjoja, lehtiä, elokuvia ja muuta aineistoa, joita kirjasto tarjoaa asiakkailleen."},
+  {"answer": "Kirjastorakennuksen huonekaluja ja sisustusta."},
+  {"answer": "Kirjaston järjestämiä tapahtumia ja kursseja."}
+  ],
+  "answer": "Kaikkia niitä kirjoja, lehtiä, elokuvia ja muuta aineistoa, joita kirjasto tarjoaa asiakkailleen.",
+  "explanation": "Kokoelma on yleisnimitys kaikelle sille materiaalille, jonka kirjasto on hankkinut asiakkaidensa käyttöön. Siihen kuuluvat perinteisten kirjojen lisäksi esimerkiksi aikakauslehdet, sanomalehdet, musiikki (CD-levyt, nuotit), elokuvat (DVD, Blu-ray), pelit (lauta- ja konsolipelit) sekä e-aineistot, kuten e-kirjat ja äänikirjat."
+  },
+  {
+  "question": "Mikä on yleisen kirjaston päätehtävä Suomessa?",
+  "answers": [
+  {"answer": "Myydä kirjoja ja muita tuotteita."},
+  {"answer": "Tarjota kaikille yhtäläiset mahdollisuudet sivistykseen, oppimiseen ja kulttuuriin."},
+  {"answer": "Säilyttää vain vanhoja ja arvokkaita kirjoja."},
+  {"answer": "Tarjota tiloja vain opiskelijoille ja tutkijoille."}
+  ],
+  "answer": "Tarjota kaikille yhtäläiset mahdollisuudet sivistykseen, oppimiseen ja kulttuuriin.",
+  "explanation": "Suomen kirjastolaki määrittelee yleisen kirjaston tehtäväksi edistää väestön yhtäläisiä mahdollisuuksia sivistykseen, lukemiskulttuuria, tiedonhankintaa, oppimista ja kansalaisvalmiuksia. Se on kaikille avoin, maksuton peruspalvelu, jonka tavoitteena on tukea ihmisten henkistä kasvua ja yhteiskunnallista osallistumista."
+  },
+  {
+  "question": "Mitä tarkoittaa 'eräpäivä' kirjastolainassa?",
+  "answers": [
+  {"answer": "Päivä, jolloin kirja on julkaistu."},
+  {"answer": "Päivä, jolloin sinun täytyy viimeistään palauttaa lainaamasi aineisto."},
+  {"answer": "Päivä, jolloin voit uusia lainasi."},
+  {"answer": "Päivä, jolloin kirja on hankittu kirjastoon."}
+  ],
+  "answer": "Päivä, jolloin sinun täytyy viimeistään palauttaa lainaamasi aineisto.",
+  "explanation": "Kun lainaat aineistoa kirjastosta, sille asetetaan laina-aika (esim. 2 tai 4 viikkoa). Eräpäivä on se päivämäärä, jolloin laina-aika päättyy ja aineisto tulee palauttaa takaisin kirjastoon. Jos palautat aineiston eräpäivän jälkeen, joudut yleensä maksamaan myöhästymismaksun. Eräpäivän voi tarkistaa lainakuitista tai verkkokirjastosta."
+  },
+  {
+  "question": "Miksi kirjat on järjestetty kirjastossa hyllyihin tietyn luokitusjärjestelmän mukaan?",
+  "answers": [
+  {"answer": "Jotta hyllyt näyttäisivät siisteiltä ja tasaisilta."},
+  {"answer": "Jotta samaa aihetta käsittelevät kirjat löytyisivät läheltä toisiaan."},
+  {"answer": "Jotta suosituimmat kirjat olisivat helpoimmin saatavilla."},
+  {"answer": "Koska laki vaatii sitä."}
+  ],
+  "answer": "Jotta samaa aihetta käsittelevät kirjat löytyisivät läheltä toisiaan.",
+  "explanation": "Luokitusjärjestelmä on kuin kirjaston sisäinen kartta. Tietokirjallisuus on järjestetty aihepiireittäin (esim. historia, luonnontieteet, keittokirjat) omiin luokkiinsa. Tämä auttaa sinua löytämään helposti kaikki ne kirjat, jotka käsittelevät sinua kiinnostavaa aihetta. Kaunokirjallisuus on yleensä järjestetty tekijän sukunimen mukaan aakkosjärjestykseen."
+  },
+  {
+  "question": "Mikä on 'tietokirja'?",
+  "answers": [
+  {"answer": "Kirja, joka kertoo keksityn tarinan."},
+  {"answer": "Kirja, joka perustuu faktoihin ja todelliseen tietoon jostakin aiheesta."},
+  {"answer": "Kirja, jossa on paljon kuvia mutta ei lainkaan tekstiä."},
+  {"answer": "Kirja, joka sisältää vain listoja puhelinnumeroista."}
+  ],
+  "answer": "Kirja, joka perustuu faktoihin ja todelliseen tietoon jostakin aiheesta.",
+  "explanation": "Tietokirjallisuuden (fakta) ja kaunokirjallisuuden (fiktio) keskeinen ero on niiden suhde todellisuuteen. Tietokirja pyrkii kuvaamaan ja selittämään todellista maailmaa ja sen ilmiöitä. Esimerkkejä tietokirjoista ovat elämäkerrat, historiaa käsittelevät teokset, luontooppaat, keittokirjat ja tiedettä popularisoivat kirjat."
+  },
+  {
+  "question": "Mitä tarkoittaa 'lainan uusiminen'?",
+  "answers": [
+  {"answer": "Palautat kirjan ja lainaat sen heti uudestaan."},
+  {"answer": "Pyydät lisää laina-aikaa kirjalle."},
+  {"answer": "Vaihdat lainaamasi kirjan toiseen."},
+  {"answer": "Maksat sakon, jotta saat pitää kirjan pidempään."}
+  ],
+  "answer": "Pyydät lisää laina-aikaa kirjalle.",
+  "explanation": "Jos et ehdi lukea kirjaa loppuun ennen eräpäivää, voit yleensä uusia lainan. Uusiminen tarkoittaa uuden laina-ajan saamista. Eräpäivä siirtyy siis eteenpäin. Uusiminen onnistuu helposti verkkokirjastossa, kirjaston sovelluksella tai asioimalla kirjastossa. Uusiminen ei kuitenkaan onnistu, jos joku toinen asiakas on tehnyt kirjaan varauksen."
+  },
+  {
+  "question": "Mikä on verkkokirjasto?",
+  "answers": [
+  {"answer": "Kirjaston ylläpitämä keskustelupalsta."},
+  {"answer": "Kirjaston verkkosivu, jossa voit hakea aineistoa, uusia lainoja ja tehdä varauksia."},
+  {"answer": "Sovellus, jolla voi lukea vain e-kirjoja."},
+  {"answer": "Virtuaalinen 3D-malli kirjastorakennuksesta."}
+  ],
+  "answer": "Kirjaston verkkosivu, jossa voit hakea aineistoa, uusia lainoja ja tehdä varauksia.",
+  "explanation": "Verkkokirjasto on kirjaston digitaalinen vastine, joka on käytettävissäsi milloin ja missä vain internet-yhteyden kautta. Siellä voit selata kirjaston kokoelmaa, tarkistaa onko jokin kirja saatavilla, tehdä varauksia lainassa olevaan aineistoon, uusia omia lainojasi ja tarkistaa niiden eräpäivät. Se on tärkeä työkalu omien kirjastoasioiden hoitamiseen."
+  },
+  {
+  "question": "Mitä tarkoittaa 'varauksen tekeminen'?",
+  "answers": [
+  {"answer": "Ostat kirjan itsellesi kirjakaupasta."},
+  {"answer": "Ilmoitat kirjastolle, että haluat lainata kirjan seuraavaksi, kun se palautuu."},
+  {"answer": "Pyydät kirjastonhoitajaa piilottamaan kirjan sinua varten."},
+  {"answer": "Lupaat palauttaa sen nopeammin kuin muut."}
+  ],
+  "answer": "Ilmoitat kirjastolle, että haluat lainata kirjan seuraavaksi, kun se palautuu.",
+  "explanation": "Jos haluamasi kirja on lainassa jollakulla toisella, voit tehdä siihen varauksen. Tämä tarkoittaa, että asetat itsesi jonoon odottamaan kirjan vapautumista. Kun kirja palautetaan kirjastoon, se otetaan sivuun sinua varten ja saat ilmoituksen (esim. sähköpostilla tai tekstiviestillä), että voit tulla noutamaan sen."
+  },
+  {
+  "question": "Mikä on kirjastonhoitajan tai informaatikon tehtävä?",
+  "answers": [
+  {"answer": "Ainoastaan kirjojen lajittelu hyllyihin."},
+  {"answer": "Asiakkaiden neuvominen ja auttaminen tiedon etsinnässä sekä kirjaston palveluiden käytössä."},
+  {"answer": "Kirjaston siivoaminen ja kunnossapito."},
+  {"answer": "Asiakkaiden valvonta, jotta he eivät metelöi."}
+  ],
+  "answer": "Asiakkaiden neuvominen ja auttaminen tiedon etsinnässä sekä kirjaston palveluiden käytössä.",
+  "explanation": "Kirjaston ammattilaiset ovat asiakaspalvelijoita ja tiedon asiantuntijoita. Heidän tärkein tehtävänsä on auttaa sinua löytämään tarvitsemasi tieto ja aineisto. He opastavat verkkokirjaston ja muiden tietokantojen käytössä, suosittelevat luettavaa ja vastaavat monenlaisiin kysymyksiin. He ovat kirjastossa sinua varten."
+  },
+  {
+  "question": "Mikä on e-kirja?",
+  "answers": [
+  {"answer": "Erityisen painava ja iso kirja."},
+  {"answer": "Digitaalisessa muodossa oleva kirja, jota voi lukea esimerkiksi tietokoneelta, tabletilta tai lukulaitteelta."},
+  {"answer": "Kirja, josta on tehty elokuva."},
+  {"answer": "Kirja, joka lähetetään sinulle postitse kotiin."}
+  ],
+  "answer": "Digitaalisessa muodossa oleva kirja, jota voi lukea esimerkiksi tietokoneelta, tabletilta tai lukulaitteelta.",
+  "explanation": "E-kirja on sähköinen kirja. Sen sijaan, että lukisit painettua paperikirjaa, voit lainata e-kirjan kirjastosta verkon kautta ja lukea sen omalla laitteellasi. E-kirjat ovat käteviä, koska ne eivät vie fyysistä tilaa ja kulkevat helposti mukanasi esimerkiksi puhelimessa. Niiden laina-aika on määrätty, ja laina palautuu automaattisesti."
+  },
+  {
+  "question": "Mitä tarkoittaa 'tekijänoikeus'?",
+  "answers": [
+  {"answer": "Oikeus kopioida vapaasti kaikkea löytämäänsä materiaalia."},
+  {"answer": "Lain suoma oikeus teoksen tekijälle päättää teoksensa käytöstä, kuten kopioinnista ja julkisesta esittämisestä."},
+  {"answer": "Kirjaston oikeus muokata hankkimiaan kirjoja."},
+  {"answer": "Lukijan oikeus arvostella lukemaansa kirjaa."}
+  ],
+  "answer": "Lain suoma oikeus teoksen tekijälle päättää teoksensa käytöstä, kuten kopioinnista ja julkisesta esittämisestä.",
+  "explanation": "Tekijänoikeus suojaa luovan työn tekijää, kuten kirjailijaa, säveltäjää tai valokuvaajaa. Se takaa, että tekijä saa itse päättää, miten hänen teostaan käytetään. Esimerkiksi kirjan kopioiminen ilman lupaa on tekijänoikeusrikkomus. Kirjastot noudattavat toiminnassaan tarkasti tekijänoikeuslakia."
+  },
+  {
+  "question": "Mikä on Finna.fi?",
+  "answers": [
+  {"answer": "Helsingin kaupunginkirjaston verkkokirjasto."},
+  {"answer": "Valtakunnallinen hakupalvelu, josta löytyy Suomen kirjastojen, arkistojen ja museoiden aineistoja."},
+  {"answer": "Suomalainen sosiaalisen median palvelu."},
+  {"answer": "E-kirjojen ja äänikirjojen myyntiin keskittynyt verkkokauppa."}
+  ],
+  "answer": "Valtakunnallinen hakupalvelu, josta löytyy Suomen kirjastojen, arkistojen ja museoiden aineistoja.",
+  "explanation": "Finna.fi on kuin jättimäinen, koko Suomen kattava verkkokirjasto ja museo. Sen sijaan, että etsisit tietoa jokaisen kirjaston, museon ja arkiston omilta sivuilta, voit tehdä haun Finna.fi:ssä ja saada tuloksia sadoista eri organisaatioista yhdellä kertaa. Se on erittäin hyödyllinen työkalu laajaan tiedonhakuun."
+  },
+  {
+  "question": "Mitä on 'medialukutaito'?",
+  "answers": [
+  {"answer": "Kyky lukea sanomalehtiä paperilta."},
+  {"answer": "Taito tulkita, analysoida ja arvioida kriittisesti erilaisten medioiden (kuten uutisten, mainosten, elokuvien) välittämiä viestejä."},
+  {"answer": "Kyky tuottaa omia videoita ja podcasteja."},
+  {"answer": "Nopea taito selata sosiaalista mediaa."}
+  ],
+  "answer": "Taito tulkita, analysoida ja arvioida kriittisesti erilaisten medioiden (kuten uutisten, mainosten, elokuvien) välittämiä viestejä.",
+  "explanation": "Medialukutaito on tärkeä kansalaistaito nykymaailmassa, jossa olemme jatkuvasti erilaisten viestien ympäröimiä. Se tarkoittaa kykyä ymmärtää, että mediateksteillä on aina tekijä ja tarkoitus. Medialukutaitoinen henkilö osaa kyseenalaistaa näkemäänsä, erottaa faktan mielipiteestä ja tunnistaa esimerkiksi valeuutisia tai piilomainontaa."
+  },
+  {
+  "question": "Mikä on 'hakuteos'?",
+  "answers": [
+  {"answer": "Romaani, jossa päähenkilö etsii jotakin."},
+  {"answer": "Kirja, joka on tarkoitettu luettavaksi alusta loppuun yhdellä kertaa."},
+  {"answer": "Kirja, johon tieto on järjestetty helposti löydettävään muotoon, kuten sanakirjat ja tietosanakirjat."},
+  {"answer": "Mikä tahansa kirja, jossa on sisällysluettelo."}
+  ],
+  "answer": "Kirja, johon tieto on järjestetty helposti löydettävään muotoon, kuten sanakirjat ja tietosanakirjat.",
+  "explanation": "Hakuteokset on suunniteltu nopeaan tiedonhakuun. Niistä ei ole tarkoitus lukea jokaista sivua, vaan etsiä vastaus tiettyyn kysymykseen. Tyypillisiä hakuteoksia ovat sanakirjat (mitä sana tarkoittaa?), tietosanakirjat (mitä tiedetään aiheesta X?) ja kartastot (missä jokin paikka sijaitsee?). Tieto on niissä usein aakkosjärjestyksessä tai muuten loogisesti järjestelty."
+  },
+  {
+  "question": "Mitä tarkoittaa 'kaukolaina'?",
+  "answers": [
+  {"answer": "Lainaat kirjan, joka on erityisen pitkä."},
+  {"answer": "Kirjasto tilaa sinulle aineiston toisesta kirjastosta, jos sitä ei löydy omasta kokoelmasta."},
+  {"answer": "Lainasit kirjan mukaasi lomamatkalle kauas kotoa."},
+  {"answer": "Varaat kirjan etukäteen verkkokirjastosta."}
+  ],
+  "answer": "Kirjasto tilaa sinulle aineiston toisesta kirjastosta, jos sitä ei löydy omasta kokoelmasta.",
+  "explanation": "Jos tarvitsemaasi kirjaa ei löydy oman lähikirjastosi hyllystä, sitä ei tarvitse lähteä itse etsimään toiselta paikkakunnalta. Voit tehdä siitä kaukolainapyynnön. Tällöin oma kirjastosi tilaa kirjan sinulle toisesta kirjastosta Suomesta. Tämä laajentaa käytössäsi olevan kokoelman lähes koko maan laajuiseksi. Kaukolainasta peritään usein pieni maksu."
+  },
+  {
+  "question": "Mikä on kaunokirjallisuuden ja tietokirjallisuuden suurin ero?",
+  "answers": [
+  {"answer": "Kaunokirjallisuus on aina sidottu ja tietokirjallisuus on pokkari."},
+  {"answer": "Kaunokirjallisuus perustuu mielikuvitukseen ja keksittyihin tarinoihin, kun taas tietokirjallisuus perustuu faktoihin ja todellisuuteen."},
+  {"answer": "Kaunokirjallisuudessa on värikkäät kannet ja tietokirjallisuudessa yksiväriset."},
+  {"answer": "Kaunokirjallisuus on suunnattu lapsille ja tietokirjallisuus aikuisille."}
+  ],
+  "answer": "Kaunokirjallisuus perustuu mielikuvitukseen ja keksittyihin tarinoihin, kun taas tietokirjallisuus perustuu faktoihin ja todellisuuteen.",
+  "explanation": "Tämä on kirjallisuuden perusjako. Kaunokirjallisuus eli fiktio sisältää keksittyjä henkilöitä, tapahtumia ja maailmoja (esim. romaanit, novellit, runot). Tietokirjallisuus eli fakta pyrkii kuvaamaan todellisuutta ja antamaan siitä paikkansapitävää tietoa (esim. elämäkerrat, historia, luontokirjat)."
+  },
+  {
+  "question": "Miksi on tärkeää arvioida tiedon luotettavuutta, kun haet tietoa internetistä?",
+  "answers": [
+  {"answer": "Koska vain kirjastosta löytyvä tieto on luotettavaa."},
+  {"answer": "Koska kuka tahansa voi julkaista internetissä mitä tahansa, ja kaikki tieto ei ole totta tai asiallista."},
+  {"answer": "Koska nopeimmin löytyvä tieto on aina parasta."},
+  {"answer": "Sillä ei ole väliä, kaikki tieto on samanarvoista."}
+  ],
+  "answer": "Koska kuka tahansa voi julkaista internetissä mitä tahansa, ja kaikki tieto ei ole totta tai asiallista.",
+  "explanation": "Internet on valtava tietovarasto, mutta siellä ei ole laadunvalvontaa. Kuka vain voi perustaa verkkosivun ja kirjoittaa sinne mitä haluaa. Siksi on tärkeää olla kriittinen ja miettiä: Kuka on tiedon takana? Mikä on sivuston tarkoitus (tiedottaa, myydä, viihdyttää)? Onko tieto ajantasaista? Voisiko tiedon tarkistaa jostain muualta? Tätä kutsutaan lähdekritiikiksi."
+  },
+  {
+  "question": "Mikä on kirjaston 'lastenosasto'?",
+  "answers": [
+  {"answer": "Paikka, jossa aikuiset voivat lukea lastenkirjoja."},
+  {"answer": "Kirjaston osa, jossa on aineistoa ja palveluita lapsille ja lapsiperheille."},
+  {"answer": "Varasto, jossa säilytetään vanhoja lastenkirjoja."},
+  {"answer": "Tila, jossa lapset voivat leikkiä ilman valvontaa."}
+  ],
+  "answer": "Kirjaston osa, jossa on aineistoa ja palveluita lapsille ja lapsiperheille.",
+  "explanation": "Lastenosasto on suunniteltu lapsiasiakkaita varten. Sen kokoelmissa on kuvakirjoja, satuja, romaaneja, tietokirjoja, musiikkia ja elokuvia lapsille. Usein osastolla on myös leikkitilaa ja sinne on sijoitettu matalia hyllyjä ja kalusteita, jotta lasten olisi helppo itse tutkia aineistoja. Siellä järjestetään myös lapsille suunnattuja tapahtumia, kuten satuhetkiä."
+  },
+  {
+  "question": "Mitä 'tiedonhaku' tarkoittaa?",
+  "answers": [
+  {"answer": "Kysymistä kaverilta."},
+  {"answer": "Systemaattista toimintaa, jonka tavoitteena on löytää tietoa tiettyyn tarpeeseen tai ongelmaan."},
+  {"answer": "Arvaamista ja olettamista."},
+  {"answer": "Vain Googlen käyttämistä."}
+  ],
+  "answer": "Systemaattista toimintaa, jonka tavoitteena on löytää tietoa tiettyyn tarpeeseen tai ongelmaan.",
+  "explanation": "Tiedonhaku on prosessi. Se alkaa tiedontarpeen tunnistamisesta (Mitä minun tarvitsee tietää?). Sen jälkeen valitaan sopivat tiedonlähteet (kirja, verkkosivu, tietokanta?) ja hakusanat. Kun hakutuloksia on saatu, niitä arvioidaan kriittisesti ja valitaan niistä sopivimmat. Kirjaston ammattilaiset ovat tiedonhaun asiantuntijoita ja opastavat mielellään tässä prosessissa."
+  },
+  {
+  "question": "Mikä on sanomalehtien lukusali kirjastossa?",
+  "answers": [
+  {"answer": "Tila, jossa myydään sanomalehtiä."},
+  {"answer": "Hiljainen tila, jossa voi opiskella omilla kirjoilla."},
+  {"answer": "Kirjaston alue, josta löytyy laaja valikoima tuoreita sanoma- ja aikakauslehtiä luettavaksi."},
+  {"answer": "Arkisto, jossa säilytetään vanhoja sanomalehtiä."}
+  ],
+  "answer": "Kirjaston alue, josta löytyy laaja valikoima tuoreita sanoma- ja aikakauslehtiä luettavaksi.",
+  "explanation": "Lehtilukusali on monille tärkeä paikka pysyä ajan tasalla maailman ja oman paikkakunnan tapahtumista. Kirjasto tilaa laajan valikoiman kotimaisia ja joskus myös ulkomaisia sanoma- ja aikakauslehtiä, joita asiakkaat voivat tulla lukemaan paikan päälle ilmaiseksi. Se on tärkeä osa kirjaston tarjoamaa tietopalvelua."
+  },
+  {
+  "question": "Mitä tarkoittaa 'lähdekritiikki'?",
+  "answers": [
+  {"answer": "Lähteiden kopioimista omaan tekstiin."},
+  {"answer": "Tiedonlähteen luotettavuuden, alkuperän ja tarkoituksen arviointia."},
+  {"answer": "Mahdollisimman monen lähteen käyttämistä."},
+  {"answer": "Vain uusimpien lähteiden hyväksymistä."}
+  ],
+  "answer": "Tiedonlähteen luotettavuuden, alkuperän ja tarkoituksen arviointia.",
+  "explanation": "Lähdekritiikki on taito arvioida löytämänsä tiedon laatua. Kun löydät tietoa, sinun kannattaa kysyä itseltäsi: Kuka on tämän tiedon tuottanut ja onko hän asiantuntija? Miksi tämä tieto on julkaistu? Onko se mainos tai mielipide? Milloin tieto on julkaistu ja onko se vanhentunutta? Vertailemalla eri lähteitä voit saada luotettavamman kuvan asiasta."
+  },
+  {
+  "question": "Mikä on äänikirja?",
+  "answers": [
+  {"answer": "Kirja, jossa on nuotteja ja laulun sanoja."},
+  {"answer": "Kirja, josta on tehty kuunnelma radiota varten."},
+  {"answer": "Ääneen luettu kirja, jota voi kuunnella esimerkiksi puhelimella tai CD-soittimella."},
+  {"answer": "Kirja, joka käsittelee musiikin historiaa."}
+  ],
+  "answer": "Ääneen luettu kirja, jota voi kuunnella esimerkiksi puhelimella tai CD-soittimella.",
+  "explanation": "Äänikirja on täydellinen vaihtoehto, kun haluat nauttia tarinasta, mutta et voi tai halua lukea itse. Voit kuunnella äänikirjoja esimerkiksi autoillessa, lenkillä tai kotitöitä tehdessä. Kirjastot tarjoavat äänikirjoja sekä fyysisinä CD-levyinä että digitaalisina e-äänikirjoina, jotka voi lainata ja kuunnella suoraan omalla laitteella."
+  },
+  {
+  "question": "Mitä kirjastossa tarkoitetaan 'aineistolla'?",
+  "answers": [
+  {"answer": "Vain kirjoja."},
+  {"answer": "Kaikkea, mitä kirjasto tarjoaa asiakkaiden käyttöön, kuten kirjoja, lehtiä, musiikkia, elokuvia ja pelejä."},
+  {"answer": "Kirjaston tietokoneita ja tulostimia."},
+  {"answer": "Opiskeluun käytettäviä materiaaleja, kuten karttoja ja luita."}
+  ],
+  "answer": "Kaikkea, mitä kirjasto tarjoaa asiakkaiden käyttöön, kuten kirjoja, lehtiä, musiikkia, elokuvia ja pelejä.",
+  "explanation": "'Aineisto' on kattava yleistermi kaikelle sille materiaalille, jota kirjasto hankkii ja tarjoaa asiakkailleen. Se kattaa siis koko kirjaston monipuolisen tarjonnan, ei pelkästään kirjoja. Kun puhutaan aineiston lainaamisesta tai varaamisesta, tarkoitetaan mitä tahansa näistä lainattavista nimikkeistä."
+  },
+  {
+  "question": "Miksi kirjastossa tulee olla hiljaa tietyillä alueilla?",
+  "answers": [
+  {"answer": "Koska kirjastonhoitajat eivät pidä melusta."},
+  {"answer": "Jotta ihmiset voisivat keskittyä rauhassa lukemiseen, opiskeluun ja työntekoon."},
+  {"answer": "Koska kirjat voivat vaurioitua kovista äänistä."},
+  {"answer": "Se on vanha tapa, jolla ei ole enää merkitystä."}
+  ],
+  "answer": "Jotta ihmiset voisivat keskittyä rauhassa lukemiseen, opiskeluun ja työntekoon.",
+  "explanation": "Kirjasto on monimuotoinen tila, jota käytetään moniin eri tarkoituksiin. Monet ihmiset tulevat kirjastoon nimenomaan löytääkseen rauhallisen paikan opiskella tai lukea. Siksi kirjastoissa on usein erikseen merkittyjä hiljaisia alueita tai lukusaleja. Kunnioittamalla hiljaisuutta näillä alueilla osoitat kunnioitusta muita asiakkaita kohtaan."
+  },
+  {
+  "question": "Mikä on 'kirjastokimppa'?",
+  "answers": [
+  {"answer": "Ryhmä ihmisiä, jotka käyvät yhdessä kirjastossa."},
+  {"answer": "Usean kunnan kirjaston muodostama yhteenliittymä, jolla on yhteinen verkkokirjasto, aineistotietokanta ja usein myös yhteinen kirjastokortti."},
+  {"answer": "Kirjaston järjestämä lukupiiri."},
+  {"answer": "Valtakunnallinen kampanja kirjastojen puolesta."}
+  ],
+  "answer": "Usean kunnan kirjaston muodostama yhteenliittymä, jolla on yhteinen verkkokirjasto, aineistotietokanta ja usein myös yhteinen kirjastokortti.",
+  "explanation": "Kirjastokimpat ovat kirjastojen välistä yhteistyötä. Useat lähikunnat ovat yhdistäneet voimansa, jotta ne voivat palvella asukkaitaan paremmin. Kimpan ansiosta voit samalla kirjastokortilla lainata materiaalia kaikista kimppaan kuuluvista kirjastoista ja palauttaa lainasi mihin tahansa niistä. Se tekee asioinnista joustavampaa ja tuo laajemman kokoelman ulottuvillesi."
+  },
+  {
+  "question": "Mitä tietoja löydät yleensä kirjan 'selkämyksestä'?",
+  "answers": [
+  {"answer": "Kirjan koko tarinan tiivistettynä."},
+  {"answer": "Kirjailijan nimen, kirjan nimekkeen ja usein myös luokkatunnuksen."},
+  {"answer": "Kirjan hinnan ja ostopäivän."},
+  {"answer": "Varoituksen kirjan sisällöstä."}
+  ],
+  "answer": "Kirjailijan nimen, kirjan nimekkeen ja usein myös luokkatunnuksen.",
+  "explanation": "Kirjan selkämys on se osa, joka näkyy, kun kirja on hyllyssä. Siihen on painettu tärkeimmät tunnistetiedot, jotta kirja olisi helppo löytää. Näet siitä kirjailijan sukunimen ja teoksen nimen. Lisäksi tietokirjoissa on usein tarra, jossa on luokkatunnus (numero- ja kirjainyhdistelmä), joka kertoo kirjan aiheen ja paikan hyllyssä."
+  },
+  {
+  "question": "Mitä tarkoittaa 'plagiointi'?",
+  "answers": [
+  {"answer": "Toisen henkilön tekstin tai ideoiden esittämistä omana työnä mainitsematta alkuperäistä lähdettä."},
+  {"answer": "Kirjan lainaamista kirjastosta."},
+  {"answer": "Lähteen lainaamista ja sen merkitsemistä lähdeluetteloon."},
+  {"answer": "Lähteen lukemista ja siitä oppimista."}
+  ],
+  "answer": "Toisen henkilön tekstin tai ideoiden esittämistä omana työnä mainitsematta alkuperäistä lähdettä.",
+  "explanation": "Plagiointi on toisen työn varastamista. Kun kirjoitat esitelmää tai muuta tekstiä, voit ja sinun kannattaakin käyttää lähteitä, mutta sinun on aina kerrottava, mistä olet tietosi ottanut. Jos kopioit tekstin suoraan tai esität toisen ajatuksen omanasi, syyllistyt plagiointiin. Se on epärehellistä ja voi johtaa vakaviin seuraamuksiin esimerkiksi opiskelussa."
+  },
+  {
+  "question": "Mikä on tietokanta kirjaston näkökulmasta?",
+  "answers": [
+  {"answer": "Kirjaston kellari, jossa säilytetään vanhoja aineistoja."},
+  {"answer": "Jäsennelty, elektroninen kokoelma tietoa, josta voi hakea tietoa tehokkaasti. Esimerkiksi lehtiartikkelitietokanta tai sanakirja."},
+  {"answer": "Kirjaston asiakasrekisteri."},
+  {"answer": "Lista kaikista kirjaston työntekijöistä."}
+  ],
+  "answer": "Jäsennelty, elektroninen kokoelma tietoa, josta voi hakea tietoa tehokkaasti. Esimerkiksi lehtiartikkelitietokanta tai sanakirja.",
+  "explanation": "Kirjastot tarjoavat asiakkailleen pääsyn moniin laadukkaisiin elektronisiin tietokantoihin. Ne ovat järjestettyjä kokoelmia tietoa, joista et voi hakea tietoa Googlesta. Tällaisia ovat esimerkiksi laajat kansainväliset lehtiartikkelitietokannat, kotimaiset uutisarkistot tai vaikkapa sukututkimustietokannat. Niiden käyttö on luotettava tapa löytää syvällisempää tietoa."
+  },
+  {
+  "question": "Mitä on 'tiedonhallinta' (knowledge management) yksinkertaisesti selitettynä?",
+  "answers": [
+  {"answer": "Tiedostojen järjestämistä aakkosjärjestykseen tietokoneella."},
+  {"answer": "Prosessi, jolla organisaatio kerää, jakaa, käyttää ja hallinnoi tietojaan ja osaamistaan."},
+  {"answer": "Salasanan asettamista kaikkiin tiedostoihin."},
+  {"answer": "Kaiken paperisen tiedon tuhoamista."}
+  ],
+  "answer": "Prosessi, jolla organisaatio kerää, jakaa, käyttää ja hallinnoi tietojaan ja osaamistaan.",
+  "explanation": "Jokaisessa organisaatiossa, kuten yrityksessä tai virastossa, on valtavasti tietoa ja osaamista. Tiedonhallinnan tavoitteena on varmistaa, että tämä tieto ei ole vain yksittäisten ihmisten päässä, vaan se on tallessa ja kaikkien sitä tarvitsevien saatavilla. Näin varmistetaan, että toiminta on tehokasta ja tieto ei katoa esimerkiksi työntekijän vaihtaessa työpaikkaa."
+  },
+  {
+  "question": "Mikä on kirjaston 'palautusautomaatti'?",
+  "answers": [
+  {"answer": "Laite, joka myy kirjoja."},
+  {"answer": "Laite, jonka avulla asiakas voi itsenäisesti palauttaa lainaamansa aineiston."},
+  {"answer": "Robotti, joka järjestää kirjat hyllyyn."},
+  {"answer": "Tulostin, jolla voi tulostaa palautuskuitteja."}
+  ],
+  "answer": "Laite, jonka avulla asiakas voi itsenäisesti palauttaa lainaamansa aineiston.",
+  "explanation": "Palautusautomaatti on itsepalvelulaite, joka tekee lainojen palauttamisesta nopeaa ja helppoa. Sen sijaan, että jonottaisit palvelutiskille, voit syöttää kirjat yksi kerrallaan automaatin luukusta sisään. Laite lukee kirjan tunnisteen, kirjaa sen palautetuksi ja usein myös lajittelee sen valmiiksi oikeaan kärryyn. Voit käyttää sitä yleensä myös kirjaston aukioloaikojen ulkopuolella."
+  },
+  {
+  "question": "Miksi kirjastosta voi lainata kirjojen lisäksi esimerkiksi liikuntavälineitä tai soittimia?",
+  "answers": [
+  {"answer": "Koska kirjastolla on liikaa tilaa."},
+  {"answer": "Tukeakseen kuntalaisten harrastamista ja hyvinvointia sekä edistääkseen kiertotaloutta."},
+  {"answer": "Koska urheilukaupat ja soitinliikkeet ovat sponsoroineet kirjastoa."},
+  {"answer": "Jotta ihmiset tulisivat kirjastoon useammin."}
+  ],
+  "answer": "Tukeakseen kuntalaisten harrastamista ja hyvinvointia sekä edistääkseen kiertotaloutta.",
+  "explanation": "Nykyajan kirjasto on paljon muutakin kuin vain kirjoja. Se on aktiivinen toimija, joka haluaa edistää asukkaidensa hyvinvointia monipuolisesti. Tavaroiden, kuten lumikenkien, ompelukoneen tai ukulelen, lainaaminen antaa mahdollisuuden kokeilla uusia harrastuksia matalalla kynnyksellä ilman, että tarvitsee heti ostaa kalliita välineitä. Se on myös ekologista jakamistaloutta parhaimmillaan."
+  },
+  {
+  "question": "Mikä on 'kirjastoauto'?",
+  "answers": [
+  {"answer": "Auto, jolla kirjaston henkilökunta ajaa töihin."},
+  {"answer": "Pyörillä kulkeva kirjasto, eli bussi, joka kiertää haja-asutusalueilla ja lähiöissä tarjoten kirjastopalveluita."},
+  {"answer": "Kirjojen kuljetuspalvelu kirjastojen välillä."},
+  {"answer": "Vanha, museokäyttöön otettu auto, joka on esillä kirjastossa."}
+  ],
+  "answer": "Pyörillä kulkeva kirjasto, eli bussi, joka kiertää haja-asutusalueilla ja lähiöissä tarjoten kirjastopalveluita.",
+  "explanation": "Kirjastoauto on liikkuva palvelupiste, jonka tehtävänä on tuoda kirjaston palvelut sinne, missä kiinteää kirjastorakennusta ei ole lähellä. Se on tärkeä palvelu erityisesti lapsille, vanhuksille ja muille, joiden on vaikea liikkua. Kirjastoautossa on pieni mutta vaihtuva kokoelma aineistoa, ja sinne voi myös tilata kirjoja pääkirjastosta."
+  },
+  {
+  "question": "Mitä tarkoittaa, kun tieto on 'avoimesti saatavilla' (Open Access)?",
+  "answers": [
+  {"answer": "Tieto on salaista ja vain harvojen saatavilla."},
+  {"answer": "Tieteellinen tai muu aineisto on vapaasti ja maksutta luettavissa ja hyödynnettävissä internetissä."},
+  {"answer": "Tieto on ymmärrettävää vain asiantuntijoille."},
+  {"answer": "Tieto on saatavilla vain yhdessä tietyssä kirjastossa."}
+  ],
+  "answer": "Tieteellinen tai muu aineisto on vapaasti ja maksutta luettavissa ja hyödynnettävissä internetissä.",
+  "explanation": "Perinteisesti monet tieteelliset lehdet ovat olleet maksumuurin takana. Avoin saatavuus eli Open Access tarkoittaa, että tutkimustulokset ovat kaikkien halukkaiden luettavissa ilmaiseksi internetissä. Tämä edistää tieteen kehitystä ja takaa, että esimerkiksi verovaroin tuotettu tutkimustieto on kaikkien kansalaisten saatavilla, ei vain maksukykyisten organisaatioiden."
+  },
+  {
+  "question": "Mikä on 'lukupiiri'?",
+  "answers": [
+  {"answer": "Ryhmä, joka lukee ääneen toisilleen."},
+  {"answer": "Ryhmä ihmisiä, jotka lukevat saman kirjan ja kokoontuvat sitten keskustelemaan siitä."},
+  {"answer": "Kilpailu siitä, kuka lukee eniten kirjoja."},
+  {"answer": "Paikka, jossa voi lukea piirustuksia ja karttoja."}
+  ],
+  "answer": "Ryhmä ihmisiä, jotka lukevat saman kirjan ja kokoontuvat sitten keskustelemaan siitä.",
+  "explanation": "Lukupiiri on sosiaalinen ja antoisa harrastus. Ryhmä sopii yhteisesti luettavasta kirjasta. Jokainen lukee kirjan itsenäisesti, ja sitten ryhmä kokoontuu jakamaan ajatuksiaan ja tuntemuksiaan kirjasta. Keskustelu avaa usein uusia näkökulmia teokseen ja syventää omaa lukukokemusta. Monet kirjastot järjestävät omia lukupiirejään tai tarjoavat tiloja ja aineistoja itseohjautuville ryhmille."
+  },
+  {
+  "question": "Mitä on 'satuhetki' kirjastossa?",
+  "answers": [
+  {"answer": "Hetki, jolloin kaikkien on kerrottava satuja."},
+  {"answer": "Tilaisuus, jossa kirjaston työntekijä tai vieraileva kertoja lukee satuja lapsille."},
+  {"answer": "Aika, jolloin lastenosasto on suljettu."},
+  {"answer": "Lasten nukkumiseen tarkoitettu hetki."}
+  ],
+  "answer": "Tilaisuus, jossa kirjaston työntekijä tai vieraileva kertoja lukee satuja lapsille.",
+  "explanation": "Satuhetket ovat perinteinen ja suosittu osa kirjastojen lapsille suunnattua toimintaa. Ne ovat kaikille avoimia ja maksuttomia tilaisuuksia, joissa lapset pääsevät kuuntelemaan tarinoita ja uppoutumaan satujen maailmaan. Satuhetket tukevat lapsen kielellistä kehitystä, mielikuvitusta ja keskittymiskykyä ja ovat mukava yhteinen kokemus lapsille ja vanhemmille."
+  },
+  {
+  "question": "Mikä on 'tietopalvelu' kirjastossa?",
+  "answers": [
+  {"answer": "Palvelu, jossa voit kysyä kirjaston aukioloaikoja."},
+  {"answer": "Kirjaston tarjoama asiantuntijapalvelu, jossa informaatikko auttaa asiakasta löytämään tietoa monimutkaisiin ja vaativiin kysymyksiin."},
+  {"answer": "Paikka, jossa voit käyttää kirjaston tietokoneita."},
+  {"answer": "Automaattinen puhelinvastaaja, joka kertoo perustietoja."}
+  ],
+  "answer": "Kirjaston tarjoama asiantuntijapalvelu, jossa informaatikko auttaa asiakasta löytämään tietoa monimutkaisiin ja vaativiin kysymyksiin.",
+  "explanation": "Kun tarvitset tietoa vaikkapa opinnäytetyöhön tai muuhun vaativaan selvitystyöhön, kirjaston tietopalvelu on oikea paikka kääntyä. Siellä työskentelevät informaatikot ovat tiedonhaun ammattilaisia, jotka tuntevat eri alojen tietokannat ja hakutekniikat. He voivat auttaa sinua tarkentamaan aihettasi, löytämään parhaat lähteet ja rakentamaan tehokkaita hakuja."
+  },
+  {
+  "question": "Miksi on tärkeää mainita lähteet, kun käytät tietoa esimerkiksi esitelmässä?",
+  "answers": [
+  {"answer": "Jotta esitelmästä tulisi pidempi."},
+  {"answer": "Se on reilua alkuperäisen tiedon tuottajaa kohtaan ja antaa kuulijoille mahdollisuuden tarkistaa tiedon oikeellisuus."},
+  {"answer": "Sitä ei tarvitse tehdä, jos on muuttanut lauseita hieman."},
+  {"answer": "Koska opettaja vaatii sitä ilman mitään hyvää syytä."}
+  ],
+  "answer": "Se on reilua alkuperäisen tiedon tuottajaa kohtaan ja antaa kuulijoille mahdollisuuden tarkistaa tiedon oikeellisuus.",
+  "explanation": "Lähteiden ilmoittaminen on hyvän tavan ja rehellisyyden mukaista. Se osoittaa, että annat arvoa muiden tekemälle työlle. Lisäksi se tekee omasta työstäsi uskottavamman, kun kerrot, mihin tietosi perustuvat. Se myös antaa lukijalle tai kuulijalle mahdollisuuden halutessaan perehtyä aiheeseen syvällisemmin etsimällä alkuperäisen lähteen."
+  },
+  {
+  "question": "Mikä on 'digitoiminen'?",
+  "answers": [
+  {"answer": "Aineiston hävittäminen."},
+  {"answer": "Fyysisen aineiston, kuten kuvan, asiakirjan tai kirjan, muuntaminen digitaaliseen muotoon esimerkiksi skannaamalla."},
+  {"answer": "Aineiston korjaaminen ja entisöinti."},
+  {"answer": "Uuden digitaalisen aineiston luominen tyhjästä."}
+  ],
+  "answer": "Fyysisen aineiston, kuten kuvan, asiakirjan tai kirjan, muuntaminen digitaaliseen muotoon esimerkiksi skannaamalla.",
+  "explanation": "Digitoiminen tarkoittaa fyysisen maailman asioiden siirtämistä tietokoneelle ymmärrettävään muotoon. Esimerkiksi vanha paperivalokuva voidaan skannata kuvatiedostoksi tai vanha sanomalehti voidaan digitoida luettavaksi verkkosivuna. Kirjastot ja arkistot digitoivat aineistojaan, jotta ne säilyisivät paremmin ja olisivat helpommin tutkijoiden ja muiden kiinnostuneiden saatavilla."
+  },
+  {
+  "question": "Miksi kirjastot järjestävät näyttelyitä?",
+  "answers": [
+  {"answer": "Täyttääkseen tyhjät seinät."},
+  {"answer": "Esitelläkseen kulttuurisisältöjä, taidetta ja tietoa sekä tarjotakseen paikallisille taiteilijoille ja harrastajille esiintymispaikan."},
+  {"answer": "Myydäkseen tauluja ja veistoksia."},
+  {"answer": "Korvatakseen kirjojen lainaamisen."}
+  ],
+  "answer": "Esitelläkseen kulttuurisisältöjä, taidetta ja tietoa sekä tarjotakseen paikallisille taiteilijoille ja harrastajille esiintymispaikan.",
+  "explanation": "Näyttelyt ovat yksi tapa, jolla kirjasto toteuttaa tehtäväänsä kulttuurin ja tiedon edistäjänä. Ne tuovat esiin mielenkiintoisia aiheita, paikallista historiaa tai antavat näkyvyyttä paikallisille taiteilijoille ja käsityöläisille. Näyttelyt tekevät kirjastotilasta elävämmän ja mielenkiintoisemman ja tarjoavat asiakkaille uusia elämyksiä ja oivalluksia."
+  },
+  {
+  "question": "Mikä on YKL (Yleisten kirjastojen luokitusjärjestelmä)?",
+  "answers": [
+  {"answer": "Kansainvälinen standardi, jota käytetään kaikissa maailman kirjastoissa."},
+  {"answer": "Suomessa yleisissä kirjastoissa käytettävä järjestelmä, joka ryhmittelee tietokirjallisuuden aiheiden mukaan numero- ja kirjainkoodeilla."},
+  {"answer": "Järjestelmä kaunokirjallisuuden lajittelemiseksi huumoriin, jännitykseen ja romantiikkaan."},
+  {"answer": "Tietokoneohjelma, joka etsii kirjoja."}
+  ],
+  "answer": "Suomessa yleisissä kirjastoissa käytettävä järjestelmä, joka ryhmittelee tietokirjallisuuden aiheiden mukaan numero- ja kirjainkoodeilla.",
+  "explanation": "YKL on suomalaisten kirjastojen oma työkalu tietokirjallisuuden järjestämiseen. Jokaisella aihepiirillä on oma numeronsa. Pääluokkia on kymmenen (0-9), ja ne jakautuvat yhä tarkempiin alaluokkiin. Esimerkiksi luokka 60 käsittelee maataloutta ja metsätaloutta, ja sen alaluokka 67.5 käsittelee sienestystä. Tämä järjestelmä auttaa löytämään kaikki samaa aihetta käsittelevät kirjat samasta paikasta hyllystä."
+  },
+  {
+  "question": "Mitä tarkoittaa 'hiljainen tieto' työpaikalla?",
+  "answers": [
+  {"answer": "Salaisuuksia, joita ei saa kertoa kenellekään."},
+  {"answer": "Henkilökohtaista, kokemukseen perustuvaa osaamista ja taitoa, jota on vaikea pukea sanoiksi tai kirjoittaa ylös."},
+  {"answer": "Tietoa, josta ei saa puhua meluisissa tiloissa."},
+  {"answer": "Kaikki tieto, joka on tallennettu tietokoneelle."}
+  ],
+  "answer": "Henkilökohtaista, kokemukseen perustuvaa osaamista ja taitoa, jota on vaikea pukea sanoiksi tai kirjoittaa ylös.",
+  "explanation": "Hiljainen tieto on niitä taitoja ja niksejä, jotka opitaan kokemuksen kautta, ei ohjekirjoista. Se on esimerkiksi kokeneen mekaanikon kykyä tunnistaa moottorin viat äänestä tai pitkään asiakaspalvelussa olleen taitoa käsitellä vaikeita tilanteita. Tämä tieto on organisaatiolle erittäin arvokasta, ja sen jakaminen uusille työntekijöille on tärkeää."
+  },
+  {
+  "question": "Mikä on 'Celian' tehtävä Suomessa?",
+  "answers": [
+  {"answer": "Tuottaa oppikirjoja kaikkiin Suomen kouluihin."},
+  {"answer": "Valtion erikoiskirjasto, joka tuottaa ja välittää kirjoja saavutettavassa muodossa, kuten äänikirjoina ja pistekirjoina, niille, joille tavallisen kirjan lukeminen on vaikeaa."},
+  {"answer": "Kääntää ulkomaista kirjallisuutta suomeksi."},
+  {"answer": "Arkistoida kaikki Suomessa julkaistut kirjat."}
+  ],
+  "answer": "Valtion erikoiskirjasto, joka tuottaa ja välittää kirjoja saavutettavassa muodossa, kuten äänikirjoina ja pistekirjoina, niille, joille tavallisen kirjan lukeminen on vaikeaa.",
+  "explanation": "Celia takaa, että kirjallisuus kuuluu kaikille. Se palvelee ihmisiä, joilla on jokin lukemiseste, kuten näkövamma, lukivaikeus tai sairaus, joka vaikeuttaa kirjan käsittelyä. Celia tuottaa tavallisia kirjoja äänikirjoiksi ja pistekirjoitukselle, jotta ne olisivat saavutettavia. Yleiset kirjastot tekevät yhteistyötä Celian kanssa ja auttavat asiakkaita palvelun käyttöönotossa."
+  },
+  {
+  "question": "Miksi kirjastossa on asiakastietokoneita?",
+  "answers": [
+  {"answer": "Jotta henkilökunta voi pelata pelejä tauoilla."},
+  {"answer": "Tarjotakseen kaikille mahdollisuuden käyttää internetiä, sähköpostia ja muita digitaalisia palveluita sekä tulostaa asiakirjoja."},
+  {"answer": "Korvaamaan kaikki kirjat tulevaisuudessa."},
+  {"answer": "Ainoastaan verkkokirjaston käyttöä varten."}
+  ],
+  "answer": "Tarjotakseen kaikille mahdollisuuden käyttää internetiä, sähköpostia ja muita digitaalisia palveluita sekä tulostaa asiakirjoja.",
+  "explanation": "Kirjaston asiakastietokoneet ovat tärkeä tasa-arvoa edistävä palvelu. Kaikilla ei ole kotona omaa tietokonetta, tulostinta tai internetyhteyttä. Kirjastossa voi maksutta hoitaa sähköistä asiointia, kuten täyttää lomakkeita, maksaa laskuja, etsiä töitä tai olla yhteydessä läheisiin. Se on osa kirjaston tehtävää tukea kansalaisten digitaalisia valmiuksia."
+  },
+  {
+  "question": "Mikä on 'tietosuoja'?",
+  "answers": [
+  {"answer": "Tiedon suojaamista varkailta lukitsemalla se kaappiin."},
+  {"answer": "Jokaisen henkilön oikeus omiin henkilötietoihinsa ja niiden käsittelyn sääntely."},
+  {"answer": "Ohjelmisto, joka suojaa tietokonetta viruksilta."},
+  {"answer": "Tiedon piilottamista viranomaisilta."}
+  ],
+  "answer": "Jokaisen henkilön oikeus omiin henkilötietoihinsa ja niiden käsittelyn sääntely.",
+  "explanation": "Tietosuoja turvaa sinun yksityisyyttäsi. Se tarkoittaa, että sinua koskevia henkilötietoja (kuten nimi, osoite, henkilötunnus) tulee käsitellä huolellisesti ja lain mukaan. Esimerkiksi kirjasto ei saa luovuttaa tietoja lainaushistoriastasi kenellekään. Sinulla on oikeus tietää, mitä tietoja sinusta kerätään ja mihin tarkoitukseen."
+  },
+  {
+  "question": "Mitä tarkoittaa 'sisällönkuvailu'?",
+  "answers": [
+  {"answer": "Kirjan sisällysluettelon kirjoittamista."},
+  {"answer": "Prosessi, jossa aineiston sisältö analysoidaan ja kuvataan esimerkiksi asiasanojen ja luokitusten avulla, jotta se olisi helpompi löytää."},
+  {"answer": "Kirjan takakansitekstin lukemista."},
+  {"answer": "Kirjan arvioimista ja arvostelun kirjoittamista."}
+  ],
+  "answer": "Prosessi, jossa aineiston sisältö analysoidaan ja kuvataan esimerkiksi asiasanojen ja luokitusten avulla, jotta se olisi helpompi löytää.",
+  "explanation": "Kun etsit tietoa verkkokirjastosta, etsit itse asiassa sisällönkuvailun tuottamaa tietoa, et koko kirjan tekstiä. Sisällönkuvailija on kirjaston ammattilainen, joka lukee kirjan ja miettii, mitä aiheita se käsittelee. Sitten hän lisää nämä aiheet (asiasanat) ja aiheluokan (luokituksen) kirjan tietoihin. Tämä työ tekee mahdolliseksi sen, että löydät kirjan, vaikka et tietäisi sen tarkkaa nimeä."
+  },
+  {
+  "question": "Mikä on Kansalliskirjaston rooli Suomessa?",
+  "answers": [
+  {"answer": "Se on Helsingin pääkirjasto."},
+  {"answer": "Suomen vanhin ja suurin tieteellinen kirjasto, joka tallentaa ja säilyttää kansallista julkaisuperintöä sekä tarjoaa palveluita koko kirjastokentälle."},
+  {"answer": "Eduskunnan oma kirjasto, joka palvelee vain kansanedustajia."},
+  {"answer": "Yksityinen säätiö, joka kerää vanhoja kirjoja."}
+  ],
+  "answer": "Suomen vanhin ja suurin tieteellinen kirjasto, joka tallentaa ja säilyttää kansallista julkaisuperintöä sekä tarjoaa palveluita koko kirjastokentälle.",
+  "explanation": "Kansalliskirjasto on Suomen kulttuuriperinnön muistiorganisaatio. Sen lakisääteinen tehtävä on kerätä ja säilyttää kaikki Suomessa painetut ja julkaistut aineistot (ns. vapaakappaleet) tuleville sukupolville. Lisäksi se toimii koko kirjastokentän hyväksi kehittämällä ja ylläpitämällä keskeisiä palveluita, kuten Finna.fi-hakupalvelua."
+  },
+  {
+  "question": "Mitä on 'digituki', jota kirjastot tarjoavat?",
+  "answers": [
+  {"answer": "Raha-avustus uuden tietokoneen ostamiseen."},
+  {"answer": "Henkilökohtaista neuvontaa ja opastusta digitaalisten laitteiden, ohjelmistojen ja palveluiden käytössä."},
+  {"answer": "Tietokoneiden korjauspalvelu."},
+  {"answer": "Ohjelmointikurssi ammattilaisille."}
+  ],
+  "answer": "Henkilökohtaista neuvontaa ja opastusta digitaalisten laitteiden, ohjelmistojen ja palveluiden käytössä.",
+  "explanation": "Digituki on matalan kynnyksen apua digiarjen pulmiin. Jos sinulla on ongelmia älypuhelimen, tabletin tai tietokoneen käytössä, voit kysyä neuvoa kirjaston digitukihenkilöltä. He auttavat esimerkiksi sähköisen lomakkeen täytössä, sovelluksen asentamisessa tai turvallisessa verkon käytössä. Tavoitteena on, että kukaan ei putoaisi digikelkasta."
+  },
+  {
+  "question": "Mikä on 'asiasana'?",
+  "answers": [
+  {"answer": "Salasana, jolla pääsee lukemaan kirjaa."},
+  {"answer": "Sana tai sanaliitto, joka kuvaa dokumentin, kuten kirjan tai artikkelin, keskeistä sisältöä."},
+  {"answer": "Kirjailijan keksimä uusi sana."},
+  {"answer": "Sana, jota toistetaan tekstissä eniten."}
+  ],
+  "answer": "Sana tai sanaliitto, joka kuvaa dokumentin, kuten kirjan tai artikkelin, keskeistä sisältöä.",
+  "explanation": "Asiasanat ovat kuin avainsanoja tai tunnisteita, jotka kertovat, mistä kirjassa on kyse. Kun kirjaston ammattilainen kuvailee uuden kirjan, hän miettii sen tärkeimmät aiheet ja liittää ne kirjan tietoihin asiasanoina. Esimerkiksi puutarhakirja voi saada asiasanat 'puutarhanhoito', 'kasvit' ja 'hyötypuutarhat'. Asiasanojen avulla voit löytää kaikki samaa aihetta käsittelevät teokset helposti."
+  },
+  {
+  "question": "Miksi kirjastot ovat tärkeitä demokratialle?",
+  "answers": [
+  {"answer": "Koska kirjastoissa järjestetään vaaleja."},
+  {"answer": "Tarjoamalla kaikille kansalaisille tasa-arvoisen ja maksuttoman pääsyn tietoon, sivistykseen ja julkiseen keskusteluun, ne tukevat aktiivista kansalaisuutta ja kykyä tehdä perusteltuja päätöksiä."},
+  {"answer": "Koska kirjaston johtajan valitsee kansa."},
+  {"answer": "Koska ne ovat ainoita paikkoja, joissa voi lukea lakikirjoja."}
+  ],
+  "answer": "Tarjoamalla kaikille kansalaisille tasa-arvoisen ja maksuttoman pääsyn tietoon, sivistykseen ja julkiseen keskusteluun, ne tukevat aktiivista kansalaisuutta ja kykyä tehdä perusteltuja päätöksiä.",
+  "explanation": "Demokratia perustuu siihen, että kansalaiset ovat tietoisia yhteiskunnan asioista ja voivat muodostaa omia mielipiteitään luotettavan tiedon pohjalta. Kirjasto on kaikille avoin ja maksuton tila, joka tarjoaa pääsyn monipuoliseen tietoon ja erilaisiin näkemyksiin. Se tukee kriittistä ajattelua ja antaa välineitä yhteiskunnalliseen osallistumiseen, mikä on toimivan demokratian elinehto."
+  }
+  ]
+ },
+{
+  "name": "Kirjasto- ja tietopalvelualan syventävä tietovisa",
+  "questions": [
+  {
+  "question": "Mikä on keskeinen ero MARC 21 -formaatin ja BIBFRAME-mallin välillä?",
+  "answers": [
+  {"answer": "MARC 21 on suunniteltu vain fyysisille aineistoille, kun taas BIBFRAME on tarkoitettu ainoastaan digitaalisille aineistoille."},
+  {"answer": "MARC 21 perustuu tietueisiin (records), kun taas BIBFRAME perustuu linkitetyn datan periaatteisiin ja entiteetteihin (Work, Instance, Item)."},
+  {"answer": "BIBFRAME on Kansalliskirjaston kehittämä formaatti, joka on korvannut MARC 21:n Suomessa kokonaan."},
+  {"answer": "MARC 21 käyttää XML-syntaksia, kun taas BIBFRAME käyttää ainoastaan JSON-LD-syntaksia."}
+  ],
+  "answer": "MARC 21 perustuu tietueisiin (records), kun taas BIBFRAME perustuu linkitetyn datan periaatteisiin ja entiteetteihin (Work, Instance, Item).",
+  "explanation": "MARC 21 on tietuekeskeinen formaatti, jossa kaikki teosta, sen julkaisumuotoa ja yksittäistä nimekettä koskeva tieto on usein yhdessä litteässä tietueessa. BIBFRAME (Bibliographic Framework) on Kongressin kirjaston aloite, joka pyrkii korvaamaan MARC-standardin. Se perustuu linkitetyn datan periaatteisiin ja mallintaa kuvailutiedon kolmen ydinentiteetin kautta: Teos (Work), Ilmentymä (Instance) ja Nide/kappale (Item). Tämä mahdollistaa rikkaampien ja verkottuneempien suhteiden kuvaamisen aineistojen välillä."
+  },
+  {
+  "question": "Mitä tarkoitetaan institutionaalisella tietovarannolla (institutional repository)?",
+  "answers": [
+  {"answer": "Korkeakoulun tai tutkimuslaitoksen ylläpitämää palvelua, joka tallentaa, säilyttää ja jakelee organisaation tuottamia digitaalisia aineistoja, kuten opinnäytteitä ja tutkimusartikkeleita."},
+  {"answer": "Kansalliskirjaston ylläpitämää kansallista bibliografiaa, joka sisältää kaikki Suomessa julkaistut aineistot."},
+  {"answer": "Yleisen kirjaston paikalliskokoelmaa, joka on digitoitu ja saatavilla verkossa."},
+  {"answer": "Kaupallisen kustantajan tietokantaa, johon kirjastot hankkivat käyttöoikeuksia."}
+  ],
+  "answer": "Korkeakoulun tai tutkimuslaitoksen ylläpitämää palvelua, joka tallentaa, säilyttää ja jakelee organisaation tuottamia digitaalisia aineistoja, kuten opinnäytteitä ja tutkimusartikkeleita.",
+  "explanation": "Institutionaalinen tietovaranto on digitaalinen arkisto, jonka tarkoituksena on koota yhteen paikkaan organisaation, kuten yliopiston, tuottama aineisto. Se edistää avointa julkaisemista (Open Access) ja parantaa organisaation tutkimuksen ja opetuksen näkyvyyttä ja saatavuutta. Esimerkkejä Suomessa ovat mm. Trepo (Tampereen yliopisto) ja Helda (Helsingin yliopisto)."
+  },
+  {
+  "question": "Mikä seuraavista kuvaa parhaiten YKL:n (Yleisten kirjastojen luokitusjärjestelmä) rakennetta ja periaatetta?",
+  "answers": [
+  {"answer": "Se on fasettiluokitus, joka perustuu DDC:n (Dewey Decimal Classification) tapaan desimaalilukuihin, mutta on sovitettu suomalaiseen kirjastokenttään."},
+  {"answer": "Se on hierarkkinen, kymmenluokitukseen perustuva järjestelmä, joka on kehitetty erityisesti suomalaisten yleisten kirjastojen tarpeisiin."},
+  {"answer": "Se on ontologiapohjainen asiasanasto, jota käytetään vain kaunokirjallisuuden luokitteluun."},
+  {"answer": "Se on kansainvälinen standardi, jota ylläpitää IFLA (International Federation of Library Associations and Institutions)." }
+  ],
+  "answer": "Se on hierarkkinen, kymmenluokitukseen perustuva järjestelmä, joka on kehitetty erityisesti suomalaisten yleisten kirjastojen tarpeisiin.",
+  "explanation": "YKL on Suomessa yleisissä kirjastoissa käytössä oleva pääasiassa hierarkkinen luokitusjärjestelmä. Se perustuu kymmenluokitukseen, jossa pääluokat on jaettu numeroin 0-9. Vaikka se on saanut vaikutteita DDC:stä, se on itsenäinen, suomalaiseen kulttuuriin ja yhteiskuntaan sovitettu järjestelmä. Sitä ylläpitää Kirjastot.fi:n luokitus- ja indeksointipalvelu."
+  },
+  {
+  "question": "Mitä tarkoitetaan tiedonhakijan 'marjastuskäyttäytymisellä' (berrypicking)?",
+  "answers": [
+  {"answer": "Käyttäjä tekee yhden, täydellisesti muotoillun hakulauseen ja arvioi vain sen tulosjoukon."},
+  {"answer": "Käyttäjän tiedontarve ja hakulauseke muuttuvat ja kehittyvät tiedonhakuprosessin aikana pala palalta."},
+  {"answer": "Käyttäjä etsii tietoa ainoastaan ennalta tuntemistaan ja luotettaviksi arvioimistaan lähteistä."},
+  {"answer": "Käyttäjä käyttää ainoastaan yleiskäyttöisiä hakukoneita, kuten Googlea, erikoistuneiden tietokantojen sijaan."}
+  ],
+  "answer": "Käyttäjän tiedontarve ja hakulauseke muuttuvat ja kehittyvät tiedonhakuprosessin aikana pala palalta.",
+  "explanation": "Marcia J. Batesin vuonna 1989 esittelemä 'berrypicking'-malli kuvaa tiedonhakua dynaamisena ja iteratiivisena prosessina. Toisin kuin perinteisessä mallissa, jossa oletetaan staattinen tiedontarve, marjastuksessa käyttäjä kerää tietoa 'marja' kerrallaan eri lähteistä. Jokainen löydetty tiedonjyvä (marja) voi muokata alkuperäistä tiedontarvetta ja johtaa uusiin hakuihin ja poluille. Tämä kuvaa realistisemmin monimutkaista tiedonhakua."
+  },
+  {
+  "question": "Mikä on Finto-palvelun keskeinen tehtävä Suomen kirjastokentässä?",
+  "answers": [
+  {"answer": "Se on kansallinen metatietovaranto, johon kaikki Suomen kirjastot tallentavat kuvailutietonsa."},
+  {"answer": "Se tarjoaa keskitetyn palvelun ja julkaisualustan kansallisille ontologioille, sanastoille ja luokituksille, kuten KOKO-ontologialle ja YSA:lle/YSO:lle."},
+  {"answer": "Se on avoimen lähdekoodin kirjastojärjestelmä, jota kehittää Kansalliskirjasto."},
+  {"answer": "Se on valtakunnallinen e-kirjapalvelu, josta yleiset kirjastot voivat lainata aineistoja asiakkailleen."}
+  ],
+  "answer": "Se tarjoaa keskitetyn palvelun ja julkaisualustan kansallisille ontologioille, sanastoille ja luokituksille, kuten KOKO-ontologialle ja YSA:lle/YSO:lle.",
+  "explanation": "Finto on Kansalliskirjaston ylläpitämä palvelu, joka kokoaa yhteen ja tarjoaa käyttöliittymiä ja rajapintoja (API) Suomessa käytettäviin keskeisiin sanastoihin, ontologioihin ja luokituksiin. Sen tavoitteena on edistää yhteentoimivuutta ja tukea siirtymistä linkitettyyn dataan. Finton kautta ovat käytettävissä mm. Yleinen suomalainen ontologia (YSO), KOKO-ontologia (aik. YSA ja Allärs) sekä monet erikoisalojen sanastot."
+  },
+  {
+  "question": "Mitä tarkoitetaan RDA-kuvailusääntöjen (Resource Description and Access) FRBR-mallin mukaisella 'Ilmentymällä' (Manifestation)?",
+  "answers": [
+  {"answer": "Teoksen immateriaalinen, henkinen sisältö."},
+  {"answer": "Teoksen fyysinen tai digitaalinen julkaisumuoto."},
+  {"answer": "Yksittäinen fyysinen kappale, jonka voi lainata hyllystä."},
+  {"answer": "Kaikki teoksen käännökset ja sovitukset."}
+  ],
+  "answer": "Teoksen fyysinen tai digitaalinen julkaisumuoto.",
+  "explanation": "RDA perustuu FRBR-malliin (Functional Requirements for Bibliographic Records), joka jäsentää kuvailun kohteet neljään tasoon. 'Ilmentymä' (Manifestation) on näistä kolmas taso. Se edustaa teoksen (Work) ja sen ilmaisumuodon (Expression) fyysistä tai digitaalista ruumiillistumaa. Esimerkiksi tietyn romaanin (Work) suomenkielisen käännöksen (Expression) vuoden 2021 painettu kirja on yksi Ilmentymä, ja saman käännöksen e-kirjaversio on toinen Ilmentymä."
+  },
+  {
+  "question": "Mikä seuraavista on esimerkki fasettianalyysista tiedonhaussa tai luokittelussa?",
+  "answers": [
+  {"answer": "Tiedon järjestäminen tiukan hierarkkisesti pää- ja alaluokkiin, kuten YKL:ssä."},
+  {"answer": "Tiedon kohteen pilkkominen toisistaan riippumattomiin, mutta yhdessä aihetta kuvaaviin osatekijöihin eli fasetteihin (esim. materiaali, sijainti, aikakausi)."},
+  {"answer": "Synonyymien ja laajempien termien automaattinen lisääminen hakulauseeseen."},
+  {"answer": "Aineiston järjestäminen aakkosjärjestykseen tekijän tai nimekkeen mukaan."}
+  ],
+  "answer": "Tiedon kohteen pilkkominen toisistaan riippumattomiin, mutta yhdessä aihetta kuvaaviin osatekijöihin eli fasetteihin (esim. materiaali, sijainti, aikakausi).",
+  "explanation": "Fasettianalyysi, jonka kehitti S. R. Ranganathan, on menetelmä, jossa aihe analysoidaan perustavanlaatuisiin kategorioihin eli fasetteihin. Esimerkiksi aihe 'puukalusteiden restaurointi Ruotsissa 1700-luvulla' voidaan jakaa fasetteihin: Kohde (kalusteet), Materiaali (puu), Toiminta (restaurointi), Sijainti (Ruotsi) ja Aika (1700-luku). Tämä mahdollistaa erittäin joustavien ja tarkkojen haku- ja selausnäkymien luomisen verkkoympäristöissä."
+  },
+  {
+  "question": "Mitä Suomen tekijänoikeuslain pykälä 16 § (ns. kirjastopykälä) sallii kirjastoille?",
+  "answers": [
+  {"answer": "Kappaleen valmistamisen mistä tahansa aineistosta vapaasti asiakkaan kotiinlainattavaksi."},
+  {"answer": "Aineistojen digitointia ja vapaata saattamista yleisön saataville internetissä ilman lupaa."},
+  {"answer": "Kappaleen valmistamisen kokoelmiin kuuluvasta aineistosta säilytys- ja täydennystarkoituksiin sekä laitteiston avulla tapahtuvan käytön varmistamiseksi tietyin ehdoin."},
+  {"answer": "Tekijänoikeudella suojatun musiikin ja elokuvien vapaan esittämisen kirjaston tiloissa."}
+  ],
+  "answer": "Kappaleen valmistamisen kokoelmiin kuuluvasta aineistosta säilytys- ja täydennystarkoituksiin sekä laitteiston avulla tapahtuvan käytön varmistamiseksi tietyin ehdoin.",
+  "explanation": "Tekijänoikeuslain 16 § antaa arkistoille, kirjastoille ja museoille rajoitetun oikeuden valmistaa kappaleita kokoelmiinsa kuuluvista julkistetuista teoksista. Tämä on sallittua kokoelmien säilyttämistä, täydentämistä ja järjestämistä varten sekä teosten saattamista yleisön saataviin tarkoitukseen varatuilla laitteilla laitoksen tiloissa. Pykälä on keskeinen esimerkiksi vanhojen ja hauraiden aineistojen digitointiin käyttökopioiksi tai aineistomuodon vanhentuessa (esim. VHS-nauhat)."
+  },
+  {
+  "question": "Mitä tarkoitetaan tiedonhallinnassa (Knowledge Management) hiljaisella tiedolla (tacit knowledge)?",
+  "answers": [
+  {"answer": "Salassa pidettävää, turvaluokiteltua tietoa."},
+  {"answer": "Henkilökohtaista, kokemukseen ja intuitioon perustuvaa tietoa, jota on vaikea sanallistaa tai siirtää muille."},
+  {"answer": "Dokumentoitua ja jäsenneltyä tietoa, kuten ohjekirjoja ja tietokantoja."},
+  {"answer": "Vanhentunutta tietoa, jolla ei ole enää käyttöarvoa organisaatiolle."}
+  ],
+  "answer": "Henkilökohtaista, kokemukseen ja intuitioon perustuvaa tietoa, jota on vaikea sanallistaa tai siirtää muille.",
+  "explanation": "Tiedonhallinnan teoriassa, jonka popularisoi Ikujiro Nonaka, tieto jaetaan usein hiljaiseen (tacit) ja eksplisiittiseen (explicit) tietoon. Eksplisiittinen tieto on helposti kodifioitavissa ja jaettavissa (esim. manuaalit, raportit). Hiljainen tieto on syvälle henkilökohtaisissa kokemuksissa, taidoissa, arvoissa ja oivalluksissa piilevää tietoa. Se on 'tietoa, jota emme tiedä tietävämme' ja sen jakaminen vaatii sosiaalista vuorovaikutusta, kuten mentorointia tai yhdessä tekemistä."
+  },
+  {
+  "question": "Mikä on Finna-palvelun arkkitehtuurin keskeinen periaate?",
+  "answers": [
+  {"answer": "Se on yksi monoliittinen tietokanta, joka sisältää kaikkien osallistujaorganisaatioiden aineistot."},
+  {"answer": "Jokainen organisaatio ylläpitää omaa Finna-asennustaan täysin itsenäisesti."},
+  {"answer": "Se on keskitetty hakuindeksi, joka haravoi metadataa osallistujaorganisaatioiden omista taustajärjestelmistä ja tarjoaa yhteisen käyttöliittymän."},
+  {"answer": "Se perustuu lohkoketjuteknologiaan metadatan eheyden varmistamiseksi."}
+  ],
+  "answer": "Se on keskitetty hakuindeksi, joka haravoi metadataa osallistujaorganisaatioiden omista taustajärjestelmistä ja tarjoaa yhteisen käyttöliittymän.",
+  "explanation": "Finna.fi ei ole yksi massiivinen tietokanta, johon kaikki data kopioidaan. Sen sijaan se toimii haravoimalla metadataa (esim. OAI-PMH-protokollalla) kymmenistä eri arkistojen, kirjastojen ja museoiden taustajärjestelmistä. Tämä metadata käsitellään ja tallennetaan Finnan keskitettyyn hakuindeksiin (perustuu Solr-hakusovelluspalvelimeen). Tämä arkkitehtuuri mahdollistaa sen, että organisaatiot voivat ylläpitää omia järjestelmiään, mutta niiden aineistot ovat löydettävissä yhden valtakunnallisen näkymän kautta."
+  },
+  {
+  "question": "Mitä mittaa tiedonhaussa yleisesti käytetty tarkkuus (precision)?",
+  "answers": [
+  {"answer": "Kuinka suuri osa kaikista olemassa olevista relevanteista dokumenteista löytyi haulla."},
+  {"answer": "Kuinka suuri osa haun palauttamista dokumenteista on relevantteja."},
+  {"answer": "Haun suorittamiseen kulunut aika millisekunteina."},
+  {"answer": "Kuinka monta erilaista hakusanaa käyttäjä käytti."}
+  ],
+  "answer": "Kuinka suuri osa haun palauttamista dokumenteista on relevantteja.",
+  "explanation": "Tarkkuus (precision) on yksi tiedonhaun arvioinnin perusmittareista. Se lasketaan kaavalla: (Relevattien löytyneiden dokumenttien määrä) / (Kaikkien löytyneiden dokumenttien määrä). Se mittaa siis tulosjoukon puhtautta 'kohinasta'. Korkea tarkkuus tarkoittaa, että suurin osa hakutuloksista on hyödyllisiä. Sen vastapari on saanti (recall), joka mittaa, kuinka suuri osa kaikista relevanteista dokumenteista onnistuttiin löytämään."
+  },
+  {
+  "question": "Mitä tarkoitetaan Dublin Core -metadatastandardin 'yksinkertaisella' (Simple) ja 'tarkennetulla' (Qualified) tasolla?",
+  "answers": [
+  {"answer": "Yksinkertainen taso on maksuton, tarkennettu on maksullinen."},
+  {"answer": "Yksinkertainen taso sisältää 15 perusalkiota, kun taas tarkennettu taso mahdollistaa näiden alkioiden tarkentamisen ja koodattujen arvojen käytön."},
+  {"answer": "Yksinkertainen taso on tarkoitettu ihmisille, tarkennettu koneille."},
+  {"answer": "Yksinkertaista tasoa käytetään yleisissä kirjastoissa, tarkennettua tieteellisissä kirjastoissa."}
+  ],
+  "answer": "Yksinkertainen taso sisältää 15 perusalkiota, kun taas tarkennettu taso mahdollistaa näiden alkioiden tarkentamisen ja koodattujen arvojen käytön.",
+  "explanation": "Dublin Core on laaja-alainen metadatastandardi. Sen ytimessä on 15 perusalkiota (esim. Title, Creator, Subject, Date). 'Simple Dublin Core' viittaa näiden 15 alkuperäisen elementin käyttöön. 'Qualified Dublin Core' laajentaa tätä sallimalla elementtien tarkentimia (qualifiers), jotka täsmentävät alkuperäisen elementin merkitystä (esim. Date-elementti voidaan tarkentaa 'dateAccepted' tai 'dateCopyrighted'). Lisäksi se mahdollistaa sisällön koodaamisen kontrolloitujen sanastojen (esim. ISO-standardit) avulla, mikä parantaa koneellista tulkintaa."
+  },
+  {
+  "question": "Mikä on Melinda-metatietovarannon ensisijainen tehtävä Suomen kirjastosektorilla?",
+  "answers": [
+  {"answer": "Toimia kaikkien suomalaisten yleisten kirjastojen yhteisenä kirjastojärjestelmänä."},
+  {"answer": "Tarjota avoin rajapinta e-aineistojen hankintaan ja lisensointiin."},
+  {"answer": "Toimia kansallisena yhteisluettelointijärjestelmänä, johon suomalaiset kirjastot tuottavat ja josta ne hyödyntävät laadukasta metadataa."},
+  {"answer": "Arkistoida pysyvästi kaikki Suomessa julkaistut digitaaliset aineistot."}
+  ],
+  "answer": "Toimia kansallisena yhteisluettelointijärjestelmänä, johon suomalaiset kirjastot tuottavat ja josta ne hyödyntävät laadukasta metadataa.",
+  "explanation": "Melinda on Kansalliskirjaston koordinoima kansallinen metatietovaranto, joka toimii yhteisluettelointialustana. Useat suomalaiset kirjastot (erityisesti yliopistokirjastot, mutta myös muita) luetteloivat aineistonsa suoraan Melindaan tai kopioivat sieltä laadukkaat tietueet omiin järjestelmiinsä. Tämä vähentää päällekkäistä työtä, yhtenäistää kuvailun laatua ja toimii perustana monille kansallisille palveluille, kuten Finnalle."
+  },
+  {
+  "question": "Mihin OAIS-referenssimalli (Open Archival Information System) antaa viitekehyksen?",
+  "answers": [
+  {"answer": "Kirjastojen asiakaspalveluprosessien standardointiin."},
+  {"answer": "Avoimen lähdekoodin kirjastojärjestelmien kehittämiseen."},
+  {"answer": "Digitaalisen aineiston pitkäaikaissäilytyksen (PAS) järjestämiseen ja hallintaan."},
+  {"answer": "Yliopistojen ranking-järjestelmien laskentaperusteisiin."}
+  ],
+  "answer": "Digitaalisen aineiston pitkäaikaissäilytyksen (PAS) järjestämiseen ja hallintaan.",
+  "explanation": "OAIS (ISO 14721:2012) on konseptuaalinen viitekehys, joka määrittelee digitaalisen arkiston vastuut, toiminnot ja tietomallit. Sitä käytetään laajasti digitaalisen pitkäaikaissäilytyksen suunnittelussa ja arvioinnissa. Se ei ole ohjelmisto tai järjestelmä, vaan malli, joka auttaa organisaatioita varmistamaan, että niiden digitaaliset aineistot säilyvät autenttisina, ymmärrettävinä ja käyttökelpoisina pitkällä aikavälillä. Se määrittelee mm. keskeiset informaatiopaketit: SIP (Submission), AIP (Archival) ja DIP (Dissemination)."
+  },
+  {
+  "question": "Mikä seuraavista kuvaa parhaiten ontologian ja tesauruksen välistä eroa tiedon organisoinnissa?",
+  "answers": [
+  {"answer": "Tesaurus on aakkosellinen sanalista, ontologia on hierarkkinen luokitusjärjestelmä."},
+  {"answer": "Ontologia kuvaa käsitteiden välisiä rikkaita ja monityyppisiä semanttisia suhteita (esim. 'on osa', 'aiheuttaa'), kun taas tesaurus keskittyy pääasiassa hierarkkisiin (BT/NT) ja assosiatiivisiin (RT) suhteisiin."},
+  {"answer": "Tesauruksia käytetään vain lääketieteessä, ontologioita humanistisilla aloilla."},
+  {"answer": "Ontologiat ovat aina koneellisesti tuotettuja, tesaurukset aina ihmisen rakentamia."}
+  ],
+  "answer": "Ontologia kuvaa käsitteiden välisiä rikkaita ja monityyppisiä semanttisia suhteita (esim. 'on osa', 'aiheuttaa'), kun taas tesaurus keskittyy pääasiassa hierarkkisiin (BT/NT) ja assosiatiivisiin (RT) suhteisiin.",
+  "explanation": "Molemmat ovat tiedon organisoinnin välineitä, mutta ontologia on ilmaisukyvyltään rikkaampi. Tesaurus (kuten YSA/YSO) määrittelee termien välille perussuhteet: laajempi termi (Broader Term), suppeampi termi (Narrower Term) ja rinnakkaistermi (Related Term). Ontologia mahdollistaa paljon tarkempien ja monipuolisempien suhteiden määrittelyn käsitteiden välille, mikä on olennaista semanttisessa webissä ja tekoälysovelluksissa. Se voi määritellä esimerkiksi, että 'kirurgi' on 'henkilö', joka suorittaa 'leikkauksia'."
+  },
+  {
+  "question": "Mitä tarkoitetaan tiedonarkkitehtuurin (information architecture) kontekstissa 'Top-down' ja 'Bottom-up' -suunnittelulla?",
+  "answers": [
+  {"answer": "'Top-down' perustuu käyttäjien antamaan palautteeseen, 'Bottom-up' organisaation strategiaan."},
+  {"answer": "'Top-down' lähtee organisaation tavoitteista ja liiketoimintastrategiasta, 'Bottom-up' lähtee olemassa olevan sisällön analyysista ja käyttäjien tarpeista."},
+  {"answer": "'Top-down' on nopea ja edullinen, 'Bottom-up' on hidas ja kallis tapa suunnitella."},
+  {"answer": "'Top-down' soveltuu vain pienille verkkosivustoille, 'Bottom-up' suurille portaaleille."}
+  ],
+  "answer": "'Top-down' lähtee organisaation tavoitteista ja liiketoimintastrategiasta, 'Bottom-up' lähtee olemassa olevan sisällön analyysista ja käyttäjien tarpeista.",
+  "explanation": "Tiedonarkkitehtuurin suunnittelussa käytetään usein molempia lähestymistapoja. 'Top-down' (ylhäältä alas) -suunnittelu alkaa yleiskuvasta: mitkä ovat organisaation tavoitteet, mitä sivuston halutaan saavuttavan? Tämän perusteella luodaan päänavigaatio ja rakenne. 'Bottom-up' (alhaalta ylös) -suunnittelu puolestaan lähtee yksityiskohdista: mitä sisältöä meillä on, miten käyttäjät hakevat tietoa, miten sisältö tulisi ryhmitellä ja nimetä? Paras lopputulos saavutetaan yleensä yhdistämällä nämä kaksi näkökulmaa."
+  },
+  {
+  "question": "Mitä tarkoittaa UDC-luokitusjärjestelmän (Universal Decimal Classification) kaksoispisteen (:) käyttö luokkien yhdistämisessä?",
+  "answers": [
+  {"answer": "Se erottaa pääluokan maantieteellisestä jaottelusta."},
+  {"answer": "Se ilmaisee kahden tai useamman aiheen välisen suhteen, eli relaation."},
+  {"answer": "Se on desimaalierotin, jolla ei ole semanttista merkitystä."},
+  {"answer": "Se osoittaa, että luokka on vanhentunut."}
+  ],
+  "answer": "Se ilmaisee kahden tai useamman aiheen välisen suhteen, eli relaation.",
+  "explanation": "UDC on tunnettu syntetiikastaan eli kyvystään yhdistellä luokkia tarkkojen aihekuvausten luomiseksi. Kaksoispiste (:) on keskeinen relaatiosyntaksin merkki. Sitä käytetään yhdistämään kaksi erillistä UDC-luokkaa kuvaamaan niiden välistä suhdetta. Esimerkiksi luokka '330.341.1:004' yhdistää luokat 'Talouskasvun tekijät' (330.341.1) ja 'Tietotekniikka' (004) ja kuvaa aihetta 'Tietotekniikan vaikutus talouskasvuun'."
+  },
+  {
+  "question": "Mikä on Creative Commons Nolla (CC0) -lisenssin keskeinen juridinen vaikutus?",
+  "answers": [
+  {"answer": "Se edellyttää aina alkuperäisen tekijän mainitsemista, mutta sallii muun käytön."},
+  {"answer": "Se sallii aineiston käytön vain ei-kaupallisiin tarkoituksiin."},
+  {"answer": "Tekijä luopuu kaikista tekijänoikeuksistaan ja lähioikeuksistaan maailmanlaajuisesti ja siirtää teoksen public domainiin niin laajasti kuin laki sallii."},
+  {"answer": "Se kieltää teoksen muuntelemisen, mutta sallii sen jakamisen."}
+  ],
+  "answer": "Tekijä luopuu kaikista tekijänoikeuksistaan ja lähioikeuksistaan maailmanlaajuisesti ja siirtää teoksen public domainiin niin laajasti kuin laki sallii.",
+  "explanation": "CC0 (Creative Commons Zero) on työkalu, jonka avulla oikeudenhaltija voi omistaa teoksensa public domainille, eli vapauttaa sen kaikista tekijänoikeuden asettamista rajoituksista. Toisin kuin muut CC-lisenssit, jotka myöntävät tiettyjä lupia tietyin ehdoin (kuten nimeäminen tai ei-kaupallisuus), CC0 on luopumisteko. Se on tehokas tapa maksimoida aineiston uudelleenkäytettävyys esimerkiksi datan tai metadatan yhteydessä."
+  },
+  {
+  "question": "Mitä tarkoitetaan kirjastojen konsortiopalveluilla?",
+  "answers": [
+  {"answer": "Yksittäisen kirjaston kaikkia digitaalisia palveluita kutsutaan konsortiopalveluiksi."},
+  {"answer": "Kirjastojen välistä yhteistyötä, jossa hankitaan ja hallinnoidaan keskitetysti esimerkiksi e-aineistojen lisenssejä suuremmalle ryhmälle kustannustehokkuuden saavuttamiseksi."},
+  {"answer": "Vapaaehtoisten ylläpitämää kirjastopalvelua ilman julkista rahoitusta."},
+  {"answer": "Lain, joka velvoittaa kaikki Suomen kirjastot käyttämään samaa kirjastojärjestelmää."}
+  ],
+  "answer": "Kirjastojen välistä yhteistyötä, jossa hankitaan ja hallinnoidaan keskitetysti esimerkiksi e-aineistojen lisenssejä suuremmalle ryhmälle kustannustehokkuuden saavuttamiseksi.",
+  "explanation": "Kirjastokonsortio on usean kirjaston muodostama yhteenliittymä, jonka tavoitteena on saavuttaa etuja yhteistyöllä. Yksi yleisimmistä konsortiopalveluista on e-aineistojen, kuten tieteellisten lehtien ja e-kirjojen, yhteishankinta. Neuvottelemalla sopimukset keskitetysti suurelle joukolle kirjastoja, konsortio saa yleensä paremmat hinnat ja ehdot kuin yksittäinen kirjasto saisi. Suomessa Kansalliskirjaston FinELib-palvelu on keskeinen konsortiopalveluiden tarjoaja."
+  },
+  {
+  "question": "Mitä tarkoitetaan tiedon käyttäytymisen (information behavior) Dervinin Sense-Making -teoriassa käsitteellä 'silta' (bridge)?",
+  "answers": [
+  {"answer": "Tietoaukkoa, jonka käyttäjä haluaa ylittää."},
+  {"answer": "Käyttäjän ajatuksia, ideoita, tunteita tai toimia, joiden avulla hän pyrkii ylittämään havaitsemansa tietoaukon."},
+  {"answer": "Kirjastonhoitajan roolia tiedonhakijan ja tiedon välissä."},
+  {"answer": "Teknologista ratkaisua, kuten hakukonetta."}
+  ],
+  "answer": "Käyttäjän ajatuksia, ideoita, tunteita tai toimia, joiden avulla hän pyrkii ylittämään havaitsemansa tietoaukon.",
+  "explanation": "Brenda Dervinin Sense-Making -metateoria mallintaa tiedon tarvetta ja käyttöä kognitiivisena prosessina. Mallin ytimessä on tilanne (Situation), aukko (Gap) ja käyttö (Use/Help). Henkilö kokee tilanteessa kognitiivisen aukon, joka estää häntä etenemästä. 'Silta' on se, mitä henkilö rakentaa tämän aukon yli. Se koostuu hänen omista strategioistaan, kysymyksistään ja toimistaan. Tieto nähdään tässä mallissa rakennusmateriaalina, jota käytetään sillan rakentamiseen eli oman ymmärryksen luomiseen."
+  },
+  {
+  "question": "Mikä on PREMIS-metadatasanaston (Preservation Metadata: Implementation Strategies) päätarkoitus?",
+  "answers": [
+  {"answer": "Kuvata digitaalisen objektin henkistä sisältöä, kuten aihetta ja tekijää."},
+  {"answer": "Hallinnoida digitaalisen objektin pitkäaikaissäilytyksen kannalta oleellista tietoa, kuten provenienssia, eheyttä ja säilytystoimenpiteitä."},
+  {"answer": "Standardoida e-kirjojen lainausprosessia kirjastoissa."},
+  {"answer": "Määritellä käyttöoikeuksiin liittyviä tietoja, kuten lisenssejä."}
+  ],
+  "answer": "Hallinnoida digitaalisen objektin pitkäaikaissäilytyksen kannalta oleellista tietoa, kuten provenienssia, eheyttä ja säilytystoimenpiteitä.",
+  "explanation": "PREMIS on de facto -standardi pitkäaikaissäilytyksen metatiedoille. Sen tehtävä ei ole kuvailla, mitä objekti 'on' (kuten MARC tai Dublin Core), vaan mitä sille on 'tapahtunut' ja miten sen säilyminen varmistetaan. PREMIS-datamalli määrittelee semanttisia yksiköitä, jotka kuvaavat esimerkiksi objektin luontitietoja, teknisiä ominaisuuksia, tarkistussummia (eheyden varmistus), muutoshistoriaa (provenienssi) ja sille tehtyjä säilytystoimenpiteitä (esim. tiedostomuodon migraatio)."
+  },
+  {
+  "question": "Mitä tarkoittaa API-rajapinta (Application Programming Interface) kirjastopalveluiden kontekstissa?",
+  "answers": [
+  {"answer": "Kirjaston sisäinen laadunvarmistusprosessi."},
+  {"answer": "Standardisoitu tapa, jolla eri tietokoneohjelmat voivat keskustella keskenään ja hyödyntää toistensa dataa tai toiminnallisuuksia."},
+  {"answer": "Käyttöliittymä, joka on suunniteltu erityisesti mobiililaitteille."},
+  {"answer": "Asiakaspalautteen keräämiseen tarkoitettu lomake."}
+  ],
+  "answer": "Standardisoitu tapa, jolla eri tietokoneohjelmat voivat keskustella keskenään ja hyödyntää toistensa dataa tai toiminnallisuuksia.",
+  "explanation": "API-rajapinta on eräänlainen 'sopimus' tai 'käsikirja', joka määrittelee, miten ulkopuolinen ohjelma voi tehdä pyyntöjä ja saada vastauksia toisesta järjestelmästä. Kirjastot tarjoavat yhä useammin API-rajapintoja esimerkiksi metatietovarantoihinsa (esim. Finna API, Melinda API). Tämä mahdollistaa sen, että ulkopuoliset kehittäjät voivat luoda uusia sovelluksia ja palveluita (esim. mobiilisovelluksia, visualisointeja) kirjaston datan päälle ilman, että heidän tarvitsee päästä käsiksi kirjaston taustajärjestelmän sisäiseen toimintaan."
+  },
+  {
+  "question": "Mikä on Laki yleisistä kirjastoista (1492/2016) keskeinen velvoite kunnille?",
+  "answers": [
+  {"answer": "Ylläpitää vähintään yhtä kirjastoautoa jokaista 50 000 asukasta kohden."},
+  {"answer": "Kuulua osaksi jotakin kirjastokimppaa."},
+  {"answer": "Järjestää yleisen kirjaston palvelut asukkailleen."},
+  {"answer": "Tarjota kaikki kirjaston palvelut maksutta, mukaan lukien myöhästymismaksut ja varaaminen."}
+  ],
+  "answer": "Järjestää yleisen kirjaston palvelut asukkailleen.",
+  "explanation": "Suomessa kunnilla on lakisääteinen velvollisuus järjestää yleisen kirjaston palvelut. Laki yleisistä kirjastoista (1492/2016) määrittelee kirjastotoiminnan tavoitteet ja tehtävät. Vaikka laki ei määrittele tarkkoja resursseja tai palvelupisteiden määrää, se velvoittaa kunnan tarjoamaan asukkailleen pääsyn aineistoihin, tietoon ja kulttuurisisältöihin. Lain mukaan kirjaston peruspalvelut, kuten aineistojen käyttö ja lainaus sekä ohjaus ja neuvonta, ovat maksuttomia, mutta kunta voi periä maksuja esimerkiksi myöhästymisistä ja varauksista."
+  },
+  {
+  "question": "Mitä tarkoitetaan tiedonhankinnan 'pearl growing' -strategialla?",
+  "answers": [
+  {"answer": "Aloitetaan haku mahdollisimman laajalla termillä ja kavennetaan sitä asteittain."},
+  {"answer": "Etsitään ensin yksi tai muutama erittäin relevantti dokumentti ja hyödynnetään niiden ominaisuuksia (asiasanat, lähteet) uusien hakujen pohjana."},
+  {"answer": "Käytetään ainoastaan sitaattihakuja muiden strategioiden sijaan."},
+  {"answer": "Rajoitetaan haku vain uusimpiin, viimeisen vuoden aikana julkaistuihin artikkeleihin."}
+  ],
+  "answer": "Etsitään ensin yksi tai muutama erittäin relevantti dokumentti ja hyödynnetään niiden ominaisuuksia (asiasanat, lähteet) uusien hakujen pohjana.",
+  "explanation": "'Pearl growing' (helmen kasvatus) on tehokas tiedonhakustrategia erityisesti silloin, kun aihealue tai sen terminologia on vieras. Prosessi alkaa usein yksinkertaisella haulla, jolla pyritään löytämään edes yksi hyvä osuma ('helmen siemen'). Tämän dokumentin tietoja, kuten sen asiasanoja, tiivistelmän termejä, ja erityisesti sen lähdeluetteloa (ja artikkeleita, jotka siihen viittaavat) käytetään sitten uusien, tarkempien hakujen rakentamiseen ja relevanttien dokumenttien löytämiseen."
+  },
+  {
+  "question": "Mikä seuraavista kuvaa parhaiten semanttisen webin ja linkitetyn avoimen datan (LOD) tavoitetta kirjastojen kannalta?",
+  "answers": [
+  {"answer": "Nopeuttaa kirjastojen verkkosivujen latautumista."},
+  {"answer": "Korvata kaikki nykyiset kirjastojärjestelmät yhdellä keskitetyllä järjestelmällä."},
+  {"answer": "Muuttaa web dokumenttien verkosta datan verkostoksi, jossa kirjastojen metadata on koneluettavassa muodossa, linkitettynä ja vapaasti hyödynnettävissä osana laajempaa tietoverkkoa."},
+  {"answer": "Parantaa kirjastojen tietoturvaa salaamalla kaiken metadatan."}
+  ],
+  "answer": "Muuttaa web dokumenttien verkosta datan verkostoksi, jossa kirjastojen metadata on koneluettavassa muodossa, linkitettynä ja vapaasti hyödynnettävissä osana laajempaa tietoverkkoa.",
+  "explanation": "Semanttisen webin visio on muuttaa nykyinen, pääasiassa ihmisille luettavaksi tarkoitettu web koneluettavaksi tietoverkoksi. Linkitetty avoin data (LOD) on tämän vision toteuttamisen keino. Kirjastoille tämä tarkoittaa siirtymistä erillisistä tietosiiloista (MARC-tietokannat) kohti avoimia, RDF-malliin perustuvia datavarantoja. Kun kirjaston data (esim. teostiedot, auktoriteetit) on linkitettyä dataa, se voidaan yhdistää muihin tietovarantoihin (esim. Wikipedia/Wikidata, paikkatiedot), mikä luo täysin uusia mahdollisuuksia tiedon löytämiseen ja hyödyntämiseen."
+  },
+  {
+  "question": "Mihin tarkoitukseen kirjastossa käytetään RFID-tekniikkaa (Radio-frequency identification)?",
+  "answers": [
+  {"answer": "Ainoastaan aineiston kopiosuojaukseen."},
+  {"answer": "Tehostamaan logistiikkaa: automaattinen lainaus ja palautus, aineiston etsintä ja hyllyjärjestyksen tarkistus."},
+  {"answer": "Seuraamaan asiakkaiden liikkumista kirjaston tiloissa yksityisyyttä loukaten."},
+  {"answer": "Mittamaan kirjaston lämpötilaa ja ilmankosteutta."}
+  ],
+  "answer": "Tehostamaan logistiikkaa: automaattinen lainaus ja palautus, aineiston etsintä ja hyllyjärjestyksen tarkistus.",
+  "explanation": "RFID-tekniikka käyttää radiotaajuuksia tunnistaakseen objekteihin kiinnitettyjä RFID-tunnisteita. Kirjastoissa se on suurelta osin korvannut vanhat magneettijuovat ja viivakoodit. Se mahdollistaa lainaus- ja palautusautomaatit, joissa asiakas voi käsitellä suuren pinon kirjoja kerralla. Lisäksi henkilökunta voi käyttää käsiskannereita nopeuttamaan hyllytystyötä, etsimään hyllystä tiettyä nimekettä ja tekemään inventaariota eli tarkistamaan hyllyjärjestystä ja havaitsemaan puuttuvat niteet."
+  },
+  {
+  "question": "Mitä tarkoitetaan kokoelmien hallinnassa ns. 'weedingillä' eli harvennuksella?",
+  "answers": [
+  {"answer": "Uusien, suosittujen kirjojen hankintaa kokoelmaan."},
+  {"answer": "Vanhentuneen, vähän käytetyn tai huonokuntoisen aineiston kontrolloitua poistamista kokoelmasta."},
+  {"answer": "Kirjaston aineiston digitointia säilytystarkoituksessa."},
+  {"answer": "Kokoelman järjestämistä uuteen järjestykseen hyllyissä."}
+  ],
+  "answer": "Vanhentuneen, vähän käytetyn tai huonokuntoisen aineiston kontrolloitua poistamista kokoelmasta.",
+  "explanation": "Harvennus ('weeding' tai 'deselection') on keskeinen osa dynaamista kokoelmien hallintaa. Sen tavoitteena on pitää kokoelma relevanttina, ajantasaisena, houkuttelevana ja käyttökelpoisena. Harvennuksen kriteereitä voivat olla esimerkiksi aineiston alhainen käyttö, vanhentunut tieto (erityisesti tietokirjallisuudessa), huono fyysinen kunto tai se, että aineisto ei enää palvele kirjaston nykyisiä tavoitteita. Hyvin hoidettu harvennus vapauttaa tilaa uudelle aineistolle ja parantaa kokoelman yleistä laatua."
+  },
+  {
+  "question": "Mitä KDK-hanke (Kansallinen digitaalinen kirjasto) tavoitteli?",
+  "answers": [
+  {"answer": "Perustamaan uuden, täysin digitaalisen Kansalliskirjaston Helsingin keskustaan."},
+  {"answer": "Luomaan keskitetyn palvelukokonaisuuden ja infrastruktuurin, joka mahdollistaa arkistojen, kirjastojen ja museoiden (AKM-sektori) digitaalisten aineistojen yhteisen hallinnoinnin ja käytön."},
+  {"answer": "Korvaamaan kaikki yleisten kirjastojen kirjastokortit yhdellä kansallisella digitaalisella kortilla."},
+  {"answer": "Kääntämään kaikki suomalaiset kaunokirjallisuuden klassikot englanniksi."}
+  ],
+  "answer": "Luomaan keskitetyn palvelukokonaisuuden ja infrastruktuurin, joka mahdollistaa arkistojen, kirjastojen ja museoiden (AKM-sektori) digitaalisten aineistojen yhteisen hallinnoinnin ja käytön.",
+  "explanation": "Kansallinen digitaalinen kirjasto (KDK) oli opetus- ja kulttuuriministeriön hanke (n. 2008–2017), jonka tavoitteena oli parantaa AKM-sektorin digitaalisten aineistojen saatavuutta ja yhteentoimivuutta. Hankkeen näkyvimpiä tuloksia ovat Finna-hakupalvelu, metatietovaranto Melinda sekä digitaalisen aineiston pitkäaikaissäilytysratkaisu (PAS-palvelu). KDK ei siis ollut yksi rakennus tai organisaatio, vaan hajautettu kansallinen infrastruktuuri."
+  },
+  {
+  "question": "Mikä on viittaustenhallintaohjelman (esim. Zotero, Mendeley) ensisijainen funktio tutkijalle?",
+  "answers": [
+  {"answer": "Kirjoittaa tutkimusartikkeli automaattisesti annettujen lähteiden perusteella."},
+  {"answer": "Tarkistaa tutkimuksen tulosten tilastollinen merkitsevyys."},
+  {"answer": "Kerätä, järjestää ja tallentaa lähdeviitteitä sekä muotoilla lähdeluetteloita ja tekstiviitteitä automaattisesti eri viittaustyylien mukaisesti."},
+  {"answer": "Myydä ja levittää valmiita tutkimusartikkeleita."}
+  ],
+  "answer": "Kerätä, järjestää ja tallentaa lähdeviitteitä sekä muotoilla lähdeluetteloita ja tekstiviitteitä automaattisesti eri viittaustyylien mukaisesti.",
+  "explanation": "Viittaustenhallintaohjelmat ovat tärkeitä työkaluja akateemisessa kirjoittamisessa. Ne auttavat käyttäjää keräämään viitetietoja eri lähteistä (tietokannat, verkkosivut), organisoimaan niitä kansioihin ja avainsanoilla sekä liittämään niihin PDF-tiedostoja ja muistiinpanoja. Ohjelmien keskeisin hyöty on niiden integrointi tekstinkäsittelyohjelmiin (kuten Word tai LibreOffice). Tämä mahdollistaa tekstin sisäisten viitteiden ja lopun lähdeluettelon automaattisen luomisen ja muotoilun valitun viittaustyylin (esim. APA, Chicago, Harvard) sääntöjen mukaan, mikä säästää valtavasti aikaa ja vähentää virheitä."
+  },
+  {
+  "question": "Mitä kuvataan termillä 'informaatiolukutaito' (information literacy)?",
+  "answers": [
+  {"answer": "Kykyä lukea ja kirjoittaa sujuvasti."},
+  {"answer": "Taitoa käyttää tietokonetta ja perusohjelmistoja."},
+  {"answer": "Kykyä tunnistaa tiedontarve, paikantaa, arvioida kriittisesti ja käyttää löydettyä tietoa tehokkaasti ja eettisesti."},
+  {"answer": "Nopeaa lukunopeutta ja kykyä omaksua suuria tietomääriä lyhyessä ajassa."}
+  ],
+  "answer": "Kykyä tunnistaa tiedontarve, paikantaa, arvioida kriittisesti ja käyttää löydettyä tietoa tehokkaasti ja eettisesti.",
+  "explanation": "Informaatiolukutaito on laaja käsite, joka kattaa koko tiedonhankinnan ja -käytön prosessin. Se ei ole pelkästään tekninen taito, vaan ennen kaikkea kriittisen ajattelun taito. Siihen kuuluu tiedontarpeen määrittely, sopivien hakustrategioiden ja -lähteiden valinta, löydetyn tiedon luotettavuuden, näkökulman ja relevanssin arviointi sekä tiedon eettinen käyttö (mm. tekijänoikeuksien ja viittauskäytäntöjen noudattaminen) omassa työssä. Kirjastot ovat keskeisessä roolissa informaatiolukutaidon opettamisessa."
+  },
+  {
+  "question": "Mikä seuraavista on esimerkki boolen operaattoreiden käytöstä tarkennetussa haussa?",
+  "answers": [
+  {"answer": "haku: 'ilmastonmuutos Suomessa'"},
+  {"answer": "haku: ilmastonmuutos AND metsätalous NOT englanti"},
+  {"answer": "haku: ilmastonmuutos*"},
+  {"answer": "haku: link:www.ym.fi"}
+  ],
+  "answer": "haku: ilmastonmuutos AND metsätalous NOT englanti",
+  "explanation": "Boolen logiikka on tarkennetun tiedonhaun perusta. Se käyttää operaattoreita AND, OR ja NOT yhdistämään hakusanoja ja määrittelemään niiden välisiä suhteita. 'AND' kaventaa hakua ja vaatii, että kaikkien annettujen termien on esiinnyttävä tuloksissa. 'OR' laajentaa hakua ja vaatii, että vähintään yhden annetuista termeistä on esiinnyttävä. 'NOT' rajaa hakua pois ja sulkee pois dokumentit, joissa kyseinen termi esiintyy. Esimerkkihaku löytäisi siis dokumentteja, joissa mainitaan sekä ilmastonmuutos että metsätalous, mutta ei niitä, joissa mainitaan sana englanti."
+  },
+  {
+  "question": "Mitä tarkoitetaan kirjaston käyttäjäkokemuksen (UX, User Experience) suunnittelulla?",
+  "answers": [
+  {"answer": "Keskittymistä ainoastaan kirjaston verkkosivujen visuaaliseen ilmeeseen."},
+  {"answer": "Asiakaspalvelun ystävällisyyden mittaamista kyselyillä."},
+  {"answer": "Kokonaisvaltaista lähestymistapaa, joka pyrkii tekemään kaikista kirjaston palveluista ja kosketuspinnoista (fyysiset tilat, verkkopalvelut, henkilökunta) mahdollisimman helppokäyttöisiä, tehokkaita ja miellyttäviä asiakkaan näkökulmasta."},
+  {"answer": "Ainoastaan esteettömyysmääräysten noudattamista fyysisissä tiloissa."}
+  ],
+  "answer": "Kokonaisvaltaista lähestymistapaa, joka pyrkii tekemään kaikista kirjaston palveluista ja kosketuspinnoista (fyysiset tilat, verkkopalvelut, henkilökunta) mahdollisimman helppokäyttöisiä, tehokkaita ja miellyttäviä asiakkaan näkökulmasta.",
+  "explanation": "Käyttäjäkokemus (UX) -suunnittelu on holistinen lähestymistapa, joka tarkastelee asiakkaan koko palvelupolkua ja kaikkia vuorovaikutuspisteitä kirjaston kanssa. Se ei rajoitu pelkkään digitaaliseen käyttöliittymään, vaan kattaa myös fyysisen tilan opasteet, palvelutiskien toimivuuden, lainausautomaattien helppokäyttöisyyden ja henkilökunnan kanssa asioinnin. Tavoitteena on ymmärtää käyttäjien tarpeita ja motiiveja (esim. käyttäjätutkimuksen avulla) ja suunnitella palvelut niiden pohjalta saumattomiksi ja positiivisia tuntemuksia herättäviksi."
+  },
+  {
+  "question": "Mikä on MARC 21 -formaatin kentän 245 ensisijainen tehtävä?",
+  "answers": [
+  {"answer": "Sisältää julkaisijan tiedot."},
+  {"answer": "Sisältää nimeke- ja vastuullisuustiedot (Title and Statement of Responsibility)."},
+  {"answer": "Sisältää fyysisen kuvailun, kuten sivumäärän."},
+  {"answer": "Sisältää asiasanat ja luokat."}
+  ],
+  "answer": "Sisältää nimeke- ja vastuullisuustiedot (Title and Statement of Responsibility).",
+  "explanation": "MARC 21 -formaatissa kenttä 245 on yksi keskeisimmistä. Se sisältää teoksen pää- ja alanimekkeet sekä vastuullisuustiedot, kuten tekijän, toimittajan tai kääntäjän nimen. Kentän indikaattorit ja osakentät (esim. $a nimeke, $b muu nimeketieto, $c vastuullisuustieto) jäsentävät tiedon tarkasti koneluettavaan muotoon."
+  },
+  {
+  "question": "Mitä tarkoittaa 'evidence-based acquisition' (EBA) -hankintamalli e-kirjoissa?",
+  "answers": [
+  {"answer": "Kirjasto ostaa vain ne e-kirjat, jotka ovat saaneet parhaat arvostelut."},
+  {"answer": "Kirjasto ostaa laajan e-kirjakokoelman väliaikaisesti käyttöönsä, ja hankintapäätökset tehdään tämän jälkeen todellisen käytön perusteella."},
+  {"answer": "Kirjastonhoitaja valitsee kaikki hankittavat e-kirjat oman asiantuntemuksensa perusteella."},
+  {"answer": "Asiakkaat äänestävät, mitkä e-kirjat kirjasto hankkii."}
+  ],
+  "answer": "Kirjasto ostaa laajan e-kirjakokoelman väliaikaisesti käyttöönsä, ja hankintapäätökset tehdään tämän jälkeen todellisen käytön perusteella.",
+  "explanation": "Näyttöön perustuva hankinta (EBA) on asiakaslähtöinen hankintamalli. Sen sijaan, että kirjasto yrittäisi ennalta arvata, mitkä kirjat tulevat käyttöön, se maksaa kustantajalle pääsystä laajaan e-kirjakokoelmaan tietyksi ajaksi (esim. vuodeksi). Tämän jakson lopussa kirjasto saa käyttötilastot ja tekee pysyvät ostopäätökset niiden nimekkeiden osalta, joita on todellisuudessa käytetty eniten. Tämä varmistaa, että hankintamäärärahat kohdentuvat aineistoon, jolla on todistettua kysyntää."
+  },
+  {
+  "question": "Mitä tarkoittaa, että metadata on 'yhteentoimivaa' (interoperable)?",
+  "answers": [
+  {"answer": "Metadata on tallennettu useaan eri paikkaan varmuuskopioina."},
+  {"answer": "Metadata on kirjoitettu kielellä, jota mahdollisimman moni ihminen ymmärtää."},
+  {"answer": "Eri järjestelmien ja palveluiden kykyä vaihtaa, ymmärtää ja hyödyntää metadataa keskenään ilman erityistoimenpiteitä."},
+  {"answer": "Metadata on suojattu salasanalla."}
+  ],
+  "answer": "Eri järjestelmien ja palveluiden kykyä vaihtaa, ymmärtää ja hyödyntää metadataa keskenään ilman erityistoimenpiteitä.",
+  "explanation": "Yhteentoimivuus on metadatan keskeinen laatuvaatimus. Se tarkoittaa, että eri lähteistä peräisin oleva metadata voidaan yhdistää ja käsitellä saumattomasti. Tämä vaatii yhteisten standardien käyttöä. Yhteentoimivuus voidaan jakaa usealle tasolle: tekninen (voidaanko data siirtää?), semanttinen (ymmärtävätkö järjestelmät datan merkityksen samalla tavalla?), syntaktinen (onko data samassa formaatissa, esim. XML?) ja organisatorinen (onko olemassa yhteisiä sopimuksia?). Esimerkiksi Finto-palvelu edistää semanttista yhteentoimivuutta tarjoamalla yhteisiä sanastoja."
+  },
+  {
+  "question": "Mihin viitataan referenssipalvelun yhteydessä termillä 'referenssihaastattelu'?",
+  "answers": [
+  {"answer": "Työhaastatteluun, jossa hakijalta kysytään suosittelijoita."},
+  {"answer": "Asiakkaan ja informaatikon välinen keskustelu, jonka tavoitteena on tarkentaa ja ymmärtää asiakkaan todellinen tiedontarve."},
+  {"answer": "Asiakastyytyväisyyskysely, joka tehdään lainauksen yhteydessä."},
+  {"answer": "Kirjastonhoitajan suorittama koe, jolla testataan hänen tietokantojen tuntemustaan."}
+  ],
+  "answer": "Asiakkaan ja informaatikon välinen keskustelu, jonka tavoitteena on tarkentaa ja ymmärtää asiakkaan todellinen tiedontarve.",
+  "explanation": "Referenssihaastattelu on keskeinen osa ammattitaitoista asiakaspalvelua. Asiakkaat esittävät usein tiedontarpeensa epätarkasti tai yleisellä tasolla. Referenssihaastattelun avulla kirjaston ammattilainen pyrkii avoimilla kysymyksillä (esim. 'Millaiseen työhön tarvitset tietoa?', 'Mitä lähteitä olet jo kokeillut?') selvittämään piilossa olevan, todellisen tiedontarpeen. Tämä mahdollistaa tehokkaampien hakustrategioiden laatimisen ja relevantimpien lähteiden löytämisen, mikä säästää sekä asiakkaan että ammattilaisen aikaa."
+  },
+  {
+  "question": "Mitä tarkoittaa tiedonlouhinta (data mining) kirjastojen data-aineistojen yhteydessä?",
+  "answers": [
+  {"answer": "Asiakkaiden henkilötietojen luvatonta keräämistä ja myymistä."},
+  {"answer": "Suurten data-aineistojen (esim. lainaushistoria, lokitiedot) automaattista analysointia uusien, piilossa olevien mallien, säännönmukaisuuksien ja trendien löytämiseksi."},
+  {"answer": "Metadatan manuaalista korjaamista ja parantelua."},
+  {"answer": "Yksittäisen faktan etsimistä suuresta tietokannasta."}
+  ],
+  "answer": "Suurten data-aineistojen (esim. lainaushistoria, lokitiedot) automaattista analysointia uusien, piilossa olevien mallien, säännönmukaisuuksien ja trendien löytämiseksi.",
+  "explanation": "Tiedonlouhinta käyttää tilastollisia ja koneoppimisen menetelmiä suurten tietomassojen analysointiin. Kirjastot voivat soveltaa sitä esimerkiksi anonymisoituun lainausdataan löytääkseen yllättäviä yhteyksiä eri aihepiirien välillä (esim. 'asiakkaat, jotka lainaavat puutarhakirjoja, lainaavat usein myös dekkareita'). Tällainen tieto voi auttaa kokoelmien kehittämisessä, aineiston esillepanossa ja suosittelujärjestelmien rakentamisessa. Tiedonlouhinta edellyttää aina tarkkaa harkintaa tietosuojan ja eettisten periaatteiden osalta."
+  },
+  {
+  "question": "Mikä on DOI-tunnisteen (Digital Object Identifier) ensisijainen tehtävä?",
+  "answers": [
+  {"answer": "Kertoa digitaalisen objektin fyysinen sijainti palvelimella."},
+  {"answer": "Toimia pysyvänä ja yksilöllisenä tunnisteena digitaaliselle objektille, joka linkittää sen sijainnista riippumatta."},
+  {"answer": "Määrittää digitaalisen objektin hinta."},
+  {"answer": "Osoittaa, että digitaalinen objekti on vapaasti käytettävissä."}
+  ],
+  "answer": "Toimia pysyvänä ja yksilöllisenä tunnisteena digitaaliselle objektille, joka linkittää sen sijainnista riippumatta.",
+  "explanation": "DOI on pysyvä linkki digitaaliseen aineistoon, tyypillisesti tieteelliseen artikkeliin tai tutkimusdataan. Vaikka artikkelin URL-osoite voi muuttua (esim. jos se siirretään toiselle palvelimelle), sen DOI-tunniste pysyy samana. DOI-järjestelmä ylläpitää rekisteriä, joka ohjaa tunnisteen aina oikeaan, voimassaolevaan osoitteeseen. Tämä tekee siitä erittäin luotettavan tavan viitata digitaalisiin lähteisiin ja varmistaa viittausten toimivuuden pitkällä aikavälillä."
+  },
+  {
+  "question": "Mitä tarkoittaa vektoriavaruusmalli (Vector Space Model) tiedonhaussa?",
+  "answers": [
+  {"answer": "Graafinen käyttöliittymä, jossa hakutulokset näytetään avaruudessa leijuvina palloina."},
+  {"answer": "Algebrallinen malli, jossa dokumentit ja hakulauseke esitetään numeerisina vektoreina moniulotteisessa avaruudessa, ja niiden relevanssi määritetään vektoreiden välisen kulman perusteella."},
+  {"answer": "Malli, jossa hakutulokset järjestetään ainoastaan julkaisuajan mukaan."},
+  {"answer": "Fyysinen malli kirjaston rakenteesta tiedon löytämisen helpottamiseksi."}
+  ],
+  "answer": "Algebrallinen malli, jossa dokumentit ja hakulauseke esitetään numeerisina vektoreina moniulotteisessa avaruudessa, ja niiden relevanssi määritetään vektoreiden välisen kulman perusteella.",
+  "explanation": "Vektoriavaruusmalli on yksi klassisista tiedonhakumalleista, jota monet hakukoneet hyödyntävät. Siinä jokainen dokumentti ja käyttäjän hakukysely kuvataan vektorina. Vektorin ulottuvuudet vastaavat indeksin termejä, ja kunkin ulottuvuuden arvo (paino, esim. TF-IDF) kuvaa, kuinka tärkeä kyseinen termi on dokumentille. Hakuprosessi etsii ne dokumenttivektorit, jotka ovat lähimpänä kyselyvektoria tässä avaruudessa, usein mittaamalla kosinin samankaltaisuutta (vektoreiden välisen kulman kosinia). Tämä mahdollistaa osittaiset osumat ja tulosten järjestämisen relevanssin mukaan, toisin kuin tiukka boolen malli."
+  },
+  {
+  "question": "Mikä on Kansallisen äänitearkiston (nyk. osa Kansallista audiovisuaalista instituuttia, KAVI) keskeinen tehtävä?",
+  "answers": [
+  {"answer": "Tuottaa ja julkaista uutta suomalaista populaarimusiikkia."},
+  {"answer": "Kerätä, säilyttää ja asettaa saataville suomalaisia äänitteitä ja niihin liittyvää tietoa mahdollisimman kattavasti."},
+  {"answer": "Myöntää apurahoja muusikoille ja yhtyeille."},
+  {"answer": "Ylläpitää Suomen virallista levymyyntilistaa."}
+  ],
+  "answer": "Kerätä, säilyttää ja asettaa saataville suomalaisia äänitteitä ja niihin liittyvää tietoa mahdollisimman kattavasti.",
+  "explanation": "Kansallinen äänitearkisto, joka on nykyään osa KAVIa, toimii suomalaisen ääniteperinnön muistiorganisaationa. Sen tehtävänä on tallentaa Suomessa julkaistut ja suomalaista alkuperää olevat äänitteet (sekä kaupalliset että ei-kaupalliset) ja niihin liittyvä dokumentaatio. Tähän kuuluu äänitteiden digitointi, luettelointi ja pitkäaikaissäilytys. KAVIn tietokannat (kuten Viola ja Elonet) ovat keskeisiä lähteitä suomalaista audiovisuaalista kulttuuria koskevalle tiedolle."
+  },
+  {
+  "question": "Mitä tarkoitetaan Z39.50-protokollalla kirjastoympäristössä?",
+  "answers": [
+  {"answer": "Uusi metadatan kuvailuformaatti, joka korvaa MARC 21:n."},
+  {"answer": "Asiakas-palvelin-protokolla, joka mahdollistaa yhden käyttöliittymän kautta tehtävät haut useisiin, erillisiin kirjastotietokantoihin samanaikaisesti."},
+  {"answer": "Kirjastojen sisäverkon tietoturvastandardi."},
+  {"answer": "Protokolla e-kirjojen lainaamiseen ja palauttamiseen."}
+  ],
+  "answer": "Asiakas-palvelin-protokolla, joka mahdollistaa yhden käyttöliittymän kautta tehtävät haut useisiin, erillisiin kirjastotietokantoihin samanaikaisesti.",
+  "explanation": "Z39.50 on standardi tietokoneiden väliseen tiedonhakuun. Se mahdollistaa sen, että Z39.50-asiakasohjelma voi lähettää hakukyselyn Z39.50-palvelimelle standardoidussa muodossa, riippumatta siitä, mikä on palvelimen taustalla oleva tietokantajärjestelmä. Tämä oli erityisen tärkeää ns. metahakujen (federated search) aikakaudella, jolloin käyttäjä saattoi yhdellä haulla hakea useista eri kirjastojen ja kustantajien tietokannoista. Vaikka nykyään OAI-PMH-haravointi ja API-rajapinnat ovat osin korvanneet sen roolia, se on edelleen käytössä monissa järjestelmissä."
+  },
+  {
+  "question": "Mihin tarkoitukseen on kehitetty Functional Requirements for Authority Data (FRAD) -malli?",
+  "answers": [
+  {"answer": "Määrittelemään toiminnalliset vaatimukset kirjaston lainausjärjestelmälle."},
+  {"answer": "Mallintamaan auktoriteettitietojen (esim. henkilöiden, yhteisöjen, teosten nimet) entiteettejä, attribuutteja ja suhteita käyttäjien näkökulmasta."},
+  {"answer": "Standardisoimaan kirjaston taloushallinnon prosesseja."},
+  {"answer": "Antamaan ohjeistusta kirjastorakennuksen suunnitteluun."}
+  ],
+  "answer": "Mallintamaan auktoriteettitietojen (esim. henkilöiden, yhteisöjen, teosten nimet) entiteettejä, attribuutteja ja suhteita käyttäjien näkökulmasta.",
+  "explanation": "FRAD on FRBR-mallin laajennus, joka keskittyy auktoriteettidataan. Auktoriteettidatan tavoitteena on varmistaa nimien ja termien yhdenmukainen käyttö kuvailutiedoissa. FRAD analysoi, mitä tehtäviä käyttäjät suorittavat auktoriteettidatan avulla (löytäminen, identifiointi, kontekstin ymmärtäminen) ja määrittelee tältä pohjalta konseptuaalisen mallin. Se auttaa ymmärtämään, mitä tietoa nimistä (esim. Tove Jansson) ja niiden eri muodoista (Мария Янссон, トーベ・ヤンソン) ja suhteista muihin entiteetteihin (kuten hänen teoksiinsa) tulee tallentaa."
+  },
+  {
+  "question": "Mitä tarkoittaa termi 'gamification' eli pelillistäminen kirjastopalveluissa?",
+  "answers": [
+  {"answer": "Kaikkien kirjaston palveluiden muuttamista videopeleiksi."},
+  {"answer": "Pelimekaniikkojen ja -elementtien (kuten pisteet, saavutukset, tulostaulut) soveltamista ei-pelillisiin yhteyksiin käyttäjien sitouttamisen ja motivoimisen lisäämiseksi."},
+  {"answer": "Ainoastaan lautapelien tarjoamista asiakkaille."},
+  {"answer": "Asiakaspalvelijoiden kouluttamista pelien avulla."}
+  ],
+  "answer": "Pelimekaniikkojen ja -elementtien (kuten pisteet, saavutukset, tulostaulut) soveltamista ei-pelillisiin yhteyksiin käyttäjien sitouttamisen ja motivoimisen lisäämiseksi.",
+  "explanation": "Pelillistämisen tavoitteena on hyödyntää peleistä tuttuja elementtejä tekemään tavanomaisista tehtävistä hauskempia ja palkitsevampia. Kirjastot voivat käyttää sitä esimerkiksi lukemaan kannustamisessa (lukupassit, joihin kerätään merkintöjä ja saadaan palkintoja), tiedonhankintataitojen opettamisessa (opetuspolut, joissa edetään tasolta toiselle) tai kirjaston palveluihin tutustuttamisessa (suunnistus, jossa kerätään pisteitä eri palvelupisteistä)."
+  },
+  {
+  "question": "Mikä on keskeinen ero tekijänoikeuden ja lähioikeuksien välillä?",
+  "answers": [
+  {"answer": "Tekijänoikeus suojaa vain kirjallisia teoksia, lähioikeudet musiikkia ja elokuvia."},
+  {"answer": "Tekijänoikeus suojaa luovan työn tulosta (teosta), kun taas lähioikeudet suojaavat esittäviä taiteilijoita, äänitetuottajia, elokuvatuottajia ja radio/tv-yrityksiä eli teoksen välittämiseen liittyviä toimijoita."},
+  {"answer": "Tekijänoikeus on voimassa ikuisesti, lähioikeudet raukeavat 10 vuodessa."},
+  {"answer": "Lähioikeudet ovat vahvempia ja kattavampia kuin tekijänoikeus."}
+  ],
+  "answer": "Tekijänoikeus suojaa luovan työn tulosta (teosta), kun taas lähioikeudet suojaavat esittäviä taiteilijoita, äänitetuottajia, elokuvatuottajia ja radio/tv-yrityksiä eli teoksen välittämiseen liittyviä toimijoita.",
+  "explanation": "Tekijänoikeus syntyy sille, joka on luonut itsenäisen ja omaperäisen teoksen (esim. säveltäjä, kirjailija). Lähioikeudet (related rights tai neighbouring rights) suojaavat investointeja ja suorituksia, jotka liittyvät teosten esittämiseen ja levittämiseen. Esimerkiksi laulun yhteydessä säveltäjällä ja sanoittajalla on tekijänoikeus. Laulun esittävällä laulajalla on esittävän taiteilijan lähioikeus, ja levy-yhtiöllä on äänitteen tuottajan lähioikeus. Kirjastojen on huomioitava molemmat oikeusluokat toiminnassaan."
+  },
+  {
+  "question": "Mitä kuvataan termillä 'digitaalinen kuilu' (digital divide)?",
+  "answers": [
+  {"answer": "Eroa kiinteän ja langattoman verkkoyhteyden nopeudessa."},
+  {"answer": "Kuvaa etäisyyttä datakeskuksen ja loppukäyttäjän välillä."},
+  {"answer": "Eriarvoisuutta ihmisten ja väestöryhmien välillä liittyen tietotekniikan ja internetin käyttömahdollisuuksiin, osaamiseen ja hyötyihin."},
+  {"answer": "Tietoturva-aukkoa, joka mahdollistaa luvattoman pääsyn järjestelmään."}
+  ],
+  "answer": "Eriarvoisuutta ihmisten ja väestöryhmien välillä liittyen tietotekniikan ja internetin käyttömahdollisuuksiin, osaamiseen ja hyötyihin.",
+  "explanation": "Digitaalinen kuilu on yhteiskunnallinen ilmiö, joka voi syntyä monista syistä, kuten iästä, sosioekonomisesta asemasta, koulutuksesta, asuinpaikasta tai vammaisuudesta. Se ei tarkoita pelkästään laitteiden tai internetyhteyden puutetta (ensimmäisen tason kuilu), vaan yhä enemmän myös eroja taidoissa hyödyntää teknologiaa mielekkäällä tavalla (toisen tason kuilu) ja kyvyssä saavuttaa konkreettisia hyötyjä käytöstä (kolmannen tason kuilu). Yleisillä kirjastoilla on keskeinen rooli digitaalisen kuilun kaventajina tarjoamalla laitteita, yhteyksiä ja digitukea."
+  },
+  {
+  "question": "Mikä seuraavista kuvaa parhaiten altmetriikan (altmetrics) käsitettä tieteellisen julkaisun vaikuttavuuden mittarina?",
+  "answers": [
+  {"answer": "Perinteinen mittari, joka laskee, kuinka monta kertaa julkaisuun on viitattu toisissa tieteellisissä julkaisuissa."},
+  {"answer": "Mittaristo, joka kerää tietoa tutkimusjulkaisun saamasta huomiosta verkossa ja sosiaalisessa mediassa (esim. lataukset, blogikirjoitukset, uutismaininnat, twiitit)."},
+  {"answer": "Lehden impact factor -arvon laskentatapa."},
+  {"answer": "Tutkijan saamien apurahojen yhteissumma."}
+  ],
+  "answer": "Mittaristo, joka kerää tietoa tutkimusjulkaisun saamasta huomiosta verkossa ja sosiaalisessa mediassa (esim. lataukset, blogikirjoitukset, uutismaininnat, twiitit).",
+  "explanation": "Altmetriikka (alternative metrics) tarjoaa vaihtoehdon ja täydennyksen perinteisille, viittauspohjaisille metriikoille. Se pyrkii mittaamaan tutkimuksen laajempaa yhteiskunnallista vaikuttavuutta ja näkyvyyttä reaaliaikaisemmin kuin hitaasti kertyvät viittaukset. Altmetriikka seuraa, miten tutkimusta jaetaan, keskustellaan ja käytetään eri verkkoympäristöissä, mikä antaa monipuolisemman kuvan sen tavoittavuudesta ja herättämästä mielenkiinnosta sekä tiedeyhteisön sisällä että sen ulkopuolella."
+  },
+  {
+  "question": "Mikä on keskeinen ero luokitusjärjestelmän (esim. YKL) ja asiasanaston (esim. YSO) välillä kuvailutiedon tuottamisessa?",
+  "answers": [
+  {"answer": "Luokitusjärjestelmää käytetään vain fyysisille kirjoille, asiasanastoa vain e-kirjoille."},
+  {"answer": "Luokitusjärjestelmä sijoittaa teoksen yhteen tai muutamaan paikkaan laajassa aihehierarkiassa (usein hyllypaikan määrittämiseksi), kun taas asiasanasto mahdollistaa teoksen sisällön kuvailemisen useilla tarkoilla, toisistaan riippumattomilla termeillä."},
+  {"answer": "Luokitusjärjestelmät ovat kansainvälisiä, asiasanastot aina paikallisia."},
+  {"answer": "Asiasanaston käyttö vaatii erityisen koulutuksen, luokitusjärjestelmän ei."}
+  ],
+  "answer": "Luokitusjärjestelmä sijoittaa teoksen yhteen tai muutamaan paikkaan laajassa aihehierarkiassa (usein hyllypaikan määrittämiseksi), kun taas asiasanasto mahdollistaa teoksen sisällön kuvailemisen useilla tarkoilla, toisistaan riippumattomilla termeillä.",
+  "explanation": "Molemmat ovat sisällönkuvailun välineitä, mutta niiden funktio on erilainen. Luokitus (classification) on syntaktista, se järjestää aineiston systemaattiseen järjestykseen ja antaa sille 'osoitteen' (esim. hyllyluokka 67.4). Se vastaa kysymykseen 'Mihin ryhmään tämä kuuluu?'. Asiasanoitus (subject indexing) on semanttista, se kuvaa, mitä aineisto 'käsittelee'. Yhdelle teokselle voidaan antaa useita asiasanoja (esim. 'saaristo', 'majakat', 'valokuvaus'), jotka kuvaavat sen sisältöä monipuolisesti ja mahdollistavat tarkat tiedonhaut. Ne täydentävät toisiaan."
+  },
+  {
+  "question": "Mitä tarkoitetaan termillä 'tietosuunnitelma' (data management plan, DMP) tutkimuksen kontekstissa?",
+  "answers": [
+  {"answer": "Yhteenveto tutkimuksen tuloksista."},
+  {"answer": "Dokumentti, jossa tutkija kuvaa, miten tutkimusaineistoa kerätään, käsitellään, tallennetaan, jaetaan ja säilytetään tutkimuksen elinkaaren aikana ja sen jälkeen."},
+  {"answer": "Hakemus tutkimusrahoituksen saamiseksi."},
+  {"answer": "Artikkeli, joka julkaistaan tieteellisessä lehdessä."}
+  ],
+  "answer": "Dokumentti, jossa tutkija kuvaa, miten tutkimusaineistoa kerätään, käsitellään, tallennetaan, jaetaan ja säilytetään tutkimuksen elinkaaren aikana ja sen jälkeen.",
+  "explanation": "Tietosuunnitelma on keskeinen osa vastuullista tutkimusdatan hallintaa. Monet tutkimusrahoittajat (kuten Suomen Akatemia) ja organisaatiot vaativat sen laatimista. DMP auttaa tutkijaa suunnittelemaan datanhallinnan etukäteen, mikä parantaa datan laatua ja käytettävyyttä. Se käsittelee mm. datan kuvailemiseen käytettävää metadataa, tietosuojaan ja etiikkaan liittyviä kysymyksiä, tiedostomuotoja, vastuita sekä suunnitelmia datan avaamiseksi ja pitkäaikaissäilyttämiseksi. Kirjastot ja tietopalvelut tarjoavat usein tukea tietosuunnitelmien laatimiseen."
+  },
+  {
+  "question": "Mitä tarkoittaa OAI-PMH (Open Archives Initiative Protocol for Metadata Harvesting)?",
+  "answers": [
+  {"answer": "Protokolla, jonka avulla palveluntarjoaja ('harvesteri') voi noutaa eli 'haravoida' metadataa eri tietovarannoista ('repository')."},
+  {"answer": "Täydellinen kirjastojärjestelmä, joka on saatavilla avoimella lähdekoodilla."},
+  {"answer": "Tekijänoikeuslisenssi, joka sallii metadatan vapaan käytön."},
+  {"answer": "Standardi digitaalisten objektien pitkäaikaissäilytykseen."}
+  ],
+  "answer": "Protokolla, jonka avulla palveluntarjoaja ('harvesteri') voi noutaa eli 'haravoida' metadataa eri tietovarannoista ('repository').",
+  "explanation": "OAI-PMH on protokolla, joka on suunniteltu erityisesti metadatan yhteentoimivuuden ja levittämisen edistämiseen. Se mahdollistaa sen, että yksi palvelu (esim. Finna) voi automaattisesti ja säännöllisesti kerätä metadataa monista eri lähteistä (esim. eri yliopistojen julkaisuarkistoista) luodakseen keskitetyn hakupalvelun. Protokolla on suhteellisen yksinkertainen ja perustuu HTTP- ja XML-teknologioihin. Se on ollut avainasemassa monien avoimen julkaisemisen ja tieteen palveluiden rakentamisessa."
+  },
+  {
+  "question": "Mikä on IFLA:n (International Federation of Library Associations and Institutions) keskeinen rooli maailmanlaajuisesti?",
+  "answers": [
+  {"answer": "Se myöntää akkreditoinnin kaikille maailman kirjastoalan koulutusohjelmille."},
+  {"answer": "Se toimii maailmanlaajuisena kirjasto- ja tietopalvelualan edunvalvojana, asiantuntijaorganisaationa ja yhteistyöfoorumina."},
+  {"answer": "Se hallinnoi maailmanlaajuista kaukopalvelujärjestelmää."},
+  {"answer": "Se julkaisee kaikkia tärkeimpiä kirjastoalan tieteellisiä lehtiä."}
+  ],
+  "answer": "Se toimii maailmanlaajuisena kirjasto- ja tietopalvelualan edunvalvojana, asiantuntijaorganisaationa ja yhteistyöfoorumina.",
+  "explanation": "IFLA on johtava kansainvälinen elin, joka edustaa kirjastojen ja tietopalvelujen sekä niiden käyttäjien etuja. Se pyrkii edistämään korkeatasoisia kirjastopalveluita ja ammatillista osaamista maailmanlaajuisesti. IFLA julkaisee standardeja ja ohjeistoja (kuten FRBR-mallin ja RDA:n pohjatyöt), ajaa tärkeitä asioita (kuten pääsyä tietoon ja tekijänoikeuspoikkeuksia) kansainvälisillä foorumeilla (kuten WIPO ja UNESCO) ja järjestää vuosittaisen maailmankongressin, joka kokoaa alan ammattilaiset yhteen."
+  },
+  {
+  "question": "Mitä tarkoitetaan termillä 'informaatiokäyttäytymisen anomaliatila' (Anomalous State of Knowledge, ASK)?",
+  "answers": [
+  {"answer": "Tila, jossa käyttäjä tietää tarkalleen, mitä tietoa hän etsii."},
+  {"answer": "Tila, jossa käyttäjän oma tietämys aiheesta on riittämätön tai epäjohdonmukainen, minkä vuoksi hän ei pysty tarkasti muotoilemaan, mitä tietoa hän tarvitsee."},
+  {"answer": "Tila, jossa hakujärjestelmä antaa virheellisen tuloksen."},
+  {"answer": "Käyttäjän tapa etsiä tietoa ainoastaan epäluotettavista lähteistä."}
+  ],
+  "answer": "Tila, jossa käyttäjän oma tietämys aiheesta on riittämätön tai epäjohdonmukainen, minkä vuoksi hän ei pysty tarkasti muotoilemaan, mitä tietoa hän tarvitsee.",
+  "explanation": "Nicholas J. Belkinin esittelemä ASK-hypoteesi on tiedonhaun keskeisiä käsitteitä. Se lähtee oletuksesta, että tiedontarve syntyy, kun henkilö tunnistaa omassa tietämyksessään 'anomalian' eli puutteen tai ristiriidan. Koska henkilö ei täysin ymmärrä, mitä häneltä puuttuu, hän ei myöskään voi esittää täydellistä kysymystä hakujärjestelmälle. Tämän vuoksi tehokkaan tiedonhakujärjestelmän tulisi pystyä toimimaan epätäydellisten ja epätarkkojen kyselyiden kanssa ja auttamaan käyttäjää tarkentamaan tarvettaan prosessin aikana."
+  }
+  ]
+ },
     {
   "name": "Sähköautot",
   "questions": [
