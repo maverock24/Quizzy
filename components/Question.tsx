@@ -293,7 +293,7 @@ export const Question: React.FC<QuestionProps> = ({
   const handleReadAloud = () => {
     const questionText = typeof question === 'string' ? question : '';
     const answersText = answers.map((a, i) => `${answerLabels[i]} ${a.answer}`).join('. ');
-    const fullText = `${t('question')} ${currentQuestionIndex + 1} of ${selectedQuizAnswersAmount}. ${questionText}. ${t('answers')}: ${answersText}`;
+    const fullText = `${questionText}.${answersText}`;
 
     // Get current language code (e.g., 'en', 'fi', 'de')
     const lang = i18n.language || 'en';
@@ -409,10 +409,15 @@ export const Question: React.FC<QuestionProps> = ({
             <Text style={styles.questionText}>{renderRichText(question)}</Text>
             <TouchableOpacity
                 onPress={handleReadAloud}
-                style={{ marginLeft: 8, marginBottom: 8, alignSelf: 'flex-start', backgroundColor: 'rgb(86, 92, 99)', borderRadius: 8, padding: 8 }}
+                style={{ marginLeft: 8, marginBottom: 8, alignSelf: 'flex-start', backgroundColor: 'transparent', borderRadius: 8, padding: 8 }}
                 accessibilityLabel="Read question and answers aloud"
               >
-                <Text style={{ color: 'white', fontSize: 14 }}>{t('read_aloud') || '🔊 Read Aloud'}</Text>
+               <FontAwesome
+        name="comment"
+        size={25}
+        color="white"
+       style={{ marginLeft: 8, marginTop: -5 }}
+      />
               </TouchableOpacity>
                     </View>
           </View>
