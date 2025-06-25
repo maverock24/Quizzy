@@ -1,5 +1,472 @@
 [
   {
+  "name": "Human Body",
+  "questions": [
+    {
+      "question": "How many bones does an adult human body typically have?",
+      "answers": [
+        {"answer": "206"},
+        {"answer": "270"},
+        {"answer": "186"},
+        {"answer": "230"}
+      ],
+      "answer": "206",
+      "explanation": "An adult human skeleton typically contains 206 bones, though this number can vary slightly between individuals. Interestingly, babies are born with approximately 270 bones, many of which are made of cartilage. As a child grows, many of these bones fuse together through a process called ossification. For example, the skull of a newborn has several separate plates that gradually fuse to form the solid skull of an adult. The exact number can vary due to individual differences in bone fusion, with some people having an extra rib or variations in vertebrae. The skeletal system serves multiple functions: providing structural support, protecting internal organs, producing blood cells in the bone marrow (hematopoiesis), storing minerals like calcium and phosphorus, and enabling movement through muscle attachment points."
+    },
+    {
+      "question": "What is the largest organ in the human body?",
+      "answers": [
+        {"answer": "Liver"},
+        {"answer": "Lungs"},
+        {"answer": "Skin"},
+        {"answer": "Brain"}
+      ],
+      "answer": "Skin",
+      "explanation": "The skin is the largest organ in the human body, covering approximately 20 square feet (1.8 square meters) in adults and weighing about 8 pounds (3.6 kg), which represents roughly 16% of total body weight. The skin consists of three main layers: the epidermis (outer protective layer), dermis (middle layer containing blood vessels, nerves, and hair follicles), and hypodermis (subcutaneous layer with fat and connective tissue). Beyond its obvious protective function, skin serves multiple critical roles: temperature regulation through sweating and blood vessel dilation/constriction, vitamin D synthesis when exposed to sunlight, immune defense as the first barrier against pathogens, sensation through various receptors for touch, pressure, temperature, and pain, and excretion of waste products through sweat. The skin completely renews itself approximately every 28 days, with dead cells constantly sloughing off and being replaced by new cells from deeper layers."
+    },
+    {
+      "question": "Which blood type is considered the universal donor?",
+      "answers": [
+        {"answer": "AB+"},
+        {"answer": "O-"},
+        {"answer": "A+"},
+        {"answer": "B-"}
+      ],
+      "answer": "O-",
+      "explanation": "Type O-negative blood is considered the universal donor because it lacks A, B, and Rh antigens on the red blood cell surface, making it compatible with all other blood types in emergency situations. The ABO blood group system, discovered by Karl Landsteiner in 1901, is based on the presence or absence of A and B antigens. Type O blood lacks both A and B antigens, while the negative designation means it also lacks the Rh factor (D antigen). This combination means that O-negative blood won't trigger an immune response in recipients of any blood type. However, people with O-negative blood can only receive O-negative blood themselves, making them 'universal donors but difficult recipients.' Conversely, AB-positive individuals are universal recipients because they have all antigens and won't react to any blood type. Only about 6-7% of the population has O-negative blood, making it particularly valuable for emergency medical situations where there's no time to type and cross-match blood."
+    },
+    {
+      "question": "What is the strongest muscle in the human body?",
+      "answers": [
+        {"answer": "Biceps"},
+        {"answer": "Quadriceps"},
+        {"answer": "Masseter (jaw muscle)"},
+        {"answer": "Heart"}
+      ],
+      "answer": "Masseter (jaw muscle)",
+      "explanation": "The masseter muscle, located in the jaw, is considered the strongest muscle in the human body when measured by force per unit area. It can exert a force of up to 200 pounds (890 Newtons) on the molars, with the record being 975 pounds of force. This incredible strength is necessary for the mechanical breakdown of food through chewing. The masseter works in conjunction with other muscles of mastication including the temporalis, medial pterygoid, and lateral pterygoid muscles. However, 'strongest' can be defined in different ways: the quadriceps femoris (thigh muscles) are strongest in terms of absolute force and are crucial for standing, walking, and jumping; the heart is strongest in terms of endurance, beating approximately 100,000 times per day without rest; and the uterus develops enormous strength during childbirth. The masseter's strength is particularly impressive considering its relatively small size compared to other major muscle groups, demonstrating the importance of leverage and mechanical advantage in the human musculoskeletal system."
+    },
+    {
+      "question": "How many chambers does the human heart have?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "6"}
+      ],
+      "answer": "4",
+      "explanation": "The human heart has four chambers: two atria (upper chambers) and two ventricles (lower chambers). The right atrium receives deoxygenated blood from the body via the vena cava, which then flows to the right ventricle and is pumped to the lungs through the pulmonary artery for oxygenation. The left atrium receives oxygenated blood from the lungs via the pulmonary veins, which flows to the left ventricle and is pumped throughout the body via the aorta. This four-chamber design creates a complete separation between oxygenated and deoxygenated blood, making the circulatory system highly efficient. The heart also contains four valves that ensure unidirectional blood flow: the tricuspid valve (between right atrium and ventricle), pulmonary valve (between right ventricle and pulmonary artery), mitral/bicuspid valve (between left atrium and ventricle), and aortic valve (between left ventricle and aorta). This sophisticated design allows the heart to pump approximately 5 liters of blood per minute, circulating the entire blood volume roughly once per minute during rest."
+    },
+    {
+      "question": "What percentage of the human body is water?",
+      "answers": [
+        {"answer": "50-55%"},
+        {"answer": "60-65%"},
+        {"answer": "70-75%"},
+        {"answer": "80-85%"}
+      ],
+      "answer": "60-65%",
+      "explanation": "The human body is approximately 60-65% water by weight in healthy adults, though this percentage varies with age, sex, and body composition. Newborns have the highest percentage at about 75-78%, which decreases to adult levels by age one. Women typically have slightly lower percentages (55-60%) than men due to higher body fat content, as adipose tissue contains less water than muscle tissue. Water is distributed throughout the body in different compartments: intracellular fluid (about 40% of body weight), extracellular fluid including blood plasma and interstitial fluid (about 20% of body weight). This water is essential for numerous biological processes: maintaining blood volume and pressure, regulating body temperature through sweating and respiration, facilitating cellular metabolism and waste removal, serving as a medium for chemical reactions, lubricating joints, and cushioning organs. The body can only survive 3-5 days without water, making proper hydration critical for health. Daily water requirements vary but generally range from 2-3 liters, obtained through drinking fluids, food consumption, and metabolic water production."
+    },
+    {
+      "question": "Which part of the brain controls balance and coordination?",
+      "answers": [
+        {"answer": "Cerebrum"},
+        {"answer": "Cerebellum"},
+        {"answer": "Brain stem"},
+        {"answer": "Thalamus"}
+      ],
+      "answer": "Cerebellum",
+      "explanation": "The cerebellum, located at the back of the brain beneath the cerebrum, is primarily responsible for balance, coordination, and motor learning. Despite containing only 10% of the brain's volume, it houses over 50% of all neurons, reflecting its complex computational role. The cerebellum receives input from sensory systems, the spinal cord, and other brain areas to fine-tune motor activity. It doesn't initiate movement but modulates ongoing movements, ensuring they are smooth, precise, and coordinated. The cerebellum is crucial for maintaining posture and balance by integrating information from the vestibular system (inner ear), visual input, and proprioceptive feedback from muscles and joints. It also plays important roles in motor learning (like learning to ride a bicycle), speech articulation, and even cognitive functions including attention and language processing. Damage to the cerebellum results in ataxia, characterized by uncoordinated movements, balance problems, and difficulties with fine motor tasks. Recent research has also implicated the cerebellum in autism spectrum disorders and other neurological conditions, highlighting its broader importance beyond motor control."
+    },
+    {
+      "question": "What is the average human body temperature in Fahrenheit?",
+      "answers": [
+        {"answer": "96.8°F"},
+        {"answer": "98.6°F"},
+        {"answer": "100.4°F"},
+        {"answer": "97.2°F"}
+      ],
+      "answer": "98.6°F",
+      "explanation": "The traditional average human body temperature is 98.6°F (37°C), though recent studies suggest the actual average may be slightly lower at around 97.8-98.2°F (36.6-36.8°C). This baseline was established by German physician Carl Wunderlich in the 1860s based on millions of temperature measurements. Body temperature is tightly regulated by the hypothalamus through various mechanisms including sweating, shivering, and blood vessel dilation/constriction. Normal body temperature can vary by individual, time of day (circadian rhythm), activity level, age, and measurement location. Oral temperatures are typically 0.5-1°F lower than core body temperature, while rectal temperatures are considered most accurate for core temperature. The body maintains this narrow temperature range because enzymatic reactions and cellular processes are temperature-dependent. Even small deviations can affect protein function and metabolic efficiency. Fever (pyrexia) is a protective response to infection, typically defined as temperatures above 100.4°F (38°C), while hypothermia occurs when core temperature drops below 95°F (35°C). Modern lifestyle changes, improved medical care, and measurement techniques may explain why recent studies show slightly lower average temperatures than historical data."
+    },
+    {
+      "question": "How many taste buds does the average person have?",
+      "answers": [
+        {"answer": "5,000"},
+        {"answer": "10,000"},
+        {"answer": "15,000"},
+        {"answer": "20,000"}
+      ],
+      "answer": "10,000",
+      "explanation": "The average human has approximately 10,000 taste buds, though this number varies significantly between individuals and decreases with age. Taste buds are small sensory organs containing 50-100 specialized chemoreceptor cells that detect five basic tastes: sweet, sour, salty, bitter, and umami (savory). Contrary to popular belief, taste buds are not confined to specific regions of the tongue; all areas can detect all five tastes, though sensitivity may vary slightly. Most taste buds are located on the tongue within structures called papillae (fungiform, circumvallate, and foliate), but they're also found on the roof of the mouth, throat, and epiglottis. Each taste bud has a lifespan of only 7-10 days before being replaced. What we commonly call 'taste' is actually a combination of true taste (detected by taste buds) and smell (detected by olfactory receptors in the nose), which is why food seems flavorless when we have a cold. The sense of taste serves important survival functions: sweet tastes indicate energy-rich foods, salty tastes help maintain electrolyte balance, sour tastes can indicate spoilage, bitter tastes often warn of potential toxins, and umami helps identify protein-rich foods."
+    },
+    {
+      "question": "What is the smallest bone in the human body?",
+      "answers": [
+        {"answer": "Stapes"},
+        {"answer": "Incus"},
+        {"answer": "Malleus"},
+        {"answer": "Hyoid"}
+      ],
+      "answer": "Stapes",
+      "explanation": "The stapes, also known as the stirrup bone, is the smallest bone in the human body, measuring only 2-3.4 millimeters in length and weighing about 2-4.3 milligrams. Located in the middle ear, it's one of three tiny bones (ossicles) that transmit sound vibrations from the eardrum to the inner ear. The three ossicles - malleus (hammer), incus (anvil), and stapes (stirrup) - work together in a chain reaction: sound waves hit the eardrum, causing the malleus to vibrate, which moves the incus, which then moves the stapes. The stapes is connected to the oval window of the cochlea, where its movements create pressure waves in the fluid-filled inner ear, ultimately converting mechanical vibrations into electrical signals that the brain interprets as sound. This system provides mechanical advantage, amplifying sound by about 20-30 decibels. The stapes is shaped like a stirrup with two arms (crura) and a footplate. Otosclerosis, a condition where the stapes becomes fixed due to abnormal bone growth, is a common cause of conductive hearing loss that can often be surgically corrected."
+    },
+    {
+      "question": "How many lungs do humans have, and how many lobes does each have?",
+      "answers": [
+        {"answer": "2 lungs, 2 lobes each"},
+        {"answer": "2 lungs, left has 2 lobes, right has 3 lobes"},
+        {"answer": "2 lungs, 3 lobes each"},
+        {"answer": "2 lungs, left has 3 lobes, right has 2 lobes"}
+      ],
+      "answer": "2 lungs, left has 2 lobes, right has 3 lobes",
+      "explanation": "Humans have two lungs with different numbers of lobes: the left lung has two lobes (upper and lower), while the right lung has three lobes (upper, middle, and lower). This asymmetry exists because the heart, positioned slightly to the left of center, requires space in the left chest cavity. The left lung also has a cardiac notch, an indentation that accommodates the heart. The lungs are separated by lobes through fissures: the right lung has both a horizontal and oblique fissure, while the left lung has only an oblique fissure. Each lobe functions somewhat independently, which is why surgical removal of a single lobe (lobectomy) is possible if necessary. The lungs contain approximately 300-500 million alveoli (tiny air sacs) where gas exchange occurs, providing a surface area roughly equivalent to a tennis court (70 square meters). The right lung is typically larger and heavier than the left lung. Both lungs are encased in a double-layered membrane called the pleura, which produces lubricating fluid to reduce friction during breathing. This structural organization allows for efficient ventilation and optimal gas exchange between air and blood."
+    },
+    {
+      "question": "What is the function of the spleen?",
+      "answers": [
+        {"answer": "Produces digestive enzymes"},
+        {"answer": "Filters blood and stores white blood cells"},
+        {"answer": "Regulates blood sugar"},
+        {"answer": "Produces bile"}
+      ],
+      "answer": "Filters blood and stores white blood cells",
+      "explanation": "The spleen is a fist-sized organ located in the upper left abdomen that serves multiple important functions in the immune and circulatory systems. Its primary functions include: filtering and cleaning the blood by removing old, damaged, or abnormal red blood cells; storing white blood cells (lymphocytes) and platelets; producing antibodies and other immune system components; and recycling iron from broken-down red blood cells. The spleen contains two types of tissue: red pulp (which filters blood and removes old red blood cells) and white pulp (which contains immune cells and helps fight infections). It acts as a 'blood reservoir,' storing about one cup of blood that can be released during emergencies like hemorrhage. The spleen also helps detect and respond to bloodborne pathogens and foreign antigens. While important, the spleen isn't essential for survival; people can live normally after splenectomy (surgical removal), though they may have increased susceptibility to certain bacterial infections. In such cases, the liver and bone marrow can partially compensate for the spleen's functions. The spleen enlarges (splenomegaly) in various diseases including infections, blood disorders, and liver disease."
+    },
+    {
+      "question": "How long does it take for food to travel through the entire digestive system?",
+      "answers": [
+        {"answer": "6-12 hours"},
+        {"answer": "12-24 hours"},
+        {"answer": "24-72 hours"},
+        {"answer": "3-7 days"}
+      ],
+      "answer": "24-72 hours",
+      "explanation": "Food typically takes 24-72 hours to travel through the entire digestive system, though this varies considerably based on individual factors, food type, and health status. The journey begins in the mouth where mechanical and chemical digestion start, then food spends 2-4 seconds traveling down the esophagus. In the stomach, food is churned and mixed with gastric acid for 2-6 hours, depending on the meal's composition (liquids empty faster than solids, carbohydrates faster than proteins, and proteins faster than fats). The small intestine, where most nutrient absorption occurs, processes food for 3-5 hours. The large intestine (colon) accounts for most of the transit time, typically 12-48 hours, as it absorbs water and electrolytes while forming feces. Factors affecting transit time include: fiber content (high fiber speeds transit), hydration level, physical activity, medications, stress, age, and various medical conditions. Men generally have faster transit times than women. Very fast transit (less than 12 hours) can indicate conditions like hyperthyroidism or inflammatory bowel disease, while very slow transit (more than 72 hours) might suggest constipation, hypothyroidism, or other digestive disorders. Normal bowel movement frequency ranges from three times per day to three times per week."
+    },
+    {
+      "question": "What is the largest artery in the human body?",
+      "answers": [
+        {"answer": "Pulmonary artery"},
+        {"answer": "Carotid artery"},
+        {"answer": "Aorta"},
+        {"answer": "Femoral artery"}
+      ],
+      "answer": "Aorta",
+      "explanation": "The aorta is the largest artery in the human body, with a diameter of about 2.5-3.5 cm (roughly the width of a garden hose) and a length of approximately 35-40 cm. It originates from the left ventricle of the heart and is the main conduit carrying oxygenated blood to the entire body except the lungs. The aorta has several distinct sections: the ascending aorta (rising from the heart), the aortic arch (curving over the top), and the descending aorta (which divides into thoracic and abdominal portions). Major branches include the coronary arteries (supplying the heart muscle), brachiocephalic trunk, left carotid and subclavian arteries (supplying the head, neck, and arms), and various branches supplying the chest, abdomen, and legs. The aortic wall has three layers: the intima (inner smooth layer), media (thick muscular middle layer), and adventitia (outer connective tissue layer). This structure must withstand the highest pressures in the circulatory system (up to 120 mmHg during systole). Common aortic conditions include atherosclerosis, aneurysms (dangerous dilations), and dissections (tears in the wall layers), which can be life-threatening and often require surgical intervention."
+    },
+    {
+      "question": "How many teeth does a healthy adult typically have?",
+      "answers": [
+        {"answer": "28"},
+        {"answer": "30"},
+        {"answer": "32"},
+        {"answer": "36"}
+      ],
+      "answer": "32",
+      "explanation": "A healthy adult typically has 32 permanent teeth, consisting of 16 teeth in each jaw (upper and lower). The dental formula for adult humans is: 2 incisors, 1 canine, 2 premolars, and 3 molars on each side of each jaw. The four types of teeth serve different functions: incisors (8 total) for cutting and biting food; canines (4 total) for tearing food; premolars (8 total) for crushing and grinding; and molars (12 total) for heavy grinding and chewing. The third molars are commonly called 'wisdom teeth' and typically emerge between ages 17-25, though many people have them removed due to lack of space or impaction. Some individuals may have fewer than 32 teeth due to congenital absence (particularly wisdom teeth), extraction, or trauma. Each tooth has a crown (visible portion) and root(s) anchored in the jawbone. Teeth are composed of four tissues: enamel (hardest substance in the body), dentin (underlying supportive tissue), pulp (innermost tissue containing nerves and blood vessels), and cementum (covering the root). Children have 20 primary (baby) teeth that are gradually replaced by permanent teeth between ages 6-12."
+    },
+    {
+      "question": "What is the primary function of red blood cells?",
+      "answers": [
+        {"answer": "Fighting infections"},
+        {"answer": "Clotting blood"},
+        {"answer": "Transporting oxygen"},
+        {"answer": "Producing hormones"}
+      ],
+      "answer": "Transporting oxygen",
+      "explanation": "The primary function of red blood cells (erythrocytes) is to transport oxygen from the lungs to body tissues and carry carbon dioxide from tissues back to the lungs for elimination. Red blood cells contain hemoglobin, an iron-containing protein that gives blood its red color and can bind up to four oxygen molecules per hemoglobin molecule. Each red blood cell contains about 270 million hemoglobin molecules, allowing efficient oxygen transport. The unique biconcave (doughnut-like) shape of red blood cells maximizes surface area for gas exchange while allowing flexibility to squeeze through tiny capillaries (2-3 micrometers in diameter). Red blood cells lack nuclei and most organelles, maximizing space for hemoglobin and extending their lifespan to about 120 days. They're produced in bone marrow through a process called erythropoiesis, regulated by the hormone erythropoietin (EPO) produced by the kidneys in response to low oxygen levels. A normal red blood cell count is approximately 4.5-5.5 million cells per microliter in men and 4.0-5.0 million in women. Disorders affecting red blood cells include anemia (insufficient numbers or hemoglobin), polycythemia (excessive numbers), and sickle cell disease (abnormal hemoglobin causing cell deformation)."
+    },
+    {
+      "question": "What is the longest nerve in the human body?",
+      "answers": [
+        {"answer": "Optic nerve"},
+        {"answer": "Sciatic nerve"},
+        {"answer": "Vagus nerve"},
+        {"answer": "Median nerve"}
+      ],
+      "answer": "Sciatic nerve",
+      "explanation": "The sciatic nerve is the longest and largest nerve in the human body, extending from the lower back down through the buttocks and into each leg, reaching lengths of up to 2 feet (60 cm). It originates from nerve roots L4-S3 in the lumbosacral plexus and is actually composed of two separate nerves: the tibial nerve and common peroneal (fibular) nerve, bound together by connective tissue. The sciatic nerve can be as thick as a person's thumb (up to 2 cm in diameter) and controls major muscles in the back of the thigh, lower leg, and foot, while providing sensation to parts of the leg and foot. It enables critical functions including knee flexion, ankle movement, and toe flexion. The nerve typically splits into its two components around the knee level, though this division can occur anywhere from the pelvis to the popliteal fossa. Sciatica, a common condition causing pain, numbness, or tingling along the sciatic nerve pathway, often results from compression by herniated discs, piriformis syndrome, or spinal stenosis. The sciatic nerve's large size and long course make it particularly vulnerable to injury from trauma, prolonged pressure, or anatomical variations. Treatment for sciatic nerve problems ranges from conservative management to surgical intervention depending on the underlying cause."
+    },
+    {
+      "question": "How many pairs of chromosomes do humans have?",
+      "answers": [
+        {"answer": "21"},
+        {"answer": "22"},
+        {"answer": "23"},
+        {"answer": "24"}
+      ],
+      "answer": "23",
+      "explanation": "Humans have 23 pairs of chromosomes, for a total of 46 chromosomes in each cell (except gametes, which have 23). The first 22 pairs are called autosomes and are numbered 1-22 roughly in order of decreasing size. The 23rd pair consists of sex chromosomes: XX for females and XY for males. Each chromosome contains hundreds to thousands of genes, with the entire human genome estimated to contain approximately 20,000-25,000 protein-coding genes. Chromosomes are composed of DNA tightly wrapped around histone proteins and are only visible under a microscope during cell division when they condense. During meiosis (formation of egg and sperm cells), chromosome pairs separate so each gamete receives only one chromosome from each pair. When fertilization occurs, the full complement of 46 chromosomes is restored. Chromosomal abnormalities can occur when there are too many or too few chromosomes (aneuploidy) or when chromosome structure is altered. Common examples include Down syndrome (trisomy 21), Turner syndrome (45,X), and Klinefelter syndrome (47,XXY). Chromosomes were first observed in the 1840s, but their role in heredity wasn't understood until the early 1900s. Advances in chromosomal analysis techniques have revolutionized genetics, medicine, and our understanding of human development."
+    },
+    {
+      "question": "What is the main function of the liver?",
+      "answers": [
+        {"answer": "Pumping blood"},
+        {"answer": "Filtering blood and detoxification"},
+        {"answer": "Producing insulin"},
+        {"answer": "Storing oxygen"}
+      ],
+      "answer": "Filtering blood and detoxification",
+      "explanation": "The liver is the body's largest internal organ and performs over 500 essential functions, with detoxification and blood filtration being among the most critical. The liver processes approximately 1.5 liters of blood per minute, filtering toxins, drugs, alcohol, and metabolic waste products. Key hepatic functions include: synthesizing proteins like albumin and clotting factors; producing bile for fat digestion; storing glycogen, vitamins (A, D, E, K, B12), and minerals; metabolizing carbohydrates, fats, and proteins; regulating blood glucose levels; breaking down hormones; and producing cholesterol and lipoproteins. The liver has remarkable regenerative capacity, able to regenerate up to 75% of its tissue if damaged, making it unique among human organs. It consists of hepatocytes (liver cells) organized into lobules, each containing a central vein surrounded by radiating plates of cells. The liver receives blood from two sources: the hepatic artery (oxygenated blood) and portal vein (nutrient-rich blood from intestines). Common liver diseases include hepatitis, cirrhosis, fatty liver disease, and liver cancer. The liver's dual blood supply and extensive metabolic functions make it vulnerable to damage from alcohol, drugs, viruses, and toxins, but also give it remarkable resilience and functional reserve."
+    },
+    {
+      "question": "How much does the human brain weigh on average?",
+      "answers": [
+        {"answer": "2 pounds (0.9 kg)"},
+        {"answer": "3 pounds (1.4 kg)"},
+        {"answer": "4 pounds (1.8 kg)"},
+        {"answer": "5 pounds (2.3 kg)"}
+      ],
+      "answer": "3 pounds (1.4 kg)",
+      "explanation": "The average human brain weighs approximately 3 pounds (1.4 kg), representing about 2% of total body weight but consuming roughly 20% of the body's energy and oxygen supply. Brain weight varies between individuals based on factors including age, sex, height, and individual variation. Men's brains typically weigh slightly more than women's (1.4 kg vs 1.3 kg on average), largely due to differences in body size rather than intelligence. The brain reaches about 90% of its adult weight by age 5, though development continues into the mid-20s with myelination and synaptic pruning. The brain consists of approximately 86 billion neurons and an equal number of glial cells (support cells). About 77-78% of brain weight is water, 10-12% is lipids (fats), 8% is proteins, and the remainder includes carbohydrates, soluble organics, and inorganic salts. Despite its relatively small size, the brain's complexity is staggering, with an estimated 100 trillion synaptic connections. Brain weight decreases with aging, losing about 5-10% of weight between ages 20-90 due to neuron loss and reduced brain volume. The brain's high metabolic demands mean it requires constant blood flow and oxygen; it can only survive 4-6 minutes without oxygen before irreversible damage occurs."
+    },
+    {
+      "question": "What is the normal range for adult resting heart rate?",
+      "answers": [
+        {"answer": "40-60 beats per minute"},
+        {"answer": "60-100 beats per minute"},
+        {"answer": "100-120 beats per minute"},
+        {"answer": "120-140 beats per minute"}
+      ],
+      "answer": "60-100 beats per minute",
+      "explanation": "The normal resting heart rate for healthy adults ranges from 60-100 beats per minute (bpm), with an average around 70-75 bpm. Resting heart rate is measured when you're calm, relaxed, and haven't exercised recently. Several factors influence heart rate: age (newborns have rates of 120-160 bpm, which decrease with age), fitness level (athletes often have resting rates of 40-60 bpm due to increased cardiac efficiency), body position, emotions, medications, body size, and air temperature. Women typically have slightly higher resting heart rates than men. The heart rate is controlled by the autonomic nervous system: the sympathetic system increases rate during stress or exercise, while the parasympathetic system decreases it during rest. Bradycardia (below 60 bpm) can be normal in athletes but may indicate heart problems in others. Tachycardia (above 100 bpm at rest) may suggest anxiety, dehydration, anemia, hyperthyroidism, or heart conditions. The heart rate varies throughout the day, typically lowest during sleep and higher in the morning. Maximum heart rate is roughly estimated as 220 minus your age, though this varies significantly between individuals. Regular cardiovascular exercise can lower resting heart rate and improve overall heart health."
+    },
+    {
+      "question": "What is the function of insulin in the body?",
+      "answers": [
+        {"answer": "Breaks down proteins"},
+        {"answer": "Regulates blood sugar levels"},
+        {"answer": "Produces red blood cells"},
+        {"answer": "Fights infections"}
+      ],
+      "answer": "Regulates blood sugar levels",
+      "explanation": "Insulin is a vital hormone produced by beta cells in the islets of Langerhans within the pancreas, primarily responsible for regulating blood glucose (sugar) levels and metabolism. When blood glucose rises after eating, the pancreas releases insulin, which acts as a 'key' allowing glucose to enter cells where it can be used for energy or stored. Insulin promotes glucose uptake by muscle and fat cells, stimulates glycogen synthesis in the liver and muscles (storing excess glucose), promotes fat storage in adipose tissue, and inhibits glucose production by the liver. It also influences protein metabolism by promoting amino acid uptake and protein synthesis while inhibiting protein breakdown. Insulin works in concert with glucagon (another pancreatic hormone) to maintain glucose homeostasis: insulin lowers blood sugar when high, while glucagon raises it when low. In Type 1 diabetes, the pancreas produces little or no insulin due to autoimmune destruction of beta cells, requiring external insulin administration. Type 2 diabetes involves insulin resistance, where cells don't respond properly to insulin, often combined with eventual decreased insulin production. Normal fasting blood glucose levels are 70-100 mg/dL, maintained through this delicate hormonal balance. Insulin discovery in 1922 by Banting and Best revolutionized diabetes treatment and earned them the Nobel Prize."
+    },
+    {
+      "question": "How many vertebrae are in the human spine?",
+      "answers": [
+        {"answer": "24"},
+        {"answer": "26"},
+        {"answer": "33"},
+        {"answer": "31"}
+      ],
+      "answer": "33",
+      "explanation": "The human spine typically contains 33 vertebrae, though this number varies slightly between individuals due to developmental variations. The vertebrae are organized into five distinct regions: 7 cervical vertebrae (neck region, labeled C1-C7), 12 thoracic vertebrae (chest region, labeled T1-T12), 5 lumbar vertebrae (lower back, labeled L1-L5), 5 sacral vertebrae (which fuse into the sacrum), and 4 coccygeal vertebrae (which fuse into the coccyx or tailbone). In adults, the sacral and coccygeal vertebrae are fused, so the spine is often described as having 26 movable segments. The spine serves multiple functions: protecting the spinal cord, supporting the body's weight, enabling movement and flexibility, and providing attachment points for muscles and ligaments. Each vertebra has a vertebral body (weight-bearing portion) and a vertebral arch that surrounds the spinal cord. Between vertebrae are intervertebral discs that act as shock absorbers and allow movement. The spine has natural curves: cervical lordosis (inward curve), thoracic kyphosis (outward curve), and lumbar lordosis, which help distribute weight and maintain balance. Common spinal problems include herniated discs, scoliosis (lateral curvature), and various forms of back pain affecting millions of people worldwide."
+    },
+    {
+      "question": "What is the approximate length of the small intestine?",
+      "answers": [
+        {"answer": "10 feet (3 meters)"},
+        {"answer": "15 feet (4.5 meters)"},
+        {"answer": "20 feet (6 meters)"},
+        {"answer": "25 feet (7.5 meters)"}
+      ],
+      "answer": "20 feet (6 meters)",
+      "explanation": "The small intestine is approximately 20 feet (6 meters) long in adults, making it the longest part of the digestive tract despite being called 'small' (referring to its diameter, not length). It consists of three sections: the duodenum (first 10-12 inches), jejunum (next 8 feet), and ileum (final 12 feet). The small intestine is where most chemical digestion and nutrient absorption occur. Its inner surface is dramatically increased by three levels of folding: circular folds (plicae circulares), villi (finger-like projections), and microvilli (tiny projections on each villus cell), creating a total surface area of approximately 250-300 square meters (about the size of a tennis court). This enormous surface area maximizes nutrient absorption efficiency. The duodenum receives digestive enzymes from the pancreas and bile from the liver/gallbladder. The jejunum primarily absorbs carbohydrates and proteins, while the ileum absorbs vitamin B12, bile acids, and remaining nutrients before passing undigested material to the large intestine. Transit time through the small intestine is typically 3-5 hours. The small intestine also contains immune tissue (Peyer's patches) and produces hormones that regulate digestion. Various conditions can affect the small intestine, including celiac disease, Crohn's disease, and small bowel obstruction."
+    },
+    {
+      "question": "What percentage of the brain is used at any given time?",
+      "answers": [
+        {"answer": "10%"},
+        {"answer": "25%"},
+        {"answer": "Nearly 100%"},
+        {"answer": "50%"}
+      ],
+      "answer": "Nearly 100%",
+      "explanation": "Contrary to the popular myth that humans only use 10% of their brains, modern neuroscience clearly shows that we use virtually 100% of our brains, even during simple tasks. This misconception likely arose from early neuroscience research and misinterpretations of brain imaging studies. Brain imaging technologies like PET scans and fMRI demonstrate that even during rest, the brain shows widespread activity. The brain consumes about 20% of the body's total energy despite being only 2% of body weight, which wouldn't make evolutionary sense if 90% were unused. Even during sleep, most brain areas remain active, performing vital functions like memory consolidation, maintenance, and waste removal. Different brain regions are specialized for different functions: the visual cortex processes sight, motor cortex controls movement, language areas handle speech and comprehension, etc. While not every neuron fires simultaneously (which would cause a seizure), brain imaging shows that over the course of a day, virtually all brain areas are active. Brain damage studies also demonstrate that injury to almost any brain area causes noticeable deficits, indicating that all regions serve important functions. The '10% myth' has been perpetuated by self-help books and movies but has no scientific basis. Modern neuroscience reveals the brain as a remarkably efficient, fully utilized organ with amazing interconnectivity and computational power."
+    },
+    {
+      "question": "How many nephrons does each kidney contain?",
+      "answers": [
+        {"answer": "100,000"},
+        {"answer": "500,000"},
+        {"answer": "1 million"},
+        {"answer": "2 million"}
+      ],
+      "answer": "1 million",
+      "explanation": "Each human kidney contains approximately 1 million nephrons, the functional units responsible for filtering blood and producing urine. Nephrons are microscopic structures consisting of a glomerulus (cluster of tiny blood vessels) surrounded by Bowman's capsule, followed by a series of tubules: proximal convoluted tubule, loop of Henle, and distal convoluted tubule, which connects to a collecting duct. The filtration process begins when blood enters the glomerulus under pressure, forcing water and small molecules through the capillary walls into Bowman's capsule while keeping large molecules like proteins and blood cells in the bloodstream. As filtrate moves through the tubules, essential substances like glucose, amino acids, and most water are reabsorbed back into the blood, while waste products and excess substances continue toward the bladder as urine. Each kidney filters about 180 liters of blood daily, producing 1-2 liters of urine. Nephrons also regulate blood pressure through the renin-angiotensin system, maintain electrolyte balance, and produce hormones like erythropoietin (stimulates red blood cell production). The large number of nephrons provides substantial functional reserve; people can live normally with one kidney or even when kidney function drops to 10-15%. Age-related nephron loss (about 1% per year after age 30) and diseases like diabetes and hypertension can damage nephrons, potentially leading to chronic kidney disease."
+    },
+    {
+      "question": "What is the main component of hair and nails?",
+      "answers": [
+        {"answer": "Collagen"},
+        {"answer": "Keratin"},
+        {"answer": "Calcium"},
+        {"answer": "Melanin"}
+      ],
+      "answer": "Keratin",
+      "explanation": "Keratin is the primary structural protein that makes up hair, nails, and the outer layer of skin (epidermis). This fibrous protein is extremely durable and resistant to degradation, providing protection and structural integrity. Hair and nails are composed of 'hard keratin,' which contains more sulfur bonds (disulfide bridges) than the 'soft keratin' found in skin, making them stronger and more rigid. The keratin in hair forms long chains that are bundled together and cross-linked by disulfide bonds, hydrogen bonds, and salt links, giving hair its strength and elasticity. Hair color comes from melanin pigments embedded within the keratin structure, not from the keratin itself. Nail keratin is densely packed and highly cross-linked, creating the hard, protective plates we see. The process of keratinization involves cells moving outward from deeper layers, losing their nuclei and organelles, and filling with keratin proteins before dying and forming the final keratinized structure. This is why hair and nails are essentially dead tissue that doesn't hurt when cut. Keratin is also found in other animals' structures like feathers, horns, hooves, and scales. Various factors affect keratin production including nutrition (especially protein, biotin, and sulfur-containing amino acids), hormones, age, and genetics. Damage to keratin structures can occur from chemical treatments, heat, UV radiation, and physical trauma."
+    },
+    {
+      "question": "How often does the human heart beat in a day?",
+      "answers": [
+        {"answer": "50,000 times"},
+        {"answer": "75,000 times"},
+        {"answer": "100,000 times"},
+        {"answer": "150,000 times"}
+      ],
+      "answer": "100,000 times",
+      "explanation": "The human heart beats approximately 100,000 times per day, though this varies based on individual factors like age, fitness level, and activity. With an average resting heart rate of 70 beats per minute, the heart beats about 100,800 times in 24 hours (70 × 60 × 24). Over a lifetime of 75 years, this amounts to roughly 2.7 billion heartbeats. Each heartbeat represents a complete cardiac cycle consisting of systole (contraction phase when blood is pumped out) and diastole (relaxation phase when chambers fill with blood). During systole, the heart pumps about 70-80 milliliters of blood per beat (stroke volume), meaning the heart pumps approximately 7,000-8,000 liters of blood daily - enough to fill a small swimming pool. The heart's electrical conduction system coordinates these beats: the sinoatrial (SA) node acts as the natural pacemaker, sending electrical impulses that spread through the atria, then to the atrioventricular (AV) node, and finally through the ventricles via the bundle of His and Purkinje fibers. This intrinsic rhythm is modulated by the autonomic nervous system and hormones. Athletes may have lower resting heart rates (50-60 bpm) due to increased cardiac efficiency, while factors like stress, caffeine, illness, or medications can increase heart rate. The heart muscle (myocardium) never rests, making it remarkably durable but also vulnerable to damage from reduced blood flow or oxygen."
+    },
+    {
+      "question": "What is the normal pH range of human blood?",
+      "answers": [
+        {"answer": "6.8-7.2"},
+        {"answer": "7.35-7.45"},
+        {"answer": "7.5-7.8"},
+        {"answer": "8.0-8.5"}
+      ],
+      "answer": "7.35-7.45",
+      "explanation": "Human blood maintains a tightly regulated pH range of 7.35-7.45, making it slightly alkaline (basic). This narrow range is critical for proper physiological function, as even small deviations can be life-threatening. Blood pH below 7.35 is called acidosis, while pH above 7.45 is alkalosis; both conditions can disrupt enzyme function, protein structure, and cellular metabolism. The body maintains this pH balance through three main buffer systems: the bicarbonate buffer system (most important, involving carbonic acid and bicarbonate ions), the phosphate buffer system (important in intracellular fluid), and protein buffers (including hemoglobin). The respiratory system helps regulate pH by controlling CO2 levels: hyperventilation decreases CO2 and raises pH, while hypoventilation increases CO2 and lowers pH. The kidneys provide long-term pH regulation by excreting or retaining hydrogen ions and bicarbonate. Respiratory acidosis/alkalosis results from lung problems affecting CO2 removal, while metabolic acidosis/alkalosis stems from kidney dysfunction, diabetes, poisoning, or other metabolic issues. The pH scale is logarithmic, so small numerical changes represent large actual changes in acidity. Normal arterial blood pH is slightly higher (7.40) than venous blood pH (7.35) due to CO2 content differences. Maintaining proper blood pH is so vital that the body will sacrifice other functions to preserve it."
+    },
+    {
+      "question": "How many muscles are there in the human body?",
+      "answers": [
+        {"answer": "206"},
+        {"answer": "400"},
+        {"answer": "600"},
+        {"answer": "800"}
+      ],
+      "answer": "600",
+      "explanation": "The human body contains approximately 600-700 muscles, depending on how they're counted and classified. This number includes all three types of muscle tissue: skeletal muscle (about 400 muscles that move the skeleton), smooth muscle (found in organs, blood vessels, and digestive tract), and cardiac muscle (heart muscle). Skeletal muscles are the ones typically counted in the '600' figure and include muscles ranging from the massive gluteus maximus (buttocks) to tiny muscles like the stapedius in the ear (smallest muscle, controlling the stapes bone). Muscles work in coordinated groups and opposing pairs (agonist and antagonist) to create movement. For example, the biceps and triceps work together to flex and extend the elbow. Muscles comprise 30-40% of total body weight in healthy adults and are composed of bundles of muscle fibers (myofibers) that contract when stimulated by motor neurons. Each muscle fiber contains thousands of myofibrils made up of the proteins actin and myosin, which slide past each other during contraction. Muscles require constant energy (ATP) and are highly vascularized to supply oxygen and nutrients. They adapt to use by growing stronger with exercise (hypertrophy) or weakening with disuse (atrophy). The exact count varies because some anatomists count muscle groups as single units while others count individual components separately."
+    },
+    {
+      "question": "What is the function of white blood cells?",
+      "answers": [
+        {"answer": "Carrying oxygen"},
+        {"answer": "Clotting blood"},
+        {"answer": "Fighting infections and disease"},
+        {"answer": "Producing energy"}
+      ],
+      "answer": "Fighting infections and disease",
+      "explanation": "White blood cells (leukocytes) are the immune system's primary defense against infections, diseases, and foreign substances. Unlike red blood cells, white blood cells are nucleated, less numerous (4,000-11,000 per microliter vs. 4-5 million red blood cells), and have diverse specialized functions. There are five main types: neutrophils (60-70%, first responders to bacterial infections, perform phagocytosis), lymphocytes (20-30%, include B cells that produce antibodies, T cells that kill infected cells and coordinate immune responses, and NK cells that attack tumor cells), monocytes (2-8%, mature into macrophages that engulf pathogens and dead cells), eosinophils (1-4%, combat parasites and participate in allergic reactions), and basophils (<1%, release histamine during allergic reactions). White blood cells are produced in bone marrow and lymphoid tissues, and they circulate throughout the body via blood and lymphatic systems. They can leave blood vessels and enter tissues where infections occur through a process called diapedesis. Some white blood cells have memory functions, providing long-lasting immunity after exposure to specific pathogens (basis of vaccination). Abnormal white blood cell counts can indicate various conditions: elevated counts (leukocytosis) suggest infection or leukemia, while low counts (leukopenia) may indicate bone marrow problems, autoimmune diseases, or immunosuppression. White blood cells are essential for wound healing, cancer surveillance, and maintaining overall health."
+    },
+    {
+      "question": "What is the average lifespan of a red blood cell?",
+      "answers": [
+        {"answer": "30 days"},
+        {"answer": "60 days"},
+        {"answer": "120 days"},
+        {"answer": "180 days"}
+      ],
+      "answer": "120 days",
+      "explanation": "Red blood cells (erythrocytes) have an average lifespan of approximately 120 days (about 4 months). This relatively short lifespan is due to their unique structure and function: they lack nuclei and most organelles, making them unable to repair themselves or synthesize new proteins. As they circulate through the bloodstream, red blood cells gradually accumulate damage from mechanical stress of squeezing through tiny capillaries, oxidative damage, and membrane changes that make them less flexible. Old or damaged red blood cells are primarily removed by the spleen, liver, and bone marrow through a process involving macrophages that recognize and phagocytose aging cells. The iron from destroyed red blood cells is recycled for new hemoglobin production, while other components are processed for elimination or reuse. To maintain adequate red blood cell numbers, bone marrow must continuously produce new cells through erythropoiesis at a rate of about 2-3 million cells per second. This process is regulated by erythropoietin (EPO), a hormone produced by the kidneys in response to low oxygen levels. The reticulocyte count (immature red blood cells) in blood indicates bone marrow production activity. Various conditions can shorten red blood cell lifespan, including sickle cell disease, malaria, autoimmune hemolytic anemia, and certain medications, requiring increased production to maintain adequate levels."
+    },
+    {
+      "question": "How many chambers are in the human stomach?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "1",
+      "explanation": "The human stomach is a single-chambered organ, unlike ruminant animals (cows, sheep, deer) that have four-chambered stomachs for digesting plant material. The human stomach is a muscular, expandable sac located in the upper left portion of the abdomen, capable of holding 1-2 liters when full. Although it's one chamber, the stomach has several anatomical regions: the cardia (area near the esophageal opening), fundus (upper curved portion), body (main central region), antrum (lower section), and pylorus (outlet to the small intestine). The stomach wall contains three layers of smooth muscle that contract in coordinated waves (peristalsis) to churn and mix food with gastric juice. Gastric juice contains hydrochloric acid (making stomach pH 1.5-3.5), pepsinogen (converted to pepsin for protein digestion), intrinsic factor (essential for vitamin B12 absorption), and mucus for protection. The stomach's main functions are mechanical breakdown of food, chemical digestion of proteins, storage of food for gradual release into small intestine, and sterilization through its acidic environment. The stomach lining (mucosa) contains specialized cells: chief cells produce pepsinogen, parietal cells secrete acid and intrinsic factor, and mucus cells provide protective secretions. The stomach can stretch considerably to accommodate large meals and typically empties in 2-6 hours depending on food composition."
+    },
+    {
+      "question": "What is the body's largest muscle?",
+      "answers": [
+        {"answer": "Quadriceps"},
+        {"answer": "Latissimus dorsi"},
+        {"answer": "Gluteus maximus"},
+        {"answer": "Pectoralis major"}
+      ],
+      "answer": "Gluteus maximus",
+      "explanation": "The gluteus maximus is the largest muscle in the human body by both volume and cross-sectional area. Located in the buttocks, this powerful muscle is essential for maintaining upright posture, walking, running, and climbing. It originates from the ilium (part of the hip bone), sacrum, and coccyx, and inserts into the femur (thighbone) and iliotibial band. The gluteus maximus is primarily responsible for hip extension (straightening the hip joint), external rotation of the thigh, and stabilizing the pelvis during movement. Its large size reflects its importance in human bipedal locomotion - it's much more developed in humans than in our quadrupedal relatives, reflecting our evolutionary adaptation to walking upright. The muscle is particularly active during activities requiring power and stability: climbing stairs, standing from a seated position, sprinting, and jumping. It works in conjunction with other hip muscles including the gluteus medius and minimus (smaller muscles that abduct and stabilize the hip). Weakness in the gluteus maximus can contribute to lower back pain, hip problems, and altered gait patterns. The muscle is supplied by the inferior gluteal nerve and superior gluteal artery. Despite being the largest muscle, the gluteus maximus can become weakened by prolonged sitting, which is why 'glute activation' exercises are often recommended for people with sedentary lifestyles."
+    },
+    {
+      "question": "How long can the human body survive without water?",
+      "answers": [
+        {"answer": "1-2 days"},
+        {"answer": "3-5 days"},
+        {"answer": "7-10 days"},
+        {"answer": "2-3 weeks"}
+      ],
+      "answer": "3-5 days",
+      "explanation": "The human body can typically survive only 3-5 days without water, though this varies significantly based on environmental conditions, physical activity, health status, and individual factors. Water is essential for virtually every bodily function: maintaining blood volume and pressure, regulating body temperature through sweating, facilitating cellular metabolism, transporting nutrients and waste products, lubricating joints, and cushioning organs. The body loses water continuously through respiration, sweating, urination, and defecation - approximately 2-3 liters daily under normal conditions. In hot climates or with physical exertion, water loss can increase dramatically. Dehydration symptoms begin when the body loses just 2% of its water content (mild thirst), become serious at 5-10% loss (dizziness, rapid heart rate, decreased urination), and become life-threatening beyond 10-15% loss (organ failure, shock, death). The kidneys can concentrate urine to conserve water, but this mechanism has limits. Unlike fat stores that can sustain the body for weeks during starvation, there's no significant water storage system. Factors affecting survival time include: age (children and elderly are more vulnerable), health status, medications, environmental temperature and humidity, and activity level. In extreme heat, survival time may be reduced to 24-48 hours, while in cool conditions with minimal activity, some individuals might survive 7-10 days. The 'rule of threes' in survival states humans can survive 3 minutes without air, 3 days without water, and 3 weeks without food."
+    },
+    {
+      "question": "What is the primary function of the pancreas?",
+      "answers": [
+        {"answer": "Filtering blood"},
+        {"answer": "Producing digestive enzymes and insulin"},
+        {"answer": "Storing bile"},
+        {"answer": "Producing red blood cells"}
+      ],
+      "answer": "Producing digestive enzymes and insulin",
+      "explanation": "The pancreas is a dual-function organ serving both exocrine (digestive) and endocrine (hormonal) roles. As an exocrine gland, it produces approximately 1.5-3 liters of pancreatic juice daily containing digestive enzymes essential for breaking down food. These enzymes include: amylase (breaks down starches), lipases (break down fats), and various proteases like trypsin and chymotrypsin (break down proteins). Pancreatic juice is alkaline (pH 8.0-8.5) due to bicarbonate ions, which neutralize acidic stomach contents entering the small intestine. As an endocrine gland, the pancreas contains clusters of cells called islets of Langerhans that produce crucial hormones: insulin (from beta cells, lowers blood glucose), glucagon (from alpha cells, raises blood glucose), somatostatin (from delta cells, regulates other pancreatic hormones), and pancreatic polypeptide (regulates pancreatic secretions). The pancreas is located behind the stomach and consists of the head (near the duodenum), body, and tail (near the spleen). Its dual function makes it vulnerable to various diseases: pancreatitis (inflammation), diabetes mellitus (insulin deficiency or resistance), and pancreatic cancer (often aggressive and difficult to detect early). The main pancreatic duct joins the bile duct before entering the duodenum, coordinating the release of pancreatic enzymes with bile for optimal digestion. Pancreatic function is regulated by hormones like secretin and cholecystokinin (CCK) released by the small intestine in response to food."
+    },
+    {
+      "question": "How many ribs does a human typically have?",
+      "answers": [
+        {"answer": "20"},
+        {"answer": "22"},
+        {"answer": "24"},
+        {"answer": "26"}
+      ],
+      "answer": "24",
+      "explanation": "Humans typically have 24 ribs arranged in 12 pairs, though anatomical variations exist in about 0.5-1% of the population. The ribs are classified into three categories: true ribs (first 7 pairs, directly connected to the sternum via costal cartilages), false ribs (pairs 8-10, indirectly connected to the sternum through cartilage of the rib above), and floating ribs (pairs 11-12, not connected to the sternum at all). All ribs attach to the thoracic vertebrae posteriorly. The rib cage serves multiple vital functions: protecting internal organs (heart, lungs, liver, spleen), providing attachment points for respiratory muscles, and facilitating breathing through expansion and contraction. During inspiration, the ribs move upward and outward, increasing chest cavity volume and drawing air into the lungs. The intercostal muscles between ribs assist in breathing, with external intercostals helping inspiration and internal intercostals aiding forced expiration. Rib fractures are relatively common injuries, particularly in elderly individuals with more brittle bones. The middle ribs (4-9) are most commonly fractured due to their position and length. Cervical ribs (extra ribs arising from the 7th cervical vertebra) occur in about 0.5% of people and can sometimes cause nerve compression. The first rib is the shortest and most curved, while the 12th rib is the longest. Understanding rib anatomy is crucial for medical procedures like CPR, where proper hand placement avoids rib fractures."
+    },
+    {
+      "question": "What is the normal body temperature in Celsius?",
+      "answers": [
+        {"answer": "35°C"},
+        {"answer": "36°C"},
+        {"answer": "37°C"},
+        {"answer": "38°C"}
+      ],
+      "answer": "37°C",
+      "explanation": "Normal human body temperature is approximately 37°C (98.6°F), though this represents an average with normal variations between individuals and throughout the day. Recent large-scale studies suggest the average may be slightly lower at 36.6-36.8°C (97.9-98.2°F), possibly due to improved measurement techniques, lifestyle changes, or methodological differences from historical data. Body temperature follows a circadian rhythm, typically lowest in early morning (around 6 AM) and highest in late afternoon/early evening, with variations of 0.5-1.0°C being normal. Core body temperature is regulated by the hypothalamus, which acts as the body's thermostat, maintaining temperature within a narrow range essential for optimal enzyme function and cellular metabolism. Temperature varies by measurement site: oral temperatures are typically 0.3-0.6°C lower than core temperature, while rectal temperatures are closest to core temperature. Factors affecting body temperature include age (infants and elderly have less stable regulation), physical activity, environmental conditions, hormonal changes (menstrual cycle, pregnancy), time of day, and individual variation. Fever is generally defined as core temperature above 38°C (100.4°F) and represents an immune system response to infection. Hypothermia occurs when core temperature drops below 35°C (95°F). The body maintains temperature through various mechanisms: sweating and vasodilation for cooling, shivering and vasoconstriction for warming, and behavioral responses like seeking shelter or changing clothing."
+    },
+    {
+      "question": "How many chambers does the human eye have?",
+      "answers": [
+        {"answer": "1"},
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"}
+      ],
+      "answer": "2",
+      "explanation": "The human eye has two main chambers: the anterior chamber (between the cornea and iris) and the posterior chamber (between the iris and lens). These chambers are filled with aqueous humor, a clear fluid that maintains eye pressure, provides nutrients to surrounding tissues, and removes metabolic waste. The anterior chamber is larger and more clinically significant, as it's where intraocular pressure is typically measured and where many eye diseases manifest. Behind the lens is a much larger space called the vitreous chamber or vitreous cavity, filled with vitreous humor, a gel-like substance that maintains the eye's shape and helps focus light. Some anatomists consider this a third chamber, but traditionally, the eye is described as having two chambers based on aqueous humor circulation. Aqueous humor is continuously produced by the ciliary body and flows from the posterior chamber through the pupil into the anterior chamber, then drains through the trabecular meshwork at the chamber angle. This circulation maintains intraocular pressure (normally 12-22 mmHg), which is crucial for proper eye function. Disrupted aqueous humor drainage can cause glaucoma, a serious condition that can lead to blindness. The chamber angle (where cornea meets iris) is examined during eye exams to assess glaucoma risk. Understanding eye chamber anatomy is essential for procedures like cataract surgery, glaucoma treatment, and injection of medications into the eye."
+    },
+    {
+      "question": "What is the largest gland in the human body?",
+      "answers": [
+        {"answer": "Thyroid gland"},
+        {"answer": "Liver"},
+        {"answer": "Pancreas"},
+        {"answer": "Pituitary gland"}
+      ],
+      "answer": "Liver",
+      "explanation": "The liver is the largest gland in the human body, weighing approximately 1.2-1.5 kg (2.6-3.3 pounds) in healthy adults, representing about 2-3% of total body weight. Located in the upper right abdomen beneath the diaphragm, the liver performs over 500 essential functions, making it both the largest gland and one of the most complex organs. As an exocrine gland, the liver produces bile (500-1000 mL daily) for fat digestion and absorption. As an endocrine gland, it produces various proteins and hormones including albumin, clotting factors, and insulin-like growth factor-1 (IGF-1). The liver has a unique dual blood supply: receiving oxygenated blood from the hepatic artery and nutrient-rich blood from the portal vein (carrying blood from the intestines). This arrangement allows the liver to process nutrients and toxins before they enter systemic circulation. Key hepatic functions include: protein synthesis (albumin, clotting factors), glucose regulation (glycogen storage and gluconeogenesis), lipid metabolism, drug and toxin detoxification, vitamin storage (A, D, E, K, B12), iron storage, and immune functions. The liver has remarkable regenerative capacity, able to regenerate up to 75% of its mass if damaged, making it unique among human organs. Liver disease can be life-threatening because of the organ's critical metabolic roles. Common liver conditions include hepatitis, cirrhosis, fatty liver disease, and liver cancer. The liver's size, complexity, and multiple functions underscore its vital importance in human physiology."
+    },
+    {
+      "question": "What is the approximate surface area of the lungs?",
+      "answers": [
+        {"answer": "25 square meters"},
+        {"answer": "50 square meters"},
+        {"answer": "70 square meters"},
+        {"answer": "100 square meters"}
+      ],
+      "answer": "70 square meters",
+      "explanation": "The human lungs have an enormous internal surface area of approximately 70 square meters (750 square feet) - roughly the size of a tennis court or half a basketball court. This vast surface area is created by the intricate branching structure of the respiratory tree and millions of tiny air sacs called alveoli. The respiratory system begins with the trachea, which branches into main bronchi, then secondary and tertiary bronchi, bronchioles, terminal bronchioles, respiratory bronchioles, alveolar ducts, and finally alveolar sacs containing alveoli. There are approximately 300-500 million alveoli in healthy adult lungs, each about 0.2-0.3 mm in diameter. Each alveolus is surrounded by a dense network of capillaries, creating an air-blood barrier only 0.5 micrometers thick - thinner than a red blood cell diameter. This enormous surface area and minimal barrier thickness maximize gas exchange efficiency, allowing rapid diffusion of oxygen from air into blood and carbon dioxide from blood into air. The alveolar surface is coated with surfactant, a phospholipid mixture that reduces surface tension and prevents alveolar collapse. Various lung diseases can dramatically reduce effective surface area: emphysema destroys alveolar walls, pulmonary fibrosis thickens the air-blood barrier, and pneumonia fills alveoli with fluid. The lung's surface area is so large that even significant damage may not immediately cause symptoms, demonstrating the remarkable functional reserve of the respiratory system."
+    },
+    {
+      "question": "How many different types of blood vessels are there in the human body?",
+      "answers": [
+        {"answer": "2"},
+        {"answer": "3"},
+        {"answer": "4"},
+        {"answer": "5"}
+      ],
+      "answer": "3",
+      "explanation": "The human cardiovascular system contains three main types of blood vessels: arteries, veins, and capillaries, each with distinct structure and function. Arteries carry blood away from the heart and have thick, muscular walls to withstand high pressure from cardiac contractions. They branch into smaller arterioles and eventually into capillaries. The largest artery, the aorta, can be up to 3 cm in diameter. Veins return blood to the heart and have thinner walls than arteries, with larger lumens and valves to prevent backflow due to lower pressure. Major veins include the superior and inferior vena cavae. Capillaries are tiny vessels (5-10 micrometers in diameter) where gas, nutrient, and waste exchange occurs between blood and tissues. Their walls are only one cell thick, allowing efficient diffusion. Capillary networks (beds) surround every tissue, adapting to metabolic needs. The circulatory system also includes specialized vessels like lymphatic vessels that transport lymph fluid, but these are not typically classified as blood vessels. Understanding these vessel types is crucial for diagnosing cardiovascular diseases, managing blood pressure, and understanding circulation dynamics."
+    }  
+  ]
+  },
+      {
     "name": "Finnish Forest, Edible Herbs & Mushrooms",
     "questions": [
       {
