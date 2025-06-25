@@ -34,5 +34,6 @@
   "Quiz_losses": "Hävitty",
   "Answers_right": "Oikeita vastauksia",
   "Answers_wrong": "Vääriä vastauksia",
-  "read_aloud": "Lue ääneen"
+  "read_aloud": "Lue ääneen",
+  "answer_options": "Vastausvaihtoehdot"
 }

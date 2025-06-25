@@ -34,5 +34,6 @@
   "Quiz_losses": "Verloren",
   "Answers_right": "Richtige Antworten",
   "Answers_wrong": "Falsche Antworten",
-  "read_aloud": "Vorlesen"
+  "read_aloud": "Vorlesen",
+  "answer_options": "Antwortmöglichkeiten"
 }

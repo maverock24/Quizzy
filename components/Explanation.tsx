@@ -2,7 +2,7 @@ import React from 'react';
 import { Animated, StyleSheet, Switch, Text, TouchableOpacity, View, Platform } from 'react-native';
 import { CodeFormatter } from './CodeFormatter';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
 import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -154,10 +154,16 @@ return (
     >
        <TouchableOpacity
       onPress={handleReadAloud}
-      style={{ right:10, top: 10, marginLeft: 8, marginBottom: 8, position: 'absolute', backgroundColor: 'rgb(86, 92, 99)', borderRadius: 8, padding: 8,  }}
+      style={{ right:10, top: 10, marginLeft: 8, marginBottom: 8, position: 'absolute', zIndex:9999, borderRadius: 8, padding: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
       accessibilityLabel="Read explanation aloud"
     >
-      <Text style={{ color: 'white', fontSize: 14 }}>{t('read_aloud') || '🔊 Read Aloud'}</Text>
+
+      <FontAwesome
+        name="comment"
+        size={25}
+        color="white"
+       style={{ marginLeft: 8, marginTop: -5 }}
+      />
     </TouchableOpacity>
       <Text style={styles.questionHeading}>
         {righOrWrong}
