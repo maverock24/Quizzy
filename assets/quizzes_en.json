@@ -1,5 +1,969 @@
 [
   {
+  "name": "Security Concepts: Full Stack & Cloud",
+  "questions": [
+    {
+      "question": "When configuring a Content Security Policy (CSP) to mitigate XSS, what is the primary security advantage of using hash-based or nonce-based script whitelisting over a domain-based whitelist (`script-src 'self' cdn.example.com`)?",
+      "answers": [
+        {"answer": "It allows for the use of inline scripts, which is not possible with a domain whitelist."},
+        {"answer": "It provides a robust defense against the injection of malicious scripts from a compromised but whitelisted third-party domain (e.g., a CDN)."},
+        {"answer": "It is simpler to configure and requires less maintenance than a domain-based policy."},
+        {"answer": "It completely eliminates the need for any other XSS mitigation techniques, such as output encoding."}
+      ],
+      "answer": "It provides a robust defense against the injection of malicious scripts from a compromised but whitelisted third-party domain (e.g., a CDN).",
+      "explanation": "While a domain-based CSP is a good first step, it has a significant weakness: if any whitelisted domain is compromised and starts serving malicious JavaScript, the browser will execute it without question. A nonce-based policy mitigates this by generating a unique, random 'nonce' value for each HTTP request. This nonce is included in the CSP header and as an attribute on legitimate `<script>` tags. The browser will only execute scripts that have the correct nonce attribute, effectively blocking any injected scripts. A hash-based policy works similarly by requiring the CSP header to contain a hash of the legitimate script's content. Both methods ensure that only the specific scripts intended by the application developer can be executed, regardless of their origin, thus protecting against compromises of whitelisted third-party hosts."
+    },
+    {
+      "question": "What is the primary purpose of the `report-to` and `Report-URI` directives within security-related HTTP headers like CSP or HSTS?",
+      "answers": [
+        {"answer": "To report successful policy applications to a logging service for auditing."},
+        {"answer": "To configure a browser-level endpoint where policy violation reports are sent, allowing developers to discover and fix security vulnerabilities that are being actively blocked."},
+        {"answer": "To provide a URI where the full text of the security policy can be downloaded."},
+        {"answer": "To report the user's Browse activity to the server for analytics."}
+      ],
+      "answer": "To configure a browser-level endpoint where policy violation reports are sent, allowing developers to discover and fix security vulnerabilities that are being actively blocked.",
+      "explanation": "These directives are crucial for actively monitoring a security policy's effectiveness. When a browser enforces a policy and blocks a violation (e.g., an attempted XSS injection that violates the CSP), these directives tell the browser to send a JSON-formatted report to a specified URI. This report contains details about the violation, such as the blocked resource, the violated directive, and the document where the violation occurred. By collecting and analyzing these reports, development and security teams can gain invaluable insight into attempted attacks, identify misconfigurations in their policies, and discover vulnerabilities in their application that need to be fixed at the source. The `report-to` directive is the modern, more structured replacement for the older `Report-URI`."
+    },
+    {
+      "question": "In a cloud-native environment using Kubernetes, what is the fundamental security difference between a 'Security Context' defined at the Pod level versus one defined at the Container level?",
+      "answers": [
+        {"answer": "There is no difference; they are aliases for the same configuration."},
+        {"answer": "A Pod-level Security Context applies its settings to all containers within that pod, while a Container-level context can override the pod's settings for that specific container."},
+        {"answer": "The Pod-level context controls network policies, while the Container-level context controls filesystem access."},
+        {"answer": "The Container-level context is deprecated in favor of the Pod-level context."}
+      ],
+      "answer": "A Pod-level Security Context applies its settings to all containers within that pod, while a Container-level context can override the pod's settings for that specific container.",
+      "explanation": "Kubernetes provides granular control over the security posture of workloads. A `securityContext` can be defined in the Pod specification. These settings, such as `runAsUser`, `runAsGroup`, or `fsGroup`, apply by default to every container running within that Pod. However, you can also define a `securityContext` within the specification of an individual container. The settings at this more specific, container-level scope take precedence and will override the settings defined at the pod level. This allows for a flexible security model where a baseline policy can be set for a pod, but a specific container (e.g., an init container or a sidecar) can be given different, more or less restrictive, privileges as needed."
+    },
+    {
+      "question": "What is a 'Time-of-Check to Time-of-Use' (TOCTOU) vulnerability, and in what context is it commonly found?",
+      "answers": [
+        {"answer": "A vulnerability where the time on the server is out of sync with the client."},
+        {"answer": "A race condition vulnerability where the state of a resource (like a file's permissions) is checked, but then changes before that resource is actually used, invalidating the results of the check."},
+        {"answer": "A type of timing attack used to extract cryptographic keys."},
+        {"answer": "A bug in time-based one-time password (TOTP) implementations."}
+      ],
+      "answer": "A race condition vulnerability where the state of a resource (like a file's permissions) is checked, but then changes before that resource is actually used, invalidating the results of the check.",
+      "explanation": "TOCTOU (pronounced 'TOCK-too') is a classic race condition bug. The vulnerable code pattern looks like this: 1) The program checks a property of a resource (e.g., `if (file_exists('/tmp/foo'))`). 2) Based on this check, it decides to perform an action (e.g., `write_to_file('/tmp/foo')`). The vulnerability lies in the window of time between the check and the use. An attacker can manipulate the resource in that window. For example, after the program checks that `/tmp/foo` exists, the attacker could quickly replace it with a symbolic link to a sensitive system file like `/etc/passwd`. The program then proceeds with the `write_to_file` operation, inadvertently overwriting the sensitive file. This is a common problem in file system operations and requires careful handling, such as performing operations on file handles rather than file paths, or using atomic operations provided by the OS."
+    },
+    {
+      "question": "When securing a web application's session management, what is the primary purpose of rotating session identifiers immediately after a user's privilege level changes (e.g., upon login)?",
+      "answers": [
+        {"answer": "To ensure the new session identifier is more secure than the old one."},
+        {"answer": "To mitigate 'session fixation' attacks by invalidating the pre-authentication session identifier."},
+        {"answer": "To reduce the load on the session store by clearing out old sessions."},
+        {"answer": "To signal to the user that their privilege level has changed."}
+      ],
+      "answer": "To mitigate 'session fixation' attacks by invalidating the pre-authentication session identifier.",
+      "explanation": "This is the most critical defense against session fixation. In a fixation attack, an attacker forces a victim's browser to use a session ID known to the attacker *before* the victim logs in. If the application continues to use that same session ID *after* the user authenticates, the attacker can now use that known ID to hijack the newly authenticated session. By explicitly destroying the old session and generating a completely new, random session identifier as part of the login process, the application makes the pre-authentication session ID useless. The attacker's known ID is invalidated, and only the victim's browser receives the new, authenticated session ID."
+    },
+    {
+      "question": "What is the primary security benefit of using prepared statements (or parameterized queries) when interacting with a SQL database?",
+      "answers": [
+        {"answer": "They make database queries run significantly faster in all scenarios."},
+        {"answer": "They provide a robust defense against SQL Injection attacks by strictly separating the SQL query's structure from the user-supplied data."},
+        {"answer": "They automatically encrypt the data being sent to the database."},
+        {"answer": "They allow a single query to be executed against multiple databases at once."}
+      ],
+      "answer": "They provide a robust defense against SQL Injection attacks by strictly separating the SQL query's structure from the user-supplied data.",
+      "explanation": "SQL Injection occurs when user input is concatenated directly into a SQL query string, allowing an attacker to inject malicious SQL code. A prepared statement solves this by separating the process into two stages. First, the application sends the SQL query template with placeholders (e.g., `SELECT * FROM users WHERE username = ?`) to the database server. The database parses and compiles this query structure. Second, the application sends the user-supplied data (e.g., `'admin' OR '1'='1'`) as separate parameters. The database driver then binds this data to the placeholders. Crucially, the data is always treated as data, never as executable code. The structure of the query is already fixed and cannot be altered by the parameter values, which completely mitigates this class of vulnerability."
+    },
+    {
+      "question": "In a cloud environment like AWS, what is the fundamental difference between an IAM 'Role' and an IAM 'User'?",
+      "answers": [
+        {"answer": "A User is for human access, while a Role is for programmatic access only."},
+        {"answer": "A User has permanent credentials (e.g., a password or access key), whereas a Role is an identity with permissions that can be temporarily assumed by a trusted entity, which then receives temporary credentials."},
+        {"answer": "A Role has more permissions than a User by default."},
+        {"answer": "Users are defined globally, while Roles are specific to a single region."}
+      ],
+      "answer": "A User has permanent credentials (e.g., a password or access key), whereas a Role is an identity with permissions that can be temporarily assumed by a trusted entity, which then receives temporary credentials.",
+      "explanation": "An IAM User represents a specific person or service and has long-lived credentials associated with it. An IAM Role, on the other hand, does not have its own credentials. It is an identity that defines a set of permissions. Other entities (like an IAM User, an EC2 instance, or a Lambda function) can be granted permission to 'assume' that role. When they do, the AWS Security Token Service (STS) provides them with temporary security credentials (an access key, secret key, and session token) that are valid only for a short duration. This is the security best practice for granting permissions to applications or services, as it avoids hardcoding long-lived access keys in code and adheres to the principle of least privilege by granting permissions only when and for as long as they are needed."
+    },
+    {
+      "question": "What is Server-Side Request Forgery (SSRF), and how does it differ from Cross-Site Request Forgery (CSRF)?",
+      "answers": [
+        {"answer": "SSRF is an attack where the server forges a request to itself, while CSRF is where the client forges a request."},
+        {"answer": "SSRF is a vulnerability where an attacker can coerce a server-side application to make arbitrary HTTP requests to an attacker-chosen domain, often targeting internal, non-public services. CSRF tricks a user's browser into making an unwanted request."},
+        {"answer": "They are two names for the same attack that forges server-side requests."},
+        {"answer": "CSRF is a server vulnerability, while SSRF is a client-side browser vulnerability."}
+      ],
+      "answer": "SSRF is a vulnerability where an attacker can coerce a server-side application to make arbitrary HTTP requests to an attacker-chosen domain, often targeting internal, non-public services. CSRF tricks a user's browser into making an unwanted request.",
+      "explanation": "The key difference is the entity being tricked. In CSRF, the victim is the user's browser; the attacker abuses the browser's trust in the user's session to make the browser send a malicious request. In SSRF, the victim is the server itself. This vulnerability typically occurs when a server takes a user-provided URL and makes a request to it (e.g., to fetch a user's profile picture from a URL they provide). If the server doesn't properly validate the URL, an attacker can provide an internal IP address (like `http://127.0.0.1/admin` or `http://169.254.169.254/latest/meta-data` in AWS). The server, having a trusted position within the network, then makes a request to this internal service, potentially exposing sensitive data or accessing internal administrative endpoints that are not exposed to the public internet."
+    },
+    {
+      "question": "What is the purpose of the HTTP `Strict-Transport-Security` (HSTS) header?",
+      "answers": [
+        {"answer": "To enforce a specific version of the TLS protocol."},
+        {"answer": "To instruct the browser to only ever communicate with the site over a secure HTTPS connection, automatically converting any future HTTP requests to HTTPS. It mitigates protocol downgrade and man-in-the-middle attacks."},
+        {"answer": "To provide a secure way to transport security tokens in the header."},
+        {"answer": "To list the public key hashes of the site's valid certificates (HPKP)."}
+      ],
+      "answer": "To instruct the browser to only ever communicate with the site over a secure HTTPS connection, automatically converting any future HTTP requests to HTTPS. It mitigates protocol downgrade and man-in-the-middle attacks.",
+      "explanation": "Even if a site properly redirects from HTTP to HTTPS, a user's first visit might be to the unencrypted HTTP version. A sophisticated man-in-the-middle attacker could intercept this initial request and prevent the redirect, keeping the user on an unencrypted connection (an attack called SSL stripping). The HSTS header solves this. After the first successful HTTPS connection, the server sends the `Strict-Transport-Security` header (e.g., `Strict-Transport-Security: max-age=31536000; includeSubDomains`). The browser then records that this domain must *only* be accessed via HTTPS for the specified duration. For any subsequent attempt to visit the site via HTTP (e.g., by typing it in manually), the browser will internally and automatically upgrade the request to HTTPS before it ever leaves the user's machine, ensuring a secure connection and defeating SSL stripping attacks."
+    },
+    {
+      "question": "In the context of Infrastructure as Code (IaC) security, what is 'policy as code'?",
+      "answers": [
+        {"answer": "The practice of writing security policies in a human-readable document, like a Word file."},
+        {"answer": "A method for embedding application code directly into infrastructure policies."},
+        {"answer": "The practice of defining security and compliance policies in a high-level, declarative language (e.g., using Open Policy Agent's Rego). These policies can then be automatically tested and enforced against IaC configurations before deployment."},
+        {"answer": "A system that automatically generates IaC from a written policy."}
+      ],
+      "answer": "The practice of defining security and compliance policies in a high-level, declarative language (e.g., using Open Policy Agent's Rego). These policies can then be automatically tested and enforced against IaC configurations before deployment.",
+      "explanation": "Policy as Code extends the benefits of IaC to security and compliance. Instead of manual reviews and checklists, security rules are codified into a machine-readable format. For example, a policy might state 'No security group can have an inbound rule allowing port 22 from 0.0.0.0/0'. This policy code can then be integrated directly into the CI/CD pipeline. Before a Terraform or CloudFormation plan is applied, it can be automatically validated against the policy set. If the plan violates a policy, the build fails, preventing insecure infrastructure from ever being provisioned. This shifts security left, making it a proactive and automated part of the development lifecycle, rather than a reactive, manual audit process. Open Policy Agent (OPA) is a popular open-source tool for implementing this."
+    },
+    {
+      "question": "What is a 'Prototype Pollution' vulnerability in JavaScript?",
+      "answers": [
+        {"answer": "A performance issue caused by creating too many object prototypes."},
+        {"answer": "A vulnerability where an attacker can modify the `__proto__` property or `Object.prototype` itself, adding or changing properties that will then be inherited by almost all objects in the application, leading to potential DoS or remote code execution."},
+        {"answer": "A bug that causes the prototype chain to be corrupted during garbage collection."},
+        {"answer": "A feature that allows for the safe modification of JavaScript's built-in object prototypes."}
+      ],
+      "answer": "A vulnerability where an attacker can modify the `__proto__` property or `Object.prototype` itself, adding or changing properties that will then be inherited by almost all objects in the application, leading to potential DoS or remote code execution.",
+      "explanation": "Prototype pollution is a subtle and dangerous JavaScript vulnerability. It exploits the way JavaScript's prototype-based inheritance works. Many libraries use unsafe recursive merge or clone functions. If an attacker can control the input to such a function, they can craft a JSON object like `{\"__proto__\": {\"isAdmin\": true}}`. An unsafe merge function might interpret `__proto__` as a regular key and try to merge its contents into the target object's prototype, which is `Object.prototype`. This 'pollutes' the global `Object.prototype` by adding an `isAdmin` property to it. Now, any object in the application created via `{}` or `new Object()` will inherit this `isAdmin: true` property, which could lead to privilege escalation or other unexpected behavior when the application later checks for the existence of this property."
+    },
+    {
+      "question": "What is the primary security goal of 'memory-safe' programming languages like Rust?",
+      "answers": [
+        {"answer": "To ensure that all memory allocations are as small as possible."},
+        {"answer": "To provide compile-time guarantees that prevent entire classes of memory-related bugs, such as buffer overflows, use-after-free, and data races, without requiring a garbage collector."},
+        {"answer": "To make all memory operations safe by running them inside a virtual machine."},
+        {"answer": "To automatically encrypt all data stored in memory."}
+      ],
+      "answer": "To provide compile-time guarantees that prevent entire classes of memory-related bugs, such as buffer overflows, use-after-free, and data races, without requiring a garbage collector.",
+      "explanation": "Languages like C and C++ offer high performance but place the burden of manual memory management on the developer, which is a major source of security vulnerabilities. Languages like Java and C# provide memory safety using a garbage collector, which adds runtime overhead. Rust's key innovation is its 'ownership' and 'borrow checker' system. It's a set of strict rules, enforced at compile-time, that govern how memory is accessed and managed. Every value has a unique 'owner', and its lifetime is tied to that owner's scope. You can have multiple immutable references ('borrows') or exactly one mutable reference, but not both at the same time. This system statically proves at compile time that there can be no dangling pointers, no buffer overflows, and no data races, providing the memory safety of a garbage-collected language with the performance and control of a systems language."
+    },
+    {
+      "question": "What is the 'Dependency Confusion' or 'Substitution' attack in a software supply chain?",
+      "answers": [
+        {"answer": "A bug in the dependency resolver that confuses two different versions of the same library."},
+        {"answer": "An attack where an adversary publishes a malicious public package with the same name as a private, internal package used by a company. If the package manager is misconfigured, it may pull the malicious public package instead of the internal one."},
+        {"answer": "A social engineering attack where a developer is confused into installing a malicious dependency."},
+        {"answer": "A vulnerability where a dependency's own dependencies are confused during installation."}
+      ],
+      "answer": "An attack where an adversary publishes a malicious public package with the same name as a private, internal package used by a company. If the package manager is misconfigured, it may pull the malicious public package instead of the internal one.",
+      "explanation": "This attack exploits ambiguity in how package managers (like npm, PyPI, or Maven) resolve dependencies. Many companies use internal, private package repositories for their own code. If an internal project depends on a package named, for example, `internal-billing`, an attacker can check public repositories like npmjs.com to see if a package with that name exists. If it doesn't, the attacker can publish their own malicious package with that exact name (often with a higher version number). When a developer or a CI/CD system runs `npm install`, the package manager might be configured to check both the public and private repositories. If it prioritizes the higher version number, it may download and install the attacker's malicious public package instead of the intended internal one, leading to remote code execution inside the company's network."
+    },
+    {
+      "question": "In the context of applied cryptography, what is a 'Timing Attack'?",
+      "answers": [
+        {
+          "answer": "An attack that exploits a system's out-of-date time synchronization."
+        },
+        {
+          "answer": "A side-channel attack where an attacker can deduce secret information (like a cryptographic key or a password) by precisely measuring the time it takes the system to perform a cryptographic operation for different inputs."
+        },
+        {
+          "answer": "A denial-of-service attack that uses timed requests to overwhelm a server."
+        },
+        {
+          "answer": "An attack that must be performed within a very specific time window to succeed."
+        }
+      ],
+      "answer": "A side-channel attack where an attacker can deduce secret information (like a cryptographic key or a password) by precisely measuring the time it takes the system to perform a cryptographic operation for different inputs.",
+      "explanation": "A timing attack exploits the fact that some computations can take slightly different amounts of time depending on the secret data they are processing. For example, a naive string comparison function might return 'false' as soon as it finds the first mismatching character. An attacker could use this to guess a password character by character. They would try `a...`, `b...`, `c...`, etc. The attempt that takes slightly longer to fail is likely the one with the correct first character. By repeating this process over a network and using statistical analysis on many timing measurements, an attacker can reconstruct a secret. The defense against timing attacks is to write 'constant-time' code, where operations involving secrets always take the exact same amount of time to execute, regardless of the value of the secret data."
+    },
+    {
+      "question": "What is 'certificate pinning' and what attack does it primarily mitigate?",
+      "answers": [
+        {"answer": "Pinning a physical certificate to a server rack for identification."},
+        {"answer": "A security mechanism where an application is hardcoded to trust only a specific, 'pinned' public key or certificate, mitigating man-in-the-middle (MITM) attacks caused by a compromised Certificate Authority (CA)."},
+        {"answer": "A technique for pinning a certificate to a user's session."},
+        {"answer": "A method for compressing certificates to reduce their size."}
+      ],
+      "answer": "A security mechanism where an application is hardcoded to trust only a specific, 'pinned' public key or certificate, mitigating man-in-the-middle (MITM) attacks caused by a compromised Certificate Authority (CA).",
+      "explanation": "Normally, a client trusts any TLS certificate that is signed by a trusted Certificate Authority in the browser's or OS's trust store. The weakness is that if any one of these hundreds of CAs is compromised or coerced, it could issue a fraudulent certificate for a legitimate domain (e.g., `your-bank.com`), enabling a MITM attack. Certificate pinning bypasses this chain of trust. The application developer embeds (pins) the hash of their own server's public key or certificate directly into the mobile app or browser policy. When the application connects to the server, it checks if the presented certificate matches the pinned one. If it doesn't match—even if it's signed by a trusted CA—the application immediately terminates the connection. This provides a strong defense against CA compromise, but it can also be brittle and cause service outages if the pinned certificate needs to be changed unexpectedly (this is why the original HPKP header was deprecated)."
+    },
+    {
+      "question": "What is 'Homomorphic Encryption'?",
+      "answers": [
+        {
+          "answer": "An encryption scheme that uses the same key for encryption and decryption."
+        },
+        {
+          "answer": "A form of encryption that allows computation to be performed on ciphertext, generating an encrypted result which, when decrypted, matches the result of the operations as if they had been performed on the plaintext."
+        },
+        {
+          "answer": "An encryption method that morphs the data into a different shape."
+        },
+        {
+          "answer": "A type of encryption that can only be used for numbers, not text."
+        }
+      ],
+      "answer": "A form of encryption that allows computation to be performed on ciphertext, generating an encrypted result which, when decrypted, matches the result of the operations as if they had been performed on the plaintext.",
+      "explanation": "Homomorphic encryption is a powerful and advanced cryptographic technique. It allows a third party (like a cloud provider) to process encrypted data without ever having access to the decryption key or the plaintext data itself. For example, a user could encrypt two numbers, send the ciphertexts to a cloud service, and ask the service to 'add' them. The service would perform a specific mathematical operation on the two ciphertexts, resulting in a new ciphertext. When the user decrypts this result, they get the sum of the original two numbers. While partially homomorphic schemes (which support only one type of operation, like addition or multiplication) exist, 'fully homomorphic encryption' (FHE), which supports arbitrary computation, is still extremely computationally intensive and largely confined to research, but it holds enormous promise for secure cloud computing."
+    },
+    {
+      "question": "In the context of cloud security, what is a 'Cloud Access Security Broker' (CASB)?",
+      "answers": [
+        {
+          "answer": "A cloud service that provides brokerage services for buying and selling cloud resources."
+        },
+        {
+          "answer": "A security policy enforcement point, placed between cloud service consumers and cloud service providers, that combines and interjects enterprise security policies as cloud-based resources are accessed."
+        },
+        {
+          "answer": "A physical hardware device that brokers access to the cloud from an on-premise network."
+        },
+        {
+          "answer": "A type of insurance policy for cloud security breaches."
+        }
+      ],
+      "answer": "A security policy enforcement point, placed between cloud service consumers and cloud service providers, that combines and interjects enterprise security policies as cloud-based resources are accessed.",
+      "explanation": "A CASB acts as a control and policy enforcement point to provide visibility and control over how an organization's data is being used in cloud services. It can be deployed as a forward proxy, reverse proxy, or in an API-based mode. Key functions of a CASB include: 1) Visibility: Discovering which cloud apps (both sanctioned and 'shadow IT') are in use and what data is being uploaded. 2) Compliance: Ensuring data stored in the cloud complies with regulations like GDPR or HIPAA. 3) Data Security: Applying policies like data loss prevention (DLP) to block sensitive data from being uploaded, or applying encryption. 4) Threat Protection: Detecting anomalous behavior, malware, and compromised accounts."
+    },
+    {
+      "question": "What is the primary purpose of a Software Bill of Materials (SBOM)?",
+      "answers": [
+        {
+          "answer": "A bill for the total cost of all software licenses used in a project."
+        },
+        {
+          "answer": "A formal, machine-readable inventory of the software components, libraries, and dependencies included in an application. It is crucial for vulnerability management and supply chain security."
+        },
+        {
+          "answer": "A document that lists all the features to be built in a software project."
+        },
+        {
+          "answer": "The source code of the entire application, billed to the customer."
+        }
+      ],
+      "answer": "A formal, machine-readable inventory of the software components, libraries, and dependencies included in an application. It is crucial for vulnerability management and supply chain security.",
+      "explanation": "An SBOM is essentially a nested list of ingredients for a piece of software. It details all the open-source and third-party components that make up the final application, including their versions and license information. The importance of an SBOM has grown immensely with the rise of supply chain attacks. When a new vulnerability is discovered in a common library (like Log4j), organizations with a comprehensive SBOM for their applications can immediately and automatically query it to see which of their systems are affected. Without an SBOM, this process would be a slow, manual, and error-prone scramble, leaving systems vulnerable for longer. SBOM formats like SPDX and CycloneDX are becoming industry standards."
+    },
+    {
+      "question": "What is 'fuzzing' (or fuzz testing) in the context of application security?",
+      "answers": [
+        {
+          "answer": "A manual testing technique that involves looking for 'fuzzy' logic in the code."
+        },
+        {
+          "answer": "An automated testing technique that provides invalid, unexpected, or random data as input to a program to discover bugs, crashes, and security vulnerabilities like buffer overflows."
+        },
+        {
+          "answer": "A performance testing technique that uses 'fuzzy' inputs to measure response times."
+        },
+        {
+          "answer": "A type of static analysis that looks for blurry or unclear code patterns."
+        }
+      ],
+      "answer": "An automated testing technique that provides invalid, unexpected, or random data as input to a program to discover bugs, crashes, and security vulnerabilities like buffer overflows.",
+      "explanation": "Fuzzing is a powerful technique for finding implementation bugs that developers might not anticipate. A 'fuzzer' tool generates a vast number of malformed inputs and feeds them to the target application's entry points (e.g., file parsers, network protocol handlers, API endpoints). It then monitors the application for any signs of abnormal behavior, such as crashes, assertion failures, or memory access errors. Modern 'coverage-guided' fuzzers are particularly effective; they use instrumentation to track which code paths are executed by a given input and then intelligently mutate the inputs to discover new, unexplored paths in the program. Fuzzing is extremely effective at finding memory corruption vulnerabilities, denial-of-service bugs, and other security-critical issues."
+    },
+    {
+      "question": "What is a 'canary deployment' strategy?",
+      "answers": [
+        {
+          "answer": "Deploying a new version of an application to a small subset of users or servers to test it in a live production environment before rolling it out to everyone."
+        },
+        {
+          "answer": "A deployment that uses a canary-yellow color scheme."
+        },
+        {
+          "answer": "Deploying a 'canary' token in the code to detect security breaches."
+        },
+        {
+          "answer": "A strategy where the old and new versions of the application are deployed simultaneously, and traffic is split evenly between them."
+        }
+      ],
+      "answer": "Deploying a new version of an application to a small subset of users or servers to test it in a live production environment before rolling it out to everyone.",
+      "explanation": "Named after the 'canary in a coal mine', this is a risk-mitigation strategy for releasing new software. Instead of a 'big bang' deployment where the new version replaces the old one for all users at once, the new version is first routed to a small, controlled group (the 'canary' group). The team then closely monitors key metrics like error rates, latency, and CPU usage for this group. If the metrics remain healthy, the rollout is gradually expanded to larger and larger portions of the user base. If any problems are detected with the canary deployment, it can be quickly rolled back with minimal impact on the overall service. This allows for safe, real-world testing of new code under production load."
+    },
+    {
+      "question": "What is the primary difference between a 'vulnerability' and an 'exploit'?",
+      "answers": [
+        {
+          "answer": "They are the same thing."
+        },
+        {
+          "answer": "A vulnerability is a weakness or flaw in a system's design, implementation, or operation. An exploit is a piece of code or a technique that takes advantage of a specific vulnerability to cause unintended behavior."
+        },
+        {
+          "answer": "An exploit is a vulnerability that has been publicly disclosed."
+        },
+        {
+          "answer": "A vulnerability is a hardware flaw, while an exploit is a software flaw."
+        }
+      ],
+      "answer": "A vulnerability is a weakness or flaw in a system's design, implementation, or operation. An exploit is a piece of code or a technique that takes advantage of a specific vulnerability to cause unintended behavior.",
+      "explanation": "This is a fundamental distinction in cybersecurity. A vulnerability is a potential problem or a weakness. For example, a buffer overflow bug in a piece of C code is a vulnerability. It just sits there, being a flaw. An exploit is the *action* of using that vulnerability. It is the specific, crafted input or sequence of commands that leverages the buffer overflow vulnerability to achieve a goal, such as crashing the program or, in a more sophisticated case, achieving remote code execution. A system can be vulnerable without being actively exploited, but an exploit cannot exist without a corresponding vulnerability to target."
+    },
+    {
+      "question": "What is 'mTLS' (Mutual TLS)?",
+      "answers": [
+        {
+          "answer": "A version of TLS that is mutually agreed upon by two parties."
+        },
+        {
+          "answer": "An extension of the standard TLS protocol where not only does the client verify the server's identity using a certificate, but the server also verifies the client's identity by requiring the client to present its own certificate."
+        },
+        {
+          "answer": "A less secure version of TLS used for mutual funds."
+        },
+        {
+          "answer": "A method for terminating TLS connections at a load balancer."
+        }
+      ],
+      "answer": "An extension of the standard TLS protocol where not only does the client verify the server's identity using a certificate, but the server also verifies the client's identity by requiring the client to present its own certificate.",
+      "explanation": "In a standard TLS handshake (like when you visit an HTTPS website), only the server presents a certificate to prove its identity to the client. The client's identity is typically verified later at the application layer (e.g., with a username and password). In mTLS, the authentication is bidirectional at the transport layer. After the client has verified the server's certificate, the server requests a certificate from the client. The client presents its own X.509 certificate and proves possession of the corresponding private key. This provides very strong authentication for the client. It is commonly used for service-to-service communication within a microservices architecture (a core component of a 'service mesh') and for high-security B2B APIs, as it ensures that only trusted clients with a valid, provisioned certificate can even establish a connection to the server."
+    },
+    {
+      "question": "What is 'Infrastructure as Code' (IaC)?",
+      "answers": [
+        {
+          "answer": "Writing the operating system's kernel code."
+        },
+        {
+          "answer": "The process of managing and provisioning computer data centers through machine-readable definition files (e.g., using Terraform or CloudFormation), rather than physical hardware configuration or interactive configuration tools."
+        },
+        {
+          "answer": "A type of code that can only run on specific infrastructure."
+        },
+        {
+          "answer": "The practice of embedding application code directly into the infrastructure."
+        }
+      ],
+      "answer": "The process of managing and provisioning computer data centers through machine-readable definition files (e.g., using Terraform or CloudFormation), rather than physical hardware configuration or interactive configuration tools.",
+      "explanation": "IaC is a key practice of DevOps and modern cloud management. Instead of manually clicking through a web console to create a virtual machine, a network, and a database, you define all the required infrastructure and its configuration in a declarative code file. This file can then be version controlled in Git, peer-reviewed, and used by a tool (like Terraform) to automatically create, update, or destroy the infrastructure to match the definition. This brings the benefits of software development—automation, versioning, testing, and repeatability—to infrastructure management, reducing manual errors and making environments reproducible and consistent."
+    },
+    {
+      "question": "What is a 'Web Application Firewall' (WAF)?",
+      "answers": [
+        {
+          "answer": "A firewall that is built into the web browser."
+        },
+        {
+          "answer": "A firewall that operates at the application layer (Layer 7) to inspect, monitor, and filter HTTP traffic to and from a web application. It is designed to protect against common web attacks like SQL Injection and XSS."
+        },
+        {
+          "answer": "A traditional network firewall that only allows traffic on port 80 and 443."
+        },
+        {
+          "answer": "A piece of software on the web server that manages firewall rules."
+        }
+      ],
+      "answer": "A firewall that operates at the application layer (Layer 7) to inspect, monitor, and filter HTTP traffic to and from a web application. It is designed to protect against common web attacks like SQL Injection and XSS.",
+      "explanation": "A traditional network firewall operates at lower layers of the network stack (Layers 3 and 4), making decisions based on IP addresses and ports. A WAF operates at a higher level, understanding the HTTP protocol itself. It sits in front of a web application and analyzes the actual content of the HTTP requests and responses. It can detect and block malicious patterns that are indicative of common attacks, such as SQL injection syntax (`' OR '1'='1'`), cross-site scripting payloads (`<script>alert(1)</script>`), and directory traversal attempts (`../../..`). A WAF provides an important layer of defense, especially for protecting legacy applications or as a 'virtual patch' while a vulnerability in the application code is being fixed."
+    },
+    {
+      "question": "What is a 'Zero-Day' vulnerability?",
+      "answers": [
+        {
+          "answer": "A vulnerability that is guaranteed to be fixed in zero days."
+        },
+        {
+          "answer": "A vulnerability that is unknown to the software vendor or the public and is being actively exploited by attackers. The vendor has had 'zero days' to create a patch."
+        },
+        {
+          "answer": "A vulnerability that was discovered on the first day of the software's release."
+        },
+        {
+          "answer": "A type of vulnerability that has zero impact on the system's security."
+        }
+      ],
+      "answer": "A vulnerability that is unknown to the software vendor or the public and is being actively exploited by attackers. The vendor has had 'zero days' to create a patch.",
+      "explanation": "A zero-day vulnerability is a security flaw that has been discovered by attackers before the software developer is aware of it. Because the vendor is unaware, no patch or mitigation exists, making these vulnerabilities extremely dangerous. An attacker who has a 'zero-day exploit' (code to take advantage of the vulnerability) can often operate undetected for a long time. The term 'zero-day' refers to the fact that the developer has had zero days of notice to fix the problem before it becomes a threat."
+    },
+    {
+      "question": "What is the 'OpenID Connect UserInfo Endpoint'?",
+      "answers": [
+        {
+          "answer": "The endpoint where the user logs in."
+        },
+        {
+          "answer": "An OAuth 2.0 protected resource on the OpenID Provider that, when presented with a valid access token, returns authorized claims (user profile information) about the authenticated user."
+        },
+        {
+          "answer": "An endpoint that provides information about the OpenID Provider's configuration."
+        },
+        {
+          "answer": "The endpoint where the client application registers itself."
+        }
+      ],
+      "answer": "An OAuth 2.0 protected resource on the OpenID Provider that, when presented with a valid access token, returns authorized claims (user profile information) about the authenticated user.",
+      "explanation": "While the OIDC ID Token contains essential identity claims, it is often kept minimal. The UserInfo Endpoint provides a standardized RESTful mechanism for a client application to retrieve more detailed profile information about the user (e.g., full name, profile picture, phone number). After the client has obtained an access token from the token endpoint, it can make an authenticated GET or POST request to the UserInfo Endpoint, including the access token in the `Authorization` header. The OpenID Provider validates the token and returns a JSON object containing only the user claims that the client was authorized (via its requested scopes) to access."
+    },
+    {
+      "question": "What is a 'Dead Man's Switch' in a security or operational context?",
+      "answers": [
+        {
+          "answer": "A switch that is operated by a person who is no longer living."
+        },
+        {
+          "answer": "A switch or trigger that is activated when a human operator fails to perform a regular action, such as pressing a button or sending a heartbeat signal. It is a failsafe mechanism to detect incapacity or absence."
+        },
+        {
+          "answer": "A physical switch that, when flipped, permanently disables a system."
+        },
+        {
+          "answer": "A software switch that is protected by multi-factor authentication."
+        }
+      ],
+      "answer": "A switch or trigger that is activated when a human operator fails to perform a regular action, such as pressing a button or sending a heartbeat signal. It is a failsafe mechanism to detect incapacity or absence.",
+      "explanation": "The dead man's switch concept is a failsafe. It's designed to trigger an action when its operator becomes incapacitated. In the physical world, it could be a lever on a train that must be held down. In cybersecurity, it can be a system designed to perform an action (e.g., wipe data, send an alert, publish pre-written information) if a user fails to log in or send a 'check-in' signal within a specified time period. It operates on the principle of 'action upon inaction', providing a way to automate a response to the unexpected absence or unavailability of a key person."
+    },
+    {
+      "question": "What is 'Threat Modeling' in the software development lifecycle?",
+      "answers": [
+        {"answer": "A process for modeling the performance threats to an application."},
+        {"answer": "A structured process for identifying potential security threats and vulnerabilities in an application, prioritizing them, and determining appropriate mitigations. It is typically done during the design phase."},
+        {"answer": "A modeling technique for creating 3D models of security threats."},
+        {"answer": "The process of modeling the user's behavior to detect threats."}
+      ],
+      "answer": "A structured process for identifying potential security threats and vulnerabilities in an application, prioritizing them, and determining appropriate mitigations. It is typically done during the design phase.",
+      "explanation": "Threat modeling is a proactive, preventative security practice. Instead of waiting for vulnerabilities to be found after development, threat modeling aims to identify and address them early in the design phase when they are cheapest and easiest to fix. A common methodology is STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege). The team analyzes a diagram of the application's architecture, identifies trust boundaries and data flows, and brainstorms potential threats for each component under the STRIDE categories. The identified threats are then prioritized, and mitigations are designed and incorporated into the application's requirements."
+    },
+    {
+      "question": "What is 'eBPF' (extended Berkeley Packet Filter) and why is it significant for cloud-native security and observability?",
+      "answers": [
+        {"answer": "It is a new type of network packet filter that is built into hardware switches."},
+        {"answer": "A technology that allows sandboxed programs to be run directly in an operating system's kernel space, enabling highly efficient and secure networking, observability, and security tooling without changing kernel source code."},
+        {"answer": "A Berkeley-based project for filtering spam emails."},
+        {"answer": "An extension to the BPF virtual machine that can only be used on BSD operating systems."}
+      ],
+      "answer": "A technology that allows sandboxed programs to be run directly in an operating system's kernel space, enabling highly efficient and secure networking, observability, and security tooling without changing kernel source code.",
+      "explanation": "eBPF is a revolutionary technology within the Linux kernel. It can be thought of as a lightweight, sandboxed virtual machine inside the kernel that can execute user-supplied bytecode. A user-space controller loads an eBPF program into the kernel and attaches it to a specific hook point (e.g., a system call, a network interface, or a kernel function entry/exit). When that hook point is triggered, the eBPF code executes safely within the kernel's context. This allows developers to extend the kernel's capabilities on the fly. For security, it enables powerful intrusion detection and policy enforcement at the syscall level. For observability, it allows for incredibly detailed, low-overhead performance tracing. For networking, it powers high-performance load balancing and packet processing (e.g., in projects like Cilium)."
+    }
+  ]
+},
+  {
+  "name": "Advanced Authentication & Authorization Concepts",
+  "questions": [
+    {
+      "question": "When implementing OpenID Connect (OIDC), what is the primary purpose of the 'nonce' parameter in the authentication request and its validation in the ID Token?",
+      "answers": [
+        {"answer": "To prevent Cross-Site Request Forgery (CSRF) by ensuring the request originated from the client's own session."},
+        {"answer": "To mitigate replay attacks by providing a unique, single-use value that binds the client's session to the resulting ID Token."},
+        {"answer": "To specify the desired Authentication Context Class Reference (ACR) for the authentication event."},
+        {"answer": "To encrypt the ID Token for confidential transmission back to the client."}
+      ],
+      "answer": "To mitigate replay attacks by providing a unique, single-use value that binds the client's session to the resulting ID Token.",
+      "explanation": "The 'nonce' (number used once) is a critical security mechanism in OIDC's implicit and hybrid flows. The client generates a unique, unpredictable string and includes it in the authentication request. The OpenID Provider (OP) is required to include this exact same nonce value as a claim within the issued ID Token. When the client receives the ID Token, it MUST validate that the `nonce` claim matches the value it originally sent. This prevents replay attacks where an attacker could intercept a previously issued ID Token (e.g., from a different session) and 'replay' it to the client to impersonate a user. The nonce ensures the received token was generated in direct response to the client's specific, current authentication request. While the 'state' parameter is the primary defense against CSRF, the 'nonce' specifically targets token replay."
+    },
+    {
+      "question": "In the context of JSON Web Tokens (JWT), what is the 'alg': 'none' vulnerability, and how should a compliant library prevent it?",
+      "answers": [
+        {"answer": "A vulnerability where the token is signed with a non-standard algorithm that the verifier ignores, defaulting to an unsecured state."},
+        {"answer": "A feature that allows for unsigned tokens, which should be used for low-security contexts where the payload is public."},
+        {"answer": "An attack where an attacker crafts a token with the 'alg' header set to 'none' and an empty signature. A vulnerable library will trust the header and treat the token as validly unsigned."},
+        {"answer": "A denial-of-service attack where specifying 'none' causes the verification library to enter an infinite loop."}
+      ],
+      "answer": "An attack where an attacker crafts a token with the 'alg' header set to 'none' and an empty signature. A vulnerable library will trust the header and treat the token as validly unsigned.",
+      "explanation": "The JWT JWS specification (RFC 7515) defines an 'Unsecured JWS' with the `alg` header value 'none'. This is intended for situations where the payload's integrity is protected by other means. The vulnerability arises when a server is configured to expect a signed token (e.g., using RS256) but the verification library naively trusts the `alg` header from the token itself. An attacker can take a valid JWT, modify its payload, change the `alg` header to `none`, and remove the signature part. If the library sees `alg: 'none'`, it may skip signature validation entirely and treat the malicious token as valid. A compliant and secure library MUST allow the developer to specify a whitelist of accepted algorithms and must never accept a token with `alg: 'none'` unless explicitly configured to do so for that specific context."
+    },
+    {
+      "question": "What is the primary security advantage of using PASETO (Platform-Agnostic Security Tokens) over JWTs?",
+      "answers": [
+        {"answer": "PASETOs are always smaller in size than JWTs, reducing network latency."},
+        {"answer": "PASETOs enforce the use of modern, secure cryptographic algorithms and prevent algorithm confusion attacks by design, offering 'paved road' cryptography."},
+        {"answer": "PASETOs natively support token revocation, which is not possible with JWTs."},
+        {"answer": "PASETOs use XML as their encoding format, which is more widely supported than Base64Url."}
+      ],
+      "answer": "PASETOs enforce the use of modern, secure cryptographic algorithms and prevent algorithm confusion attacks by design, offering 'paved road' cryptography.",
+      "explanation": "PASETO was created as a direct response to the perceived design flaws and implementation complexities of JWTs. The core problem with JWTs is their flexibility, particularly with the `alg` header, which led to numerous vulnerabilities like the 'alg: none' and key confusion attacks. PASETO's philosophy is to be prescriptive rather than flexible. It doesn't allow developers to choose algorithms. Instead, it defines a small number of specific, modern, secure cryptographic suites (e.g., v2.public uses Ed25519 for signing, v2.local uses XChaCha20-Poly1305 for authenticated encryption). The token format itself indicates the version and purpose (e.g., `v2.public.`), making algorithm confusion attacks impossible. This provides a 'paved road' or 'secure by default' approach, removing the need for developers to be cryptography experts to use tokens securely."
+    },
+    {
+      "question": "When implementing OAuth 2.1, what is the purpose of PKCE (Proof Key for Code Exchange), and why is it now mandatory for all client types, including confidential ones?",
+      "answers": [
+        {"answer": "To encrypt the authorization code so it cannot be read by intermediaries."},
+        {"answer": "To provide a mechanism for the client to prove it was the original initiator of the authorization flow, mitigating authorization code interception and injection attacks."},
+        {"answer": "To replace the need for a client secret, making all clients effectively public."},
+        {"answer": "To allow the authorization server to verify the user's identity using a hardware security key."}
+      ],
+      "answer": "To provide a mechanism for the client to prove it was the original initiator of the authorization flow, mitigating authorization code interception and injection attacks.",
+      "explanation": "PKCE (RFC 7636) was originally designed to protect public clients (like mobile and single-page apps) that cannot securely store a client secret. It addresses the threat of authorization code interception. The flow is: 1) The client creates a secret `code_verifier`. 2) It hashes and encodes this to create a `code_challenge`. 3) It sends the `code_challenge` in the initial authorization request. 4) The authorization server stores the challenge. 5) When the client exchanges the received authorization code for a token, it must also present the original `code_verifier`. 6) The server hashes the verifier and confirms it matches the stored challenge. This proves the client making the token request is the same one that started the flow. Even if an attacker steals the authorization code from a custom URL scheme, they cannot use it without the `code_verifier`. OAuth 2.1 now mandates PKCE for *all* clients, including confidential ones, as it provides a robust defense-in-depth against code injection and other attacks, even when a client secret is used."
+    },
+    {
+      "question": "What is the 'thundering herd' problem in the context of session management with a distributed cache (like Redis or Memcached), and what is a common mitigation strategy?",
+      "answers": [
+        {"answer": "A network broadcast storm caused by too many session validation requests."},
+        {"answer": "A condition where a popular session key expires, causing a massive number of concurrent requests to miss the cache and hit the primary database simultaneously to regenerate the session."},
+        {"answer": "The sudden failure of all nodes in the cache cluster at once."},
+        {"answer": "A race condition where multiple servers attempt to write to the same session key at the exact same time."}
+      ],
+      "answer": "A condition where a popular session key expires, causing a massive number of concurrent requests to miss the cache and hit the primary database simultaneously to regenerate the session.",
+      "explanation": "The thundering herd problem occurs when a cached item with a hard TTL (Time To Live) expires. If that item is very popular (e.g., a session for a highly active user, or a piece of frequently accessed data), many application servers might try to access it at roughly the same time. They all experience a cache miss, and all of them proceed to perform the expensive operation to regenerate the data (e.g., a complex database query). This flood of identical, concurrent requests can overwhelm the backend database. A common mitigation strategy is to use a 'probabilistic early expiration' or a 'lock-and-refresh' mechanism. For instance, upon a cache miss, the first process acquires a short-lived lock (like a mutex in Redis). It then regenerates the data and updates the cache. Other processes that arrive while the lock is held will either wait briefly for the new data to appear in the cache or serve slightly stale data, preventing the database from being hit by all of them at once."
+    },
+    {
+      "question": "In the context of WebAuthn and FIDO2, what is a 'discoverable credential' (or 'resident key'), and what user experience does it enable?",
+      "answers": [
+        {"answer": "A credential that can be discovered on the network using a broadcast protocol."},
+        {"answer": "A credential where the private key is stored on the server, but is discoverable by the authenticator."},
+        {"answer": "A credential where the key pair and user information are stored directly on the authenticator (e.g., a YubiKey or phone), enabling username-less, passwordless authentication."},
+        {"answer": "A credential that is tied to the user's browser profile and can be discovered by any website the user visits."}
+      ],
+      "answer": "A credential where the key pair and user information are stored directly on the authenticator (e.g., a YubiKey or phone), enabling username-less, passwordless authentication.",
+      "explanation": "In a standard WebAuthn flow, the relying party (the website) stores the `credentialID` and looks up the user by username first. The server then asks the authenticator to sign a challenge using the key associated with that specific `credentialID`. With a 'discoverable credential', the authenticator itself stores not only the private key but also the `credentialID` and user handle (a reference to the user). This enables a superior user experience. The user can simply arrive at a login page, activate their authenticator (e.g., via biometrics), and the authenticator can present a list of all accounts it has for that website directly to the browser. The user selects an account, the authenticator proves ownership of the corresponding private key, and the login completes without the user ever having to type a username. This is a true passwordless and username-less flow."
+    },
+    {
+      "question": "What is the 'Billion Laughs' attack, and how does it apply to parsing XML-based assertion formats like SAML?",
+      "answers": [
+        {"answer": "A social engineering attack where the attacker sends a billion funny messages to distract an administrator."},
+        {"answer": "A type of XML entity expansion attack where a small, nested entity definition can expand exponentially, consuming vast amounts of memory and CPU, leading to a Denial of Service."},
+        {"answer": "A timing attack that measures the number of laughs per second to deduce cryptographic key material."},
+        {"answer": "An attack that exploits a billion different known vulnerabilities in SAML implementations."}
+      ],
+      "answer": "A type of XML entity expansion attack where a small, nested entity definition can expand exponentially, consuming vast amounts of memory and CPU, leading to a Denial of Service.",
+      "explanation": "The 'Billion Laughs' attack is a classic XML Denial of Service (DoS) vulnerability. It exploits the XML feature of entity expansion. An attacker defines a small entity (e.g., `&lol1;` as 'lol'). Then they define a larger entity that references the first one multiple times (e.g., `&lol2;` as ten `&lol1;`s). This continues with `&lol3;` referencing ten `&lol2;`s, and so on. A final entity reference in the document to the largest entity (e.g., `&lol9;`) will cause the XML parser to attempt to expand this recursively. The result is an exponential growth in data size (10^9 or a 'billion laughs' in this case), which rapidly consumes all available memory and CPU resources of the server processing the XML, leading to a crash or denial of service. Since SAML assertions are XML-based, any SAML service provider that parses incoming assertions without disabling or limiting DTDs and entity expansion is vulnerable to this attack."
+    },
+    {
+      "question": "What is the core principle behind Google's Zanzibar authorization system, and what problem does it solve at scale?",
+      "answers": [
+        {"answer": "It uses a globally distributed blockchain to store all authorization policies."},
+        {"answer": "It is a role-based access control (RBAC) system that relies on a central SQL database for all permission checks."},
+        {"answer": "It's a globally consistent, relationship-based access control system that stores ACLs as a directed graph of relations and uses snapshot reads with 'Zookies' to ensure both low latency and correctness."},
+        {"answer": "It offloads all authorization decisions to the client-side application to reduce server load."}
+      ],
+      "answer": "It's a globally consistent, relationship-based access control system that stores ACLs as a directed graph of relations and uses snapshot reads with 'Zookies' to ensure both low latency and correctness.",
+      "explanation": "Zanzibar is Google's solution for a unified, planet-scale authorization system, used by services like Google Drive and YouTube. It solves the problem of performing consistent permission checks across a massive, globally distributed dataset. Its core idea is to represent all permissions as relationship tuples, e.g., `(user:bob, viewer, doc:readme)`. These tuples form a massive, directed graph. Authorization checks (`Check` requests) become graph traversal problems. To handle scale and latency, Zanzibar allows checks to be served from potentially stale local replicas. To ensure correctness despite this, it introduces 'Zookies' – opaque tokens that encode a timestamp of the last relevant write operation. A client can pass a Zookie with its `Check` request to ensure the replica serving the request is at least as fresh as that timestamp, thus preventing inconsistent results due to replication lag. This provides 'snapshot consistency' and avoids the high latency of always querying a central, up-to-date leader."
+    },
+    {
+      "question": "In cryptography, what is a 'padding oracle' attack, and how could it be used against a system that encrypts session cookies using CBC mode?",
+      "answers": [
+        {"answer": "An attack that adds extra padding to a request to cause a buffer overflow."},
+        {"answer": "A side-channel attack where an attacker can decrypt ciphertext by repeatedly sending modified ciphertexts to a server and observing whether the server's response indicates a padding error or a different error."},
+        {"answer": "A system that provides correctly padded plaintexts for any given ciphertext."},
+        {"answer": "An attack where the oracle at Delphi is consulted to break cryptographic padding."}
+      ],
+      "answer": "A side-channel attack where an attacker can decrypt ciphertext by repeatedly sending modified ciphertexts to a server and observing whether the server's response indicates a padding error or a different error.",
+      "explanation": "This attack exploits a weakness in how systems report errors for incorrectly padded ciphertext. In a block cipher mode like CBC, the plaintext must be a multiple of the block size, so padding (e.g., PKCS#7) is added. When decrypting, the server first decrypts the blocks and then checks if the padding at the end is valid. If an attacker has a ciphertext (e.g., an encrypted session cookie) and can send modified versions to the server, they can use the server's response as an 'oracle'. If the server responds with a 'Bad Padding' error, the attacker learns something about the intermediate plaintext state. If it responds with a different error (e.g., 'Invalid MAC' or 'Invalid Session'), the attacker knows the padding was, by chance, correct. By systematically modifying one byte at a time and observing this difference in error messages, the attacker can, byte-by-byte, reconstruct the entire original plaintext without ever knowing the encryption key."
+    },
+    {
+      "question": "What is the primary difference between Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC)?",
+      "answers": [
+        {"answer": "RBAC is more secure because it uses fewer rules."},
+        {"answer": "RBAC assigns permissions to users based on their defined roles within an organization. ABAC makes access decisions based on a dynamic evaluation of policies that combine attributes of the user, the resource, the action, and the environment."},
+        {"answer": "ABAC is a simpler model that only considers user attributes, whereas RBAC considers user roles."},
+        {"answer": "RBAC is used for authentication, while ABAC is used for authorization."}
+      ],
+      "answer": "RBAC assigns permissions to users based on their defined roles within an organization. ABAC makes access decisions based on a dynamic evaluation of policies that combine attributes of the user, the resource, the action, and the environment.",
+      "explanation": "RBAC is a relatively static model. A user is assigned one or more roles (e.g., 'editor', 'viewer'), and each role is granted a set of permissions. Access is determined by checking if the user's role has the required permission. ABAC is a much more fine-grained and dynamic model. An access decision is made by a policy engine that evaluates rules based on multiple attributes. For example, a rule might state: 'Allow a user to access a document if the user's clearance level (user attribute) is 'Secret' AND the document's sensitivity (resource attribute) is 'Secret' AND the action is 'view' AND the time of day (environment attribute) is during business hours.' ABAC provides enormous flexibility and context-awareness but is significantly more complex to implement and manage than RBAC."
+    },
+    {
+      "question": "What is 'key confusion' or 'cross-algorithm' attack against JWTs, and how does a well-designed library prevent it?",
+      "answers": [
+        {
+          "answer": "An attack where the attacker is confused about which key to use."
+        },
+        {
+          "answer": "A vulnerability where an attacker can trick a server into verifying a token signed with a symmetric algorithm (HS256) using an asymmetric public key."
+        },
+        {
+          "answer": "A denial-of-service attack that provides a key of the wrong type, causing the verifier to crash."
+        },
+        {
+          "answer": "An attack that confuses the key management system into issuing a key for the wrong user."
+        }
+      ],
+      "answer": "A vulnerability where an attacker can trick a server into verifying a token signed with a symmetric algorithm (HS256) using an asymmetric public key.",
+      "explanation": "This is a subtle but critical JWT vulnerability. Suppose a server is configured to verify tokens using an asymmetric algorithm like RS256. To do this, it makes its public key available. An attacker obtains this public key. They then craft a malicious JWT, but in the header, they set `alg` to `HS256`, a symmetric algorithm. They then sign this token using the *public key itself* as the secret key for the HMAC-SHA256 signature. When the malicious token is sent to the server, a vulnerable library sees `alg: 'HS256'` and fetches the key configured for this user/issuer, which is the public key. It then uses this public key as the HMAC secret to validate the signature. Since the attacker also used the public key as the secret, the signature validation succeeds. A secure library prevents this by ensuring that the key provided for verification is of the correct type for the algorithm specified in the token's header (e.g., it refuses to use an RSA public key for an HMAC verification)."
+    },
+    {
+      "question": "What is the primary function of the 'state' parameter in an OAuth 2.0 Authorization Code flow?",
+      "answers": [
+        {"answer": "To maintain the user's session state on the authorization server."},
+        {"answer": "To store the user's access token."},
+        {"answer": "To prevent Cross-Site Request Forgery (CSRF) attacks by correlating the client's initial request with the final callback."},
+        {"answer": "To indicate the desired state (e.g., 'online' or 'offline') of the access token."}
+      ],
+      "answer": "To prevent Cross-Site Request Forgery (CSRF) attacks by correlating the client's initial request with the final callback.",
+      "explanation": "The 'state' parameter is a crucial CSRF protection mechanism. Before redirecting the user to the authorization server, the client application generates a random, unpredictable, and session-bound value and stores it. It then includes this value in the `state` parameter of the authorization request. After the user authenticates and authorizes the client, the authorization server redirects the user back to the client's `redirect_uri`, including the exact same `state` value as a parameter. The client application MUST then compare the received `state` value with the one it stored in the user's session. If they do not match, the request must be rejected. This prevents an attacker from tricking a logged-in user into clicking a malicious link that would initiate an authorization flow and link the attacker's account to the victim's session."
+    },
+    {
+      "question": "What is a Time-based One-Time Password (TOTP) algorithm's core components?",
+      "answers": [
+        {
+          "answer": "A shared secret key, the current GPS location, and an HMAC function."
+        },
+        {
+          "answer": "A user's password, a public key, and the SHA-256 algorithm."
+        },
+        {
+          "answer": "A shared secret key, the current time synchronized into discrete steps, and an HMAC-based key derivation function (like HMAC-SHA1)."
+        },
+        {
+          "answer": "A counter that is incremented with every login attempt and a public key."
+        }
+      ],
+      "answer": "A shared secret key, the current time synchronized into discrete steps, and an HMAC-based key derivation function (like HMAC-SHA1).",
+      "explanation": "TOTP (RFC 6238) is the basis for most authenticator apps. Its operation relies on two shared pieces of information between the user's device and the server: a secret key (shared during setup, often as a QR code) and the current time. The algorithm works as follows: 1) Both client and server take the current Unix time and divide it by a time-step (usually 30 seconds) to get a synchronized, slowly changing integer counter. 2) This counter value is combined with the shared secret key using an HMAC (Hash-based Message Authentication Code) function, typically HMAC-SHA1. 3) The resulting HMAC hash is a long binary string. A specific, standardized procedure is used to truncate this hash into a 6-digit (or 8-digit) code that is easy for the user to read and type. Because both sides use the same secret and the same time-step, they will generate the same code for that 30-second window."
+    },
+    {
+      "question": "In the context of password hashing, what is the purpose of 'salting' and 'peppering'?",
+      "answers": [
+        {
+          "answer": "Salting adds a unique value per user before hashing to mitigate rainbow table attacks; peppering adds a server-side secret to the hash to make it harder to crack if the database is stolen."
+        },
+        {
+          "answer": "Salting encrypts the password, and peppering adds a random string to the end."
+        },
+        {
+          "answer": "Salting is a slow hashing algorithm, while peppering is a fast one."
+        },
+        {
+          "answer": "They are two names for the same process of adding a random value to the password before hashing."
+        }
+      ],
+      "answer": "Salting adds a unique value per user before hashing to mitigate rainbow table attacks; peppering adds a server-side secret to the hash to make it harder to crack if the database is stolen.",
+      "explanation": "Salting is a critical defense. A unique, random salt is generated for each user and stored alongside their password hash. The salt is combined with the password before hashing. This ensures that two users with the same password will have different hashes, rendering pre-computed hash lists (rainbow tables) useless. Peppering is an additional, optional defense. A 'pepper' is a secret value that is the same for all users but is stored separately from the database (e.g., in an environment variable or a hardware security module). It is added to the password/salt combination before hashing. The goal of the pepper is to add a secret element that an attacker would not have even if they successfully steal the entire user database with its hashes and salts. This makes offline brute-force or dictionary attacks on the stolen database much more difficult."
+    },
+    {
+      "question": "What is the 'Same-Origin Policy' (SOP) in web browsers, and how does it relate to authentication mechanisms?",
+      "answers": [
+        {
+          "answer": "A policy that requires all scripts on a page to originate from the same file."
+        },
+        {
+          "answer": "A fundamental security mechanism that restricts how a document or script loaded from one origin (domain, protocol, port) can interact with a resource from another origin. It is the reason technologies like CORS are needed."
+        },
+        {
+          "answer": "A policy that ensures all users of a website originate from the same country."
+        },
+        {
+          "answer": "A feature that automatically logs in a user if they originate from a trusted IP address."
+        }
+      ],
+      "answer": "A fundamental security mechanism that restricts how a document or script loaded from one origin (domain, protocol, port) can interact with a resource from another origin. It is the reason technologies like CORS are needed.",
+      "explanation": "The Same-Origin Policy is a cornerstone of web security. It prevents a malicious script on one page (e.g., `evil.com`) from making arbitrary requests to and reading the response from another page (e.g., `your-bank.com`). Without SOP, a script on a malicious site could use a logged-in user's credentials (like session cookies, which are sent automatically) to make authenticated API requests to their bank and read their account balance. SOP is what prevents this. When a script tries to make a cross-origin HTTP request (e.g., using `XMLHttpRequest` or `fetch`), the browser blocks the script from seeing the response by default. To allow legitimate cross-origin requests, the server at the destination origin must explicitly opt-in using Cross-Origin Resource Sharing (CORS) headers (like `Access-Control-Allow-Origin`)."
+    },
+    {
+      "question": "What is a 'blinding attack' in the context of some cryptographic signature schemes?",
+      "answers": [
+        {
+          "answer": "An attack that blinds the user with a bright light to steal their password."
+        },
+        {
+          "answer": "A form of attack where an adversary can have a message signed by a legitimate party without revealing the content of the message itself. This is a feature in privacy-preserving protocols like anonymous digital cash."
+        },
+        {
+          "answer": "An attack that erases the digital signature from a document."
+        },
+        {
+          "answer": "A denial-of-service attack that sends a blinding number of signature requests."
+        }
+      ],
+      "answer": "A form of attack where an adversary can have a message signed by a legitimate party without revealing the content of the message itself. This is a feature in privacy-preserving protocols like anonymous digital cash.",
+      "explanation": "Blinding is a cryptographic technique that can be either a feature or a vulnerability depending on the context. In a protocol like Chaumian blinding for e-cash, it's a feature. A user 'blinds' a message (a digital coin) by multiplying it with a random factor. They send the blinded message to a bank to be signed. The bank signs the blinded message and sends it back. The user can then mathematically 'unblind' the signature, resulting in a valid signature on the original, unblinded message. The bank has signed something, but it cannot link the signed message back to the original request. In other contexts, if a signature scheme is not designed to handle it, this same property could be an attack, allowing an adversary to obtain a valid signature on a malicious message by tricking a user into signing a blinded, innocent-looking version of it."
+    },
+    {
+      "question": "What is the primary difference between Authentication and Authorization?",
+      "answers": [
+        {
+          "answer": "They are two terms for the same process of logging a user in."
+        },
+        {
+          "answer": "Authentication is the process of verifying a user's identity (proving you are who you say you are), while Authorization is the process of granting or denying that authenticated user access to specific resources or actions (determining what you are allowed to do)."
+        },
+        {
+          "answer": "Authorization must always happen before Authentication."
+        },
+        {
+          "answer": "Authentication is handled by the frontend, while Authorization is handled by the backend."
+        }
+      ],
+      "answer": "Authentication is the process of verifying a user's identity (proving you are who you say you are), while Authorization is the process of granting or denying that authenticated user access to specific resources or actions (determining what you are allowed to do).",
+      "explanation": "This is the most fundamental distinction in access control. Authentication (often abbreviated as AuthN) answers the question 'Who are you?'. It's the process of validating credentials like a password, a biometric scan, or a security key to confirm a user's claimed identity. Authorization (AuthZ) answers the question 'What are you allowed to do?'. This process happens *after* a user has been successfully authenticated. It involves checking the authenticated user's permissions, roles, or attributes against an access control policy to determine if they should be allowed to perform a requested action, such as reading a file, deleting a record, or accessing an admin dashboard. You cannot authorize someone whose identity you don't know."
+    },
+    {
+      "question": "In a system using JSON Web Tokens (JWTs), what is the 'audience' (aud) claim used for?",
+      "answers": [
+        {
+          "answer": "To specify which group of users this token is intended for."
+        },
+        {
+          "answer": "To identify the recipient or service for which the JWT is intended. A service should reject any token where it is not the intended audience."
+        },
+        {
+          "answer": "To specify the issuer of the token."
+        },
+        {
+          "answer": "To list the audience members who attended the creation of the token."
+        }
+      ],
+      "answer": "To identify the recipient or service for which the JWT is intended. A service should reject any token where it is not the intended audience.",
+      "explanation": "The 'aud' claim is a critical security validation step. It identifies the intended recipient(s) of the token. When a service (the 'resource server') receives a JWT, it MUST validate that its own identifier is present in the `aud` claim. This prevents a token that was issued for one service (e.g., `https://api.example.com/profile`) from being replayed and accepted by a different service (e.g., `https://api.example.com/billing`). If this check were omitted, an attacker who compromises a low-security service could potentially steal a token and use it to access a high-security service, bypassing its authorization checks. The `aud` claim ensures a token is only valid for the specific context for which it was issued."
+    },
+    {
+      "question": "What is a 'replay attack' in the context of authentication protocols?",
+      "answers": [
+        {
+          "answer": "An attack where the user replays a video game to find a security flaw."
+        },
+        {
+          "answer": "A form of network attack in which a valid data transmission is maliciously or fraudulently repeated or delayed. An attacker intercepts a message and re-transmits it later to impersonate the legitimate user."},
+        {"answer": "An attack where the server's reply is sent back to it."},
+        {"answer": "A denial-of-service attack that replays the same request over and over."}
+      ],
+      "answer": "A form of network attack in which a valid data transmission is maliciously or fraudulently repeated or delayed. An attacker intercepts a message and re-transmits it later to impersonate the legitimate user.",
+      "explanation": "A replay attack is a classic man-in-the-middle attack vector. The attacker doesn't need to decrypt the message, only capture and resend it. For example, if an authentication protocol simply involved sending a hashed password, an attacker could capture that hash and replay it to the server to log in. This is why robust protocols use mechanisms to prevent replay attacks, such as: 1) Timestamps: The server rejects messages that are too old. 2) Challenges/Nonces: The server sends a unique, unpredictable challenge, and the client's response must incorporate this challenge, proving the response is fresh and not replayed. 3) Sequence Numbers: Each message in a session has a unique, incrementing sequence number."
+    },
+    {
+      "question": "What is the primary vulnerability of OAuth 2.0's 'Implicit Flow' that led to it being deprecated in favor of the 'Authorization Code Flow with PKCE'?",
+      "answers": [
+        {
+          "answer": "It is too complex for developers to implement correctly."
+        },
+        {
+          "answer": "It returns the Access Token directly in the URL fragment, making it vulnerable to leakage via browser history, logs, and referrer headers, and it lacks a mechanism to confirm the token was issued to the legitimate client."
+        },
+        {
+          "answer": "It requires the client to have a backend server, which is not suitable for single-page applications."
+        },
+        {
+          "answer": "It can only be used with confidential clients."
+        }
+      ],
+      "answer": "It returns the Access Token directly in the URL fragment, making it vulnerable to leakage via browser history, logs, and referrer headers, and it lacks a mechanism to confirm the token was issued to the legitimate client.",
+      "explanation": "The Implicit Flow was designed for simplicity in browser-based apps. However, it returns the valuable access token directly to the browser in the URL's hash fragment. This creates several security risks: the token can be leaked through browser history, web server logs, or as part of the `Referer` header if the user navigates away from the page. More critically, there is no way for the single-page app (SPA) to cryptographically verify that it was the intended recipient of the token. An attacker could potentially trick a user, obtain a token, and then redirect the user back to the legitimate SPA with the malicious token. The modern best practice (as defined in OAuth 2.1) is to use the Authorization Code Flow with PKCE for all clients, including SPAs. This flow returns a one-time-use code to the browser, and the access token is fetched securely in a separate backend request, which PKCE protects from interception."
+    },
+    {
+      "question": "What is a 'salt' in the context of password hashing?",
+      "answers": [
+        {"answer": "A common password that is added to a user's password to make it stronger."},
+        {"answer": "A secret key that is used to encrypt the password hash."},
+        {"answer": "A unique, random value that is generated for each user and combined with their password before hashing. It is stored alongside the hash in the database."},
+        {"answer": "A type of slow hashing algorithm."}
+      ],
+      "answer": "A unique, random value that is generated for each user and combined with their password before hashing. It is stored alongside the hash in the database.",
+      "explanation": "Salting is a fundamental defense against a specific type of attack on password databases: rainbow table attacks. A rainbow table is a pre-computed list of hashes for common passwords. If an attacker steals a database of unsalted hashes, they can simply look up the hashes in their table to find the original passwords. By adding a unique salt to each user's password before hashing, you ensure that two users with the same password (e.g., 'password123') will have completely different hashes in the database. This renders rainbow tables useless, as an attacker would need to generate a separate table for every possible salt, which is computationally infeasible. The salt is not a secret; it's stored with the hash and is used during login to re-hash the user's provided password for comparison."
+    },
+    {
+      "question": "What is SAML (Security Assertion Markup Language) primarily used for?",
+      "answers": [
+        {"answer": "For defining security policies within a single application."},
+        {"answer": "As a markup language for creating secure user interfaces."},
+        {"answer": "An XML-based open standard for exchanging authentication and authorization data between parties, typically between an Identity Provider (IdP) and a Service Provider (SP), to enable web-based single sign-on (SSO)."},
+        {"answer": "A protocol for securely transmitting audio and video streams."}
+      ],
+      "answer": "An XML-based open standard for exchanging authentication and authorization data between parties, typically between an Identity Provider (IdP) and a Service Provider (SP), to enable web-based single sign-on (SSO).",
+      "explanation": "SAML is a mature and widely-used federation protocol, especially in enterprise environments. The core use case is Single Sign-On. A user authenticates once with their organization's Identity Provider (e.g., Active Directory, Okta). When they try to access a third-party Service Provider (e.g., Salesforce, Slack), the SP redirects them to the IdP. The IdP, knowing the user is already authenticated, generates a SAML Assertion—a digitally signed XML document containing the user's identity and attributes. The user's browser then POSTs this assertion back to the SP. The SP verifies the digital signature of the IdP, trusts the information in the assertion, and logs the user in without ever needing to see the user's password. This allows for centralized identity management and a seamless SSO experience."
+    },
+    {
+      "question": "What is the 'principle of least privilege'?",
+      "answers": [
+        {"answer": "The principle that a user should have as few privileges as possible to be productive."},
+        {"answer": "A fundamental security principle stating that a user, program, or process should only be given the bare minimum permissions (privileges) necessary to perform its intended function."},
+        {"answer": "A legal principle that governs data privacy."},
+        {"answer": "The idea that the administrator account should have the least amount of privilege in the system."}
+      ],
+      "answer": "A fundamental security principle stating that a user, program, or process should only be given the bare minimum permissions (privileges) necessary to perform its intended function.",
+      "explanation": "This is a core concept in secure system design. Instead of granting broad permissions, access should be granular and specific. A user account for daily tasks should not have administrative rights. A web server process that only needs to read files from a specific directory should not have write access to the entire file system. By enforcing the principle of least privilege, you limit the potential damage that can be caused by an accident, a bug, or a security compromise. If an attacker gains control of a process, they can only do what that process is permitted to do, thus containing the breach."
+    },
+    {
+      "question": "What is a 'session fixation' attack?",
+      "answers": [
+        {"answer": "An attack that fixes a user's session to a specific server."},
+        {"answer": "A denial-of-service attack that floods the server with new session requests."},
+        {"answer": "An attack where the attacker forces a user's browser to use a session identifier known to the attacker. After the user logs in, the attacker can use that same session identifier to hijack the user's authenticated session."},
+        {"answer": "A bug where a user's session never expires."}
+      ],
+      "answer": "An attack where the attacker forces a user's browser to use a session identifier known to the attacker. After the user logs in, the attacker can use that same session identifier to hijack the user's authenticated session.",
+      "explanation": "Session fixation exploits the fact that some web applications accept session identifiers from the client. The attack flow is: 1) The attacker obtains a valid session ID from the target site (e.g., by visiting it themselves). 2) They trick the victim into using this specific session ID (e.g., by sending them a link like `http://example.com/?sessionid=...`). 3) The victim clicks the link, their browser adopts the attacker's session ID, and then they proceed to log in. 4) The server authenticates the user but continues to use the same session ID, associating it now with the victim's authenticated state. 5) Since the attacker knows the session ID, they can now use it to access the victim's logged-in session. The primary defense against this is to always generate a new, fresh session identifier immediately after a user successfully authenticates."
+    },
+    {
+      "question": "What is the primary purpose of an 'API Gateway' in a microservices architecture?",
+      "answers": [
+        {"answer": "To act as a single entry point for all clients, handling tasks like routing, authentication, rate limiting, and logging, while abstracting the underlying microservice infrastructure."},
+        {"answer": "To replace the need for individual microservices by combining them into a monolith."},
+        {"answer": "A database that stores all the API schemas for the microservices."},
+        {"answer": "A tool for automatically generating API documentation."}
+      ],
+      "answer": "To act as a single entry point for all clients, handling tasks like routing, authentication, rate limiting, and logging, while abstracting the underlying microservice infrastructure.",
+      "explanation": "In a microservices architecture, a client might need to get data from several different services to build a single view. Having the client call each service directly would be complex and brittle. An API Gateway acts as a reverse proxy and a facade. All client requests go to the gateway. The gateway is then responsible for common 'cross-cutting' concerns: 1) Authentication: It can validate a user's token (e.g., a JWT) and reject unauthenticated requests before they reach the internal network. 2) Routing: It routes the incoming request to the appropriate downstream microservice(s). 3) Aggregation: It can call multiple microservices and aggregate their responses into a single response for the client. 4) Other tasks like SSL termination, rate limiting, caching, and logging. This simplifies the client code and provides a centralized place to enforce security and operational policies."
+    },
+    {
+      "question": "What is 'MFA' (Multi-Factor Authentication)?",
+      "answers": [
+        {"answer": "A system that requires the user to have multiple factors of the same type (e.g., three different passwords)."},
+        {"answer": "A security process that requires a user to provide two or more verification factors from different categories to gain access to a resource."},
+        {"answer": "A method for authenticating multiple users at the same time."},
+        {"answer": "A marketing term for a very secure password."}
+      ],
+      "answer": "A security process that requires a user to provide two or more verification factors from different categories to gain access to a resource.",
+      "explanation": "MFA provides a layered defense and makes it significantly harder for an unauthorized person to access an account. The verification factors are typically grouped into three categories: 1) Something you know (e.g., a password, a PIN). 2) Something you have (e.g., a mobile phone for receiving a code, a hardware security key). 3) Something you are (e.g., a fingerprint, a face scan - biometrics). By requiring at least two factors from different categories, you ensure that even if one factor (like the password) is compromised, the attacker still cannot gain access without the second factor (like the user's physical phone)."
+    },
+    {
+      "question": "What is Cross-Site Scripting (XSS)?",
+      "answers": [
+        {"answer": "A type of attack where a script is transferred across two different computer sites."},
+        {"answer": "A security vulnerability where an attacker injects malicious scripts (usually JavaScript) into a trusted website, which are then executed in the victim's browser."},
+        {"answer": "A method for writing scripts that work on multiple websites."},
+        {"answer": "A technique for securely sharing scripts between sites."}
+      ],
+      "answer": "A security vulnerability where an attacker injects malicious scripts (usually JavaScript) into a trusted website, which are then executed in the victim's browser.",
+      "explanation": "XSS is one of the most common web application vulnerabilities. It occurs when an application takes user-provided input and includes it in a webpage without properly sanitizing or encoding it. An attacker can then inject their own script. When another user views this page, the attacker's script runs in their browser with the full permissions of the trusted website. This allows the attacker to do things like steal the user's session cookies, modify the content of the page, or redirect the user to a malicious site. The primary defense is to always treat user input as untrusted and to properly encode any output to the page to ensure it is treated as text, not as executable code."
+    },
+    {
+      "question": "What is Cross-Site Request Forgery (CSRF or XSRF)?",
+      "answers": [
+        {"answer": "An attack where an attacker forges a request from a different website."},
+        {"answer": "An attack that tricks a logged-in user into submitting a malicious request to a web application they are authenticated with, without their knowledge."},
+        {"answer": "A technique for making legitimate requests across different sites."},
+        {"answer": "A type of attack that forges a user's digital signature."}
+      ],
+      "answer": "An attack that tricks a logged-in user into submitting a malicious request to a web application they are authenticated with, without their knowledge.",
+      "explanation": "CSRF exploits the trust a website has in a user's browser. The attack works like this: 1) A user is logged into a vulnerable site, `bank.com`. 2) The user visits a malicious site, `evil.com`. 3) `evil.com` contains hidden code (e.g., an image tag or a form that is auto-submitted) that sends a request to `bank.com` to perform an action, like `POST /transfer?to=attacker&amount=1000`. 4) The user's browser helpfully includes their `bank.com` session cookie with this request. 5) `bank.com` receives a valid request from a logged-in user and processes the transfer. The user performed the action without realizing it. The primary defense is the use of anti-CSRF tokens: the server embeds a unique, unpredictable token in every form, and it will only process requests that include this valid token, which the attacker on `evil.com` cannot know."
+    },
+    {
+      "question": "What is OpenID Connect (OIDC)?",
+      "answers": [
+        {"answer": "It is a replacement for OAuth 2.0 that handles authorization."},
+        {"answer": "A simple identity layer built on top of the OAuth 2.0 protocol. It allows clients to verify the identity of the end-user based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the user."},
+        {"answer": "A protocol for connecting to open databases."},
+        {"answer": "An open-source identity management system."}
+      ],
+      "answer": "A simple identity layer built on top of the OAuth 2.0 protocol. It allows clients to verify the identity of the end-user based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the user.",
+      "explanation": "OAuth 2.0 is a framework for *authorization* – it allows a user to grant a third-party application limited access to their resources on another service, without sharing their password. It provides an access token. However, OAuth 2.0 itself doesn't provide a standard way for the application to know *who* the user is that authorized the access. OIDC fixes this. It's a thin layer on top of OAuth 2.0 that introduces a new type of token: the ID Token. The ID Token is a JWT that contains claims about the authentication event (who logged in, when, and how) and the user's identity (like their name and email). OIDC provides the 'identity' part that OAuth 2.0 lacks, making it a complete federation protocol."
+    },
+    {
+      "question": "In cryptography, what is a 'digital signature'?",
+      "answers": [
+        {"answer": "A scanned image of a person's handwritten signature."},
+        {"answer": "A mathematical scheme for verifying the authenticity and integrity of a digital message or document. It is created by hashing the message and then encrypting the hash with the signer's private key."},
+        {"answer": "A method for encrypting a document so only the intended recipient can read it."},
+        {"answer": "A special font that looks like a signature."}
+      ],
+      "answer": "A mathematical scheme for verifying the authenticity and integrity of a digital message or document. It is created by hashing the message and then encrypting the hash with the signer's private key.",
+      "explanation": "A digital signature provides three key security properties: 1) Authenticity: Since the signature is created with the signer's private key, anyone with the corresponding public key can verify that the signature was created by the owner of that key. 2) Integrity: The signature is based on a cryptographic hash of the message content. If even a single bit of the message is changed, the hash will change, and the signature will no longer be valid. 3) Non-repudiation: The signer cannot later deny having signed the message, as only they could have created the signature with their private key. The process is: Signer hashes the message, then encrypts that hash with their private key. Verifier decrypts the signature with the public key to get the original hash, independently hashes the message, and confirms the two hashes match."
+    },
+    {
+      "question": "What is a 'man-in-the-middle' (MITM) attack?",
+      "answers": [
+        {"answer": "An attack where someone stands in the middle of a room to eavesdrop."},
+        {"answer": "An attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating with each other."},
+        {"answer": "A type of social engineering attack."},
+        {"answer": "An attack on the middle layer of the OSI model."}
+      ],
+      "answer": "An attack where the attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating with each other.",
+      "explanation": "In a MITM attack, the attacker positions themselves between the user and the legitimate server. For the user, the attacker pretends to be the server. For the server, the attacker pretends to be the user. This allows the attacker to intercept, read, and even modify all traffic passing between them. For example, on an unsecured Wi-Fi network, an attacker could intercept a user's login attempt, capture their password, and then pass the login on to the real server. The primary defense against MITM attacks on the web is the use of TLS/SSL (HTTPS), which uses digital certificates to allow the browser to verify the identity of the server it is talking to and encrypts all traffic between them."
+    },
+    {
+      "question": "What does 'hashing' mean in a security context?",
+      "answers": [
+        {"answer": "The process of encrypting data so it can be decrypted later."},
+        {"answer": "The process of transforming an arbitrary size of data into a fixed-size value (the hash). It is a one-way function, meaning the original data cannot be recovered from the hash."},
+        {"answer": "The process of chopping up data into smaller pieces."},
+        {"answer": "A method for making data look messy and unreadable."}
+      ],
+      "answer": "The process of transforming an arbitrary size of data into a fixed-size value (the hash). It is a one-way function, meaning the original data cannot be recovered from the hash.",
+      "explanation": "Hashing is a fundamental building block in cryptography. A cryptographic hash function (like SHA-256) takes an input (e.g., a password or a file) and produces a unique, fixed-length string of characters. Key properties are: 1) Deterministic: The same input always produces the same output. 2) One-way: It is computationally infeasible to reverse the process and find the original input from the hash. 3) Collision-resistant: It is extremely difficult to find two different inputs that produce the same hash. This makes it ideal for storing password representations (you store the hash, not the password) and for verifying data integrity (you can compare the hash of a downloaded file to the original to ensure it hasn't been corrupted)."
+    },
+    {
+      "question": "What is 'rate limiting' and why is it important for login systems?",
+      "answers": [
+        {"answer": "A feature that limits the rate at which a user can type their password."},
+        {"answer": "A technique used to control the rate of requests that a client can make to a server. It is crucial for preventing brute-force password guessing attacks and denial-of-service attacks."},
+        {"answer": "A method for rating the quality of a user's login attempts."},
+        {"answer": "A financial term related to interest rates on user accounts."}
+      ],
+      "answer": "A technique used to control the rate of requests that a client can make to a server. It is crucial for preventing brute-force password guessing attacks and denial-of-service attacks.",
+      "explanation": "Rate limiting is a critical defense mechanism. For a login endpoint, it prevents an attacker from making thousands of password guesses per second (a brute-force attack). The system might be configured to allow, for example, only 5 failed login attempts from a single IP address per minute. After that, it temporarily blocks further attempts from that IP. This makes automated password guessing extremely slow and impractical. Rate limiting is also used more broadly to protect APIs from being overwhelmed by too many requests (a Denial of Service attack), to ensure fair usage among different clients, and to prevent resource exhaustion on the server."
+    },
+    {
+      "question": "What is a 'session cookie'?",
+      "answers": [
+        {"answer": "A type of cookie that is eaten during a coding session."},
+        {"answer": "A small piece of data sent from a website and stored on the user's computer by the web browser. It is used to maintain the user's state, typically their logged-in status, across multiple page requests."},
+        {"answer": "An encrypted file that contains the user's password."},
+        {"answer": "A cookie that is only valid for a single browser session and is deleted when the browser is closed."}
+      ],
+      "answer": "A small piece of data sent from a website and stored on the user's computer by the web browser. It is used to maintain the user's state, typically their logged-in status, across multiple page requests.",
+      "explanation": "HTTP, the protocol of the web, is stateless. This means each request is independent, and the server has no memory of previous requests from the same user. To solve this, servers use sessions. After a user logs in, the server creates a unique, random session identifier, stores it, and sends it back to the user's browser in the form of a cookie. For every subsequent request to that server, the browser automatically includes this session cookie. The server can then look up the session ID to retrieve the user's state (e.g., who they are, what's in their shopping cart) and know that the request is coming from an authenticated user. While some session cookies are deleted when the browser closes, many are persistent to allow for 'Remember Me' functionality."
+    },
+    {
+      "question": "What does the 'HttpOnly' flag on a cookie do?",
+      "answers": [
+        {"answer": "It makes the cookie only accessible over HTTP, not HTTPS."},
+        {"answer": "It prevents the cookie from being accessed by client-side scripts (like JavaScript), mitigating cookie theft via Cross-Site Scripting (XSS) attacks."},
+        {"answer": "It indicates that the cookie can only contain HTTP-related data."},
+        {"answer": "It is a flag that tells the browser this is the only cookie for the site."}
+      ],
+      "answer": "It prevents the cookie from being accessed by client-side scripts (like JavaScript), mitigating cookie theft via Cross-Site Scripting (XSS) attacks.",
+      "explanation": "The `HttpOnly` flag is an important security attribute for cookies, especially session cookies. When a cookie is set with this flag, the browser will not allow any client-side script (e.g., JavaScript running on the page) to read or modify it via `document.cookie`. This is a crucial defense against XSS attacks. If an attacker manages to inject a malicious script onto a page, that script could try to steal the user's session cookie and send it to the attacker's server. If the session cookie is marked as `HttpOnly`, the script cannot access it, and this attack vector is blocked. The cookie is still sent to the server with every HTTP request as normal."
+    },
+    {
+      "question": "What is the purpose of the 'Secure' flag on a cookie?",
+      "answers": [
+        {"answer": "It encrypts the content of the cookie."},
+        {"answer": "It ensures the cookie is only sent from the browser to the server over an encrypted HTTPS connection, never over unencrypted HTTP."},
+        {"answer": "It marks the cookie as a security-related cookie."},
+        {"answer": "It means the cookie has been scanned for viruses."}
+      ],
+      "answer": "It ensures the cookie is only sent from the browser to the server over an encrypted HTTPS connection, never over unencrypted HTTP.",
+      "explanation": "The `Secure` flag is another critical security attribute for cookies containing sensitive information. When this flag is set, the browser is instructed to never send the cookie with a request that uses the unencrypted HTTP protocol. It will only include the cookie in requests made over a secure, encrypted HTTPS connection. This prevents an attacker on the same network (e.g., a public Wi-Fi) from sniffing the network traffic and capturing the session cookie in plaintext. For any site that uses HTTPS, all session cookies should be set with the `Secure` flag."
+    },
+    {
+      "question": "What is a 'brute-force attack' in the context of logins?",
+      "answers": [
+        {"answer": "A very forceful and aggressive way of logging in."},
+        {"answer": "An attack where the user's computer is physically broken into."},
+        {"answer": "A trial-and-error method where an attacker systematically tries a huge number of possible passwords for a given username, hoping to eventually guess the correct one."},
+        {"answer": "An attack that uses brute strength to bypass the login form."}
+      ],
+      "answer": "A trial-and-error method where an attacker systematically tries a huge number of possible passwords for a given username, hoping to eventually guess the correct one.",
+      "explanation": "A brute-force attack is the simplest form of password guessing. An automated script will attempt to log in with a specific username and try all possible combinations of letters, numbers, and symbols, or a list of common passwords (a 'dictionary attack'). This is why password complexity requirements (length, character types) and, more importantly, rate limiting on failed login attempts are so crucial. Rate limiting makes brute-force attacks impractically slow, as the attacker can only make a few guesses per minute instead of thousands per second."
+    },
+    {
+      "question": "What is OAuth 2.0?",
+      "answers": [
+        {
+          "answer": "An authentication protocol used to log users in with a username and password."
+        },
+        {
+          "answer": "An industry-standard protocol for authorization. It allows a user to grant a third-party application limited access to their resources on another service, without sharing their credentials."
+        },
+        {
+          "answer": "A type of encryption used for securing web traffic."
+        },
+        {
+          "answer": "A version of the OAuth protocol that was released in 2002."
+        }
+      ],
+      "answer": "An industry-standard protocol for authorization. It allows a user to grant a third-party application limited access to their resources on another service, without sharing their credentials.",
+      "explanation": "OAuth 2.0 is not about logging a user in (that's the job of protocols like OpenID Connect). It's about delegated access. The classic example is a third-party app that wants to access your photos on Google Photos. Instead of giving the app your Google password (which would give it full access to everything), you are redirected to Google's login page. You log in to Google, and Google asks you 'Do you want to allow this app to view your photos?'. If you agree, Google gives the app a special, limited-access 'access token'. The app can then use this token to access only your photos, and nothing else. You can also revoke this access at any time from your Google account settings."
+    },
+    {
+      "question": "What is a 'password manager' and why is it recommended for good security hygiene?",
+      "answers": [
+        {
+          "answer": "A person who manages passwords for a company."
+        },
+        {
+          "answer": "A software application that helps users generate, store, and manage their passwords in a secure, encrypted vault. It allows users to have a unique, strong password for every website."
+        },
+        {
+          "answer": "A feature in a web browser that automatically fills in passwords."
+        },
+        {
+          "answer": "A system for resetting forgotten passwords."
+        }
+      ],
+      "answer": "A software application that helps users generate, store, and manage their passwords in a secure, encrypted vault. It allows users to have a unique, strong password for every website.",
+      "explanation": "The single biggest cause of account takeovers is password reuse. Users use the same, often weak, password for multiple services. If one of those services suffers a data breach, attackers can use the leaked password to access the user's accounts on other sites. A password manager solves this. The user only needs to remember one strong master password to unlock the manager's encrypted vault. The manager can then generate a long, random, and unique password for every single website and automatically fill it in during login. This ensures that a breach on one site does not compromise any other account."
+    },
+    {
+      "question": "What is the 'SameSite' attribute on a cookie used for?",
+      "answers": [
+        {
+          "answer": "To ensure the cookie is only used on websites that are the same as the user's location."
+        },
+        {
+          "answer": "To control whether a cookie is sent with cross-site requests, providing a robust defense against Cross-Site Request Forgery (CSRF) attacks."
+        },
+        {
+          "answer": "To ensure that all cookies for a site are the same size."
+        },
+        {
+          "answer": "To group cookies from the same site together."
+        }
+      ],
+      "answer": "To control whether a cookie is sent with cross-site requests, providing a robust defense against Cross-Site Request Forgery (CSRF) attacks.",
+      "explanation": "The `SameSite` attribute is a powerful security feature that mitigates CSRF. It can have several values: `Strict` means the cookie will only be sent if the request originates from the same site it was set on. `Lax` (the modern browser default) allows the cookie to be sent with top-level navigations (e.g., clicking a link), but not with cross-site subrequests like those made by forms or scripts. `None` allows the cookie to be sent with all cross-site requests, but it requires the `Secure` attribute to also be set. By setting a session cookie to `SameSite=Lax` or `SameSite=Strict`, you prevent the browser from automatically including it in a request initiated by a different domain, which effectively stops most CSRF attacks at the browser level."
+    }
+  ]
+},
+  {
   "name": "Coding Concepts (Expert)",
   "questions": [
     {
