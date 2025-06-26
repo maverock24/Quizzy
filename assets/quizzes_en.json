@@ -1,5 +1,1544 @@
 [
   {
+  "name": "Coding Concepts (Expert)",
+  "questions": [
+    {
+      "question": "What is the primary motivation for using a 'Bloom filter' and what is its key trade-off?",
+      "answers": [
+        {"answer": "To store a set of elements with guaranteed O(1) retrieval time, at the cost of high memory usage."},
+        {"answer": "To provide a probabilistic data structure for testing set membership that is extremely space-efficient, at the cost of allowing false positives but no false negatives."},
+        {"answer": "To create a perfectly hashed set of items, at the cost of being a static, immutable data structure."},
+        {"answer": "To sort a stream of data in a single pass, at the cost of being an unstable sort."}
+      ],
+      "answer": "To provide a probabilistic data structure for testing set membership that is extremely space-efficient, at the cost of allowing false positives but no false negatives.",
+      "explanation": "A Bloom filter is a probabilistic data structure designed to answer the question, 'Is this item a member of this set?'. It uses a large bit array and multiple hash functions. To add an item, it is hashed multiple times, and the bits at the resulting indices are set to 1. To check for membership, the item is hashed again, and if all corresponding bits are 1, the item is *probably* in the set. Its key trade-off is this probabilistic nature: if the check returns 'false', the item is definitively not in the set (no false negatives). If it returns 'true', the item might be in the set, or it could be a 'false positive' caused by hash collisions from other items. This trade-off allows Bloom filters to be incredibly memory-efficient compared to storing the actual set, making them ideal for use cases like checking for malicious URLs in a browser or avoiding recommending an article a user has already seen, where an occasional mistake is acceptable."
+    },
+    {
+      "question": "In the context of concurrent data structures, how does a 'lock-free' algorithm differ from a 'wait-free' algorithm?",
+      "answers": [
+        {"answer": "There is no difference; the terms are interchangeable."},
+        {"answer": "A lock-free algorithm guarantees that at least one thread will make progress in a finite number of steps, while a wait-free algorithm guarantees that *every* thread will make progress in a finite number of steps."},
+        {"answer": "A lock-free algorithm uses fine-grained locks, while a wait-free algorithm uses no locks at all."},
+        {"answer": "A wait-free algorithm is susceptible to deadlock, while a lock-free algorithm is not."}
+      ],
+      "answer": "A lock-free algorithm guarantees that at least one thread will make progress in a finite number of steps, while a wait-free algorithm guarantees that *every* thread will make progress in a finite number of steps.",
+      "explanation": "Both lock-free and wait-free algorithms are non-blocking concurrency techniques that avoid traditional locks (mutexes, semaphores). A 'lock-free' algorithm guarantees system-wide progress: in any given time slice, at least one thread is guaranteed to complete its operation, preventing total system starvation. However, it's possible for a specific thread to be repeatedly preempted or have its operation fail (e.g., a Compare-And-Swap loop), causing it to starve individually. A 'wait-free' algorithm provides a much stronger, per-thread guarantee. Every thread is guaranteed to complete its operation in a bounded number of its own steps, regardless of the actions or speeds of other threads. This prevents individual starvation and is the strongest form of non-blocking progress, but it is also significantly more complex to implement correctly."
+    },
+    {
+      "question": "What is the 'Curiously Recurring Template Pattern' (CRTP) in C++?",
+      "answers": [
+        {"answer": "A pattern where a class inherits from a base class that is a template specialization of itself."},
+        {"answer": "A design pattern that uses recursion to solve template metaprogramming problems."},
+        {"answer": "A runtime polymorphism pattern that uses virtual functions and templates together."},
+        {"answer": "An anti-pattern that leads to infinite recursion during template instantiation."}
+      ],
+      "answer": "A pattern where a class inherits from a base class that is a template specialization of itself.",
+      "explanation": "The CRTP is a static polymorphism technique in C++. The pattern looks like this: `class Derived : public Base<Derived> { ... };`. The base class template (`Base<T>`) can then use the derived type `T` in its implementation. For example, the base class can `static_cast` its `this` pointer to `T*` to call methods on the derived class. This allows you to implement common functionality in the base class that operates on the specific derived type, all resolved at compile-time without the overhead of virtual function calls (v-tables). It's a way to achieve a form of polymorphism and code reuse statically, often used for implementing features like cloning or comparison operators in a generic way."
+    },
+    {
+      "question": "In a distributed system, what is the 'Two-Phase Commit' (2PC) protocol designed to achieve?",
+      "answers": [
+        {"answer": "To ensure that two different databases have the exact same schema."},
+        {"answer": "To achieve atomic commitment of a transaction across multiple distributed nodes. It ensures that either all participating nodes commit the transaction, or all of them abort it."},
+        {"answer": "A security protocol for establishing a connection between two untrusted parties."},
+        {"answer": "A replication strategy where data is written to two nodes simultaneously."}
+      ],
+      "answer": "To achieve atomic commitment of a transaction across multiple distributed nodes. It ensures that either all participating nodes commit the transaction, or all of them abort it.",
+      "explanation": "Two-Phase Commit is a distributed algorithm that ensures atomicity in a distributed transaction. It involves a central 'coordinator' and multiple 'participants' (the nodes). Phase 1 (Prepare/Voting Phase): The coordinator asks all participants to prepare to commit. Each participant checks if it can commit the transaction, writes the necessary information to a persistent log, and votes 'Yes' or 'No'. Phase 2 (Commit/Abort Phase): If the coordinator receives a 'Yes' from all participants, it decides to commit and sends a 'Commit' message to all. If even one participant votes 'No' or times out, the coordinator decides to abort and sends an 'Abort' message to all. The main drawback of 2PC is that it is a blocking protocol; if the coordinator fails after the prepare phase, the participants are left in an uncertain state until it recovers."
+    },
+    {
+      "question": "What is the primary difference in how 'Generics' in Java and 'Templates' in C++ are implemented by the compiler?",
+      "answers": [
+        {"answer": "Java generics are implemented via 'erasure', where type information is removed at compile time, while C++ templates are implemented via 'monomorphization', creating a new specialized class for each type."},
+        {"answer": "C++ templates use erasure, and Java generics use monomorphization."},
+        {"answer": "Both use monomorphization, but Java's is more efficient."},
+        {"answer": "Both use erasure, but C++ allows primitive types."}
+      ],
+      "answer": "Java generics are implemented via 'erasure', where type information is removed at compile time, while C++ templates are implemented via 'monomorphization', creating a new specialized class for each type.",
+      "explanation": "This is a key implementation difference. In Java, generics are a compile-time construct. The compiler checks for type safety, but then it 'erases' the generic type information. A `List<String>` and a `List<Integer>` both become a raw `List` in the generated bytecode. This provides backward compatibility but means you cannot get the generic type information at runtime. In C++, templates work by monomorphization. The compiler generates a completely new, specialized version of the template code for each concrete type it is used with. If you use `Vector<int>` and `Vector<double>`, the compiler generates two distinct classes in the final binary. This allows for full specialization and compile-time optimizations but can lead to larger binary sizes ('code bloat')."
+    },
+    {
+      "question": "What is 'continuation-passing style' (CPS) in programming?",
+      "answers": [
+        {"answer": "A style of programming where the program continues to run even after an error."},
+        {"answer": "A style of programming where, instead of returning a value, a function takes an extra argument: a 'continuation' function, which it calls with its result. It makes control flow explicit."},
+        {"answer": "A design pattern for continuing a long-running process after a system restart."},
+        {"answer": "A method for passing a continuous stream of data between functions."}
+      ],
+      "answer": "A style of programming where, instead of returning a value, a function takes an extra argument: a 'continuation' function, which it calls with its result. It makes control flow explicit.",
+      "explanation": "Continuation-passing style is a fundamental transformation that makes control flow explicit. In direct style, a function returns its result to its caller. In CPS, a function never returns. Instead, it takes another function (the continuation) as an argument. When it has computed its result, it calls the continuation with that result. This might seem convoluted, but it's extremely powerful. It makes complex control structures like exceptions, coroutines, and call/cc (call-with-current-continuation) implementable as regular functions. The 'callback' pattern in asynchronous JavaScript is a well-known, albeit limited, form of CPS."
+    },
+    {
+      "question": "In the context of formal languages and compilers, what does it mean for a grammar to be 'LL(1)'?",
+      "answers": [
+        {"answer": "It means the grammar is suitable for parsing with a Left-to-right, Leftmost derivation parser, using 1 token of lookahead."},
+        {"answer": "It means the language can only have 1 level of logic."},
+        {"answer": "It means the parser must look at 1 character before and 1 character after the current token."},
+        {"answer": "It refers to a 'Look-Left(1)' parser that checks the previously parsed token."}
+      ],
+      "answer": "It means the grammar is suitable for parsing with a Left-to-right, Leftmost derivation parser, using 1 token of lookahead.",
+      "explanation": "LL(k) and LR(k) describe classes of context-free grammars. The 'LL(1)' designation means: The first 'L' stands for scanning the input from Left-to-right. The second 'L' stands for producing a Leftmost derivation of the string. The '(1)' indicates that the parser needs only one token of lookahead to make its parsing decisions (i.e., to decide which production rule to apply). Grammars that are LL(1) are desirable because they can be parsed by simple, efficient, predictive recursive-descent parsers. However, the class of LL(1) grammars is relatively restrictive; for example, it cannot handle left-recursive rules."
+    },
+    {
+      "question": "What is the 'Paxos' algorithm, and what problem does it solve in distributed systems?",
+      "answers": [
+        {"answer": "It's an algorithm for leader election in a cluster."},
+        {"answer": "It's a family of protocols for achieving consensus on a single value among a network of unreliable processors, forming the basis for many replicated state machines."},
+        {"answer": "It's a cryptographic protocol for secure multi-party computation."},
+        {"answer": "It's a load-balancing algorithm for web servers."}
+      ],
+      "answer": "It's a family of protocols for achieving consensus on a single value among a network of unreliable processors, forming the basis for many replicated state machines.",
+      "explanation": "Paxos, first described by Leslie Lamport, is a foundational algorithm for fault-tolerant distributed consensus. The core problem it solves is getting a group of computers (which may fail or have messages delayed) to agree on a single proposed value. It does this through a multi-phase protocol involving 'proposers', 'acceptors', and 'learners'. Paxos guarantees that if a value is chosen, it is chosen by a majority and all nodes will eventually learn that chosen value. Its correctness proofs are notoriously subtle. It is the theoretical basis for building replicated state machines, where a sequence of operations is agreed upon by all nodes, ensuring that a distributed service (like a distributed database) remains consistent despite failures. Raft is a more recent consensus algorithm designed to be more understandable than Paxos."
+    },
+    {
+      "question": "What is the purpose of a 'memory barrier' (or memory fence) instruction?",
+      "answers": [
+        {"answer": "To erect a 'barrier' in memory that cannot be accessed by unauthorized processes."},
+        {"answer": "To force a specific ordering of memory operations, preventing the compiler and CPU from reordering reads and writes across the barrier in a way that would violate program logic in a concurrent context."},
+        {"answer": "To clear a specific region of memory, creating a barrier between old and new data."},
+        {"answer": "A hardware feature that prevents buffer overflow attacks."}
+      ],
+      "answer": "To force a specific ordering of memory operations, preventing the compiler and CPU from reordering reads and writes across the barrier in a way that would violate program logic in a concurrent context.",
+      "explanation": "Modern compilers and CPUs aggressively reorder instructions to improve performance. For a single-threaded program, this is fine as long as the final result is the same. In a multi-threaded program, however, this reordering can break the logic of synchronization primitives. A memory barrier is an instruction that tells the CPU and compiler not to reorder memory operations across it. For example, a 'full barrier' ensures that all memory operations (reads and writes) specified *before* the barrier in the program code are completed before any memory operations *after* the barrier are allowed to begin. This is crucial for correctly implementing low-level synchronization mechanisms like mutexes and lock-free data structures, as it ensures that changes made by one thread become visible to other threads in a predictable order."
+    },
+    {
+      "question": "In type theory, what is 'structural typing' and how does it differ from 'nominal typing'?",
+      "answers": [
+        {"answer": "Structural typing is used for data structures, while nominal typing is for primitive types."},
+        {"answer": "In nominal typing, type compatibility is determined by the explicit names or declarations of the types. In structural typing, compatibility is determined by the shape or structure of the type (e.g., the names and types of its properties and methods)."},
+        {"answer": "Nominal typing is a feature of static languages, while structural typing is a feature of dynamic languages."},
+        {"answer": "There is no difference; they are just different names for the same system."}
+      ],
+      "answer": "In nominal typing, type compatibility is determined by the explicit names or declarations of the types. In structural typing, compatibility is determined by the shape or structure of the type (e.g., the names and types of its properties and methods).",
+      "explanation": "Most mainstream OO languages (Java, C++, C#) use nominal typing. Two classes are only considered compatible if they share a name in the inheritance hierarchy. If you have two classes, `ClassA` and `ClassB`, that have the exact same methods and properties, they are still considered completely different types. In a structurally typed system (used by languages like TypeScript, Go, and Haskell), `ClassA` and `ClassB` would be considered compatible or interchangeable because they have the same structure. This is often compared to 'duck typing', but it's performed statically at compile-time rather than at runtime. It can lead to more flexible and decoupled code, as a function can accept any object that has the required 'shape' without needing it to explicitly implement a named interface."
+    },
+    {
+      "question": "What is a 'persistent data structure'?",
+      "answers": [
+        {"answer": "A data structure that is automatically saved to disk."},
+        {"answer": "A data structure that, when modified, always preserves the previous version of itself. 'Update' operations yield a new, modified structure instead of changing the original in-place."},
+        {"answer": "A data structure that persists in memory even after the program has terminated."},
+        {"answer": "A data structure that is resistant to data corruption."}
+      ],
+      "answer": "A data structure that, when modified, always preserves the previous version of itself. 'Update' operations yield a new, modified structure instead of changing the original in-place.",
+      "explanation": "Persistent data structures are effectively immutable. When you perform an operation that would normally mutate the structure (like adding an element to a list), it instead returns a new, updated version of the structure while leaving the original untouched. This is often achieved efficiently through 'structural sharing', where the new version reuses large parts of the old version's internal nodes. This has significant advantages in concurrent programming, as a data structure that is never modified in-place is inherently thread-safe and requires no locks for read operations. It also makes tracking history and implementing undo/redo functionality trivial. They are a cornerstone of many functional programming languages."
+    },
+    {
+      "question": "What is the 'actor model' of concurrency?",
+      "answers": [
+        {
+          "answer": "A model where every programmer is an 'actor' in the system."
+        },
+        {
+          "answer": "A mathematical model of concurrent computation where 'actors' are the universal primitives. An actor is a computational entity that communicates with other actors exclusively by sending and receiving asynchronous messages."
+        },
+        {
+          "answer": "A software design pattern for modeling actors in a play or movie."
+        },
+        {
+          "answer": "A concurrency model based on sharing memory and using locks."
+        }
+      ],
+      "answer": "A mathematical model of concurrent computation where 'actors' are the universal primitives. An actor is a computational entity that communicates with other actors exclusively by sending and receiving asynchronous messages.",
+      "explanation": "The actor model provides an alternative to traditional shared-memory, lock-based concurrency. In this model, everything is an actor. An actor has a private internal state that no other actor can access directly. It also has a mailbox for incoming messages. When an actor receives a message, it can do three things: 1) create more actors, 2) send messages to other actors, and 3) decide what to do with the next message it receives. The key principle is 'share nothing'. Since state is not shared, there is no need for locks, which eliminates entire classes of concurrency problems like race conditions and deadlocks. This model is highly scalable and well-suited for distributed, fault-tolerant systems. Frameworks like Akka (for the JVM) and languages like Erlang are well-known implementations of the actor model."
+    },
+    {
+      "question": "In C++, what is SFINAE (Substitution Failure Is Not An Error)?",
+      "answers": [
+        {
+          "answer": "A principle that states that syntax failures should be ignored by the compiler."
+        },
+        {
+          "answer": "A rule that applies during template overload resolution. If an invalid type or expression is formed during the substitution of a template parameter, the specialization is discarded from the overload set instead of causing a compile error."
+        },
+        {
+          "answer": "A debugging tool for finding errors in template code."
+        },
+        {
+          "answer": "An acronym for a set of secure coding guidelines."
+        }
+      ],
+      "answer": "A rule that applies during template overload resolution. If an invalid type or expression is formed during the substitution of a template parameter, the specialization is discarded from the overload set instead of causing a compile error.",
+      "explanation": "SFINAE is a complex but powerful aspect of C++ template metaprogramming. It allows you to create function or class templates that are only enabled for certain types. For example, you can write a template function that should only work for types that have a specific member function or a nested `typedef`. You do this by creating a template parameter whose substitution will only be valid if the type has the desired property. If you then call this function with a type that *doesn't* have that property, the substitution fails. Instead of a hard compile error, SFINAE dictates that this particular template overload is simply removed from consideration, allowing the compiler to potentially match another, more general overload. This is the mechanism behind concepts and `std::enable_if`."
+    },
+    {
+      "question": "What is a 'hygienic macro' system, and what problem does it solve?",
+      "answers": [
+        {
+          "answer": "A macro system that automatically cleans up memory leaks."
+        },
+        {
+          "answer": "A macro system that prevents the accidental capture of identifiers (variable shadowing) by ensuring that identifiers introduced by the macro are distinct from those in the calling code."
+        },
+        {
+          "answer": "A system for writing macros that are guaranteed to be free of bugs."
+        },
+        {
+          "answer": "A macro system that works only with numeric types."
+        }
+      ],
+      "answer": "A macro system that prevents the accidental capture of identifiers (variable shadowing) by ensuring that identifiers introduced by the macro are distinct from those in the calling code.",
+      "explanation": "Traditional C-style text-substitution macros are 'unhygienic' and can lead to subtle bugs. For example, if you define a macro `SWAP(x, y)` that uses a temporary variable `tmp`, and then you call it as `SWAP(a, tmp)`, the `tmp` variable from the calling scope will clash with the macro's internal `tmp`. A hygienic macro system (found in languages like Scheme and Rust) solves this. It intelligently renames identifiers during macro expansion to ensure that variables defined inside the macro cannot accidentally capture or shadow variables from the code that calls the macro, and vice versa. This makes macros much safer and more predictable to use."
+    },
+    {
+      "question": "What is 'Hindley-Milner' (or Damas-Milner) type inference?",
+      "answers": [
+        {
+          "answer": "A type system where the programmer must explicitly declare all types."
+        },
+        {
+          "answer": "An algorithm that can automatically deduce the types of most expressions in a programming language without requiring explicit type annotations, and it can deduce the most general polymorphic type possible."
+        },
+        {
+          "answer": "A dynamic typing system used in Lisp-like languages."
+        },
+        {
+          "answer": "A system for inferring the performance characteristics of a program."
+        }
+      ],
+      "answer": "An algorithm that can automatically deduce the types of most expressions in a programming language without requiring explicit type annotations, and it can deduce the most general polymorphic type possible.",
+      "explanation": "Hindley-Milner (HM) is a classic and powerful type inference algorithm. It is the basis for the type systems of most statically-typed functional languages like Haskell and ML, and it influences languages like Rust and Swift. The algorithm works by analyzing the code, collecting a set of constraints based on how functions and values are used, and then solving these constraints using unification. Its key feature is that it can infer types without the programmer having to write them down, while still providing the full safety of a static type system. Furthermore, it infers the most general possible type (principality). For example, for a function `f(x) = x`, HM would infer its type as `forall a. a -> a`, meaning it's a function that takes an argument of any type 'a' and returns a value of that same type."
+    },
+    {
+      "question": "What is the primary purpose of a 'zipper' data structure?",
+      "answers": [
+        {
+          "answer": "To compress and decompress data trees."
+        },
+        {
+          "answer": "It is a technique for representing a data structure (like a tree) along with a 'focus' or 'cursor' on a specific sub-term. It allows for efficient, purely functional updates to the focused element while sharing structure with the original."
+        },
+        {
+          "answer": "A data structure that combines two lists into a list of pairs."},
+        {
+          "answer": "A security data structure that zips and encrypts files."}
+      ],
+      "answer": "It is a technique for representing a data structure (like a tree) along with a 'focus' or 'cursor' on a specific sub-term. It allows for efficient, purely functional updates to the focused element while sharing structure with the original.",
+      "explanation": "In functional programming, modifying a deeply nested element in an immutable data structure (like a tree) can be cumbersome. You have to reconstruct the entire path from the root down to the element you want to change. A zipper provides a solution. It represents the tree as the focused subtree plus its 'context' – essentially, the path back to the root, stored as a 'list of one-hole contexts'. This allows you to navigate up, down, left, and right within the structure. When you want to update the focused element, you can do so easily, and then 'zip' the structure back up by rebuilding only the path to the root, while the rest of the tree's original structure is shared. It provides a kind of 'mutable view' into an immutable structure."
+    },
+    {
+      "question": "What is 'double-checked locking' and why is it considered a broken pattern in many language memory models?",
+      "answers": [
+        {
+          "answer": "A pattern that uses two locks for extra security."},
+        {"answer": "An optimization attempt for lazy initialization of a singleton where you check for null outside a lock, then again inside the lock. It's often broken due to instruction reordering by compilers or CPUs."},
+        {"answer": "A technique for verifying that a lock was acquired correctly."},
+        {"answer": "A pattern that is guaranteed to prevent deadlocks."}
+      ],
+      "answer": "An optimization attempt for lazy initialization of a singleton where you check for null outside a lock, then again inside the lock. It's often broken due to instruction reordering by compilers or CPUs.",
+      "explanation": "The double-checked locking pattern aims to avoid the cost of acquiring a lock every time a singleton instance is accessed. The code looks something like: `if (instance == null) { synchronized(this) { if (instance == null) { instance = new Singleton(); } } } return instance;`. The idea is that the expensive lock is only taken the first time. The problem is that this pattern is not thread-safe in many older memory models (like pre-Java 5 or pre-C++11). A clever compiler or CPU could reorder the operations inside `new Singleton()`, causing the `instance` variable to be assigned a non-null value *before* the Singleton's constructor has actually finished running. Another thread could then see the non-null `instance` in the first check, skip the lock, and return a partially constructed, unsafe object. This is fixed in modern languages by using the `volatile` keyword (in Java) or `std::atomic` (in C++), which introduce the necessary memory barriers to prevent this reordering."
+    },
+    {
+      "question": "What is a 'type constructor' in the context of type theory and functional programming?",
+      "answers": [
+        {
+          "answer": "The same as a class constructor in object-oriented programming."
+        },
+        {
+          "answer": "A function that constructs a new type at runtime."
+        },
+        {
+          "answer": "A 'function' at the type level that takes one or more types as arguments and produces a new type. For example, `List` is a type constructor that takes a type `T` to produce a type `List<T>`."
+        },
+        {
+          "answer": "A constructor that is strongly typed."
+        }
+      ],
+      "answer": "A 'function' at the type level that takes one or more types as arguments and produces a new type. For example, `List` is a type constructor that takes a type `T` to produce a type `List<T>`.",
+      "explanation": "This concept distinguishes between a concrete type and the 'template' for a type. `Int` and `String` are concrete types (of 'kind' `*`). `List` on its own is not a concrete type; you cannot have a variable of type `List`. It is a type constructor. It's like a function at the type level that is waiting for a type argument. When you provide it with a type, like `Int`, it produces a new concrete type, `List<Int>`. This concept is fundamental to understanding higher-kinded types, where you can have a type constructor that takes another type constructor as an argument, which is a key feature of advanced functional programming languages like Haskell and Scala."
+    },
+    {
+      "question": "In the Raft consensus algorithm, what is the primary purpose of the 'term' number?",
+      "answers": [
+        {"answer": "It limits the total number of terms a server can serve."},
+        {"answer": "It acts as a logical clock to detect stale leaders and messages. Any server that discovers a higher term number immediately reverts to a follower state."},
+        {"answer": "It is a configuration parameter that defines the timeout for heartbeats."},
+        {"answer": "It specifies the terms and conditions of the software license."}
+      ],
+      "answer": "It acts as a logical clock to detect stale leaders and messages. Any server that discovers a higher term number immediately reverts to a follower state.",
+      "explanation": "Raft divides time into 'terms' of arbitrary length, each identified by a monotonically increasing integer. Each term begins with a leader election. If a server completes an election, it becomes the leader for that term. The term number is a crucial mechanism for ensuring consistency and resolving conflicts. It's included in every RPC call. If a server (leader or follower) receives a message with a term number higher than its own, it knows its own information is stale. It immediately updates its term to the higher value and reverts to being a follower. This ensures that an old, partitioned leader cannot continue to issue commands after a new leader has been elected in a new, higher term."
+    },
+    {
+      "question": "What is 'effect system' or 'effect typing' in a programming language?",
+      "answers": [
+        {
+          "answer": "A system for adding special visual effects to a program."
+        },
+        {
+          "answer": "A type system that, in addition to tracking the types of values, also tracks the computational effects (like I/O, exceptions, or state mutation) that a function might produce."
+        },
+        {
+          "answer": "A system for measuring the performance effects of a code change."
+        },
+        {
+          "answer": "A typing system based on the side effects of medications."
+        }
+      ],
+      "answer": "A type system that, in addition to tracking the types of values, also tracks the computational effects (like I/O, exceptions, or state mutation) that a function might produce.",
+      "explanation": "Effect systems are an extension of traditional type systems. A normal type signature might be `String -> Int`, telling you the function takes a string and returns an integer. An effect system adds information about what 'effects' the function might have on the world. The signature might look more like `String -> Int throws IOException, reads Console`. This makes side effects an explicit part of the function's contract, tracked by the compiler. This allows the compiler to enforce purity, ensure that exceptions are handled, or guarantee that a function only accesses certain parts of the system. Monads in Haskell are one way to encode effects, and checked exceptions in Java are a very limited form of an effect system. More advanced effect systems are a subject of active research."
+    },
+    {
+      "question": "What is a 'disjoint-set' or 'union-find' data structure optimized to do?",
+      "answers": [
+        {
+          "answer": "To efficiently find the union of two sorted arrays."
+        },
+        {
+          "answer": "To keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets, and efficiently perform 'union' (merging two subsets) and 'find' (determining which subset an element belongs to) operations."
+        },
+        {
+          "answer": "To find items that are in one set but not another."
+        },
+        {
+          "answer": "To perform set operations on data that is stored on disk."
+        }
+      ],
+      "answer": "To keep track of a set of elements partitioned into a number of disjoint (non-overlapping) subsets, and efficiently perform 'union' (merging two subsets) and 'find' (determining which subset an element belongs to) operations.",
+      "explanation": "A disjoint-set data structure is highly specialized. It is used to model a collection of sets where no element belongs to more than one set. It supports two main operations: `find(item)`, which returns an identifier for the set containing that item, and `union(item1, item2)`, which merges the sets containing `item1` and `item2`. With optimizations like 'union by rank/size' and 'path compression', the amortized time complexity for these operations is nearly constant, making it extremely fast. It is a key component in algorithms like Kruskal's algorithm for finding a minimum spanning tree in a graph and for detecting cycles in an undirected graph."
+    },
+    {
+      "question": "What is the primary trade-off when choosing between a 'row-oriented' and a 'column-oriented' database?",
+      "answers": [
+        {
+          "answer": "Row-oriented databases are faster for all types of queries."
+        },
+        {
+          "answer": "Row-oriented databases are optimized for transactional workloads (reading/writing entire rows), while column-oriented databases are optimized for analytical queries that aggregate data from a small number of columns across many rows."
+        },
+        {
+          "answer": "Column-oriented databases cannot be updated once data is written."
+        },
+        {
+          "answer": "There is no functional difference, only a difference in the SQL syntax used."
+        }
+      ],
+      "answer": "Row-oriented databases are optimized for transactional workloads (reading/writing entire rows), while column-oriented databases are optimized for analytical queries that aggregate data from a small number of columns across many rows.",
+      "explanation": "The difference is in how data is laid out on disk. A row-oriented database (like MySQL or PostgreSQL) stores all the data for a single row together. This is efficient when you need to fetch an entire record, e.g., `SELECT * FROM users WHERE id = 123`. A column-oriented database (like Vertica or ClickHouse) stores all the values for a single column together. This is highly inefficient for fetching a single row, as it requires multiple disk seeks. However, it is extremely efficient for analytical (OLAP) queries like `SELECT AVG(price) FROM sales WHERE product_id = 42`. This query only needs to read the `price` and `product_id` columns, ignoring all others. Furthermore, since all data in a column is of the same type, it can be compressed very effectively, reducing I/O and improving query performance dramatically."
+    },
+    {
+      "question": "What does it mean for a language to have 'first-class functions'?",
+      "answers": [
+        {
+          "answer": "The language's functions are of the highest quality and bug-free."
+        },
+        {
+          "answer": "It means functions are treated like any other value or 'citizen' in the language. They can be assigned to variables, passed as arguments to other functions, and returned as the result of other functions."
+        },
+        {
+          "answer": "The language only has a single, global function."
+        },
+        {
+          "answer": "Functions must be defined inside a class."
+        }
+      ],
+      "answer": "It means functions are treated like any other value or 'citizen' in the language. They can be assigned to variables, passed as arguments to other functions, and returned as the result of other functions.",
+      "explanation": "First-class functions are a key feature of functional programming, and they are present in many modern multi-paradigm languages (like Python, JavaScript, C#, and modern C++). Treating functions as first-class citizens enables a host of powerful programming patterns. Passing a function as an argument to another function is the basis for callbacks and strategies (this is what a 'higher-order function' is). Returning a function from another function is the basis for closures and techniques like currying. This elevates functions from being just static code blocks to being dynamic data that can be manipulated by the program itself."
+    },
+    {
+      "question": "What problem does the 'Circuit Breaker' pattern solve in distributed systems?",
+      "answers": [
+        {
+          "answer": "It prevents unauthorized access to the system by breaking the connection."
+        },
+        {
+          "answer": "It prevents a network service from being repeatedly called when it is known to be failing, avoiding cascading failures and allowing the failing service time to recover."
+        },
+        {
+          "answer": "It is a physical device that cuts power to a server rack in case of an overload."
+        },
+        {
+          "answer": "It is a pattern for breaking down a monolithic application into microservices."
+        }
+      ],
+      "answer": "It prevents a network service from being repeatedly called when it is known to be failing, avoiding cascading failures and allowing the failing service time to recover.",
+      "explanation": "In a microservices architecture, one service often depends on others. If a downstream service fails or becomes latent, continuing to send it requests can be harmful. It wastes resources (threads, sockets) on the calling service and can create a cascading failure that brings down the entire system. The Circuit Breaker pattern wraps calls to the remote service in a state machine object. Initially, the breaker is 'Closed', and calls pass through. If calls start to fail, the breaker 'trips' and moves to the 'Open' state. In this state, all subsequent calls fail immediately without even attempting to contact the remote service. After a timeout, the breaker moves to a 'Half-Open' state, where it allows a single test call to go through. If that call succeeds, the breaker closes again; if it fails, it returns to the open state. This pattern makes the system more resilient to transient failures."
+    },
+    {
+      "question": "In C++, what is 'RAII' and how does it relate to exception safety?",
+      "answers": [
+        {
+          "answer": "Resource Allocation Is Inexpensive, a principle for memory optimization."
+        },
+        {
+          "answer": "Resource Acquisition Is Initialization, an idiom where a resource's lifetime is bound to an object's lifetime. Cleanup is guaranteed in the object's destructor, making code strongly exception-safe."
+        },
+        {
+          "answer": "Random Access Is Immediate, a property of memory arrays."
+        },
+        {
+          "answer": "A technique for raising exceptions in an array initialization."
+        }
+      ],
+      "answer": "Resource Acquisition Is Initialization, an idiom where a resource's lifetime is bound to an object's lifetime. Cleanup is guaranteed in the object's destructor, making code strongly exception-safe.",
+      "explanation": "RAII is a cornerstone of modern C++. The principle is to manage a resource (like memory, a file handle, a mutex lock, or a network socket) by encapsulating it within a class. The resource is acquired in the constructor of the object, and it is released in the destructor. C++ guarantees that destructors are called for stack-allocated objects when they go out of scope, and this guarantee holds even if the scope is exited via a thrown exception. This means that cleanup is deterministic and guaranteed. By using RAII wrappers (like `std::unique_ptr` for memory or `std::lock_guard` for mutexes), you can write code that is exception-safe without littering it with `try...catch...finally` blocks for resource cleanup, leading to cleaner and more robust programs."
+    },
+    {
+      "question": "What is the primary trade-off of using a 'generational garbage collector'?",
+      "answers": [
+        {
+          "answer": "It can only be used on programs written by a younger generation of programmers."
+        },
+        {
+          "answer": "It achieves low-latency garbage collection by focusing on collecting short-lived objects in a 'young generation' heap, based on the 'weak generational hypothesis', but it adds complexity and can have higher throughput overhead than simpler collectors."
+        },
+        {
+          "answer": "It collects objects based on the generation of the CPU they are running on."
+        },
+        {
+          "answer": "It is simpler to implement but less efficient than a mark-and-sweep collector."
+        }
+      ],
+      "answer": "It achieves low-latency garbage collection by focusing on collecting short-lived objects in a 'young generation' heap, based on the 'weak generational hypothesis', but it adds complexity and can have higher throughput overhead than simpler collectors.",
+      "explanation": "Generational garbage collectors are based on the empirical observation that most objects in a program die young (the weak generational hypothesis). The collector divides the heap into two or more 'generations'. New objects are allocated in the 'young generation' (or 'nursery'). This area is collected frequently and quickly, as most objects there are expected to be garbage. Objects that survive a few young generation collections are 'promoted' to the 'old generation' (or 'tenured' space). This area is collected much less frequently, as objects there are assumed to be long-lived. This approach minimizes pause times, as the frequent young-generation collections are very fast. The trade-off is the added complexity of managing multiple memory spaces and the overhead of the 'write barrier', a mechanism needed to track pointers from the old generation to the young generation."
+    },
+    {
+      "question": "What are 'higher-kinded types' (HKTs)?",
+      "answers": [
+        {
+          "answer": "Types that are considered more polite than others."
+        },
+        {
+          "answer": "A feature where a generic type parameter can itself be a generic type constructor, like `F<T>`, rather than just a concrete type. It allows for abstraction over things like `List`, `Optional`, or `Future`."
+        },
+        {
+          "answer": "Types that are only available in higher-level programming languages."
+        },
+        {
+          "answer": "A type that can hold a value of any other type, similar to `void*`."
+        }
+      ],
+      "answer": "A feature where a generic type parameter can itself be a generic type constructor, like `F<T>`, rather than just a concrete type. It allows for abstraction over things like `List`, `Optional`, or `Future`.",
+      "explanation": "Higher-kinded types represent a powerful level of abstraction, common in languages like Haskell and Scala. A regular generic function might take a `List<Int>`. A function using HKTs can be generic over the 'container' itself. It can be written to take an `F<Int>`, where `F` could be `List`, `Optional`, `Future`, or any other type constructor that takes one type parameter. This allows you to write extremely generic code that works for any 'container-like' structure that conforms to a certain behavior (e.g., a Functor or a Monad). It's an abstraction over abstractions. Most mainstream languages, including Java, C#, and C++, do not directly support HKTs."
+    },
+    {
+      "question": "In formal language theory, what is the Chomsky Hierarchy?",
+      "answers": [
+        {
+          "answer": "A ranking of programming languages by their popularity."
+        },
+        {
+          "answer": "A containment hierarchy of classes of formal grammars, classifying them by their expressive power. It consists of Type-3 (regular), Type-2 (context-free), Type-1 (context-sensitive), and Type-0 (recursively enumerable) grammars."
+        },
+        {
+          "answer": "A set of guidelines for writing clean and hierarchical code."
+        },
+        {
+          "answer": "A classification of computer scientists based on their influence."
+        }
+      ],
+      "answer": "A containment hierarchy of classes of formal grammars, classifying them by their expressive power. It consists of Type-3 (regular), Type-2 (context-free), Type-1 (context-sensitive), and Type-0 (recursively enumerable) grammars.",
+      "explanation": "The Chomsky Hierarchy provides a formal way to classify the complexity and expressive power of languages. Each level in the hierarchy corresponds to a class of grammar and a class of machine capable of recognizing it. Type-3 (Regular Grammars) are the simplest, recognized by finite automata, and describe things like regular expressions. Type-2 (Context-Free Grammars) are more powerful, recognized by pushdown automata, and can describe the syntax of most programming languages. Type-1 (Context-Sensitive Grammars) are recognized by linear-bounded automata. Type-0 (Unrestricted/Recursively Enumerable Grammars) are the most powerful, recognized by a Turing machine, and can describe any language that can be computed. Each type is a proper subset of the one above it."
+    },
+    {
+      "question": "What is the 'gossip protocol' (or epidemic protocol) in distributed systems?",
+      "answers": [
+        {
+          "answer": "A protocol for spreading rumors among employees in a company."
+        },
+        {
+          "answer": "A decentralized peer-to-peer communication protocol where nodes periodically exchange state information with a random subset of their neighbors, leading to the eventual, highly resilient dissemination of information across the entire network."
+        },
+        {
+          "answer": "A security protocol that detects and reports gossip in a network."
+        },
+        {
+          "answer": "A centralized protocol where a leader node gossips to all other nodes."
+        }
+      ],
+      "answer": "A decentralized peer-to-peer communication protocol where nodes periodically exchange state information with a random subset of their neighbors, leading to the eventual, highly resilient dissemination of information across the entire network.",
+      "explanation": "Gossip protocols are a robust and scalable way to manage state and disseminate information in large, dynamic distributed systems. Instead of relying on a central server, each node periodically chooses one or more random peers and exchanges information with them (e.g., its knowledge of cluster membership or the latest data version). This process mimics the spread of a virus or a rumor. While it doesn't guarantee that all nodes have the latest information at any given moment (it's eventually consistent), it is extremely resilient to node and network failures. The failure of any single node has a negligible impact on the system's ability to communicate. This makes it ideal for service discovery, failure detection, and data replication in systems like Cassandra and Consul."
+    },
+    {
+      "question": "What does it mean for a function to be 'variadic'?",
+      "answers": [
+        {
+          "answer": "The function's behavior varies depending on the time of day."
+        },
+        {
+          "answer": "The function accepts a variable number of arguments."
+        },
+        {
+          "answer": "The function can return values of various different types."
+        },
+        {
+          "answer": "The function is defined in various different files."
+        }
+      ],
+      "answer": "The function accepts a variable number of arguments.",
+      "explanation": "A variadic function is one that can be called with a varying number of arguments. A classic example is the `printf` function in C, which takes a format string followed by a variable number of arguments corresponding to the format specifiers. In modern languages, this is often implemented in a more type-safe way. For example, in C++, you can use variadic templates, and in Python, you can use `*args` to collect an arbitrary number of positional arguments into a tuple and `**kwargs` to collect keyword arguments into a dictionary. This provides flexibility for functions that need to operate on an indeterminate number of inputs."
+    },
+    {
+      "question": "What is a 'CRDT' (Conflict-free Replicated Data Type)?",
+      "answers": [
+        {
+          "answer": "A data type that is guaranteed to be free of compile-time errors."
+        },
+        {
+          "answer": "A data structure that can be replicated across multiple computers in a network, where updates can be made concurrently and independently without coordination, and it is mathematically guaranteed that all replicas will eventually converge to the same state."
+        },
+        {
+          "answer": "A data type used for resolving conflicts in version control systems."
+        },
+        {
+          "answer": "A secure data type that is resistant to replication."
+        }
+      ],
+      "answer": "A data structure that can be replicated across multiple computers in a network, where updates can be made concurrently and independently without coordination, and it is mathematically guaranteed that all replicas will eventually converge to the same state.",
+      "explanation": "CRDTs are designed for optimistic replication in eventually consistent distributed systems, such as collaborative editing tools or distributed databases. They are designed in such a way that conflicting concurrent operations can be resolved automatically and deterministically, without requiring complex consensus algorithms. For example, a G-Set (Grow-Only Set) only allows additions; the union of two replica sets is simply the union of their elements. A PN-Counter (Positive-Negative Counter) maintains separate counters for increments and decrements. The final value is the sum of increments minus the sum of decrements. By designing the data structure and its operations to be commutative, associative, and idempotent, CRDTs ensure that all replicas will eventually reach the same final state, regardless of the order in which they receive the updates."
+    },
+    {
+      "question": "In the context of operating systems, what is a 'system call' (syscall)?",
+      "answers": [
+        {
+          "answer": "A call to another function within the same program."
+        },
+        {
+          "answer": "A programmatic way for a user-space program to request a service from the operating system's kernel, such as file I/O, process creation, or network communication."
+        },
+        {
+          "answer": "A phone call made to the system administrator."
+        },
+        {
+          "answer": "A mechanism for one system to call another over the network."
+        }
+      ],
+      "answer": "A programmatic way for a user-space program to request a service from the operating system's kernel, such as file I/O, process creation, or network communication.",
+      "explanation": "Modern operating systems use a protection mechanism where the OS kernel runs in a privileged 'kernel mode' and user applications run in a restricted 'user mode'. A user-space program cannot directly access hardware or perform sensitive operations. The system call is the interface between these two modes. When a program needs to do something like read a file, it executes a special instruction that traps into the kernel. The kernel then takes over, verifies the request, performs the operation on the program's behalf, and then returns control back to the user-space program. This provides a secure and stable environment by preventing applications from interfering with each other or the hardware directly."
+    },
+    {
+      "question": "What is 'property-based testing'?",
+      "answers": [
+        {
+          "answer": "Testing the properties of an object's class."
+        },
+        {
+          "answer": "A testing approach where, instead of writing individual test cases with specific inputs and expected outputs, the programmer specifies general properties or invariants that the code should hold true for all valid inputs. A testing framework then generates hundreds of random inputs to try to find a counterexample that falsifies the property."
+        },
+        {
+          "answer": "Testing the properties of a real estate application."
+        },
+        {
+          "answer": "A method of testing based on the physical properties of the hardware."
+        }
+      ],
+      "answer": "A testing approach where, instead of writing individual test cases with specific inputs and expected outputs, the programmer specifies general properties or invariants that the code should hold true for all valid inputs. A testing framework then generates hundreds of random inputs to try to find a counterexample that falsifies the property.",
+      "explanation": "Property-based testing (popularized by frameworks like QuickCheck for Haskell) is a powerful way to find edge-case bugs. Instead of writing `assert(add(2, 3) == 5)`, you would state a property like `forall (a, b), add(a, b) == add(b, a)` (commutativity). The testing framework then generates a large number of random integers for `a` and `b` and checks if the property holds. If it finds a failing case, it will often try to 'shrink' the input to the smallest possible counterexample, making debugging much easier. It's a great way to test the general correctness of an algorithm beyond the specific examples a developer might think of."
+    },
+    {
+      "question": "What is a 'lexical closure'?",
+      "answers": [
+        {
+          "answer": "It is another term for a 'finally' block, ensuring closure of resources."},
+        {"answer": "A function bundled with its lexical environment. This means the function 'remembers' the variables from the scope where it was defined, even if it is executed in a different scope."},
+        {"answer": "A security feature that closes lexical analysis to prevent injection attacks."},
+        {"answer": "The process of closing a lexical analyzer after parsing is complete."}
+      ],
+      "answer": "A function bundled with its lexical environment. This means the function 'remembers' the variables from the scope where it was defined, even if it is executed in a different scope.",
+      "explanation": "This is the formal definition of a closure. 'Lexical scope' means that the scope of a variable is determined by its position in the source code. When a function is defined inside another function, it has access to the variables of the outer function. A closure is created when this inner function is then passed as a value or returned, outliving the scope of its parent. The runtime environment must keep the parent function's variables alive in memory so that the inner function can still access them. This powerful feature is the mechanism behind data encapsulation, partial application, and many fundamental patterns in languages like JavaScript, Python, and Lisp."
+    },
+    {
+      "question": "What is the primary purpose of a 'Content Delivery Network' (CDN)?",
+      "answers": [
+        {
+          "answer": "To deliver content to the developers of a project."
+        },
+        {
+          "answer": "A geographically distributed network of proxy servers that caches content close to end-users, reducing latency and improving the speed and availability of web assets."
+        },
+        {
+          "answer": "A network protocol for delivering content securely."
+        },
+        {
+          "answer": "A system for managing the content of a website."
+        }
+      ],
+      "answer": "A geographically distributed network of proxy servers that caches content close to end-users, reducing latency and improving the speed and availability of web assets.",
+      "explanation": "A CDN is a critical piece of infrastructure for modern, high-traffic websites. Instead of all users fetching static content (like images, CSS, and JavaScript files) from a single 'origin' server, the CDN caches copies of this content on servers located in many different data centers around the world ('edge locations'). When a user requests a file, the request is transparently redirected to the CDN edge server that is geographically closest to them. This dramatically reduces the network latency (round-trip time), resulting in faster page load times. It also reduces the load on the origin server and provides resilience, as traffic can be served from multiple locations."
+    },
+    {
+      "question": "In the context of the Actor Model, what does 'location transparency' mean?",
+      "answers": [
+        {
+          "answer": "The location of the actor is always visible and transparent to the caller."
+        },
+        {
+          "answer": "The mechanism for sending a message to an actor is the same regardless of whether the target actor is in the same process, on the same machine, or on a remote machine in the network."
+        },
+        {
+          "answer": "Actors cannot be moved from their original location."
+        },
+        {
+          "answer": "The physical location of the server must be transparent."
+        }
+      ],
+      "answer": "The mechanism for sending a message to an actor is the same regardless of whether the target actor is in the same process, on the same machine, or on a remote machine in the network.",
+      "explanation": "Location transparency is a key benefit of the Actor Model for building distributed systems. Since all communication happens via asynchronous messages sent to an actor's address (its 'mailbox'), the sender does not need to know or care where the recipient actor is physically located. The underlying actor system runtime is responsible for routing the message to the correct location. This decouples the components of the system and makes it much easier to scale out an application from a single machine to a cluster of machines without changing the application logic."
+    },
+    {
+      "question": "What is a 'Trie' (also known as a prefix tree) data structure primarily used for?",
+      "answers": [
+        {
+          "answer": "For storing numeric data for statistical analysis."
+        },
+        {
+          "answer": "For efficient retrieval of keys in a dataset that share a common prefix, such as dictionary lookups and autocomplete features."
+        },
+        {
+          "answer": "For sorting strings in reverse alphabetical order."
+        },
+        {
+          "answer": "As a general-purpose replacement for a hash table."
+        }
+      ],
+      "answer": "For efficient retrieval of keys in a dataset that share a common prefix, such as dictionary lookups and autocomplete features.",
+      "explanation": "A Trie is a tree-like data structure where the position of a node in the tree defines the key with which it is associated. Each node represents a character, and paths from the root to a node represent a prefix. This structure is highly optimized for prefix-based searches. To find all words starting with 'cat', you simply traverse the tree along the path 'c'-'a'-'t' and then perform a traversal of the subtree rooted at the 't' node. The time complexity for finding a key is proportional to the length of the key, not the number of keys in the dataset, making it very efficient for these types of tasks."
+    },
+    {
+      "question": "What is 'idempotence' in the context of RESTful APIs?",
+      "answers": [
+        {"answer": "A guarantee that a request will always succeed."},
+        {"answer": "A property of an operation where making the same request multiple times has the same effect as making it once. It does not necessarily mean the operation is 'safe'."},
+        {"answer": "The ability of an API to identify the potency of a user's request."},
+        {"answer": "A security feature that prevents identical requests from being processed."}
+      ],
+      "answer": "A property of an operation where making the same request multiple times has the same effect as making it once. It does not necessarily mean the operation is 'safe'.",
+      "explanation": "Idempotence is a crucial concept for building robust, fault-tolerant APIs. It means that if a client sends a request and doesn't receive a response (e.g., due to a network timeout), it can safely retry the exact same request without worrying about accidentally creating duplicate resources or performing an action twice. For example, `PUT /users/123` is idempotent because setting the state of user 123 to the same thing multiple times has the same final result. `DELETE /users/123` is idempotent because after the first successful deletion, subsequent deletions do nothing (the resource is already gone). However, `POST /users` is *not* idempotent, as making the same request twice would create two different users."
+    },
+    {
+      "question": "What problem does a 'write-ahead log' (WAL) solve in database systems?",
+      "answers": [
+        {"answer": "It logs all read operations to a file for auditing."},
+        {"answer": "It provides durability and atomicity by writing the intended changes to a sequential log on disk *before* applying them to the main data files. In case of a crash, the log can be replayed to recover the database to a consistent state."},
+        {"answer": "It predicts which data will be written next and pre-allocates space for it."},
+        {"answer": "It is a log file that contains warnings about potential write errors."}
+      ],
+      "answer": "It provides durability and atomicity by writing the intended changes to a sequential log on disk *before* applying them to the main data files. In case of a crash, the log can be replayed to recover the database to a consistent state.",
+      "explanation": "A write-ahead log is a standard technique for achieving two of the ACID properties: Atomicity and Durability. Writing to random locations in the main database files on disk can be slow. Instead of doing that immediately, the database first writes a record of the intended changes to the end of a sequential log file. Appending to a log is very fast. Only after the log record is safely written to persistent storage is the change applied to the in-memory data structures. If the system crashes before the changes are written to the main data files, the recovery process can read the WAL, see which transactions were successfully logged but not yet applied, and 'replay' them to bring the database back to a consistent state, ensuring no committed data is lost."
+    },
+    {
+      "question": "In garbage collection, what is a 'stop-the-world' event?",
+      "answers": [
+        {"answer": "An event that stops all programs running on the operating system."},
+        {"answer": "A phase in the garbage collection cycle where the execution of the application's threads is completely paused so the collector can safely modify the object graph and reclaim memory."},
+        {"answer": "An unrecoverable error in the garbage collector itself."},
+        {"answer": "A global event that triggers garbage collection in all running applications simultaneously."}
+      ],
+      "answer": "A phase in the garbage collection cycle where the execution of the application's threads is completely paused so the collector can safely modify the object graph and reclaim memory.",
+      "explanation": "Many garbage collection algorithms require a 'stop-the-world' (STW) pause to do their work. During this pause, all of the application's threads are suspended. This is necessary because the garbage collector needs a consistent snapshot of the program's memory. If the application threads were allowed to run concurrently, they could be modifying object references while the collector is trying to trace them, leading to data corruption. The length and frequency of these STW pauses are a critical performance characteristic of a garbage collector. Modern, concurrent, and low-latency collectors are designed to minimize the duration of these pauses or to perform as much work as possible concurrently with the application to avoid them."
+    },
+    {
+      "question": "What is the 'Visitor' design pattern?",
+      "answers": [
+        {"answer": "A pattern for tracking visitors to a website."},
+        {"answer": "A way of separating an algorithm from an object structure on which it operates. It allows you to add new operations to existing object structures without modifying those structures."},
+        {"answer": "A security pattern for validating visitor permissions."},
+        {"answer": "A pattern that provides a simplified interface to a complex system of objects."}
+      ],
+      "answer": "A way of separating an algorithm from an object structure on which it operates. It allows you to add new operations to existing object structures without modifying those structures.",
+      "explanation": "The Visitor pattern is a behavioral pattern used when you have a complex object structure (like a composite tree representing a document or an abstract syntax tree) and you want to perform various different operations on it. Instead of adding a new method to every class in the hierarchy for each new operation (which violates the Open/Closed Principle), you create a 'Visitor' class that encapsulates the operation. Each object in the structure has an `accept(visitor)` method. When called, it simply calls back to the visitor, passing itself as an argument (`visitor.visit(this)`). The visitor then has different `visit` methods for each concrete type in the structure, allowing it to perform the specific operation for that type. This allows you to add new functionality by simply creating a new visitor, without touching the original class hierarchy."
+    },
+    {
+      "question": "In the context of CAP theorem, what is a 'CP' system?",
+      "answers": [
+        {"answer": "A system that prioritizes Consistency and Partition Tolerance over Availability. In the event of a network partition, it will become unavailable rather than return potentially stale or incorrect data."},
+        {"answer": "A 'Copy-Paste' system for data replication."},
+        {"answer": "A system that prioritizes Consistency and Performance."},
+        {"answer": "A system that has a Central Processor."}
+      ],
+      "answer": "A system that prioritizes Consistency and Partition Tolerance over Availability. In the event of a network partition, it will become unavailable rather than return potentially stale or incorrect data.",
+      "explanation": "Since network partitions (P) are a given in any distributed system, the real trade-off is between Consistency (C) and Availability (A). A CP system chooses Consistency. When a partition occurs, the system cannot guarantee that all nodes have the most up-to-date information. To avoid returning stale data, the partitioned part of the system (or the entire system) will stop accepting requests and return an error. It becomes unavailable. This is a common choice for systems where data correctness is absolutely critical, such as banking systems or distributed locks (e.g., Zookeeper, etcd)."
+    },
+    {
+      "question": "What is a 'pointer' in languages like C and C++?",
+      "answers": [
+        {"answer": "A special type of integer used for counting."},
+        {"answer": "A variable whose value is the memory address of another value. It 'points' to the location of data in memory."},
+        {"answer": "A graphical cursor on the screen."},
+        {"answer": "A reference to a point in a geometric shape."}
+      ],
+      "answer": "A variable whose value is the memory address of another value. It 'points' to the location of data in memory.",
+      "explanation": "Pointers are a fundamental but low-level concept. Instead of holding data directly, a pointer holds the address where the data is stored. This allows for powerful techniques like dynamic memory allocation on the heap, creating complex linked data structures (like lists and trees), and passing large objects to functions efficiently without copying them (pass-by-reference). It gives the programmer direct control over memory, which is powerful but also dangerous, as incorrect pointer usage can lead to bugs like null pointer dereferences, memory leaks, and buffer overflows."
+    },
+    {
+      "question": "What is 'big-O notation' used for?",
+      "answers": [
+        {
+          "answer": "To describe the exact running time of an algorithm in seconds."
+        },
+        {
+          "answer": "To classify algorithms according to how their running time or space requirements grow as the input size grows. It describes the worst-case asymptotic behavior."
+        },
+        {
+          "answer": "To notate very large numbers in mathematics."
+        },
+        {
+          "answer": "To describe the size of an object in memory."
+        }
+      ],
+      "answer": "To classify algorithms according to how their running time or space requirements grow as the input size grows. It describes the worst-case asymptotic behavior.",
+      "explanation": "Big-O notation is a mathematical notation used in computer science to describe the performance or complexity of an algorithm. It focuses on the 'order of growth' and ignores constant factors and lower-order terms. For example, an algorithm with a time complexity of O(n²) will become dramatically slower than an O(n) algorithm as the input size 'n' increases. It provides a high-level, hardware-independent way to analyze and compare the efficiency of algorithms, helping programmers choose the right approach for a given problem, especially when dealing with large datasets."
+    },
+    {
+      "question": "What is 'API' an acronym for, and what is its purpose?",
+      "answers": [
+        {
+          "answer": "Automated Programming Interface, a tool for writing code automatically."
+        },
+        {
+          "answer": "Application Programming Interface. It is a set of definitions, protocols, and tools for building software, defining how different software components should interact."
+        },
+        {
+          "answer": "Applied Programmatic Integration, a method for combining programs."
+        },
+        {
+          "answer": "Advanced Processor Instruction, a type of CPU command."
+        }
+      ],
+      "answer": "Application Programming Interface. It is a set of definitions, protocols, and tools for building software, defining how different software components should interact.",
+      "explanation": "An API is essentially a contract or an interface that a piece of software provides to other pieces of software. It specifies the 'public' parts of a software component—the functions, methods, and data structures that other developers are allowed to use—while hiding the internal implementation details. This allows for abstraction and modularity. For example, when you use a weather library, you don't need to know how it contacts the weather service; you just need to know how to call the `get_temperature('city')` function defined in its API. Web APIs (like REST or GraphQL) allow different services to communicate with each other over the internet."
+    },
+    {
+      "question": "In Git, what is the 'staging area' (or 'index')?",
+      "answers": [
+        {
+          "answer": "A temporary storage area for code that is not yet ready to be committed."
+        },
+        {
+          "answer": "A file in your working directory that sits between your working directory and your repository. It allows you to build up a set of changes that you want to commit as a single, logical unit."
+        },
+        {
+          "answer": "The main branch of the repository."
+        },
+        {
+          "answer": "A backup of the last commit."
+        }
+      ],
+      "answer": "A file in your working directory that sits between your working directory and your repository. It allows you to build up a set of changes that you want to commit as a single, logical unit.",
+      "explanation": "The staging area is a key feature that distinguishes Git from some other version control systems. It acts as an intermediate step. When you modify files in your working directory, Git knows they've changed. Before you commit, you must use the `git add` command to move those changes to the staging area. This allows you to be selective. You can stage changes from only some of your modified files, or even stage only some of the changes within a single file. The `git commit` command then takes whatever is in the staging area and creates a new commit from that snapshot. This enables you to craft clean, focused commits that represent a single logical change, even if you made many unrelated edits in your working directory."
+    },
+    {
+      "question": "What is 'Object-Oriented Programming' (OOP)?",
+      "answers": [
+        {
+          "answer": "A programming paradigm based on the concept of 'objects', which can contain data (in the form of fields, often known as attributes or properties) and code (in the form of procedures, often known as methods)."
+        },
+        {
+          "answer": "A style of programming that is focused on mathematical functions."
+        },
+        {
+          "answer": "A method for programming physical objects and robots."
+        },
+        {
+          "answer": "A programming language used for creating 3D objects."
+        }
+      ],
+      "answer": "A programming paradigm based on the concept of 'objects', which can contain data (in the form of fields, often known as attributes or properties) and code (in the form of procedures, often known as methods).",
+      "explanation": "OOP is a way of structuring a program by bundling related data and the functions that operate on that data into units called 'objects'. This is in contrast to procedural programming, where data and functions are often separate. Key concepts in OOP include: Encapsulation (hiding the internal state of an object and only allowing access through its public methods), Inheritance (allowing a new class to be based on an existing class, inheriting its properties and methods), and Polymorphism (allowing objects of different classes to be treated as objects of a common superclass). Languages like Java, C++, Python, and C# are heavily influenced by OOP principles."
+    }
+  ]
+},
+  {
+  "name": "Coding Concepts (Advanced)",
+  "questions": [
+    {
+      "question": "In the context of concurrent programming, what is the fundamental difference between a mutex and a semaphore?",
+      "answers": [
+        {"answer": "A mutex is used for mutual exclusion, while a semaphore is used for signaling between threads."},
+        {"answer": "A mutex can only be unlocked by the thread that locked it, whereas a semaphore can be signaled (unlocked) by any thread."},
+        {"answer": "A mutex is a binary semaphore, but a semaphore can have a count greater than one, allowing multiple threads to access a resource pool."},
+        {"answer": "All of the above are correct."}
+      ],
+      "answer": "All of the above are correct.",
+      "explanation": "This question touches on a classic concurrency topic. A Mutex (Mutual Exclusion) is a locking mechanism designed to enforce a policy where only one thread at a time can access a critical section of code. Crucially, the ownership is tied to the thread that acquires the lock; only that specific thread can release it. A Semaphore is a more general synchronization primitive. It maintains a counter. A 'binary semaphore' (with a count of 1) can be used like a mutex. However, a 'counting semaphore' (with a count > 1) can be used to control access to a finite pool of resources, allowing N threads to enter a critical section simultaneously. Furthermore, because semaphores don't have an 'owner', one thread can 'wait' (decrement the counter) and another thread can 'signal' (increment the counter), making them suitable for producer-consumer scenarios and other signaling tasks where a mutex would be inappropriate."
+    },
+    {
+      "question": "What is the primary purpose of the 'virtual' keyword when applied to a method in C++ or C#?",
+      "answers": [
+        {"answer": "It indicates that the method is defined in a different file."},
+        {"answer": "It signals to the compiler that the method's address should be resolved at runtime (late binding), enabling polymorphic behavior in class hierarchies."},
+        {"answer": "It makes the method accessible from outside the class, similar to the 'public' keyword."},
+        {"answer": "It ensures the method is inlined for performance."}
+      ],
+      "answer": "It signals to the compiler that the method's address should be resolved at runtime (late binding), enabling polymorphic behavior in class hierarchies.",
+      "explanation": "The 'virtual' keyword is the cornerstone of runtime polymorphism in object-oriented programming. When a method in a base class is declared as virtual, the compiler generates a virtual table (v-table) for that class. The v-table is an array of function pointers. When a derived class overrides that virtual method, its entry in the v-table is updated to point to the new implementation. When a call is made to the virtual method through a base class pointer or reference, the program performs a lookup in the object's v-table at runtime to find the correct method to execute. This is called late binding or dynamic dispatch. Without the 'virtual' keyword, the compiler would use early binding (static dispatch) and always call the base class version of the method, regardless of the actual type of the object."
+    },
+    {
+      "question": "In functional programming, what is a 'monad'?",
+      "answers": [
+        {"answer": "A data type that can only hold a single, immutable value."},
+        {"answer": "A design pattern that encapsulates a computation, providing a standard way to sequence operations and handle context (like state, I/O, or potential absence of a value)."},
+        {"answer": "A function that takes another function as an argument and returns a function."},
+        {"answer": "A recursive data structure, such as a linked list or a tree."}
+      ],
+      "answer": "A design pattern that encapsulates a computation, providing a standard way to sequence operations and handle context (like state, I/O, or a potential absence of a value).",
+      "explanation": "A monad is a concept from category theory that has been adopted by functional programming languages to manage side effects and complexity in a pure functional setting. At its core, a monad is a type that wraps another type, plus two operations: 'return' (or 'unit'), which puts a plain value into the monadic container, and 'bind' (often represented by an operator like >>=), which sequences operations. The 'bind' function takes a monadic value and a function that returns a new monadic value, and it knows how to 'unwrap' the value, apply the function, and return the new wrapped result. This allows programmers to write sequences of operations that look imperative, while the monad itself handles the 'plumbing' of the context. Common examples include the Maybe/Optional monad (handling nulls), the List monad (handling non-determinism), the State monad (handling state), and the IO monad (handling side effects)."
+    },
+    {
+      "question": "What is the key difference between 'idempotent' and 'referentially transparent' functions?",
+      "answers": [
+        {"answer": "They are synonymous terms for a pure function."},
+        {"answer": "An idempotent function produces the same result if called multiple times with the same input, while a referentially transparent function can be replaced by its return value without changing the program's behavior."},
+        {"answer": "Idempotent functions can have side effects, while referentially transparent functions must be pure."},
+        {"answer": "Both B and C are correct."}
+      ],
+      "answer": "Both B and C are correct.",
+      "explanation": "These two concepts are related but distinct. A function is idempotent if f(f(x)) = f(x). In a broader sense, especially in REST APIs, it means that making the same request multiple times has the same effect as making it once (e.g., a PUT or DELETE request). This does not preclude side effects; setting a user's name to 'Alex' twice is idempotent, but it does change state. A function is referentially transparent if it is a pure function, meaning it has no side effects and its output depends only on its inputs. Because of this purity, any call to the function can be replaced with its corresponding return value without affecting the program's logic. All referentially transparent functions are inherently idempotent (since f(x) always equals some value 'y', f(y) is not a valid operation in this context), but not all idempotent functions are referentially transparent because they might have side effects."
+    },
+    {
+      "question": "In database systems, what does the 'C' in ACID properties stand for, and what does it guarantee?",
+      "answers": [
+        {"answer": "Concurrency: It guarantees that multiple transactions can occur at the same time."},
+        {"answer": "Consistency: It guarantees that any transaction will bring the database from one valid state to another, preserving all predefined rules and constraints."},
+        {"answer": "Commit: It guarantees that once a transaction is committed, it will not be undone."},
+        {"answer": "Cacheability: It guarantees that the results of the transaction can be cached."}
+      ],
+      "answer": "Consistency: It guarantees that any transaction will bring the database from one valid state to another, preserving all predefined rules and constraints.",
+      "explanation": "ACID (Atomicity, Consistency, Isolation, Durability) is a set of properties that guarantee database transactions are processed reliably. Consistency is arguably the most application-oriented property. It ensures that a transaction cannot leave the database in an invalid state. This is enforced through rules, constraints, cascades, and triggers defined within the database schema. For example, if a rule states that the balance of an account cannot be negative, any transaction that would result in a negative balance will be rolled back, thus maintaining the consistency of the data. Atomicity guarantees that the transaction is all-or-nothing, Isolation ensures that concurrent transactions don't interfere with each other, and Durability ensures that committed data survives system failures."
+    },
+    {
+      "question": "What is the Big O notation for the time complexity of a binary search algorithm on a sorted array?",
+      "answers": [
+        {"answer": "O(n)"},
+        {"answer": "O(n²)"},
+        {"answer": "O(log n)"},
+        {"answer": "O(1)"}
+      ],
+      "answer": "O(log n)",
+      "explanation": "Binary search operates on a 'divide and conquer' principle. On each step, it compares the target value with the middle element of the sorted array. If they are not equal, the half of the array in which the target cannot lie is eliminated, and the search continues on the remaining half. This process of halving the search space with each comparison is what gives it its logarithmic time complexity. If you have 'n' elements, it takes roughly log₂(n) steps to find the target. For example, in an array of 1,000,000 elements, it would take at most about 20 comparisons (2²⁰ ≈ 1,000,000) to find an element, whereas a linear search (O(n)) could take up to 1,000,000 comparisons."
+    },
+    {
+      "question": "In network protocols, what is the primary difference between TCP (Transmission Control Protocol) and UDP (User Datagram Protocol)?",
+      "answers": [
+        {"answer": "TCP is a connectionless protocol, while UDP is connection-oriented."},
+        {"answer": "UDP guarantees packet delivery and order, while TCP does not."},
+        {"answer": "TCP is a reliable, connection-oriented protocol that provides error checking and ensures packets are delivered in order, while UDP is a lightweight, connectionless protocol that offers no such guarantees."},
+        {"answer": "TCP is used for broadcasting messages, while UDP is for unicasting."}
+      ],
+      "answer": "TCP is a reliable, connection-oriented protocol that provides error checking and ensures packets are delivered in order, while UDP is a lightweight, connectionless protocol that offers no such guarantees.",
+      "explanation": "TCP and UDP are both core protocols of the Internet Protocol Suite, but they serve very different purposes. TCP is designed for reliability. It establishes a connection (a 'three-way handshake'), numbers the data packets, and retransmits any packets that are lost. It also reassembles the packets in the correct order at the destination. This makes it ideal for applications where data integrity is paramount, like web Browse (HTTP), file transfer (FTP), and email (SMTP). UDP is designed for speed and simplicity. It is 'fire-and-forget'; it sends packets (datagrams) without establishing a connection and without any guarantee that they will arrive or be in the right order. This low overhead makes it suitable for real-time applications where speed is more important than perfect reliability, such as online gaming, video streaming, and DNS lookups."
+    },
+    {
+      "question": "What problem is the 'Decorator' design pattern intended to solve?",
+      "answers": [
+        {"answer": "It provides a way to create objects without specifying their exact class."},
+        {"answer": "It allows an object's behavior to be altered at runtime by wrapping it in an object of a decorator class, without affecting other objects of the same class."},
+        {"answer": "It ensures that a class has only one instance and provides a global point of access to it."},
+        {"answer": "It defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified."}
+      ],
+      "answer": "It allows an object's behavior to be altered at runtime by wrapping it in an object of a decorator class, without affecting other objects of the same class.",
+      "explanation": "The Decorator pattern is a structural design pattern that provides a flexible alternative to subclassing for extending functionality. Instead of creating many different subclasses to handle various combinations of optional behaviors, you create a decorator class that 'wraps' the original object. The decorator conforms to the same interface as the object it decorates, so it's transparent to the client. It forwards requests to the wrapped object and can perform additional actions before or after the forwarding. Decorators can be stacked on top of each other, allowing for a rich combination of functionalities to be added to an object dynamically. A classic example is adding scrolling functionality to a text view window in a GUI framework."
+    },
+    {
+      "question": "What is the primary characteristic of a 'pure function' in programming?",
+      "answers": [
+        {"answer": "It does not take any arguments."},
+        {"answer": "Its return value depends only on its input arguments, and it has no observable side effects (like modifying global state or performing I/O)."},
+        {"answer": "It is a function that has been formally verified to be free of bugs."},
+        {"answer": "It always returns a boolean value."}
+      ],
+      "answer": "Its return value depends only on its input arguments, and it has no observable side effects (like modifying global state or performing I/O).",
+      "explanation": "Purity is a central concept in functional programming. A function is pure if it satisfies two conditions: 1) It is deterministic, meaning for the same set of inputs, it will always return the same output. 2) It has no side effects, meaning it does not modify any state outside its own scope (e.g., changing a global variable, writing to a file, mutating its input arguments). This makes pure functions highly predictable, testable, and easy to reason about. Since their output is guaranteed, their results can be cached (a technique called memoization). They are also inherently thread-safe, as they don't interact with shared state, which simplifies concurrent and parallel programming."
+    },
+    {
+      "question": "In the context of RESTful APIs, which HTTP method is expected to be idempotent but not necessarily safe?",
+      "answers": [
+        {"answer": "GET"},
+        {"answer": "POST"},
+        {"answer": "PUT"},
+        {"answer": "HEAD"}
+      ],
+      "answer": "PUT",
+      "explanation": "Let's break down the terms: 'Safe' methods are not expected to change the state on the server (e.g., GET, HEAD). 'Idempotent' methods mean that making the same request multiple times has the same effect as making it once. GET and HEAD are both safe and idempotent. POST is neither safe nor idempotent (creating two identical blog posts results in two posts). PUT is used to update or replace a resource at a specific URI. Calling PUT on `/articles/123` with the same payload multiple times will result in the same state as calling it once (the article with ID 123 will have that payload), so it is idempotent. However, it is not safe because it modifies the server's state. DELETE is another example of a method that is idempotent but not safe."
+    },
+    {
+      "question": "What is the primary difference between a 'process' and a 'thread' in an operating system?",
+      "answers": [
+        {"answer": "A process is a program in execution, having its own memory space, while a thread is the smallest unit of execution within a process, sharing the process's memory space."},
+        {"answer": "Processes are used for I/O-bound tasks, while threads are for CPU-bound tasks."},
+        {"answer": "A process cannot have multiple threads, but a thread can belong to multiple processes."},
+        {"answer": "Threads are managed by the hardware, while processes are managed by the OS kernel."}
+      ],
+      "answer": "A process is a program in execution, having its own memory space, while a thread is the smallest unit of execution within a process, sharing the process's memory space.",
+      "explanation": "A process is an instance of a running program. The operating system allocates it a private virtual address space, file handles, and other resources. A thread is a path of execution within a process. A process can have one or more threads. All threads within the same process share the same memory space, code, and resources. This makes communication between threads (e.g., via shared variables) very fast and efficient. However, it also means that one thread can interfere with another. Because threads are lightweight (creating a thread is much faster than creating a process), they are the standard way to achieve concurrency within a single application."
+    },
+    {
+      "question": "In garbage collection, what is the fundamental principle of a 'mark and sweep' algorithm?",
+      "answers": [
+        {"answer": "It divides the heap into two halves and copies live objects from one half to the other."},
+        {"answer": "It uses a reference count for each object to determine if it's still in use."},
+        {"answer": "It first traverses the object graph starting from root objects to mark all reachable objects, then iterates through the entire heap, reclaiming memory from any unmarked objects."},
+        {"answer": "It deallocates memory as soon as a variable goes out of scope."}
+      ],
+      "answer": "It first traverses the object graph starting from root objects to mark all reachable objects, then iterates through the entire heap, reclaiming memory from any unmarked objects.",
+      "explanation": "Mark and sweep is a classic garbage collection algorithm. It operates in two phases: 1) The Mark Phase: The collector starts from a set of 'root' objects (e.g., global variables, objects on the current call stack) and traverses all object references recursively. Every object it encounters is 'marked' as being alive or reachable. 2) The Sweep Phase: The collector then sweeps through the entire memory heap from start to finish. Any object it finds that was not marked during the first phase is considered garbage and its memory is deallocated and added to a list of free memory blocks. The main advantages are that it correctly handles reference cycles (which reference counting does not) and it is relatively simple to implement. Its main disadvantage is that it can lead to memory fragmentation."
+    },
+    {
+      "question": "What does 'covariance' and 'contravariance' refer to in the context of type systems?",
+      "answers": [
+        {"answer": "They describe how generic type parameters can be converted. Covariance allows a more derived type (e.g., `List<String>`) to be used where a less derived type (`List<Object>`) is expected. Contravariance allows the opposite."},
+        {"answer": "Covariance refers to value types, and contravariance refers to reference types."},
+        {"answer": "They are different strategies for resolving method overloads."},
+        {"answer": "They describe the relationship between a class and its interface."}
+      ],
+      "answer": "They describe how generic type parameters can be converted. Covariance allows a more derived type (e.g., `List<String>`) to be used where a less derived type (`List<Object>`) is expected. Contravariance allows the opposite.",
+      "explanation": "Variance describes the subtyping relationship of complex types. Let's say `String` is a subtype of `Object`. Covariance preserves this relationship: `List<String>` is treated as a subtype of `List<Object>`. This is intuitive for 'producer' types (e.g., you can read a `String` from a `List<String>` and treat it as an `Object`). Contravariance reverses the relationship: `Action<Object>` is treated as a subtype of `Action<String>`. This makes sense for 'consumer' types: a function that knows how to handle any `Object` (`Action<Object>`) can certainly handle a `String`. If a type is neither, it is 'invariant'. In many languages, arrays are covariant, which can lead to runtime errors, while generic collections are often invariant by default unless explicitly marked with keywords like `out` (for covariance) or `in` (for contravariance) in languages like C# and Kotlin."
+    },
+    {
+      "question": "In computer architecture, what is 'branch prediction' and why is it important for modern pipelined processors?",
+      "answers": [
+        {"answer": "A technique where the CPU predicts the outcome of a conditional branch instruction and speculatively begins executing instructions from the predicted path before the condition is actually evaluated."},
+        {"answer": "A security feature that prevents unauthorized branches in code execution."},
+        {"answer": "A compiler optimization that removes all branches from a program."},
+        {"answer": "A method for predicting which memory branch will be accessed next."}
+      ],
+      "answer": "A technique where the CPU predicts the outcome of a conditional branch instruction and speculatively begins executing instructions from the predicted path before the condition is actually evaluated.",
+      "explanation": "Modern CPUs use instruction pipelining to improve performance, where multiple instructions are in different stages of execution simultaneously. A conditional branch (like an `if` statement) poses a problem: the CPU doesn't know which instructions to fetch next until the condition is resolved. Waiting for the result would stall the pipeline and waste clock cycles. A branch predictor makes an educated guess about whether the branch will be taken or not (e.g., based on past history). It then directs the pipeline to start fetching and executing instructions from the predicted path. If the prediction was correct, no time was lost. If it was incorrect (a 'misprediction'), the speculatively executed instructions are discarded, and the pipeline is flushed and refilled from the correct path. A misprediction incurs a significant performance penalty, which is why modern branch predictors are extremely sophisticated and have accuracy rates well over 95%."
+    },
+    {
+      "question": "What is the primary motivation for using a 'hash map' (or hash table) data structure?",
+      "answers": [
+        {"answer": "To store elements in a guaranteed sorted order."},
+        {"answer": "To achieve, on average, constant time O(1) complexity for insertions, deletions, and lookups."},
+        {"answer": "To minimize the memory usage for storing key-value pairs."},
+        {"answer": "To ensure that all elements are unique."}
+      ],
+      "answer": "To achieve, on average, constant time O(1) complexity for insertions, deletions, and lookups.",
+      "explanation": "A hash map is a data structure that maps keys to values. Its key feature is speed. It uses a hash function to compute an index, or 'bucket', from a key's hash code. This allows it to directly locate the position where the corresponding value should be stored or found, without having to search through all the elements. In an ideal case (no collisions), this means that finding, adding, or removing an element is an O(1) operation—its time does not depend on the number of elements in the map. In practice, hash collisions (where two different keys hash to the same index) can occur. These are typically handled by storing a linked list or a balanced tree at each bucket. As long as the hash function is good and the table is not too full, the average time complexity remains O(1), although the worst-case time complexity can degrade to O(n)."
+    },
+    {
+      "question": "What is tail-call optimization (TCO)?",
+      "answers": [
+        {"answer": "An optimization that removes the tail of a linked list."},
+        {"answer": "A compiler optimization where a function's last action is a call to another function (or itself), which can be replaced by a jump, avoiding the creation of a new stack frame."},
+        {"answer": "A technique for optimizing database 'tail' logs."},
+        {"answer": "An optimization that always makes the last element of an array the fastest to access."}
+      ],
+      "answer": "A compiler optimization where a function's last action is a call to another function (or itself), which can be replaced by a jump, avoiding the creation of a new stack frame.",
+      "explanation": "Tail-call optimization is a crucial feature for many functional programming languages. Normally, every function call creates a new frame on the call stack to store its arguments and local variables. In a deep recursion, this can lead to a stack overflow error. If a function's very last action is to call another function (a 'tail call'), the current function's stack frame is no longer needed. A TCO-enabled compiler can recognize this and, instead of creating a new stack frame, it can simply reuse the current one for the new function call, effectively turning the recursion into a loop. This allows for writing recursive algorithms that can run indefinitely without consuming stack space. Many languages like Scheme guarantee TCO, while others like Python do not."
+    },
+    {
+      "question": "In object-oriented design, what is the 'Liskov Substitution Principle' (LSP)?",
+      "answers": [
+        {"answer": "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program."},
+        {"answer": "A class should have only one reason to change (Single Responsibility Principle)."},
+        {"answer": "Clients should not be forced to depend on interfaces they do not use (Interface Segregation Principle)."},
+        {"answer": "High-level modules should not depend on low-level modules; both should depend on abstractions (Dependency Inversion Principle)."}
+      ],
+      "answer": "Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program.",
+      "explanation": "The Liskov Substitution Principle is the 'L' in the SOLID principles of object-oriented design. It is a fundamental principle of good inheritance. It states that if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering any of the desirable properties of the program. This means a subclass must not just have the same method signatures as its superclass, but it must also adhere to its 'contract'. For example, a subclass method should not throw new exceptions that the base class method does not, and it should not have stricter preconditions or weaker postconditions. Violating LSP leads to a fragile class hierarchy where you have to use `instanceof` checks to know the real type of an object before you can safely use it."
+    },
+    {
+      "question": "What is the primary difference between 'static' and 'dynamic' typing in programming languages?",
+      "answers": [
+        {"answer": "Static languages are compiled, while dynamic languages are interpreted."},
+        {"answer": "In static typing, type checking is performed at compile-time, while in dynamic typing, it is performed at runtime."},
+        {"answer": "Static typing is used for web development, while dynamic typing is used for systems programming."},
+        {"answer": "Static types cannot be changed, while dynamic types can."}
+      ],
+      "answer": "In static typing, type checking is performed at compile-time, while in dynamic typing, it is performed at runtime.",
+      "explanation": "This distinction refers to when the type safety of a program is verified. In a statically typed language (like Java, C++, or Rust), variables have types, and the compiler checks that all operations are type-safe before the program is even run. You cannot, for example, call a string method on an integer variable; the compiler will flag it as an error. This catches many bugs early and allows for better performance and tooling. In a dynamically typed language (like Python, JavaScript, or Ruby), variables themselves do not have fixed types, but the values they hold do. Type checking happens at runtime. You can assign an integer to a variable and then later assign a string to the same variable. An attempt to call a string method on a variable holding an integer will only be caught when that line of code is actually executed, potentially causing a runtime error. This offers more flexibility and faster prototyping at the cost of compile-time safety."
+    },
+    {
+      "question": "What is a 'closure' in the context of programming languages like JavaScript or Python?",
+      "answers": [
+        {"answer": "The act of closing a file handle or network socket."},
+        {"answer": "A function that has been closed to modification."},
+        {"answer": "A function bundled together with references to its surrounding state (the lexical environment). It gives you access to an outer function's scope from an inner function."},
+        {"answer": "A security feature that closes off parts of a program from external access."}
+      ],
+      "answer": "A function bundled together with references to its surrounding state (the lexical environment). It gives you access to an outer function's scope from an inner function.",
+      "explanation": "A closure is a powerful feature of many modern languages. It occurs when a function is defined inside another function. The inner function has access to its own variables, the outer function's variables, and the global variables. Even after the outer function has finished executing, the inner function 'remembers' the environment in which it was created. This allows the inner function to be passed around as a value (e.g., returned from the outer function or passed as a callback) and still have access to the outer function's state. This is fundamental for enabling concepts like data privacy (creating private variables) and for functional programming patterns like currying and partial application."
+    },
+    {
+      "question": "In database indexing, what is a 'B-Tree' and why is it well-suited for on-disk storage?",
+      "answers": [
+        {"answer": "A binary tree where each node has at most two children."},
+        {"answer": "A self-balancing tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. Its nodes can have many children, which keeps the tree shallow and minimizes disk I/O."},
+        {"answer": "A tree structure used exclusively for storing boolean values."},
+        {"answer": "A backup copy of the main database tree."}
+      ],
+      "answer": "A self-balancing tree data structure that keeps data sorted and allows searches, sequential access, insertions, and deletions in logarithmic time. Its nodes can have many children, which keeps the tree shallow and minimizes disk I/O.",
+      "explanation": "A B-Tree is the most common data structure for implementing database indexes. Unlike a binary tree, a B-Tree node can have a large number of children (a high branching factor). This is its key advantage for disk-based systems. Disk I/O is extremely slow compared to memory access. Data is read from disk in blocks or pages. By making the B-Tree node size correspond to the disk page size, a single disk read can bring a large number of keys and pointers into memory. The high branching factor means the tree is very shallow (wide and short). To find any record, you only need to traverse a small number of nodes, which means a small number of slow disk reads. This minimizes I/O and makes searching very fast, even for databases with billions of records."
+    },
+    {
+      "question": "What is the purpose of 'duck typing'?",
+      "answers": [
+        {
+          "answer": "It is a form of static typing that uses a special 'duck' keyword."
+        },
+        {
+          "answer": "It is a style of dynamic typing where an object's suitability for a certain operation is determined by the presence of specific methods and properties, rather than its explicit type or inheritance."
+        },
+        {
+          "answer": "It is a debugging technique where a rubber duck is used to explain the code."
+        },
+        {
+          "answer": "It is a testing methodology for waterfowl-related software."
+        }
+      ],
+      "answer": "It is a style of dynamic typing where an object's suitability for a certain operation is determined by the presence of specific methods and properties, rather than its explicit type or inheritance.",
+      "explanation": "The name comes from the phrase, \"If it walks like a duck and it quacks like a duck, then it must be a duck.\" In duck typing, you don't care about what an object *is* (its class or type), you only care about what it *does* (what methods it can respond to). If you have a function that needs an object with a `.quack()` method, you can pass it any object that has that method, regardless of its class hierarchy. This promotes flexibility and decouples components. It is common in dynamically typed languages like Python and Ruby. The focus is on the object's interface (what it can do) rather than its identity."
+    },
+    {
+      "question": "What is the 'CAP Theorem' in distributed systems?",
+      "answers": [
+        {
+          "answer": "A theorem stating that a distributed data store can provide at most two of the following three guarantees: Consistency, Availability, and Partition Tolerance."
+        },
+        {
+          "answer": "A theorem that defines the maximum capacity of a network link."
+        },
+        {
+          "answer": "A security principle for capitalizing passwords."
+        },
+        {
+          "answer": "A theorem about the capacity of a capacitor in an electrical circuit."
+        }
+      ],
+      "answer": "A theorem stating that a distributed data store can provide at most two of the following three guarantees: Consistency, Availability, and Partition Tolerance.",
+      "explanation": "The CAP theorem, also known as Brewer's theorem, is a fundamental principle in distributed system design. It states that it is impossible for a distributed data store to simultaneously provide more than two of these three guarantees: 1) Consistency: Every read receives the most recent write or an error. All nodes see the same data at the same time. 2) Availability: Every request receives a (non-error) response, without the guarantee that it contains the most recent write. 3) Partition Tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes. Since network partitions are a fact of life in distributed systems, the real-world trade-off is almost always between Consistency and Availability. A system can choose to return an error or stale data when a partition occurs (favoring consistency, a CP system) or it can choose to always return a response, even if it's not the latest data (favoring availability, an AP system)."
+    },
+    {
+      "question": "What is 'memoization'?",
+      "answers": [
+        {
+          "answer": "The process of writing a memo about a function's behavior."
+        },
+        {
+          "answer": "An optimization technique where the return values of expensive function calls are cached and returned when the same inputs occur again, avoiding re-computation."
+        },
+        {
+          "answer": "A memory allocation strategy for large data structures."
+        },
+        {
+          "answer": "The process of converting an object into a stream of bytes for storage or transmission."
+        }
+      ],
+      "answer": "An optimization technique where the return values of expensive function calls are cached and returned when the same inputs occur again, avoiding re-computation.",
+      "explanation": "Memoization is a specific form of caching that is applied to functions. It is most effective on pure functions, whose return value depends only on their inputs. The first time a memoized function is called with a particular set of arguments, it computes the result as normal, but before returning, it stores the result in a lookup table (like a hash map), keyed by the input arguments. On subsequent calls with the same arguments, the function first checks the lookup table. If the result is found, it is returned immediately without executing the function's body again. This can provide a dramatic performance increase for computationally expensive functions, especially in recursive algorithms like calculating Fibonacci numbers."
+    },
+    {
+      "question": "In the context of CPU caching, what is the 'principle of locality'?",
+      "answers": [
+        {
+          "answer": "The principle that code should be written in the local language of the developer."
+        },
+        {
+          "answer": "The tendency of a processor to access the same set of memory locations repetitively over a short period. It comprises temporal locality (recently accessed items are likely to be accessed again) and spatial locality (items with nearby addresses are likely to be accessed soon)."
+        },
+        {
+          "answer": "The principle that local variables are faster to access than global variables."
+        },
+        {
+          "answer": "A security principle that restricts code to accessing only its local memory."
+        }
+      ],
+      "answer": "The tendency of a processor to access the same set of memory locations repetitively over a short period. It comprises temporal locality (recently accessed items are likely to be accessed again) and spatial locality (items with nearby addresses are likely to be accessed soon).",
+      "explanation": "The principle of locality is the fundamental reason why CPU caches are effective. Modern computer programs exhibit predictable memory access patterns. Temporal locality states that if a program accesses a memory location, it is very likely to access that same location again in the near future (e.g., a variable inside a loop). Spatial locality states that if a program accesses a memory location, it is very likely to access memory locations near it soon (e.g., iterating through an array). CPU caches exploit this by storing recently accessed data (temporal) and by fetching entire blocks of memory (cache lines) at once, even if only one byte was requested (spatial). This ensures that most memory accesses can be satisfied by the small, fast cache, rather than requiring a slow trip to main memory (RAM)."
+    },
+    {
+      "question": "What is the main purpose of a 'singleton' design pattern?",
+      "answers": [
+        {
+          "answer": "To ensure a class has only one instance and to provide a global point of access to it."
+        },
+        {
+          "answer": "To create a single interface for a complex subsystem."
+        },
+        {
+          "answer": "To allow a single object to be decorated with multiple responsibilities."
+        },
+        {
+          "answer": "To allow an object to be created from a single line of code."
+        }
+      ],
+      "answer": "To ensure a class has only one instance and to provide a global point of access to it.",
+      "explanation": "The Singleton pattern is a creational pattern that restricts the instantiation of a class to a single object. It is used when exactly one object is needed to coordinate actions across the system. A typical implementation involves a private constructor (to prevent direct instantiation), a static private member to hold the single instance, and a public static method that provides access to this instance (creating it on the first call). While sometimes useful for managing global resources like a database connection or a logger, the Singleton pattern is often criticized as an 'anti-pattern' because it introduces global state into an application, which can make testing difficult and create hidden dependencies between components."
+    },
+    {
+      "question": "In version control systems like Git, what is a 'rebase' operation?",
+      "answers": [
+        {
+          "answer": "It is a synonym for merging one branch into another."
+        },
+        {
+          "answer": "It is the process of moving or combining a sequence of commits to a new base commit. It rewrites the commit history to create a linear, cleaner-looking history."},
+        {"answer": "It is an operation to revert a repository to its initial commit."},
+        {"answer": "It is the act of deleting a branch."}
+      ],
+      "answer": "It is the process of moving or combining a sequence of commits to a new base commit. It rewrites the commit history to create a linear, cleaner-looking history.",
+      "explanation": "Both `git merge` and `git rebase` are used to integrate changes from one branch into another. A merge takes the entire history of one branch and creates a new 'merge commit' that ties the two histories together, resulting in a graph that shows the parallel history. A rebase, on the other hand, takes the commits from a feature branch, 'unwinds' them, moves the branch pointer to the latest commit on the target branch (e.g., `main`), and then 'replays' the commits one by one on top of the new base. This results in a straight, linear history without any merge commits. It makes the history easier to read, but because it rewrites history (creates new commits with new hashes), it should be used with great care and generally not on public, shared branches."
+    },
+    {
+      "question": "What is the 'Dependency Inversion Principle' (the 'D' in SOLID)?",
+      "answers": [
+        {
+          "answer": "It states that a class should depend on as few other classes as possible."
+        },
+        {
+          "answer": "It is the same as Dependency Injection."
+        },
+        {
+          "answer": "It states that high-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces). Abstractions should not depend on details. Details should depend on abstractions."
+        },
+        {
+          "answer": "It states that all dependencies should be inverted in the constructor."
+        }
+      ],
+      "answer": "It states that high-level modules should not depend on low-level modules. Both should depend on abstractions (e.g., interfaces). Abstractions should not depend on details. Details should depend on abstractions.",
+      "explanation": "The Dependency Inversion Principle aims to decouple software modules. Without it, high-level modules that contain complex business logic often depend directly on low-level modules that handle details like database access or network calls. This makes the high-level module difficult to test and reuse, as it's tied to specific implementations. The principle 'inverts' this dependency. Instead of A -> B, you have A -> I <- B. The high-level module (A) depends on an abstraction (an interface, I). The low-level module (B) also depends on that same abstraction by implementing it. This decouples the modules. The high-level module doesn't care about the concrete implementation, only the interface. Dependency Injection is a common technique for implementing this principle, where the concrete dependency is 'injected' into the high-level class at runtime."
+    },
+    {
+      "question": "In cryptography, what is the fundamental difference between symmetric and asymmetric encryption?",
+      "answers": [
+        {
+          "answer": "Symmetric encryption is more secure than asymmetric encryption."
+        },
+        {
+          "answer": "Symmetric encryption uses the same key for both encryption and decryption, while asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption."
+        },
+        {
+          "answer": "Asymmetric encryption is much faster than symmetric encryption."
+        },
+        {
+          "answer": "Symmetric encryption can only be implemented in hardware, while asymmetric can be in software."
+        }
+      ],
+      "answer": "Symmetric encryption uses the same key for both encryption and decryption, while asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption.",
+      "explanation": "Symmetric encryption (e.g., AES) uses a single, shared secret key. Both the sender and receiver must have the same key. The sender encrypts the message with the key, and the receiver decrypts it with the exact same key. It is very fast and efficient, but its main challenge is key distribution: how do you securely share the secret key in the first place? Asymmetric encryption (or public-key cryptography, e.g., RSA) solves this. It uses a key pair. The public key can be shared freely with anyone. Anyone can use the public key to encrypt a message, but only the holder of the corresponding private key can decrypt it. This is much slower than symmetric encryption. In practice, they are used together: a secure connection (like TLS/SSL) uses slow asymmetric encryption to securely exchange a fast symmetric key, which is then used to encrypt the bulk of the data."
+    },
+    {
+      "question": "What is 'currying' in functional programming?",
+      "answers": [
+        {
+          "answer": "A technique for adding spice to bland code."
+        },
+        {
+          "answer": "The process of transforming a function that takes multiple arguments into a sequence of nested functions, each taking a single argument."
+        },
+        {
+          "answer": "A debugging technique that involves printing a function's arguments to the console."
+        },
+        {
+          "answer": "A way of combining multiple functions into a single function."
+        }
+      ],
+      "answer": "The process of transforming a function that takes multiple arguments into a sequence of nested functions, each taking a single argument.",
+      "explanation": "Currying, named after the logician Haskell Curry, is a technique that allows you to work with functions that take multiple arguments as if they were a chain of functions that each take one argument. For example, a function `add(x, y)` can be curried into a function `add(x)` that returns a new function. This new function 'remembers' the value of `x` (via a closure) and takes a single argument, `y`, to complete the calculation. This is powerful because it enables partial application, where you can fix some of the arguments to a function and pass the resulting specialized function around. For example, you could create an `add5` function by calling the curried `add(5)`."
+    },
+    {
+      "question": "What is the role of a 'compiler'?",
+      "answers": [
+        {
+          "answer": "To execute a program line by line."
+        },
+        {
+          "answer": "To translate source code written in a high-level programming language into a lower-level language, typically machine code, that the CPU can execute."
+        },
+        {
+          "answer": "To check for stylistic errors in the code."
+        },
+        {
+          "answer": "To bundle all the program's dependencies into a single file."
+        }
+      ],
+      "answer": "To translate source code written in a high-level programming language into a lower-level language, typically machine code, that the CPU can execute.",
+      "explanation": "A compiler is a program that acts as a translator. It takes the entire source code of a program (e.g., written in C++, Rust, or Go) and goes through several phases: lexical analysis (breaking code into tokens), parsing (building a syntax tree), semantic analysis (checking for type errors), optimization (restructuring the code for better performance), and finally, code generation (producing an executable file in machine language). The result is a standalone executable that can be run directly by the operating system. This is in contrast to an 'interpreter' (used by languages like Python or JavaScript), which reads and executes the source code line by line without first creating a separate executable file."
+    },
+    {
+      "question": "What is the 'Observer' design pattern?",
+      "answers": [
+        {
+          "answer": "A pattern for observing and logging all method calls in a system."
+        },
+        {
+          "answer": "A pattern that ensures only one instance of an object is created."
+        },
+        {
+          "answer": "A behavioral design pattern that defines a one-to-many dependency between objects so that when one object (the subject) changes state, all its dependents (the observers) are notified and updated automatically."
+        },
+        {
+          "answer": "A pattern for creating a simplified interface to a complex subsystem."
+        }
+      ],
+      "answer": "A behavioral design pattern that defines a one-to-many dependency between objects so that when one object (the subject) changes state, all its dependents (the observers) are notified and updated automatically.",
+      "explanation": "The Observer pattern is fundamental for building event-driven systems. It allows objects (observers) to subscribe to an object of interest (the subject). The subject maintains a list of its observers. When the subject's state changes, it iterates through its list of observers and calls a specific method (e.g., `update()`) on each one, passing along information about the change. This decouples the subject from its observers; the subject doesn't need to know anything about the concrete classes of its observers, only that they implement the observer interface. This pattern is widely used in GUI toolkits (e.g., for button clicks), event listeners, and reactive programming frameworks."
+    },
+    {
+      "question": "What is a 'race condition' in concurrent programming?",
+      "answers": [
+        {
+          "answer": "A competition between programmers to finish their code first."
+        },
+        {
+          "answer": "A situation where the behavior of a software system depends on the unpredictable timing or interleaving of operations from multiple threads or processes, leading to erroneous results."
+        },
+        {
+          "answer": "A hardware condition where the CPU runs too fast for the memory."
+        },
+        {
+          "answer": "A feature that makes a program run faster by racing multiple threads."
+        }
+      ],
+      "answer": "A situation where the behavior of a software system depends on the unpredictable timing or interleaving of operations from multiple threads or processes, leading to erroneous results.",
+      "explanation": "A race condition is a common and difficult-to-debug bug in concurrent systems. It occurs when two or more threads access a shared resource (like a variable or a file) concurrently, and at least one of the accesses is a write. The final state of the resource depends on the precise, non-deterministic order in which the threads' operations are scheduled by the operating system. A classic example is two threads both incrementing a shared counter: `count++`. This operation is not atomic; it involves reading the value, incrementing it, and writing it back. If the threads' operations are interleaved, one of the increments can be lost. Race conditions are prevented by using synchronization primitives like mutexes, semaphores, or atomic operations to ensure that access to the shared resource is mutually exclusive."
+    },
+    {
+      "question": "What is the primary difference between a 'stack' and a 'heap' in terms of memory management?",
+      "answers": [
+        {
+          "answer": "The stack is for storing global variables, while the heap is for local variables."
+        },
+        {
+          "answer": "The stack is a region of memory for static memory allocation (function call frames, local variables), managed automatically in a LIFO manner. The heap is for dynamic memory allocation, and memory must be managed explicitly or by a garbage collector."
+        },
+        {
+          "answer": "Accessing memory on the heap is faster than on the stack."
+        },
+        {
+          "answer": "The stack has a much larger size limit than the heap."
+        }
+      ],
+      "answer": "The stack is a region of memory for static memory allocation (function call frames, local variables), managed automatically in a LIFO manner. The heap is for dynamic memory allocation, and memory must be managed explicitly or by a garbage collector.",
+      "explanation": "The stack is a highly organized and efficient region of memory. When a function is called, a 'stack frame' containing its local variables and return address is pushed onto the stack. When the function returns, its frame is popped off. This Last-In, First-Out (LIFO) management is extremely fast. The heap is a large, unstructured pool of memory available for the program to use for data whose size or lifetime is not known at compile time. Memory is allocated on the heap using functions like `malloc` (in C) or the `new` keyword (in C++/Java). This memory remains allocated until it is explicitly freed (`free`) or automatically reclaimed by a garbage collector. Heap allocation is more flexible but slower than stack allocation, and it can lead to memory leaks if not managed properly."
+    },
+    {
+      "question": "In API design, what does 'GraphQL' offer as an alternative to REST?",
+      "answers": [
+        {
+          "answer": "It is a simpler version of REST that only uses the GET method."
+        },
+        {
+          "answer": "It is a query language for APIs that allows clients to request exactly the data they need, and nothing more, from a single endpoint, avoiding the problems of over-fetching and under-fetching common in REST."
+        },
+        {
+          "answer": "It is a protocol for graphically designing APIs."
+        },
+        {
+          "answer": "It is a database technology that competes with SQL."
+        }
+      ],
+      "answer": "It is a query language for APIs that allows clients to request exactly the data they need, and nothing more, from a single endpoint, avoiding the problems of over-fetching and under-fetching common in REST.",
+      "explanation": "GraphQL was developed by Facebook to address some of the inflexibilities of traditional REST APIs. In REST, you typically have multiple endpoints (e.g., `/users/1`, `/users/1/posts`), and each endpoint returns a fixed data structure. This can lead to over-fetching (getting more data than you need, like a user's full profile when you only need their name) or under-fetching (having to make multiple requests to get all the data you need, like getting a user and then their posts). GraphQL exposes a single endpoint. The client sends a 'query' to this endpoint that precisely describes the data it needs, including nested relationships. The server then responds with a JSON object that exactly matches the structure of the query. This gives the client control, reduces the amount of data transferred over the network, and simplifies API evolution."
+    },
+    {
+      "question": "What is a 'deadlock' in concurrent systems?",
+      "answers": [
+        {
+          "answer": "A situation where a thread's lock is never released."
+        },
+        {
+          "answer": "A condition where two or more threads are blocked forever, each waiting for a resource held by another thread in the same set."
+        },
+        {
+          "answer": "A thread that has been terminated by the operating system."
+        },
+        {
+          "answer": "A lock that has no owner."
+        }
+      ],
+      "answer": "A condition where two or more threads are blocked forever, each waiting for a resource held by another thread in the same set.",
+      "explanation": "A deadlock is a classic concurrency problem. The most common scenario involves two threads and two mutexes (A and B). Thread 1 acquires a lock on mutex A and then tries to acquire a lock on mutex B. Simultaneously, Thread 2 acquires a lock on mutex B and then tries to acquire a lock on mutex A. The result is that Thread 1 is waiting for Thread 2 to release B, and Thread 2 is waiting for Thread 1 to release A. Neither can proceed, and they are stuck in a deadly embrace. Deadlocks can be prevented by enforcing a strict lock acquisition order (e.g., all threads must always lock A before B), using timeouts on lock attempts, or using deadlock detection algorithms."
+    },
+    {
+      "question": "What is the purpose of an 'interface' in languages like Java or C#?",
+      "answers": [
+        {
+          "answer": "It is a concrete class that can be instantiated directly."
+        },
+        {
+          "answer": "It defines a 'contract' of methods and properties that a class must implement. It allows for polymorphism and decouples the 'what' from the 'how'."
+        },
+        {
+          "answer": "It is a special type of comment used for documentation."
+        },
+        {
+          "answer": "It is a user interface for the application."
+        }
+      ],
+      "answer": "It defines a 'contract' of methods and properties that a class must implement. It allows for polymorphism and decouples the 'what' from the 'how'.",
+      "explanation": "An interface is a purely abstract type. It contains only the signatures of methods, properties, events, or indexers, but no implementation. When a class 'implements' an interface, it promises to provide a concrete implementation for all the members defined in that interface. This is extremely powerful for abstraction. Code can be written to depend on an interface, not a specific concrete class. This means you can swap out different implementations of the interface without changing the code that uses it. This is a key enabler of the Dependency Inversion Principle and allows for building flexible, loosely coupled, and testable systems. For example, you could have a `DataRepository` interface and have concrete implementations like `SQLRepository` and `InMemoryRepository` for production and testing, respectively."
+    },
+    {
+      "question": "What distinguishes a 'compiler' from a 'transpiler'?",
+      "answers": [
+        {
+          "answer": "A transpiler is a more advanced type of compiler."
+        },
+        {
+          "answer": "A compiler translates high-level source code to a lower-level language (like machine code), while a transpiler translates source code from one high-level language to another high-level language."
+        },
+        {
+          "answer": "A compiler works on transparent files, while a transpiler does not."
+        },
+        {
+          "answer": "There is no difference; the terms are interchangeable."
+        }
+      ],
+      "answer": "A compiler translates high-level source code to a lower-level language (like machine code), while a transpiler translates source code from one high-level language to another high-level language.",
+      "explanation": "Both are source-to-source translators, but the key difference is the level of abstraction of the output. A compiler's primary goal is to produce low-level code that a machine can execute. A transpiler (a portmanteau of 'translate' and 'compile') takes source code in one language and produces equivalent source code in another language at a similar level of abstraction. A very common use case is transpiling modern JavaScript (e.g., ES2021) or a different language like TypeScript into an older version of JavaScript (e.g., ES5) that can be understood by all web browsers. The output is still human-readable high-level code, just in a different dialect or language."
+    },
+    {
+      "question": "What is 'SOLID' an acronym for?",
+      "answers": [
+        {
+          "answer": "A set of five design principles intended to make software designs more understandable, flexible, and maintainable in object-oriented programming."
+        },
+        {
+          "answer": "A methodology for writing secure, optimized, lightweight, isolated, and dependable code."
+        },
+        {
+          "answer": "A framework for building solid-state applications."},
+        {"answer": "A testing paradigm: Static, Objective, Load, Integration, and Durability testing."}
+      ],
+      "answer": "A set of five design principles intended to make software designs more understandable, flexible, and maintainable in object-oriented programming.",
+      "explanation": "SOLID is an acronym for five key design principles promoted by Robert C. Martin. They are: S - Single Responsibility Principle (a class should have only one reason to change), O - Open/Closed Principle (software entities should be open for extension, but closed for modification), L - Liskov Substitution Principle (subtypes must be substitutable for their base types), I - Interface Segregation Principle (clients should not be forced to depend on interfaces they do not use), D - Dependency Inversion Principle (depend upon abstractions, not concretions). Following these principles helps to create systems that are easier to maintain, refactor, and extend over time by reducing dependencies and coupling."
+    },
+    {
+      "question": "In the context of software testing, what is the primary goal of 'fuzzing' or 'fuzz testing'?",
+      "answers": [
+        {
+          "answer": "To test the user interface for blurry or 'fuzzy' graphics."
+        },
+        {
+          "answer": "To find implementation bugs and security vulnerabilities by providing invalid, unexpected, or random data as input to a program."
+        },
+        {
+          "answer": "To verify that the code meets its functional requirements with a set of predefined inputs."
+        },
+        {
+          "answer": "To test the performance of the code under heavy load."
+        }
+      ],
+      "answer": "To find implementation bugs and security vulnerabilities by providing invalid, unexpected, or random data as input to a program.",
+      "explanation": "Fuzzing is an automated software testing technique. Instead of writing specific test cases with expected outputs, a 'fuzzer' generates a vast number of malformed or semi-malformed data inputs and feeds them to the target program, monitoring for crashes, assertion failures, or memory leaks. The goal is to discover edge cases and vulnerabilities that developers might not have anticipated. It is particularly effective at finding security issues like buffer overflows, denial-of-service vulnerabilities, and other crash-inducing bugs that can be triggered by unexpected input."
+    },
+    {
+      "question": "What is a 'type class' in languages like Haskell or Rust, and how does it differ from an 'interface' in Java/C#?",
+      "answers": [
+        {
+          "answer": "A type class is a class that can only be instantiated with a specific type."
+        },
+        {
+          "answer": "It is a mechanism for ad-hoc polymorphism that allows you to define behavior for a type without modifying the type's source code. An interface must be implemented by the class itself at compile time."
+        },
+        {
+          "answer": "There is no difference; they are the same concept."
+        },
+        {
+          "answer": "A type class is for value types, whereas an interface is for reference types."
+        }
+      ],
+      "answer": "It is a mechanism for ad-hoc polymorphism that allows you to define behavior for a type without modifying the type's source code. An interface must be implemented by the class itself at compile time.",
+      "explanation": "While both concepts enable polymorphism, they approach it differently. In Java or C#, for a class `Foo` to be a `Comparable`, `Foo` itself must explicitly state `implements Comparable` in its source code. You cannot make a class from an external library implement an interface you've just defined. A type class (like Haskell's `Eq` or Rust's `trait`) separates the definition of the behavior from the type. You can define a type class `Show` and then, separately, provide an 'instance' (in Haskell) or `impl` block (in Rust) that defines how to `show` a `Foo`, even if `Foo` comes from a third-party library and you don't have its source code. This allows for retroactively making types conform to a certain behavior, which is a more flexible and powerful form of polymorphism."
+    },
+    {
+      "question": "What is the primary role of a 'linker' in the C/C++ build process?",
+      "answers": [
+        {
+          "answer": "To link the source code to a version control system."
+        },
+        {
+          "answer": "To take one or more object files produced by the compiler and combine them into a single executable file, resolving symbol references between them."
+        },
+        {
+          "answer": "To analyze the source code for potential linking errors."
+        },
+        {
+          "answer": "To link comments in the code to the documentation."
+        }
+      ],
+      "answer": "To take one or more object files produced by the compiler and combine them into a single executable file, resolving symbol references between them.",
+      "explanation": "The build process for a compiled language like C++ typically has two main stages: compilation and linking. The compiler takes a single source file (e.g., `main.cpp`) and translates it into an 'object file' (`main.o`), which contains machine code but has unresolved references to symbols (like functions or variables) defined in other files. The linker's job is to take all these object files, along with any static libraries, and combine them. It arranges the code and data sections, and its most important task is to resolve the symbol references. When it sees a call to a function `foo()` in `main.o`, it finds the actual machine code for `foo()` in `foo.o` and patches the call to point to the correct address. The final output is a complete, runnable executable file."
+    },
+    {
+      "question": "In algorithm analysis, what is the difference between 'amortized' time complexity and 'worst-case' time complexity?",
+      "answers": [
+        {
+          "answer": "Amortized complexity is always better than worst-case complexity."
+        },
+        {
+          "answer": "Worst-case is the maximum time taken for any single operation. Amortized is the average time taken per operation over a sequence of operations, where occasional expensive operations are 'paid for' by many cheap operations."
+        },
+        {
+          "answer": "Amortized complexity only applies to financial algorithms."
+        },
+        {
+          "answer": "They are the same, but amortized is used for data structures and worst-case is for algorithms."
+        }
+      ],
+      "answer": "Worst-case is the maximum time taken for any single operation. Amortized is the average time taken per operation over a sequence of operations, where occasional expensive operations are 'paid for' by many cheap operations.",
+      "explanation": "Worst-case analysis gives a hard upper bound on the time for any given operation. Amortized analysis is a different way of looking at performance over a sequence of operations. A classic example is a dynamic array (like C++'s `std::vector`). Most of the time, adding an element is a fast O(1) operation. However, when the array becomes full, it must be resized. This involves allocating a new, larger array and copying all the old elements over, which is an expensive O(n) operation. While the worst-case time for a single `push_back` is O(n), this happens very infrequently. If you average the cost of this expensive operation over the many cheap O(1) operations that preceded it, the amortized time per operation comes out to be O(1). It gives a more realistic performance guarantee for a sequence of operations."
+    },
+    {
+      "question": "What is the 'Endianness' of a computer system?",
+      "answers": [
+        {
+          "answer": "The programming language used by the operating system's kernel."
+        },
+        {
+          "answer": "It describes the order in which a sequence of bytes is stored in computer memory for a multi-byte data type."
+        },
+        {
+          "answer": "The physical orientation of the CPU on the motherboard."
+        },
+        {
+          "answer": "The version number of the system's BIOS."
+        }
+      ],
+      "answer": "It describes the order in which a sequence of bytes is stored in computer memory for a multi-byte data type.",
+      "explanation": "Endianness specifies how bytes are ordered to represent a number larger than a single byte. There are two main types: 1) Big-Endian: The most significant byte (the 'big end') is stored at the lowest memory address. This is similar to how we write numbers. For the hex value `0x12345678`, the byte `12` would be stored first. 2) Little-Endian: The least significant byte (the 'little end') is stored at the lowest memory address. For `0x12345678`, the byte `78` would be stored first. Most modern desktop CPUs (like x86-64) are little-endian, while many network protocols and older architectures are big-endian. This becomes a critical issue when transferring binary data between systems with different endianness, as the bytes may need to be swapped to be interpreted correctly."
+    },
+    {
+      "question": "What problem does the 'RAII' (Resource Acquisition Is Initialization) idiom in C++ solve?",
+      "answers": [
+        {
+          "answer": "It ensures that all resources are initialized before they are acquired."
+        },
+        {
+          "answer": "It provides a mechanism for automatic resource management by tying the lifetime of a resource to the lifetime of an object, guaranteeing cleanup via the object's destructor, even in the presence of exceptions."
+        },
+        {
+          "answer": "It is a pattern for initializing arrays of resources."
+        },
+        {
+          "answer": "It is a memory allocation strategy for very large resources."
+        }
+      ],
+      "answer": "It provides a mechanism for automatic resource management by tying the lifetime of a resource to the lifetime of an object, guaranteeing cleanup via the object's destructor, even in the presence of exceptions.",
+      "explanation": "RAII is a powerful and fundamental concept in C++. It solves the problem of resource leaks (e.g., memory, file handles, network sockets, mutex locks). The idea is to wrap a 'raw' resource inside a class. The resource is acquired in the class's constructor. The crucial part is that the resource is released in the class's destructor. Because C++ guarantees that destructors are called for stack-allocated objects when they go out of scope (either normally or due to an exception being thrown), this guarantees that the resource will be cleaned up properly. Smart pointers like `std::unique_ptr` and `std::shared_ptr`, and lock guards like `std::lock_guard`, are prime examples of the RAII idiom in practice. It makes resource management deterministic and exception-safe."
+    },
+    {
+      "question": "What is the primary function of a 'finally' block in a try-catch-finally construct?",
+      "answers": [
+        {
+          "answer": "To execute code only if an exception is caught."
+        },
+        {
+          "answer": "To execute code only if no exception is thrown in the 'try' block."
+        },
+        {
+          "answer": "To execute a block of code after the 'try' and any 'catch' blocks have completed, regardless of whether an exception was thrown or caught. It is typically used for resource cleanup."
+        },
+        {
+          "answer": "To mark the final catch block in a series of catches."
+        }
+      ],
+      "answer": "To execute a block of code after the 'try' and any 'catch' blocks have completed, regardless of whether an exception was thrown or caught. It is typically used for resource cleanup.",
+      "explanation": "The `finally` block provides a mechanism to guarantee that a certain piece of code will be executed, no matter what happens within the `try` block. If the `try` block completes successfully, the `finally` block runs. If an exception is thrown inside the `try` block and is caught by a `catch` block, the `finally` block runs after the `catch` block. If an exception is thrown that is *not* caught, the `finally` block still runs before the exception propagates up the call stack. This makes it the ideal place to put critical cleanup code, such as closing file handles or releasing network connections, ensuring that resources are not leaked even when errors occur. In languages with RAII (like C++), `finally` is less necessary, but in languages like Java or C#, it is a very common pattern."
+    },
+    {
+      "question": "What is 'lazy evaluation' as a programming language strategy?",
+      "answers": [
+        {
+          "answer": "A strategy for writing code as slowly as possible."
+        },
+        {
+          "answer": "A strategy where the evaluation of an expression is delayed until its value is actually needed."
+        },
+        {
+          "answer": "A strategy where only the most important parts of a program are evaluated."
+        },
+        {
+          "answer": "A debugging strategy where you postpone fixing bugs."
+        }
+      ],
+      "answer": "A strategy where the evaluation of an expression is delayed until its value is actually needed.",
+      "explanation": "In most languages, which use 'strict' or 'eager' evaluation, function arguments are fully evaluated before the function is called. In lazy evaluation (also known as call-by-need), an expression is not evaluated when it is bound to a variable. Instead, its evaluation is deferred until its result is required by another computation. Once it has been evaluated, the result is typically memoized so it doesn't need to be computed again. This strategy, common in functional languages like Haskell, has several advantages. It allows for the creation of conceptually infinite data structures (like an infinite list of prime numbers), and it can avoid unnecessary computations, potentially improving performance if a computed value is never actually used."
+    },
+    {
+      "question": "What is the 'Factory Method' design pattern?",
+      "answers": [
+        {
+          "answer": "A pattern that ensures a class has only one instance."
+        },
+        {
+          "answer": "A creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created."
+        },
+        {
+          "answer": "A pattern for attaching additional responsibilities to an object dynamically."
+        },
+        {
+          "answer": "A pattern for creating a simplified interface to a factory."
+        }
+      ],
+      "answer": "A creational pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.",
+      "explanation": "The Factory Method pattern deals with the problem of creating objects without specifying the exact class of object that will be created. A superclass defines a 'factory method' (often abstract) for creating an object, but the actual implementation of this method is left to its subclasses. This decouples the client code (which lives in the superclass and calls the factory method) from the concrete implementation of the products. For example, a `Logistics` base class might have a method `createTransport()`, and its subclasses `RoadLogistics` and `SeaLogistics` would override this method to return a `Truck` object and a `Ship` object, respectively. The client code in the `Logistics` class can then operate on the `Transport` interface without knowing the specific type."
+    },
+    {
+      "question": "What does it mean for a sorting algorithm to be 'stable'?",
+      "answers": [
+        {
+          "answer": "The algorithm's performance does not degrade on already sorted data."
+        },
+        {
+          "answer": "The algorithm does not use any extra memory (it sorts in-place)."},
+        {"answer": "The algorithm maintains the relative order of records with equal keys. If two items have the same sorting key, their relative order in the output is the same as in the input."},
+        {"answer": "The algorithm is guaranteed to finish in a stable amount of time."}
+      ],
+      "answer": "The algorithm maintains the relative order of records with equal keys. If two items have the same sorting key, their relative order in the output is the same as in the input.",
+      "explanation": "Stability is an important property of sorting algorithms, especially when sorting complex objects with multiple fields. Imagine sorting a list of customers first by city, then by name. If you use a stable sorting algorithm for the second sort (by name), customers with the same name will remain sorted by their city from the first pass. If you used an unstable algorithm, their city order might be scrambled. Merge Sort, Insertion Sort, and Bubble Sort are examples of stable algorithms. Quicksort and Heapsort are typically unstable."
+    },
+    {
+      "question": "In the context of the OSI model, at which layer does a router primarily operate?",
+      "answers": [
+        {
+          "answer": "Layer 1 (Physical Layer)"
+        },
+        {
+          "answer": "Layer 2 (Data Link Layer)"
+        },
+        {
+          "answer": "Layer 3 (Network Layer)"
+        },
+        {
+          "answer": "Layer 4 (Transport Layer)"
+        }
+      ],
+      "answer": "Layer 3 (Network Layer)",
+      "explanation": "The OSI (Open Systems Interconnection) model describes the seven layers of a telecommunication or computing system. A router's main job is to forward data packets between different computer networks. To do this, it must make decisions based on the logical address (the IP address) of the destination. IP addressing is the domain of the Network Layer (Layer 3). A router inspects the Layer 3 header of an incoming packet to determine its destination IP address, consults its routing table, and forwards the packet to the next hop on the path. In contrast, a switch primarily operates at Layer 2 (Data Link Layer), making forwarding decisions based on MAC addresses, and a hub operates at Layer 1 (Physical Layer), simply repeating electrical signals."
+    },
+    {
+      "question": "What is 'generics' (or 'parametric polymorphism') in programming?",
+      "answers": [
+        {
+          "answer": "A feature that allows a function or a class to operate on objects of various types, where the type is specified as a parameter at compile time."
+        },
+        {
+          "answer": "A generic way of handling errors and exceptions."
+        },
+        {
+          "answer": "The practice of using generic variable names like 'x' and 'y'."
+        },
+        {
+          "answer": "A feature that generates code automatically."
+        }
+      ],
+      "answer": "A feature that allows a function or a class to operate on objects of various types, where the type is specified as a parameter at compile time.",
+      "explanation": "Generics allow you to write code that is type-safe and reusable. Instead of writing separate `IntList`, `StringList`, and `CustomerList` classes, you can write a single generic `List<T>` class. The `T` is a type parameter, a placeholder for a concrete type that will be provided when the class is used (e.g., `List<int>`, `List<String>`). The compiler then enforces type safety, ensuring you can only add integers to a `List<int>`. This combines the flexibility of working with different types with the safety of static type checking, avoiding the need for manual type casting and preventing runtime errors. It's a powerful tool for creating generic data structures and algorithms."
+    },
+    {
+      "question": "What is the purpose of the `volatile` keyword in languages like Java and C++?",
+      "answers": [
+        {
+          "answer": "It indicates that a variable is likely to change its value and should not be optimized by the compiler in ways that assume it won't."
+        },
+        {
+          "answer": "It ensures that a variable is stored in volatile memory (RAM) instead of on the disk."
+        },
+        {
+          "answer": "It provides a lightweight form of mutual exclusion, similar to a mutex."
+        },
+        {
+          "answer": "It is used to mark a variable as a potential security vulnerability."
+        }
+      ],
+      "answer": "It indicates that a variable is likely to change its value and should not be optimized by the compiler in ways that assume it won't.",
+      "explanation": "The `volatile` keyword is a hint to the compiler and CPU. It tells them that the value of a variable may be modified by something outside the control of the current thread of execution (e.g., by another thread, a hardware interrupt, or a memory-mapped I/O device). This prevents the compiler from performing certain optimizations, such as caching the variable's value in a CPU register for a long time. It forces every read of the volatile variable to fetch its value directly from main memory and every write to be flushed to main memory immediately. In concurrent programming, it also establishes a 'happens-before' relationship, ensuring that memory writes by one thread are visible to subsequent reads of that same volatile variable by another thread. However, it does not provide atomicity for compound operations (like `count++`), which still require stronger synchronization like a mutex or an atomic type."
+    }
+  ]
+},
+  {
   "name": "Electric Cars",
   "questions": [
     {
