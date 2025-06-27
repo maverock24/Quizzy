@@ -6731,7 +6731,7 @@
     ]
 },
   {
-    "name": "AWS CDK (Cloud Development Kit) Basic Concepts Quiz",
+    "name": "AWS CDK Basic Concepts Quiz",
     "questions": [
         {
             "question": "What does AWS CDK stand for?",
