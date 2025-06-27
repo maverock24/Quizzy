@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   scoreTitle: {
-    fontSize: 20,
+    fontSize: 16,
     marginBottom: 10,
     color: 'white',
   },

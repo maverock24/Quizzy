@@ -1,5 +1,543 @@
 [
 {
+  "name": "Vanhojen Rakennusten Entisöinti Suomessa",
+  "questions": [
+    {
+      "question": "Mikä on vanhojen rakennusten korjauksen tärkein periaate, joka erottaa sen modernista remontoinnista?",
+      "answers": [
+        {"answer": "Kaikki vanha puretaan ja korvataan uudella ja tehokkaammalla."},
+        {"answer": "Säilytetään mahdollisimman paljon vanhaa, korjataan alkuperäisillä materiaaleilla ja menetelmillä, ja kunnioitetaan rakennuksen alkuperäistä 'henkeä'."},
+        {"answer": "Rakennus muutetaan aina vastaamaan täysin nykypäivän energiatehokkuusmääräyksiä muovisilla höyrysuluilla."},
+        {"answer": "Käytetään aina edullisimpia saatavilla olevia rakennusmateriaaleja."}
+      ],
+      "answer": "Säilytetään mahdollisimman paljon vanhaa, korjataan alkuperäisillä materiaaleilla ja menetelmillä, ja kunnioitetaan rakennuksen alkuperäistä 'henkeä'.",
+      "explanation": "Lapsille: Vanhan talon korjaaminen on kuin vanhan, rakkaan lelun korjaamista. Et halua heittää sitä pois, vaan yrität paikata sen varovasti niin, että se näyttää taas omalta itseltään. Perinnerakentamisessa yritetään korjata rikkinäinen osa vanhalla, samanlaisella palalla, eikä vaihtaa koko lelua uuteen. Tärkeintä on, että talo saa pitää oman tarinansa ja vanhan ulkonäkönsä.\n\nAikuisille: Perinnerakentamisen ja restauroinnin eetos perustuu säilyttävään korjaamiseen. Tavoitteena on ylläpitää rakennuksen kulttuurihistoriallista ja rakennusteknistä arvoa. Tämä tarkoittaa vaurioituneiden osien korjaamista alkuperäisen kaltaisilla, perinteisillä materiaaleilla ja työtavoilla. Tarpeetonta uusimista vältetään. Keskeistä on ymmärtää rakennuksen alkuperäinen toimintaperiaate, kuten painovoimainen ilmanvaihto ja 'hengittävät' rakenteet, ja varmistaa, että korjaukset tukevat näitä ominaisuuksia eivätkä riko niitä esimerkiksi asentamalla muovisia höyrynsulkuja."
+    },
+    {
+      "question": "Mitä tarkoitetaan vanhan talon 'hengittävällä rakenteella'?",
+      "answers": [
+        {"answer": "Rakenteessa on niin paljon reikiä, että tuuli puhaltaa läpi."},
+        {"answer": "Se tarkoittaa, että rakenteen ilmanvaihto toimii vain avoimien ikkunoiden kautta."},
+        {"answer": "Rakenteen kykyä sitoa ja luovuttaa kosteutta, mikä auttaa tasaamaan sisäilman kosteusvaihteluita. Se ei tarkoita ilmanvuotoa."},
+        {"answer": "Kaikki talon rakenteet on tehty elävästä, hengittävästä puusta."}
+      ],
+      "answer": "Rakenteen kykyä sitoa ja luovuttaa kosteutta, mikä auttaa tasaamaan sisäilman kosteusvaihteluita. Se ei tarkoita ilmanvuotoa.",
+      "explanation": "Lapsille: Ajattele, että vanha hirsiseinä on kuin sieni. Kun sisällä on paljon kosteutta (esim. kun keitetään perunoita), seinä imee osan siitä itseensä. Kun ilma kuivuu, se päästää kosteuden hitaasti takaisin huoneeseen. Se 'hengittää' kosteutta edestakaisin ja pitää sisäilman miellyttävänä. Se ei tarkoita, että seinästä tuulee läpi!\n\nAikuisille: 'Hengittävä rakenne' on termi, joka kuvaa rakenteen hygroskooppisia ominaisuuksia eli sen kykyä hallita vesihöyryä. Vanhoissa taloissa käytetyt materiaalit, kuten puu, hirsi, sahanpuru, sammal ja selluvilla, pystyvät sitomaan vesihöyryä ilmasta sen suhteellisen kosteuden ollessa korkea ja luovuttamaan sen takaisin ilman kuivuessa. Tämä tasapainottaa sisäilman kosteutta ja mahdollistaa rakenteeseen päässeen kosteuden kuivumisen. Tämä on perustavanlaatuinen ero moderniin rakentamiseen, joka pyrkii estämään kosteuden pääsyn rakenteeseen tiiviillä höyrynsuluilla."
+    },
+    {
+      "question": "Mikä on yleisin perinteinen ulkomaali suomalaisissa puutaloissa, joka tunnetaan punaisesta väristään ja himmeästä pinnastaan?",
+      "answers": [
+        {"answer": "Lateksimaali"},
+        {"answer": "Akrylaattimaali"},
+        {"answer": "Pellavaöljymaali"},
+        {"answer": "Punamultamaali (keittomaali)"}
+      ],
+      "answer": "Punamultamaali (keittomaali)",
+      "explanation": "Lapsille: Punainen tupa ja perunamaa on suomalaisen maalaismaiseman kuva. Se kuuluisa punainen maali on punamultamaalia. Se on vanhanaikainen maali, joka keitetään vedestä, ruisjauhoista, rautasulfaatista ja punaisesta värijauheesta (punamullasta). Se on helppo maalata, antaa puun hengittää ja antaa talolle kauniin, mattapintaisen värin.\n\nAikuisille: Punamultamaali, tai yleisemmin keittomaali, on perinteinen, vesiohenteinen maali, joka sopii erinomaisesti karkeille, sahaamattomille puupinnoille. Sen sideaineena toimii ruis- tai vehnäjauhoista keitetty tärkkelysliisteri. Rautasulfaatti (rautavihtrilli) toimii lahoamista estävänä aineena ja auttaa maalia tarttumaan puuhun. Punamulta on maaväripigmentti. Maali on täysin hengittävä, mutta ei muodosta tiivistä kalvoa, minkä vuoksi sen päälle ei voi maalata nykyaikaisilla muovimaaleilla. Vanhan punamultapinnan tunnistaa siitä, että se värjää sormea hangattaessa ja tummuu sateella."
+    },
+    {
+      "question": "Miten vanha, ehjä pinkopahvi seinässä kannattaa käsitellä ennen tapetointia tai maalausta?",
+      "answers": [
+        {"answer": "Se tulee aina repiä pois ja korvata kipsilevyllä."},
+        {"answer": "Se hiotaan kauttaaltaan karkealla hiekkapaperilla."},
+        {"answer": "Pienet repeämät paikataan ja pinta pestään varovasti esimerkiksi sokerivedellä tai astianpesuaineliuoksella liasta ja rasvasta."},
+        {"answer": "Se maalataan ensin vesieristeellä."}
+      ],
+      "answer": "Pienet repeämät paikataan ja pinta pestään varovasti esimerkiksi sokerivedellä tai astianpesuaineliuoksella liasta ja rasvasta.",
+      "explanation": "Lapsille: Pinkopahvi on kuin paksua paperia, joka on pingotettu seinään. Jos siinä on vain pieniä reikiä tai se on vähän likainen, sitä ei tarvitse ottaa pois. Se voidaan paikata ja pestä hellästi, jotta uusi maali tai tapetti tarttuu siihen kunnolla kiinni. Se on kuin antaisi seinälle pesun ja laittaisi laastarin ennen uusien vaatteiden pukemista.\n\nAikuisille: Vanhan, kiinteästi alustassaan olevan pinkopahvin säilyttäminen on suositeltavaa. Pinta tulee puhdistaa liasta ja rasvasta, mikä onnistuu miedolla pesuaineliuoksella (esim. sokerivesi, astianpesuaine, pellavaöljysuopa). On tärkeää olla kastelematta pahvia liikaa, ettei se menetä pingotustaan. Pienet repeämät ja reiät voidaan paikata paperipaikoilla ja liisterillä. Puhdistuksen ja paikkauksen jälkeen pinta on valmis uudelleentapetointiin perinteisillä menetelmillä tai maalaamiseen esimerkiksi pellavaöljy- tai liimamaalilla."
+    },
+    {
+      "question": "Mikä on rossipohja (tuulettuva alapohja) ja miksi sen tuuletus on elintärkeää?",
+      "answers": [
+        {"answer": "Se on betoniperustus, joka vaatii lattialämmityksen."},
+        {"answer": "Se on vanha nimitys kellarille."},
+        {"answer": "Se on puurakenteinen alapohja, jonka alla on ilmatila (ryömintätila). Riittävä tuuletus tässä tilassa estää kosteuden tiivistymisen ja lahovaurioiden synnyn."},
+        {"answer": "Se on lattiarakenne, jossa eristeenä käytetään ainoastaan multaa."}
+      ],
+      "answer": "Se on puurakenteinen alapohja, jonka alla on ilmatila (ryömintätila). Riittävä tuuletus tässä tilassa estää kosteuden tiivistymisen ja lahovaurioiden synnyn.",
+      "explanation": "Lapsille: Rossipohja on kuin talon lattia, joka on rakennettu pienten jalkojen varaan niin, että sen alle jää tyhjä tila. Tässä tilassa ilma pääsee kiertämään ulkoa sisään ja taas ulos pienten luukkujen kautta. Tämä tuuletus on supertärkeää, koska se pitää lattian alapuolen kuivana. Jos ilma ei pääse kiertämään, sinne kertyy kosteutta ja puuosat voivat alkaa mädäntyä.\n\nAikuisille: Rossipohja eli tuulettuva alapohja on perinteinen ja toimivaksi todettu alapohjarakenne. Se koostuu lattiakannattajista, jotka lepäävät perustusten varassa, jättäen alapuolelleen vähintään 50-80 cm korkean tuulettuvan tilan. Maasta nouseva kosteus ja mahdollinen rakennuksen sisäpuolelta tuleva kosteus pääsevät tuulettumaan pois sokkelissa olevien tuuletusaukkojen kautta. Tämän järjestelmän toimivuus on kriittistä. Tukkeutuneet tuuletusaukot tai liian vähäinen tuuletus johtavat kosteuden tiivistymiseen viileisiin puurakenteisiin, mikä luo optimaaliset olosuhteet laho- ja sienikasvustoille."
+    },
+    {
+      "question": "Mitä materiaalia perinteisesti käytettiin hirsiseinän tilkkeenä eli hirsien välisenä eristeenä?",
+      "answers": [
+        {"answer": "Lasivillaa"},
+        {"answer": "Polyuretaanivaahtoa"},
+        {"answer": "Sammalta, pellavarivettä tai hamppua"},
+        {"answer": "Sementtilaastia"}
+      ],
+      "answer": "Sammalta, pellavarivettä tai hamppua",
+      "explanation": "Lapsille: Kun hirsitalo rakennetaan, hirsien väliin jää pieniä rakoja. Jotta tuuli ei puhaltaisi sisään, nämä raot täytettiin tiiviisti eristeellä. Ennen vanhaan ihmiset käyttivät sitä, mitä luonnosta löytyi. He keräsivät metsästä seinäsammalta tai käyttivät pellavan ja hampun kuituja. Nämä luonnonmateriaalit ovat hyviä, koska ne antavat seinän 'hengittää'.\n\nAikuisille: Perinteinen hirsiseinän tilkemateriaali oli tyypillisesti kuivattu seinäsammal (pellava- tai rahkasammal). Sammal on kimmoisaa, lahoamatonta ja hygroskooppista, eli se pystyy tasaamaan kosteutta. Myöhemmin yleistyivät myös teolliset sivutuotteet, kuten pellava- ja hamppurive (kuitukasvin päistäreosa). Nykyaikaisessa perinnerakentamisessa käytetään edelleen näitä materiaaleja. On ehdottoman tärkeää välttää nykyaikaisia, tiiviitä materiaaleja kuten mineraalivillaa tai uretaania, jotka eivät ole yhteensopivia hirsirakenteen kosteusteknisen toiminnan kanssa ja voivat aiheuttaa lahovaurioita."
+    },
+    {
+      "question": "Miten perinteinen, pellavaöljymaalilla maalattu ikkunanpoka kunnostetaan oikeaoppisesti?",
+      "answers": [
+        {"answer": "Vanha maali poltetaan pois kuumailmapuhaltimella ja poka maalataan lateksimaalilla."},
+        {"answer": "Poka upotetaan lipeään maalinpoistoa varten ja lakataan sen jälkeen venelakalla."},
+        {"answer": "Irtonainen maali kaavitaan pois, vanha kitti poistetaan, puuosat paikataan tarvittaessa, pinta öljytään tai pohjamaalataan ja kitataan uudelleen pellavaöljykitillä ennen pintamaalausta pellavaöljymaalilla."},
+        {"answer": "Poka vaihdetaan aina uuteen, energiatehokkaaseen ikkunaan."}
+      ],
+      "answer": "Irtonainen maali kaavitaan pois, vanha kitti poistetaan, puuosat paikataan tarvittaessa, pinta öljytään tai pohjamaalataan ja kitataan uudelleen pellavaöljykitillä ennen pintamaalausta pellavaöljymaalilla.",
+      "explanation": "Lapsille: Vanhan puuikkunan korjaaminen on tarkkaa puuhaa. Ensin rapsutetaan varovasti kaikki irtonainen maali pois. Sitten kaivetaan vanha, kova ikkunakitti pois lasin ympäriltä. Jos puussa on koloja, ne paikataan. Sitten maalataan ensimmäinen kerros maalia, ja sen kuivuttua laitetaan uusi, pehmeä kitti lasin reunaan. Lopuksi ikkuna maalataan vielä pari kertaa. Näin vanhasta ikkunasta tulee taas kuin uusi ja se kestää taas monta kymmentä vuotta.\n\nAikuisille: Vanhojen, tiheäsyisestä puusta tehtyjen ikkunoiden kunnostaminen on lähes aina kannattavampaa ja kestävämpi ratkaisu kuin niiden uusiminen. Kunnostusprosessi sisältää: 1. Maalinpoisto: Vain irtonainen ja hilseilevä maali poistetaan mekaanisesti kaapimella. Vältetään voimakkaita menetelmiä kuten kuumailmapuhallinta tai lipeää, jotka voivat vahingoittaa puuta. 2. Kitin poisto: Hapertunut pellavaöljykitti poistetaan varovasti. 3. Puuosien korjaus: Mahdolliset lahot kohdat paikataan puupaikoilla. 4. Pohjustus: Puupuhtaat kohdat pohjustetaan pellavaöljyllä tai ohennetulla pellavaöljymaalilla. 5. Kittaaminen: Lasit kitataan uudelleen perinteisellä pellavaöljykitillä. 6. Pintamaalaus: Maalaus tehdään ohuina kerroksina pellavaöljymaalilla, maalaten n. 1-2 mm lasin päälle tiiviin sauman aikaansaamiseksi."
+    },
+    {
+      "question": "Mikä on 'lattiasieni' ja miksi se on vanhojen talojen yksi pahimmista vihollisista?",
+      "answers": [
+        {"answer": "Syötävä sieni, jota kasvaa lattian alla."},
+        {"answer": "Vaaraton home, joka lähtee pesemällä pois."},
+        {"answer": "Todellinen lattiasieni (Serpula lacrymans) on erittäin aggressiivinen ruskolahottajasieni, joka pystyy tuhoamaan puurakenteet nopeasti ja leviämään jopa kuivien materiaalien ja muurien läpi."},
+        {"answer": "Sienikasvusto, joka parantaa sisäilman laatua."}
+      ],
+      "answer": "Todellinen lattiasieni (Serpula lacrymans) on erittäin aggressiivinen ruskolahottajasieni, joka pystyy tuhoamaan puurakenteet nopeasti ja leviämään jopa kuivien materiaalien ja muurien läpi.",
+      "explanation": "Lapsille: Lattiasieni on talon 'superpahis'. Se on sieni, joka rakastaa syödä puuta ja kasvaa todella nopeasti piilossa lattioiden ja seinien sisällä. Se on siitä ovela, että se osaa kuljettaa vettä mukanaan ja voi siksi levitä myös kuiviin paikkoihin. Jos taloon iskee lattiasieni, se voi tehdä suurta tuhoa ja sen häätäminen on todella vaikeaa.\n\nAikuisille: Todellinen lattiasieni (Serpula lacrymans) on rakennusten vaarallisin lahottajasieni. Se aiheuttaa tehokasta ruskolahottamista, jossa puun selluloosa ja hemiselluloosa hajoavat, jättäen jäljelle hauraan, kuutiomaisesti halkeilevan ligniinirungon. Sen erottaa muista lahottajista sen kyky kasvattaa paksuja, rihmastomaisia strengejä, jotka pystyvät kuljettamaan vettä ja ravinteita pitkiä matkoja. Tämän ansiosta se voi levitä kosteasta pesäkkeestään kuivienkin rakenteiden, kuten tiili- ja betonimuurien, yli ja infektoida uusia puurakenteita. Sen tunnusomainen haju on maakellarimainen ja tunkkainen. Lattiasienivaurion korjaus vaatii aina ammattilaisen ja on erittäin laaja-alainen toimenpide."
+    },
+    {
+      "question": "Mitä tarkoittaa hirsirakennuksen 'nurkkasalvos'?",
+      "answers": [
+        {"answer": "Hirsien väliin laitettava sammaleriste."},
+        {"answer": "Hirsiseinän ylin hirsi."},
+        {"answer": "Tapa, jolla risteävien seinien hirret liitetään toisiinsa rakennuksen nurkassa."},
+        {"answer": "Koristeellinen veistos hirsinurkan päässä."}
+      ],
+      "answer": "Tapa, jolla risteävien seinien hirret liitetään toisiinsa rakennuksen nurkassa.",
+      "explanation": "Lapsille: Kun rakennetaan hirsitaloa, hirret pitää liittää nurkissa toisiinsa kuin legopalikat. Tätä liitosta kutsutaan nurkkasalvokseksi. On olemassa monenlaisia salvoksia, joilla on hienoja nimiä kuten 'koirankaulasalvos' tai 'lohenpyrstösalvos'. Hyvin tehty salvos tekee nurkasta tiiviin ja kestävän.\n\nAikuisille: Nurkkasalvos on hirsirakentamisen kriittisin liitos. Sen tyyppi ja laatu määrittävät rakennuksen ulkonäön, tiiviyden ja kestävyyden. Yleisimpiä perinteisiä salvostyyppejä Suomessa ovat mm. pitkänurkkaiset salvokset kuten ristinurkka (koirankaula) ja sen koristeellisemmat muodot, sekä lyhytnurkkaiset salvokset kuten lohenpyrstösalvos, joka on tiivis ja ei vaadi ulkonevia nurkkapäitä. Salvoksen valinta ja veistotapa kertovat paljon rakennuksen iästä, käyttötarkoituksesta ja rakentajan ammattitaidosta."
+    },
+    {
+      "question": "Mikä on punamultamaalin perinteinen sideaine?",
+      "answers": [
+        {"answer": "Pellavaöljy"},
+        {"answer": "Lateksi"},
+        {"answer": "Ruis- tai vehnäjauhoista keitetty tärkkelysliisteri"},
+        {"answer": "Munanvalkuainen"}
+      ],
+      "answer": "Ruis- tai vehnäjauhoista keitetty tärkkelysliisteri",
+      "explanation": "Lapsille: Jotta värijauhe (punamulta) tarttuisi seinään, se pitää sekoittaa johonkin liimamaiseen aineeseen. Punamultamaalissa tämä 'liima' keitetään ihan tavallisista ruis- tai vehnäjauhoista ja vedestä. Siitä tulee vähän niin kuin paksua, punaista puuroa, jolla talo maalataan!\n\nAikuisille: Keittomaalin sideaineena toimii vedessä kuumentamalla avattu viljan tärkkelys, joka muodostaa liisterin. Perinteisesti käytettiin ruis- tai vehnäjauhoja. Ruisjauho sisältää enemmän liima-aineita ja sitä pidetään kestävämpänä. Tämä orgaaninen sideaine on hengittävä, mutta ei kestä kovaa mekaanista kulutusta. Keittoprosessin aikana tärkkelys kleisteröityy ja antaa maalille sen sitovat ominaisuudet. Muut ainesosat ovat vesi (liuotin), punamulta (pigmentti) ja rautasulfaatti (kiinnitystä parantava ja lahoa estävä aine)."
+    },
+    {
+      "question": "Miksi vanhoihin taloihin ei pidä asentaa muovista höyrynsulkua seiniin?",
+      "answers": [
+        {"answer": "Koska se on liian kallista."},
+        {"answer": "Koska se rikkoo talon alkuperäisen 'hengittävän' rakenteen ja voi lukita kosteuden seinän sisään, aiheuttaen lahovaurioita."},
+        {"answer": "Koska vanhoissa taloissa ei ole tarpeeksi tilaa sille."},
+        {"answer": "Koska se on kielletty lailla kaikissa rakennuksissa."}
+      ],
+      "answer": "Koska se rikkoo talon alkuperäisen 'hengittävän' rakenteen ja voi lukita kosteuden seinän sisään, aiheuttaen lahovaurioita.",
+      "explanation": "Lapsille: Vanha talo on tottunut siihen, että se voi 'hengittää' kosteutta ulos ja sisään seinien läpi. Jos laitat seinän sisään muovipussin (höyrynsulun), se on kuin laittaisit sadetakin päälle hikisenä. Kosteus ei pääse enää pois, vaan jää jumiin seinän sisään. Tämä märkä, muhiva paikka on täydellinen koti homeelle ja laholle, jotka syövät talon puuosia.\n\nAikuisille: Vanhojen rakennusten kosteustekninen toiminta perustuu hygroskooppisiin materiaaleihin ja painovoimaiseen ilmanvaihtoon. Rakenne pystyy puskuroimaan ja siirtämään kosteutta. Tiiviin höyrynsulun asentaminen tähän järjestelmään on erittäin riskialtista. Se estää rakenteen luonnollisen kuivumisen sisäänpäin. Jos ulkopuolelta tai sisältä pääsee kosteutta (esim. ilmavuodon kautta) höyrynsulun ja kylmän ulkoseinän väliin, se tiivistyy vedeksi eikä pääse enää pois. Tämä johtaa vääjäämättä kosteus- ja lahovaurioihin. Oikea tapa parantaa vanhan seinän ilman- ja tuulentiiviyttä on käyttää ilmansulkupaperia tai -pahvia, jotka ovat höyryä läpäiseviä."
+    },
+    {
+      "question": "Mikä on 'pinkopahvin' asennuksen salaisuus?",
+      "answers": [
+        {"answer": "Se liimataan seinään kuivana ja tiukasti."},
+        {"answer": "Se naulataan seinään kuivana ja jätetään löysäksi."},
+        {"answer": "Pahvi kostutetaan kauttaaltaan vedellä, annetaan turvota ja kiinnitetään sitten reunoistaan. Kuivuessaan se kiristyy itsestään sileäksi ja pingottuneeksi seinäpinnaksi."},
+        {"answer": "Se kiinnitetään ainoastaan katonrajaan."}
+      ],
+      "answer": "Pahvi kostutetaan kauttaaltaan vedellä, annetaan turvota ja kiinnitetään sitten reunoistaan. Kuivuessaan se kiristyy itsestään sileäksi ja pingottuneeksi seinäpinnaksi.",
+      "explanation": "Lapsille: Pinkopahvin kiinnittäminen on vähän kuin taikuutta. Ensin pahvi kastellaan märäksi, jolloin se venyy ja löystyy. Sitten tämä märkä, veltto pahvi naulataan tai liimataan seinään reunoistaan kiinni. Kun pahvi alkaa kuivua, se kutistuu takaisin kasaan ja vetää itsensä ihan suoraksi ja tiukaksi, kuin rummun kalvo! Siksi sitä kutsutaan 'pinko'-pahviksi.\n\nAikuisille: Pinkopahvin onnistunut asennus perustuu paperin luonnolliseen elämiseen kosteuden vaikutuksesta. Pahvivuodat kostutetaan tasaisesti vedellä (esim. sienellä tai sumutinpullolla) ja annetaan vettyä ja turvota pinossa useita tunteja. Tämän jälkeen turvonnut, laajentunut pahvi kiinnitetään seiniin reunoistaan joko nupinauloilla tai liisterillä. Kuivuessaan paperikuidut vetäytyvät takaisin yhteen, mikä luo voimakkaan pingotuksen ja saa aikaan saumattoman ja sileän pinnan, joka elää alustan mukana halkeilematta. Tämä on erinomainen alusta perinteisille tapeteille tai maaleille."
+    },
+    {
+      "question": "Mitä materiaalia käytetään perinteisesti vanhojen ikkunoiden lasin ja puupuitteen välisenä tiivisteenä ja kiinnikkeenä?",
+      "answers": [
+        {"answer": "Silikonia"},
+        {"answer": "Akryylimassaa"},
+        {"answer": "Pellavaöljykittiä"},
+        {"answer": "Sementtiä"}
+      ],
+      "answer": "Pellavaöljykittiä",
+      "explanation": "Lapsille: Se harmaa tai valkoinen, vähän kuin muovailuvaha, jolla ikkunalasi on kiinni puukehyksessä, on nimeltään ikkunakitti. Vanhoissa ikkunoissa se on tehty pellavaöljystä ja liitujauhosta. Se on aluksi pehmeää, joten sen voi muotoilla nätisti lasin reunaan, ja sitten se kovettuu hitaasti ja pitää lasin paikallaan ja tuulen ulkona.\n\nAikuisille: Perinteinen ikkunakitti valmistetaan sekoittamalla liitujauhoa (kalsiumkarbonaattia) keitettyyn pellavaöljyyn (vernissaan). Se on plastinen ja hitaasti kuivuva massa. Sitä käytetään sekä aluskittinä lasin alla (antaa tasaisen alustan) että päällyskittinä lasin päällä, joka kiinnittää lasin ja muodostaa vedenpitävän, viistotun pinnan. Pellavaöljykitti säilyy joustavana vuosikymmeniä, elää puun mukana ja on yhteensopiva pellavaöljymaalien kanssa. Nykyaikaiset silikoni- tai akryylimassat eivät sovellu vanhojen puuikkunoiden kittaukseen, koska ne ovat liian tiiviitä eivätkä anna puun hengittää, mikä johtaa puun lahoamiseen."
+    },
+    {
+      "question": "Mikä on 'pärekatto'?",
+      "answers": [
+        {"answer": "Katto, joka on tehty suurista puupalkeista."},
+        {"answer": "Katto, joka on päällystetty ohuilla, puusta kiskotuilla tai höylätyillä levyillä (pärepaloilla)."},
+        {"answer": "Katto, joka on tehty oljista."},
+        {"answer": "Litteä katto, jolla kasvaa kasveja."}
+      ],
+      "answer": "Katto, joka on päällystetty ohuilla, puusta kiskotuilla tai höylätyillä levyillä (pärepaloilla).",
+      "explanation": "Lapsille: Pärekatto on puinen katto, joka on tehty monista pienistä, ohuista puulastuista, joita kutsutaan päreiksi. Ne ladotaan katolle useaan kerrokseen vähän niin kuin kalansuomut, jotta vesi valuu pois eikä pääse sisään. Se on vanha ja kaunis kattotyyppi, joka sopii hyvin hirsirakennuksiin.\n\nAikuisille: Pärekatto oli Suomessa yleinen kattomateriaali 1800-luvun puolivälistä 1900-luvun puoliväliin. Päreet valmistettiin tyypillisesti männystä, kuusesta tai haavasta joko käsityönä kiskomalla tai myöhemmin koneellisesti höyläämällä. Katto ladotaan yleensä kolmeen tai neljään kerrokseen limittäin niin, että vain pieni osa kunkin päreen pituudesta jää näkyviin. Oikein tehty ja hoidettu pärekatto on kestävä ja hengittävä. Se harmaantuu kauniisti ajan myötä. Kestävyyttä voidaan parantaa käsittelemällä katto esimerkiksi tervalla tai puunsuojaöljyllä."
+    },
+    {
+      "question": "Mitä Museovirasto tekee?",
+      "answers": [
+        {"answer": "Se on rakennusliike, joka korjaa vanhoja taloja."},
+        {"answer": "Se on museo, jossa esitellään vanhoja rakennustyökaluja."},
+        {"answer": "Se on valtion viranovoimainen, joka ohjaa ja valvoo kulttuurihistoriallisesti arvokkaan rakennusperinnön suojelua ja myöntää korjausavustuksia."},
+        {"answer": "Se myy perinteisiä rakennusmateriaaleja."}
+      ],
+      "answer": "Se on valtion viranovoimainen, joka ohjaa ja valvoo kulttuurihistoriallisesti arvokkaan rakennusperinnön suojelua ja myöntää korjausavustuksia.",
+      "explanation": "Lapsille: Museovirasto on kuin Suomen vanhojen aarteiden vartija. Sen tehtävä on huolehtia siitä, että vanhat ja tärkeät paikat, kuten linnat, kirkot ja vanhat talot, säilyvät myös tuleville sukupolville. Jos omistat erityisen hienon vanhan talon, voit saada Museovirastolta apua ja jopa rahaa sen korjaamiseen, kunhan teet sen oikein ja vanhaa kunnioittaen.\n\nAikuisille: Museovirasto on opetus- ja kulttuuriministeriön alainen asiantuntijaviranomainen ja tutkimuslaitos. Yksi sen keskeisistä tehtävistä on rakennusperinnön ja kulttuuriympäristön suojelu. Se toimii asiantuntijana kaavoituksessa ja rakennuslupaprosesseissa, jotka koskevat suojeltuja kohteita. Lisäksi Museovirasto ja ELY-keskukset myöntävät vuosittain harkinnanvaraisia entistämis- ja korjausavustuksia kulttuurihistoriallisesti arvokkaiden rakennusten omistajille. Avustuksen saaminen edellyttää yleensä, että korjaukset tehdään säilyttävän korjaamisen periaatteiden mukaisesti."
+    },
+    {
+      "question": "Mikä seuraavista on yleisin syy lahovaurioihin vanhan talon puurakenteissa?",
+      "answers": [
+        {"answer": "Liian kuiva ilma."},
+        {"answer": "Rakenteeseen pitkäksi aikaa jäänyt kosteus."},
+        {"answer": "Auringonvalo."},
+        {"answer": "Vanhuus sinänsä."}
+      ],
+      "answer": "Rakenteeseen pitkäksi aikaa jäänyt kosteus.",
+      "explanation": "Lapsille: Puu on vähän kuin keksi. Jos se on kuiva, se on kova ja vahva. Mutta jos se kastuu ja pysyy märkänä pitkään, se menee pehmeäksi ja hajoaa. Samoin käy talon puuosille. Laho on sieni, joka rakastaa syödä märkää puuta. Siksi on tosi tärkeää pitää huolta, että talon katto on ehjä, sadevedet ohjataan pois seinustalta ja talon alapohja tuulettuu hyvin.\n\nAikuisille: Puu ei lahoa itsestään iän myötä. Lahottajasienet tarvitsevat elääkseen neljä asiaa: sopivan lämpötilan, happea, ravintoa (puun) ja ennen kaikkea kosteutta. Näistä kosteus on ainoa tekijä, johon rakentamisella ja kunnossapidolla voidaan tehokkaasti vaikuttaa. Kun puun kosteusprosentti ylittää pitkäaikaisesti noin 20 %, lahosienten itiöt voivat alkaa itää ja kasvaa. Siksi lahovaurioiden ennaltaehkäisy on ensisijaisesti kosteudenhallintaa: toimiva vesikatto, sadevesijärjestelmät, maaston kallistukset pois perustuksilta ja rakenteiden riittävä tuuletus ovat avainasemassa."
+    },
+    {
+      "question": "Mitä tarkoittaa 'kuullotus'?",
+      "answers": [
+        {"answer": "Puun maalaamista paksulla, peittävällä maalilla."},
+        {"answer": "Puupinnan käsittelyä läpikuultavalla aineella, joka värjää puuta mutta jättää sen syykuvion näkyviin."},
+        {"answer": "Puun kuivattamista uunissa."},
+        {"answer": "Puun kiillottamista vahalla."}
+      ],
+      "answer": "Puupinnan käsittelyä läpikuultavalla aineella, joka värjää puuta mutta jättää sen syykuvion näkyviin.",
+      "explanation": "Lapsille: Jos haluat antaa puulle väriä, mutta haluat silti nähdä puun kauniit raidat ja kuviot, käytät kuullotetta. Se on kuin vesiväriä puulle. Se imeytyy puuhun ja antaa sille sävyn, mutta ei peitä sitä kokonaan niin kuin paksu peitemaali. Näin puun oma luonne jää kauniisti esiin.\n\nAikuisille: Kuullote on läpikuultava puunsuoja-aine. Perinteisissä yhteyksissä kuullotteet ovat usein öljypohjaisia (esim. pellavaöljy tai mäntyöljy), joihin on sekoitettu väripigmenttiä. Ne imeytyvät puun pintasolukkoon ja suojaavat sitä kosteudelta ja UV-säteilyltä, mutta eivät muodosta yhtenäistä, kalvomaista pintaa. Tämä mahdollistaa puun luonnollisen kosteuselämisen. Kuullotteita käytetään sekä sisä- että ulkopinnoilla, kun halutaan säilyttää puun luonnollinen ulkonäkö ja syykuvio näkyvissä."
+    },
+    {
+      "question": "Mikä on vanhan hirsitalon yleisin perustusratkaisu ennen betonin yleistymistä?",
+      "answers": [
+        {"answer": "Syvälle maahan paalutettu teräsperustus."},
+        {"answer": "Yhtenäinen betonilaatta."},
+        {"answer": "Nurkkakivet, joiden varaan alimmat hirret laskettiin, ja seinien välit täytettiin usein mullalla (multapenkki)."},
+        {"answer": "Rakennus on pystytetty suoraan maan päälle ilman perustuksia."}
+      ],
+      "answer": "Nurkkakivet, joiden varaan alimmat hirret laskettiin, ja seinien välit täytettiin usein mullalla (multapenkki).",
+      "explanation": "Lapsille: Ennen vanhaan ei ollut betoniautoja. Kun rakennettiin hirsitaloa, etsittiin isoja, litteitä kiviä ja laitettiin ne rakennuksen nurkkiin. Alin hirsikerros laskettiin näiden kivien päälle. Näin talo saatiin nostettua hieman irti maasta. Seinien vierustat saatettiin sitten täyttää mullalla, jotta lattian alta ei tuullut niin paljoa.\n\nAikuisille: Yleisin vanhojen hirsirakennusten perustusmuoto on avoin perustus eli nurkkakiviperustus. Rakennuksen nurkille ja pitkien seinien alle asetettiin suuria luonnonkiviä, jotka kantoivat alimman hirsikerran painon. Tämä mahdollisti alapohjan tuulettumisen. Usein tähän yhdistyi multapenkki- tai täytepohjarakenne, jossa seinien vierustat ja lattian alusta täytettiin esimerkiksi hiekalla, mullalla tai sahanpurulla lämmöneristyksen parantamiseksi. Tällaisen perustuksen korjaaminen vaatii vanhojen rakenteiden ja niiden toimintaperiaatteen ymmärtämistä."
+    },
+    {
+      "question": "Mistä tunnistat vanhan, käsintehdyn ikkunalasin?",
+      "answers": [
+        {"answer": "Se on täysin sileä ja virheetön."},
+        {"answer": "Siinä on aina vihreä sävy."},
+        {"answer": "Se on hieman epätasainen, siinä voi olla pieniä ilmakuplia ja sen läpi katsottu maisema näyttää elävän ja aaltoilevan hieman."},
+        {"answer": "Se on huomattavasti paksumpaa kuin nykylasi."}
+      ],
+      "answer": "Se on hieman epätasainen, siinä voi olla pieniä ilmakuplia ja sen läpi katsottu maisema näyttää elävän ja aaltoilevan hieman.",
+      "explanation": "Lapsille: Ennen vanhaan ikkunalasia ei pystytty tekemään niin täydellisen suoraksi kuin nykyään. Siksi vanhat lasit ovat vähän 'laineikkaita'. Kun katsot vanhan ikkunan läpi, maisema näyttää vähän elävän tai väreilevän. Lasissa voi myös olla pieniä ilmakuplia. Juuri tämä epätäydellisyys tekee vanhasta lasista niin kauniin ja arvokkaan.\n\nAikuisille: Vanha, ennen koneellisen valmistuksen aikaa tehty lasi on joko puhallettua tai vedettyä. Nämä valmistusmenetelmät jättivät lasiin tunnusomaisia piirteitä: se ei ole optisesti täysin tasalaatuista. Siinä on usein paksuusvaihtelua, venymiä (vetoja) ja pieniä sulkeumia, kuten ilmakuplia. Nämä piirteet taittavat valoa epäsäännöllisesti, mikä antaa lasille sen elävän ja arvokkaan luonteen. Vanhojen lasien säilyttäminen on tärkeä osa ikkunoiden entisöintiä."
+    }
+  ]
+},
+{
+  "name": "Puutarhanhoito Suomessa: Testaa tietosi",
+  "questions": [
+    {
+      "question": "Mikä on Suomen kasvuvyöhykejärjestelmän päätarkoitus ja mihin vyöhykkeeseen Orimattilan seutu pääasiassa kuuluu?",
+      "answers": [
+        {"answer": "Järjestelmä jakaa maan eri maaperätyyppien mukaan; Orimattila on savimaa-aluetta."},
+        {"answer": "Järjestelmä kuvaa kesän keskimääräistä sademäärää; Orimattila kuuluu kuivaan vyöhykkeeseen."},
+        {"answer": "Järjestelmä auttaa valitsemaan kasveja, jotka menestyvät tietyn alueen ilmasto-olosuhteissa perustuen tehoisan lämpötilan summaan; Orimattila kuuluu pääasiassa vyöhykkeeseen II."},
+        {"answer": "Järjestelmä kertoo yleisimmät tuholaiset kullakin alueella; Orimattilassa yleisin on lehtokotilo."}
+      ],
+      "answer": "Järjestelmä auttaa valitsemaan kasveja, jotka menestyvät tietyn alueen ilmasto-olosuhteissa perustuen tehoisan lämpötilan summaan; Orimattila kuuluu pääasiassa vyöhykkeeseen II.",
+      "explanation": "Suomen kasvuvyöhykejärjestelmä (I-VIII) on puutarhurin tärkein työkalu. Se perustuu tehoisan lämpötilan summaan, joka lasketaan yhteen niiden vuorokausien keskilämpötiloista, jotka ylittävät +5°C. Tämä luku kuvaa kasvukauden lämpöenergian määrää. Järjestelmä auttaa valitsemaan monivuotisia kasveja (perennoja, puita, pensaita), jotka ehtivät kasvaa, kukkia ja valmistautua talveen eli talvehtia onnistuneesti tietyllä alueella. Orimattila ja sen ympäristö, kuten suuri osa Päijät-Hämettä, kuuluu kasvuvyöhykkeeseen II, rannikon läheisyydessä jopa Ib. Tämä tarkoittaa suhteellisen pitkää ja lämmintä kasvukautta Suomen mittakaavassa, mikä mahdollistaa laajan kasvivalikoiman."
+    },
+    {
+      "question": "Mitä tarkoitetaan termisellä kasvukaudella Suomessa?",
+      "answers": [
+        {"answer": "Aika, jolloin aurinko paistaa yli 12 tuntia päivässä."},
+        {"answer": "Aika toukokuun alusta elokuun loppuun."},
+        {"answer": "Aika, jolloin vuorokauden keskilämpötila pysyvästi ylittää +5°C."},
+        {"answer": "Aika, jolloin yöpakkasia ei esiinny lainkaan."}
+      ],
+      "answer": "Aika, jolloin vuorokauden keskilämpötila pysyvästi ylittää +5°C.",
+      "explanation": "Terminen kasvukausi on tieteellinen määritelmä ajanjaksolle, jolloin kasvien kasvu on aktiivista. Se alkaa keväällä, kun vuorokauden keskilämpötila nousee ja pysyy yli +5 asteen, ja päättyy syksyllä, kun se laskee pysyvästi tämän rajan alle. Tämä on tärkeä mittari, sillä se kertoo tehokkaan kasvuun käytettävissä olevan ajan pituuden, joka vaihtelee Etelä-Suomen noin 175 päivästä Pohjois-Lapin noin 100 päivään. Puutarhurin on sopeutettava kylvö- ja istutusajat tähän paikalliseen rytmiin."
+    },
+    {
+      "question": "Mikä seuraavista on tyypillinen haaste ja samalla etu suomalaiselle puutarhaviljelylle?",
+      "answers": [
+        {"answer": "Jatkuva kuivuus ja auringonpaiste."},
+        {"answer": "Lyhyt, mutta valoisa kasvukausi, joka tuottaa aromikkaita ja makeita marjoja ja vihanneksia."},
+        {"answer": "Liian emäksinen maaperä koko maassa."},
+        {"answer": "Tuholaisten ja kasvitautien täydellinen puuttuminen."}
+      ],
+      "answer": "Lyhyt, mutta valoisa kasvukausi, joka tuottaa aromikkaita ja makeita marjoja ja vihanneksia.",
+      "explanation": "Suomen kesän valoisat yöt ovat puutarhurin salainen ase. Vaikka kasvukausi on lyhyt, kasvit saavat runsaasti valoa ympäri vuorokauden, mikä edistää tehokasta fotosynteesiä. Viileät yölämpötilat hidastavat kasvien aineenvaihduntaa, jolloin ne varastoivat enemmän sokereita ja aromiaineita. Tämä johtaa siihen, että esimerkiksi suomalaiset mansikat, perunat ja juurekset ovat tunnettuja poikkeuksellisen intensiivisestä maustaan. Haasteena on ehtiä saada satoa lyhyessä ajassa ja varautua mahdollisiin hallaöihin."
+    },
+    {
+      "question": "Mitä tarkoittaa taimien 'esikasvatus' ja miksi se on Suomessa niin tärkeää?",
+      "answers": [
+        {"answer": "Kasvien kasvattamista ulkona ruukuissa ennen maahan istutusta."},
+        {"answer": "Siementen kylvämistä sisätiloihin aikaisin keväällä, jotta taimet saavat etumatkaa ennen ulos istutusta."},
+        {"answer": "Monivuotisten kasvien talvisuojausta."},
+        {"answer": "Kasvimaan lannoittamista ennen kylvöä."}
+      ],
+      "answer": "Siementen kylvämistä sisätiloihin aikaisin keväällä, jotta taimet saavat etumatkaa ennen ulos istutusta.",
+      "explanation": "Koska Suomen kasvukausi on lyhyt, monet kasvit, kuten tomaatit, kurkut, paprikat ja monet kesäkukat, eivät ehtisi tuottaa satoa tai kukkia, jos niiden siemenet kylvettäisiin suoraan ulos maan lämmettyä. Esikasvatus tarkoittaa, että siemenet kylvetään sisällä lämpimässä ja valoisassa paikassa (esim. ikkunalaudalla tai kasvivalojen alla) jo maalis-huhtikuussa. Näin kasvit saavat 6-8 viikon 'varaslähdön'. Kun hallanvaara on ohi, tanakat taimet voidaan istuttaa ulos, ja ne alkavat tuottaa satoa paljon nopeammin."
+    },
+    {
+      "question": "Mikä seuraavista on Suomessa yleinen savimaan parannuskeino?",
+      "answers": [
+        {"answer": "Maan tiivistäminen jyrällä."},
+        {"answer": "Kalkin ja hiekan lisääminen."},
+        {"answer": "Runsaan orgaanisen aineksen, kuten kompostin ja puunlehtien, lisääminen maan rakenteen kuohkeuttamiseksi."},
+        {"answer": "Kasteleminen suolavedellä."}
+      ],
+      "answer": "Runsaan orgaanisen aineksen, kuten kompostin ja puunlehtien, lisääminen maan rakenteen kuohkeuttamiseksi.",
+      "explanation": "Savimaa on ravinteikasta mutta raskasta, märkänä tahmeaa ja kuivana kivikovaa. Sen rakenne on tiivis ja vähähappinen. Paras tapa parantaa savimaata on lisätä siihen runsaasti eloperäistä ainesta. Komposti, maatunut lanta, puiden lehdet ja ruohokate ruokkivat maan pieneliöitä ja lieroja. Nämä eliöt kuohkeuttavat maata ja muodostavat mururakennetta, joka parantaa ilmavuutta ja vedenpidätyskykyä. Vaikka karkeaa hiekkaa voidaan myös käyttää, orgaaninen aines on avainasemassa savimaan muuttamisessa eläväksi ja hyväksi kasvualustaksi."
+    },
+    {
+      "question": "Mitä tarkoittaa 'kateviljely' ja mikä on sen suurin hyöty?",
+      "answers": [
+        {"answer": "Kasvimaan peittämistä muovilla auringonoton maksimoimiseksi."},
+        {"answer": "Maanpinnan peittämistä eloperäisellä aineksella, kuten ruohosilpulla tai oljilla, mikä vähentää kastelutarvetta, estää rikkaruohoja ja parantaa maan pieneliötoimintaa."},
+        {"answer": "Kasvien viljelyä katolla."},
+        {"answer": "Kasvimaan peittämistä kivillä."}
+      ],
+      "answer": "Maanpinnan peittämistä eloperäisellä aineksella, kuten ruohosilpulla tai oljilla, mikä vähentää kastelutarvetta, estää rikkaruohoja ja parantaa maan pieneliötoimintaa.",
+      "explanation": "Kateviljely on luonnonmukainen ja tehokas viljelymenetelmä. Kun paljas maa kasvien ympärillä peitetään katteella (esim. ruohonleikkuujäte, oljet, lehdet, sanomalehti), se estää veden haihtumista maasta, mikä vähentää kastelun tarvetta merkittävästi. Paksu katekerros tukahduttaa myös rikkaruohojen kasvua. Hitaasti maatuessaan kate tarjoaa ravintoa maan pieneliöille ja lieroille, mikä parantaa maan rakennetta ja hedelmällisyyttä pitkällä aikavälillä."
+    },
+    {
+      "question": "Mikä on lavakaulusviljelyn suurin etu perinteiseen kasvimaahan verrattuna?",
+      "answers": [
+        {"answer": "Se vaatii huomattavasti enemmän kastelua."},
+        {"answer": "Siinä ei voi kasvattaa juureksia."},
+        {"answer": "Se mahdollistaa viljelyn huonossakin maaperässä, helpottaa kitkemistä ja maanmuokkausta sekä lämpenee keväällä nopeammin."},
+        {"answer": "Se on huomattavasti halvempi perustaa."}
+      ],
+      "answer": "Se mahdollistaa viljelyn huonossakin maaperässä, helpottaa kitkemistä ja maanmuokkausta sekä lämpenee keväällä nopeammin.",
+      "explanation": "Lavakaulusviljely on erinomainen ratkaisu moniin puutarhan haasteisiin. Koska laatikko täytetään hyvällä mullalla, viljelyn voi aloittaa vaikka suoraan nurmikon päälle tai alueelle, jossa on huono ja savinen maa. Korotettu penkki säästää selkää, koska työskentelykorkeus on parempi. Mustaksi maalattu tai käsittelemätön puinen laatikko lämpenee auringossa nopeammin kuin tasamaa, mikä antaa kasvulle varaslähdön Suomen viileässä keväässä. Lisäksi rajattu alue on helppo pitää rikkaruohottomana."
+    },
+    {
+      "question": "Mikä on Suomen kansallismarja?",
+      "answers": [
+        {"answer": "Mansikka"},
+        {"answer": "Puolukka"},
+        {"answer": "Mustikka"},
+        {"answer": "Lakka"}
+      ],
+      "answer": "Mustikka",
+      "explanation": "Metsämustikka (Vaccinium myrtillus) on suomalaisten rakastama marja, joka valittiin äänestyksellä Suomen kansallismarjaksi. Se kasvaa yleisenä lähes koko maassa ja on tärkeä osa suomalaista luontoa ja ruokakulttuuria. Se on erittäin terveellinen, sisältäen runsaasti antioksidantteja (antosyaaneja), vitamiineja ja kuituja. Mustikkapiirakka, -keitto ja -hillo ovat klassisia suomalaisia herkkuja."
+    },
+    {
+      "question": "Miksi kompostin säännöllinen kääntäminen tai sekoittaminen on tärkeää?",
+      "answers": [
+        {"answer": "Jotta komposti jäähtyisi mahdollisimman nopeasti."},
+        {"answer": "Se ei ole tärkeää, kompostin on annettava olla rauhassa."},
+        {"answer": "Jotta kompostimassan pohjalle ei kerry liikaa nestettä."},
+        {"answer": "Se lisää happea kompostiin, mikä on välttämätöntä hajottajamikrobien toiminnalle ja nopeuttaa kompostoitumisprosessia."}
+      ],
+      "answer": "Se lisää happea kompostiin, mikä on välttämätöntä hajottajamikrobien toiminnalle ja nopeuttaa kompostoitumisprosessia.",
+      "explanation": "Kompostoituminen on aerobinen prosessi, eli sitä tekevät pieneliöt (bakteerit, sienet) tarvitsevat happea toimiakseen tehokkaasti. Kun kompostiin lisätään uutta materiaalia, se painuu kasaan ja muuttuu tiiviiksi, jolloin happi loppuu sen keskeltä. Kääntämällä tai sekoittamalla kompostia (esim. talikolla tai kompostin sekoitussauvalla) massan sekaan saadaan ilmaa. Tämä aktivoi mikrobit uudelleen, nostaa kompostin lämpötilaa ja nopeuttaa merkittävästi jätteen hajoamista ravinteikkaaksi mullaksi."
+    },
+    {
+      "question": "Milloin talvivalkosipuli tyypillisesti istutetaan Suomessa?",
+      "answers": [
+        {"answer": "Aikaisin keväällä heti lumen sulamisen jälkeen."},
+        {"answer": "Keskikesällä heinäkuussa."},
+        {"answer": "Myöhään syksyllä ennen maan routaantumista, tyypillisesti loka-marraskuussa."},
+        {"answer": "Jouluaattona."}
+      ],
+      "answer": "Myöhään syksyllä ennen maan routaantumista, tyypillisesti loka-marraskuussa.",
+      "explanation": "Talvivalkosipuli on lajike, joka vaatii kylmäkäsittelyn tuottaakseen kunnon sadon. Siksi se istutetaan kynsinä maahan myöhään syksyllä, juuri ennen pysyvien pakkasten tuloa. Tavoite on, että kynsi ehtii juurtua hieman ennen talvea, mutta ei ala kasvattaa vihreää vartta. Talven aikana kylmyys käynnistää sipulin jakautumisprosessin. Heti keväällä maan sulettua sipuli alkaa kasvaa voimakkaasti ja tuottaa suuren ja maukkaan sadon jo keskikesällä, paljon aikaisemmin kuin keväällä istutetut valkosipulit."
+    },
+    {
+      "question": "Mikä on yleisin ja haitallisin tuholainen suomalaisissa kotipuutarhoissa, joka syö lähes kaikkea lehtevää ja on erityisen aktiivinen kostealla säällä?",
+      "answers": [
+        {"answer": "Kirva"},
+        {"answer": "Leppäkerttu"},
+        {"answer": "Lehtokotilo"},
+        {"answer": "Perhonen"}
+      ],
+      "answer": "Lehtokotilo",
+      "explanation": "Espanjansiruetana, jota virheellisesti usein lehtokotiloksi kutsutaan (lehtokotilo on eri laji, vaikkakin myös tuholainen), on tullut todelliseksi vitsaukseksi monissa suomalaisissa puutarhoissa. Tämä suuri etana on erittäin ahne ja syö reikiä ja koloja monien kasvien, kuten salaattien, kuunliljojen ja kurpitsojen lehtiin. Ne ovat kaksineuvoisia ja lisääntyvät nopeasti. Torjunta on työlästä ja vaatii usein yhdistelmän erilaisia keinoja, kuten keräämistä, ansoja (esim. olutansat) ja rautafosfaattivalmisteiden käyttöä."
+    },
+    {
+      "question": "Mitä tarkoitetaan maan pH-arvolla ja miksi se on tärkeä kasveille?",
+      "answers": [
+        {"answer": "Se mittaa maan suolapitoisuutta."},
+        {"answer": "Se kuvaa maan happamuutta tai emäksisyyttä, mikä vaikuttaa ratkaisevasti kasvien kykyyn ottaa ravinteita maasta."},
+        {"answer": "Se kertoo maan typpipitoisuuden."},
+        {"answer": "Se mittaa maan lämpötilaa."}
+      ],
+      "answer": "Se kuvaa maan happamuutta tai emäksisyyttä, mikä vaikuttaa ratkaisevasti kasvien kykyyn ottaa ravinteita maasta.",
+      "explanation": "pH-arvo on asteikko (0-14), joka mittaa happamuutta. Arvo 7 on neutraali, alle 7 on hapan ja yli 7 on emäksinen. Suomen maaperä on luonnostaan hapanta (pH usein 5.5-6.5). Useimmat puutarhakasvit viihtyvät parhaiten lievästi happamassa tai lähes neutraalissa maassa (pH 6.0-7.0). Jos maa on liian hapan tai liian emäksinen, tietyt ravinteet (kuten rauta tai fosfori) muuttuvat sellaiseen kemialliseen muotoon, että kasvin juuret eivät pysty hyödyntämään niitä, vaikka niitä olisi maassa runsaasti. Tämä johtaa puutosoireisiin. Maan pH-arvoa voidaan nostaa (emäksisemmäksi) lisäämällä kalkkia."
+    },
+    {
+      "question": "Mikä seuraavista on tehokas ja luonnonmukainen tapa torjua kirvoja?",
+      "answers": [
+        {"answer": "Kasvien suihkuttaminen sokerivedellä."},
+        {"answer": "Mäntysuopaliuoksella tai nokkosvedellä suihkuttaminen ja leppäkerttujen houkutteleminen puutarhaan."},
+        {"answer": "Voimakkaiden kemiallisten torjunta-aineiden käyttö."},
+        {"answer": "Kirvojen jättäminen rauhaan, ne häviävät itsestään."}
+      ],
+      "answer": "Mäntysuopaliuoksella tai nokkosvedellä suihkuttaminen ja leppäkerttujen houkutteleminen puutarhaan.",
+      "explanation": "Kirvat ovat yleisiä imeviä tuholaisia. Luonnonmukaisessa torjunnassa on useita keinoja. Suihkutus miedolla mäntysuopaliuoksella (n. 2-3 dl nestemäistä mäntysuopaa 10 litraan vettä) rikkoo kirvojen pinnan ja tukahduttaa ne. Myös nokkosista uutettu vesi (nokkoskäyte) toimii karkotteena. Biologinen torjunta on tehokkainta: leppäkertut ja niiden toukat ovat ahneita kirvansyöjiä. Houkuttelemalla hyötyhyönteisiä puutarhaan monipuolisilla istutuksilla ja välttämällä myrkkyjä, luonto hoitaa usein torjunnan itse."
+    },
+    {
+      "question": "Mikä on 'kylmäkäsittelyn' (stratifikaatio) tarkoitus joidenkin kasvien siemenille?",
+      "answers": [
+        {"answer": "Se on keino siementen pakastamiseksi pitkäaikaista säilytystä varten."},
+        {"answer": "Se on menetelmä, jolla rikotaan siementen lepotila jäljittelemällä luonnon talvikautta, mikä on välttämätöntä joidenkin lajien itämiselle."},
+        {"answer": "Se on siementen desinfiointia kylmällä vedellä."},
+        {"answer": "Se on siementen karaisemista pakkasta vastaan."}
+      ],
+      "answer": "Se on menetelmä, jolla rikotaan siementen lepotila jäljittelemällä luonnon talvikautta, mikä on välttämätöntä joidenkin lajien itämiselle.",
+      "explanation": "Monien pohjoisen ilmaston kasvien, kuten omenien, orapihlajien ja monien perennojen, siemenillä on sisäänrakennettu itämisesto. Tämä estää niitä itämästä heti syksyllä ja paleltumasta talvella. Siemen vaatii pitkän, kostean ja kylmän jakson (talven) murtaakseen tämän lepotilan. Puutarhuri voi jäljitellä tätä prosessia. Siemenet sekoitetaan kosteaan hiekkaan tai vermikuliittiin ja pidetään muovipussissa jääkaapissa useita viikkoja tai kuukausia. Tämän keinotekoisen talven jälkeen siemenet voidaan kylvää, ja ne itävät normaalisti."
+    },
+    {
+      "question": "Mitä tarkoitetaan kasvien 'ristipölytyksellä'?",
+      "answers": [
+        {"answer": "Kasvien istuttamista ristiin riveihin."},
+        {"answer": "Tilannetta, jossa kasvi pölyttää itse itsensä."},
+        {"answer": "Siitepölyn siirtymistä yhden kasvin kukasta toisen, samaan lajiin kuuluvan mutta eri yksilön kukkaan, mikä on välttämätöntä hedelmien ja siementen tuottamiseksi monilla lajeilla."},
+        {"answer": "Pölyttämistä ristin muotoisella siveltimellä."}
+      ],
+      "answer": "Siitepölyn siirtymistä yhden kasvin kukasta toisen, samaan lajiin kuuluvan mutta eri yksilön kukkaan, mikä on välttämätöntä hedelmien ja siementen tuottamiseksi monilla lajeilla.",
+      "explanation": "Monet hedelmäpuut (kuten useimmat omenalajikkeet) ja marjapensaat ovat 'itsehedelmättömiä'. Tämä tarkoittaa, että ne eivät voi tuottaa satoa omalla siitepölyllään. Ne tarvitsevat siitepölyä toisesta, geneettisesti erilaisesta lajikkeesta. Esimerkiksi, jotta 'Valkea Kuulas' -omenapuu tuottaisi hedelmiä, sen lähellä on oltava toinen omenapuulajike (esim. 'Melba'), joka kukkii samaan aikaan. Hyönteiset, kuten mehiläiset ja kimalaiset, hoitavat tämän siitepölyn siirron lajikkeesta toiseen. Siksi puutarhaan kannattaa aina istuttaa vähintään kaksi eri lajiketta ristipölytyksen varmistamiseksi."
+    },
+    {
+      "question": "Mikä on perunaruton aiheuttaja ja miten sitä voi parhaiten ennaltaehkäistä?",
+      "answers": [
+        {"answer": "Se on bakteeritauti, jota levittävät kirvat."},
+        {"answer": "Se johtuu liiallisesta auringonvalosta."},
+        {"answer": "Se on munasienen aiheuttama kasvitauti, jota voi ennaltaehkäistä käyttämällä tervettä siemenperunaa, viljelykierrolla ja varmistamalla ilmavat kasvuolosuhteet."},
+        {"answer": "Se on virustauti, jolle ei voi tehdä mitään."}
+      ],
+      "answer": "Se on munasienen aiheuttama kasvitauti, jota voi ennaltaehkäistä käyttämällä tervettä siemenperunaa, viljelykierrolla ja varmistamalla ilmavat kasvuolosuhteet.",
+      "explanation": "Perunarutto on perunan ja tomaatin vitsaus, joka voi tuhota koko sadon. Se on leväsienen kaltainen munasieni (Phytophthora infestans), joka leviää erityisesti kostealla ja lämpimällä säällä. Tärkein ennaltaehkäisykeino on käyttää ainoastaan sertifioitua, tervettä siemenperunaa, sillä tauti talvehtii saastuneissa mukuloissa. Viljelykierto, jossa perunaa ei kasvateta samassa paikassa peräkkäisinä vuosina, on myös tärkeää. Ilmava kasvusto, jossa lehdet kuivuvat nopeasti sateen jälkeen, hidastaa taudin leviämistä. Saastuneet kasvinosat on hävitettävä välittömästi polttamalla tai sekajätteen mukana, ei kompostiin."
+    },
+    {
+      "question": "Mikä on paras tapa torjua omenapuun muumiotautia?",
+      "answers": [
+        {"answer": "Ruiskuttamalla puu sokerivedellä."},
+        {"answer": "Antamalla tautisten hedelmien olla puussa, ne paranevat itsestään."},
+        {"answer": "Poistamalla ja hävittämällä huolellisesti kaikki tartunnan saaneet, kuivuneet 'muumio-omenat' puusta ja maasta syksyllä."},
+        {"answer": "Lannoittamalla puuta voimakkaasti typellä."}
+      ],
+      "answer": "Poistamalla ja hävittämällä huolellisesti kaikki tartunnan saaneet, kuivuneet 'muumio-omenat' puusta ja maasta syksyllä.",
+      "explanation": "Muumiotauti on sieni-tauti, joka mädättää omenoita ja muita hedelmiä. Tauti-itiöt talvehtivat puuhun jääneissä tai maahan pudonneissa, kuivuneissa ja mustuneissa 'muumiohedelmissä'. Keväällä näistä muumioista vapautuu uusia itiöitä, jotka tartuttavat uuden sadon. Ainoa ja tärkein torjuntakeino on sanitaatio: kaikkien muumioituneiden hedelmien huolellinen kerääminen ja hävittäminen (ei kompostiin!) katkaisee taudin elinkierron. Myös puun oksiston pitäminen ilmavana leikkaamalla auttaa, koska lehdistö kuivuu nopeammin ja sienitaudit eivät viihdy kuivassa."
+    },
+    {
+      "question": "Mitä tarkoittaa 'viljelykierto' ja miksi se on hyödyllistä?",
+      "answers": [
+        {"answer": "Kasvien istuttamista ympyrän muotoon."},
+        {"answer": "Kasvilajien paikan järjestelmällistä vaihtamista kasvimaalla vuosittain, mikä auttaa ehkäisemään kasvitauteja ja maan väsymistä."},
+        {"answer": "Sadonkorjuun kiertävää aikataulua."},
+        {"answer": "Eri viljelymenetelmien kiertoa."}
+      ],
+      "answer": "Kasvilajien paikan järjestelmällistä vaihtamista kasvimaalla vuosittain, mikä auttaa ehkäisemään kasvitauteja ja maan väsymistä.",
+      "explanation": "Viljelykierto on yksi puutarhanhoidon perusperiaatteista. Eri kasveilla on erilaiset ravinnetarpeet ja ne ovat alttiita eri taudeille ja tuholaisille. Jos kasvatat samaa kasvia (esim. perunaa tai kaalia) samassa paikassa vuodesta toiseen, maaperästä ehtyvät tietyt ravinteet ja juuri kyseisen kasvin taudinaiheuttajat ja tuholaiset lisääntyvät maassa. Vaihtamalla kasvien paikkaa järjestelmällisesti (esim. 4-vuoden kierrossa) tämä kierre katkaistaan. Esimerkiksi palkokasvit sitovat maahan typpeä, jota seuraavan vuoden paljon ravinteita vaativat kaalikasvit voivat hyödyntää."
+    },
+    {
+      "question": "Mikä seuraavista kasveista on typensitojakasvi, joka parantaa maaperää?",
+      "answers": [
+        {"answer": "Peruna"},
+        {"answer": "Porkkana"},
+        {"answer": "Härkäpapu"},
+        {"answer": "Salaatti"}
+      ],
+      "answer": "Härkäpapu",
+      "explanation": "Palkokasveilla, kuten herneillä, pavuilla, apiloilla ja lupiineilla, on ainutlaatuinen kyky. Niiden juurinystyröissä elää symbioosissa typensitojabakteereita (Rhizobium-bakteereita). Nämä bakteerit pystyvät ottamaan ilmakehän typpeä, jota kasvit eivät voi suoraan käyttää, ja muuttamaan sen kasville käyttökelpoiseen muotoon (ammoniakiksi). Tämä prosessi rikastaa maaperää luonnollisesti typellä. Siksi palkokasvien viljely on erinomainen tapa lannoittaa maata luonnonmukaisesti osana viljelykiertoa."
+    },
+    {
+      "question": "Mitä tarkoitetaan, kun sanotaan, että kasvi on 'yksivuotinen'?",
+      "answers": [
+        {"answer": "Se kasvaa vain yhden metrin korkuiseksi."},
+        {"answer": "Se kukkii vain kerran elämässään."},
+        {"answer": "Sen koko elinkaari siemenestä siemeneen tapahtuu yhden kasvukauden aikana, jonka jälkeen kasvi kuolee."},
+        {"answer": "Sitä tarvitsee kastella vain kerran vuodessa."}
+      ],
+      "answer": "Sen koko elinkaari siemenestä siemeneen tapahtuu yhden kasvukauden aikana, jonka jälkeen kasvi kuolee.",
+      "explanation": "Yksivuotiset kasvit (annuellit) panostavat kaiken energiansa yhteen kasvukauteen. Ne itävät keväällä, kasvavat, kukkivat, tuottavat siemeniä ja kuolevat syksyn tullen. Seuraavan vuoden sukupolvi kasvaa näistä siemenistä. Useimmat kesäkukat (kuten kehäkukat ja auringonkukat) ja monet vihannekset (kuten herneet, salaatti ja kurpitsat) ovat yksivuotisia. Niiden vastakohta ovat monivuotiset kasvit (perennat), jotka talvehtivat ja kasvavat uudelleen vuodesta toiseen."
+    },
+    {
+      "question": "Mikä on 'hallan' ja 'pakkasen' ero?",
+      "answers": [
+        {"answer": "Halla on voimakkaampaa kuin pakkanen."},
+        {"answer": "Niillä ei ole eroa, ne ovat sama asia."},
+        {"answer": "Hallaa on, kun lämpötila maanpinnan tasolla laskee pakkasen puolelle, vaikka ilman virallinen lämpötila (2 metrin korkeudessa) pysyisi plussalla. Pakkasta on, kun myös ilman lämpötila on alle nollan."},
+        {"answer": "Pakkanen tulee talvella, halla kesällä."}
+      ],
+      "answer": "Hallaa on, kun lämpötila maanpinnan tasolla laskee pakkasen puolelle, vaikka ilman virallinen lämpötila (2 metrin korkeudessa) pysyisi plussalla. Pakkasta on, kun myös ilman lämpötila on alle nollan.",
+      "explanation": "Tämä on tärkeä ero puutarhurille. Halla on paikallinen ilmiö, joka esiintyy tyypillisesti selkeinä ja tyyninä öinä, jolloin maanpinta säteilee lämpöä avaruuteen ja jäähtyy nopeasti. Kylmä ilma on raskaampaa ja valuu notkelmiin. Vaikka virallinen lämpömittari näyttäisi +2°C, voi kasvien lehtien pinnalla olla jo pakkasta. Tämä 'halla' voi vioittaa arkoja kasveja, kuten perunan naatteja tai kurkun taimia. Puutarhuri voi suojautua hallalta peittämällä kasvit yöksi harsolla tai käyttämällä sadetusta."
+    },
+    {
+      "question": "Mikä on paras ajankohta omenapuiden leikkaamiselle Suomessa?",
+      "answers": [
+        {"answer": "Keskellä kesää, kun puussa on eniten lehtiä."},
+        {"answer": "Myöhään syksyllä lehtien pudottua."},
+        {"answer": "Keskellä talvea kovilla pakkasilla."},
+        {"answer": "Aikaisin keväällä ennen silmujen puhkeamista, leudolla säällä (pakkasta alle -5°C)."}
+      ],
+      "answer": "Aikaisin keväällä ennen silmujen puhkeamista, leudolla säällä (pakkasta alle -5°C).",
+      "explanation": "Paras aika omenapuiden hoito- ja harvennusleikkauksille on kevättalvella tai aikaisin keväällä, tyypillisesti maalis-huhtikuussa. Tällöin puu on vielä lepotilassa, eikä mahlavuoto ole alkanut. Leikkauspinnat paranevat parhaiten, kun puu aloittaa kasvunsa keväällä. On tärkeää leikata kuivalla säällä ja välttää leikkaamista kovilla pakkasilla, jolloin oksat ovat hauraita ja leikkauspinnat voivat paleltua. Kesällä voidaan tehdä pieniä siistimisleikkauksia ja poistaa esimerkiksi vesiversoja."
+    },
+    {
+      "question": "Mikä on Suomen luonnossa kasvava, herkullinen villiyrtti, joka maistuu miedosti anikselta ja on monen riesana rikkaruohona?",
+      "answers": [
+        {"answer": "Nokkonen"},
+        {"answer": "Voikukka"},
+        {"answer": "Vuohenputki"},
+        {"answer": "Maitohorsma"}
+      ],
+      "answer": "Vuohenputki",
+      "explanation": "Vuohenputki (Aegopodium podagraria) on monille puutarhureille tuttu sitkeä rikkaruoho, mutta se on myös erinomainen ja ravinteikas villivihannes. Erityisesti nuoret, vaaleanvihreät ja kiiltävät lehdet ovat herkullisia. Niiden maku on mieto, hieman porkkanamainen ja anismainen. Niitä voi käyttää pinaatin tavoin keitoissa, muhennoksissa, piirakoissa tai tuoreena salaateissa ja pestoissa. On kuitenkin erittäin tärkeää tunnistaa kasvi varmasti, sillä sen voi sekoittaa myrkyllisiin putkikasveihin, kuten myrkkykatkoon."
+    },
+    {
+      "question": "Minkä tyyppistä lannoitetta mansikka tarvitsee eniten satokauden jälkeen seuraavan vuoden sadon varmistamiseksi?",
+      "answers": [
+        {"answer": "Voimakasta typpilannoitetta."},
+        {"answer": "Syyslannoitetta, joka on vähätyppinen mutta sisältää runsaasti kaliumia ja fosforia."},
+        {"answer": "Kalkkia."},
+        {"answer": "Ei mitään lannoitetta."}
+      ],
+      "answer": "Syyslannoitetta, joka on vähätyppinen mutta sisältää runsaasti kaliumia ja fosforia.",
+      "explanation": "Sadonkorjuun jälkeen mansikka alkaa valmistautua seuraavaan kauteen ja talveen. Se kehittää uusia lehtiä ja mikä tärkeintä, alkaa muodostaa kukka-aiheita seuraavan vuoden satoa varten. Tässä vaiheessa runsas typpilannoitus olisi haitallista, sillä se edistäisi vain rehevää lehtikasvua ja heikentäisi talvenkestävyyttä. Sen sijaan mansikka hyötyy syyslannoitteesta, joka sisältää runsaasti kaliumia ja fosforia. Kalium parantaa talvenkestävyyttä ja sokeripitoisuutta, ja fosfori on tärkeää kukkien ja juuriston kehitykselle."
+    },
+    {
+      "question": "Mikä on 'Timo' suomalaisessa puutarhamaailmassa?",
+      "answers": [
+        {"answer": "Yleinen etunimi puutarhureiden keskuudessa."},
+        {"answer": "Suosittu ja perinteinen varhaisperunalajike."},
+        {"answer": "Tunnettu suomalainen puutarhatyökalujen valmistaja."},
+        {"answer": "Pieni tuholaishyönteinen."}
+      ],
+      "answer": "Suosittu ja perinteinen varhaisperunalajike.",
+      "explanation": "'Timo' on yksi Suomen tunnetuimmista ja viljellyimmistä perunalajikkeista, erityisesti varhaisperunana. Se on nopeakasvuinen ja tuottaa satoa aikaisin kesällä. Se on kiinteämaltoinen ja sopii hyvin keitettäväksi sellaisenaan uusina perunoina. Monille suomalaisille ensimmäiset itse kasvatetut tai torilta ostetut 'Timot' tillin ja voin kera ovat kesän ehdoton kohokohta."
+    },
+    {
+      "question": "Mitä tarkoittaa taimien 'karaisu'?",
+      "answers": [
+        {"answer": "Taimien leikkaamista voimakkaasti."},
+        {"answer": "Taimien totuttamista vähitellen ulko-olosuhteisiin ennen lopullista istutusta."},
+        {"answer": "Taimien lannoittamista rautapitoisella lannoitteella."},
+        {"answer": "Taimien istuttamista erityisen kovaan maahan."}
+      ],
+      "answer": "Taimien totuttamista vähitellen ulko-olosuhteisiin ennen lopullista istutusta.",
+      "explanation": "Sisällä suojaisissa olosuhteissa kasvaneet taimet ovat herkkiä. Ne eivät ole tottuneet voimakkaaseen auringonpaisteeseen, tuuleen ja suuriin lämpötilanvaihteluihin. Jos ne istutetaan suoraan ulos, ne voivat saada 'sokin' ja niiden lehdet palavat auringossa tai kasvu pysähtyy. Karaisu tarkoittaa, että taimia viedään ulos päivittäin 1-2 viikon ajan ennen lopullista istutusta. Aluksi ne pidetään ulkona vain lyhyen aikaa varjoisassa ja suojaisassa paikassa. Vähitellen ulkoiluaikaa pidennetään ja taimia siirretään aurinkoisempaan paikkaan. Näin ne sopeutuvat ja vahvistuvat kestämään ulkoelämää."
+    },
+    {
+      "question": "Mikä on kuunliljojen (Hosta) suurin etu ja käyttö puutarhassa?",
+      "answers": [
+        {"answer": "Ne kukkivat näyttävästi koko kesän auringossa."},
+        {"answer": "Ne ovat erinomaisia ja peittäviä maanpeitekasveja varjoisiin ja puolivarjoisiin paikkoihin upeiden lehtiensä ansiosta."},
+        {"answer": "Ne ovat kuivuutta erittäin hyvin kestäviä kasveja."},
+        {"answer": "Ne ovat syötäviä ja maistuvat sitruunalta."}
+      ],
+      "answer": "Ne ovat erinomaisia ja peittäviä maanpeitekasveja varjoisiin ja puolivarjoisiin paikkoihin upeiden lehtiensä ansiosta.",
+      "explanation": "Kuunliljat ovat varjoisan puutarhan kuninkaita. Niiden pääasiallinen koristearvo ei ole kukissa (vaikka nekin ovat kauniita), vaan upeissa ja monimuotoisissa lehdissä. Lajikkeita on satoja: on pieniä ja suuria, vihreitä, sinivihreitä, keltavihreitä ja monenkirjavia. Ne ovat helppohoitoisia, pitkäikäisiä ja muodostavat ajan myötä tiiviin ja rehevän lehdistön, joka tukahduttaa rikkaruohot alleen. Valitettavasti ne ovat myös lehtokotiloiden suurta herkkua."
+    },
+    {
+      "question": "Mikä on 'hiekkaviljely' ja mihin se sopii erityisen hyvin?",
+      "answers": [
+        {"answer": "Ainoastaan kaktusten kasvattamiseen hiekassa."},
+        {"answer": "Kasvimaan perustamiseen rannalle."},
+        {"answer": "Menetelmä, jossa erittäin tiiviin savimaan päälle levitetään paksu kerros karkeaa hiekkaa ja kompostia, mikä luo juureksille ilmavan ja helposti muokattavan kasvualustan."},
+        {"answer": "Viljelymenetelmä, joka ei vaadi lainkaan multaa."}
+      ],
+      "answer": "Menetelmä, jossa erittäin tiiviin savimaan päälle levitetään paksu kerros karkeaa hiekkaa ja kompostia, mikä luo juureksille ilmavan ja helposti muokattavan kasvualustan.",
+      "explanation": "Hiekkaviljely on nerokas ratkaisu raskaille savimaille, joissa juurekset, kuten porkkana ja palsternakka, kasvavat helposti haaraisiksi ja epämuodostuneiksi. Sen sijaan, että yritettäisiin muokata syvältä tiivistä savea, sen päälle levitetään noin 20-30 cm kerros karkeaa hiekkaa, johon sekoitetaan kompostia tai muuta orgaanista ainesta. Tämä luo juureksille täydellisen, kuohkean ja lämpimän kasvualustan, jossa ne voivat kasvaa suoriksi ja pitkiksi. Alla oleva savimaa pidättää kosteutta ja luovuttaa sitä ylöspäin."
+    },
+    {
+      "question": "Mitä tarkoittaa 'syyskylvö' ja mille kasveille se sopii?",
+      "answers": [
+        {"answer": "Kaikkien kasvien siementen kylvämistä syksyllä."},
+        {"answer": "Kylmää kestävien kasvien, kuten palsternakan, tillin ja joidenkin salaattien siementen kylvämistä myöhään syksyllä juuri ennen maan jäätymistä. Siemenet talvehtivat maassa ja itävät heti keväällä."},
+        {"answer": "Kukkasipulien istuttamista syksyllä."},
+        {"answer": "Valmiiden taimien istuttamista syksyllä."}
+      ],
+      "answer": "Kylmää kestävien kasvien, kuten palsternakan, tillin ja joidenkin salaattien siementen kylvämistä myöhään syksyllä juuri ennen maan jäätymistä. Siemenet talvehtivat maassa ja itävät heti keväällä.",
+      "explanation": "Syyskylvö on tapa hyödyntää luonnon omaa rytmiä ja saada etumatkaa keväällä. Joidenkin kylmänkestävien lajien siemenet voidaan kylvää maanmuokkauksen jälkeen myöhään syksyllä, kun maa on jo kylmää, mutta ei vielä jäässä. Tavoitteena on, että siemenet eivät idä syksyllä, vaan jäävät maahan odottamaan. Heti kun olosuhteet keväällä ovat sopivat, ne itävät ja aloittavat kasvunsa paljon aikaisemmin kuin keväällä kylvetyt siemenet. Tämä sopii erinomaisesti esimerkiksi palsternakalle, mustajuurelle, tillille ja kehäkukalle."
+    }
+  ]
+},
+{
   "name": "Kirjasto- ja tietopalvelualan perusteet",
   "questions": [
   {
