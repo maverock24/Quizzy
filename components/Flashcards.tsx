@@ -474,6 +474,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
                                 
                     
                                 <Switch
+                                style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
                                   trackColor={{ false: 'gray', true: 'white' }}
                                   thumbColor={
                                     flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
