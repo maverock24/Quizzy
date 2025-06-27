@@ -19,8 +19,9 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
     <View style={styles.header}>
       <View style={{ marginBottom: 10, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-evenly', height: 40 }}>
         <View style={styles.settingItem}>
-          <Text style={styles.settingText}>Music</Text>
+          <Text style={styles.settingText}>{t('enable_music')}</Text>
           <Switch
+            style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
             trackColor={{ false: 'gray', true: 'white' }}
             thumbColor={musicEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'}
             ios_backgroundColor="gray"
@@ -31,6 +32,7 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
         <View style={styles.settingItem}>
           <Text style={styles.settingText}>{t('show_explanation')}</Text>
           <Switch
+            style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
             trackColor={{ false: 'gray', true: 'white' }}
             thumbColor={'rgb(85, 101, 107)'}
             ios_backgroundColor="gray"
@@ -41,6 +43,7 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
         <View style={styles.settingItem}>
           <Text style={styles.settingText}>{t('enable_sound')}</Text>
           <Switch
+            style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
             trackColor={{ false: 'gray', true: 'white' }}
             thumbColor={'rgb(85, 101, 107)'}
             ios_backgroundColor="gray"
@@ -51,6 +54,7 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
         <View style={styles.settingItem}>
           <Text style={styles.settingText}>{t('use_flashcards')}</Text>
           <Switch
+            style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
             trackColor={{ false: 'gray', true: 'white' }}
             thumbColor={flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'}
             ios_backgroundColor="gray"
