@@ -6,7 +6,7 @@
   "wrong": "Väärin!",
   "next": "Seuraava",
   "back": "takaisin",
-  "show_explanation": "Näytä selitys",
+  "show_explanation": "selitys",
   "hide_explanation": "Piilota selitys",
   "score": "Pisteet",
   "scores": "Pisteet",
@@ -17,10 +17,10 @@
   "finnish": "Suomi",
   "enable_notifications": "Ota ilmoitukset käyttöön",
   "enable_notifications_desc": "Sallii käyttäjän kytkeä muistutusilmoitukset päälle/pois",
-  "use_flashcards": "Käytä muistilappuja",
+  "use_flashcards": "muistilappuja",
   "use_flashcards_desc": "Monivalintakysymysten sijaan käytä muistilappuja",
   "show_explanation_desc": "Sallii käyttäjän piilottaa vastauksen tarkistuksen",
-  "enable_sound": "Ota äänet käyttöön",
+  "enable_sound": "käyttöön",
   "enable_sound_desc": "Salli äänien toisto kysymyksiin vastattaessa",
   "use_custom_remote": "Käytä omaa etälähdettä",
   "use_custom_remote_desc": "Käytä omaa etälähdettä tietovisadatalle (vaatii etäosoitteen)",
@@ -35,5 +35,6 @@
   "Answers_right": "Oikeita vastauksia",
   "Answers_wrong": "Vääriä vastauksia",
   "read_aloud": "Lue ääneen",
-  "answer_options": "Vastausvaihtoehdot"
+  "answer_options": "Vastausvaihtoehdot",
+  "enable_music": "musiikki"
 }
