@@ -45,6 +45,8 @@ type QuizContextType = {
   setRemoteAdress: (address: string) => void;
   remoteAddress: string;
   resetState: () => void;
+  musicEnabled: boolean;
+  setMusicEnabled: (enabled: boolean) => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -107,6 +109,15 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [userQuizLoadEnabled, setUserQuizLoadEnabledState] = useState<boolean>(
     false,
   );
+  const [musicEnabled, setMusicEnabledState] = useState<boolean>(false);
+  const setMusicEnabled = useCallback(async (enabled: boolean) => {
+    setMusicEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('musicEnabled', String(enabled));
+    } catch (error) {
+      console.error('Failed to save music setting', error);
+    }
+  }, []);
 
   const setUserQuizLoadEnabled = useCallback((enabled: boolean) => {
     setUserQuizLoadEnabledState(enabled);
@@ -576,6 +587,8 @@ console.log('Fetched data from API route:', jsonData);
         setLanguage, // Expose the language setter
         userQuizLoadEnabled,
         setUserQuizLoadEnabled, // Expose the user quiz load setter
+        musicEnabled,
+        setMusicEnabled, // Expose the music enabled setter
       }}
     >
       {children}
