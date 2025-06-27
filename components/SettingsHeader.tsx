@@ -17,7 +17,7 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
 
   return (
     <View style={styles.header}>
-      <View style={{ marginBottom: 10, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-evenly', height: 40 }}>
+      <View style={{ marginBottom: 10, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', height: 40 }}>
         <View style={styles.settingItem}>
           <Text style={styles.settingText}>{t('enable_music')}</Text>
           <Switch
@@ -73,7 +73,6 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
 const styles = StyleSheet.create({
   header: {
     flexDirection: 'column',
-    justifyContent: 'space-between',
     borderBottomColor: 'rgb(255, 255, 255)',
     borderBottomWidth: 1,
     paddingBottom: 10,
@@ -81,7 +80,7 @@ const styles = StyleSheet.create({
   },
   settingItem: {
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 5,
   },
