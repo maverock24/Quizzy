@@ -221,6 +221,7 @@ export const Question: React.FC<QuestionProps> = ({
     const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
     setSound(newSound);
     // Play the sound
+    await newSound.setVolumeAsync(0.4);
     await newSound.playAsync();
   };
 
