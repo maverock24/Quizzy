@@ -1,6 +1,5 @@
 export type Quiz = {
-  name?: string;
-  nimi?: string;
+  name: string;
   questions: QuizQuestion[];
 };
 
