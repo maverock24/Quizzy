@@ -29,6 +29,8 @@ export default function SettingsScreen() {
     setLanguage,
     userQuizLoadEnabled,
     setUserQuizLoadEnabled,
+    readerModeEnabled,
+    setReaderModeEnabled,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -198,6 +200,21 @@ export default function SettingsScreen() {
               ios_backgroundColor="gray"
               onValueChange={setAudioEnabled}
               value={audioEnabled}
+            />
+          </View>
+          <View style={styles.settingItem}>
+            <View style={styles.settingName}>
+              <Text style={styles.settingText}>{t('reader_mode')}</Text>
+              <Text style={styles.settingDescription}>
+                {t('reader_mode_desc')}
+              </Text>
+            </View>
+            <Switch
+              trackColor={{ false: 'gray', true: 'white' }}
+              thumbColor={'rgb(85, 101, 107)'}
+              ios_backgroundColor="gray"
+              onValueChange={setReaderModeEnabled}
+              value={readerModeEnabled}
             />
           </View>
           {/* User Quiz Load Switch */}
