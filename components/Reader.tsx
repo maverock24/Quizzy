@@ -64,7 +64,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
     if (explanation) {
       content += ` ${t('show_explanation')}: ${explanation}.`;
     }
-    readAloud(content, undefined, 0.7, 1); // Slower reading speed with voice index 1
+    readAloud(content, undefined, 0.9, 3); // Slower reading speed with voice index 1
   };
 
   // Monitor TTS state to update our reading state
