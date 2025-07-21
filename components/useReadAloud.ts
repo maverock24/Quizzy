@@ -42,6 +42,15 @@ export function useReadAloud() {
       const utterance = utteranceQueue.current.shift();
       if (!utterance) return;
 
+      // Check if this is a pause utterance
+      if ((utterance as any).isPause) {
+        const pauseDuration = (utterance as any).pauseDuration;
+        setTimeout(() => {
+          speakNextInQueue();
+        }, pauseDuration);
+        return;
+      }
+
       utterance.onend = () => {
         // A small delay can help prevent issues on some browsers before speaking the next chunk
         setTimeout(speakNextInQueue, 50);
@@ -72,7 +81,7 @@ export function useReadAloud() {
     };
   }, [ttsState]); // The effect now correctly depends on `ttsState`
 
-  const readAloud = useCallback((text: string, langOverride?: string) => {
+  const readAloud = useCallback((text: string, langOverride?: string, rate: number = 1.0, voiceIndex: number = 0) => {
     // 1. Immediately stop any currently playing speech.
     stopTTS();
 
@@ -83,7 +92,29 @@ export function useReadAloud() {
     const ttsLang = langMap[lang] || 'en-US';
 
     if (Platform.OS === 'web' && 'speechSynthesis' in window) {
-      // More robust chunking strategy
+      // Handle break tags by splitting text and creating timed pauses
+      const processTextWithBreaks = (textWithBreaks: string): { type: 'text' | 'pause', content: string | number }[] => {
+        const segments = textWithBreaks.split(/(<break time="(\d+)s"\s*\/?>)/);
+        const result: { type: 'text' | 'pause', content: string | number }[] = [];
+        
+        for (let i = 0; i < segments.length; i++) {
+          const segment = segments[i];
+          if (segment.match(/<break time="(\d+)s"\s*\/?>/)) {
+            // Extract pause duration
+            const match = segment.match(/(\d+)/);
+            if (match) {
+              result.push({ type: 'pause', content: parseInt(match[1]) * 1000 }); // Convert to milliseconds
+            }
+          } else if (segment.trim()) {
+            // Regular text segment
+            result.push({ type: 'text', content: segment.trim() });
+          }
+        }
+        
+        return result;
+      };
+
+      // More robust chunking strategy for text segments
       const splitIntoChunks = (textToSplit: string, maxLen = 200): string[] => {
         if (textToSplit.length <= maxLen) return [textToSplit];
         const sentences = textToSplit.match(/[^.!?]+[.!?]*|[^.!?]+$/g) || [];
@@ -102,12 +133,36 @@ export function useReadAloud() {
         return chunks;
       };
 
-      const chunks = splitIntoChunks(text);
-      utteranceQueue.current = chunks.map(chunk => {
-        const utterance = new window.SpeechSynthesisUtterance(chunk);
-        utterance.lang = ttsLang;
-        utterance.rate = 1.0;
-        return utterance;
+      // Process the text with breaks
+      const segments = processTextWithBreaks(text);
+      
+      // Get available voices for the language
+      const voices = window.speechSynthesis.getVoices();
+      const languageVoices = voices.filter(voice => voice.lang.startsWith(lang));
+      const selectedVoice = languageVoices[voiceIndex] || voices[voiceIndex] || voices[0];
+      
+      // Create utterances for text segments and handle pauses manually
+      utteranceQueue.current = [];
+      
+      segments.forEach(segment => {
+        if (segment.type === 'text') {
+          const chunks = splitIntoChunks(segment.content as string);
+          chunks.forEach(chunk => {
+            const utterance = new window.SpeechSynthesisUtterance(chunk);
+            utterance.lang = ttsLang;
+            utterance.rate = rate;
+            if (selectedVoice) {
+              utterance.voice = selectedVoice;
+            }
+            utteranceQueue.current.push(utterance);
+          });
+        } else if (segment.type === 'pause') {
+          // Create a special "pause utterance" with metadata
+          const pauseUtterance = new window.SpeechSynthesisUtterance('');
+          (pauseUtterance as any).isPause = true;
+          (pauseUtterance as any).pauseDuration = segment.content;
+          utteranceQueue.current.push(pauseUtterance);
+        }
       });
 
       // 2. THIS IS THE KEY CHANGE:

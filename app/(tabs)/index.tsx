@@ -2,6 +2,7 @@ import { Explanation } from '@/components/Explanation';
 import FlashcardCarousel from '@/components/Flashcards';
 import Flashcards from '@/components/Flashcards';
 import { Question } from '@/components/Question';
+import { Reader } from '@/components/Reader';
 import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
@@ -40,6 +41,7 @@ export default function TabOneScreen() {
     setSelectedQuizName,
     showExplanation,
     flashcardsEnabled,
+    readerModeEnabled,
     quizzes,
     checkForQuizzesUpdate,
     totalCorrectAnswers,
@@ -57,6 +59,7 @@ export default function TabOneScreen() {
     QuizQuestion[]
   >([]);
   const [explanationMode, setExplanationMode] = useState<boolean>(false);
+  const [showReader, setShowReader] = useState<boolean>(false);
 
   useEffect(() => {
     if (selectedQuiz) {
@@ -76,13 +79,20 @@ export default function TabOneScreen() {
   }, [currentQuestionIndex, randomizedQuestions]);
 
   const handleQuizSelection = (quiz: any) => {
-    const selectedQuiz = quizzes.find((q: Quiz) => q.name === quiz.name);
+    const selectedQuiz = quizzes.find((q: Quiz) => (q.name || q.nimi) === (quiz.name || quiz.nimi));
     setSelectedQuiz(selectedQuiz);
     setSelectedQuizAnswersAmount(selectedQuiz?.questions.length!);
     setScore(0);
     setScoreVisible(false);
-    setSelectedQuizName(quiz.name);
+    setSelectedQuizName(quiz.name || quiz.nimi);
     setExplanationMode(false);
+    
+    // If reader mode is enabled, show the reader instead of the quiz
+    if (readerModeEnabled) {
+      setShowReader(true);
+    } else {
+      setShowReader(false);
+    }
   };
 
   const handleAnswerSelection = (answer: string) => {
@@ -110,6 +120,7 @@ export default function TabOneScreen() {
     setCurrentQuestionIndex(0);
     setScoreVisible(false);
     setAnswerIsCorrect(false);
+    setShowReader(false);
   };
 
   const handleNext = () => {
@@ -212,7 +223,15 @@ export default function TabOneScreen() {
             />
           )}
 
-          {showExplanation && explanationMode && selectedQuiz && (
+          {/* Show Reader when reader mode is enabled and a quiz is selected */}
+          {selectedQuiz && showReader && (
+            <Reader
+              quiz={selectedQuiz}
+              onBack={handleBack}
+            />
+          )}
+
+          {showExplanation && explanationMode && selectedQuiz && !showReader && (
             
             <Explanation
               answerIsCorrect={answerIsCorrect}
@@ -227,7 +246,7 @@ export default function TabOneScreen() {
                 
           )}
 
-          {selectedQuiz && !explanationMode && (
+          {selectedQuiz && !explanationMode && !showReader && (
             <>
               {flashcardsEnabled && !scoreVisible && (
                 <FlashcardCarousel
@@ -262,7 +281,7 @@ export default function TabOneScreen() {
             />
           )}
         </View>
-         {(selectedQuiz || scoreVisible) && (
+         {(selectedQuiz || scoreVisible) && !showReader && (
           <TouchableOpacity onPress={handleBack} style={{ marginLeft: 18, marginBottom: 20 }}>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name="arrow-back" size={35} color="white" style={{ marginRight: 6 }} />

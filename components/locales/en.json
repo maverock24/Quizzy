@@ -36,5 +36,9 @@
   "Answers_wrong": "Correct Answers",
   "read_aloud": "Read Aloud",
   "answer_options": "Answer Options",
-  "enable_music": "Music"
+  "enable_music": "Music",
+  "reader_mode": "Reader Mode",
+  "reader_mode_desc": "Enable text-to-speech reading of questions and answers",
+  "stop": "Stop",
+  "correct_answer_is": "The correct answer is"
 }

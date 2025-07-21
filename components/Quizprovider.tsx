@@ -47,6 +47,8 @@ type QuizContextType = {
   resetState: () => void;
   musicEnabled: boolean;
   setMusicEnabled: (enabled: boolean) => void;
+  readerModeEnabled: boolean;
+  setReaderModeEnabled: (enabled: boolean) => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -110,12 +112,22 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     false,
   );
   const [musicEnabled, setMusicEnabledState] = useState<boolean>(false);
+  const [readerModeEnabled, setReaderModeEnabledState] = useState<boolean>(false);
   const setMusicEnabled = useCallback(async (enabled: boolean) => {
     setMusicEnabledState(enabled);
     try {
       await AsyncStorage.setItem('musicEnabled', String(enabled));
     } catch (error) {
       console.error('Failed to save music setting', error);
+    }
+  }, []);
+
+  const setReaderModeEnabled = useCallback(async (enabled: boolean) => {
+    setReaderModeEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('readerModeEnabled', String(enabled));
+    } catch (error) {
+      console.error('Failed to save reader mode setting', error);
     }
   }, []);
 
@@ -203,6 +215,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setRemoteUpdateEnabledState(false);
     setRemoteAddressState('');
     setLanguageState(i18n.language || 'en');
+    setMusicEnabledState(false);
+    setReaderModeEnabledState(false);
   }, []);
 
   // Function to check for and download updated quizzes
@@ -455,6 +469,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         'lastUpdateDate',
       );
       const savedLanguage = await AsyncStorage.getItem('language');
+      const musicSetting = await AsyncStorage.getItem('musicEnabled');
+      const readerModeSetting = await AsyncStorage.getItem('readerModeEnabled');
 
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
@@ -467,6 +483,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setRemoteAddressState(remoteAddressSetting || '');
       setLastUpdateDateState(lastUpdateDateSetting || null);
       setLanguageState(savedLanguage || i18n.language || 'en');
+      setMusicEnabledState(musicSetting === 'true');
+      setReaderModeEnabledState(readerModeSetting === 'true');
       if (savedLanguage && savedLanguage !== i18n.language) {
         i18n.changeLanguage(savedLanguage);
       }
@@ -589,6 +607,8 @@ console.log('Fetched data from API route:', jsonData);
         setUserQuizLoadEnabled, // Expose the user quiz load setter
         musicEnabled,
         setMusicEnabled, // Expose the music enabled setter
+        readerModeEnabled,
+        setReaderModeEnabled, // Expose the reader mode setter
       }}
     >
       {children}

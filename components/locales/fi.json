@@ -36,5 +36,9 @@
   "Answers_wrong": "Vääriä vastauksia",
   "read_aloud": "Lue ääneen",
   "answer_options": "Vastausvaihtoehdot",
-  "enable_music": "musiikki"
+  "enable_music": "musiikki",
+  "reader_mode": "Lukutila",
+  "reader_mode_desc": "Ota käyttöön tekstistä puheeksi -lukeminen kysymyksille ja vastauksille",
+  "stop": "Pysäytä",
+  "correct_answer_is": "Oikea vastaus on"
 }
