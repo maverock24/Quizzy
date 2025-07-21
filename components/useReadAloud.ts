@@ -85,6 +85,24 @@ export function useReadAloud() {
     // 1. Immediately stop any currently playing speech.
     stopTTS();
 
+    // Clean up text for better TTS experience
+    const cleanTextForTTS = (textToClean: string): string => {
+      return textToClean
+        // Remove backticks (inline code)
+        .replace(/`([^`]+)`/g, '$1')
+        // Remove triple backticks (code blocks) 
+        .replace(/```[\s\S]*?```/g, '')
+        // Remove other markdown formatting
+        .replace(/\*\*([^*]+)\*\*/g, '$1') // Bold
+        .replace(/\*([^*]+)\*/g, '$1') // Italic
+        .replace(/_([^_]+)_/g, '$1') // Italic underscore
+        // Clean up extra whitespace
+        .replace(/\s+/g, ' ')
+        .trim();
+    };
+
+    const cleanedText = cleanTextForTTS(text);
+
     const lang = langOverride || i18n.language || 'en';
     const langMap: Record<string, string> = {
       en: 'en-US', fi: 'fi-FI', de: 'de-DE',
@@ -94,7 +112,7 @@ export function useReadAloud() {
     if (Platform.OS === 'web' && 'speechSynthesis' in window) {
       // Handle break tags by splitting text and creating timed pauses
       const processTextWithBreaks = (textWithBreaks: string): { type: 'text' | 'pause', content: string | number }[] => {
-        const segments = textWithBreaks.split(/(<break time="(\d+)s"\s*\/?>)/);
+        const segments = textWithBreaks.split(/(<break time="\d+s"\s*\/?>)/);
         const result: { type: 'text' | 'pause', content: string | number }[] = [];
         
         for (let i = 0; i < segments.length; i++) {
@@ -133,8 +151,8 @@ export function useReadAloud() {
         return chunks;
       };
 
-      // Process the text with breaks
-      const segments = processTextWithBreaks(text);
+      // Process the cleaned text with breaks
+      const segments = processTextWithBreaks(cleanedText);
       
       // Get available voices for the language
       const voices = window.speechSynthesis.getVoices();
@@ -174,7 +192,7 @@ export function useReadAloud() {
 
     } else if (Platform.OS !== 'web') {
       Tts.setDefaultLanguage(ttsLang);
-      Tts.speak(text);
+      Tts.speak(cleanedText);
       setTtsState('playing'); // Reflect native state
     } else {
       alert('Text-to-speech is not supported in this browser.');
