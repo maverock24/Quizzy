@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useReadAloud } from './useReadAloud';
+import {
+  Dimensions,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import { CodeFormatter } from './CodeFormatter';
 import { Quiz } from './types';
+import { useReadAloud } from './useReadAloud';
 
 type ReaderProps = {
   quiz: Quiz;
@@ -27,7 +27,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
 
   // Generate the full text content for reading
   const generateReadingContent = () => {
-    let content = `${t('quiz_title')}: ${quiz.name || quiz.nimi}. `;
+    let content = `${t('quiz_title')}: ${quiz.name}. `;
 
     quiz.questions.forEach((question, index) => {
       content += `${t('question')} ${index + 1}: ${question.question}. `;
@@ -90,7 +90,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
           <Text style={styles.backButtonText}>{t('back')}</Text>
         </TouchableOpacity>
 
-        <Text style={styles.title}>{quiz.name || quiz.nimi}</Text>
+        <Text style={styles.title}>{quiz.name}</Text>
 
         <TouchableOpacity onPress={handleReadAll} style={styles.readAllButton}>
           <FontAwesome
