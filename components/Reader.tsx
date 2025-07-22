@@ -48,7 +48,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       setIsReading(false);
     } else {
       const content = generateReadingContent();
-      readAloud(content, undefined, 0.9, 2); // Slower reading speed with voice index 1
+      readAloud(content, undefined, 0.9, 0); // Slower reading speed with voice index 1
       setIsReading(true);
     }
   };
