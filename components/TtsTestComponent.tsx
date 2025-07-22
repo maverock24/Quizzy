@@ -25,12 +25,80 @@ export const TtsTestComponent: React.FC = () => {
   const checkSpeechSynthesis = () => {
     if ('speechSynthesis' in window) {
       const voices = window.speechSynthesis.getVoices();
-      Alert.alert(
-        'Speech Synthesis Status', 
-        `Speech Synthesis: Available\nVoices loaded: ${voices.length}\nFirst voice: ${voices[0]?.name || 'None'}\nUser Agent: ${navigator.userAgent.substring(0, 50)}...`
-      );
+      const isAndroid = /Android/i.test(navigator.userAgent);
+      const isChrome = /Chrome/i.test(navigator.userAgent);
+      const isMobile = /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      let debugInfo = `Speech Synthesis: Available\n`;
+      debugInfo += `Voices loaded: ${voices.length}\n`;
+      debugInfo += `Platform: ${isAndroid ? 'Android' : 'Other'}\n`;
+      debugInfo += `Browser: ${isChrome ? 'Chrome' : 'Other'}\n`;
+      debugInfo += `Mobile: ${isMobile ? 'Yes' : 'No'}\n`;
+      debugInfo += `First voice: ${voices[0]?.name || 'None'}\n`;
+      debugInfo += `Default voice: ${voices.find(v => v.default)?.name || 'None'}\n`;
+      debugInfo += `Speaking: ${window.speechSynthesis.speaking ? 'Yes' : 'No'}\n`;
+      debugInfo += `Pending: ${window.speechSynthesis.pending ? 'Yes' : 'No'}\n`;
+      debugInfo += `Paused: ${window.speechSynthesis.paused ? 'Yes' : 'No'}\n`;
+      debugInfo += `User Agent: ${navigator.userAgent.substring(0, 100)}...`;
+      
+      Alert.alert('Speech Synthesis Debug', debugInfo);
+      
+      // Also log to console for more detailed debugging
+      console.log('=== TTS DEBUG INFO ===');
+      console.log('Voices:', voices);
+      console.log('User Agent:', navigator.userAgent);
+      console.log('Speech Synthesis State:', {
+        speaking: window.speechSynthesis.speaking,
+        pending: window.speechSynthesis.pending,
+        paused: window.speechSynthesis.paused
+      });
     } else {
       Alert.alert('Speech Synthesis Status', 'Speech Synthesis: Not Available');
+    }
+  };
+
+  const testAndroidSpecific = () => {
+    // Test specifically for common Android issues
+    const testText = "Testing Android specific text to speech functionality.";
+    
+    if ('speechSynthesis' in window) {
+      // Force reload voices first
+      const voices = window.speechSynthesis.getVoices();
+      console.log('Pre-test voices:', voices.length);
+      
+      // Create a simple test utterance with Android-friendly settings
+      const utterance = new SpeechSynthesisUtterance(testText);
+      utterance.rate = 0.8;  // Slower for better Android compatibility
+      utterance.pitch = 1.0;
+      utterance.volume = 1.0;
+      utterance.lang = 'en-US';
+      
+      // Use default voice if available
+      const defaultVoice = voices.find(v => v.default);
+      if (defaultVoice) {
+        utterance.voice = defaultVoice;
+        console.log('Using default voice:', defaultVoice.name);
+      }
+      
+      utterance.onstart = () => console.log('Android test: Speech started');
+      utterance.onend = () => console.log('Android test: Speech ended');
+      utterance.onerror = (e) => console.error('Android test error:', e);
+      
+      // Clear any existing speech first
+      window.speechSynthesis.cancel();
+      
+      // Wait a moment then speak
+      setTimeout(() => {
+        try {
+          window.speechSynthesis.speak(utterance);
+          console.log('Android test utterance queued');
+        } catch (error) {
+          console.error('Android test failed:', error);
+          Alert.alert('Android Test Failed', String(error));
+        }
+      }, 100);
+    } else {
+      Alert.alert('Error', 'Speech synthesis not available');
     }
   };
 
@@ -53,6 +121,10 @@ export const TtsTestComponent: React.FC = () => {
 
       <TouchableOpacity style={styles.button} onPress={checkSpeechSynthesis}>
         <Text style={styles.buttonText}>Check Speech API</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={testAndroidSpecific}>
+        <Text style={styles.buttonText}>Android Direct Test</Text>
       </TouchableOpacity>
 
       <TouchableOpacity 
