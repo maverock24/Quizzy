@@ -2,11 +2,13 @@ import { useState, useRef, useCallback, useEffect } from 'react';
 import { Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 import { useTranslation } from 'react-i18next';
+import { useQuiz } from './Quizprovider';
 
 type TTSState = 'idle' | 'playing';
 
 export function useReadAloud() {
   const { i18n } = useTranslation();
+  const { selectedVoice } = useQuiz();
   const [ttsState, setTtsState] = useState<TTSState>('idle');
   const utteranceQueue = useRef<SpeechSynthesisUtterance[]>([]);
   const sessionId = useRef(0);
@@ -223,6 +225,7 @@ export function useReadAloud() {
 
   const readAloud = useCallback((text: string, langOverride?: string, rate: number = 1.0, voiceIndex: number = 0) => {
     console.log('ReadAloud called with text length:', text.length, 'Mobile:', isMobile.current);
+    console.log('Current selectedVoice from context:', selectedVoice ? `${selectedVoice.name} (${selectedVoice.lang})` : 'null');
     
     // 1. Immediately stop any currently playing speech.
     stopTTS();
@@ -338,18 +341,29 @@ export function useReadAloud() {
         voices.forEach((v, i) => console.log(`${i}: ${v.name} (${v.lang}) ${v.default ? '[DEFAULT]' : ''}`));
         
         const languageVoices = voices.filter(voice => voice.lang.startsWith(lang));
-        let selectedVoice = languageVoices[voiceIndex] || voices[voiceIndex] || voices[0];
         
-        // On mobile, prefer system default voice if available
-        if (isMobile.current) {
-          const defaultVoice = voices.find(v => v.default);
-          if (defaultVoice) {
-            selectedVoice = defaultVoice;
-            console.log('Using default voice for mobile:', selectedVoice.name);
+        // Try to find the selected voice by name and language since voice objects may not be the same reference
+        let chosenVoice = null;
+        if (selectedVoice) {
+          chosenVoice = voices.find(v => v.name === selectedVoice.name && v.lang === selectedVoice.lang);
+          console.log('User selected voice found:', chosenVoice ? chosenVoice.name : 'Not found');
+        }
+        
+        // Fallback to default voice selection if no user selection or selected voice not found
+        if (!chosenVoice) {
+          chosenVoice = languageVoices[voiceIndex] || voices[voiceIndex] || voices[0];
+          
+          // On mobile, prefer system default voice if available (unless user has specifically selected one)
+          if (isMobile.current && !selectedVoice) {
+            const defaultVoice = voices.find(v => v.default);
+            if (defaultVoice) {
+              chosenVoice = defaultVoice;
+              console.log('Using default voice for mobile:', chosenVoice.name);
+            }
           }
         }
         
-        console.log('Selected voice:', selectedVoice?.name || 'None');
+        console.log('Final chosen voice:', chosenVoice?.name || 'None');
         
         // Create utterances for text segments and handle pauses manually
         utteranceQueue.current = [];
@@ -365,8 +379,8 @@ export function useReadAloud() {
               utterance.pitch = 1;
               utterance.volume = 1;
               
-              if (selectedVoice) {
-                utterance.voice = selectedVoice;
+              if (chosenVoice) {
+                utterance.voice = chosenVoice;
               }
               
               utteranceCount++;

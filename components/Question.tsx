@@ -12,7 +12,6 @@ import {
   View,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import Tts from 'react-native-tts';
 
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 

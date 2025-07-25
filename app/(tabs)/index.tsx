@@ -79,7 +79,7 @@ export default function TabOneScreen() {
   }, [currentQuestionIndex, randomizedQuestions]);
 
   const handleQuizSelection = (quiz: any) => {
-    const selectedQuiz = quizzes.find((q: Quiz) => (q.name || q.nimi) === (quiz.name || quiz.nimi));
+    const selectedQuiz = quizzes.find((q: Quiz) => q.name === quiz.name);
     setSelectedQuiz(selectedQuiz);
     setSelectedQuizAnswersAmount(selectedQuiz?.questions.length!);
     setScore(0);

@@ -31,6 +31,9 @@ export default function SettingsScreen() {
     setUserQuizLoadEnabled,
     readerModeEnabled,
     setReaderModeEnabled,
+    availableVoices,
+    selectedVoice,
+    setSelectedVoice,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -217,6 +220,42 @@ export default function SettingsScreen() {
               value={readerModeEnabled}
             />
           </View>
+          
+          {/* Voice Selection - only show when Reader mode is enabled */}
+          {readerModeEnabled && availableVoices.length > 0 && (
+            <View style={styles.settingItem}>
+              <Text style={[styles.label, { flex: 1 }]}>TTS Voice</Text>
+              <View
+                style={{
+                  flex: 1,
+                  marginLeft: 10,
+                  backgroundColor: 'white',
+                  borderRadius: 5,
+                  width: '50%',
+                }}
+              >
+                <Picker
+                  selectedValue={selectedVoice?.name || ''}
+                  onValueChange={(voiceName: string) => {
+                    const voice = availableVoices.find(v => v.name === voiceName);
+                    setSelectedVoice(voice || null);
+                  }}
+                  style={{ height: 30, color: 'black' }}
+                  dropdownIconColor="black"
+                >
+                  <Picker.Item label="Default Voice" value="" />
+                  {availableVoices.map((voice, index) => (
+                    <Picker.Item 
+                      key={`${voice.name}-${index}`} 
+                      label={`${voice.name} (${voice.lang})`} 
+                      value={voice.name} 
+                    />
+                  ))}
+                </Picker>
+              </View>
+            </View>
+          )}
+          
           {/* User Quiz Load Switch */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
