@@ -256,6 +256,38 @@ export default function SettingsScreen() {
             </View>
           )}
           
+          {/* TTS Test Button - especially useful for mobile */}
+          {readerModeEnabled && (
+            <View style={styles.settingItem}>
+              <View style={styles.settingName}>
+                <Text style={styles.settingText}>Test Voice</Text>
+                <Text style={styles.settingDescription}>
+                  Test the selected voice. On mobile devices, this also enables TTS functionality.
+                </Text>
+              </View>
+              <Button
+                onPress={() => {
+                  const testText = "Hello! This is a test of the text-to-speech voice.";
+                  // Use the TTS directly with the Web Speech API
+                  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                    window.speechSynthesis.cancel(); // Stop any current speech
+                    const utterance = new SpeechSynthesisUtterance(testText);
+                    if (selectedVoice) {
+                      utterance.voice = selectedVoice;
+                    }
+                    utterance.rate = 1.0;
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
+                    window.speechSynthesis.speak(utterance);
+                  }
+                }}
+                style={[styles.button, { alignSelf: 'flex-end' }]}
+              >
+                <Text style={styles.buttonText}>Test</Text>
+              </Button>
+            </View>
+          )}
+          
           {/* User Quiz Load Switch */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>

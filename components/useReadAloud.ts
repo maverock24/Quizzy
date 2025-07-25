@@ -14,11 +14,41 @@ export function useReadAloud() {
   const sessionId = useRef(0);
   const voicesLoaded = useRef(false);
   const isMobile = useRef(false);
+  const isMobileTTSUnlocked = useRef(false);
 
   // Detect if we're on mobile
   useEffect(() => {
     if (Platform.OS === 'web' && typeof navigator !== 'undefined') {
       isMobile.current = /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      console.log('Mobile detected:', isMobile.current);
+    }
+  }, []);
+
+  // Unlock TTS on mobile with user interaction
+  const unlockMobileTTS = useCallback(() => {
+    if (!isMobile.current || isMobileTTSUnlocked.current) return;
+    
+    console.log('Attempting to unlock mobile TTS...');
+    const silent = new SpeechSynthesisUtterance('');
+    silent.volume = 0.01;
+    silent.rate = 0.1;
+    
+    silent.onend = () => {
+      isMobileTTSUnlocked.current = true;
+      console.log('Mobile TTS unlocked successfully');
+    };
+    
+    silent.onerror = (e) => {
+      console.log('Mobile TTS unlock error (may be expected):', e.error);
+      // Even if there's an error, consider it unlocked for subsequent attempts
+      isMobileTTSUnlocked.current = true;
+    };
+    
+    try {
+      window.speechSynthesis.speak(silent);
+    } catch (e) {
+      console.log('Mobile TTS unlock exception:', e);
+      isMobileTTSUnlocked.current = true;
     }
   }, []);
 
@@ -26,7 +56,7 @@ export function useReadAloud() {
   useEffect(() => {
     if (Platform.OS === 'web' && 'speechSynthesis' in window) {
       let voicesLoadAttempts = 0;
-      const maxVoicesLoadAttempts = 10;
+      const maxVoicesLoadAttempts = isMobile.current ? 30 : 10; // More attempts for mobile
 
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
@@ -36,34 +66,24 @@ export function useReadAloud() {
           voicesLoaded.current = true;
           console.log('Voices loaded:', voices.map(v => `${v.name} (${v.lang})`).join(', '));
           
-          // Initialize speech synthesis on mobile with a very short utterance
-          // This is crucial for Android Chrome which needs user interaction to "unlock" speech
-          if (isMobile.current) {
-            console.log('Mobile detected, initializing speech synthesis...');
-            const silent = new SpeechSynthesisUtterance(' ');
-            silent.volume = 0.01; // Very low but not 0 (some browsers don't like 0)
-            silent.rate = 0.1;
-            silent.pitch = 1;
-            
-            // Add error handling for the initialization
-            silent.onerror = (e) => {
-              console.log('Silent init error (expected on some devices):', e.error);
+          // For mobile, set up a click listener to unlock TTS on first user interaction
+          if (isMobile.current && !isMobileTTSUnlocked.current) {
+            const unlockOnInteraction = () => {
+              unlockMobileTTS();
+              document.removeEventListener('touchstart', unlockOnInteraction);
+              document.removeEventListener('click', unlockOnInteraction);
             };
             
-            silent.onend = () => {
-              console.log('Silent initialization completed');
-            };
-            
-            try {
-              window.speechSynthesis.speak(silent);
-            } catch (e) {
-              console.log('Silent init exception (expected on some devices):', e);
-            }
+            document.addEventListener('touchstart', unlockOnInteraction, { once: true });
+            document.addEventListener('click', unlockOnInteraction, { once: true });
           }
         } else if (voicesLoadAttempts < maxVoicesLoadAttempts) {
           // Retry loading voices with increasing delays
           voicesLoadAttempts++;
-          setTimeout(loadVoices, voicesLoadAttempts * 100);
+          const delay = isMobile.current ? voicesLoadAttempts * 200 : voicesLoadAttempts * 100;
+          setTimeout(loadVoices, delay);
+        } else {
+          console.warn('Failed to load voices after maximum attempts');
         }
       };
 
@@ -82,7 +102,7 @@ export function useReadAloud() {
         window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged);
       };
     }
-  }, []);
+  }, [unlockMobileTTS]);
 
   const stopTTS = useCallback(() => {
     console.log('Stopping TTS...');
@@ -343,27 +363,45 @@ export function useReadAloud() {
         const languageVoices = voices.filter(voice => voice.lang.startsWith(lang));
         
         // Try to find the selected voice by name and language since voice objects may not be the same reference
-        let chosenVoice = null;
+        let chosenVoice: SpeechSynthesisVoice | null = null;
         if (selectedVoice) {
-          chosenVoice = voices.find(v => v.name === selectedVoice.name && v.lang === selectedVoice.lang);
-          console.log('User selected voice found:', chosenVoice ? chosenVoice.name : 'Not found');
+          chosenVoice = voices.find(v => v.name === selectedVoice.name && v.lang === selectedVoice.lang) || null;
+          console.log('User selected voice found:', chosenVoice ? `${chosenVoice.name} (${chosenVoice.lang})` : 'Not found - will use fallback');
         }
         
         // Fallback to default voice selection if no user selection or selected voice not found
         if (!chosenVoice) {
-          chosenVoice = languageVoices[voiceIndex] || voices[voiceIndex] || voices[0];
-          
-          // On mobile, prefer system default voice if available (unless user has specifically selected one)
-          if (isMobile.current && !selectedVoice) {
-            const defaultVoice = voices.find(v => v.default);
-            if (defaultVoice) {
-              chosenVoice = defaultVoice;
-              console.log('Using default voice for mobile:', chosenVoice.name);
+          // For mobile, prioritize finding a working voice
+          if (isMobile.current) {
+            // Try language-specific voices first
+            if (languageVoices.length > 0) {
+              chosenVoice = languageVoices[0];
+              console.log('Mobile: Using first language voice:', chosenVoice.name);
+            } else {
+              // Fall back to default voice or first available
+              const defaultVoice = voices.find(v => v.default);
+              chosenVoice = defaultVoice || voices[0] || null;
+              console.log('Mobile: Using fallback voice:', chosenVoice?.name || 'None');
             }
+          } else {
+            // Desktop logic
+            chosenVoice = languageVoices[voiceIndex] || voices[voiceIndex] || voices[0] || null;
           }
         }
         
         console.log('Final chosen voice:', chosenVoice?.name || 'None');
+        
+        // For mobile, ensure TTS is unlocked before proceeding
+        if (isMobile.current && !isMobileTTSUnlocked.current) {
+          console.log('Mobile TTS not unlocked, attempting unlock...');
+          unlockMobileTTS();
+          // Wait a bit for unlock, then retry
+          setTimeout(() => {
+            console.log('Retrying TTS after unlock attempt...');
+            readAloud(text, langOverride, rate, voiceIndex);
+          }, 500);
+          return;
+        }
         
         // Create utterances for text segments and handle pauses manually
         utteranceQueue.current = [];
