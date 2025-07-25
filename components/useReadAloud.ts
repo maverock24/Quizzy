@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { Platform } from 'react-native';
-import Tts from 'react-native-tts';
+import * as Speech from 'expo-speech';
 import { useTranslation } from 'react-i18next';
 
 type TTSState = 'idle' | 'playing';
@@ -99,7 +99,7 @@ export function useReadAloud() {
         window.speechSynthesis.cancel();
       }
     } else {
-      Tts.stop();
+      Speech.stop();
     }
     setTtsState('idle');
   }, []);
@@ -395,8 +395,16 @@ export function useReadAloud() {
       waitForVoicesAndSpeak();
 
     } else if (Platform.OS !== 'web') {
-      Tts.setDefaultLanguage(ttsLang);
-      Tts.speak(cleanedText);
+      Speech.speak(cleanedText, {
+        language: ttsLang,
+        rate: rate,
+        pitch: 1.0,
+        onDone: () => setTtsState('idle'),
+        onError: (error) => {
+          console.error('Speech error:', error);
+          setTtsState('idle');
+        }
+      });
       setTtsState('playing'); // Reflect native state
     } else {
       alert('Text-to-speech is not supported in this browser.');
