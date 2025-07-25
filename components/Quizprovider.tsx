@@ -168,9 +168,13 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   // Load available voices and restore selected voice
   useEffect(() => {
     if (Platform.OS === 'web' && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      let voicesLoadAttempts = 0;
+      const maxAttempts = 20;
+      const isMobile = /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
-        console.log('Loading voices:', voices.length);
+        console.log(`QuizProvider: Loading voices attempt ${voicesLoadAttempts + 1}: Found ${voices.length} voices`);
         setAvailableVoices(voices);
 
         // Restore selected voice from storage
@@ -188,6 +192,12 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
                 setSelectedVoiceState(matchingVoice);
               } else {
                 console.log('No matching voice found for:', savedVoiceName, savedVoiceLang);
+                // On mobile, if saved voice not found, clear the storage to avoid confusion
+                if (isMobile) {
+                  await AsyncStorage.removeItem('selectedVoiceName');
+                  await AsyncStorage.removeItem('selectedVoiceLang');
+                  console.log('Cleared invalid voice selection from mobile storage');
+                }
               }
             }
           } catch (error) {
@@ -197,6 +207,11 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
         if (voices.length > 0) {
           restoreSelectedVoice();
+        } else if (voicesLoadAttempts < maxAttempts) {
+          // Retry with longer delays for mobile
+          voicesLoadAttempts++;
+          const delay = isMobile ? voicesLoadAttempts * 200 : voicesLoadAttempts * 100;
+          setTimeout(loadVoices, delay);
         }
       };
 
