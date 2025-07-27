@@ -176,7 +176,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
 
         const nextIndex = currentIndex + 1;
 
-        // Calculate timing based on content length
+        // Calculate balanced timing based on content length
         const currentQuestion = quiz.questions[currentIndex];
         const questionWords = currentQuestion.question.split(' ').length;
         const answerWords = currentQuestion.answer.split(' ').length;
@@ -184,17 +184,21 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
           ? currentQuestion.explanation.split(' ').length
           : 0;
 
-        // Estimate reading time: ~150 words per minute + pauses
+        // Balanced reading time estimation - not too fast, not too slow
         const totalWords = questionWords + answerWords + explanationWords;
-        const readingTimeSeconds = Math.max(6, (totalWords / 150) * 60); // At least 6 seconds
+        const readingTimeSeconds = Math.max(6, (totalWords / 140) * 60); // Slightly faster: 140 words per minute
         const pauseTime = 8; // 5s after question + 3s between questions
         const totalTime = (readingTimeSeconds + pauseTime) * 1000; // Convert to milliseconds
+
+        // Add small buffer time
+        const bufferTime = 5000; // 5    second buffer
+        const finalTime = totalTime + bufferTime;
 
         console.log(
           `Question ${
             currentIndex + 1
-          }: ${totalWords} words, estimated ${readingTimeSeconds}s + ${pauseTime}s pause = ${
-            totalTime / 1000
+          }: ${totalWords} words, estimated ${readingTimeSeconds}s + ${pauseTime}s pause + 2s buffer = ${
+            finalTime / 1000
           }s total`,
         );
 
@@ -213,7 +217,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
 
           // Schedule the next question
           scheduleNextQuestionUpdate(nextIndex);
-        }, totalTime);
+        }, finalTime);
       };
 
       // Start progression if not the last question
