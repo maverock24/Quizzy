@@ -32,6 +32,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
   const isReadingRef = useRef(false);
   const currentQuestionRef = useRef(0);
   const startFromQuestionRef = useRef(0);
+  const questionRefs = useRef<(View | null)[]>([]);
   const questionProgressRef = useRef<
     { questionIndex: number; startTime: number }[]
   >([]);
@@ -86,34 +87,43 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       return;
     }
 
-    // More accurate height estimation including all cards and spacing
-    const headerHeight = 80; // Controls + progress containers
-    const questionCardHeight = 120; // Base question card
-    const answerCardHeight = 100; // Answer card
-    const explanationCardHeight = 80; // Explanation card (if present)
-    const spacingBetweenCards = 8; // marginBottom between cards
-    const spacingBetweenQuestions = 24; // marginBottom between question containers
-
-    let totalHeight = 0;
-    for (let i = 0; i < index; i++) {
-      totalHeight +=
-        questionCardHeight + answerCardHeight + spacingBetweenCards * 2;
-      if (quiz.questions[i].explanation) {
-        totalHeight += explanationCardHeight + spacingBetweenCards;
-      }
-      totalHeight += spacingBetweenQuestions;
+    // Use measureLayout to get the actual position of the question element
+    const questionRef = questionRefs.current[index];
+    if (questionRef) {
+      questionRef.measureLayout(
+        scrollViewRef.current.getInnerViewNode(),
+        (x, y, width, height) => {
+          // Scroll to the question with a small offset to position it near the top
+          const offsetY = Math.max(0, y - 100); // 100px from top of viewport
+          scrollViewRef.current?.scrollTo({
+            y: offsetY,
+            animated: true,
+          });
+          console.log(
+            `Scrolled to measured position: ${offsetY} for question ${
+              index + 1
+            }`,
+          );
+        },
+        () => {
+          console.log('Error measuring layout');
+          // Fallback to simple estimation
+          const fallbackY = index * 250;
+          scrollViewRef.current?.scrollTo({
+            y: fallbackY,
+            animated: true,
+          });
+        },
+      );
+    } else {
+      // Fallback if ref is not available
+      const fallbackY = index * 250;
+      scrollViewRef.current.scrollTo({
+        y: fallbackY,
+        animated: true,
+      });
+      console.log(`Fallback scroll to: ${fallbackY} for question ${index + 1}`);
     }
-
-    scrollViewRef.current.scrollTo({
-      y: Math.max(0, totalHeight - 50), // Small offset from top
-      animated: true,
-    });
-
-    console.log(
-      `Scrolled to calculated position: ${totalHeight} for question ${
-        index + 1
-      }`,
-    );
   };
 
   const handleReadAll = () => {
@@ -191,7 +201,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
         const totalTime = (readingTimeSeconds + pauseTime) * 1000; // Convert to milliseconds
 
         // Add small buffer time
-        const bufferTime = 5000; // 5    second buffer
+        const bufferTime = 8000; // 8 second buffer
         const finalTime = totalTime + bufferTime;
 
         console.log(
@@ -358,7 +368,11 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
         showsVerticalScrollIndicator={true}
       >
         {quiz.questions.map((question, index) => (
-          <View key={index} style={styles.questionContainer}>
+          <View
+            key={index}
+            style={styles.questionContainer}
+            ref={(ref) => (questionRefs.current[index] = ref)}
+          >
             {/* Question Card */}
             <View
               style={[
