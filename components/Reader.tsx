@@ -194,14 +194,14 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
           ? currentQuestion.explanation.split(' ').length
           : 0;
 
-        // Balanced reading time estimation - not too fast, not too slow
+        // Balanced reading time estimation - slower pace for better comprehension
         const totalWords = questionWords + answerWords + explanationWords;
-        const readingTimeSeconds = Math.max(6, (totalWords / 140) * 60); // Slightly faster: 140 words per minute
+        const readingTimeSeconds = Math.max(8, (totalWords / 120) * 60); // Slower: 120 words per minute
         const pauseTime = 8; // 5s after question + 3s between questions
         const totalTime = (readingTimeSeconds + pauseTime) * 1000; // Convert to milliseconds
 
         // Add small buffer time
-        const bufferTime = 8000; // 8 second buffer
+        const bufferTime = 6000; // 6.5 second buffer
         const finalTime = totalTime + bufferTime;
 
         console.log(
