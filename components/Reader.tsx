@@ -64,7 +64,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       // Use the actual question number (i + 1) not a calculated one
       content += `${t('question')} ${questionNumber}: ${question.question}. `;
       // Add 5 second pause after question
-      content += `<break time="5s"/> `;
+      content += `<break time="3s"/> `;
       content += `${t('correct_answer_is')}: ${question.answer}. `;
       if (question.explanation) {
         content += `${t('show_explanation')}: ${question.explanation}. `;
@@ -196,7 +196,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
 
         // Balanced reading time estimation - slower pace for better comprehension
         const totalWords = questionWords + answerWords + explanationWords;
-        const readingTimeSeconds = Math.max(8, (totalWords / 150) * 60); // Slower: 150 words per minute
+        const readingTimeSeconds = Math.max(8, (totalWords / 120) * 60); // Slower: 120 words per minute
         const pauseTime = 8; // 5s after question + 3s between questions
         const totalTime = (readingTimeSeconds + pauseTime) * 1000; // Convert to milliseconds
 
