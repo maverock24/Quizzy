@@ -71,7 +71,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       }
       // Add pause between questions
       if (i < quiz.questions.length - 1) {
-        content += `<break time="3s"/> `;
+        content += `<break time="2s"/> `;
       }
     }
 
