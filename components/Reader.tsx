@@ -64,7 +64,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       // Use the actual question number (i + 1) not a calculated one
       content += `${t('question')} ${questionNumber}: ${question.question}. `;
       // Add 5 second pause after question
-      content += `<break time="3s"/> `;
+      content += `<break time="4s"/> `;
       content += `${t('correct_answer_is')}: ${question.answer}. `;
       if (question.explanation) {
         content += `${t('show_explanation')}: ${question.explanation}. `;
