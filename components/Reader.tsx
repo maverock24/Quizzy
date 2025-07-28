@@ -196,7 +196,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
 
         // Balanced reading time estimation - slower pace for better comprehension
         const totalWords = questionWords + answerWords + explanationWords;
-        const readingTimeSeconds = Math.max(8, (totalWords / 120) * 60); // Slower: 120 words per minute
+        const readingTimeSeconds = Math.max(8, (totalWords / 125) * 60); // Slower: 125 words per minute
         const pauseTime = 8; // 5s after question + 3s between questions
         const totalTime = (readingTimeSeconds + pauseTime) * 1000; // Convert to milliseconds
 
