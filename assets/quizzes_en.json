@@ -1,5 +1,105 @@
 [
   {
+    "name": "AI Kickstart Quiz for Full-Stack Developers (RAG & Fine-Tuning)",
+    "questions": [
+      {
+        "question": "A full-stack developer needs to implement a semantic search feature for user-generated documents. Which AI concept is most crucial for converting text into a numerical format that captures its meaning?",
+        "answers": [
+          {
+            "answer": "Embeddings"
+          },
+          {
+            "answer": "Tokenization"
+          },
+          {
+            "answer": "Fine-Tuning"
+          },
+          {
+            "answer": "Normalization"
+          }
+        ],
+        "answer": "Embeddings",
+        "explanation": "Embeddings are the cornerstone of modern semantic search. They are vector representations (arrays of numbers) of text that capture its semantic meaning. A dedicated embedding model converts a piece of text like 'how to build a web app' into a vector. The key insight is that texts with similar meanings will have vectors that are close to each other in multi-dimensional space. This allows you to perform a similarity search to find the most relevant documents, which is far more powerful than traditional keyword matching. While tokenization (breaking text into pieces) is a prerequisite for creating embeddings, it's the embedding itself that represents the meaning."
+      },
+      {
+        "question": "What is the primary goal of the Retrieval-Augmented Generation (RAG) pattern in an AI application?",
+        "answers": [
+          {
+            "answer": "To provide a Large Language Model with relevant, external context from a private knowledge base before it generates a response."
+          },
+          {
+            "answer": "To permanently re-train a model's internal weights with new data from a database."
+          },
+          {
+            "answer": "To compress a large model into a smaller, faster version that can run on edge devices."
+          },
+          {
+            "answer": "To replace the need for a traditional backend API by having the LLM query databases directly."
+          }
+        ],
+        "answer": "To provide a Large Language Model with relevant, external context from a private knowledge base before it generates a response.",
+        "explanation": "RAG is a powerful and cost-effective pattern for making LLMs 'smarter' without altering the model itself. The process involves taking a user's query, first searching a private knowledge base (like a vector database with your company's documents) for relevant information, and then injecting that information into the prompt you send to the LLM. Think of it as giving the LLM an 'open book' with the correct facts just before asking it the question. This dramatically reduces hallucinations (making things up) and allows the LLM to answer questions based on specific, up-to-date, or proprietary data."
+      },
+      {
+        "question": "In a typical RAG architecture, what is the specific role of a vector database (e.g., Pinecone, ChromaDB, Weaviate)?",
+        "answers": [
+          {
+            "answer": "To store text embeddings and perform efficient similarity searches to find the most relevant document chunks for a user's query."
+          },
+          {
+            "answer": "To act as a session store for user conversations with the LLM."
+          },
+          {
+            "answer": "To store the full weights and architecture of the pre-trained model for faster loading."
+          },
+          {
+            "answer": "To cache API responses from the Large Language Model to reduce costs."
+          }
+        ],
+        "answer": "To store text embeddings and perform efficient similarity searches to find the most relevant document chunks for a user's query.",
+        "explanation": "For a full-stack developer, the easiest analogy is this: a vector database is to embeddings what a relational database with a good index is to structured data. You first 'chunk' your documents into smaller pieces, create an embedding for each chunk, and store these embeddings in the vector database. When a user asks a question, you create an embedding of their question and use the vector database to perform a very fast 'nearest neighbor' or 'similarity' search. This returns the embeddings (and their corresponding text chunks) that are semantically closest to the user's query. These retrieved chunks are the 'context' you then feed to the LLM."
+      },
+      {
+        "question": "When should a developer consider fine-tuning a pre-trained model from Hugging Face instead of using RAG?",
+        "answers": [
+          {
+            "answer": "When the goal is to teach the model a new style, tone, or specific skill (e.g., generating code in a specific framework's style)."
+          },
+          {
+            "answer": "When you need to add new real-time factual information, like today's news, to the model's knowledge."
+          },
+          {
+            "answer": "When you have a very large (1 million+ documents) knowledge base you want the model to answer questions about."
+          },
+          {
+            "answer": "When you want the quickest and cheapest method to get started with custom data."
+          }
+        ],
+        "answer": "When the goal is to teach the model a new style, tone, or specific skill (e.g., generating code in a specific framework's style).",
+        "explanation": "This is the core difference between RAG and fine-tuning. Use RAG when you need to provide the model with new *knowledge* or *facts* to reason about. Use fine-tuning when you need to change the model's *behavior*. Fine-tuning actually updates the model's internal weights by training it further on a curated dataset of examples. This is ideal for teaching it a specific format (like generating JSON), a persona (like a cheerful support bot), or a skill (like converting natural language to your company's specific SQL dialect). For simply adding new factual knowledge, RAG is almost always more efficient, cheaper, and less prone to 'catastrophic forgetting' where the model loses previous abilities."
+      },
+      {
+        "question": "For a full-stack developer starting with AI, what is the primary role of the Hugging Face Hub?",
+        "answers": [
+          {
+            "answer": "It acts like a package manager and repository (similar to npm, Docker Hub, or Maven) for open-source pre-trained models, datasets, and tokenizers."
+          },
+          {
+            "answer": "It's a cloud platform that provides a single, proprietary LLM via an API, similar to OpenAI's GPT."
+          },
+          {
+            "answer": "It is a specific type of vector database optimized for storing model weights."
+          },
+          {
+            "answer": "It's a frontend library for building user interfaces for AI chat applications."
+          }
+        ],
+        "answer": "It acts like a package manager and repository (similar to npm, Docker Hub, or Maven) for open-source pre-trained models, datasets, and tokenizers.",
+        "explanation": "The Hugging Face Hub is the central ecosystem for the open-source AI community. As a developer, you can think of it exactly like npm for Node.js or Maven for Java. It's a place where you can find and download thousands of pre-trained models for various tasks (text generation, embedding, image classification, etc.). The `transformers` library allows you to easily download and use these models with just a few lines of code (e.g., `AutoModel.from_pretrained('google-bert/bert-base-cased')`). This is incredibly powerful as it allows you to stand on the shoulders of giants, using a multi-million dollar model without having to train it from scratch."
+      }
+    ]
+  },
+  {
     "name": "Fullstack Engineer Interview Quiz (React, Node.js, EDA)",
     "questions": [
       {
