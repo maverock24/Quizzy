@@ -1,0 +1,28 @@
+{
+  "name": "Quizzy",
+  "short_name": "Quizzy",
+  "description": "Educational quiz application with offline support",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1d2836",
+  "theme_color": "#3f526c",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/assets/images/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "productivity"],
+  "screenshots": [],
+  "prefer_related_applications": false
+}

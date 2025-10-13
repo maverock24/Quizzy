@@ -7,9 +7,11 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { I18nextProvider } from 'react-i18next';
+import { Platform } from 'react-native';
 
 import { QuizProvider } from '@/components/Quizprovider';
 import i18n from '@/components/i18n';
+import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -41,12 +43,27 @@ export default function RootLayout() {
     }
   }, [loaded]);
 
+  // Register service worker for web
+  useEffect(() => {
+    if (Platform.OS === 'web' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register('/sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered:', registration);
+        })
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+  }, []);
+
   if (!loaded) {
     return null;
   }
 
   return (
     <I18nextProvider i18n={i18n}>
+      <OfflineIndicator />
       <RootLayoutNav />
     </I18nextProvider>
   );
