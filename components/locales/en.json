@@ -6,7 +6,7 @@
   "wrong": "Wrong!",
   "next": "Next",
   "back": "back",
-  "show_explanation": "Show Explanation",
+  "show_explanation": "Explanation",
   "hide_explanation": "Hide Explanation",
   "score": "Score",
   "scores": "Scores",
@@ -17,10 +17,10 @@
   "finnish": "Finnish",
   "enable_notifications": "Enable Notifications",
   "enable_notifications_desc": "Allows the user to switch on-/off reminder notifications",
-  "use_flashcards": "Use Flashcards",
+  "use_flashcards": "Flashcards",
   "use_flashcards_desc": "Instead of multiple choice questions, use flashcards",
   "show_explanation_desc": "Allows the user to hide validation of answer",
-  "enable_sound": "Enable Sound",
+  "enable_sound": "Sound",
   "enable_sound_desc": "Allow to play sound when answering questions",
   "use_custom_remote": "Use custom remote data",
   "use_custom_remote_desc": "Use your own remote source for quiz data (requires Remote Address)",
@@ -35,5 +35,10 @@
   "Answers_right": "Wrong Answers",
   "Answers_wrong": "Correct Answers",
   "read_aloud": "Read Aloud",
-  "answer_options": "Answer Options"
+  "answer_options": "Answer Options",
+  "enable_music": "Music",
+  "reader_mode": "Reader Mode",
+  "reader_mode_desc": "Enable text-to-speech reading of questions and answers",
+  "stop": "Stop",
+  "correct_answer_is": "The correct answer is"
 }

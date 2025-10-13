@@ -12,12 +12,12 @@ import {
   View,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import Tts from 'react-native-tts';
 
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
+import { SettingsHeader } from './SettingsHeader';
 
 type Answer = {
   answer: string;
@@ -220,6 +220,7 @@ export const Question: React.FC<QuestionProps> = ({
     const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
     setSound(newSound);
     // Play the sound
+    await newSound.setVolumeAsync(0.4);
     await newSound.playAsync();
   };
 
@@ -305,52 +306,10 @@ export const Question: React.FC<QuestionProps> = ({
       <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between' }}>
         <View style={[styles.card, styles.questionCard]}>
           <View style={styles.header}>
-            <Text style={styles.questionHeading}>
-              {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
-            </Text>
-            <View style={{ marginBottom: 10, flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between', height: 50 }}>
-              <View style={styles.settingItem}>
-                            <Text style={styles.settingText}>{t('use_flashcards')}</Text>
-                            
-                          
-              
-                          <Switch
-                            trackColor={{ false: 'gray', true: 'white' }}
-                            thumbColor={
-                              flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
-                            }
-                            ios_backgroundColor="gray"
-                            onValueChange={setFlashcardsEnabled}
-                            value={flashcardsEnabled}
-                          />
-              </View>
-              <View style={styles.settingItem}>
-
-              <Text style={styles.settingText}>{t('show_explanation')}</Text>
-
-
-              <Switch
-                trackColor={{ false: 'gray', true: 'white' }}
-                thumbColor={'rgb(85, 101, 107)'}
-                ios_backgroundColor="gray"
-                onValueChange={setShowExplanation}
-                value={showExplanation}
-              />
-            </View>
-            <View style={styles.settingItem}>
-
-              <Text style={styles.settingText}>{t('enable_sound')}</Text>
-
-
-              <Switch
-                trackColor={{ false: 'gray', true: 'white' }}
-                thumbColor={'rgb(85, 101, 107)'}
-                ios_backgroundColor="gray"
-                onValueChange={setAudioEnabled}
-                value={audioEnabled}
-              />
-            </View>
-            </View>
+            <SettingsHeader
+              currentQuestionIndex={currentQuestionIndex}
+              selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+            />
           </View>
           <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
             <Text style={styles.questionText}>{renderRichText(question)}</Text>
@@ -415,7 +374,7 @@ export const Question: React.FC<QuestionProps> = ({
 
 const styles = StyleSheet.create({
   settingItem: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
     marginBottom: 5,
@@ -484,12 +443,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   header: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
-    borderBottomColor: 'rgb(255, 255, 255)',
-    borderBottomWidth: 1,
-    marginBottom: 10,
-    paddingBottom: 18,
   },
   questionHeading: {
     alignContent: 'flex-end',

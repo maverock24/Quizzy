@@ -45,6 +45,13 @@ type QuizContextType = {
   setRemoteAdress: (address: string) => void;
   remoteAddress: string;
   resetState: () => void;
+  musicEnabled: boolean;
+  setMusicEnabled: (enabled: boolean) => void;
+  readerModeEnabled: boolean;
+  setReaderModeEnabled: (enabled: boolean) => void;
+  availableVoices: SpeechSynthesisVoice[];
+  selectedVoice: SpeechSynthesisVoice | null;
+  setSelectedVoice: (voice: SpeechSynthesisVoice | null) => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -107,6 +114,27 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [userQuizLoadEnabled, setUserQuizLoadEnabledState] = useState<boolean>(
     false,
   );
+  const [musicEnabled, setMusicEnabledState] = useState<boolean>(false);
+  const [readerModeEnabled, setReaderModeEnabledState] = useState<boolean>(false);
+  const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([]);
+  const [selectedVoice, setSelectedVoiceState] = useState<SpeechSynthesisVoice | null>(null);
+  const setMusicEnabled = useCallback(async (enabled: boolean) => {
+    setMusicEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('musicEnabled', String(enabled));
+    } catch (error) {
+      console.error('Failed to save music setting', error);
+    }
+  }, []);
+
+  const setReaderModeEnabled = useCallback(async (enabled: boolean) => {
+    setReaderModeEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('readerModeEnabled', String(enabled));
+    } catch (error) {
+      console.error('Failed to save reader mode setting', error);
+    }
+  }, []);
 
   const setUserQuizLoadEnabled = useCallback((enabled: boolean) => {
     setUserQuizLoadEnabledState(enabled);
@@ -116,6 +144,92 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         console.error('Failed to save user quiz load setting', error);
       },
     );
+  }, []);
+
+  // Voice management functions
+  const setSelectedVoice = useCallback(async (voice: SpeechSynthesisVoice | null) => {
+    console.log('Setting selected voice:', voice ? `${voice.name} (${voice.lang})` : 'null');
+    setSelectedVoiceState(voice);
+    try {
+      if (voice) {
+        await AsyncStorage.setItem('selectedVoiceName', voice.name);
+        await AsyncStorage.setItem('selectedVoiceLang', voice.lang);
+        console.log('Saved voice to storage:', voice.name, voice.lang);
+      } else {
+        await AsyncStorage.removeItem('selectedVoiceName');
+        await AsyncStorage.removeItem('selectedVoiceLang');
+        console.log('Removed voice from storage');
+      }
+    } catch (error) {
+      console.error('Failed to save selected voice', error);
+    }
+  }, []);
+
+  // Load available voices and restore selected voice
+  useEffect(() => {
+    if (Platform.OS === 'web' && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      let voicesLoadAttempts = 0;
+      const maxAttempts = 20;
+      const isMobile = /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      const loadVoices = () => {
+        const voices = window.speechSynthesis.getVoices();
+        console.log(`QuizProvider: Loading voices attempt ${voicesLoadAttempts + 1}: Found ${voices.length} voices`);
+        setAvailableVoices(voices);
+
+        // Restore selected voice from storage
+        const restoreSelectedVoice = async () => {
+          try {
+            const savedVoiceName = await AsyncStorage.getItem('selectedVoiceName');
+            const savedVoiceLang = await AsyncStorage.getItem('selectedVoiceLang');
+            
+            console.log('Restoring voice from storage:', savedVoiceName, savedVoiceLang);
+            
+            if (savedVoiceName && savedVoiceLang) {
+              const matchingVoice = voices.find(v => v.name === savedVoiceName && v.lang === savedVoiceLang);
+              if (matchingVoice) {
+                console.log('Found matching voice:', matchingVoice.name);
+                setSelectedVoiceState(matchingVoice);
+              } else {
+                console.log('No matching voice found for:', savedVoiceName, savedVoiceLang);
+                // On mobile, if saved voice not found, clear the storage to avoid confusion
+                if (isMobile) {
+                  await AsyncStorage.removeItem('selectedVoiceName');
+                  await AsyncStorage.removeItem('selectedVoiceLang');
+                  console.log('Cleared invalid voice selection from mobile storage');
+                }
+              }
+            }
+          } catch (error) {
+            console.error('Failed to restore selected voice', error);
+          }
+        };
+
+        if (voices.length > 0) {
+          restoreSelectedVoice();
+        } else if (voicesLoadAttempts < maxAttempts) {
+          // Retry with longer delays for mobile
+          voicesLoadAttempts++;
+          const delay = isMobile ? voicesLoadAttempts * 200 : voicesLoadAttempts * 100;
+          setTimeout(loadVoices, delay);
+        }
+      };
+
+      // Load voices immediately
+      loadVoices();
+
+      // Also listen for voiceschanged event
+      const handleVoicesChanged = () => {
+        console.log('Voices changed event fired');
+        loadVoices();
+      };
+
+      window.speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged);
+
+      return () => {
+        window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged);
+      };
+    }
   }, []);
 
   // Helper to load user quizzes (native or web)
@@ -192,6 +306,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setRemoteUpdateEnabledState(false);
     setRemoteAddressState('');
     setLanguageState(i18n.language || 'en');
+    setMusicEnabledState(false);
+    setReaderModeEnabledState(false);
+    setSelectedVoiceState(null);
   }, []);
 
   // Function to check for and download updated quizzes
@@ -444,6 +561,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         'lastUpdateDate',
       );
       const savedLanguage = await AsyncStorage.getItem('language');
+      const musicSetting = await AsyncStorage.getItem('musicEnabled');
+      const readerModeSetting = await AsyncStorage.getItem('readerModeEnabled');
 
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
@@ -456,6 +575,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setRemoteAddressState(remoteAddressSetting || '');
       setLastUpdateDateState(lastUpdateDateSetting || null);
       setLanguageState(savedLanguage || i18n.language || 'en');
+      setMusicEnabledState(musicSetting === 'true');
+      setReaderModeEnabledState(readerModeSetting === 'true');
       if (savedLanguage && savedLanguage !== i18n.language) {
         i18n.changeLanguage(savedLanguage);
       }
@@ -576,6 +697,13 @@ console.log('Fetched data from API route:', jsonData);
         setLanguage, // Expose the language setter
         userQuizLoadEnabled,
         setUserQuizLoadEnabled, // Expose the user quiz load setter
+        musicEnabled,
+        setMusicEnabled, // Expose the music enabled setter
+        readerModeEnabled,
+        setReaderModeEnabled, // Expose the reader mode setter
+        availableVoices,
+        selectedVoice,
+        setSelectedVoice, // Expose the voice selection functions
       }}
     >
       {children}

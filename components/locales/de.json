@@ -6,7 +6,7 @@
   "wrong": "Falsch!",
   "next": "Weiter",
   "back": "zurück",
-  "show_explanation": "Erklärung anzeigen",
+  "show_explanation": "Erklärung",
   "hide_explanation": "Erklärung verbergen",
   "score": "Punktzahl",
   "scores": "Punkte",
@@ -17,10 +17,10 @@
   "finnish": "Finnisch",
   "enable_notifications": "Benachrichtigungen aktivieren",
   "enable_notifications_desc": "Ermöglicht dem Benutzer, Erinnerungsbenachrichtigungen ein- oder auszuschalten",
-  "use_flashcards": "Karteikarten verwenden",
+  "use_flashcards": "Karteikarten",
   "use_flashcards_desc": "Statt Multiple-Choice-Fragen Karteikarten verwenden",
   "show_explanation_desc": "Ermöglicht dem Benutzer, die Validierung der Antwort auszublenden",
-  "enable_sound": "Ton aktivieren",
+  "enable_sound": "Sound",
   "enable_sound_desc": "Ton beim Beantworten von Fragen abspielen",
   "use_custom_remote": "Benutzerdefinierte Remote-Daten verwenden",
   "use_custom_remote_desc": "Eigene Remote-Quelle für Quizdaten verwenden (benötigt Remote-Adresse)",
@@ -35,5 +35,10 @@
   "Answers_right": "Richtige Antworten",
   "Answers_wrong": "Falsche Antworten",
   "read_aloud": "Vorlesen",
-  "answer_options": "Antwortmöglichkeiten"
+  "answer_options": "Antwortmöglichkeiten",
+  "enable_music": "Musik",
+  "reader_mode": "Lesemodus",
+  "reader_mode_desc": "Text-zu-Sprache-Vorlesung von Fragen und Antworten aktivieren",
+  "stop": "Stopp",
+  "correct_answer_is": "Die richtige Antwort ist"
 }

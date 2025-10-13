@@ -13,7 +13,7 @@ function TabBarIcon(props: {
 }) {
   return (
     <FontAwesome
-      size={35}
+      size={30}
       style={{ marginBottom: -15, marginRight: -10 }}
       {...props}
     />
@@ -44,14 +44,14 @@ export default function TabLayout() {
           },
           headerShown: false,
           tabBarStyle: {
-            height: 85,
+            height: 70,
             backgroundColor: '#000',
           },
           tabBarLabelStyle: {
-            marginTop: 10,
+            marginTop: 5,
             marginRight: -10,
             padding: 0,
-            fontSize: 16,
+            fontSize: 14,
           },
           tabBarActiveTintColor: 'white',
           tabBarInactiveTintColor: 'gray',

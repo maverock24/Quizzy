@@ -10,6 +10,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Platform } from 'react-native';
 
 import { QuizProvider } from '@/components/Quizprovider';
+import { Music } from '@/components/Music';
 import i18n from '@/components/i18n';
 import { OfflineIndicator } from '@/components/OfflineIndicator';
 
@@ -69,6 +70,11 @@ export default function RootLayout() {
   );
 }
 
+function MusicFromContext() {
+  const { musicEnabled } = require('@/components/Quizprovider').useQuiz();
+  return <Music enabled={musicEnabled} />;
+}
+
 function RootLayoutNav() {
   const CustomDarkTheme: Theme = {
     ...DarkTheme,
@@ -80,6 +86,7 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={CustomDarkTheme}>
       <QuizProvider>
+        <MusicFromContext />
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
