@@ -58,7 +58,6 @@ const QuizContext = createContext<QuizContextType | undefined>(undefined);
 
 // Updated getLocalQuizzes to accept userQuizzes
 const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
-  console.log('getLocalQuizzes userQuizzes:', userQuizzes);
   const lang = i18n.language || 'en';
   const getQuizName = (quiz: any) => quiz.name || quiz.nimi || '';
   let quizzes;
@@ -148,17 +147,14 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
   // Voice management functions
   const setSelectedVoice = useCallback(async (voice: SpeechSynthesisVoice | null) => {
-    console.log('Setting selected voice:', voice ? `${voice.name} (${voice.lang})` : 'null');
     setSelectedVoiceState(voice);
     try {
       if (voice) {
         await AsyncStorage.setItem('selectedVoiceName', voice.name);
         await AsyncStorage.setItem('selectedVoiceLang', voice.lang);
-        console.log('Saved voice to storage:', voice.name, voice.lang);
       } else {
         await AsyncStorage.removeItem('selectedVoiceName');
         await AsyncStorage.removeItem('selectedVoiceLang');
-        console.log('Removed voice from storage');
       }
     } catch (error) {
       console.error('Failed to save selected voice', error);
@@ -174,7 +170,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
-        console.log(`QuizProvider: Loading voices attempt ${voicesLoadAttempts + 1}: Found ${voices.length} voices`);
         setAvailableVoices(voices);
 
         // Restore selected voice from storage
@@ -182,21 +177,16 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
           try {
             const savedVoiceName = await AsyncStorage.getItem('selectedVoiceName');
             const savedVoiceLang = await AsyncStorage.getItem('selectedVoiceLang');
-            
-            console.log('Restoring voice from storage:', savedVoiceName, savedVoiceLang);
-            
+
             if (savedVoiceName && savedVoiceLang) {
               const matchingVoice = voices.find(v => v.name === savedVoiceName && v.lang === savedVoiceLang);
               if (matchingVoice) {
-                console.log('Found matching voice:', matchingVoice.name);
                 setSelectedVoiceState(matchingVoice);
               } else {
-                console.log('No matching voice found for:', savedVoiceName, savedVoiceLang);
                 // On mobile, if saved voice not found, clear the storage to avoid confusion
                 if (isMobile) {
                   await AsyncStorage.removeItem('selectedVoiceName');
                   await AsyncStorage.removeItem('selectedVoiceLang');
-                  console.log('Cleared invalid voice selection from mobile storage');
                 }
               }
             }
@@ -220,7 +210,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
       // Also listen for voiceschanged event
       const handleVoicesChanged = () => {
-        console.log('Voices changed event fired');
         loadVoices();
       };
 
@@ -315,7 +304,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const checkForQuizzesUpdate = async (): Promise<boolean> => {
     // Don't proceed if remote updates are disabled
     if (!remoteUpdateEnabled) {
-      console.log('Remote updates are disabled');
       return false;
     }
 
@@ -341,14 +329,10 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const tempPath = FileSystem.documentDirectory + 'temp_quizzes.json';
       const permanentPath = FileSystem.documentDirectory + 'quizzes.json';
 
-      // Platform-specific logging
-      console.log(`Downloading quizzes on ${Platform.OS}...`);
-
       // Download file - iOS has stricter sandbox rules than Android
       const { status } = await FileSystem.downloadAsync(downloadUrl, tempPath);
 
       if (status !== 200) {
-        console.log(`Failed to download quizzes file on ${Platform.OS}`);
         return false;
       }
 
@@ -361,8 +345,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const isNewer = currentQuizzesJson !== JSON.stringify(newQuizzes);
 
       if (isNewer) {
-        console.log(`New quizzes found on ${Platform.OS}, updating...`);
-
         // iOS might need additional permissions for certain directories
         if (Platform.OS === 'ios') {
           await FileSystem.writeAsStringAsync(permanentPath, newQuizzesJson, {
@@ -375,9 +357,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
         // Update state
         setQuizzes(newQuizzes);
-        console.log(`Quizzes updated successfully on ${Platform.OS}`);
-      } else {
-        console.log(`Quizzes are already up to date on ${Platform.OS}`);
       }
 
       // Clean up temp file
@@ -422,10 +401,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       } else {
         // If it's not JSON (or backend didn't specify), treat as text or handle other types
         const rawData = await response.text();
-        console.log(
-          'Downloaded raw data (assuming text/quiz format):',
-          rawData,
-        );
         // Attempt to parse if you still expect JSON structure within a text file
         try {
           newQuizzesData = JSON.parse(rawData);
@@ -437,8 +412,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         }
       }
 
-      console.log('Processed quizzes data:', newQuizzesData);
-
       const currentQuizzesJson = JSON.stringify(quizzes); // Current state quizzes
       const isNewer = currentQuizzesJson !== JSON.stringify(newQuizzesData);
 
@@ -447,7 +420,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setQuizzes(newQuizzesData); // Update state
         return true;
       } else {
-        console.log('Quizzes are already up to date');
         return false;
       }
     } catch (error) {
@@ -478,7 +450,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setShowExplanationState(show);
     try {
       await AsyncStorage.setItem('showExplanation', String(show));
-      console.log('Explanation setting saved:', show);
     } catch (error) {
       console.error('Failed to save explanation setting', error);
     }
@@ -488,7 +459,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTotalQuestionsAnsweredState(total);
     try {
       await AsyncStorage.setItem('totalQuestionsAnswered', String(total));
-      console.log('Total questions answered saved:', total);
     } catch (error) {
       console.error('Failed to save total questions answered', error);
     }
@@ -498,7 +468,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTotalCorrectAnswersState(total);
     try {
       await AsyncStorage.setItem('totalCorrectAnswers', String(total));
-      console.log('Total correct answers saved:', total);
     } catch (error) {
       console.error('Failed to save total correct answers', error);
     }
@@ -508,7 +477,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTotalWrongAnswersState(total);
     try {
       await AsyncStorage.setItem('totalWrongAnswers', String(total));
-      console.log('Total wrong answers saved:', total);
     } catch (error) {
       console.error('Failed to save total wrong answers', error);
     }
@@ -518,7 +486,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTotalWonGamesState(total);
     try {
       await AsyncStorage.setItem('totalWonGames', String(total));
-      console.log('Total won games saved:', total);
     } catch (error) {
       console.error('Failed to save total won games', error);
     }
@@ -528,7 +495,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTotalLostGamesState(total);
     try {
       await AsyncStorage.setItem('totalLostGames', String(total));
-      console.log('Total lost games saved:', total);
     } catch (error) {
       console.error('Failed to save total lost games', error);
     }
@@ -538,7 +504,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setLastUpdateDateState(date);
     try {
       await AsyncStorage.setItem('lastUpdateDate', date);
-      console.log('Last update date saved:', date);
     } catch (error) {
       console.error('Failed to save last update date', error);
     }
@@ -595,7 +560,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     // and when remoteUpdateEnabled changes to true
     if (remoteUpdateEnabled && lastUpdateDate !== getTodaysDate()) {
       checkForQuizzesUpdate().then((updated) => {
-        console.log('Quizzes updated:', updated);
         if (updated) {
           AsyncStorage.setItem('lastUpdateDate', getTodaysDate());
         }
@@ -611,27 +575,23 @@ const absoluteApiEndpointUrl = `${origin}${API_ENDPOINT_URL}`;
 const STORAGE_KEY = 'quizzes_de';
 
 const updateDataFromGoogleDrive = async () => {
-  
   try {
     // The fetch call targets the internal route.
     const response = await fetch('https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json');
-    
+
     if (!response.ok) {
       throw new Error(`API route responded with an error: ${response.statusText}`);
     }
-    
+
     const jsonData = await response.json();
-console.log('Fetched data from API route:', jsonData);
     // Save the fetched data to AsyncStorage for persistence.
     await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(jsonData));
-    
+
     // Update the component's state to reflect the new data.
     setData(jsonData);
-    console.log('Data successfully updated in AsyncStorage');
-
   } catch (error) {
     console.error('Error updating data:', error);
-  } 
+  }
 };
 
   // Load settings from AsyncStorage on component mount
@@ -646,10 +606,8 @@ console.log('Fetched data from API route:', jsonData);
   // Listen for i18n.language or userQuizLoadEnabled changes and update quizzes accordingly
   React.useEffect(() => {
     (async () => {
-      console.log('userQuizLoadEnabled:', userQuizLoadEnabled);
       if (userQuizLoadEnabled) {
         const userQuizzes = await loadUserQuizzes();
-        console.log('Loaded user quizzes:', userQuizzes);
         setQuizzes(getLocalQuizzes(userQuizzes));
       } else {
         setQuizzes(getLocalQuizzes());

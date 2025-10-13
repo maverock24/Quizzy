@@ -15,13 +15,11 @@ export const useOfflineDetection = () => {
     setIsOnline(navigator.onLine);
 
     const handleOnline = () => {
-      console.log('[Offline Detection] Connection restored');
       setWasOffline(!isOnline); // Mark that we were offline
       setIsOnline(true);
     };
 
     const handleOffline = () => {
-      console.log('[Offline Detection] Connection lost');
       setIsOnline(false);
     };
 

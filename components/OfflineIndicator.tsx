@@ -17,7 +17,7 @@ export const OfflineIndicator: React.FC = () => {
       setShowBackOnline(false);
       Animated.spring(slideAnim, {
         toValue: 0,
-        useNativeDriver: true,
+        useNativeDriver: false,
         tension: 50,
         friction: 7,
       }).start();
@@ -26,7 +26,7 @@ export const OfflineIndicator: React.FC = () => {
       setShowBackOnline(true);
       Animated.spring(slideAnim, {
         toValue: 0,
-        useNativeDriver: true,
+        useNativeDriver: false,
         tension: 50,
         friction: 7,
       }).start();
@@ -36,7 +36,7 @@ export const OfflineIndicator: React.FC = () => {
         Animated.timing(slideAnim, {
           toValue: -100,
           duration: 300,
-          useNativeDriver: true,
+          useNativeDriver: false,
         }).start(() => {
           setShowBackOnline(false);
         });
@@ -46,7 +46,7 @@ export const OfflineIndicator: React.FC = () => {
       Animated.timing(slideAnim, {
         toValue: -100,
         duration: 300,
-        useNativeDriver: true,
+        useNativeDriver: false,
       }).start();
     }
   }, [isOnline, wasOffline, slideAnim]);

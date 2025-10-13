@@ -1,6 +1,6 @@
 // Service Worker for Quizzy - Offline Support
-const CACHE_NAME = 'quizzy-v1';
-const RUNTIME_CACHE = 'quizzy-runtime-v1';
+const CACHE_NAME = 'quizzy-v2';
+const RUNTIME_CACHE = 'quizzy-runtime-v2';
 
 // Assets to cache immediately on install
 const PRECACHE_URLS = [
@@ -12,16 +12,21 @@ const PRECACHE_URLS = [
   '/assets/quizzes_fi.json',
 ];
 
+// File patterns that should be cached (for sounds, fonts, etc.)
+const CACHEABLE_PATTERNS = [
+  /\/assets\/.*\.(png|jpg|jpeg|svg|gif|webp)$/,
+  /\/assets\/.*\.(mp3|wav|ogg)$/,
+  /\/assets\/.*\.(woff|woff2|ttf|otf)$/,
+  /\/assets\/.*\.json$/,
+];
+
 // Install event - cache essential resources
 self.addEventListener('install', (event) => {
-  console.log('[Service Worker] Installing...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('[Service Worker] Precaching app shell');
         return cache.addAll(PRECACHE_URLS.map(url => new Request(url, { cache: 'reload' })))
-          .catch(err => {
-            console.warn('[Service Worker] Some resources failed to cache:', err);
+          .catch(() => {
             // Don't fail the entire installation if some resources fail
             return Promise.resolve();
           });
@@ -32,19 +37,22 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('[Service Worker] Activating...');
   const currentCaches = [CACHE_NAME, RUNTIME_CACHE];
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return cacheNames.filter((cacheName) => !currentCaches.includes(cacheName));
     }).then((cachesToDelete) => {
       return Promise.all(cachesToDelete.map((cacheToDelete) => {
-        console.log('[Service Worker] Deleting old cache:', cacheToDelete);
         return caches.delete(cacheToDelete);
       }));
     }).then(() => self.clients.claim())
   );
 });
+
+// Helper function to check if URL should be cached
+const shouldCache = (url) => {
+  return CACHEABLE_PATTERNS.some(pattern => pattern.test(url));
+};
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', (event) => {
@@ -62,31 +70,32 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request)
       .then((cachedResponse) => {
         if (cachedResponse) {
-          console.log('[Service Worker] Serving from cache:', event.request.url);
           return cachedResponse;
         }
 
         return fetch(event.request)
           .then((response) => {
             // Don't cache if not a success response
-            if (!response || response.status !== 200 || response.type !== 'basic') {
+            if (!response || response.status !== 200) {
               return response;
             }
 
             // Clone the response
             const responseToCache = response.clone();
 
-            // Cache successful responses
-            caches.open(RUNTIME_CACHE)
-              .then((cache) => {
-                cache.put(event.request, responseToCache);
-              });
+            // Cache successful responses for cacheable resources
+            if (shouldCache(event.request.url) || event.request.url.includes('/_expo/')) {
+              caches.open(RUNTIME_CACHE)
+                .then((cache) => {
+                  cache.put(event.request, responseToCache);
+                });
+            }
 
             return response;
           })
           .catch((error) => {
-            console.error('[Service Worker] Fetch failed:', error);
-            // You could return a custom offline page here
+            // For offline scenarios, we already have cached responses
+            // If nothing is cached, the error will propagate
             throw error;
           });
       })
