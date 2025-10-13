@@ -49,7 +49,15 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png",
-      "scope": "/"
+      "scope": "/",
+      "name": "Quizzy",
+      "shortName": "Quizzy",
+      "description": "Educational quiz application with offline support",
+      "themeColor": "#3f526c",
+      "backgroundColor": "#1d2836",
+      "display": "standalone",
+      "startUrl": "/",
+      "orientation": "portrait"
     },
     "plugins": ["expo-router"],
     "experiments": {
