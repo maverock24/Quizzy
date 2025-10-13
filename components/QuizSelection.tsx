@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   normalText: {
-    fontSize: 18,
+    fontSize: 16,
     lineHeight: 24,
     color: 'white',
   },

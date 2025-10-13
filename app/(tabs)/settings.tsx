@@ -29,6 +29,11 @@ export default function SettingsScreen() {
     setLanguage,
     userQuizLoadEnabled,
     setUserQuizLoadEnabled,
+    readerModeEnabled,
+    setReaderModeEnabled,
+    availableVoices,
+    selectedVoice,
+    setSelectedVoice,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -200,6 +205,89 @@ export default function SettingsScreen() {
               value={audioEnabled}
             />
           </View>
+          <View style={styles.settingItem}>
+            <View style={styles.settingName}>
+              <Text style={styles.settingText}>{t('reader_mode')}</Text>
+              <Text style={styles.settingDescription}>
+                {t('reader_mode_desc')}
+              </Text>
+            </View>
+            <Switch
+              trackColor={{ false: 'gray', true: 'white' }}
+              thumbColor={'rgb(85, 101, 107)'}
+              ios_backgroundColor="gray"
+              onValueChange={setReaderModeEnabled}
+              value={readerModeEnabled}
+            />
+          </View>
+          
+          {/* Voice Selection - only show when Reader mode is enabled */}
+          {readerModeEnabled && availableVoices.length > 0 && (
+            <View style={styles.settingItem}>
+              <Text style={[styles.label, { flex: 1 }]}>TTS Voice</Text>
+              <View
+                style={{
+                  flex: 1,
+                  marginLeft: 10,
+                  backgroundColor: 'white',
+                  borderRadius: 5,
+                  width: '50%',
+                }}
+              >
+                <Picker
+                  selectedValue={selectedVoice?.name || ''}
+                  onValueChange={(voiceName: string) => {
+                    const voice = availableVoices.find(v => v.name === voiceName);
+                    setSelectedVoice(voice || null);
+                  }}
+                  style={{ height: 30, color: 'black' }}
+                  dropdownIconColor="black"
+                >
+                  <Picker.Item label="Default Voice" value="" />
+                  {availableVoices.map((voice, index) => (
+                    <Picker.Item 
+                      key={`${voice.name}-${index}`} 
+                      label={`${voice.name} (${voice.lang})`} 
+                      value={voice.name} 
+                    />
+                  ))}
+                </Picker>
+              </View>
+            </View>
+          )}
+          
+          {/* TTS Test Button - especially useful for mobile */}
+          {readerModeEnabled && (
+            <View style={styles.settingItem}>
+              <View style={styles.settingName}>
+                <Text style={styles.settingText}>Test Voice</Text>
+                <Text style={styles.settingDescription}>
+                  Test the selected voice. On mobile devices, this also enables TTS functionality.
+                </Text>
+              </View>
+              <Button
+                onPress={() => {
+                  const testText = "Hello! This is a test of the text-to-speech voice.";
+                  // Use the TTS directly with the Web Speech API
+                  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                    window.speechSynthesis.cancel(); // Stop any current speech
+                    const utterance = new SpeechSynthesisUtterance(testText);
+                    if (selectedVoice) {
+                      utterance.voice = selectedVoice;
+                    }
+                    utterance.rate = 1.0;
+                    utterance.pitch = 1.0;
+                    utterance.volume = 1.0;
+                    window.speechSynthesis.speak(utterance);
+                  }
+                }}
+                style={[styles.button, { alignSelf: 'flex-end' }]}
+              >
+                <Text style={styles.buttonText}>Test</Text>
+              </Button>
+            </View>
+          )}
+          
           {/* User Quiz Load Switch */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>

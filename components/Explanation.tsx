@@ -8,7 +8,7 @@ import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
-
+import { SettingsHeader } from './SettingsHeader';
 type ExplanationProps = {
   answerIsCorrect: boolean;
   explanation: string;
@@ -48,54 +48,10 @@ return (
               contentContainerStyle={{ flexGrow: 2, justifyContent: 'center' }}
               showsVerticalScrollIndicator={true}
             >
-               <View style={styles.header}>
-                          <Text style={styles.questionHeading}>
-                            {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
-                          </Text>
-                          <View style={{ marginBottom: 10, flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'space-between', height: 50 }}>
-                            <View style={styles.settingItem}>
-                                          <Text style={styles.settingText}>{t('use_flashcards')}</Text>
-                                          
-                                        
-                            
-                                        <Switch
-                                          trackColor={{ false: 'gray', true: 'white' }}
-                                          thumbColor={
-                                            flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
-                                          }
-                                          ios_backgroundColor="gray"
-                                          onValueChange={setFlashcardsEnabled}
-                                          value={flashcardsEnabled}
-                                        />
-                            </View>
-                            <View style={styles.settingItem}>
-              
-                            <Text style={styles.settingText}>{t('show_explanation')}</Text>
-              
-              
-                            <Switch
-                              trackColor={{ false: 'gray', true: 'white' }}
-                              thumbColor={'rgb(85, 101, 107)'}
-                              ios_backgroundColor="gray"
-                              onValueChange={setShowExplanation}
-                              value={showExplanation}
-                            />
-                          </View>
-                          <View style={styles.settingItem}>
-              
-                            <Text style={styles.settingText}>{t('enable_sound')}</Text>
-              
-              
-                            <Switch
-                              trackColor={{ false: 'gray', true: 'white' }}
-                              thumbColor={'rgb(85, 101, 107)'}
-                              ios_backgroundColor="gray"
-                              onValueChange={setAudioEnabled}
-                              value={audioEnabled}
-                            />
-                          </View>
-                          </View>
-                        </View>
+              <SettingsHeader
+                currentQuestionIndex={currentQuestionIndex}
+                selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+              />
                         
     <View
       style={[
@@ -109,7 +65,7 @@ return (
     >
        <TouchableOpacity
       onPress={handleReadAloud}
-      style={{ right:10, top: 10, marginLeft: 8, marginBottom: 8, position: 'absolute', zIndex:9999, borderRadius: 8, padding: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
+      style={{ right:0, top: 0, position: 'absolute', zIndex:9999, borderRadius: 8, padding: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
       accessibilityLabel="Read explanation aloud"
     >
 
@@ -136,7 +92,7 @@ return (
     <TouchableOpacity onPress={handlerNextQuestion}>
                 <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
                 {/* <Text style={styles.buttonText}>Next </Text> */}
-                <Ionicons name="arrow-forward" size={35} color="white" style={{ marginRight: 6 }} />
+                <FontAwesome name="forward" size={35} color="white" style={{ marginRight: 6 }} />
               </View>
                 </TouchableOpacity>
   </View>
@@ -145,7 +101,7 @@ return (
 
 const styles = StyleSheet.create({
     header: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     borderBottomColor: 'rgb(255, 255, 255)',
     borderBottomWidth: 1,
@@ -153,7 +109,7 @@ const styles = StyleSheet.create({
     paddingBottom: 18,
   },
   settingItem: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
     marginBottom: 5,
