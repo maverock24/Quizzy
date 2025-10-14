@@ -12,7 +12,6 @@ import { Platform } from 'react-native';
 import { QuizProvider } from '@/components/Quizprovider';
 import { Music } from '@/components/Music';
 import i18n from '@/components/i18n';
-import { OfflineIndicator } from '@/components/OfflineIndicator';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -64,7 +63,6 @@ export default function RootLayout() {
 
   return (
     <I18nextProvider i18n={i18n}>
-      <OfflineIndicator />
       <RootLayoutNav />
     </I18nextProvider>
   );
