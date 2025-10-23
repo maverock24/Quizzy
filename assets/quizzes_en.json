@@ -1,5 +1,581 @@
 [
   {
+  "name": "Skimle Full-Stack Developer Interview",
+  "image": "https://images.unsplash.com/photo-1550751827-4133750a69b0",
+  "questions": [
+    {
+      "question": "Skimle's AI workflow processes large documents, which can be a slow, asynchronous task. How would you design a robust API endpoint for a user uploading a large document for analysis?",
+      "answers": [
+        {
+          "answer": "Use a WebSocket to stream the file, run the AI analysis, and stream the results back, keeping the connection open the whole time."
+        },
+        {
+          "answer": "Have the HTTP request stay open (e.g., increase server timeout) until the AI analysis is 100% complete, then return the full JSON result."
+        },
+        {
+          "answer": "Immediately save the file, add a 'processing' job to a message queue (like RabbitMQ or SQS), and return an HTTP 202 Accepted response with a job ID."
+        },
+        {
+          "answer": "Run the entire AI analysis in the browser using WebAssembly before uploading the results."
+        }
+      ],
+      "answer": "Immediately save the file, add a 'processing' job to a message queue (like RabbitMQ or SQS), and return an HTTP 202 Accepted response with a job ID.",
+      "explanation": "This is the most scalable and user-friendly architecture. Long-running AI tasks should never block the main HTTP request thread, as this leads to timeouts and a poor user experience. An asynchronous architecture using a message queue decouples the upload (a fast operation) from the processing (a slow, resource-intensive operation). A separate 'worker' service can then consume jobs from the queue, and the frontend can poll a status endpoint using the job ID or receive a notification (e.g., via WebSocket) when the job is done."
+    },
+    {
+      "question": "Skimle's data model links documents, 'insights' (quotes), and a hierarchical system of categories/subcategories. What database model would be *best* suited for storing and querying these complex, structured relationships?",
+      "answers": [
+        {
+          "answer": "A key-value store (like Redis) for maximum speed, storing each document and its insights as a single large JSON blob."
+        },
+        {
+          "answer": "A relational database (like PostgreSQL) using foreign keys for relationships and a self-referencing table for the hierarchical categories."
+        },
+        {
+          "answer": "A time-series database (like InfluxDB) to track when insights were created."
+        },
+        {
+          "answer": "A standard RAG/Vector Database, as it's the only thing needed to store text for AI."
+        }
+      ],
+      "answer": "A relational database (like PostgreSQL) using foreign keys for relationships and a self-referencing table for the hierarchical categories.",
+      "explanation": "Skimle's core value is its 'structured knowledge,' not just vector search. A relational database is ideal for storing and enforcing these strong, complex relationships. You'd have tables for `documents`, `insights`, and `categories`. The `categories` table could have a `parent_category_id` (a foreign key to its own `id`) to create the hierarchy. While a vector database is used for semantic search (RAG), the *structured output* of the AI (the insights, categories, and their links) is best stored relationally. A Graph Database (like Neo4j) could also be a strong candidate, but SQL is a very common and robust solution for this."
+    },
+    {
+      "question": "The main UI is an 'interactive spreadsheet' with documents as rows and categories as columns. What frontend technique is *most critical* for ensuring this UI remains fast and responsive when displaying thousands of rows?",
+      "answers": [
+        {
+          "answer": "UI/UX design with pagination, showing only 50 rows at a time."
+        },
+        {
+          "answer": "Using 'virtualization' or 'windowing' libraries (like react-window or tanstack-virtual)."
+        },
+        {
+          "answer": "Writing all the DOM manipulation in plain JavaScript instead of using a framework."
+        },
+        {
+          "answer": "Aggressively memoizing every cell component with `React.memo`."
+        }
+      ],
+      "answer": "Using 'virtualization' or 'windowing' libraries (like react-window or tanstack-virtual).",
+      "explanation": "While pagination is a valid strategy, the 'spreadsheet' metaphor implies a desire to scroll freely. Virtualization is the key technique for this. It works by only rendering the DOM nodes for the rows (and columns) that are *currently visible* in the viewport. As the user scrolls, it recycles the existing nodes and populates them with new data, preventing the creation of thousands of DOM elements, which is the primary cause of slowdown in large list/grid UIs."
+    },
+    {
+      "question": "Skimle's 'rich chat' is superior to standard RAG because it also uses the structured insights and categories. How would you design the backend logic to generate an answer?",
+      "answers": [
+        {
+          "answer": "Only query the vector database (RAG) for raw text, as it's the most modern AI technique."
+        },
+        {
+          "answer": "First, query the structured database (e.g., PostgreSQL) for relevant insights/categories based on the prompt, then *also* query the vector database for raw context. Finally, feed *both* sets of information to the LLM."
+        },
+        {
+          "answer": "Let the user choose 'Search Insights' or 'Search Documents' and run two separate queries."
+        },
+        {
+          "answer": "Build a single, massive JSON object of all insights and documents and send it with every chat prompt to the LLM."
+        }
+      ],
+      "answer": "First, query the structured database (e.g., PostgreSQL) for relevant insights/categories based on the prompt, then *also* query the vector database for raw context. Finally, feed *both* sets of information to the LLM.",
+      "explanation": "This 'hybrid' or 'multi-step' approach is what makes the chat 'superior.' A standard RAG chatbot only retrieves semantically similar text chunks. Skimle's advantage is its pre-categorized structure. The backend logic should leverage this by first finding structured insights (which are already verified and categorized) and then supplementing that with raw text from the vector store. This combined context allows the LLM to give a more synthesized, structured, and accurate answer, just as described in the product summary."
+    },
+    {
+      "question": "How would you efficiently implement the 'zoom to context' feature, where clicking a quote (insight) instantly shows its location in the *original*, potentially massive, document?",
+      "answers": [
+        {
+          "answer": "When the user clicks, load the entire original document into the frontend and use `window.find()` to locate the quote."
+        },
+        {
+          "answer": "Store the quote's character start/end index in the `insights` table. The frontend then calls an API endpoint like `GET /documents/:id/context?start=1050&end=1120` to fetch just that snippet."
+        },
+        {
+          "answer": "Pre-render every possible quote snippet as a separate HTML file for fast loading."
+        },
+        {
+          "answer": "This is impossible; the user must manually open the document and search for the quote."
+        }
+      ],
+      "answer": "Store the quote's character start/end index in the `insights` table. The frontend then calls an API endpoint like `GET /documents/:id/context?start=1050&end=1120` to fetch just that snippet.",
+      "explanation": "This is a scalable full-stack solution. The AI process, when identifying the 'insight' quote, should also store its metadata (like character or line indices) in the database. The frontend can then request just a small, relevant 'slice' of the large document from the backend. The backend API reads the large file (e.g., from S3 or disk) and returns only the requested byte/character range (perhaps with some padding for context). This avoids loading a massive, multi-megabyte document into the browser just to show a single sentence."
+    },
+    {
+      "question": "For the spreadsheet's sorting and filtering (e.g., by category, by document name), when would you choose a **server-side** implementation over a client-side one?",
+      "answers": [
+        {
+          "answer": "Always. The server is always more powerful than the client."
+        },
+        {
+          "answer": "Never. Modern JavaScript engines are fast enough to handle all data filtering on the client."
+        },
+        {
+          "answer": "When the total dataset (all documents and insights) is too large to load into the browser at once without causing performance or memory issues."
+        },
+        {
+          "answer": "Only when the user needs to export the filtered data as a CSV."
+        }
+      ],
+      "answer": "When the total dataset (all documents and insights) is too large to load into the browser at once without causing performance or memory issues.",
+      "explanation": "This is a classic full-stack tradeoff. For small-to-medium datasets, client-side sorting/filtering is ideal because it's instantaneous and feels responsive. However, Skimle is designed for large 'bodies of documents.' If a user has thousands of documents, it's not feasible to send all that data to the client. In this case, the sorting/filtering logic must live on the server. The frontend passes the filter/sort parameters to the API (e.g., `GET /insights?sortBy=document_name&category=finance`), and the database performs the efficient query, returning only the paginated, filtered data."
+    },
+    {
+      "question": "What API paradigm would be most suitable for the frontend, which needs to fetch varying combinations of data (e.g., 'documents with their categories' for one view, 'a category with its insights' for another)?",
+      "answers": [
+        {
+          "answer": "GraphQL, because it allows the client to request exactly the shape of data it needs, avoiding over-fetching and under-fetching."
+        },
+        {
+          "answer": "gRPC, because it is the highest performance and best for streaming."
+        },
+        {
+          "answer": "A standard REST API with many specific endpoints (e.g., `/docs`, `/categories`, `/insights`, `/docs/:id/categories`)."
+        },
+        {
+          "answer": "SOAP, because it is the most secure and well-defined enterprise standard."
+        }
+      ],
+      "answer": "GraphQL, because it allows the client to request exactly the shape of data it needs, avoiding over-fetching and under-fetching.",
+      "explanation": "Skimle's data is highly interconnected (a graph). A standard REST API would force the frontend to make multiple round-trips to 'stitch' data together (e.g., get a doc, then get its categories, then get its insights). This is 'under-fetching.' Or, the backend would create 'fat' endpoints that return everything, 'over-fetching' data the UI doesn't need. GraphQL solves this perfectly. The frontend can send a single query asking for exactly what it needs for a specific view, and the server returns exactly that data in one response, improving perceived performance and simplifying frontend development."
+    },
+    {
+      "question": "Given Skimle's complex UI state (selected documents, filtered insights, category tree expansion, chat history), what would be your primary concern when choosing a frontend state management library?",
+      "answers": [
+        {
+          "answer": "Choosing the library with the smallest bundle size."
+        },
+        {
+          "answer": "Ensuring the library has a "
+        },
+        {
+          "answer": "How well it handles complex, shared state and minimizes re-renders, (e.g., using selectors or atoms)."
+        },
+        {
+          "answer": "Finding a library that requires no boilerplate code."
+        }
+      ],
+      "answer": "How well it handles complex, shared state and minimizes re-renders, (e.g., using selectors or atoms).",
+      "explanation": "In an application this complex, many different components need to access the same state (e.g., the chat and the spreadsheet might both need to know the 'selected insight'). The biggest challenge will be managing this shared state efficiently. A good state management library (like Redux, Zustand, Recoil, etc.) will provide a 'single source of truth' and, critically, offer mechanisms (like selectors or atomic state) to ensure that when one small piece of state changes, *only* the components that depend on it will re-render, not the entire application. Bundle size and boilerplate are secondary concerns to this core performance and maintainability challenge."
+    },
+    {
+      "question": "Skimle leverages AI for categorization. What is a key challenge when integrating an external or self-hosted LLM (Large Language Model) into a production backend?",
+      "answers": [
+        {
+          "answer": "Ensuring the LLM always returns a JSON output, regardless of prompt."
+        },
+        {
+          "answer": "Managing token limits, latency, cost, and ensuring reliable, scalable inference."
+        },
+        {
+          "answer": "Making sure the LLM understands all human languages."
+        },
+        {
+          "answer": "The LLM's ability to create images from text."
+        }
+      ],
+      "answer": "Managing token limits, latency, cost, and ensuring reliable, scalable inference.",
+      "explanation": "Integrating LLMs into production brings significant engineering challenges. **Token limits** constrain the amount of context you can send. **Latency** can be high, impacting user experience for synchronous requests. **Cost** scales with usage, especially for powerful models. Finally, ensuring **reliable and scalable inference** means handling concurrent requests, retries, model versioning, and potentially managing GPU resources for self-hosted models."
+    },
+    {
+      "question": "Skimle's chat interface needs to be 'grounded in exact quotes.' How would you ensure the LLM's responses are traceable back to specific parts of the source documents?",
+      "answers": [
+        {
+          "answer": "Ask the LLM to simply summarize the topic without referencing sources."
+        },
+        {
+          "answer": "Include a strict instruction in the prompt, telling the LLM to cite its sources with unique IDs, which correspond to the insights/documents."
+        },
+        {
+          "answer": "Only feed the LLM single sentences at a time to prevent hallucination."
+        },
+        {
+          "answer": "Trust the LLM to always be factual without needing explicit grounding."
+        }
+      ],
+      "answer": "Include a strict instruction in the prompt, telling the LLM to cite its sources with unique IDs, which correspond to the insights/documents.",
+      "explanation": "This is a core RAG technique. To ensure traceability, the prompt sent to the LLM should not only include the user's question and relevant retrieved context but also instruct the LLM to explicitly reference the source text or insights (e.g., by including a unique ID or snippet) that support each part of its answer. The frontend can then use these IDs to display the 'diamond icon' and link back to the original quotes/documents."
+    },
+    {
+      "question": "Skimle offers free, starter, and pro subscriptions. How would you implement a robust and secure multi-tenancy solution for user data?",
+      "answers": [
+        {
+          "answer": "Store all user data in a single table and rely on the frontend to filter based on the logged-in user."
+        },
+        {
+          "answer": "Use a separate database for each customer to ensure complete isolation."
+        },
+        {
+          "answer": "Implement row-level security (RLS) or add a `tenant_id` column to all relevant tables, enforcing access control at the database or application layer."
+        },
+        {
+          "answer": "Encrypt all data with a single master key, and decrypt it for any user who logs in."
+        }
+      ],
+      "answer": "Implement row-level security (RLS) or add a `tenant_id` column to all relevant tables, enforcing access control at the database or application layer.",
+      "explanation": "Multi-tenancy is crucial for SaaS products. Using a `tenant_id` (or `organization_id`) column on all user-specific data tables (documents, insights, categories) is a common and effective pattern. Application-level logic or database-level Row-Level Security (RLS) then ensures that queries are always scoped to the currently authenticated user's tenant, preventing data leaks between customers. A separate database per customer is overkill for most SaaS applications due to management overhead."
+    },
+    {
+      "question": "To provide 'effortless access to quotes' by clicking small diamond icons, how would you best structure the API response from the chat endpoint?",
+      "answers": [
+        {
+          "answer": "A plain string response containing only the LLM's conversational text."
+        },
+        {
+          "answer": "A JSON object where the main answer text is a string, and there's a separate array of `source_insight_ids` that the frontend can use."
+        },
+        {
+          "answer": "A large HTML blob with the diamond icons already embedded, generated by the backend."
+        },
+        {
+          "answer": "A Markdown string which the frontend can parse for `[source](id)` links."
+        }
+      ],
+      "answer": "A JSON object where the main answer text is a string, and there's a separate array of `source_insight_ids` that the frontend can use.",
+      "explanation": "A structured JSON response is ideal. The LLM's response can be a string, and accompanying it should be a list of identifiers (e.g., `insight_id` or `quote_id`) for the source materials it drew upon. The frontend then iterates through this list, renders the 'diamond icons' as needed, and attaches the `insight_id` to each icon, allowing it to fetch or display the corresponding insight details when clicked. This keeps the backend focused on data, and the frontend on presentation."
+    },
+    {
+      "question": "Skimle's AI 'forms a parsimonious and comprehensive category scheme.' What data structure would you use to represent this dynamic, hierarchical category scheme in memory (e.g., on the frontend or a caching layer)?",
+      "answers": [
+        {
+          "answer": "A flat array of all categories, requiring the frontend to iterate and build the hierarchy."
+        },
+        {
+          "answer": "A tree-like structure (e.g., an array of objects, where each object has a `children` array of subcategories)."
+        },
+        {
+          "answer": "A linked list for efficient insertion and deletion of categories."
+        },
+        {
+          "answer": "A hash map where keys are category names and values are their corresponding documents."
+        }
+      ],
+      "answer": "A tree-like structure (e.g., an array of objects, where each object has a `children` array of subcategories).",
+      "explanation": "For a 'hierarchical category scheme,' a tree structure is the most natural and efficient representation in memory. Each node in the tree would represent a category and could contain its name, ID, and a `children` array to hold its subcategories. This structure directly maps to the UI's need to display expandable/collapsible category trees and simplifies navigation and rendering logic compared to a flat list."
+    },
+    {
+      "question": "What is a major security consideration when handling user-uploaded documents that contain sensitive information (e.g., legal contracts, interview transcripts)?",
+      "answers": [
+        {
+          "answer": "Ensuring the document is converted to PDF before storage."
+        },
+        {
+          "answer": "Implementing robust access control, data encryption at rest and in transit, and secure deletion policies."
+        },
+        {
+          "answer": "Scanning all documents for computer viruses, ignoring the content."
+        },
+        {
+          "answer": "Sharing the documents with third-party LLMs without user consent for better analysis."
+        }
+      ],
+      "answer": "Implementing robust access control, data encryption at rest and in transit, and secure deletion policies.",
+      "explanation": "Handling sensitive user data requires a strong security posture. **Access control** ensures only authorized users (and tenants) can view documents. **Encryption at rest** (e.g., on S3 buckets, database disks) protects data when it's stored, and **encryption in transit** (HTTPS/TLS) protects it during transfer. **Secure deletion policies** are essential for compliance and user trust, ensuring data is truly purged when requested. Sharing data with third parties without consent is a major privacy violation."
+    },
+    {
+      "question": "Skimle's service aims to 'save countless hours, digesting, summarizing, and cataloguing documents.' How would you prioritize frontend performance optimizations for the spreadsheet view?",
+      "answers": [
+        {
+          "answer": "Optimizing image loading speed, as it's the most noticeable aspect for users."
+        },
+        {
+          "answer": "Minimizing JavaScript bundle size and optimizing initial page load for first-time users."
+        },
+        {
+          "answer": "Focusing on efficient rendering of large datasets (virtualization) and fast interactions (sorting, filtering)."
+        },
+        {
+          "answer": "Ensuring all animations are smooth at 60fps."
+        }
+      ],
+      "answer": "Focusing on efficient rendering of large datasets (virtualization) and fast interactions (sorting, filtering).",
+      "explanation": "While initial load and bundle size are important, for a 'spreadsheet' interface designed to handle many documents, the *perceived performance during interaction* is paramount. Users will spend most of their time scrolling, sorting, and filtering. Therefore, optimizing these interactions through techniques like virtualization, debouncing/throttling input, and efficient data fetching will have the largest impact on the user's daily experience and the 'countless hours saved' promise."
+    },
+    {
+      "question": "For the 'highlight, comment, and hide/unhide functions' for documents and insights, what kind of API design would you use for updating these properties?",
+      "answers": [
+        {
+          "answer": "A single `PUT /documents` endpoint that requires sending the entire document object every time a property changes."
+        },
+        {
+          "answer": "Individual `PATCH` endpoints for each property (e.g., `PATCH /documents/:id/highlight`, `PATCH /insights/:id/hidden`)."
+        },
+        {
+          "answer": "A `POST /actions` endpoint that takes a generic action payload (e.g., `{ type: 'HIGHLIGHT_DOCUMENT', id: 123 }`)."
+        },
+        {
+          "answer": "Only allow these changes via bulk CSV upload."
+        }
+      ],
+      "answer": "Individual `PATCH` endpoints for each property (e.g., `PATCH /documents/:id/highlight`, `PATCH /insights/:id/hidden`).",
+      "explanation": "The `PATCH` HTTP method is specifically designed for 'partial updates' of a resource. This is ideal for toggling a highlight, adding a comment, or changing a hidden status, as you only send the specific field(s) that are changing, not the entire resource. This is more efficient than `PUT` (which expects the full resource) and more semantically appropriate than a generic `POST /actions`."
+    },
+    {
+      "question": "When defining the API for creating and managing 'insight types' (how users define what knowledge to extract), what validation is critical on the backend?",
+      "answers": [
+        {
+          "answer": "Ensuring the insight type name is always in uppercase."
+        },
+        {
+          "answer": "Validating the user's input to prevent malicious code injection (XSS, SQL injection) and ensuring the definition is semantically valid for the AI system."
+        },
+        {
+          "answer": "That the insight type definition is exactly 100 characters long."
+        },
+        {
+          "answer": "Only allowing administrators to create insight types."
+        }
+      ],
+      "answer": "Validating the user's input to prevent malicious code injection (XSS, SQL injection) and ensuring the definition is semantically valid for the AI system.",
+      "explanation": "User-defined content is a common attack vector. Preventing **malicious code injection** (like XSS if the insight type name is displayed in the UI, or SQL injection if it's used directly in database queries) is paramount. Beyond security, **semantic validation** is crucial for AI. You need to ensure the user's 'insight type' definition is something the AI can actually understand and process effectively, preventing garbage input from breaking the AI workflow or producing meaningless results."
+    },
+    {
+      "question": "Skimle's architecture includes an 'AI workflow processes documents thoroughly.' What architectural pattern might be used to manage the execution of these AI tasks?",
+      "answers": [
+        {
+          "answer": "A monolith where all AI tasks run directly within the main web server process."
+        },
+        {
+          "answer": "A batch processing system or worker queue (e.g., Celery with Redis, AWS SQS/Lambda) where tasks are picked up by dedicated workers."
+        },
+        {
+          "answer": "Server-Side Rendering (SSR) for all AI processing."
+        },
+        {
+          "answer": "Running all AI directly on the client's browser using Web Workers."
+        }
+      ],
+      "answer": "A batch processing system or worker queue (e.g., Celery with Redis, AWS SQS/Lambda) where tasks are picked up by dedicated workers.",
+      "explanation": "AI document processing is typically a long-running, resource-intensive, and asynchronous task. A batch processing system or worker queue is ideal. The main web server places a task onto the queue, which is then picked up and executed by a separate worker service. This decouples the AI processing from the web request cycle, allowing the web server to remain responsive, scaling AI workers independently, and providing fault tolerance (tasks can be retried if a worker fails)."
+    },
+    {
+      "question": "The 'magnifying glass icon' takes the user to the original document context. How would you ensure the `GET /documents/:id` endpoint loads large documents efficiently and securely for this feature?",
+      "answers": [
+        {
+          "answer": "Always return the full document text, regardless of size, for every request."
+        },
+        {
+          "answer": "Implement range requests (HTTP `Range` header) and stream the document content, especially for extremely large files, coupled with authorization checks."
+        },
+        {
+          "answer": "Only serve documents from a public CDN without any authentication."
+        },
+        {
+          "answer": "Convert all documents to image format and serve them as static files."
+        }
+      ],
+      "answer": "Implement range requests (HTTP `Range` header) and stream the document content, especially for extremely large files, coupled with authorization checks.",
+      "explanation": "For potentially 'massive' documents, returning the full text on every request is inefficient. **Range requests** allow the client to ask for only a specific portion (byte range) of a file, which is perfect for showing a small context window. The backend should support this, reading only the requested bytes from storage. Crucially, this must always be **coupled with robust authorization checks** to ensure the user requesting the document has permission to access it, respecting multi-tenancy and user roles."
+    },
+    {
+      "question": "What kind of testing strategy would be most important for the core AI workflow that processes documents and generates insights and categories?",
+      "answers": [
+        {
+          "answer": "Only UI-driven end-to-end tests to ensure the buttons work."
+        },
+        {
+          "answer": "Unit tests for individual functions within the AI code, integration tests for connecting AI modules, and robust data-driven tests (with known inputs and expected AI outputs) for the full workflow."
+        },
+        {
+          "answer": "Performance tests to see how quickly the AI runs on dummy data."
+        },
+        {
+          "answer": "Manual testing only, as AI outputs are inherently unpredictable."
+        }
+      ],
+      "answer": "Unit tests for individual functions within the AI code, integration tests for connecting AI modules, and robust data-driven tests (with known inputs and expected AI outputs) for the full workflow.",
+      "explanation": "AI workflows are complex and often non-deterministic, making them challenging to test. A multi-layered strategy is best. **Unit tests** ensure code correctness. **Integration tests** verify that different AI components (e.g., embedding model, LLM, post-processing) work together. Most importantly, **data-driven tests** (often called 'golden tests' or 'regression tests') are critical for the full workflow. You provide a set of carefully selected input documents and assert that the generated insights and categories (or their core structure/content) match a predefined expected output, helping catch regressions or unexpected AI behavior changes over time."
+    },
+    {
+      "question": "Skimle's chat interface 'leverages the abstract knowledge structure' to provide 'superior, structured response.' How would you prompt an LLM to utilize this structured knowledge effectively?",
+      "answers": [
+        {
+          "answer": "Simply tell the LLM to 'answer the user's question' and provide raw document chunks."
+        },
+        {
+          "answer": "Provide the LLM with relevant insights and their associated categories in a structured format (e.g., JSON or clear Markdown) and instruct it to synthesize answers drawing from these categories and insights."
+        },
+        {
+          "answer": "Ask the LLM to generate its own categories first, then answer the question."
+        },
+        {
+          "answer": "Only provide the LLM with the user's query, no additional context."
+        }
+      ],
+      "answer": "Provide the LLM with relevant insights and their associated categories in a structured format (e.g., JSON or clear Markdown) and instruct it to synthesize answers drawing from these categories and insights.",
+      "explanation": "To make the LLM leverage the 'abstract knowledge structure,' you must provide it to the LLM in a usable format. Instead of just raw text, you'd retrieve the most relevant *insights* and *their associated categories* (e.g., 'Insight X is part of Category A and Subcategory B') and present this to the LLM within the prompt. Crucially, the prompt should also include instructions for the LLM to *specifically use and reference* this structured information in its answer, guiding it to synthesize rather than just summarize raw text."
+    },
+    {
+      "question": "What is the most effective strategy for managing environment-specific configurations (e.g., database connection strings, API keys for external LLMs) in a Full-Stack application like Skimle?",
+      "answers": [
+        {
+          "answer": "Hardcoding them directly into the source code for simplicity."
+        },
+        {
+          "answer": "Storing them in a `.env` file and committing it to version control."
+        },
+        {
+          "answer": "Using environment variables (e.g., Docker secrets, Kubernetes secrets, cloud provider secret managers) and loading them at runtime."
+        },
+        {
+          "answer": "Passing them as command-line arguments to the application on every startup."
+        }
+      ],
+      "answer": "Using environment variables (e.g., Docker secrets, Kubernetes secrets, cloud provider secret managers) and loading them at runtime.",
+      "explanation": "Environment variables are the industry standard for managing configurations that differ across environments (development, staging, production) and for securely storing sensitive information like API keys. They prevent secrets from being committed to version control, allow for easy changes without code redeployment, and integrate well with modern deployment pipelines and secret management services in cloud environments."
+    },
+    {
+      "question": "Skimle highlights the importance of going 'back to the original documents to verify the conclusions for yourself.' How would you incorporate user feedback into the AI workflow to improve accuracy over time?",
+      "answers": [
+        {
+          "answer": "Assume the AI is always correct and no feedback is needed."
+        },
+        {
+          "answer": "Allow users to 'thumbs up/down' generated insights or categories, storing this feedback for retraining or fine-tuning models."
+        },
+        {
+          "answer": "Only collect feedback from internal Skimle employees, not end-users."
+        },
+        {
+          "answer": "Periodically replace the LLM with a newer version from the provider without specific feedback."
+        }
+      ],
+      "answer": "Allow users to 'thumbs up/down' generated insights or categories, storing this feedback for retraining or fine-tuning models.",
+      "explanation": "User feedback is invaluable for improving AI systems. Providing simple mechanisms (like thumbs up/down, or the ability to edit/correct a category/insight) allows Skimle to collect 'human-in-the-loop' data. This data can then be used to: 1) Measure the AI's performance, 2) Identify areas for improvement, and crucially, 3) Create a labeled dataset that can be used to retrain or fine-tune the underlying AI models, making them more accurate and aligned with user expectations over time. This iterative feedback loop is essential for a high-quality AI product."
+    },
+    {
+      "question": "What is a key consideration for the deployment strategy of a Full-Stack application like Skimle that involves both web servers and AI workers?",
+      "answers": [
+        {
+          "answer": "Deploying everything on a single, powerful bare-metal server to keep costs low."
+        },
+        {
+          "answer": "Using a container orchestration platform (e.g., Kubernetes, Docker Swarm) to manage and scale web servers and AI workers independently."
+        },
+        {
+          "answer": "Manually deploying each service via SSH to individual virtual machines."
+        },
+        {
+          "answer": "Only deploying frontend assets to a CDN and letting the backend run on a developer's laptop."
+        }
+      ],
+      "answer": "Using a container orchestration platform (e.g., Kubernetes, Docker Swarm) to manage and scale web servers and AI workers independently.",
+      "explanation": "Skimle has distinct components: web servers (handling user requests) and AI workers (doing heavy computation). These components have different scaling needs and resource requirements. A container orchestration platform allows you to define and deploy these services (e.g., as Docker containers), manage their lifecycles, and most importantly, scale them independently based on load. For example, you might need more web servers during peak UI usage and more AI workers when many documents are uploaded. This provides scalability, resilience, and efficient resource utilization."
+    },
+    {
+      "question": "For 'highlight, comment, and hide/unhide functions', what frontend framework feature would be most useful for immediately reflecting user changes in the UI without a full page refresh?",
+      "answers": [
+        {
+          "answer": "Direct DOM manipulation using `document.getElementById`."
+        },
+        {
+          "answer": "Component-based architecture with reactive state updates (e.g., React, Vue, Angular)."
+        },
+        {
+          "answer": "Reloading the entire page after every action to ensure data consistency."
+        },
+        {
+          "answer": "Using server-side rendering exclusively."
+        }
+      ],
+      "answer": "Component-based architecture with reactive state updates (e.g., React, Vue, Angular).",
+      "explanation": "Modern frontend frameworks (React, Vue, Angular) are built around a component-based architecture and reactive state management. When a user interacts (e.g., highlights an insight), the relevant component's local state (or global state) is updated. The framework then efficiently re-renders only the necessary parts of the UI that depend on that state, providing an immediate and smooth user experience without needing a full page reload or manual DOM manipulation."
+    },
+    {
+      "question": "Skimle aims to 'leverage AI in an entirely new way.' How would you approach monitoring and alerting for the AI models in production?",
+      "answers": [
+        {
+          "answer": "Only monitor server uptime; AI performance is irrelevant."
+        },
+        {
+          "answer": "Monitor inference latency, error rates from the LLM API, token usage, and establish alerts for significant deviations in AI output quality (e.g., via drift detection or synthetic monitoring)."
+        },
+        {
+          "answer": "Only monitor the cost of the AI services and nothing else."
+        },
+        {
+          "answer": "Rely solely on user bug reports to identify AI issues."
+        }
+      ],
+      "answer": "Monitor inference latency, error rates from the LLM API, token usage, and establish alerts for significant deviations in AI output quality (e.g., via drift detection or synthetic monitoring).",
+      "explanation": "Monitoring AI in production goes beyond traditional application monitoring. You need to track: **Inference latency** (how long AI takes to respond), **error rates** (e.g., failed API calls to LLMs), and **token usage** (for cost management). Crucially, for Skimle, you'd also want to monitor for **AI output quality degradation**. This might involve: 1) **Data drift detection** (changes in input data distribution that could affect AI), 2) **Model drift** (changes in model behavior), or 3) **Synthetic monitoring** where you periodically send known inputs to the AI and check if the outputs still meet expectations. User bug reports are reactive; proactive monitoring is essential."
+    },
+    {
+      "question": "To enable Skimle's 'Register now for our free trial, or buy our starter or pro subscription,' what backend component is essential?",
+      "answers": [
+        {
+          "answer": "A static file server."
+        },
+        {
+          "answer": "An authentication and authorization service, and an integration with a payment gateway/subscription management platform (e.g., Stripe, Chargebee)."
+        },
+        {
+          "answer": "A content delivery network (CDN)."
+        },
+        {
+          "answer": "A simple cron job that sends daily emails."
+        }
+      ],
+      "answer": "An authentication and authorization service, and an integration with a payment gateway/subscription management platform (e.g., Stripe, Chargebee).",
+      "explanation": "Handling user accounts and subscriptions is a foundational aspect of most SaaS applications. An **authentication service** is needed to allow users to sign up and log in securely. An **authorization service** determines what features/data a user can access based on their subscription tier (free, starter, pro). Finally, integration with a **payment gateway or subscription management platform** handles the actual billing, free trials, and recurring payments, abstracting away the complexities of financial transactions."
+    },
+    {
+      "question": "When designing the database schema for the 'comment' function on insights, what is a crucial field to include for auditing and future features?",
+      "answers": [
+        {
+          "answer": "`comment_text` only."
+        },
+        {
+          "answer": "`comment_text`, `user_id`, `created_at`, and potentially `updated_at`."
+        },
+        {
+          "answer": "A `comment_id` field and nothing else."
+        },
+        {
+          "answer": "Only `comment_text` and the `insight_id` it belongs to."
+        }
+      ],
+      "answer": "`comment_text`, `user_id`, `created_at`, and potentially `updated_at`.",
+      "explanation": "For any user-generated content, especially in a collaborative tool like Skimle, including metadata is vital. `comment_text` is the content itself. `user_id` tracks who made the comment (essential for moderation, collaboration, and multi-tenancy). `created_at` provides an audit trail of when the comment was made. `updated_at` is useful if comments can be edited, showing the last modification time. These fields are crucial for functionality, accountability, and debugging."
+    },
+    {
+      "question": "Skimle's product relies heavily on AI to produce structured knowledge. How would you ensure the application remains functional even if a primary AI service (e.g., an external LLM API) experiences an outage?",
+      "answers": [
+        {
+          "answer": "Display a generic 'AI Error' message and block all user interaction until the AI service is restored."
+        },
+        {
+          "answer": "Implement fallbacks, circuit breakers, and graceful degradation. For instance, allow users to view existing insights/categories but disable new document processing or chat features."
+        },
+        {
+          "answer": "Immediately switch to a completely different AI provider without any downtime."
+        },
+        {
+          "answer": "Shut down the entire Skimle application to prevent further errors."
+        }
+      ],
+      "answer": "Implement fallbacks, circuit breakers, and graceful degradation. For instance, allow users to view existing insights/categories but disable new document processing or chat features.",
+      "explanation": "Resilience is key in a system dependent on external services. A robust design would incorporate **fallbacks** (e.g., using a simpler, cached AI response if the primary fails), **circuit breakers** (to prevent cascading failures by quickly failing requests to an unhealthy service), and **graceful degradation**. Graceful degradation means identifying core functionalities that *can* still work without the AI (like viewing existing analyzed data, managing categories) and keeping them operational while clearly indicating that AI-dependent features are temporarily unavailable. This ensures a better user experience than a complete outage."
+    },
+    {
+      "question": "When designing the user interface for defining 'insight types', what UX principle should guide its implementation?",
+      "answers": [
+        {
+          "answer": "Allow users to input free-form text without any guidance or examples."
+        },
+        {
+          "answer": "Provide clear examples, templates, and validation feedback to guide users in creating effective and AI-understandable definitions."
+        },
+        {
+          "answer": "Hide the 'insight types' feature deep within settings to avoid overwhelming users."
+        },
+        {
+          "answer": "Require users to learn a specific programming language to define insight types."
+        }
+      ],
+      "answer": "Provide clear examples, templates, and validation feedback to guide users in creating effective and AI-understandable definitions.",
+      "explanation": "User experience is crucial, especially for a feature like defining 'insight types' which interfaces with AI. Users might not know how to best formulate their requests for the AI. Providing **clear examples** of good insight types, **templates** to start from, and **immediate validation feedback** (e.g., 'This definition might be too vague for the AI') will significantly improve the user's ability to extract meaningful information and maximize the value of Skimle. This minimizes user frustration and leads to better AI outcomes."
+    }
+  ]
+},
+  {
     "name": "Advanced Full Stack Developer Quiz",
     "questions": [
       {
