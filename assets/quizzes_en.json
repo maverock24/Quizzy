@@ -1,5 +1,581 @@
 [
   {
+  "name": "Project: Build a Llama-3 Support Ticket Analyzer (Fine-Tuning + RAG)",
+  "image": "https://images.unsplash.com/photo-1555099962-4199c345e5dd",
+  "questions": [
+    {
+      "question": "Step 1: Goal Definition. We want to fine-tune a model to take an unstructured user complaint (e.g., 'My internet is down and I hate you!') and output a clean JSON object with `{ sentiment: 'negative', issue: 'connectivity', priority: 'high' }`. Why do we choose a 'T4 GPU' runtime in Google Colab for this?",
+      "answers": [
+        {
+          "answer": "It is the only paid option."
+        },
+        {
+          "answer": "It is the only free GPU with enough VRAM (16GB) to load Llama-3 in 4-bit mode."
+        },
+        {
+          "answer": "It is a CPU optimized for text."
+        },
+        {
+          "answer": "It allows unlimited training time."
+        }
+      ],
+      "answer": "It is the only free GPU with enough VRAM (16GB) to load Llama-3 in 4-bit mode.",
+      "explanation": "Action: Set Runtime to T4 GPU. The goal is to perform this high-value task for free. The T4 is the workhorse of free AI. A standard Llama-3 8B model requires ~16GB of memory (VRAM). The T4 provides exactly 16GB. If you used a smaller GPU or CPU, the model simply wouldn't load. *Consideration: If Colab says 'No backend available', you may have hit a daily limit; try Kaggle Kernels as a backup.*"
+    },
+    {
+      "question": "Step 2: The Efficiency Engine. To make this run 2x faster and fit in memory, we install 'Unsloth'. What is the specific command to install it in a Colab environment?",
+      "answers": [
+        {
+          "answer": "`pip install transformers`"
+        },
+        {
+          "answer": "`pip install \"unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git\"`"
+        },
+        {
+          "answer": "`npm install unsloth`"
+        },
+        {
+          "answer": "`import unsloth`"
+        }
+      ],
+      "answer": "`pip install \"unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git\"`",
+      "explanation": "Action: Run this installation command. Unsloth is a library that optimizes the 'backward pass' (the math of learning). Without it, standard fine-tuning would consume ~24GB of VRAM, crashing our 16GB T4 GPU immediately. Unsloth shrinks this requirement to ~7GB. *Consideration: This library is Linux/NVIDIA specific. If you try this on a Macbook later, it won't work.*"
+    },
+    {
+      "question": "Step 3: Loading the Brain. We load `unsloth/llama-3-8b-bnb-4bit`. Why do we use the '4-bit' version for our Support Agent?",
+      "answers": [
+        {
+          "answer": "It makes the model smarter."
+        },
+        {
+          "answer": "It quantizes weights from 16-bit floats to 4-bit integers, reducing memory usage by 4x with negligible accuracy loss."
+        },
+        {
+          "answer": "It removes all non-English words."
+        },
+        {
+          "answer": "It is required for JSON output."
+        }
+      ],
+      "answer": "It quantizes weights from 16-bit floats to 4-bit integers, reducing memory usage by 4x with negligible accuracy loss.",
+      "explanation": "Action: Load the model with `load_in_4bit=True`. A full precision model is like a massive uncompressed WAV file. 4-bit is like an MP3—it sounds 99% the same but is tiny. This allows us to fit the model *and* the training data onto our free GPU. *Consideration: For a simple task like 'Summarize to JSON', 4-bit quantization has virtually zero negative impact on performance.*"
+    },
+    {
+      "question": "Step 4: Data Construction. We need to teach the model our specific JSON format. Which dataset structure effectively teaches this Input-to-Output mapping?",
+      "answers": [
+        {
+          "answer": "A folder of PDF manuals."
+        },
+        {
+          "answer": "An 'Alpaca' style JSONL file where `instruction` is the system rule, `input` is the user email, and `output` is the desired JSON."
+        },
+        {
+          "answer": "A single long text file of emails."
+        },
+        {
+          "answer": "Raw Python code."
+        }
+      ],
+      "answer": "An 'Alpaca' style JSONL file where `instruction` is the system rule, `input` is the user email, and `output` is the desired JSON.",
+      "explanation": "Action: Create a dataset like `[{'instruction': 'Convert to JSON', 'input': 'I hate this!', 'output': '{\"sentiment\": \"negative\"}'}]`. We are doing 'Supervised Fine-Tuning'. We must show the model exactly what we want: Input (Email) -> Output (JSON). *Consideration: You only need about 50-100 high-quality examples for this specific task to see results.*"
+    },
+    {
+      "question": "Step 5: The Prompt Template. We must format our data into a string the model can read. What crucial element must be appended to the end of the `output` string in our training data?",
+      "answers": [
+        {
+          "answer": "The user's signature."
+        },
+        {
+          "answer": "The `<|end_of_text_id|>` (EOS) token."
+        },
+        {
+          "answer": "A timestamp."
+        },
+        {
+          "answer": "Two newlines."
+        }
+      ],
+      "answer": "The `<|end_of_text_id|>` (EOS) token.",
+      "explanation": "Action: Ensure your formatter adds the EOS token. If you miss this, the model will output the correct JSON ticket... and then continue generating fake emails and tickets endlessly because it never learned when to *stop* writing. *Consideration: This is the most common bug in beginner fine-tuning projects.*"
+    },
+    {
+      "question": "Step 6: LoRA Setup. We are using LoRA (Low-Rank Adaptation). We set `r=16`. What does this mean for our Support Agent?",
+      "answers": [
+        {
+          "answer": "It will train for 16 hours."
+        },
+        {
+          "answer": "It defines the 'rank' or capacity of the adapter—how much new information it can absorb."
+        },
+        {
+          "answer": "It sets the batch size."
+        },
+        {
+          "answer": "It uses 16 GPUs."
+        }
+      ],
+      "answer": "It defines the 'rank' or capacity of the adapter—how much new information it can absorb.",
+      "explanation": "Action: Set `r=16`. Think of this as the size of the 'sticky note' we are attaching to the model's brain. Since our task (JSON formatting) is relatively simple, a rank of 16 is plenty. *Consideration: Setting this too high (e.g., 256) increases VRAM usage and can lead to overfitting on small datasets.*"
+    },
+    {
+      "question": "Step 7: Targeting Layers. To make our Support Agent smart at logic (categorizing issues), which modules should we apply LoRA to?",
+      "answers": [
+        {
+          "answer": "Only the attention (`q_proj`, `v_proj`)."
+        },
+        {
+          "answer": "All linear layers (`q`, `k`, `v`, `o`, `gate`, `up`, `down`)."
+        },
+        {
+          "answer": "Only the embedding layer."
+        },
+        {
+          "answer": "Only the output layer."
+        }
+      ],
+      "answer": "All linear layers (`q`, `k`, `v`, `o`, `gate`, `up`, `down`).",
+      "explanation": "Action: Target all linear modules. Originally, people only trained the 'Attention' layers. But for logic tasks like classifying a support ticket, training the 'MLP' layers (gate, up, down) makes the model significantly smarter. *Consideration: Unsloth handles this by default, adding negligible memory cost.*"
+    },
+    {
+      "question": "Step 8: Overcoming Memory Limits. Our T4 GPU is small. We want a batch size of 64, but can only fit 2. What technique simulates the larger batch?",
+      "answers": [
+        {
+          "answer": "Memory Paging."
+        },
+        {
+          "answer": "Gradient Accumulation."
+        },
+        {
+          "answer": "Data Compression."
+        },
+        {
+          "answer": "Skipping Batches."
+        }
+      ],
+      "answer": "Gradient Accumulation.",
+      "explanation": "Action: Set `per_device_train_batch_size = 2` and `gradient_accumulation_steps = 32`. This tells the model: 'Calculate the math for 2 emails, save it. Do 2 more, save it... Once you've done this 32 times (total 64), *then* update the brain.' *Consideration: This makes training slower (wall clock time) but stable (mathematically).* "
+    },
+    {
+      "question": "Step 9: Learning Rate. Since we are using QLoRA (Quantized LoRA), why do we set the learning rate to `2e-4` instead of the standard `2e-5`?",
+      "answers": [
+        {
+          "answer": "We want it to be slower."
+        },
+        {
+          "answer": "QLoRA adapters need a higher learning rate to converge effectively."
+        },
+        {
+          "answer": "It's a typo."
+        },
+        {
+          "answer": "Llama-3 requires it."
+        }
+      ],
+      "answer": "QLoRA adapters need a higher learning rate to converge effectively.",
+      "explanation": "Action: Set `learning_rate = 2e-4`. Because we are training a tiny number of parameters (the adapters) on top of a frozen 4-bit base, we need a slightly more aggressive update speed to see results. *Consideration: If your loss graph spikes up or looks jagged, lower this to 1e-4.*"
+    },
+    {
+      "question": "Step 10: Training Speed Hack. We set `packing=True` in the Trainer. How does this help us finish our tutorial faster?",
+      "answers": [
+        {
+          "answer": "It zips the files."
+        },
+        {
+          "answer": "It combines multiple short training examples into one long sequence."
+        },
+        {
+          "answer": "It skips hard examples."
+        },
+        {
+          "answer": "It overclocks the GPU."
+        }
+      ],
+      "answer": "It combines multiple short training examples into one long sequence.",
+      "explanation": "Action: Enable `packing=True`. Our support emails might be short (100 tokens), but the GPU works on chunks of 2048 tokens. Without packing, we waste 95% of the GPU's time processing 'padding' (zeros). Packing fills the buffer with real data. *Consideration: This can speed up training by 3x-5x.*"
+    },
+    {
+      "question": "Step 11: Execution. We run `trainer.train()`. We are looking for the 'Goldilocks' zone. When do we stop training?",
+      "answers": [
+        {
+          "answer": "When Training Loss is 0.00001."
+        },
+        {
+          "answer": "When Training Loss decreases, but Validation Loss starts to flatten or rise."
+        },
+        {
+          "answer": "After 1 hour."
+        },
+        {
+          "answer": "When the battery dies."
+        }
+      ],
+      "answer": "When Training Loss decreases, but Validation Loss starts to flatten or rise.",
+      "explanation": "Action: Monitor the loss curves. For a simple task like 'Email to JSON', the model learns very fast—often in 1 epoch (seeing the data once). If you keep going, it memorizes the specific emails instead of the general rule. *Consideration: Stop early. Under-training is better than over-training for this specific use case.* "
+    },
+    {
+      "question": "Step 12: The Sanity Check. Before saving, we run `FastLanguageModel.for_inference(model)`. What does this command do?",
+      "answers": [
+        {
+          "answer": "It deletes the training data."
+        },
+        {
+          "answer": "It enables native inference optimizations and disables dropout layers."
+        },
+        {
+          "answer": "It saves the file."
+        },
+        {
+          "answer": "It connects to the internet."
+        }
+      ],
+      "answer": "It enables native inference optimizations and disables dropout layers.",
+      "explanation": "Action: Run this command, then pass a *new* fake email to the model. Verify it outputs valid JSON. This step is critical because it tests the model in memory. *Consideration: If the output is broken here, do not proceed. Adjust your prompt template.*"
+    },
+    {
+      "question": "Step 13: Understanding Artifacts. We save the model. We see a file `adapter_model.safetensors` that is only 100MB. Where is the rest of the 8GB model?",
+      "answers": [
+        {
+          "answer": "It was deleted."
+        },
+        {
+          "answer": "It is still on HuggingFace; we only saved the LoRA 'diff'."
+        },
+        {
+          "answer": "It is hidden."
+        },
+        {
+          "answer": "It is compressed."
+        }
+      ],
+      "answer": "It is still on HuggingFace; we only saved the LoRA 'diff'.",
+      "explanation": "Concept: We created a 'mod'. Just like a game mod doesn't include the whole game, our LoRA adapter only contains the changes needed to turn Llama-3 into a Support Agent. *Consideration: This makes sharing incredibly easy—you can email this 100MB file to a colleague.*"
+    },
+    {
+      "question": "Step 14: Merging. To run this on our laptop with Ollama, we need a single GGUF file. What does the command `model.save_pretrained_gguf(...)` actually do?",
+      "answers": [
+        {
+          "answer": "It changes the file extension."
+        },
+        {
+          "answer": "It merges the 100MB adapter into the 8GB base model and quantizes the result into a single file."
+        },
+        {
+          "answer": "It downloads a new model."
+        },
+        {
+          "answer": "It creates a Docker container."
+        }
+      ],
+      "answer": "It merges the 100MB adapter into the 8GB base model and quantizes the result into a single file.",
+      "explanation": "Action: Run the GGUF export. This is a CPU-intensive process. It effectively 'glues' our sticky notes (adapters) onto the encyclopedia pages permanently so standard software (like Ollama) can read it as one standard model. *Consideration: This step usually requires system RAM. Colab has enough.*"
+    },
+    {
+      "question": "Step 15: Precision Choice. When exporting to GGUF, we choose `q4_k_m`. What is the trade-off here?",
+      "answers": [
+        {
+          "answer": "It is the slowest but smartest."
+        },
+        {
+          "answer": "It offers a balanced trade-off between size, speed, and accuracy."
+        },
+        {
+          "answer": "It is only for images."
+        },
+        {
+          "answer": "It makes the model black and white."
+        }
+      ],
+      "answer": "It offers a balanced trade-off between size, speed, and accuracy.",
+      "explanation": "Action: Select `q4_k_m`. 'q4' means 4-bit. 'k_m' refers to a specific mix of quantization methods for different layers (Medium). It is widely considered the best standard for running 8B models on consumer laptops. *Consideration: q5_k_m is smarter but slower; q8_0 is huge.*"
+    },
+    {
+      "question": "Step 16: The Modelfile. We have `model.gguf`. To run it in Ollama, we write a `Modelfile`. What critical instruction prevents our Support Agent from acting like a Pirate?",
+      "answers": [
+        {
+          "answer": "The `LICENSE` line."
+        },
+        {
+          "answer": "The `SYSTEM` prompt."
+        },
+        {
+          "answer": "The `FROM` line."
+        },
+        {
+          "answer": "The `PARAMETER` line."
+        }
+      ],
+      "answer": "The `SYSTEM` prompt.",
+      "explanation": "Action: In the Modelfile, add: `SYSTEM \"You are a helpful support agent. Output only JSON.\"` This hardcodes the behavior. Even though we fine-tuned it, the System Prompt reinforces the rules and prevents 'drift'. *Consideration: Fine-tuning + System Prompt = Robust Behavior.*"
+    },
+    {
+      "question": "Step 17: Local Deployment. You run `ollama create support-agent -f Modelfile`. Where does this run now?",
+      "answers": [
+        {
+          "answer": "Still on Google Colab."
+        },
+        {
+          "answer": "On your local machine (Laptop/PC)."
+        },
+        {
+          "answer": "On HuggingFace servers."
+        },
+        {
+          "answer": "On AWS."
+        }
+      ],
+      "answer": "On your local machine (Laptop/PC).",
+      "explanation": "Action: Run the command. You have now successfully taken a model from the cloud, customized it, and brought it 'to the edge'. You can now disconnect the internet and it will still work. *Consideration: This is crucial for privacy. You can process sensitive user emails locally without sending data to OpenAI.*"
+    },
+    {
+      "question": "Step 18: Integration. You want to use this in a Python script. Which library allows you to talk to your local Ollama model?",
+      "answers": [
+        {
+          "answer": "`requests` (or the official `ollama` lib)."
+        },
+        {
+          "answer": "`numpy`"
+        },
+        {
+          "answer": "`pandas`"
+        },
+        {
+          "answer": "`react`"
+        }
+      ],
+      "answer": "`requests` (or the official `ollama` lib).",
+      "explanation": "Action: Use `import ollama`. Run `response = ollama.chat(model='support-agent', messages=[...])`. This allows you to build a pipeline: Receive Email -> Python Script -> Local AI -> JSON -> Database. *Consideration: Ollama exposes a standard REST API on port 11434.*"
+    },
+    {
+      "question": "Step 19: The 'Knowledge Gap' Problem. Your user emails about 'Error Code 543 on the new X-200 Router'. Your fine-tuned model correctly formats the JSON, but hallucinates the solution. Why?",
+      "answers": [
+        {
+          "answer": "The model is not trained on the internet."
+        },
+        {
+          "answer": "Fine-tuning teaches *style* (JSON), not *new facts*. It doesn't know what an X-200 Router is."
+        },
+        {
+          "answer": "The temperature is too high."
+        },
+        {
+          "answer": "The model hates routers."
+        }
+      ],
+      "answer": "Fine-tuning teaches *style* (JSON), not *new facts*. It doesn't know what an X-200 Router is.",
+      "explanation": "Concept: LLMs are 'frozen' in time. Your Fine-Tune made it an expert *Form Filler*, but it didn't update its internal database of world facts. *Consideration: Do NOT re-train the model to learn the router manual. Use RAG (Retrieval Augmented Generation) instead.*"
+    },
+    {
+      "question": "Step 20: Optimization. Before starting RAG, let's optimize the JSON output. What Ollama parameter forces the model to stop generating immediately after the JSON object is closed?",
+      "answers": [
+        {
+          "answer": "`temperature`"
+        },
+        {
+          "answer": "`stop` tokens."
+        },
+        {
+          "answer": "`top_k`"
+        },
+        {
+          "answer": "`seed`"
+        }
+      ],
+      "answer": "`stop` tokens.",
+      "explanation": "Action: Add `stop` parameter: `[\"}\"]`. Since we only want a JSON object, we can tell the engine to kill the generation process the moment it sees the closing curly brace `}`. *Consideration: This frees up resources immediately for the next request.*"
+    },
+    {
+      "question": "Step 21: RAG Strategy. We need to feed the model the manual for the 'X-200 Router'. We have a PDF manual. What is the first step to making this PDF readable by an AI?",
+      "answers": [
+        {
+          "answer": "Upload the PDF to ChatGPT."
+        },
+        {
+          "answer": "Chunking: Splitting the long text into smaller, manageable pieces (e.g., 500 characters)."
+        },
+        {
+          "answer": "Converting it to an image."
+        },
+        {
+          "answer": " emailing it to the user."
+        }
+      ],
+      "answer": "Chunking: Splitting the long text into smaller, manageable pieces (e.g., 500 characters).",
+      "explanation": "Action: Use a library like `LangChain` to split the text. If you feed the whole manual at once, it might exceed the context window or confuse the model. *Consideration: Overlap your chunks (e.g., 100 characters overlap) so you don't cut sentences in half.*"
+    },
+    {
+      "question": "Step 22: Embeddings. To search this manual, we need to convert text chunks into numbers (vectors). Should we use our fine-tuned Llama-3 model for this?",
+      "answers": [
+        {
+          "answer": "Yes, it is the smartest."
+        },
+        {
+          "answer": "No, we use a specialized 'Embedding Model' (like `nomic-embed-text` or `all-MiniLM-L6-v2`)."
+        },
+        {
+          "answer": "We use a random number generator."
+        },
+        {
+          "answer": "We use ASCII codes."
+        }
+      ],
+      "answer": "No, we use a specialized 'Embedding Model' (like `nomic-embed-text` or `all-MiniLM-L6-v2`).",
+      "explanation": "Concept: LLMs *generate* text. Embedding models *measure* meaning. They are much smaller, faster, and designed specifically to turn 'Router is broken' into a list of numbers like `[0.1, 0.9, ...]` that represent its semantic meaning. *Consideration: You can run `nomic-embed-text` locally via Ollama too!*"
+    },
+    {
+      "question": "Step 23: The Vector Store. We need a place to store these vectors. For a simple local project, which database is easiest to set up in Python?",
+      "answers": [
+        {
+          "answer": "Oracle Enterprise SQL."
+        },
+        {
+          "answer": "ChromaDB (or FAISS)."
+        },
+        {
+          "answer": "Excel."
+        },
+        {
+          "answer": "Notepad."
+        }
+      ],
+      "answer": "ChromaDB (or FAISS).",
+      "explanation": "Action: `pip install chromadb`. It runs locally in a folder, requires no server setup, and handles the complexity of storing vectors and performing similarity searches. *Consideration: For production with millions of users, you would use Pinecone or Weaviate.*"
+    },
+    {
+      "question": "Step 24: Ingestion. You run the ingestion script. It loops through your chunks, embeds them, and saves them to ChromaDB. How long does this take?",
+      "answers": [
+        {
+          "answer": "Days."
+        },
+        {
+          "answer": "Seconds or Minutes (Embedding is very fast)."
+        },
+        {
+          "answer": "It depends on the weather."
+        },
+        {
+          "answer": "It never finishes."
+        }
+      ],
+      "answer": "Seconds or Minutes (Embedding is very fast).",
+      "explanation": "Action: Verify the database file is created. This process only needs to happen **once** (or whenever the manual changes). You don't do this for every user query. *Consideration: This is the 'Indexing' phase.*"
+    },
+    {
+      "question": "Step 25: Retrieval Logic. A user asks 'How to reset X-200?'. We query ChromaDB. What mathematical operation does it perform to find the answer?",
+      "answers": [
+        {
+          "answer": "Long division."
+        },
+        {
+          "answer": "Cosine Similarity (calculating the angle between the question vector and the stored manual vectors)."
+        },
+        {
+          "answer": "Keyword matching (Ctrl+F)."
+        },
+        {
+          "answer": "Alphabetical sort."
+        }
+      ],
+      "answer": "Cosine Similarity (calculating the angle between the question vector and the stored manual vectors).",
+      "explanation": "Concept: It finds the chunk of text that is 'closest' in meaning to the question. Even if the user says 'Wipe settings' and the manual says 'Factory Reset', the vectors will be close because the meanings are similar. "
+    },
+    {
+      "question": "Step 26: The New Prompt. ChromaDB returns the top 3 chunks of text. How do we give this to our Fine-Tuned Llama-3?",
+      "answers": [
+        {
+          "answer": "We train the model again on these chunks."
+        },
+        {
+          "answer": "We inject them into the 'Prompt' dynamically using a placeholder like `{context}`."
+        },
+        {
+          "answer": "We send them as a separate email."
+        },
+        {
+          "answer": "We hope the model guesses."
+        }
+      ],
+      "answer": "We inject them into the 'Prompt' dynamically using a placeholder like `{context}`.",
+      "explanation": "Action: Update your code. Old Input: `User Query`. New Input: `Use this Context: [Chunk 1, Chunk 2] to answer User Query: ...`.\n*Consideration: This is RAG. You are augmenting the generation with retrieved data.*"
+    },
+    {
+      "question": "Step 27: Combining FT + RAG. You now have a prompt with the Context (Manual) and the Instruction (JSON Format). Why is this combination so powerful?",
+      "answers": [
+        {
+          "answer": "It isn't."
+        },
+        {
+          "answer": "The Fine-Tune ensures the output is *always* valid JSON (Behavior). The RAG ensures the content inside the JSON is *factually correct* (Knowledge)."
+        },
+        {
+          "answer": "It uses two GPUs."
+        },
+        {
+          "answer": "It is cheaper."
+        }
+      ],
+      "answer": "The Fine-Tune ensures the output is *always* valid JSON (Behavior). The RAG ensures the content inside the JSON is *factually correct* (Knowledge).",
+      "explanation": "Concept: This solves the two biggest problems in AI. Fine-tuning solves 'Formatting/Style'. RAG solves 'Hallucination/Knowledge'. Together, you get a reliable, smart enterprise agent."
+    },
+    {
+      "question": "Step 28: Handling 'I don't know'. What if ChromaDB returns irrelevant chunks (low similarity score)? How should your Python script handle this?",
+      "answers": [
+        {
+          "answer": "Feed them to the model anyway."
+        },
+        {
+          "answer": "Set a 'Threshold' (e.g., if similarity < 0.7, ignore chunks) and have the model output `{'error': 'manual not found'}`."
+        },
+        {
+          "answer": "Crash the server."
+        },
+        {
+          "answer": "Make up an answer."
+        }
+      ],
+      "answer": "Set a 'Threshold' (e.g., if similarity < 0.7, ignore chunks) and have the model output `{'error': 'manual not found'}`.",
+      "explanation": "Action: Implement a filter. If the user asks about 'Cooking Pasta' and your Vector DB only has router manuals, the retrieval score will be low. Don't confuse the model with bad context. *Consideration: Reliability is key in support automation.*"
+    },
+    {
+      "question": "Step 29: Evaluation. How do you know if your RAG pipeline is working better than the base model?",
+      "answers": [
+        {
+          "answer": "Ask it 'How are you?'."
+        },
+        {
+          "answer": "Use the 'RAGAS' framework (or simple visual inspection) to check: 1. Is the retrieved context relevant? 2. Is the answer faithful to the context?"
+        },
+        {
+          "answer": "Check the file size."
+        },
+        {
+          "answer": "Count the words."
+        }
+      ],
+      "answer": "Use the 'RAGAS' framework (or simple visual inspection) to check: 1. Is the retrieved context relevant? 2. Is the answer faithful to the context?",
+      "explanation": "Action: For a beginner, just print the `Retrieved Chunks` to the console before the answer. If the chunks answer the question, your RAG is working. If the answer ignores those chunks, your Fine-Tune might be 'overfitted' (ignoring context)."
+    },
+    {
+      "question": "Step 30: The Final Architecture. You have built the full stack. What is the flow of data for a single user request?",
+      "answers": [
+        {
+          "answer": "User -> Model -> Database."
+        },
+        {
+          "answer": "User -> Vector DB (Retrieve) -> Combine with Prompt -> Fine-Tuned Local LLM -> JSON Output."
+        },
+        {
+          "answer": "User -> Internet -> Cloud."
+        },
+        {
+          "answer": "User -> JSON."
+        }
+      ],
+      "answer": "User -> Vector DB (Retrieve) -> Combine with Prompt -> Fine-Tuned Local LLM -> JSON Output.",
+      "explanation": "Congratulations! You have built a private, domain-specific, structured AI agent using free tools. You went from raw weights -> Fine-Tuning (Unsloth) -> RAG (Chroma) -> Local Inference (Ollama). This is the blueprint for almost all modern Enterprise AI applications."
+    }
+  ]
+},
+  {
   "name": "Skimle Full-Stack Developer Interview",
   "image": "https://images.unsplash.com/photo-1550751827-4133750a69b0",
   "questions": [
