@@ -67,9 +67,16 @@ const QuizButton: React.FC<{ item: any; onPress: (quiz: any) => void }> = ({
           },
         ]}
       >
-        <Text style={styles.buttonText} numberOfLines={1}>
-          {item.name}
-        </Text>
+        <View style={styles.buttonContent}>
+          <Text style={styles.buttonText} numberOfLines={1}>
+            {item.name}
+          </Text>
+          <View style={styles.questionCountBadge}>
+            <Text style={styles.questionCountText}>
+              {item.questions?.length || 0} 📝
+            </Text>
+          </View>
+        </View>
       </Animated.View>
     </Pressable>
   );
@@ -113,9 +120,28 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     alignItems: 'center',
   },
+  buttonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+  },
   buttonText: {
     color: 'white',
     fontSize: 16,
+    fontWeight: '600',
+    flex: 1,
+  },
+  questionCountBadge: {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+    marginLeft: 10,
+  },
+  questionCountText: {
+    color: 'white',
+    fontSize: 14,
     fontWeight: '600',
   },
 });
