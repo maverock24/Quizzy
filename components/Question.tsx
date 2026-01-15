@@ -262,7 +262,7 @@ export const Question: React.FC<QuestionProps> = ({
       if (i !== index) {
         Animated.timing(anim, {
           toValue: 0,
-          duration: 500,
+          duration: 250,
           useNativeDriver: true,
         }).start();
       }
@@ -273,7 +273,7 @@ export const Question: React.FC<QuestionProps> = ({
       answer === correctAnswer
         ? setAnswerIsCorrect(true)
         : setAnswerIsWrong(true);
-    }, 800);
+    }, 400);
 
     setTimeout(() => {
       handleAnswerSelection(answer);
@@ -284,13 +284,13 @@ export const Question: React.FC<QuestionProps> = ({
       fadeOutAnim.forEach((anim) => {
         Animated.timing(anim, {
           toValue: 1,
-          duration: 500,
+          duration: 300,
           useNativeDriver: true,
         }).start();
       });
       setAnswerIsCorrect(false);
       setAnswerIsWrong(false);
-    }, 4000); // 2-second delay
+    }, 1200); // Quick transition to next question
   };
 
   // TTS: Read aloud question and answers
