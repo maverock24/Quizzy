@@ -63,18 +63,31 @@ export default function TabOneScreen() {
 
   useEffect(() => {
     if (selectedQuiz) {
-      setRandomizedQuestions(shuffleArray(selectedQuiz.questions));
-      setRandomizedAnswers(
-        shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
-      );
+      // If noShuffle is true (e.g., for experiment tutorials), keep original order
+      if (selectedQuiz.noShuffle) {
+        setRandomizedQuestions(selectedQuiz.questions);
+        setRandomizedAnswers(
+          selectedQuiz.questions[currentQuestionIndex].answers,
+        );
+      } else {
+        setRandomizedQuestions(shuffleArray(selectedQuiz.questions));
+        setRandomizedAnswers(
+          shuffleArray(selectedQuiz.questions[currentQuestionIndex].answers),
+        );
+      }
     }
   }, [selectedQuiz]);
 
   useEffect(() => {
     if (selectedQuiz && randomizedQuestions[currentQuestionIndex]) {
-      setRandomizedAnswers(
-        shuffleArray(randomizedQuestions[currentQuestionIndex].answers),
-      );
+      // If noShuffle is true (e.g., for experiment tutorials), keep answer order too
+      if (selectedQuiz.noShuffle) {
+        setRandomizedAnswers(randomizedQuestions[currentQuestionIndex].answers);
+      } else {
+        setRandomizedAnswers(
+          shuffleArray(randomizedQuestions[currentQuestionIndex].answers),
+        );
+      }
     }
   }, [currentQuestionIndex, randomizedQuestions]);
 
@@ -86,7 +99,7 @@ export default function TabOneScreen() {
     setScoreVisible(false);
     setSelectedQuizName(quiz.name || quiz.nimi);
     setExplanationMode(false);
-    
+
     // If reader mode is enabled, show the reader instead of the quiz
     if (readerModeEnabled) {
       setShowReader(true);
@@ -225,26 +238,23 @@ export default function TabOneScreen() {
 
           {/* Show Reader when reader mode is enabled and a quiz is selected */}
           {selectedQuiz && showReader && (
-            <Reader
-              quiz={selectedQuiz}
-              onBack={handleBack}
-            />
+            <Reader quiz={selectedQuiz} onBack={handleBack} />
           )}
 
-          {showExplanation && explanationMode && selectedQuiz && !showReader && (
-            
-            <Explanation
-              answerIsCorrect={answerIsCorrect}
-              explanation={
-                randomizedQuestions[currentQuestionIndex].explanation
-              }
-              currentQuestionIndex={currentQuestionIndex}
-              selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-              handleNext={handleNext}
-            />
-            
-                
-          )}
+          {showExplanation &&
+            explanationMode &&
+            selectedQuiz &&
+            !showReader && (
+              <Explanation
+                answerIsCorrect={answerIsCorrect}
+                explanation={
+                  randomizedQuestions[currentQuestionIndex].explanation
+                }
+                currentQuestionIndex={currentQuestionIndex}
+                selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+                handleNext={handleNext}
+              />
+            )}
 
           {selectedQuiz && !explanationMode && !showReader && (
             <>
@@ -272,8 +282,6 @@ export default function TabOneScreen() {
             </>
           )}
 
-          
-
           {scoreVisible && (
             <Score
               score={score}
@@ -281,16 +289,23 @@ export default function TabOneScreen() {
             />
           )}
         </View>
-         {(selectedQuiz || scoreVisible) && !showReader && (
-          <TouchableOpacity onPress={handleBack} style={{ marginLeft: 18, marginBottom: 20 }}>
-          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <Ionicons name="arrow-back" size={35} color="white" style={{ marginRight: 6 }} />
-            {/* <Text style={styles.buttonText}>{t('back')}</Text> */}
-          </View>
-        </TouchableOpacity>
+        {(selectedQuiz || scoreVisible) && !showReader && (
+          <TouchableOpacity
+            onPress={handleBack}
+            style={{ marginLeft: 18, marginBottom: 20 }}
+          >
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Ionicons
+                name="arrow-back"
+                size={35}
+                color="white"
+                style={{ marginRight: 6 }}
+              />
+              {/* <Text style={styles.buttonText}>{t('back')}</Text> */}
+            </View>
+          </TouchableOpacity>
         )}
       </SafeAreaLinearGradient>
-      
     </View>
   );
 }
