@@ -11941,5 +11941,77 @@
         "explanation": "Problem: Vereinfache $\\sqrt{48}$.\n\nLösung: Um die Quadratwurzel einer nicht-perfekten Quadratzahl zu vereinfachen, suchen wir nach der größten Quadratzahl, die ein Faktor der Zahl unter der Wurzel (dem Radikanden) ist. Eine perfekte Quadratzahl ist eine Zahl wie $4 (2^2), 9 (3^2), 16 (4^2), 25 (5^2)$, etc.\n\n1. **Finde die Faktoren des Radikanden (48):**\n * $48 = 1 \\mal 48$\n * $48 = 2 \\mal 24$\n * $48 = 3 \\mal 16$\n * $48 = 4 \\mal 12$\n * $48 = 6 \\mal 8$\n\n2. **Identifiziere die Faktoren der perfekten Quadratzahl:** Aus der Liste sind die Faktoren der perfekten Quadratzahl $1, 4, 16$.\n\n3. **Wähle den größten Faktor der Quadratzahl:** Der größte Faktor der Quadratzahl von $48$ ist $16$.\n\n4. **Schreibe den Radikanden mit diesem Faktor neu:**\n * $48 = 16 \\mal 3$.\n\n5. **Verwende die Eigenschaft $\\sqrt{a \\mal b} = \\sqrt{a} \\mal \\sqrt{b}$:**\n * $\\sqrt{48} = \\sqrt{16 \\mal 3} = \\sqrt{16} \\mal \\sqrt{3}$.\n\n6. **Vereinfache die Quadratwurzel der Quadratzahl:**\n * $\\sqrt{16} = 4$.\n\n7. **Schreibe den vereinfachten Ausdruck:**\n * $\\sqrt{48} = 4 \\mal \\sqrt{3} = 4\\sqrt{3}$.\n\nLösung: Die vereinfachte Form von $\\sqrt{48}$ ist $4\\sqrt{3}$."
       }
     ]
+  },
+  {
+    "name": "🔬 Experiment: Vulkan aus der Küche",
+    "noShuffle": true,
+    "questions": [
+      {
+        "question": "🌋 Willkommen zum Vulkan-Experiment! In diesem Experiment bauen wir einen kleinen Vulkan, der wirklich ausbricht! Bist du bereit, ein Wissenschaftler zu werden?\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 1 kleines Glas oder eine Plastikflasche\n• 3 Esslöffel Backpulver (Natron)\n• 1 Tasse Essig\n• Rote Lebensmittelfarbe (optional)\n• 1 Tropfen Spülmittel\n• Ein Tablett oder große Schüssel (zum Auffangen)\n\nWas ist die wichtigste Zutat für die chemische Reaktion in unserem Vulkan?",
+        "answers": [
+          {"answer": "Die Lebensmittelfarbe"},
+          {"answer": "Das Spülmittel"},
+          {"answer": "Backpulver und Essig zusammen"},
+          {"answer": "Das Tablett"}
+        ],
+        "answer": "Backpulver und Essig zusammen",
+        "explanation": "Super! ✨ Backpulver (Natriumhydrogencarbonat) und Essig (Essigsäure) sind die Hauptzutaten. Wenn sie sich treffen, passiert eine chemische Reaktion! Die Lebensmittelfarbe macht es nur bunt und das Spülmittel macht mehr Schaum - aber die eigentliche 'Magie' passiert durch Backpulver und Essig.\n\n🔬 Wissenschaft dahinter: Eine chemische Reaktion ist, wenn zwei Stoffe sich treffen und etwas Neues entsteht!"
+      },
+      {
+        "question": "📋 SCHRITT 2: Den Vulkan vorbereiten\n\nJetzt bauen wir unseren Vulkan auf:\n\n1. Stelle das Glas oder die Flasche in die Mitte des Tabletts\n2. Gib 3 Esslöffel Backpulver in das Glas\n3. Füge einen Tropfen Spülmittel hinzu\n4. Wenn du möchtest, gib ein paar Tropfen rote Lebensmittelfarbe dazu\n\n⚠️ WICHTIG: Gieße den Essig noch NICHT hinein!\n\nWarum stellen wir das Glas auf ein Tablett?",
+        "answers": [
+          {"answer": "Damit der Vulkan höher aussieht"},
+          {"answer": "Weil die Reaktion überlaufen wird und wir die Flüssigkeit auffangen müssen"},
+          {"answer": "Weil das Glas sonst umfällt"},
+          {"answer": "Das ist nicht wichtig"}
+        ],
+        "answer": "Weil die Reaktion überlaufen wird und wir die Flüssigkeit auffangen müssen",
+        "explanation": "Genau richtig! 🎯 Wenn der Vulkan 'ausbricht', entsteht viel Schaum, der über den Rand fließt. Das Tablett fängt alles auf, damit wir keine Sauerei machen!\n\n💡 Tipp: Echte Wissenschaftler denken immer voraus und bereiten sich auf alle Möglichkeiten vor. Das nennt man 'Versuchsaufbau'!"
+      },
+      {
+        "question": "📋 SCHRITT 3: Der große Ausbruch!\n\n🎬 Jetzt kommt der spannende Teil!\n\n1. Halte die Tasse mit Essig bereit\n2. Zähle laut: 3... 2... 1...\n3. Gieße den Essig schnell in das Glas mit dem Backpulver\n4. Tritt einen Schritt zurück und beobachte!\n\n🌋 JETZT AUSPROBIEREN! 🌋\n\nWas passiert, wenn du den Essig hinzugibst?",
+        "answers": [
+          {"answer": "Es sprudelt, schäumt und 'bricht aus' wie ein kleiner Vulkan!"},
+          {"answer": "Gar nichts passiert"},
+          {"answer": "Die Flüssigkeit wird nur bunt"},
+          {"answer": "Es wird ganz heiß"}
+        ],
+        "answer": "Es sprudelt, schäumt und 'bricht aus' wie ein kleiner Vulkan!",
+        "explanation": "WOW! 🎉 Hast du gesehen, wie es gesprudelt hat? Das war fantastisch!\n\n🔬 Was ist passiert?\nBackpulver (eine Base) + Essig (eine Säure) = Kohlendioxid-Gas (CO₂) + Wasser + Salz\n\nDas Gas (CO₂) macht all die Bläschen! Es ist das gleiche Gas, das in Sprudelwasser ist. Das Spülmittel hält die Bläschen zusammen und macht daraus Schaum!"
+      },
+      {
+        "question": "📋 SCHRITT 4: Wissenschaft verstehen\n\nDu hast gerade eine echte chemische Reaktion durchgeführt! 🧪\n\nBei einer chemischen Reaktion:\n• Treffen sich zwei oder mehr Stoffe\n• Es entsteht etwas Neues\n• Man kann es oft sehen, hören oder fühlen\n\nWelches Gas entsteht bei der Reaktion von Backpulver und Essig?",
+        "answers": [
+          {"answer": "Sauerstoff (O₂)"},
+          {"answer": "Kohlendioxid (CO₂)"},
+          {"answer": "Stickstoff (N₂)"},
+          {"answer": "Helium (He)"}
+        ],
+        "answer": "Kohlendioxid (CO₂)",
+        "explanation": "Richtig! 🌟 Kohlendioxid (CO₂) ist das Gas, das die Bläschen macht!\n\n🔬 Wusstest du?\n• CO₂ ist auch das Gas, das du ausatmest\n• Pflanzen brauchen CO₂ zum Leben\n• Es ist in Sprudel und Limonade\n• Bei echten Vulkanen kommt auch CO₂ heraus (neben vielen anderen Gasen)\n\nDu bist jetzt ein richtiger kleiner Chemiker! 👨‍🔬👩‍🔬"
+      },
+      {
+        "question": "📋 SCHRITT 5: Experimentieren und entdecken!\n\n🧪 Echte Wissenschaftler probieren verschiedene Dinge aus!\n\nVersuche das Experiment noch einmal mit diesen Änderungen:\n• Mehr Backpulver - Was passiert?\n• Warmer Essig statt kalter - Ist die Reaktion schneller?\n• Verschiedene Lebensmittelfarben\n\nWas passiert, wenn du mehr Backpulver verwendest?",
+        "answers": [
+          {"answer": "Die Reaktion wird schwächer"},
+          {"answer": "Die Reaktion wird stärker und es gibt mehr Schaum!"},
+          {"answer": "Die Farbe ändert sich"},
+          {"answer": "Es passiert genau das Gleiche"}
+        ],
+        "answer": "Die Reaktion wird stärker und es gibt mehr Schaum!",
+        "explanation": "Genau! 🎯 Mehr Backpulver = mehr Reaktion = mehr Schaum!\n\n🔬 Das nennt man in der Wissenschaft eine 'Variable ändern'. Echte Wissenschaftler machen das ständig, um zu verstehen, wie Dinge funktionieren!\n\n💡 Probiere auch:\n• Warmer Essig reagiert schneller (Wärme beschleunigt Reaktionen!)\n• Sehr viel Backpulver macht einen RIESIGEN Ausbruch!"
+      },
+      {
+        "question": "📋 SCHRITT 6: Aufräumen und reflektieren\n\n🧹 Zeit zum Aufräumen!\n\n1. Gieße die Flüssigkeit in den Ausguss (das ist sicher!)\n2. Spüle das Glas aus\n3. Wische das Tablett ab\n\n✨ Du hast heute gelernt:\n• Was eine chemische Reaktion ist\n• Dass Säuren und Basen zusammen Gas erzeugen\n• Wie man ein wissenschaftliches Experiment durchführt\n\nWarum ist es sicher, die Flüssigkeit in den Ausguss zu gießen?",
+        "answers": [
+          {"answer": "Weil die Reaktion giftige Stoffe erzeugt hat"},
+          {"answer": "Weil nach der Reaktion nur ungefährliches Salzwasser übrig bleibt"},
+          {"answer": "Weil der Essig noch gefährlich ist"},
+          {"answer": "Es ist nicht sicher, man muss es in den Müll werfen"}
+        ],
+        "answer": "Weil nach der Reaktion nur ungefährliches Salzwasser übrig bleibt",
+        "explanation": "Super verstanden! 🌟\n\nNach der Reaktion haben wir:\n• Wasser (H₂O)\n• Natriumacetat (ein harmloses Salz)\n• Das CO₂-Gas ist schon in die Luft entwichen\n\nAlles völlig ungefährlich! Das macht dieses Experiment perfekt für zu Hause.\n\n🎉 HERZLICHEN GLÜCKWUNSCH!\nDu hast das Vulkan-Experiment erfolgreich abgeschlossen! Du bist ein echter Nachwuchswissenschaftler! 👨‍🔬👩‍🔬🌋"
+      }
+    ]
   }
 ]
