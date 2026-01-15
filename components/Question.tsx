@@ -33,7 +33,8 @@ type QuestionProps = {
 };
 
 // Your improved renderRichText helper
-export function renderRichText(text: string): React.ReactNode[] { // Added return type
+export function renderRichText(text: string): React.ReactNode[] {
+  // Added return type
   const decoded = decode(text); // Ensure 'html-entities' is imported if not global
 
   const latexToUnicode: { [key: string]: string } = {
@@ -79,7 +80,9 @@ export function renderRichText(text: string): React.ReactNode[] { // Added retur
     // Text part before the math block
     if (match.index > lastIndex) {
       parts.push(
-        <Text key={`text-${lastIndex}`}>{inputText.substring(lastIndex, match.index)}</Text>
+        <Text key={`text-${lastIndex}`}>
+          {inputText.substring(lastIndex, match.index)}
+        </Text>,
       );
     }
 
@@ -90,7 +93,10 @@ export function renderRichText(text: string): React.ReactNode[] { // Added retur
     // This helps if your LaTeX source sometimes uses \text for non-math text within math mode.
     mathContent = mathContent.replace(/\\text\s*{([^}]*)}/g, '$1');
 
-    mathContent = mathContent.replace(/\\frac\s*{([^}]*)}\s*{([^}]*)}/g, '$1/$2');
+    mathContent = mathContent.replace(
+      /\\frac\s*{([^}]*)}\s*{([^}]*)}/g,
+      '$1/$2',
+    );
 
     // Replace LaTeX commands with Unicode
     // Iterate carefully to avoid issues with substrings (e.g. if one command is part of another)
@@ -116,14 +122,18 @@ export function renderRichText(text: string): React.ReactNode[] { // Added retur
         style={styles.mathText} // Use a dedicated style from StyleSheet
       >
         {mathContent}
-      </Text>
+      </Text>,
     );
     lastIndex = mathRegex.lastIndex;
   }
 
   // Text part after the last math block (if any)
   if (lastIndex < inputText.length) {
-    parts.push(<Text key={`text-${lastIndex}-end`}>{inputText.substring(lastIndex)}</Text>);
+    parts.push(
+      <Text key={`text-${lastIndex}-end`}>
+        {inputText.substring(lastIndex)}
+      </Text>,
+    );
   }
 
   // If no math blocks were found, return the original text in a Text component
@@ -198,8 +208,8 @@ export const Question: React.FC<QuestionProps> = ({
   useEffect(() => {
     return sound
       ? () => {
-        sound.unloadAsync();
-      }
+          sound.unloadAsync();
+        }
       : undefined;
   }, [sound]);
 
@@ -296,14 +306,22 @@ export const Question: React.FC<QuestionProps> = ({
   // TTS: Read aloud question and answers
   const handleReadAloud = () => {
     const questionText = typeof question === 'string' ? question : '';
-    const answersText = answers.map((a, i) => `${answerLabels[i]} ${a.answer}`).join('. ');
+    const answersText = answers
+      .map((a, i) => `${answerLabels[i]} ${a.answer}`)
+      .join('. ');
     const fullText = `${questionText}.${answersText}`;
     readAloud(fullText);
   };
 
   return (
     <ScrollView style={styles.contentContainer}>
-      <View style={{ flexDirection: 'column', marginBottom: 20, justifyContent: 'space-between' }}>
+      <View
+        style={{
+          flexDirection: 'column',
+          marginBottom: 20,
+          justifyContent: 'space-between',
+        }}
+      >
         <View style={[styles.card, styles.questionCard]}>
           <View style={styles.header}>
             <SettingsHeader
@@ -311,22 +329,35 @@ export const Question: React.FC<QuestionProps> = ({
               selectedQuizAnswersAmount={selectedQuizAnswersAmount}
             />
           </View>
-          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+          <View
+            style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+            }}
+          >
             <Text style={styles.questionText}>{renderRichText(question)}</Text>
             <TouchableOpacity
-                onPress={handleReadAloud}
-                style={{ marginLeft: 8, marginBottom: 8, alignSelf: 'flex-start', backgroundColor: 'transparent', borderRadius: 8, padding: 8 }}
-                accessibilityLabel="Read question and answers aloud"
-              >
-               <FontAwesome
-        name="comment"
-        size={30}
-        color="white"
-       style={{ marginLeft: 8, marginTop: -5 }}
-      />
-              </TouchableOpacity>
-                    </View>
+              onPress={handleReadAloud}
+              style={{
+                marginLeft: 8,
+                marginBottom: 8,
+                alignSelf: 'flex-start',
+                backgroundColor: 'transparent',
+                borderRadius: 8,
+                padding: 8,
+              }}
+              accessibilityLabel="Read question and answers aloud"
+            >
+              <FontAwesome
+                name="comment"
+                size={30}
+                color="white"
+                style={{ marginLeft: 8, marginTop: -5 }}
+              />
+            </TouchableOpacity>
           </View>
+        </View>
 
         {answers.map((answer, index) => (
           <Animated.View
@@ -396,7 +427,8 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'white',
   },
-  mathText: { // Style for parts rendered as math
+  mathText: {
+    // Style for parts rendered as math
     fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', // Common monospace fonts
     // backgroundColor: 'rgba(0,0,0,0.15)', // Slightly adjusted background
     // color: '#58a6ff', // Adjusted blue for potentially better contrast
@@ -432,8 +464,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: 'rgb(255, 255, 255)',
   },
-  contentContainer: {
-  },
+  contentContainer: {},
   card: {
     padding: 0,
     borderRadius: 8,

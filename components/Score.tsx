@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Dimensions, Easing, StyleSheet, Text, View } from 'react-native';
+import {
+  Animated,
+  Dimensions,
+  Easing,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import Happy from '../assets/images/happy.svg';
 import Sad from '../assets/images/sad.svg';
 import { useQuiz } from './Quizprovider';
@@ -22,7 +29,7 @@ const ConfettiPiece: React.FC<{
 
   useEffect(() => {
     const duration = 3000 + Math.random() * 2000;
-    
+
     Animated.sequence([
       Animated.delay(delay),
       Animated.parallel([
@@ -54,7 +61,7 @@ const ConfettiPiece: React.FC<{
               easing: Easing.inOut(Easing.sin),
               useNativeDriver: true,
             }),
-          ])
+          ]),
         ),
         // Rotate
         Animated.loop(
@@ -63,7 +70,7 @@ const ConfettiPiece: React.FC<{
             duration: 1000 + Math.random() * 1000,
             easing: Easing.linear,
             useNativeDriver: true,
-          })
+          }),
         ),
       ]),
     ]).start();
@@ -153,7 +160,7 @@ export const Score: React.FC<ScoreProps> = ({
 }) => {
   const { t } = useTranslation();
   const { flashcardsEnabled } = useQuiz();
-  
+
   // Animation refs
   const scaleAnim = useRef(new Animated.Value(0)).current;
   const bounceAnim = useRef(new Animated.Value(0)).current;
@@ -162,21 +169,33 @@ export const Score: React.FC<ScoreProps> = ({
   const headingScale = useRef(new Animated.Value(0.5)).current;
   const emojiRotate = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
-  
+
   const [displayScore, setDisplayScore] = useState(0);
   const isWinner = score === selectedQuizAnswersAmount;
   const isPerfect = isWinner;
-  
+
   // Generate confetti pieces
-  const confettiColors = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#95E1D3', '#F38181', '#AA96DA', '#FCBAD3', '#A8D8EA'];
-  const confettiPieces = isWinner ? Array.from({ length: 50 }, (_, i) => ({
-    id: i,
-    delay: Math.random() * 1000,
-    startX: Math.random() * SCREEN_WIDTH,
-    color: confettiColors[Math.floor(Math.random() * confettiColors.length)],
-    size: 8 + Math.random() * 8,
-    rotation: Math.random() * 360,
-  })) : [];
+  const confettiColors = [
+    '#FF6B6B',
+    '#4ECDC4',
+    '#FFE66D',
+    '#95E1D3',
+    '#F38181',
+    '#AA96DA',
+    '#FCBAD3',
+    '#A8D8EA',
+  ];
+  const confettiPieces = isWinner
+    ? Array.from({ length: 50 }, (_, i) => ({
+        id: i,
+        delay: Math.random() * 1000,
+        startX: Math.random() * SCREEN_WIDTH,
+        color:
+          confettiColors[Math.floor(Math.random() * confettiColors.length)],
+        size: 8 + Math.random() * 8,
+        rotation: Math.random() * 360,
+      }))
+    : [];
 
   useEffect(() => {
     // Entrance animation sequence
@@ -232,7 +251,7 @@ export const Score: React.FC<ScoreProps> = ({
             easing: Easing.inOut(Easing.sin),
             useNativeDriver: true,
           }),
-        ])
+        ]),
       ).start();
 
       // Emoji celebration rotation
@@ -253,7 +272,7 @@ export const Score: React.FC<ScoreProps> = ({
             duration: 200,
             useNativeDriver: true,
           }),
-        ])
+        ]),
       ).start();
     }
 
@@ -272,16 +291,17 @@ export const Score: React.FC<ScoreProps> = ({
   return (
     <View style={styles.scoreContainer}>
       {/* Confetti layer */}
-      {isWinner && confettiPieces.map((piece) => (
-        <ConfettiPiece
-          key={piece.id}
-          delay={piece.delay}
-          startX={piece.startX}
-          color={piece.color}
-          size={piece.size}
-          rotation={piece.rotation}
-        />
-      ))}
+      {isWinner &&
+        confettiPieces.map((piece) => (
+          <ConfettiPiece
+            key={piece.id}
+            delay={piece.delay}
+            startX={piece.startX}
+            color={piece.color}
+            size={piece.size}
+            rotation={piece.rotation}
+          />
+        ))}
 
       {/* Star bursts for perfect score */}
       {isPerfect && (
@@ -345,7 +365,9 @@ export const Score: React.FC<ScoreProps> = ({
           >
             <View style={[styles.scoreBox, isWinner && styles.winnerScoreBox]}>
               <Text style={styles.scoreLabel}>{t('score')}</Text>
-              <Text style={[styles.scoreText, isWinner && styles.winnerScoreText]}>
+              <Text
+                style={[styles.scoreText, isWinner && styles.winnerScoreText]}
+              >
                 {displayScore} / {selectedQuizAnswersAmount}
               </Text>
               {isWinner && (
@@ -389,7 +411,10 @@ export const Score: React.FC<ScoreProps> = ({
 };
 
 // Floating emoji component
-const FloatingEmoji: React.FC<{ emoji: string; delay: number }> = ({ emoji, delay }) => {
+const FloatingEmoji: React.FC<{ emoji: string; delay: number }> = ({
+  emoji,
+  delay,
+}) => {
   const translateY = useRef(new Animated.Value(0)).current;
   const opacity = useRef(new Animated.Value(0)).current;
 
@@ -416,7 +441,7 @@ const FloatingEmoji: React.FC<{ emoji: string; delay: number }> = ({ emoji, dela
               easing: Easing.inOut(Easing.sin),
               useNativeDriver: true,
             }),
-          ])
+          ]),
         ),
       ]),
     ]).start();
