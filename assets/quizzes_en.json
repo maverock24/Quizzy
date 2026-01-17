@@ -1,6 +1,679 @@
 [
   {
+  "name": "Advanced Finnish Language & Complex Grammar",
+  "category": "🌐 Language",
+  "questions": [
+    {
+      "question": "Which noun case is used to express 'without something' (e.g., 'without money')?",
+      "answers": [
+        {"answer": "Abessive (-tta / -ttä)"},
+        {"answer": "Adessive (-lla / -llä)"},
+        {"answer": "Ablative (-lta / -ltä)"},
+        {"answer": "Essive (-na / -nä)"}
+      ],
+      "answer": "Abessive (-tta / -ttä)",
+      "explanation": "The Abessive case expresses the lack of something. For example, 'raha' (money) becomes 'rahatta' (without money). In modern spoken Finnish, it is often replaced by the preposition 'ilman', but it remains essential in formal writing and specific idioms like 'huomiotta' (without notice)."
+    },
+    {
+      "question": "How does the 'Partitive' case function when expressing an ongoing action versus a completed one?",
+      "answers": [
+        {"answer": "The partitive is only used for plural objects."},
+        {"answer": "The partitive indicates an incomplete or ongoing action (irresultative), while the accusative/genitive indicates a completed action (resultative)."},
+        {"answer": "The partitive is used when you like something, and the nominative when you hate it."},
+        {"answer": "It has no relation to the completion of actions."}
+      ],
+      "answer": "The partitive indicates an incomplete or ongoing action (irresultative), while the accusative/genitive indicates a completed action (resultative).",
+      "explanation": "This is one of the most difficult aspects of Finnish. 'Luen kirjaa' (Partitive) means 'I am reading a book' (ongoing). 'Luen kirjan' (Genitive/Accusative) means 'I will read the (whole) book' (completed/resultative). The object case changes the meaning of the verb's aspect."
+    },
+    {
+      "question": "What is 'Vowel Harmony' in Finnish, and which vowels are considered 'neutral'?",
+      "answers": [
+        {"answer": "All vowels must be the same; there are no neutral vowels."},
+        {"answer": "Finnish words cannot mix back vowels (a, o, u) with front vowels (ä, ö, y); 'e' and 'i' are neutral and can appear with both groups."},
+        {"answer": "Vowels must rhyme at the end of every sentence."},
+        {"answer": "Neutral vowels are vowels that are never stressed."}
+      ],
+      "answer": "Finnish words cannot mix back vowels (a, o, u) with front vowels (ä, ö, y); 'e' and 'i' are neutral and can appear with both groups.",
+      "explanation": "Vowel harmony dictates the suffix of a word. If a word has 'a, o, u', the suffix must be the 'a' version (e.g., -ssa). If it has 'ä, ö, y', it uses the 'ä' version (e.g., -ssä). Because 'e' and 'i' are neutral, a word like 'Helsinki' (neutral vowels only) defaults to the front vowel suffix: 'Helsingissä'."
+    },
+    {
+      "question": "Translate the sentence: 'If I had money, I would buy a car.'",
+      "answers": [
+        {"answer": "Jos minulla on rahaa, ostan auton."},
+        {"answer": "Jos minulla olisi rahaa, ostaisin auton."},
+        {"answer": "Kun minulla oli rahaa, ostin auton."},
+        {"answer": "Minulla olisi rahaa ja auto."}
+      ],
+      "answer": "Jos minulla olisi rahaa, ostaisin auton.",
+      "explanation": "This uses the Conditional mood, marked by the infix '-isi-'. It is used for hypothetical situations. Note that both the condition (jos...) and the consequence (ostaisin...) require the '-isi-' marker in Finnish, unlike English which uses 'if I had... I would'."
+    },
+    {
+      "question": "What is the 'Passive' voice in Finnish primarily used for in spoken language?",
+      "answers": [
+        {"answer": "To describe things that happened to animals."},
+        {"answer": "To replace the 'we' (me) form of verbs."},
+        {"answer": "To speak more formally in business meetings."},
+        {"answer": "It is never used in spoken language."}
+      ],
+      "answer": "To replace the 'we' (me) form of verbs.",
+      "explanation": "In standard Finnish, 'we go' is 'me menemme'. However, in almost all spoken dialects, Finns use the passive form: 'me mennään'. This is one of the most immediate markers of 'puhekieli' (spoken language) vs 'kirjakieli' (written language)."
+    },
+    {
+      "question": "Which of these represents the 'Illative' case (moving into something) for the word 'maa' (country/land)?",
+      "answers": [
+        {"answer": "maassa"},
+        {"answer": "maalta"},
+        {"answer": "maahan"},
+        {"answer": "maaksi"}
+      ],
+      "answer": "maahan",
+      "explanation": "The Illative case indicates movement into a place. For many words, it involves lengthening the final vowel and adding 'n'. For 'maa', it becomes 'maahan'. 'Menen maahan' means 'I go into the country' or 'I go to the ground'."
+    },
+    {
+      "question": "What is the difference between 'veljen' and 'veljeni'?",
+      "answers": [
+        {"answer": "'veljen' is plural, 'veljeni' is singular."},
+        {"answer": "'veljen' means 'brother's' (genitive), while 'veljeni' means 'my brother' (nominative or genitive + possessive suffix)."},
+        {"answer": "There is no difference; the 'i' is optional."},
+        {"answer": "'veljeni' is used only for older brothers."}
+      ],
+      "answer": "'veljen' means 'brother's' (genitive), while 'veljeni' means 'my brother' (nominative or genitive + possessive suffix).",
+      "explanation": "Finnish uses possessive suffixes. '-ni' is the suffix for 'my'. In 'veljeni', the 'n' of the genitive often disappears before the suffix in nominative contexts, or stays hidden. 'Veljen koira' = 'The brother's dog'. 'Veljeni koira' = 'My brother's dog'."
+    },
+    {
+      "question": "The verb 'pitää' has multiple meanings depending on the case of the object. What does 'Pidän sinusta' mean?",
+      "answers": [
+        {"answer": "I hold you."},
+        {"answer": "I like you."},
+        {"answer": "I must you."},
+        {"answer": "I believe you."}
+      ],
+      "answer": "I like you.",
+      "explanation": "The verb 'pitää' requires the Elative case (-sta/-stä) to mean 'to like'. 'Pidän kahvista' = 'I like coffee'. If followed by an infinitive and a genitive subject, it means 'must': 'Minun pitää mennä' = 'I must go'."
+    },
+    {
+      "question": "Which ending is used for the 'Translative' case, expressing a change in state (e.g., 'to become something')?",
+      "answers": [
+        {"answer": "-ksi"},
+        {"answer": "-na"},
+        {"answer": "-ttan"},
+        {"answer": "-on"}
+      ],
+      "answer": "-ksi",
+      "explanation": "The Translative case is used for transformations. 'Hän tuli opettajaksi' = 'He became a teacher'. It is also used for time limits: 'perjantaiksi' = 'by/for Friday'."
+    },
+    {
+      "question": "In Consonant Gradation, what does the word 'reikä' (hole) change to in the Inessive case ('in the hole')?",
+      "answers": [
+        {"answer": "reikässä"},
+        {"answer": "reiässä"},
+        {"answer": "reijässä"},
+        {"answer": "reikässäni"}
+      ],
+      "answer": "reiässä",
+      "explanation": "This is a quantitative/qualitative change. In the 'k-gradation', a single 'k' often disappears entirely when the syllable becomes closed. Thus, 'reikä' becomes 'reiässä'."
+    },
+    {
+      "question": "What does the word 'kuitenkin' mean?",
+      "answers": [
+        {"answer": "Therefore"},
+        {"answer": "However / Nevertheless"},
+        {"answer": "Furthermore"},
+        {"answer": "Immediately"}
+      ],
+      "answer": "However / Nevertheless",
+      "explanation": "'Kuitenkin' is an essential conjunctive adverb used to show contrast, much like 'however' or 'anyway' in English."
+    },
+    {
+      "question": "How do you form the 'Comitative' case (meaning 'together with')?",
+      "answers": [
+        {"answer": "Add -ine followed by a possessive suffix."},
+        {"answer": "Add -ssa."},
+        {"answer": "Use the word 'kanssa' after the genitive case."},
+        {"answer": "Double the last consonant."}
+      ],
+      "answer": "Add -ine followed by a possessive suffix.",
+      "explanation": "The Comitative is rare and formal. It is always plural in form, even if the meaning is singular. 'Hän saapui lapsineen' = 'He arrived with his child/children'. In speech, most people just use the postposition 'kanssa'."
+    },
+    {
+      "question": "Which case is used to express a role or a temporary state (e.g., 'As a child...')?",
+      "answers": [
+        {"answer": "Partitive"},
+        {"answer": "Essive (-na / -nä)"},
+        {"answer": "Genitive"},
+        {"answer": "Inessive"}
+      ],
+      "answer": "Essive (-na / -nä)",
+      "explanation": "The Essive expresses a state of being. 'Lapsena' = 'As a child'. 'Tänä päivänä' = 'On this day' (used for specific days/dates)."
+    },
+    {
+      "question": "What is the 'Third Infinitive' (ma-infinitive) in the Illative form used for?",
+      "answers": [
+        {"answer": "To indicate the beginning of an action after verbs of movement (e.g., 'going to do')."},
+        {"answer": "To show that an action is impossible."},
+        {"answer": "To describe a past event."},
+        {"answer": "To command someone."}
+      ],
+      "answer": "To indicate the beginning of an action after verbs of movement (e.g., 'going to do').",
+      "explanation": "The '-maan/-mään' form follows verbs like 'mennä' (to go). 'Menen nukkumaan' = 'I am going to sleep'. 'Hän tuli auttamaan' = 'He came to help'."
+    },
+    {
+      "question": "What is the meaning of the suffix '-han / -hän' in the word 'Onpahan'?",
+      "answers": [
+        {"answer": "It marks a question."},
+        {"answer": "It is a softening or emphasizing clitic, often implying 'as you know' or adding a nuance of 'well, at least'."},
+        {"answer": "It indicates the future tense."},
+        {"answer": "It means 'without'."}
+      ],
+      "answer": "It is a softening or emphasizing clitic, often implying 'as you know' or adding a nuance of 'well, at least'.",
+      "explanation": "Finnish clitics like -han/-hän add subtle flavor. 'Tämä on kallis' (This is expensive). 'Tämähän on kallis' (This is expensive, as you can see/as we know)."
+    },
+    {
+      "question": "What is the plural partitive of 'talo' (house)?",
+      "answers": [
+        {"answer": "taloja"},
+        {"answer": "taloita"},
+        {"answer": "talojaa"},
+        {"answer": "talojaen"}
+      ],
+      "answer": "taloja",
+      "explanation": "The plural partitive is formed using '-ja/-jä' or '-ita/-itä'. For 'talo', the correct form is 'taloja' (e.g., 'Nään paljon taloja' - I see many houses)."
+    },
+    {
+      "question": "Which of these sentences uses the 'Necessative' construction correctly?",
+      "answers": [
+        {"answer": "Minä täytyy mennä."},
+        {"answer": "Minun täytyy mennä."},
+        {"answer": "Minua täytyy mennä."},
+        {"answer": "Minulla täytyy mennä."}
+      ],
+      "answer": "Minun täytyy mennä.",
+      "explanation": "In 'must' constructions ('täytyy', 'pitää', 'tulee'), the subject must be in the Genitive case ('minun'), and the verb is always in the 3rd person singular."
+    },
+    {
+      "question": "What is the 'Abessive' of 'onni' (happiness)?",
+      "answers": [
+        {"answer": "onnitta"},
+        {"answer": "onnetta"},
+        {"answer": "onnittaessa"},
+        {"answer": "onneton"}
+      ],
+      "answer": "onnetta",
+      "explanation": "To form the abessive of 'onni', we use the weak stem 'onne-' and add '-tta'. 'Onnetta' means 'without happiness'. (Note: 'onneton' is an adjective meaning 'unhappy')."
+    },
+    {
+      "question": "What is the function of the 'Instructive' case?",
+      "answers": [
+        {"answer": "To give instructions to a student."},
+        {"answer": "To express the means or manner by which an action is done (usually in the plural)."},
+        {"answer": "To show the location of a school."},
+        {"answer": "To indicate the future."}
+      ],
+      "answer": "To express the means or manner by which an action is done (usually in the plural).",
+      "explanation": "The Instructive case ending is '-n'. It is mostly found in fixed expressions: 'omin silmin' (with one's own eyes), 'jalan' (by foot)."
+    },
+    {
+      "question": "What happens to the stem of 'vesi' (water) when it is in the partitive case?",
+      "answers": [
+        {"answer": "vesiä"},
+        {"answer": "vettä"},
+        {"answer": "vesi"},
+        {"answer": "veden"}
+      ],
+      "answer": "vettä",
+      "explanation": "Nouns ending in '-si' often have an old 't' stem. 'Vesi' becomes 'vettä' in the partitive. In the genitive, it becomes 'veden'."
+    },
+    {
+      "question": "What does the potential mood ending '-ne-' indicate in 'Hän lienee kotona'?",
+      "answers": [
+        {"answer": "He is definitely at home."},
+        {"answer": "He might be / is likely at home."},
+        {"answer": "He was at home."},
+        {"answer": "He wants to be at home."}
+      ],
+      "answer": "He might be / is likely at home.",
+      "explanation": "The Potential mood expresses probability. It is rarely used in speech (where 'ehkä' is preferred) but common in journalism and literature."
+    },
+    {
+      "question": "What is 'Kausatiiviverbi' (Causative verb)?",
+      "answers": [
+        {"answer": "A verb that describes a cause of death."},
+        {"answer": "A verb derived from another to show that someone causes an action (e.g., 'syödä' -> 'syöttää')."},
+        {"answer": "A verb that is used only in the past tense."},
+        {"answer": "A verb that has no subject."}
+      ],
+      "answer": "A verb derived from another to show that someone causes an action (e.g., 'syödä' -> 'syöttää').",
+      "explanation": "Finnish is very productive with suffixes. 'Syödä' (to eat) becomes 'syöttää' (to feed/cause to eat). 'Nauraa' (to laugh) becomes 'naurattaa' (to make someone laugh)."
+    },
+    {
+      "question": "Which postposition requires the Partitive case instead of the Genitive?",
+      "answers": [
+        {"answer": "kanssa (with)"},
+        {"answer": "varten (for)"},
+        {"answer": "kohti (towards)"},
+        {"answer": "päällä (on top of)"}
+      ],
+      "answer": "kohti (towards)",
+      "explanation": "Most Finnish postpositions (like 'kanssa', 'päällä', 'edessä') follow a Genitive noun. However, 'kohti' (towards), 'vastaan' (against), and 'ennen' (before) often take the Partitive."
+    },
+    {
+      "question": "What is the meaning of 'itsekseni'?",
+      "answers": [
+        {"answer": "By myself / alone"},
+        {"answer": "Yourself"},
+        {"answer": "Automatically"},
+        {"answer": "Quickly"}
+      ],
+      "answer": "By myself / alone",
+      "explanation": "This is the reflexive pronoun 'itse' + the translative case suffix '-kse' + the 1st person possessive suffix '-ni'. It means 'to/by myself'."
+    },
+    {
+      "question": "In the word 'kirjoitteleminen', what is the root verb and what do the suffixes imply?",
+      "answers": [
+        {"answer": "Root: kirja. It means 'reading a book'."},
+        {"answer": "Root: kirjoittaa. The suffixes imply a frequentative/casual action turned into a noun (writing back and forth/scribbling)."},
+        {"answer": "Root: kirjo. It means 'coloring'."},
+        {"answer": "There is no root; it is a compound word."}
+      ],
+      "answer": "Root: kirjoittaa. The suffixes imply a frequentative/casual action turned into a noun (writing back and forth/scribbling).",
+      "explanation": "Finnish uses 'derivational' suffixes. 'Kirjoittaa' (to write) + '-ella' (frequentative: to do casually/repeatedly) + '-minen' (gerund: the act of doing). 'Kirjoitteleminen' = the act of casual/repeated writing."
+    },
+    {
+      "question": "What is the 'Allative' case used for?",
+      "answers": [
+        {"answer": "Moving onto a surface or giving to someone (-lle)."},
+        {"answer": "Moving away from a surface."},
+        {"answer": "Moving into a room."},
+        {"answer": "Staying on a surface."}
+      ],
+      "answer": "Moving onto a surface or giving to someone (-lle).",
+      "explanation": "The Allative case (-lle) is the external counterpart to the Illative. 'Pöydälle' = 'onto the table'. It is also the case for the indirect object: 'Minulle' = 'to me'."
+    },
+    {
+      "question": "How do you form the plural of a word ending in '-nen' like 'nainen' (woman)?",
+      "answers": [
+        {"answer": "naisat"},
+        {"answer": "naiset"},
+        {"answer": "nainenit"},
+        {"answer": "naisimet"}
+      ],
+      "answer": "naiset",
+      "explanation": "Words ending in '-nen' have a stem ending in '-se-'. 'Nainen' -> 'naise-'. Adding the plural marker '-t' results in 'naiset'."
+    },
+    {
+      "question": "What is 'Aikka' or 'Aika' when used as an adverb before an adjective (e.g., 'aika hyvä')?",
+      "answers": [
+        {"answer": "Time"},
+        {"answer": "Very"},
+        {"answer": "Quite / Rather"},
+        {"answer": "Never"}
+      ],
+      "answer": "Quite / Rather",
+      "explanation": "While 'aika' means 'time', as an adverb it means 'quite' or 'pretty'. 'Aika hyvä' = 'pretty good'."
+    },
+    {
+      "question": "What is the meaning of the verb 'viitsiä'?",
+      "answers": [
+        {"answer": "To be able to"},
+        {"answer": "To bother to / to have the energy/will to do something perceived as an effort."},
+        {"answer": "To hate doing something."},
+        {"answer": "To understand."}
+      ],
+      "answer": "To bother to / to have the energy/will to do something perceived as an effort.",
+      "explanation": "'Viitsiä' is a unique Finnish verb. 'En viitsi' means 'I can't be bothered' or 'I don't feel like putting in the effort'."
+    },
+    {
+      "question": "Which of these is the correct way to say 'In my opinion' using the ablative case?",
+      "answers": [
+        {"answer": "Minun mielestäni"},
+        {"answer": "Minulta mielestä"},
+        {"answer": "Mielessäni"},
+        {"answer": "Mieltäni"}
+      ],
+      "answer": "Minun mielestäni",
+      "explanation": "The Elative case (-sta) of 'mieli' (mind) + possessive suffix is the standard way to say 'in my opinion'. Literally: 'from my mind'."
+    },
+    {
+      "question": "What is the 'Comitative' case ending?",
+      "answers": [
+        {"answer": "-ine"},
+        {"answer": "-ineen"},
+        {"answer": "-ttat"},
+        {"answer": "-neen"}
+      ],
+      "answer": "-ine",
+      "explanation": "The Comitative ending is '-ine'. It must always be followed by a possessive suffix (e.g., -ineen, -ineni). Example: 'koirineen' (with his/her dogs)."
+    },
+    {
+      "question": "What does 'Saisinko...' mean?",
+      "answers": [
+        {"answer": "I got it."},
+        {"answer": "Could I have...?"},
+        {"answer": "I will get it."},
+        {"answer": "You should have it."}
+      ],
+      "answer": "Could I have...?",
+      "explanation": "This is 'saada' (to get/have) + conditional '-isi-' + question clitic '-ko'. It is the polite way to ask for something in a shop or restaurant."
+    },
+    {
+      "question": "What is 'Sanakirja'?",
+      "answers": [
+        {"answer": "A message book."},
+        {"answer": "A dictionary."},
+        {"answer": "A novel."},
+        {"answer": "A grammar book."}
+      ],
+      "answer": "A dictionary.",
+      "explanation": "'Sana' (word) + 'kirja' (book) = wordbook, or dictionary."
+    },
+    {
+      "question": "What is the plural of 'mies' (man)?",
+      "answers": [
+        {"answer": "miest"},
+        {"answer": "miehet"},
+        {"answer": "miehetat"},
+        {"answer": "miesit"}
+      ],
+      "answer": "miehet",
+      "explanation": "The word 'mies' has a stem change to 'miehe-'. The plural is 'miehet'."
+    },
+    {
+      "question": "What is the difference between 'kaupungissa' and 'kaupunkiin'?",
+      "answers": [
+        {"answer": "'kaupungissa' is 'in the city', 'kaupunkiin' is 'into the city'."},
+        {"answer": "'kaupungissa' is 'from the city', 'kaupunkiin' is 'in the city'."},
+        {"answer": "There is no difference."},
+        {"answer": "One is for big cities, the other for small towns."}
+      ],
+      "answer": "'kaupungissa' is 'in the city', 'kaupunkiin' is 'into the city'.",
+      "explanation": "'kaupungissa' uses the Inessive case (location), while 'kaupunkiin' uses the Illative case (movement)."
+    },
+    {
+      "question": "What is the 'Ablative' case (-lta / -ltä) primarily used for?",
+      "answers": [
+        {"answer": "Moving away from a surface or from someone."},
+        {"answer": "Moving onto a surface."},
+        {"answer": "Staying on a surface."},
+        {"answer": "Moving out of a room."}
+      ],
+      "answer": "Moving away from a surface or from someone.",
+      "explanation": "The Ablative is the external counterpart to the Elative. 'Pöydältä' = 'from off the table'. 'Minulta' = 'from me'."
+    },
+    {
+      "question": "What is the 'J-type' plural genitive of 'talo'?",
+      "answers": [
+        {"answer": "talojen"},
+        {"answer": "taloiden"},
+        {"answer": "taloen"},
+        {"answer": "talon"}
+      ],
+      "answer": "talojen",
+      "explanation": "The plural genitive for words like 'talo' is formed with '-jen'. 'Talojen katot' = 'The houses' roofs'."
+    },
+    {
+      "question": "What does the verb 'pärjätä' mean?",
+      "answers": [
+        {"answer": "To win"},
+        {"answer": "To get by / to cope / to manage."},
+        {"answer": "To lose"},
+        {"answer": "To travel"}
+      ],
+      "answer": "To get by / to cope / to manage.",
+      "explanation": "'Pärjätä' is a very common verb used to describe surviving or managing a situation. 'Pärjään kyllä' = 'I'll manage/I'll be fine'."
+    },
+    {
+      "question": "What is 'Maarianhamina'?",
+      "answers": [
+        {"answer": "A traditional Finnish food."},
+        {"answer": "The capital of the Åland Islands."},
+        {"answer": "A famous Finnish poem."},
+        {"answer": "The word for 'Northern Lights'."}
+      ],
+      "answer": "The capital of the Åland Islands.",
+      "explanation": "Maarianhamina (Mariehamn) is the only city in the autonomous, Swedish-speaking Åland region of Finland."
+    },
+    {
+      "question": "What is 'Löyly'?",
+      "answers": [
+        {"answer": "A type of wooden bucket."},
+        {"answer": "The steam created by throwing water on hot sauna stones."},
+        {"answer": "A Finnish folk dance."},
+        {"answer": "The feeling of cold after a swim."}
+      ],
+      "answer": "The steam created by throwing water on hot sauna stones.",
+      "explanation": "Sauna culture is central to Finland, and 'löyly' is the specific word for that vital steam. It also metaphorically refers to the 'spirit' or 'atmosphere' of the sauna session."
+    }
+  ]
+},
+{
+  "name": "Finnish Mastery: The Expert Challenge",
+  "category": "🌐 Language",
+  "questions": [
+    {
+      "question": "Which suffix is used to indicate the 'Plural Genitive' for words belonging to the 'Koira' (dog) type?",
+      "answers": [
+        {"answer": "koirien"},
+        {"answer": "koiriennen"},
+        {"answer": "koirienat"},
+        {"answer": "koirojen"}
+      ],
+      "answer": "koirien",
+      "explanation": "Finnish plural genitives are notoriously complex. For words ending in '-a' or '-ä' with two syllables (like koira), the ending is usually '-ien'. However, if the first vowel is 'o' or 'u', it might change to '-ojen' (e.g., 'talo' -> 'talojen')."
+    },
+    {
+      "question": "What is the 'Illative Plural' of the word 'käsi' (hand)?",
+      "answers": [
+        {"answer": "käsihin"},
+        {"answer": "käsiin"},
+        {"answer": "kädessä"},
+        {"answer": "käsille"}
+      ],
+      "answer": "käsiin",
+      "explanation": "The Illative plural involves the plural marker 'i' and the illative ending. For 'käsi', the stem becomes 'käsi-' and the ending results in 'käsiin'. Note the difference: 'käteen' (into the hand) vs 'käsiin' (into the hands)."
+    },
+    {
+      "question": "In the sentence 'En ole nähnyt häntä pitkään aikaan', what is the grammatical role of the word 'häntä'?",
+      "answers": [
+        {"answer": "Nominative subject"},
+        {"answer": "Partitive object"},
+        {"answer": "Genitive possessor"},
+        {"answer": "Accusative completion"}
+      ],
+      "answer": "Partitive object",
+      "explanation": "Negative sentences in Finnish *always* require the object to be in the Partitive case. Even if the action would be completed in a positive sentence, the presence of 'en' (not) forces 'hän' (him/her) into the partitive form 'häntä'."
+    },
+    {
+      "question": "What does the '2nd Infinitive' in the Inessive case indicate (e.g., 'syödessä')?",
+      "answers": [
+        {"answer": "While doing an action (simultaneity)."},
+        {"answer": "In order to do something (purpose)."},
+        {"answer": "After doing something (sequence)."},
+        {"answer": "Because of doing something (cause)."}
+      ],
+      "answer": "While doing an action (simultaneity).",
+      "explanation": "The Inessive of the 2nd infinitive corresponds to the English 'while' or 'when' construction. 'Syödessäni' = 'While I was eating'. 'Puhuessa' = 'While speaking'."
+    },
+    {
+      "question": "Which word is the correct comparative form of 'pitkä' (long/tall)?",
+      "answers": [
+        {"answer": "pitkämpi"},
+        {"answer": "pitempi"},
+        {"answer": "pitkin"},
+        {"answer": "pitemmän"}
+      ],
+      "answer": "pitempi",
+      "explanation": "While 'pitkämpi' is sometimes heard, 'pitempi' is the standard comparative form. The 'k' undergoes gradation and disappears in many forms of this adjective's comparison."
+    },
+    {
+      "question": "What is the meaning of the frequentative verb 'lueskella' compared to 'lukea'?",
+      "answers": [
+        {"answer": "To read very fast."},
+        {"answer": "To read for a long time."},
+        {"answer": "To read casually, aimlessly, or every now and then."},
+        {"answer": "To read for someone else."}
+      ],
+      "answer": "To read casually, aimlessly, or every now and then.",
+      "explanation": "The suffix '-skella' creates frequentative verbs that imply a casual or repetitive nature. 'Lukea' is 'to read' (focused), while 'lueskella' is 'to browse' or 'to read a bit here and there'."
+    },
+    {
+      "question": "Translate the phrase: 'I was just about to go.'",
+      "answers": [
+        {"answer": "Olin menossa."},
+        {"answer": "Olin juuri lähdössä."},
+        {"answer": "Minun täytyy mennä."},
+        {"answer": "Olin mennyt jo."}
+      ],
+      "answer": "Olin juuri lähdössä.",
+      "explanation": "This uses the 'Inessive of the 3rd Infinitive' (lähdössä). It indicates that someone is currently in the state of performing or being about to perform an action. 'Juuri' adds the 'just' nuance."
+    },
+    {
+      "question": "Which pronoun is used as the relative pronoun 'which/who' in Finnish?",
+      "answers": [
+        {"answer": "mikä"},
+        {"answer": "kuka"},
+        {"answer": "joka"},
+        {"answer": "se"}
+      ],
+      "answer": "joka",
+      "explanation": "'Joka' refers to the immediately preceding word (the antecedent). 'Mikä' is also used as a relative pronoun, but usually when referring to a whole sentence or an indefinite pronoun."
+    },
+    {
+      "question": "What is the 'Abessive' form of the word 'kenkä' (shoe)?",
+      "answers": [
+        {"answer": "kenkättä"},
+        {"answer": "kengättä"},
+        {"answer": "kenkiittä"},
+        {"answer": "kengältä"}
+      ],
+      "answer": "kengättä",
+      "explanation": "To form the Abessive, you use the weak stem (where 'nk' becomes 'ng') and add '-ttä'. 'Hän kulki kengättä' = 'He walked without a shoe'."
+    },
+    {
+      "question": "What does the particle '-pa / -pä' add to a sentence like 'Onpa täällä hienoa!'?",
+      "answers": [
+        {"answer": "It turns it into a question."},
+        {"answer": "It adds emphasis or expresses surprise/admiration."},
+        {"answer": "It makes the sentence negative."},
+        {"answer": "It indicates a future event."}
+      ],
+      "answer": "It adds emphasis or expresses surprise/admiration.",
+      "explanation": "The clitic '-pa/-pä' is often used for exclamations. 'On hienoa' (It is nice) vs 'Onpa hienoa!' (Wow, it is nice!)."
+    },
+    {
+      "question": "What is the 'Partitive Plural' of 'vesi' (water)?",
+      "answers": [
+        {"answer": "vesiä"},
+        {"answer": "vesiäinen"},
+        {"answer": "vettä"},
+        {"answer": "vesillä"}
+      ],
+      "answer": "vesiä",
+      "explanation": "The singular partitive is 'vettä', but the plural partitive is 'vesiä'. This is often used in contexts like 'Suomen vesiä' (The waters of Finland)."
+    },
+    {
+      "question": "In the 'minun on pakko' construction, why is the verb in the 3rd person singular?",
+      "answers": [
+        {"answer": "Because 'pakko' is the subject."},
+        {"answer": "Because Finnish verbs always default to 3rd person when the subject is genitive."},
+        {"answer": "It is a mistake; it should be 1st person."},
+        {"answer": "Because it refers to the weather."}
+      ],
+      "answer": "Because Finnish verbs always default to 3rd person when the subject is genitive.",
+      "explanation": "In impersonal constructions where the logical subject is in the genitive (minun, sinun, jne.), the verb 'olla' (to be) or any auxiliary verb is always in the 3rd person singular form ('on', 'täytyy', 'pitää')."
+    },
+    {
+      "question": "Which of these is a 'Reflexive' verb?",
+      "answers": [
+        {"answer": "peseytyä"},
+        {"answer": "pestä"},
+        {"answer": "pestään"},
+        {"answer": "peset"}
+      ],
+      "answer": "peseytyä",
+      "explanation": "The suffix '-ytyä/-ytyä' often indicates a reflexive action (doing something to oneself). 'Pestä' = to wash (something), 'Peseytyä' = to wash oneself."
+    },
+    {
+      "question": "What is the difference between 'kaikki' and 'koko'?",
+      "answers": [
+        {"answer": "'Kaikki' means 'all' (count), 'koko' means 'whole' (entirety of one thing)."},
+        {"answer": "'Koko' is for people, 'kaikki' is for things."},
+        {"answer": "They are exactly the same."},
+        {"answer": "'Kaikki' is plural, 'koko' is singular only."}
+      ],
+      "answer": "'Kaikki' means 'all' (count), 'koko' means 'whole' (entirety of one thing).",
+      "explanation": "'Kaikki ihmiset' = 'All people'. 'Koko päivä' = 'The whole day'. Using them correctly is key for natural-sounding Finnish."
+    },
+    {
+      "question": "What is the 'Translative' form of 'iloinen' (happy)?",
+      "answers": [
+        {"answer": "iloiseksi"},
+        {"answer": "iloiseen"},
+        {"answer": "iloisena"},
+        {"answer": "iloisella"}
+      ],
+      "answer": "iloiseksi",
+      "explanation": "Adjectives ending in '-nen' change to '-se-'. The Translative ending is '-ksi'. 'Hän tuli iloiseksi' = 'He became happy'."
+    },
+    {
+      "question": "What is the 'Superlative' of 'hyvä' (good)?",
+      "answers": [
+        {"answer": "hyvin"},
+        {"answer": "parempi"},
+        {"answer": "paras"},
+        {"answer": "parhain"}
+      ],
+      "answer": "paras",
+      "explanation": "'Hyvä' (good), 'parempi' (better), 'paras' (best). 'Parhain' is an alternative form often used in more poetic or specific contexts, but 'paras' is the standard."
+    },
+    {
+      "question": "Which case is used with the verb 'auttaa' (to help)?",
+      "answers": [
+        {"answer": "Genitive"},
+        {"answer": "Partitive"},
+        {"answer": "Allative"},
+        {"answer": "Ablative"}
+      ],
+      "answer": "Partitive",
+      "explanation": "Some verbs strictly require a specific case. 'Auttaa' always takes the partitive. 'Autan sinua' = 'I help you' (not 'sinulle' or 'sinut')."
+    },
+    {
+      "question": "What is the meaning of the prefix 'epä-'?",
+      "answers": [
+        {"answer": "Very"},
+        {"answer": "Again"},
+        {"answer": "Un- / Non- (Negation)"},
+        {"answer": "Together"}
+      ],
+      "answer": "Un- / Non- (Negation)",
+      "explanation": "'Epä-' is the most common prefix for creating opposites. 'Onni' (luck) -> 'epäonni' (misfortune). 'Rehellinen' (honest) -> 'epärehellinen' (dishonest)."
+    },
+    {
+      "question": "How do you say 'I've been working for five hours'?",
+      "answers": [
+        {"answer": "Olen työskennellyt viisi tuntia."},
+        {"answer": "Työskentelin viisi tuntia."},
+        {"answer": "Olin työskennellyt viisi tuntia."},
+        {"answer": "Työskentelen viisi tuntia."}
+      ],
+      "answer": "Olen työskennellyt viisi tuntia.",
+      "explanation": "This requires the Perfect tense (have worked), which is formed with 'olla' + the past participle. It indicates an action that started in the past and still has relevance or continues."
+    },
+    {
+      "question": "What is the 'Essive Plural' of 'lapsi' (child)?",
+      "answers": [
+        {"answer": "lapsina"},
+        {"answer": "lapsinä"},
+        {"answer": "lapsinait"},
+        {"answer": "lapsilla"}
+      ],
+      "answer": "lapsina",
+      "explanation": "The Essive plural 'lapsina' is used in phrases like 'lapsina me leimme...' (As children, we used to play...)."
+    }
+  ]
+},
+  {
   "name": "Global Finance & International Trade 101",
+  "category": "💰 Finance & Economics",
   "questions": [
     {
       "question": "What is a 'Government Bond' (Staatsanleihe)?",
