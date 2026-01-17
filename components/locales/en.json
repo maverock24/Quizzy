@@ -40,5 +40,6 @@
   "reader_mode": "Reader Mode",
   "reader_mode_desc": "Enable text-to-speech reading of questions and answers",
   "stop": "Stop",
-  "correct_answer_is": "The correct answer is"
+  "correct_answer_is": "The correct answer is",
+  "other": "Other"
 }

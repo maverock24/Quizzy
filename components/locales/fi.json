@@ -40,5 +40,6 @@
   "reader_mode": "Lukutila",
   "reader_mode_desc": "Ota käyttöön tekstistä puheeksi -lukeminen kysymyksille ja vastauksille",
   "stop": "Pysäytä",
-  "correct_answer_is": "Oikea vastaus on"
+  "correct_answer_is": "Oikea vastaus on",
+  "other": "Muut"
 }
