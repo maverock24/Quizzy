@@ -1,5 +1,340 @@
 [
   {
+  "name": "Mastering GitHub Copilot & AI Agents for Fullstack Developers",
+  "questions": [
+    {
+      "question": "Which slash command is specifically designed to help you understand a complex piece of code or a specific file within your project?",
+      "answers": [
+        {"answer": "/explain"},
+        {"answer": "/fix"},
+        {"answer": "/help"},
+        {"answer": "/doc"}
+      ],
+      "answer": "/explain",
+      "explanation": "The `/explain` command triggers Copilot to analyze the selected code or the active file and provide a natural language breakdown of its logic, purpose, and dependencies. It is an essential tool for onboarding to legacy codebases or understanding complex algorithms."
+    },
+    {
+      "question": "What is the primary function of the `@workspace` agent in GitHub Copilot Chat?",
+      "answers": [
+        {"answer": "To search for code across all public GitHub repositories."},
+        {"answer": "To perform cross-file analysis and answer questions about the entire project structure and inter-module logic."},
+        {"answer": "To manage VS Code extensions and themes."},
+        {"answer": "To run shell scripts in the integrated terminal automatically."}
+      ],
+      "answer": "To perform cross-file analysis and answer questions about the entire project structure and inter-module logic.",
+      "explanation": "The `@workspace` agent indexes your local repository, allowing it to provide context-aware answers that span multiple files. It can answer questions like 'Where is the database connection configured?' or 'How do these two services interact?'."
+    },
+    {
+      "question": "To provide persistent, project-specific rules for Copilot (e.g., 'Always use TypeScript interfaces instead of types'), where should you store the custom instructions file?",
+      "answers": [
+        {"answer": "In `package.json` under the 'copilot' key."},
+        {"answer": "In a file named `.github/copilot-instructions.md` at the root of the workspace."},
+        {"answer": "In the IDE's global `settings.json`."},
+        {"answer": "In a hidden file named `.copilot-ignore`."}
+      ],
+      "answer": "In a file named `.github/copilot-instructions.md` at the root of the workspace.",
+      "explanation": "GitHub Copilot automatically detects `.github/copilot-instructions.md`. Instructions provided here act as a 'system prompt' for all chat requests in that workspace, ensuring suggestions follow your team's specific coding standards and architectural preferences."
+    },
+    {
+      "question": "How can you manually add a specific file to the context of a Copilot Chat conversation without opening the file in the editor?",
+      "answers": [
+        {"answer": "Drag and drop the file into the chat window."},
+        {"answer": "Type '#' followed by the file name in the chat input (e.g., #app.ts)."},
+        {"answer": "Use the /include-file command."},
+        {"answer": "Copy and paste the file path into the prompt."}
+      ],
+      "answer": "Type '#' followed by the file name in the chat input (e.g., #app.ts).",
+      "explanation": "The `#` symbol triggers 'Chat Variables' or context mentions. You can use it to reference specific files, folders, or even terminal output directly in your prompt to give the AI the exact context it needs to answer correctly."
+    },
+    {
+      "question": "Which feature allows a developer to accept an AI suggestion word-by-word or line-by-line rather than the entire block?",
+      "answers": [
+        {"answer": "The /partial-accept command."},
+        {"answer": "Ghost text partial acceptance (typically Cmd/Ctrl + Right Arrow)."},
+        {"answer": "The 'Drafts' mode in Copilot Chat."},
+        {"answer": "Holding Shift while pressing Tab."}
+      ],
+      "answer": "Ghost text partial acceptance (typically Cmd/Ctrl + Right Arrow).",
+      "explanation": "Partial acceptance is a best practice for maintaining control over your code. Using the arrow key shortcut (Cmd/Ctrl + Right Arrow in most IDEs) allows you to nudge the AI's suggestion forward incrementally, ensuring you only commit code you have reviewed."
+    },
+    {
+      "question": "What is the function of the `@terminal` agent in Copilot Chat?",
+      "answers": [
+        {"answer": "To automatically execute all suggested commands in the shell."},
+        {"answer": "To help explain terminal errors and generate shell commands based on natural language descriptions."},
+        {"answer": "To monitor network traffic and API responses."},
+        {"answer": "To act as a remote SSH client for cloud servers."}
+      ],
+      "answer": "To help explain terminal errors and generate shell commands based on natural language descriptions.",
+      "explanation": "The `@terminal` agent is fine-tuned for CLI tasks. It can debug cryptic exit codes, suggest `git` commands, or write complex `grep` or `find` one-liners based on your requests."
+    },
+    {
+      "question": "When using Copilot to write unit tests for a Node.js service, which command is the most efficient starting point?",
+      "answers": [
+        {"answer": "/new tests"},
+        {"answer": "/tests"},
+        {"answer": "/explain --test-cases"},
+        {"answer": "/fix tests"}
+      ],
+      "answer": "/tests",
+      "explanation": "The `/tests` command prompts Copilot to generate test cases for the selected code or active file, usually following the testing framework (Jest, Mocha, etc.) already used in your project."
+    },
+    {
+      "question": "What is a 'Best Practice' for Prompt Engineering when asking Copilot to refactor a React component?",
+      "answers": [
+        {"answer": "Ask for the whole refactor in one single prompt to save time."},
+        {"answer": "Use 'Iterative Refinement'—ask for small changes, verify them, and build the solution conversationally."},
+        {"answer": "Delete all existing comments so the AI isn't distracted."},
+        {"answer": "Avoid using technical terms like 'Memoization' or 'Prop Drilling'."}
+      ],
+      "answer": "Use 'Iterative Refinement'—ask for small changes, verify them, and build the solution conversationally.",
+      "explanation": "LLMs perform significantly better when tasks are broken down. Refining the code through a dialogue (e.g., 'Now convert this to a functional component', then 'Now add error handling') leads to more accurate and maintainable results."
+    },
+    {
+      "question": "What is the purpose of the `.instructions.md` files (using the plural format or glob patterns)?",
+      "answers": [
+        {"answer": "They are ignored by Copilot and used only for human documentation."},
+        {"answer": "They allow for conditional, folder-specific, or language-specific instructions based on glob patterns defined in the file header."},
+        {"answer": "They store the user's personal API keys for cloud services."},
+        {"answer": "They are used to train local models on your hardware."}
+      ],
+      "answer": "They allow for conditional, folder-specific, or language-specific instructions based on glob patterns defined in the file header.",
+      "explanation": "While `copilot-instructions.md` is global, you can use `.instructions.md` files with YAML frontmatter to apply specific rules only to certain paths (e.g., 'apply to `**/*.test.ts`'), which is ideal for multi-package monorepos."
+    },
+    {
+      "question": "Which Copilot Chat variable allows you to include the contents of the integrated terminal's current selection into your prompt?",
+      "answers": [
+        {"answer": "#terminal"},
+        {"answer": "#terminalSelection"},
+        {"answer": "#console"},
+        {"answer": "#output"}
+      ],
+      "answer": "#terminalSelection",
+      "explanation": "Typing `#terminalSelection` allows Copilot to 'see' specific error logs or command outputs you've highlighted in your terminal, making it much faster to debug environment issues."
+    },
+    {
+      "question": "What happens when you use the `/fix` command on a block of code?",
+      "answers": [
+        {"answer": "Copilot automatically commits a fix to your current branch."},
+        {"answer": "Copilot analyzes the code for potential bugs or errors and proposes a corrected version in the chat panel."},
+        {"answer": "Copilot runs `eslint --fix` on the entire project."},
+        {"answer": "Copilot deletes the erroneous code and waits for you to rewrite it."}
+      ],
+      "answer": "Copilot analyzes the code for potential bugs or errors and proposes a corrected version in the chat panel.",
+      "explanation": "The `/fix` command is specifically tuned for debugging. It looks for syntax errors, logical flaws, and runtime issues in the provided context and offers a diff-like suggestion to resolve them."
+    },
+    {
+      "question": "When working on a project like QOCO's MROTools, which frequently interacts with cloud metadata, what is the best way to use the `@azure` (or similar cloud) agent?",
+      "answers": [
+        {"answer": "To ask for the current billing status of your cloud account."},
+        {"answer": "To ask questions about cloud service configuration, troubleshooting, or CLI commands without leaving the IDE."},
+        {"answer": "To automatically deploy code to production servers."},
+        {"answer": "To bypass organizational security firewalls."}
+      ],
+      "answer": "To ask questions about cloud service configuration, troubleshooting, or CLI commands without leaving the IDE.",
+      "explanation": "Cloud agents like `@azure` integrate documentation and best practices directly into the chat, allowing you to ask things like '@azure How do I configure a managed identity for this function?' directly in context."
+    },
+    {
+      "question": "In the 'Shared Responsibility Model' for AI security, what is the developer's primary responsibility?",
+      "answers": [
+        {"answer": "Maintaining the underlying hardware of the AI server."},
+        {"answer": "Ensuring that secrets (API keys, passwords) are not included in prompts or committed files visible to the AI."},
+        {"answer": "Updating the weights of the Large Language Model."},
+        {"answer": "Providing the electrical power for the AI inference."}
+      ],
+      "answer": "Ensuring that secrets (API keys, passwords) are not included in prompts or committed files visible to the AI.",
+      "explanation": "While tools like Copilot have filters, developers are responsible for the data they provide as context. Including real secrets in code or prompts is a critical security risk as they could be logged or inadvertently leaked."
+    },
+    {
+      "question": "What is the primary benefit of using the `/new` command in Copilot Chat?",
+      "answers": [
+        {"answer": "It deletes all files in the current folder to start fresh."},
+        {"answer": "It scaffolds a new file or project based on your description, often suggesting the folder structure and initial boilerplate code."},
+        {"answer": "It creates a new GitHub account for the user."},
+        {"answer": "It installs the latest version of Node.js."}
+      ],
+      "answer": "It scaffolds a new file or project based on your description, often suggesting the folder structure and initial boilerplate code.",
+      "explanation": "The `/new` command is a powerful starting point for new modules. You can describe a feature, and Copilot will suggest the necessary files and initial implementation, saving significant setup time."
+    },
+    {
+      "question": "How does Copilot's 'Ghost Text' autocomplete decide what to suggest in the editor?",
+      "answers": [
+        {"answer": "It only looks at the current line you are typing."},
+        {"answer": "It uses the entire file and other open tabs as context to predict the most likely next block of code."},
+        {"answer": "It randomly picks snippets from popular open-source projects."},
+        {"answer": "It queries Google Search for every keystroke."}
+      ],
+      "answer": "It uses the entire file and other open tabs as context to predict the most likely next block of code.",
+      "explanation": "Ghost text relies on local context. By looking at open tabs and the code surrounding the cursor, Copilot can accurately predict function bodies, imports, and data structures tailored to your project's style."
+    },
+    {
+      "question": "Which keyboard shortcut is used to open the 'Copilot Completions' panel to see multiple suggestions at once?",
+      "answers": [
+        {"answer": "Ctrl + Enter"},
+        {"answer": "Alt + F4"},
+        {"answer": "Cmd + S"},
+        {"answer": "Tab + Space"}
+      ],
+      "answer": "Ctrl + Enter",
+      "explanation": "Pressing Ctrl + Enter (on Windows/Linux) or Cmd + Enter (on macOS) opens a side panel that generates up to 10 different suggestions for your current cursor position, allowing you to pick the best implementation."
+    },
+    {
+      "question": "What is the benefit of the `/doc` command for a Fullstack developer?",
+      "answers": [
+        {"answer": "It automatically hosts your project on a documentation website."},
+        {"answer": "It generates standardized documentation comments (like JSDoc or TSDoc) based on the function's logic, parameters, and return types."},
+        {"answer": "It translates your code into a different programming language."},
+        {"answer": "It checks your code for spelling errors in variable names."}
+      ],
+      "answer": "It generates standardized documentation comments (like JSDoc or TSDoc) based on the function's logic, parameters, and return types.",
+      "explanation": "Maintaining documentation is critical for large projects like MROTools. `/doc` analyzes the function signature and body to create accurate, well-formatted comments instantly, promoting better team collaboration."
+    },
+    {
+      "question": "Which agent would you use to ask questions about current Pull Requests or Issues in your repository?",
+      "answers": [
+        {"answer": "@workspace"},
+        {"answer": "@github"},
+        {"answer": "@pr-bot"},
+        {"answer": "@terminal"}
+      ],
+      "answer": "@github",
+      "explanation": "The `@github` agent integrates with the GitHub platform. It can answer questions about the repository's metadata, open issues, PR descriptions, and the status of GitHub Actions workflows."
+    },
+    {
+      "question": "What is 'Context Management' and why is it important for a Fullstack developer using AI?",
+      "answers": [
+        {"answer": "It refers to managing the memory usage of the IDE."},
+        {"answer": "It is the process of intentionally providing the AI with the relevant files and code blocks needed to solve a specific problem, avoiding irrelevant data that might confuse the model."},
+        {"answer": "It is a feature that automatically translates code into different natural languages."},
+        {"answer": "It is the act of switching between frontend and backend tasks."}
+      ],
+      "answer": "It is the process of intentionally providing the AI with the relevant files and code blocks needed to solve a specific problem, avoiding irrelevant data that might confuse the model.",
+      "explanation": "Effective context management (opening relevant files, closing irrelevant ones, or using `#` mentions) ensures the AI 'sees' the necessary dependencies and data types, leading to much more accurate suggestions and fewer hallucinations."
+    },
+    {
+      "question": "If Copilot produces code that isn't quite right, what is the best next step?",
+      "answers": [
+        {"answer": "Delete the code and try a completely different library."},
+        {"answer": "Use 'Iterative Prompting'—provide a follow-up message explaining what is wrong and asking for a specific correction."},
+        {"answer": "Restart the IDE and try the same prompt again."},
+        {"answer": "Assume the AI isn't capable and write it manually."}
+      ],
+      "answer": "Use 'Iterative Prompting'—provide a follow-up message explaining what is wrong and asking for a specific correction.",
+      "explanation": "AI is conversational. Telling the AI 'This is good, but use an async/await pattern instead of promises' allows the model to adjust its output to your specific needs without you starting from scratch."
+    },
+    {
+      "question": "What is the purpose of the `/clear` command in the Chat panel?",
+      "answers": [
+        {"answer": "To delete all files in the current folder."},
+        {"answer": "To reset the current chat session and its context, allowing you to start a fresh conversation without previous messages influencing the AI."},
+        {"answer": "To clear the terminal output."},
+        {"answer": "To uninstall the Copilot extension."}
+      ],
+      "answer": "To reset the current chat session and its context, allowing you to start a fresh conversation without previous messages influencing the AI.",
+      "explanation": "Over long conversations, the chat history can become cluttered with irrelevant context. `/clear` resets the 'brain' of the current session, which is often necessary when switching tasks (e.g., from frontend bug fixing to backend architecture planning)."
+    },
+    {
+      "question": "Which feature in Copilot helps you avoid 'Copyright Infringement' by alerting you if a suggestion matches a known public code snippet?",
+      "answers": [
+        {"answer": "The 'Public Code Filter' settings in the GitHub Copilot profile."},
+        {"answer": "The /check-license command."},
+        {"answer": "Copilot automatically re-licenses all code as MIT."},
+        {"answer": "A popup that requires a payment for every suggestion."}
+      ],
+      "answer": "The 'Public Code Filter' settings in the GitHub Copilot profile.",
+      "explanation": "GitHub provides a setting to 'Block suggestions matching public code'. When enabled, Copilot will suppress suggestions that match code in public repositories, helping teams avoid potential licensing or attribution issues."
+    },
+    {
+      "question": "What does the `/explain` command provide if you use it with the `@workspace` agent?",
+      "answers": [
+        {"answer": "An explanation of how VS Code works."},
+        {"answer": "A holistic explanation of how a specific feature or symbol works across the entire project, rather than just the current file."},
+        {"answer": "A summary of the project's total lines of code."},
+        {"answer": "A list of all contributors to the repository."}
+      ],
+      "answer": "A holistic explanation of how a specific feature or symbol works across the entire project, rather than just the current file.",
+      "explanation": "Using `@workspace /explain` allows Copilot to trace logic across multiple files, explaining how a backend API endpoint is consumed by a specific React component, for example."
+    },
+    {
+      "question": "When using Copilot in the terminal via 'Copilot in the CLI', what is the purpose of the 'eval' command?",
+      "answers": [
+        {"answer": "To evaluate the performance of your CPU."},
+        {"answer": "To execute the suggested command directly in your shell after you have reviewed it."},
+        {"answer": "To calculate mathematical expressions."},
+        {"answer": "To send your terminal history to GitHub."}
+      ],
+      "answer": "To execute the suggested command directly in your shell after you have reviewed it.",
+      "explanation": "Copilot in the CLI suggests commands. The `eval` functionality (often integrated as a 'Run' button or a shell alias) bridges the gap by allowing you to instantly run the verified suggestion without manual typing."
+    },
+    {
+      "question": "What is the best practice for giving Copilot context about an error that occurred during a build process?",
+      "answers": [
+        {"answer": "Describe the error in your own words in the chat."},
+        {"answer": "Highlight the error in the terminal and use the #terminalSelection variable in your prompt."},
+        {"answer": "Open the source code and guess where the error might be."},
+        {"answer": "The AI automatically sees all build errors without any action."}
+      ],
+      "answer": "Highlight the error in the terminal and use the #terminalSelection variable in your prompt.",
+      "explanation": "Providing the literal error message via `#terminalSelection` gives the AI the exact stack trace or error code needed to pinpoint the failure, leading to significantly more accurate 'fixes'."
+    },
+    {
+      "question": "What is the role of 'System Prompts' in custom AI agents?",
+      "answers": [
+        {"answer": "They are prompts that only the operating system can see."},
+        {"answer": "They are foundational instructions that define the agent's identity, behavior, and limitations before any user input is processed."},
+        {"answer": "They are notifications that appear when the AI is offline."},
+        {"answer": "They are prompts for system administrators only."}
+      ],
+      "answer": "They are foundational instructions that define the agent's identity, behavior, and limitations before any user input is processed.",
+      "explanation": "A system prompt (like the one in `.github/copilot-instructions.md`) tells the AI 'who it is' (e.g., 'You are a senior React developer at QOCO'). This frames all future interactions and ensures consistent personality and technical standards."
+    },
+    {
+      "question": "How can you use Copilot to learn a new framework or library effectively?",
+      "answers": [
+        {"answer": "Copy and paste the entire library documentation into a single prompt."},
+        {"answer": "Use Copilot Chat to ask 'What are the core concepts of X?' and then ask for simple code examples for each concept."},
+        {"answer": "Ask Copilot to build a production-ready app with the library instantly."},
+        {"answer": "There is no way to use Copilot for learning."}
+      ],
+      "answer": "Use Copilot Chat to ask 'What are the core concepts of X?' and then ask for simple code examples for each concept.",
+      "explanation": "AI agents are excellent educational tools. By asking conceptual questions and requesting progressive examples, you can build your mental model of a new technology much faster than reading dry docs."
+    },
+    {
+      "question": "In React, how can Copilot help you handle 'State Lifting'?",
+      "answers": [
+        {"answer": "It automatically lifts all state to the global context."},
+        {"answer": "You can highlight two components and ask 'How can I lift the state from Component A to their common parent?', and it will suggest the code changes for both."},
+        {"answer": "It prevents you from lifting state by throwing a syntax error."},
+        {"answer": "It moves the state to a backend database automatically."}
+      ],
+      "answer": "You can highlight two components and ask 'How can I lift the state from Component A to their common parent?', and it will suggest the code changes for both.",
+      "explanation": "By providing multiple components as context (using `#file` or highlighting), Copilot can refactor your component hierarchy, moving state up and passing props down correctly."
+    },
+    {
+      "question": "What does the 'Prompt' Variable `#editor` refer to?",
+      "answers": [
+        {"answer": "The person who is editing the code."},
+        {"answer": "The visible part of the code in the currently active editor window."},
+        {"answer": "The entire file system of the project."},
+        {"answer": "The IDE's configuration file."}
+      ],
+      "answer": "The visible part of the code in the currently active editor window.",
+      "explanation": "Using `#editor` is a way to limit context to exactly what you see on your screen right now, which is useful when you want to focus the AI on a specific UI layout or small logic block."
+    },
+    {
+      "question": "What is the primary benefit of the 'Agentic Workflow' (Agent Mode) in GitHub Copilot?",
+      "answers": [
+        {"answer": "The AI works 24/7 even when your computer is off."},
+        {"answer": "The agent can autonomously plan and execute multi-step tasks (e.g., searching, editing, and running tests) to achieve a high-level goal defined by the user."},
+        {"answer": "The agent replaces the developer entirely."},
+        {"answer": "The agent only works if you have a GitHub Enterprise account."}
+      ],
+      "answer": "The agent can autonomously plan and execute multi-step tasks (e.g., searching, editing, and running tests) to achieve a high-level goal defined by the user.",
+      "explanation": "Agent Mode moves beyond simple completion. It can formulate a plan, find the right files to edit, apply the changes, and check for errors, acting as a true autonomous peer for complex feature development."
+    }
+  ]
+},
+  {
   "name": "Project: Build a Llama-3 Support Ticket Analyzer (Fine-Tuning + RAG)",
   "image": "https://images.unsplash.com/photo-1555099962-4199c345e5dd",
   "questions": [
