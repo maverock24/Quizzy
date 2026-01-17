@@ -1,5 +1,559 @@
-
 [
+  {
+  "name": "Heimelektrik & Profi-Wissen Deutschland - Teil 3",
+  "questions": [
+    {
+      "question": "Was ist eine 'Serienschaltung' und wo wird sie typischerweise eingesetzt?",
+      "answers": [
+        {"answer": "Eine Schaltung, bei der Lampen in einer Reihe hintereinander hängen."},
+        {"answer": "Ein einzelner Schalter mit zwei Wippen, der zwei verschiedene Lampengruppen unabhängig voneinander schaltet."},
+        {"answer": "Eine Schaltung für die Gartenbewässerung."},
+        {"answer": "Mehrere Sicherungen, die hintereinander geschaltet sind."}
+      ],
+      "answer": "Ein einzelner Schalter mit zwei Wippen, der zwei verschiedene Lampengruppen unabhängig voneinander schaltet.",
+      "explanation": "Für Kinder: Stell dir einen Schalter vor, der zwei Knöpfe nebeneinander hat. Mit dem linken machst du das helle Licht in der Mitte des Zimmers an, mit dem rechten nur die gemütliche Leselampe. Das spart Platz an der Wand.\n\nAikuisille: Die Serienschaltung (VDE-Begriff) nutzt einen Serienschalter. Er hat einen gemeinsamen Eingang für die Phase (L) und zwei separate Ausgänge für zwei Lampen. Typisches Einsatzgebiet ist das Wohnzimmer oder Bad, um die Beleuchtungsstärke zu variieren."
+    },
+    {
+      "question": "Warum ist ein zweipoliger Spannungsprüfer (z.B. Duspol) sicherer als ein Multimeter zur Feststellung der Spannungsfreiheit?",
+      "answers": [
+        {"answer": "Weil er bunter leuchtet."},
+        {"answer": "Weil er eine Last zuschalten kann, die 'Geisterspannungen' (kapazitive Einkopplungen) eliminiert."},
+        {"answer": "Weil er keine Batterien benötigt."},
+        {"answer": "Weil er kleiner ist."}
+      ],
+      "answer": "Weil er eine Last zuschalten kann, die 'Geisterspannungen' (kapazitive Einkopplungen) eliminiert.",
+      "explanation": "Für Kinder: Ein Multimeter ist so empfindlich, dass es manchmal Strom anzeigt, der gar nicht gefährlich ist – wie statische Aufladung beim Kämmen. Der Duspol prüft 'echten' Strom, auf den man sich verlassen kann.\n\nAikuisille: Multimeter haben einen sehr hohen Innenwiderstand. Sie zeigen oft Spannungen an, die durch parallel laufende Leitungen nur eingekoppelt sind, aber beim Berühren sofort zusammenbrechen würden. Ein Duspol belastet die Messstelle leicht; bricht die Spannung dann zusammen, war sie nicht real. Nur so ist die Regel 'Spannungsfreiheit feststellen' sicher erfüllt."
+    },
+    {
+      "question": "Wie hoch ist die maximale Dauerlast in Watt, die man an einen mit 16A abgesicherten Stromkreis (230V) anschließen sollte?",
+      "answers": [
+        {"answer": "1.000 Watt"},
+        {"answer": "2.300 Watt"},
+        {"answer": "Etwa 3.680 Watt"},
+        {"answer": "5.000 Watt"}
+      ],
+      "answer": "Etwa 3.680 Watt",
+      "explanation": "Für Kinder: Jede Sicherung ist wie ein Türsteher. Wenn zu viele Geräte gleichzeitig 'rein' wollen, macht er die Tür zu. In einem normalen Zimmer dürfen Geräte mit insgesamt ca. 3.600 Watt gleichzeitig laufen.\n\nAikuisille: Die Formel lautet P = U * I (Leistung = Spannung * Strom). Bei 230V und 16A ergibt das 3680 Watt. Werden dauerhaft mehr Geräte (z.B. zwei Heizlüfter an einer Leiste) betrieben, erwärmt sich die Leitung und die Sicherung löst thermisch aus."
+    },
+    {
+      "question": "Was muss beim Anschluss von flexiblen Adern (Litzen) in einer Steckdose oder Klemme unbedingt beachtet werden?",
+      "answers": [
+        {"answer": "Man muss sie besonders fest verzwirbeln."},
+        {"answer": "Man muss Aderendhülsen verwenden, sofern die Klemme nicht explizit für feindrähtige Leiter geeignet ist."},
+        {"answer": "Man muss sie mit Lötzinn bestreichen."},
+        {"answer": "Flexible Adern sind im Haus verboten."}
+      ],
+      "answer": "Man muss Aderendhülsen verwenden, sofern die Klemme nicht explizit für feindrähtige Leiter geeignet ist.",
+      "explanation": "Für Kinder: Wenn man die feinen Drähte einfach so festschraubt, gehen sie kaputt oder rutschen raus. Deshalb bekommen sie eine kleine Metallmütze (Hülse) aufgesetzt, damit sie fest zusammenhalten.\n\nAikuisille: Schraubklemmen würden die feinen Einzeldrähte einer Litze (wie sie in Lampen oder Verlängerungskabeln vorkommen) zerquetschen oder abscheren. Aderendhülsen bündeln diese. Bei modernen Federzugklemmen (Wago) ist dies oft nicht mehr nötig, aber bei klassischer Verschraubung absolute Pflicht gemäß VDE."
+    },
+    {
+      "question": "Welches Messgerät nutzt man, um den Widerstand einer Leitung zu prüfen und so einen Kabelbruch zu finden?",
+      "answers": [
+        {"answer": "Einen Phasenprüfer"},
+        {"answer": "Ein Multimeter in der Einstellung 'Ohm' (Ω) oder Durchgangsprüfung."},
+        {"answer": "Ein Luxmeter"},
+        {"answer": "Ein Amperemeter"}
+      ],
+      "answer": "Ein Multimeter in der Einstellung 'Ohm' (Ω) oder Durchgangsprüfung.",
+      "explanation": "Für Kinder: Wenn du wissen willst, ob eine Tunnelröhre für deine Spielzeugeisenbahn frei ist, schickst du eine kleine Testlok durch. Das Multimeter schickt einen winzigen Strom durch das Kabel. Wenn es piepst, ist der Weg frei!\n\nAikuisille: Die Durchgangsprüfung misst, ob ein geschlossener Stromkreis vorliegt. Ein unendlicher Widerstand (1 oder OL auf dem Display) bedeutet, dass die Leitung unterbrochen ist. Wichtig: Diese Messung darf nur an spannungsfreien Kabeln durchgeführt werden!"
+    },
+    {
+      "question": "Darf man ein blaues Kabel (Neutralleiter) als Schaltdraht für eine Lampe verwenden?",
+      "answers": [
+        {"answer": "Ja, grundsätzlich immer."},
+        {"answer": "Nein, Blau ist strikt dem Neutralleiter vorbehalten. Als Schaltdraht muss eine andere Farbe (z.B. Schwarz oder Grau) genutzt werden."},
+        {"answer": "Nur wenn kein anderes Kabel da ist."},
+        {"answer": "Blau ist nur für Erdung da."}
+      ],
+      "answer": "Nein, Blau ist strikt dem Neutralleiter vorbehalten. Als Schaltdraht muss eine andere Farbe (z.B. Schwarz oder Grau) genutzt werden.",
+      "explanation": "Für Kinder: Blau ist die Farbe für den Rückweg des Stroms. Wenn wir sie für etwas anderes benutzen, kommt der nächste Elektriker durcheinander und macht einen gefährlichen Fehler.\n\nAikuisille: Gemäß DIN VDE 0100-510 darf die Farbe Blau nicht für andere Zwecke verwendet werden, wenn ein Neutralleiter vorhanden ist oder verwechselt werden könnte. In Schalterleitungen (z.B. 3-adriges NYM zum Schalter) muss für den Schaltdraht eine andere Aderfarbe als Blau oder Grün-Gelb gewählt werden."
+    },
+    {
+      "question": "Was ist eine 'Abzweigdose' und warum sollte sie immer zugänglich bleiben?",
+      "answers": [
+        {"answer": "Eine Dose für Gartenabfälle."},
+        {"answer": "Ein Kasten in der Wand, in dem Kabel miteinander verbunden werden. Er muss für Wartungen und Fehlersuche erreichbar sein."},
+        {"answer": "Eine spezielle Sicherung."},
+        {"answer": "Ein Behälter für Ersatzbirnen."}
+      ],
+      "answer": "Ein Kasten in der Wand, in dem Kabel miteinander verbunden werden. Er muss für Wartungen und Fehlersuche erreichbar sein.",
+      "explanation": "Für Kinder: Das ist wie eine Autobahnkreuzung für Stromkabel unter dem Putz. Wenn dort ein Kabel locker wird, muss man herankommen können, ohne die ganze Wand mit dem Hammer kaputt zu machen.\n\nAikuisille: Abzweigdosen enthalten die Klemmstellen der Installation. VDE-Vorschriften verlangen, dass jede Klemmstelle für Prüf- und Wartungszwecke zugänglich sein muss. Das Übertapezieren oder Verputzen von Abzweigdosen ist daher unzulässig und erschwert die Fehlersuche massiv."
+    },
+    {
+      "question": "Was passiert bei einer 'Überlastung' eines Stromkreises?",
+      "answers": [
+        {"answer": "Die Glühbirnen leuchten heller."},
+        {"answer": "Die Leitungen werden heiß, die Isolierung kann schmelzen und es kann zum Brand kommen; davor schützt der Leitungsschutzschalter."},
+        {"answer": "Der Strom wird automatisch in einen anderen Kreis geleitet."},
+        {"answer": "Die Spannung steigt von 230V auf 400V."}
+      ],
+      "answer": "Die Leitungen werden heiß, die Isolierung kann schmelzen und es kann zum Brand kommen; davor schützt der Leitungsschutzschalter.",
+      "explanation": "Für Kinder: Wenn zu viel Strom durch ein dünnes Kabel gequetscht wird, wird es so heiß wie eine Herdplatte. Das ist gefährlich! Die Sicherung ist wie eine Notbremse, die den Strom vorher abstellt.\n\nAikuisille: Jeder Leiter hat eine maximale Strombelastbarkeit (abhängig von Querschnitt und Verlegeart). Ein Leitungsschutzschalter (LS) mit Charakteristik B oder C schaltet ab, bevor die zulässige Grenztemperatur der Isolierung überschritten wird."
+    },
+    {
+      "question": "Warum müssen Erdkabel im Garten in einem Sandbett verlegt werden?",
+      "answers": [
+        {"answer": "Damit sie es weich haben."},
+        {"answer": "Als mechanischer Schutz vor spitzen Steinen, die die Isolierung durch Erdbewegungen (Frost/Last) beschädigen könnten."},
+        {"answer": "Damit das Wasser besser abfließen kann."},
+        {"answer": "Sand leitet den Strom besser."}
+      ],
+      "answer": "Als mechanischer Schutz vor spitzen Steinen, die die Isolierung durch Erdbewegungen (Frost/Last) beschädigen könnten.",
+      "explanation": "Für Kinder: Stell dir vor, du liegst auf einem harten Stein – das drückt! Sand ist wie eine Matratze, die das Kabel vor scharfen Steinen im Boden schützt.\n\nAikuisille: Steine im Erdreich können bei Bodenfrost oder Belastung des Bodens von oben einen punktuellen Druck auf das Kabel ausüben. Über Jahre hinweg 'wandert' der Stein durch die Isolierung. Ein 10 cm starkes Sandbett oben und unten ist daher Pflicht für die Langlebigkeit von NYY-Leitungen."
+    },
+    {
+      "question": "Was bedeutet das Symbol 'zwei ineinanderliegende Quadrate' auf einem Elektrogerät?",
+      "answers": [
+        {"answer": "Das Gerät ist quadratisch."},
+        {"answer": "Schutzklasse II (Schutzisolierung). Das Gerät hat keine Erdung nötig, da es doppelt isoliert ist."},
+        {"answer": "Das Gerät darf nur im Doppelpack benutzt werden."},
+        {"answer": "Achtung, Hochspannung!"}
+      ],
+      "answer": "Schutzklasse II (Schutzisolierung). Das Gerät hat keine Erdung nötig, da es doppelt isoliert ist.",
+      "explanation": "Für Kinder: Dieses Zeichen bedeutet, dass das Gerät so sicher gebaut ist, dass man keinen Schlag bekommen kann, selbst wenn innen ein Kabel locker wird. Es braucht deshalb kein grün-gelbes Erdkabel.\n\nAikuisille: Geräte der Schutzklasse II haben eine verstärkte oder doppelte Isolierung zwischen den spannungsführenden Teilen und der berührbaren Oberfläche. Ein Schutzleiteranschluss ist hier nicht nur unnötig, sondern oft gar nicht vorhanden (z.B. bei vielen Bohrmaschinen oder Lampen mit Kunststoffgehäuse)."
+    },
+    {
+      "question": "Was ist eine 'Kreuzschaltung'?",
+      "answers": [
+        {"answer": "Eine Schaltung in Form eines Kreuzes."},
+        {"answer": "Eine Installation, bei der man eine Lampe von drei oder mehr Stellen aus schalten kann."},
+        {"answer": "Eine verbotene Schaltung, die Funken erzeugt."},
+        {"answer": "Der Anschluss eines Herdes."}
+      ],
+      "answer": "Eine Installation, bei der man eine Lampe von drei oder mehr Stellen aus schalten kann.",
+      "explanation": "Für Kinder: Wenn du einen sehr langen Flur hast und an jedem Ende und in der Mitte einen Schalter für das Licht haben willst, brauchst du eine Kreuzschaltung.\n\nAikuisille: Eine Kreuzschaltung erweitert eine Wechselschaltung. Zwischen zwei Wechselschaltern können beliebig viele Kreuzschalter eingebaut werden. Heutzutage wird dies jedoch oft durch eine einfachere Tasterschaltung mit Stromstoßrelais (Eltako) im Sicherungskasten ersetzt."
+    },
+    {
+      "question": "Darf man im Badezimmer eine Steckdose direkt neben der Dusche (Abstand 10 cm) installieren?",
+      "answers": [
+        {"answer": "Ja, wenn sie einen Deckel hat."},
+        {"answer": "Nein, es muss ein Mindestabstand von 60 cm zum Rand der Dusche/Wanne eingehalten werden (Schutzbereich 2)."},
+        {"answer": "Nur wenn sie in 2,50 m Höhe montiert wird."},
+        {"answer": "Ja, Strom und Wasser vertragen sich gut."}
+      ],
+      "answer": "Nein, es muss ein Mindestabstand von 60 cm zum Rand der Dusche/Wanne eingehalten werden (Schutzbereich 2).",
+      "explanation": "Für Kinder: Strom und Wasser sind wie Feuer und Wasser – sie dürfen sich nie zu nahe kommen. In der Nähe der Dusche ist es viel zu gefährlich für eine Steckdose.\n\nAikuisille: Nach DIN VDE 0100-701 sind Steckdosen in den Bereichen 0, 1 und 2 verboten. Bereich 2 reicht bis 60 cm um die Wanne oder Dusche herum. Erst außerhalb dieser Zone (Bereich 3) ist die Installation von Steckdosen erlaubt, sofern ein FI-Schutzschalter vorhanden ist."
+    },
+    {
+      "question": "Wie verbindet man zwei Erdkabel im Boden sicher miteinander?",
+      "answers": [
+        {"answer": "Mit Klebeband umwickeln."},
+        {"answer": "Gar nicht, Erdkabel dürfen nie verbunden werden."},
+        {"answer": "Mit einer speziellen Gießharz-Muffe oder einer zertifizierten Gel-Muffe für das Erdreich."},
+        {"answer": "In einer normalen Plastikdose, die man vergräbt."}
+      ],
+      "answer": "Mit einer speziellen Gießharz-Muffe oder einer zertifizierten Gel-Muffe für das Erdreich.",
+      "explanation": "Für Kinder: Wenn man ein Kabel im Garten flicken muss, muss man es so einpacken, dass niemals Feuchtigkeit herankommt – wie ein wasserdichter Gipsfuß.\n\nAikuisille: Normale Verteilerdosen werden im Boden durch die Feuchtigkeit irgendwann undicht. Erdmuffen werden mit einem speziellen Harz oder Gel ausgegossen, das die Verbindungsstelle komplett umschließt und so dauerhaft gegen Wasser und Korrosion schützt."
+    },
+    {
+      "question": "Was misst man zwischen der Phase (L) und dem Neutralleiter (N) mit einem Multimeter?",
+      "answers": [
+        {"answer": "Den Widerstand der Lampe."},
+        {"answer": "Die Netzspannung (idealerweise ca. 230V AC)."},
+        {"answer": "Den Stromverbrauch des Hauses."},
+        {"answer": "Die Frequenz in Megahertz."}
+      ],
+      "answer": "Die Netzspannung (idealerweise ca. 230V AC).",
+      "explanation": "Für Kinder: Das ist wie der Druck in einer Wasserleitung. Wir messen, ob genug 'Power' in der Leitung ist, damit die Geräte funktionieren.\n\nAikuisille: Dies ist die Standardmessung, um die Betriebsbereitschaft einer Steckdose zu prüfen. Liegt der Wert deutlich unter 230V (z.B. 180V), liegt oft ein Fehler in der Installation oder eine Überlastung vor."
+    },
+    {
+      "question": "Warum ist es gefährlich, den Schutzleiter (PE) und den Neutralleiter (N) in einer Steckdose zu vertauschen?",
+      "answers": [
+        {"answer": "Es passiert nichts, das Gerät funktioniert trotzdem."},
+        {"answer": "Der FI-Schutzschalter löst sofort aus, sobald ein Gerät eingesteckt wird."},
+        {"answer": "Die Lampe leuchtet in einer anderen Farbe."},
+        {"answer": "Das Gerät verbraucht mehr Strom."}
+      ],
+      "answer": "Der FI-Schutzschalter löst sofort aus, sobald ein Gerät eingesteckt wird.",
+      "explanation": "Für Kinder: Der FI-Schalter passt auf, dass der Strom genau den Weg nimmt, den er soll. Wenn du die Kabel vertauschst, merkt er das sofort und stellt den Strom ab, um dich zu schützen.\n\nAikuisille: Der FI (RCD) misst die Summe der Ströme über L und N. Wenn Strom über den PE zurückfließt (weil N und PE vertauscht sind), entsteht eine Differenz, und der RCD löst aus. Dies ist ein wichtiger Sicherheitscheck."
+    },
+    {
+      "question": "Was versteht man unter einer 'Hohlwanddose'?",
+      "answers": [
+        {"answer": "Eine Dose für hohle Zähne."},
+        {"answer": "Eine orangefarbene Unterputzdose mit Klemmlaschen für die Montage in Gipskarton- oder Holzwänden."},
+        {"answer": "Eine Dose, die keine Rückwand hat."},
+        {"answer": "Eine Dose für den Außenbereich."}
+      ],
+      "answer": "Eine orangefarbene Unterputzdose mit Klemmlaschen für die Montage in Gipskarton- oder Holzwänden.",
+      "explanation": "Für Kinder: Wenn man eine Wand aus Gipsplatten hat, kann man die Dose nicht mit Mörtel festkleben. Man benutzt eine Dose mit kleinen 'Ärmchen', die sich von hinten an der Platte festhalten.\n\nAikuisille: Im Gegensatz zu schwarzen Mauerdosen (die eingegipst werden), werden Hohlwanddosen in ein gebohrtes Loch gesteckt und mit Schrauben festgezogen, wobei sich Metallkrallen hinter der Platte verspannen. Sie sind oft winddicht ausgeführt, um Zugluft zu vermeiden."
+    },
+    {
+      "question": "Welche Leitung eignet sich für den festen Anschluss eines Elektroherdes (400V Drehstrom)?",
+      "answers": [
+        {"answer": "NYM-J 3x1,5"},
+        {"answer": "NYM-J 5x2,5"},
+        {"answer": "Ein USB-Kabel"},
+        {"answer": "Ein Klingeldraht"}
+      ],
+      "answer": "NYM-J 5x2,5",
+      "explanation": "Für Kinder: Ein Herd braucht so viel Kraft wie fünf normale Lampen zusammen. Deshalb braucht er ein dickeres Kabel mit fünf Adern statt nur drei.\n\nAikuisille: Herde werden meist an Drehstrom (3 Phasen) angeschlossen. Dafür braucht man L1, L2, L3 sowie N und PE – also 5 Adern. Aufgrund der hohen Leistung ist ein Querschnitt von 2,5 mm² in Deutschland Standard, um Überhitzung zu vermeiden."
+    },
+    {
+      "question": "Woran erkennt man, ob eine Sicherung (LS-Schalter) ausgelöst hat?",
+      "answers": [
+        {"answer": "Die Sicherung wird heiß."},
+        {"answer": "Der Hebel am Schalter steht unten (auf '0' oder 'Off')."},
+        {"answer": "Man hört ein lautes Pfeifen."},
+        {"answer": "Die Lampe explodiert."}
+      ],
+      "answer": "Der Hebel am Schalter steht unten (auf '0' oder 'Off').",
+      "explanation": "Für Kinder: Wenn die Sicherung 'rausspringt', fällt der kleine Schalter im Sicherungskasten nach unten. Das ist das Zeichen, dass etwas nicht stimmte.\n\nAikuisille: Moderne Leitungsschutzschalter haben eine klare Beschriftung. Zeigt der Hebel nach unten, wurde der Stromkreis getrennt – entweder durch manuelles Ausschalten, thermische Überlastung oder einen Kurzschluss."
+    },
+    {
+      "question": "Darf man NYM-Leitungen (graue Innenkabel) im Garten in einem Rohr verlegen?",
+      "answers": [
+        {"answer": "Ja, das Rohr schützt sie genug."},
+        {"answer": "Nein, NYM ist nicht für den Außenbereich geeignet, da sich im Rohr Kondenswasser sammelt, was die Isolierung zerstört. Man muss Erdkabel (NYY) verwenden."},
+        {"answer": "Nur wenn das Rohr aus Gold ist."},
+        {"answer": "Ja, aber nur für 12V Lampen."}
+      ],
+      "answer": "Nein, NYM ist nicht für den Außenbereich geeignet, da sich im Rohr Kondenswasser sammelt, was die Isolierung zerstört. Man muss Erdkabel (NYY) verwenden.",
+      "explanation": "Für Kinder: Das graue Kabel ist wie ein Hausschuh – drinnen super, aber draußen im Matsch geht es kaputt, auch wenn du in einer Röhre stehst. Draußen brauchen wir Gummistiefel-Kabel (Erdkabel).\n\nAikuisille: NYM-Leitungen sind nicht UV-beständig und nicht resistent gegen dauerhafte Feuchtigkeit. In Schutzrohren im Erdreich sammelt sich unweigerlich Kondenswasser. Die Isolierung von NYM quillt auf und wird brüchig. Im Außenbereich und im Erdreich ist ausschließlich NYY (Erdkabel) zulässig."
+    },
+    {
+      "question": "Was ist der 'Lügenstift'?",
+      "answers": [
+        {"answer": "Ein Stift, der nicht schreibt."},
+        {"answer": "Ein umgangssprachlicher Name für den einpoligen Phasenprüfer, da er oft unzuverlässige Ergebnisse liefert."},
+        {"answer": "Ein Messgerät für Architekten."},
+        {"answer": "Ein Bleistift für falsche Markierungen."}
+      ],
+      "answer": "Ein umgangssprachlicher Name für den einpoligen Phasenprüfer, da er oft unzuverlässige Ergebnisse liefert.",
+      "explanation": "Für Kinder: Das ist ein kleiner Schraubenzieher, der leuchten kann. Aber Vorsicht: Er lügt manchmal und zeigt kein Licht an, obwohl Strom da ist. Deshalb darf man ihm nie blind vertrauen!\n\nAikuisille: Der einpolige Phasenprüfer ist in der Fachwelt verpönt. Er leuchtet bei geringen Strömen nicht (z.B. wenn man auf einer isolierenden Gummimatte steht) oder leuchtet durch Induktion, obwohl keine gefährliche Spannung anliegt. Für eine sichere Arbeit ist er ungeeignet."
+    },
+    {
+      "question": "Welche Farbe hat der Neutralleiter (N) in einer modernen Standardinstallation?",
+      "answers": [
+        {"answer": "Blau"},
+        {"answer": "Schwarz"},
+        {"answer": "Grau"},
+        {"answer": "Grün-Gelb"}
+      ],
+      "answer": "Blau",
+      "explanation": "Der Neutralleiter (N) dient dazu, den Strom vom Verbraucher zurück zur Stromquelle zu führen. In Deutschland ist dafür die Farbe Blau fest vorgeschrieben. Er führt im Idealfall keine Spannung gegen Erde, darf aber niemals mit dem Schutzleiter (Grün-Gelb) vertauscht werden."
+    },
+    {
+      "question": "Was versteht man unter den '5 Sicherheitsregeln' der Elektrotechnik vor Beginn der Arbeiten?",
+      "answers": [
+        {"answer": "Handschuhe anziehen, Werkzeug prüfen, Licht an, Musik aus, Kaffee trinken."},
+        {"answer": "Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, Erden und Kurzschließen, benachbarte unter Spannung stehende Teile abdecken."},
+        {"answer": "Sicherung raus, Fenster auf, isolierte Schuhe, Phasenprüfer nutzen, Nachbarn informieren."},
+        {"answer": "Batterie abklemmen, Kabel isolieren, Stecker ziehen, Wasser fernhalten, Helm aufsetzen."}
+      ],
+      "answer": "Freischalten, gegen Wiedereinschalten sichern, Spannungsfreiheit feststellen, Erden und Kurzschließen, benachbarte unter Spannung stehende Teile abdecken.",
+      "explanation": "Diese Regeln sind lebenswichtig. 1. Freischalten (Sicherung raus). 2. Gegen Wiedereinschalten sichern (Abkleben/Schild). 3. Spannungsfreiheit feststellen (Messen!). 4. Erden/Kurzschließen (bei Anlagen über 1000V). 5. Benachbarte Teile abdecken (Schutz gegen versehentliches Berühren)."
+    },
+    {
+      "question": "Welcher Leitungsquerschnitt wird in Deutschland standardmäßig für fest verlegte Steckdosenstromkreise (mit 16A Absicherung) empfohlen?",
+      "answers": [
+        {"answer": "0,75 mm²"},
+        {"answer": "1,5 mm² (bei langen Leitungswegen oft 2,5 mm²)"},
+        {"answer": "4,0 mm²"},
+        {"answer": "10,0 mm²"}
+      ],
+      "answer": "1,5 mm² (bei langen Leitungswegen oft 2,5 mm²)",
+      "explanation": "Für normale Steckdosen im Haushalt ist ein Querschnitt von 1,5 mm² Standard. Bei sehr langen Kabelwegen (z.B. in den Garten) greift man zu 2,5 mm², um den Spannungsfall gering zu halten und sicherzustellen, dass die Sicherung im Fehlerfall schnell genug auslöst."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen einem NYM-Kabel und einem NYY-Kabel?",
+      "answers": [
+        {"answer": "NYM ist für den Innenbereich, NYY ist ein Erdkabel für den Außenbereich."},
+        {"answer": "NYM ist dicker als NYY."},
+        {"answer": "NYY darf nur für Gleichstrom verwendet werden."},
+        {"answer": "NYM hat keine Erdung."}
+      ],
+      "answer": "NYM ist für den Innenbereich, NYY ist ein Erdkabel für den Außenbereich.",
+      "explanation": "NYM (Normenleitung-Mantelleitung) ist die klassische 'Feuchtraumleitung' für die Verlegung in, auf oder unter Putz innerhalb von Gebäuden. NYY ist ein Erdkabel mit einer speziellen Isolierung, die resistent gegen Bodenfeuchtigkeit und chemische Einflüsse im Erdreich ist."
+    },
+    {
+      "question": "Wozu dient der grün-gelbe Leiter (PE) in einer Elektroinstallation?",
+      "answers": [
+        {"answer": "Er liefert den Strom für Nachtlichter."},
+        {"answer": "Er ist der Schutzleiter und leitet im Fehlerfall gefährliche Spannungen gegen Erde ab."},
+        {"answer": "Er wird für das Internet-Signal über die Steckdose genutzt."},
+        {"answer": "Er verbindet zwei Lichtschalter miteinander."}
+      ],
+      "answer": "Er ist der Schutzleiter and leitet im Fehlerfall gefährliche Spannungen gegen Erde ab.",
+      "explanation": "Der PE (Protective Earth) ist die wichtigste Sicherheitsader. Er ist mit leitfähigen Gehäusen (z.B. Waschmaschine, Lampe) verbunden. Tritt ein Defekt auf und die Phase berührt das Gehäuse, fließt der Strom über den PE ab, was die Sicherung oder den FI-Schalter auslöst."
+    },
+    {
+      "question": "Welche Messung muss zwingend durchgeführt werden, nachdem eine neue Steckdose installiert wurde?",
+      "answers": [
+        {"answer": "Lautstärkemessung beim Einstecken."},
+        {"answer": "Messung der Luftfeuchtigkeit in der Dose."},
+        {"answer": "Prüfung der Wirksamkeit der Schutzmaßnahme (Schleifenimpedanz und RCD-Auslösung)."},
+        {"answer": "Gewichtsmessung der Dose."}
+      ],
+      "answer": "Prüfung der Wirksamkeit der Schutzmaßnahme (Schleifenimpedanz und RCD-Auslösung).",
+      "explanation": "Es reicht nicht, dass das Licht leuchtet. Man muss prüfen, ob im Kurzschlussfall genug Strom fließt, um die Sicherung sofort auszulösen, und ob der FI-Schalter (RCD) bei einem Fehlerstrom innerhalb der vorgeschriebenen Zeit abschaltet."
+    },
+    {
+      "question": "Wie installiert man ein Erdkabel unter einem gepflasterten Weg richtig?",
+      "answers": [
+        {"answer": "Direkt unter die Steine in den Sand legen."},
+        {"answer": "In einem stabilen Schutzrohr (z.B. Kabelschutzrohr) in mindestens 60 cm Tiefe."},
+        {"answer": "Das Kabel muss einbetoniert werden."},
+        {"answer": "Man darf keine Kabel unter Wegen verlegen."}
+      ],
+      "answer": "In einem stabilen Schutzrohr (z.B. Kabelschutzrohr) in mindestens 60 cm Tiefe.",
+      "explanation": "Unter Wegen ist die mechanische Belastung durch Druck höher. Ein Schutzrohr verhindert Beschädigungen am Kabel und ermöglicht es zudem, das Kabel später ohne Aufgraben auszutauschen (Einziehen)."
+    },
+    {
+      "question": "Darf man eine normale Steckdose (IP20) in einer Garage installieren?",
+      "answers": [
+        {"answer": "Ja, uneingeschränkt."},
+        {"answer": "Nein, in Garagen müssen mindestens IP44-Dosen (spritzwassergeschützt mit Klappdeckel) verwendet werden."},
+        {"answer": "Nur wenn sie in 2 Metern Höhe montiert wird."},
+        {"answer": "Nur wenn die Garage beheizt ist."}
+      ],
+      "answer": "Nein, in Garagen müssen mindestens IP44-Dosen (spritzwassergeschützt mit Klappdeckel) verwendet werden.",
+      "explanation": "Garagen gelten als feuchte Räume oder Bereiche mit erhöhtem Schmutzaufkommen. Um das Eindringen von Staub und Feuchtigkeit (z.B. durch nasse Autos) zu verhindern, sind Klappdeckel und eine erhöhte Schutzart (IP44) vorgeschrieben."
+    },
+    {
+      "question": "Was bedeutet die Angabe '16A' auf einem Leitungsschutzschalter (Sicherung)?",
+      "answers": [
+        {"answer": "Das Gerät verbraucht 16 Ampere."},
+        {"answer": "Die Sicherung lässt dauerhaft maximal 16 Ampere Strom fließen, bevor sie den Stromkreis wegen Überlastung trennt."},
+        {"answer": "Die Sicherung hält genau 16 Jahre."},
+        {"answer": "Das Kabel muss 16 mm dick sein."}
+      ],
+      "answer": "Die Sicherung lässt dauerhaft maximal 16 Ampere Strom fließen, bevor sie den Stromkreis wegen Überlastung trennt.",
+      "explanation": "Sicherungen schützen die Leitungen vor Überhitzung. Wird zu viel Strom entnommen (z.B. Wasserkocher und Waschmaschine an einer Mehrfachsteckdose), löst der Schutzschalter aus, um einen Kabelbrand zu verhindern."
+    },
+    {
+      "question": "Welche Installationszonen gelten im Badezimmer für elektrische Geräte?",
+      "answers": [
+        {"answer": "Es gibt keine Zonen, man darf alles überall hinbauen."},
+        {"answer": "Die Zonen 0, 1 und 2 definieren Bereiche um Wanne/Dusche, in denen strenge Regeln für Steckdosen und Leuchten gelten."},
+        {"answer": "Nur eine Zone: 5 Meter Abstand zum Wasser."},
+        {"answer": "Zone 'Trocken' und Zone 'Nass'."}
+      ],
+      "answer": "Die Zonen 0, 1 und 2 definieren Bereiche um Wanne/Dusche, in denen strenge Regeln für Steckdosen und Leuchten gelten.",
+      "explanation": "VDE 0100-701: In Zone 0 (Innenraum Wanne) und Zone 1 (darüber bis 2,25m) sind Steckdosen streng verboten. Erst ab Zone 3 (60cm Abstand zu Zone 2) dürfen normale Steckdosen installiert werden, sofern sie über einen RCD geschützt sind."
+    },
+    {
+      "question": "Wie verbindet man Adern in einer Verteilerdose heute fachgerecht?",
+      "answers": [
+        {"answer": "Zusammenzwirbeln und mit Tesafilm umwickeln."},
+        {"answer": "Mit Lüsterklemmen (Schraubklemmen)."},
+        {"answer": "Mit Federkraftklemmen (z.B. WAGO-Klemmen)."},
+        {"answer": "Löten und mit Kaugummi isolieren."}
+      ],
+      "answer": "Mit Federkraftklemmen (z.B. WAGO-Klemmen).",
+      "explanation": "Lüsterklemmen können sich durch Vibrationen oder Temperaturschwankungen lockern. Federkraftklemmen halten die Ader dauerhaft unter Spannung und sind wartungsfrei und sicherer gegen Lichtbogenbildung."
+    },
+    {
+      "question": "Darf man ein Erdkabel direkt durch eine Hauswand führen?",
+      "answers": [
+        {"answer": "Ja, einfach ein Loch bohren und durchstecken."},
+        {"answer": "Ja, aber die Mauerdurchführung muss gas- und wasserdicht versiegelt werden (z.B. mit einer Ringraumdichtung)."},
+        {"answer": "Nein, man muss das Fenster benutzen."},
+        {"answer": "Kabel dürfen nur über das Dach ins Haus."}
+      ],
+      "answer": "Ja, aber die Mauerdurchführung muss gas- und wasserdicht versiegelt werden (z.B. mit einer Ringraumdichtung).",
+      "explanation": "Eine unsachgemäße Durchführung kann dazu führen, dass Grundwasser oder Radon-Gas ins Haus gelangt. Daher sind professionelle Dichtungssysteme an der Gebäudehülle Pflicht."
+    },
+    {
+      "question": "Was ist eine 'Wechselschaltung'?",
+      "answers": [
+        {"answer": "Eine Schaltung, bei der man die Birne wechseln muss."},
+        {"answer": "Eine Installation, bei der eine Lampe von zwei verschiedenen Schaltern aus ein- und ausgeschaltet werden kann."},
+        {"answer": "Eine Schaltung für Wechselstrom."},
+        {"answer": "Wenn der Schalter beim Drücken die Farbe wechselt."}
+      ],
+      "answer": "Eine Installation, bei der eine Lampe von zwei verschiedenen Schaltern aus ein- und ausgeschaltet werden kann.",
+      "explanation": "Klassisch für Flure oder Treppenhäuser. Man schaltet unten ein und oben aus. Dafür benötigt man zwei Wechselschalter und zwei 'korrespondierende' Adern zwischen den Schaltern."
+    },
+    {
+      "question": "Dürfen Steckdosen und Lichtschalter in Holz-Gartenhäusern direkt auf das Holz geschraubt werden?",
+      "answers": [
+        {"answer": "Ja, Holz leitet keinen Strom."},
+        {"answer": "Nein, es müssen spezielle Hohlwanddosen für brennbare Untergründe oder Aufputzdosen mit Brandschutzplatte verwendet werden."},
+        {"answer": "Nur wenn das Holz gestrichen ist."},
+        {"answer": "Nur wenn man Plastikschrauben benutzt."}
+      ],
+      "answer": "Nein, es müssen spezielle Hohlwanddosen für brennbare Untergründe oder Aufputzdosen mit Brandschutzplatte verwendet werden.",
+      "explanation": "Brandschutz ist hier das Stichwort. Bei einem Kurzschluss oder Funkenflug in der Dose darf das Holzgehäuse des Hauses nicht sofort Feuer fangen."
+    },
+    {
+      "question": "Was versteht man unter 'Potentialausgleich'?",
+      "answers": [
+        {"answer": "Dass alle Bewohner das gleiche Recht auf Strom haben."},
+        {"answer": "Die elektrische Verbindung aller leitfähigen Teile (Rohre, Gehäuse, Fundamenterder) im Haus, um gefährliche Spannungsunterschiede zu vermeiden."},
+        {"answer": "Den Ausgleich des Kontostands beim Stromanbieter."},
+        {"answer": "Dass alle Steckdosen gleich hoch hängen."}
+      ],
+      "answer": "Die elektrische Verbindung aller leitfähigen Teile (Rohre, Gehäuse, Fundamenterder) im Haus, um gefährliche Spannungsunterschiede zu vermeiden.",
+      "explanation": "Stell dir vor, du berührst ein Wasserrohr und ein defektes Elektrogerät. Wenn diese nicht auf dem gleichen elektrischen Potential liegen, fließt Strom durch dich. Der Potentialausgleich ('Erdungsschiene' im Keller) verhindert das."
+    },
+    {
+      "question": "Wie hoch ist die Netzspannung in einer Standard-Steckdose in Deutschland?",
+      "answers": [
+        {"answer": "110 Volt"},
+        {"answer": "230 Volt"},
+        {"answer": "400 Volt"},
+        {"answer": "12 Volt"}
+      ],
+      "answer": "230 Volt",
+      "explanation": "Die Nennspannung im Haushaltsnetz beträgt in Deutschland 230V. In der Industrie oder für Herde wird oft mit 400V (Drehstrom/Starkstrom) gearbeitet."
+    },
+    {
+      "question": "Was passiert, wenn man beim Multimeter die Messspitzen in die Steckdose hält, das Gerät aber auf 'Widerstand' (Ohm) gestellt ist?",
+      "answers": [
+        {"answer": "Nichts, das Gerät zeigt 0 an."},
+        {"answer": "Das Gerät geht wahrscheinlich kaputt (die interne Sicherung brennt durch), da man niemals Spannung an einer Widerstandsmessung anlegen darf."},
+        {"answer": "Die Lampe im Zimmer leuchtet heller."},
+        {"answer": "Das Multimeter lädt seinen Akku auf."}
+      ],
+      "answer": "Das Gerät geht wahrscheinlich kaputt (die interne Sicherung brennt durch), da man niemals Spannung an einer Widerstandsmessung anlegen darf.",
+      "explanation": "Widerstandsmessungen dürfen nur an spannungsfreien Bauteilen durchgeführt werden. Die Elektronik des Multimeters wird durch die hohe Netzspannung zerstört, wenn es im Ohm-Modus ist."
+    },
+    {
+      "question": "Warum müssen Außensteckdosen von innen abschaltbar sein?",
+      "answers": [
+        {"answer": "Um Strom zu sparen."},
+        {"answer": "Damit Unbefugte draußen keinen Strom stehlen oder durch Kurzschließen die Sicherung im Haus absichtlich auslösen können."},
+        {"answer": "Damit das Kabel draußen nicht einfriert."},
+        {"answer": "Damit Kinder nicht mit der Dose spielen."}
+      ],
+      "answer": "Damit Unbefugte draußen keinen Strom stehlen oder durch Kurzschließen die Sicherung im Haus absichtlich auslösen können.",
+      "explanation": "Es ist eine Sicherheitsmaßnahme gegen Vandalismus und Manipulation. Ein Einbrecher könnte sonst draußen einen Kurzschluss verursachen, um die Alarmanlage lahmzulegen, wenn diese nicht separat gepuffert ist."
+    },
+    {
+      "question": "Welcher Buchstabe kennzeichnet den Außenleiter (Phase) in Schaltplänen?",
+      "answers": [
+        {"answer": "N"},
+        {"answer": "PE"},
+        {"answer": "L"},
+        {"answer": "G"}
+      ],
+      "answer": "L",
+      "explanation": "L steht für 'Line' oder 'Live'. N steht für 'Neutral' und PE für 'Protective Earth'."
+    },
+    {
+      "question": "Was ist die Gefahr bei 'klassischer Nullung' in alten Gebäuden?",
+      "answers": [
+        {"answer": "Der Strom ist schwächer."},
+        {"answer": "Bricht der kombinierte PEN-Leiter, kann das Gehäuse eines Geräts unter voller Netzspannung stehen, ohne dass die Sicherung auslöst."},
+        {"answer": "Man kann keine LED-Lampen verwenden."},
+        {"answer": "Die Sicherungen sind zu groß."}
+      ],
+      "answer": "Bricht der kombinierte PEN-Leiter, kann das Gehäuse eines Geräts unter voller Netzspannung stehen, ohne dass die Sicherung auslöst.",
+      "explanation": "Bei der klassischen Nullung gibt es keinen separaten Schutzleiter. Neutralleiter und Schutzleiter sind eins. Wenn dieses eine Kabel bricht, liegt die Phase über den Verbraucher direkt am Metallgehäuse an – eine tödliche Gefahr beim Berühren!"
+    },
+    {
+      "question": "Welche Aderfarbe kennzeichnet in einer modernen deutschen Elektroinstallation (nach 2006) üblicherweise den Außenleiter (Phase L1)?",
+      "answers": [
+        {"answer": "Blau"},
+        {"answer": "Grün-Gelb"},
+        {"answer": "Braun"},
+        {"answer": "Rot"}
+      ],
+      "answer": "Braun",
+      "explanation": "In Deutschland sind die Aderfarben für Neuinstallationen streng genormt. Der Außenleiter (Phase), der den Strom zum Verbraucher führt, ist üblicherweise Braun (L1), Schwarz (L2) oder Grau (L3). Blau ist exklusiv für den Neutralleiter (N) reserviert, und Grün-Gelb darf ausschließlich für den Schutzleiter (PE/Erdung) verwendet werden. Rot findet man heute nur noch in sehr alten Installationen oder speziellen Steuerleitungen."
+    },
+    {
+      "question": "Wie bestimmt man sicher die Phase (L) an einem offenen Kabelende, wenn man kein Messgerät, aber einen einpoligen Spannungsprüfer ('Phasenprüfer-Schraubendreher') hat?",
+      "answers": [
+        {"answer": "Man berührt nacheinander alle Adern mit der bloßen Hand."},
+        {"answer": "Man hält die Spitze an die Ader und berührt gleichzeitig das Kontaktplättchen am Griffende; die Glimmlampe leuchtet bei der Phase."},
+        {"answer": "Man hält das Kabel ins Wasser und schaut, wo es sprudelt."},
+        {"answer": "Man schlägt die Adern gegeneinander und wartet auf Funken."}
+      ],
+      "answer": "Man hält die Spitze an die Ader und berührt gleichzeitig das Kontaktplättchen am Griffende; die Glimmlampe leuchtet bei der Phase.",
+      "explanation": "Ein einpoliger Phasenprüfer nutzt den menschlichen Körper als Rückleiter gegen Erde. Wenn die Spitze die spannungsführende Phase berührt und der Finger auf dem Kontakt am Griff liegt, fließt ein winziger, ungefährlicher Strom durch eine Glimmlampe im Inneren. Leuchtet diese, handelt es sich um die Phase. Wichtig: Ein Phasenprüfer gilt nicht als absolut sicheres Prüfmittel ('Lügenstift'), da er bei isoliertem Standort (z.B. auf einer Holzleiter) versagen kann. Ein zweipoliger Spannungsprüfer (Duspol) ist immer vorzuziehen."
+    },
+    {
+      "question": "Du möchtest mit einem Multimeter prüfen, ob an einer Steckdose die korrekte Netzspannung anliegt. Welche Einstellung am Gerät ist dafür zwingend erforderlich?",
+      "answers": [
+        {"answer": "Gleichspannung (V DC / ⎓)"},
+        {"answer": "Wechselspannung (V AC / ~) mit Messbereich über 230V"},
+        {"answer": "Widerstandsmessung (Ω)"},
+        {"answer": "Stromstärkemessung (A)"}
+      ],
+      "answer": "Wechselspannung (V AC / ~) mit Messbereich über 230V",
+      "explanation": "In deutschen Haushalten liegt Wechselspannung (AC) mit einer Frequenz von 50 Hz an. Um die Spannung zu messen, muss das Multimeter auf AC (oft mit einer Wellenlinie ~ gekennzeichnet) eingestellt sein. Da die Nennspannung 230V beträgt, muss der gewählte Messbereich höher liegen (z.B. 600V oder 750V), um das Gerät nicht zu beschädigen. Eine falsche Einstellung auf 'Strommessung' (A) würde beim Einstecken in die Steckdose einen Kurzschluss verursachen."
+    },
+    {
+      "question": "Welche IP-Schutzart muss eine Außenleuchte in Deutschland mindestens erfüllen, wenn sie direktem Regen ausgesetzt ist?",
+      "answers": [
+        {"answer": "IP20"},
+        {"answer": "IP44"},
+        {"answer": "IP67"},
+        {"answer": "IPX0"}
+      ],
+      "answer": "IP44",
+      "explanation": "Die IP-Schutzart (International Protection) gibt an, wie gut ein Gerät gegen Fremdkörper und Wasser geschützt ist. Für den Außenbereich an Hauswänden ist IP44 der Standard. Die erste Ziffer '4' steht für Schutz gegen feste Fremdkörper (≥ 1 mm), die zweite Ziffer '4' für Schutz gegen allseitiges Spritzwasser. IP20 ist nur für trockene Innenräume geeignet. IP67 wäre für zeitweiliges Untertauchen (z.B. Teichbeleuchtung) nötig."
+    },
+    {
+      "question": "In welcher Tiefe sollten Erdkabel (z.B. NYY-J) im Garten in Deutschland üblicherweise verlegt werden, um vor Spatenstichen geschützt zu sein?",
+      "answers": [
+        {"answer": "10 cm"},
+        {"answer": "Mindestens 60 cm (unter Gehwegen/Rasen)"},
+        {"answer": "Immer exakt 2 Meter"},
+        {"answer": "Einfach locker unter den Rindenmulch legen"}
+      ],
+      "answer": "Mindestens 60 cm (unter Gehwegen/Rasen)",
+      "explanation": "Die VDE-Vorschriften sehen für Erdkabel eine Verlegetiefe von mindestens 60 cm vor (unter Fahrbahnen sogar 80 cm). Dies dient dem mechanischen Schutz vor Gartenwerkzeugen wie Spaten oder Hacken. Zusätzlich wird oft ein gelbes Warnband ('Achtung Starkstromkabel') ca. 20 cm über dem Kabel im Graben verlegt, damit man beim Graben rechtzeitig gewarnt wird."
+    },
+    {
+      "question": "Beim Anschluss einer Deckenlampe in einem Altbau findest du nur zwei Adern: Schwarz und Grau. Wie wird hier üblicherweise verfahren?",
+      "answers": [
+        {"answer": "Schwarz ist Phase, Grau ist der Neutralleiter (oft auch PEN-Leiter in klassischer Nullung)."},
+        {"answer": "Beide Kabel sind Phasen und müssen zusammengezwirbelt werden."},
+        {"answer": "Man muss das Haus sofort abreißen."},
+        {"answer": "Grau ist immer die Erdung und darf nicht benutzt werden."}
+      ],
+      "answer": "Schwarz ist Phase, Grau ist der Neutralleiter (oft auch PEN-Leiter in klassischer Nullung).",
+      "explanation": "In alten Installationen (vor 1965/1974) war die Farbgebung anders. Schwarz war oft die Phase und Grau der Neutralleiter (N). In Systemen mit 'klassischer Nullung' fungierte Grau gleichzeitig als Schutzleiter (PEN). Wenn eine moderne Lampe einen Erdungsanschluss (Metallgehäuse) hat, ist der Anschluss an solchen Systemen für Laien lebensgefährlich und sollte nur von einer Fachkraft geprüft werden, da kein separater FI-Schutzschalter (RCD) möglich ist."
+    },
+    {
+      "question": "Wie nennt man das Sicherheitsbauteil im Sicherungskasten, das bei Fehlerströmen (z.B. Stromfluss über den Körper) den Stromkreis binnen Millisekunden trennt?",
+      "answers": [
+        {"answer": "Leitungsschutzschalter (LS)"},
+        {"answer": "FI-Schutzschalter (RCD)"},
+        {"answer": "Stromzähler"},
+        {"answer": "Transformator"}
+      ],
+      "answer": "FI-Schutzschalter (RCD)",
+      "explanation": "Der FI-Schalter (Fehlerstrom-Schutzschalter, heute oft RCD genannt) vergleicht den hinführenden Strom (Phase) mit dem zurückfließenden Strom (Neutralleiter). Gibt es eine Differenz (z.B. weil Strom über eine Person gegen Erde abfließt), löst er sofort aus. In Deutschland ist ein RCD mit einem Auslösestrom von maximal 30mA für alle Steckdosenstromkreise in Wohnungen zwingend vorgeschrieben."
+    },
+    {
+      "question": "Du installierst einen Lichtschalter. Wo sollte die Phase (L) idealerweise angeschlossen werden?",
+      "answers": [
+        {"answer": "An den Kontakt für den Schutzleiter."},
+        {"answer": "An den Eingangskontakt (oft mit 'L' oder einem Pfeil markiert)."},
+        {"answer": "Direkt an die Glühbirne ohne Schalter dazwischen."},
+        {"answer": "An den blauen Draht."}
+      ],
+      "answer": "An den Eingangskontakt (oft mit 'L' oder einem Pfeil markiert).",
+      "explanation": "Ein Schalter unterbricht immer die Phase (den stromführenden Leiter). Die ankommende Phase wird am Eingang 'L' angeschlossen. Die abgehende Ader zur Lampe (der 'Lampendraht' oder 'geschaltete Phase') wird an einem der Ausgänge angeschlossen. So ist sichergestellt, dass die Fassung der Lampe bei ausgeschaltetem Schalter spannungsfrei ist."
+    },
+    {
+      "question": "Was bedeutet die Kennzeichnung 'NYM-J 3x1,5' auf einer typischen Mantelleitung?",
+      "answers": [
+        {"answer": "3 Meter lang und 1,5 kg schwer"},
+        {"answer": "3 Adern mit jeweils 1,5 mm² Querschnitt, inklusive grün-gelbem Schutzleiter"},
+        {"answer": "Nur für 1,5 Volt Batterien geeignet"},
+        {"answer": "3 Phasen und 1,5 Neutralleiter"}
+      ],
+      "answer": "3 Adern mit jeweils 1,5 mm² Querschnitt, inklusive grün-gelbem Schutzleiter",
+      "explanation": "Das Kürzel NYM steht für Normenleitung mit Kunststoffisolierung. Das '-J' signalisiert, dass ein grün-gelber Schutzleiter enthalten ist (im Gegensatz zu '-O'). '3x1,5' bedeutet, dass das Kabel drei Kupferadern mit einem Querschnitt von jeweils 1,5 mm² besitzt. Dies ist die Standardleitung für Licht- und einfache Steckdosenstromkreise im Haus."
+    },
+    {
+      "question": "Darf ein Laie in Deutschland die komplette Elektroinstallation eines Neubaus selbst durchführen und in Betrieb nehmen?",
+      "answers": [
+        {"answer": "Ja, solange er die Kabel ordentlich verlegt."},
+        {"answer": "Nein, Arbeiten an der elektrischen Anlage dürfen nur durch eingetragene Fachbetriebe ausgeführt und abgenommen werden (NAV §13)."},
+        {"answer": "Ja, wenn er ein YouTube-Video geschaut hat."},
+        {"answer": "Nur wenn die Sicherung draußen ist."}
+      ],
+      "answer": "Nein, Arbeiten an der elektrischen Anlage dürfen nur durch eingetragene Fachbetriebe ausgeführt und abgenommen werden (NAV §13).",
+      "explanation": "In Deutschland regelt die Niederspannungsanschlussverordnung (NAV), dass nur Fachbetriebe, die im Installateurverzeichnis des Netzbetreibers eingetragen sind, elektrische Anlagen errichten oder ändern dürfen. Laien dürfen zwar oft Vorarbeiten leisten (z.B. Schlitze klopfen oder Kabel ziehen), aber der Anschluss an den Verteiler und die finale Prüfung/Abnahme muss durch einen Elektromeister erfolgen, um Versicherungsschutz und Sicherheit zu gewährleisten."
+    }
+  ]
+},
 {
   "name": "Das antike Rom",
   "questions": [
