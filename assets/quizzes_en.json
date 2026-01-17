@@ -1,5 +1,340 @@
 [
   {
+  "name": "Global Finance & International Trade 101",
+  "questions": [
+    {
+      "question": "What is a 'Government Bond' (Staatsanleihe)?",
+      "answers": [
+        {"answer": "A share of ownership in a country, like a stock."},
+        {"answer": "A loan made by an investor to a government for a set period of time at a fixed interest rate."},
+        {"answer": "A tax that foreign countries must pay to trade."},
+        {"answer": "A physical gold bar stored in a national vault."}
+      ],
+      "answer": "A loan made by an investor to a government for a set period of time at a fixed interest rate.",
+      "explanation": "Think of a government bond as an IOU. When the U.S. government needs money to build roads or fund the military, it 'issues' a bond. An investor (like a person or another country) buys that bond. In return, the government promises to pay back the original amount plus interest after a certain number of years. It is essentially the government borrowing money from the public or other nations."
+    },
+    {
+      "question": "Why do countries like China buy trillions of dollars worth of U.S. government bonds?",
+      "answers": [
+        {"answer": "They are forced to by international law."},
+        {"answer": "To take over the U.S. government eventually."},
+        {"answer": "To store their excess cash in a safe place and keep their own currency stable for exports."},
+        {"answer": "Because the U.S. pays the highest interest rates in the world."}
+      ],
+      "answer": "To store their excess cash in a safe place and keep their own currency stable for exports.",
+      "explanation": "China sells a lot of goods to the U.S. and receives U.S. Dollars in return. Instead of just letting that cash sit idle, they buy U.S. Treasury bonds because they are historically considered one of the safest investments in the world. Additionally, by buying dollars and selling their own currency (Yuan), they keep the Yuan relatively 'cheap,' which makes Chinese products more affordable for Americans to buy."
+    },
+    {
+      "question": "If China were to suddenly start 'dumping' (selling) all its U.S. bonds, what is the most likely immediate risk to the U.S. economy?",
+      "answers": [
+        {"answer": "The U.S. would run out of physical cash."},
+        {"answer": "U.S. interest rates would likely spike, making it more expensive for Americans to get mortgages or car loans."},
+        {"answer": "China would immediately become the richest country in the world."},
+        {"answer": "The U.S. Stock Market would be closed forever."}
+      ],
+      "answer": "U.S. interest rates would likely spike, making it more expensive for Americans to get mortgages or car loans.",
+      "explanation": "Basic supply and demand applies here. If a huge holder like China sells all its bonds at once, the 'price' of those bonds drops because there is a sudden oversupply. In the bond world, when prices go down, 'yields' (interest rates) go up. This would force the U.S. government to pay much higher interest to attract new buyers, which in turn causes interest rates for normal citizens (like mortgages) to rise."
+    },
+    {
+      "question": "What is a 'Trade Deficit'?",
+      "answers": [
+        {"answer": "When a country has no more partners to trade with."},
+        {"answer": "When a country exports more than it imports."},
+        {"answer": "When the value of a country's imports is greater than the value of its exports."},
+        {"answer": "When a country refuses to pay its debts."}
+      ],
+      "answer": "When the value of a country's imports is greater than the value of its exports.",
+      "explanation": "If the U.S. buys $500 billion worth of goods from China, but China only buys $100 billion worth of goods from the U.S., the U.S. has a 'Trade Deficit' of $400 billion. It simply means the country is spending more on foreign goods than it is earning from selling its own goods abroad."
+    },
+    {
+      "question": "What does it mean for a currency to be the 'Global Reserve Currency'?",
+      "answers": [
+        {"answer": "It is the only currency that can be used for online shopping."},
+        {"answer": "It is the currency held in significant quantities by central banks around the world for international trade and debt."},
+        {"answer": "It is a currency that never changes in value."},
+        {"answer": "It is a currency that is backed by actual diamonds."}
+      ],
+      "answer": "It is the currency held in significant quantities by central banks around the world for international trade and debt.",
+      "explanation": "Currently, the U.S. Dollar is the world's primary reserve currency. This means most international commodities (like oil) are priced in dollars, and most countries keep large amounts of dollars in their central banks. This gives the U.S. a 'superpower' status in finance because it can borrow money more easily than any other nation."
+    },
+    {
+      "question": "What is a 'Tariff'?",
+      "answers": [
+        {"answer": "A special discount for trading partners."},
+        {"answer": "A tax imposed by a government on goods imported from other countries."},
+        {"answer": "A limit on how many items can be shipped."},
+        {"answer": "A type of high-speed cargo ship."}
+      ],
+      "answer": "A tax imposed by a government on goods imported from other countries.",
+      "explanation": "Tariffs are used to make imported goods more expensive, which encourages citizens to buy products made locally in their own country. For example, if the U.S. puts a 25% tariff on Chinese steel, the price of that steel goes up, making U.S.-produced steel look more attractive to buyers."
+    },
+    {
+      "question": "What is 'Inflation' in simple terms?",
+      "answers": [
+        {"answer": "When the government prints more physical paper money."},
+        {"answer": "A general increase in prices and a decrease in the purchasing power of money."},
+        {"answer": "When the population of a country grows too fast."},
+        {"answer": "When banks run out of money to lend."}
+      ],
+      "answer": "A general increase in prices and a decrease in the purchasing power of money.",
+      "explanation": "Inflation means your money doesn't go as far as it used to. If a loaf of bread cost $1 last year and $1.10 this year, that is inflation. In world finance, high inflation in one country can make its currency less valuable compared to others."
+    },
+    {
+      "question": "What is the primary role of a 'Central Bank' (like the Federal Reserve in the U.S.)?",
+      "answers": [
+        {"answer": "To manage the country's money supply and set interest rates."},
+        {"answer": "To collect taxes from citizens."},
+        {"answer": "To decide which companies are allowed to go public."},
+        {"answer": "To provide customer service for credit card users."}
+      ],
+      "answer": "To manage the country's money supply and set interest rates.",
+      "explanation": "Central banks are the 'banks for banks.' Their main job is to keep the economy stable. They do this by raising interest rates to slow down inflation or lowering them to encourage people to spend more money and boost the economy."
+    },
+    {
+      "question": "What is 'GDP' (Gross Domestic Product)?",
+      "answers": [
+        {"answer": "The amount of gold a country has in its treasury."},
+        {"answer": "The total value of all goods and services produced within a country in a year."},
+        {"answer": "The total debt a country owes to its citizens."},
+        {"answer": "The average income of a single person in a country."}
+      ],
+      "answer": "The total value of all goods and services produced within a country in a year.",
+      "explanation": "GDP is like a country's 'report card' for its economy. It measures the size and health of an economy. If the GDP is growing, the economy is usually doing well, creating jobs and increasing wealth."
+    },
+    {
+      "question": "What happens to a country's exports if its currency becomes much 'stronger' (more valuable)?",
+      "answers": [
+        {"answer": "Its exports become cheaper for other countries to buy."},
+        {"answer": "Its exports become more expensive for other countries to buy, potentially hurting its trade balance."},
+        {"answer": "Nothing happens to trade."},
+        {"answer": "The country is forced to stop exporting entirely."}
+      ],
+      "answer": "Its exports become more expensive for other countries to buy, potentially hurting its trade balance.",
+      "explanation": "If the U.S. Dollar gets very strong, a German company needs more Euros to buy the same American machine. This makes American products look expensive, so the German company might buy a Japanese machine instead. Therefore, a very strong currency can actually make it harder for a country to sell its products abroad."
+    },
+    {
+      "question": "What is 'Protectionism'?",
+      "answers": [
+        {"answer": "Protecting the environment during trade."},
+        {"answer": "Economic policies that restrict imports from other countries to help domestic industries."},
+        {"answer": "Using the military to protect trade ships."},
+        {"answer": "Insuring bank accounts against theft."}
+      ],
+      "answer": "Economic policies that restrict imports from other countries to help domestic industries.",
+      "explanation": "Protectionism is the opposite of 'Free Trade.' It involves using tariffs, quotas, and regulations to make it harder for foreign companies to compete with local companies. While it helps local businesses, it often leads to higher prices for consumers."
+    },
+    {
+      "question": "Why is the U.S. Dollar often called a 'Safe Haven' currency?",
+      "answers": [
+        {"answer": "Because it is waterproof."},
+        {"answer": "Because it is the only currency not affected by war."},
+        {"answer": "Because investors tend to buy it during times of global uncertainty or crisis to protect their wealth."},
+        {"answer": "Because it is issued by a private company that cannot go bankrupt."}
+      ],
+      "answer": "Because investors tend to buy it during times of global uncertainty or crisis to protect their wealth.",
+      "explanation": "When there is a global crisis (like a pandemic or war), investors get scared. They sell risky assets (like stocks or emerging market currencies) and buy U.S. Dollars. They do this because they trust the U.S. economy and its legal system to be stable, even when the rest of the world is chaotic."
+    },
+    {
+      "question": "What is 'Foreign Direct Investment' (FDI)?",
+      "answers": [
+        {"answer": "When a citizen buys a souvenir in another country."},
+        {"answer": "When a company from one country builds a factory or buys a business in another country."},
+        {"answer": "When a government gives aid to another country."},
+        {"answer": "When a person moves to another country for work."}
+      ],
+      "answer": "When a company from one country builds a factory or buys a business in another country.",
+      "explanation": "FDI is when 'real' business happens across borders. For example, if German company BMW builds a factory in South Carolina, that is FDI in the U.S. It usually brings jobs and technology to the host country."
+    },
+    {
+      "question": "What does a 'Sanction' do in international trade?",
+      "answers": [
+        {"answer": "It provides a grant to help a country grow."},
+        {"answer": "It is a penalty applied by one or more countries against another, often restricting trade or freezing assets."},
+        {"answer": "It is a celebration of a successful trade deal."},
+        {"answer": "It is a type of insurance for international shipping."}
+      ],
+      "answer": "It is a penalty applied by one or more countries against another, often restricting trade or freezing assets.",
+      "explanation": "Sanctions are used as a political tool. If Country A is unhappy with the actions of Country B, it might ban its companies from doing business with Country B. This is intended to hurt Country B's economy to force a change in behavior."
+    },
+    {
+      "question": "What is 'Quantitative Easing' (QE)?",
+      "answers": [
+        {"answer": "A way to count how many people are in the economy."},
+        {"answer": "A policy where a central bank buys government bonds or other financial assets to inject money into the economy and lower interest rates."},
+        {"answer": "A method for measuring the quality of exports."},
+        {"answer": "A type of tax on high-frequency trading."}
+      ],
+      "answer": "A policy where a central bank buys government bonds or other financial assets to inject money into the economy and lower interest rates.",
+      "explanation": "When interest rates are already near zero but the economy is still struggling, central banks use QE. They 'create' digital money and use it to buy bonds. This puts more cash into the banking system, making it even easier and cheaper for businesses and people to borrow money."
+    },
+    {
+      "question": "What is the 'IMF' (International Monetary Fund)?",
+      "answers": [
+        {"answer": "A global bank that lends money to people to buy houses."},
+        {"answer": "An organization that promotes global economic growth and provides loans to countries in financial crisis."},
+        {"answer": "A group that decides the prices of all stocks."},
+        {"answer": "A secret society that controls the price of gold."}
+      ],
+      "answer": "An organization that promotes global economic growth and provides loans to countries in financial crisis.",
+      "explanation": "The IMF acts like a 'lender of last resort.' If a country's economy is collapsing and no one else will lend them money, the IMF provides a loan to help them stabilize—though these loans usually come with strict rules on how the country must change its spending."
+    },
+    {
+      "question": "What is an 'Emerging Market'?",
+      "answers": [
+        {"answer": "A market that only opens in the morning."},
+        {"answer": "A country that is in the process of moving from a 'developing' to a 'developed' economy."},
+        {"answer": "A new type of cryptocurrency exchange."},
+        {"answer": "A company that has just started selling products."}
+      ],
+      "answer": "A country that is in the process of moving from a 'developing' to a 'developed' economy.",
+      "explanation": "Countries like India, Brazil, or Vietnam are often called emerging markets. They have high growth potential but are also seen as riskier for investors than established economies like Germany or the U.S."
+    },
+    {
+      "question": "What is 'Hyperinflation'?",
+      "answers": [
+        {"answer": "When inflation is slightly higher than 2%."},
+        {"answer": "When prices rise incredibly fast, often by more than 50% in a single month, making the currency practically worthless."},
+        {"answer": "When the government refuses to print any more money."},
+        {"answer": "When a country's GDP grows too fast."}
+      ],
+      "answer": "When prices rise incredibly fast, often by more than 50% in a single month, making the currency practically worthless.",
+      "explanation": "Hyperinflation is an economic nightmare. It usually happens when a government prints too much money to pay off its debts. Famous examples include Germany in the 1920s or Zimbabwe and Venezuela more recently, where people needed wheelbarrows of cash just to buy a loaf of bread."
+    },
+    {
+      "question": "What is 'Arbitrage'?",
+      "answers": [
+        {"answer": "A type of legal dispute in trade."},
+        {"answer": "The practice of buying an asset in one market and simultaneously selling it in another at a higher price to profit from the price difference."},
+        {"answer": "A government-mandated price for a good."},
+        {"answer": "The total amount of money a person has in their bank account."}
+      ],
+      "answer": "The practice of buying an asset in one market and simultaneously selling it in another at a higher price to profit from the price difference.",
+      "explanation": "Imagine gold is selling for $2,000 in London and $2,010 in New York. If you can buy it in London and sell it in New York instantly, you make $10 profit per ounce. This is arbitrage. In modern markets, computer programs do this in milliseconds."
+    },
+    {
+      "question": "What is a 'Trade War'?",
+      "answers": [
+        {"answer": "A literal war fought with ships and tanks over trade routes."},
+        {"answer": "A situation where countries repeatedly increase tariffs or trade barriers against each other in a cycle of retaliation."},
+        {"answer": "When companies compete to sell the same product."},
+        {"answer": "A shortage of goods caused by too much trade."}
+      ],
+      "answer": "A situation where countries repeatedly increase tariffs or trade barriers against each other in a cycle of retaliation.",
+      "explanation": "A trade war usually starts when Country A puts a tariff on Country B's goods. Country B gets angry and puts a tariff on Country A's goods in response. This continues back and forth, making products more expensive for everyone and slowing down global growth."
+    },
+    {
+      "question": "What is the 'World Bank'?",
+      "answers": [
+        {"answer": "A bank where any citizen of the world can open an account."},
+        {"answer": "An international organization that provides loans and grants to the governments of poorer countries for big infrastructure projects."},
+        {"answer": "A bank that handles the finances of the United Nations."},
+        {"answer": "The bank that prints the world's money."}
+      ],
+      "answer": "An international organization that provides loans and grants to the governments of poorer countries for big infrastructure projects.",
+      "explanation": "While the IMF focuses on economic stability, the World Bank focuses on long-term development and poverty reduction. They lend money to developing countries to build things like dams, roads, and schools."
+    },
+    {
+      "question": "What is 'Mercantilism'?",
+      "answers": [
+        {"answer": "An old economic theory that a country should maximize its exports and minimize its imports to accumulate gold and wealth."},
+        {"answer": "A modern system of trading via the internet."},
+        {"answer": "The practice of hiring merchants to run the government."},
+        {"answer": "A system where all trade is done without money."}
+      ],
+      "answer": "An old economic theory that a country should maximize its exports and minimize its imports to accumulate gold and wealth.",
+      "explanation": "Mercantilism was popular in Europe from the 16th to the 18th century. It led to many wars and colonialism as countries tried to grab as many resources as possible to ensure they were 'selling more than they were buying.' Today, many economists consider it an outdated and harmful way of thinking."
+    },
+    {
+      "question": "What is a 'Sovereign Wealth Fund'?",
+      "answers": [
+        {"answer": "A savings account for a king or queen."},
+        {"answer": "A state-owned investment fund that invests a country's excess money (often from oil or trade) into global assets."},
+        {"answer": "A fund used to pay for a country's military."},
+        {"answer": "A type of insurance for government employees."}
+      ],
+      "answer": "A state-owned investment fund that invests a country's excess money (often from oil or trade) into global assets.",
+      "explanation": "Countries like Norway, Saudi Arabia, and China have massive 'Sovereign Wealth Funds.' They take the money they make from selling resources and invest it in stocks, real estate, and companies all over the world to ensure the country has wealth for the future."
+    },
+    {
+      "question": "What is 'Capital Flight'?",
+      "answers": [
+        {"answer": "When a country's leaders leave the country with all the money."},
+        {"answer": "A large-scale exit of money and assets from a country because of economic instability, war, or fear of higher taxes."},
+        {"answer": "Sending physical cash via airplanes to other countries."},
+        {"answer": "Investing money in the airline industry."}
+      ],
+      "answer": "A large-scale exit of money and assets from a country because of economic instability, war, or fear of higher taxes.",
+      "explanation": "If a country's economy looks like it's going to crash, rich people and companies will move their money to safer countries (like the U.S. or Switzerland). This 'flight' of capital makes the original country's problems even worse because there is less money left to invest or pay for services."
+    },
+    {
+      "question": "What is 'Offshoring'?",
+      "answers": [
+        {"answer": "The practice of moving a company's business processes or manufacturing to another country, usually to take advantage of lower costs."},
+        {"answer": "Trading goods using ships instead of planes."},
+        {"answer": "Fishing in international waters."},
+        {"answer": "Storing money in banks located on islands."}
+      ],
+      "answer": "The practice of moving a company's business processes or manufacturing to another country, usually to take advantage of lower costs.",
+      "explanation": "Offshoring is a major part of global trade. For example, an American tech company might move its customer service center to India or its manufacturing to Vietnam because labor and operating costs are significantly cheaper there."
+    },
+    {
+      "question": "What does 'Fiat Money' mean?",
+      "answers": [
+        {"answer": "Money that is backed by a specific amount of silver."},
+        {"answer": "Currency that has value because the government says it does, and is not backed by a physical commodity like gold."},
+        {"answer": "A type of currency used only for buying cars."},
+        {"answer": "The digital currency used by the European Union."}
+      ],
+      "answer": "Currency that has value because the government says it does, and is not backed by a physical commodity like gold.",
+      "explanation": "Almost every modern currency, including the Dollar and the Euro, is 'Fiat' money. It doesn't have any 'intrinsic' value (you can't eat it or use it to build things), and you can't trade it for a fixed amount of gold from the government. Its value comes purely from our collective trust in the government that issues it."
+    },
+    {
+      "question": "What is a 'Speculative Bubble'?",
+      "answers": [
+        {"answer": "A new type of eco-friendly packaging."},
+        {"answer": "When the price of an asset (like houses or stocks) rises far above its actual value, driven by investor excitement, before eventually crashing."},
+        {"answer": "A period of very high economic growth."},
+        {"answer": "When a country's debt becomes too high to measure."}
+      ],
+      "answer": "When the price of an asset (like houses or stocks) rises far above its actual value, driven by investor excitement, before eventually crashing.",
+      "explanation": "Bubbles happen when people buy things just because they think the price will keep going up, not because the thing is actually worth that much. Famous examples include the Dot-com bubble in the 1990s or the U.S. housing bubble that led to the 2008 financial crisis."
+    },
+    {
+      "question": "What is 'Commodity Trading'?",
+      "answers": [
+        {"answer": "The buying and selling of raw materials like oil, gold, wheat, and copper."},
+        {"answer": "Trading finished products like iPhones and cars."},
+        {"answer": "Buying and selling companies on the stock market."},
+        {"answer": "A type of trade that only happens between neighbors."}
+      ],
+      "answer": "The buying and selling of raw materials like oil, gold, wheat, and copper.",
+      "explanation": "Commodities are the basic building blocks of the global economy. Changes in their prices (like a sudden rise in the price of oil) can have a massive impact on the inflation and economy of every country in the world."
+    },
+    {
+      "question": "What is the 'G7'?",
+      "answers": [
+        {"answer": "A group of the seven largest tech companies in the world."},
+        {"answer": "An informal group of seven of the world's most advanced economies that meets to discuss global economic issues."},
+        {"answer": "The seven continents of the world when they trade together."},
+        {"answer": "A type of security code used by banks."}
+      ],
+      "answer": "An informal group of seven of the world's most advanced economies that meets to discuss global economic issues.",
+      "explanation": "The G7 (Group of Seven) includes the U.S., UK, France, Germany, Italy, Canada, and Japan. They represent a huge portion of global wealth and meet regularly to try and coordinate their economic policies."
+    },
+    {
+      "question": "What is 'Outsourcing'?",
+      "answers": [
+        {"answer": "When a company hires an outside supplier to perform services or create goods that were originally done in-house."},
+        {"answer": "When a country runs out of a specific natural resource."},
+        {"answer": "Selling products directly to consumers instead of stores."},
+        {"answer": "Hiring employees from other countries to work in your office."}
+      ],
+      "answer": "When a company hires an outside supplier to perform services or create goods that were originally done in-house.",
+      "explanation": "While 'offshoring' specifically means moving work to another country, 'outsourcing' just means hiring another company to do it. A U.S. company could 'outsource' its payroll to another U.S. company, or it could 'outsource and offshore' its IT department to a company in Poland."
+    }
+  ]
+},
+  {
     "name": "Mastering GitHub Copilot & AI Agents for Fullstack Developers",
     "questions": [
       {
