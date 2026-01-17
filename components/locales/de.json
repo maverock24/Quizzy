@@ -40,5 +40,6 @@
   "reader_mode": "Lesemodus",
   "reader_mode_desc": "Text-zu-Sprache-Vorlesung von Fragen und Antworten aktivieren",
   "stop": "Stopp",
-  "correct_answer_is": "Die richtige Antwort ist"
+  "correct_answer_is": "Die richtige Antwort ist",
+  "other": "Sonstige"
 }

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useMemo, useState } from 'react';
 import {
   FlatList,
   StyleSheet,
@@ -6,12 +6,51 @@ import {
   View,
   Animated,
   Pressable,
+  SectionList,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 type QuizSelectionProps = {
   quizzes: any[];
   handleQuizSelection: (quiz: any) => void;
+};
+
+const CategoryHeader: React.FC<{
+  title: string;
+  count: number;
+  isExpanded: boolean;
+  onToggle: () => void;
+}> = ({ title, count, isExpanded, onToggle }) => {
+  const rotateAnim = useRef(new Animated.Value(isExpanded ? 1 : 0)).current;
+
+  React.useEffect(() => {
+    Animated.timing(rotateAnim, {
+      toValue: isExpanded ? 1 : 0,
+      duration: 200,
+      useNativeDriver: true,
+    }).start();
+  }, [isExpanded]);
+
+  const rotation = rotateAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['0deg', '90deg'],
+  });
+
+  return (
+    <Pressable onPress={onToggle} style={styles.categoryHeader}>
+      <View style={styles.categoryHeaderContent}>
+        <Animated.Text
+          style={[styles.categoryArrow, { transform: [{ rotate: rotation }] }]}
+        >
+          ▶
+        </Animated.Text>
+        <Text style={styles.categoryTitle}>{title}</Text>
+        <View style={styles.categoryCountBadge}>
+          <Text style={styles.categoryCountText}>{count}</Text>
+        </View>
+      </View>
+    </Pressable>
+  );
 };
 
 const QuizButton: React.FC<{ item: any; onPress: (quiz: any) => void }> = ({
@@ -87,18 +126,112 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   handleQuizSelection,
 }) => {
   const { t } = useTranslation();
+  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
+    new Set(['all']),
+  );
+
+  // Group quizzes by category
+  const groupedQuizzes = useMemo(() => {
+    const groups: { [key: string]: any[] } = {};
+    const uncategorized: any[] = [];
+
+    quizzes.forEach((quiz) => {
+      if (quiz.category) {
+        if (!groups[quiz.category]) {
+          groups[quiz.category] = [];
+        }
+        groups[quiz.category].push(quiz);
+      } else {
+        uncategorized.push(quiz);
+      }
+    });
+
+    // Sort categories alphabetically (ignoring emoji prefix)
+    const sections = Object.keys(groups)
+      .sort((a, b) => {
+        // Remove emoji prefix for sorting (emojis are typically followed by a space)
+        const textA = a.replace(/^[\p{Emoji}\s]+/u, '').toLowerCase();
+        const textB = b.replace(/^[\p{Emoji}\s]+/u, '').toLowerCase();
+        return textA.localeCompare(textB);
+      })
+      .map((category) => ({
+        title: category,
+        data: groups[category],
+        count: groups[category].length, // Store original count
+      }));
+
+    // Add uncategorized at the end if any
+    if (uncategorized.length > 0) {
+      sections.push({
+        title: t('other') || 'Other',
+        data: uncategorized,
+        count: uncategorized.length,
+      });
+    }
+
+    return sections;
+  }, [quizzes, t]);
+
+  const toggleCategory = (category: string) => {
+    setExpandedCategories((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(category)) {
+        newSet.delete(category);
+      } else {
+        newSet.add(category);
+      }
+      return newSet;
+    });
+  };
+
   const renderItem = ({ item }: { item: any }) => (
     <QuizButton item={item} onPress={handleQuizSelection} />
   );
 
+  const renderSectionHeader = ({
+    section,
+  }: {
+    section: { title: string; data: any[]; count: number };
+  }) => (
+    <CategoryHeader
+      title={section.title}
+      count={section.count}
+      isExpanded={expandedCategories.has(section.title)}
+      onToggle={() => toggleCategory(section.title)}
+    />
+  );
+
+  // If no categories exist, use simple FlatList
+  if (
+    groupedQuizzes.length <= 1 &&
+    groupedQuizzes[0]?.title === (t('other') || 'Other')
+  ) {
+    return (
+      <View style={styles.quizSelectionContainer}>
+        <Text style={styles.normalText}>{t('select_quiz')}</Text>
+        <FlatList
+          style={{ padding: 10 }}
+          data={quizzes}
+          keyExtractor={(item) => item.name}
+          renderItem={renderItem}
+        />
+      </View>
+    );
+  }
+
   return (
     <View style={styles.quizSelectionContainer}>
       <Text style={styles.normalText}>{t('select_quiz')}</Text>
-      <FlatList
+      <SectionList
         style={{ padding: 10 }}
-        data={quizzes}
+        sections={groupedQuizzes.map((section) => ({
+          ...section,
+          data: expandedCategories.has(section.title) ? section.data : [],
+        }))}
         keyExtractor={(item) => item.name}
         renderItem={renderItem}
+        renderSectionHeader={renderSectionHeader}
+        stickySectionHeadersEnabled={false}
       />
     </View>
   );
@@ -112,6 +245,40 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: 'white',
+  },
+  categoryHeader: {
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    marginTop: 16,
+    marginBottom: 4,
+  },
+  categoryHeaderContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  categoryArrow: {
+    color: 'white',
+    fontSize: 12,
+    marginRight: 10,
+  },
+  categoryTitle: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '700',
+    flex: 1,
+  },
+  categoryCountBadge: {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 12,
+  },
+  categoryCountText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: '600',
   },
   answerButton: {
     backgroundColor: 'rgb(46, 150, 194)',
