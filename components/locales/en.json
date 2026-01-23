@@ -41,5 +41,9 @@
   "reader_mode_desc": "Enable text-to-speech reading of questions and answers",
   "stop": "Stop",
   "correct_answer_is": "The correct answer is",
-  "other": "Other"
+  "other": "Other",
+  "text_input_mode": "Type Answer Mode",
+  "text_input_mode_desc": "Type your answer instead of selecting from choices. Ideal for math quizzes or open-ended questions.",
+  "submit_answer": "Submit",
+  "type_your_answer": "Type your answer..."
 }

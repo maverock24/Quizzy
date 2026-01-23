@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Switch,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -165,6 +166,7 @@ export const Question: React.FC<QuestionProps> = ({
     setLanguage,
     userQuizLoadEnabled,
     setUserQuizLoadEnabled,
+    textInputAnswerMode,
   } = useQuiz();
   const { t, i18n } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
@@ -179,6 +181,8 @@ export const Question: React.FC<QuestionProps> = ({
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
   const [answerIsWrong, setAnswerIsWrong] = useState(false);
   const [sound, setSound] = useState<Audio.Sound | null>(null);
+  const [textInputValue, setTextInputValue] = useState('');
+  const [textInputSubmitted, setTextInputSubmitted] = useState(false);
 
   // Update the useEffect that resets animations
   useEffect(() => {
@@ -194,6 +198,9 @@ export const Question: React.FC<QuestionProps> = ({
     setAnswerSelected(false);
     setAnswerIsCorrect(false);
     setAnswerIsWrong(false);
+    // Reset text input state
+    setTextInputValue('');
+    setTextInputSubmitted(false);
 
     // Force immediate update on Android
     Platform.OS === 'android' &&
@@ -208,8 +215,8 @@ export const Question: React.FC<QuestionProps> = ({
   useEffect(() => {
     return sound
       ? () => {
-          sound.unloadAsync();
-        }
+        sound.unloadAsync();
+      }
       : undefined;
   }, [sound]);
 
@@ -313,6 +320,33 @@ export const Question: React.FC<QuestionProps> = ({
     readAloud(fullText);
   };
 
+  // Handle text input answer submission
+  const handleTextInputSubmit = () => {
+    if (textInputSubmitted || !textInputValue.trim()) return;
+
+    stopTTS();
+    playSoundAnswerSelected();
+    setTextInputSubmitted(true);
+
+    // Normalize both answers for comparison (case-insensitive, trim whitespace)
+    const normalizedInput = textInputValue.trim().toLowerCase();
+    const normalizedCorrect = correctAnswer.trim().toLowerCase();
+    const isCorrect = normalizedInput === normalizedCorrect;
+
+    setTimeout(() => {
+      playSound(isCorrect);
+      isCorrect ? setAnswerIsCorrect(true) : setAnswerIsWrong(true);
+    }, 400);
+
+    setTimeout(() => {
+      handleAnswerSelection(isCorrect ? correctAnswer : textInputValue);
+      setTextInputSubmitted(false);
+      setTextInputValue('');
+      setAnswerIsCorrect(false);
+      setAnswerIsWrong(false);
+    }, 1200);
+  };
+
   return (
     <ScrollView style={styles.contentContainer}>
       <View
@@ -359,45 +393,101 @@ export const Question: React.FC<QuestionProps> = ({
           </View>
         </View>
 
-        {answers.map((answer, index) => (
-          <Animated.View
-            key={index}
-            style={{
-              opacity: fadeOutAnim[index],
-            }}
-          >
+        {/* Conditionally render text input mode or multiple choice */}
+        {textInputAnswerMode ? (
+          <View style={styles.textInputContainer}>
+            <TextInput
+              style={[
+                styles.textInput,
+                textInputSubmitted && answerIsCorrect && styles.textInputCorrect,
+                textInputSubmitted && answerIsWrong && styles.textInputWrong,
+              ]}
+              value={textInputValue}
+              onChangeText={setTextInputValue}
+              placeholder={t('type_your_answer')}
+              placeholderTextColor="rgba(255,255,255,0.5)"
+              editable={!textInputSubmitted}
+              onSubmitEditing={handleTextInputSubmit}
+              returnKeyType="done"
+              autoCapitalize="none"
+              autoCorrect={false}
+            />
             <TouchableOpacity
               style={[
-                styles.answerButton,
-                selectedAnswerIndex === index && styles.selectedAnswerButton,
+                styles.submitButton,
+                textInputSubmitted && styles.submitButtonDisabled,
               ]}
-              onPress={() => handleAnswer(answer.answer, index)}
+              onPress={handleTextInputSubmit}
+              disabled={textInputSubmitted}
             >
-              <View style={styles.labelContainer}>
-                <Text style={styles.labelText}>{answerLabels[index]}</Text>
-              </View>
-              <Text style={styles.answerButtonText} numberOfLines={4}>
-                {renderRichText(answer.answer)}
-              </Text>
-              {answerIsCorrect && (
+              <Text style={styles.submitButtonText}>{t('submit_answer')}</Text>
+              {textInputSubmitted && answerIsCorrect && (
                 <FontAwesome
                   name="check"
                   size={20}
                   color="white"
-                  style={styles.correct}
+                  style={styles.submitIcon}
                 />
               )}
-              {answerIsWrong && (
+              {textInputSubmitted && answerIsWrong && (
                 <FontAwesome
                   name="times"
                   size={20}
                   color="white"
-                  style={styles.wrong}
+                  style={styles.submitIcon}
                 />
               )}
             </TouchableOpacity>
-          </Animated.View>
-        ))}
+            {/* Show correct answer if wrong */}
+            {textInputSubmitted && answerIsWrong && (
+              <View style={styles.correctAnswerHint}>
+                <Text style={styles.correctAnswerHintText}>
+                  {t('correct_answer_is')}: {correctAnswer}
+                </Text>
+              </View>
+            )}
+          </View>
+        ) : (
+          answers.map((answer, index) => (
+            <Animated.View
+              key={index}
+              style={{
+                opacity: fadeOutAnim[index],
+              }}
+            >
+              <TouchableOpacity
+                style={[
+                  styles.answerButton,
+                  selectedAnswerIndex === index && styles.selectedAnswerButton,
+                ]}
+                onPress={() => handleAnswer(answer.answer, index)}
+              >
+                <View style={styles.labelContainer}>
+                  <Text style={styles.labelText}>{answerLabels[index]}</Text>
+                </View>
+                <Text style={styles.answerButtonText} numberOfLines={4}>
+                  {renderRichText(answer.answer)}
+                </Text>
+                {answerIsCorrect && (
+                  <FontAwesome
+                    name="check"
+                    size={20}
+                    color="white"
+                    style={styles.correct}
+                  />
+                )}
+                {answerIsWrong && (
+                  <FontAwesome
+                    name="times"
+                    size={20}
+                    color="white"
+                    style={styles.wrong}
+                  />
+                )}
+              </TouchableOpacity>
+            </Animated.View>
+          ))
+        )}
       </View>
     </ScrollView>
   );
@@ -520,5 +610,60 @@ const styles = StyleSheet.create({
   selectedAnswerButton: {
     borderColor: 'white',
     borderWidth: 1,
+  },
+  // Text input mode styles
+  textInputContainer: {
+    marginTop: 10,
+  },
+  textInput: {
+    backgroundColor: 'rgb(45, 55, 72)',
+    borderRadius: 8,
+    borderWidth: 2,
+    borderColor: 'rgb(63, 75, 90)',
+    padding: 16,
+    fontSize: 18,
+    color: 'white',
+    marginBottom: 12,
+  },
+  textInputCorrect: {
+    borderColor: 'rgb(0, 216, 0)',
+    backgroundColor: 'rgba(0, 216, 0, 0.15)',
+  },
+  textInputWrong: {
+    borderColor: 'rgb(255, 0, 0)',
+    backgroundColor: 'rgba(255, 0, 0, 0.15)',
+  },
+  submitButton: {
+    backgroundColor: 'rgb(37, 106, 158)',
+    padding: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+  submitButtonDisabled: {
+    opacity: 0.6,
+  },
+  submitButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  submitIcon: {
+    marginLeft: 10,
+  },
+  correctAnswerHint: {
+    marginTop: 12,
+    padding: 12,
+    backgroundColor: 'rgba(0, 216, 0, 0.2)',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'rgb(0, 216, 0)',
+  },
+  correctAnswerHintText: {
+    color: 'rgb(180, 255, 180)',
+    fontSize: 14,
+    fontWeight: '500',
+    textAlign: 'center',
   },
 });

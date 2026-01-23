@@ -41,5 +41,9 @@
   "reader_mode_desc": "Text-zu-Sprache-Vorlesung von Fragen und Antworten aktivieren",
   "stop": "Stopp",
   "correct_answer_is": "Die richtige Antwort ist",
-  "other": "Sonstige"
+  "other": "Sonstige",
+  "text_input_mode": "Antwort eintippen",
+  "text_input_mode_desc": "Antwort eintippen statt auswählen. Ideal für Mathe-Quizze oder offene Fragen.",
+  "submit_answer": "Absenden",
+  "type_your_answer": "Antwort eingeben..."
 }

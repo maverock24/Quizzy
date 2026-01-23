@@ -52,6 +52,8 @@ type QuizContextType = {
   availableVoices: SpeechSynthesisVoice[];
   selectedVoice: SpeechSynthesisVoice | null;
   setSelectedVoice: (voice: SpeechSynthesisVoice | null) => void;
+  textInputAnswerMode: boolean;
+  setTextInputAnswerMode: (enabled: boolean) => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -117,6 +119,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [readerModeEnabled, setReaderModeEnabledState] = useState<boolean>(false);
   const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoiceState] = useState<SpeechSynthesisVoice | null>(null);
+  const [textInputAnswerMode, setTextInputAnswerModeState] = useState<boolean>(false);
   const setMusicEnabled = useCallback(async (enabled: boolean) => {
     setMusicEnabledState(enabled);
     try {
@@ -132,6 +135,15 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       await AsyncStorage.setItem('readerModeEnabled', String(enabled));
     } catch (error) {
       console.error('Failed to save reader mode setting', error);
+    }
+  }, []);
+
+  const setTextInputAnswerMode = useCallback(async (enabled: boolean) => {
+    setTextInputAnswerModeState(enabled);
+    try {
+      await AsyncStorage.setItem('textInputAnswerMode', String(enabled));
+    } catch (error) {
+      console.error('Failed to save text input answer mode setting', error);
     }
   }, []);
 
@@ -167,7 +179,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       let voicesLoadAttempts = 0;
       const maxAttempts = 20;
       const isMobile = /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      
+
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
         setAvailableVoices(voices);
@@ -298,6 +310,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setMusicEnabledState(false);
     setReaderModeEnabledState(false);
     setSelectedVoiceState(null);
+    setTextInputAnswerModeState(false);
   }, []);
 
   // Function to check for and download updated quizzes
@@ -528,6 +541,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const savedLanguage = await AsyncStorage.getItem('language');
       const musicSetting = await AsyncStorage.getItem('musicEnabled');
       const readerModeSetting = await AsyncStorage.getItem('readerModeEnabled');
+      const textInputAnswerModeSetting = await AsyncStorage.getItem('textInputAnswerMode');
 
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
@@ -542,6 +556,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setLanguageState(savedLanguage || i18n.language || 'en');
       setMusicEnabledState(musicSetting === 'true');
       setReaderModeEnabledState(readerModeSetting === 'true');
+      setTextInputAnswerModeState(textInputAnswerModeSetting === 'true');
       if (savedLanguage && savedLanguage !== i18n.language) {
         i18n.changeLanguage(savedLanguage);
       }
@@ -568,31 +583,31 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   }, [remoteUpdateEnabled]); // This effect runs when remoteUpdateEnabled changes
 
   // --- Configuration ---
-// 1. This points to the local API route at app/remoteUpdate.ts
-const API_ENDPOINT_URL = '/api/remoteUpdate';
-const absoluteApiEndpointUrl = `${origin}${API_ENDPOINT_URL}`;
-// 2. Using the storage key from your provided snippet.
-const STORAGE_KEY = 'quizzes_de';
+  // 1. This points to the local API route at app/remoteUpdate.ts
+  const API_ENDPOINT_URL = '/api/remoteUpdate';
+  const absoluteApiEndpointUrl = `${origin}${API_ENDPOINT_URL}`;
+  // 2. Using the storage key from your provided snippet.
+  const STORAGE_KEY = 'quizzes_de';
 
-const updateDataFromGoogleDrive = async () => {
-  try {
-    // The fetch call targets the internal route.
-    const response = await fetch('https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json');
+  const updateDataFromGoogleDrive = async () => {
+    try {
+      // The fetch call targets the internal route.
+      const response = await fetch('https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json');
 
-    if (!response.ok) {
-      throw new Error(`API route responded with an error: ${response.statusText}`);
+      if (!response.ok) {
+        throw new Error(`API route responded with an error: ${response.statusText}`);
+      }
+
+      const jsonData = await response.json();
+      // Save the fetched data to AsyncStorage for persistence.
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(jsonData));
+
+      // Update the component's state to reflect the new data.
+      setData(jsonData);
+    } catch (error) {
+      console.error('Error updating data:', error);
     }
-
-    const jsonData = await response.json();
-    // Save the fetched data to AsyncStorage for persistence.
-    await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(jsonData));
-
-    // Update the component's state to reflect the new data.
-    setData(jsonData);
-  } catch (error) {
-    console.error('Error updating data:', error);
-  }
-};
+  };
 
   // Load settings from AsyncStorage on component mount
   useEffect(() => {
@@ -662,6 +677,8 @@ const updateDataFromGoogleDrive = async () => {
         availableVoices,
         selectedVoice,
         setSelectedVoice, // Expose the voice selection functions
+        textInputAnswerMode,
+        setTextInputAnswerMode, // Expose the text input answer mode setter
       }}
     >
       {children}
