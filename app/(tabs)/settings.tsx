@@ -34,6 +34,8 @@ export default function SettingsScreen() {
     availableVoices,
     selectedVoice,
     setSelectedVoice,
+    textInputAnswerMode,
+    setTextInputAnswerMode,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -113,7 +115,7 @@ export default function SettingsScreen() {
           <Text style={styles.heading}>{t('settings')}</Text>
           {/* Language Switcher */}
           <View style={styles.settingItem}>
-            <Text style={[styles.label, { flex: 1}]}>{t('language')}</Text>
+            <Text style={[styles.label, { flex: 1 }]}>{t('language')}</Text>
             <View
               style={{
                 flex: 1,
@@ -220,7 +222,22 @@ export default function SettingsScreen() {
               value={readerModeEnabled}
             />
           </View>
-          
+          <View style={styles.settingItem}>
+            <View style={styles.settingName}>
+              <Text style={styles.settingText}>{t('text_input_mode')}</Text>
+              <Text style={styles.settingDescription}>
+                {t('text_input_mode_desc')}
+              </Text>
+            </View>
+            <Switch
+              trackColor={{ false: 'gray', true: 'white' }}
+              thumbColor={'rgb(85, 101, 107)'}
+              ios_backgroundColor="gray"
+              onValueChange={setTextInputAnswerMode}
+              value={textInputAnswerMode}
+            />
+          </View>
+
           {/* Voice Selection - only show when Reader mode is enabled */}
           {readerModeEnabled && availableVoices.length > 0 && (
             <View style={styles.settingItem}>
@@ -245,17 +262,17 @@ export default function SettingsScreen() {
                 >
                   <Picker.Item label="Default Voice" value="" />
                   {availableVoices.map((voice, index) => (
-                    <Picker.Item 
-                      key={`${voice.name}-${index}`} 
-                      label={`${voice.name} (${voice.lang})`} 
-                      value={voice.name} 
+                    <Picker.Item
+                      key={`${voice.name}-${index}`}
+                      label={`${voice.name} (${voice.lang})`}
+                      value={voice.name}
                     />
                   ))}
                 </Picker>
               </View>
             </View>
           )}
-          
+
           {/* TTS Test Button - especially useful for mobile */}
           {readerModeEnabled && (
             <View style={styles.settingItem}>
@@ -287,7 +304,7 @@ export default function SettingsScreen() {
               </Button>
             </View>
           )}
-          
+
           {/* User Quiz Load Switch */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>

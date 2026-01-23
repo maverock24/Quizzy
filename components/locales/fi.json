@@ -41,5 +41,9 @@
   "reader_mode_desc": "Ota käyttöön tekstistä puheeksi -lukeminen kysymyksille ja vastauksille",
   "stop": "Pysäytä",
   "correct_answer_is": "Oikea vastaus on",
-  "other": "Muut"
+  "other": "Muut",
+  "text_input_mode": "Kirjoita vastaus",
+  "text_input_mode_desc": "Kirjoita vastauksesi valinnan sijaan. Ihanteellinen matikkavisailuille tai avoimille kysymyksille.",
+  "submit_answer": "Lähetä",
+  "type_your_answer": "Kirjoita vastauksesi..."
 }
