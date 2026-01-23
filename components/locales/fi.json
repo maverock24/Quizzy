@@ -45,5 +45,12 @@
   "text_input_mode": "Kirjoita vastaus",
   "text_input_mode_desc": "Kirjoita vastauksesi valinnan sijaan. Ihanteellinen matikkavisailuille tai avoimille kysymyksille.",
   "submit_answer": "Lähetä",
-  "type_your_answer": "Kirjoita vastauksesi..."
+  "type_your_answer": "Kirjoita vastauksesi...",
+  "timer_mode": "Quiz-ajastin",
+  "timer_mode_desc": "Aseta aikaraja quizin suorittamiselle. Haasta itsesi!",
+  "timer_duration": "Ajastimen kesto",
+  "timer_duration_desc": "Kesto minuuteissa",
+  "minutes": "minuuttia",
+  "time_up": "Aika loppui!",
+  "time_remaining": "Aikaa jäljellä"
 }

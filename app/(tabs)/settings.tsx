@@ -36,6 +36,10 @@ export default function SettingsScreen() {
     setSelectedVoice,
     textInputAnswerMode,
     setTextInputAnswerMode,
+    timerEnabled,
+    setTimerEnabled,
+    timerDuration,
+    setTimerDuration,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -237,6 +241,55 @@ export default function SettingsScreen() {
               value={textInputAnswerMode}
             />
           </View>
+
+          {/* Timer Mode Settings */}
+          <View style={styles.settingItem}>
+            <View style={styles.settingName}>
+              <Text style={styles.settingText}>{t('timer_mode')}</Text>
+              <Text style={styles.settingDescription}>
+                {t('timer_mode_desc')}
+              </Text>
+            </View>
+            <Switch
+              trackColor={{ false: 'gray', true: 'white' }}
+              thumbColor={'rgb(85, 101, 107)'}
+              ios_backgroundColor="gray"
+              onValueChange={setTimerEnabled}
+              value={timerEnabled}
+            />
+          </View>
+
+          {/* Timer Duration - only show when timer is enabled */}
+          {timerEnabled && (
+            <View style={styles.settingItem}>
+              <Text style={[styles.label, { flex: 1 }]}>{t('timer_duration')}</Text>
+              <View
+                style={{
+                  flex: 1,
+                  marginLeft: 10,
+                  backgroundColor: 'white',
+                  borderRadius: 5,
+                  width: '50%',
+                }}
+              >
+                <Picker
+                  selectedValue={timerDuration}
+                  onValueChange={(value: number) => setTimerDuration(value)}
+                  style={{ height: 30, color: 'black' }}
+                  dropdownIconColor="black"
+                >
+                  <Picker.Item label={`1 ${t('minutes')}`} value={1} />
+                  <Picker.Item label={`2 ${t('minutes')}`} value={2} />
+                  <Picker.Item label={`3 ${t('minutes')}`} value={3} />
+                  <Picker.Item label={`5 ${t('minutes')}`} value={5} />
+                  <Picker.Item label={`10 ${t('minutes')}`} value={10} />
+                  <Picker.Item label={`15 ${t('minutes')}`} value={15} />
+                  <Picker.Item label={`20 ${t('minutes')}`} value={20} />
+                  <Picker.Item label={`30 ${t('minutes')}`} value={30} />
+                </Picker>
+              </View>
+            </View>
+          )}
 
           {/* Voice Selection - only show when Reader mode is enabled */}
           {readerModeEnabled && availableVoices.length > 0 && (
