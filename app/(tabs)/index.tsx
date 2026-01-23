@@ -7,9 +7,10 @@ import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
+import { QuizTimer } from '@/components/QuizTimer';
 import { Answer, Quiz, QuizQuestion } from '@/components/types';
 import { t } from 'i18next';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useReadAloud } from '@/components/useReadAloud';
@@ -52,7 +53,11 @@ export default function TabOneScreen() {
     setTotalWonGames,
     totalLostGames,
     setTotalLostGames,
+    timerEnabled,
+    timerDuration,
   } = useQuiz();
+  const [timerActive, setTimerActive] = useState<boolean>(false);
+  const [timeExpired, setTimeExpired] = useState<boolean>(false);
   const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
   const [randomizedQuestions, setRandomizedQuestions] = useState<
@@ -99,6 +104,12 @@ export default function TabOneScreen() {
     setScoreVisible(false);
     setSelectedQuizName(quiz.name || quiz.nimi);
     setExplanationMode(false);
+    setTimeExpired(false);
+
+    // Start timer if enabled
+    if (timerEnabled) {
+      setTimerActive(true);
+    }
 
     // If reader mode is enabled, show the reader instead of the quiz
     if (readerModeEnabled) {
@@ -134,7 +145,21 @@ export default function TabOneScreen() {
     setScoreVisible(false);
     setAnswerIsCorrect(false);
     setShowReader(false);
+    setTimerActive(false);
+    setTimeExpired(false);
   };
+
+  // Handle time up - end the quiz
+  const handleTimeUp = useCallback(() => {
+    setTimerActive(false);
+    setTimeExpired(true);
+    setTotalLostGames(totalLostGames + 1);
+    setScoreVisible(true);
+    setSelectedQuiz(undefined);
+    setSelectedQuizName(null);
+    setCurrentQuestionIndex(0);
+    setExplanationMode(false);
+  }, [totalLostGames, setTotalLostGames, setSelectedQuizName]);
 
   const handleNext = () => {
     setAnswerIsCorrect(false);
@@ -142,6 +167,8 @@ export default function TabOneScreen() {
     if (currentQuestionIndex < selectedQuiz?.questions.length! - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
+      // Quiz completed - stop timer
+      setTimerActive(false);
       if (score === selectedQuiz?.questions.length) {
         setTotalWonGames(totalWonGames + 1);
       } else {
@@ -258,6 +285,14 @@ export default function TabOneScreen() {
 
           {selectedQuiz && !explanationMode && !showReader && (
             <>
+              {/* Quiz Timer */}
+              {timerEnabled && (
+                <QuizTimer
+                  durationMinutes={timerDuration}
+                  onTimeUp={handleTimeUp}
+                  isActive={timerActive}
+                />
+              )}
               {flashcardsEnabled && !scoreVisible && (
                 <FlashcardCarousel
                   questions={quizQuestions}
@@ -286,6 +321,7 @@ export default function TabOneScreen() {
             <Score
               score={score}
               selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+              timeExpired={timeExpired}
             />
           )}
         </View>

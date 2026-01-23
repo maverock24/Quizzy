@@ -54,6 +54,10 @@ type QuizContextType = {
   setSelectedVoice: (voice: SpeechSynthesisVoice | null) => void;
   textInputAnswerMode: boolean;
   setTextInputAnswerMode: (enabled: boolean) => void;
+  timerEnabled: boolean;
+  setTimerEnabled: (enabled: boolean) => void;
+  timerDuration: number; // Duration in minutes
+  setTimerDuration: (duration: number) => void;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -120,6 +124,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [selectedVoice, setSelectedVoiceState] = useState<SpeechSynthesisVoice | null>(null);
   const [textInputAnswerMode, setTextInputAnswerModeState] = useState<boolean>(false);
+  const [timerEnabled, setTimerEnabledState] = useState<boolean>(false);
+  const [timerDuration, setTimerDurationState] = useState<number>(5); // Default 5 minutes
   const setMusicEnabled = useCallback(async (enabled: boolean) => {
     setMusicEnabledState(enabled);
     try {
@@ -144,6 +150,24 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       await AsyncStorage.setItem('textInputAnswerMode', String(enabled));
     } catch (error) {
       console.error('Failed to save text input answer mode setting', error);
+    }
+  }, []);
+
+  const setTimerEnabled = useCallback(async (enabled: boolean) => {
+    setTimerEnabledState(enabled);
+    try {
+      await AsyncStorage.setItem('timerEnabled', String(enabled));
+    } catch (error) {
+      console.error('Failed to save timer enabled setting', error);
+    }
+  }, []);
+
+  const setTimerDuration = useCallback(async (duration: number) => {
+    setTimerDurationState(duration);
+    try {
+      await AsyncStorage.setItem('timerDuration', String(duration));
+    } catch (error) {
+      console.error('Failed to save timer duration setting', error);
     }
   }, []);
 
@@ -311,6 +335,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setReaderModeEnabledState(false);
     setSelectedVoiceState(null);
     setTextInputAnswerModeState(false);
+    setTimerEnabledState(false);
+    setTimerDurationState(5);
   }, []);
 
   // Function to check for and download updated quizzes
@@ -557,6 +583,14 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setMusicEnabledState(musicSetting === 'true');
       setReaderModeEnabledState(readerModeSetting === 'true');
       setTextInputAnswerModeState(textInputAnswerModeSetting === 'true');
+
+      // Load timer settings
+      const timerEnabledSetting = await AsyncStorage.getItem('timerEnabled');
+      const timerDurationSetting = await AsyncStorage.getItem('timerDuration');
+      setTimerEnabledState(timerEnabledSetting === 'true');
+      if (timerDurationSetting) {
+        setTimerDurationState(parseInt(timerDurationSetting, 10) || 5);
+      }
       if (savedLanguage && savedLanguage !== i18n.language) {
         i18n.changeLanguage(savedLanguage);
       }
@@ -679,6 +713,10 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setSelectedVoice, // Expose the voice selection functions
         textInputAnswerMode,
         setTextInputAnswerMode, // Expose the text input answer mode setter
+        timerEnabled,
+        setTimerEnabled, // Expose the timer enabled setter
+        timerDuration,
+        setTimerDuration, // Expose the timer duration setter
       }}
     >
       {children}

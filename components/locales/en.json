@@ -45,5 +45,12 @@
   "text_input_mode": "Type Answer Mode",
   "text_input_mode_desc": "Type your answer instead of selecting from choices. Ideal for math quizzes or open-ended questions.",
   "submit_answer": "Submit",
-  "type_your_answer": "Type your answer..."
+  "type_your_answer": "Type your answer...",
+  "timer_mode": "Quiz Timer",
+  "timer_mode_desc": "Set a time limit to complete the quiz. Challenge yourself!",
+  "timer_duration": "Timer Duration",
+  "timer_duration_desc": "Duration in minutes",
+  "minutes": "minutes",
+  "time_up": "Time's Up!",
+  "time_remaining": "Time Remaining"
 }

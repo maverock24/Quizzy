@@ -45,5 +45,12 @@
   "text_input_mode": "Antwort eintippen",
   "text_input_mode_desc": "Antwort eintippen statt auswählen. Ideal für Mathe-Quizze oder offene Fragen.",
   "submit_answer": "Absenden",
-  "type_your_answer": "Antwort eingeben..."
+  "type_your_answer": "Antwort eingeben...",
+  "timer_mode": "Quiz-Timer",
+  "timer_mode_desc": "Zeitlimit für das Quiz setzen. Fordere dich selbst heraus!",
+  "timer_duration": "Timer-Dauer",
+  "timer_duration_desc": "Dauer in Minuten",
+  "minutes": "Minuten",
+  "time_up": "Zeit abgelaufen!",
+  "time_remaining": "Verbleibende Zeit"
 }

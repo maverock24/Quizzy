@@ -152,11 +152,13 @@ const StarBurst: React.FC<{ delay: number }> = ({ delay }) => {
 type ScoreProps = {
   score: number;
   selectedQuizAnswersAmount: number;
+  timeExpired?: boolean;
 };
 
 export const Score: React.FC<ScoreProps> = ({
   score,
   selectedQuizAnswersAmount,
+  timeExpired = false,
 }) => {
   const { t } = useTranslation();
   const { flashcardsEnabled } = useQuiz();
@@ -187,14 +189,14 @@ export const Score: React.FC<ScoreProps> = ({
   ];
   const confettiPieces = isWinner
     ? Array.from({ length: 50 }, (_, i) => ({
-        id: i,
-        delay: Math.random() * 1000,
-        startX: Math.random() * SCREEN_WIDTH,
-        color:
-          confettiColors[Math.floor(Math.random() * confettiColors.length)],
-        size: 8 + Math.random() * 8,
-        rotation: Math.random() * 360,
-      }))
+      id: i,
+      delay: Math.random() * 1000,
+      startX: Math.random() * SCREEN_WIDTH,
+      color:
+        confettiColors[Math.floor(Math.random() * confettiColors.length)],
+      size: 8 + Math.random() * 8,
+      rotation: Math.random() * 360,
+    }))
     : [];
 
   useEffect(() => {
@@ -325,7 +327,7 @@ export const Score: React.FC<ScoreProps> = ({
             }}
           >
             <Text style={[styles.heading, isWinner && styles.winnerHeading]}>
-              {isWinner ? '🎉 Well Done! 🎉' : '💪 Try again!'}
+              {timeExpired ? `⏰ ${t('time_up')} ⏰` : isWinner ? '🎉 Well Done! 🎉' : '💪 Try again!'}
             </Text>
             {isWinner && (
               <Text style={styles.subHeading}>
