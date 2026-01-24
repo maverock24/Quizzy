@@ -1,12 +1,24 @@
 // Service Worker for Quizzy - Offline Support
-const CACHE_NAME = 'quizzy-v2';
-const RUNTIME_CACHE = 'quizzy-runtime-v2';
+const CACHE_NAME = 'quizzy-v3';
+const RUNTIME_CACHE = 'quizzy-runtime-v3';
 
 // Assets to cache immediately on install
 const PRECACHE_URLS = [
   '/',
   '/index.html',
   '/_expo/static/js/web/entry.js',
+  '/manifest.json',
+  '/icons/icon-48x48.png',
+  '/icons/icon-72x72.png',
+  '/icons/icon-96x96.png',
+  '/icons/icon-120x120.png',
+  '/icons/icon-144x144.png',
+  '/icons/icon-152x152.png',
+  '/icons/icon-192x192.png',
+  '/icons/icon-512x512.png',
+  '/icons/maskable-192x192.png',
+  '/icons/maskable-512x512.png',
+  '/icons/apple-touch-icon.png',
   '/assets/quizzes_en.json',
   '/assets/quizzes_de.json',
   '/assets/quizzes_fi.json',
