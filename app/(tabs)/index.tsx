@@ -10,10 +10,16 @@ import { Score } from '@/components/Score';
 import { QuizTimer } from '@/components/QuizTimer';
 import { Answer, Quiz, QuizQuestion } from '@/components/types';
 import { t } from 'i18next';
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState, useCallback, useRef } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useReadAloud } from '@/components/useReadAloud';
+import {
+  useGamification,
+  StreakDisplay,
+  XPProgress,
+  DailyQuiz,
+} from '@/components/gamification';
 
 // Function to shuffle array (Fi
 const shuffleArray = (array: any[]) => {
@@ -65,6 +71,10 @@ export default function TabOneScreen() {
   >([]);
   const [explanationMode, setExplanationMode] = useState<boolean>(false);
   const [showReader, setShowReader] = useState<boolean>(false);
+
+  // Gamification integration
+  const { onQuizComplete, onCorrectAnswer } = useGamification();
+  const quizStartTime = useRef<number>(Date.now());
 
   useEffect(() => {
     if (selectedQuiz) {
@@ -127,6 +137,8 @@ export default function TabOneScreen() {
         setAnswerIsCorrect(true);
         setTotalCorrectAnswers(totalCorrectAnswers + 1);
         setScore(score + 1);
+        // Award XP for correct answer
+        onCorrectAnswer();
       } else {
         setTotalWrongAnswers(totalWrongAnswers + 1);
         setAnswerIsCorrect(false);
@@ -169,6 +181,13 @@ export default function TabOneScreen() {
     } else {
       // Quiz completed - stop timer
       setTimerActive(false);
+      const finalScore = score + (answerIsCorrect ? 1 : 0); // Include current answer
+      const totalQuestions = selectedQuiz?.questions.length || 0;
+      const timeElapsed = Math.round((Date.now() - quizStartTime.current) / 1000);
+
+      // Track gamification
+      onQuizComplete(finalScore, totalQuestions, timeElapsed);
+
       if (score === selectedQuiz?.questions.length) {
         setTotalWonGames(totalWonGames + 1);
       } else {
@@ -178,6 +197,14 @@ export default function TabOneScreen() {
       setSelectedQuiz(undefined);
       setSelectedQuizName(null);
       setCurrentQuestionIndex(0);
+    }
+  };
+
+  // Handle daily quiz selection
+  const handleDailyQuizStart = (quizName: string) => {
+    const quiz = quizzes.find((q: Quiz) => q.name === quizName);
+    if (quiz) {
+      handleQuizSelection(quiz);
     }
   };
 
@@ -200,60 +227,17 @@ export default function TabOneScreen() {
         <View style={styles.container}>
           {!selectedQuiz && (
             <>
-              <Text style={styles.scoreTitle}>{t('scores')}</Text>
-              <View style={styles.scoreBoard}>
-                <View style={styles.scoreItemRow}>
-                  <View style={styles.scoreItemColumn}>
-                    <View
-                      style={[
-                        styles.scoreItem,
-                        { backgroundColor: 'rgb(0, 123, 255)' },
-                      ]}
-                    >
-                      <Text style={styles.scoreItemTitle}>
-                        {t('Quiz_wins')}:
-                      </Text>
-                      <Text style={styles.scoreItemText}>{totalWonGames}</Text>
-                    </View>
-                    <View
-                      style={[
-                        styles.scoreItem,
-                        { backgroundColor: 'rgb(239, 130, 22)' },
-                      ]}
-                    >
-                      <Text style={styles.scoreItemTitle}>
-                        {t('Quiz_losses')}:
-                      </Text>
-                      <Text style={styles.scoreItemText}>{totalLostGames}</Text>
-                    </View>
-                  </View>
-                  <View style={styles.scoreItemColumn}>
-                    <View
-                      style={[styles.scoreItem, { backgroundColor: 'green' }]}
-                    >
-                      <Text style={styles.scoreItemTitle}>
-                        {t('Answers_right')}:
-                      </Text>
-                      <Text style={styles.scoreItemText}>
-                        {totalCorrectAnswers}
-                      </Text>
-                    </View>
-                    <View
-                      style={[
-                        styles.scoreItem,
-                        { backgroundColor: 'rgb(205, 57, 161)' },
-                      ]}
-                    >
-                      <Text style={styles.scoreItemTitle}>
-                        {t('Answers_wrong')}:
-                      </Text>
-                      <Text style={styles.scoreItemText}>
-                        {totalWrongAnswers}
-                      </Text>
-                    </View>
-                  </View>
-                </View>
+              {/* Gamification Header - Streak and XP */}
+              <View style={styles.gamificationHeader}>
+                <StreakDisplay size="small" showLabel />
+                <XPProgress size="compact" style={styles.xpProgressCompact} />
               </View>
+
+              {/* Daily Challenge */}
+              <DailyQuiz
+                onStartDailyQuiz={handleDailyQuizStart}
+                style={styles.dailyQuiz}
+              />
             </>
           )}
           {!selectedQuiz && !scoreVisible && (
@@ -370,45 +354,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
   },
-  scoreTitle: {
-    fontSize: 16,
-    marginBottom: 10,
-    color: 'white',
-  },
-  scoreBoard: {
-    height: 170,
-    width: '100%',
-    justifyContent: 'flex-start',
-    marginBottom: 30,
-  },
-  scoreItem: {
-    height: 80,
-    margin: 3,
-    flexDirection: 'column',
-    padding: 5,
-    backgroundColor: 'rgb(209, 79, 170)',
-    borderRadius: 5,
-  },
-  scoreItemTitle: {
-    color: 'white',
-    fontSize: 14,
-    marginBottom: 5,
-  },
-  scoreItemRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  scoreItemColumn: {
-    width: '50%',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  },
-  scoreItemText: {
-    color: 'white',
-    fontSize: 40,
-    justifyContent: 'center',
-    textAlign: 'center',
-  },
   container: {
     padding: 20,
     flex: 1,
@@ -428,5 +373,18 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 14,
     fontWeight: '600',
+  },
+  gamificationHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+    gap: 12,
+  },
+  xpProgressCompact: {
+    flex: 1,
+  },
+  dailyQuiz: {
+    marginBottom: 20,
   },
 });
