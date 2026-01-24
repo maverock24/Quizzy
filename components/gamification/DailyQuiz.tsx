@@ -36,9 +36,11 @@ export const DailyQuiz: React.FC<DailyQuizProps> = ({
         if (quizzes.length === 0) return null;
 
         const today = getTodayDateString();
-        // Create a simple hash from the date to select a quiz
-        const dateHash = today.split('-').reduce((acc, num) => acc + parseInt(num, 10), 0);
-        const quizIndex = dateHash % quizzes.length;
+        // Create a better hash from the date for more variety
+        // Use date parts with prime multipliers for better distribution
+        const [year, month, day] = today.split('-').map(n => parseInt(n, 10));
+        const dateHash = (year * 31 + month * 17 + day * 13) * 7919; // Use prime numbers for distribution
+        const quizIndex = Math.abs(dateHash) % quizzes.length;
 
         return {
             quiz: quizzes[quizIndex],
