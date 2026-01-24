@@ -97,6 +97,17 @@ function MusicFromContext() {
   return <Music enabled={musicEnabled} />;
 }
 
+function OnboardingWrapper({ children }: { children: React.ReactNode }) {
+  const { onboardingCompleted, completeOnboarding } = require('@/components/Quizprovider').useQuiz();
+  const { Onboarding } = require('@/components/Onboarding');
+
+  if (!onboardingCompleted) {
+    return <Onboarding onComplete={completeOnboarding} />;
+  }
+
+  return <>{children}</>;
+}
+
 function RootLayoutNav() {
   const CustomDarkTheme: Theme = {
     ...DarkTheme,
@@ -105,17 +116,24 @@ function RootLayoutNav() {
       background: 'transparent',
     },
   };
+
+  const { LearningTodosProvider } = require('@/components/LearningTodosProvider');
+
   return (
     <ThemeProvider value={CustomDarkTheme}>
       <QuizProvider>
-        <GamificationProvider>
-          <MusicFromContext />
-          <AchievementModal />
-          <Stack>
-            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-          </Stack>
-        </GamificationProvider>
+        <LearningTodosProvider>
+          <GamificationProvider>
+            <OnboardingWrapper>
+              <MusicFromContext />
+              <AchievementModal />
+              <Stack>
+                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+              </Stack>
+            </OnboardingWrapper>
+          </GamificationProvider>
+        </LearningTodosProvider>
       </QuizProvider>
     </ThemeProvider>
   );
