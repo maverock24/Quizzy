@@ -73,8 +73,9 @@ export default function TabOneScreen() {
   const [showReader, setShowReader] = useState<boolean>(false);
 
   // Gamification integration
-  const { onQuizComplete, onCorrectAnswer } = useGamification();
+  const { onQuizComplete, onCorrectAnswer, completeDailyQuiz } = useGamification();
   const quizStartTime = useRef<number>(Date.now());
+  const [isDailyQuiz, setIsDailyQuiz] = useState<boolean>(false);
 
   useEffect(() => {
     if (selectedQuiz) {
@@ -151,6 +152,13 @@ export default function TabOneScreen() {
 
   const handleBack = () => {
     stopTTS();
+
+    // If abandoning a daily quiz, mark it as completed (can't retry)
+    if (isDailyQuiz && selectedQuiz) {
+      completeDailyQuiz(score, selectedQuiz.questions.length);
+      setIsDailyQuiz(false);
+    }
+
     setSelectedQuiz(undefined);
     setSelectedQuizName(null);
     setCurrentQuestionIndex(0);
@@ -166,12 +174,19 @@ export default function TabOneScreen() {
     setTimerActive(false);
     setTimeExpired(true);
     setTotalLostGames(totalLostGames + 1);
+
+    // If time expires during daily quiz, mark it as completed (can't retry)
+    if (isDailyQuiz) {
+      completeDailyQuiz(score, selectedQuizAnswersAmount);
+      setIsDailyQuiz(false);
+    }
+
     setScoreVisible(true);
     setSelectedQuiz(undefined);
     setSelectedQuizName(null);
     setCurrentQuestionIndex(0);
     setExplanationMode(false);
-  }, [totalLostGames, setTotalLostGames, setSelectedQuizName]);
+  }, [totalLostGames, setTotalLostGames, setSelectedQuizName, isDailyQuiz, score, selectedQuizAnswersAmount, completeDailyQuiz]);
 
   const handleNext = () => {
     setAnswerIsCorrect(false);
@@ -187,6 +202,12 @@ export default function TabOneScreen() {
 
       // Track gamification
       onQuizComplete(finalScore, totalQuestions, timeElapsed);
+
+      // Complete daily quiz if it was a daily challenge
+      if (isDailyQuiz) {
+        completeDailyQuiz(finalScore, totalQuestions);
+        setIsDailyQuiz(false);
+      }
 
       if (score === selectedQuiz?.questions.length) {
         setTotalWonGames(totalWonGames + 1);
@@ -204,6 +225,7 @@ export default function TabOneScreen() {
   const handleDailyQuizStart = (quizName: string) => {
     const quiz = quizzes.find((q: Quiz) => q.name === quizName);
     if (quiz) {
+      setIsDailyQuiz(true); // Mark this as a daily quiz
       handleQuizSelection(quiz);
     }
   };
