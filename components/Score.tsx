@@ -5,6 +5,7 @@ import {
   Easing,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from 'react-native';
 import Happy from '../assets/images/happy.svg';
@@ -153,12 +154,16 @@ type ScoreProps = {
   score: number;
   selectedQuizAnswersAmount: number;
   timeExpired?: boolean;
+  wrongAnswerCount?: number;
+  onRetryWrongAnswers?: () => void;
 };
 
 export const Score: React.FC<ScoreProps> = ({
   score,
   selectedQuizAnswersAmount,
   timeExpired = false,
+  wrongAnswerCount = 0,
+  onRetryWrongAnswers,
 }) => {
   const { t } = useTranslation();
   const { flashcardsEnabled } = useQuiz();
@@ -378,6 +383,19 @@ export const Score: React.FC<ScoreProps> = ({
                 </Text>
               )}
             </View>
+
+            {/* Retry Wrong Answers Button */}
+            {wrongAnswerCount > 0 && onRetryWrongAnswers && (
+              <TouchableOpacity
+                style={styles.retryButton}
+                onPress={onRetryWrongAnswers}
+                activeOpacity={0.8}
+              >
+                <Text style={styles.retryButtonText}>
+                  🔄 {t('retry_wrong', 'Retry Wrong Answers')} ({wrongAnswerCount})
+                </Text>
+              </TouchableOpacity>
+            )}
           </Animated.View>
         </>
       )}
@@ -546,5 +564,18 @@ const styles = StyleSheet.create({
   },
   starEmoji: {
     fontSize: 100,
+  },
+  retryButton: {
+    marginTop: 20,
+    backgroundColor: '#4ECDC4',
+    paddingVertical: 14,
+    paddingHorizontal: 24,
+    borderRadius: 16,
+    alignItems: 'center',
+  },
+  retryButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
 });

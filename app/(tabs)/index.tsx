@@ -20,6 +20,15 @@ import {
   XPProgress,
   DailyQuiz,
 } from '@/components/gamification';
+import { useLearningTodos } from '@/components/LearningTodosProvider';
+
+// Type for tracking wrong answers during a quiz session
+interface WrongAnswerRecord {
+  question: string;
+  correctAnswer: string;
+  userAnswer: string;
+  explanation?: string;
+}
 
 // Function to shuffle array (Fi
 const shuffleArray = (array: any[]) => {
@@ -45,6 +54,7 @@ export default function TabOneScreen() {
 
   // Get quizzes from context
   const {
+    selectedQuizName,
     setSelectedQuizName,
     showExplanation,
     flashcardsEnabled,
@@ -74,8 +84,13 @@ export default function TabOneScreen() {
 
   // Gamification integration
   const { onQuizComplete, onCorrectAnswer, completeDailyQuiz } = useGamification();
+  const { addWrongAnswer, recordCorrectAnswer, getTodoByQuestion } = useLearningTodos();
   const quizStartTime = useRef<number>(Date.now());
   const [isDailyQuiz, setIsDailyQuiz] = useState<boolean>(false);
+
+  // Track wrong answers during this quiz session
+  const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<WrongAnswerRecord[]>([]);
+  const [isRetryMode, setIsRetryMode] = useState<boolean>(false);
 
   useEffect(() => {
     if (selectedQuiz) {
@@ -140,9 +155,32 @@ export default function TabOneScreen() {
         setScore(score + 1);
         // Award XP for correct answer
         onCorrectAnswer();
+
+        // Check if this was a learning todo question and record correct answer
+        const todoItem = getTodoByQuestion(question.question);
+        if (todoItem) {
+          recordCorrectAnswer(todoItem.id);
+        }
       } else {
         setTotalWrongAnswers(totalWrongAnswers + 1);
         setAnswerIsCorrect(false);
+
+        // Track wrong answer for this session
+        setWrongAnswersThisQuiz(prev => [...prev, {
+          question: question.question,
+          correctAnswer: question.answer,
+          userAnswer: answer,
+          explanation: question.explanation,
+        }]);
+
+        // Add to learning todos (persistent)
+        addWrongAnswer(
+          question.question,
+          question.answer,
+          answer,
+          selectedQuiz.name,
+          question.explanation
+        );
       }
       if (!showExplanation) {
         handleNext();
@@ -167,6 +205,8 @@ export default function TabOneScreen() {
     setShowReader(false);
     setTimerActive(false);
     setTimeExpired(false);
+    setWrongAnswersThisQuiz([]);
+    setIsRetryMode(false);
   };
 
   // Handle time up - end the quiz
@@ -227,6 +267,49 @@ export default function TabOneScreen() {
     if (quiz) {
       setIsDailyQuiz(true); // Mark this as a daily quiz
       handleQuizSelection(quiz);
+    }
+  };
+
+  // Handle retry of wrong answers
+  const handleRetryWrongAnswers = () => {
+    if (wrongAnswersThisQuiz.length === 0) return;
+
+    // Create new questions from wrong answers
+    const retryQuestions: QuizQuestion[] = wrongAnswersThisQuiz.map(wa => ({
+      question: wa.question,
+      answer: wa.correctAnswer,
+      answers: [], // Will be filled with actual answers below
+      explanation: wa.explanation || '',
+    }));
+
+    // We need to find the original question to get all answers
+    // For now, we'll create a simple retry quiz
+    setIsRetryMode(true);
+    setWrongAnswersThisQuiz([]);
+    setScore(0);
+    setScoreVisible(false);
+    setCurrentQuestionIndex(0);
+
+    // Find the original quiz to get full answer options
+    const lastQuizName = selectedQuizName;
+    const originalQuiz = quizzes.find((q: Quiz) => q.name === lastQuizName);
+
+    if (originalQuiz) {
+      const questionsWithAnswers = retryQuestions.map(rq => {
+        const originalQ = originalQuiz.questions.find(oq => oq.question === rq.question);
+        return originalQ || rq;
+      });
+
+      // Create a temporary quiz with only the wrong questions
+      const retryQuiz: Quiz = {
+        name: `${lastQuizName} (Retry)`,
+        questions: questionsWithAnswers,
+      };
+
+      setSelectedQuiz(retryQuiz);
+      setSelectedQuizName(retryQuiz.name);
+      setSelectedQuizAnswersAmount(questionsWithAnswers.length);
+      setRandomizedQuestions(shuffleArray(questionsWithAnswers));
     }
   };
 
@@ -328,6 +411,8 @@ export default function TabOneScreen() {
               score={score}
               selectedQuizAnswersAmount={selectedQuizAnswersAmount}
               timeExpired={timeExpired}
+              wrongAnswerCount={wrongAnswersThisQuiz.length}
+              onRetryWrongAnswers={wrongAnswersThisQuiz.length > 0 ? handleRetryWrongAnswers : undefined}
             />
           )}
         </View>

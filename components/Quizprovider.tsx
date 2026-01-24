@@ -14,8 +14,14 @@ import { Platform } from 'react-native';
 import { Quiz } from './types';
 
 type QuizContextType = {
-  userQuizLoadEnabled: boolean; // Add userQuizLoadEnabled to the context
-  setUserQuizLoadEnabled: (enabled: boolean) => void; // Add setter for userQuizLoadEnabled
+  // User personalization
+  userName: string;
+  setUserName: (name: string) => void;
+  onboardingCompleted: boolean;
+  completeOnboarding: (name: string, language: string) => void;
+  // User quiz settings
+  userQuizLoadEnabled: boolean;
+  setUserQuizLoadEnabled: (enabled: boolean) => void;
   language: string;
   setLanguage: (lang: string) => void;
   selectedQuizName: string | null;
@@ -26,8 +32,8 @@ type QuizContextType = {
   setNotificationsEnabled: (enabled: boolean) => void;
   showExplanation: boolean;
   setShowExplanation: (show: boolean) => void;
-  quizzes: Quiz[]; // Add quizzes to the context
-  checkForQuizzesUpdate: () => Promise<boolean>; // Function to check for updates
+  quizzes: Quiz[];
+  checkForQuizzesUpdate: () => Promise<boolean>;
   totalQuestionsAnswered: number;
   setTotalQuestionsAnswered: (total: number) => void;
   totalCorrectAnswers: number;
@@ -56,7 +62,7 @@ type QuizContextType = {
   setTextInputAnswerMode: (enabled: boolean) => void;
   timerEnabled: boolean;
   setTimerEnabled: (enabled: boolean) => void;
-  timerDuration: number; // Duration in minutes
+  timerDuration: number;
   setTimerDuration: (duration: number) => void;
 };
 
@@ -126,6 +132,10 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [textInputAnswerMode, setTextInputAnswerModeState] = useState<boolean>(false);
   const [timerEnabled, setTimerEnabledState] = useState<boolean>(false);
   const [timerDuration, setTimerDurationState] = useState<number>(5); // Default 5 minutes
+
+  // User personalization
+  const [userName, setUserNameState] = useState<string>('');
+  const [onboardingCompleted, setOnboardingCompletedState] = useState<boolean>(false);
   const setMusicEnabled = useCallback(async (enabled: boolean) => {
     setMusicEnabledState(enabled);
     try {
@@ -179,6 +189,30 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         console.error('Failed to save user quiz load setting', error);
       },
     );
+  }, []);
+
+  // User personalization functions
+  const setUserName = useCallback(async (name: string) => {
+    setUserNameState(name);
+    try {
+      await AsyncStorage.setItem('userName', name);
+    } catch (error) {
+      console.error('Failed to save user name', error);
+    }
+  }, []);
+
+  const completeOnboarding = useCallback(async (name: string, lang: string) => {
+    setUserNameState(name);
+    setOnboardingCompletedState(true);
+    setLanguageState(lang);
+    i18n.changeLanguage(lang);
+    try {
+      await AsyncStorage.setItem('userName', name);
+      await AsyncStorage.setItem('onboardingCompleted', 'true');
+      await AsyncStorage.setItem('language', lang);
+    } catch (error) {
+      console.error('Failed to save onboarding data', error);
+    }
   }, []);
 
   // Voice management functions
@@ -594,6 +628,13 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       if (savedLanguage && savedLanguage !== i18n.language) {
         i18n.changeLanguage(savedLanguage);
       }
+
+      // Load user personalization
+      const savedUserName = await AsyncStorage.getItem('userName');
+      const savedOnboardingCompleted = await AsyncStorage.getItem('onboardingCompleted');
+      setUserNameState(savedUserName || '');
+      setOnboardingCompletedState(savedOnboardingCompleted === 'true');
+
       // Create a separate effect to handle checking for updates
     } catch (error) {
       console.error('Failed to load settings', error);
@@ -673,6 +714,12 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   return (
     <QuizContext.Provider
       value={{
+        // User personalization
+        userName,
+        setUserName,
+        onboardingCompleted,
+        completeOnboarding,
+        // Quiz settings
         selectedQuizName,
         setSelectedQuizName,
         flashcardsEnabled,
@@ -681,8 +728,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setNotificationsEnabled,
         showExplanation,
         setShowExplanation,
-        quizzes, // Expose quizzes through context
-        checkForQuizzesUpdate, // Expose the update function
+        quizzes,
+        checkForQuizzesUpdate,
         totalQuestionsAnswered,
         setTotalQuestionsAnswered,
         totalCorrectAnswers,
@@ -699,24 +746,24 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         remoteUpdateEnabled,
         setRemoteAdress,
         remoteAddress,
-        resetState, // Expose the reset function
+        resetState,
         language,
-        setLanguage, // Expose the language setter
+        setLanguage,
         userQuizLoadEnabled,
-        setUserQuizLoadEnabled, // Expose the user quiz load setter
+        setUserQuizLoadEnabled,
         musicEnabled,
-        setMusicEnabled, // Expose the music enabled setter
+        setMusicEnabled,
         readerModeEnabled,
-        setReaderModeEnabled, // Expose the reader mode setter
+        setReaderModeEnabled,
         availableVoices,
         selectedVoice,
-        setSelectedVoice, // Expose the voice selection functions
+        setSelectedVoice,
         textInputAnswerMode,
-        setTextInputAnswerMode, // Expose the text input answer mode setter
+        setTextInputAnswerMode,
         timerEnabled,
-        setTimerEnabled, // Expose the timer enabled setter
+        setTimerEnabled,
         timerDuration,
-        setTimerDuration, // Expose the timer duration setter
+        setTimerDuration,
       }}
     >
       {children}
