@@ -91,6 +91,8 @@ export default function TabOneScreen() {
   // Track wrong answers during this quiz session
   const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<WrongAnswerRecord[]>([]);
   const [isRetryMode, setIsRetryMode] = useState<boolean>(false);
+  // Track the last quiz name for retry functionality (persists after quiz ends)
+  const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(null);
 
   useEffect(() => {
     if (selectedQuiz) {
@@ -129,6 +131,7 @@ export default function TabOneScreen() {
     setScore(0);
     setScoreVisible(false);
     setSelectedQuizName(quiz.name || quiz.nimi);
+    setLastPlayedQuizName(quiz.name || quiz.nimi);
     setExplanationMode(false);
     setTimeExpired(false);
 
@@ -291,8 +294,8 @@ export default function TabOneScreen() {
     setCurrentQuestionIndex(0);
 
     // Find the original quiz to get full answer options
-    const lastQuizName = selectedQuizName;
-    const originalQuiz = quizzes.find((q: Quiz) => q.name === lastQuizName);
+    // Use lastPlayedQuizName since selectedQuizName is null after quiz ends
+    const originalQuiz = quizzes.find((q: Quiz) => q.name === lastPlayedQuizName);
 
     if (originalQuiz) {
       const questionsWithAnswers = retryQuestions.map(rq => {
@@ -302,7 +305,7 @@ export default function TabOneScreen() {
 
       // Create a temporary quiz with only the wrong questions
       const retryQuiz: Quiz = {
-        name: `${lastQuizName} (Retry)`,
+        name: `${lastPlayedQuizName} (Retry)`,
         questions: questionsWithAnswers,
       };
 
