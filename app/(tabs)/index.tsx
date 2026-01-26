@@ -333,7 +333,7 @@ export default function TabOneScreen() {
         style={styles.safeArea}
       >
         <View style={styles.container}>
-          {!selectedQuiz && (
+          {!selectedQuiz && !scoreVisible && (
             <>
               {/* Gamification Header - Streak and XP */}
               <View style={styles.gamificationHeader}>
