@@ -616,6 +616,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       setLanguageState(savedLanguage || i18n.language || 'en');
       setMusicEnabledState(musicSetting === 'true');
       setReaderModeEnabledState(readerModeSetting === 'true');
+
+      // Default to false if not set
       setTextInputAnswerModeState(textInputAnswerModeSetting === 'true');
 
       // Load timer settings

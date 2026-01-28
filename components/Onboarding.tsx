@@ -66,18 +66,35 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
                     <View style={styles.stepContainer}>
                         <Text style={styles.questionText}>{t('select_language', 'Select your language')}</Text>
 
-                        <View style={styles.pickerContainer}>
-                            <Picker
-                                selectedValue={language}
-                                onValueChange={handleLanguageChange}
-                                style={styles.picker}
-                                dropdownIconColor="white"
-                                itemStyle={styles.pickerItem}
-                            >
-                                <Picker.Item label="🇬🇧 English" value="en" />
-                                <Picker.Item label="🇩🇪 Deutsch" value="de" />
-                                <Picker.Item label="🇫🇮 Suomi" value="fi" />
-                            </Picker>
+                        <View style={styles.languageOptionsContainer}>
+                            {[
+                                { label: 'English', value: 'en' },
+                                { label: 'Deutsch', value: 'de' },
+                                { label: 'Suomi', value: 'fi' },
+                            ].map((option) => (
+                                <TouchableOpacity
+                                    key={option.value}
+                                    style={[
+                                        styles.languageOption,
+                                        language === option.value && styles.languageOptionSelected,
+                                    ]}
+                                    onPress={() => handleLanguageChange(option.value)}
+                                >
+                                    <Text
+                                        style={[
+                                            styles.languageOptionText,
+                                            language === option.value && styles.languageOptionTextSelected,
+                                        ]}
+                                    >
+                                        {option.label}
+                                    </Text>
+                                    {language === option.value && (
+                                        <View style={styles.checkmarkContainer}>
+                                            <Text style={styles.checkmark}>✓</Text>
+                                        </View>
+                                    )}
+                                </TouchableOpacity>
+                            ))}
                         </View>
 
                         <Text style={styles.helperText}>
@@ -171,22 +188,47 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         textAlign: 'center',
     },
-    pickerContainer: {
+    languageOptionsContainer: {
+        width: '100%',
+    },
+    languageOption: {
         width: '100%',
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
         borderRadius: 16,
+        paddingVertical: 16,
+        paddingHorizontal: 20,
+        marginBottom: 12,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
         borderWidth: 2,
-        borderColor: 'rgba(255, 255, 255, 0.2)',
-        overflow: 'hidden',
+        borderColor: 'transparent',
     },
-    picker: {
-        width: '100%',
-        height: 60,
-        color: 'white',
+    languageOptionSelected: {
+        backgroundColor: 'rgba(78, 205, 196, 0.2)',
+        borderColor: '#4ECDC4',
     },
-    pickerItem: {
-        color: 'white',
+    languageOptionText: {
         fontSize: 18,
+        color: 'white',
+        fontWeight: '500',
+    },
+    languageOptionTextSelected: {
+        color: '#4ECDC4',
+        fontWeight: '700',
+    },
+    checkmarkContainer: {
+        backgroundColor: '#4ECDC4',
+        width: 24,
+        height: 24,
+        borderRadius: 12,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    checkmark: {
+        color: 'white',
+        fontSize: 14,
+        fontWeight: 'bold',
     },
     input: {
         width: '100%',

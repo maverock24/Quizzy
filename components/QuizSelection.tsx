@@ -298,25 +298,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
     new Set(['all']),
   );
   const [recentlyExpanded, setRecentlyExpanded] = useState<string | null>(null);
-  const headerOpacity = useRef(new Animated.Value(0)).current;
-  const headerSlide = useRef(new Animated.Value(-20)).current;
-
-  // Header entrance animation
-  useEffect(() => {
-    Animated.parallel([
-      Animated.timing(headerOpacity, {
-        toValue: 1,
-        duration: 400,
-        useNativeDriver: true,
-      }),
-      Animated.timing(headerSlide, {
-        toValue: 0,
-        duration: 400,
-        easing: Easing.out(Easing.cubic),
-        useNativeDriver: true,
-      }),
-    ]).start();
-  }, []);
 
   // Group quizzes by category
   const groupedQuizzes = useMemo(() => {
@@ -404,21 +385,13 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   ) {
     return (
       <View style={styles.quizSelectionContainer}>
-        <Animated.Text
-          style={[
-            styles.normalText,
-            {
-              opacity: headerOpacity,
-              transform: [{ translateY: headerSlide }],
-            },
-          ]}
-        >
-          {t('select_quiz')}
-        </Animated.Text>
+
         <FlatList
           style={{ paddingVertical: 10 }}
           data={quizzes}
           keyExtractor={(item) => item.name}
+          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           renderItem={({ item, index }) => (
             <QuizButton
               item={item}
@@ -434,17 +407,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
 
   return (
     <View style={styles.quizSelectionContainer}>
-      <Animated.Text
-        style={[
-          styles.normalText,
-          {
-            opacity: headerOpacity,
-            transform: [{ translateY: headerSlide }],
-          },
-        ]}
-      >
-        {t('select_quiz')}
-      </Animated.Text>
       <SectionList
         style={{ paddingVertical: 10 }}
         sections={groupedQuizzes.map((section) => ({
@@ -455,6 +417,8 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
         stickySectionHeadersEnabled={false}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       />
     </View>
   );
