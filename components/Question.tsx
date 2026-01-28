@@ -851,7 +851,7 @@ export const Question: React.FC<QuestionProps> = ({
         ) : (
           <View style={{
             overflow: 'visible',
-            marginTop: 20,
+            marginTop: 10,
           }}>
             {answers.map((answer, index) => {
               const isSelected = selectedAnswerIndex === index;
