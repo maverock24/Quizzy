@@ -727,6 +727,8 @@ export const Question: React.FC<QuestionProps> = ({
     <ScrollView
       style={styles.contentContainer}
       contentContainerStyle={{ overflow: 'visible' }}
+      showsVerticalScrollIndicator={false}
+      showsHorizontalScrollIndicator={false}
     >
       {/* Screen flash overlay for correct answer */}
       <Animated.View

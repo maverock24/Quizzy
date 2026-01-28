@@ -46,7 +46,8 @@ export const Explanation: React.FC<ExplanationProps> = ({
       <ScrollView
         style={styles.explanationScroll}
         contentContainerStyle={{ flexGrow: 2, justifyContent: 'center' }}
-        showsVerticalScrollIndicator={true}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
       >
         <SettingsHeader
           currentQuestionIndex={currentQuestionIndex}
