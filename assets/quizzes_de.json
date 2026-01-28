@@ -24077,5 +24077,2885 @@
       }
     ],
     "category": "🧪 Experimente"
+  },
+  {
+    "name": "Das Meer - Quiz für Kinder 🌊",
+    "questions": [
+      {
+        "question": "Wie viel Prozent der Erdoberfläche ist von Wasser bedeckt?",
+        "answers": [
+          {
+            "answer": "Etwa 30 Prozent"
+          },
+          {
+            "answer": "Etwa 50 Prozent"
+          },
+          {
+            "answer": "Etwa 70 Prozent"
+          },
+          {
+            "answer": "Etwa 90 Prozent"
+          }
+        ],
+        "answer": "Etwa 70 Prozent",
+        "explanation": "🌍 Unsere Erde ist ein echter Wasserplanet! Stell dir vor, wenn du die Erde in 10 Teile teilst, dann sind 7 davon Wasser! Deshalb sieht die Erde vom Weltraum aus so schön blau aus. 💙"
+      },
+      {
+        "question": "Welches ist das größte Tier im Meer?",
+        "answers": [
+          {
+            "answer": "Der Weiße Hai"
+          },
+          {
+            "answer": "Der Blauwal"
+          },
+          {
+            "answer": "Der Riesenkalmar"
+          },
+          {
+            "answer": "Der Orca"
+          }
+        ],
+        "answer": "Der Blauwal",
+        "explanation": "🐋 Der Blauwal ist nicht nur das größte Tier im Meer, sondern das größte Tier, das jemals auf der Erde gelebt hat! Er kann bis zu 30 Meter lang werden - das ist so lang wie drei Schulbusse hintereinander! Sein Herz ist so groß wie ein kleines Auto! 💙"
+      },
+      {
+        "question": "Warum ist das Meerwasser salzig?",
+        "answers": [
+          {
+            "answer": "Weil jemand Salz hineingeschüttet hat"
+          },
+          {
+            "answer": "Weil Flüsse Salz aus dem Gestein ins Meer spülen"
+          },
+          {
+            "answer": "Weil Fische das Wasser salzig machen"
+          },
+          {
+            "answer": "Weil die Sonne das Wasser salzig macht"
+          }
+        ],
+        "answer": "Weil Flüsse Salz aus dem Gestein ins Meer spülen",
+        "explanation": "🧂 Regen wäscht winzige Salzkörnchen aus den Steinen und Felsen. Die Flüsse bringen dieses Salz ins Meer. Über Millionen von Jahren hat sich so viel Salz im Meer gesammelt! Wenn du das ganze Salz aus dem Meer nehmen würdest, könntest du damit alle Kontinente mit einer dicken Salzschicht bedecken! 🌊"
+      },
+      {
+        "question": "Was ist eine Qualle?",
+        "answers": [
+          {
+            "answer": "Ein Fisch ohne Schuppen"
+          },
+          {
+            "answer": "Ein gallertartiges Tier ohne Gehirn und Herz"
+          },
+          {
+            "answer": "Eine Wasserpflanze"
+          },
+          {
+            "answer": "Ein Baby-Oktopus"
+          }
+        ],
+        "answer": "Ein gallertartiges Tier ohne Gehirn und Herz",
+        "explanation": "🎐 Quallen sind faszinierende Wesen! Sie bestehen zu etwa 95% aus Wasser und haben kein Gehirn, kein Herz und kein Blut. Trotzdem leben sie schon seit über 500 Millionen Jahren - länger als die Dinosaurier! Manche können leuchten und sehen aus wie schwebende Lampen im Wasser. ✨"
+      },
+      {
+        "question": "Welches Tier hat acht Arme?",
+        "answers": [
+          {
+            "answer": "Die Krabbe"
+          },
+          {
+            "answer": "Der Seestern"
+          },
+          {
+            "answer": "Der Oktopus"
+          },
+          {
+            "answer": "Die Seegurke"
+          }
+        ],
+        "answer": "Der Oktopus",
+        "explanation": "🐙 Der Oktopus hat nicht nur acht Arme, sondern ist auch super schlau! Er kann Gläser öffnen, sich verstecken indem er seine Farbe ändert, und sogar durch ganz kleine Löcher schlüpfen, weil er keine Knochen hat. Jeder seiner Arme hat sogar ein eigenes 'Mini-Gehirn'! 🧠"
+      },
+      {
+        "question": "Was ist eine Koralle?",
+        "answers": [
+          {
+            "answer": "Ein bunter Stein"
+          },
+          {
+            "answer": "Eine Unterwasserpflanze"
+          },
+          {
+            "answer": "Winzige Tiere, die zusammenleben"
+          },
+          {
+            "answer": "Ein Fischei"
+          }
+        ],
+        "answer": "Winzige Tiere, die zusammenleben",
+        "explanation": "🪸 Korallen sehen zwar wie bunte Steine oder Pflanzen aus, aber sie sind tatsächlich Tiere! Ganz viele winzige Tiere (Polypen) bauen zusammen ihre Häuschen aus Kalk. So entstehen Korallenriffe, die aussehen wie Unterwasser-Städte. Dort wohnen Tausende verschiedene Fische! 🐠"
+      },
+      {
+        "question": "Wie atmen Fische unter Wasser?",
+        "answers": [
+          {
+            "answer": "Mit der Nase"
+          },
+          {
+            "answer": "Mit Kiemen"
+          },
+          {
+            "answer": "Mit der Flosse"
+          },
+          {
+            "answer": "Fische müssen nicht atmen"
+          }
+        ],
+        "answer": "Mit Kiemen",
+        "explanation": "🐟 Fische haben spezielle Organe namens Kiemen an der Seite ihres Kopfes. Das Wasser strömt durch den Mund hinein und durch die Kiemen wieder hinaus. Dabei holen die Kiemen den Sauerstoff aus dem Wasser - ähnlich wie unsere Lungen Sauerstoff aus der Luft holen! 💨"
+      },
+      {
+        "question": "Welches Tier kann sich tarnen, indem es seine Farbe ändert?",
+        "answers": [
+          {
+            "answer": "Der Delfin"
+          },
+          {
+            "answer": "Der Seepferdchen"
+          },
+          {
+            "answer": "Der Tintenfisch"
+          },
+          {
+            "answer": "Die Muschel"
+          }
+        ],
+        "answer": "Der Tintenfisch",
+        "explanation": "🦑 Tintenfische sind wahre Verwandlungskünstler! Sie können in Sekundenbruchteilen ihre Farbe und sogar ihre Hautstruktur ändern. So können sie sich vor Feinden verstecken oder mit anderen Tintenfischen 'sprechen'. Sie können sogar leuchten! ✨"
+      },
+      {
+        "question": "Wie schlafen Delfine?",
+        "answers": [
+          {
+            "answer": "Sie legen sich auf den Meeresboden"
+          },
+          {
+            "answer": "Mit einer Gehirnhälfte, während die andere wach bleibt"
+          },
+          {
+            "answer": "Sie schlafen gar nicht"
+          },
+          {
+            "answer": "In Unterwasserhöhlen"
+          }
+        ],
+        "answer": "Mit einer Gehirnhälfte, während die andere wach bleibt",
+        "explanation": "🐬 Delfine sind Säugetiere und müssen zum Atmen an die Oberfläche kommen. Deshalb schlafen sie auf eine besondere Art: Eine Hälfte ihres Gehirns schläft, während die andere wach bleibt! So vergessen sie nie, zum Atmen aufzutauchen. Schlau, oder? 🧠💤"
+      },
+      {
+        "question": "Was ist Ebbe und Flut?",
+        "answers": [
+          {
+            "answer": "Wellen, die durch Wind entstehen"
+          },
+          {
+            "answer": "Das regelmäßige Steigen und Sinken des Meereswassers durch den Mond"
+          },
+          {
+            "answer": "Unterwasservulkane"
+          },
+          {
+            "answer": "Regen, der ins Meer fällt"
+          }
+        ],
+        "answer": "Das regelmäßige Steigen und Sinken des Meereswassers durch den Mond",
+        "explanation": "🌙 Der Mond zieht das Wasser auf der Erde an wie ein riesiger Magnet! Dadurch steigt das Wasser am Strand (Flut) und sinkt wieder (Ebbe). Das passiert etwa alle 12 Stunden. An manchen Stränden kann der Unterschied mehrere Meter betragen! 🏖️"
+      },
+      {
+        "question": "Welches Tier ist das schnellste im Meer?",
+        "answers": [
+          {
+            "answer": "Der Delfin"
+          },
+          {
+            "answer": "Der Segelfisch"
+          },
+          {
+            "answer": "Der Hai"
+          },
+          {
+            "answer": "Die Schildkröte"
+          }
+        ],
+        "answer": "Der Segelfisch",
+        "explanation": "⚡ Der Segelfisch ist der Rennfahrer der Meere! Er kann bis zu 110 km/h schnell schwimmen - das ist so schnell wie ein Auto auf der Autobahn! Seinen Namen hat er von seiner großen Rückenflosse, die wie ein Segel aussieht. 🏎️"
+      },
+      {
+        "question": "Wie viele Arme hat ein Seestern normalerweise?",
+        "answers": [
+          {
+            "answer": "Drei"
+          },
+          {
+            "answer": "Vier"
+          },
+          {
+            "answer": "Fünf"
+          },
+          {
+            "answer": "Sechs"
+          }
+        ],
+        "answer": "Fünf",
+        "explanation": "⭐ Die meisten Seesterne haben fünf Arme, aber es gibt auch welche mit mehr! Das Tollste: Wenn ein Seestern einen Arm verliert, wächst ihm ein neuer nach! Manche Seesterne können sogar aus einem abgetrennten Arm einen komplett neuen Seestern wachsen lassen! 🌟"
+      },
+      {
+        "question": "Was ist Plankton?",
+        "answers": [
+          {
+            "answer": "Eine Art Hai"
+          },
+          {
+            "answer": "Winzige Lebewesen, die im Wasser treiben"
+          },
+          {
+            "answer": "Unterwasserpflanzen"
+          },
+          {
+            "answer": "Meersand"
+          }
+        ],
+        "answer": "Winzige Lebewesen, die im Wasser treiben",
+        "explanation": "🔬 Plankton sind winzig kleine Lebewesen - Pflanzen und Tiere - die im Wasser treiben. Die meisten sind so klein, dass man sie nur mit einem Mikroskop sehen kann. Aber sie sind super wichtig: Sie produzieren über die Hälfte des Sauerstoffs, den wir atmen! Und sie sind Futter für viele Meerestiere, sogar für den riesigen Blauwal! 🐋"
+      },
+      {
+        "question": "Warum schwimmen Fische oft in Schwärmen?",
+        "answers": [
+          {
+            "answer": "Weil sie einsam wären"
+          },
+          {
+            "answer": "Um sich vor Räubern zu schützen"
+          },
+          {
+            "answer": "Weil sie den Weg nicht kennen"
+          },
+          {
+            "answer": "Um schneller zu schwimmen"
+          }
+        ],
+        "answer": "Um sich vor Räubern zu schützen",
+        "explanation": "🐠🐠🐠 Wenn viele kleine Fische zusammen schwimmen, sieht das für Räuber wie ein riesiges, verwirrendes Wesen aus! Die Fische können blitzschnell die Richtung wechseln und so Angreifer verwirren. Gemeinsam sind sie stark! 💪"
+      },
+      {
+        "question": "Wie orientieren sich Wale auf langen Reisen?",
+        "answers": [
+          {
+            "answer": "Sie folgen den Sternen"
+          },
+          {
+            "answer": "Sie orientieren sich am Erdmagnetfeld"
+          },
+          {
+            "answer": "Sie folgen anderen Schiffen"
+          },
+          {
+            "answer": "Sie schwimmen einfach geradeaus"
+          }
+        ],
+        "answer": "Sie orientieren sich am Erdmagnetfeld",
+        "explanation": "🧭 Wale haben einen eingebauten Kompass! Sie können das Magnetfeld der Erde spüren und finden so ihren Weg über Tausende Kilometer durchs Meer. Manche Wale reisen jedes Jahr von den kalten Polarmeeren bis in warme tropische Gewässer und wieder zurück! 🐋"
+      },
+      {
+        "question": "Welches Tier kann elektrische Schocks abgeben?",
+        "answers": [
+          {
+            "answer": "Der Kugelfisch"
+          },
+          {
+            "answer": "Der Zitterrochen"
+          },
+          {
+            "answer": "Der Seestern"
+          },
+          {
+            "answer": "Die Krabbe"
+          }
+        ],
+        "answer": "Der Zitterrochen",
+        "explanation": "⚡ Der Zitterrochen hat spezielle Organe, mit denen er Elektrizität erzeugen kann! Er nutzt die Stromschläge, um Beute zu fangen und sich gegen Feinde zu verteidigen. Manche Zitterrochen können einen Schock von bis zu 220 Volt erzeugen - so viel wie eine Steckdose! 🔌"
+      },
+      {
+        "question": "Was macht den Clownfisch so besonders?",
+        "answers": [
+          {
+            "answer": "Er kann fliegen"
+          },
+          {
+            "answer": "Er lebt in Seeanemonen, die andere Fische verbrennen würden"
+          },
+          {
+            "answer": "Er kann sprechen"
+          },
+          {
+            "answer": "Er leuchtet im Dunkeln"
+          }
+        ],
+        "answer": "Er lebt in Seeanemonen, die andere Fische verbrennen würden",
+        "explanation": "🐠🪸 Clownfische (wie Nemo!) haben eine besondere Schleimschicht auf ihrer Haut, die sie vor den brennenden Tentakeln der Seeanemone schützt. Die Seeanemone schützt den Clownfisch vor Feinden, und der Clownfisch hält die Anemone sauber. So helfen sich beide gegenseitig! 🤝"
+      },
+      {
+        "question": "Wie tief ist die tiefste Stelle im Meer?",
+        "answers": [
+          {
+            "answer": "Etwa 1.000 Meter"
+          },
+          {
+            "answer": "Etwa 5.000 Meter"
+          },
+          {
+            "answer": "Etwa 11.000 Meter"
+          },
+          {
+            "answer": "Etwa 20.000 Meter"
+          }
+        ],
+        "answer": "Etwa 11.000 Meter",
+        "explanation": "🌊 Der Marianengraben ist die tiefste Stelle im Meer - fast 11.000 Meter tief! Das ist so tief, dass man den Mount Everest (den höchsten Berg der Welt) dort versenken könnte und er wäre immer noch unter Wasser! Dort unten ist es stockdunkel und eisig kalt. 🏔️⬇️"
+      },
+      {
+        "question": "Welches Meerestier kann Wasser spritzen, um Insekten zu fangen?",
+        "answers": [
+          {
+            "answer": "Der Wal"
+          },
+          {
+            "answer": "Der Schützenfisch"
+          },
+          {
+            "answer": "Der Seehund"
+          },
+          {
+            "answer": "Die Krabbe"
+          }
+        ],
+        "answer": "Der Schützenfisch",
+        "explanation": "💦 Der Schützenfisch ist ein echter Scharfschütze! Er kann Wasser aus seinem Mund spritzen und Insekten treffen, die auf Blättern über dem Wasser sitzen. Die Insekten fallen dann ins Wasser und werden gefressen. Er kann bis zu 3 Meter weit spritzen und trifft fast immer! 🎯"
+      },
+      {
+        "question": "Warum sehen viele Tiefseefische gruselig aus?",
+        "answers": [
+          {
+            "answer": "Weil sie böse sind"
+          },
+          {
+            "answer": "Weil sie sich an das Leben in der Dunkelheit angepasst haben"
+          },
+          {
+            "answer": "Weil das Salzwasser sie verändert hat"
+          },
+          {
+            "answer": "Weil sie alt sind"
+          }
+        ],
+        "answer": "Weil sie sich an das Leben in der Dunkelheit angepasst haben",
+        "explanation": "🐡 In der Tiefsee ist es stockdunkel! Deshalb haben viele Fische dort riesige Augen, um jedes bisschen Licht zu sehen, oder sie können selbst leuchten. Manche haben große Zähne, weil in der Tiefe nur wenig Futter vorbeischwimmt - wenn sie etwas fangen, wollen sie es nicht entkommen lassen! 👀✨"
+      },
+      {
+        "question": "Was ist ein Tsunami?",
+        "answers": [
+          {
+            "answer": "Ein starker Sturm"
+          },
+          {
+            "answer": "Eine riesige Welle, die durch Erdbeben entsteht"
+          },
+          {
+            "answer": "Ein Unterwasservulkan"
+          },
+          {
+            "answer": "Ein großer Fischschwarm"
+          }
+        ],
+        "answer": "Eine riesige Welle, die durch Erdbeben entsteht",
+        "explanation": "🌊 Ein Tsunami ist eine gewaltige Flutwelle, die meist durch Erdbeben unter Wasser entsteht. Im offenen Meer merkt man sie kaum, aber wenn sie an die Küste kommt, kann sie riesig groß werden - manchmal so hoch wie ein Haus! Das japanische Wort 'Tsunami' bedeutet 'Hafenwelle'. ⚠️"
+      },
+      {
+        "question": "Welches Meerestier kann seinen Körper aufblasen wie einen Ballon?",
+        "answers": [
+          {
+            "answer": "Der Hai"
+          },
+          {
+            "answer": "Der Kugelfisch"
+          },
+          {
+            "answer": "Der Rochen"
+          },
+          {
+            "answer": "Der Aal"
+          }
+        ],
+        "answer": "Der Kugelfisch",
+        "explanation": "🎈 Wenn der Kugelfisch Angst hat, schluckt er ganz viel Wasser (oder Luft) und bläst sich zu einer stacheligen Kugel auf! So wird er für Räuber viel zu groß zum Verschlucken. Außerdem ist er giftig - einer der giftigsten Fische der Welt! Also: Nur gucken, nicht anfassen! ⚠️"
+      },
+      {
+        "question": "Was ist das Great Barrier Reef?",
+        "answers": [
+          {
+            "answer": "Ein großer Felsen im Meer"
+          },
+          {
+            "answer": "Das größte Korallenriff der Welt vor Australien"
+          },
+          {
+            "answer": "Eine Insel im Pazifik"
+          },
+          {
+            "answer": "Ein Aquarium in Sydney"
+          }
+        ],
+        "answer": "Das größte Korallenriff der Welt vor Australien",
+        "explanation": "🪸 Das Great Barrier Reef vor der Küste Australiens ist so riesig, dass man es sogar aus dem Weltraum sehen kann! Es ist über 2.300 Kilometer lang und besteht aus fast 3.000 einzelnen Riffen. Dort leben mehr als 1.500 Fischarten, 400 Korallenarten und viele Schildkröten! 🐢"
+      },
+      {
+        "question": "Wie produzieren Meeresschildkröten ihre Babys?",
+        "answers": [
+          {
+            "answer": "Sie gebären sie im Wasser"
+          },
+          {
+            "answer": "Sie legen Eier am Strand"
+          },
+          {
+            "answer": "Sie bauen Nester auf dem Meeresboden"
+          },
+          {
+            "answer": "Die Babys wachsen in Korallen"
+          }
+        ],
+        "answer": "Sie legen Eier am Strand",
+        "explanation": "🐢 Meeresschildkröten schwimmen in der Nacht an den Strand, graben mit ihren Flossen ein Loch und legen dort ihre Eier ab. Dann bedecken sie das Nest mit Sand und schwimmen zurück ins Meer. Nach etwa 2 Monaten schlüpfen die Baby-Schildkröten und krabbeln ins Wasser! 🏖️🥚"
+      },
+      {
+        "question": "Was ist eine Muräne?",
+        "answers": [
+          {
+            "answer": "Eine Art Muschel"
+          },
+          {
+            "answer": "Ein schlangenartiger Fisch mit scharfen Zähnen"
+          },
+          {
+            "answer": "Eine Seepflanze"
+          },
+          {
+            "answer": "Eine Baby-Qualle"
+          }
+        ],
+        "answer": "Ein schlangenartiger Fisch mit scharfen Zähnen",
+        "explanation": "🐍 Muränen sehen wie Schlangen aus, sind aber Fische! Sie verstecken sich in Felsen und Spalten und warten auf ihre Beute. Sie haben zwei Kiefer - einen im Maul und einen zweiten weiter hinten im Hals, der die Beute hinunterzieht wie in einem Gruselfilm! 😱"
+      },
+      {
+        "question": "Warum haben Haie keine Knochen?",
+        "answers": [
+          {
+            "answer": "Weil sie noch Babys sind"
+          },
+          {
+            "answer": "Ihr Skelett besteht aus Knorpel, der leichter ist"
+          },
+          {
+            "answer": "Weil das Salzwasser die Knochen auflöst"
+          },
+          {
+            "answer": "Haie haben Knochen"
+          }
+        ],
+        "answer": "Ihr Skelett besteht aus Knorpel, der leichter ist",
+        "explanation": "🦈 Haie haben ein Skelett aus Knorpel - das ist das gleiche weiche Material wie in deiner Nasenspitze! Knorpel ist viel leichter als Knochen, was den Haien hilft, im Wasser zu schweben und schnell zu schwimmen. Haie gibt es schon seit über 400 Millionen Jahren - länger als die Dinosaurier! 🦖"
+      },
+      {
+        "question": "Was ist ein Narwal?",
+        "answers": [
+          {
+            "answer": "Ein Delfin mit gestreiftem Fell"
+          },
+          {
+            "answer": "Ein Wal mit einem langen Stoßzahn"
+          },
+          {
+            "answer": "Ein riesiger Hai"
+          },
+          {
+            "answer": "Eine Fischart mit Flügeln"
+          }
+        ],
+        "answer": "Ein Wal mit einem langen Stoßzahn",
+        "explanation": "🦄 Der Narwal wird auch 'Einhorn des Meeres' genannt! Männliche Narwale haben einen spiralförmigen Stoßzahn, der bis zu 3 Meter lang werden kann. Es ist eigentlich ein sehr langer Zahn! Narwale leben in den eisigen Gewässern der Arktis und benutzen ihren Stoßzahn wahrscheinlich, um Fische zu betäuben. 🌊❄️"
+      },
+      {
+        "question": "Was passiert mit Plastik, das ins Meer gelangt?",
+        "answers": [
+          {
+            "answer": "Es löst sich nach einer Woche auf"
+          },
+          {
+            "answer": "Es zerfällt in Mikroplastik und schadet Meerestieren"
+          },
+          {
+            "answer": "Fische fressen es und werden davon satt"
+          },
+          {
+            "answer": "Es sinkt sofort auf den Meeresboden"
+          }
+        ],
+        "answer": "Es zerfällt in Mikroplastik und schadet Meerestieren",
+        "explanation": "🚯 Plastik im Meer ist ein großes Problem! Es braucht Hunderte Jahre, um zu zerfallen. Dabei wird es zu winzigem Mikroplastik, das Meerestiere mit Essen verwechseln. Jedes Jahr landen Millionen Tonnen Plastik im Meer. Wir alle können helfen, indem wir weniger Plastik benutzen und keinen Müll in die Natur werfen! 🌍💚"
+      },
+      {
+        "question": "Welches Tier benutzt Werkzeuge, um Muscheln zu öffnen?",
+        "answers": [
+          {
+            "answer": "Der Hai"
+          },
+          {
+            "answer": "Der Seeotter"
+          },
+          {
+            "answer": "Der Delfin"
+          },
+          {
+            "answer": "Die Krabbe"
+          }
+        ],
+        "answer": "Der Seeotter",
+        "explanation": "🦦 Der Seeotter ist super clever! Er legt sich auf den Rücken ins Wasser, legt einen flachen Stein auf seinen Bauch und schlägt damit Muscheln auf, um das leckere Fleisch darin zu essen. Er trägt seinen Lieblingsstein sogar in einer 'Tasche' unter seinem Arm mit sich herum! 🪨"
+      },
+      {
+        "question": "Was sind Mangroven?",
+        "answers": [
+          {
+            "answer": "Große Wale"
+          },
+          {
+            "answer": "Bäume, die im Salzwasser an der Küste wachsen"
+          },
+          {
+            "answer": "Unterwasservulkane"
+          },
+          {
+            "answer": "Eine Art Koralle"
+          }
+        ],
+        "answer": "Bäume, die im Salzwasser an der Küste wachsen",
+        "explanation": "🌳 Mangroven sind echte Superhelden-Bäume! Sie können mit ihren Wurzeln im Salzwasser stehen - was die meisten Pflanzen umbringen würde. Ihre verschlungenen Wurzeln bieten Schutz für Baby-Fische und schützen die Küsten vor Stürmen und Wellen. Sie sind wie ein Kindergarten für viele Meerestiere! 🐟"
+      }
+    ],
+    "category": "🌊 Natur & Tiere"
+  },
+  {
+    "name": "Hunde - Quiz für Kinder 🐕",
+    "questions": [
+      {
+        "question": "Wie nennt man den Vorfahren aller Haushunde?",
+        "answers": [
+          {
+            "answer": "Der Fuchs"
+          },
+          {
+            "answer": "Der Wolf"
+          },
+          {
+            "answer": "Der Löwe"
+          },
+          {
+            "answer": "Der Bär"
+          }
+        ],
+        "answer": "Der Wolf",
+        "explanation": "🐺 Alle Hunde auf der Welt - vom winzigen Chihuahua bis zum riesigen Bernhardiner - stammen vom Wolf ab! Menschen und Wölfe wurden vor über 15.000 Jahren Freunde, und aus den Wölfen entstanden nach und nach unsere treuen Haushunde. 🐕"
+      },
+      {
+        "question": "Wie viele Zähne hat ein erwachsener Hund?",
+        "answers": [
+          {
+            "answer": "20 Zähne"
+          },
+          {
+            "answer": "32 Zähne"
+          },
+          {
+            "answer": "42 Zähne"
+          },
+          {
+            "answer": "50 Zähne"
+          }
+        ],
+        "answer": "42 Zähne",
+        "explanation": "🦷 Ein erwachsener Hund hat 42 Zähne - das sind 10 mehr als bei uns Menschen! Welpen werden ohne Zähne geboren und bekommen erst nach ein paar Wochen ihre Milchzähne, die später durch die richtigen Zähne ersetzt werden. 😁"
+      },
+      {
+        "question": "Was bedeutet es, wenn ein Hund mit dem Schwanz wedelt?",
+        "answers": [
+          {
+            "answer": "Er hat Hunger"
+          },
+          {
+            "answer": "Er ist aufgeregt oder freut sich"
+          },
+          {
+            "answer": "Er ist müde"
+          },
+          {
+            "answer": "Er friert"
+          }
+        ],
+        "answer": "Er ist aufgeregt oder freut sich",
+        "explanation": "🐕 Wenn ein Hund mit dem Schwanz wedelt, zeigt er oft, dass er glücklich und aufgeregt ist - besonders wenn du nach Hause kommst! Aber Vorsicht: Manchmal wedeln Hunde auch, wenn sie nervös sind. Man muss immer den ganzen Hund anschauen, um zu wissen, wie er sich fühlt! 💕"
+      },
+      {
+        "question": "Welcher Hund ist der schnellste der Welt?",
+        "answers": [
+          {
+            "answer": "Der Deutsche Schäferhund"
+          },
+          {
+            "answer": "Der Golden Retriever"
+          },
+          {
+            "answer": "Der Greyhound (Windhund)"
+          },
+          {
+            "answer": "Der Beagle"
+          }
+        ],
+        "answer": "Der Greyhound (Windhund)",
+        "explanation": "⚡ Der Greyhound ist ein echter Rennwagen auf vier Beinen! Er kann bis zu 70 km/h schnell laufen - das ist fast so schnell wie ein Auto in der Stadt fährt! Sein schlanker Körper und die langen Beine machen ihn zum Sprinter unter den Hunden. 🏃"
+      },
+      {
+        "question": "Können Hunde Farben sehen?",
+        "answers": [
+          {
+            "answer": "Nein, sie sehen nur schwarz-weiß"
+          },
+          {
+            "answer": "Ja, sie sehen die gleichen Farben wie wir"
+          },
+          {
+            "answer": "Ja, aber nur Blau und Gelb"
+          },
+          {
+            "answer": "Ja, sie sehen mehr Farben als wir"
+          }
+        ],
+        "answer": "Ja, aber nur Blau und Gelb",
+        "explanation": "👀 Hunde sehen die Welt anders als wir! Sie können Blau und Gelb gut erkennen, aber Rot und Grün sehen für sie fast gleich aus - ungefähr wie ein gelblicher Ton. Dafür können sie viel besser bei Dunkelheit sehen als wir! 🌙"
+      },
+      {
+        "question": "Wie oft sollte ein Hund ungefähr gefüttert werden?",
+        "answers": [
+          {
+            "answer": "Einmal pro Woche"
+          },
+          {
+            "answer": "Zehnmal am Tag"
+          },
+          {
+            "answer": "Ein- bis zweimal am Tag"
+          },
+          {
+            "answer": "Nur wenn er bettelt"
+          }
+        ],
+        "answer": "Ein- bis zweimal am Tag",
+        "explanation": "🍖 Die meisten erwachsenen Hunde bekommen ein- bis zweimal am Tag ihr Futter. Welpen brauchen öfter kleinere Mahlzeiten. Wichtig ist auch, dass Hunde immer frisches Wasser zum Trinken haben! 💧"
+      },
+      {
+        "question": "Welches Körperteil benutzen Hunde hauptsächlich zum Schwitzen?",
+        "answers": [
+          {
+            "answer": "Die Ohren"
+          },
+          {
+            "answer": "Die Pfoten"
+          },
+          {
+            "answer": "Den Rücken"
+          },
+          {
+            "answer": "Die Nase"
+          }
+        ],
+        "answer": "Die Pfoten",
+        "explanation": "🐾 Hunde haben Schweißdrüsen in ihren Pfoten! Deshalb hinterlassen sie manchmal feuchte Pfotenabdrücke, wenn es ihnen warm ist. Aber hauptsächlich kühlen sich Hunde ab, indem sie hecheln - also mit offenem Maul schnell atmen. 😛"
+      },
+      {
+        "question": "Wie viel besser kann ein Hund riechen als ein Mensch?",
+        "answers": [
+          {
+            "answer": "Doppelt so gut"
+          },
+          {
+            "answer": "10-mal so gut"
+          },
+          {
+            "answer": "Bis zu 100.000-mal so gut"
+          },
+          {
+            "answer": "Genauso gut"
+          }
+        ],
+        "answer": "Bis zu 100.000-mal so gut",
+        "explanation": "👃 Die Nase eines Hundes ist ein Superpower-Organ! Hunde können bis zu 100.000-mal besser riechen als wir Menschen. Deshalb werden sie oft als Spürhunde eingesetzt, um vermisste Menschen zu finden oder versteckte Sachen aufzuspüren. 🔍"
+      },
+      {
+        "question": "Wie nennt man die Babys eines Hundes?",
+        "answers": [
+          {
+            "answer": "Kätzchen"
+          },
+          {
+            "answer": "Welpen"
+          },
+          {
+            "answer": "Fohlen"
+          },
+          {
+            "answer": "Küken"
+          }
+        ],
+        "answer": "Welpen",
+        "explanation": "🐶 Hundebabys heißen Welpen! Sie werden blind und taub geboren und öffnen erst nach etwa zwei Wochen ihre Augen. Am Anfang trinken sie nur Milch von ihrer Mama. Sind sie nicht süß? 💝"
+      },
+      {
+        "question": "Welche Hunderasse ist bekannt für ihre Falten im Gesicht?",
+        "answers": [
+          {
+            "answer": "Der Pudel"
+          },
+          {
+            "answer": "Der Mops"
+          },
+          {
+            "answer": "Der Dalmatiner"
+          },
+          {
+            "answer": "Der Collie"
+          }
+        ],
+        "answer": "Der Mops",
+        "explanation": "🐕 Der Mops ist ein kleiner, lustiger Hund mit einem flachen Gesicht und vielen süßen Falten! Diese Hunde sind sehr verspielt und lieben es, bei ihren Menschen zu kuscheln. Ihr Gesicht sieht immer ein bisschen so aus, als würden sie sich über etwas wundern! 😊"
+      },
+      {
+        "question": "Warum heulen manche Hunde?",
+        "answers": [
+          {
+            "answer": "Weil sie Musik nicht mögen"
+          },
+          {
+            "answer": "Um mit anderen Hunden zu 'sprechen' oder ihre Gefühle auszudrücken"
+          },
+          {
+            "answer": "Weil sie krank sind"
+          },
+          {
+            "answer": "Weil sie spielen wollen"
+          }
+        ],
+        "answer": "Um mit anderen Hunden zu 'sprechen' oder ihre Gefühle auszudrücken",
+        "explanation": "🐺 Das Heulen ist eine Art, wie Hunde kommunizieren - genau wie ihre Vorfahren, die Wölfe! Manchmal heulen sie, wenn sie Sirenen hören, weil das Geräusch dem Heulen anderer Hunde ähnelt. Es ist ihre Art zu sagen: 'Hey, ich bin hier!' 🎵"
+      },
+      {
+        "question": "Welche Hunderasse hat einen schwarzen oder blauen Fleck auf der Zunge?",
+        "answers": [
+          {
+            "answer": "Der Labrador"
+          },
+          {
+            "answer": "Der Chow-Chow"
+          },
+          {
+            "answer": "Der Dackel"
+          },
+          {
+            "answer": "Der Beagle"
+          }
+        ],
+        "answer": "Der Chow-Chow",
+        "explanation": "👅 Der Chow-Chow ist ein flauschiger Hund mit einer blauen oder schwarzen Zunge! Das ist ganz normal für diese Rasse und macht sie besonders einzigartig. Chow-Chows sehen aus wie kleine Löwen oder Teddybären! 🧸"
+      },
+      {
+        "question": "Was bedeutet es, wenn ein Hund gähnt?",
+        "answers": [
+          {
+            "answer": "Er ist immer müde"
+          },
+          {
+            "answer": "Er könnte müde, gestresst oder entspannt sein"
+          },
+          {
+            "answer": "Er hat Hunger"
+          },
+          {
+            "answer": "Er möchte spielen"
+          }
+        ],
+        "answer": "Er könnte müde, gestresst oder entspannt sein",
+        "explanation": "😴 Hunde gähnen nicht nur, wenn sie müde sind! Manchmal gähnen sie auch, wenn sie sich ein bisschen unwohl fühlen oder wenn sie sich entspannen. Wenn du gähnst, gähnt dein Hund vielleicht sogar mit - das zeigt, dass er sich mit dir verbunden fühlt! 💤"
+      },
+      {
+        "question": "Wie viele Hunderassen gibt es ungefähr auf der Welt?",
+        "answers": [
+          {
+            "answer": "Etwa 50"
+          },
+          {
+            "answer": "Etwa 100"
+          },
+          {
+            "answer": "Über 300"
+          },
+          {
+            "answer": "Über 1000"
+          }
+        ],
+        "answer": "Über 300",
+        "explanation": "🐕 Es gibt über 300 verschiedene Hunderassen auf der Welt! Von winzig kleinen bis riesig großen, von kurzhaarigen bis langhaarigen - für jeden Menschen gibt es den perfekten Hundefreund. Und jeder einzelne ist etwas ganz Besonderes! 🌟"
+      },
+      {
+        "question": "Welche Hunderasse ist für ihre schwarz-weißen Tupfen bekannt?",
+        "answers": [
+          {
+            "answer": "Der Golden Retriever"
+          },
+          {
+            "answer": "Der Dalmatiner"
+          },
+          {
+            "answer": "Der Pudel"
+          },
+          {
+            "answer": "Der Husky"
+          }
+        ],
+        "answer": "Der Dalmatiner",
+        "explanation": "⚫⚪ Dalmatiner sind die gepunkteten Superstars unter den Hunden! Jeder Dalmatiner hat ein einzigartiges Punktmuster - wie ein Fingerabdruck. Wusstest du, dass Dalmatiner-Welpen ganz weiß geboren werden? Die Punkte erscheinen erst nach ein paar Wochen! 🎬"
+      },
+      {
+        "question": "Wie lange schlafen Hunde durchschnittlich am Tag?",
+        "answers": [
+          {
+            "answer": "4 bis 6 Stunden"
+          },
+          {
+            "answer": "8 bis 10 Stunden"
+          },
+          {
+            "answer": "12 bis 14 Stunden"
+          },
+          {
+            "answer": "20 Stunden"
+          }
+        ],
+        "answer": "12 bis 14 Stunden",
+        "explanation": "💤 Hunde sind echte Schlafmützen! Sie schlafen 12 bis 14 Stunden am Tag, manche sogar mehr. Welpen und ältere Hunde brauchen noch mehr Schlaf. Aber keine Sorge - sie haben trotzdem genug Zeit zum Spielen mit dir! 🛏️"
+      },
+      {
+        "question": "Was ist die Aufgabe eines Blindenhundes?",
+        "answers": [
+          {
+            "answer": "Er bewacht das Haus"
+          },
+          {
+            "answer": "Er führt blinde Menschen sicher durch den Alltag"
+          },
+          {
+            "answer": "Er spielt mit Kindern"
+          },
+          {
+            "answer": "Er fängt Mäuse"
+          }
+        ],
+        "answer": "Er führt blinde Menschen sicher durch den Alltag",
+        "explanation": "🦮 Blindenhunde sind echte Helden! Sie werden speziell ausgebildet, um Menschen, die nicht sehen können, sicher durch den Straßenverkehr und über Hindernisse zu führen. Sie erkennen Ampeln, Treppen und Gefahren und beschützen ihre Menschen jeden Tag. 💙"
+      },
+      {
+        "question": "Welche Hunderasse ist besonders klein?",
+        "answers": [
+          {
+            "answer": "Die Deutsche Dogge"
+          },
+          {
+            "answer": "Der Chihuahua"
+          },
+          {
+            "answer": "Der Bernhardiner"
+          },
+          {
+            "answer": "Der Irische Wolfshund"
+          }
+        ],
+        "answer": "Der Chihuahua",
+        "explanation": "🐕 Der Chihuahua ist die kleinste Hunderasse der Welt! Manche wiegen weniger als 1 Kilogramm - so viel wie eine Packung Butter! Aber sie haben große Persönlichkeiten und viel Mut. Benannt sind sie nach dem mexikanischen Staat Chihuahua. 🇲🇽"
+      },
+      {
+        "question": "Warum drehen sich Hunde manchmal im Kreis, bevor sie sich hinlegen?",
+        "answers": [
+          {
+            "answer": "Weil sie schwindelig werden wollen"
+          },
+          {
+            "answer": "Es ist ein Instinkt von ihren wilden Vorfahren"
+          },
+          {
+            "answer": "Weil sie nicht müde sind"
+          },
+          {
+            "answer": "Weil sie Angst haben"
+          }
+        ],
+        "answer": "Es ist ein Instinkt von ihren wilden Vorfahren",
+        "explanation": "🔄 Dieses lustige Verhalten kommt von ihren Vorfahren, den Wölfen! In der Wildnis haben Wölfe sich im Kreis gedreht, um das Gras niederzudrücken und sich ein gemütliches Nest zu machen. Hunde machen das noch heute - auch auf weichen Kissen! 😄"
+      },
+      {
+        "question": "Welche Hunderasse ist besonders groß und hoch?",
+        "answers": [
+          {
+            "answer": "Der Chihuahua"
+          },
+          {
+            "answer": "Die Deutsche Dogge"
+          },
+          {
+            "answer": "Der Dackel"
+          },
+          {
+            "answer": "Der Mops"
+          }
+        ],
+        "answer": "Die Deutsche Dogge",
+        "explanation": "🐕 Die Deutsche Dogge ist ein sanfter Riese! Sie kann über 80 cm groß werden und auf den Hinterbeinen sogar größer als ein erwachsener Mensch sein. Trotz ihrer Größe sind sie oft sehr verschmust und sanft. 💝"
+      },
+      {
+        "question": "Wie oft sollte man einen Hund Gassi führen?",
+        "answers": [
+          {
+            "answer": "Einmal pro Woche"
+          },
+          {
+            "answer": "Einmal im Monat"
+          },
+          {
+            "answer": "Mehrmals am Tag"
+          },
+          {
+            "answer": "Nur wenn es regnet"
+          }
+        ],
+        "answer": "Mehrmals am Tag",
+        "explanation": "🚶 Hunde brauchen mehrmals am Tag Bewegung und die Möglichkeit, ihr Geschäft zu machen. Die meisten Hunde sollten mindestens 2-3 mal am Tag spazieren gehen. Sie lieben es, die Welt zu erkunden und zu schnüffeln! 🌳"
+      },
+      {
+        "question": "Was ist die Lieblingsbeschäftigung der meisten Hunde?",
+        "answers": [
+          {
+            "answer": "Fernsehen"
+          },
+          {
+            "answer": "Spielen und Zeit mit ihren Menschen verbringen"
+          },
+          {
+            "answer": "Alleine sein"
+          },
+          {
+            "answer": "Schwimmen"
+          }
+        ],
+        "answer": "Spielen und Zeit mit ihren Menschen verbringen",
+        "explanation": "🎾 Hunde sind sehr soziale Tiere! Am liebsten spielen sie mit ihren Menschen - ob Ball werfen, Tauziehen oder einfach herumtoben. Sie genießen jede Minute, die sie mit ihrer Familie verbringen können. Du bist ihr bester Freund! 💕"
+      },
+      {
+        "question": "Welcher Hund ist berühmt dafür, Menschen aus Lawinen zu retten?",
+        "answers": [
+          {
+            "answer": "Der Pudel"
+          },
+          {
+            "answer": "Der Bernhardiner"
+          },
+          {
+            "answer": "Der Chihuahua"
+          },
+          {
+            "answer": "Der Dackel"
+          }
+        ],
+        "answer": "Der Bernhardiner",
+        "explanation": "🏔️ Bernhardiner sind die berühmten Rettungshunde aus den Schweizer Alpen! Der bekannteste war Barry, der über 40 Menschen aus dem Schnee gerettet hat. Diese großen, kräftigen Hunde wurden speziell gezüchtet, um Menschen zu finden und zu wärmen. ⛰️"
+      },
+      {
+        "question": "Was bedeutet es, wenn ein Hund die Ohren nach hinten legt?",
+        "answers": [
+          {
+            "answer": "Er ist wütend"
+          },
+          {
+            "answer": "Er könnte ängstlich, unterwürfig oder entspannt sein"
+          },
+          {
+            "answer": "Er ist hungrig"
+          },
+          {
+            "answer": "Er will spielen"
+          }
+        ],
+        "answer": "Er könnte ängstlich, unterwürfig oder entspannt sein",
+        "explanation": "👂 Die Ohren eines Hundes verraten viel über seine Gefühle! Angelegte Ohren können bedeuten, dass der Hund Angst hat, sich unterwirft, oder einfach ganz entspannt ist. Man muss immer auch auf den Rest des Körpers achten! 🐕"
+      },
+      {
+        "question": "Welche Hunderasse hat besonders kurze Beine?",
+        "answers": [
+          {
+            "answer": "Der Deutsche Schäferhund"
+          },
+          {
+            "answer": "Der Dackel"
+          },
+          {
+            "answer": "Der Husky"
+          },
+          {
+            "answer": "Der Labrador"
+          }
+        ],
+        "answer": "Der Dackel",
+        "explanation": "🌭 Der Dackel hat seinen langen Körper und die kurzen Beine nicht ohne Grund! Er wurde gezüchtet, um in Dachsbaue zu kriechen - daher auch sein Name. In manchen Ländern nennt man ihn liebevoll 'Würstchenhund'! 🐕"
+      },
+      {
+        "question": "Können Hunde träumen?",
+        "answers": [
+          {
+            "answer": "Nein, nur Menschen träumen"
+          },
+          {
+            "answer": "Ja, sie können träumen wie wir!"
+          },
+          {
+            "answer": "Nein, Hunde schlafen zu tief"
+          },
+          {
+            "answer": "Nur große Hunde träumen"
+          }
+        ],
+        "answer": "Ja, sie können träumen wie wir!",
+        "explanation": "💭 Hunde können tatsächlich träumen! Wenn du siehst, dass dein Hund im Schlaf zuckt, winselt oder mit den Pfoten paddelt, träumt er wahrscheinlich gerade. Vielleicht jagt er im Traum einen Ball oder rennt über eine Wiese! 🌈"
+      },
+      {
+        "question": "Warum lecken Hunde Menschen?",
+        "answers": [
+          {
+            "answer": "Weil Menschen salzig schmecken"
+          },
+          {
+            "answer": "Um Zuneigung zu zeigen oder Aufmerksamkeit zu bekommen"
+          },
+          {
+            "answer": "Weil sie durstig sind"
+          },
+          {
+            "answer": "Weil sie krank sind"
+          }
+        ],
+        "answer": "Um Zuneigung zu zeigen oder Aufmerksamkeit zu bekommen",
+        "explanation": "👅 Wenn dein Hund dich ableckt, ist das wie ein Hundekuss! Es ist eine Art, Liebe zu zeigen. Welpen lernen das von ihrer Mama. Manchmal lecken Hunde auch, weil unsere Haut interessant salzig schmeckt! 💋"
+      },
+      {
+        "question": "Welche Sinne nutzen Hunde am meisten, um die Welt zu erkunden?",
+        "answers": [
+          {
+            "answer": "Sehen und Schmecken"
+          },
+          {
+            "answer": "Riechen und Hören"
+          },
+          {
+            "answer": "Fühlen und Sehen"
+          },
+          {
+            "answer": "Nur Sehen"
+          }
+        ],
+        "answer": "Riechen und Hören",
+        "explanation": "👃👂 Für Hunde ist die Nase das wichtigste! Sie 'sehen' die Welt durch Gerüche. Außerdem können sie viel höhere Töne hören als wir Menschen - sogar Ultraschall! Deshalb reagieren sie manchmal auf Geräusche, die wir gar nicht hören. 🔊"
+      },
+      {
+        "question": "Was ist ein Mischlingshund?",
+        "answers": [
+          {
+            "answer": "Ein kranker Hund"
+          },
+          {
+            "answer": "Ein Hund, dessen Eltern verschiedene Rassen sind"
+          },
+          {
+            "answer": "Ein sehr alter Hund"
+          },
+          {
+            "answer": "Ein Hund aus dem Zoo"
+          }
+        ],
+        "answer": "Ein Hund, dessen Eltern verschiedene Rassen sind",
+        "explanation": "🐕 Mischlingshunde sind eine bunte Mischung aus verschiedenen Rassen! Ihre Eltern waren unterschiedliche Hunderassen. Mischlinge sind oft sehr gesund und haben einzigartige Persönlichkeiten. Jeder Mischling ist ein Unikat! 🌈"
+      },
+      {
+        "question": "Welcher Hund hat das flauschigste Fell?",
+        "answers": [
+          {
+            "answer": "Der Windhund"
+          },
+          {
+            "answer": "Der Samojede"
+          },
+          {
+            "answer": "Der Dalmatiner"
+          },
+          {
+            "answer": "Der Boxer"
+          }
+        ],
+        "answer": "Der Samojede",
+        "explanation": "☁️ Der Samojede sieht aus wie eine laufende Wolke! Sein weißes, flauschiges Fell ist superdicht und hält ihn auch bei eisiger Kälte warm. Diese Hunde kommen aus Sibirien und haben immer ein Lächeln im Gesicht! 😊"
+      }
+    ],
+    "category": "🐕 Natur & Tiere"
+  },
+  {
+    "name": "Mathe 2. Klasse 🔢",
+    "questions": [
+      {
+        "question": "Was ergibt 7 + 8?",
+        "answers": [
+          {
+            "answer": "13"
+          },
+          {
+            "answer": "14"
+          },
+          {
+            "answer": "15"
+          },
+          {
+            "answer": "16"
+          }
+        ],
+        "answer": "15",
+        "explanation": "🧮 7 + 8 = 15. Du kannst dir das so merken: 7 + 8 ist wie 7 + 7 + 1 = 14 + 1 = 15! Oder zähle einfach von 7 aus 8 Schritte weiter! ➕"
+      },
+      {
+        "question": "Was ergibt 15 - 6?",
+        "answers": [
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          },
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "11"
+          }
+        ],
+        "answer": "9",
+        "explanation": "🧮 15 - 6 = 9. Stell dir vor, du hast 15 Bonbons und gibst 6 davon ab. Dann bleiben dir noch 9 leckere Bonbons! 🍬"
+      },
+      {
+        "question": "Was ergibt 2 · 5?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "12"
+          },
+          {
+            "answer": "25"
+          }
+        ],
+        "answer": "10",
+        "explanation": "✖️ 2 · 5 = 10. Das bedeutet: 5 + 5 = 10. Wenn du 2 Hände hast und jede Hand 5 Finger, hast du insgesamt 10 Finger! ✋✋"
+      },
+      {
+        "question": "Was ergibt 36 + 20?",
+        "answers": [
+          {
+            "answer": "46"
+          },
+          {
+            "answer": "56"
+          },
+          {
+            "answer": "38"
+          },
+          {
+            "answer": "66"
+          }
+        ],
+        "answer": "56",
+        "explanation": "➕ 36 + 20 = 56. Bei Zehnerzahlen ist es einfach: 3 Zehner + 2 Zehner = 5 Zehner. Die 6 Einer bleiben gleich! 🎯"
+      },
+      {
+        "question": "Was ergibt 50 - 30?",
+        "answers": [
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "20"
+          },
+          {
+            "answer": "30"
+          },
+          {
+            "answer": "80"
+          }
+        ],
+        "answer": "20",
+        "explanation": "➖ 50 - 30 = 20. Das sind 5 Zehner minus 3 Zehner = 2 Zehner = 20! So einfach ist das! 🌟"
+      },
+      {
+        "question": "Lisa hat 12 Äpfel. Sie bekommt noch 7 dazu. Wie viele Äpfel hat sie jetzt?",
+        "answers": [
+          {
+            "answer": "17"
+          },
+          {
+            "answer": "18"
+          },
+          {
+            "answer": "19"
+          },
+          {
+            "answer": "20"
+          }
+        ],
+        "answer": "19",
+        "explanation": "🍎 12 + 7 = 19 Äpfel! Lisa hat jetzt ganz viele leckere Äpfel. Das reicht für fast 3 Wochen, wenn sie jeden Tag einen isst! 🍎"
+      },
+      {
+        "question": "Was ergibt 3 · 4?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "12"
+          },
+          {
+            "answer": "14"
+          }
+        ],
+        "answer": "12",
+        "explanation": "✖️ 3 · 4 = 12. Das bedeutet: 4 + 4 + 4 = 12. Denk an 3 Teller mit je 4 Keksen - das sind zusammen 12 Kekse! 🍪"
+      },
+      {
+        "question": "Welche Zahl liegt zwischen 45 und 47?",
+        "answers": [
+          {
+            "answer": "44"
+          },
+          {
+            "answer": "46"
+          },
+          {
+            "answer": "48"
+          },
+          {
+            "answer": "50"
+          }
+        ],
+        "answer": "46",
+        "explanation": "🔢 Zwischen 45 und 47 liegt die 46! Beim Zählen kommt immer: 45, 46, 47. Die Zahl in der Mitte ist 46! 🎯"
+      },
+      {
+        "question": "Was ergibt 18 + 14?",
+        "answers": [
+          {
+            "answer": "30"
+          },
+          {
+            "answer": "32"
+          },
+          {
+            "answer": "34"
+          },
+          {
+            "answer": "22"
+          }
+        ],
+        "answer": "32",
+        "explanation": "➕ 18 + 14 = 32. Tipp: 18 + 10 = 28, und dann noch + 4 = 32! Schritt für Schritt ist es einfacher! 👣"
+      },
+      {
+        "question": "Was ergibt 25 - 9?",
+        "answers": [
+          {
+            "answer": "14"
+          },
+          {
+            "answer": "15"
+          },
+          {
+            "answer": "16"
+          },
+          {
+            "answer": "17"
+          }
+        ],
+        "answer": "16",
+        "explanation": "➖ 25 - 9 = 16. Ein Trick: 25 - 10 = 15, aber wir haben 1 zu viel abgezogen, also + 1 = 16! 🧠"
+      },
+      {
+        "question": "Wie viele Minuten hat eine halbe Stunde?",
+        "answers": [
+          {
+            "answer": "20 Minuten"
+          },
+          {
+            "answer": "30 Minuten"
+          },
+          {
+            "answer": "40 Minuten"
+          },
+          {
+            "answer": "60 Minuten"
+          }
+        ],
+        "answer": "30 Minuten",
+        "explanation": "⏰ Eine ganze Stunde hat 60 Minuten. Die Hälfte von 60 ist 30. Also hat eine halbe Stunde 30 Minuten! ⌚"
+      },
+      {
+        "question": "Was ergibt 5 · 5?",
+        "answers": [
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "20"
+          },
+          {
+            "answer": "25"
+          },
+          {
+            "answer": "30"
+          }
+        ],
+        "answer": "25",
+        "explanation": "✖️ 5 · 5 = 25. Das ist eine Quadratzahl! Wenn du 5 Reihen mit je 5 Steinen legst, hast du ein Quadrat mit 25 Steinen! ⬜"
+      },
+      {
+        "question": "Tim hat 20 Euro. Er kauft ein Spielzeug für 8 Euro. Wie viel Geld hat er noch?",
+        "answers": [
+          {
+            "answer": "10 Euro"
+          },
+          {
+            "answer": "12 Euro"
+          },
+          {
+            "answer": "14 Euro"
+          },
+          {
+            "answer": "28 Euro"
+          }
+        ],
+        "answer": "12 Euro",
+        "explanation": "💰 20 - 8 = 12 Euro. Tim hat noch 12 Euro übrig für ein anderes Spielzeug oder zum Sparen! 🐷"
+      },
+      {
+        "question": "Was ergibt 40 + 35?",
+        "answers": [
+          {
+            "answer": "65"
+          },
+          {
+            "answer": "70"
+          },
+          {
+            "answer": "75"
+          },
+          {
+            "answer": "85"
+          }
+        ],
+        "answer": "75",
+        "explanation": "➕ 40 + 35 = 75. Erst die Zehner: 40 + 30 = 70. Dann die Einer: + 5 = 75! Super gemacht! 🌟"
+      },
+      {
+        "question": "Welche Zahl ist größer: 67 oder 76?",
+        "answers": [
+          {
+            "answer": "67"
+          },
+          {
+            "answer": "76"
+          },
+          {
+            "answer": "Sie sind gleich groß"
+          },
+          {
+            "answer": "Das kann man nicht vergleichen"
+          }
+        ],
+        "answer": "76",
+        "explanation": "📊 76 ist größer als 67! Schau auf die Zehner: 76 hat 7 Zehner, 67 hat nur 6 Zehner. 7 > 6, also ist 76 größer! 📈"
+      },
+      {
+        "question": "Was ergibt 10 · 3?",
+        "answers": [
+          {
+            "answer": "13"
+          },
+          {
+            "answer": "30"
+          },
+          {
+            "answer": "31"
+          },
+          {
+            "answer": "33"
+          }
+        ],
+        "answer": "30",
+        "explanation": "✖️ 10 · 3 = 30. Bei mal 10 hängst du einfach eine 0 an! 3 wird zu 30. Das ist ein super Trick! 🎩"
+      },
+      {
+        "question": "Was ergibt 63 - 40?",
+        "answers": [
+          {
+            "answer": "13"
+          },
+          {
+            "answer": "23"
+          },
+          {
+            "answer": "33"
+          },
+          {
+            "answer": "43"
+          }
+        ],
+        "answer": "23",
+        "explanation": "➖ 63 - 40 = 23. Die Einer (3) bleiben gleich, und 6 Zehner - 4 Zehner = 2 Zehner. Also 23! 🎯"
+      },
+      {
+        "question": "Wie viele Ecken hat ein Dreieck?",
+        "answers": [
+          {
+            "answer": "2"
+          },
+          {
+            "answer": "3"
+          },
+          {
+            "answer": "4"
+          },
+          {
+            "answer": "5"
+          }
+        ],
+        "answer": "3",
+        "explanation": "📐 Ein Dreieck hat 3 Ecken - darum heißt es ja DREIeck! Es hat auch 3 Seiten. Kannst du ein Dreieck malen? 🔺"
+      },
+      {
+        "question": "Was ergibt 2 · 8?",
+        "answers": [
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "14"
+          },
+          {
+            "answer": "16"
+          },
+          {
+            "answer": "18"
+          }
+        ],
+        "answer": "16",
+        "explanation": "✖️ 2 · 8 = 16. Das ist das Doppelte von 8: 8 + 8 = 16! Zwei mal etwas bedeutet immer das Doppelte! 👯"
+      },
+      {
+        "question": "Was ergibt 27 + 33?",
+        "answers": [
+          {
+            "answer": "50"
+          },
+          {
+            "answer": "60"
+          },
+          {
+            "answer": "70"
+          },
+          {
+            "answer": "55"
+          }
+        ],
+        "answer": "60",
+        "explanation": "➕ 27 + 33 = 60. Die Einer: 7 + 3 = 10 (ein neuer Zehner!). Die Zehner: 2 + 3 + 1 = 6 Zehner = 60! 🎉"
+      },
+      {
+        "question": "Ein Hund hat 4 Beine. Wie viele Beine haben 3 Hunde zusammen?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "12"
+          },
+          {
+            "answer": "16"
+          }
+        ],
+        "answer": "12",
+        "explanation": "🐕 3 · 4 = 12 Beine! Jeder der 3 Hunde hat 4 Beine: 4 + 4 + 4 = 12. Das sind ganz schön viele Pfoten! 🐾"
+      },
+      {
+        "question": "Was ergibt 100 - 35?",
+        "answers": [
+          {
+            "answer": "55"
+          },
+          {
+            "answer": "65"
+          },
+          {
+            "answer": "75"
+          },
+          {
+            "answer": "85"
+          }
+        ],
+        "answer": "65",
+        "explanation": "➖ 100 - 35 = 65. Tipp: Von 35 bis 100 sind es 65! Oder: 100 - 30 = 70, dann - 5 = 65! 💯"
+      },
+      {
+        "question": "Wie viele Zentimeter sind 1 Meter?",
+        "answers": [
+          {
+            "answer": "10 cm"
+          },
+          {
+            "answer": "50 cm"
+          },
+          {
+            "answer": "100 cm"
+          },
+          {
+            "answer": "1000 cm"
+          }
+        ],
+        "answer": "100 cm",
+        "explanation": "📏 1 Meter = 100 Zentimeter! Das ist ungefähr so lang wie ein großer Schritt oder von deiner Hüfte bis zum Boden! 📐"
+      },
+      {
+        "question": "Was ergibt 4 · 5?",
+        "answers": [
+          {
+            "answer": "9"
+          },
+          {
+            "answer": "15"
+          },
+          {
+            "answer": "20"
+          },
+          {
+            "answer": "25"
+          }
+        ],
+        "answer": "20",
+        "explanation": "✖️ 4 · 5 = 20. Das ist wie 5 + 5 + 5 + 5 = 20. Oder denk daran: 4 Fünfer-Münzen sind 20 Cent! 💰"
+      },
+      {
+        "question": "Was ergibt 56 + 28?",
+        "answers": [
+          {
+            "answer": "74"
+          },
+          {
+            "answer": "84"
+          },
+          {
+            "answer": "86"
+          },
+          {
+            "answer": "78"
+          }
+        ],
+        "answer": "84",
+        "explanation": "➕ 56 + 28 = 84. Die Einer: 6 + 8 = 14 (schreibe 4, merke 1). Die Zehner: 5 + 2 + 1 = 8. Also 84! 🧮"
+      },
+      {
+        "question": "Wie viele Seiten hat ein Quadrat?",
+        "answers": [
+          {
+            "answer": "2"
+          },
+          {
+            "answer": "3"
+          },
+          {
+            "answer": "4"
+          },
+          {
+            "answer": "5"
+          }
+        ],
+        "answer": "4",
+        "explanation": "⬜ Ein Quadrat hat 4 gleich lange Seiten und 4 Ecken! Es sieht aus wie ein Fenster oder ein Würfel von vorne! 🪟"
+      },
+      {
+        "question": "Was ergibt 6 · 2?",
+        "answers": [
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "10"
+          },
+          {
+            "answer": "12"
+          },
+          {
+            "answer": "14"
+          }
+        ],
+        "answer": "12",
+        "explanation": "✖️ 6 · 2 = 12. Das Doppelte von 6 ist 12! Wenn du 6 Bonbons hast und nochmal 6 bekommst, hast du 12! 🍬🍬"
+      },
+      {
+        "question": "Anna ist um 8 Uhr aufgestanden. Jetzt ist es 11 Uhr. Wie viele Stunden ist sie wach?",
+        "answers": [
+          {
+            "answer": "2 Stunden"
+          },
+          {
+            "answer": "3 Stunden"
+          },
+          {
+            "answer": "4 Stunden"
+          },
+          {
+            "answer": "5 Stunden"
+          }
+        ],
+        "answer": "3 Stunden",
+        "explanation": "⏰ Von 8 Uhr bis 11 Uhr sind es 3 Stunden: 8 → 9 → 10 → 11. Das sind 3 Schritte auf der Uhr! 🕐"
+      },
+      {
+        "question": "Was ergibt 71 - 25?",
+        "answers": [
+          {
+            "answer": "44"
+          },
+          {
+            "answer": "46"
+          },
+          {
+            "answer": "54"
+          },
+          {
+            "answer": "56"
+          }
+        ],
+        "answer": "46",
+        "explanation": "➖ 71 - 25 = 46. Tipp: 71 - 20 = 51, dann - 5 = 46. Schritt für Schritt wird es leichter! 📝"
+      },
+      {
+        "question": "Welche Zahl kommt nach 99?",
+        "answers": [
+          {
+            "answer": "98"
+          },
+          {
+            "answer": "100"
+          },
+          {
+            "answer": "101"
+          },
+          {
+            "answer": "199"
+          }
+        ],
+        "answer": "100",
+        "explanation": "💯 Nach 99 kommt die 100! Das ist eine besondere Zahl - sie hat 3 Ziffern und ist die erste dreistellige Zahl! 🎉"
+      }
+    ],
+    "category": "🔢 Mathematik"
+  },
+  {
+    "name": "Mathe 3. Klasse 🧮",
+    "questions": [
+      {
+        "question": "Was ergibt 7 · 8?",
+        "answers": [
+          {
+            "answer": "54"
+          },
+          {
+            "answer": "56"
+          },
+          {
+            "answer": "58"
+          },
+          {
+            "answer": "63"
+          }
+        ],
+        "answer": "56",
+        "explanation": "✖️ 7 · 8 = 56. Merksatz: '5, 6, 7, 8 - 56 = 7 · 8'! Die Zahlen 5, 6, 7, 8 sind alle dabei! 🧠"
+      },
+      {
+        "question": "Was ergibt 63 ÷ 9?",
+        "answers": [
+          {
+            "answer": "6"
+          },
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          }
+        ],
+        "answer": "7",
+        "explanation": "➗ 63 ÷ 9 = 7. Denn 9 · 7 = 63. Division ist die Umkehrung der Multiplikation! 🔄"
+      },
+      {
+        "question": "Was ergibt 345 + 128?",
+        "answers": [
+          {
+            "answer": "463"
+          },
+          {
+            "answer": "473"
+          },
+          {
+            "answer": "483"
+          },
+          {
+            "answer": "453"
+          }
+        ],
+        "answer": "473",
+        "explanation": "➕ 345 + 128 = 473. Rechne von rechts: 5+8=13 (3 schreiben, 1 merken), 4+2+1=7, 3+1=4. Also 473! 📝"
+      },
+      {
+        "question": "Was ergibt 6 · 9?",
+        "answers": [
+          {
+            "answer": "45"
+          },
+          {
+            "answer": "54"
+          },
+          {
+            "answer": "56"
+          },
+          {
+            "answer": "63"
+          }
+        ],
+        "answer": "54",
+        "explanation": "✖️ 6 · 9 = 54. Finger-Trick: Halte beide Hände hoch, knicke den 6. Finger ab. Links: 5 Finger (Zehner), rechts: 4 Finger (Einer) = 54! 🖐️"
+      },
+      {
+        "question": "Was ergibt 500 - 175?",
+        "answers": [
+          {
+            "answer": "315"
+          },
+          {
+            "answer": "325"
+          },
+          {
+            "answer": "335"
+          },
+          {
+            "answer": "375"
+          }
+        ],
+        "answer": "325",
+        "explanation": "➖ 500 - 175 = 325. Tipp: Von 175 bis 200 sind es 25, und von 200 bis 500 sind es 300. 300 + 25 = 325! 🎯"
+      },
+      {
+        "question": "Wie viele Minuten sind 2 Stunden?",
+        "answers": [
+          {
+            "answer": "60 Minuten"
+          },
+          {
+            "answer": "90 Minuten"
+          },
+          {
+            "answer": "120 Minuten"
+          },
+          {
+            "answer": "180 Minuten"
+          }
+        ],
+        "answer": "120 Minuten",
+        "explanation": "⏰ 2 Stunden = 2 · 60 = 120 Minuten. Jede Stunde hat 60 Minuten, also 60 + 60 = 120! ⌚"
+      },
+      {
+        "question": "Was ergibt 8 · 7?",
+        "answers": [
+          {
+            "answer": "48"
+          },
+          {
+            "answer": "54"
+          },
+          {
+            "answer": "56"
+          },
+          {
+            "answer": "63"
+          }
+        ],
+        "answer": "56",
+        "explanation": "✖️ 8 · 7 = 56. Das ist das Gleiche wie 7 · 8! Bei der Multiplikation kannst du die Zahlen tauschen! 🔄"
+      },
+      {
+        "question": "Was ergibt 72 ÷ 8?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          },
+          {
+            "answer": "10"
+          }
+        ],
+        "answer": "9",
+        "explanation": "➗ 72 ÷ 8 = 9. Frage dich: Welche Zahl mal 8 ergibt 72? Das ist 9, denn 8 · 9 = 72! ✅"
+      },
+      {
+        "question": "Ein Buch hat 248 Seiten. Tom hat schon 156 Seiten gelesen. Wie viele Seiten fehlen noch?",
+        "answers": [
+          {
+            "answer": "82 Seiten"
+          },
+          {
+            "answer": "92 Seiten"
+          },
+          {
+            "answer": "102 Seiten"
+          },
+          {
+            "answer": "112 Seiten"
+          }
+        ],
+        "answer": "92 Seiten",
+        "explanation": "📚 248 - 156 = 92 Seiten. Tom hat schon mehr als die Hälfte geschafft! Nur noch 92 Seiten bis zum Ende! 📖"
+      },
+      {
+        "question": "Was ergibt 9 · 9?",
+        "answers": [
+          {
+            "answer": "72"
+          },
+          {
+            "answer": "81"
+          },
+          {
+            "answer": "90"
+          },
+          {
+            "answer": "99"
+          }
+        ],
+        "answer": "81",
+        "explanation": "✖️ 9 · 9 = 81. Das ist eine Quadratzahl! 9 Reihen mit je 9 Feldern ergeben 81 Felder - wie ein Sudoku! 🔲"
+      },
+      {
+        "question": "Was ergibt 1000 - 456?",
+        "answers": [
+          {
+            "answer": "444"
+          },
+          {
+            "answer": "544"
+          },
+          {
+            "answer": "554"
+          },
+          {
+            "answer": "644"
+          }
+        ],
+        "answer": "544",
+        "explanation": "➖ 1000 - 456 = 544. Tipp: 1000 - 400 = 600, dann - 50 = 550, dann - 6 = 544! 🧮"
+      },
+      {
+        "question": "Wie viele Tage hat ein Jahr (kein Schaltjahr)?",
+        "answers": [
+          {
+            "answer": "350 Tage"
+          },
+          {
+            "answer": "360 Tage"
+          },
+          {
+            "answer": "365 Tage"
+          },
+          {
+            "answer": "370 Tage"
+          }
+        ],
+        "answer": "365 Tage",
+        "explanation": "📅 Ein normales Jahr hat 365 Tage! Ein Schaltjahr (alle 4 Jahre) hat 366 Tage wegen des 29. Februars! 🗓️"
+      },
+      {
+        "question": "Was ergibt 4 · 12?",
+        "answers": [
+          {
+            "answer": "44"
+          },
+          {
+            "answer": "46"
+          },
+          {
+            "answer": "48"
+          },
+          {
+            "answer": "52"
+          }
+        ],
+        "answer": "48",
+        "explanation": "✖️ 4 · 12 = 48. Tipp: 4 · 10 = 40, plus 4 · 2 = 8, also 40 + 8 = 48! 🎯"
+      },
+      {
+        "question": "Was ergibt 56 ÷ 7?",
+        "answers": [
+          {
+            "answer": "6"
+          },
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          }
+        ],
+        "answer": "8",
+        "explanation": "➗ 56 ÷ 7 = 8. Merke: 5, 6, 7, 8 → 56 = 7 · 8, also ist 56 ÷ 7 = 8! Die Zahlenreihe hilft! 🔢"
+      },
+      {
+        "question": "Eine Packung hat 6 Eier. Wie viele Eier sind in 8 Packungen?",
+        "answers": [
+          {
+            "answer": "42 Eier"
+          },
+          {
+            "answer": "46 Eier"
+          },
+          {
+            "answer": "48 Eier"
+          },
+          {
+            "answer": "54 Eier"
+          }
+        ],
+        "answer": "48 Eier",
+        "explanation": "🥚 8 · 6 = 48 Eier! Das sind ganz schön viele Eier - genug für viele leckere Frühstücke! 🍳"
+      },
+      {
+        "question": "Was ergibt 234 + 567?",
+        "answers": [
+          {
+            "answer": "701"
+          },
+          {
+            "answer": "791"
+          },
+          {
+            "answer": "801"
+          },
+          {
+            "answer": "811"
+          }
+        ],
+        "answer": "801",
+        "explanation": "➕ 234 + 567 = 801. Einer: 4+7=11 (1 merken). Zehner: 3+6+1=10 (1 merken). Hunderter: 2+5+1=8. Also 801! 📝"
+      },
+      {
+        "question": "Was ergibt 3 · 11?",
+        "answers": [
+          {
+            "answer": "31"
+          },
+          {
+            "answer": "33"
+          },
+          {
+            "answer": "36"
+          },
+          {
+            "answer": "39"
+          }
+        ],
+        "answer": "33",
+        "explanation": "✖️ 3 · 11 = 33. Bei mal 11 ist es einfach: Die Ziffer verdoppelt sich bei kleinen Zahlen! 3 → 33! ✨"
+      },
+      {
+        "question": "Was ergibt 81 ÷ 9?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          },
+          {
+            "answer": "10"
+          }
+        ],
+        "answer": "9",
+        "explanation": "➗ 81 ÷ 9 = 9. Das ist die Umkehrung von 9 · 9 = 81! Teilen und Malnehmen gehören zusammen! 🔄"
+      },
+      {
+        "question": "Wie viele Gramm sind 2 Kilogramm?",
+        "answers": [
+          {
+            "answer": "200 g"
+          },
+          {
+            "answer": "500 g"
+          },
+          {
+            "answer": "1000 g"
+          },
+          {
+            "answer": "2000 g"
+          }
+        ],
+        "answer": "2000 g",
+        "explanation": "⚖️ 2 kg = 2000 g. Ein Kilogramm hat 1000 Gramm, also 2 · 1000 = 2000 Gramm! 📦"
+      },
+      {
+        "question": "Was ergibt 7 · 6?",
+        "answers": [
+          {
+            "answer": "36"
+          },
+          {
+            "answer": "40"
+          },
+          {
+            "answer": "42"
+          },
+          {
+            "answer": "48"
+          }
+        ],
+        "answer": "42",
+        "explanation": "✖️ 7 · 6 = 42. Diese Zahl ist besonders - manche sagen, 42 ist die Antwort auf alles! 🌟"
+      },
+      {
+        "question": "Was ergibt 900 - 357?",
+        "answers": [
+          {
+            "answer": "533"
+          },
+          {
+            "answer": "543"
+          },
+          {
+            "answer": "553"
+          },
+          {
+            "answer": "643"
+          }
+        ],
+        "answer": "543",
+        "explanation": "➖ 900 - 357 = 543. Das Ergänzen hilft: Von 357 bis 400 sind es 43, von 400 bis 900 sind es 500. 500 + 43 = 543! 🧮"
+      },
+      {
+        "question": "Was ergibt 48 ÷ 6?",
+        "answers": [
+          {
+            "answer": "6"
+          },
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          }
+        ],
+        "answer": "8",
+        "explanation": "➗ 48 ÷ 6 = 8. Frage: Wie oft passt 6 in 48? Genau 8 mal, denn 6 · 8 = 48! ✅"
+      },
+      {
+        "question": "Ein Zug fährt um 9:45 Uhr los. Die Fahrt dauert 2 Stunden und 30 Minuten. Wann kommt er an?",
+        "answers": [
+          {
+            "answer": "11:45 Uhr"
+          },
+          {
+            "answer": "12:00 Uhr"
+          },
+          {
+            "answer": "12:15 Uhr"
+          },
+          {
+            "answer": "12:30 Uhr"
+          }
+        ],
+        "answer": "12:15 Uhr",
+        "explanation": "🚂 9:45 + 2 Stunden = 11:45, dann + 30 Minuten = 12:15 Uhr. Gute Reise! 🚃"
+      },
+      {
+        "question": "Was ergibt 8 · 8?",
+        "answers": [
+          {
+            "answer": "56"
+          },
+          {
+            "answer": "62"
+          },
+          {
+            "answer": "64"
+          },
+          {
+            "answer": "72"
+          }
+        ],
+        "answer": "64",
+        "explanation": "✖️ 8 · 8 = 64. Das ist auch eine Quadratzahl! Ein Schachbrett hat 8 · 8 = 64 Felder! ♟️"
+      },
+      {
+        "question": "Was ergibt 45 ÷ 5?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          },
+          {
+            "answer": "10"
+          }
+        ],
+        "answer": "9",
+        "explanation": "➗ 45 ÷ 5 = 9. Trick: 45 endet auf 5, also ist es durch 5 teilbar. 5 · 9 = 45! 🎯"
+      },
+      {
+        "question": "Mia hat 5 Euro. Sie kauft 3 Hefte für je 1,20 Euro. Wie viel bekommt sie zurück?",
+        "answers": [
+          {
+            "answer": "1,20 Euro"
+          },
+          {
+            "answer": "1,30 Euro"
+          },
+          {
+            "answer": "1,40 Euro"
+          },
+          {
+            "answer": "1,50 Euro"
+          }
+        ],
+        "answer": "1,40 Euro",
+        "explanation": "💰 3 · 1,20 = 3,60 Euro. 5,00 - 3,60 = 1,40 Euro Wechselgeld. Gut gerechnet! 🧾"
+      },
+      {
+        "question": "Was ergibt 12 · 5?",
+        "answers": [
+          {
+            "answer": "55"
+          },
+          {
+            "answer": "60"
+          },
+          {
+            "answer": "65"
+          },
+          {
+            "answer": "70"
+          }
+        ],
+        "answer": "60",
+        "explanation": "✖️ 12 · 5 = 60. Trick: 12 · 5 ist die Hälfte von 12 · 10 = 120. Die Hälfte von 120 ist 60! 🧠"
+      },
+      {
+        "question": "Was ergibt 36 ÷ 4?",
+        "answers": [
+          {
+            "answer": "7"
+          },
+          {
+            "answer": "8"
+          },
+          {
+            "answer": "9"
+          },
+          {
+            "answer": "10"
+          }
+        ],
+        "answer": "9",
+        "explanation": "➗ 36 ÷ 4 = 9. Wie oft passt 4 in 36? Genau 9 mal! 4 · 9 = 36 ✅"
+      },
+      {
+        "question": "Ein Rechteck hat eine Länge von 8 cm und eine Breite von 5 cm. Wie groß ist der Umfang?",
+        "answers": [
+          {
+            "answer": "13 cm"
+          },
+          {
+            "answer": "26 cm"
+          },
+          {
+            "answer": "40 cm"
+          },
+          {
+            "answer": "52 cm"
+          }
+        ],
+        "answer": "26 cm",
+        "explanation": "📐 Umfang = 2 · Länge + 2 · Breite = 2 · 8 + 2 · 5 = 16 + 10 = 26 cm. Das ist einmal rundherum! 🔲"
+      },
+      {
+        "question": "Was ergibt 11 · 11?",
+        "answers": [
+          {
+            "answer": "111"
+          },
+          {
+            "answer": "121"
+          },
+          {
+            "answer": "131"
+          },
+          {
+            "answer": "144"
+          }
+        ],
+        "answer": "121",
+        "explanation": "✖️ 11 · 11 = 121. Das ist eine Schnapszahl-Quadratzahl! Von vorne und hinten gelesen ist es 121! 🔢"
+      }
+    ],
+    "category": "🔢 Mathematik"
+  },
+  {
+    "name": "Mathe 4. Klasse 📊",
+    "questions": [
+      {
+        "question": "Was ergibt 1.245 + 3.678?",
+        "answers": [
+          {
+            "answer": "4.823"
+          },
+          {
+            "answer": "4.913"
+          },
+          {
+            "answer": "4.923"
+          },
+          {
+            "answer": "5.023"
+          }
+        ],
+        "answer": "4.923",
+        "explanation": "➕ 1.245 + 3.678 = 4.923. Schritt für Schritt von rechts: 5+8=13, 4+7+1=12, 2+6+1=9, 1+3=4. Also 4.923! 📝"
+      },
+      {
+        "question": "Was ergibt 7.000 - 2.456?",
+        "answers": [
+          {
+            "answer": "4.444"
+          },
+          {
+            "answer": "4.544"
+          },
+          {
+            "answer": "4.554"
+          },
+          {
+            "answer": "4.654"
+          }
+        ],
+        "answer": "4.544",
+        "explanation": "➖ 7.000 - 2.456 = 4.544. Ergänze: Von 2.456 bis 3.000 sind 544, von 3.000 bis 7.000 sind 4.000. 4.000 + 544 = 4.544! 🎯"
+      },
+      {
+        "question": "Was ergibt 25 · 16?",
+        "answers": [
+          {
+            "answer": "350"
+          },
+          {
+            "answer": "375"
+          },
+          {
+            "answer": "400"
+          },
+          {
+            "answer": "425"
+          }
+        ],
+        "answer": "400",
+        "explanation": "✖️ 25 · 16 = 400. Trick: 25 · 16 = 25 · 4 · 4 = 100 · 4 = 400! Oder: 25 · 16 = 25 · (20-4) = 500 - 100 = 400! 🧠"
+      },
+      {
+        "question": "Was ergibt 144 ÷ 12?",
+        "answers": [
+          {
+            "answer": "11"
+          },
+          {
+            "answer": "12"
+          },
+          {
+            "answer": "13"
+          },
+          {
+            "answer": "14"
+          }
+        ],
+        "answer": "12",
+        "explanation": "➗ 144 ÷ 12 = 12. Das ist 12 · 12! 144 ist also eine Quadratzahl! 🔲"
+      },
+      {
+        "question": "Was ist die Hälfte von 3/4?",
+        "answers": [
+          {
+            "answer": "1/4"
+          },
+          {
+            "answer": "1/2"
+          },
+          {
+            "answer": "3/8"
+          },
+          {
+            "answer": "3/2"
+          }
+        ],
+        "answer": "3/8",
+        "explanation": "🍕 Die Hälfte von 3/4 ist 3/8. Halbieren = durch 2 teilen = Nenner verdoppeln: 3/4 ÷ 2 = 3/8! 🥧"
+      },
+      {
+        "question": "Was ergibt 45 · 20?",
+        "answers": [
+          {
+            "answer": "800"
+          },
+          {
+            "answer": "850"
+          },
+          {
+            "answer": "900"
+          },
+          {
+            "answer": "950"
+          }
+        ],
+        "answer": "900",
+        "explanation": "✖️ 45 · 20 = 900. Trick: 45 · 2 = 90, dann eine Null anhängen = 900! Bei · 20 rechnest du · 2 und hängst eine 0 an! 🎯"
+      },
+      {
+        "question": "Wie viele Meter sind 3,5 Kilometer?",
+        "answers": [
+          {
+            "answer": "350 m"
+          },
+          {
+            "answer": "3.050 m"
+          },
+          {
+            "answer": "3.500 m"
+          },
+          {
+            "answer": "35.000 m"
+          }
+        ],
+        "answer": "3.500 m",
+        "explanation": "📏 3,5 km = 3.500 m. 1 km = 1.000 m, also 3,5 · 1.000 = 3.500 Meter! 🚶"
+      },
+      {
+        "question": "Was ergibt 1/4 + 1/2?",
+        "answers": [
+          {
+            "answer": "1/6"
+          },
+          {
+            "answer": "2/6"
+          },
+          {
+            "answer": "3/4"
+          },
+          {
+            "answer": "1"
+          }
+        ],
+        "answer": "3/4",
+        "explanation": "🍕 1/4 + 1/2 = 1/4 + 2/4 = 3/4. Mache die Nenner gleich! 1/2 = 2/4, dann addiere die Zähler! 🥧"
+      },
+      {
+        "question": "Was ergibt 324 ÷ 18?",
+        "answers": [
+          {
+            "answer": "16"
+          },
+          {
+            "answer": "17"
+          },
+          {
+            "answer": "18"
+          },
+          {
+            "answer": "19"
+          }
+        ],
+        "answer": "18",
+        "explanation": "➗ 324 ÷ 18 = 18. Probe: 18 · 18 = 324 ✓ Das ist wieder eine Quadratzahl! 🔲"
+      },
+      {
+        "question": "Ein Fahrrad kostet 289 Euro. Wie viel kosten 4 Fahrräder?",
+        "answers": [
+          {
+            "answer": "1.056 Euro"
+          },
+          {
+            "answer": "1.156 Euro"
+          },
+          {
+            "answer": "1.256 Euro"
+          },
+          {
+            "answer": "1.356 Euro"
+          }
+        ],
+        "answer": "1.156 Euro",
+        "explanation": "🚴 289 · 4 = 1.156 Euro. Rechnung: 300 · 4 = 1.200, minus 11 · 4 = 44, also 1.200 - 44 = 1.156! 💰"
+      },
+      {
+        "question": "Welcher Bruch ist größer: 2/3 oder 3/5?",
+        "answers": [
+          {
+            "answer": "2/3"
+          },
+          {
+            "answer": "3/5"
+          },
+          {
+            "answer": "Sie sind gleich groß"
+          },
+          {
+            "answer": "Das kann man nicht vergleichen"
+          }
+        ],
+        "answer": "2/3",
+        "explanation": "📊 2/3 > 3/5. Mache gleiche Nenner: 2/3 = 10/15 und 3/5 = 9/15. 10/15 > 9/15, also ist 2/3 größer! 📈"
+      },
+      {
+        "question": "Was ergibt 35 · 24?",
+        "answers": [
+          {
+            "answer": "740"
+          },
+          {
+            "answer": "800"
+          },
+          {
+            "answer": "840"
+          },
+          {
+            "answer": "880"
+          }
+        ],
+        "answer": "840",
+        "explanation": "✖️ 35 · 24 = 840. Zerlegen: 35 · 24 = 35 · 20 + 35 · 4 = 700 + 140 = 840! 🧮"
+      },
+      {
+        "question": "Wie viele Milliliter sind 2,5 Liter?",
+        "answers": [
+          {
+            "answer": "25 ml"
+          },
+          {
+            "answer": "250 ml"
+          },
+          {
+            "answer": "2.500 ml"
+          },
+          {
+            "answer": "25.000 ml"
+          }
+        ],
+        "answer": "2.500 ml",
+        "explanation": "🥤 2,5 Liter = 2.500 ml. 1 Liter = 1.000 ml, also 2,5 · 1.000 = 2.500 Milliliter! 💧"
+      },
+      {
+        "question": "Was ergibt 3/4 - 1/3?",
+        "answers": [
+          {
+            "answer": "2/7"
+          },
+          {
+            "answer": "5/12"
+          },
+          {
+            "answer": "1/2"
+          },
+          {
+            "answer": "2/1"
+          }
+        ],
+        "answer": "5/12",
+        "explanation": "🍕 3/4 - 1/3 = 9/12 - 4/12 = 5/12. Gemeinsamer Nenner von 4 und 3 ist 12! 🥧"
+      },
+      {
+        "question": "Was ergibt 756 ÷ 21?",
+        "answers": [
+          {
+            "answer": "34"
+          },
+          {
+            "answer": "35"
+          },
+          {
+            "answer": "36"
+          },
+          {
+            "answer": "37"
+          }
+        ],
+        "answer": "36",
+        "explanation": "➗ 756 ÷ 21 = 36. Probe: 21 · 36 = 756 ✓ Tipp: 21 · 30 = 630, es fehlen noch 126 = 21 · 6, also 36! ✅"
+      },
+      {
+        "question": "Ein Rechteck hat einen Flächeninhalt von 48 cm² und eine Länge von 8 cm. Wie breit ist es?",
+        "answers": [
+          {
+            "answer": "4 cm"
+          },
+          {
+            "answer": "5 cm"
+          },
+          {
+            "answer": "6 cm"
+          },
+          {
+            "answer": "7 cm"
+          }
+        ],
+        "answer": "6 cm",
+        "explanation": "📐 Fläche = Länge · Breite. Also: 48 = 8 · Breite → Breite = 48 ÷ 8 = 6 cm! 🔲"
+      },
+      {
+        "question": "Was ergibt 125 · 8?",
+        "answers": [
+          {
+            "answer": "900"
+          },
+          {
+            "answer": "950"
+          },
+          {
+            "answer": "1.000"
+          },
+          {
+            "answer": "1.050"
+          }
+        ],
+        "answer": "1.000",
+        "explanation": "✖️ 125 · 8 = 1.000. Merke: 125 · 8 ist immer 1.000! Das ist ein super nützlicher Trick! 💡"
+      },
+      {
+        "question": "Was ist 25% von 80?",
+        "answers": [
+          {
+            "answer": "15"
+          },
+          {
+            "answer": "20"
+          },
+          {
+            "answer": "25"
+          },
+          {
+            "answer": "40"
+          }
+        ],
+        "answer": "20",
+        "explanation": "📊 25% = 1/4. Ein Viertel von 80 = 80 ÷ 4 = 20. 25% von 80 ist also 20! 🎯"
+      },
+      {
+        "question": "Was ergibt 2/5 + 3/10?",
+        "answers": [
+          {
+            "answer": "5/15"
+          },
+          {
+            "answer": "7/10"
+          },
+          {
+            "answer": "5/10"
+          },
+          {
+            "answer": "7/15"
+          }
+        ],
+        "answer": "7/10",
+        "explanation": "🍕 2/5 + 3/10 = 4/10 + 3/10 = 7/10. Mache erst gleiche Nenner: 2/5 = 4/10! 🥧"
+      },
+      {
+        "question": "Ein Zug legt in 3 Stunden 240 km zurück. Wie schnell fährt er durchschnittlich?",
+        "answers": [
+          {
+            "answer": "60 km/h"
+          },
+          {
+            "answer": "70 km/h"
+          },
+          {
+            "answer": "80 km/h"
+          },
+          {
+            "answer": "90 km/h"
+          }
+        ],
+        "answer": "80 km/h",
+        "explanation": "🚂 Geschwindigkeit = Strecke ÷ Zeit = 240 km ÷ 3 h = 80 km/h. Der Zug ist ziemlich flott! 🚃"
+      },
+      {
+        "question": "Was ergibt 18 · 50?",
+        "answers": [
+          {
+            "answer": "800"
+          },
+          {
+            "answer": "850"
+          },
+          {
+            "answer": "900"
+          },
+          {
+            "answer": "950"
+          }
+        ],
+        "answer": "900",
+        "explanation": "✖️ 18 · 50 = 900. Trick: 18 · 50 = 18 · 100 ÷ 2 = 1.800 ÷ 2 = 900! 🧠"
+      },
+      {
+        "question": "Was ist 50% von 126?",
+        "answers": [
+          {
+            "answer": "53"
+          },
+          {
+            "answer": "63"
+          },
+          {
+            "answer": "73"
+          },
+          {
+            "answer": "83"
+          }
+        ],
+        "answer": "63",
+        "explanation": "📊 50% = die Hälfte. 126 ÷ 2 = 63. Die Hälfte von 126 ist 63! 🎯"
+      },
+      {
+        "question": "Was ergibt 5/6 - 1/2?",
+        "answers": [
+          {
+            "answer": "1/3"
+          },
+          {
+            "answer": "2/3"
+          },
+          {
+            "answer": "4/6"
+          },
+          {
+            "answer": "1/6"
+          }
+        ],
+        "answer": "1/3",
+        "explanation": "🍕 5/6 - 1/2 = 5/6 - 3/6 = 2/6 = 1/3. Kürze 2/6 durch 2 und du bekommst 1/3! 🥧"
+      },
+      {
+        "question": "Ein Quadrat hat eine Seitenlänge von 15 cm. Wie groß ist der Flächeninhalt?",
+        "answers": [
+          {
+            "answer": "60 cm²"
+          },
+          {
+            "answer": "150 cm²"
+          },
+          {
+            "answer": "225 cm²"
+          },
+          {
+            "answer": "300 cm²"
+          }
+        ],
+        "answer": "225 cm²",
+        "explanation": "📐 Fläche eines Quadrats = Seite · Seite = 15 · 15 = 225 cm²! Das ist eine Quadratzahl! 🔲"
+      },
+      {
+        "question": "Was ergibt 1.008 ÷ 14?",
+        "answers": [
+          {
+            "answer": "70"
+          },
+          {
+            "answer": "71"
+          },
+          {
+            "answer": "72"
+          },
+          {
+            "answer": "73"
+          }
+        ],
+        "answer": "72",
+        "explanation": "➗ 1.008 ÷ 14 = 72. Probe: 14 · 72 = 14 · 70 + 14 · 2 = 980 + 28 = 1.008 ✓ 🧮"
+      },
+      {
+        "question": "Was ist 10% von 350?",
+        "answers": [
+          {
+            "answer": "3,5"
+          },
+          {
+            "answer": "35"
+          },
+          {
+            "answer": "70"
+          },
+          {
+            "answer": "175"
+          }
+        ],
+        "answer": "35",
+        "explanation": "📊 10% = durch 10 teilen. 350 ÷ 10 = 35. Einfach das Komma um eine Stelle nach links verschieben! 🎯"
+      },
+      {
+        "question": "Was ergibt 3/4 · 2/5?",
+        "answers": [
+          {
+            "answer": "5/9"
+          },
+          {
+            "answer": "6/20"
+          },
+          {
+            "answer": "3/10"
+          },
+          {
+            "answer": "6/9"
+          }
+        ],
+        "answer": "3/10",
+        "explanation": "🍕 3/4 · 2/5 = (3·2)/(4·5) = 6/20 = 3/10. Zähler mal Zähler, Nenner mal Nenner, dann kürzen! 🥧"
+      },
+      {
+        "question": "Wie viele Sekunden sind 5 Minuten?",
+        "answers": [
+          {
+            "answer": "50 Sekunden"
+          },
+          {
+            "answer": "100 Sekunden"
+          },
+          {
+            "answer": "250 Sekunden"
+          },
+          {
+            "answer": "300 Sekunden"
+          }
+        ],
+        "answer": "300 Sekunden",
+        "explanation": "⏱️ 5 Minuten = 5 · 60 = 300 Sekunden. Jede Minute hat 60 Sekunden! ⌚"
+      },
+      {
+        "question": "Was ergibt 64 · 25?",
+        "answers": [
+          {
+            "answer": "1.400"
+          },
+          {
+            "answer": "1.500"
+          },
+          {
+            "answer": "1.600"
+          },
+          {
+            "answer": "1.700"
+          }
+        ],
+        "answer": "1.600",
+        "explanation": "✖️ 64 · 25 = 64 · 100 ÷ 4 = 6.400 ÷ 4 = 1.600. Bei · 25 rechnest du · 100 ÷ 4! 💡"
+      },
+      {
+        "question": "0,75 als Bruch ist:",
+        "answers": [
+          {
+            "answer": "1/4"
+          },
+          {
+            "answer": "1/2"
+          },
+          {
+            "answer": "3/4"
+          },
+          {
+            "answer": "7/5"
+          }
+        ],
+        "answer": "3/4",
+        "explanation": "🔢 0,75 = 75/100 = 3/4. Kürze durch 25! 75 ÷ 25 = 3 und 100 ÷ 25 = 4. Also 3/4! 📊"
+      }
+    ],
+    "category": "🔢 Mathematik"
   }
 ]
