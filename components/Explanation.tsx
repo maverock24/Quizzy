@@ -41,66 +41,66 @@ export const Explanation: React.FC<ExplanationProps> = ({
     handleNext();
   };
 
-return (
-  <View style={styles.contentContainer}>
-    <ScrollView
-              style={styles.explanationScroll}
-              contentContainerStyle={{ flexGrow: 2, justifyContent: 'center' }}
-              showsVerticalScrollIndicator={true}
-            >
-              <SettingsHeader
-                currentQuestionIndex={currentQuestionIndex}
-                selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-              />
-                        
-    <View
-      style={[
-        styles.card,
-        {
-          backgroundColor: answerIsCorrect
-            ? 'rgb(71, 155, 62)'
-            : 'rgb(161, 64, 64)',
-        },
-      ]}
-    >
-       <TouchableOpacity
-      onPress={handleReadAloud}
-      style={{ right:0, top: 0, position: 'absolute', zIndex:9999, borderRadius: 8, padding: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
-      accessibilityLabel="Read explanation aloud"
-    >
+  return (
+    <View style={styles.contentContainer}>
+      <ScrollView
+        style={styles.explanationScroll}
+        contentContainerStyle={{ flexGrow: 2, justifyContent: 'center' }}
+        showsVerticalScrollIndicator={true}
+      >
+        <SettingsHeader
+          currentQuestionIndex={currentQuestionIndex}
+          selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+        />
 
-      <FontAwesome
-        name="comment"
-        size={30}
-        color="white"
-       style={{ marginLeft: 8, marginTop: -5 }}
-      />
-    </TouchableOpacity>
-      <Text style={styles.questionHeading}>
-        {righOrWrong}
-      </Text>
-      <CodeFormatter
-        text={explanation}
-        containerStyle={{ marginTop: 8 }}
-        textStyle={styles.normalText}
-        codeBlockContainerStyle={{ backgroundColor: 'rgb(46, 50, 54)' }}
-        codeBlockTextStyle={{ color: 'white' }}
-      />
+        <View
+          style={[
+            styles.card,
+            {
+              backgroundColor: answerIsCorrect
+                ? 'rgb(71, 155, 62)'
+                : 'rgb(161, 64, 64)',
+            },
+          ]}
+        >
+          <TouchableOpacity
+            onPress={handleReadAloud}
+            style={{ right: 0, top: 0, position: 'absolute', zIndex: 9999, borderRadius: 8, padding: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
+            accessibilityLabel="Read explanation aloud"
+          >
+
+            <FontAwesome
+              name="comment"
+              size={30}
+              color="white"
+              style={{ marginLeft: 8, marginTop: -5 }}
+            />
+          </TouchableOpacity>
+          <Text style={styles.questionHeading}>
+            {righOrWrong}
+          </Text>
+          <CodeFormatter
+            text={explanation}
+            containerStyle={{ marginTop: 8 }}
+            textStyle={styles.normalText}
+            codeBlockContainerStyle={{ backgroundColor: 'rgb(46, 50, 54)' }}
+            codeBlockTextStyle={{ color: 'white' }}
+          />
+        </View>
+
+      </ScrollView>
+      <TouchableOpacity onPress={handlerNextQuestion}>
+        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+          {/* <Text style={styles.buttonText}>Next </Text> */}
+          <FontAwesome name="forward" size={35} color="white" style={{ marginRight: 6 }} />
+        </View>
+      </TouchableOpacity>
     </View>
-    
-    </ScrollView>
-    <TouchableOpacity onPress={handlerNextQuestion}>
-                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
-                {/* <Text style={styles.buttonText}>Next </Text> */}
-                <FontAwesome name="forward" size={35} color="white" style={{ marginRight: 6 }} />
-              </View>
-                </TouchableOpacity>
-  </View>
-);
+  );
 }
 
 const styles = StyleSheet.create({
-    header: {
+  header: {
     flexDirection: 'column',
     justifyContent: 'space-between',
     borderBottomColor: 'rgb(255, 255, 255)',
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: 'white',
   },
-   explanationScroll: {
+  explanationScroll: {
     maxHeight: height * 0.7,
     marginBottom: 5,
   },
@@ -142,6 +142,7 @@ const styles = StyleSheet.create({
     elevation: 3,
     marginBottom: 16,
     paddingLeft: 36,
+    marginHorizontal: 8,
   },
   questionHeading: {
     alignContent: 'flex-end',

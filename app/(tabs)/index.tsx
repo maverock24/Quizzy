@@ -465,6 +465,14 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderBottomWidth: 1,
     overflow: 'visible',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
+    shadowOpacity: 0.5,
+    shadowRadius: 20,
+    elevation: 10,
   },
   container: {
     padding: 20,
@@ -493,11 +501,13 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 16,
     gap: 12,
+    marginHorizontal: 8,
   },
   xpProgressCompact: {
     flex: 1,
   },
   dailyQuiz: {
     marginBottom: 20,
+    marginHorizontal: 8,
   },
 });
