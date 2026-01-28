@@ -450,6 +450,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'transparent',
+    overflow: 'visible',
   },
   safeArea: {
     flex: 1,
@@ -463,6 +464,7 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderTopWidth: 1,
     borderBottomWidth: 1,
+    overflow: 'visible',
   },
   container: {
     padding: 20,
@@ -470,6 +472,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     height: '100%',
     backgroundColor: 'transparent',
+    overflow: 'visible',
   },
   button: {
     backgroundColor: 'rgb(86, 92, 99)',
