@@ -47,5 +47,6 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1,
+    overflow: 'visible',
   },
 });
