@@ -850,7 +850,8 @@ export const Question: React.FC<QuestionProps> = ({
           </View>
         ) : (
           <View style={{
-            overflow: 'visible'
+            overflow: 'visible',
+            marginTop: 20,
           }}>
             {answers.map((answer, index) => {
               const isSelected = selectedAnswerIndex === index;
@@ -1154,7 +1155,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: 'rgb(63, 65, 66)',
     borderWidth: 1,
-    marginVertical: 5,
+    marginVertical: 10,
     marginHorizontal: 8,
     alignItems: 'center',
     flexDirection: 'row',
