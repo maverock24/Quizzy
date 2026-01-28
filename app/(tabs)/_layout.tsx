@@ -1,7 +1,14 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs, usePathname } from 'expo-router';
-import React from 'react';
-import { Easing, ImageBackground, Pressable, StyleSheet } from 'react-native';
+import React, { useEffect } from 'react';
+import { Easing, Pressable, StyleSheet, View } from 'react-native';
+import Animated, {
+  useSharedValue,
+  useAnimatedStyle,
+  withRepeat,
+  withTiming,
+  Easing as ReanimatedEasing,
+} from 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors from '@/constants/Colors';
@@ -27,12 +34,33 @@ export default function TabLayout() {
   const pathName = usePathname();
   const isSettings = pathName === '/';
 
+  const scale = useSharedValue(1);
+
+  useEffect(() => {
+    scale.value = withRepeat(
+      withTiming(1.1, {
+        duration: 20000,
+        easing: ReanimatedEasing.inOut(ReanimatedEasing.ease),
+      }),
+      -1,
+      true
+    );
+  }, []);
+
+  const animatedStyle = useAnimatedStyle(() => ({
+    transform: [{ scale: scale.value }],
+  }));
+
   return (
-    <ImageBackground
-      source={image}
-      resizeMode="cover"
-      style={styles.imageContainer}
-    >
+    <View style={styles.imageContainer}>
+      <Animated.Image
+        source={image}
+        resizeMode="cover"
+        style={[
+          styles.backgroundImage,
+          animatedStyle,
+        ]}
+      />
       <Tabs
         initialRouteName="index"
         screenOptions={{
@@ -93,7 +121,7 @@ export default function TabLayout() {
           }}
         />
       </Tabs>
-    </ImageBackground>
+    </View>
   );
 }
 const styles = StyleSheet.create({
@@ -101,5 +129,13 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
+    backgroundColor: 'black', // fallback
+  },
+  backgroundImage: {
+    position: 'absolute',
+    left: '-10%',
+    top: '-10%',
+    width: '120%',
+    height: '120%',
   },
 });

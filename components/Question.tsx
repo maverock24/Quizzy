@@ -300,7 +300,7 @@ export const Question: React.FC<QuestionProps> = ({
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
   const [answerIsWrong, setAnswerIsWrong] = useState(false);
   const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number | null>(null);
-  const [sound, setSound] = useState<Audio.Sound | null>(null);
+  const soundRef = useRef<Audio.Sound | null>(null);
   const [textInputValue, setTextInputValue] = useState('');
   const [textInputSubmitted, setTextInputSubmitted] = useState(false);
 
@@ -391,48 +391,82 @@ export const Question: React.FC<QuestionProps> = ({
   }, [buttonSlideAnims, buttonOpacityAnims]);
 
   // Clean up sound when component unmounts
-  useEffect(() => {
-    return sound
-      ? () => {
-        sound.unloadAsync();
-      }
-      : undefined;
-  }, [sound]);
+
 
   // Function to play sound
   const playSound = async (isCorrect: boolean) => {
     if (!audioEnabled) return; // Check if audio is enabled
-    // Unload any existing sound
-    if (sound) {
-      await sound.unloadAsync();
+
+    try {
+      // Unload any existing sound
+      if (soundRef.current) {
+        await soundRef.current.unloadAsync();
+      }
+
+      // Create and load new sound based on answer correctness
+      const soundFile = isCorrect
+        ? require('../assets/sounds/correct_answer.mp3')
+        : require('../assets/sounds/wrong_answer.mp3');
+
+      // Create and load new sound
+      const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
+      soundRef.current = newSound;
+
+      // Set up auto-unload
+      newSound.setOnPlaybackStatusUpdate(async (status) => {
+        if (status.isLoaded && status.didJustFinish) {
+          try {
+            await newSound.unloadAsync();
+            if (soundRef.current === newSound) {
+              soundRef.current = null;
+            }
+          } catch (e) {
+            // Ignore unload errors
+          }
+        }
+      });
+
+      // Play the sound
+      await newSound.setVolumeAsync(isCorrect ? 0.4 : 0.4);
+      await newSound.playAsync();
+    } catch (error) {
+      console.warn('Error playing sound:', error);
     }
-
-    // Create and load new sound based on answer correctness
-    const soundFile = isCorrect
-      ? require('../assets/sounds/correct_answer.mp3')
-      : require('../assets/sounds/wrong_answer.mp3');
-
-    // Create and load new sound
-    const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
-    setSound(newSound);
-    // Play the sound
-    await newSound.setVolumeAsync(0.4);
-    await newSound.playAsync();
   };
 
   const playSoundAnswerSelected = async () => {
     if (!audioEnabled) return; // Check if audio is enabled
-    // Unload any existing sound
-    if (sound) {
-      await sound.unloadAsync();
+
+    try {
+      // Unload any existing sound
+      if (soundRef.current) {
+        await soundRef.current.unloadAsync();
+      }
+
+      const soundFile = require('../assets/sounds/answer_selected.mp3');
+      // Create and load new sound
+      const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
+      soundRef.current = newSound;
+
+      // Set up auto-unload
+      newSound.setOnPlaybackStatusUpdate(async (status) => {
+        if (status.isLoaded && status.didJustFinish) {
+          try {
+            await newSound.unloadAsync();
+            if (soundRef.current === newSound) {
+              soundRef.current = null;
+            }
+          } catch (e) {
+            // Ignore
+          }
+        }
+      });
+
+      // Play the sound
+      await newSound.playAsync();
+    } catch (error) {
+      console.warn('Error playing select sound:', error);
     }
-    // Create and load new sound based on answer correctness
-    const soundFile = require('../assets/sounds/answer_selected.mp3');
-    // Create and load new sound
-    const { sound: newSound } = await Audio.Sound.createAsync(soundFile);
-    setSound(newSound);
-    // Play the sound
-    await newSound.playAsync();
   };
 
   // Trigger haptic feedback (only on native platforms, not web)

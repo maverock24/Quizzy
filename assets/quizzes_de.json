@@ -26957,5 +26957,296 @@
       }
     ],
     "category": "🔢 Mathematik"
+  },
+  {
+    "name": "🐴 Pferde-Quiz für Kinder",
+    "questions": [
+      {
+        "question": "Wie nennt man ein junges Pferd, das noch kein Jahr alt ist?",
+        "answers": [
+          {
+            "answer": "Fohlen"
+          },
+          {
+            "answer": "Pony"
+          },
+          {
+            "answer": "Hengst"
+          },
+          {
+            "answer": "Wallach"
+          }
+        ],
+        "answer": "Fohlen",
+        "explanation": "🐴 Ein Baby-Pferd heißt Fohlen! Es kann schon wenige Stunden nach der Geburt laufen und bleibt etwa 6 Monate bei seiner Mama. 🍼"
+      },
+      {
+        "question": "Was fressen Pferde am liebsten?",
+        "answers": [
+          {
+            "answer": "Fleisch"
+          },
+          {
+            "answer": "Heu und Gras"
+          },
+          {
+            "answer": "Fisch"
+          },
+          {
+            "answer": "Schokolade"
+          }
+        ],
+        "answer": "Heu und Gras",
+        "explanation": "🌿 Pferde sind Pflanzenfresser! Sie lieben Heu, Gras und manchmal auch Karotten oder Äpfel als Leckerli. Schokolade ist für Pferde giftig! 🥕🍎"
+      },
+      {
+        "question": "Wie viele Beine hat ein Pferd?",
+        "answers": [
+          {
+            "answer": "Zwei"
+          },
+          {
+            "answer": "Vier"
+          },
+          {
+            "answer": "Sechs"
+          },
+          {
+            "answer": "Acht"
+          }
+        ],
+        "answer": "Vier",
+        "explanation": "🐎 Pferde haben vier kräftige Beine! Die vorderen Beine heißen Vorderbeine und die hinteren Hinterbeine. Damit können sie super schnell laufen! 🏃‍♂️"
+      },
+      {
+        "question": "Was ist ein Pony?",
+        "answers": [
+          {
+            "answer": "Ein krankes Pferd"
+          },
+          {
+            "answer": "Ein kleines Pferd unter 1,48 Meter"
+          },
+          {
+            "answer": "Ein altes Pferd"
+          },
+          {
+            "answer": "Ein gestreiftes Pferd"
+          }
+        ],
+        "answer": "Ein kleines Pferd unter 1,48 Meter",
+        "explanation": "🎠 Ponys sind kleine Pferde! Sie sind nicht größer als 1,48 Meter. Trotz ihrer Größe sind sie oft sehr stark und mutig! 💪"
+      },
+      {
+        "question": "Wie nennt man den Ort, wo Pferde schlafen und wohnen?",
+        "answers": [
+          {
+            "answer": "Hundehütte"
+          },
+          {
+            "answer": "Stall"
+          },
+          {
+            "answer": "Nest"
+          },
+          {
+            "answer": "Höhle"
+          }
+        ],
+        "answer": "Stall",
+        "explanation": "🏠 Pferde leben in einem Stall! Dort haben sie eine Box mit weichem Stroh zum Schlafen und bekommen ihr Futter und Wasser. 🌾"
+      },
+      {
+        "question": "Welche Farbe kann ein Pferd NICHT haben?",
+        "answers": [
+          {
+            "answer": "Braun"
+          },
+          {
+            "answer": "Schwarz"
+          },
+          {
+            "answer": "Neongrün"
+          },
+          {
+            "answer": "Weiß"
+          }
+        ],
+        "answer": "Neongrün",
+        "explanation": "🎨 Pferde gibt es in vielen natürlichen Farben: braun, schwarz, weiß, grau, gescheckt... aber neongrün gibt es nicht in der Natur! 🌈"
+      },
+      {
+        "question": "Was trägt ein Pferd an seinen Füßen zum Schutz?",
+        "answers": [
+          {
+            "answer": "Socken"
+          },
+          {
+            "answer": "Hufeisen"
+          },
+          {
+            "answer": "Turnschuhe"
+          },
+          {
+            "answer": "Sandalen"
+          }
+        ],
+        "answer": "Hufeisen",
+        "explanation": "🔧 Hufeisen schützen die Hufe des Pferdes! Ein Hufschmied nagelt sie vorsichtig an den Huf - das tut dem Pferd nicht weh. 🐴👟"
+      },
+      {
+        "question": "Wie nennt man das lange Haar am Hals des Pferdes?",
+        "answers": [
+          {
+            "answer": "Mähne"
+          },
+          {
+            "answer": "Schweif"
+          },
+          {
+            "answer": "Fell"
+          },
+          {
+            "answer": "Bart"
+          }
+        ],
+        "answer": "Mähne",
+        "explanation": "💇 Die Mähne ist das lange, schöne Haar am Hals des Pferdes! Man kann sie bürsten und sogar flechten. Der Schweif ist das Haar am Po. 🎀"
+      },
+      {
+        "question": "Wie schnell kann ein Pferd rennen?",
+        "answers": [
+          {
+            "answer": "So schnell wie eine Schnecke"
+          },
+          {
+            "answer": "Bis zu 70 km/h"
+          },
+          {
+            "answer": "Nur 5 km/h"
+          },
+          {
+            "answer": "So schnell wie ein Flugzeug"
+          }
+        ],
+        "answer": "Bis zu 70 km/h",
+        "explanation": "🏎️ Pferde sind super schnell! Rennpferde können bis zu 70 km/h laufen - das ist schneller als ein Auto in der Stadt fahren darf! 🏆"
+      },
+      {
+        "question": "Wie nennt man eine weibliche erwachsene Pferd?",
+        "answers": [
+          {
+            "answer": "Hengst"
+          },
+          {
+            "answer": "Stute"
+          },
+          {
+            "answer": "Wallach"
+          },
+          {
+            "answer": "Fohlen"
+          }
+        ],
+        "answer": "Stute",
+        "explanation": "👸 Ein weibliches Pferd heißt Stute! Ein männliches Pferd heißt Hengst. Stuten können Babys (Fohlen) bekommen. 🐴💕"
+      },
+      {
+        "question": "Was muss man jeden Tag mit einem Pferd machen?",
+        "answers": [
+          {
+            "answer": "Fernsehen"
+          },
+          {
+            "answer": "Füttern, tränken und striegeln"
+          },
+          {
+            "answer": "Vorlesen"
+          },
+          {
+            "answer": "Baden im Meer"
+          }
+        ],
+        "answer": "Füttern, tränken und striegeln",
+        "explanation": "🧹 Pferde brauchen viel Pflege! Man muss ihnen Futter und Wasser geben und ihr Fell mit einer Bürste (Striegel) putzen. Das mögen sie sehr! 🥰"
+      },
+      {
+        "question": "Wie nennt man es, wenn man auf einem Pferd sitzt und es sich bewegt?",
+        "answers": [
+          {
+            "answer": "Schwimmen"
+          },
+          {
+            "answer": "Reiten"
+          },
+          {
+            "answer": "Fliegen"
+          },
+          {
+            "answer": "Tanzen"
+          }
+        ],
+        "answer": "Reiten",
+        "explanation": "🏇 Wenn man auf einem Pferd sitzt und es läuft, nennt man das Reiten! Dafür braucht man einen Sattel und einen Helm zur Sicherheit. 🪖"
+      },
+      {
+        "question": "Wie schlafen Pferde meistens?",
+        "answers": [
+          {
+            "answer": "Auf dem Rücken"
+          },
+          {
+            "answer": "Im Stehen"
+          },
+          {
+            "answer": "Im Wasser"
+          },
+          {
+            "answer": "Auf einem Baum"
+          }
+        ],
+        "answer": "Im Stehen",
+        "explanation": "😴 Pferde können im Stehen schlafen! Ihre Beine haben ein spezielles System, das sie nicht umfallen lässt. Für Tiefschlaf legen sie sich aber auch manchmal hin. 🛏️"
+      },
+      {
+        "question": "Welches berühmte gestreifte Tier ist mit dem Pferd verwandt?",
+        "answers": [
+          {
+            "answer": "Tiger"
+          },
+          {
+            "answer": "Zebra"
+          },
+          {
+            "answer": "Biene"
+          },
+          {
+            "answer": "Dalmatiner"
+          }
+        ],
+        "answer": "Zebra",
+        "explanation": "🦓 Zebras sind die gestreiften Cousins der Pferde! Sie leben in Afrika und haben schwarz-weiße Streifen. Jedes Zebra hat ein einzigartiges Muster! 🌍"
+      },
+      {
+        "question": "Wie viele Jahre kann ein Pferd alt werden?",
+        "answers": [
+          {
+            "answer": "Nur 2 Jahre"
+          },
+          {
+            "answer": "Etwa 25-30 Jahre"
+          },
+          {
+            "answer": "100 Jahre"
+          },
+          {
+            "answer": "5 Jahre"
+          }
+        ],
+        "answer": "Etwa 25-30 Jahre",
+        "explanation": "🎂 Pferde können 25 bis 30 Jahre alt werden! Das ist ziemlich alt für ein Tier. Das älteste Pferd der Welt wurde sogar über 60 Jahre alt! 🎉"
+      }
+    ],
+    "category": "👶 Für Kinder"
   }
 ]

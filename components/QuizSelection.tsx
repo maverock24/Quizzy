@@ -416,7 +416,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
           {t('select_quiz')}
         </Animated.Text>
         <FlatList
-          style={{ padding: 10 }}
+          style={{ paddingVertical: 10 }}
           data={quizzes}
           keyExtractor={(item) => item.name}
           renderItem={({ item, index }) => (
@@ -446,7 +446,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         {t('select_quiz')}
       </Animated.Text>
       <SectionList
-        style={{ padding: 10 }}
+        style={{ paddingVertical: 10 }}
         sections={groupedQuizzes.map((section) => ({
           ...section,
           data: expandedCategories.has(section.title) ? section.data : [],
@@ -463,6 +463,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
 const styles = StyleSheet.create({
   quizSelectionContainer: {
     flex: 1,
+    overflow: 'visible',
   },
   normalText: {
     fontSize: 16,
@@ -477,6 +478,7 @@ const styles = StyleSheet.create({
     marginBottom: 6,
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.1)',
+    marginHorizontal: 8,
   },
   categoryHeaderContent: {
     flexDirection: 'row',
@@ -502,6 +504,11 @@ const styles = StyleSheet.create({
   categoryCountBadgeActive: {
     backgroundColor: 'rgba(100, 180, 255, 0.25)',
   },
+  categoryCountText: {
+    color: 'white',
+    fontSize: 14,
+    fontWeight: '600',
+  },
   answerButton: {
     backgroundColor: 'rgb(46, 150, 194)',
     padding: 18,
@@ -511,6 +518,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.1)',
+    marginHorizontal: 8,
   },
   glowOverlay: {
     position: 'absolute',

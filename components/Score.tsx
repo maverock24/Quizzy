@@ -507,7 +507,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'hidden',
+    overflow: 'visible',
   },
   scoreBox: {
     backgroundColor: 'rgba(255, 255, 255, 0.1)',
@@ -517,6 +517,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 2,
     borderColor: 'rgba(255, 255, 255, 0.2)',
+    alignSelf: 'stretch',
+    marginHorizontal: 8,
   },
   winnerScoreBox: {
     backgroundColor: 'rgba(255, 215, 0, 0.15)',
