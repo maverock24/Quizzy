@@ -1,0 +1,383 @@
+[
+    {
+        "id": "pp_fetch_1",
+        "title": "Fetch API Request",
+        "description": "Arrange the lines to make a valid API fetch request that handles both success and error cases.",
+        "scrambledLines": [
+            {
+                "id": "l1",
+                "code": "async function fetchData(url) {",
+                "indent": 0
+            },
+            {
+                "id": "l2",
+                "code": "try {",
+                "indent": 1
+            },
+            {
+                "id": "l3",
+                "code": "const response = await fetch(url);",
+                "indent": 2
+            },
+            {
+                "id": "l4",
+                "code": "if (!response.ok) {",
+                "indent": 2
+            },
+            {
+                "id": "l5",
+                "code": "throw new Error(`HTTP error! status: ${response.status}`);",
+                "indent": 3
+            },
+            {
+                "id": "l6",
+                "code": "}",
+                "indent": 2
+            },
+            {
+                "id": "l7",
+                "code": "const data = await response.json();",
+                "indent": 2
+            },
+            {
+                "id": "l8",
+                "code": "return data;",
+                "indent": 2
+            },
+            {
+                "id": "l9",
+                "code": "} catch (error) {",
+                "indent": 1
+            },
+            {
+                "id": "l10",
+                "code": "console.error('Fetch error:', error);",
+                "indent": 2
+            },
+            {
+                "id": "l11",
+                "code": "throw error;",
+                "indent": 2
+            },
+            {
+                "id": "l12",
+                "code": "}",
+                "indent": 1
+            },
+            {
+                "id": "l13",
+                "code": "}",
+                "indent": 0
+            }
+        ],
+        "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7",
+            "l8",
+            "l9",
+            "l10",
+            "l11",
+            "l12",
+            "l13"
+        ]
+    },
+    {
+        "id": "pp_useeffect_1",
+        "title": "React useEffect Cleanup",
+        "description": "Arrange the lines to create a useEffect hook that subscribes to events and properly cleans up.",
+        "scrambledLines": [
+            {
+                "id": "l1",
+                "code": "useEffect(() => {",
+                "indent": 0
+            },
+            {
+                "id": "l2",
+                "code": "const handleResize = () => {",
+                "indent": 1
+            },
+            {
+                "id": "l3",
+                "code": "setWidth(window.innerWidth);",
+                "indent": 2
+            },
+            {
+                "id": "l4",
+                "code": "};",
+                "indent": 1
+            },
+            {
+                "id": "l5",
+                "code": "window.addEventListener('resize', handleResize);",
+                "indent": 1
+            },
+            {
+                "id": "l6",
+                "code": "return () => {",
+                "indent": 1
+            },
+            {
+                "id": "l7",
+                "code": "window.removeEventListener('resize', handleResize);",
+                "indent": 2
+            },
+            {
+                "id": "l8",
+                "code": "};",
+                "indent": 1
+            },
+            {
+                "id": "l9",
+                "code": "}, []);",
+                "indent": 0
+            }
+        ],
+        "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7",
+            "l8",
+            "l9"
+        ]
+    },
+    {
+        "id": "pp_bubblesort_1",
+        "title": "Bubble Sort Algorithm",
+        "description": "Arrange the lines to implement a bubble sort algorithm.",
+        "scrambledLines": [
+            {
+                "id": "l1",
+                "code": "function bubbleSort(arr) {",
+                "indent": 0
+            },
+            {
+                "id": "l2",
+                "code": "const n = arr.length;",
+                "indent": 1
+            },
+            {
+                "id": "l3",
+                "code": "for (let i = 0; i < n - 1; i++) {",
+                "indent": 1
+            },
+            {
+                "id": "l4",
+                "code": "for (let j = 0; j < n - i - 1; j++) {",
+                "indent": 2
+            },
+            {
+                "id": "l5",
+                "code": "if (arr[j] > arr[j + 1]) {",
+                "indent": 3
+            },
+            {
+                "id": "l6",
+                "code": "[arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];",
+                "indent": 4
+            },
+            {
+                "id": "l7",
+                "code": "}",
+                "indent": 3
+            },
+            {
+                "id": "l8",
+                "code": "}",
+                "indent": 2
+            },
+            {
+                "id": "l9",
+                "code": "}",
+                "indent": 1
+            },
+            {
+                "id": "l10",
+                "code": "return arr;",
+                "indent": 1
+            },
+            {
+                "id": "l11",
+                "code": "}",
+                "indent": 0
+            }
+        ],
+        "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7",
+            "l8",
+            "l9",
+            "l10",
+            "l11"
+        ]
+    },
+    {
+        "id": "pp_promise_chain",
+        "title": "Promise Chain",
+        "description": "Arrange the lines to create a promise chain that processes data sequentially.",
+        "scrambledLines": [
+            {
+                "id": "l1",
+                "code": "fetchUser(userId)",
+                "indent": 0
+            },
+            {
+                "id": "l2",
+                "code": ".then(user => {",
+                "indent": 1
+            },
+            {
+                "id": "l3",
+                "code": "console.log('User:', user.name);",
+                "indent": 2
+            },
+            {
+                "id": "l4",
+                "code": "return fetchPosts(user.id);",
+                "indent": 2
+            },
+            {
+                "id": "l5",
+                "code": "})",
+                "indent": 1
+            },
+            {
+                "id": "l6",
+                "code": ".then(posts => {",
+                "indent": 1
+            },
+            {
+                "id": "l7",
+                "code": "console.log('Posts:', posts.length);",
+                "indent": 2
+            },
+            {
+                "id": "l8",
+                "code": "})",
+                "indent": 1
+            },
+            {
+                "id": "l9",
+                "code": ".catch(error => {",
+                "indent": 1
+            },
+            {
+                "id": "l10",
+                "code": "console.error('Error:', error);",
+                "indent": 2
+            },
+            {
+                "id": "l11",
+                "code": "});",
+                "indent": 1
+            }
+        ],
+        "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7",
+            "l8",
+            "l9",
+            "l10",
+            "l11"
+        ]
+    },
+    {
+        "id": "pp_express_route",
+        "title": "Express Route Handler",
+        "description": "Arrange the lines to create an Express route that validates input and returns JSON.",
+        "scrambledLines": [
+            {
+                "id": "l1",
+                "code": "app.post('/api/users', async (req, res) => {",
+                "indent": 0
+            },
+            {
+                "id": "l2",
+                "code": "const { name, email } = req.body;",
+                "indent": 1
+            },
+            {
+                "id": "l3",
+                "code": "if (!name || !email) {",
+                "indent": 1
+            },
+            {
+                "id": "l4",
+                "code": "return res.status(400).json({ error: 'Name and email required' });",
+                "indent": 2
+            },
+            {
+                "id": "l5",
+                "code": "}",
+                "indent": 1
+            },
+            {
+                "id": "l6",
+                "code": "try {",
+                "indent": 1
+            },
+            {
+                "id": "l7",
+                "code": "const user = await User.create({ name, email });",
+                "indent": 2
+            },
+            {
+                "id": "l8",
+                "code": "res.status(201).json(user);",
+                "indent": 2
+            },
+            {
+                "id": "l9",
+                "code": "} catch (error) {",
+                "indent": 1
+            },
+            {
+                "id": "l10",
+                "code": "res.status(500).json({ error: 'Server error' });",
+                "indent": 2
+            },
+            {
+                "id": "l11",
+                "code": "}",
+                "indent": 1
+            },
+            {
+                "id": "l12",
+                "code": "});",
+                "indent": 0
+            }
+        ],
+        "correctOrder": [
+            "l1",
+            "l2",
+            "l3",
+            "l4",
+            "l5",
+            "l6",
+            "l7",
+            "l8",
+            "l9",
+            "l10",
+            "l11",
+            "l12"
+        ]
+    }
+]

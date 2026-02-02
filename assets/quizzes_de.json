@@ -1,5 +1,561 @@
 [
   {
+  "name": "Meereswelten & Umweltschutz: Der große Experten-Check",
+  "category": "👶 Für Kinder",
+  "questions": [
+    {
+      "question": "Wie lockt der Tiefsee-Anglerfisch in der ewigen Dunkelheit seine Beute an?",
+      "answers": [
+        {"answer": "Durch lautes Singen"},
+        {"answer": "Mit einer leuchtenden 'Angel' am Kopf"},
+        {"answer": "Durch elektrische Schläge"},
+        {"answer": "Er jagt gar nicht, sondern wartet nur"}
+      ],
+      "answer": "Mit einer leuchtenden 'Angel' am Kopf",
+      "explanation": "Für Kinder: Da es in der Tiefsee kein Sonnenlicht gibt, hat der Anglerfisch einen eingebauten Trick: Eine leuchtende Kugel an einer Angel über seinem Maul. Neugierige Fische schwimmen zum Licht und – SCHNAPP – werden sie gefressen. \n\nFür Erwachsene: Dieses Phänomen nennt man Biolumineszenz. In der Leucht-Angel leben symbiotische Bakterien, die Licht erzeugen. Interessanterweise sind meist nur die Weibchen die Jäger; die Männchen sind winzig und leben als Parasiten festgewachsen am Körper des Weibchens."
+    },
+    {
+      "question": "Welches Tier ist ein wichtiges 'Werkzeug' des Meeres, da es Steine benutzt, um Muschelschalen aufzuknacken?",
+      "answers": [
+        {"answer": "Die Krabbe"},
+        {"answer": "Der Seeotter"},
+        {"answer": "Die Möwe"},
+        {"answer": "Der Seestern"}
+      ],
+      "answer": "Der Seeotter",
+      "explanation": "Für Kinder: Seeotter sind super schlau. Sie legen sich einen flachen Stein auf den Bauch, während sie auf dem Rücken im Wasser treiben, und schlagen die Muscheln darauf kaputt.\n\nFür Erwachsene: Seeotter sind eine der wenigen Tierarten, die Werkzeuge benutzen. Sie gelten als 'Schlüsselart', da sie Seeigel fressen. Ohne die Otter würden die Seeigel die Kelpwälder (Unterwasser-Wälder) kahlfressen, was vielen anderen Tieren das Zuhause rauben würde."
+    },
+    {
+      "question": "Wozu dienen die 'Lorenzinischen Ampullen' bei einem Hai?",
+      "answers": [
+        {"answer": "Zum Atmen unter Sand"},
+        {"answer": "Um elektrische Felder von Beutetieren wahrzunehmen"},
+        {"answer": "Um die Wassertemperatur zu messen"},
+        {"answer": "Zum Kauen von harter Beute"}
+      ],
+      "answer": "Um elektrische Felder von Beutetieren wahrzunehmen",
+      "explanation": "Für Kinder: Haie haben einen sechsten Sinn! Sie können sogar den Herzschlag eines Fisches spüren, der sich unter dem Sand versteckt, weil sie die Elektrizität fühlen können. Für Erwachsene: Diese Elektrorezeptoren befinden sich meist am Kopf des Hais. Jedes Lebewesen erzeugt winzige elektrische Impulse durch Muskelbewegungen. Diese Ampullen ermöglichen es dem Hai, Beute auch ohne Sicht oder Geruch präzise zu orten."
+    },
+    {
+      "question": "Was versteht man unter 'Geisternetzen' im Meer?",
+      "answers": [
+        {"answer": "Netze aus durchsichtigem Material"},
+        {"answer": "Verlorene oder weggeworfene Fischernetze, die herrenlos im Meer weitertreiben"},
+        {"answer": "Spezielle Netze zum Fang von Quallen"},
+        {"answer": "Spinnweben unter Wasser"}
+      ],
+      "answer": "Verlorene oder weggeworfene Fischernetze, die herrenlos im Meer weitertreiben",
+      "explanation": "Für Kinder: Das sind Netze, die Fischer verloren haben. Sie schwimmen wie unsichtbare Fallen durch das Meer. Fische, Robben und Schildkröten verfangen sich darin und können sich nicht mehr befreien.\n\nFür Erwachsene: Geisternetze machen einen erheblichen Teil des Plastikmülls im Meer aus. Da sie aus Kunststoffen wie Nylon bestehen, verrotten sie nicht und 'fischen' über Jahrzehnte passiv weiter. Jährlich sterben Millionen Meerestiere durch dieses Problem."
+    },
+    {
+      "question": "Welcher große Meeresstrom wirkt wie eine riesige Heizung für Europa?",
+      "answers": [
+        {"answer": "Der Humboldtstrom"},
+        {"answer": "Der Golfstrom"},
+        {"answer": "Der Benguelastrom"},
+        {"answer": "Der Äquatorialstrom"}
+      ],
+      "answer": "Der Golfstrom",
+      "explanation": "Für Kinder: Der Golfstrom ist wie ein warmes Flussband mitten im kalten Ozean. Er bringt warmes Wasser aus der Nähe des Äquators bis nach Europa, damit es bei uns im Winter nicht so eisig kalt ist wie zum Beispiel in Kanada.Für Erwachsene: Der Golfstrom ist Teil der thermohalinen Zirkulation. Durch den Klimawandel und das Schmelzen der Arktis gelangt viel Süßwasser in den Nordatlantik, was diesen 'Motor' abschwächen könnte. Dies hätte dramatische Folgen für das Klima in Nordeuropa."
+    },
+    {
+      "question": "Wieso ist der Hammerhai so geformt, wie er ist?",
+      "answers": [
+        {"answer": "Damit er besser durch enge Felsen passt"},
+        {"answer": "Um eine bessere Rundumsicht und einen besseren elektrischen Sinn zu haben"},
+        {"answer": "Es ist ein reiner Schönheitsfehler"},
+        {"answer": "Damit er schneller schwimmen kann"}
+      ],
+      "answer": "Um eine bessere Rundumsicht und einen besseren elektrischen Sinn zu haben",
+      "explanation": "Für Kinder: Durch seinen breiten Kopf kann der Hammerhai viel besser nach oben, unten und zur Seite schauen. Außerdem passen auf die große Fläche mehr von seinen elektrischen 'Spürnasen'. \n\nFür Erwachsene: Der hammerförmige Kopf (Cephalofoil) verbessert die Manövrierfähigkeit und dient als Tragfläche. Die weit auseinanderliegenden Augen ermöglichen ein exzellentes räumliches Sehen, was bei der Jagd in der Dämmerung von Vorteil ist."
+    },
+    {
+      "question": "Welcher Wal ist für seine komplexe Jagdmethode mit 'Blasennetzen' bekannt?",
+      "answers": [
+        {"answer": "Der Blauwal"},
+        {"answer": "Der Buckelwal"},
+        {"answer": "Der Pottwal"},
+        {"answer": "Der Beluga"}
+      ],
+      "answer": "Der Buckelwal",
+      "explanation": "Für Kinder: Buckelwale arbeiten im Team. Sie schwimmen im Kreis unter einem Fischschwarm und pusten Luftblasen aus. Die Blasen bilden eine Wand, durch die die Fische nicht hindurchtrauen. Dann schwimmen die Wale von unten mit offenem Maul durch die Fischsuppe.\n\nFür Erwachsene: Das 'Bubble-Net Feeding' ist ein erlerntes, kooperatives Verhalten. Ein Wal gibt oft laute Signale, um die Fische zu verwirren, während die anderen den Blasenring erzeugen. Dies zeigt die hohe soziale Intelligenz dieser Tiere."
+    },
+    {
+      "question": "Was ist 'Meeresschnee'?",
+      "answers": [
+        {"answer": "Gefrorenes Meerwasser"},
+        {"answer": "Herabsinkende Reste von Plankton und Kot, die wie Flocken aussehen"},
+        {"answer": "Winzige weiße Steinchen am Grund"},
+        {"answer": "Schaum auf den Wellen"}
+      ],
+      "answer": "Herabsinkende Reste von Plankton und Kot, die wie Flocken aussehen",
+      "explanation": "Für Kinder: In der Tiefsee gibt es keine Pflanzen. Das Essen für die Tiere dort unten fällt von oben herab. Es sieht aus wie weiße Flocken, ist aber eigentlich 'Müll' und Reste von Tieren weiter oben.\n\nFür Erwachsene: Meeresschnee ist ein wichtiger Teil der biologischen Kohlenstoffpumpe. Er transportiert organischen Kohlenstoff von der Oberfläche in die Tiefe und dient als primäre Nahrungsquelle für die Ökosysteme am Meeresboden."
+    },
+    {
+      "question": "Welche Wirkung hat das Schmelzen von Meereis auf die Erderwärmung (Albedo-Effekt)?",
+      "answers": [
+        {"answer": "Es hat keine Auswirkung."},
+        {"answer": "Dunkles Wasser nimmt mehr Sonnenwärme auf als weißes Eis, was die Erwärmung beschleunigt."},
+        {"answer": "Das Wasser kühlt die Erde stärker ab, wenn das Eis weg ist."},
+        {"answer": "Die Schiffe können schneller fahren, was CO2 spart."}
+      ],
+      "answer": "Dunkles Wasser nimmt mehr Sonnenwärme auf als weißes Eis, was die Erwärmung beschleunigt.",
+      "explanation": "Für Kinder: Stell dir vor, du trägst im Sommer ein schwarzes T-Shirt. Da wird dir viel heißer als in einem weißen! Das weiße Eis spiegelt die Sonne zurück ins Weltall. Wenn es schmilzt, ist dort nur noch dunkles Wasser, das die Wärme schluckt.\n\nFür Erwachsene: Weißes Eis hat eine hohe Albedo (Rückstrahlvermögen). Wenn die Eisflächen verschwinden, entsteht ein Rückkopplungseffekt: Mehr Wärme wird absorbiert, das Wasser wird wärmer und noch mehr Eis schmilzt."
+    },
+    {
+      "question": "Warum ist 'Garnelenzucht' in Küstengebieten oft ein Umweltproblem?",
+      "answers": [
+        {"answer": "Garnelen brauchen zu viel Strom."},
+        {"answer": "Für die Zuchtbecken werden oft wertvolle Mangrovenwälder abgeholzt."},
+        {"answer": "Garnelen machen zu viel Lärm."},
+        {"answer": "Garnelen trinken das Meerwasser weg."}
+      ],
+      "answer": "Für die Zuchtbecken werden oft wertvolle Mangrovenwälder abgeholzt.",
+      "explanation": "Für Kinder: Damit wir viele Garnelen essen können, bauen Menschen große Teiche am Meer. Dafür müssen sie die Mangroven-Bäume fällen, die eigentlich ein wichtiger Schutz für die Küste sind.\n\nFür Erwachsene: Mangrovenwälder sind ökologisch extrem wertvoll. Ihre Zerstörung für die Aquakultur führt zu Küstenerosion, dem Verlust von Biodiversität und der Freisetzung von gespeichertem CO2. Achten Sie beim Kauf auf Bio-Zertifizierungen."
+    },
+    {
+      "question": "Wie nennt man Tiere, die nicht in ein Gebiet gehören, dorthin eingeschleppt wurden und das Ökosystem stören?",
+      "answers": [
+        {"answer": "Gast-Tiere"},
+        {"answer": "Invasive Arten"},
+        {"answer": "Urlauber-Fische"},
+        {"answer": "Zierfische"}
+      ],
+      "answer": "Invasive Arten",
+      "explanation": "Für Kinder: Manchmal reisen Fische in Schiffen mit in Meere, wo sie eigentlich nicht wohnen. Dort haben sie keine natürlichen Feinde und fressen den einheimischen Fischen das ganze Futter weg.\n\nFür Erwachsene: Ein Beispiel ist der Feuerfisch in der Karibik. Ursprünglich aus dem Indopazifik, dezimiert er nun einheimische Riff-Fische. Solche biologischen Invasionen verändern ganze Nahrungsnetze und sind oft schwer rückgängig zu machen."
+    },
+    {
+      "question": "Wale tragen zum Klimaschutz bei, indem sie das Wachstum von Phytoplankton fördern. Wie machen sie das?",
+      "answers": [
+        {"answer": "Sie bewässern die Algen."},
+        {"answer": "Durch ihre Ausscheidungen (Kot), die als Dünger für Plankton wirken."},
+        {"answer": "Sie atmen reinen Sauerstoff ins Wasser."},
+        {"answer": "Sie vertreiben Fische, die Algen fressen."}
+      ],
+      "answer": "Durch ihre Ausscheidungen (Kot), die als Dünger für Plankton wirken.",
+      "explanation": "Für Kinder: Wale sind die Gärtner des Ozeans! Wenn sie 'mal müssen', düngen sie das Wasser mit wertvollen Nährstoffen wie Eisen. Davon wächst das Plankton, das wiederum die Luft sauber macht. Für Erwachsene: Wale fressen in der Tiefe und setzen Nährstoffe an der Oberfläche frei. Dieser 'Walkreislauf' kurbelt die Primärproduktion an. Das Phytoplankton nimmt riesige Mengen CO2 auf. Mehr Wale bedeuten also indirekt weniger Treibhausgase in der Atmosphäre."
+    },
+    {
+      "question": "Welcher Meerestier-Nachwuchs schlüpft in der Antarktis und wird von den Vätern auf den Füßen warmgehalten?",
+      "answers": [
+        {"answer": "Seehunde"},
+        {"answer": "Kaiserpinguine"},
+        {"answer": "Blauwale"},
+        {"answer": "Albatrosse"}
+      ],
+      "answer": "Kaiserpinguine",
+      "explanation": "Für Kinder: Bei den Kaiserpinguinen ist der Papa der Babysitter. Während die Mama im Meer fischt, steht der Papa im eiskalten Wind und balanciert das Ei auf seinen Füßen unter einer warmen Hautfalte.\n\nFür Erwachsene: Kaiserpinguine brüten während des antarktischen Winters bei bis zu -60°C. Die Väter bilden Kuschelgruppen ('Huddle'), um Energie zu sparen. Durch den Rückgang des Packeises verlieren sie zunehmend ihre stabilen Brutplätze."
+    },
+    {
+      "question": "Welches Tier hat das größte Auge im Tierreich (etwa so groß wie ein Fußball)?",
+      "answers": [
+        {"answer": "Der Blauwal"},
+        {"answer": "Der Riesenkalmar"},
+        {"answer": "Der Elefantenrochen"},
+        {"answer": "Der Weiße Hai"}
+      ],
+      "answer": "Der Riesenkalmar",
+      "explanation": "Für Kinder: Der Riesenkalmar lebt in der dunklen Tiefsee. Damit er dort überhaupt etwas sehen kann (zum Beispiel das Leuchten von Feinden), hat er Augen, die so groß wie Fußbälle sind!\n\nFür Erwachsene: Riesenkalmare (Architeuthis dux) brauchen diese riesigen Augen, um biolumineszente Lichtblitze wahrzunehmen, die entstehen, wenn ihr größter Feind – der Pottwal – Plankton aufwirbelt. So können sie den Wal frühzeitig bemerken."
+    },
+    {
+      "question": "Darf man Meerwasser trinken, wenn man auf See Durst hat?",
+      "answers": [
+        {"answer": "Ja, es ist gesund wegen der Mineralien."},
+        {"answer": "Nein, der hohe Salzgehalt entzieht dem Körper Wasser und schadet den Nieren."},
+        {"answer": "Nur wenn man es vorher schüttelt."},
+        {"answer": "Ja, aber nur nachts."}
+      ],
+      "answer": "Nein, der hohe Salzgehalt entzieht dem Körper Wasser und schadet den Nieren.",
+      "explanation": "Für Kinder: Auf keinen Fall! Das Wasser im Meer ist viel zu salzig für uns. Dein Körper würde versuchen, das Salz wieder loszuwerden und dabei noch mehr Durst bekommen. Man würde also schneller verdursten.\n\nFür Erwachsene: Die menschliche Niere kann Urin nur bis zu einer bestimmten Salzkonzentration ausscheiden. Meerwasser ist salziger als unser Blut. Um das überschüssige Salz aus dem Meerwasser loszuwerden, muss der Körper mehr Wasser ausscheiden, als er aufgenommen hat (Osmose)."
+    },
+    {
+      "question": "Was ist eine 'Tote Zone' im Ozean?",
+      "answers": [
+        {"answer": "Ein Friedhof für Schiffe"},
+        {"answer": "Ein Bereich mit extrem wenig Sauerstoff, in dem fast kein Leben möglich ist"},
+        {"answer": "Ein Ort, an dem es keine Wellen gibt"},
+        {"answer": "Die kälteste Stelle am Nordpol"}
+      ],
+      "answer": "Ein Bereich mit extrem wenig Sauerstoff, in dem fast kein Leben möglich ist",
+      "explanation": "Für Kinder: In manchen Gegenden gibt es im Wasser keine Luft mehr zum Atmen für die Fische. Das passiert oft, wenn zu viele Düngemittel vom Land ins Meer fließen.\n\nFür Erwachsene: Dieser Prozess heißt Eutrophierung. Algen wachsen durch Dünger massenhaft und sterben ab. Bakterien bauen die Algen ab und verbrauchen dabei den gesamten Sauerstoff. Solche Zonen nehmen weltweit zu, besonders in Küstennähe."
+    },
+    {
+      "question": "Welcher Meeressäuger nutzt keine Fettschicht (Blubber) gegen Kälte, sondern das dichteste Fell der Welt?",
+      "answers": [
+        {"answer": "Der Seehund"},
+        {"answer": "Der Seeotter"},
+        {"answer": "Der Walross"},
+        {"answer": "Der Eisbär"}
+      ],
+      "answer": "Der Seeotter",
+      "explanation": "Für Kinder: Seeotter haben ein super-flauschiges Fell mit bis zu 150.000 Haaren pro Quadratzentimeter (wir Menschen haben das auf dem ganzen Kopf!). In dem Fell wird Luft gefangen, die sie trocken und warm hält.\n\nFür Erwachsene: Da sie keine isolierende Fettschicht haben, verbringen Seeotter einen Großteil des Tages mit der Fellpflege, um die wasserabweisende Luftschicht zu erhalten. Eine Ölverschmutzung ist für sie sofort tödlich, da das Öl die Luftschicht zerstört und sie erfrieren."
+    },
+    {
+      "question": "Warum ist es sinnvoll, im Urlaub Sonnencreme ohne 'Oxybenzon' zu benutzen?",
+      "answers": [
+        {"answer": "Weil sie besser riecht."},
+        {"answer": "Weil dieser Stoff die Korallenriffe schädigt und Korallenbleiche fördert."},
+        {"answer": "Weil sie schneller einzieht."},
+        {"answer": "Es macht keinen Unterschied."}
+      ],
+      "answer": "Weil dieser Stoff die Korallenriffe schädigt und Korallenbleiche fördert.",
+      "explanation": "Für Kinder: Wenn wir uns eincremen und dann im Meer baden, waschen wir einen Teil der Creme ab. Manche Stoffe darin sind wie Gift für die Korallen. Es gibt aber korallenfreundliche Cremes!\n\nFür Erwachsene: Bestimmte chemische UV-Filter (wie Oxybenzon oder Octinoxat) wirken hormonell schädigend auf Korallenlarven und schwächen erwachsene Polypen. Einige Urlaubsgebiete (z.B. Hawaii oder Palau) haben diese Stoffe bereits verboten."
+    },
+    {
+      "question": "Was passiert mit einem Wal, wenn er stirbt und auf den Meeresboden sinkt (Whale Fall)?",
+      "answers": [
+        {"answer": "Er verwandelt sich sofort in Sand."},
+        {"answer": "Er bildet ein eigenes kleines Ökosystem und bietet Nahrung für hunderte Arten über viele Jahrzehnte."},
+        {"answer": "Er wird von Strömungen sofort weggespült."},
+        {"answer": "Er verschmutzt den Meeresgrund."}
+      ],
+      "answer": "Er bildet ein eigenes kleines Ökosystem und bietet Nahrung für hunderte Arten über viele Jahrzehnte.",
+      "explanation": "Für Kinder: Ein toter Wal am Boden ist wie ein riesiges Buffet für die Tiefsee-Tiere. Sogar die Knochen werden von ganz speziellen Würmern gefressen. So hilft der Wal auch nach seinem Tod anderen Tieren.\n\nFür Erwachsene: Ein 'Whale Fall' durchläuft mehrere Stadien. Zuerst kommen Haie und Aale, später kleinere Krebstiere und schließlich Bakterien, die Energie aus den Skelettresten gewinnen. In der kargen Tiefsee ist ein toter Wal eine seltene und lebensnotwendige Oase der Energie."
+    },
+    {
+      "question": "Welche Farbe hat ein Eisbär unter seinem weißen Fell?",
+      "answers": [
+        {"answer": "Rosa"},
+        {"answer": "Weiß"},
+        {"answer": "Schwarz"},
+        {"answer": "Blau"}
+      ],
+      "answer": "Schwarz",
+      "explanation": "Für Kinder: Eisbären haben schwarze Haut! Das hilft ihnen, die Wärme der Sonne viel besser aufzusaugen. Das Fell sieht nur weiß aus, weil die Haare hohl sind und das Licht spiegeln.\n\nFür Erwachsene: Die schwarze Haut absorbiert die Wärmeenergie der Sonnenstrahlen effizient. Da der Eisbär perfekt an die Arktis angepasst ist, leidet er heute massiv unter dem Schwinden des Packeises, das er als Plattform für die Jagd auf Robben benötigt."
+    },
+    {
+      "question": "Welches Tier ist das größte Lebewesen, das heute im Ozean (und auf der gesamten Erde) lebt?",
+      "answers": [
+        {"answer": "Der Weiße Hai"},
+        {"answer": "Der Blauwal"},
+        {"answer": "Der Riesenkalmar"},
+        {"answer": "Der Walhai"}
+      ],
+      "answer": "Der Blauwal",
+      "explanation": "Für Kinder: Der Blauwal ist so riesig, dass allein seine Zunge so viel wiegt wie ein ganzer Elefant! Er ist ein Säugetier, genau wie wir, und muss zum Atmen an die Wasseroberfläche kommen.\n\nFür Erwachsene: Der Blauwal (Balaenoptera musculus) erreicht Längen von bis zu 30 Metern und ein Gewicht von etwa 190 Tonnen. Trotz seiner enormen Größe ernährt er sich fast ausschließlich von winzigen Krebstieren, dem Krill. Er gehört zu den Bartenwalen, die das Wasser durch riesige Hornplatten filtern, um Nahrung aufzunehmen."
+    },
+    {
+      "question": "Wie atmen Fische unter Wasser, ohne zu ertrinken?",
+      "answers": [
+        {"answer": "Sie halten die Luft an."},
+        {"answer": "Sie atmen durch die Haut."},
+        {"answer": "Sie nutzen ihre Kiemen, um Sauerstoff aus dem Wasser zu filtern."},
+        {"answer": "Sie haben kleine Taucherflaschen im Körper."}
+      ],
+      "answer": "Sie nutzen ihre Kiemen, um Sauerstoff aus dem Wasser zu filtern.",
+      "explanation": "Für Kinder: Fische haben keine Lungen wie wir. An den Seiten ihres Kopfes haben sie Kiemen. Das Wasser fließt dort hindurch, und die Kiemen nehmen den Sauerstoff aus dem Wasser auf.\n\nFür Erwachsene: Kiemen sind hochspezialisierte Organe mit einer sehr großen Oberfläche und feinen Blutgefäßen. Durch das Gegenstromprinzip wird Sauerstoff aus dem vorbeiströmenden Wasser ins Blut aufgenommen. Meeressäuger wie Delfine hingegen müssen auftauchen, da sie Lungen besitzen."
+    },
+    {
+      "question": "Was passiert mit Korallenriffen, wenn das Meerwasser durch den Klimawandel dauerhaft zu warm wird?",
+      "answers": [
+        {"answer": "Sie wachsen schneller."},
+        {"answer": "Sie verwandeln sich in Sand."},
+        {"answer": "Es kommt zur Korallenbleiche, wodurch die Korallen sterben können."},
+        {"answer": "Sie fangen an zu wandern."}
+      ],
+      "answer": "Es kommt zur Korallenbleiche, wodurch die Korallen sterben können.",
+      "explanation": "Für Kinder: Korallen sind eigentlich winzige Tiere, die in bunten Häusern wohnen. Wenn es ihnen zu heiß wird, bekommen sie Stress und werfen die bunten Algen raus, die in ihnen leben. Dann werden sie ganz weiß und krank.\n\nFür Erwachsene: Korallen leben in Symbiose mit Zooxanthellen (Algen), die ihnen Farbe und Nahrung liefern. Bei Hitzestress stoßen die Korallenpolypen diese Algen ab. Bleibt das Wasser zu warm, verhungern die Korallen und das Riff stirbt ab. Das gefährdet das gesamte Ökosystem, da Riffe Kinderstuben für viele Fischarten sind."
+    },
+    {
+      "question": "Warum ist Plastikmüll im Meer besonders gefährlich für Meeresschildkröten?",
+      "answers": [
+        {"answer": "Plastik macht das Wasser zu schwer zum Schwimmen."},
+        {"answer": "Schildkröten verwechseln Plastiktüten mit Quallen und fressen sie."},
+        {"answer": "Plastik verfängt sich in ihren Ohren."},
+        {"answer": "Das Plastik stinkt zu sehr."}
+      ],
+      "answer": "Schildkröten verwechseln Plastiktüten mit Quallen und fressen sie.",
+      "explanation": "Für Kinder: Schildkröten fressen für ihr Leben gern Quallen. Eine durchsichtige Plastiktüte sieht im Wasser fast genau so aus wie eine Qualle. Wenn die Schildkröte sie frisst, bekommt sie Bauchschmerzen und kann sterben.\n\nFür Erwachsene: Plastikmüll im Magen führt zu einem falschen Sättigungsgefühl, wodurch die Tiere verhungern. Zudem können Schildkröten und andere Meerestiere in sogenannten 'Geisternetzen' (verlorenen Fischernetzen) hängen bleiben und qualvoll verenden."
+    },
+    {
+      "question": "Wie viele Herzen hat ein Krake (Oktopus)?",
+      "answers": [
+        {"answer": "Eines, genau wie wir."},
+        {"answer": "Zwei."},
+        {"answer": "Drei."},
+        {"answer": "Gar keines."}
+      ],
+      "answer": "Drei.",
+      "explanation": "Für Kinder: Kraken sind echte Superwesen! Sie haben nicht nur acht Arme, sondern gleich drei Herzen, damit ihr blaues Blut durch den ganzen Körper gepumpt werden kann.\n\nFür Erwachsene: Ein Hauptherz versorgt den Körper mit Blut, während zwei Kiemenherzen das Blut direkt durch die Kiemen pumpen, um die Sauerstoffaufnahme zu optimieren. Das Blut von Kraken ist blau, weil es Hämocyanin enthält, ein kupferhaltiges Protein."
+    },
+    {
+      "question": "Welcher Himmelskörper ist hauptsächlich für Ebbe und Flut verantwortlich?",
+      "answers": [
+        {"answer": "Die Sonne"},
+        {"answer": "Der Mars"},
+        {"answer": "Der Mond"},
+        {"answer": "Die Venus"}
+      ],
+      "answer": "Der Mond",
+      "explanation": "Für Kinder: Der Mond ist wie ein riesiger Magnet. Er zieht das Wasser der Meere ein bisschen zu sich heran, während er um die Erde kreist. So entstehen Ebbe und Flut.\n\nFür Erwachsene: Die Gezeiten entstehen durch die Gravitationskraft des Mondes (und in geringerem Maße der Sonne) in Kombination mit der Fliehkraft der Erdrotation. Dadurch bilden sich auf der Erde zwei Flutberge."
+    },
+    {
+      "question": "Was versteht man unter 'Überfischung'?",
+      "answers": [
+        {"answer": "Wenn Fische zu viel fressen."},
+        {"answer": "Wenn zu viele Fische aus dem Meer gefangen werden, als nachwachsen können."},
+        {"answer": "Wenn Menschen zu viel Fisch essen."},
+        {"answer": "Wenn Fische aus dem Wasser springen."}
+      ],
+      "answer": "Wenn zu viele Fische aus dem Meer gefangen werden, als nachwachsen können.",
+      "explanation": "Für Kinder: Stell dir ein Sparschwein vor. Wenn du jeden Tag mehr Geld rausnimmst, als du reinsteckst, ist es bald leer. Bei der Überfischung holen wir so viele Fische aus dem Meer, dass nicht genug Fisch-Babys nachkommen können.\n\nFür Erwachsene: Überfischung bedroht das ökologische Gleichgewicht. Wenn bestimmte Arten verschwinden, verändert das die gesamte Nahrungskette. Nachhaltige Fischerei (erkennbar an Siegeln wie MSC) versucht, dies zu verhindern."
+    },
+    {
+      "question": "Welche Organismen im Meer produzieren etwa die Hälfte des Sauerstoffs auf unserer Erde?",
+      "answers": [
+        {"answer": "Wale"},
+        {"answer": "Phytoplankton (winzige Algen)"},
+        {"answer": "Unterwasser-Vulkane"},
+        {"answer": "Seesterne"}
+      ],
+      "answer": "Phytoplankton (winzige Algen)",
+      "explanation": "Für Kinder: Die winzigen, grünen Pünktchen im Wasser, die man fast nicht sehen kann, sind wie ein riesiger Wald. Sie machen die Luft, die wir zum Atmen brauchen!\n\nFür Erwachsene: Phytoplankton betreibt Photosynthese. Dabei binden diese Kleinstlebewesen CO2 und setzen Sauerstoff frei. Damit sind die Ozeane eine ebenso wichtige 'Lunge' für den Planeten wie die Regenwälder."
+    },
+    {
+      "question": "Warum ist 'Mikroplastik' ein Problem für die Umwelt?",
+      "answers": [
+        {"answer": "Es macht das Wasser glitzernd."},
+        {"answer": "Es ist so klein, dass Tiere es mit Nahrung verwechseln und es so in die Nahrungskette gelangt."},
+        {"answer": "Es verstopft die Schiffsmotoren."},
+        {"answer": "Es gibt kein Mikroplastik."}
+      ],
+      "answer": "Es ist so klein, dass Tiere es mit Nahrung verwechseln und es so in die Nahrungskette gelangt.",
+      "explanation": "Für Kinder: Mikroplastik sind ganz winzige Plastikstückchen, kleiner als ein Sandkorn. Fische essen sie aus Versehen, und am Ende landet das Plastik vielleicht sogar auf unserem Teller.\n\nFür Erwachsene: Mikroplastik entsteht durch den Zerfall von Müll oder durch Abrieb (z. B. Autoreifen). Diese Partikel binden Giftstoffe und werden von Plankton und kleinen Fischen aufgenommen. So reichern sich Schadstoffe über die Nahrungskette bis zum Menschen an."
+    },
+    {
+      "question": "In welcher Zone des Ozeans ist es das ganze Jahr über stockfinster?",
+      "answers": [
+        {"answer": "In der Brandungszone"},
+        {"answer": "In der Tiefsee (Abyssal-Zone)"},
+        {"answer": "In der Korallenzone"},
+        {"answer": "In der Oberflächenzone"}
+      ],
+      "answer": "In der Tiefsee (Abyssal-Zone)",
+      "explanation": "Für Kinder: Ab einer Tiefe von 1000 Metern kommt kein Sonnenstrahl mehr an. Dort unten ist es immer dunkel und sehr kalt.\n\nFür Erwachsene: Die Tiefsee beginnt dort, wo die Lichtdurchlässigkeit endet. In diesen Zonen herrscht extremer Druck. Tiere, die dort leben, haben sich oft durch Biolumineszenz (Selbstleuchten) angepasst."
+    },
+    {
+      "question": "Wie nennen man die großen Müllteppiche im Ozean, wie zum Beispiel im Nordpazifik?",
+      "answers": [
+        {"answer": "Müllberge"},
+        {"answer": "Garbage Patches"},
+        {"answer": "Plastik-Inseln"},
+        {"answer": "Meeres-Deponien"}
+      ],
+      "answer": "Garbage Patches",
+      "explanation": "Für Kinder: In manchen Meeren dreht sich das Wasser im Kreis und sammelt den ganzen Müll an einer Stelle. Das sieht dann aus wie eine riesige Suppe aus Plastikmüll.\n\nFür Erwachsene: Der Great Pacific Garbage Patch ist der bekannteste dieser Müllwirbel. Es ist keine feste Insel, sondern eine hohe Konzentration von Plastikfragmenten, die das marine Leben schädigt."
+    },
+    {
+      "question": "Welches Tier nutzt Echo-Ortung (Schall), um Beute zu finden?",
+      "answers": [
+        {"answer": "Der Goldfisch"},
+        {"answer": "Der Delfin"},
+        {"answer": "Die Meeresschildkröte"},
+        {"answer": "Die Krabbe"}
+      ],
+      "answer": "Der Delfin",
+      "explanation": "Für Kinder: Delfine schicken Klick-Geräusche aus. Der Schall prallt von Fischen ab und kommt zurück. So 'sieht' der Delfin mit seinen Ohren, wo das Mittagessen schwimmt.\n\nFür Erwachsene: Diese Biosonar-Technik erlaubt es Zahnwalen (wie Delfinen oder Pottwalen), sich in trübem Wasser oder in der Dunkelheit präzise zu orientieren."
+    },
+    {
+      "question": "Welche Bäume können direkt im Salzwasser an der Küste wachsen und schützen das Land vor Stürmen?",
+      "answers": [
+        {"answer": "Eichen"},
+        {"answer": "Mangroven"},
+        {"answer": "Tannen"},
+        {"answer": "Palmen"}
+      ],
+      "answer": "Mangroven",
+      "explanation": "Für Kinder: Mangroven sind Bäume mit Stelzenwurzeln, die im Schlamm am Meer stehen. In ihren Wurzeln verstecken sich kleine Fische vor großen Räubern.\n\nFür Erwachsene: Mangrovenwälder sind hocheffiziente CO2-Speicher und schützen Küstenregionen vor Erosion und Tsunamis."
+    },
+    {
+      "question": "Wie nennt man die symbiotische Beziehung zwischen Clownfischen und Seeanemonen?",
+      "answers": [
+        {"answer": "Kampf-Partnerschaft"},
+        {"answer": "Symbiose"},
+        {"answer": "WG-Leben"},
+        {"answer": "Zufallsbegegnung"}
+      ],
+      "answer": "Symbiose",
+      "explanation": "Für Kinder: Der Clownfisch darf in der giftigen Anemone wohnen, weil er eine besondere Schleimschicht hat. Die Anemone beschützt ihn vor Feinden, und der Clownfisch putzt die Anemone.\n\nFür Erwachsene: Unter Symbiose versteht man das Zusammenleben zweier Arten zum gegenseitigen Vorteil. Der Clownfisch liefert Nährstoffe durch seine Ausscheidungen und lockt Futter für die Anemone an."
+    },
+    {
+      "question": "Warum ist Lärm im Ozean (z.B. durch große Schiffe) ein Problem?",
+      "answers": [
+        {"answer": "Fische können nicht schlafen."},
+        {"answer": "Wale und Delfine werden bei der Orientierung und Kommunikation gestört."},
+        {"answer": "Das Wasser fängt an zu kochen."},
+        {"answer": "Es gibt kein Problem mit Lärm."}
+      ],
+      "answer": "Wale und Delfine werden bei der Orientierung und Kommunikation gestört.",
+      "explanation": "Für Kinder: Wale 'reden' miteinander über lange Strecken durch Gesang. Wenn ein lautes Schiff vorbeifährt, verstehen sie sich nicht mehr und finden vielleicht ihre Familie nicht wieder.\n\nFür Erwachsene: Anthropogener Lärm unter Wasser kann bei Meeressäugern zu Stress, Verhaltensänderungen und sogar physischen Schäden an den Gehörorganen führen."
+    },
+    {
+      "question": "Was ist der Hauptgrund für den Anstieg des Meeresspiegels?",
+      "answers": [
+        {"answer": "Es regnet mehr."},
+        {"answer": "Schmelzende Gletscher an Land und die Ausdehnung des Wassers durch Wärme."},
+        {"answer": "Schiffe verdrängen zu viel Wasser."},
+        {"answer": "Fische werden immer größer."}
+      ],
+      "answer": "Schmelzende Gletscher an Land und die Ausdehnung des Wassers durch Wärme.",
+      "explanation": "Für Kinder: Wenn es auf der Erde wärmer wird, schmilzt das Eis an Nord- und Südpol und fließt ins Meer. Außerdem braucht warmes Wasser mehr Platz als kaltes Wasser.\n\nFür Erwachsene: Die thermische Ausdehnung des Ozeans trägt signifikant zum Anstieg bei. Das Abschmelzen von Festlandeis führt zusätzliches Wasser in den Kreislauf ein."
+    },
+    {
+      "question": "Welches Tier trägt den Nachwuchs in einer Bauchtasche aus – und zwar das Männchen?",
+      "answers": [
+        {"answer": "Känguru"},
+        {"answer": "Seepferdchen"},
+        {"answer": "Pinguin"},
+        {"answer": "Delfin"}
+      ],
+      "answer": "Seepferdchen",
+      "explanation": "Für Kinder: Bei den Seepferdchen ist alles andersherum! Die Mutter legt die Eier in die Tasche des Vaters, und er passt auf sie auf, bis die kleinen Babys schlüpfen.\n\nFür Erwachsene: Seepferdchen gehören zu den wenigen Arten im Tierreich, bei denen eine echte männliche Trächtigkeit vorliegt."
+    },
+    {
+      "question": "Was ist 'Beifang' in der Fischerei?",
+      "answers": [
+        {"answer": "Fisch, den man im Laden extra bekommt."},
+        {"answer": "Tiere wie Delfine oder Schildkröten, die versehentlich in Fischernetzen landen."},
+        {"answer": "Ein spezielles Gewürz für Fisch."},
+        {"answer": "Kleine Fische, die man als Haustiere hält."}
+      ],
+      "answer": "Tiere wie Delfine oder Schildkröten, die versehentlich in Fischernetzen landen.",
+      "explanation": "Für Kinder: Wenn Fischer große Netze auswerfen, fangen sie oft Tiere, die sie gar nicht haben wollen, wie Schildkröten. Diese sterben dann oft unnötig.\n\nFür Erwachsene: Beifang ist ein massives Problem der industriellen Fischerei. Moderne Netze versuchen, dies durch Fluchtfenster zu reduzieren."
+    },
+    {
+      "question": "Wie lange braucht eine Plastikflasche im Meer etwa, um zu zerfallen?",
+      "answers": [
+        {"answer": "10 Jahre"},
+        {"answer": "100 Jahre"},
+        {"answer": "450 Jahre"},
+        {"answer": "Plastik zerfällt nie ganz."}
+      ],
+      "answer": "450 Jahre",
+      "explanation": "Für Kinder: Plastik hält fast ewig. Eine Flasche, die heute ins Meer geworfen wird, ist noch da, wenn deine Ur-Ur-Ur-Enkel leben! Danach wird sie zu Mikroplastik.\n\nFür Erwachsene: Plastik wird mechanisch zerkleinert, aber chemisch kaum abgebaut. Es verbleibt für Jahrhunderte in der Umwelt."
+    },
+    {
+      "question": "Welches Meerestier kann seine Farbe und Hautstruktur verändern, um sich zu tarnen?",
+      "answers": [
+        {"answer": "Der Tintenfisch (Sepia)"},
+        {"answer": "Der Goldfisch"},
+        {"answer": "Die Robbe"},
+        {"answer": "Der Hering"}
+      ],
+      "answer": "Der Tintenfisch (Sepia)",
+      "explanation": "Für Kinder: Die Sepia ist ein Verwandlungskünstler. Sie kann in Sekunden die Farbe von Sand oder Steinen annehmen, damit man sie nicht sieht.\n\nFür Erwachsene: Cephalopoden nutzen Chromatophoren (Pigmentzellen) in ihrer Haut, um komplexe Muster zur Tarnung oder Kommunikation zu erzeugen."
+    },
+    {
+      "question": "Woher kommt das meiste Salz im Meerwasser?",
+      "answers": [
+        {"answer": "Aus Salzbergwerken unter Wasser."},
+        {"answer": "Von Steinen an Land, aus denen der Regen das Salz herauswäscht."},
+        {"answer": "Von Schiffen, die Salz geladen haben."},
+        {"answer": "Fische schwitzen Salz aus."}
+      ],
+      "answer": "Von Steinen an Land, aus denen der Regen das Salz herauswäscht.",
+      "explanation": "Für Kinder: Regen wäscht winzige Mengen Salz aus Steinen an Land. Flüsse tragen dieses Salz ins Meer. Da das Wasser im Meer verdunstet, aber das Salz bleibt, wurde das Meer über Millionen von Jahren salzig.\n\nFür Erwachsene: Die chemische Verwitterung von Gesteinen an Land ist die Hauptquelle für die im Meerwasser gelösten Salze."
+    },
+    {
+      "question": "Was ist die Hauptnahrung von Blauwalen?",
+      "answers": [
+        {"answer": "Große Haie"},
+        {"answer": "Winzige Krebstiere (Krill)"},
+        {"answer": "Unterwasser-Pflanzen"},
+        {"answer": "Robben"}
+      ],
+      "answer": "Winzige Krebstiere (Krill)",
+      "explanation": "Für Kinder: Der größte Riese der Welt isst die kleinsten Tierchen im Meer! Er siebt sie einfach eimerweise aus dem Wasser.\n\nFür Erwachsene: Blauwale können am Tag bis zu 4 Tonnen Krill fressen. Sie gehören zu den Bartenwalen, die ihre Nahrung aus dem Wasser filtern."
+    },
+    {
+      "question": "Warum ist das 'Great Barrier Reef' so bekannt?",
+      "answers": [
+        {"answer": "Es ist die größte Mauer unter Wasser."},
+        {"answer": "Es ist das größte Korallenriff der Welt und man kann es sogar aus dem Weltraum sehen."},
+        {"answer": "Dort leben die einzigen Fische der Welt."},
+        {"answer": "Es ist ein versunkener Freizeitpark."}
+      ],
+      "answer": "Es ist das größte Korallenriff der Welt und man kann es sogar aus dem Weltraum sehen.",
+      "explanation": "Für Kinder: Das Riff vor Australien ist wie ein bunter Unterwasser-Dschungel. Es ist über 2000 Kilometer lang und ein Zuhause für Tausende verschiedene Tiere.\n\nFür Erwachsene: Das Riff ist ein UNESCO-Weltnaturerbe und leidet massiv unter der globalen Erwärmung."
+    },
+    {
+      "question": "Welche Energiequelle im Ozean ist umweltfreundlich und erneuerbar?",
+      "answers": [
+        {"answer": "Erdölbohrungen"},
+        {"answer": "Offshore-Windkraft und Gezeitenkraftwerke"},
+        {"answer": "Unterwasser-Kohleminen"},
+        {"answer": "Plastikmüllverbrennung auf Schiffen"}
+      ],
+      "answer": "Offshore-Windkraft und Gezeitenkraftwerke",
+      "explanation": "Für Kinder: Man kann den starken Wind auf dem Meer nutzen, um mit großen Windrädern Strom zu machen, ohne die Umwelt zu verpesten.\n\nFür Erwachsene: Meeresenergie umfasst Wind, Gezeiten und Wellenkraft. Sie sind wichtige Bausteine für eine nachhaltige Energieversorgung."
+    },
+    {
+      "question": "Was passiert bei einer 'Ölpest' im Meer?",
+      "answers": [
+        {"answer": "Das Wasser wird glatt und glänzend."},
+        {"answer": "Vögel und Fische sterben, weil das Öl ihr Gefieder oder ihre Kiemen verklebt und giftig ist."},
+        {"answer": "Die Fische fangen an zu rutschen."},
+        {"answer": "Das Öl reinigt das Meer."}
+      ],
+      "answer": "Vögel und Fische sterben, weil das Öl ihr Gefieder oder ihre Kiemen verklebt und giftig ist.",
+      "explanation": "Für Kinder: Wenn Öl aus einem Schiff ausläuft, ist das wie eine klebrige, schwarze Decke auf dem Wasser. Vögel können nicht mehr fliegen und Tiere werden krank.\n\nFür Erwachsene: Rohöl enthält giftige Kohlenwasserstoffe. Es zerstört die Isolierfähigkeit von Gefieder und Fell, was oft zum Tod durch Unterkühlung führt."
+    },
+    {
+      "question": "Welches Tier verbringt fast sein ganzes Leben in der Luft über dem Ozean und landet nur zum Brüten?",
+      "answers": [
+        {"answer": "Der Albatros"},
+        {"answer": "Der Pinguin"},
+        {"answer": "Die Ente"},
+        {"answer": "Der Strauß"}
+      ],
+      "answer": "Der Albatros",
+      "explanation": "Für Kinder: Der Albatros hat riesige Flügel und kann hunderte Kilometer fliegen, ohne einmal mit den Flügeln zu schlagen.\n\nFür Erwachsene: Albatrosse nutzen den dynamischen Segelflug über den Wellen. Sie sind perfekt an das Leben auf hoher See angepasst."
+    },
+    {
+      "question": "Was ist eine 'Nahrungskette' im Meer?",
+      "answers": [
+        {"answer": "Eine Kette, mit der man Fische fängt."},
+        {"answer": "Der Weg der Energie: Kleine Algen werden gefressen, die wiederum von größeren Tieren gefressen werden."},
+        {"answer": "Eine Schlange von Fischen vor einem Restaurant."},
+        {"answer": "Ein Schmuckstück aus Muscheln."}
+      ],
+      "answer": "Der Weg der Energie: Kleine Algen werden gefressen, die wiederum von größeren Tieren gefressen werden.",
+      "explanation": "Für Kinder: Kleine Fische essen Algen, große Fische essen kleine Fische, und am Ende kommt vielleicht ein Hai. Alles ist miteinander verbunden.\n\nFür Erwachsene: Marine Nahrungsnetze sind komplex. Eine Störung an der Basis (Phytoplankton) wirkt sich auf alle Ebenen bis zum Spitzenprädator aus."
+    },
+    {
+      "question": "Welches Meerestier hat ein Gehirn, das so groß wie eine Faust ist, und gilt als sehr intelligent?",
+      "answers": [
+        {"answer": "Der Oktopus"},
+        {"answer": "Die Qualle"},
+        {"answer": "Die Auster"},
+        {"answer": "Die Seeanemone"}
+      ],
+      "answer": "Der Oktopus",
+      "explanation": "Für Kinder: Oktopusse können Rätsel lösen, Gläser aufschrauben und sich Gesichter von Menschen merken. Sie sind extrem schlau!\n\nFür Erwachsene: Oktopusse verfügen über ein komplexes Nervensystem, wobei ein Großteil der Neuronen in den Armen liegt, was ihnen eine dezentrale Intelligenz verleiht."
+    },
+    {
+      "question": "Welche Farbe hat das Blut eines Hais?",
+      "answers": [
+        {"answer": "Blau"},
+        {"answer": "Grün"},
+        {"answer": "Rot"},
+        {"answer": "Durchsichtig"}
+      ],
+      "answer": "Rot",
+      "explanation": "Für Kinder: Haie haben genau wie wir rotes Blut, weil sie Eisen darin haben, das den Sauerstoff transportiert.\n\nFür Erwachsene: Haie sind Wirbeltiere und nutzen Hämoglobin für den Sauerstofftransport, was dem Blut die rote Farbe verleiht."
+    },
+    {
+      "question": "Was bedeutet der Begriff 'Ozeanversauerung'?",
+      "answers": [
+        {"answer": "Es schwimmen zu viele Zitronen im Meer."},
+        {"answer": "Das Meer nimmt CO2 auf, wodurch chemische Reaktionen das Wasser saurer machen."},
+        {"answer": "Das Wasser schmeckt nach Essig."},
+        {"answer": "Es regnet Batteriesäure ins Meer."}
+      ],
+      "answer": "Das Meer nimmt CO2 auf, wodurch chemische Reaktionen das Wasser saurer machen.",
+      "explanation": "Für Kinder: Wenn das Wasser zu 'sauer' wird, können Muscheln und Korallen ihre harten Schalen nicht mehr richtig bauen. Das ist für sie wie Knochenschwund.\n\nFür Erwachsene: Die Aufnahme von atmosphärischem CO2 senkt den pH-Wert des Wassers, was die Kalzifizierung von Meeresorganismen behindert."
+    }
+  ]
+},
+  {
     "name": "Heimelektrik & Profi-Wissen Deutschland",
     "questions": [
       {
