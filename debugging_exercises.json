@@ -1,0 +1,56 @@
+[
+    {
+        "id": "debug_infinite_loop_1",
+        "title": "Infinite useEffect Loop",
+        "description": "This React component causes an infinite render loop. Find the bug!",
+        "code": "function UserProfile({ userId }) {\n  const [user, setUser] = useState(null);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    setLoading(true);\n    fetchUser(userId).then(data => {\n      setUser(data);\n      setLoading(false);\n    });\n  });\n\n  if (loading) return <Spinner />;\n  return <div>{user.name}</div>;\n}",
+        "buggyLineIndex": 10,
+        "explanation": "The useEffect has no dependency array, so it runs after EVERY render. Each render triggers state updates (setUser, setLoading), which cause more renders, creating an infinite loop. Fix: Add [userId] as dependencies.",
+        "fixedCode": "function UserProfile({ userId }) {\n  const [user, setUser] = useState(null);\n  const [loading, setLoading] = useState(true);\n\n  useEffect(() => {\n    setLoading(true);\n    fetchUser(userId).then(data => {\n      setUser(data);\n      setLoading(false);\n    });\n  }, [userId]);\n\n  if (loading) return <Spinner />;\n  return <div>{user.name}</div>;\n}"
+    },
+    {
+        "id": "debug_off_by_one_1",
+        "title": "Array Off-By-One Error",
+        "description": "This function should return the last N items of an array, but it has a bug.",
+        "code": "function getLastN(arr, n) {\n  if (n >= arr.length) {\n    return arr;\n  }\n  const startIndex = arr.length - n - 1;\n  return arr.slice(startIndex);\n}",
+        "buggyLineIndex": 4,
+        "explanation": "The startIndex calculation has an off-by-one error. For getLastN([1,2,3,4,5], 2), we want [4,5]. arr.length=5, n=2, so startIndex should be 3. But 5-2-1=2, giving [3,4,5]. Remove the -1.",
+        "fixedCode": "function getLastN(arr, n) {\n  if (n >= arr.length) {\n    return arr;\n  }\n  const startIndex = arr.length - n;\n  return arr.slice(startIndex);\n}"
+    },
+    {
+        "id": "debug_closure_1",
+        "title": "Closure in Loop",
+        "description": "This code should log 0, 1, 2 after delays, but it logs 3, 3, 3. Find the bug!",
+        "code": "for (var i = 0; i < 3; i++) {\n  setTimeout(function() {\n    console.log(i);\n  }, 1000);\n}",
+        "buggyLineIndex": 0,
+        "explanation": "Using 'var' creates a single 'i' variable shared across all iterations. By the time setTimeout callbacks run, the loop has finished and i=3. Fix: Use 'let' instead of 'var' to create block scope.",
+        "fixedCode": "for (let i = 0; i < 3; i++) {\n  setTimeout(function() {\n    console.log(i);\n  }, 1000);\n}"
+    },
+    {
+        "id": "debug_async_await_1",
+        "title": "Missing Await",
+        "description": "This function should return user data, but returns a pending Promise instead.",
+        "code": "async function getUser(id) {\n  const response = fetch(`/api/users/${id}`);\n  const data = await response.json();\n  return data;\n}",
+        "buggyLineIndex": 1,
+        "explanation": "The fetch() call is missing 'await'. Without it, 'response' is a Promise, not a Response object. Calling .json() on a Promise throws an error or returns unexpected results.",
+        "fixedCode": "async function getUser(id) {\n  const response = await fetch(`/api/users/${id}`);\n  const data = await response.json();\n  return data;\n}"
+    },
+    {
+        "id": "debug_mutation_1",
+        "title": "Direct State Mutation",
+        "description": "This React handler should add an item to the list, but the UI doesn't update.",
+        "code": "function TodoList() {\n  const [todos, setTodos] = useState([]);\n\n  const addTodo = (text) => {\n    todos.push({ id: Date.now(), text });\n    setTodos(todos);\n  };\n\n  return (/* ... */);\n}",
+        "buggyLineIndex": 4,
+        "explanation": "The code mutates the existing array with push(), then passes the same reference to setTodos. React compares references and sees the same array, so it doesn't re-render. Fix: Create a new array.",
+        "fixedCode": "function TodoList() {\n  const [todos, setTodos] = useState([]);\n\n  const addTodo = (text) => {\n    setTodos([...todos, { id: Date.now(), text }]);\n  };\n\n  return (/* ... */);\n}"
+    },
+    {
+        "id": "debug_equality_1",
+        "title": "Wrong Equality Check",
+        "description": "This validation should reject null and undefined, but it allows them through.",
+        "code": "function validateEmail(email) {\n  if (email == '') {\n    return { valid: false, error: 'Email is required' };\n  }\n  // ... more validation\n  return { valid: true };\n}",
+        "buggyLineIndex": 1,
+        "explanation": "Using loose equality (==) with empty string. null == '' is false, undefined == '' is false. So null/undefined pass this check! Use strict check: email === '' || email == null, or better: !email.",
+        "fixedCode": "function validateEmail(email) {\n  if (!email) {\n    return { valid: false, error: 'Email is required' };\n  }\n  // ... more validation\n  return { valid: true };\n}"
+    }
+]

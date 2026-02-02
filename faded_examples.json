@@ -1,0 +1,110 @@
+[
+    {
+        "id": "fe_useeffect_1",
+        "title": "React useEffect with API Call",
+        "description": "Learn how to fetch data on component mount with proper cleanup.",
+        "stages": [
+            {
+                "description": "Study this complete useEffect pattern for fetching data:",
+                "code": "useEffect(() => {\n  let isMounted = true;\n\n  const fetchData = async () => {\n    const response = await fetch('/api/users');\n    const data = await response.json();\n    if (isMounted) {\n      setUsers(data);\n    }\n  };\n\n  fetchData();\n\n  return () => {\n    isMounted = false;\n  };\n}, []);",
+                "blanks": []
+            },
+            {
+                "description": "Fill in the missing line to prevent state updates after unmount:",
+                "code": "useEffect(() => {\n  let isMounted = true;\n\n  const fetchData = async () => {\n    const response = await fetch('/api/users');\n    const data = await response.json();\n    ___BLANK___\n      setUsers(data);\n    }\n  };\n\n  fetchData();\n\n  return () => {\n    isMounted = false;\n  };\n}, []);",
+                "blanks": [
+                    {
+                        "lineIndex": 6,
+                        "answer": "if (isMounted) {"
+                    }
+                ]
+            },
+            {
+                "description": "Now fill in both the check and the cleanup:",
+                "code": "useEffect(() => {\n  let isMounted = true;\n\n  const fetchData = async () => {\n    const response = await fetch('/api/users');\n    const data = await response.json();\n    ___BLANK___\n      setUsers(data);\n    }\n  };\n\n  fetchData();\n\n  return () => {\n    ___BLANK___\n  };\n}, []);",
+                "blanks": [
+                    {
+                        "lineIndex": 6,
+                        "answer": "if (isMounted) {"
+                    },
+                    {
+                        "lineIndex": 14,
+                        "answer": "isMounted = false;"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fe_express_1",
+        "title": "Express Error Handler Middleware",
+        "description": "Learn the pattern for centralized error handling in Express.",
+        "stages": [
+            {
+                "description": "Study this error handling middleware pattern:",
+                "code": "const errorHandler = (err, req, res, next) => {\n  console.error(err.stack);\n  \n  const statusCode = err.statusCode || 500;\n  const message = err.message || 'Internal Server Error';\n  \n  res.status(statusCode).json({\n    success: false,\n    error: message,\n    stack: process.env.NODE_ENV === 'production' ? null : err.stack\n  });\n};\n\n// Use at the END of middleware chain\napp.use(errorHandler);",
+                "blanks": []
+            },
+            {
+                "description": "Fill in the response status code logic:",
+                "code": "const errorHandler = (err, req, res, next) => {\n  console.error(err.stack);\n  \n  ___BLANK___\n  const message = err.message || 'Internal Server Error';\n  \n  res.status(statusCode).json({\n    success: false,\n    error: message,\n    stack: process.env.NODE_ENV === 'production' ? null : err.stack\n  });\n};",
+                "blanks": [
+                    {
+                        "lineIndex": 3,
+                        "answer": "const statusCode = err.statusCode || 500;"
+                    }
+                ]
+            },
+            {
+                "description": "Now fill in the status code and the production check:",
+                "code": "const errorHandler = (err, req, res, next) => {\n  console.error(err.stack);\n  \n  ___BLANK___\n  const message = err.message || 'Internal Server Error';\n  \n  res.status(statusCode).json({\n    success: false,\n    error: message,\n    stack: ___BLANK___\n  });\n};",
+                "blanks": [
+                    {
+                        "lineIndex": 3,
+                        "answer": "const statusCode = err.statusCode || 500;"
+                    },
+                    {
+                        "lineIndex": 9,
+                        "answer": "process.env.NODE_ENV === 'production' ? null : err.stack"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "fe_redux_1",
+        "title": "Redux Slice with createSlice",
+        "description": "Learn the modern Redux Toolkit pattern for creating slices.",
+        "stages": [
+            {
+                "description": "Study this Redux slice pattern:",
+                "code": "import { createSlice } from '@reduxjs/toolkit';\n\nconst counterSlice = createSlice({\n  name: 'counter',\n  initialState: { value: 0 },\n  reducers: {\n    increment: (state) => {\n      state.value += 1;\n    },\n    decrement: (state) => {\n      state.value -= 1;\n    },\n    incrementByAmount: (state, action) => {\n      state.value += action.payload;\n    },\n  },\n});\n\nexport const { increment, decrement, incrementByAmount } = counterSlice.actions;\nexport default counterSlice.reducer;",
+                "blanks": []
+            },
+            {
+                "description": "Fill in the increment reducer:",
+                "code": "import { createSlice } from '@reduxjs/toolkit';\n\nconst counterSlice = createSlice({\n  name: 'counter',\n  initialState: { value: 0 },\n  reducers: {\n    increment: (state) => {\n      ___BLANK___\n    },\n    decrement: (state) => {\n      state.value -= 1;\n    },\n  },\n});",
+                "blanks": [
+                    {
+                        "lineIndex": 7,
+                        "answer": "state.value += 1;"
+                    }
+                ]
+            },
+            {
+                "description": "Now fill in increment and the action export:",
+                "code": "import { createSlice } from '@reduxjs/toolkit';\n\nconst counterSlice = createSlice({\n  name: 'counter',\n  initialState: { value: 0 },\n  reducers: {\n    increment: (state) => {\n      ___BLANK___\n    },\n    incrementByAmount: (state, action) => {\n      state.value += action.payload;\n    },\n  },\n});\n\nexport const { ___BLANK___ } = counterSlice.actions;",
+                "blanks": [
+                    {
+                        "lineIndex": 7,
+                        "answer": "state.value += 1;"
+                    },
+                    {
+                        "lineIndex": 15,
+                        "answer": "increment, incrementByAmount"
+                    }
+                ]
+            }
+        ]
+    }
+]
