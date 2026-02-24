@@ -601,7 +601,7 @@
           {
             "answer": "Could I have...?"
           },
-          {https://www.facebook.com/reel/683786534760738
+          {
             "answer": "I will get it."
           },
           {
@@ -23654,6 +23654,567 @@
     "category": "🧠 Psychology"
   },
   {
+    "name": "AI Context Management & Governance",
+    "image": "https://images.unsplash.com/photo-1620712943543-bcc4638ef80b",
+    "category": "🤖 AI Architecture",
+    "questions": [
+      {
+        "question": "What is the primary benefit of maintaining 'Statelessness' in an AI agent architecture?",
+        "answers": [
+          {
+            "answer": "It allows the agent to remember user preferences across years."
+          },
+          {
+            "answer": "It prevents 'Architectural Drift' and ensures decisions are grounded only in the current provided context."
+          },
+          { "answer": "It reduces the cost of every API call to zero." },
+          { "answer": "It allows the agent to skip system instructions." }
+        ],
+        "answer": "It prevents 'Architectural Drift' and ensures decisions are grounded only in the current provided context.",
+        "explanation": "Statelessness ensures that an agent does not carry over 'hallucinated memory' or bias from previous sessions. Every action must be explicitly justified by the repository documentation and the current task context provided in the prompt."
+      },
+      {
+        "question": "In a multi-agent system, what is the role of an 'Orchestrator' or 'Router'?",
+        "answers": [
+          { "answer": "To write the actual implementation code." },
+          {
+            "answer": "To enforce workflow discipline, validate scope, and route tasks to specialized sub-agents."
+          },
+          { "answer": "To perform deep security audits of the code." },
+          { "answer": "To summarize the results for the end user only." }
+        ],
+        "answer": "To enforce workflow discipline, validate scope, and route tasks to specialized sub-agents.",
+        "explanation": "An Orchestrator acts as a traffic controller. It ensures that specialized agents (like a Planner or Developer) only receive tasks that are valid according to the system's rules and invariants."
+      },
+      {
+        "question": "What does the term 'Architectural Invariant' refer to in agent governance?",
+        "answers": [
+          { "answer": "A variable that changes frequently during execution." },
+          {
+            "answer": "A flexible suggestion for the AI to follow if it has time."
+          },
+          {
+            "answer": "A hard rule or constraint that must never be violated regardless of the task."
+          },
+          { "answer": "A specific type of machine learning model." }
+        ],
+        "answer": "A hard rule or constraint that must never be violated regardless of the task.",
+        "explanation": "Invariants are the 'laws' of the repository. Examples include 'One App Per Task' or 'No Agent May Modify UI'. These maintain system stability by limiting the AI's surface area for errors."
+      },
+      {
+        "question": "Why is 'Task Decomposition' (Planning) separated from 'Implementation' in advanced AI workflows?",
+        "answers": [
+          { "answer": "To increase the latency of the system." },
+          {
+            "answer": "To ensure structural correctness and documentation alignment before any code is actually written."
+          },
+          { "answer": "Because models cannot do both at the same time." },
+          { "answer": "To allow the user more time to change their mind." }
+        ],
+        "answer": "To ensure structural correctness and documentation alignment before any code is actually written.",
+        "explanation": "Separating planning from execution allows for a 'Strategic Gate'. It ensures the proposed solution is architecturally sound and follows best practices before the 'Developer' starts modifying the codebase."
+      },
+      {
+        "question": "What is 'Contextual Grounding' in the context of using MCP (Model Context Protocol) tools?",
+        "answers": [
+          {
+            "answer": "Relying on the model's internal training data for all answers."
+          },
+          {
+            "answer": "Forcing the model to check real-time documentation or files before making a decision."
+          },
+          { "answer": "A method to speed up the model's response time." },
+          { "answer": "A way to hide information from the model." }
+        ],
+        "answer": "Forcing the model to check real-time documentation or files before making a decision.",
+        "explanation": "Grounding ensures the AI uses 'Live Truth' (current docs/files) rather than outdated or potentially hallucinated information from its training weights."
+      },
+      {
+        "question": "What is the purpose of a 'Human Gate' in an automated agentic workflow?",
+        "answers": [
+          { "answer": "To replace the AI whenever it gets tired." },
+          {
+            "answer": "To stop the workflow when a task requires human-only skills (e.g., design) or high-risk approvals."
+          },
+          { "answer": "To verify the user's identity via captcha." },
+          { "answer": "To slow down the deployment process." }
+        ],
+        "answer": "To stop the workflow when a task requires human-only skills (e.g., design) or high-risk approvals.",
+        "explanation": "Certain tasks, like shared UI modifications or sensitive architectural changes, are 'Human Only'. A Human Gate pauses the agent and requires manual confirmation before proceeding."
+      },
+      {
+        "question": "What is 'Traceability' in the context of AI-generated commits?",
+        "answers": [
+          { "answer": "The ability to see which model was used for the code." },
+          {
+            "answer": "The requirement that every change must link back to a specific, approved Plan ID."
+          },
+          {
+            "answer": "A feature that tracks how many lines of code were deleted."
+          },
+          { "answer": "A log of the agent's internal thought process." }
+        ],
+        "answer": "The requirement that every change must link back to a specific, approved Plan ID.",
+        "explanation": "Traceability ensures that every line of code in the repository can be traced back to a specific architectural decision and planning phase, preventing 'shadow changes'."
+      },
+      {
+        "question": "In a 'Reviewer' agent's protocol, what does a 'Severity Score' typically determine?",
+        "answers": [
+          { "answer": "How much the AI liked the code." },
+          {
+            "answer": "Whether the workflow should proceed, require corrections, or trigger a hard STOP."
+          },
+          { "answer": "The complexity of the algorithm used." },
+          { "answer": "The speed of the resulting application." }
+        ],
+        "answer": "Whether the workflow should proceed, require corrections, or trigger a hard STOP.",
+        "explanation": "Severity scores provide a deterministic way to handle failures. High severity (e.g., security risks) triggers a STOP, while low severity might allow progress with a note of technical debt."
+      },
+      {
+        "question": "Why is 'Domain Scoping' (e.g., One Primary App) critical for AI Context Management?",
+        "answers": [
+          {
+            "answer": "It reduces the number of files the AI has to read, minimizing token noise and distraction."
+          },
+          {
+            "answer": "It allows the AI to work on multiple projects at once."
+          },
+          { "answer": "It prevents the AI from using the internet." },
+          { "answer": "It makes the code compile faster." }
+        ],
+        "answer": "It reduces the number of files the AI has to read, minimizing token noise and distraction.",
+        "explanation": "When an AI has 'too much' context, it can become distracted or introduce cross-contamination. Scoping the task to one specific area keeps the 'Context Density' high and relevant."
+      },
+      {
+        "question": "What is a 'Clarification Protocol' used for in planning?",
+        "answers": [
+          { "answer": "To explain the code to the user after it is written." },
+          {
+            "answer": "To pause and ask the user for a decision when multiple valid architectural paths exist."
+          },
+          { "answer": "To fix spelling errors in the documentation." },
+          { "answer": "To translate the plan into different languages." }
+        ],
+        "answer": "To pause and ask the user for a decision when multiple valid architectural paths exist.",
+        "explanation": "Instead of guessing (which leads to hallucination), a Clarification Protocol forces the AI to present options (Option A vs Option B) to the human when the path is ambiguous."
+      },
+      {
+        "question": "In AI governance, what does 'PII Leakage' refer to?",
+        "answers": [
+          { "answer": "A bug that makes the app run slowly." },
+          {
+            "answer": "The accidental inclusion of Personally Identifiable Information in logs or API responses."
+          },
+          { "answer": "A type of database migration error." },
+          { "answer": "When an agent forgets its system instructions." }
+        ],
+        "answer": "The accidental inclusion of Personally Identifiable Information in logs or API responses.",
+        "explanation": "Context management must include 'Privacy Gates' to ensure that sensitive data (names, emails, keys) are not passed into logs or non-secure context windows."
+      },
+      {
+        "question": "How does 'Token Management' impact the effectiveness of an AI Reviewer?",
+        "answers": [
+          { "answer": "Higher token limits always mean better reviews." },
+          {
+            "answer": "Effective context pruning ensures the reviewer only sees the code delta and relevant architectural rules."
+          },
+          { "answer": "It doesn't; tokens only matter for the Developer." },
+          { "answer": "It determines the font size of the review." }
+        ],
+        "answer": "Effective context pruning ensures the reviewer only sees the code delta and relevant architectural rules.",
+        "explanation": "Reviewers need 'Just-in-Time' context. Overloading them with the entire codebase makes them less likely to spot specific security or logic flaws in the new changes."
+      },
+      {
+        "question": "What is 'Architectural Drift'?",
+        "answers": [
+          {
+            "answer": "When the server physically moves to a different location."
+          },
+          {
+            "answer": "When the codebase slowly moves away from its original design principles due to incremental agent changes."
+          },
+          {
+            "answer": "A feature that allows the AI to update its own models."
+          },
+          { "answer": "When the UI design is updated to a modern style." }
+        ],
+        "answer": "When the codebase slowly moves away from its original design principles due to incremental agent changes.",
+        "explanation": "Without strict Orchestration and Invariants, agents will solve tasks in the easiest way possible, which often involves 'cheating' against the intended architecture (e.g., cross-app calls)."
+      },
+      {
+        "question": "What is the function of a 'Debt Registry' in an agentic workflow?",
+        "answers": [
+          { "answer": "To track how much money is spent on API calls." },
+          {
+            "answer": "To formally document minor architectural shortcuts that are allowed to proceed but must be fixed later."
+          },
+          {
+            "answer": "To list all the developers who have worked on the project."
+          },
+          { "answer": "To store the user's credit card information." }
+        ],
+        "answer": "To formally document minor architectural shortcuts that are allowed to proceed but must be fixed later.",
+        "explanation": "A Debt Registry allows for 'Velocity' without losing 'Governance'. It lets minor issues pass review while ensuring they are recorded as tasks for future refactoring."
+      },
+      {
+        "question": "What is 'Intent Classification' in the Task Intake stage?",
+        "answers": [
+          { "answer": "Determining if the user is angry or happy." },
+          {
+            "answer": "Determining whether a request is a Bug, Feature, Refactor, or Architecture Proposal."
+          },
+          { "answer": "Translating the user's request into Python code." },
+          { "answer": "Choosing the UI color scheme for the task." }
+        ],
+        "answer": "Determining whether a request is a Bug, Feature, Refactor, or Architecture Proposal.",
+        "explanation": "Classifying the intent allows the system to choose the correct workflow. A Bug fix might skip certain planning steps that an Architecture Proposal requires."
+      },
+      {
+        "question": "Why is 'Multi-Model Routing' (using different models for different agents) used?",
+        "answers": [
+          { "answer": "Because it's cheaper to use only one model." },
+          {
+            "answer": "To match the model's strengths (e.g., logic vs speed) to the specific requirements of the role (e.g., Reviewer vs Formatter)."
+          },
+          { "answer": "To make the system more complicated." },
+          {
+            "answer": "To ensure that if one model fails, the others can take over its job."
+          }
+        ],
+        "answer": "To match the model's strengths (e.g., logic vs speed) to the specific requirements of the role (e.g., Reviewer vs Formatter).",
+        "explanation": "A 'Mechanical' agent (like a Formatter) can use a faster/cheaper model, while a 'Constitutional' agent (like a Reviewer or Orchestrator) requires a more intelligent, high-reasoning model."
+      },
+      {
+        "question": "What does 'Documentation Binding' mean for an AI Developer?",
+        "answers": [
+          {
+            "answer": "The AI is required to write documentation for every function."
+          },
+          {
+            "answer": "The AI's implementation must strictly follow the official framework best-practices (e.g., NextJS, NestJS) retrieved via tools."
+          },
+          { "answer": "The AI is forbidden from reading the documentation." },
+          { "answer": "The documentation is converted into a PDF." }
+        ],
+        "answer": "The AI's implementation must strictly follow the official framework best-practices (e.g., NextJS, NestJS) retrieved via tools.",
+        "explanation": "Binding ensures consistency. It prevents the AI from using 'clever' but non-standard patterns that would make the codebase harder for humans to maintain."
+      },
+      {
+        "question": "In the context of 'Context Management', what is a 'Stop Trigger'?",
+        "answers": [
+          { "answer": "A button the user clicks to cancel the task." },
+          {
+            "answer": "A specific condition (like an invariant breach) that forces the entire agentic loop to halt immediately."
+          },
+          { "answer": "A way to pause the animation in the UI." },
+          { "answer": "A command that shuts down the server." }
+        ],
+        "answer": "A specific condition (like an invariant breach) that forces the entire agentic loop to halt immediately.",
+        "explanation": "Stop triggers are safety valves. If an agent tries to modify a 'Forbidden' file or introduces a security vulnerability, the system halts to prevent the damage from being committed."
+      },
+      {
+        "question": "What is 'Context Density'?",
+        "answers": [
+          { "answer": "The number of words in the prompt." },
+          {
+            "answer": "The ratio of highly relevant information to 'noise' within the context window."
+          },
+          { "answer": "The file size of the AI model." },
+          { "answer": "How fast the AI can read the input." }
+        ],
+        "answer": "The ratio of highly relevant information to 'noise' within the context window.",
+        "explanation": "High Context Density makes for better AI performance. Removing irrelevant files and 'chatter' helps the model focus on the logic that matters."
+      },
+      {
+        "question": "What is a 'Deterministic Quality Gate'?",
+        "answers": [
+          { "answer": "A manual check by a senior developer." },
+          {
+            "answer": "A requirement that code must pass automated tools (Lint, Type-check, Tests) before the AI considers it 'done'."
+          },
+          {
+            "answer": "A rule that the AI must output the same answer every time."
+          },
+          { "answer": "A security firewall." }
+        ],
+        "answer": "A requirement that code must pass automated tools (Lint, Type-check, Tests) before the AI considers it 'done'.",
+        "explanation": "Determinism means that if the Linter fails, the AI *must* fix it. It removes the 'opinion' of the AI and relies on the hard rules of the programming language."
+      },
+      {
+        "question": "What is the 'One-App-Per-Branch' rule in context management?",
+        "answers": [
+          { "answer": "Only one developer can work on a branch at a time." },
+          {
+            "answer": "Each task/branch should only target changes within a single application scope to maintain isolation."
+          },
+          { "answer": "A branch can only contain one file." },
+          { "answer": "The app must be deployed to one server only." }
+        ],
+        "answer": "Each task/branch should only target changes within a single application scope to maintain isolation.",
+        "explanation": "Isolation prevents 'spaghetti architecture'. If an agent modifies the API and the Web app in the same task, it's harder to test, review, and revert."
+      },
+      {
+        "question": "Why is 'Audit Logging' necessary for AI agents?",
+        "answers": [
+          { "answer": "To show how many tokens were used." },
+          {
+            "answer": "To provide a transparent record of every tool-call and decision for human forensic review."
+          },
+          { "answer": "To help the AI improve its own training." },
+          { "answer": "To make the logs look more technical." }
+        ],
+        "answer": "To provide a transparent record of every tool-call and decision for human forensic review.",
+        "explanation": "When an agent makes a mistake, the Audit Log allows humans to see exactly where the logic failed—was it a bad plan, a bad implementation, or a missed review?"
+      },
+      {
+        "question": "What is 'Context Contamination'?",
+        "answers": [
+          { "answer": "When a computer virus infects the AI." },
+          {
+            "answer": "When information from one domain (e.g., App A) accidentally leaks into the logic for another domain (e.g., App B)."
+          },
+          { "answer": "When the prompt is too long for the model to handle." },
+          { "answer": "When the AI uses too many emojis." }
+        ],
+        "answer": "When information from one domain (e.g., App A) accidentally leaks into the logic for another domain (e.g., App B).",
+        "explanation": "Contamination leads to 'leakage' where the AI might try to use internal utilities from one app in another where they don't belong, breaking modularity."
+      },
+      {
+        "question": "What is the primary role of a 'Planning Agent' compared to an 'Implementation Agent'?",
+        "answers": [
+          { "answer": "The Planner is smarter than the Implementer." },
+          {
+            "answer": "The Planner creates a logical roadmap, while the Implementer writes the actual code."
+          },
+          {
+            "answer": "The Planner writes the tests, and the Implementer runs them."
+          },
+          { "answer": "There is no difference; they are the same." }
+        ],
+        "answer": "The Planner creates a logical roadmap, while the Implementer writes the actual code.",
+        "explanation": "This separation follows the 'Think twice, code once' principle. The roadmap can be reviewed and corrected before high-effort coding begins."
+      },
+      {
+        "question": "What is 'Hallucination Mitigation' in Context Management?",
+        "answers": [
+          { "answer": "A medication for the AI." },
+          {
+            "answer": "Strategies like grounding, few-shot examples, and strict invariants that reduce the likelihood of the AI inventing facts."
+          },
+          { "answer": "A filter that removes weird words from the output." },
+          { "answer": "A way to make the AI more creative." }
+        ],
+        "answer": "Strategies like grounding, few-shot examples, and strict invariants that reduce the likelihood of the AI inventing facts.",
+        "explanation": "By constraining the AI to specific files and documentation, we give it fewer opportunities to 'fill in the gaps' with its own imagination."
+      },
+      {
+        "question": "What does 'State Persistence' refer to in agentic workflows?",
+        "answers": [
+          {
+            "answer": "The ability of the agent to stay awake for long periods."
+          },
+          {
+            "answer": "Saving the progress, variables, and decision history of a task so it can be resumed accurately."
+          },
+          { "answer": "Ensuring the agent always gives the same answer." },
+          { "answer": "Backing up the entire codebase every hour." }
+        ],
+        "answer": "Saving the progress, variables, and decision history of a task so it can be resumed accurately.",
+        "explanation": "While individual sessions may be stateless, the 'Workflow' must persist state so the Reviewer knows what the Planner and Developer did in previous steps."
+      },
+      {
+        "question": "What is 'Prompt Injection' and how does governance prevent it?",
+        "answers": [
+          { "answer": "A way to make the prompt run faster." },
+          {
+            "answer": "A security vulnerability where a user attempts to override an agent's system instructions via the task input."
+          },
+          { "answer": "A type of SQL injection for AI." },
+          { "answer": "When the AI asks too many questions." }
+        ],
+        "answer": "A security vulnerability where a user attempts to override an agent's system instructions via the task input.",
+        "explanation": "Governance prevents this by placing strict 'Constitutional' instructions in the system prompt that cannot be easily overridden by user-provided 'task' content."
+      },
+      {
+        "question": "What is the purpose of 'Regression Testing' in an AI workflow?",
+        "answers": [
+          {
+            "answer": "To make the code look like it was written in the 1990s."
+          },
+          {
+            "answer": "To ensure that new AI-generated code doesn't break existing functionality."
+          },
+          { "answer": "To test if the AI is getting smarter over time." },
+          { "answer": "To delete old code that is no longer used." }
+        ],
+        "answer": "To ensure that new AI-generated code doesn't break existing functionality.",
+        "explanation": "AI is prone to 'Butterfly Effects' where a small change in one file breaks something far away. Automated regression tests are the primary defense against this."
+      },
+      {
+        "question": "What is 'Context Window Exhaustion'?",
+        "answers": [
+          { "answer": "When the AI gets tired of reading the prompt." },
+          {
+            "answer": "When the amount of required information exceeds the model's maximum limit, causing it to 'forget' earlier instructions."
+          },
+          { "answer": "When the user types too fast for the AI to keep up." },
+          { "answer": "When the server runs out of memory." }
+        ],
+        "answer": "When the amount of required information exceeds the model's maximum limit, causing it to 'forget' earlier instructions.",
+        "explanation": "Effective context management involves 'Summarization' or 'Pruning' to ensure the most important rules (like invariants) always stay within the 'Active Memory' of the window."
+      },
+      {
+        "question": "What is 'Role-Based Access Control' (RBAC) for agents?",
+        "answers": [
+          {
+            "answer": "Limiting which agents can use specific tools (e.g., only the Commit Agent can write to the repo)."
+          },
+          { "answer": "Giving every agent a unique name and avatar." },
+          { "answer": "Ensuring the AI can only speak to specific users." },
+          { "answer": "Making the AI act like a pirate or a knight." }
+        ],
+        "answer": "Limiting which agents can use specific tools (e.g., only the Commit Agent can write to the repo).",
+        "explanation": "RBAC prevents 'Permission Creep'. A Reviewer doesn't need 'Write' access to the repo; only the final Commit agent should have that authority."
+      },
+      {
+        "question": "What is a 'Rollback Strategy' in an AI implementation plan?",
+        "answers": [
+          {
+            "answer": "A plan to delete the entire repository if something goes wrong."
+          },
+          {
+            "answer": "A predefined set of steps to undo changes if the deployment or tests fail."
+          },
+          { "answer": "A way to make the AI repeat its last sentence." },
+          { "answer": "A technique for scrolling up in the chat window." }
+        ],
+        "answer": "A predefined set of steps to undo changes if the deployment or tests fail.",
+        "explanation": "Safety requires knowing how to 'go back'. A good plan includes instructions on how to revert the state to the last known 'Good' version."
+      },
+      {
+        "question": "What is 'Structural Re-evaluation' in context management?",
+        "answers": [
+          { "answer": "When the AI checks if the code is correctly indented." },
+          {
+            "answer": "Returning to the planning phase after multiple failed review cycles to reconsider the basic approach."
+          },
+          {
+            "answer": "Updating the version of TypeScript used in the project."
+          },
+          { "answer": "Changing the folder structure of the repository." }
+        ],
+        "answer": "Returning to the planning phase after multiple failed review cycles to reconsider the basic approach.",
+        "explanation": "If a Developer keeps failing reviews, it usually means the *Plan* was flawed. Re-evaluation stops the 'endless loop' and forces a smarter strategy."
+      },
+      {
+        "question": "What is 'Zero-Shot' vs 'Few-Shot' in the context of agent instructions?",
+        "answers": [
+          { "answer": "Zero-shot is free; Few-shot costs money." },
+          {
+            "answer": "Zero-shot gives no examples; Few-shot provides specific examples of correct behavior to guide the model."
+          },
+          { "answer": "Zero-shot is for beginners; Few-shot is for experts." },
+          { "answer": "There is no difference in modern models." }
+        ],
+        "answer": "Zero-shot gives no examples; Few-shot provides specific examples of correct behavior to guide the model.",
+        "explanation": "Few-shot examples are one of the most powerful 'Context' tools. They show the AI exactly how a PR summary or a Plan should look, significantly improving consistency."
+      },
+      {
+        "question": "In 'Context Management', what is the purpose of 'Summarization'?",
+        "answers": [
+          { "answer": "To make the code shorter so it runs faster." },
+          {
+            "answer": "To condense long histories or documents into their essential facts to save token space."
+          },
+          { "answer": "To write a short bio for the AI." },
+          { "answer": "To skip the middle part of a long book." }
+        ],
+        "answer": "To condense long histories or documents into their essential facts to save token space.",
+        "explanation": "When a conversation or a document is too long, the AI can 'summarize' it to keep the core meaning alive without hitting the context window limit."
+      },
+      {
+        "question": "What is 'Data Minimization' in AI Privacy governance?",
+        "answers": [
+          { "answer": "Using the smallest possible database." },
+          {
+            "answer": "The practice of only providing the AI with the specific data points it needs to solve the current task."
+          },
+          { "answer": "Deleting all the data after the AI is finished." },
+          { "answer": "Compressing files into .zip format." }
+        ],
+        "answer": "The practice of only providing the AI with the specific data points it needs to solve the current task.",
+        "explanation": "The less data you give the AI, the less chance there is for leakage or misuse. This is a core security principle in context management."
+      },
+      {
+        "question": "What is 'Cross-App Contamination'?",
+        "answers": [
+          { "answer": "When a bug in one app makes another app crash." },
+          {
+            "answer": "When an agent accidentally uses logic or assets from 'App A' while implementing a feature for 'App B'."
+          },
+          { "answer": "When the user has two tabs open at the same time." },
+          { "answer": "A method for sharing data between apps." }
+        ],
+        "answer": "When an agent accidentally uses logic or assets from 'App A' while implementing a feature for 'App B'.",
+        "explanation": "In monorepos, agents often get confused between similar folders. Strict scoping and 'Forbidden' rules in the context prevent this contamination."
+      },
+      {
+        "question": "What is the 'Review Iteration Limit'?",
+        "answers": [
+          { "answer": "The number of times a human can review the AI code." },
+          {
+            "answer": "A cap on how many times an agent can attempt to fix a specific review failure before being forced to stop."
+          },
+          { "answer": "The maximum number of files in a pull request." },
+          { "answer": "The speed limit for the deployment pipeline." }
+        ],
+        "answer": "A cap on how many times an agent can attempt to fix a specific review failure before being forced to stop.",
+        "explanation": "Iteration limits prevent 'Infinite Loops' where an agent makes the same mistake over and over, wasting tokens and time."
+      },
+      {
+        "question": "What is a 'Constitutional Agent'?",
+        "answers": [
+          { "answer": "An agent that helps write legal documents." },
+          {
+            "answer": "An agent tasked primarily with enforcing rules, invariants, and architectural laws over other agents."
+          },
+          { "answer": "An agent that is part of the government." },
+          { "answer": "The first agent created in a system." }
+        ],
+        "answer": "An agent tasked primarily with enforcing rules, invariants, and architectural laws over other agents.",
+        "explanation": "Like a Supreme Court, a Constitutional Agent (often the Orchestrator or Reviewer) doesn't build things; it ensures that what *is* built follows the rules."
+      },
+      {
+        "question": "Why is 'Deterministic Output' important for Commit Agents?",
+        "answers": [
+          { "answer": "Because it makes the commit messages look cooler." },
+          {
+            "answer": "To ensure that repository finalization follows a predictable, machine-readable format for CI/CD pipelines."
+          },
+          {
+            "answer": "So that the AI doesn't change its mind about the code."
+          },
+          { "answer": "To prevent the AI from using slang in its messages." }
+        ],
+        "answer": "To ensure that repository finalization follows a predictable, machine-readable format for CI/CD pipelines.",
+        "explanation": "If commit messages or file staging are random, automated deployment tools will fail. Determinism ensures the 'Machine-to-Machine' handoff works every time."
+      },
+      {
+        "question": "What is the ultimate purpose of 'AI Context Management'?",
+        "answers": [
+          { "answer": "To make the AI sound more human." },
+          {
+            "answer": "To provide the AI with the exact right amount of information to be accurate, safe, and efficient."
+          },
+          { "answer": "To help the AI pass the Turing Test." },
+          { "answer": "To replace the need for human developers." }
+        ],
+        "answer": "To provide the AI with the exact right amount of information to be accurate, safe, and efficient.",
+        "explanation": "Context is everything. Too little, and the AI hallucinates; too much, and it gets distracted. Management is the 'Goldilocks' balance of information."
+      }
+    ]
+  },
+  {
     "name": "World History (Basics)",
     "image": "../../assets/images/quizzes/history.png",
     "questions": [
@@ -24046,6 +24607,487 @@
       }
     ],
     "category": "🔬 Science"
+  },
+  {
+    "name": "Clean Code for the AI Era (Expert)",
+    "image": "http://googleusercontent.com/image_collection/image_retrieval/16362416198185106826",
+    "questions": [
+      {
+        "question": "Who is considered the 'second reader' of source code in modern development?",
+        "answers": [
+          { "answer": "The End User" },
+          { "answer": "The Project Manager" },
+          { "answer": "The Artificial Intelligence (AI)" },
+          { "answer": "The Compiler" }
+        ],
+        "answer": "The Artificial Intelligence (AI)",
+        "explanation": "Since 2025, AI has joined humans as a primary reader of code. It uses probabilistic token prediction to understand and help maintain projects, requiring a shift in how we write 'clean' code."
+      },
+      {
+        "question": "What is the primary mechanism AI models use to process and remember information in a session?",
+        "answers": [
+          { "answer": "Hard Drive Storage" },
+          { "answer": "The Context Window" },
+          { "answer": "Long-Term Memory" },
+          { "answer": "SQL Databases" }
+        ],
+        "answer": "The Context Window",
+        "explanation": "The context window is the limit of info an AI can 'see' at once. Because AI models are stateless, they effectively forget everything between separate calls unless it fits in this window."
+      },
+      {
+        "question": "What is the smallest unit of language that AI models use to process text?",
+        "answers": [
+          { "answer": "Pixels" },
+          { "answer": "Bits" },
+          { "answer": "Tokens" },
+          { "answer": "Functions" }
+        ],
+        "answer": "Tokens",
+        "explanation": "Tokens are small units of language (parts of words or whole words). AI models calculate probability based on these tokens to generate the next part of your code."
+      },
+      {
+        "question": "For a developer budgeting context, what is the standard estimate for English words to tokens?",
+        "answers": [
+          { "answer": "1 word = 0.5 tokens" },
+          { "answer": "1 word = 1.5 tokens" },
+          { "answer": "1 word = 10 tokens" },
+          { "answer": "1 word = 100 tokens" }
+        ],
+        "answer": "1 word = 1.5 tokens",
+        "explanation": "While it varies by tokenizer, 1.5 tokens per word is the standard rule of thumb. This helps you calculate how much of your project background can fit in a prompt."
+      },
+      {
+        "question": "Why are AI models described as 'stateless'?",
+        "answers": [
+          { "answer": "They don't belong to a specific country" },
+          { "answer": "They remember nothing between separate API calls" },
+          { "answer": "They have zero bugs" },
+          { "answer": "They cannot process CSS styles" }
+        ],
+        "answer": "They remember nothing between separate API calls",
+        "explanation": "AI models are stateless, meaning every time you send a message, it's like their 'first day' on the job. You must provide all necessary context every time."
+      },
+      {
+        "question": "In the context formula T_context = C_max - T_task, what is the risk of a high T_task?",
+        "answers": [
+          { "answer": "It uses too much electricity" },
+          {
+            "answer": "It leaves less room for the AI to remember project background"
+          },
+          { "answer": "It speeds up the generation too much" },
+          { "answer": "It deletes the local source code" }
+        ],
+        "answer": "It leaves less room for the AI to remember project background",
+        "explanation": "The more complex the current task (T_task), the less space is left in the context window (C_max) for the AI to track overall project goals."
+      },
+      {
+        "question": "What are 'Semantic Anchors' in source code?",
+        "answers": [
+          { "answer": "Comments that anchor the top of a file" },
+          {
+            "answer": "Descriptive names that ground the AI in explicit intent"
+          },
+          { "answer": "Special brackets used in HTML" },
+          { "answer": "Git tags used for version control" }
+        ],
+        "answer": "Descriptive names that ground the AI in explicit intent",
+        "explanation": "Natural language names (like PascalCase or camelCase) provide semantic signals. AI uses these anchors to avoid guessing or hallucinating logic."
+      },
+      {
+        "question": "Why is natural language naming better for AI than short abbreviations?",
+        "answers": [
+          { "answer": "Abbreviations are illegal in modern IDEs" },
+          { "answer": "AI is trained on massive datasets of natural language" },
+          { "answer": "Natural language uses fewer tokens than abbreviations" },
+          { "answer": "Short names cause physical damage to AI servers" }
+        ],
+        "answer": "AI is trained on massive datasets of natural language",
+        "explanation": "Since models learn from human communication, they 'understand' a variable named 'CurrentCustomerBalance' much better than 'c_bal'."
+      },
+      {
+        "question": "Which traditional principle is most challenged by AI coding assistance?",
+        "answers": [
+          { "answer": "Naming Conventions" },
+          { "answer": "DRY (Don't Repeat Yourself)" },
+          { "answer": "KISS (Keep It Simple)" },
+          { "answer": "Separation of Concerns" }
+        ],
+        "answer": "DRY (Don't Repeat Yourself)",
+        "explanation": "DRY aims to eliminate redundancy, but for AI, deep abstractions to avoid repetition can hide logic. Moderate repetition often works better."
+      },
+      {
+        "question": "What does the 'WET' principle stand for as an alternative to DRY?",
+        "answers": [
+          { "answer": "Web Enhanced Technology" },
+          { "answer": "Write Everything Twice" },
+          { "answer": "While Executing Tasks" },
+          { "answer": "Wait Every Time" }
+        ],
+        "answer": "Write Everything Twice",
+        "explanation": "WET is the opposite of DRY. In AI development, it suggests keeping logic local and self-contained, even if it's repeated, to maintain context."
+      },
+      {
+        "question": "How is 'Indirection' defined in software design?",
+        "answers": [
+          { "answer": "Writing code without a direct plan" },
+          {
+            "answer": "Referencing something using a name or container instead of the value"
+          },
+          { "answer": "Using AI to write code for you" },
+          { "answer": "A bug that occurs only in the back-end" }
+        ],
+        "answer": "Referencing something using a name or container instead of the value",
+        "explanation": "Indirection is like a scavenger hunt where you get a pointer instead of the data. Too many levels (hops) make the AI lose the logical thread."
+      },
+      {
+        "question": "What is the recommended limit for 'hops' of indirection for AI clarity?",
+        "answers": [
+          { "answer": "1-2 levels" },
+          { "answer": "Exactly 10 levels" },
+          { "answer": "Unlimited hops" },
+          { "answer": "Zero (No indirection allowed)" }
+        ],
+        "answer": "1-2 levels",
+        "explanation": "When logic is spread across more than 2 files or functions (A calls B which calls C), the AI's accuracy in tracking the flow drops significantly."
+      },
+      {
+        "question": "When documenting for AI, what is the 'Golden Rule'?",
+        "answers": [
+          { "answer": "Describe what every line of code does" },
+          {
+            "answer": "Document the 'Why' (intent) because the AI can read the 'What'"
+          },
+          { "answer": "Only use emojis in your comments" },
+          { "answer": "Hide your comments from the AI" }
+        ],
+        "answer": "Document the 'Why' (intent) because the AI can read the 'What'",
+        "explanation": "AI is great at analyzing syntax to see what happens, but it cannot guess the strategic reason or 'Why' a specific choice was made."
+      },
+      {
+        "question": "Why is documenting 'What' the code does less important for AI?",
+        "answers": [
+          { "answer": "AI models don't read comments" },
+          {
+            "answer": "AI models can already analyze syntax to understand the 'What'"
+          },
+          { "answer": "It uses too many tokens" },
+          { "answer": "It is considered rude to the AI" }
+        ],
+        "answer": "AI models can already analyze syntax to understand the 'What'",
+        "explanation": "Since models are trained on code, they can easily figure out the logic. They need help with the intent and business constraints."
+      },
+      {
+        "question": "What is the 'Lost in the Middle' phenomenon?",
+        "answers": [
+          { "answer": "Forgetting the middle of a code file" },
+          {
+            "answer": "AI models performing worse on info in the center of a prompt"
+          },
+          { "answer": "Code that isn't front-end or back-end" },
+          { "answer": "A bug that happens at 50% CPU usage" }
+        ],
+        "answer": "AI models performing worse on info in the center of a prompt",
+        "explanation": "AI models weight information at the start and end of a long prompt much higher than info buried in the middle."
+      },
+      {
+        "question": "What is 'Context Hygiene' in an AI-assisted workflow?",
+        "answers": [
+          { "answer": "Keeping your monitor clean" },
+          {
+            "answer": "Managing and clearing irrelevant info from the session"
+          },
+          { "answer": "Using only high-quality GPUs" },
+          { "answer": "Indenting your code with tabs" }
+        ],
+        "answer": "Managing and clearing irrelevant info from the session",
+        "explanation": "Context hygiene involves resetting sessions and removing 'noise' to keep the AI focused on the current task without distractions."
+      },
+      {
+        "question": "What is 'Spec-First Development'?",
+        "answers": [
+          { "answer": "Writing the code first, then the specs" },
+          {
+            "answer": "Drafting a detailed plan (spec.md) before generating code"
+          },
+          { "answer": "Only writing code for specialized servers" },
+          { "answer": "Testing code before writing it" }
+        ],
+        "answer": "Drafting a detailed plan (spec.md) before generating code",
+        "explanation": "Brainstorming requirements in a Markdown file ensures the human and AI are aligned before any code is actually generated."
+      },
+      {
+        "question": "What is the primary benefit of the Single Responsibility Principle (SRP) for AI?",
+        "answers": [
+          { "answer": "It makes the binary smaller" },
+          { "answer": "It allows 'Context Packing' of small, modular units" },
+          { "answer": "It prevents the AI from getting confused" },
+          { "answer": "It removes the need for naming variables" }
+        ],
+        "answer": "It allows 'Context Packing' of small, modular units",
+        "explanation": "When functions do one thing, you can pack only the relevant modules into the context window, keeping the prompt clean and focused."
+      },
+      {
+        "question": "AI models are best described as what kind of engines?",
+        "answers": [
+          { "answer": "Logic deduction engines" },
+          { "answer": "Pattern-recognition and token prediction engines" },
+          { "answer": "Mechanical calculation engines" },
+          { "answer": "Real-time thinking engines" }
+        ],
+        "answer": "Pattern-recognition and token prediction engines",
+        "explanation": "LLMs predict the most likely next word based on patterns they've recognized. Consistent code helps them predict more accurately."
+      },
+      {
+        "question": "What is the risk of using 'Clever Code' (hacks) with AI?",
+        "answers": [
+          { "answer": "It is too expensive to run" },
+          {
+            "answer": "The AI may refactor it into a standard but broken form"
+          },
+          { "answer": "It crashes the AI's context window" },
+          { "answer": "Clever code is only for humans" }
+        ],
+        "answer": "The AI may refactor it into a standard but broken form",
+        "explanation": "AI prefers standard patterns. During a refactor, it might 'fix' a non-obvious optimization, breaking the intended functionality."
+      },
+      {
+        "question": "Which model is noted for repo-wide analysis due to its huge context window?",
+        "answers": [
+          { "answer": "GPT-4o" },
+          { "answer": "Gemini 1.5 Pro" },
+          { "answer": "Llama 3" },
+          { "answer": "Claude 3 Haiku" }
+        ],
+        "answer": "Gemini 1.5 Pro",
+        "explanation": "Gemini 1.5 Pro has a massive context window (millions of tokens), making it the best choice for analyzing entire repositories at once."
+      },
+      {
+        "question": "Which model is a 2026 favorite for high-accuracy daily coding tasks?",
+        "answers": [
+          { "answer": "DeepSeek R1" },
+          { "answer": "Claude 3.5 Sonnet" },
+          { "answer": "GPT-3.5" },
+          { "answer": "Mixtral" }
+        ],
+        "answer": "Claude 3.5 Sonnet",
+        "explanation": "Claude 3.5 Sonnet is widely considered a top choice for coding because of its logical accuracy and ability to follow complex instructions."
+      },
+      {
+        "question": "What is 'Selective Context Packing'?",
+        "answers": [
+          { "answer": "Selecting only the files relevant to the current task" },
+          { "answer": "Packing as much code as possible into every prompt" },
+          { "answer": "Using a zip file for your code" },
+          { "answer": "Renaming all files to .txt" }
+        ],
+        "answer": "Selecting only the files relevant to the current task",
+        "explanation": "To prevent focus loss, only show the AI the specific code it needs to work on. Too much irrelevant info causes 'context rot'."
+      },
+      {
+        "question": "What is 'Abstraction' in programming simplified?",
+        "answers": [
+          { "answer": "Removing code to make it faster" },
+          { "answer": "Hiding complex details behind a simple interface" },
+          { "answer": "Writing code in abstract art style" },
+          { "answer": "A method of encrypting passwords" }
+        ],
+        "answer": "Hiding complex details behind a simple interface",
+        "explanation": "Like a 'Start' button hides the internal plumbing of a washer, abstraction hides complexity so you don't have to see every detail."
+      },
+      {
+        "question": "What is 'Curly's Law'?",
+        "answers": [
+          { "answer": "Always use curly braces" },
+          { "answer": "An entity should do one thing, and one thing only" },
+          { "answer": "Never code with wet hands" },
+          { "answer": "Indents must be four spaces" }
+        ],
+        "answer": "An entity should do one thing, and one thing only",
+        "explanation": "Curly's Law is the foundation of Single Responsibility. If a function does more than one thing, it's harder for humans and AI to manage."
+      },
+      {
+        "question": "Why is 'Context Window > Cleverness' a dominant rule?",
+        "answers": [
+          { "answer": "Clever code is illegal" },
+          {
+            "answer": "AI attention is more accurate with adjacent, simple code"
+          },
+          { "answer": "Simple code uses zero tokens" },
+          { "answer": "Cleverness makes the AI jealous" }
+        ],
+        "answer": "AI attention is more accurate with adjacent, simple code",
+        "explanation": "The transformer attention mechanism weights tokens more accurately when they are physically and logically closer together."
+      },
+      {
+        "question": "What is 'Vibe Coding'?",
+        "answers": [
+          { "answer": "Coding while listening to music" },
+          { "answer": "Generating code based on vague prompts without a plan" },
+          { "answer": "Using only trendy libraries" },
+          { "answer": "A method of peer review" }
+        ],
+        "answer": "Generating code based on vague prompts without a plan",
+        "explanation": "Vibe coding is ad-hoc and lacks discipline. It often results in messy architecture compared to spec-first engineering."
+      },
+      {
+        "question": "What is the purpose of a rules file like CLAUDE.md?",
+        "answers": [
+          { "answer": "To store passwords" },
+          {
+            "answer": "To provide style guides and architectural rules for the AI"
+          },
+          { "answer": "To act as a secondary compiler" },
+          { "answer": "To list the team's email addresses" }
+        ],
+        "answer": "To provide style guides and architectural rules for the AI",
+        "explanation": "Rules files act as 'institutional memory' for the AI, helping it follow your specific team conventions automatically."
+      },
+      {
+        "question": "What does it mean if an abstraction 'leaks'?",
+        "answers": [
+          { "answer": "The file is too large" },
+          {
+            "answer": "The hidden internal details are showing through the interface"
+          },
+          { "answer": "It is sharing data with other apps" },
+          { "answer": "The code is being deleted automatically" }
+        ],
+        "answer": "The hidden internal details are showing through the interface",
+        "explanation": "A leaky abstraction fails to hide complexity, forcing you to understand the internals just to use the simple interface."
+      },
+      {
+        "question": "What is 'Technical Debt'?",
+        "answers": [
+          { "answer": "Money owed to cloud providers" },
+          {
+            "answer": "The future cost of refactoring poorly written or inconsistent code"
+          },
+          { "answer": "A method of buying computer hardware" },
+          { "answer": "Using an outdated version of Windows" }
+        ],
+        "answer": "The future cost of refactoring poorly written or inconsistent code",
+        "explanation": "If you take shortcuts now, you create 'debt' that must be paid back with interest (harder work) later when you need to change the code."
+      },
+      {
+        "question": "What is the 'Boy-Scout Rule' of coding?",
+        "answers": [
+          { "answer": "Always code outdoors" },
+          { "answer": "Leave the code in a better state than you found it" },
+          { "answer": "Only use code that has been validated" },
+          { "answer": "Help others learn to code" }
+        ],
+        "answer": "Leave the code in a better state than you found it",
+        "explanation": "Refactoring small things as you go ensures the codebase stays clean and readable for both humans and AI models."
+      },
+      {
+        "question": "What is 'Separation of Concerns'?",
+        "answers": [
+          { "answer": "Worrying about every part of the project at once" },
+          { "answer": "Dividing a program into sections for distinct jobs" },
+          { "answer": "Splitting the front-end and back-end teams" },
+          { "answer": "Keeping your personal and professional code separate" }
+        ],
+        "answer": "Dividing a program into sections for distinct jobs",
+        "explanation": "Separation of concerns allows you to isolate logic (like UI vs Database), making it easier to pack only the relevant context for AI."
+      },
+      {
+        "question": "Why is 'Write Everything Twice' (WET) sometimes safer than DRY?",
+        "answers": [
+          { "answer": "It is faster to type" },
+          {
+            "answer": "It reduces coupling, making it easier to change code later"
+          },
+          { "answer": "AI models prefer duplicated code" },
+          { "answer": "It uses more storage" }
+        ],
+        "answer": "It reduces coupling, making it easier to change code later",
+        "explanation": "If two things share code but change for different reasons, duplication is better than abstraction, which makes code brittle."
+      },
+      {
+        "question": "What is the 'Verification Cycle' in AI development?",
+        "answers": [
+          { "answer": "A monthly review of all AI code" },
+          { "answer": "A feedback loop of 'write code → run tests → fix'" },
+          { "answer": "Confirming the AI's identity" },
+          { "answer": "Asking the AI to verify its own logic" }
+        ],
+        "answer": "A feedback loop of 'write code → run tests → fix'",
+        "explanation": "AI is a 'BS machine' that doesn't run its own code. Humans must run verification cycles to confirm it actually works."
+      },
+      {
+        "question": "What is 'Adjacency' in Clean Code for AI?",
+        "answers": [
+          { "answer": "Alphabetizing your functions" },
+          {
+            "answer": "Keeping related logic and its usage in the same block or file"
+          },
+          { "answer": "Moving all data to a cloud server" },
+          { "answer": "Using similar variable names" }
+        ],
+        "answer": "Keeping related logic and its usage in the same block or file",
+        "explanation": "Adjacency minimizes the 'hops' for the AI's attention mechanism, resulting in more accurate code generation."
+      },
+      {
+        "question": "How should you treat the AI's code output?",
+        "answers": [
+          { "answer": "As absolute production-ready truth" },
+          { "answer": "As an unreviewed pull request from a junior developer" },
+          { "answer": "As a virus that should be deleted" },
+          { "answer": "As a finished product" }
+        ],
+        "answer": "As an unreviewed pull request from a junior developer",
+        "explanation": "AI is smart but fallible. You must always review, validate, and test its code before merging it into your project."
+      },
+      {
+        "question": "What is the 'Rule of Three' for abstraction?",
+        "answers": [
+          { "answer": "Use three AI models for every task" },
+          {
+            "answer": "Abstract code only after you see it duplicated three times"
+          },
+          { "answer": "A function should only have three lines" },
+          { "answer": "Never use more than three variables" }
+        ],
+        "answer": "Abstract code only after you see it duplicated three times",
+        "explanation": "This rule prevents 'premature abstraction' where you simplify code before you truly understand the common pattern."
+      },
+      {
+        "question": "What is a 'Sub-agent' in an agentic coding workflow?",
+        "answers": [
+          { "answer": "A smaller version of a computer" },
+          { "answer": "An AI model spawned for a specific specialized task" },
+          { "answer": "A human helper who edits code" },
+          { "answer": "A browser plugin" }
+        ],
+        "answer": "An AI model spawned for a specific specialized task",
+        "explanation": "Advanced workflows use an 'Orchestrator' model to manage specialized 'Sub-agent' models for research or implementation."
+      },
+      {
+        "question": "What is the 'Golden Rule' of AI-native Clean Code?",
+        "answers": [
+          { "answer": "Only code in Python" },
+          {
+            "answer": "Write code for a reader with zero context and no memory"
+          },
+          { "answer": "Use AI for 100% of your project" },
+          { "answer": "Never document your code" }
+        ],
+        "answer": "Write code for a reader with zero context and no memory",
+        "explanation": "Treat the AI as a new colleague on their first day. If they can understand it without asking questions, the AI will handle it well."
+      },
+      {
+        "question": "In 2026, what is the primary role of the human engineer?",
+        "answers": [
+          { "answer": "Writing every line of code manually" },
+          { "answer": "Strategic orchestrator, architect, and debugger" },
+          { "answer": "Entering data for AI models" },
+          { "answer": "Marketing the software" }
+        ],
+        "answer": "Strategic orchestrator, architect, and debugger",
+        "explanation": "As AI handles routine implementation, humans focus on high-level system design, integration, and verification."
+      }
+    ],
+    "category": "💻 Software Engineering"
   },
   {
     "name": "Physics (Basics)",
