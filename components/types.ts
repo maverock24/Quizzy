@@ -1,6 +1,7 @@
 export type Quiz = {
   name: string;
   category?: string;
+  image?: string;
   questions: QuizQuestion[];
   noShuffle?: boolean; // If true, questions will be shown in order (useful for tutorials/experiments)
 };

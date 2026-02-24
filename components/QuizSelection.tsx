@@ -9,9 +9,26 @@ import {
   SectionList,
   Easing,
   Platform,
+  Image,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import * as Haptics from 'expo-haptics';
+
+const Illustrations: { [key: string]: any } = {
+  'programming.png': require('../assets/images/quizzes/programming.png'),
+  'ai_ml.png': require('../assets/images/quizzes/ai_ml.png'),
+  'science.png': require('../assets/images/quizzes/science.png'),
+  'history.png': require('../assets/images/quizzes/history.png'),
+  'geography.png': require('../assets/images/quizzes/geography.png'),
+  'math.png': require('../assets/images/quizzes/math.png'),
+  'security.png': require('../assets/images/quizzes/security.png'),
+  'space.png': require('../assets/images/quizzes/space.png'),
+  'kids.png': require('../assets/images/quizzes/kids.png'),
+  'nature.png': require('../assets/images/quizzes/nature.png'),
+  'health.png': require('../assets/images/quizzes/health.png'),
+  'finance.png': require('../assets/images/quizzes/finance.png'),
+  'entertainment.png': require('../assets/images/quizzes/entertainment.png'),
+};
 
 type QuizSelectionProps = {
   quizzes: any[];
@@ -274,9 +291,19 @@ const QuizButton: React.FC<{
             ]}
           />
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText} numberOfLines={1}>
-              {item.name}
-            </Text>
+            {item.image ? (
+              <Image
+                source={Illustrations[item.image.split('/').pop() || '']}
+                style={styles.quizImage}
+                resizeMode="contain"
+                accessibilityLabel={item.name}
+              />
+            ) : null}
+            <View style={{ flex: 1 }}>
+              <Text style={styles.buttonText} numberOfLines={1}>
+                {item.name}
+              </Text>
+            </View>
             <View style={styles.questionCountBadge}>
               <Text style={styles.questionCountText}>
                 {item.questions?.length || 0} 📝
@@ -289,11 +316,17 @@ const QuizButton: React.FC<{
   );
 };
 
+// ... (imports remain)
+import { useRouter } from 'expo-router';
+
+// ... (previous helper components remain)
+
 export const QuizSelection: React.FC<QuizSelectionProps> = ({
   quizzes,
   handleQuizSelection,
 }) => {
   const { t } = useTranslation();
+  const router = useRouter();
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(['all']),
   );
@@ -301,6 +334,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
 
   // Group quizzes by category
   const groupedQuizzes = useMemo(() => {
+    // ... (grouping logic remains same)
     const groups: { [key: string]: any[] } = {};
     const uncategorized: any[] = [];
 
@@ -315,7 +349,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
       }
     });
 
-    // Sort categories alphabetically (ignoring emoji prefix)
     const sections = Object.keys(groups)
       .sort((a, b) => {
         const textA = a.replace(/^[\p{Emoji}\s]+/u, '').toLowerCase();
@@ -328,7 +361,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         count: groups[category].length,
       }));
 
-    // Add uncategorized at the end if any
     if (uncategorized.length > 0) {
       sections.push({
         title: t('other') || 'Other',
@@ -349,7 +381,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
       } else {
         newSet.add(category);
         setRecentlyExpanded(category);
-        // Clear recently expanded after animation completes
         setTimeout(() => setRecentlyExpanded(null), 500);
       }
       return newSet;
@@ -378,6 +409,27 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
     />
   );
 
+  const MultiplayerHeader = () => (
+    <View style={{ marginBottom: 10, paddingHorizontal: 8 }}>
+      <Pressable
+        onPress={() => router.push('/multiplayer')}
+        style={({ pressed }) => [
+          styles.answerButton,
+          {
+            backgroundColor: pressed ? 'rgb(40, 180, 140)' : 'rgb(52, 211, 153)', // Greenish for distinction
+            marginBottom: 10,
+            borderWidth: 1,
+            borderColor: 'rgba(255,255,255,0.3)'
+          }
+        ]}
+      >
+        <View style={styles.buttonContent}>
+          <Text style={[styles.buttonText, { textAlign: 'center', fontSize: 18 }]}>⚔️ Multiplayer Mode</Text>
+        </View>
+      </Pressable>
+    </View>
+  );
+
   // If no categories exist, use simple FlatList
   if (
     groupedQuizzes.length <= 1 &&
@@ -389,6 +441,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         <FlatList
           style={{ paddingVertical: 10 }}
           data={quizzes}
+          ListHeaderComponent={MultiplayerHeader}
           keyExtractor={(item) => item.name}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
@@ -413,6 +466,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
           ...section,
           data: expandedCategories.has(section.title) ? section.data : [],
         }))}
+        ListHeaderComponent={MultiplayerHeader}
         keyExtractor={(item) => item.name}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
@@ -515,5 +569,11 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 14,
     fontWeight: '600',
+  },
+  quizImage: {
+    width: 50,
+    height: 50,
+    marginRight: 12,
+    borderRadius: 8,
   },
 });

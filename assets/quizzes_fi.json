@@ -921,7 +921,8 @@
         "explanation": "Syyskylvö on tapa hyödyntää luonnon omaa rytmiä ja saada etumatkaa keväällä. Joidenkin kylmänkestävien lajien siemenet voidaan kylvää maanmuokkauksen jälkeen myöhään syksyllä, kun maa on jo kylmää, mutta ei vielä jäässä. Tavoitteena on, että siemenet eivät idä syksyllä, vaan jäävät maahan odottamaan. Heti kun olosuhteet keväällä ovat sopivat, ne itävät ja aloittavat kasvunsa paljon aikaisemmin kuin keväällä kylvetyt siemenet. Tämä sopii erinomaisesti esimerkiksi palsternakalle, mustajuurelle, tillille ja kehäkukalle."
       }
     ],
-    "category": "🌱 Luonto & Puutarha"
+    "category": "🌱 Luonto & Puutarha",
+    "image": "../../assets/images/quizzes/nature.png"
   },
   {
     "name": "Kirjasto- ja tietopalvelualan perusteet",
@@ -4992,7 +4993,8 @@
         "explanation": "Vaikka katajanmarjoiksi yleisesti kutsutaan, katajan sinimustat muodostelmat eivät ole kasvitieteellisessä mielessä aitoja marjoja. Kataja on havupuu, paljassiemeninen kasvi, ja paljassiemeniset eivät tuota kukkia tai hedelmiä. 'Marja' on itse asiassa pitkälle erikoistunut emikäpy. Sen suomut ovat epätavallisen meheviä ja ovat sulautuneet yhteen muodostaen marjamaisen rakenteen, joka kätkee siemenet sisäänsä. Tämä on esimerkki konvergentista evoluutiosta, jossa rakenne kehittyy muistuttamaan hedelmää houkutellakseen eläimiä siementen levittäjiksi."
       }
     ],
-    "category": "🌱 Luonto & Puutarha"
+    "category": "🌱 Luonto & Puutarha",
+    "image": "../../assets/images/quizzes/nature.png"
   },
   {
     "name": "Ravitsemus",
@@ -5910,7 +5912,8 @@
         "explanation": "Aamiaisen tärkeys on yksilöllistä. Vaikka jotkut ihmiset ovat aamulla nälkäisiä ja hyötyvät tasapainoisesta aamiaisesta, toiset pärjäävät hyvin ilman. Tärkeää on koko päivän ravitsemuksen kokonaistasapaino."
       }
     ],
-    "category": "🥗 Terveys & Ravinto"
+    "category": "🥗 Terveys & Ravinto",
+    "image": "../../assets/images/quizzes/health.png"
   },
   {
     "name": "Maailmanhistoria",
@@ -6486,7 +6489,8 @@
         "explanation": "Saksan demokraattinen tasavalta (Itä-Saksa) yhdistyi Saksan liittotasavaltaan (Länsi-Saksa) 3. lokakuuta 1990. Tämä tapahtui Berliinin muurin murtumisen jälkeen."
       }
     ],
-    "category": "📚 Historia"
+    "category": "📚 Historia",
+    "image": "../../assets/images/quizzes/history.png"
   },
   {
     "name": "Kemia",
@@ -7043,7 +7047,8 @@
         "explanation": "Eksotermisessä reaktiossa energia vapautuu ympäristöön, jolloin ympäristön lämpötila nousee. Reaktion entalpia on negatiivinen (ΔH < 0)."
       }
     ],
-    "category": "🔬 Tiede"
+    "category": "🔬 Tiede",
+    "image": "../../assets/images/quizzes/science.png"
   },
   {
     "name": "Biologia",
@@ -7619,7 +7624,8 @@
         "explanation": "Jokainen entsyymi toimii optimaalisesti tietyssä lämpötilassa ja pH:ssa. Ihmisen entsyymit toimivat yleensä parhaiten 37°C:ssa ja fysiologisessa pH:ssa (noin 7,4)."
       }
     ],
-    "category": "🔬 Tiede"
+    "category": "🔬 Tiede",
+    "image": "../../assets/images/quizzes/science.png"
   },
   {
     "name": "Fysiikka",
@@ -8195,7 +8201,8 @@
         "explanation": "Rydbergin vakio R∞ ≈ 1,097 × 10⁷ m⁻¹ esiintyy vetykaakaavan spektriviivoja kuvaavissa kaavoissa. Se liittyy atomin emissio- ja absorptiospektreihin."
       }
     ],
-    "category": "🔬 Tiede"
+    "category": "🔬 Tiede",
+    "image": "../../assets/images/quizzes/science.png"
   },
   {
     "name": "Eläinkunta",
@@ -8771,11 +8778,12 @@
         "explanation": "Orangutangeilla on voimakkain puristusvoima kaikista kädellisistä, kyky puristaa 272 kilogramman voimalla neliötuumaa kohden, noin 7 kertaa vahvemmin kuin ihmiset."
       }
     ],
-    "category": "🐾 Eläimet & Luonto"
+    "category": "🐾 Eläimet & Luonto",
+    "image": "../../assets/images/quizzes/nature.png"
   },
   {
     "name": "Suomen Historian Tietovisa",
-    "image": "https://images.unsplash.com/photo-1579563229278-6c83a713b1c4",
+    "image": "../../assets/images/quizzes/history.png",
     "questions": [
       {
         "question": "Minä päivänä Suomi julistautui itsenäiseksi?",
@@ -9162,7 +9170,7 @@
   },
   {
     "name": "Suuri Muumitietovisa",
-    "image": "https://images.unsplash.com/photo-1629875375355-502a56762193",
+    "image": "../../assets/images/quizzes/entertainment.png",
     "questions": [
       {
         "question": "Kuka on Muumien luoja, eli kirjailija ja taiteilija, joka kirjoitti ja kuvitti Muumi-kirjat?",
