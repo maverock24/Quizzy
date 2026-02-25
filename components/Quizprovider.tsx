@@ -11,7 +11,7 @@ import React, {
   useState,
 } from 'react';
 import { Platform } from 'react-native';
-import { Quiz } from './types';
+import { CategoryEssay, Quiz } from './types';
 
 type QuizContextType = {
   // User personalization
@@ -64,6 +64,9 @@ type QuizContextType = {
   setTimerEnabled: (enabled: boolean) => void;
   timerDuration: number;
   setTimerDuration: (duration: number) => void;
+  // Essays
+  essays: CategoryEssay[];
+  getEssayByCategory: (category: string) => CategoryEssay | undefined;
 };
 
 const QuizContext = createContext<QuizContextType | undefined>(undefined);
@@ -89,6 +92,12 @@ const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
   );
 };
 
+// Load essays based on current language (only English for now)
+const getLocalEssays = (): CategoryEssay[] => {
+  // Only English essays exist for now; extend with de/fi when available
+  return require('../assets/essays_en.json');
+};
+
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
@@ -105,6 +114,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   >(true);
   const [showExplanation, setShowExplanationState] = useState<boolean>(false);
   const [quizzes, setQuizzes] = useState<Quiz[]>(getLocalQuizzes());
+  const [essays] = useState<CategoryEssay[]>(getLocalEssays());
   const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] = useState<
     number
   >(0);
@@ -372,6 +382,10 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTimerEnabledState(false);
     setTimerDurationState(5);
   }, []);
+
+  const getEssayByCategory = useCallback((category: string) => {
+    return essays.find(e => e.category === category);
+  }, [essays]);
 
   // Function to check for and download updated quizzes
   const checkForQuizzesUpdate = async (): Promise<boolean> => {
@@ -766,6 +780,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setTimerEnabled,
         timerDuration,
         setTimerDuration,
+        // Essays
+        essays,
+        getEssayByCategory,
       }}
     >
       {children}
