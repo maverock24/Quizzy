@@ -18,6 +18,15 @@ import {
     SRSReviewQuestion,
 } from './SRSManager';
 
+const shuffleArray = <T,>(array: T[]): T[] => {
+    const shuffled = [...array];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+};
+
 interface SRSDailyWarmupProps {
     onBack: () => void;
 }
@@ -37,6 +46,13 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
 
     const fadeAnim = useRef(new Animated.Value(0)).current;
     const slideAnim = useRef(new Animated.Value(30)).current;
+
+    // Must be called before any early returns to satisfy Rules of Hooks
+    const currentQuestion = questions[currentIndex];
+    const shuffledAnswers = React.useMemo(
+        () => (currentQuestion ? shuffleArray(currentQuestion.answers) : []),
+        [currentIndex, currentQuestion]
+    );
 
     useEffect(() => {
         loadQuestions();
@@ -104,15 +120,6 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
         }
     };
 
-    const shuffleArray = <T,>(array: T[]): T[] => {
-        const shuffled = [...array];
-        for (let i = shuffled.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-        }
-        return shuffled;
-    };
-
     if (loading) {
         return (
             <View style={styles.container}>
@@ -171,12 +178,6 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
             </View>
         );
     }
-
-    const currentQuestion = questions[currentIndex];
-    const shuffledAnswers = React.useMemo(
-        () => shuffleArray(currentQuestion.answers),
-        [currentIndex]
-    );
 
     return (
         <View style={styles.container}>

@@ -3,14 +3,15 @@ import FlashcardCarousel from '@/components/Flashcards';
 import Flashcards from '@/components/Flashcards';
 import { Question } from '@/components/Question';
 import { Reader } from '@/components/Reader';
+import { EssayReader } from '@/components/EssayReader';
 import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { QuizTimer } from '@/components/QuizTimer';
-import { Answer, Quiz, QuizQuestion } from '@/components/types';
+import { Answer, CategoryEssay, Quiz, QuizQuestion } from '@/components/types';
 import { t } from 'i18next';
-import { useEffect, useState, useCallback, useRef } from 'react';
+import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useReadAloud } from '@/components/useReadAloud';
@@ -71,6 +72,8 @@ export default function TabOneScreen() {
     setTotalLostGames,
     timerEnabled,
     timerDuration,
+    essays,
+    getEssayByCategory,
   } = useQuiz();
   const [timerActive, setTimerActive] = useState<boolean>(false);
   const [timeExpired, setTimeExpired] = useState<boolean>(false);
@@ -93,6 +96,15 @@ export default function TabOneScreen() {
   const [isRetryMode, setIsRetryMode] = useState<boolean>(false);
   // Track the last quiz name for retry functionality (persists after quiz ends)
   const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(null);
+
+  // Essay state
+  const [selectedEssay, setSelectedEssay] = useState<CategoryEssay | null>(null);
+
+  // Derive which categories have essays (for showing the Read button)
+  const categoriesWithEssays = useMemo(
+    () => new Set(essays.map(e => e.category)),
+    [essays],
+  );
 
   useEffect(() => {
     if (selectedQuiz) {
@@ -210,6 +222,7 @@ export default function TabOneScreen() {
     setTimeExpired(false);
     setWrongAnswersThisQuiz([]);
     setIsRetryMode(false);
+    setSelectedEssay(null);
   };
 
   // Handle time up - end the quiz
@@ -333,7 +346,7 @@ export default function TabOneScreen() {
         style={styles.safeArea}
       >
         <View style={styles.container}>
-          {!selectedQuiz && !scoreVisible && (
+          {!selectedQuiz && !scoreVisible && !selectedEssay && (
             <>
               {/* Gamification Header - Streak and XP */}
               <View style={styles.gamificationHeader}>
@@ -348,10 +361,31 @@ export default function TabOneScreen() {
               />
             </>
           )}
-          {!selectedQuiz && !scoreVisible && (
+          {!selectedQuiz && !scoreVisible && !selectedEssay && (
             <QuizSelection
               quizzes={quizzes}
               handleQuizSelection={handleQuizSelection}
+              onReadEssay={(category) => {
+                const essay = getEssayByCategory(category);
+                if (essay) setSelectedEssay(essay);
+              }}
+              categoriesWithEssays={categoriesWithEssays}
+            />
+          )}
+
+          {/* Show Essay Reader */}
+          {selectedEssay && !selectedQuiz && !scoreVisible && (
+            <EssayReader
+              essay={selectedEssay}
+              onBack={() => setSelectedEssay(null)}
+              onStartQuiz={() => {
+                // Find the first quiz in this category and start it
+                const firstQuiz = quizzes.find(
+                  (q: Quiz) => q.category === selectedEssay.category
+                );
+                setSelectedEssay(null);
+                if (firstQuiz) handleQuizSelection(firstQuiz);
+              }}
             />
           )}
 

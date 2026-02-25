@@ -72,3 +72,15 @@ export type SRSQuestionData = {
   easeFactor: number;
   repetitions: number;
 };
+
+// Category Essays — educational reading material per quiz category
+export type EssaySection = {
+  heading: string;
+  content: string;
+};
+
+export type CategoryEssay = {
+  category: string;
+  title: string;
+  sections: EssaySection[];
+};

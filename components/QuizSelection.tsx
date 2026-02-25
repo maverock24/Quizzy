@@ -3,36 +3,25 @@ import {
   FlatList,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
   Animated,
   Pressable,
   SectionList,
   Easing,
   Platform,
-  Image,
+
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import * as Haptics from 'expo-haptics';
 
-const Illustrations: { [key: string]: any } = {
-  'programming.png': require('../assets/images/quizzes/programming.png'),
-  'ai_ml.png': require('../assets/images/quizzes/ai_ml.png'),
-  'science.png': require('../assets/images/quizzes/science.png'),
-  'history.png': require('../assets/images/quizzes/history.png'),
-  'geography.png': require('../assets/images/quizzes/geography.png'),
-  'math.png': require('../assets/images/quizzes/math.png'),
-  'security.png': require('../assets/images/quizzes/security.png'),
-  'space.png': require('../assets/images/quizzes/space.png'),
-  'kids.png': require('../assets/images/quizzes/kids.png'),
-  'nature.png': require('../assets/images/quizzes/nature.png'),
-  'health.png': require('../assets/images/quizzes/health.png'),
-  'finance.png': require('../assets/images/quizzes/finance.png'),
-  'entertainment.png': require('../assets/images/quizzes/entertainment.png'),
-};
+
 
 type QuizSelectionProps = {
   quizzes: any[];
   handleQuizSelection: (quiz: any) => void;
+  onReadEssay?: (category: string) => void;
+  categoriesWithEssays?: Set<string>;
 };
 
 // Trigger haptic feedback (only on native platforms)
@@ -56,7 +45,9 @@ const CategoryHeader: React.FC<{
   count: number;
   isExpanded: boolean;
   onToggle: () => void;
-}> = ({ title, count, isExpanded, onToggle }) => {
+  hasEssay?: boolean;
+  onReadEssay?: () => void;
+}> = ({ title, count, isExpanded, onToggle, hasEssay, onReadEssay }) => {
   const rotateAnim = useRef(new Animated.Value(isExpanded ? 1 : 0)).current;
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const bgOpacity = useRef(new Animated.Value(isExpanded ? 0.15 : 0.1)).current;
@@ -132,6 +123,18 @@ const CategoryHeader: React.FC<{
             ▶
           </Animated.Text>
           <Text style={styles.categoryTitle}>{title}</Text>
+          {hasEssay && onReadEssay && (
+            <TouchableOpacity
+              style={styles.readEssayBadge}
+              onPress={(e) => {
+                e.stopPropagation();
+                onReadEssay();
+              }}
+              hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+            >
+              <Text style={styles.readEssayText}>📖 Read</Text>
+            </TouchableOpacity>
+          )}
           <View style={[styles.categoryCountBadge, isExpanded && styles.categoryCountBadgeActive]}>
             <Text style={styles.categoryCountText}>{count}</Text>
           </View>
@@ -291,14 +294,6 @@ const QuizButton: React.FC<{
             ]}
           />
           <View style={styles.buttonContent}>
-            {item.image ? (
-              <Image
-                source={Illustrations[item.image.split('/').pop() || '']}
-                style={styles.quizImage}
-                resizeMode="contain"
-                accessibilityLabel={item.name}
-              />
-            ) : null}
             <View style={{ flex: 1 }}>
               <Text style={styles.buttonText} numberOfLines={1}>
                 {item.name}
@@ -324,6 +319,8 @@ import { useRouter } from 'expo-router';
 export const QuizSelection: React.FC<QuizSelectionProps> = ({
   quizzes,
   handleQuizSelection,
+  onReadEssay,
+  categoriesWithEssays,
 }) => {
   const { t } = useTranslation();
   const router = useRouter();
@@ -406,6 +403,8 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
       count={section.count}
       isExpanded={expandedCategories.has(section.title)}
       onToggle={() => toggleCategory(section.title)}
+      hasEssay={categoriesWithEssays?.has(section.title)}
+      onReadEssay={onReadEssay ? () => onReadEssay(section.title) : undefined}
     />
   );
 
@@ -570,10 +569,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
   },
-  quizImage: {
-    width: 50,
-    height: 50,
-    marginRight: 12,
-    borderRadius: 8,
+  readEssayBadge: {
+    backgroundColor: 'rgba(79, 195, 247, 0.2)',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 10,
+    marginRight: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(79, 195, 247, 0.35)',
   },
+  readEssayText: {
+    color: '#4FC3F7',
+    fontSize: 13,
+    fontWeight: '600',
+  },
+
 });
