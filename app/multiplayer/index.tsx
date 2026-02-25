@@ -1,24 +1,36 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, Alert, KeyboardAvoidingView, Platform, Text, Pressable, ActivityIndicator, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Text, Pressable, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { multiplayerService } from '../../services/MultiplayerService';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
+const showAlert = (title: string, message: string) => {
+  if (Platform.OS === 'web') {
+    window.alert(`${title}\n\n${message}`);
+  } else {
+    const { Alert } = require('react-native');
+    Alert.alert(title, message);
+  }
+};
+
 export default function MultiplayerHome() {
   const router = useRouter();
-
-
   const { t } = useTranslation();
   const [name, setName] = useState('');
   const [roomCode, setRoomCode] = useState('');
   const [isJoining, setIsJoining] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
 
+  // Clean up any stale connections on mount
+  useEffect(() => {
+    multiplayerService.destroy();
+  }, []);
+
   const handleCreateRoom = async () => {
     if (!name.trim()) {
-      Alert.alert('Required', 'Please enter your name');
+      showAlert('Required', 'Please enter your name');
       return;
     }
 
@@ -29,11 +41,11 @@ export default function MultiplayerHome() {
         // @ts-ignore: router.push type mismatch
         router.push(`/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`);
       } else {
-        Alert.alert('Error', 'Failed to create room');
+        showAlert('Error', 'Failed to create room. Please try again.');
       }
     } catch (error) {
       console.error(error);
-      Alert.alert('Error', 'Something went wrong');
+      showAlert('Error', 'Something went wrong');
     } finally {
       setIsCreating(false);
     }
@@ -41,7 +53,7 @@ export default function MultiplayerHome() {
 
   const handleJoinRoom = async () => {
     if (!name.trim() || !roomCode.trim()) {
-      Alert.alert('Required', 'Please enter your name and room code');
+      showAlert('Required', 'Please enter your name and room code');
       return;
     }
 
@@ -50,13 +62,13 @@ export default function MultiplayerHome() {
       const response = await multiplayerService.joinRoom(roomCode, name);
       if (response.success) {
         // @ts-ignore: router.push type mismatch
-        router.push(`/multiplayer/${roomCode}?name=${encodeURIComponent(name)}&isHost=false&initialQuizId=${response.quizId || ''}`);
+        router.push(`/multiplayer/${roomCode}?name=${encodeURIComponent(name)}&isHost=false`);
       } else {
-        Alert.alert('Error', 'Failed to join room');
+        showAlert('Error', 'Failed to join room. Check the code and try again.');
       }
     } catch (error) {
       console.error(error);
-      Alert.alert('Error', 'Could not join room');
+      showAlert('Error', 'Could not join room');
     } finally {
       setIsJoining(false);
     }
@@ -73,7 +85,7 @@ export default function MultiplayerHome() {
           style={styles.container}
         >
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>Multiplayer Quiz</Text>
+            <Text style={styles.title}>⚔️ Multiplayer Quiz</Text>
 
             <View style={styles.card}>
               <View style={styles.formGroup}>
@@ -90,7 +102,7 @@ export default function MultiplayerHome() {
               <TouchableOpacity
                 onPress={handleCreateRoom}
                 disabled={isJoining || isCreating}
-                style={[styles.button, styles.createBtn]}
+                style={[styles.button, styles.createBtn, (isJoining || isCreating) && styles.disabledBtn]}
               >
                 {isCreating ? (
                   <ActivityIndicator color="white" />
@@ -122,7 +134,7 @@ export default function MultiplayerHome() {
               <TouchableOpacity
                 onPress={handleJoinRoom}
                 disabled={isJoining || isCreating}
-                style={[styles.button, styles.joinBtn]}
+                style={[styles.button, styles.joinBtn, (isJoining || isCreating) && styles.disabledBtn]}
               >
                 {isJoining ? (
                   <ActivityIndicator color="white" />
@@ -167,10 +179,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     overflow: 'visible',
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 10,
-    },
+    shadowOffset: { width: 0, height: 10 },
     shadowOpacity: 0.5,
     shadowRadius: 20,
     elevation: 10,
@@ -236,7 +245,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   button: {
-    backgroundColor: 'rgb(46, 150, 194)', // Vibrant Blue from QuizSelection
+    backgroundColor: 'rgb(46, 150, 194)',
     padding: 18,
     borderRadius: 12,
     alignItems: 'center',
@@ -255,9 +264,12 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
   createBtn: {
-    backgroundColor: 'rgb(52, 211, 153)', // Greenish for distinction
+    backgroundColor: 'rgb(52, 211, 153)',
   },
   joinBtn: {
     backgroundColor: 'rgb(46, 150, 194)',
+  },
+  disabledBtn: {
+    opacity: 0.5,
   },
 });
