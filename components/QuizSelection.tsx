@@ -348,8 +348,8 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
 
     const sections = Object.keys(groups)
       .sort((a, b) => {
-        const textA = a.replace(/^[\p{Emoji}\s]+/u, '').toLowerCase();
-        const textB = b.replace(/^[\p{Emoji}\s]+/u, '').toLowerCase();
+        const textA = a.replace(/^[\p{Emoji}\u{FE0E}\u{FE0F}\u{200D}\s]+/u, '').toLowerCase();
+        const textB = b.replace(/^[\p{Emoji}\u{FE0E}\u{FE0F}\u{200D}\s]+/u, '').toLowerCase();
         return textA.localeCompare(textB);
       })
       .map((category) => ({
