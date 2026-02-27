@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useRef } from 'react';
 import {
+    Image,
     ScrollView,
     StyleSheet,
     Text,
@@ -13,6 +14,18 @@ type EssayReaderProps = {
     essay: CategoryEssay;
     onBack: () => void;
     onStartQuiz?: () => void;
+};
+
+// Static image registry — React Native requires compile-time paths for require()
+const essayImages: Record<string, any> = {
+    'cloud_pizza_model.png': require('../assets/essay_images/cloud_pizza_model.png'),
+    'aws_regions_azs.png': require('../assets/essay_images/aws_regions_azs.png'),
+    'compute_ec2_lambda.png': require('../assets/essay_images/compute_ec2_lambda.png'),
+    'storage_s3_tiers.png': require('../assets/essay_images/storage_s3_tiers.png'),
+    'vpc_networking.png': require('../assets/essay_images/vpc_networking.png'),
+    'iam_security.png': require('../assets/essay_images/iam_security.png'),
+    'cdk_constructs.png': require('../assets/essay_images/cdk_constructs.png'),
+    'monitoring_trio.png': require('../assets/essay_images/monitoring_trio.png'),
 };
 
 export const EssayReader: React.FC<EssayReaderProps> = ({
@@ -61,6 +74,13 @@ export const EssayReader: React.FC<EssayReaderProps> = ({
                             </View>
                             <Text style={styles.sectionHeading}>{section.heading}</Text>
                         </View>
+                        {section.image && essayImages[section.image] && (
+                            <Image
+                                source={essayImages[section.image]}
+                                style={styles.sectionImage}
+                                resizeMode="contain"
+                            />
+                        )}
                         <Text style={styles.sectionContent}>{section.content}</Text>
                     </View>
                 ))}
@@ -187,6 +207,13 @@ const styles = StyleSheet.create({
         fontSize: 17,
         fontWeight: '700',
         flex: 1,
+    },
+    sectionImage: {
+        width: '100%',
+        height: 200,
+        borderRadius: 10,
+        marginBottom: 14,
+        backgroundColor: 'rgba(0, 0, 0, 0.2)',
     },
     sectionContent: {
         color: 'rgba(255, 255, 255, 0.88)',

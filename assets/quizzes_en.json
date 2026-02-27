@@ -36400,5 +36400,1841 @@
     ],
     "category": "🤖 AI & Machine Learning",
     "image": "../../assets/images/quizzes/ai_ml.png"
+  },
+  {
+    "name": "Sins of a Solar Empire: Rebellion — Master the Galaxy",
+    "category": "🎮 Gaming",
+    "questions": [
+      {
+        "question": "What genre is Sins of a Solar Empire: Rebellion?",
+        "answers": [
+          {
+            "answer": "Turn-based strategy (TBS)"
+          },
+          {
+            "answer": "Real-time 4X strategy (RT4X)"
+          },
+          {
+            "answer": "First-person shooter (FPS)"
+          },
+          {
+            "answer": "Tower defense"
+          }
+        ],
+        "answer": "Real-time 4X strategy (RT4X)",
+        "explanation": "Sins of a Solar Empire: Rebellion is a real-time 4X (eXplore, eXpand, eXploit, eXterminate) strategy game. Unlike traditional 4X games like Civilization which are turn-based, Sins plays out in real time, combining large-scale empire management with real-time combat."
+      },
+      {
+        "question": "What are the three primary resources in Sins of a Solar Empire: Rebellion?",
+        "answers": [
+          {
+            "answer": "Gold, Wood, and Stone"
+          },
+          {
+            "answer": "Credits, Metal, and Crystal"
+          },
+          {
+            "answer": "Energy, Minerals, and Gas"
+          },
+          {
+            "answer": "Money, Iron, and Uranium"
+          }
+        ],
+        "answer": "Credits, Metal, and Crystal",
+        "explanation": "The three resources are Credits (money — earned from taxes and trade), Metal (mined from asteroids — used for ships and structures), and Crystal (mined from asteroids — used for research and advanced technology). Managing all three is essential for a balanced empire."
+      },
+      {
+        "question": "What should you build FIRST at the very start of a game?",
+        "answers": [
+          {
+            "answer": "A starbase for defense"
+          },
+          {
+            "answer": "Your faction's colony capital ship (it's free initially)"
+          },
+          {
+            "answer": "A fleet of bombers to rush the enemy"
+          },
+          {
+            "answer": "Three research stations"
+          }
+        ],
+        "answer": "Your faction's colony capital ship (it's free initially)",
+        "explanation": "Your first priority is building your colony capital ship — it's free at the start! This ship can colonize new planets and is powerful enough to clear neutral militia. It gains experience and levels up through combat, unlocking powerful abilities. Never skip this step."
+      },
+      {
+        "question": "How many core factions are there in Sins of a Solar Empire: Rebellion?",
+        "answers": [
+          {
+            "answer": "2 factions"
+          },
+          {
+            "answer": "3 factions, each with Loyalist and Rebel sub-factions (6 total)"
+          },
+          {
+            "answer": "4 factions"
+          },
+          {
+            "answer": "5 factions"
+          }
+        ],
+        "answer": "3 factions, each with Loyalist and Rebel sub-factions (6 total)",
+        "explanation": "There are three core factions: TEC (Trader Emergency Coalition), Advent, and Vasari. Each has a Loyalist and Rebel sub-faction, giving 6 distinct playstyles. TEC Loyalist focuses on defense, TEC Rebel on offense, Advent Loyalist on culture, Advent Rebel on ship resurrection, Vasari Loyalist on mobility, and Vasari Rebel on diplomacy."
+      },
+      {
+        "question": "Which faction is generally recommended for beginners?",
+        "answers": [
+          {
+            "answer": "Vasari Loyalist"
+          },
+          {
+            "answer": "Advent Rebel"
+          },
+          {
+            "answer": "TEC (Trader Emergency Coalition)"
+          },
+          {
+            "answer": "All factions are equally difficult"
+          }
+        ],
+        "answer": "TEC (Trader Emergency Coalition)",
+        "explanation": "TEC is the most beginner-friendly faction. Their ships are cheap, their technologies are straightforward, and their economy (based on trade) is easy to understand. They emphasize brute force and fixed defenses, making them less reliant on complex micro-management compared to the Advent's cultural warfare or Vasari's mobility tricks."
+      },
+      {
+        "question": "What should you do with your starting scout ships?",
+        "answers": [
+          {
+            "answer": "Keep them at your homeworld for defense"
+          },
+          {
+            "answer": "Set them to auto-explore to uncover nearby planets and resources"
+          },
+          {
+            "answer": "Send them directly to attack the enemy"
+          },
+          {
+            "answer": "Scuttle them for resources"
+          }
+        ],
+        "answer": "Set them to auto-explore to uncover nearby planets and resources",
+        "explanation": "Your starting scouts should be set to auto-explore immediately. This reveals the map, identifies nearby colonizable planets, resource-rich asteroids, and enemy positions. Information is critical in the early game — you need to know where to expand and where threats are coming from."
+      },
+      {
+        "question": "What is a 'gravity well' in Sins of a Solar Empire?",
+        "answers": [
+          {
+            "answer": "A weapon that crushes enemy ships"
+          },
+          {
+            "answer": "The area around a planet or star where ships can exist and interact"
+          },
+          {
+            "answer": "A type of research upgrade"
+          },
+          {
+            "answer": "A defensive structure"
+          }
+        ],
+        "answer": "The area around a planet or star where ships can exist and interact",
+        "explanation": "A gravity well is the zone surrounding a celestial body (planet, asteroid, or star) where ships can operate. Combat, construction, and resource extraction all happen within gravity wells. Ships travel between gravity wells via phase lanes — the travel routes connecting star systems."
+      },
+      {
+        "question": "What are 'phase lanes'?",
+        "answers": [
+          {
+            "answer": "Research paths in the tech tree"
+          },
+          {
+            "answer": "The travel routes connecting gravity wells that ships use to move between systems"
+          },
+          {
+            "answer": "A type of weapon upgrade"
+          },
+          {
+            "answer": "Visual effects during combat"
+          }
+        ],
+        "answer": "The travel routes connecting gravity wells that ships use to move between systems",
+        "explanation": "Phase lanes are the pre-defined routes ships use to travel between gravity wells. They create natural choke points — strategic positions where a smaller defending force can hold off a larger attacking fleet. Controlling key phase lane intersections is a fundamental part of strategy."
+      },
+      {
+        "question": "How do you colonize a new planet?",
+        "answers": [
+          {
+            "answer": "Click on the planet and press 'C'"
+          },
+          {
+            "answer": "Clear the neutral militia, then use a colony capital ship or colony frigate to colonize"
+          },
+          {
+            "answer": "Build a starbase next to it"
+          },
+          {
+            "answer": "Research the colonization tech and it happens automatically"
+          }
+        ],
+        "answer": "Clear the neutral militia, then use a colony capital ship or colony frigate to colonize",
+        "explanation": "To colonize, first you must defeat the neutral militia defending the planet. Militia strength varies by planet type. Then use either your colony capital ship (which has colonize as an ability) or a dedicated colony frigate to claim the planet. After colonization, build infrastructure to develop it."
+      },
+      {
+        "question": "What generates Credits (income) in the game?",
+        "answers": [
+          {
+            "answer": "Only mining asteroids"
+          },
+          {
+            "answer": "Planet population (taxes) and Trade Ports"
+          },
+          {
+            "answer": "Destroying enemy ships"
+          },
+          {
+            "answer": "Building research stations"
+          }
+        ],
+        "answer": "Planet population (taxes) and Trade Ports",
+        "explanation": "Credits come from two main sources: taxes from your planet's population, and Trade Ports built at colonized planets. Trade Ports generate passive income and become more valuable as you control more planets with trade infrastructure. A strong economy requires both population growth and a well-connected trade network."
+      },
+      {
+        "question": "What is the role of Metal and Crystal extractors?",
+        "answers": [
+          {
+            "answer": "They generate Credits from asteroid mining"
+          },
+          {
+            "answer": "They harvest Metal and Crystal from resource-rich asteroids near planets"
+          },
+          {
+            "answer": "They convert enemy ships into resources"
+          },
+          {
+            "answer": "They automatically build ships"
+          }
+        ],
+        "answer": "They harvest Metal and Crystal from resource-rich asteroids near planets",
+        "explanation": "Metal and Crystal extractors are built on resource-rich asteroids found in gravity wells. Metal is used primarily for ships and basic structures, while Crystal is needed for research and advanced technology. Always build extractors as soon as you colonize a new planet to maximize resource income."
+      },
+      {
+        "question": "How many civic research labs do you need to unlock Tier 2 civic research?",
+        "answers": [
+          {
+            "answer": "1 lab"
+          },
+          {
+            "answer": "2 labs"
+          },
+          {
+            "answer": "3 labs"
+          },
+          {
+            "answer": "4 labs"
+          }
+        ],
+        "answer": "2 labs",
+        "explanation": "Higher tiers of research require multiple research labs of the same type. Tier 2 civic research requires 2 civic research stations, Tier 3 requires 3, and so on. This applies to both military and civic research. Level 2 civic research is particularly important because it unlocks the ability to colonize additional planet types."
+      },
+      {
+        "question": "What is a Capital Ship and how does it differ from regular ships?",
+        "answers": [
+          {
+            "answer": "Capital Ships are cheaper but weaker versions of regular ships"
+          },
+          {
+            "answer": "Capital Ships gain experience, level up, and unlock powerful abilities — they are your fleet's backbone"
+          },
+          {
+            "answer": "Capital Ships can only be used for colonization"
+          },
+          {
+            "answer": "There is no difference besides size"
+          }
+        ],
+        "answer": "Capital Ships gain experience, level up, and unlock powerful abilities — they are your fleet's backbone",
+        "explanation": "Capital Ships are unique warships that gain experience from combat and level up (up to level 10). Each level unlocks or improves special abilities like healing, area damage, or fleet buffs. They are expensive and limited in number but are far more powerful than regular frigates. Losing one is a major setback."
+      },
+      {
+        "question": "What happens if your Capital Ship's hull drops to around 50% in battle?",
+        "answers": [
+          {
+            "answer": "It automatically retreats"
+          },
+          {
+            "answer": "You should manually retreat it — losing a leveled capital ship is devastating"
+          },
+          {
+            "answer": "It gains a damage bonus"
+          },
+          {
+            "answer": "Nothing special happens"
+          }
+        ],
+        "answer": "You should manually retreat it — losing a leveled capital ship is devastating",
+        "explanation": "There is no auto-retreat for capital ships. You must monitor their health and manually pull them back when they reach ~50% hull. A high-level capital ship represents hours of experience gain — losing one in battle can cost you the game. Always keep an eye on your capital ships during combat."
+      },
+      {
+        "question": "What is the TEC Kol Battleship known for?",
+        "answers": [
+          {
+            "answer": "Colonizing planets quickly"
+          },
+          {
+            "answer": "Strong direct combat DPS with a powerful beam ability effective against single targets"
+          },
+          {
+            "answer": "Supporting allied ships with shields"
+          },
+          {
+            "answer": "Building strikecraft"
+          }
+        ],
+        "answer": "Strong direct combat DPS with a powerful beam ability effective against single targets",
+        "explanation": "The Kol Battleship is the TEC's dedicated combat capital ship. It has high DPS, a devastating beam ability (Gauss Rail Gun) that damages a single target, and abilities for hull regeneration and area-of-effect splash damage. It's a frontline bruiser that excels in sustained combat."
+      },
+      {
+        "question": "Which TEC capital ship is the best choice for your FIRST capital ship?",
+        "answers": [
+          {
+            "answer": "Marza Dreadnought"
+          },
+          {
+            "answer": "Sova Carrier"
+          },
+          {
+            "answer": "Akkan Battlecruiser (the colonizer)"
+          },
+          {
+            "answer": "Dunov Battlecruiser"
+          }
+        ],
+        "answer": "Akkan Battlecruiser (the colonizer)",
+        "explanation": "The Akkan Battlecruiser is the TEC's colony capital ship and the ideal first build. It can colonize planets (essential for expanding), boosts early economic development through trade bonuses, and is effective in early combat against militia and small fleets. It lets you expand quickly while still fighting."
+      },
+      {
+        "question": "What is the primary combat advantage of the Advent faction?",
+        "answers": [
+          {
+            "answer": "Cheap, numerous ships"
+          },
+          {
+            "answer": "Strong shields and powerful late-game abilities, using laser-based weapons"
+          },
+          {
+            "answer": "Phase missiles that bypass shields"
+          },
+          {
+            "answer": "Faster ship movement speed"
+          }
+        ],
+        "answer": "Strong shields and powerful late-game abilities, using laser-based weapons",
+        "explanation": "The Advent rely on strong shields and laser weaponry. While their early-to-mid game can be weaker than TEC, their late-game technologies are extremely powerful. Their ships have excellent shield regeneration, and their cultural influence can spread to enemy planets, weakening foes without direct combat."
+      },
+      {
+        "question": "What unique mechanic does the Vasari faction specialize in?",
+        "answers": [
+          {
+            "answer": "Building the cheapest ships"
+          },
+          {
+            "answer": "Phase missiles that bypass enemy shields, and extreme fleet mobility"
+          },
+          {
+            "answer": "Having the strongest fixed defenses"
+          },
+          {
+            "answer": "Instant colonization of any planet"
+          }
+        ],
+        "answer": "Phase missiles that bypass enemy shields, and extreme fleet mobility",
+        "explanation": "The Vasari are masters of phase technology. Their signature phase missiles bypass enemy shields entirely, dealing damage directly to hull. Combined with their ability to create phase lanes and move starbases, they excel at unexpected attacks and hit-and-run tactics. Their ships are expensive but technologically superior."
+      },
+      {
+        "question": "What is the difference between TEC Loyalist and TEC Rebel sub-factions?",
+        "answers": [
+          {
+            "answer": "They are identical"
+          },
+          {
+            "answer": "Loyalist focuses on defense and turtling; Rebel focuses on aggressive offense and pirate alliances"
+          },
+          {
+            "answer": "Loyalist can only build frigates; Rebel can only build capital ships"
+          },
+          {
+            "answer": "Loyalist has no research tree"
+          }
+        ],
+        "answer": "Loyalist focuses on defense and turtling; Rebel focuses on aggressive offense and pirate alliances",
+        "explanation": "TEC Loyalist (Enclave) excels at defensive play — stronger garrisons, cheaper starbases, and the ability to field two starbases per gravity well. TEC Rebel (Primacy) is aggressive — they can hire pirate mercenaries, gain credits from bombarding planets, and have research that increases damage output."
+      },
+      {
+        "question": "What is a Starbase?",
+        "answers": [
+          {
+            "answer": "Your homeworld building"
+          },
+          {
+            "answer": "A massive, upgradeable defensive/offensive space station that acts as a fleet anchor point"
+          },
+          {
+            "answer": "A mobile repair ship"
+          },
+          {
+            "answer": "A type of scout vessel"
+          }
+        ],
+        "answer": "A massive, upgradeable defensive/offensive space station that acts as a fleet anchor point",
+        "explanation": "Starbases are powerful space stations that can be built at colonized gravity wells. They can be upgraded with weapons, hangars, shields, and special abilities. They serve as the backbone of planetary defense and can significantly deter enemy attacks. Placing them at choke points is a key defensive strategy."
+      },
+      {
+        "question": "What is 'fleet supply' and why is it important?",
+        "answers": [
+          {
+            "answer": "It's the fuel for your ships"
+          },
+          {
+            "answer": "It's the maximum number of ship supply points you can field — exceeding it incurs penalties"
+          },
+          {
+            "answer": "It's the speed at which ships are built"
+          },
+          {
+            "answer": "It only affects capital ships"
+          }
+        ],
+        "answer": "It's the maximum number of ship supply points you can field — exceeding it incurs penalties",
+        "explanation": "Fleet supply is your cap on total ship strength. Every ship costs a certain number of supply points. If you exceed your supply cap, your ships suffer combat penalties. Increase supply through research and building fleet logistics structures. Always monitor your supply — building too many ships without increasing supply makes your entire fleet weaker."
+      },
+      {
+        "question": "What does building multiple frigate factories in the same gravity well do?",
+        "answers": [
+          {
+            "answer": "Nothing — only one factory works at a time"
+          },
+          {
+            "answer": "Increases ship production speed in that gravity well"
+          },
+          {
+            "answer": "Reduces ship costs"
+          },
+          {
+            "answer": "Unlocks special ship types"
+          }
+        ],
+        "answer": "Increases ship production speed in that gravity well",
+        "explanation": "Multiple frigate factories in the same gravity well stack their production, allowing ships to be built faster. This is critical for frontline worlds where you need to quickly reinforce your fleet during or after battles. A planet with 3 factories produces ships much faster than one with a single factory."
+      },
+      {
+        "question": "What are strikecraft (fighters and bombers)?",
+        "answers": [
+          {
+            "answer": "The smallest capital ships"
+          },
+          {
+            "answer": "Small squadrons launched from carriers and hangars — fighters intercept, bombers attack large ships"
+          },
+          {
+            "answer": "Automated defense turrets"
+          },
+          {
+            "answer": "A type of resource collector"
+          }
+        ],
+        "answer": "Small squadrons launched from carriers and hangars — fighters intercept, bombers attack large ships",
+        "explanation": "Strikecraft are small craft that operate in squadrons. Fighters are effective against other strikecraft and can screen for your fleet. Bombers deal heavy damage to capital ships and large frigates. They are launched from carrier ships, starbases, or hangar defense structures. A balanced fleet needs strikecraft support."
+      },
+      {
+        "question": "What is the Advent Loyalist's cultural influence used for?",
+        "answers": [
+          {
+            "answer": "It has no gameplay effect — purely cosmetic"
+          },
+          {
+            "answer": "Spreading influence to enemy planets to weaken them and potentially convert them to your side"
+          },
+          {
+            "answer": "Increasing ship speed"
+          },
+          {
+            "answer": "Generating Metal income"
+          }
+        ],
+        "answer": "Spreading influence to enemy planets to weaken them and potentially convert them to your side",
+        "explanation": "Advent Loyalists excel at cultural warfare. Their cultural influence spreads to neighboring enemy planets, reducing enemy income, weakening defenses, and eventually allowing planets to be culturally converted without military conquest. This is a powerful non-combat victory path and can cripple opponents economically."
+      },
+      {
+        "question": "What special ability do Vasari Loyalists have with their starbases?",
+        "answers": [
+          {
+            "answer": "Their starbases are invisible"
+          },
+          {
+            "answer": "They can move (phase jump) their starbases to other gravity wells"
+          },
+          {
+            "answer": "Their starbases cost no resources"
+          },
+          {
+            "answer": "They can build unlimited starbases"
+          }
+        ],
+        "answer": "They can move (phase jump) their starbases to other gravity wells",
+        "explanation": "Vasari Loyalists can phase jump their starbases to different gravity wells — an incredibly unique and powerful ability. This means they can build a starbase at home, fully upgrade it, then jump it directly into an enemy's system for a devastating surprise attack. No other faction can move starbases."
+      },
+      {
+        "question": "What is a Titan and how do you unlock one?",
+        "answers": [
+          {
+            "answer": "A Titan is a basic frigate available from the start"
+          },
+          {
+            "answer": "Titans are massive super-capital ships unlocked through extensive research — each sub-faction has a unique Titan"
+          },
+          {
+            "answer": "Titans are map objectives you capture"
+          },
+          {
+            "answer": "You can build unlimited Titans"
+          }
+        ],
+        "answer": "Titans are massive super-capital ships unlocked through extensive research — each sub-faction has a unique Titan",
+        "explanation": "Titans are the most powerful ships in the game — enormous super-capital ships that require significant research and resources to build. Each sub-faction has its own unique Titan with different abilities. You can only have ONE Titan at a time, so losing it is catastrophic. Building a Titan is often a late-game goal."
+      },
+      {
+        "question": "What are the main victory conditions in Sins of a Solar Empire: Rebellion?",
+        "answers": [
+          {
+            "answer": "Only military conquest (destroy all enemies)"
+          },
+          {
+            "answer": "Military conquest, flagship destruction, research victory, or diplomatic victory"
+          },
+          {
+            "answer": "Collect the most resources"
+          },
+          {
+            "answer": "Build the most ships"
+          }
+        ],
+        "answer": "Military conquest, flagship destruction, research victory, or diplomatic victory",
+        "explanation": "There are multiple paths to victory: Military Conquest (eliminate all opponents), Flagship Destruction (destroy an enemy's capital ship), Research Victory (complete a specific research path), and Diplomatic Victory (achieve alliances with enough players). This variety means pure military might isn't the only path to winning."
+      },
+      {
+        "question": "What is the purpose of the 'pause' button in gameplay?",
+        "answers": [
+          {
+            "answer": "It saves the game"
+          },
+          {
+            "answer": "It pauses the game while still allowing you to issue orders and manage your empire"
+          },
+          {
+            "answer": "It speeds up the game"
+          },
+          {
+            "answer": "It ends the match"
+          }
+        ],
+        "answer": "It pauses the game while still allowing you to issue orders and manage your empire",
+        "explanation": "The pause button is essential, especially for beginners. When paused, you can still issue build orders, queue research, set waypoints, and organize your fleet — the game simply won't advance time until you unpause. Use it liberally when you feel overwhelmed or need to micromanage multiple fronts simultaneously."
+      },
+      {
+        "question": "Why should beginners disable pirates in their first few games?",
+        "answers": [
+          {
+            "answer": "Pirates make the game take too long"
+          },
+          {
+            "answer": "Pirates are AI-controlled raiders that attack the player with the lowest bounty, adding extra pressure to new players"
+          },
+          {
+            "answer": "Pirates steal your research"
+          },
+          {
+            "answer": "Pirates have no effect on gameplay"
+          }
+        ],
+        "answer": "Pirates are AI-controlled raiders that attack the player with the lowest bounty, adding extra pressure to new players",
+        "explanation": "Pirates are an NPC faction that periodically raids the player with the lowest bounty (a resource you can spend to redirect pirates at opponents). For beginners, this adds confusing economic and military pressure. Disabling them in game setup lets you focus on learning core mechanics without unexpected raids."
+      },
+      {
+        "question": "What is the most effective way to manage choke points on the map?",
+        "answers": [
+          {
+            "answer": "Ignore them and spread forces evenly"
+          },
+          {
+            "answer": "Fortify them with starbases, defenses, and fleet presence to create strong defensive positions"
+          },
+          {
+            "answer": "Only place scouts there"
+          },
+          {
+            "answer": "Leave them completely empty to lure enemies"
+          }
+        ],
+        "answer": "Fortify them with starbases, defenses, and fleet presence to create strong defensive positions",
+        "explanation": "Phase lanes create natural choke points — gravity wells that sit between your empire and the enemy. Fortifying these with starbases, hangar defenses, weapon platforms, and a defensive fleet allows a smaller force to hold off much larger attacks. Good choke point defense lets you expand safely while minimizing the fleet needed for defense."
+      },
+      {
+        "question": "What is 'planet specialization' in the Rebellion expansion?",
+        "answers": [
+          {
+            "answer": "A cosmetic feature that changes planet colors"
+          },
+          {
+            "answer": "The ability to develop planets for either social (population/culture) or industrial (trade/shipbuilding) output"
+          },
+          {
+            "answer": "A terrain modifier on the map"
+          },
+          {
+            "answer": "An AI difficulty setting"
+          }
+        ],
+        "answer": "The ability to develop planets for either social (population/culture) or industrial (trade/shipbuilding) output",
+        "explanation": "Planet specialization lets you choose a development path for each colonized world. Social planets focus on population growth, cultural influence, and research. Industrial planets focus on trade income, ship production speed, and fleet supply. Strategically specializing planets based on their position (frontline = industrial, backline = social) optimizes your empire."
+      },
+      {
+        "question": "What key advantage does the seamless zoom feature provide?",
+        "answers": [
+          {
+            "answer": "It's purely visual with no strategic benefit"
+          },
+          {
+            "answer": "It lets you zoom from galactic overview to individual ship combat without loading screens, enabling macro and micro management"
+          },
+          {
+            "answer": "It reveals hidden enemies"
+          },
+          {
+            "answer": "It increases ship speed"
+          }
+        ],
+        "answer": "It lets you zoom from galactic overview to individual ship combat without loading screens, enabling macro and micro management",
+        "explanation": "The seamless zoom is one of the game's signature features. You can zoom from viewing the entire galaxy (for strategic planning and expansion) all the way down to watching individual fighters in combat. This allows you to manage your empire at the macro level while also micromanaging critical battles without any loading screens breaking the flow."
+      },
+      {
+        "question": "What is the TEC Marza Dreadnought specialized for?",
+        "answers": [
+          {
+            "answer": "Fleet support and healing"
+          },
+          {
+            "answer": "Planetary bombardment and area-of-effect destruction"
+          },
+          {
+            "answer": "Scouting and exploration"
+          },
+          {
+            "answer": "Economic trade bonuses"
+          }
+        ],
+        "answer": "Planetary bombardment and area-of-effect destruction",
+        "explanation": "The Marza Dreadnought is the TEC's dedicated siege capital ship. Its abilities include missile barrages, area damage, and devastating planetary bombs. It excels at bombarding enemy planets into submission and clearing large numbers of enemy ships with AoE attacks. It's a late-game powerhouse for offensive campaigns."
+      },
+      {
+        "question": "What does the TEC Dunov Battlecruiser's antimatter restore ability do?",
+        "answers": [
+          {
+            "answer": "It repairs hull damage"
+          },
+          {
+            "answer": "It restores antimatter to allied ships, enabling them to use their abilities more frequently"
+          },
+          {
+            "answer": "It produces Credits"
+          },
+          {
+            "answer": "It increases ship speed"
+          }
+        ],
+        "answer": "It restores antimatter to allied ships, enabling them to use their abilities more frequently",
+        "explanation": "The Dunov Battlecruiser is a crucial support ship. All ship abilities cost antimatter — when it runs out, the ship can't use abilities. The Dunov restores antimatter to nearby allied ships, keeping your fleet's abilities active longer in sustained battles. It can also strip enemy shields and antimatter, making it particularly effective against the Advent."
+      },
+      {
+        "question": "What do Light Frigates serve as in the early game?",
+        "answers": [
+          {
+            "answer": "They are useless and should be avoided"
+          },
+          {
+            "answer": "Cheap, expendable combat support for your capital ship to clear militia and fight early battles"
+          },
+          {
+            "answer": "Resource gatherers"
+          },
+          {
+            "answer": "Mobile research stations"
+          }
+        ],
+        "answer": "Cheap, expendable combat support for your capital ship to clear militia and fight early battles",
+        "explanation": "Light frigates are the bread and butter of early fleets. They're cheap and fast to build, providing essential support for your capital ship when clearing neutral militia and engaging in early skirmishes. As the game progresses, you'll transition to heavier ships, but light frigates remain useful as screening forces and for filling fleet supply."
+      },
+      {
+        "question": "What is 'antimatter' used for on ships?",
+        "answers": [
+          {
+            "answer": "Fuel to travel between gravity wells"
+          },
+          {
+            "answer": "Energy that powers a ship's special abilities — once depleted, abilities can't be used"
+          },
+          {
+            "answer": "A resource used to build ships"
+          },
+          {
+            "answer": "Ammunition for weapons"
+          }
+        ],
+        "answer": "Energy that powers a ship's special abilities — once depleted, abilities can't be used",
+        "explanation": "Antimatter is the energy pool each ship (especially capital ships) uses to activate special abilities. Once a ship's antimatter is depleted, it cannot use any abilities until it regenerates. Managing antimatter is critical — don't spam abilities early in a fight, save some for clutch moments. The Dunov Battlecruiser can restore antimatter to allies."
+      },
+      {
+        "question": "What is the Advent Rapture Battlecruiser known for?",
+        "answers": [
+          {
+            "answer": "Mining resources faster"
+          },
+          {
+            "answer": "The ability to mind-control and steal enemy ships, turning them to your side"
+          },
+          {
+            "answer": "Building the fastest strikecraft"
+          },
+          {
+            "answer": "Cloaking allied ships"
+          }
+        ],
+        "answer": "The ability to mind-control and steal enemy ships, turning them to your side",
+        "explanation": "The Rapture Battlecruiser is one of the most feared Advent capital ships because of its 'Domination' ability — it can permanently convert an enemy ship to your fleet. This is devastating when used on expensive enemy capital ships or large frigates. It also boosts squadron damage for nearby allies."
+      },
+      {
+        "question": "What should you prioritize in your research early game?",
+        "answers": [
+          {
+            "answer": "Only military research — ignore civic research completely"
+          },
+          {
+            "answer": "Both military AND civic research — civic unlocks colonization of new planet types and economic upgrades"
+          },
+          {
+            "answer": "Only civic research — military research is useless"
+          },
+          {
+            "answer": "Don't research anything early — save resources for ships"
+          }
+        ],
+        "answer": "Both military AND civic research — civic unlocks colonization of new planet types and economic upgrades",
+        "explanation": "A balanced research approach is essential. Military research improves your combat effectiveness (ship weapons, armor, new ship types). Civic research unlocks critical economic upgrades, the ability to colonize additional planet types (like ice or volcanic worlds), and diplomatic options. Neglecting either puts you at a disadvantage."
+      },
+      {
+        "question": "How does the pirate bounty system work?",
+        "answers": [
+          {
+            "answer": "You pay pirates to leave your planets alone"
+          },
+          {
+            "answer": "Players bid Credits on bounties — pirates attack the player with the lowest total bounty"
+          },
+          {
+            "answer": "Pirates randomly choose who to attack"
+          },
+          {
+            "answer": "You can recruit pirates permanently"
+          }
+        ],
+        "answer": "Players bid Credits on bounties — pirates attack the player with the lowest total bounty",
+        "explanation": "The pirate system works like an auction. You spend Credits to place bounties on other players. When the pirate timer expires, pirates attack whoever has the LOWEST total bounty placed on them. If you don't invest in bounties, pirates will raid you. It's an economic warfare tool — spend money to make your opponents deal with pirate attacks."
+      },
+      {
+        "question": "What is the ideal early game expansion strategy?",
+        "answers": [
+          {
+            "answer": "Colonize every planet you see as fast as possible"
+          },
+          {
+            "answer": "Rapidly expand to nearby resource-rich planets while securing choke points, avoiding over-extension"
+          },
+          {
+            "answer": "Stay on your homeworld and build up defenses"
+          },
+          {
+            "answer": "Only colonize planets after fully researching the tech tree"
+          }
+        ],
+        "answer": "Rapidly expand to nearby resource-rich planets while securing choke points, avoiding over-extension",
+        "explanation": "Early expansion should be aggressive but controlled. Colonize nearby planets (especially those with good Metal/Crystal asteroids) quickly using your colony capital ship. Secure choke points between you and enemies. But don't over-extend — each planet needs defenses and infrastructure, and stretching too thin leaves you vulnerable to counterattacks."
+      },
+      {
+        "question": "What is the Vasari Jarrasul Evacuator unique ability?",
+        "answers": [
+          {
+            "answer": "Building unlimited strikecraft"
+          },
+          {
+            "answer": "Draining resources from enemy planets and disabling enemy jump drives"
+          },
+          {
+            "answer": "Cloaking the entire fleet"
+          },
+          {
+            "answer": "Instantly destroying a planet"
+          }
+        ],
+        "answer": "Draining resources from enemy planets and disabling enemy jump drives",
+        "explanation": "The Jarrasul Evacuator is the Vasari colony capital ship with a twist — it can drain resources directly from enemy planets, weakening their economy while boosting yours. Its ability to disable jump drives prevents enemies from retreating, trapping them in combat. This reflects the Vasari's parasitic, nomadic playstyle."
+      },
+      {
+        "question": "What is the game speed setting recommended for beginners?",
+        "answers": [
+          {
+            "answer": "Fastest speed to keep things exciting"
+          },
+          {
+            "answer": "Slow or Normal — you can adjust the real-time speed if you feel overwhelmed"
+          },
+          {
+            "answer": "Speed doesn't matter"
+          },
+          {
+            "answer": "There is no speed setting"
+          }
+        ],
+        "answer": "Slow or Normal — you can adjust the real-time speed if you feel overwhelmed",
+        "explanation": "Beginners should start at Slow or Normal speed. The game can be overwhelming with multiple fronts, economy management, and research decisions happening simultaneously. Slower speeds give you more time to think and react. Remember you can also pause at any time to issue orders without time pressure."
+      },
+      {
+        "question": "What is the Novalith Cannon?",
+        "answers": [
+          {
+            "answer": "A type of frigate weapon"
+          },
+          {
+            "answer": "A TEC superweapon that fires a long-range nuclear missile at an enemy planet from across the map"
+          },
+          {
+            "answer": "A defensive shield generator"
+          },
+          {
+            "answer": "An Advent cultural building"
+          }
+        ],
+        "answer": "A TEC superweapon that fires a long-range nuclear missile at an enemy planet from across the map",
+        "explanation": "The Novalith Cannon is a devastating TEC superweapon — a giant cannon that fires a nuclear missile at any enemy planet on the map, dealing massive damage to its population and infrastructure. TEC Loyalists get access to cheaper Novalith Cannons through research. It's an expensive but terrifying late-game weapon that can cripple enemy planets without sending a single ship."
+      },
+      {
+        "question": "What happens to the game's music during combat?",
+        "answers": [
+          {
+            "answer": "Music stops entirely during combat"
+          },
+          {
+            "answer": "The dynamic music transitions seamlessly from peaceful exploration themes to intense battle themes"
+          },
+          {
+            "answer": "You must manually change the music"
+          },
+          {
+            "answer": "Music is the same regardless of game state"
+          }
+        ],
+        "answer": "The dynamic music transitions seamlessly from peaceful exploration themes to intense battle themes",
+        "explanation": "Sins of a Solar Empire features a dynamic music system that seamlessly transitions between peaceful, ambient exploration themes and intense, dramatic battle music as combat begins. This creates an immersive experience where the audio naturally reflects the action, enhancing the epic feel of large-scale space battles."
+      }
+    ]
+  },
+  {
+    "name": "Modern Full Stack Development",
+    "category": "💻 Programming & Development",
+    "questions": [
+      {
+        "question": "In a pnpm monorepo, what does the 'workspace:*' protocol mean when used in a dependency?",
+        "answers": [
+          {
+            "answer": "It downloads the latest version from npm"
+          },
+          {
+            "answer": "It links to the local workspace package at any version"
+          },
+          {
+            "answer": "It creates a git submodule link"
+          },
+          {
+            "answer": "It pins the dependency to version 1.0.0"
+          }
+        ],
+        "answer": "It links to the local workspace package at any version",
+        "explanation": "The 'workspace:*' protocol in pnpm tells the package manager to resolve the dependency from the local workspace rather than the npm registry. The '*' wildcard means it accepts any version of the local package. This is essential for monorepos where packages reference each other without publishing."
+      },
+      {
+        "question": "What is Turborepo's primary role in a monorepo?",
+        "answers": [
+          {
+            "answer": "It replaces the package manager entirely"
+          },
+          {
+            "answer": "It orchestrates task execution across packages with intelligent caching and dependency ordering"
+          },
+          {
+            "answer": "It compiles TypeScript faster than tsc"
+          },
+          {
+            "answer": "It serves as the runtime engine for Node.js apps"
+          }
+        ],
+        "answer": "It orchestrates task execution across packages with intelligent caching and dependency ordering",
+        "explanation": "Turborepo is a build system for JavaScript/TypeScript monorepos. It doesn't replace npm/pnpm but sits on top, orchestrating task execution (build, lint, test) across packages with intelligent caching (skipping unchanged work), parallel execution, and respecting dependency graphs via 'dependsOn' in turbo.json."
+      },
+      {
+        "question": "In turbo.json, what does 'dependsOn: [\"^build\"]' mean for a task?",
+        "answers": [
+          {
+            "answer": "The task depends on its own build script"
+          },
+          {
+            "answer": "The task depends on the build task of its upstream workspace dependencies (packages it imports from)"
+          },
+          {
+            "answer": "The task must run after all other tasks in all packages"
+          },
+          {
+            "answer": "The caret means the task is optional"
+          }
+        ],
+        "answer": "The task depends on the build task of its upstream workspace dependencies (packages it imports from)",
+        "explanation": "The '^' prefix in Turborepo's 'dependsOn' creates a topological dependency — meaning before this package's task runs, the 'build' task of every workspace package it depends on must complete first. This ensures, for example, that shared packages are built before the apps that consume them."
+      },
+      {
+        "question": "What is Biome in a modern JavaScript project?",
+        "answers": [
+          {
+            "answer": "A CSS-in-JS framework"
+          },
+          {
+            "answer": "A fast, all-in-one toolchain for linting, formatting, and code analysis that replaces ESLint + Prettier"
+          },
+          {
+            "answer": "A test runner alternative to Jest"
+          },
+          {
+            "answer": "A bundler like Webpack"
+          }
+        ],
+        "answer": "A fast, all-in-one toolchain for linting, formatting, and code analysis that replaces ESLint + Prettier",
+        "explanation": "Biome is a performant all-in-one toolchain written in Rust. It combines the functionality of ESLint (linting), Prettier (formatting), and more into a single tool. It's significantly faster than running ESLint + Prettier separately and uses a single configuration file (biome.json)."
+      },
+      {
+        "question": "In a Biome linter configuration, what does 'noExplicitAny: \"error\"' enforce?",
+        "answers": [
+          {
+            "answer": "It allows using 'any' type only in test files"
+          },
+          {
+            "answer": "It disallows the use of TypeScript's 'any' type, promoting type safety"
+          },
+          {
+            "answer": "It disallows using JavaScript instead of TypeScript"
+          },
+          {
+            "answer": "It prevents variable shadowing"
+          }
+        ],
+        "answer": "It disallows the use of TypeScript's 'any' type, promoting type safety",
+        "explanation": "The 'noExplicitAny' rule at the 'error' level makes it a build-breaking error to use TypeScript's 'any' type explicitly. This enforces strict type safety, pushing developers to use proper types, generics, or 'unknown' instead. It prevents type-safety holes that can lead to runtime bugs."
+      },
+      {
+        "question": "What is the purpose of Husky in a Git workflow?",
+        "answers": [
+          {
+            "answer": "It compresses Git repositories"
+          },
+          {
+            "answer": "It manages Git hooks to run scripts automatically before commits, pushes, etc."
+          },
+          {
+            "answer": "It provides a GUI for Git operations"
+          },
+          {
+            "answer": "It replaces Git's merge strategy"
+          }
+        ],
+        "answer": "It manages Git hooks to run scripts automatically before commits, pushes, etc.",
+        "explanation": "Husky enables easy management of Git hooks (pre-commit, pre-push, commit-msg, etc.) in a project. It lets teams enforce quality by running linters, formatters, or commit message validators automatically before code is committed. Combined with commitlint, it ensures every commit follows Conventional Commits."
+      },
+      {
+        "question": "What does commitlint with '@commitlint/config-conventional' enforce?",
+        "answers": [
+          {
+            "answer": "That all files are properly formatted"
+          },
+          {
+            "answer": "That commit messages follow Conventional Commits format like 'feat:', 'fix:', 'docs:'"
+          },
+          {
+            "answer": "That branches are named correctly"
+          },
+          {
+            "answer": "That pull requests have descriptions"
+          }
+        ],
+        "answer": "That commit messages follow Conventional Commits format like 'feat:', 'fix:', 'docs:'",
+        "explanation": "Commitlint validates commit messages against rules. The '@commitlint/config-conventional' preset enforces the Conventional Commits specification, requiring messages like 'feat: add login page', 'fix: resolve null pointer', or 'chore: update deps'. This enables automated changelogs and semantic versioning."
+      },
+      {
+        "question": "In NestJS, what is a Module?",
+        "answers": [
+          {
+            "answer": "A single function that handles one HTTP request"
+          },
+          {
+            "answer": "An organizational unit that groups related controllers, services, and providers together"
+          },
+          {
+            "answer": "A database table definition"
+          },
+          {
+            "answer": "A configuration file for environment variables"
+          }
+        ],
+        "answer": "An organizational unit that groups related controllers, services, and providers together",
+        "explanation": "A NestJS Module (decorated with @Module()) is the fundamental organizational unit. It groups related functionality — importing other modules, declaring controllers (HTTP endpoints), and providing services (business logic). The root AppModule imports all feature modules, creating a modular, maintainable architecture."
+      },
+      {
+        "question": "What is the purpose of APP_GUARD in NestJS's dependency injection system?",
+        "answers": [
+          {
+            "answer": "It registers a service that runs only during testing"
+          },
+          {
+            "answer": "It registers a guard that is automatically applied to every route in the application globally"
+          },
+          {
+            "answer": "It creates a database connection pool"
+          },
+          {
+            "answer": "It enables CORS for all endpoints"
+          }
+        ],
+        "answer": "It registers a guard that is automatically applied to every route in the application globally",
+        "explanation": "APP_GUARD is a special NestJS injection token. When you provide a class using 'provide: APP_GUARD', that guard is automatically applied to every route without needing to add @UseGuards() on each controller. This is commonly used for authentication, rate limiting (ThrottlerGuard), or role-based access control."
+      },
+      {
+        "question": "What does the @nestjs/throttler package provide?",
+        "answers": [
+          {
+            "answer": "Database connection pooling"
+          },
+          {
+            "answer": "Rate limiting to protect APIs from excessive requests"
+          },
+          {
+            "answer": "Request body compression"
+          },
+          {
+            "answer": "Response caching"
+          }
+        ],
+        "answer": "Rate limiting to protect APIs from excessive requests",
+        "explanation": "The @nestjs/throttler package provides rate limiting for NestJS applications. It prevents abuse by limiting how many requests a client can make within a time window (configured via 'ttl' and 'limit'). ThrottlerGuard can be applied globally via APP_GUARD to protect all endpoints from DDoS attacks or brute-force attempts."
+      },
+      {
+        "question": "What is Helmet's role in a Node.js/Express application?",
+        "answers": [
+          {
+            "answer": "It serves static files"
+          },
+          {
+            "answer": "It sets various HTTP security headers to protect against common web vulnerabilities"
+          },
+          {
+            "answer": "It compresses HTTP responses"
+          },
+          {
+            "answer": "It validates request bodies"
+          }
+        ],
+        "answer": "It sets various HTTP security headers to protect against common web vulnerabilities",
+        "explanation": "Helmet is a middleware that sets security-related HTTP headers like Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, and Strict-Transport-Security. These headers protect against XSS, clickjacking, MIME-type sniffing, and other common attacks. It should be applied before other middleware (CORS, etc.)."
+      },
+      {
+        "question": "What does 'app.set(\"trust proxy\", \"loopback\")' configure in an Express/NestJS app?",
+        "answers": [
+          {
+            "answer": "It enables WebSocket support"
+          },
+          {
+            "answer": "It tells the app to trust proxy headers (like X-Forwarded-For) only from localhost, needed behind load balancers"
+          },
+          {
+            "answer": "It sets up a proxy server for API calls"
+          },
+          {
+            "answer": "It disables SSL verification"
+          }
+        ],
+        "answer": "It tells the app to trust proxy headers (like X-Forwarded-For) only from localhost, needed behind load balancers",
+        "explanation": "When an app sits behind a reverse proxy or load balancer (like AWS ALB), the real client IP comes in X-Forwarded-For headers. Setting 'trust proxy' to 'loopback' tells Express to trust these headers only from localhost connections, ensuring rate limiting and logging use the correct client IP while preventing header spoofing."
+      },
+      {
+        "question": "What is Zod used for in a TypeScript application?",
+        "answers": [
+          {
+            "answer": "Database migrations"
+          },
+          {
+            "answer": "Schema declaration and runtime validation with automatic TypeScript type inference"
+          },
+          {
+            "answer": "CSS preprocessing"
+          },
+          {
+            "answer": "HTTP client requests"
+          }
+        ],
+        "answer": "Schema declaration and runtime validation with automatic TypeScript type inference",
+        "explanation": "Zod is a TypeScript-first schema validation library. You define a schema once and get both runtime validation and compile-time TypeScript types (via z.infer<>). In NestJS, nestjs-zod integrates Zod for request validation via ZodValidationPipe and response serialization via ZodSerializerInterceptor, replacing class-validator."
+      },
+      {
+        "question": "What does the ZodValidationPipe in nestjs-zod do when applied globally via APP_PIPE?",
+        "answers": [
+          {
+            "answer": "It compresses response bodies"
+          },
+          {
+            "answer": "It automatically validates all incoming request data (body, query, params) against Zod schemas before reaching controllers"
+          },
+          {
+            "answer": "It converts all responses to XML"
+          },
+          {
+            "answer": "It logs every request to the console"
+          }
+        ],
+        "answer": "It automatically validates all incoming request data (body, query, params) against Zod schemas before reaching controllers",
+        "explanation": "ZodValidationPipe, when registered globally via APP_PIPE, intercepts every incoming request and validates the body, query parameters, and route params against the Zod schemas defined in DTOs. Invalid requests receive a 400 Bad Request with detailed error messages, preventing invalid data from reaching business logic."
+      },
+      {
+        "question": "What is the 'neverthrow' library's approach to error handling?",
+        "answers": [
+          {
+            "answer": "It catches all unhandled promise rejections"
+          },
+          {
+            "answer": "It provides Result types (Ok/Err) for type-safe error handling without throw/catch"
+          },
+          {
+            "answer": "It retries failed operations automatically"
+          },
+          {
+            "answer": "It logs errors to an external monitoring service"
+          }
+        ],
+        "answer": "It provides Result types (Ok/Err) for type-safe error handling without throw/catch",
+        "explanation": "Neverthrow implements the Result pattern from functional programming. Instead of throw/catch, functions return Result<T, E> which is either Ok(value) or Err(error). This makes all possible errors explicitly typed in function signatures, forcing callers to handle both success and failure cases at compile time."
+      },
+      {
+        "question": "What is Drizzle ORM's key differentiator compared to ORMs like Prisma or TypeORM?",
+        "answers": [
+          {
+            "answer": "It only supports MongoDB"
+          },
+          {
+            "answer": "It embraces SQL with a thin TypeScript layer — you write SQL-like queries that compile to efficient SQL, with full type safety"
+          },
+          {
+            "answer": "It generates GraphQL schemas automatically"
+          },
+          {
+            "answer": "It requires no configuration file"
+          }
+        ],
+        "answer": "It embraces SQL with a thin TypeScript layer — you write SQL-like queries that compile to efficient SQL, with full type safety",
+        "explanation": "Drizzle ORM is 'SQL-like' by design. Unlike heavier ORMs, its query API closely mirrors SQL syntax (select, where, join, etc.) while providing full TypeScript type inference. This means developers who know SQL can immediately be productive, and queries stay predictable — you know exactly what SQL gets generated."
+      },
+      {
+        "question": "What does 'drizzle-kit generate' do?",
+        "answers": [
+          {
+            "answer": "Generates TypeScript types from a JSON schema"
+          },
+          {
+            "answer": "Generates SQL migration files by comparing your Drizzle schema definitions with the current database state"
+          },
+          {
+            "answer": "Creates a new database from scratch"
+          },
+          {
+            "answer": "Generates mock data for testing"
+          }
+        ],
+        "answer": "Generates SQL migration files by comparing your Drizzle schema definitions with the current database state",
+        "explanation": "Drizzle Kit's 'generate' command compares your TypeScript schema definitions with the migration history to produce new SQL migration files. These migrations capture structural changes (new tables, columns, indexes) as versioned SQL files. You then apply them with 'drizzle-kit migrate' to update the actual database."
+      },
+      {
+        "question": "What does the 'drizzle-zod' package provide?",
+        "answers": [
+          {
+            "answer": "Database connection pooling for Zod"
+          },
+          {
+            "answer": "Automatic generation of Zod validation schemas from Drizzle table definitions"
+          },
+          {
+            "answer": "SQL query logging with Zod"
+          },
+          {
+            "answer": "A REST API generator from database tables"
+          }
+        ],
+        "answer": "Automatic generation of Zod validation schemas from Drizzle table definitions",
+        "explanation": "drizzle-zod bridges Drizzle ORM and Zod by automatically generating Zod schemas from your Drizzle table definitions. This means you define your schema once (in Drizzle) and get both the database type definitions AND validation schemas. This ensures validation rules always match your database structure (DRY principle)."
+      },
+      {
+        "question": "What is the purpose of 'drizzle-seed' in a project?",
+        "answers": [
+          {
+            "answer": "It runs database backups"
+          },
+          {
+            "answer": "It provides utilities to populate the database with test or development data in a repeatable way"
+          },
+          {
+            "answer": "It optimizes database indexes"
+          },
+          {
+            "answer": "It monitors database performance"
+          }
+        ],
+        "answer": "It provides utilities to populate the database with test or development data in a repeatable way",
+        "explanation": "drizzle-seed integrates with Drizzle ORM to provide type-safe database seeding. Combined with @faker-js/faker for generating realistic fake data, it enables developers to populate databases with consistent test data for local development and testing. Seeders are typically run via scripts like 'pnpm db:seed'."
+      },
+      {
+        "question": "What does Drizzle Studio (drizzle-kit studio) provide?",
+        "answers": [
+          {
+            "answer": "A code editor for writing SQL"
+          },
+          {
+            "answer": "A web-based GUI to browse, query, and edit your database data visually"
+          },
+          {
+            "answer": "An automated migration tool"
+          },
+          {
+            "answer": "A performance profiler for queries"
+          }
+        ],
+        "answer": "A web-based GUI to browse, query, and edit your database data visually",
+        "explanation": "Drizzle Studio is a built-in visual database browser that launches as a web application. It lets developers browse tables, view/edit rows, run queries, and inspect relationships without needing external tools like pgAdmin. It reads your Drizzle schema for type-aware display and is typically accessed on port 4983."
+      },
+      {
+        "question": "In a Next.js App Router project, what do parenthesized folder names like '(platform)' represent?",
+        "answers": [
+          {
+            "answer": "API route groups"
+          },
+          {
+            "answer": "Route groups that organize routes under a shared layout without affecting the URL path"
+          },
+          {
+            "answer": "Dynamic route parameters"
+          },
+          {
+            "answer": "Middleware interceptors"
+          }
+        ],
+        "answer": "Route groups that organize routes under a shared layout without affecting the URL path",
+        "explanation": "In Next.js App Router, parenthesized folders like (platform), (auth-fullglass), and (auth-simple) are route groups. They allow organizing routes under a shared layout.tsx without the folder name appearing in the URL. For example, app/(platform)/orders/page.tsx maps to '/orders', not '/platform/orders'."
+      },
+      {
+        "question": "What is the benefit of having multiple route groups like '(auth-fullglass)' and '(auth-simple)' in Next.js?",
+        "answers": [
+          {
+            "answer": "They create separate API endpoints"
+          },
+          {
+            "answer": "Each route group can have its own layout.tsx, allowing different page layouts for different sections of the app"
+          },
+          {
+            "answer": "They enable server-side caching per group"
+          },
+          {
+            "answer": "They enforce different authentication methods"
+          }
+        ],
+        "answer": "Each route group can have its own layout.tsx, allowing different page layouts for different sections of the app",
+        "explanation": "Multiple route groups allow different sections of an app to have completely different layout wrappers without affecting URL structure. For example, (auth-fullglass) routes can use a full-glass background layout while (auth-simple) uses a minimal layout, and (platform) uses the main dashboard layout — all with distinct layout.tsx files."
+      },
+      {
+        "question": "What are Server Actions in Next.js?",
+        "answers": [
+          {
+            "answer": "WebSocket event handlers"
+          },
+          {
+            "answer": "Async functions marked with 'use server' that run on the server, enabling form handling and data mutations without API routes"
+          },
+          {
+            "answer": "Cron jobs that run on a schedule"
+          },
+          {
+            "answer": "Background workers for heavy computation"
+          }
+        ],
+        "answer": "Async functions marked with 'use server' that run on the server, enabling form handling and data mutations without API routes",
+        "explanation": "Server Actions are async functions defined with 'use server' directive. They execute on the server and can be called directly from Client Components (e.g., form submissions). They replace the need for separate API endpoints for mutations, reducing boilerplate while keeping sensitive logic server-side."
+      },
+      {
+        "question": "What is Radix UI's architectural approach to building UI components?",
+        "answers": [
+          {
+            "answer": "It provides fully styled Material Design components"
+          },
+          {
+            "answer": "It provides unstyled, accessible, headless primitives that developers style themselves"
+          },
+          {
+            "answer": "It generates components from Figma designs"
+          },
+          {
+            "answer": "It is a CSS framework like Bootstrap"
+          }
+        ],
+        "answer": "It provides unstyled, accessible, headless primitives that developers style themselves",
+        "explanation": "Radix UI provides unstyled ('headless') component primitives that handle complex behaviors (focus management, keyboard navigation, ARIA attributes) without imposing any visual style. This makes them highly composable — developers get robust accessibility and interaction logic while having full control over styling with TailwindCSS, CSS modules, etc."
+      },
+      {
+        "question": "What is shadcn/ui and how does it differ from a typical component library?",
+        "answers": [
+          {
+            "answer": "It's an npm package you install as a dependency"
+          },
+          {
+            "answer": "It's a collection of copy-paste-able components built on Radix UI + Tailwind that live in your codebase, not node_modules"
+          },
+          {
+            "answer": "It's a design system like Material UI"
+          },
+          {
+            "answer": "It's a CSS preprocessor"
+          }
+        ],
+        "answer": "It's a collection of copy-paste-able components built on Radix UI + Tailwind that live in your codebase, not node_modules",
+        "explanation": "Unlike traditional libraries installed via npm, shadcn/ui uses a CLI to copy component source code directly into your project. Components are built on Radix UI primitives + TailwindCSS, giving you full ownership and customization ability. You modify the code directly — there's no version to update or breaking changes from upstream."
+      },
+      {
+        "question": "What does Class Variance Authority (CVA) solve in component development?",
+        "answers": [
+          {
+            "answer": "It manages CSS animations"
+          },
+          {
+            "answer": "It provides a type-safe way to define component variants (size, color, state) mapping to className combinations"
+          },
+          {
+            "answer": "It validates class names at compile time"
+          },
+          {
+            "answer": "It minifies CSS class names in production"
+          }
+        ],
+        "answer": "It provides a type-safe way to define component variants (size, color, state) mapping to className combinations",
+        "explanation": "CVA (Class Variance Authority) lets you define component variants declaratively — e.g., a Button with variants for 'size' (sm/md/lg) and 'intent' (primary/danger). It maps each variant combination to specific CSS classes (typically Tailwind) and provides TypeScript autocomplete for variant props. It pairs perfectly with shadcn/ui."
+      },
+      {
+        "question": "What does 'tailwind-merge' do that regular string concatenation doesn't?",
+        "answers": [
+          {
+            "answer": "It minifies Tailwind classes"
+          },
+          {
+            "answer": "It intelligently merges Tailwind classes, resolving conflicts by keeping the last conflicting class"
+          },
+          {
+            "answer": "It generates new utility classes"
+          },
+          {
+            "answer": "It converts Tailwind to vanilla CSS"
+          }
+        ],
+        "answer": "It intelligently merges Tailwind classes, resolving conflicts by keeping the last conflicting class",
+        "explanation": "tailwind-merge resolves Tailwind class conflicts when merging class strings. For example, 'p-4 p-2' would keep only 'p-2' (last wins). This is critical for component libraries where base styles may conflict with overrides passed via props. Without it, 'p-4 p-2' would both apply with unpredictable results."
+      },
+      {
+        "question": "What is the 'cn()' utility commonly seen in shadcn/ui projects?",
+        "answers": [
+          {
+            "answer": "A function to create new CSS variables"
+          },
+          {
+            "answer": "A helper that combines clsx (conditional classes) and tailwind-merge (conflict resolution) into one function"
+          },
+          {
+            "answer": "A network request helper"
+          },
+          {
+            "answer": "A component naming convention enforcer"
+          }
+        ],
+        "answer": "A helper that combines clsx (conditional classes) and tailwind-merge (conflict resolution) into one function",
+        "explanation": "The cn() utility is a pattern from shadcn/ui that composes clsx and tailwind-merge. clsx handles conditional class logic (e.g., applying classes based on boolean props), while tailwind-merge handles conflict resolution. Together, cn('p-4 text-red-500', isActive && 'text-blue-500') cleanly merges and resolves conflicts."
+      },
+      {
+        "question": "What does Lucide React provide?",
+        "answers": [
+          {
+            "answer": "A charting library"
+          },
+          {
+            "answer": "A comprehensive, tree-shakeable icon library with React components"
+          },
+          {
+            "answer": "A font loading utility"
+          },
+          {
+            "answer": "A CSS animation framework"
+          }
+        ],
+        "answer": "A comprehensive, tree-shakeable icon library with React components",
+        "explanation": "Lucide React is a modern icon library offering 1000+ SVG icons as individual React components. Being tree-shakeable means only the icons you actually import are included in your bundle, keeping it small. Each icon is a customizable component accepting props like size, color, and className."
+      },
+      {
+        "question": "What is React Hook Form's key advantage over managing form state manually?",
+        "answers": [
+          {
+            "answer": "It stores data in localStorage automatically"
+          },
+          {
+            "answer": "It minimizes re-renders by using uncontrolled components and ref-based registration"
+          },
+          {
+            "answer": "It generates form HTML from a JSON schema"
+          },
+          {
+            "answer": "It sends form data to a server automatically"
+          }
+        ],
+        "answer": "It minimizes re-renders by using uncontrolled components and ref-based registration",
+        "explanation": "React Hook Form uses refs instead of state for form inputs (uncontrolled), dramatically reducing re-renders. A form with 50 fields only re-renders the changed field, not all 50. Combined with @hookform/resolvers and Zod schemas, it provides validation without the performance penalty of controlled inputs."
+      },
+      {
+        "question": "What is 'sonner' used for in a React application?",
+        "answers": [
+          {
+            "answer": "Sound effects management"
+          },
+          {
+            "answer": "A toast notification library for showing brief, non-intrusive messages to users"
+          },
+          {
+            "answer": "A state management library"
+          },
+          {
+            "answer": "A server-sent events handler"
+          }
+        ],
+        "answer": "A toast notification library for showing brief, non-intrusive messages to users",
+        "explanation": "Sonner is a lightweight toast/notification library for React. It displays brief, non-blocking messages (success, error, loading states) that auto-dismiss. Toasts appear in a stack, support rich content, and animate smoothly. It's commonly used to confirm user actions like 'Order saved successfully' or 'Error: please try again'."
+      },
+      {
+        "question": "What does the 'next-themes' package handle?",
+        "answers": [
+          {
+            "answer": "CSS animations based on scroll position"
+          },
+          {
+            "answer": "Theme switching (light/dark/system) with SSR-safe, flicker-free implementation in Next.js"
+          },
+          {
+            "answer": "Internationalization of theme names"
+          },
+          {
+            "answer": "Dynamic font loading based on theme"
+          }
+        ],
+        "answer": "Theme switching (light/dark/system) with SSR-safe, flicker-free implementation in Next.js",
+        "explanation": "next-themes provides theme management for Next.js apps, handling light/dark/system modes. It solves the SSR flash-of-unstyled-content problem by injecting a tiny script that reads the user's preference before React hydrates. It exposes useTheme() hook and integrates seamlessly with TailwindCSS's dark mode."
+      },
+      {
+        "question": "What is the 'cmdk' library used for?",
+        "answers": [
+          {
+            "answer": "Command-line interface for React apps"
+          },
+          {
+            "answer": "A command palette / command menu component (like VS Code's Ctrl+Shift+P or macOS Spotlight)"
+          },
+          {
+            "answer": "Keyboard shortcut management"
+          },
+          {
+            "answer": "CLI argument parsing"
+          }
+        ],
+        "answer": "A command palette / command menu component (like VS Code's Ctrl+Shift+P or macOS Spotlight)",
+        "explanation": "cmdk provides a command palette component — the kind of searchable, keyboard-navigable popup menu you see in VS Code (Ctrl+Shift+P) or GitHub (Ctrl+K). Users can quickly search and execute actions, navigate to pages, or filter data using keyboard shortcuts. It's composable and accessible out of the box."
+      },
+      {
+        "question": "What does TanStack React Table provide?",
+        "answers": [
+          {
+            "answer": "Pre-built HTML table components with Material Design"
+          },
+          {
+            "answer": "A headless, fully type-safe table/datagrid library — it manages state and logic while you render the UI"
+          },
+          {
+            "answer": "A database query builder"
+          },
+          {
+            "answer": "CSV/Excel export utilities"
+          }
+        ],
+        "answer": "A headless, fully type-safe table/datagrid library — it manages state and logic while you render the UI",
+        "explanation": "TanStack React Table is a headless table library — it handles all table logic (sorting, filtering, pagination, column resizing, row selection) without rendering any HTML. You control the markup and styling completely. This makes it perfect for design systems where tables must match custom designs exactly."
+      },
+      {
+        "question": "What is the purpose of Pino in a NestJS application?",
+        "answers": [
+          {
+            "answer": "It processes payment transactions"
+          },
+          {
+            "answer": "It provides fast, structured JSON logging optimized for production with low overhead"
+          },
+          {
+            "answer": "It compresses static assets"
+          },
+          {
+            "answer": "It schedules background tasks"
+          }
+        ],
+        "answer": "It provides fast, structured JSON logging optimized for production with low overhead",
+        "explanation": "Pino is an extremely fast Node.js logger that outputs structured JSON logs. In production, JSON logs are easily parsed by log aggregation tools (CloudWatch, Datadog). The nestjs-pino integration replaces NestJS's default logger and adds request context (method, path, status, response time) to every log line automatically."
+      },
+      {
+        "question": "What does 'pino-pretty' do and when is it typically used?",
+        "answers": [
+          {
+            "answer": "It compresses Pino logs for storage"
+          },
+          {
+            "answer": "It formats Pino's JSON output into colorful, human-readable console logs — used only in development"
+          },
+          {
+            "answer": "It validates log schemas"
+          },
+          {
+            "answer": "It sends logs to a cloud service"
+          }
+        ],
+        "answer": "It formats Pino's JSON output into colorful, human-readable console logs — used only in development",
+        "explanation": "pino-pretty transforms Pino's machine-readable JSON logs into human-readable, colorized console output. It's used only during development (as a devDependency) because in production you want raw JSON for log aggregation services. This gives developers readable logs locally while keeping production logs machine-parseable."
+      },
+      {
+        "question": "What does @nestjs/swagger with OpenAPI provide?",
+        "answers": [
+          {
+            "answer": "GraphQL schema generation"
+          },
+          {
+            "answer": "Auto-generated interactive API documentation (Swagger UI) with request/response schemas from your code"
+          },
+          {
+            "answer": "Database schema visualization"
+          },
+          {
+            "answer": "Unit test coverage reports"
+          }
+        ],
+        "answer": "Auto-generated interactive API documentation (Swagger UI) with request/response schemas from your code",
+        "explanation": "@nestjs/swagger auto-generates OpenAPI (Swagger) documentation from your NestJS controllers and DTOs. It produces an interactive Swagger UI where developers can explore endpoints, see request/response schemas, and test API calls directly in the browser. The 'cleanupOpenApiDoc' from nestjs-zod ensures Zod schemas render correctly."
+      },
+      {
+        "question": "What does the 'jose' library handle alongside 'jsonwebtoken'?",
+        "answers": [
+          {
+            "answer": "HTTP request signing"
+          },
+          {
+            "answer": "JSON Web Token (JWT), JSON Web Encryption (JWE), and JSON Web Key (JWK) operations for authentication"
+          },
+          {
+            "answer": "Database encryption"
+          },
+          {
+            "answer": "OAuth2 flow management"
+          }
+        ],
+        "answer": "JSON Web Token (JWT), JSON Web Encryption (JWE), and JSON Web Key (JWK) operations for authentication",
+        "explanation": "Jose is a modern JavaScript library for JOSE (JSON Object Signing and Encryption) standards. It handles JWTs, JWEs, JWKs, and JWSs with Web Crypto API support. Using it alongside 'jsonwebtoken' allows flexible token verification — jose for modern JWKS-based verification (e.g., from Cognito) and jsonwebtoken for simpler JWT operations."
+      },
+      {
+        "question": "What AWS service does '@aws-sdk/client-cognito-identity-provider' integrate with?",
+        "answers": [
+          {
+            "answer": "AWS Lambda"
+          },
+          {
+            "answer": "AWS Cognito — a managed user authentication and identity service for sign-up, sign-in, and access control"
+          },
+          {
+            "answer": "AWS DynamoDB"
+          },
+          {
+            "answer": "AWS S3"
+          }
+        ],
+        "answer": "AWS Cognito — a managed user authentication and identity service for sign-up, sign-in, and access control",
+        "explanation": "AWS Cognito provides managed user pools for authentication (sign-up, sign-in, MFA, password reset) and identity pools for authorization. The SDK client allows the API to programmatically create users, verify tokens, manage user attributes, and handle authentication flows — eliminating the need to build auth infrastructure from scratch."
+      },
+      {
+        "question": "What does '@aws-sdk/client-ses' enable in the application?",
+        "answers": [
+          {
+            "answer": "File storage on S3"
+          },
+          {
+            "answer": "Sending transactional emails via Amazon Simple Email Service"
+          },
+          {
+            "answer": "Managing DNS records"
+          },
+          {
+            "answer": "Streaming video content"
+          }
+        ],
+        "answer": "Sending transactional emails via Amazon Simple Email Service",
+        "explanation": "Amazon SES (Simple Email Service) is used for sending transactional emails like order confirmations, password resets, and notifications. The SDK client lets the API send emails programmatically with HTML templates, attachments, and tracking. SES is cost-effective for high-volume email at scale."
+      },
+      {
+        "question": "What is AWS CDK (Cloud Development Kit)?",
+        "answers": [
+          {
+            "answer": "A command-line interface for AWS services"
+          },
+          {
+            "answer": "An Infrastructure-as-Code framework that lets you define cloud resources using TypeScript (or other languages) instead of YAML/JSON"
+          },
+          {
+            "answer": "A monitoring dashboard for AWS"
+          },
+          {
+            "answer": "A CI/CD pipeline service"
+          }
+        ],
+        "answer": "An Infrastructure-as-Code framework that lets you define cloud resources using TypeScript (or other languages) instead of YAML/JSON",
+        "explanation": "AWS CDK lets you define cloud infrastructure using familiar programming languages like TypeScript. Instead of writing CloudFormation YAML, you create Stacks and Constructs as TypeScript classes. CDK synthesizes these into CloudFormation templates. It enables loops, conditionals, inheritance, and IDE autocomplete for infrastructure — far more powerful than raw templates."
+      },
+      {
+        "question": "In AWS CDK, what is a 'Construct'?",
+        "answers": [
+          {
+            "answer": "A running Docker container"
+          },
+          {
+            "answer": "The basic building block representing a single or group of cloud resources, composable into higher-level abstractions"
+          },
+          {
+            "answer": "A database migration script"
+          },
+          {
+            "answer": "A monitoring alarm"
+          }
+        ],
+        "answer": "The basic building block representing a single or group of cloud resources, composable into higher-level abstractions",
+        "explanation": "A Construct in CDK is the fundamental building block. L1 constructs map 1:1 to CloudFormation resources. L2 constructs add convenience (e.g., an S3 Bucket with sensible defaults). L3 constructs (patterns) compose multiple resources (e.g., a load-balanced ECS service). Custom constructs let you encapsulate complex infrastructure as reusable components."
+      },
+      {
+        "question": "What is Amazon ECS (Elastic Container Service) used for in this project?",
+        "answers": [
+          {
+            "answer": "Storing container images"
+          },
+          {
+            "answer": "Running and managing containerized applications (API, frontend, Storybook) on AWS without managing servers"
+          },
+          {
+            "answer": "Building Docker images"
+          },
+          {
+            "answer": "Managing DNS records"
+          }
+        ],
+        "answer": "Running and managing containerized applications (API, frontend, Storybook) on AWS without managing servers",
+        "explanation": "Amazon ECS orchestrates Docker containers for the API, web-external, web-internal, and Storybook services. With Fargate (serverless compute), you don't manage EC2 instances — AWS handles the underlying infrastructure. ECS Services ensure containers stay running, scale based on demand, and connect to ALBs for load balancing."
+      },
+      {
+        "question": "What role does an Application Load Balancer (ALB) play in the AWS architecture?",
+        "answers": [
+          {
+            "answer": "It stores application state between requests"
+          },
+          {
+            "answer": "It distributes incoming HTTP/HTTPS traffic across multiple ECS tasks, with path-based routing and health checks"
+          },
+          {
+            "answer": "It compiles application code"
+          },
+          {
+            "answer": "It manages database connections"
+          }
+        ],
+        "answer": "It distributes incoming HTTP/HTTPS traffic across multiple ECS tasks, with path-based routing and health checks",
+        "explanation": "An ALB sits in front of ECS services, distributing incoming traffic across healthy container instances. It supports path-based routing (e.g., /api/* → API containers, /* → frontend containers), SSL termination, health checks, and listener rules with priorities. This enables a single domain to serve multiple services."
+      },
+      {
+        "question": "What is the purpose of AWS Secrets Manager in this project?",
+        "answers": [
+          {
+            "answer": "Encrypting database columns"
+          },
+          {
+            "answer": "Securely storing and managing sensitive values like database passwords, API keys, and JWT secrets accessed at runtime"
+          },
+          {
+            "answer": "Managing user passwords for the web app"
+          },
+          {
+            "answer": "Generating random data for testing"
+          }
+        ],
+        "answer": "Securely storing and managing sensitive values like database passwords, API keys, and JWT secrets accessed at runtime",
+        "explanation": "AWS Secrets Manager securely stores sensitive configuration like DATABASE_URL, JWT_SECRET, and API keys. Applications retrieve secrets at runtime via the SDK, avoiding hardcoded credentials in code or environment variables. Secrets Manager supports automatic rotation, versioning, and fine-grained IAM access control."
+      },
+      {
+        "question": "What is the key benefit of Vitest over Jest?",
+        "answers": [
+          {
+            "answer": "It supports more programming languages"
+          },
+          {
+            "answer": "It uses Vite's transform pipeline for near-instant test startup and native ESM/TypeScript support"
+          },
+          {
+            "answer": "It has more plugins available"
+          },
+          {
+            "answer": "It runs tests in a real browser"
+          }
+        ],
+        "answer": "It uses Vite's transform pipeline for near-instant test startup and native ESM/TypeScript support",
+        "explanation": "Vitest leverages Vite's blazing-fast transform pipeline, eliminating the slow startup that Jest has with TypeScript (via ts-jest or babel). It natively supports ESM, TypeScript, and JSX without configuration. It's Jest-compatible (same expect, describe, it API) but starts tests almost instantly thanks to Vite's on-demand compilation."
+      },
+      {
+        "question": "What does the '@suites/unit' package provide for testing?",
+        "answers": [
+          {
+            "answer": "E2E browser testing"
+          },
+          {
+            "answer": "Automatic unit test scaffolding with deep mocking of NestJS dependency injection, isolating the unit under test"
+          },
+          {
+            "answer": "Code coverage reporting"
+          },
+          {
+            "answer": "Visual regression testing"
+          }
+        ],
+        "answer": "Automatic unit test scaffolding with deep mocking of NestJS dependency injection, isolating the unit under test",
+        "explanation": "The Suites testing library (@suites/unit, @suites/di.nestjs, @suites/doubles.vitest) automatically resolves NestJS's dependency injection tree and mocks all dependencies of the unit under test. This means you don't manually create mocks for every injected service — Suites handles it, letting you focus on testing business logic."
+      },
+      {
+        "question": "What is Playwright used for in this project?",
+        "answers": [
+          {
+            "answer": "Unit testing React components"
+          },
+          {
+            "answer": "End-to-end browser testing — automating real browser interactions to test complete user flows"
+          },
+          {
+            "answer": "API performance load testing"
+          },
+          {
+            "answer": "Static code analysis"
+          }
+        ],
+        "answer": "End-to-end browser testing — automating real browser interactions to test complete user flows",
+        "explanation": "Playwright automates real browsers (Chromium, Firefox, WebKit) for E2E testing. It navigates pages, fills forms, clicks buttons, asserts content — testing the full user journey. With @axe-core/playwright, it also tests accessibility. Tests can run headless in CI or headed locally for debugging with '--ui' or '--debug' flags."
+      },
+      {
+        "question": "What does '@axe-core/playwright' add to Playwright E2E tests?",
+        "answers": [
+          {
+            "answer": "Visual screenshot comparison"
+          },
+          {
+            "answer": "Automated accessibility (a11y) auditing — detecting WCAG violations like missing labels, poor contrast, or keyboard navigation issues"
+          },
+          {
+            "answer": "Network request mocking"
+          },
+          {
+            "answer": "Test parallelization"
+          }
+        ],
+        "answer": "Automated accessibility (a11y) auditing — detecting WCAG violations like missing labels, poor contrast, or keyboard navigation issues",
+        "explanation": "@axe-core/playwright integrates the axe accessibility engine into Playwright tests. During E2E tests, it scans rendered pages for WCAG violations — missing alt text, poor color contrast, improper heading hierarchy, missing form labels, etc. This ensures the application remains accessible to users with disabilities."
+      },
+      {
+        "question": "In Docker Compose, what does the 'extends' keyword do?",
+        "answers": [
+          {
+            "answer": "It creates a container that runs after the extended service stops"
+          },
+          {
+            "answer": "It inherits the configuration (image, volumes, environment) from a base service definition, enabling DRY service definitions"
+          },
+          {
+            "answer": "It scales the service to multiple instances"
+          },
+          {
+            "answer": "It links two containers on the same network"
+          }
+        ],
+        "answer": "It inherits the configuration (image, volumes, environment) from a base service definition, enabling DRY service definitions",
+        "explanation": "Docker Compose's 'extends' lets services inherit configuration from base service definitions. In this project, 'db-base', 'api-base', etc. define common config (image, volumes, env), while 'db', 'api', 'db-test', 'api-test' extend them with specific overrides (ports, commands, healthchecks). This follows the DRY principle."
+      },
+      {
+        "question": "In Docker Compose, what does 'condition: service_completed_successfully' mean?",
+        "answers": [
+          {
+            "answer": "The service will restart if it fails"
+          },
+          {
+            "answer": "The dependent service only starts after the referenced service exits with code 0 (success), useful for one-shot setup tasks"
+          },
+          {
+            "answer": "It enables health check monitoring"
+          },
+          {
+            "answer": "It merges the service logs"
+          }
+        ],
+        "answer": "The dependent service only starts after the referenced service exits with code 0 (success), useful for one-shot setup tasks",
+        "explanation": "This condition ensures a service waits for a dependency to complete successfully (exit code 0) before starting. In this project, 'api-test' depends on 'db-migrate-test' with this condition — ensuring database migrations finish successfully before integration tests begin. This prevents test failures from missing schema."
+      },
+      {
+        "question": "What is SWC and why is it used in this project alongside NestJS?",
+        "answers": [
+          {
+            "answer": "A CSS preprocessor"
+          },
+          {
+            "answer": "A super-fast Rust-based TypeScript/JavaScript compiler that replaces Babel for significantly faster builds and test compilation"
+          },
+          {
+            "answer": "A web server"
+          },
+          {
+            "answer": "A code formatter"
+          }
+        ],
+        "answer": "A super-fast Rust-based TypeScript/JavaScript compiler that replaces Babel for significantly faster builds and test compilation",
+        "explanation": "SWC (Speedy Web Compiler) is written in Rust and compiles TypeScript up to 20x faster than Babel. In the NestJS API, 'unplugin-swc' integrates SWC with Vitest for near-instant test compilation. NestJS CLI also supports SWC mode ('nest build --builder swc') for faster development builds. SWC handles decorators and reflect-metadata needed by NestJS."
+      }
+    ]
   }
 ]

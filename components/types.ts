@@ -77,6 +77,7 @@ export type SRSQuestionData = {
 export type EssaySection = {
   heading: string;
   content: string;
+  image?: string; // optional illustration filename from assets/essay_images/
 };
 
 export type CategoryEssay = {
