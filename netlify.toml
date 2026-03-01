@@ -2,6 +2,10 @@
   command = "expo export -p web && cp -r public/* dist/"
   publish = "dist"
 
+[dev]
+  targetPort = 8081
+
+
 [[headers]]
   for = "/sw.js"
   [headers.values]

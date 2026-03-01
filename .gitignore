@@ -35,3 +35,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 components/learning/.SRSDailyWarmup.tsx.swp
+
+# Local Netlify folder
+.netlify

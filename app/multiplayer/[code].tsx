@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, ScrollView, BackHandler, ActivityIndicator, Tou
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { multiplayerService, Player, GameState } from '../../services/MultiplayerService';
+import { presenceService } from '../../services/PresenceService';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useQuiz } from '../../components/Quizprovider';
 import { Question } from '../../components/Question';
@@ -73,12 +74,29 @@ export default function MultiplayerRoom() {
             {
                 text: 'Leave', onPress: () => {
                     multiplayerService.destroy();
+                    if (isHost) presenceService.setRoomCode(null);
                     router.replace('/multiplayer');
                 }
             },
         ]);
         return true;
-    }, [router]);
+    }, [router, isHost]);
+
+    useEffect(() => {
+        if (isHost) {
+            if (gameState.status === 'waiting') {
+                presenceService.setRoomCode(code);
+            } else if (gameState.status === 'playing') {
+                presenceService.disconnect();
+            }
+        }
+
+        return () => {
+            if (isHost) {
+                presenceService.setRoomCode(null);
+            }
+        };
+    }, [isHost, gameState.status, code]);
 
     useEffect(() => {
         // Clear any stale listeners from previous renders
