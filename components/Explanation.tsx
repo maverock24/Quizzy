@@ -95,7 +95,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
         </View>
 
       </ScrollView>
-      <TouchableOpacity onPress={handlerNextQuestion}>
+      <TouchableOpacity onPress={handlerNextQuestion} style={{ marginBottom: 20, paddingBottom: 10 }}>
         <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
           {/* <Text style={styles.buttonText}>Next </Text> */}
           <FontAwesome name="forward" size={35} color="white" style={{ marginRight: 6 }} />
