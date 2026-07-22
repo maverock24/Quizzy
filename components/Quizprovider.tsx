@@ -142,6 +142,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [textInputAnswerMode, setTextInputAnswerModeState] = useState<boolean>(false);
   const [timerEnabled, setTimerEnabledState] = useState<boolean>(false);
   const [timerDuration, setTimerDurationState] = useState<number>(5); // Default 5 minutes
+  const [kidsMode, setKidsModeState] = useState<boolean>(false);
 
   // User personalization
   const [userName, setUserNameState] = useState<string>('');
