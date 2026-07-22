@@ -38236,5 +38236,1402 @@
         "explanation": "SWC (Speedy Web Compiler) is written in Rust and compiles TypeScript up to 20x faster than Babel. In the NestJS API, 'unplugin-swc' integrates SWC with Vitest for near-instant test compilation. NestJS CLI also supports SWC mode ('nest build --builder swc') for faster development builds. SWC handles decorators and reflect-metadata needed by NestJS."
       }
     ]
+  },
+  {
+    "name": "📝 NLP Foundations",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What is tokenization and name two common algorithms?",
+        "answers": [
+          {
+            "answer": "Splitting text into tokens. BPE (Byte-Pair Encoding) merges frequent pairs; WordPiece maximizes likelihood; SentencePiece works on raw text"
+          },
+          {
+            "answer": "Converting tokens to IDs using a vocabulary lookup"
+          },
+          {
+            "answer": "A method for encrypting text before processing"
+          },
+          {
+            "answer": "Converting speech to text tokens"
+          }
+        ],
+        "answer": "Splitting text into tokens. BPE (Byte-Pair Encoding) merges frequent pairs; WordPiece maximizes likelihood; SentencePiece works on raw text",
+        "explanation": "BPE (used by GPT): start with characters, iteratively merge most frequent adjacent pairs → subword vocabulary. WordPiece (BERT): merges to maximize training data likelihood. SentencePiece: treats text as raw Unicode, language-independent. Subword tokenization handles OOV words: 'unhappiness' → ['un', 'happiness']."
+      },
+      {
+        "question": "What are word embeddings and how do they capture meaning?",
+        "answers": [
+          {
+            "answer": "Dense vectors where similar words have similar vectors. Trained using the distributional hypothesis: 'a word is characterized by the company it keeps'"
+          },
+          {
+            "answer": "One-hot encoded vectors for each word in the vocabulary"
+          },
+          {
+            "answer": "Dictionary lookup tables for word definitions"
+          },
+          {
+            "answer": "Image representations of words for visual processing"
+          }
+        ],
+        "answer": "Dense vectors where similar words have similar vectors. Trained using the distributional hypothesis: 'a word is characterized by the company it keeps'",
+        "explanation": "Word2Vec (2013): two architectures — CBOW (predict word from context), Skip-gram (predict context from word). The famous analogy: king - man + woman ≈ queen. GloVe: uses global co-occurrence statistics. Modern contextual embeddings (BERT, GPT) generate different vectors for the same word depending on context ('bank' of river vs 'bank' for money)."
+      },
+      {
+        "question": "What is the difference between stemming and lemmatization?",
+        "answers": [
+          {
+            "answer": "Stemming: crude rule-based chopping ('running'→'run', 'better'→'better'). Lemmatization: dictionary-based, returns actual word ('better'→'good')"
+          },
+          {
+            "answer": "Stemming is for English, lemmatization for other languages"
+          },
+          {
+            "answer": "Stemming uses ML, lemmatization uses rules"
+          },
+          {
+            "answer": "They are the same process with different names"
+          }
+        ],
+        "answer": "Stemming: crude rule-based chopping ('running'→'run', 'better'→'better'). Lemmatization: dictionary-based, returns actual word ('better'→'good')",
+        "explanation": "Porter stemmer: 'fishing'→'fish', 'fished'→'fish', but 'university'→'univers'. Lemma: 'better'→'good', 'went'→'go', 'mice'→'mouse'. In modern deep learning NLP, both are largely replaced by subword tokenization which handles morphology implicitly."
+      },
+      {
+        "question": "What is TF-IDF?",
+        "answers": [
+          {
+            "answer": "Term Frequency-Inverse Document Frequency. TF = how often a word appears in a doc. IDF = log(N/docs_with_word). Product weights rare-but-important words"
+          },
+          {
+            "answer": "A type of neural network for text classification"
+          },
+          {
+            "answer": "A tokenization algorithm for multilingual text"
+          },
+          {
+            "answer": "A loss function for language modeling"
+          }
+        ],
+        "answer": "Term Frequency-Inverse Document Frequency. TF = how often a word appears in a doc. IDF = log(N/docs_with_word). Product weights rare-but-important words",
+        "explanation": "TF-IDF(w, d) = TF(w,d) × IDF(w). High weight: word appears frequently in THIS document but rarely in the collection — likely important/descriptive. Low weight: common words across all docs ('the', 'is') or rare words that don't matter. Basis of traditional information retrieval. Still used as a strong baseline for text classification."
+      },
+      {
+        "question": "What is Named Entity Recognition (NER)?",
+        "answers": [
+          {
+            "answer": "Identifying and classifying named entities (person, org, location, date) in text. Often using sequence labeling with BIO tagging"
+          },
+          {
+            "answer": "Recognizing the author of a text document"
+          },
+          {
+            "answer": "Classifying entire documents into named categories"
+          },
+          {
+            "answer": "Finding the name of the dataset used for training"
+          }
+        ],
+        "answer": "Identifying and classifying named entities (person, org, location, date) in text. Often using sequence labeling with BIO tagging",
+        "explanation": "Input: 'Tim Cook visited Apple HQ in Cupertino on Tuesday.' → [Tim Cook: PER, Apple: ORG, Cupertino: LOC, Tuesday: DATE]. BIO tagging: B-PER, I-PER (Tim Cook), B-ORG (Apple), B-LOC (Cupertino), B-DATE (Tuesday), O (all others). Used in search, knowledge extraction, and document understanding. Modern approach: fine-tuned BERT/RoBERTa with token classification head."
+      },
+      {
+        "question": "What is sequence-to-sequence (seq2seq) learning?",
+        "answers": [
+          {
+            "answer": "Encoder processes input sequence to a context vector, decoder generates output sequence from context. Used for translation, summarization"
+          },
+          {
+            "answer": "A method for training on 2 sequences simultaneously"
+          },
+          {
+            "answer": "Converting a sequence of tokens to a fixed-length vector"
+          },
+          {
+            "answer": "Matching input sequences to output sequences in a database"
+          }
+        ],
+        "answer": "Encoder processes input sequence to a context vector, decoder generates output sequence from context. Used for translation, summarization",
+        "explanation": "Encoder: RNN/LSTM/Transformer reads input and compresses to a fixed-length context vector. Decoder: generates output token by token, attending to encoder states. Attention mechanism (Bahdanau, 2014) solved the bottleneck problem — decoder can focus on different parts of input at each step. Transformers replaced RNNs for seq2seq starting around 2018."
+      },
+      {
+        "question": "What is the attention mechanism in NLP?",
+        "answers": [
+          {
+            "answer": "Computes weighted relevance of each input token to each output position — lets the model 'attend to' different parts dynamically"
+          },
+          {
+            "answer": "A mechanism that increases model training speed"
+          },
+          {
+            "answer": "A regularization technique for language models"
+          },
+          {
+            "answer": "A method for compressing large text inputs"
+          }
+        ],
+        "answer": "Computes weighted relevance of each input token to each output position — lets the model 'attend to' different parts dynamically",
+        "explanation": "Attention(Q,K,V) = softmax(QK^T/√d_k)V. Query: 'what am I looking for?', Key: 'what do I contain?', Value: 'what information do I have?'. The softmax produces attention weights — how much each value contributes. In translation: when generating 'chat', the model attends heavily to 'chat' in the source. Self-attention: Q,K,V all come from same sequence."
+      },
+      {
+        "question": "What is BERT and how does its pre-training work?",
+        "answers": [
+          {
+            "answer": "Encoder-only Transformer. Pre-trained with Masked Language Modeling (predict masked words) and Next Sentence Prediction"
+          },
+          {
+            "answer": "A decoder-only model for text generation"
+          },
+          {
+            "answer": "An image-text multimodal model"
+          },
+          {
+            "answer": "A reinforcement learning model for dialogue"
+          }
+        ],
+        "answer": "Encoder-only Transformer. Pre-trained with Masked Language Modeling (predict masked words) and Next Sentence Prediction",
+        "explanation": "MLM: randomly mask 15% of tokens, model predicts them from bidirectional context. NSP: given two sentences A and B, predict if B follows A (later found less useful). BERT revolutionized NLP (2018): achieved SOTA on 11 tasks. Fine-tuned by adding task-specific heads for classification, NER, QA (SQuAD). RoBERTa improved BERT by removing NSP and training longer with more data."
+      },
+      {
+        "question": "What is the difference between GPT and BERT architectures?",
+        "answers": [
+          {
+            "answer": "GPT is decoder-only (unidirectional, left-to-right, generates text). BERT is encoder-only (bidirectional, understands text, can't generate)"
+          },
+          {
+            "answer": "GPT uses attention, BERT uses convolutions"
+          },
+          {
+            "answer": "GPT is for English, BERT is multilingual"
+          },
+          {
+            "answer": "GPT is open-source, BERT is proprietary"
+          }
+        ],
+        "answer": "GPT is decoder-only (unidirectional, left-to-right, generates text). BERT is encoder-only (bidirectional, understands text, can't generate)",
+        "explanation": "GPT: autoregressive — predicts next token given previous tokens. Causal attention mask prevents looking ahead. Great for generation, completion. BERT: bidirectional — sees full context for each masked token. Uses masked self-attention. Great for understanding tasks (classification, NER, QA). T5 (encoder-decoder) combines both for seq2seq tasks."
+      },
+      {
+        "question": "What is perplexity and what does it measure?",
+        "answers": [
+          {
+            "answer": "Metric for language model quality: perplexity = exp(cross-entropy). Lower = better. Measures how 'surprised' model is by text"
+          },
+          {
+            "answer": "The number of parameters in a language model"
+          },
+          {
+            "answer": "A measure of how fast the model generates text"
+          },
+          {
+            "answer": "The complexity of the training dataset"
+          }
+        ],
+        "answer": "Metric for language model quality: perplexity = exp(cross-entropy). Lower = better. Measures how 'surprised' model is by text",
+        "explanation": "Perplexity of 10 = model is as uncertain as choosing uniformly among 10 options at each position. A perfect model would have perplexity of 1 (100% certain of every token). GPT-3 on Wikipedia: perplexity ~20. Used to evaluate language models during training. Note: lower perplexity ≠ better generation quality (can be gamed by memorization)."
+      }
+    ]
+  },
+  {
+    "name": "🏗️ Transformer Architecture Deep Dive",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What are the three core components of the Transformer architecture?",
+        "answers": [
+          {
+            "answer": "Self-attention, position-wise feed-forward networks, and positional encoding. Stacked in encoder and/or decoder blocks"
+          },
+          {
+            "answer": "CNN, RNN, and fully-connected layers"
+          },
+          {
+            "answer": "Encoder, decoder, and classifier head"
+          },
+          {
+            "answer": "Input embedding, hidden layers, output projection"
+          }
+        ],
+        "answer": "Self-attention, position-wise feed-forward networks, and positional encoding. Stacked in encoder and/or decoder blocks",
+        "explanation": "From 'Attention Is All You Need' (Vaswani et al., 2017): (1) Self-attention — each token attends to all tokens in the sequence to build contextualized representations, (2) FFN — two linear transformations with ReLU/GELU, applied independently per position, (3) Positional encoding — adds position information since attention is permutation-invariant. Residual connections and layer norm wrap each sublayer."
+      },
+      {
+        "question": "In attention, why do we divide by sqrt(d_k) in softmax(QK^T / sqrt(d_k))?",
+        "answers": [
+          {
+            "answer": "Prevents the dot products from growing too large as d_k increases, which would push softmax into regions of extremely small gradients"
+          },
+          {
+            "answer": "It's a normalization factor for the batch size"
+          },
+          {
+            "answer": "To ensure attention weights sum to 1"
+          },
+          {
+            "answer": "To make the computation numerically more stable on GPUs"
+          }
+        ],
+        "answer": "Prevents the dot products from growing too large as d_k increases, which would push softmax into regions of extremely small gradients",
+        "explanation": "Dot product of two random d_k-dimensional vectors has variance proportional to d_k. Large dot products → softmax saturates (near 0 or 1) → gradients vanish. Scaling by 1/√d_k keeps variance ≈ 1 regardless of dimension, maintaining healthy gradients. This is called 'scaled dot-product attention'."
+      },
+      {
+        "question": "What is multi-head attention and why is it beneficial?",
+        "answers": [
+          {
+            "answer": "Run attention multiple times in parallel with different learned projections (W_Q, W_K, W_V) — allows attending to different representational subspaces"
+          },
+          {
+            "answer": "Attention that processes multiple sequences simultaneously"
+          },
+          {
+            "answer": "Attention with multiple query vectors per token"
+          },
+          {
+            "answer": "Running attention on multiple GPUs in parallel"
+          }
+        ],
+        "answer": "Run attention multiple times in parallel with different learned projections (W_Q, W_K, W_V) — allows attending to different representational subspaces",
+        "explanation": "Single head: each token gets one attention pattern. Multi-head (8-128 heads): each head learns different relationships — one head might attend to syntax (verb-object), another to semantics (pronoun-antecedent), another to positional proximity. Outputs concatenated and projected. Heads can be pruned after training (many are redundant)."
+      },
+      {
+        "question": "What is positional encoding and why do Transformers need it?",
+        "answers": [
+          {
+            "answer": "Adds position information to token embeddings because self-attention is permutation-invariant (doesn't know token order)"
+          },
+          {
+            "answer": "Encodes the position of each layer in the network"
+          },
+          {
+            "answer": "A compression technique for storing model positions on disk"
+          },
+          {
+            "answer": "Encodes the position of training examples in the dataset"
+          }
+        ],
+        "answer": "Adds position information to token embeddings because self-attention is permutation-invariant (doesn't know token order)",
+        "explanation": "Without position: 'dog bites man' and 'man bites dog' have identical self-attention outputs (just different token embeddings). Original paper: sinusoidal encoding PE(pos,2i)=sin(pos/10000^(2i/d)), PE(pos,2i+1)=cos(...). Learned positional embeddings (GPT, BERT): each position 0..N-1 has a learned vector. Modern approaches: RoPE (rotary), ALiBi (additive linear bias) — better length extrapolation."
+      },
+      {
+        "question": "What is layer normalization and why is it used in Transformers instead of batch normalization?",
+        "answers": [
+          {
+            "answer": "Normalizes across features (not batch) — independent of batch size, works for variable sequence lengths, same computation train/test"
+          },
+          {
+            "answer": "It's faster to compute than batch normalization"
+          },
+          {
+            "answer": "Batch normalization causes attention weights to collapse"
+          },
+          {
+            "answer": "Layer norm is better for convolutional layers"
+          }
+        ],
+        "answer": "Normalizes across features (not batch) — independent of batch size, works for variable sequence lengths, same computation train/test",
+        "explanation": "BatchNorm: normalize across batch for each feature → depends on batch statistics (noisy with small batches, different train/test behavior). LayerNorm: normalize across features for each sample → consistent train/test, works with batch_size=1, handles variable sequence lengths. Applied BEFORE attention/FFN (Pre-LN) for training stability, or AFTER (Post-LN, original paper, less stable)."
+      },
+      {
+        "question": "What is the difference between encoder self-attention, decoder self-attention, and cross-attention?",
+        "answers": [
+          {
+            "answer": "Encoder self-attn: bidirectional (all tokens attend to all). Decoder self-attn: causal (only left context). Cross-attn: decoder attends to encoder output"
+          },
+          {
+            "answer": "Encoder uses single-head, decoder uses multi-head, cross-attention uses both"
+          },
+          {
+            "answer": "They differ only in the number of attention heads"
+          },
+          {
+            "answer": "Encoder works on text, decoder on images, cross-attention on both"
+          }
+        ],
+        "answer": "Encoder self-attn: bidirectional (all tokens attend to all). Decoder self-attn: causal (only left context). Cross-attn: decoder attends to encoder output",
+        "explanation": "Encoder: token sees entire input (bidirectional) — good for understanding. Decoder self-attention: causal mask (upper triangular = -inf) — token can only attend to itself and previous tokens (autoregressive). Cross-attention: Q from decoder, K,V from encoder output — decoder 'queries' the encoded source. Modern decoder-only LLMs (GPT) skip cross-attention entirely."
+      },
+      {
+        "question": "What is the feed-forward network (FFN) in a Transformer block?",
+        "answers": [
+          {
+            "answer": "Two linear layers with activation: FFN(x) = W₂·activation(W₁·x + b₁) + b₂. Applied identically to each position independently"
+          },
+          {
+            "answer": "A network for feeding forward the attention output to the next layer"
+          },
+          {
+            "answer": "The input embedding lookup table"
+          },
+          {
+            "answer": "A network that predicts the next token directly"
+          }
+        ],
+        "answer": "Two linear layers with activation: FFN(x) = W₂·activation(W₁·x + b₁) + b₂. Applied identically to each position independently",
+        "explanation": "FFN is applied per-position (same weights for all positions) — this is where most of the model's 'knowledge' is stored. The first layer expands (d_model → 4×d_model), the second projects back (4×d_model → d_model). In large models like GPT-3, FFN contains ~2/3 of all parameters. Activation: ReLU (original), GELU (GPT, BERT), SwiGLU (LLaMA, PaLM — better performance)."
+      },
+      {
+        "question": "What are the query, key, and value in self-attention intuitively?",
+        "answers": [
+          {
+            "answer": "Query: 'what am I looking for?', Key: 'what do I have?', Value: 'what information should I pass along?'. All derived from input via learned projections"
+          },
+          {
+            "answer": "Query is input, key is output, value is the loss"
+          },
+          {
+            "answer": "They are different names for the same thing"
+          },
+          {
+            "answer": "Query handles questions, key handles answers, value stores confidence"
+          }
+        ],
+        "answer": "Query: 'what am I looking for?', Key: 'what do I have?', Value: 'what information should I pass along?'. All derived from input via learned projections",
+        "explanation": "Retrieval analogy: you have a database of (key, value) pairs. You provide a query. The system finds keys most similar to your query and returns a weighted sum of the corresponding values. Self-attention: Q=W_Q·x, K=W_K·x, V=W_V·x. Each token generates all three. Attention weights: softmax(QK^T/√d) determine how much of each token's value to include in the output."
+      },
+      {
+        "question": "What is KV caching and why is it crucial for LLM inference?",
+        "answers": [
+          {
+            "answer": "Stores key-value pairs from previous tokens so they aren't recomputed when generating each new token — reduces compute from O(n²) per token to O(n)"
+          },
+          {
+            "answer": "A cache for storing the model vocabulary"
+          },
+          {
+            "answer": "Caching layer parameters to reduce memory usage"
+          },
+          {
+            "answer": "A technique for speeding up training by caching intermediate values"
+          }
+        ],
+        "answer": "Stores key-value pairs from previous tokens so they aren't recomputed when generating each new token — reduces compute from O(n²) per token to O(n)",
+        "explanation": "Without KV cache: generate token 1000 → recompute ALL 1000 attention computations → O(n²). With KV cache: compute attention for new token only (O(n), using cached K,V for previous 999 tokens). Memory bottleneck: for large models/long sequences, KV cache can exceed model weights in size. vLLM's PagedAttention manages KV cache like OS virtual memory pages."
+      },
+      {
+        "question": "What is Rotary Position Embedding (RoPE) and why is it preferred over learned positional embeddings?",
+        "answers": [
+          {
+            "answer": "Encodes position by rotating query/key vectors by position-dependent angles. Naturally captures relative positions and extrapolates to longer sequences"
+          },
+          {
+            "answer": "A faster version of learned positional embeddings"
+          },
+          {
+            "answer": "Positional embeddings that rotate during training for augmentation"
+          },
+          {
+            "answer": "An embedding method specific to rotary (spin-based) quantum computers"
+          }
+        ],
+        "answer": "Encodes position by rotating query/key vectors by position-dependent angles. Naturally captures relative positions and extrapolates to longer sequences",
+        "explanation": "RoPE (Su et al., 2021): multiplies Q and K by rotation matrices based on position. Key property: dot product Q_m·K_n depends only on (m-n) — the relative position, not absolute positions. Used by LLaMA, Mistral, Gemma, Qwen. Extrapolates better to sequences longer than training. Variants: NTK-aware scaling, YaRN for extreme context extension."
+      }
+    ]
+  },
+  {
+    "name": "📐 Math for Machine Learning",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What is a vector in ML?",
+        "answers": [
+          {
+            "answer": "Ordered list of numbers representing a data point in n-dimensional space"
+          },
+          {
+            "answer": "A database table"
+          },
+          {
+            "answer": "A programming language"
+          },
+          {
+            "answer": "A model metric"
+          }
+        ],
+        "answer": "Ordered list of numbers representing a data point in n-dimensional space",
+        "explanation": "Vectors are the fundamental data structure. Word embeddings are vectors. Gradients are vectors. Data points (house: [sqft, beds, baths]) are vectors. Operations on vectors (dot product, norm) are the building blocks of ML."
+      },
+      {
+        "question": "What is a matrix in a neural network?",
+        "answers": [
+          {
+            "answer": "Weight matrix W such that output = Wx + b — each element w_ij is connection strength from input j to output i"
+          },
+          {
+            "answer": "The input data flattened to one dimension"
+          },
+          {
+            "answer": "The loss values stored during training"
+          },
+          {
+            "answer": "The activation function shape"
+          }
+        ],
+        "answer": "Weight matrix W such that output = Wx + b — each element w_ij is connection strength from input j to output i",
+        "explanation": "Learning = adjusting matrix entries. GPU cores are optimized for matrix multiplication (the core compute in neural nets). A fully-connected layer is one big matrix multiply."
+      },
+      {
+        "question": "What is a derivative and why does gradient descent need it?",
+        "answers": [
+          {
+            "answer": "Rate of change of a function. Gradient = vector of partial derivatives telling us direction to adjust weights to reduce loss"
+          },
+          {
+            "answer": "A type of activation function used in deep networks"
+          },
+          {
+            "answer": "The original function before any transformation"
+          },
+          {
+            "answer": "A measure of how diverse the training data is"
+          }
+        ],
+        "answer": "Rate of change of a function. Gradient = vector of partial derivatives telling us direction to adjust weights to reduce loss",
+        "explanation": "w_new = w_old - lr * dL/dw. The derivative dL/dw answers: 'if I increase w slightly, how does loss change?' Gradient descent moves weights in the direction that minimizes loss. Backpropagation = chain rule applied through the entire network."
+      },
+      {
+        "question": "What is the chain rule and why is it the engine behind backpropagation?",
+        "answers": [
+          {
+            "answer": "Derivative of composed functions: df/dx = (df/dg)*(dg/dx). Backprop applies this from output to input, computing all gradients in one pass"
+          },
+          {
+            "answer": "A rule for chaining multiple models together"
+          },
+          {
+            "answer": "A security protocol for ML APIs"
+          },
+          {
+            "answer": "The rule that output must follow from input in a chain"
+          }
+        ],
+        "answer": "Derivative of composed functions: df/dx = (df/dg)*(dg/dx). Backprop applies this from output to input, computing all gradients in one pass",
+        "explanation": "A neural network is composed functions: loss(model(input)). Backprop starts at loss, applies chain rule backward through each layer, computing dL/dW for every parameter. Without it, training deep networks would be computationally impossible."
+      },
+      {
+        "question": "What is the softmax function?",
+        "answers": [
+          {
+            "answer": "softmax(x_i)=e^x_i/sum(e^x_j). Converts raw scores (logits) to a probability distribution summing to 1"
+          },
+          {
+            "answer": "A function that finds the maximum value in a tensor"
+          },
+          {
+            "answer": "A regularization technique for weight constraints"
+          },
+          {
+            "answer": "An optimization algorithm for non-convex problems"
+          }
+        ],
+        "answer": "softmax(x_i)=e^x_i/sum(e^x_j). Converts raw scores (logits) to a probability distribution summing to 1",
+        "explanation": "Used as the final layer in classification models and the output mechanism of LLMs for next-token prediction. Temperature scaling: softmax(logits/T) — lower T = more peaked (deterministic), higher T = flatter (creative)."
+      },
+      {
+        "question": "What is cross-entropy loss?",
+        "answers": [
+          {
+            "answer": "L = -sum(y_i * log(p_i)). Measures distance between true and predicted probability distributions"
+          },
+          {
+            "answer": "Loss that crosses between training and validation sets"
+          },
+          {
+            "answer": "The entropy measured during cross-validation"
+          },
+          {
+            "answer": "Loss used specifically with cross-attention"
+          }
+        ],
+        "answer": "L = -sum(y_i * log(p_i)). Measures distance between true and predicted probability distributions",
+        "explanation": "Standard loss for classification (including next-token prediction in LLMs). Heavily penalizes confident wrong answers. Derived from maximum likelihood: minimizing cross-entropy = maximizing probability of true data under the model."
+      },
+      {
+        "question": "What is a Gaussian distribution and where does it appear in ML?",
+        "answers": [
+          {
+            "answer": "Bell curve defined by mean μ and variance σ². Appears in weight initialization, VAEs, diffusion models, and normalization layers"
+          },
+          {
+            "answer": "A uniform distribution used for random sampling"
+          },
+          {
+            "answer": "The distribution of dataset sizes across projects"
+          },
+          {
+            "answer": "A special distribution for binary data only"
+          }
+        ],
+        "answer": "Bell curve defined by mean μ and variance σ². Appears in weight initialization, VAEs, diffusion models, and normalization layers",
+        "explanation": "Central Limit Theorem explains ubiquity: sums of independent variables approach normality. Xavier/Glorot init samples from Gaussian. VAE latent space is Gaussian. Diffusion models add Gaussian noise. BatchNorm normalizes to Gaussian-like distributions."
+      },
+      {
+        "question": "What is Bayes' Theorem?",
+        "answers": [
+          {
+            "answer": "P(A|B) = P(B|A)*P(A)/P(B). Updates prior beliefs with evidence. Used in Naive Bayes, Bayesian inference, RL"
+          },
+          {
+            "answer": "A theorem proving all ML models converge"
+          },
+          {
+            "answer": "A method for computing matrix inverses"
+          },
+          {
+            "answer": "An alternative to gradient-based optimization"
+          }
+        ],
+        "answer": "P(A|B) = P(B|A)*P(A)/P(B). Updates prior beliefs with evidence. Used in Naive Bayes, Bayesian inference, RL",
+        "explanation": "Naive Bayes for spam filtering. Bayesian neural networks model weight uncertainty. Thompson sampling in RL uses Bayesian posterior. Variational inference approximates intractable Bayesian posteriors."
+      },
+      {
+        "question": "What is entropy in information theory?",
+        "answers": [
+          {
+            "answer": "H(X) = -sum P(x)*log(P(x)). Measures uncertainty. Used in cross-entropy loss and decision tree splitting"
+          },
+          {
+            "answer": "The energy consumed during model training"
+          },
+          {
+            "answer": "A measure of dataset size in bits"
+          },
+          {
+            "answer": "How chaotic the training process is"
+          }
+        ],
+        "answer": "H(X) = -sum P(x)*log(P(x)). Measures uncertainty. Used in cross-entropy loss and decision tree splitting",
+        "explanation": "Fair coin: H=1 bit (max). Deterministic: H=0. Decision trees: Information Gain = entropy reduction after split. Cross-entropy = true entropy + KL divergence. Minimum description length principle links entropy to model selection."
+      },
+      {
+        "question": "What is PCA (Principal Component Analysis)?",
+        "answers": [
+          {
+            "answer": "Finds orthogonal directions of max variance via eigendecomposition of covariance matrix. Used for dimensionality reduction"
+          },
+          {
+            "answer": "A clustering algorithm for principal grouping"
+          },
+          {
+            "answer": "A neural network layer for feature extraction"
+          },
+          {
+            "answer": "An optimization algorithm for finding global minima"
+          }
+        ],
+        "answer": "Finds orthogonal directions of max variance via eigendecomposition of covariance matrix. Used for dimensionality reduction",
+        "explanation": "Steps: center data, compute covariance X^TX/n, find eigenvectors (principal components) sorted by eigenvalues (variance), project onto top-k. Whitening: PCA + scaling variances to 1. t-SNE/UMAP are nonlinear alternatives for visualization."
+      }
+    ]
+  },
+  {
+    "name": "🧠 Classical Machine Learning Algorithms",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What's the difference between supervised and unsupervised learning?",
+        "answers": [
+          {
+            "answer": "Supervised uses labeled (x,y) pairs. Unsupervised finds patterns in unlabeled x only"
+          },
+          {
+            "answer": "Supervised is classification, unsupervised is regression"
+          },
+          {
+            "answer": "Supervised needs GPUs, unsupervised is CPU-only"
+          },
+          {
+            "answer": "Supervised is slower but more accurate"
+          }
+        ],
+        "answer": "Supervised uses labeled (x,y) pairs. Unsupervised finds patterns in unlabeled x only",
+        "explanation": "Supervised: learn f(x)→y from labeled examples. Unsupervised: cluster, compress, or model x with no labels. Semi-supervised: few labels + lots of unlabeled. Self-supervised (modern LLMs): create pseudo-labels from data (masked word → predict it)."
+      },
+      {
+        "question": "How does linear regression find the best-fit line?",
+        "answers": [
+          {
+            "answer": "Minimizes MSE. Closed-form: w = (X^TX)^-1 X^Ty. Or gradient descent for large datasets"
+          },
+          {
+            "answer": "Draws a line through max and min data points"
+          },
+          {
+            "answer": "Uses a single neuron with no activation"
+          },
+          {
+            "answer": "Randomly samples lines and picks the best"
+          }
+        ],
+        "answer": "Minimizes MSE. Closed-form: w = (X^TX)^-1 X^Ty. Or gradient descent for large datasets",
+        "explanation": "Normal equation gives exact solution but O(n³) for inversion. Gradient descent preferred for big data. Regularized: Ridge (L2=λ||w||²), Lasso (L1=λ|w|₁, feature selection via sparsity), ElasticNet (both)."
+      },
+      {
+        "question": "How does logistic regression work despite its name?",
+        "answers": [
+          {
+            "answer": "CLASSIFICATION: P(y=1) = σ(wx+b) where σ is sigmoid. Decision boundary is where probability = 0.5"
+          },
+          {
+            "answer": "Predicts log values of the target variable"
+          },
+          {
+            "answer": "Combines multiple linear regressions logically"
+          },
+          {
+            "answer": "Uses logistic curves to model time-series growth"
+          }
+        ],
+        "answer": "CLASSIFICATION: P(y=1) = σ(wx+b) where σ is sigmoid. Decision boundary is where probability = 0.5",
+        "explanation": "Despite the name, it's for classification. Equivalent to a single neuron with sigmoid activation. Trained with cross-entropy loss (not MSE). Output is well-calibrated probability. Foundation for understanding neural network classifiers."
+      },
+      {
+        "question": "How does a decision tree choose splits?",
+        "answers": [
+          {
+            "answer": "Maximizes Information Gain = impurity reduction. Impurity measured by Gini (1-sum p_i²) or Entropy (-sum p_i log p_i)"
+          },
+          {
+            "answer": "Splits at median of each feature"
+          },
+          {
+            "answer": "Random feature and threshold selection"
+          },
+          {
+            "answer": "Gradient descent optimizing split points"
+          }
+        ],
+        "answer": "Maximizes Information Gain = impurity reduction. Impurity measured by Gini (1-sum p_i²) or Entropy (-sum p_i log p_i)",
+        "explanation": "Greedy algorithm: at each node, try all features × thresholds, pick split that most 'purifies' children. Without pruning, a tree can memorize training data perfectly (overfit). Pre-pruning (max_depth) and post-pruning prevent this."
+      },
+      {
+        "question": "What makes Random Forest better than a single tree?",
+        "answers": [
+          {
+            "answer": "Ensemble: many trees on bootstrap samples + random feature subsets. Average/vote → reduced variance, less overfitting"
+          },
+          {
+            "answer": "Uses deeper trees for more complex patterns"
+          },
+          {
+            "answer": "Automatic hyperparameter tuning"
+          },
+          {
+            "answer": "GPU-accelerated training"
+          }
+        ],
+        "answer": "Ensemble: many trees on bootstrap samples + random feature subsets. Average/vote → reduced variance, less overfitting",
+        "explanation": "Two randomness sources: (1) Bootstrap sampling (each tree sees different data), (2) Random subspace (each split considers random feature subset). Individual tree errors are uncorrelated → they cancel when averaged. More trees = better (diminishing returns ~100-500)."
+      },
+      {
+        "question": "How does Gradient Boosting (XGBoost) differ from Random Forest?",
+        "answers": [
+          {
+            "answer": "Trees built sequentially — each corrects previous errors. RF builds independently in parallel"
+          },
+          {
+            "answer": "Boosting uses deeper trees"
+          },
+          {
+            "answer": "Boosting is regression-only"
+          },
+          {
+            "answer": "Boosting requires GPU, RF is CPU-only"
+          }
+        ],
+        "answer": "Trees built sequentially — each corrects previous errors. RF builds independently in parallel",
+        "explanation": "GBDT: each tree fits negative gradient of loss (pseudo-residuals). XGBoost adds regularization. LightGBM uses leaf-wise growth. CatBoost handles categorical natively. GBDT dominates tabular data — often beats deep learning for structured/table problems."
+      },
+      {
+        "question": "What does SVM try to achieve?",
+        "answers": [
+          {
+            "answer": "Maximizes margin (distance) between classes. Only closest points (support vectors) define the boundary"
+          },
+          {
+            "answer": "Creates vector representations of support documents"
+          },
+          {
+            "answer": "Supports vectorized GPU operations"
+          },
+          {
+            "answer": "Finds optimal number of training examples"
+          }
+        ],
+        "answer": "Maximizes margin (distance) between classes. Only closest points (support vectors) define the boundary",
+        "explanation": "Kernel trick enables non-linear boundaries by implicitly mapping to higher-dimensional space. Kernels: Linear, RBF (Gaussian), Polynomial. SVMs excel with small-to-medium datasets and high-dimensional data (text classification with TF-IDF)."
+      },
+      {
+        "question": "How does K-Means work?",
+        "answers": [
+          {
+            "answer": "1) Pick K centroids, 2) Assign points to nearest, 3) Recompute centroids as means, 4) Repeat until convergence"
+          },
+          {
+            "answer": "Sort data by K dimensions and split at medians"
+          },
+          {
+            "answer": "Build K trees and use consensus for clusters"
+          },
+          {
+            "answer": "Train K neural networks voting on assignments"
+          }
+        ],
+        "answer": "1) Pick K centroids, 2) Assign points to nearest, 3) Recompute centroids as means, 4) Repeat until convergence",
+        "explanation": "Minimizes within-cluster sum of squares (WCSS). Must pre-specify K (elbow/silhouette methods). Assumes spherical clusters of similar size. Sensitive to init (use K-Means++). May converge to local optimum (run multiple times)."
+      },
+      {
+        "question": "What is the bias-variance tradeoff?",
+        "answers": [
+          {
+            "answer": "Bias = error from oversimplification. Variance = error from sensitivity to data. Total = bias² + variance + irreducible noise"
+          },
+          {
+            "answer": "Bias is for classification, variance for regression"
+          },
+          {
+            "answer": "Bias = training error, variance = test error"
+          },
+          {
+            "answer": "Bias affects only DL, variance affects only classical ML"
+          }
+        ],
+        "answer": "Bias = error from oversimplification. Variance = error from sensitivity to data. Total = bias² + variance + irreducible noise",
+        "explanation": "High bias: underfitting (high train AND test error). High variance: overfitting (low train, high test error). Increasing model complexity decreases bias but increases variance. Governs all model selection: regularization strength, architecture size, ensemble size."
+      },
+      {
+        "question": "What is L1 vs L2 regularization?",
+        "answers": [
+          {
+            "answer": "L1 (Lasso): λ|w|₁ → sparse weights, feature selection. L2 (Ridge): λ||w||² → shrinks all weights, no zeros"
+          },
+          {
+            "answer": "L1 for learning rate, L2 for batch size"
+          },
+          {
+            "answer": "L1 for first layer, L2 for second layer"
+          },
+          {
+            "answer": "L1 for training, L2 for inference"
+          }
+        ],
+        "answer": "L1 (Lasso): λ|w|₁ → sparse weights, feature selection. L2 (Ridge): λ||w||² → shrinks all weights, no zeros",
+        "explanation": "L1 constraint is diamond-shaped → solutions hit axes → zero weights. L2 is circular → proportional shrinkage. ElasticNet combines both. In deep learning: weight decay = L2 regularization via AdamW optimizer."
+      }
+    ]
+  },
+  {
+    "name": "🔬 Deep Learning Foundations",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What is a neural network fundamentally?",
+        "answers": [
+          {
+            "answer": "Stack of linear transformations (matrices) interspersed with non-linear activation functions"
+          },
+          {
+            "answer": "A direct simulation of biological neurons"
+          },
+          {
+            "answer": "A database of interconnected data points"
+          },
+          {
+            "answer": "A rule-based expert system"
+          }
+        ],
+        "answer": "Stack of linear transformations (matrices) interspersed with non-linear activation functions",
+        "explanation": "Each layer: h = activation(Wx + b). Without non-linearity, multiple layers collapse to one linear transform. The depth lets networks learn hierarchical features: edges → shapes → objects in vision, or characters → words → semantics in NLP."
+      },
+      {
+        "question": "Why do we need non-linear activation functions?",
+        "answers": [
+          {
+            "answer": "Without them, deep networks equal a single linear layer — can't learn non-linear patterns in data"
+          },
+          {
+            "answer": "They make training faster by simplifying computations"
+          },
+          {
+            "answer": "They prevent weights from becoming negative"
+          },
+          {
+            "answer": "They are required for GPU acceleration"
+          }
+        ],
+        "answer": "Without them, deep networks equal a single linear layer — can't learn non-linear patterns in data",
+        "explanation": "f(x)=W₁x, g(x)=W₂x → g(f(x))=W₂W₁x=W₃x. No matter how deep, it's just one linear transform. Non-linear activations break this and enable learning arbitrary complex functions. This is what gives neural networks their universal approximation capability."
+      },
+      {
+        "question": "What is backpropagation?",
+        "answers": [
+          {
+            "answer": "Algorithm computing gradients for ALL parameters by applying chain rule from loss backward through the computation graph"
+          },
+          {
+            "answer": "Propagating input data backward through layers"
+          },
+          {
+            "answer": "Reversing training to recover original inputs"
+          },
+          {
+            "answer": "Forward propagation of errors to correct predictions"
+          }
+        ],
+        "answer": "Algorithm computing gradients for ALL parameters by applying chain rule from loss backward through the computation graph",
+        "explanation": "Forward: compute predictions and loss. Backward: loss.backward() applies chain rule from output to input, computing dL/dW for every layer. PyTorch/TensorFlow handle this automatically via autograd. This single backward pass computes gradients for billions of parameters."
+      },
+      {
+        "question": "What is the vanishing gradient problem?",
+        "answers": [
+          {
+            "answer": "In deep networks, gradients shrink exponentially during backprop, leaving early layers essentially untrained"
+          },
+          {
+            "answer": "When the learning rate shrinks to zero"
+          },
+          {
+            "answer": "When gradients disappear from GPU memory"
+          },
+          {
+            "answer": "When the loss function has no gradient"
+          }
+        ],
+        "answer": "In deep networks, gradients shrink exponentially during backprop, leaving early layers essentially untrained",
+        "explanation": "Sigmoid/tanh saturate → derivatives near 0 → gradient = product of many tiny numbers → effectively 0. Solutions: ReLU (gradient=0 or 1), residual connections (skip connections let gradients flow), batch normalization, proper initialization (Xavier, Kaiming)."
+      },
+      {
+        "question": "Why did ReLU revolutionize deep learning?",
+        "answers": [
+          {
+            "answer": "ReLU(x)=max(0,x). Non-saturating gradient (1 for x>0), cheap to compute, enables training 100+ layer networks"
+          },
+          {
+            "answer": "It's the fastest activation function to compute"
+          },
+          {
+            "answer": "It automatically tunes the learning rate"
+          },
+          {
+            "answer": "It replaces the need for weight initialization"
+          }
+        ],
+        "answer": "ReLU(x)=max(0,x). Non-saturating gradient (1 for x>0), cheap to compute, enables training 100+ layer networks",
+        "explanation": "Before ReLU (2012): sigmoid/tanh caused vanishing gradients → max ~10 layers. ReLU: gradient is 0 or 1 (no vanishing for active neurons). Issue: 'dying ReLU' (neurons stuck at 0). Variants: LeakyReLU (small gradient for x<0), GELU (smooth, used in Transformers), SwiGLU (LLaMA)."
+      },
+      {
+        "question": "What is a CNN and why is it suited for vision?",
+        "answers": [
+          {
+            "answer": "Convolutional NN: learned filters slide across input, exploiting spatial locality, weight sharing, and translation invariance"
+          },
+          {
+            "answer": "A network that converts images to text captions"
+          },
+          {
+            "answer": "A fully-connected network specialized for small images"
+          },
+          {
+            "answer": "A network for generating images from noise"
+          }
+        ],
+        "answer": "Convolutional NN: learned filters slide across input, exploiting spatial locality, weight sharing, and translation invariance",
+        "explanation": "Key innovations: (1) Local connectivity — each neuron connects to small region (receptive field), (2) Weight sharing — same filter applied everywhere, (3) Hierarchical features — edges → textures → objects. AlexNet (2012) on ImageNet started the deep learning revolution."
+      },
+      {
+        "question": "What is a residual (skip) connection?",
+        "answers": [
+          {
+            "answer": "output = F(x) + x. Input added to transformed output, creating identity shortcut — gradients can flow directly backward"
+          },
+          {
+            "answer": "A connection that skips training on some batches"
+          },
+          {
+            "answer": "A shortcut between CPU and GPU memory"
+          },
+          {
+            "answer": "Skipping layers that don't improve accuracy"
+          }
+        ],
+        "answer": "output = F(x) + x. Input added to transformed output, creating identity shortcut — gradients can flow directly backward",
+        "explanation": "ResNet (2015) solved: deeper networks performed worse. Skip connection: if F(x) is harmful, network can set it to zero → passes x through (identity). Gradient flows through addition: d(output)/dx = dF/dx + 1 → gradient always ≥ 1 for the skip. All modern architectures (Transformers, CNNs) use residual connections."
+      },
+      {
+        "question": "What is batch normalization?",
+        "answers": [
+          {
+            "answer": "Normalizes layer activations to zero mean/unit variance across batch. Enables faster training, higher learning rates, mild regularization"
+          },
+          {
+            "answer": "Normalizing all batches to the same size"
+          },
+          {
+            "answer": "Standardizing the number of epochs across batches"
+          },
+          {
+            "answer": "Ensuring each batch has balanced classes"
+          }
+        ],
+        "answer": "Normalizes layer activations to zero mean/unit variance across batch. Enables faster training, higher learning rates, mild regularization",
+        "explanation": "For each feature: compute μ,σ² across batch, normalize x̂=(x-μ)/√(σ²+ε), then scale/shift with learned γ,β. Reduces internal covariate shift. Noise from batch statistics acts as regularizer. LayerNorm (Transformers) normalizes across features instead of batch — independent of batch size."
+      },
+      {
+        "question": "What is dropout?",
+        "answers": [
+          {
+            "answer": "Randomly deactivate neurons during training (prob p). Forces redundant representations, prevents overfitting. At inference: all active, scaled by (1-p)"
+          },
+          {
+            "answer": "Dropping data points to speed up training"
+          },
+          {
+            "answer": "Selecting the best model from many candidates"
+          },
+          {
+            "answer": "Removing layers that don't contribute"
+          }
+        ],
+        "answer": "Randomly deactivate neurons during training (prob p). Forces redundant representations, prevents overfitting. At inference: all active, scaled by (1-p)",
+        "explanation": "During each training step, each neuron 'drops out' with probability p (typically 0.2-0.5). Like training ensemble of exponentially many subnetworks. AlexNet used dropout. Modern architectures rely more on batch norm + data augmentation for regularization."
+      },
+      {
+        "question": "What is transfer learning?",
+        "answers": [
+          {
+            "answer": "Use model pre-trained on large dataset as starting point, then fine-tune on smaller target dataset"
+          },
+          {
+            "answer": "Transferring data between training and test sets"
+          },
+          {
+            "answer": "Moving models between different frameworks"
+          },
+          {
+            "answer": "Learning transferred between GPUs in a cluster"
+          }
+        ],
+        "answer": "Use model pre-trained on large dataset as starting point, then fine-tune on smaller target dataset",
+        "explanation": "Foundation of modern ML: ImageNet-pretrained ResNet → fine-tune on medical images. BERT → fine-tune on sentiment analysis. LLMs → fine-tune for domain. Early layers learn general features (edges, syntax) that transfer well. Later layers are task-specific. Saves massive compute and data requirements."
+      }
+    ]
+  },
+  {
+    "name": "👁️ Computer Vision for AI Engineers",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What's the difference between image classification, object detection, and segmentation?",
+        "answers": [
+          {
+            "answer": "Classification: what? Detection: what+where (bbox)? Segmentation: which pixels belong to what?"
+          },
+          {
+            "answer": "They differ only in dataset size requirements"
+          },
+          {
+            "answer": "Classification uses CNNs, detection uses RNNs, segmentation uses Transformers"
+          },
+          {
+            "answer": "They are the same task at different resolutions"
+          }
+        ],
+        "answer": "Classification: what? Detection: what+where (bbox)? Segmentation: which pixels belong to what?",
+        "explanation": "Classification: image → 'cat'. Detection: image → [(cat, bbox), (dog, bbox)]. Semantic segmentation: each pixel → 'cat' or 'dog' or 'background' (all cats same label). Instance segmentation: pixel → cat_1 vs cat_2 (distinct instances). Panoptic: semantic (stuff: sky, road) + instance (things: cars, people)."
+      },
+      {
+        "question": "How does a convolutional filter work?",
+        "answers": [
+          {
+            "answer": "Small matrix slides across input, computing dot products at each position. Different filters detect different patterns"
+          },
+          {
+            "answer": "Filters remove noise from images before processing"
+          },
+          {
+            "answer": "Selects which images to include in training"
+          },
+          {
+            "answer": "Regularizes the model by filtering activations"
+          }
+        ],
+        "answer": "Small matrix slides across input, computing dot products at each position. Different filters detect different patterns",
+        "explanation": "A 3×3 filter: element-wise multiply with input patch, sum → one output value. Slide over entire image → feature map. Layer 1 filters detect edges/gradients. Layer 2 detects textures (combinations of edges). Deep layers detect object parts. The network learns what patterns to detect."
+      },
+      {
+        "question": "What is max pooling?",
+        "answers": [
+          {
+            "answer": "Downsampling: take max in each 2×2 region, stride 2. Reduces spatial size, provides slight translation invariance"
+          },
+          {
+            "answer": "Taking the maximum activation across all layers"
+          },
+          {
+            "answer": "Pooling gradients from multiple training workers"
+          },
+          {
+            "answer": "Selecting the best model from a pool of candidates"
+          }
+        ],
+        "answer": "Downsampling: take max in each 2×2 region, stride 2. Reduces spatial size, provides slight translation invariance",
+        "explanation": "Reduces spatial dimensions by ~4× per pooling layer. Benefits: less computation, larger receptive field, slight translation invariance. Modern architectures increasingly use strided convolutions instead (learned downsampling). Global average pooling at the end replaces FC layers."
+      },
+      {
+        "question": "What is YOLO?",
+        "answers": [
+          {
+            "answer": "You Only Look Once — real-time object detector predicting boxes+classes in a single forward pass (30-60 FPS)"
+          },
+          {
+            "answer": "A dataset for training object detectors"
+          },
+          {
+            "answer": "A loss function for segmentation"
+          },
+          {
+            "answer": "A data augmentation technique for images"
+          }
+        ],
+        "answer": "You Only Look Once — real-time object detector predicting boxes+classes in a single forward pass (30-60 FPS)",
+        "explanation": "Divides image into grid, each cell predicts bounding boxes + confidence + class probabilities. Single pass = fast. Two-stage detectors (Faster R-CNN): region proposals then classify (slower, more accurate). YOLO v8/v9/v10 are production standards for real-time detection."
+      },
+      {
+        "question": "What is IoU (Intersection over Union)?",
+        "answers": [
+          {
+            "answer": "Metric for bbox overlap: area(intersection)/area(union). 1.0=perfect, 0=no overlap. Used for AP/mAP calculation"
+          },
+          {
+            "answer": "Measure of image quality after compression"
+          },
+          {
+            "answer": "Ratio of input to output dimensions in CNN"
+          },
+          {
+            "answer": "Loss function for image classification"
+          }
+        ],
+        "answer": "Metric for bbox overlap: area(intersection)/area(union). 1.0=perfect, 0=no overlap. Used for AP/mAP calculation",
+        "explanation": "mAP (mean Average Precision) computes AP at different IoU thresholds: AP@0.5 (lenient, 50% overlap counts), AP@0.75 (strict), AP@[0.5:0.95] (COCO standard, averages over 10 thresholds). A prediction with IoU > threshold = true positive."
+      },
+      {
+        "question": "What is data augmentation in computer vision?",
+        "answers": [
+          {
+            "answer": "Apply random transforms (flip, rotate, crop, color jitter) to training images — improves generalization without more data"
+          },
+          {
+            "answer": "Adding more GPUs to process larger images"
+          },
+          {
+            "answer": "Augmenting images with text descriptions for multimodal models"
+          },
+          {
+            "answer": "Increasing image resolution for better accuracy"
+          }
+        ],
+        "answer": "Apply random transforms (flip, rotate, crop, color jitter) to training images — improves generalization without more data",
+        "explanation": "Standard: random horizontal flip, rotation, crop+resize, brightness/contrast/saturation. Advanced: Cutout (remove patches), MixUp (blend two images), CutMix (paste patch from another image). AutoAugment/RandAugment learn optimal augmentation policies. Heavy augmentation = strong regularization."
+      },
+      {
+        "question": "What is a Vision Transformer (ViT)?",
+        "answers": [
+          {
+            "answer": "Applies Transformer to images: split into patches (like words), add position embeddings, process with standard Transformer encoder"
+          },
+          {
+            "answer": "A CNN with transformer-like activation functions"
+          },
+          {
+            "answer": "A model for transforming between image styles"
+          },
+          {
+            "answer": "A system for image format conversion"
+          }
+        ],
+        "answer": "Applies Transformer to images: split into patches (like words), add position embeddings, process with standard Transformer encoder",
+        "explanation": "ViT (2020): image → 16×16 patches → flatten → linear projection → add position embedding → Transformer encoder. Needs lots of data (JFT-300M) to beat CNNs. Modern hybrids (Swin, ConvNeXt) combine CNN inductive biases with Transformer expressiveness. DETR applies Transformers to object detection."
+      }
+    ]
+  },
+  {
+    "name": "⚙️ MLOps & ML Engineering",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What is MLOps?",
+        "answers": [
+          {
+            "answer": "DevOps for ML: CI/CD, monitoring, versioning for models. Without it, 87% of ML projects never reach production"
+          },
+          {
+            "answer": "A specific tool for deploying models to cloud"
+          },
+          {
+            "answer": "Machine Learning using operations research methods"
+          },
+          {
+            "answer": "A cloud provider's ML service"
+          }
+        ],
+        "answer": "DevOps for ML: CI/CD, monitoring, versioning for models. Without it, 87% of ML projects never reach production",
+        "explanation": "MLOps pillars: (1) Reproducibility — same data+code = same model, (2) Testing — model validation, fairness, performance, (3) Deployment — canary, shadow, A/B, (4) Monitoring — drift detection, performance tracking, (5) Governance — model registry, lineage, audit."
+      },
+      {
+        "question": "What is a model registry?",
+        "answers": [
+          {
+            "answer": "Central repository for model versions, metadata, deployment status — single source of truth for all models in production"
+          },
+          {
+            "answer": "A database of training datasets"
+          },
+          {
+            "answer": "A website for downloading pre-trained models"
+          },
+          {
+            "answer": "A system for registering new ML services"
+          }
+        ],
+        "answer": "Central repository for model versions, metadata, deployment status — single source of truth for all models in production",
+        "explanation": "Stores: model artifacts (weights), training metadata (dataset, hyperparams, metrics), deployment stage (staging, production, archived), approval workflow. Tools: MLflow, W&B Model Registry, SageMaker Model Registry. Enables rollback, comparison, and auditability."
+      },
+      {
+        "question": "What is model drift? Name its two types.",
+        "answers": [
+          {
+            "answer": "Data drift: input distribution changes (users age). Concept drift: input→output relationship changes (spam evolves)"
+          },
+          {
+            "answer": "Model weights slowly drifting during training"
+          },
+          {
+            "answer": "Models gradually migrating between cloud regions"
+          },
+          {
+            "answer": "The slow improvement of model accuracy over time"
+          }
+        ],
+        "answer": "Data drift: input distribution changes (users age). Concept drift: input→output relationship changes (spam evolves)",
+        "explanation": "Data drift: average user was 25-35, now 45-55 → model trained on young users degrades. Concept drift: what makes spam changes as spammers adapt. Detection: KS test, PSI (Population Stability Index), monitoring prediction distributions. Triggers: periodic retraining or online learning."
+      },
+      {
+        "question": "What is a feature store?",
+        "answers": [
+          {
+            "answer": "Centralized platform storing and serving ML features — ensures training and inference use identical feature definitions"
+          },
+          {
+            "answer": "A database for raw training data storage"
+          },
+          {
+            "answer": "A store of pre-trained features for transfer learning"
+          },
+          {
+            "answer": "A marketplace for buying datasets"
+          }
+        ],
+        "answer": "Centralized platform storing and serving ML features — ensures training and inference use identical feature definitions",
+        "explanation": "Without feature store: training pipeline computes features one way, serving pipeline another → inconsistency → poor performance. Feature store: define once, use for offline (batch training) and online (low-latency serving). Enables feature sharing across teams. Tools: Feast (OSS), Tecton, SageMaker Feature Store."
+      },
+      {
+        "question": "What is A/B testing for ML models?",
+        "answers": [
+          {
+            "answer": "Route % of traffic to new model (B), rest to old (A). Compare business metrics to decide which is truly better"
+          },
+          {
+            "answer": "Testing model A on dataset B and vice versa"
+          },
+          {
+            "answer": "Alternating between two optimizers during training"
+          },
+          {
+            "answer": "Testing with two different batch sizes"
+          }
+        ],
+        "answer": "Route % of traffic to new model (B), rest to old (A). Compare business metrics to decide which is truly better",
+        "explanation": "Not just accuracy — measure: conversion rate, engagement, revenue. Statistical significance testing prevents false conclusions. Pitfalls: peeking (stopping early when B looks better), novelty effect, multiple testing. Need: experiment platform + feature flags + automated analysis."
+      },
+      {
+        "question": "What is shadow deployment?",
+        "answers": [
+          {
+            "answer": "Run new model in parallel: sends predictions to log (not users). Safe way to evaluate on live data before routing real traffic"
+          },
+          {
+            "answer": "Deploying to backup (shadow) servers"
+          },
+          {
+            "answer": "Nighttime-only model release"
+          },
+          {
+            "answer": "Deploying models cloned from a source repository"
+          }
+        ],
+        "answer": "Run new model in parallel: sends predictions to log (not users). Safe way to evaluate on live data before routing real traffic",
+        "explanation": "Traffic: User → old model → response (unchanged). Simultaneously: User → new model → log prediction only. Compare offline: prediction distributions, confidence scores, inferred metrics. Zero risk. Essential for testing major changes before real impact."
+      },
+      {
+        "question": "What is batch inference vs real-time inference?",
+        "answers": [
+          {
+            "answer": "Batch: process large datasets periodically (hours). Real-time: respond to individual requests with low latency (<100ms)"
+          },
+          {
+            "answer": "Batch uses GPU, real-time uses CPU"
+          },
+          {
+            "answer": "Batch is during training, real-time is after deployment"
+          },
+          {
+            "answer": "Batch is more accurate than real-time"
+          }
+        ],
+        "answer": "Batch: process large datasets periodically (hours). Real-time: respond to individual requests with low latency (<100ms)",
+        "explanation": "Batch: nightly job scores all users for churn → results in DB → app reads. Real-time: user uploads image → API → model → response <200ms. Tradeoffs: batch = cheaper (throughput), real-time = always-on infrastructure (latency). Hybrid: precompute embeddings batch, retrieve + predict real-time (RAG pattern)."
+      }
+    ]
+  },
+  {
+    "name": "⚖️ Responsible AI & Ethics",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "What is algorithmic bias?",
+        "answers": [
+          {
+            "answer": "Systematic unfair predictions from biased training data, flawed assumptions, or deployment context mismatch"
+          },
+          {
+            "answer": "Deliberately making models biased against groups"
+          },
+          {
+            "answer": "When models prefer certain algorithms over others"
+          },
+          {
+            "answer": "The tendency for models to use shortcuts instead of reasoning"
+          }
+        ],
+        "answer": "Systematic unfair predictions from biased training data, flawed assumptions, or deployment context mismatch",
+        "explanation": "Sources: (1) Historical bias — data reflects past discrimination, (2) Representation bias — groups underrepresented, (3) Measurement bias — features noisier for some groups, (4) Aggregation bias — one model for all subgroups. Requires both technical (fairness metrics, debiasing) and organizational (diverse teams, impact assessments) solutions."
+      },
+      {
+        "question": "What is explainable AI (XAI)?",
+        "answers": [
+          {
+            "answer": "Making model decisions understandable to humans — critical for trust, debugging, regulatory compliance, bias detection"
+          },
+          {
+            "answer": "AI that explains concepts to non-technical users"
+          },
+          {
+            "answer": "Model architectures built specifically for explanations"
+          },
+          {
+            "answer": "Documenting the model training process"
+          }
+        ],
+        "answer": "Making model decisions understandable to humans — critical for trust, debugging, regulatory compliance, bias detection",
+        "explanation": "Methods: SHAP (game-theoretic feature importance), LIME (local surrogate models), Integrated Gradients, attention visualization, counterfactual explanations ('you would be approved if income > $50K'). GDPR 'right to explanation' makes XAI legally required for automated decisions in the EU."
+      },
+      {
+        "question": "What is SHAP?",
+        "answers": [
+          {
+            "answer": "SHapley Additive exPlanations — game theory approach: fairly distributing prediction among features by marginal contributions"
+          },
+          {
+            "answer": "A model architecture designed for self-explanation"
+          },
+          {
+            "answer": "A dataset for training explainable models"
+          },
+          {
+            "answer": "A regularization technique improving interpretability"
+          }
+        ],
+        "answer": "SHapley Additive exPlanations — game theory approach: fairly distributing prediction among features by marginal contributions",
+        "explanation": "Shapley values: how much does each feature contribute vs the average prediction? Considers all feature combinations (coalitions). Properties: local accuracy, missingness, consistency. KernelSHAP (model-agnostic, slow), TreeSHAP (tree-specific, fast), DeepSHAP (NN-specific). `import shap; shap.Explainer(model)`."
+      },
+      {
+        "question": "What is differential privacy?",
+        "answers": [
+          {
+            "answer": "Adds calibrated noise to training so attacker can't determine if a specific individual's data was used in training"
+          },
+          {
+            "answer": "Encrypting the model so only authorized users access it"
+          },
+          {
+            "answer": "Training separate models for different groups"
+          },
+          {
+            "answer": "Anonymizing data before training"
+          }
+        ],
+        "answer": "Adds calibrated noise to training so attacker can't determine if a specific individual's data was used in training",
+        "explanation": "ε (epsilon) = privacy budget. Smaller ε = stronger privacy, more noise. DP-SGD: clip gradients, add Gaussian noise. Guarantee: even with all other data, attacker can't confidently tell if YOUR data was included. Used by Apple, Google (Gboard), US Census. Tradeoff: privacy vs utility."
+      },
+      {
+        "question": "What are the key principles of Responsible AI?",
+        "answers": [
+          {
+            "answer": "Fairness, transparency, accountability, privacy, safety, and human-centered design — framework for trustworthy AI"
+          },
+          {
+            "answer": "Speed, accuracy, efficiency, and cost reduction"
+          },
+          {
+            "answer": "Open-source development and community collaboration"
+          },
+          {
+            "answer": "Maximum profit with minimum legal liability"
+          }
+        ],
+        "answer": "Fairness, transparency, accountability, privacy, safety, and human-centered design — framework for trustworthy AI",
+        "explanation": "Google AI Principles, Microsoft Responsible AI Standard, EU AI Act all converge: (1) Fairness — avoid discrimination, (2) Transparency — explain decisions, (3) Accountability — humans responsible, (4) Privacy — protect data, (5) Safety — prevent harm, (6) Human oversight — meaningful control over critical decisions."
+      },
+      {
+        "question": "What is a model card?",
+        "answers": [
+          {
+            "answer": "Document describing model's intended use, limitations, evaluation results, ethical considerations — transparency artifact"
+          },
+          {
+            "answer": "A credit card for paying cloud ML costs"
+          },
+          {
+            "answer": "A hardware specification sheet for serving infrastructure"
+          },
+          {
+            "answer": "A quick-reference card for model hyperparameters"
+          }
+        ],
+        "answer": "Document describing model's intended use, limitations, evaluation results, ethical considerations — transparency artifact",
+        "explanation": "Google (2018). Includes: intended use + out-of-scope uses, performance across demographic groups, known limitations and biases, training data description, evaluation results. HuggingFace integrates model cards on model pages. Companion: Datasheets for Datasets (Gebru et al.)."
+      },
+      {
+        "question": "What is human-in-the-loop?",
+        "answers": [
+          {
+            "answer": "AI recommends, human decides — combining AI efficiency with human judgment for high-stakes decisions"
+          },
+          {
+            "answer": "Training AI alongside human workers"
+          },
+          {
+            "answer": "AI systems that can detect human presence"
+          },
+          {
+            "answer": "Real-time human labeling during model training"
+          }
+        ],
+        "answer": "AI recommends, human decides — combining AI efficiency with human judgment for high-stakes decisions",
+        "explanation": "Spectrum: Human-only → Human-in-the-loop (AI suggests, human decides) → Human-on-the-loop (AI decides, human overrides) → AI-only. Required for high-stakes: medical, legal, content moderation. Design challenges: automation bias (over-trust), alert fatigue, appropriate uncertainty communication."
+      }
+    ]
   }
 ]

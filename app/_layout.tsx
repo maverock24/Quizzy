@@ -10,6 +10,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Platform } from 'react-native';
 
 import { QuizProvider } from '@/components/Quizprovider';
+import { GlossaryProvider } from '@/components/GlossaryProvider';
 import { GamificationProvider, AchievementModal } from '@/components/gamification';
 import { Music } from '@/components/Music';
 import i18n from '@/components/i18n';
@@ -122,18 +123,20 @@ function RootLayoutNav() {
   return (
     <ThemeProvider value={CustomDarkTheme}>
       <QuizProvider>
-        <LearningTodosProvider>
-          <GamificationProvider>
-            <OnboardingWrapper>
-              <MusicFromContext />
-              <AchievementModal />
-              <Stack>
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
-              </Stack>
-            </OnboardingWrapper>
-          </GamificationProvider>
-        </LearningTodosProvider>
+        <GlossaryProvider>
+          <LearningTodosProvider>
+            <GamificationProvider>
+              <OnboardingWrapper>
+                <MusicFromContext />
+                <AchievementModal />
+                <Stack>
+                  <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+                  <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+                </Stack>
+              </OnboardingWrapper>
+            </GamificationProvider>
+          </LearningTodosProvider>
+        </GlossaryProvider>
       </QuizProvider>
     </ThemeProvider>
   );

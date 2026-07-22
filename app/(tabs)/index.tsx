@@ -9,6 +9,8 @@ import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { QuizTimer } from '@/components/QuizTimer';
+import { GlossaryModal } from '@/components/GlossaryModal';
+import { useGlossary } from '@/components/GlossaryProvider';
 import { Answer, CategoryEssay, Quiz, QuizQuestion } from '@/components/types';
 import { t } from 'i18next';
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
@@ -52,6 +54,7 @@ export default function TabOneScreen() {
   const [scoreVisible, setScoreVisible] = useState<boolean>(false);
 
   const { stopTTS } = useReadAloud();
+  const { setModalVisible: setGlossaryVisible, setSelectedTerm, setSearchQuery } = useGlossary();
 
   // Get quizzes from context
   const {
@@ -339,6 +342,14 @@ export default function TabOneScreen() {
     };
   });
 
+  // Open glossary with a specific term
+  const openGlossaryTerm = useCallback((term: string) => {
+    setSearchQuery('');
+    const entry = { term, definition: '' };
+    // Use the glossary context to find and show the term
+    setGlossaryVisible(true);
+  }, [setGlossaryVisible, setSearchQuery]);
+
   return (
     <View style={styles.outerContainer}>
       <SafeAreaLinearGradient
@@ -354,11 +365,25 @@ export default function TabOneScreen() {
                 <XPProgress size="compact" style={styles.xpProgressCompact} />
               </View>
 
-              {/* Daily Challenge */}
-              <DailyQuiz
-                onStartDailyQuiz={handleDailyQuizStart}
-                style={styles.dailyQuiz}
-              />
+              {/* Daily Challenge + Glossary Button */}
+              <View style={styles.topRow}>
+                <DailyQuiz
+                  onStartDailyQuiz={handleDailyQuizStart}
+                  style={styles.dailyQuiz}
+                />
+                <TouchableOpacity
+                  style={styles.glossaryButton}
+                  onPress={() => {
+                    setSearchQuery('');
+                    setSelectedTerm(null);
+                    setGlossaryVisible(true);
+                  }}
+                  accessibilityLabel="Open glossary"
+                >
+                  <Ionicons name="book-outline" size={18} color="white" />
+                  <Text style={styles.glossaryButtonText}>Glossary</Text>
+                </TouchableOpacity>
+              </View>
             </>
           )}
           {!selectedQuiz && !scoreVisible && !selectedEssay && (
@@ -454,22 +479,36 @@ export default function TabOneScreen() {
           )}
         </View>
         {(selectedQuiz || scoreVisible) && !showReader && (
-          <TouchableOpacity
-            onPress={handleBack}
-            style={{ marginLeft: 18, marginBottom: 20 }}
-          >
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <Ionicons
-                name="arrow-back"
-                size={35}
-                color="white"
-                style={{ marginRight: 6 }}
-              />
-              {/* <Text style={styles.buttonText}>{t('back')}</Text> */}
-            </View>
-          </TouchableOpacity>
+          <View style={styles.bottomBar}>
+            <TouchableOpacity
+              onPress={handleBack}
+              style={{ marginLeft: 18 }}
+            >
+              <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                <Ionicons
+                  name="arrow-back"
+                  size={35}
+                  color="white"
+                  style={{ marginRight: 6 }}
+                />
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.glossaryButtonSmall}
+              onPress={() => {
+                setSearchQuery('');
+                setSelectedTerm(null);
+                setGlossaryVisible(true);
+              }}
+              accessibilityLabel="Open glossary"
+            >
+              <Ionicons name="book-outline" size={18} color="white" />
+              <Text style={styles.glossaryButtonSmallText}>Glossary</Text>
+            </TouchableOpacity>
+          </View>
         )}
       </SafeAreaLinearGradient>
+      <GlossaryModal />
     </View>
   );
 }
@@ -543,5 +582,52 @@ const styles = StyleSheet.create({
   dailyQuiz: {
     marginBottom: 20,
     marginHorizontal: 8,
+    flex: 1,
+  },
+  topRow: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    marginBottom: 4,
+  },
+  glossaryButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(100, 180, 255, 0.15)',
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: 'rgba(100, 180, 255, 0.3)',
+    marginRight: 8,
+    marginTop: 2,
+  },
+  glossaryButtonText: {
+    color: 'rgb(100, 200, 255)',
+    fontSize: 13,
+    fontWeight: '600',
+    marginLeft: 6,
+  },
+  bottomBar: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 20,
+  },
+  glossaryButtonSmall: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'rgba(100, 180, 255, 0.15)',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(100, 180, 255, 0.3)',
+    marginRight: 18,
+  },
+  glossaryButtonSmallText: {
+    color: 'rgb(100, 200, 255)',
+    fontSize: 12,
+    fontWeight: '600',
+    marginLeft: 5,
   },
 });
