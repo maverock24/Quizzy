@@ -10,6 +10,7 @@ import Animated, {
   Easing as ReanimatedEasing,
 } from 'react-native-reanimated';
 
+import { GlossaryModal } from '@/components/GlossaryModal';
 import { useColorScheme } from '@/components/useColorScheme';
 import Colors from '@/constants/Colors';
 
@@ -74,6 +75,10 @@ export default function TabLayout() {
           tabBarStyle: {
             height: 70,
             backgroundColor: '#000',
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
           },
           tabBarLabelStyle: {
             marginTop: 5,
@@ -128,6 +133,7 @@ export default function TabLayout() {
           }}
         />
       </Tabs>
+      <GlossaryModal />
     </View>
   );
 }

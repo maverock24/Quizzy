@@ -9,7 +9,6 @@ import {
   StyleSheet,
   Animated,
   Dimensions,
-  KeyboardAvoidingView,
   Platform,
   Pressable,
   BackHandler,
@@ -173,12 +172,8 @@ export const GlossaryModal: React.FC = () => {
             },
           ]}
         >
+          {/* Content wrapper to prevent backdrop tap-through */}
           <Pressable onPress={() => {}} style={{ flex: 1 }}>
-          <KeyboardAvoidingView
-            style={{ flex: 1 }}
-            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-            keyboardVerticalOffset={0}
-          >
           {/* Header */}
           <View style={styles.header}>
             <View style={styles.headerHandle} />
@@ -269,7 +264,6 @@ export const GlossaryModal: React.FC = () => {
               <Ionicons name="search" size={22} color="white" />
             </TouchableOpacity>
           )}
-          </KeyboardAvoidingView>
           </Pressable>
         </Animated.View>
       </View>
