@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, Animated, Easing, Dimensions, StyleSheet } from 'react-native';
 
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
+const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-// Extra celebration particles for kids mode
-const KIDS_EMOJIS = ['🌟', '⭐', '🎉', '🎊', '💫', '✨', '🌈', '🦄', '🎀', '💖', '🏆', '👑', '🦋', '🌸', '💎'];
-const KIDS_COLORS = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#FF922B', '#E599F7', '#20C997', '#FF4081'];
+// Only unicorns and rainbows for the main celebration
+const KIDS_EMOJIS = ['🦄', '🌈', '🦄', '🌈', '🦄', '🌈', '🦄', '🌈'];
+const KIDS_COLORS = ['#E1BEE7', '#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#FF922B', '#E599F7', '#20C997'];
 
 interface CelebrationParticle {
   id: number;
@@ -24,19 +24,23 @@ export const CelebrationOverload: React.FC<{
   x: number;
   y: number;
 }> = ({ visible, x, y }) => {
+  const centerX = SCREEN_WIDTH / 2;
+  const centerY = 200;
+
   const [particles] = useState<CelebrationParticle[]>(() => {
     const p: CelebrationParticle[] = [];
-    for (let i = 0; i < 30; i++) {
+    // Central unicorn/rainbow burst — fewer but bigger particles
+    for (let i = 0; i < 12; i++) {
       p.push({
         id: i,
         emoji: KIDS_EMOJIS[i % KIDS_EMOJIS.length],
-        startX: x + (Math.random() - 0.5) * 120,
-        startY: y + (Math.random() - 0.5) * 40,
-        driftX: (Math.random() - 0.5) * 200,
-        driftY: -(60 + Math.random() * 150),
-        duration: 800 + Math.random() * 1200,
-        delay: Math.random() * 300,
-        size: 18 + Math.random() * 22,
+        startX: centerX + (Math.random() - 0.5) * 60,
+        startY: centerY,
+        driftX: (Math.random() - 0.5) * 180,
+        driftY: -(100 + Math.random() * 200),
+        duration: 1200 + Math.random() * 1000,
+        delay: i * 80,
+        size: 40 + Math.random() * 30,
       });
     }
     return p;
@@ -50,7 +54,7 @@ export const CelebrationOverload: React.FC<{
         <CelebrationParticleView key={p.id} {...p} />
       ))}
       <WooHooText />
-      <RainbowBurst x={x} y={y} />
+      <RainbowBurst x={centerX} y={centerY} />
     </View>
   );
 };
@@ -67,10 +71,7 @@ const CelebrationParticleView: React.FC<CelebrationParticle> = ({
   useEffect(() => {
     Animated.sequence([
       Animated.delay(delay),
-      Animated.parallel([
-        Animated.timing(scale, { toValue: 1.3, duration: 100, useNativeDriver: true }),
-        Animated.timing(scale, { toValue: 1, duration: duration - 100, useNativeDriver: true }),
-      ]),
+      Animated.spring(scale, { toValue: 1.4, friction: 3, tension: 80, useNativeDriver: true }),
     ]).start();
 
     Animated.sequence([
@@ -91,7 +92,7 @@ const CelebrationParticleView: React.FC<CelebrationParticle> = ({
         Animated.timing(opacity, {
           toValue: 0,
           duration,
-          delay: duration * 0.4,
+          delay: duration * 0.5,
           useNativeDriver: true,
         }),
         Animated.timing(rotate, {
@@ -105,14 +106,14 @@ const CelebrationParticleView: React.FC<CelebrationParticle> = ({
 
   const spin = rotate.interpolate({
     inputRange: [0, 1],
-    outputRange: ['0deg', `${360 + Math.random() * 720}deg`],
+    outputRange: ['-30deg', '30deg'],
   });
 
   return (
     <Animated.Text
       style={{
         position: 'absolute',
-        left: startX,
+        left: startX - size / 2,
         top: startY,
         fontSize: size,
         opacity,
@@ -124,23 +125,23 @@ const CelebrationParticleView: React.FC<CelebrationParticle> = ({
   );
 };
 
-// Big "WOOOHOOO!" text that flies up
+// Big celebration text
 const WooHooText: React.FC = () => {
   const translateY = useRef(new Animated.Value(0)).current;
   const opacity = useRef(new Animated.Value(1)).current;
-  const scale = useRef(new Animated.Value(0.3)).current;
+  const scale = useRef(new Animated.Value(0.2)).current;
   const [text] = useState(() => {
-    const texts = ['SUPER!', 'WOOOHOOO!', 'TOLL!', 'GENIAL!', 'KLASSE!'];
+    const texts = ['SUPER! 🦄', 'WOOOHOOO! 🌈', 'TOLL! 🦄', 'GENIAL! 🌈', 'KLASSE! 🦄'];
     return texts[Math.floor(Math.random() * texts.length)];
   });
 
   useEffect(() => {
     Animated.parallel([
-      Animated.spring(scale, { toValue: 1.2, friction: 3, tension: 100, useNativeDriver: true }),
+      Animated.spring(scale, { toValue: 1.3, friction: 3, tension: 100, useNativeDriver: true }),
       Animated.sequence([
-        Animated.delay(600),
-        Animated.timing(opacity, { toValue: 0, duration: 400, useNativeDriver: true }),
-        Animated.timing(translateY, { toValue: -80, duration: 400, useNativeDriver: true }),
+        Animated.delay(1000),
+        Animated.timing(opacity, { toValue: 0, duration: 500, useNativeDriver: true }),
+        Animated.timing(translateY, { toValue: -60, duration: 500, useNativeDriver: true }),
       ]),
     ]).start();
   }, []);
@@ -155,16 +156,13 @@ const WooHooText: React.FC = () => {
 };
 
 // Rainbow burst rings
-const RainbowBurst: React.FC<{ x: number; y: number }> = ({ x, y }) => {
-  const rings = [0, 1, 2];
-  return (
-    <>
-      {rings.map((i) => (
-        <RainbowRing key={i} x={x} y={y} delay={i * 150} color={KIDS_COLORS[i]} />
-      ))}
-    </>
-  );
-};
+const RainbowBurst: React.FC<{ x: number; y: number }> = ({ x, y }) => (
+  <>
+    {[0, 1, 2, 3].map((i) => (
+      <RainbowRing key={i} x={x} y={y} delay={i * 120} color={KIDS_COLORS[i]} />
+    ))}
+  </>
+);
 
 const RainbowRing: React.FC<{ x: number; y: number; delay: number; color: string }> = ({ x, y, delay, color }) => {
   const scale = useRef(new Animated.Value(0)).current;
@@ -174,8 +172,8 @@ const RainbowRing: React.FC<{ x: number; y: number; delay: number; color: string
     Animated.sequence([
       Animated.delay(delay),
       Animated.parallel([
-        Animated.timing(scale, { toValue: 1, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(opacity, { toValue: 0, duration: 600, useNativeDriver: true }),
+        Animated.timing(scale, { toValue: 1.8, duration: 800, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(opacity, { toValue: 0, duration: 800, useNativeDriver: true }),
       ]),
     ]).start();
   }, []);
@@ -185,8 +183,8 @@ const RainbowRing: React.FC<{ x: number; y: number; delay: number; color: string
       style={[
         styles.ring,
         {
-          left: x - 60,
-          top: y - 60,
+          left: x - 80,
+          top: y - 80,
           borderColor: color,
           opacity,
           transform: [{ scale }],
@@ -207,20 +205,20 @@ const styles = StyleSheet.create({
   },
   wooHoo: {
     position: 'absolute',
-    top: '30%',
+    top: '35%',
     alignSelf: 'center',
-    fontSize: 48,
+    fontSize: 52,
     fontWeight: '900',
     color: '#FFD700',
-    textShadowColor: 'rgba(0,0,0,0.5)',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 8,
+    textShadowColor: 'rgba(0,0,0,0.6)',
+    textShadowOffset: { width: 3, height: 3 },
+    textShadowRadius: 10,
   },
   ring: {
     position: 'absolute',
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    borderWidth: 3,
+    width: 160,
+    height: 160,
+    borderRadius: 80,
+    borderWidth: 4,
   },
 });
