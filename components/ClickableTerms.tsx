@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, StyleSheet } from 'react-native';
 import { useGlossary } from './GlossaryProvider';
 
 type ClickableTermsProps = {
@@ -14,8 +14,21 @@ type TextSegment = {
   term?: string;
 };
 
+/** A character that can appear inside a word (letters, digits, underscores, and common accented chars). */
+const isWordChar = (ch: string): boolean =>
+  /[a-zA-Z0-9_äöüÄÖÜßéèêëàâîïôûçñÅåÆæØø]/.test(ch);
+
+/** True if position is at a word boundary (not inside a word). String boundaries are boundaries. */
+const isBoundary = (text: string, pos: number): boolean => {
+  if (pos < 0 || pos >= text.length) return true;
+  const ch = text[pos];
+  // Characters that are NOT word chars are boundaries: spaces, punctuation, symbols, emoji, etc.
+  return !isWordChar(ch);
+};
+
 /**
  * Renders text with automatically detected glossary terms made clickable.
+ * Only matches terms at word boundaries — never inside another word.
  * Longest-match priority for overlapping terms.
  */
 export const ClickableTerms: React.FC<ClickableTermsProps> = ({
@@ -25,7 +38,6 @@ export const ClickableTerms: React.FC<ClickableTermsProps> = ({
 }) => {
   const { terms, setSelectedTerm, setModalVisible } = useGlossary();
 
-  // Parse text into segments (normal text + glossary terms)
   const segments = useMemo(() => {
     if (!text) return [{ type: 'text' as const, content: '' }];
 
@@ -43,19 +55,15 @@ export const ClickableTerms: React.FC<ClickableTermsProps> = ({
           lowerText.startsWith(termLower, i) &&
           termLower.length > (bestMatch?.length || 0)
         ) {
-          // Verify word boundary (term should end at a word boundary, or text ends)
           const endPos = i + termLower.length;
-          if (endPos === text.length || /\b|[.,;:!?)\-'"\s]/.test(text[endPos])) {
-            // Also check start boundary
-            if (i === 0 || /\b|[.,;:!?(\-'"\s]/.test(text[i - 1])) {
-              bestMatch = { term: entry.term, length: termLower.length };
-            }
+          // Both sides must be at word boundaries (or string boundaries)
+          if (isBoundary(text, endPos) && isBoundary(text, i - 1)) {
+            bestMatch = { term: entry.term, length: termLower.length };
           }
         }
       }
 
       if (bestMatch) {
-        // Add the term as a clickable segment
         result.push({
           type: 'term',
           content: text.slice(i, i + bestMatch.length),
@@ -63,11 +71,7 @@ export const ClickableTerms: React.FC<ClickableTermsProps> = ({
         });
         i += bestMatch.length;
       } else {
-        // Add characters until next potential match or end
-        result.push({
-          type: 'text',
-          content: text[i],
-        });
+        result.push({ type: 'text', content: text[i] });
         i++;
       }
     }
@@ -93,7 +97,6 @@ export const ClickableTerms: React.FC<ClickableTermsProps> = ({
     if (onTermPress) {
       onTermPress(term);
     } else {
-      // Default behavior: find term in glossary and show modal
       const entry = terms.find(
         (t) => t.term.toLowerCase() === term.toLowerCase(),
       );
@@ -104,9 +107,7 @@ export const ClickableTerms: React.FC<ClickableTermsProps> = ({
     }
   };
 
-  if (!text) {
-    return null;
-  }
+  if (!text) return null;
 
   return (
     <Text style={style}>
