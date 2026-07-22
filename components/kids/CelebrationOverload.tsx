@@ -3,121 +3,249 @@ import { View, Text, Animated, Easing, Dimensions, StyleSheet } from 'react-nati
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-// Only unicorns and rainbows for the main celebration
-const KIDS_EMOJIS = ['🦄', '🌈', '🦄', '🌈', '🦄', '🌈', '🦄', '🌈'];
-const KIDS_COLORS = ['#E1BEE7', '#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#FF922B', '#E599F7', '#20C997'];
-
-interface CelebrationParticle {
-  id: number;
-  emoji: string;
-  startX: number;
-  startY: number;
-  driftX: number;
-  driftY: number;
-  duration: number;
+// ============================================================
+// Galloping Unicorn — runs across the screen with a bouncy gait
+// ============================================================
+const GallopingUnicorn: React.FC<{
+  fromLeft: boolean;
   delay: number;
   size: number;
-}
+  row: number;
+}> = ({ fromLeft, delay, size, row }) => {
+  const x = useRef(new Animated.Value(fromLeft ? -100 : SCREEN_WIDTH + 100)).current;
+  const bounce = useRef(new Animated.Value(0)).current;
+  const sparkle = useRef(new Animated.Value(0)).current;
 
-export const CelebrationOverload: React.FC<{
-  visible: boolean;
-  x: number;
-  y: number;
-}> = ({ visible, x, y }) => {
-  const centerX = SCREEN_WIDTH / 2;
-  const centerY = 200;
+  useEffect(() => {
+    // Gallop across
+    Animated.sequence([
+      Animated.delay(delay),
+      Animated.timing(x, {
+        toValue: fromLeft ? SCREEN_WIDTH + 100 : -100,
+        duration: 2500,
+        easing: Easing.linear,
+        useNativeDriver: true,
+      }),
+    ]).start();
 
-  const [particles] = useState<CelebrationParticle[]>(() => {
-    const p: CelebrationParticle[] = [];
-    // Central unicorn/rainbow burst — fewer but bigger particles
-    for (let i = 0; i < 12; i++) {
-      p.push({
-        id: i,
-        emoji: KIDS_EMOJIS[i % KIDS_EMOJIS.length],
-        startX: centerX + (Math.random() - 0.5) * 60,
-        startY: centerY,
-        driftX: (Math.random() - 0.5) * 180,
-        driftY: -(100 + Math.random() * 200),
-        duration: 1200 + Math.random() * 1000,
-        delay: i * 80,
-        size: 40 + Math.random() * 30,
-      });
-    }
-    return p;
-  });
+    // Bouncy gallop — up and down rhythmically
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(bounce, { toValue: -15, duration: 150, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(bounce, { toValue: 0, duration: 150, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(bounce, { toValue: -12, duration: 130, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(bounce, { toValue: 0, duration: 130, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(bounce, { toValue: -10, duration: 200, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(bounce, { toValue: 0, duration: 200, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+      ]),
+      { iterations: 4 }
+    ).start();
 
-  if (!visible) return null;
+    // Sparkle trail
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(sparkle, { toValue: 1, duration: 300, useNativeDriver: true }),
+        Animated.timing(sparkle, { toValue: 0, duration: 300, useNativeDriver: true }),
+      ]),
+      { iterations: 8 }
+    ).start();
+  }, []);
+
+  const top = 80 + row * 100;
 
   return (
-    <View style={styles.container} pointerEvents="none">
-      {particles.map((p) => (
-        <CelebrationParticleView key={p.id} {...p} />
-      ))}
-      <WooHooText />
-      <RainbowBurst x={centerX} y={centerY} />
-    </View>
+    <>
+      {/* Sparkle trail behind */}
+      <Animated.Text
+        style={{
+          position: 'absolute',
+          top: top + 20,
+          fontSize: size * 0.5,
+          opacity: sparkle,
+          transform: [{ translateX: Animated.subtract(x, 30) }],
+        }}
+      >
+        ✨
+      </Animated.Text>
+      {/* The galloping unicorn */}
+      <Animated.Text
+        style={{
+          position: 'absolute',
+          top,
+          fontSize: size,
+          transform: [
+            { translateX: x },
+            { translateY: bounce },
+            { scaleX: fromLeft ? 1 : -1 },
+          ],
+        }}
+      >
+        🦄
+      </Animated.Text>
+    </>
   );
 };
 
-const CelebrationParticleView: React.FC<CelebrationParticle> = ({
-  emoji, startX, startY, driftX, driftY, duration, delay, size,
-}) => {
-  const translateY = useRef(new Animated.Value(0)).current;
-  const translateX = useRef(new Animated.Value(0)).current;
-  const opacity = useRef(new Animated.Value(1)).current;
-  const rotate = useRef(new Animated.Value(0)).current;
+// ============================================================
+// Dancing Unicorn — center stage, hops and sparkles
+// ============================================================
+const DancingUnicorn: React.FC = () => {
   const scale = useRef(new Animated.Value(0)).current;
+  const hop = useRef(new Animated.Value(0)).current;
+  const spin = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
+    // Entrance: pop in with spring
     Animated.sequence([
-      Animated.delay(delay),
-      Animated.spring(scale, { toValue: 1.4, friction: 3, tension: 80, useNativeDriver: true }),
+      Animated.delay(400),
+      Animated.spring(scale, { toValue: 1, friction: 3, tension: 80, useNativeDriver: true }),
     ]).start();
 
-    Animated.sequence([
-      Animated.delay(delay),
-      Animated.parallel([
-        Animated.timing(translateY, {
-          toValue: driftY,
-          duration,
-          easing: Easing.out(Easing.cubic),
-          useNativeDriver: true,
-        }),
-        Animated.timing(translateX, {
-          toValue: driftX,
-          duration,
-          easing: Easing.out(Easing.cubic),
-          useNativeDriver: true,
-        }),
-        Animated.timing(opacity, {
-          toValue: 0,
-          duration,
-          delay: duration * 0.5,
-          useNativeDriver: true,
-        }),
-        Animated.timing(rotate, {
-          toValue: 1,
-          duration,
-          useNativeDriver: true,
-        }),
+    // Happy hops
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(hop, { toValue: -25, duration: 200, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(hop, { toValue: 0, duration: 200, easing: Easing.bounce, useNativeDriver: true }),
+        Animated.delay(100),
+        Animated.timing(hop, { toValue: -20, duration: 180, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(hop, { toValue: 0, duration: 180, easing: Easing.bounce, useNativeDriver: true }),
+        Animated.delay(150),
+        Animated.timing(hop, { toValue: -35, duration: 250, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(hop, { toValue: 0, duration: 250, easing: Easing.bounce, useNativeDriver: true }),
       ]),
-    ]).start();
+      { iterations: 3 }
+    ).start();
+
+    // Little wiggle
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(spin, { toValue: 1, duration: 300, useNativeDriver: true }),
+        Animated.timing(spin, { toValue: -1, duration: 600, useNativeDriver: true }),
+        Animated.timing(spin, { toValue: 0, duration: 300, useNativeDriver: true }),
+      ]),
+      { iterations: 3 }
+    ).start();
   }, []);
 
-  const spin = rotate.interpolate({
-    inputRange: [0, 1],
-    outputRange: ['-30deg', '30deg'],
+  const wiggle = spin.interpolate({
+    inputRange: [-1, 0, 1],
+    outputRange: ['-15deg', '0deg', '15deg'],
   });
+
+  const centerX = SCREEN_WIDTH / 2 - 60;
 
   return (
     <Animated.Text
       style={{
         position: 'absolute',
-        left: startX - size / 2,
-        top: startY,
-        fontSize: size,
+        left: centerX,
+        top: 160,
+        fontSize: 120,
+        transform: [{ scale }, { translateY: hop }, { rotate: wiggle }],
+      }}
+    >
+      🦄
+    </Animated.Text>
+  );
+};
+
+// ============================================================
+// Rainbow Sweep — arcs across the screen
+// ============================================================
+const RainbowSweep: React.FC = () => {
+  const progress = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.sequence([
+      Animated.delay(300),
+      Animated.timing(progress, { toValue: 1, duration: 1800, easing: Easing.inOut(Easing.cubic), useNativeDriver: false }),
+    ]).start();
+  }, []);
+
+  const colors = ['#FF6B6B', '#FF922B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EF7'];
+
+  return (
+    <View style={styles.rainbowContainer} pointerEvents="none">
+      {colors.map((color, i) => {
+        const offset = i * 8;
+        const arcY = progress.interpolate({
+          inputRange: [0, 0.5, 1],
+          outputRange: [400, 120, 400],
+        });
+        const arcX = progress.interpolate({
+          inputRange: [0, 1],
+          outputRange: [-50, SCREEN_WIDTH + 50],
+        });
+        const arcOpacity = progress.interpolate({
+          inputRange: [0, 0.2, 0.8, 1],
+          outputRange: [0, 1, 1, 0],
+        });
+
+        return (
+          <Animated.View
+            key={i}
+            style={[
+              styles.rainbowStripe,
+              {
+                backgroundColor: color,
+                top: Animated.add(arcY, offset),
+                left: Animated.add(arcX, offset),
+                opacity: arcOpacity,
+                width: 80,
+                height: 6,
+                borderRadius: 3,
+              },
+            ]}
+          />
+        );
+      })}
+    </View>
+  );
+};
+
+// ============================================================
+// Floating Hearts — rise up gently
+// ============================================================
+const FloatingHearts: React.FC = () => {
+  const hearts = ['💕', '💖', '💗', '💝', '🦄', '🌈', '💕', '💖'];
+
+  return (
+    <>
+      {hearts.map((heart, i) => (
+        <FloatingHeart key={i} emoji={heart} index={i} />
+      ))}
+    </>
+  );
+};
+
+const FloatingHeart: React.FC<{ emoji: string; index: number }> = ({ emoji, index }) => {
+  const y = useRef(new Animated.Value(0)).current;
+  const opacity = useRef(new Animated.Value(0)).current;
+  const xOffset = (index - 3.5) * 45 + (Math.random() - 0.5) * 30;
+
+  useEffect(() => {
+    Animated.sequence([
+      Animated.delay(600 + index * 120),
+      Animated.parallel([
+        Animated.timing(opacity, { toValue: 1, duration: 300, useNativeDriver: true }),
+        Animated.timing(y, { toValue: 0, duration: 300, useNativeDriver: true }),
+      ]),
+      Animated.parallel([
+        Animated.timing(opacity, { toValue: 0, duration: 1500, delay: 800, useNativeDriver: true }),
+        Animated.timing(y, { toValue: -250, duration: 2000, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+      ]),
+    ]).start();
+  }, []);
+
+  return (
+    <Animated.Text
+      style={{
+        position: 'absolute',
+        left: SCREEN_WIDTH / 2 + xOffset,
+        top: 350,
+        fontSize: 28,
         opacity,
-        transform: [{ translateY }, { translateX }, { rotate: spin }, { scale }],
+        transform: [{ translateY: y }],
       }}
     >
       {emoji}
@@ -125,72 +253,61 @@ const CelebrationParticleView: React.FC<CelebrationParticle> = ({
   );
 };
 
-// Big celebration text
+// ============================================================
+// Main CelebrationOverload
+// ============================================================
+export const CelebrationOverload: React.FC<{
+  visible: boolean;
+  x: number;
+  y: number;
+}> = ({ visible }) => {
+  if (!visible) return null;
+
+  return (
+    <View style={styles.container} pointerEvents="none">
+      {/* Galloping unicorns across the screen */}
+      <GallopingUnicorn fromLeft delay={0} size={70} row={0} />
+      <GallopingUnicorn fromLeft={false} delay={600} size={60} row={1} />
+
+      {/* Center stage dancing unicorn */}
+      <DancingUnicorn />
+
+      {/* Rainbow sweep */}
+      <RainbowSweep />
+
+      {/* Floating hearts and emojis */}
+      <FloatingHearts />
+
+      {/* Big celebration text */}
+      <WooHooText />
+    </View>
+  );
+};
+
+// ============================================================
+// WooHoo Text
+// ============================================================
 const WooHooText: React.FC = () => {
-  const translateY = useRef(new Animated.Value(0)).current;
-  const opacity = useRef(new Animated.Value(1)).current;
   const scale = useRef(new Animated.Value(0.2)).current;
+  const opacity = useRef(new Animated.Value(1)).current;
   const [text] = useState(() => {
-    const texts = ['SUPER! 🦄', 'WOOOHOOO! 🌈', 'TOLL! 🦄', 'GENIAL! 🌈', 'KLASSE! 🦄'];
+    const texts = ['SUPER! 🦄', 'WOOOHOO! 🌈', 'TOLL! 🦄', 'GENIAL! 🌈', 'KLASSE! 🦄'];
     return texts[Math.floor(Math.random() * texts.length)];
   });
 
   useEffect(() => {
-    Animated.parallel([
-      Animated.spring(scale, { toValue: 1.3, friction: 3, tension: 100, useNativeDriver: true }),
-      Animated.sequence([
-        Animated.delay(1000),
-        Animated.timing(opacity, { toValue: 0, duration: 500, useNativeDriver: true }),
-        Animated.timing(translateY, { toValue: -60, duration: 500, useNativeDriver: true }),
-      ]),
+    Animated.sequence([
+      Animated.delay(500),
+      Animated.spring(scale, { toValue: 1.2, friction: 3, tension: 100, useNativeDriver: true }),
+      Animated.delay(1200),
+      Animated.timing(opacity, { toValue: 0, duration: 400, useNativeDriver: true }),
     ]).start();
   }, []);
 
   return (
-    <Animated.Text
-      style={[styles.wooHoo, { opacity, transform: [{ scale }, { translateY }] }]}
-    >
+    <Animated.Text style={[styles.wooHoo, { opacity, transform: [{ scale }] }]}>
       {text}
     </Animated.Text>
-  );
-};
-
-// Rainbow burst rings
-const RainbowBurst: React.FC<{ x: number; y: number }> = ({ x, y }) => (
-  <>
-    {[0, 1, 2, 3].map((i) => (
-      <RainbowRing key={i} x={x} y={y} delay={i * 120} color={KIDS_COLORS[i]} />
-    ))}
-  </>
-);
-
-const RainbowRing: React.FC<{ x: number; y: number; delay: number; color: string }> = ({ x, y, delay, color }) => {
-  const scale = useRef(new Animated.Value(0)).current;
-  const opacity = useRef(new Animated.Value(0.8)).current;
-
-  useEffect(() => {
-    Animated.sequence([
-      Animated.delay(delay),
-      Animated.parallel([
-        Animated.timing(scale, { toValue: 1.8, duration: 800, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(opacity, { toValue: 0, duration: 800, useNativeDriver: true }),
-      ]),
-    ]).start();
-  }, []);
-
-  return (
-    <Animated.View
-      style={[
-        styles.ring,
-        {
-          left: x - 80,
-          top: y - 80,
-          borderColor: color,
-          opacity,
-          transform: [{ scale }],
-        },
-      ]}
-    />
   );
 };
 
@@ -205,20 +322,23 @@ const styles = StyleSheet.create({
   },
   wooHoo: {
     position: 'absolute',
-    top: '35%',
+    top: '38%',
     alignSelf: 'center',
-    fontSize: 52,
+    fontSize: 50,
     fontWeight: '900',
     color: '#FFD700',
     textShadowColor: 'rgba(0,0,0,0.6)',
     textShadowOffset: { width: 3, height: 3 },
     textShadowRadius: 10,
   },
-  ring: {
+  rainbowContainer: {
     position: 'absolute',
-    width: 160,
-    height: 160,
-    borderRadius: 80,
-    borderWidth: 4,
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  rainbowStripe: {
+    position: 'absolute',
   },
 });
