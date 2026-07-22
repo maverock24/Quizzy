@@ -129,6 +129,10 @@ const WooHooText: React.FC = () => {
   const translateY = useRef(new Animated.Value(0)).current;
   const opacity = useRef(new Animated.Value(1)).current;
   const scale = useRef(new Animated.Value(0.3)).current;
+  const [text] = useState(() => {
+    const texts = ['SUPER!', 'WOOOHOOO!', 'TOLL!', 'GENIAL!', 'KLASSE!'];
+    return texts[Math.floor(Math.random() * texts.length)];
+  });
 
   useEffect(() => {
     Animated.parallel([
@@ -140,9 +144,6 @@ const WooHooText: React.FC = () => {
       ]),
     ]).start();
   }, []);
-
-  const texts = ['SUPER!', 'WOOOHOOO!', 'TOLL!', 'GENIAL!', 'KLASSE!'];
-  const text = texts[Math.floor(Math.random() * texts.length)];
 
   return (
     <Animated.Text

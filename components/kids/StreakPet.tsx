@@ -19,7 +19,9 @@ const PET_STAGES = [
 ];
 
 export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel = true }) => {
-  const { currentStreak, hasPlayedToday } = useGamification();
+  const { streak } = useGamification();
+  const currentStreak = streak.currentStreak;
+  const hasPlayedToday = streak.lastQuizDate === new Date().toISOString().split('T')[0];
 
   const bounceAnim = useRef(new Animated.Value(1)).current;
   const floatAnim = useRef(new Animated.Value(0)).current;
