@@ -7,7 +7,7 @@
         "question": "Wie lockt der Tiefsee-Anglerfisch in der ewigen Dunkelheit seine Beute an?",
         "answers": [
           {
-            "answer": "Durch lautes Singen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Durch lautes Singen"
           },
           {
             "answer": "Mit einer leuchtenden 'Angel' am Kopf"
@@ -159,7 +159,7 @@
         "question": "Welche Wirkung hat das Schmelzen von Meereis auf die Erderwärmung (Albedo-Effekt)?",
         "answers": [
           {
-            "answer": "Es hat keine Auswirkung. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Es hat keine Auswirkung."
           },
           {
             "answer": "Dunkles Wasser nimmt mehr Sonnenwärme auf als weißes Eis."
@@ -282,7 +282,7 @@
             "answer": "Nur wenn man es vorher schüttelt."
           },
           {
-            "answer": "Ja, aber nur nachts. — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Ja, aber nur nachts."
           }
         ],
         "answer": "Nein, der hohe Salzgehalt entzieht dem.",
@@ -466,7 +466,7 @@
             "answer": "Eines, genau wie wir."
           },
           {
-            "answer": "Zwei. — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Zwei."
           },
           {
             "answer": "Drei."
@@ -520,7 +520,7 @@
         "question": "Welche Organismen im Meer produzieren etwa die Hälfte des Sauerstoffs auf unserer Erde?",
         "answers": [
           {
-            "answer": "Wale — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Wale"
           },
           {
             "answer": "Phytoplankton (winzige Algen)"
@@ -529,7 +529,7 @@
             "answer": "Unterwasser-Vulkane"
           },
           {
-            "answer": "Seesterne — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Seesterne"
           }
         ],
         "answer": "Phytoplankton (winzige Algen)",
@@ -605,7 +605,7 @@
             "answer": "Die Meeresschildkröte"
           },
           {
-            "answer": "Die Krabbe — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die Krabbe"
           }
         ],
         "answer": "Der Delfin",
@@ -640,7 +640,7 @@
             "answer": "Symbiose"
           },
           {
-            "answer": "WG-Leben — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "WG-Leben"
           },
           {
             "answer": "Zufallsbegegnung"
@@ -672,7 +672,7 @@
         "question": "Was ist der Hauptgrund für den Anstieg des Meeresspiegels?",
         "answers": [
           {
-            "answer": "Es regnet mehr. — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Es regnet mehr."
           },
           {
             "answer": "Schmelzende Gletscher an Land."
@@ -700,7 +700,7 @@
             "answer": "Pinguin"
           },
           {
-            "answer": "Delfin — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Delfin"
           }
         ],
         "answer": "Seepferdchen",
@@ -729,10 +729,10 @@
         "question": "Wie lange braucht eine Plastikflasche im Meer etwa, um zu zerfallen?",
         "answers": [
           {
-            "answer": "10 Jahre — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "10 Jahre"
           },
           {
-            "answer": "100 Jahre — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "100 Jahre"
           },
           {
             "answer": "450 Jahre"
@@ -754,10 +754,10 @@
             "answer": "Der Goldfisch"
           },
           {
-            "answer": "Die Robbe — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Die Robbe"
           },
           {
-            "answer": "Der Hering — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Der Hering"
           }
         ],
         "answer": "Der Tintenfisch (Sepia)",
@@ -786,7 +786,7 @@
         "question": "Was ist die Hauptnahrung von Blauwalen?",
         "answers": [
           {
-            "answer": "Große Haie — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Große Haie"
           },
           {
             "answer": "Winzige Krebstiere (Krill)"
@@ -795,7 +795,7 @@
             "answer": "Unterwasser-Pflanzen"
           },
           {
-            "answer": "Robben — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Robben"
           }
         ],
         "answer": "Winzige Krebstiere (Krill)",
@@ -824,7 +824,7 @@
         "question": "Welche Energiequelle im Ozean ist umweltfreundlich und erneuerbar?",
         "answers": [
           {
-            "answer": "Erdölbohrungen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Erdölbohrungen"
           },
           {
             "answer": "Offshore-Windkraft und Gezeitenkraftwerke"
@@ -919,10 +919,10 @@
         "question": "Welche Farbe hat das Blut eines Hais?",
         "answers": [
           {
-            "answer": "Blau — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Blau"
           },
           {
-            "answer": "Grün — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Grün"
           },
           {
             "answer": "Rot"
@@ -1142,7 +1142,7 @@
             "answer": "Das Gerät darf nur im Doppelpack benutzt werden."
           },
           {
-            "answer": "Achtung, Hochspannung! — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Achtung, Hochspannung!"
           }
         ],
         "answer": "Schutzklasse II (Schutzisolierung).",
@@ -1190,7 +1190,7 @@
         "question": "Wie verbindet man zwei Erdkabel im Boden sicher miteinander?",
         "answers": [
           {
-            "answer": "Mit Klebeband umwickeln. — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Mit Klebeband umwickeln."
           },
           {
             "answer": "Gar nicht, Erdkabel dürfen nie verbunden werden."
@@ -1348,7 +1348,7 @@
             "answer": "Schwarz"
           },
           {
-            "answer": "Grau — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Grau"
           },
           {
             "answer": "Grün-Gelb"
@@ -1380,16 +1380,16 @@
         "question": "Welcher Leitungsquerschnitt wird in Deutschland standardmäßig für fest verlegte Steckdosenstromkreise (mit 16A Absicherung) empfohlen?",
         "answers": [
           {
-            "answer": "0,75 mm² — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "0,75 mm²"
           },
           {
             "answer": "1,5 mm² (bei langen Leitungswegen oft 2,5 mm²)"
           },
           {
-            "answer": "4,0 mm² — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "4,0 mm²"
           },
           {
-            "answer": "10,0 mm² — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "10,0 mm²"
           }
         ],
         "answer": "1,5 mm² (bei langen Leitungswegen oft 2,5 mm²)",
@@ -1402,13 +1402,13 @@
             "answer": "NYM ist für den Innenbereich, NYY ist."
           },
           {
-            "answer": "NYM ist dicker als NYY. — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "NYM ist dicker als NYY."
           },
           {
             "answer": "NYY darf nur für Gleichstrom verwendet werden."
           },
           {
-            "answer": "NYM hat keine Erdung. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "NYM hat keine Erdung."
           }
         ],
         "answer": "NYM ist für den Innenbereich, NYY ist.",
@@ -1475,7 +1475,7 @@
         "question": "Darf man eine normale Steckdose (IP20) in einer Garage installieren?",
         "answers": [
           {
-            "answer": "Ja, uneingeschränkt. — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Ja, uneingeschränkt."
           },
           {
             "answer": "Nein, in Garagen müssen mindestens."
@@ -1665,7 +1665,7 @@
         "question": "Warum müssen Außensteckdosen von innen abschaltbar sein?",
         "answers": [
           {
-            "answer": "Um Strom zu sparen. — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Um Strom zu sparen."
           },
           {
             "answer": "Damit Unbefugte draußen keinen Strom."
@@ -1684,7 +1684,7 @@
         "question": "Welcher Buchstabe kennzeichnet den Außenleiter (Phase) in Schaltplänen?",
         "answers": [
           {
-            "answer": "N — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "N"
           },
           {
             "answer": "PE"
@@ -1693,7 +1693,7 @@
             "answer": "L"
           },
           {
-            "answer": "G — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "G"
           }
         ],
         "answer": "L",
@@ -1722,7 +1722,7 @@
         "question": "Welche Aderfarbe kennzeichnet in einer modernen deutschen Elektroinstallation (nach 2006) üblicherweise den Außenleiter (Phase L1)?",
         "answers": [
           {
-            "answer": "Blau — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Blau"
           },
           {
             "answer": "Grün-Gelb"
@@ -1731,7 +1731,7 @@
             "answer": "Braun"
           },
           {
-            "answer": "Rot — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Rot"
           }
         ],
         "answer": "Braun",
@@ -1798,13 +1798,13 @@
         "question": "In welcher Tiefe sollten Erdkabel (z.B. NYY-J) im Garten in Deutschland üblicherweise verlegt werden, um vor Spatenstichen geschützt zu sein?",
         "answers": [
           {
-            "answer": "10 cm — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "10 cm"
           },
           {
             "answer": "Mindestens 60 cm (unter Gehwegen/Rasen)"
           },
           {
-            "answer": "Immer exakt 2 Meter — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Immer exakt 2 Meter"
           },
           {
             "answer": "Einfach locker unter den Rindenmulch legen"
@@ -1842,10 +1842,10 @@
             "answer": "FI-Schutzschalter (RCD)"
           },
           {
-            "answer": "Stromzähler — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Stromzähler"
           },
           {
-            "answer": "Transformator — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Transformator"
           }
         ],
         "answer": "FI-Schutzschalter (RCD)",
@@ -1864,7 +1864,7 @@
             "answer": "Direkt an die Glühbirne ohne Schalter dazwischen."
           },
           {
-            "answer": "An den blauen Draht. — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "An den blauen Draht."
           }
         ],
         "answer": "An den Eingangskontakt (oft mit 'L' oder einem Pfeil markiert).",
@@ -1975,13 +1975,13 @@
         "question": "Wer war der römische Feldherr und Politiker, der Gallien eroberte, den Rubikon überschritt und schließlich zum Diktator auf Lebenszeit ernannt wurde?",
         "answers": [
           {
-            "answer": "Pompeius — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Pompeius"
           },
           {
             "answer": "Marcus Antonius"
           },
           {
-            "answer": "Augustus — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Augustus"
           },
           {
             "answer": "Gaius Julius Cäsar"
@@ -2016,7 +2016,7 @@
             "answer": "Tiberius"
           },
           {
-            "answer": "Nero — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Nero"
           },
           {
             "answer": "Augustus"
@@ -2051,7 +2051,7 @@
         "question": "Was war das Forum Romanum?",
         "answers": [
           {
-            "answer": "Ein großer Aquädukt. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Ein großer Aquädukt."
           },
           {
             "answer": "Der Palast des Kaisers auf dem Palatin-Hügel."
@@ -2127,7 +2127,7 @@
         "question": "Welche Stadt wurde im Jahr 79 n. Chr. durch einen Ausbruch des Vulkans Vesuv vollständig verschüttet?",
         "answers": [
           {
-            "answer": "Rom — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Rom"
           },
           {
             "answer": "Athen"
@@ -2171,10 +2171,10 @@
             "answer": "Theodosius I."
           },
           {
-            "answer": "Diokletian — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Diokletian"
           },
           {
-            "answer": "Marc Aurel — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Marc Aurel"
           }
         ],
         "answer": "Theodosius I.",
@@ -2279,7 +2279,7 @@
         "question": "Was war der 'Senat' in der Römischen Republik und Kaiserzeit?",
         "answers": [
           {
-            "answer": "Die römische Armee. — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Die römische Armee."
           },
           {
             "answer": "Eine Volksversammlung, in der alle Bürger abstimmten."
@@ -2418,7 +2418,7 @@
             "answer": "Eine Eliteeinheit der römischen Armee, die als Leibwache."
           },
           {
-            "answer": "Die römische Marine. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die römische Marine."
           },
           {
             "answer": "Eine Gruppe von Priestern, die für die Bewachung des Vestalinnen-Tempels zuständig war."
@@ -2495,16 +2495,16 @@
         "question": "Wie nannte man die Stadtstaaten im antiken Griechenland?",
         "answers": [
           {
-            "answer": "Provinzen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Provinzen"
           },
           {
-            "answer": "Königreiche — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Königreiche"
           },
           {
             "answer": "Polis (Plural: Poleis)"
           },
           {
-            "answer": "Imperien — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Imperien"
           }
         ],
         "answer": "Polis (Plural: Poleis)",
@@ -2523,7 +2523,7 @@
             "answer": "Der Trojanische Krieg und der Silarus-Krieg"
           },
           {
-            "answer": "Die Punischen Kriege — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Die Punischen Kriege"
           }
         ],
         "answer": "Die Perserkriege",
@@ -2552,10 +2552,10 @@
         "question": "Welcher berühmte Feldherr aus Makedonien eroberte das riesige Perserreich und verbreitete die griechische Kultur bis nach Indien?",
         "answers": [
           {
-            "answer": "Perikles — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Perikles"
           },
           {
-            "answer": "Leonidas — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Leonidas"
           },
           {
             "answer": "Alexander der Große"
@@ -2609,10 +2609,10 @@
         "question": "Wer war der griechische Gott des Meeres, der mit einem Dreizack dargestellt wird?",
         "answers": [
           {
-            "answer": "Zeus — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Zeus"
           },
           {
-            "answer": "Ares — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Ares"
           },
           {
             "answer": "Hephaistos"
@@ -2780,7 +2780,7 @@
         "question": "Wer war die griechische Göttin der Weisheit, des Handwerks und der Kriegsstrategie?",
         "answers": [
           {
-            "answer": "Hera — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Hera"
           },
           {
             "answer": "Aphrodite"
@@ -2846,7 +2846,7 @@
             "answer": "Dionysos"
           },
           {
-            "answer": "Ares — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Ares"
           }
         ],
         "answer": "Dionysos",
@@ -2935,7 +2935,7 @@
             "answer": "Hades"
           },
           {
-            "answer": "Ares — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Ares"
           },
           {
             "answer": "Chronos"
@@ -2951,13 +2951,13 @@
         "question": "Was war die Hauptaufgabe eines spartanischen Jungen?",
         "answers": [
           {
-            "answer": "Ein Philosoph zu werden. — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ein Philosoph zu werden."
           },
           {
-            "answer": "Ein Künstler zu werden. — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Ein Künstler zu werden."
           },
           {
-            "answer": "Ein Händler zu werden. — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Ein Händler zu werden."
           },
           {
             "answer": "Ein disziplinierter und starker Soldat zu werden."
@@ -2998,7 +2998,7 @@
             "answer": "Dionysos"
           },
           {
-            "answer": "Ares — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Ares"
           }
         ],
         "answer": "Hermes",
@@ -3132,7 +3132,7 @@
             "answer": "Aphrodite"
           },
           {
-            "answer": "Hera — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Hera"
           },
           {
             "answer": "Eris"
@@ -3252,7 +3252,7 @@
             "answer": "Odysseus"
           },
           {
-            "answer": "Ajax — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ajax"
           }
         ],
         "answer": "Odysseus",
@@ -3287,7 +3287,7 @@
             "answer": "Agamemnon"
           },
           {
-            "answer": "Ajax — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Ajax"
           },
           {
             "answer": "Achilles"
@@ -3319,7 +3319,7 @@
         "question": "Welche Göttin stand den Trojanern im Krieg am treuesten zur Seite, weil Paris ihr den goldenen Apfel gegeben hatte?",
         "answers": [
           {
-            "answer": "Hera — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Hera"
           },
           {
             "answer": "Artemis"
@@ -3376,7 +3376,7 @@
         "question": "Wer war der beste Freund von Achilles, dessen Tod ihn dazu brachte, wieder in den Kampf einzugreifen?",
         "answers": [
           {
-            "answer": "Ajax — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Ajax"
           },
           {
             "answer": "Diomedes"
@@ -3572,7 +3572,7 @@
             "answer": "Diomedes"
           },
           {
-            "answer": "Nestor — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nestor"
           },
           {
             "answer": "Patroklos"
@@ -3585,7 +3585,7 @@
         "question": "Wie hieß die treue Ehefrau von Hektor?",
         "answers": [
           {
-            "answer": "Hekabe — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Hekabe"
           },
           {
             "answer": "Klytaimnestra"
@@ -3680,13 +3680,13 @@
         "question": "Welcher Gott stand auf der Seite der Griechen und wurde oft 'der Erderschütterer' genannt?",
         "answers": [
           {
-            "answer": "Ares — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Ares"
           },
           {
             "answer": "Hades"
           },
           {
-            "answer": "Zeus — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Zeus"
           },
           {
             "answer": "Poseidon"
@@ -3930,7 +3930,7 @@
             "answer": "Diomedes"
           },
           {
-            "answer": "Ajax — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Ajax"
           },
           {
             "answer": "Menelaos"
@@ -3946,7 +3946,7 @@
         "question": "Wem war das Trojanische Pferd angeblich als Opfergabe gewidmet?",
         "answers": [
           {
-            "answer": "Zeus — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Zeus"
           },
           {
             "answer": "Poseidon"
@@ -4834,7 +4834,7 @@
         "question": "Welche antike Stadt wurde 79 n. Chr. durch einen Vulkanausbruch verschüttet?",
         "answers": [
           {
-            "answer": "Athen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Athen"
           },
           {
             "answer": "Pompeji"
@@ -4872,7 +4872,7 @@
         "question": "Welche europäische Stadt war der Ausgangspunkt der Industriellen Revolution?",
         "answers": [
           {
-            "answer": "Paris — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Paris"
           },
           {
             "answer": "London"
@@ -4938,7 +4938,7 @@
             "answer": "Friedrich III."
           },
           {
-            "answer": "Karl I. — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Karl I."
           }
         ],
         "answer": "Wilhelm II.",
@@ -5024,10 +5024,10 @@
         "question": "Wer gründete das Osmanische Reich?",
         "answers": [
           {
-            "answer": "Selim I. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Selim I."
           },
           {
-            "answer": "Mehmed II. — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Mehmed II."
           },
           {
             "answer": "Osman I."
@@ -5071,7 +5071,7 @@
             "answer": "Frankreich"
           },
           {
-            "answer": "China — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "China"
           }
         ],
         "answer": "Russland",
@@ -5138,10 +5138,10 @@
         "question": "Welche Stadt war das Zentrum des Byzantinischen Reiches?",
         "answers": [
           {
-            "answer": "Athen — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Athen"
           },
           {
-            "answer": "Rom — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Rom"
           },
           {
             "answer": "Alexandria"
@@ -5242,7 +5242,7 @@
             "answer": "Sun Yat-sen"
           },
           {
-            "answer": "Yongle — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Yongle"
           }
         ],
         "answer": "Qin Shi Huangdi",
@@ -5468,16 +5468,16 @@
         "question": "Welches Organ produziert Insulin?",
         "answers": [
           {
-            "answer": "Niere — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Niere"
           },
           {
-            "answer": "Leber — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Leber"
           },
           {
             "answer": "Pankreas (Bauchspeicheldrüse)"
           },
           {
-            "answer": "Milz — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Milz"
           }
         ],
         "answer": "Pankreas (Bauchspeicheldrüse)",
@@ -5506,7 +5506,7 @@
         "question": "Wie heißt der längste Knochen im menschlichen Körper?",
         "answers": [
           {
-            "answer": "Wadenbein — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Wadenbein"
           },
           {
             "answer": "Schienbein"
@@ -5601,16 +5601,16 @@
         "question": "Welcher Muskel ist der stärkste im menschlichen Körper (bezogen auf seine Größe)?",
         "answers": [
           {
-            "answer": "Herzmuskel — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Herzmuskel"
           },
           {
-            "answer": "Zunge — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Zunge"
           },
           {
             "answer": "Kaumuskel (Musculus masseter)"
           },
           {
-            "answer": "Bizeps — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Bizeps"
           }
         ],
         "answer": "Kaumuskel (Musculus masseter)",
@@ -5696,13 +5696,13 @@
         "question": "Wie viele Liter Luft atmet ein Erwachsener durchschnittlich pro Tag ein und aus?",
         "answers": [
           {
-            "answer": "1000 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "1000"
           },
           {
-            "answer": "5000 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "5000"
           },
           {
-            "answer": "10.000 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "10.000"
           },
           {
             "answer": "ca. 10.000 bis 20.000"
@@ -5721,10 +5721,10 @@
             "answer": "Bauchspeicheldrüse"
           },
           {
-            "answer": "Magen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Magen"
           },
           {
-            "answer": "Milz — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Milz"
           }
         ],
         "answer": "Leber",
@@ -5886,7 +5886,7 @@
         "question": "Wie nennt man die Blutgefäße, die Blut vom Herzen weg transportieren?",
         "answers": [
           {
-            "answer": "Venen — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Venen"
           },
           {
             "answer": "Arterien"
@@ -5949,7 +5949,7 @@
             "answer": "Hormone"
           },
           {
-            "answer": "Axone — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Axone"
           },
           {
             "answer": "Mitochondrien"
@@ -5968,7 +5968,7 @@
             "answer": "Zwölffingerdarm"
           },
           {
-            "answer": "Leber — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Leber"
           },
           {
             "answer": "Speiseröhre"
@@ -6019,16 +6019,16 @@
         "question": "Welches Organ produziert die meisten Verdauungsenzyme?",
         "answers": [
           {
-            "answer": "Leber — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Leber"
           },
           {
-            "answer": "Magen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Magen"
           },
           {
             "answer": "Pankreas (Bauchspeicheldrüse)"
           },
           {
-            "answer": "Dünndarm — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Dünndarm"
           }
         ],
         "answer": "Pankreas (Bauchspeicheldrüse)",
@@ -6038,16 +6038,16 @@
         "question": "Wie viele Wirbel hat die menschliche Wirbelsäule?",
         "answers": [
           {
-            "answer": "24 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "24"
           },
           {
-            "answer": "26 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "26"
           },
           {
             "answer": "33-34"
           },
           {
-            "answer": "40 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "40"
           }
         ],
         "answer": "33-34",
@@ -6085,7 +6085,7 @@
             "answer": "Glaskörper"
           },
           {
-            "answer": "Lymphe — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Lymphe"
           }
         ],
         "answer": "Kammerwasser",
@@ -6152,7 +6152,7 @@
         "question": "Welcher Teil des Gehirns steuert die Atmung?",
         "answers": [
           {
-            "answer": "Großhirn — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Großhirn"
           },
           {
             "answer": "Kleinhirn"
@@ -6269,13 +6269,13 @@
             "answer": "Lederhaut (Dermis)"
           },
           {
-            "answer": "Unterhaut — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Unterhaut"
           },
           {
             "answer": "Knochenhaut"
           },
           {
-            "answer": "Bindehaut — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Bindehaut"
           }
         ],
         "answer": "Lederhaut (Dermis)",
@@ -6342,16 +6342,16 @@
         "question": "Welches Organ ist für die Produktion von Insulin zuständig?",
         "answers": [
           {
-            "answer": "Leber — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Leber"
           },
           {
             "answer": "Pankreas (Bauchspeicheldrüse)"
           },
           {
-            "answer": "Milz — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Milz"
           },
           {
-            "answer": "Niere — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Niere"
           }
         ],
         "answer": "Pankreas (Bauchspeicheldrüse)",
@@ -6364,7 +6364,7 @@
             "answer": "Arterien"
           },
           {
-            "answer": "Venen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Venen"
           },
           {
             "answer": "Kapillaren"
@@ -6564,7 +6564,7 @@
             "answer": "Schädel"
           },
           {
-            "answer": "Haut — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Haut"
           },
           {
             "answer": "Wirbelsäule"
@@ -6700,7 +6700,7 @@
             "answer": "Rippen"
           },
           {
-            "answer": "Arm — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Arm"
           }
         ],
         "answer": "Wirbelsäule",
@@ -6710,7 +6710,7 @@
         "question": "Wie heißt das Gelenk zwischen Ober- und Unterarm?",
         "answers": [
           {
-            "answer": "Knie — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Knie"
           },
           {
             "answer": "Ellenbogen"
@@ -6729,7 +6729,7 @@
         "question": "Wie viele Rippen hat ein Mensch ungefähr?",
         "answers": [
           {
-            "answer": "8 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "8"
           },
           {
             "answer": "12"
@@ -6754,7 +6754,7 @@
             "answer": "Rippen"
           },
           {
-            "answer": "Haut — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Haut"
           },
           {
             "answer": "Wirbelsäule"
@@ -6998,7 +6998,7 @@
             "answer": "Sie schützt den Körper."
           },
           {
-            "answer": "Sie denkt. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Sie denkt."
           },
           {
             "answer": "Sie pumpt Blut."
@@ -7033,7 +7033,7 @@
         "question": "Wie viele Finger hast du insgesamt an beiden Händen?",
         "answers": [
           {
-            "answer": "8 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "8"
           },
           {
             "answer": "10"
@@ -7071,7 +7071,7 @@
         "question": "Wie viele Zehen hast du insgesamt?",
         "answers": [
           {
-            "answer": "8 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "8"
           },
           {
             "answer": "10"
@@ -7096,10 +7096,10 @@
             "answer": "Oberschenkelknochen"
           },
           {
-            "answer": "Rippe — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Rippe"
           },
           {
-            "answer": "Wirbel — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Wirbel"
           }
         ],
         "answer": "Oberschenkelknochen",
@@ -7169,13 +7169,13 @@
             "answer": "Sie geben dem Körper Halt."
           },
           {
-            "answer": "Sie denken. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Sie denken."
           },
           {
             "answer": "Sie schmecken."
           },
           {
-            "answer": "Sie riechen. — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Sie riechen."
           }
         ],
         "answer": "Sie geben dem Körper Halt.",
@@ -7264,10 +7264,10 @@
             "answer": "Sie bewegen den Körper."
           },
           {
-            "answer": "Sie denken. — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Sie denken."
           },
           {
-            "answer": "Sie hören. — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Sie hören."
           },
           {
             "answer": "Sie schützen den Körper."
@@ -7321,7 +7321,7 @@
             "answer": "Oberarmknochen"
           },
           {
-            "answer": "Speiche — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Speiche"
           },
           {
             "answer": "Schlüsselbein"
@@ -7362,7 +7362,7 @@
             "answer": "Wimper"
           },
           {
-            "answer": "Haut — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Haut"
           },
           {
             "answer": "Nagel"
@@ -7384,7 +7384,7 @@
             "answer": "Wirbelsäule"
           },
           {
-            "answer": "Bauch — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Bauch"
           }
         ],
         "answer": "Schädel",
@@ -7416,10 +7416,10 @@
             "answer": "Knöchel"
           },
           {
-            "answer": "Knie — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Knie"
           },
           {
-            "answer": "Hüfte — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Hüfte"
           },
           {
             "answer": "Handgelenk"
@@ -7439,16 +7439,16 @@
         "question": "Wie heißt der berühmte Turm in Pisa, der schief ist?",
         "answers": [
           {
-            "answer": "Eiffelturm — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Eiffelturm"
           },
           {
             "answer": "Schiefer Turm von Pisa"
           },
           {
-            "answer": "Big Ben — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Big Ben"
           },
           {
-            "answer": "Kölner Dom — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Kölner Dom"
           }
         ],
         "answer": "Schiefer Turm von Pisa",
@@ -7537,7 +7537,7 @@
             "answer": "Therme"
           },
           {
-            "answer": "Sauna — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Sauna"
           },
           {
             "answer": "Dusche"
@@ -7556,10 +7556,10 @@
             "answer": "Eiffelturm"
           },
           {
-            "answer": "Fernsehturm — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Fernsehturm"
           },
           {
-            "answer": "Big Ben — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Big Ben"
           },
           {
             "answer": "Schiefer Turm von Pisa"
@@ -7619,7 +7619,7 @@
             "answer": "Victoria"
           },
           {
-            "answer": "Anne — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Anne"
           }
         ],
         "answer": "Elisabeth II.",
@@ -7638,7 +7638,7 @@
             "answer": "Donau"
           },
           {
-            "answer": "Nil — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nil"
           }
         ],
         "answer": "Tiber",
@@ -7676,7 +7676,7 @@
             "answer": "Eiffelturm"
           },
           {
-            "answer": "Big Ben — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Big Ben"
           }
         ],
         "answer": "Chinesische Mauer",
@@ -7695,7 +7695,7 @@
             "answer": "Angela Merkel"
           },
           {
-            "answer": "Anne Frank — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Anne Frank"
           }
         ],
         "answer": "Florence Nightingale",
@@ -7727,7 +7727,7 @@
             "answer": "Kolossäum"
           },
           {
-            "answer": "Arena — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Arena"
           },
           {
             "answer": "Olympiastadion"
@@ -7768,7 +7768,7 @@
             "answer": "Eiffelturm"
           },
           {
-            "answer": "Big Ben — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Big Ben"
           },
           {
             "answer": "Brandenburger Tor"
@@ -7803,7 +7803,7 @@
             "answer": "Beethoven"
           },
           {
-            "answer": "Bach — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Bach"
           },
           {
             "answer": "Mozart"
@@ -8056,7 +8056,7 @@
             "answer": "Heinrich Heine"
           },
           {
-            "answer": "Erich Kästner — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Erich Kästner"
           }
         ],
         "answer": "Johann Wolfgang von Goethe",
@@ -8205,10 +8205,10 @@
             "answer": "Mittelalter"
           },
           {
-            "answer": "Steinzeit — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Steinzeit"
           },
           {
-            "answer": "Antike — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Antike"
           }
         ],
         "answer": "Industrialisierung",
@@ -8240,7 +8240,7 @@
             "answer": "Urgeschichte"
           },
           {
-            "answer": "Antike — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Antike"
           },
           {
             "answer": "Neuzeit"
@@ -8316,10 +8316,10 @@
             "answer": "Steinzeitmenschen"
           },
           {
-            "answer": "Römer — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Römer"
           },
           {
-            "answer": "Ritter — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ritter"
           },
           {
             "answer": "Pharaonen"
@@ -8519,7 +8519,7 @@
             "answer": "Yellow"
           },
           {
-            "answer": "Red — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Red"
           }
         ],
         "answer": "Green",
@@ -8766,7 +8766,7 @@
             "answer": "Brother"
           },
           {
-            "answer": "Boy — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Boy"
           }
         ],
         "answer": "Friend",
@@ -9048,7 +9048,7 @@
             "answer": "Bridge"
           },
           {
-            "answer": "Car — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Car"
           },
           {
             "answer": "Tree"
@@ -9362,7 +9362,7 @@
             "answer": "Tiger"
           },
           {
-            "answer": "Bär — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Bär"
           }
         ],
         "answer": "Löwe",
@@ -9372,7 +9372,7 @@
         "question": "Wie viele Beine hat eine Spinne?",
         "answers": [
           {
-            "answer": "6 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "6"
           },
           {
             "answer": "8"
@@ -9391,13 +9391,13 @@
         "question": "Wie viele Tage hat eine Woche?",
         "answers": [
           {
-            "answer": "6 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "6"
           },
           {
             "answer": "7"
           },
           {
-            "answer": "8 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "8"
           },
           {
             "answer": "10"
@@ -9492,7 +9492,7 @@
             "answer": "Russland"
           },
           {
-            "answer": "USA — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "USA"
           },
           {
             "answer": "Kanada"
@@ -9907,7 +9907,7 @@
             "answer": "London"
           },
           {
-            "answer": "Rom — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Rom"
           },
           {
             "answer": "Madrid"
@@ -9923,7 +9923,7 @@
         "question": "Welche Farbe erhält man, wenn man Blau und Gelb mischt?",
         "answers": [
           {
-            "answer": "Rot — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Rot"
           },
           {
             "answer": "Grün"
@@ -10005,10 +10005,10 @@
             "answer": "Wagen"
           },
           {
-            "answer": "Bus — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Bus"
           },
           {
-            "answer": "Zug — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Zug"
           }
         ],
         "answer": "Wagen",
@@ -10037,13 +10037,13 @@
         "question": "Wie viele Planeten hat unser Sonnensystem?",
         "answers": [
           {
-            "answer": "7 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "7"
           },
           {
             "answer": "8"
           },
           {
-            "answer": "9 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "9"
           },
           {
             "answer": "10"
@@ -10122,7 +10122,7 @@
             "answer": "China"
           },
           {
-            "answer": "USA — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "USA"
           }
         ],
         "answer": "China",
@@ -10883,13 +10883,13 @@
             "answer": "10"
           },
           {
-            "answer": "8 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "8"
           },
           {
             "answer": "9"
           },
           {
-            "answer": "7 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "7"
           }
         ],
         "answer": "9",
@@ -11308,7 +11308,7 @@
             "answer": "laufen"
           },
           {
-            "answer": "rot — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "rot"
           },
           {
             "answer": "Buch"
@@ -11498,7 +11498,7 @@
             "answer": "auf den"
           },
           {
-            "answer": "im — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "im"
           },
           {
             "answer": "aus der"
@@ -11688,10 +11688,10 @@
             "answer": "schwimmen"
           },
           {
-            "answer": "Auto — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Auto"
           },
           {
-            "answer": "blau — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "blau"
           },
           {
             "answer": "Apfel"
@@ -11764,7 +11764,7 @@
             "answer": "roter"
           },
           {
-            "answer": "rot — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "rot"
           },
           {
             "answer": "rötlich"
@@ -11821,7 +11821,7 @@
             "answer": "laufen"
           },
           {
-            "answer": "blau — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "blau"
           },
           {
             "answer": "Katze"
@@ -11922,7 +11922,7 @@
             "answer": "schnell"
           },
           {
-            "answer": "rot — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "rot"
           }
         ],
         "answer": "fliegen",
@@ -11995,7 +11995,7 @@
             "answer": "Freundin"
           },
           {
-            "answer": "grün — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "grün"
           },
           {
             "answer": "essen"
@@ -12068,13 +12068,13 @@
             "answer": "klein"
           },
           {
-            "answer": "Maus — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Maus"
           },
           {
             "answer": "springen"
           },
           {
-            "answer": "Auto — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Auto"
           }
         ],
         "answer": "klein",
@@ -12191,7 +12191,7 @@
             "answer": "12"
           },
           {
-            "answer": "6 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "6"
           },
           {
             "answer": "24"
@@ -12204,10 +12204,10 @@
         "question": "Wie viele Tage hat eine Woche?",
         "answers": [
           {
-            "answer": "5 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "5"
           },
           {
-            "answer": "6 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "6"
           },
           {
             "answer": "7"
@@ -12229,7 +12229,7 @@
             "answer": "Februar"
           },
           {
-            "answer": "März — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "März"
           },
           {
             "answer": "Dezember"
@@ -12245,7 +12245,7 @@
             "answer": "April"
           },
           {
-            "answer": "Mai — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Mai"
           },
           {
             "answer": "Februar"
@@ -12270,7 +12270,7 @@
             "answer": "August"
           },
           {
-            "answer": "Mai — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Mai"
           }
         ],
         "answer": "Juli",
@@ -12280,10 +12280,10 @@
         "question": "Wie viele Jahreszeiten gibt es?",
         "answers": [
           {
-            "answer": "2 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "2"
           },
           {
-            "answer": "3 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "3"
           },
           {
             "answer": "4"
@@ -12403,7 +12403,7 @@
             "answer": "April"
           },
           {
-            "answer": "Mai — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Mai"
           }
         ],
         "answer": "März",
@@ -12476,7 +12476,7 @@
             "answer": "August"
           },
           {
-            "answer": "Mai — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Mai"
           },
           {
             "answer": "Oktober"
@@ -12511,7 +12511,7 @@
             "answer": "April"
           },
           {
-            "answer": "Juni — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Juni"
           },
           {
             "answer": "Mai"
@@ -12584,7 +12584,7 @@
         "question": "Wie heißt der Monat vor März?",
         "answers": [
           {
-            "answer": "Mai — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Mai"
           },
           {
             "answer": "Februar"
@@ -12720,13 +12720,13 @@
             "answer": "Februar"
           },
           {
-            "answer": "März — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "März"
           },
           {
             "answer": "Dezember"
           },
           {
-            "answer": "Mai — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Mai"
           }
         ],
         "answer": "Februar",
@@ -12742,10 +12742,10 @@
             "answer": "September"
           },
           {
-            "answer": "Juni — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Juni"
           },
           {
-            "answer": "Mai — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Mai"
           }
         ],
         "answer": "August",
@@ -12783,7 +12783,7 @@
             "answer": "Juni"
           },
           {
-            "answer": "Mai — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Mai"
           }
         ],
         "answer": "Juli",
@@ -12840,7 +12840,7 @@
             "answer": "April"
           },
           {
-            "answer": "Mai — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Mai"
           }
         ],
         "answer": "Oktober",
@@ -12951,7 +12951,7 @@
             "answer": "Oktober"
           },
           {
-            "answer": "Juli — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Juli"
           },
           {
             "answer": "November"
@@ -12967,10 +12967,10 @@
             "answer": "März oder April"
           },
           {
-            "answer": "Juni — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Juni"
           },
           {
-            "answer": "Mai — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Mai"
           },
           {
             "answer": "Dezember"
@@ -13024,7 +13024,7 @@
             "answer": "Februar"
           },
           {
-            "answer": "März — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "März"
           },
           {
             "answer": "Dezember"
@@ -13068,7 +13068,7 @@
             "answer": "Dienstag"
           },
           {
-            "answer": "Mai — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Mai"
           }
         ],
         "answer": "Dezember",
@@ -13220,7 +13220,7 @@
             "answer": "Februar"
           },
           {
-            "answer": "März — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "März"
           }
         ],
         "answer": "Januar",
@@ -13297,7 +13297,7 @@
             "answer": "Viertel nach"
           },
           {
-            "answer": "Halb — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Halb"
           },
           {
             "answer": "Viertel vor"
@@ -13357,7 +13357,7 @@
             "answer": "Viertel vor"
           },
           {
-            "answer": "Halb — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Halb"
           },
           {
             "answer": "Dreiviertel"
@@ -13376,10 +13376,10 @@
             "answer": "Viertel vor 11"
           },
           {
-            "answer": "Halb 12 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Halb 12"
           },
           {
-            "answer": "11 Uhr — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "11 Uhr"
           }
         ],
         "answer": "Viertel nach 11",
@@ -13392,10 +13392,10 @@
             "answer": "6 Uhr"
           },
           {
-            "answer": "12 Uhr — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "12 Uhr"
           },
           {
-            "answer": "Halb 7 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Halb 7"
           },
           {
             "answer": "Viertel nach 6"
@@ -13408,13 +13408,13 @@
         "question": "Der große Zeiger steht auf der 6 und der kleine zwischen 1 und 2. Wie spät ist es?",
         "answers": [
           {
-            "answer": "1 Uhr — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "1 Uhr"
           },
           {
             "answer": "Halb 2"
           },
           {
-            "answer": "2 Uhr — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "2 Uhr"
           },
           {
             "answer": "Viertel nach 1"
@@ -13427,7 +13427,7 @@
         "question": "Wenn der große Zeiger auf der 3 und der kleine auf der 8 steht, wie heißt die Uhrzeit?",
         "answers": [
           {
-            "answer": "Acht Uhr — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Acht Uhr"
           },
           {
             "answer": "Halb neun"
@@ -13493,7 +13493,7 @@
             "answer": "Viertel vor zehn"
           },
           {
-            "answer": "Zehn Uhr — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Zehn Uhr"
           }
         ],
         "answer": "Viertel nach zehn",
@@ -13512,7 +13512,7 @@
             "answer": "Beide Zeiger"
           },
           {
-            "answer": "Keiner — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Keiner"
           }
         ],
         "answer": "Der große Zeiger",
@@ -13525,10 +13525,10 @@
             "answer": "2 Uhr"
           },
           {
-            "answer": "3 Uhr — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "3 Uhr"
           },
           {
-            "answer": "Halb 3 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Halb 3"
           },
           {
             "answer": "Viertel nach 2"
@@ -13541,10 +13541,10 @@
         "question": "Wie viele Minuten zeigt der große Zeiger pro Zahl an?",
         "answers": [
           {
-            "answer": "1 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "1"
           },
           {
-            "answer": "2 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "2"
           },
           {
             "answer": "5"
@@ -13601,7 +13601,7 @@
             "answer": "Viertel nach 5"
           },
           {
-            "answer": "Halb 6 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Halb 6"
           },
           {
             "answer": "Viertel vor 6"
@@ -13623,10 +13623,10 @@
             "answer": "Viertel vor 12"
           },
           {
-            "answer": "Halb 1 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Halb 1"
           },
           {
-            "answer": "12 Uhr — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "12 Uhr"
           }
         ],
         "answer": "Viertel nach 12",
@@ -13674,7 +13674,7 @@
         "question": "Wie viele Stunden zeigt die Uhr am Tag an?",
         "answers": [
           {
-            "answer": "6 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "6"
           },
           {
             "answer": "12"
@@ -13696,13 +13696,13 @@
             "answer": "Halb 5"
           },
           {
-            "answer": "4 Uhr — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "4 Uhr"
           },
           {
             "answer": "Viertel nach 4"
           },
           {
-            "answer": "5 Uhr — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "5 Uhr"
           }
         ],
         "answer": "Halb 5",
@@ -13734,13 +13734,13 @@
             "answer": "Viertel nach 2"
           },
           {
-            "answer": "Halb 3 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Halb 3"
           },
           {
             "answer": "Viertel vor 3"
           },
           {
-            "answer": "3 Uhr — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "3 Uhr"
           }
         ],
         "answer": "Viertel nach 2",
@@ -13753,10 +13753,10 @@
             "answer": "1 Uhr"
           },
           {
-            "answer": "12 Uhr — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "12 Uhr"
           },
           {
-            "answer": "Halb 2 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Halb 2"
           },
           {
             "answer": "Viertel nach 1"
@@ -13829,13 +13829,13 @@
             "answer": "Viertel nach 8"
           },
           {
-            "answer": "Halb 9 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Halb 9"
           },
           {
             "answer": "Viertel vor 9"
           },
           {
-            "answer": "8 Uhr — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "8 Uhr"
           }
         ],
         "answer": "Viertel vor 9",
@@ -13867,7 +13867,7 @@
             "answer": "8 Uhr"
           },
           {
-            "answer": "Halb 9 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Halb 9"
           },
           {
             "answer": "Viertel nach 8"
@@ -13886,13 +13886,13 @@
             "answer": "Viertel nach 11"
           },
           {
-            "answer": "Halb 12 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Halb 12"
           },
           {
             "answer": "Viertel vor 12"
           },
           {
-            "answer": "12 Uhr — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "12 Uhr"
           }
         ],
         "answer": "Viertel nach 11",
@@ -13908,10 +13908,10 @@
             "answer": "Viertel vor 10"
           },
           {
-            "answer": "Halb 11 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Halb 11"
           },
           {
-            "answer": "11 Uhr — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "11 Uhr"
           }
         ],
         "answer": "Viertel vor 11",
@@ -13981,13 +13981,13 @@
             "answer": "4 Uhr"
           },
           {
-            "answer": "Halb 5 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Halb 5"
           },
           {
             "answer": "Viertel nach 4"
           },
           {
-            "answer": "5 Uhr — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "5 Uhr"
           }
         ],
         "answer": "4 Uhr",
@@ -14060,10 +14060,10 @@
             "answer": "Viertel nach 6"
           },
           {
-            "answer": "Halb 6 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Halb 6"
           },
           {
-            "answer": "5 Uhr — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "5 Uhr"
           }
         ],
         "answer": "Viertel nach 5",
@@ -14117,10 +14117,10 @@
             "answer": "Viertel vor 8"
           },
           {
-            "answer": "Halb 8 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Halb 8"
           },
           {
-            "answer": "7 Uhr — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "7 Uhr"
           }
         ],
         "answer": "Viertel vor 8",
@@ -14155,10 +14155,10 @@
             "answer": "Viertel nach 3"
           },
           {
-            "answer": "Halb 2 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Halb 2"
           },
           {
-            "answer": "1 Uhr — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "1 Uhr"
           }
         ],
         "answer": "Viertel nach 1",
@@ -14209,13 +14209,13 @@
             "answer": "Viertel nach 4"
           },
           {
-            "answer": "Halb 5 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Halb 5"
           },
           {
             "answer": "Viertel vor 5"
           },
           {
-            "answer": "4 Uhr — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "4 Uhr"
           }
         ],
         "answer": "Viertel nach 4",
@@ -14327,13 +14327,13 @@
         "question": "In welchem Land befindet sich die berühmte Salzwüste Salar de Uyuni?",
         "answers": [
           {
-            "answer": "Chile — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Chile"
           },
           {
             "answer": "Bolivien"
           },
           {
-            "answer": "Peru — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Peru"
           },
           {
             "answer": "Argentinien"
@@ -14384,7 +14384,7 @@
         "question": "Welche Halbinsel in Kroatien ist bekannt für ihre 16 terrassenförmig angeordneten Seen?",
         "answers": [
           {
-            "answer": "Istrien — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Istrien"
           },
           {
             "answer": "Plitvicer Seen"
@@ -14393,7 +14393,7 @@
             "answer": "Kornaten"
           },
           {
-            "answer": "Brijuni — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Brijuni"
           }
         ],
         "answer": "Plitvicer Seen",
@@ -14412,7 +14412,7 @@
             "answer": "Kambodscha"
           },
           {
-            "answer": "Laos — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Laos"
           }
         ],
         "answer": "Kambodscha",
@@ -14447,7 +14447,7 @@
             "answer": "Osterinsel"
           },
           {
-            "answer": "Fiji — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Fiji"
           },
           {
             "answer": "Cook-Inseln"
@@ -14517,13 +14517,13 @@
         "question": "Welche Wüste ist die größte Sandwüste der Welt?",
         "answers": [
           {
-            "answer": "Sahara — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Sahara"
           },
           {
             "answer": "Rub al-Khali"
           },
           {
-            "answer": "Gobi — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Gobi"
           },
           {
             "answer": "Kalahari"
@@ -14539,13 +14539,13 @@
             "answer": "Island"
           },
           {
-            "answer": "USA — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "USA"
           },
           {
             "answer": "Neuseeland"
           },
           {
-            "answer": "Chile — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Chile"
           }
         ],
         "answer": "Island",
@@ -14650,7 +14650,7 @@
         "question": "In welchem Land befindet sich das Valley of Fire mit seinen roten Sandsteinformationen?",
         "answers": [
           {
-            "answer": "Utah — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Utah"
           },
           {
             "answer": "Arizona"
@@ -14710,7 +14710,7 @@
             "answer": "Blue Lagoon Island"
           },
           {
-            "answer": "Crater Lake — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Crater Lake"
           },
           {
             "answer": "Blue Lagoon Iceland"
@@ -14751,10 +14751,10 @@
             "answer": "Höhle der Kristalle (Naica)"
           },
           {
-            "answer": "Mammoth Cave — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Mammoth Cave"
           },
           {
-            "answer": "Postojna-Höhle — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Postojna-Höhle"
           }
         ],
         "answer": "Höhle der Kristalle (Naica)",
@@ -14764,16 +14764,16 @@
         "question": "Welches Archipel ist bekannt für seine einzigartige Biodiversität und liegt vor der Küste Ecuadors?",
         "answers": [
           {
-            "answer": "Azoren — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Azoren"
           },
           {
             "answer": "Galápagos-Inseln"
           },
           {
-            "answer": "Kanaren — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Kanaren"
           },
           {
-            "answer": "Madeira — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Madeira"
           }
         ],
         "answer": "Galápagos-Inseln",
@@ -14922,7 +14922,7 @@
             "answer": "Easter Island."
           },
           {
-            "answer": "Chiloé — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Chiloé"
           },
           {
             "answer": "Torres del Paine"
@@ -15036,10 +15036,10 @@
             "answer": "Jordanien"
           },
           {
-            "answer": "Israel — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Israel"
           },
           {
-            "answer": "Syrien — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Syrien"
           }
         ],
         "answer": "Jordanien",
@@ -15058,7 +15058,7 @@
             "answer": "Jamaica"
           },
           {
-            "answer": "Kuba — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Kuba"
           }
         ],
         "answer": "Bahamas",
@@ -15112,7 +15112,7 @@
             "answer": "Schottland"
           },
           {
-            "answer": "Wales — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Wales"
           },
           {
             "answer": "Island"
@@ -15134,7 +15134,7 @@
             "answer": "Chapada Diamantina"
           },
           {
-            "answer": "Pantanal — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Pantanal"
           }
         ],
         "answer": "Lençóis Maranhenses",
@@ -15144,13 +15144,13 @@
         "question": "In welchem Land befinden sich die Rainbow Mountains mit ihren bunten Gesteinsschichten?",
         "answers": [
           {
-            "answer": "Peru — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Peru"
           },
           {
-            "answer": "China — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "China"
           },
           {
-            "answer": "Iran — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Iran"
           },
           {
             "answer": "Alle der genannten"
@@ -15201,7 +15201,7 @@
         "question": "Welche Insel in Japan ist bekannt für ihre Bambushaine und Affenpopulation?",
         "answers": [
           {
-            "answer": "Miyajima — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Miyajima"
           },
           {
             "answer": "Arashiyama (bei Kyoto)"
@@ -15210,7 +15210,7 @@
             "answer": "Monkey Island (Jigokudani)"
           },
           {
-            "answer": "Yakushima — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Yakushima"
           }
         ],
         "answer": "Arashiyama (bei Kyoto)",
@@ -15246,10 +15246,10 @@
         "question": "Was ist die Hauptstadt von Deutschland?",
         "answers": [
           {
-            "answer": "München — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "München"
           },
           {
-            "answer": "Hamburg — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Hamburg"
           },
           {
             "answer": "Berlin"
@@ -15322,7 +15322,7 @@
         "question": "Welches Bundesland hat die meisten Einwohner?",
         "answers": [
           {
-            "answer": "Bayern — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Bayern"
           },
           {
             "answer": "Baden-Württemberg"
@@ -15360,10 +15360,10 @@
         "question": "An wie viele Nachbarländer grenzt Deutschland?",
         "answers": [
           {
-            "answer": "7 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "7"
           },
           {
-            "answer": "8 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "8"
           },
           {
             "answer": "9"
@@ -15607,7 +15607,7 @@
         "question": "Welche deutsche Automarke hat ihren Hauptsitz in Stuttgart?",
         "answers": [
           {
-            "answer": "BMW — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "BMW"
           },
           {
             "answer": "Volkswagen"
@@ -15616,7 +15616,7 @@
             "answer": "Mercedes-Benz"
           },
           {
-            "answer": "Audi — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Audi"
           }
         ],
         "answer": "Mercedes-Benz",
@@ -15632,7 +15632,7 @@
             "answer": "Bodensee"
           },
           {
-            "answer": "Müritz — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Müritz"
           },
           {
             "answer": "Starnberger See"
@@ -15667,13 +15667,13 @@
             "answer": "Schwarzwald"
           },
           {
-            "answer": "Harz — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Harz"
           },
           {
             "answer": "Bayerische Alpen"
           },
           {
-            "answer": "Eifel — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Eifel"
           }
         ],
         "answer": "Bayerische Alpen",
@@ -15727,10 +15727,10 @@
             "answer": "Berlin"
           },
           {
-            "answer": "Potsdam — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Potsdam"
           },
           {
-            "answer": "Dresden — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Dresden"
           }
         ],
         "answer": "Berlin",
@@ -15740,13 +15740,13 @@
         "question": "Welches Bundesland ist als 'Freistaat' bekannt?",
         "answers": [
           {
-            "answer": "Nur Bayern — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur Bayern"
           },
           {
             "answer": "Bayern, Sachsen und Thüringen"
           },
           {
-            "answer": "Nur Sachsen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur Sachsen"
           },
           {
             "answer": "Bayern und Baden-Württemberg"
@@ -15892,13 +15892,13 @@
         "question": "Welches Bauwerk ist das Wahrzeichen von Köln?",
         "answers": [
           {
-            "answer": "Rathaus — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Rathaus"
           },
           {
             "answer": "Kölner Dom"
           },
           {
-            "answer": "Rheinturm — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Rheinturm"
           },
           {
             "answer": "Hohenzollernbrücke"
@@ -15917,10 +15917,10 @@
             "answer": "Harz"
           },
           {
-            "answer": "Eifel — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Eifel"
           },
           {
-            "answer": "Rhön — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Rhön"
           }
         ],
         "answer": "Harz",
@@ -15930,7 +15930,7 @@
         "question": "Welche Stadt war die erste Hauptstadt der Bundesrepublik Deutschland?",
         "answers": [
           {
-            "answer": "Berlin — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Berlin"
           },
           {
             "answer": "Frankfurt am Main"
@@ -15939,7 +15939,7 @@
             "answer": "Bonn"
           },
           {
-            "answer": "München — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "München"
           }
         ],
         "answer": "Bonn",
@@ -15968,7 +15968,7 @@
         "question": "Welches Bundesland grenzt sowohl an Frankreich als auch an die Schweiz?",
         "answers": [
           {
-            "answer": "Bayern — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Bayern"
           },
           {
             "answer": "Baden-Württemberg"
@@ -15977,7 +15977,7 @@
             "answer": "Rheinland-Pfalz"
           },
           {
-            "answer": "Saarland — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Saarland"
           }
         ],
         "answer": "Baden-Württemberg",
@@ -16053,7 +16053,7 @@
             "answer": "Hänsel und Gretel"
           },
           {
-            "answer": "Rotkäppchen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Rotkäppchen"
           }
         ],
         "answer": "Alle genannten Märchen",
@@ -16110,7 +16110,7 @@
             "answer": "Cranger Kirmes"
           },
           {
-            "answer": "Dom Hamburg — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Dom Hamburg"
           }
         ],
         "answer": "Cannstatter Volksfest",
@@ -16161,7 +16161,7 @@
             "answer": "Die Braunsche Röhre"
           },
           {
-            "answer": "Die Bildröhre — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Die Bildröhre"
           },
           {
             "answer": "Das Nipkow-Scheiben-System"
@@ -16301,7 +16301,7 @@
             "answer": "Kohlenhydrate"
           },
           {
-            "answer": "Fette — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Fette"
           },
           {
             "answer": "Proteine"
@@ -16383,7 +16383,7 @@
             "answer": "Zink"
           },
           {
-            "answer": "Jod — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Jod"
           }
         ],
         "answer": "Calcium",
@@ -16469,16 +16469,16 @@
         "question": "Was ist Cholesterin?",
         "answers": [
           {
-            "answer": "Ein Vitamin — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Ein Vitamin"
           },
           {
             "answer": "Ein fettähnlicher Stoff, wichtig für Zellmembranen"
           },
           {
-            "answer": "Ein Mineral — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ein Mineral"
           },
           {
-            "answer": "Ein Protein — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Ein Protein"
           }
         ],
         "answer": "Ein fettähnlicher Stoff, wichtig für Zellmembranen",
@@ -16535,7 +16535,7 @@
             "answer": "Magnesium"
           },
           {
-            "answer": "Zink — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Zink"
           }
         ],
         "answer": "Eisen",
@@ -16611,7 +16611,7 @@
             "answer": "Süßigkeiten und Kuchen"
           },
           {
-            "answer": "Fleisch und Eier — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Fleisch und Eier"
           }
         ],
         "answer": "Fetter Fisch, Leinsamen, Walnüsse",
@@ -16668,7 +16668,7 @@
             "answer": "Schädliche Stoffe in Pflanzen"
           },
           {
-            "answer": "Künstliche Farbstoffe — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Künstliche Farbstoffe"
           }
         ],
         "answer": "Bioaktive Substanzen in Pflanzen mit.",
@@ -16725,7 +16725,7 @@
             "answer": "Kohlenhydrate und Ballaststoffe"
           },
           {
-            "answer": "Vitamin A und E — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Vitamin A und E"
           }
         ],
         "answer": "Vitamin B12, Eisen, Calcium, Omega-3",
@@ -16830,7 +16830,7 @@
         "question": "Welche Faktoren beeinflussen den Nährstoffbedarf?",
         "answers": [
           {
-            "answer": "Nur das Alter — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Nur das Alter"
           },
           {
             "answer": "Alter, Geschlecht."
@@ -16988,7 +16988,7 @@
             "answer": "Eine Kombination aus Übergewicht."
           },
           {
-            "answer": "Ein Vitaminmangel — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Ein Vitaminmangel"
           },
           {
             "answer": "Eine Allergie gegen bestimmte Lebensmittel"
@@ -17067,7 +17067,7 @@
             "answer": "Nur weiße Lebensmittel essen"
           },
           {
-            "answer": "Sehr wenig essen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Sehr wenig essen"
           }
         ],
         "answer": "Fokus auf unverarbeitete.",
@@ -17141,16 +17141,16 @@
         "question": "Wann ist die beste Zeit zum Pflanzen von Tomaten in Deutschland?",
         "answers": [
           {
-            "answer": "Februar — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Februar"
           },
           {
             "answer": "Mitte bis Ende Mai nach den Eisheiligen"
           },
           {
-            "answer": "Juli — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Juli"
           },
           {
-            "answer": "September — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "September"
           }
         ],
         "answer": "Mitte bis Ende Mai nach den Eisheiligen",
@@ -17261,7 +17261,7 @@
             "answer": "Bei trockenem Wetter."
           },
           {
-            "answer": "Bei Regen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Bei Regen"
           },
           {
             "answer": "Nur morgens bei Tau"
@@ -17502,16 +17502,16 @@
         "question": "Wann sollten Rosen geschnitten werden?",
         "answers": [
           {
-            "answer": "Im Hochsommer — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Im Hochsommer"
           },
           {
             "answer": "Im späten Winter oder frühen Frühjahr"
           },
           {
-            "answer": "Im Herbst — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Im Herbst"
           },
           {
-            "answer": "Gar nicht — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Gar nicht"
           }
         ],
         "answer": "Im späten Winter oder frühen Frühjahr",
@@ -17559,16 +17559,16 @@
         "question": "Welche Pflanzen eignen sich gut als natürlicher Schneckenschutz?",
         "answers": [
           {
-            "answer": "Rosen — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Rosen"
           },
           {
             "answer": "Lavendel, Thymian, Salbei"
           },
           {
-            "answer": "Tomaten — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Tomaten"
           },
           {
-            "answer": "Salat — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Salat"
           }
         ],
         "answer": "Lavendel, Thymian, Salbei",
@@ -17644,7 +17644,7 @@
             "answer": "Kreuzblütler"
           },
           {
-            "answer": "Gräser — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Gräser"
           }
         ],
         "answer": "Hülsenfrüchtler.",
@@ -17701,7 +17701,7 @@
             "answer": "Pflanzen, die andere Pflanzen führen"
           },
           {
-            "answer": "Pflanzen aus dem Ausland — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Pflanzen aus dem Ausland"
           }
         ],
         "answer": "Pflanzen, die bestimmte Bodenverhältnisse anzeigen",
@@ -17717,7 +17717,7 @@
             "answer": "Wenn das Laub gelb wird und umfällt"
           },
           {
-            "answer": "Nur im Winter — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Nur im Winter"
           },
           {
             "answer": "Sofort nach der Blüte"
@@ -17774,7 +17774,7 @@
             "answer": "Früh morgens oder am späten Abend"
           },
           {
-            "answer": "Nur nachts — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Nur nachts"
           },
           {
             "answer": "Zu jeder Tageszeit"
@@ -17806,16 +17806,16 @@
         "question": "Welche Faktoren beeinflussen die Keimung von Samen?",
         "answers": [
           {
-            "answer": "Nur die Temperatur — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Nur die Temperatur"
           },
           {
             "answer": "Temperatur, Feuchtigkeit, Sauerstoff und Licht"
           },
           {
-            "answer": "Nur die Feuchtigkeit — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur die Feuchtigkeit"
           },
           {
-            "answer": "Nur das Licht — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur das Licht"
           }
         ],
         "answer": "Temperatur, Feuchtigkeit, Sauerstoff und Licht",
@@ -17907,7 +17907,7 @@
             "answer": "Bei den ersten."
           },
           {
-            "answer": "Erst im Januar — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Erst im Januar"
           },
           {
             "answer": "Gar nicht, sie bleiben draußen"
@@ -17945,10 +17945,10 @@
             "answer": "Regelmäßiges Hacken."
           },
           {
-            "answer": "Gar nichts tun — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Gar nichts tun"
           },
           {
-            "answer": "Nur viel gießen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Nur viel gießen"
           }
         ],
         "answer": "Regelmäßiges Hacken.",
@@ -18005,7 +18005,7 @@
             "answer": "Nur die Größe des Gartens"
           },
           {
-            "answer": "Nur teure Geräte — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur teure Geräte"
           }
         ],
         "answer": "Sonniger Standort, gute.",
@@ -18040,16 +18040,16 @@
         "question": "Was ist das vierte Element, das das Verbrennungstetraeder vervollständigt?",
         "answers": [
           {
-            "answer": "Wasser — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Wasser"
           },
           {
             "answer": "Chemische Kettenreaktion"
           },
           {
-            "answer": "Rauch — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Rauch"
           },
           {
-            "answer": "Kohlendioxid — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Kohlendioxid"
           }
         ],
         "answer": "Chemische Kettenreaktion",
@@ -18087,7 +18087,7 @@
             "answer": "Elektrische Anlagen"
           },
           {
-            "answer": "Metalle — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Metalle"
           }
         ],
         "answer": "Brennbare und.",
@@ -18220,7 +18220,7 @@
             "answer": "Herabfallende Trümmer"
           },
           {
-            "answer": "Panik — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Panik"
           }
         ],
         "answer": "Rauchvergiftung",
@@ -18249,16 +18249,16 @@
         "question": "Wo sollten Rauchmelder NICHT installiert werden?",
         "answers": [
           {
-            "answer": "Schlafzimmer — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Schlafzimmer"
           },
           {
-            "answer": "Flure — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Flure"
           },
           {
             "answer": "Innerhalb von 3 Metern von Kochgeräten"
           },
           {
-            "answer": "Wohnzimmer — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Wohnzimmer"
           }
         ],
         "answer": "Innerhalb von 3 Metern von Kochgeräten",
@@ -18388,7 +18388,7 @@
             "answer": "In Bereichen, die."
           },
           {
-            "answer": "In Bürogebäuden — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "In Bürogebäuden"
           },
           {
             "answer": "In der Nähe von Schwimmbädern"
@@ -18426,7 +18426,7 @@
             "answer": "Ausbreitung von Feuer und Rauch durch."
           },
           {
-            "answer": "Das Gebäude zu kühlen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Das Gebäude zu kühlen"
           },
           {
             "answer": "Frischluft für Feuerwehrleute bereitzustellen"
@@ -18496,7 +18496,7 @@
         "question": "In welche Richtung müssen Ausgangstüren in den meisten gewerblichen Nutzungen öffnen?",
         "answers": [
           {
-            "answer": "Nach innen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nach innen"
           },
           {
             "answer": "Nach außen in Fluchtrichtung"
@@ -18591,7 +18591,7 @@
         "question": "Was ist der Zweck von Fluchtwegschildern?",
         "answers": [
           {
-            "answer": "Flure zu dekorieren — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Flure zu dekorieren"
           },
           {
             "answer": "Den Weg zu Ausgängen deutlich zu markieren"
@@ -18692,7 +18692,7 @@
             "answer": "Kochunfälle"
           },
           {
-            "answer": "Heizgeräte — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Heizgeräte"
           },
           {
             "answer": "Rauchmaterialien"
@@ -18705,7 +18705,7 @@
         "question": "Welcher Löschertyp sollte bei Fettbränden verwendet werden?",
         "answers": [
           {
-            "answer": "Wasser — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Wasser"
           },
           {
             "answer": "Fettbrandlöscher (Klasse F)"
@@ -18790,7 +18790,7 @@
             "answer": "In der Nähe von Heizgeräten für Bequemlichkeit"
           },
           {
-            "answer": "Nur in Glasbehältern — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur in Glasbehältern"
           }
         ],
         "answer": "In zugelassenen Behältern entfernt von Zündquellen",
@@ -18825,7 +18825,7 @@
             "answer": "Eine Person, die zur Überwachung von Bränden."
           },
           {
-            "answer": "Ein Branderkennungsgerät — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ein Branderkennungsgerät"
           },
           {
             "answer": "Eine geplante Brandinspektion"
@@ -18914,7 +18914,7 @@
         "question": "Was sollten Sie tun, bevor Sie eine Tür während eines Brandnotfalls öffnen?",
         "answers": [
           {
-            "answer": "Bis zehn zählen — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Bis zehn zählen"
           },
           {
             "answer": "Prüfen, ob sie verschlossen ist"
@@ -18965,10 +18965,10 @@
             "answer": "Blauwal"
           },
           {
-            "answer": "Giraffe — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Giraffe"
           },
           {
-            "answer": "Weißer Hai — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Weißer Hai"
           }
         ],
         "answer": "Blauwal",
@@ -18978,16 +18978,16 @@
         "question": "Zu welcher Tierkategorie gehören Spinnen?",
         "answers": [
           {
-            "answer": "Insekten — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Insekten"
           },
           {
             "answer": "Spinnentiere (Arachnida)"
           },
           {
-            "answer": "Krebstiere — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Krebstiere"
           },
           {
-            "answer": "Tausendfüßer — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Tausendfüßer"
           }
         ],
         "answer": "Spinnentiere (Arachnida)",
@@ -19022,7 +19022,7 @@
             "answer": "Wanderheuschrecke"
           },
           {
-            "answer": "Libelle — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Libelle"
           },
           {
             "answer": "Marienkäfer"
@@ -19060,7 +19060,7 @@
             "answer": "Strauß"
           },
           {
-            "answer": "Emu — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Emu"
           },
           {
             "answer": "Kasuar"
@@ -19095,7 +19095,7 @@
             "answer": "Clownfisch"
           },
           {
-            "answer": "Hai — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Hai"
           },
           {
             "answer": "Delfin"
@@ -19111,7 +19111,7 @@
         "question": "Welche Tiere gehören zu den Beuteltieren (Metatheria)?",
         "answers": [
           {
-            "answer": "Nur Kängurus — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur Kängurus"
           },
           {
             "answer": "Alle Säugetiere Australiens"
@@ -19149,7 +19149,7 @@
         "question": "Welches ist das giftigste Tier der Welt?",
         "answers": [
           {
-            "answer": "Königskobra — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Königskobra"
           },
           {
             "answer": "Pfeilgiftfrosch"
@@ -19158,7 +19158,7 @@
             "answer": "Seewespe (Chironex fleckeri)"
           },
           {
-            "answer": "Blauringkrake — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Blauringkrake"
           }
         ],
         "answer": "Seewespe (Chironex fleckeri)",
@@ -19168,16 +19168,16 @@
         "question": "Welche Tiere bilden den Stamm der Gliederfüßer (Arthropoda)?",
         "answers": [
           {
-            "answer": "Nur Insekten — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Nur Insekten"
           },
           {
             "answer": "Insekten, Spinnentiere, Krebstiere und Tausendfüßer"
           },
           {
-            "answer": "Nur Meerestiere — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur Meerestiere"
           },
           {
-            "answer": "Nur Landtiere — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur Landtiere"
           }
         ],
         "answer": "Insekten, Spinnentiere, Krebstiere und Tausendfüßer",
@@ -19187,7 +19187,7 @@
         "question": "Welches Säugetier hat die längste Tragzeit?",
         "answers": [
           {
-            "answer": "Wal — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Wal"
           },
           {
             "answer": "Elefant"
@@ -19206,7 +19206,7 @@
         "question": "Welche Anpassung ermöglicht es Pinguinen, in der Antarktis zu überleben?",
         "answers": [
           {
-            "answer": "Warmes Blut — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Warmes Blut"
           },
           {
             "answer": "Dicke Fettschicht."
@@ -19234,7 +19234,7 @@
             "answer": "Der Paarungsvorgang"
           },
           {
-            "answer": "Die Winterruhe — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die Winterruhe"
           }
         ],
         "answer": "Die Verwandlung von der.",
@@ -19244,16 +19244,16 @@
         "question": "Welches Tier ist bekannt für seine Fähigkeit zur Echoortung?",
         "answers": [
           {
-            "answer": "Adler — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Adler"
           },
           {
             "answer": "Fledermaus"
           },
           {
-            "answer": "Eule — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Eule"
           },
           {
-            "answer": "Falke — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Falke"
           }
         ],
         "answer": "Fledermaus",
@@ -19266,7 +19266,7 @@
             "answer": "Salamander"
           },
           {
-            "answer": "Echse — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Echse"
           },
           {
             "answer": "Schlange"
@@ -19358,7 +19358,7 @@
         "question": "Welche Gruppe von Tieren entwickelte als erste die Fähigkeit zu fliegen?",
         "answers": [
           {
-            "answer": "Vögel — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Vögel"
           },
           {
             "answer": "Insekten"
@@ -19396,13 +19396,13 @@
         "question": "Welches Tier hat den stärksten Biss im Tierreich?",
         "answers": [
           {
-            "answer": "Löwe — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Löwe"
           },
           {
             "answer": "Salzwasserkrokodil"
           },
           {
-            "answer": "Weißer Hai — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Weißer Hai"
           },
           {
             "answer": "T-Rex (ausgestorben)"
@@ -19434,7 +19434,7 @@
         "question": "Welches Tier kann am tiefsten tauchen?",
         "answers": [
           {
-            "answer": "Blauwal — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Blauwal"
           },
           {
             "answer": "Cuvier-Schnabelwal"
@@ -19453,7 +19453,7 @@
         "question": "Was ist das Besondere an der Sozialisierung von Bienen?",
         "answers": [
           {
-            "answer": "Sie leben einzeln — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Sie leben einzeln"
           },
           {
             "answer": "Sie bilden hochorganisierte Staaten."
@@ -19519,7 +19519,7 @@
             "answer": "Gürteltier"
           },
           {
-            "answer": "Wombat — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Wombat"
           }
         ],
         "answer": "Schnabeltier",
@@ -19548,7 +19548,7 @@
         "question": "Welches Tier kann am längsten ohne Wasser überleben?",
         "answers": [
           {
-            "answer": "Kamel — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Kamel"
           },
           {
             "answer": "Wüstenratte"
@@ -19613,7 +19613,7 @@
         "question": "Wie heißt der imaginäre Breitengrad, der die Erde in die nördliche und die südliche Hemisphäre teilt?",
         "answers": [
           {
-            "answer": "Der Nullmeridian — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Der Nullmeridian"
           },
           {
             "answer": "Der Äquator"
@@ -19632,13 +19632,13 @@
         "question": "Zu welcher Gebirgskette gehört der Mount Everest, der höchste Berg der Welt?",
         "answers": [
           {
-            "answer": "Die Anden — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Die Anden"
           },
           {
             "answer": "Die Rocky Mountains"
           },
           {
-            "answer": "Die Alpen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Die Alpen"
           },
           {
             "answer": "Der Himalaya"
@@ -19698,7 +19698,7 @@
             "answer": "Die Mondphasen"
           },
           {
-            "answer": "Gezeiten — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Gezeiten"
           }
         ],
         "answer": "Tag und Nacht",
@@ -19708,7 +19708,7 @@
         "question": "Wie heißt die Linie des 0. Längengrads, die durch Greenwich, England, verläuft und als Grundlage für die Zeitzonen der Welt dient?",
         "answers": [
           {
-            "answer": "Der Äquator — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Äquator"
           },
           {
             "answer": "Der Wendekreis des Steinbocks"
@@ -19717,7 +19717,7 @@
             "answer": "Der Nullmeridian"
           },
           {
-            "answer": "Der Polarkreis — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Der Polarkreis"
           }
         ],
         "answer": "Der Nullmeridian",
@@ -19806,7 +19806,7 @@
             "answer": "Madagaskar"
           },
           {
-            "answer": "Borneo — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Borneo"
           },
           {
             "answer": "Großbritannien"
@@ -19907,7 +19907,7 @@
             "answer": "Indien"
           },
           {
-            "answer": "Nigeria — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Nigeria"
           }
         ],
         "answer": "Indien",
@@ -19939,7 +19939,7 @@
             "answer": "Der Äquator und der Wendekreis des Krebses"
           },
           {
-            "answer": "Der Ost- und Westpol — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Der Ost- und Westpol"
           },
           {
             "answer": "Der Nullmeridian und die internationale Datumsgrenze"
@@ -19962,7 +19962,7 @@
         "question": "Welches grundlegende wirtschaftliche Problem entsteht dadurch, dass die Menschen unbegrenzte Wünsche haben, die Ressourcen jedoch begrenzt sind?",
         "answers": [
           {
-            "answer": "Inflation — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Inflation"
           },
           {
             "answer": "Opportunitätskosten"
@@ -19971,7 +19971,7 @@
             "answer": "Knappheit"
           },
           {
-            "answer": "Monopoly — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Monopoly"
           }
         ],
         "answer": "Knappheit",
@@ -20060,7 +20060,7 @@
             "answer": "Perfekter Wettbewerb"
           },
           {
-            "answer": "Oligopol — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Oligopol"
           },
           {
             "answer": "Monopolistischer Wettbewerb"
@@ -20076,7 +20076,7 @@
         "question": "Welcher der folgenden Faktoren wird in der Wirtschaft normalerweise NICHT als einer der vier Hauptproduktionsfaktoren angesehen?",
         "answers": [
           {
-            "answer": "Land — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Land"
           },
           {
             "answer": "Arbeit"
@@ -20101,7 +20101,7 @@
             "answer": "Die Zentralbank (z."
           },
           {
-            "answer": "Die Börse — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die Börse"
           },
           {
             "answer": "Der Internationale Währungsfonds (IWF)"
@@ -20304,13 +20304,13 @@
         "question": "Wie heißt die Kurve, die die verschiedenen Kombinationen zweier Güter zeigt, die mit den verfügbaren Ressourcen und der verfügbaren Technologie hergestellt werden können?",
         "answers": [
           {
-            "answer": "Nachfragekurve — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nachfragekurve"
           },
           {
-            "answer": "Angebotskurve — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Angebotskurve"
           },
           {
-            "answer": "Indifferenzkurve — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Indifferenzkurve"
           },
           {
             "answer": "Produktionsmöglichkeitskurve (PPF)"
@@ -20584,7 +20584,7 @@
         "question": "Was ist der pH-Wert einer neutralen Lösung bei 25°C?",
         "answers": [
           {
-            "answer": "0 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "0"
           },
           {
             "answer": "7"
@@ -20685,7 +20685,7 @@
             "answer": "Ein Molekül, das mit seinem Spiegelbild nicht zur."
           },
           {
-            "answer": "Ein ringförmiges Molekül — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Ein ringförmiges Molekül"
           },
           {
             "answer": "Ein Molekül, das mehr als ein Element enthält"
@@ -20793,7 +20793,7 @@
         "question": "Welcher Wert entspricht etwa dem absoluten Nullpunkt auf der Celsius-Skala?",
         "answers": [
           {
-            "answer": "0°C — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "0°C"
           },
           {
             "answer": "-100°C"
@@ -20945,7 +20945,7 @@
         "question": "Welche Teilchen sind verantwortlich für die Übertragung der starken Kernkraft?",
         "answers": [
           {
-            "answer": "Photonen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Photonen"
           },
           {
             "answer": "W- und Z-Bosonen"
@@ -21030,7 +21030,7 @@
             "answer": "Die Verbindung von Wasser mit Kohlenstoffdioxid"
           },
           {
-            "answer": "Die Oxidation von Wasser — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Die Oxidation von Wasser"
           }
         ],
         "answer": "Die chemische Reaktion, bei der Wassermoleküle.",
@@ -21233,7 +21233,7 @@
             "answer": "CO₂"
           },
           {
-            "answer": "O₂ — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "O₂"
           },
           {
             "answer": "H₂O"
@@ -21252,7 +21252,7 @@
             "answer": "Flüssigkeit"
           },
           {
-            "answer": "Gas — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Gas"
           },
           {
             "answer": "Plasma"
@@ -21315,7 +21315,7 @@
             "answer": "Salz (NaCl)"
           },
           {
-            "answer": "Luft — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Luft"
           }
         ],
         "answer": "Salz (NaCl)",
@@ -21379,7 +21379,7 @@
             "answer": "Trägheit"
           },
           {
-            "answer": "Kraft — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Kraft"
           }
         ],
         "answer": "Trägheit",
@@ -21389,7 +21389,7 @@
         "question": "Welches von Newtons Bewegungsgesetzen wird oft wie folgt formuliert: ‚Auf jede Aktion gibt es eine gleich große und entgegengesetzte Reaktion‘?",
         "answers": [
           {
-            "answer": "Newtons erstes Gesetz — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Newtons erstes Gesetz"
           },
           {
             "answer": "Zweites Newtonsches Gesetz"
@@ -21493,7 +21493,7 @@
             "answer": "Wellenlänge"
           },
           {
-            "answer": "Punkt — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Punkt"
           }
         ],
         "answer": "Wellenlänge",
@@ -21503,7 +21503,7 @@
         "question": "Was passiert, wenn weißes Licht durch ein Prisma fällt?",
         "answers": [
           {
-            "answer": "Es wird heller. — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Es wird heller."
           },
           {
             "answer": "Es wird vollständig absorbiert."
@@ -21567,10 +21567,10 @@
         "question": "Was wird oft als das 'Kraftwerk der Zelle' bezeichnet, weil es den größten Teil des Adenosintriphosphats (ATP) der Zelle erzeugt, das als chemische Energiequelle dient?",
         "answers": [
           {
-            "answer": "Kern — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Kern"
           },
           {
-            "answer": "Ribosom — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ribosom"
           },
           {
             "answer": "Mitochondrium"
@@ -21586,13 +21586,13 @@
         "question": "Wie funktioniert der Prozess, bei dem grüne Pflanzen und einige andere Organismen Sonnenlicht nutzen, um mit Hilfe des Chlorophyllpigments Nahrungsmittel zu synthetisieren?",
         "answers": [
           {
-            "answer": "Atmung — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Atmung"
           },
           {
             "answer": "Photosynthese"
           },
           {
-            "answer": "Gärung — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Gärung"
           },
           {
             "answer": "Transpiration"
@@ -21611,7 +21611,7 @@
             "answer": "ATP (Adenosintriphosphat)"
           },
           {
-            "answer": "Protein — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Protein"
           },
           {
             "answer": "DNA (Desoxyribonukleinsäure)"
@@ -21703,7 +21703,7 @@
             "answer": "Mitochondrien"
           },
           {
-            "answer": "Kern — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Kern"
           },
           {
             "answer": "Zellwand"
@@ -21719,10 +21719,10 @@
         "question": "Welcher Prozess führt dazu, dass Organismen, die besser an ihre Umwelt angepasst sind, tendenziell überleben und mehr Nachkommen zeugen, was im Laufe der Zeit zu Veränderungen der Arten führt?",
         "answers": [
           {
-            "answer": "Gendrift — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Gendrift"
           },
           {
-            "answer": "Mutation — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Mutation"
           },
           {
             "answer": "Natürliche Selektion"
@@ -21877,7 +21877,7 @@
             "answer": "Der programmierte Zelltod, ein."
           },
           {
-            "answer": "Die Fusion zweier Zellen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Die Fusion zweier Zellen"
           },
           {
             "answer": "Eine pathologische Zellveränderung, die zu Krebs führt"
@@ -22197,7 +22197,7 @@
             "answer": "Energiegewinnung durch Zellatmung"
           },
           {
-            "answer": "Proteinsynthese — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Proteinsynthese"
           },
           {
             "answer": "Speicherung genetischer Information"
@@ -22220,7 +22220,7 @@
         "question": "Problem: Berechnen Sie den Ausdruck $5 + 3 \\times (10 - 4) \\div 2$. Welcher Teil dieses Ausdrucks sollte gemäß der Operationsreihenfolge (PEMDAS/BODMAS) zuerst berechnet werden?",
         "answers": [
           {
-            "answer": "Die Addition $5 + 3$ — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Die Addition $5 + 3$"
           },
           {
             "answer": "Die Multiplikation $3 \\mal 10$"
@@ -22277,7 +22277,7 @@
         "question": "Problem: Ein Rezept verlangt 2 Tassen Mehl für 12 Kekse. Wie viele Tassen Mehl werden benötigt, um 30 Kekse zu backen, vorausgesetzt, das Verhältnis bleibt gleich? Welches mathematische Konzept ist hier am direktesten anwendbar?",
         "answers": [
           {
-            "answer": "Direkte Addition — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Direkte Addition"
           },
           {
             "answer": "Eine quadratische Gleichung lösen"
@@ -22401,13 +22401,13 @@
             "answer": "Die Lebensmittelfarbe"
           },
           {
-            "answer": "Das Spülmittel — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Das Spülmittel"
           },
           {
             "answer": "Backpulver und Essig zusammen"
           },
           {
-            "answer": "Das Tablett — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Das Tablett"
           }
         ],
         "answer": "Backpulver und Essig zusammen",
@@ -22526,7 +22526,7 @@
             "answer": "Weil Öl und Wasser sich NICHT."
           },
           {
-            "answer": "Weil Öl bunter ist — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Weil Öl bunter ist"
           },
           {
             "answer": "Weil Wasser alleine nicht funktioniert"
@@ -22539,7 +22539,7 @@
         "question": "📋 SCHRITT 2: Die Schichten aufbauen\n\n1. Fülle die Flasche zu etwa 1/4 mit Wasser\n2. Gieße vorsichtig Öl dazu, bis die Flasche fast voll ist\n3. Warte einen Moment, bis sich die Schichten getrennt haben\n\n👀 Beobachte: Welche Flüssigkeit ist oben, welche unten?\n\nWarum schwimmt das Öl auf dem Wasser?",
         "answers": [
           {
-            "answer": "Weil Öl wärmer ist — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Weil Öl wärmer ist"
           },
           {
             "answer": "Weil Öl leichter (weniger dicht) als Wasser ist"
@@ -22548,7 +22548,7 @@
             "answer": "Weil wir das Öl zuletzt hineingegossen haben"
           },
           {
-            "answer": "Weil Öl magnetisch ist — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Weil Öl magnetisch ist"
           }
         ],
         "answer": "Weil Öl leichter (weniger dicht) als Wasser ist",
@@ -22651,7 +22651,7 @@
             "answer": "Zitronensaft"
           },
           {
-            "answer": "Milch — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Milch"
           }
         ],
         "answer": "Zitronensaft",
@@ -22770,7 +22770,7 @@
             "answer": "Es enthält gelöstes."
           },
           {
-            "answer": "Es ist wärmer — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Es ist wärmer"
           },
           {
             "answer": "Es hat eine andere Farbe"
@@ -22821,7 +22821,7 @@
         "question": "📋 SCHRITT 4: Der Tanz beginnt! 💃🕺\n\nBeobachte die Rosinen am Boden:\n• Kleine Bläschen sammeln sich an der rauen Oberfläche der Rosinen\n• Immer mehr Bläschen... und dann...\n\n🎬 Was passiert, wenn genug Bläschen an der Rosine kleben?",
         "answers": [
           {
-            "answer": "Die Rosine wird größer — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die Rosine wird größer"
           },
           {
             "answer": "Die Rosine steigt nach oben wie ein Aufzug!"
@@ -22886,16 +22886,16 @@
         "question": "🌈 Willkommen zum Regenbogen-Experiment! Wir lassen Wasser von alleine in Regenbogenfarben wandern!\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 7 Gläser oder Becher (gleiche Größe)\n• Küchenpapier oder Taschentücher\n• Lebensmittelfarbe: Rot, Gelb, Blau\n• Wasser\n\n⏰ Dieses Experiment braucht Zeit - etwa 1-2 Stunden!\n\nWie viele Grundfarben brauchen wir, um einen Regenbogen zu machen?",
         "answers": [
           {
-            "answer": "7 Farben — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "7 Farben"
           },
           {
             "answer": "Nur 3 Grundfarben: Rot, Gelb, Blau"
           },
           {
-            "answer": "2 Farben — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "2 Farben"
           },
           {
-            "answer": "5 Farben — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "5 Farben"
           }
         ],
         "answer": "Nur 3 Grundfarben: Rot, Gelb, Blau",
@@ -22943,16 +22943,16 @@
         "question": "📋 SCHRITT 4: Die Magie der Zeit\n\n⏰ Jetzt heißt es WARTEN!\n• Nach 30 Minuten: Die Farben beginnen zu wandern\n• Nach 1 Stunde: Die leeren Gläser füllen sich\n• Nach 2 Stunden: Der Regenbogen ist komplett!\n\n📸 Mach jede halbe Stunde ein Foto, um den Fortschritt zu sehen!\n\nWie heißt die Kraft, die das Wasser im Papier nach oben zieht?",
         "answers": [
           {
-            "answer": "Magnetismus — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Magnetismus"
           },
           {
-            "answer": "Schwerkraft — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Schwerkraft"
           },
           {
             "answer": "Kapillarwirkung (auch Kapillarkraft genannt)"
           },
           {
-            "answer": "Elektrizität — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Elektrizität"
           }
         ],
         "answer": "Kapillarwirkung (auch Kapillarkraft genannt)",
@@ -22981,13 +22981,13 @@
         "question": "📋 SCHRITT 6: Kapillare in der Natur\n\n🌍 Die Kapillarwirkung ist überall in der Natur!\n\n• 🌲 Bäume: Wasser steigt von den Wurzeln 100 Meter hoch!\n• 🧽 Schwämme: Saugen Wasser auf\n• 👕 Handtücher: Trocknen dich ab\n• 📝 Filzstifte: Die Tinte wandert zur Spitze\n\nWelches Lebewesen nutzt die Kapillarwirkung, um Wasser zu transportieren?",
         "answers": [
           {
-            "answer": "Fische — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Fische"
           },
           {
             "answer": "Pflanzen und Bäume"
           },
           {
-            "answer": "Vögel — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Vögel"
           },
           {
             "answer": "Steine (Achtung: Steine leben nicht!)"
@@ -23008,16 +23008,16 @@
         "question": "🥚 Willkommen zum Gummi-Ei-Experiment! Wir verwandeln ein normales Ei in einen hüpfenden Gummiball!\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 1 rohes Ei (nicht gekocht!)\n• 1 Glas (groß genug für das Ei)\n• Weißer Essig (genug um das Ei zu bedecken)\n• Geduld! (Das dauert 2-3 Tage)\n\n⚠️ Wichtig: Wir benutzen ein ROHES Ei!\n\nWoraus besteht die Schale eines Eis hauptsächlich?",
         "answers": [
           {
-            "answer": "Aus Plastik — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Aus Plastik"
           },
           {
             "answer": "Aus Kalziumkarbonat (Kalk)"
           },
           {
-            "answer": "Aus Zucker — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Aus Zucker"
           },
           {
-            "answer": "Aus Gummi — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Aus Gummi"
           }
         ],
         "answer": "Aus Kalziumkarbonat (Kalk)",
@@ -23071,10 +23071,10 @@
             "answer": "Die dünne Membran."
           },
           {
-            "answer": "Der Essig — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Der Essig"
           },
           {
-            "answer": "Magie — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Magie"
           }
         ],
         "answer": "Die dünne Membran.",
@@ -23149,16 +23149,16 @@
         "question": "📋 SCHRITT 2: Die Milch vorbereiten\n\n1. Gieße so viel Vollmilch in den Teller, dass der Boden bedeckt ist (ca. 1 cm hoch)\n2. Warte, bis die Milch ganz ruhig und still ist\n3. Keine Bewegung, keine Bläschen!\n\n👀 Die Milch sollte wie ein weißer, ruhiger See aussehen.\n\nWas siehst du in der Milch, wenn du genau hinschaust?",
         "answers": [
           {
-            "answer": "Bunte Farben — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Bunte Farben"
           },
           {
             "answer": "Nur eine weiße, gleichmäßige Flüssigkeit"
           },
           {
-            "answer": "Blasen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Blasen"
           },
           {
-            "answer": "Streifen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Streifen"
           }
         ],
         "answer": "Nur eine weiße, gleichmäßige Flüssigkeit",
@@ -23225,16 +23225,16 @@
         "question": "📋 SCHRITT 6: Kunstwerk erschaffen!\n\n🎨 Experimentiere weiter:\n• Berühre verschiedene Stellen mit dem Spülmittel\n• Verwende mehr Farben\n• Mach ein Foto von deinem Kunstwerk!\n\n♻️ Aufräumen: Die Milch kann in den Ausguss (kleine Mengen).\n\nWo benutzen wir das Wissen über Tenside noch im Alltag?",
         "answers": [
           {
-            "answer": "Nirgendwo sonst — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nirgendwo sonst"
           },
           {
             "answer": "In Seife, Shampoo, Waschmittel - überall wo wir Fett lösen wollen!"
           },
           {
-            "answer": "Nur in der Milch — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Nur in der Milch"
           },
           {
-            "answer": "Beim Kochen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Beim Kochen"
           }
         ],
         "answer": "In Seife, Shampoo, Waschmittel - überall wo wir Fett lösen wollen!",
@@ -23252,16 +23252,16 @@
         "question": "⚡ Willkommen zum Statische-Elektrizität-Experiment! Wir werden Blitze erzeugen und Dinge ohne Berührung bewegen - wie Magie!\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 1 Luftballon\n• Deine Haare oder einen Wollpullover\n• Kleine Papierschnipsel\n• Einen Wasserstrahl (Wasserhahn)\n• Salz und Pfeffer\n\n💡 Am besten funktioniert es an trockenen Tagen!\n\nWas werden wir heute erzeugen?",
         "answers": [
           {
-            "answer": "Wärme — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Wärme"
           },
           {
             "answer": "Statische Elektrizität (elektrische Ladung)"
           },
           {
-            "answer": "Magnetismus — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Magnetismus"
           },
           {
-            "answer": "Schallwellen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Schallwellen"
           }
         ],
         "answer": "Statische Elektrizität (elektrische Ladung)",
@@ -23309,7 +23309,7 @@
         "question": "📋 SCHRITT 4: Wasser biegen! 💧\n\n1. Drehe den Wasserhahn auf - ein ganz dünner Strahl\n2. Reibe den Ballon an deinen Haaren\n3. Halte den geladenen Ballon NEBEN den Wasserstrahl (nicht rein!)\n\n🌊 BEOBACHTE!\n\nWas passiert mit dem Wasser?",
         "answers": [
           {
-            "answer": "Es stoppt — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Es stoppt"
           },
           {
             "answer": "Der Wasserstrahl."
@@ -23347,16 +23347,16 @@
         "question": "📋 SCHRITT 6: Blitze im Dunkeln!\n\n⚠️ Mach dieses Experiment im Dunkeln!\n\n1. Geh in einen dunklen Raum\n2. Reibe den Ballon KRÄFTIG an Wolle oder deinen Haaren\n3. Berühre mit dem Ballon einen Metalllöffel\n\n⚡ Siehst du einen kleinen Funken?\n\nWas verursacht den Blitz in der Natur?",
         "answers": [
           {
-            "answer": "Regen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Regen"
           },
           {
             "answer": "Statische Elektrizität zwischen Wolken - genau wie bei deinem Ballon!"
           },
           {
-            "answer": "Die Sonne — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die Sonne"
           },
           {
-            "answer": "Der Wind — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Wind"
           }
         ],
         "answer": "Statische Elektrizität zwischen Wolken - genau wie bei deinem Ballon!",
@@ -23374,16 +23374,16 @@
         "question": "🔋 Willkommen zum Zitronenbatterie-Experiment! Wir bauen eine echte Batterie aus einer Zitrone und erzeugen Strom!\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 1 Zitrone (oder mehrere für mehr Strom)\n• 1 verzinkter Nagel oder Zinkplättchen\n• 1 Kupfermünze oder Kupferdraht\n• Kleine LED oder Multimeter (optional)\n• Kabel mit Krokodilklemmen (optional)\n\n💡 Die Zitrone vorher etwas rollen, um den Saft zu aktivieren!\n\nWas braucht eine Batterie um Strom zu erzeugen?",
         "answers": [
           {
-            "answer": "Nur Wasser — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur Wasser"
           },
           {
             "answer": "Zwei verschiedene Metalle und eine säurehaltige Flüssigkeit"
           },
           {
-            "answer": "Nur Zitronensaft — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Nur Zitronensaft"
           },
           {
-            "answer": "Magnete — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Magnete"
           }
         ],
         "answer": "Zwei verschiedene Metalle und eine säurehaltige Flüssigkeit",
@@ -23412,16 +23412,16 @@
         "question": "📋 SCHRITT 3: Strom messen!\n\n🔬 Wenn du ein Multimeter hast:\n1. Stelle es auf Volt (V) - Gleichspannung (DC)\n2. Halte eine Messspitze an das Zink\n3. Halte die andere an das Kupfer\n4. Lies den Wert ab!\n\n📊 Du solltest etwa 0,5-1,0 Volt messen!\n\nWie viel Volt erzeugt eine Zitrone ungefähr?",
         "answers": [
           {
-            "answer": "100 Volt — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "100 Volt"
           },
           {
-            "answer": "0 Volt — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "0 Volt"
           },
           {
             "answer": "Etwa 0,5 bis 1 Volt"
           },
           {
-            "answer": "1000 Volt — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "1000 Volt"
           }
         ],
         "answer": "Etwa 0,5 bis 1 Volt",
@@ -23469,16 +23469,16 @@
         "question": "📋 SCHRITT 6: Die Wissenschaft der Batterie\n\n🔬 Was passiert chemisch?\n\n1. Zink gibt Elektronen ab → wird langsam aufgelöst\n2. Die Elektronen fließen durch das Kabel (= Strom!)\n3. Am Kupfer nehmen Wasserstoff-Ionen die Elektronen auf\n4. Es entstehen winzige Wasserstoff-Bläschen!\n\nWer hat die erste Batterie erfunden?",
         "answers": [
           {
-            "answer": "Thomas Edison — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Thomas Edison"
           },
           {
-            "answer": "Nikola Tesla — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Nikola Tesla"
           },
           {
             "answer": "Alessandro Volta (deshalb heißt die Einheit 'Volt')"
           },
           {
-            "answer": "Albert Einstein — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Albert Einstein"
           }
         ],
         "answer": "Alessandro Volta (deshalb.",
@@ -23502,10 +23502,10 @@
             "answer": "Wasser, Wärme und Luft"
           },
           {
-            "answer": "Nur Erde — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur Erde"
           },
           {
-            "answer": "Dünger — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Dünger"
           }
         ],
         "answer": "Wasser, Wärme und Luft",
@@ -23559,7 +23559,7 @@
             "answer": "Weil sie der."
           },
           {
-            "answer": "Zufällig — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Zufällig"
           },
           {
             "answer": "Weil unten kälter ist"
@@ -23581,7 +23581,7 @@
             "answer": "Weil oben wärmer ist"
           },
           {
-            "answer": "Zufällig — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Zufällig"
           }
         ],
         "answer": "Er sucht das LICHT.",
@@ -23618,16 +23618,16 @@
         "question": "🫁 Willkommen zum Lungen-Experiment! Wir bauen ein funktionierendes Modell unserer Lunge!\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 1 Plastikflasche (0,5L, durchsichtig)\n• 2 Luftballons\n• 1 Strohhalm oder Y-förmiges Röhrchen\n• Klebeband\n• Schere\n• Knete oder Klebeknete\n\n⚠️ Beim Schneiden bitte vorsichtig sein oder einen Erwachsenen fragen!\n\nWas ist die Hauptfunktion unserer Lunge?",
         "answers": [
           {
-            "answer": "Essen verdauen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Essen verdauen"
           },
           {
             "answer": "Sauerstoff aufnehmen und CO₂ abgeben"
           },
           {
-            "answer": "Blut pumpen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Blut pumpen"
           },
           {
-            "answer": "Denken — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Denken"
           }
         ],
         "answer": "Sauerstoff aufnehmen und CO₂ abgeben",
@@ -23643,7 +23643,7 @@
             "answer": "Den BRUSTKORB."
           },
           {
-            "answer": "Das Herz — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Das Herz"
           },
           {
             "answer": "Den Magen"
@@ -23656,16 +23656,16 @@
         "question": "📋 SCHRITT 3: Die 'Lunge' einbauen\n\n1. Stecke einen kleinen Luftballon über das Ende des Strohhalms\n2. Befestige ihn luftdicht mit Klebeband\n3. Stecke den Strohhalm durch den Flaschendeckel (mach ein Loch)\n4. Dichte die Öffnung mit Knete ab - LUFTDICHT!\n\n🎈 Der Ballon hängt jetzt im Inneren der Flasche!\n\nWas stellt der Luftballon im Inneren dar?",
         "answers": [
           {
-            "answer": "Das Herz — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Das Herz"
           },
           {
             "answer": "Die LUNGE (einen Lungenflügel)"
           },
           {
-            "answer": "Den Magen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Den Magen"
           },
           {
-            "answer": "Das Gehirn — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Das Gehirn"
           }
         ],
         "answer": "Die LUNGE (einen Lungenflügel)",
@@ -23675,16 +23675,16 @@
         "question": "📋 SCHRITT 4: Das Zwerchfell bauen\n\n1. Nimm den zweiten Luftballon\n2. Schneide das obere Ende ab (du brauchst nur den unteren, dehnbaren Teil)\n3. Spanne diesen über die offene Unterseite der Flasche\n4. Befestige ihn mit Klebeband\n\n🫁 Das ist das ZWERCHFELL!\n\nWas ist das Zwerchfell in deinem Körper?",
         "answers": [
           {
-            "answer": "Ein Knochen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ein Knochen"
           },
           {
             "answer": "Ein großer MUSKEL unter der Lunge, der die Atmung steuert"
           },
           {
-            "answer": "Ein Organ im Kopf — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Ein Organ im Kopf"
           },
           {
-            "answer": "Eine Drüse — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Eine Drüse"
           }
         ],
         "answer": "Ein großer MUSKEL unter der Lunge, der die Atmung steuert",
@@ -23713,7 +23713,7 @@
         "question": "📋 SCHRITT 6: Die Wissenschaft der Atmung\n\n🔬 Zusammenfassung:\n\n• EINATMEN:\n  Zwerchfell geht runter → Raum größer → Unterdruck → Luft strömt ein\n\n• AUSATMEN:\n  Zwerchfell entspannt sich → Raum kleiner → Überdruck → Luft wird rausgedrückt\n\nWarum können wir unter Wasser nicht atmen?",
         "answers": [
           {
-            "answer": "Weil Wasser zu kalt ist — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Weil Wasser zu kalt ist"
           },
           {
             "answer": "Weil das Zwerchfell nicht im Wasser funktioniert"
@@ -23722,7 +23722,7 @@
             "answer": "Weil unsere Lunge keinen Sauerstoff."
           },
           {
-            "answer": "Weil wir Angst haben — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Weil wir Angst haben"
           }
         ],
         "answer": "Weil unsere Lunge keinen Sauerstoff.",
@@ -23778,7 +23778,7 @@
         "question": "📋 SCHRITT 3: Anschließen und EINSCHALTEN!\n\n1. Entferne die Isolierung an beiden Drahtenden (ca. 2 cm)\n2. Halte ein Drahtende an den + Pol der Batterie\n3. Halte das andere Drahtende an den - Pol\n4. Halte den Nagel über die Büroklammern!\n\n⚠️ ACHTUNG: Der Draht wird warm! Nur kurz anschließen!\n\n🧲 JETZT AUSPROBIEREN!\n\nWas passiert mit den Büroklammern?",
         "answers": [
           {
-            "answer": "Nichts — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nichts"
           },
           {
             "answer": "Sie werden vom."
@@ -23887,10 +23887,10 @@
             "answer": "Es ist MEHR gelöst, als das Wasser."
           },
           {
-            "answer": "Das Wasser ist zu heiß — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Das Wasser ist zu heiß"
           },
           {
-            "answer": "Es ist zu viel Wasser — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Es ist zu viel Wasser"
           }
         ],
         "answer": "Es ist MEHR gelöst, als das Wasser.",
@@ -23944,7 +23944,7 @@
             "answer": "Weil die Natrium- und."
           },
           {
-            "answer": "Zufällig — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Zufällig"
           },
           {
             "answer": "Weil Salz aus dem Meer kommt"
@@ -23957,16 +23957,16 @@
         "question": "📋 SCHRITT 6: Dein Kristall-Kunstwerk!\n\n🏆 Nach einer Woche:\n• Nimm den Faden mit den Kristallen vorsichtig heraus\n• Lass sie trocknen\n• Bewundere dein Werk!\n\n💎 Tipps für noch schönere Kristalle:\n• Lebensmittelfarbe zugeben = bunte Kristalle!\n• Längere Wartezeit = größere Kristalle\n• Alaun statt Salz = andere Formen\n\nWo finden wir Kristalle in der Natur?",
         "answers": [
           {
-            "answer": "Nur im Labor — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nur im Labor"
           },
           {
             "answer": "In Höhlen, Bergen, Gestein - und sogar in deinem Salzstreuer!"
           },
           {
-            "answer": "Nur unter Wasser — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur unter Wasser"
           },
           {
-            "answer": "Nur im Weltall — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Nur im Weltall"
           }
         ],
         "answer": "In Höhlen, Bergen, Gestein - und sogar in deinem Salzstreuer!",
@@ -23990,7 +23990,7 @@
             "answer": "Der LUFTDRUCK drückt es hinein!"
           },
           {
-            "answer": "Magie — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Magie"
           },
           {
             "answer": "Wir erhitzen das Ei, bis es schmilzt"
@@ -24012,7 +24012,7 @@
             "answer": "Weil wir es so leichter essen können"
           },
           {
-            "answer": "Das ist nicht wichtig — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Das ist nicht wichtig"
           }
         ],
         "answer": "Damit später keine Luft von außen einströmen kann",
@@ -24022,7 +24022,7 @@
         "question": "📋 SCHRITT 3: Die Magie des Feuers! 🔥\n\n⚠️ EIN ERWACHSENER MACHT DIESEN SCHRITT!\n\n1. Zünde einen kleinen Papierstreifen oder Streichholz an\n2. Wirf es SCHNELL in die Flasche\n3. Setze SOFORT das Ei auf die Öffnung!\n4. Beobachte!\n\n🔥 Das Feuer erlischt... und dann...\n\nWas macht das Feuer mit der Luft in der Flasche?",
         "answers": [
           {
-            "answer": "Nichts — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nichts"
           },
           {
             "answer": "Es ERWÄRMT die Luft."
@@ -24050,7 +24050,7 @@
             "answer": "Die Luft wird unsichtbar"
           },
           {
-            "answer": "Nichts passiert — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nichts passiert"
           }
         ],
         "answer": "Die Luft ZIEHT sich zusammen.",
@@ -24163,16 +24163,16 @@
         "question": "📋 SCHRITT 4: Extrahieren und filtern\n\n1. Öffne die Tüte und gib die Extraktionslösung dazu\n2. Verschließe wieder und knete SANFT (1 Minute)\n3. Gieße das Gemisch durch den Kaffeefilter in ein Glas\n4. Warte, bis die Flüssigkeit durchgelaufen ist\n\n🧪 Die klare Flüssigkeit enthält die DNA!\n\nWas filtern wir heraus?",
         "answers": [
           {
-            "answer": "Die DNA — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Die DNA"
           },
           {
             "answer": "Die Zellreste, Kerne und Fruchtfleisch - die DNA bleibt in der Flüssigkeit!"
           },
           {
-            "answer": "Das Salz — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Das Salz"
           },
           {
-            "answer": "Das Wasser — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Das Wasser"
           }
         ],
         "answer": "Die Zellreste, Kerne und Fruchtfleisch - die DNA bleibt in der Flüssigkeit!",
@@ -24182,13 +24182,13 @@
         "question": "📋 SCHRITT 5: DNA sichtbar machen! ✨\n\n🧊 Der Alkohol muss EISKALT sein!\n\n1. Gieße ~50 ml der Erdbeerflüssigkeit in ein schmales Glas\n2. Neige das Glas\n3. Gieße VORSICHTIG eiskalten Alkohol an der Glaswand herunter\n4. Der Alkohol soll eine Schicht ÜBER der Erdbeerlösung bilden\n5. WARTE und BEOBACHTE die Grenze!\n\n👀 WAS SIEHST DU?\n\nWas passiert an der Grenze zwischen Alkohol und Erdbeerlösung?",
         "answers": [
           {
-            "answer": "Nichts — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nichts"
           },
           {
             "answer": "Weiße, fadenartige."
           },
           {
-            "answer": "Es explodiert — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Es explodiert"
           },
           {
             "answer": "Die Flüssigkeiten mischen sich sofort"
@@ -24201,16 +24201,16 @@
         "question": "📋 SCHRITT 6: DNA erforschen!\n\n🔬 Du kannst die DNA mit einem Zahnstocher oder Stäbchen 'aufwickeln'!\n\n• Sie ist schleimig und fadenförmig\n• In ihr steckt die komplette Information für eine Erdbeerpflanze!\n\n🧬 Was du nicht siehst: Die berühmte Doppelhelix-Struktur ist zu klein für deine Augen - dafür braucht man ein Elektronenmikroskop!\n\nWer entdeckte die Struktur der DNA (Doppelhelix)?",
         "answers": [
           {
-            "answer": "Albert Einstein — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Albert Einstein"
           },
           {
             "answer": "Watson und Crick (mit Hilfe von Rosalind Franklins Röntgenbildern)"
           },
           {
-            "answer": "Isaac Newton — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Isaac Newton"
           },
           {
-            "answer": "Marie Curie — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Marie Curie"
           }
         ],
         "answer": "Watson und Crick (mit Hilfe von Rosalind Franklins Röntgenbildern)",
@@ -24323,13 +24323,13 @@
         "question": "📋 SCHRITT 6: Nicht-Newtonsche Flüssigkeiten im Alltag\n\n🌍 Wo gibt es das noch?\n\n• 🍅 Ketchup: Schütteln macht ihn flüssiger (umgekehrtes Prinzip!)\n• 🎨 Farbe: Sollte aus der Dose fließen, aber nicht an der Wand herunterlaufen\n• 🩸 Blut: Wird flüssiger bei Bewegung\n• 🦎 Schleim: Tiere nutzen das zum Schutz!\n\n♻️ Aufräumen: Oobleck kann im Müll entsorgt werden (NICHT im Abfluss!).\n\nWarum soll Oobleck NICHT in den Abfluss?",
         "answers": [
           {
-            "answer": "Weil es giftig ist — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Weil es giftig ist"
           },
           {
             "answer": "Weil es die Rohre verstopfen kann, wenn es fest wird"
           },
           {
-            "answer": "Weil es schlecht riecht — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Weil es schlecht riecht"
           },
           {
             "answer": "Das ist egal, man kann es in den Abfluss werfen"
@@ -24350,16 +24350,16 @@
         "question": "🚀 Willkommen zum Raketen-Experiment! Wir bauen eine echte Rakete, die mit einer chemischen Reaktion startet!\n\n📋 SCHRITT 1: Materialien sammeln\n\nSammle folgende Dinge:\n• 1 leere Filmdose mit Deckel (oder ähnlicher kleiner Behälter mit Schnappdeckel)\n• Backpulver oder Brausetablette\n• Wasser\n• Schutzbrille empfohlen!\n\n⚠️ Dieses Experiment NUR DRAUSSEN durchführen!\n⚠️ NIEMALS über die Rakete beugen!\n\nWas treibt echte Raketen an?",
         "answers": [
           {
-            "answer": "Benzin — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Benzin"
           },
           {
             "answer": "Der RÜCKSTOSS von Gasen, die mit hoher Geschwindigkeit ausgestoßen werden"
           },
           {
-            "answer": "Propeller — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Propeller"
           },
           {
-            "answer": "Magnete — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Magnete"
           }
         ],
         "answer": "Der RÜCKSTOSS von Gasen, die mit hoher Geschwindigkeit ausgestoßen werden",
@@ -24397,7 +24397,7 @@
             "answer": "Damit das Wasser nicht ausläuft"
           },
           {
-            "answer": "Das ist egal — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Das ist egal"
           }
         ],
         "answer": "Weil der Deckel abspringt.",
@@ -24407,16 +24407,16 @@
         "question": "📋 SCHRITT 4: LIFTOFF! 🚀\n\n👀 Beobachte (aus sicherer Entfernung!):\n\n1. Die Reaktion beginnt (Zischen hörbar)\n2. Der Druck steigt...\n3. PENG! 💥\n4. Die Rakete schießt in die Luft!\n\n🎉 War sie höher als du erwartet hast?\n\nWas erzeugt den Druck in der Dose?",
         "answers": [
           {
-            "answer": "Die Wärme — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Die Wärme"
           },
           {
             "answer": "Kohlendioxid-Gas (CO₂) aus der Reaktion von Backpulver/Brausetablette mit Wasser"
           },
           {
-            "answer": "Der Wind — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Der Wind"
           },
           {
-            "answer": "Das Wasser selbst — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Das Wasser selbst"
           }
         ],
         "answer": "Kohlendioxid-Gas (CO₂) aus der Reaktion von Backpulver/Brausetablette mit Wasser",
@@ -24445,16 +24445,16 @@
         "question": "📋 SCHRITT 6: Wie echte Raketen funktionieren\n\n🚀 Deine Backpulver-Rakete vs. echte Raketen:\n\n| Deine Rakete | Echte Rakete |\n|--------------|---------------|\n| CO₂-Gas | Verbrennungsgase |\n| ~5 m hoch | ~400 km hoch! |\n| 1 Sekunde Flug | 8 Minuten bis Orbit |\n| Einmal-Start | Wiederverwendbar (SpaceX) |\n\nAber das PRINZIP ist GENAU DASSELBE!\n\nWas haben deine Backpulver-Rakete und eine echte Rakete gemeinsam?",
         "answers": [
           {
-            "answer": "Die Größe — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Die Größe"
           },
           {
             "answer": "Beide nutzen das RÜCKSTOSS-Prinzip - Gas raus, Rakete hoch!"
           },
           {
-            "answer": "Beide fliegen zum Mond — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Beide fliegen zum Mond"
           },
           {
-            "answer": "Beide brauchen Benzin — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Beide brauchen Benzin"
           }
         ],
         "answer": "Beide nutzen das RÜCKSTOSS-PRINZIP.",
@@ -24478,7 +24478,7 @@
             "answer": "Mit dem Stand der."
           },
           {
-            "answer": "Mit Kerzen — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Mit Kerzen"
           },
           {
             "answer": "Sie brauchten keine Zeit"
@@ -24573,7 +24573,7 @@
             "answer": "Weil die Sonne im Sommer HÖHER."
           },
           {
-            "answer": "Weil es wärmer ist — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Weil es wärmer ist"
           },
           {
             "answer": "Weil die Tage länger sind"
@@ -24801,7 +24801,7 @@
             "answer": "Weil hohe Töne das Salz schmelzen"
           },
           {
-            "answer": "Zufällig — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Zufällig"
           }
         ],
         "answer": "Weil hohe Töne SCHNELLER.",
@@ -24904,7 +24904,7 @@
             "answer": "Weil die Sonne das Glas blind macht"
           },
           {
-            "answer": "Licht ist egal — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Licht ist egal"
           }
         ],
         "answer": "Pflanzen brauchen Licht für.",
@@ -25017,16 +25017,16 @@
         "question": "📋 SCHRITT 4: Die Magie beginnt! 🌈\n\n🧪 Gib nun die Testflüssigkeiten in die Gläser mit Rotkohlsaft:\n\n• Tropfe Zitronensaft in ein Glas\n• Tropfe Essig in ein anderes\n• Füge Seifenwasser hinzu\n• Rühre Natron in ein Glas\n\n👀 BEOBACHTE DIE FARBEN!\n\nWelche Farbe zeigt eine SÄURE mit Rotkohlsaft?",
         "answers": [
           {
-            "answer": "Grün — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Grün"
           },
           {
             "answer": "ROT oder PINK!"
           },
           {
-            "answer": "Blau — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Blau"
           },
           {
-            "answer": "Schwarz — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Schwarz"
           }
         ],
         "answer": "ROT oder PINK!",
@@ -25036,16 +25036,16 @@
         "question": "📋 SCHRITT 5: Ordne nach pH-Wert!\n\n📊 Ordne deine Testflüssigkeiten nach Farbe (von rot nach grün):\n\n1. Erstelle eine Reihe von sauer nach basisch\n2. Vergleiche mit der pH-Skala\n\n🎨 TYPISCHE Ergebnisse:\n• 🔴 Zitronensaft, Essig, Cola → SAUER\n• 💜 Wasser → NEUTRAL\n• 💙💚 Seifenwasser, Natron → BASISCH\n\nWarum ist Cola sauer?",
         "answers": [
           {
-            "answer": "Weil sie süß ist — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Weil sie süß ist"
           },
           {
             "answer": "Weil sie Phosphorsäure und Kohlensäure enthält!"
           },
           {
-            "answer": "Weil sie kalt ist — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Weil sie kalt ist"
           },
           {
-            "answer": "Weil sie bunt ist — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Weil sie bunt ist"
           }
         ],
         "answer": "Weil sie Phosphorsäure und Kohlensäure enthält!",
@@ -25109,7 +25109,7 @@
             "answer": "Der Riesenkalmar"
           },
           {
-            "answer": "Der Orca — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Der Orca"
           }
         ],
         "answer": "Der Blauwal",
@@ -25185,7 +25185,7 @@
             "answer": "Winzige Tiere, die."
           },
           {
-            "answer": "Ein Fischei — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Ein Fischei"
           }
         ],
         "answer": "Winzige Tiere, die.",
@@ -25195,7 +25195,7 @@
         "question": "Wie atmen Fische unter Wasser?",
         "answers": [
           {
-            "answer": "Mit der Nase — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Mit der Nase"
           },
           {
             "answer": "Mit Kiemen"
@@ -25277,7 +25277,7 @@
             "answer": "Der Segelfisch"
           },
           {
-            "answer": "Der Hai — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Hai"
           },
           {
             "answer": "Die Schildkröte"
@@ -25309,16 +25309,16 @@
         "question": "Was ist Plankton?",
         "answers": [
           {
-            "answer": "Eine Art Hai — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Eine Art Hai"
           },
           {
             "answer": "Winzige Lebewesen, die im Wasser treiben"
           },
           {
-            "answer": "Unterwasserpflanzen — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Unterwasserpflanzen"
           },
           {
-            "answer": "Meersand — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Meersand"
           }
         ],
         "answer": "Winzige Lebewesen, die im Wasser treiben",
@@ -25385,16 +25385,16 @@
         "question": "Was macht den Clownfisch so besonders?",
         "answers": [
           {
-            "answer": "Er kann fliegen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Er kann fliegen"
           },
           {
             "answer": "Er lebt in Seeanemonen, die andere Fische verbrennen würden"
           },
           {
-            "answer": "Er kann sprechen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Er kann sprechen"
           },
           {
-            "answer": "Er leuchtet im Dunkeln — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Er leuchtet im Dunkeln"
           }
         ],
         "answer": "Er lebt in Seeanemonen, die andere Fische verbrennen würden",
@@ -25423,7 +25423,7 @@
         "question": "Welches Meerestier kann Wasser spritzen, um Insekten zu fangen?",
         "answers": [
           {
-            "answer": "Der Wal — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Der Wal"
           },
           {
             "answer": "Der Schützenfisch"
@@ -25442,7 +25442,7 @@
         "question": "Warum sehen viele Tiefseefische gruselig aus?",
         "answers": [
           {
-            "answer": "Weil sie böse sind — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Weil sie böse sind"
           },
           {
             "answer": "Weil sie sich an das Leben in."
@@ -25451,7 +25451,7 @@
             "answer": "Weil das Salzwasser sie verändert hat"
           },
           {
-            "answer": "Weil sie alt sind — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Weil sie alt sind"
           }
         ],
         "answer": "Weil sie sich an das Leben in.",
@@ -25480,7 +25480,7 @@
         "question": "Welches Meerestier kann seinen Körper aufblasen wie einen Ballon?",
         "answers": [
           {
-            "answer": "Der Hai — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Hai"
           },
           {
             "answer": "Der Kugelfisch"
@@ -25489,7 +25489,7 @@
             "answer": "Der Rochen"
           },
           {
-            "answer": "Der Aal — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Der Aal"
           }
         ],
         "answer": "Der Kugelfisch",
@@ -25537,16 +25537,16 @@
         "question": "Was ist eine Muräne?",
         "answers": [
           {
-            "answer": "Eine Art Muschel — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Eine Art Muschel"
           },
           {
             "answer": "Ein schlangenartiger Fisch mit scharfen Zähnen"
           },
           {
-            "answer": "Eine Seepflanze — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Eine Seepflanze"
           },
           {
-            "answer": "Eine Baby-Qualle — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Eine Baby-Qualle"
           }
         ],
         "answer": "Ein schlangenartiger Fisch mit scharfen Zähnen",
@@ -25565,7 +25565,7 @@
             "answer": "Weil das Salzwasser die Knochen auflöst"
           },
           {
-            "answer": "Haie haben Knochen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Haie haben Knochen"
           }
         ],
         "answer": "Ihr Skelett besteht aus Knorpel.",
@@ -25581,7 +25581,7 @@
             "answer": "Ein Wal mit einem langen Stoßzahn"
           },
           {
-            "answer": "Ein riesiger Hai — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Ein riesiger Hai"
           },
           {
             "answer": "Eine Fischart mit Flügeln"
@@ -25696,16 +25696,16 @@
         "question": "Was bedeutet es, wenn ein Hund mit dem Schwanz wedelt?",
         "answers": [
           {
-            "answer": "Er hat Hunger — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Er hat Hunger"
           },
           {
             "answer": "Er ist aufgeregt oder freut sich"
           },
           {
-            "answer": "Er ist müde — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Er ist müde"
           },
           {
-            "answer": "Er friert — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Er friert"
           }
         ],
         "answer": "Er ist aufgeregt oder freut sich",
@@ -25724,7 +25724,7 @@
             "answer": "Der Greyhound (Windhund)"
           },
           {
-            "answer": "Der Beagle — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Beagle"
           }
         ],
         "answer": "Der Greyhound (Windhund)",
@@ -25800,7 +25800,7 @@
             "answer": "Bis zu 100.000-mal so gut"
           },
           {
-            "answer": "Genauso gut — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Genauso gut"
           }
         ],
         "answer": "Bis zu 100.000-mal so gut",
@@ -25930,10 +25930,10 @@
             "answer": "Der Dalmatiner"
           },
           {
-            "answer": "Der Pudel — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Der Pudel"
           },
           {
-            "answer": "Der Husky — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Der Husky"
           }
         ],
         "answer": "Der Dalmatiner",
@@ -26009,7 +26009,7 @@
             "answer": "Weil sie nicht müde sind"
           },
           {
-            "answer": "Weil sie Angst haben — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Weil sie Angst haben"
           }
         ],
         "answer": "Es ist ein Instinkt von ihren wilden Vorfahren",
@@ -26028,7 +26028,7 @@
             "answer": "Der Dackel"
           },
           {
-            "answer": "Der Mops — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Mops"
           }
         ],
         "answer": "Die Deutsche Dogge",
@@ -26095,16 +26095,16 @@
         "question": "Was bedeutet es, wenn ein Hund die Ohren nach hinten legt?",
         "answers": [
           {
-            "answer": "Er ist wütend — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Er ist wütend"
           },
           {
             "answer": "Er könnte ängstlich, unterwürfig oder entspannt sein"
           },
           {
-            "answer": "Er ist hungrig — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Er ist hungrig"
           },
           {
-            "answer": "Er will spielen — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Er will spielen"
           }
         ],
         "answer": "Er könnte ängstlich, unterwürfig oder entspannt sein",
@@ -26120,10 +26120,10 @@
             "answer": "Der Dackel"
           },
           {
-            "answer": "Der Husky — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Der Husky"
           },
           {
-            "answer": "Der Labrador — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Der Labrador"
           }
         ],
         "answer": "Der Dackel",
@@ -26180,7 +26180,7 @@
             "answer": "Fühlen und Sehen"
           },
           {
-            "answer": "Nur Sehen — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Nur Sehen"
           }
         ],
         "answer": "Riechen und Hören",
@@ -26254,7 +26254,7 @@
         "question": "Was ergibt 15 - 6?",
         "answers": [
           {
-            "answer": "8 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "8"
           },
           {
             "answer": "9"
@@ -26273,7 +26273,7 @@
         "question": "Was ergibt 2 · 5?",
         "answers": [
           {
-            "answer": "7 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "7"
           },
           {
             "answer": "10"
@@ -26349,7 +26349,7 @@
         "question": "Was ergibt 3 · 4?",
         "answers": [
           {
-            "answer": "7 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "7"
           },
           {
             "answer": "10"
@@ -26501,7 +26501,7 @@
         "question": "Welche Zahl ist größer: 67 oder 76?",
         "answers": [
           {
-            "answer": "67 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "67"
           },
           {
             "answer": "76"
@@ -26615,7 +26615,7 @@
         "question": "Ein Hund hat 4 Beine. Wie viele Beine haben 3 Hunde zusammen?",
         "answers": [
           {
-            "answer": "7 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "7"
           },
           {
             "answer": "10"
@@ -26672,7 +26672,7 @@
         "question": "Was ergibt 4 · 5?",
         "answers": [
           {
-            "answer": "9 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "9"
           },
           {
             "answer": "15"
@@ -26729,7 +26729,7 @@
         "question": "Was ergibt 6 · 2?",
         "answers": [
           {
-            "answer": "8 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "8"
           },
           {
             "answer": "10"
@@ -26945,10 +26945,10 @@
         "question": "Was ergibt 72 ÷ 8?",
         "answers": [
           {
-            "answer": "7 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "7"
           },
           {
-            "answer": "8 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "8"
           },
           {
             "answer": "9"
@@ -27135,10 +27135,10 @@
         "question": "Was ergibt 81 ÷ 9?",
         "answers": [
           {
-            "answer": "7 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "7"
           },
           {
-            "answer": "8 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "8"
           },
           {
             "answer": "9"
@@ -27268,10 +27268,10 @@
         "question": "Was ergibt 45 ÷ 5?",
         "answers": [
           {
-            "answer": "7 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "7"
           },
           {
-            "answer": "8 — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "8"
           },
           {
             "answer": "9"
@@ -27325,10 +27325,10 @@
         "question": "Was ergibt 36 ÷ 4?",
         "answers": [
           {
-            "answer": "7 — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "7"
           },
           {
-            "answer": "8 — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "8"
           },
           {
             "answer": "9"
@@ -27531,7 +27531,7 @@
             "answer": "3/4"
           },
           {
-            "answer": "1 — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "1"
           }
         ],
         "answer": "3/4",
@@ -27582,7 +27582,7 @@
             "answer": "2/3"
           },
           {
-            "answer": "3/5 — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "3/5"
           },
           {
             "answer": "Sie sind gleich groß"
@@ -27991,7 +27991,7 @@
             "answer": "Heu und Gras"
           },
           {
-            "answer": "Fisch — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Fisch"
           },
           {
             "answer": "Schokolade"
@@ -28048,10 +28048,10 @@
             "answer": "Stall"
           },
           {
-            "answer": "Nest — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Nest"
           },
           {
-            "answer": "Höhle — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Höhle"
           }
         ],
         "answer": "Stall",
@@ -28070,7 +28070,7 @@
             "answer": "Neongrün"
           },
           {
-            "answer": "Weiß — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Weiß"
           }
         ],
         "answer": "Neongrün",
@@ -28124,7 +28124,7 @@
             "answer": "Bis zu 70 km/h"
           },
           {
-            "answer": "Nur 5 km/h — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Nur 5 km/h"
           },
           {
             "answer": "So schnell wie ein Flugzeug"
@@ -28156,16 +28156,16 @@
         "question": "Was muss man jeden Tag mit einem Pferd machen?",
         "answers": [
           {
-            "answer": "Fernsehen — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "Fernsehen"
           },
           {
             "answer": "Füttern, tränken und striegeln"
           },
           {
-            "answer": "Vorlesen — relevant in Kontexten, wo Standardlösungen nicht anwendbar sind."
+            "answer": "Vorlesen"
           },
           {
-            "answer": "Baden im Meer — ein Verfahren mit spezifischen Vor- und Nachteilen in der Praxis."
+            "answer": "Baden im Meer"
           }
         ],
         "answer": "Füttern, tränken und striegeln",
@@ -28213,13 +28213,13 @@
         "question": "Welches berühmte gestreifte Tier ist mit dem Pferd verwandt?",
         "answers": [
           {
-            "answer": "Tiger — genutzt in Nischenanwendungen mit besonderen Anforderungen."
+            "answer": "Tiger"
           },
           {
             "answer": "Zebra"
           },
           {
-            "answer": "Biene — ein alternativer Ansatz, der in bestimmten Implementierungsszenarien verwendet wird."
+            "answer": "Biene"
           },
           {
             "answer": "Dalmatiner"
@@ -28241,7 +28241,7 @@
             "answer": "100 Jahre"
           },
           {
-            "answer": "5 Jahre — eine Methode, die unter spezifischen architektonischen Bedingungen eingesetzt wird."
+            "answer": "5 Jahre"
           }
         ],
         "answer": "Etwa 25-30 Jahre",
