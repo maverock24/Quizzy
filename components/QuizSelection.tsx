@@ -444,6 +444,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
           keyExtractor={(item) => item.name}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{ paddingBottom: 90 }}
           renderItem={({ item, index }) => (
             <QuizButton
               item={item}
@@ -472,6 +473,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         stickySectionHeadersEnabled={false}
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 90 }}
       />
     </View>
   );
