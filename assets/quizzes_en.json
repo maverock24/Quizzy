@@ -5448,7 +5448,7 @@
             "answer": "Create a WebSocket connection that stays open for the entire user session."
           }
         ],
-        "answer": "Accept a POST request with the user query, orchestrate the all steps on the backend, and support streaming the response back.",
+        "answer": "Accept a POST request with the user query, orchestrate the embedding, vector search, and LLM call on the backend, and support streaming the response back.",
         "explanation": "A robust RAG API follows standard backend design principles. A POST request is appropriate for sending a query body. The backend acts as an orchestrator, securely managing the multi-step process: 1) taking the user's query, 2) calling an embedding model, 3) querying the vector database, 4) constructing the final prompt, 5) calling the LLM, and 6) streaming the token-based response back to the client. Pushing this logic to the backend is crucial for security (hiding API keys and the internal prompt structure) and scalability (managing connections and load)."
       },
       {
@@ -9764,7 +9764,7 @@
             "answer": "A recursive data structure, such as a linked list or a tree. as specified in certain implementation guidelines."
           }
         ],
-        "answer": "A design pattern that encapsulates a computation, providing a standard way to sequence operations and handle context.",
+        "answer": "A design pattern that encapsulates a computation, providing a standard way to sequence operations and handle context (like state, I/O, or potential absence of a value).",
         "explanation": "A monad is a concept from category theory that has been adopted by functional programming languages to manage side effects and complexity in a pure functional setting. At its core, a monad is a type that wraps another type, plus two operations: 'return' (or 'unit'), which puts a plain value into the monadic container, and 'bind' (often represented by an operator like >>=), which sequences operations. The 'bind' function takes a monadic value and a function that returns a new monadic value, and it knows how to 'unwrap' the value, apply the function, and return the new wrapped result. This allows programmers to write sequences of operations that look imperative, while the monad itself handles the 'plumbing' of the context. Common examples include the Maybe/Optional monad (handling nulls), the List monad (handling non-determinism), the State monad (handling state), and the IO monad (handling side effects)."
       },
       {
@@ -23756,7 +23756,7 @@
             "answer": "To force TypeScript to infer a specific literal type instead of a general primitive type."
           }
         ],
-        "answer": "To declare a new type variable whose type is inferred based on the structure of thetype being checked in the true branch of a conditional type.",
+        "answer": "To declare a new type variable whose type is inferred based on the structure of the type being checked in the true branch of a conditional type.",
         "explanation": "The `infer` keyword in TypeScript is used within the `extends` clause of a conditional type to declare a type variable that will be inferred by TypeScript. If the type being checked (`T` in `T extends U ? X : Y`) matches the pattern where `infer R` is used, then `R` will capture the type that corresponds to that part of the pattern.\n\n**Syntax:**\n`SomeType extends infer InferredType ? TrueType<InferredType> : FalseType;`\nOr, more commonly, within a structured type:\n`SomeType extends AnotherType<infer InferredPart> ? TrueType<InferredPart> : FalseType;`\n\n**Example: Unwrapping a Promise type**\n```typescript\ntype UnwrapPromise<T> = T extends Promise<infer U> ? U : T;\n\n// Usage:\ntype MyStringType = UnwrapPromise<Promise<string>>; // MyStringType is string\ntype MyNumberType = UnwrapPromise<number>;         // MyNumberType is number (not a Promise, so T is returned)\n\nfunction fetchData(): Promise<{ id: number; data: string }> {\n  return Promise.resolve({ id: 1, data: \"Sample\" });\n}\n\n// If we want the type of the data *inside* the Promise returned by fetchData:\ntype FetchedDataType = UnwrapPromise<ReturnType<typeof fetchData>>;\n// FetchedDataType is { id: number; data: string }\n```\nIn `T extends Promise<infer U> ? U : T;`:\n- If `T` is a `Promise<Something>`, TypeScript tries to match `Something` with `infer U`.\n- If it matches, `U` becomes `Something`, and the conditional type resolves to `U`.\n- If `T` is not a `Promise`, the condition is false, and the type resolves to `T`.\n\nThis allows you to extract parts of types in a powerful and flexible way. It's commonly used in utility types like `Parameters<T>`, `ReturnType<T>`, `InstanceType<T>`, and custom complex type transformations."
       },
       {
@@ -27457,7 +27457,7 @@
             "answer": "No — BRCA1 testing is only indicated for patients with strong family history, so this test shouldn't have been ordered"
           }
         ],
-        "answer": "Yes — BRCA1 variants confer high risk (~55-72% by age 80) regardless of family history. The absence of family cancer doesn't negate the molecular finding",
+        "answer": "Yes — BRCA1 variants confer high lifetime risk (~55-72% by age 80) regardless of family history. The absence of family cancer doesn't negate the molecular finding",
         "explanation": "BRCA1/2 are high-penetrance genes. The ~60-70% lifetime breast cancer risk is independent of family history. Family history may be absent because: (1) the variant was inherited from the father's side (male carriers have lower cancer rates), (2) small family size, (3) incomplete penetrance in previous generations. ACMG guidelines classify known pathogenic variants as actionable regardless of family history."
       },
       {

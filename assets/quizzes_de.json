@@ -1430,7 +1430,7 @@
             "answer": "Er verbindet zwei Lichtschalter miteinander."
           }
         ],
-        "answer": "Er ist der Schutzleiter and leitet im Fehlerfall gefährliche Spannungen gegen Erde ab.",
+        "answer": "Er ist der Schutzleiter und leitet im Fehlerfall gefährliche Spannungen gegen Erde ab.",
         "explanation": "Der PE (Protective Earth) ist die wichtigste Sicherheitsader. Er ist mit leitfähigen Gehäusen (z.B. Waschmaschine, Lampe) verbunden. Tritt ein Defekt auf und die Phase berührt das Gehäuse, fließt der Strom über den PE ab, was die Sicherung oder den FI-Schalter auslöst."
       },
       {
@@ -2963,7 +2963,7 @@
             "answer": "Ein disziplinierter und starker Soldat zu werden."
           }
         ],
-        "answer": "Ein diszipliniert und starker Soldat zu werden.",
+        "answer": "Ein disziplinierter und starker Soldat zu werden.",
         "explanation": "Für Kinder: In Sparta drehte sich alles ums Militär. Wenn ein Junge sieben Jahre alt wurde, musste er sein Elternhaus verlassen und in eine Kaserne ziehen. Dort begann eine extrem harte Ausbildung ('Agoge'), die ihn zu einem perfekten Soldaten machen sollte. Sie lernten zu kämpfen, Schmerzen zu ertragen und dem Staat bedingungslos zu gehorchen.\n\nFür Erwachsene: Das spartanische Erziehungssystem, die Agoge, war einzigartig in Griechenland. Es war ein staatlich kontrolliertes, obligatorisches Programm, das darauf abzielte, die männlichen Bürger zu disziplinierten, kampferprobten Hopliten zu formen. Das System betonte körperliche Härte, Gehorsam, Gemeinschaftssinn und militärische Tüchtigkeit über alles andere. Diese totale Unterordnung des Individuums unter die Bedürfnisse des Staates war notwendig, um die zahlenmäßig kleine spartanische Bürgerschaft in der Lage zu versetzen, die große unterdrückte Bevölkerung der Heloten (Staatssklaven) zu kontrollieren."
       },
       {
@@ -13147,7 +13147,7 @@
             "answer": "7"
           }
         ],
-        "answer": "8",
+        "answer": "7",
         "explanation": "Januar, Februar, März, April, September, Oktober, November, Dezember."
       },
       {
@@ -20031,7 +20031,7 @@
             "answer": "Das durchschnittliche Vermögen jedes Bürgers im Land."
           }
         ],
-        "answer": "Der Gesamtwert aller Fertigwaren und Dienstleistungen, die innerhalb eines bestimmten Zeitraums innerhalb der Grenzen eines Landes produziert wurden.",
+        "answer": "Der Gesamtwert aller Fertigwaren und Dienstleistungen, die innerhalb eines bestimmten Zeitraums innerhalb der Grenzen eines Landes produziert werden.",
         "explanation": "Das Bruttoinlandsprodukt (BIP) ist einer der am häufigsten verwendeten Indikatoren zur Messung der wirtschaftlichen Gesundheit eines Landes. Es stellt den Gesamtmarktwert aller Fertigwaren und Dienstleistungen dar, die *innerhalb* der geografischen Grenzen eines Landes während eines bestimmten Zeitraums (normalerweise eines Quartals oder eines Jahres) produziert wurden."
       },
       {
@@ -22308,7 +22308,7 @@
             "answer": "Verwenden Sie die Formel für die Fläche des Polygons."
           }
         ],
-        "answer": "Addiere die Längen aller Seiten.",
+        "answer": "Addieren Sie die Längen aller Seiten.",
         "explanation": "Problem: Bestimme den Umfang eines Dreiecks mit den Seitenlängen 5 cm, 7 cm und 10 cm.\n\nLösung: Der Umfang eines Polygons (eine geschlossene Form mit geraden Seiten) ist die Gesamtlänge um seinen äußeren Rand. Diese wird durch die Summe der Längen aller Seiten berechnet.\n\n1. **Bestimme die Seitenlängen:**\n * Seite 1 = 5 cm\n * Seite 2 = 7 cm\n * Seite 3 = 10 cm\n\n2. **Summiere die Seitenlängen:**\n * Umfang = Seite 1 + Seite 2 + Seite 3\n * Umfang = 5 cm + 7 cm + 10 cm\n * Umfang = 12 cm cm} + 10 \\text{ cm}$\n * Umfang = $22 \\text{ cm}$.\n\nLösung: Der Umfang des Dreiecks beträgt $22 \\text{ cm}$."
       },
       {
@@ -22365,7 +22365,7 @@
             "answer": "Bei zwei Farben ist es immer $50\\%$."
           }
         ],
-        "answer": "Indem man die Anzahl der gewünschten Ergebnisse (blaue Murmeln) durch die Gesamtzahl der möglichen Ergebnisse (Gesamtzahl der Murmeln) dividiert.",
+        "answer": "Indem man die Anzahl der gewünschten Ergebnisse (blaue Murmeln) durch die Gesamtzahl der möglichen Ergebnisse (Gesamtzahl der Murmeln) teilt.",
         "explanation": "Problem: Bestimme die Wahrscheinlichkeit, eine blaue Murmel aus einem Beutel mit 3 roten und 2 blauen Murmeln zu ziehen.\n\nVorgehensweise: Die Grundwahrscheinlichkeit berechnet sich aus dem Verhältnis der Anzahl günstiger Ergebnisse zur Gesamtzahl möglicher Ergebnisse.\n$P(\\text{Ereignis}) = \\frac{\\text{Anzahl günstiger Ergebnisse}}{\\text{Gesamtzahl möglicher Ergebnisse}}$.\n\n1. **Bestimme die Anzahl günstiger Ergebnisse:**\n * Wir möchten eine blaue Murmel ziehen.\n * Anzahl blauer Murmeln = 2.\n\n2. **Bestimme die Gesamtzahl möglicher Ergebnisse:**\n * Dies ist die Gesamtzahl der Murmeln im Beutel.\n * Gesamtzahl der Murmeln = Anzahl roter Murmeln + Anzahl blauer Murmeln\n * Gesamtzahl der Murmeln = 3 + 2 = 5.\n\n3. **Berechne die Wahrscheinlichkeit:**\n * $P(\\text{Blau}) = \\frac{\\text{Anzahl der blauen Murmeln}}{\\text{Gesamtanzahl der Murmeln}}$\n * $P(\\text{Blau}) = \\frac{2}{5}$.\n\nLösung: Die Wahrscheinlichkeit, eine blaue Murmel zu ziehen, beträgt $\\frac{2}{5}$. Dies kann auch als Dezimalzahl ($0,4$) oder Prozentzahl ($40\\%$) ausgedrückt werden."
       },
       {
@@ -23481,7 +23481,7 @@
             "answer": "Albert Einstein"
           }
         ],
-        "answer": "Alessandro Volta (deshalb.",
+        "answer": "Alessandro Volta (deshalb heißt die Einheit 'Volt')",
         "explanation": "Richtig! 🇮🇹 Der Italiener Alessandro Volta erfand 1800 die erste echte Batterie!\n\n🔬 Die 'Volta-Säule' bestand aus:\n• Gestapelten Zink- und Kupferscheiben\n• Dazwischen: In Salzwasser getränkte Pappe\n• Genau das gleiche Prinzip wie deine Zitrone!\n\n🎉 STROMEND GUT!\nDu hast Elektronik verstanden: Spannung, Strom, Anode, Kathode und chemische Reaktionen! Du bist ein Batterie-Ingenieur! 🔋⚡👨‍🔬"
       }
     ],
@@ -24457,7 +24457,7 @@
             "answer": "Beide brauchen Benzin"
           }
         ],
-        "answer": "Beide nutzen das RÜCKSTOSS-PRINZIP.",
+        "answer": "Beide nutzen das RÜCKSTOSS-Prinzip - Gas raus, Rakete hoch!",
         "explanation": "Exakt gleiche Physik! 🎯\n\n🔬 Newton wäre stolz:\n• Deine Rakete: CO₂ raus → Dose hoch\n• SpaceX Falcon: Verbrennungsgase raus → Rakete hoch\n• Tintenfisch: Wasser raus → Tintenfisch vorwärts!\n\nOb 10 cm oder 10 km - das Prinzip ist identisch!\n\n🎉 3... 2... 1... LIFTOFF!\nDu verstehst jetzt Rückstoß, Druck, Reaktionsgeschwindigkeit und Raketenphysik! Du bist ein Raketenwissenschaftler! 🚀🔬👨‍🚀"
       }
     ],
