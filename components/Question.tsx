@@ -20,6 +20,8 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
+import { useGlossary } from './GlossaryProvider';
+import { ClickableTerms } from './ClickableTerms';
 import { SettingsHeader } from './SettingsHeader';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -272,6 +274,7 @@ export const Question: React.FC<QuestionProps> = ({
   } = useQuiz();
   const { t, i18n } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
+  const { setSelectedTerm, setModalVisible: setGlossaryVisible } = useGlossary();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
 
   // Animation refs
@@ -771,7 +774,10 @@ export const Question: React.FC<QuestionProps> = ({
               justifyContent: 'space-between',
             }}
           >
-            <Text style={styles.questionText}>{renderRichText(question)}</Text>
+            <ClickableTerms
+              text={question}
+              style={styles.questionText}
+            />
             <TouchableOpacity
               onPress={handleReadAloud}
               style={{

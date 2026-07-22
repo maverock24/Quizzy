@@ -1,6 +1,5 @@
 import React from 'react';
 import { Animated, StyleSheet, Switch, Text, TouchableOpacity, View, Platform } from 'react-native';
-import { CodeFormatter } from './CodeFormatter';
 import { ScrollView } from 'react-native-gesture-handler';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
@@ -8,6 +7,7 @@ import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
+import { ClickableTerms } from './ClickableTerms';
 import { SettingsHeader } from './SettingsHeader';
 type ExplanationProps = {
   answerIsCorrect: boolean;
@@ -80,13 +80,18 @@ export const Explanation: React.FC<ExplanationProps> = ({
           <Text style={styles.questionHeading}>
             {righOrWrong}
           </Text>
-          <CodeFormatter
-            text={explanation}
-            containerStyle={{ marginTop: 8 }}
-            textStyle={styles.normalText}
-            codeBlockContainerStyle={{ backgroundColor: 'rgb(46, 50, 54)' }}
-            codeBlockTextStyle={{ color: 'white' }}
-          />
+          <View style={{ marginTop: 8 }}>
+            <ClickableTerms
+              text={explanation}
+              style={styles.normalText}
+            />
+          </View>
+          <View style={styles.glossaryHint}>
+            <Ionicons name="bulb-outline" size={14} color="rgba(255,255,255,0.6)" />
+            <Text style={styles.glossaryHintText}>
+              Tap highlighted terms for definitions
+            </Text>
+          </View>
         </View>
 
       </ScrollView>
@@ -169,5 +174,18 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 16,
     fontWeight: '600',
+  },
+  glossaryHint: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 12,
+    paddingHorizontal: 8,
+    opacity: 0.7,
+  },
+  glossaryHintText: {
+    color: 'rgba(255, 255, 255, 0.6)',
+    fontSize: 12,
+    marginLeft: 6,
+    fontStyle: 'italic',
   },
 });
