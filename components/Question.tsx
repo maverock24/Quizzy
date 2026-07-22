@@ -650,6 +650,9 @@ export const Question: React.FC<QuestionProps> = ({
       }
     }, 300);
 
+    // Kids mode gets extra time for celebration overload animation
+    const switchDelay = kidsMode ? 2800 : 1400;
+
     setTimeout(() => {
       handleAnswerSelection(answer);
       setAnswerSelected(false); // Reset to false instead of toggling
@@ -667,7 +670,7 @@ export const Question: React.FC<QuestionProps> = ({
       setAnswerIsWrong(false);
       setShowConfetti(false);
       setShowFloatingScore(false);
-    }, 1400); // Slightly longer for animations to complete
+    }, switchDelay);
   };
 
   // TTS: Read aloud question and answers
