@@ -79,6 +79,7 @@ export default function TabLayout() {
             bottom: 0,
             left: 0,
             right: 0,
+            zIndex: 100,
           },
           tabBarLabelStyle: {
             marginTop: 5,
@@ -142,7 +143,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     height: '100%',
-    backgroundColor: 'black', // fallback
+    backgroundColor: 'black',
+    overflow: 'hidden',
   },
   backgroundImage: {
     position: 'absolute',
