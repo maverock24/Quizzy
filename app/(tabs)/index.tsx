@@ -9,7 +9,6 @@ import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { Score } from '@/components/Score';
 import { QuizTimer } from '@/components/QuizTimer';
-import { GlossaryModal } from '@/components/GlossaryModal';
 import { useGlossary } from '@/components/GlossaryProvider';
 import { Answer, CategoryEssay, Quiz, QuizQuestion } from '@/components/types';
 import { t } from 'i18next';
@@ -508,7 +507,6 @@ export default function TabOneScreen() {
           </View>
         )}
       </SafeAreaLinearGradient>
-      <GlossaryModal />
     </View>
   );
 }
