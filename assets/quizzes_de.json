@@ -28250,5 +28250,410 @@
     ],
     "category": "👶 Für Kinder",
     "image": "../../assets/images/quizzes/kids.png"
+  },
+  {
+    "name": "🏕️ Pfadfinder-Wissen fürpfadfinderinnen (Myrskylä)",
+    "category": "👶 Für Kinder",
+    "questions": [
+      {
+        "question": "Wie lautet das Pfadfinder-Motto weltweit?",
+        "answers": [
+          {
+            "answer": "Allzeit bereit!"
+          },
+          {
+            "answer": "Immer vorwärts!"
+          },
+          {
+            "answer": "Gemeinsam stark!"
+          },
+          {
+            "answer": "Mutig und treu!"
+          }
+        ],
+        "answer": "Allzeit bereit!",
+        "explanation": "Das Pfadfinder-Motto 'Allzeit bereit!' (englisch: 'Be Prepared') wurde von Gründer Robert Baden-Powell festgelegt. Es bedeutet, dass Pfadfinder immer bereit sind zu helfen - körperlich und im Kopf."
+      },
+      {
+        "question": "Welcher berühmte Brite gründete 1907 die Pfadfinderbewegung?",
+        "answers": [
+          {
+            "answer": "Robert Baden-Powell"
+          },
+          {
+            "answer": "Winston Churchill"
+          },
+          {
+            "answer": "Charles Darwin"
+          },
+          {
+            "answer": "Arthur Conan Doyle"
+          }
+        ],
+        "answer": "Robert Baden-Powell",
+        "explanation": "Lord Robert Baden-Powell (oft 'BP' genannt) war ein britischer General, der 1907 das erste Pfadfinderlager auf Brownsea Island in England veranstaltete. Er schrieb das berühmte Buch 'Scouting for Boys'."
+      },
+      {
+        "question": "Wie heißt die finnische Pfadfinderorganisation?",
+        "answers": [
+          {
+            "answer": "Suomen Partiolaiset – Finlands Scouter ry"
+          },
+          {
+            "answer": "Suomen Retkeilijät"
+          },
+          {
+            "answer": "Finnische Jugendwanderer"
+          },
+          {
+            "answer": "Nordische Pfadfinder Union"
+          }
+        ],
+        "answer": "Suomen Partiolaiset – Finlands Scouter ry",
+        "explanation": "Suomen Partiolaiset ist der Dachverband der finnischen Pfadfinder. Er wurde 1972 gegründet, als die finnischsprachigen und schwedischsprachigen Pfadfinderverbände fusionierten. 'Partio' ist das finnische Wort für Pfadfinder!"
+      },
+      {
+        "question": "In welcher Region Finnlands liegt Myrskylä?",
+        "answers": [
+          {
+            "answer": "Uusimaa (Nyland)"
+          },
+          {
+            "answer": "Lappland"
+          },
+          {
+            "answer": "Karelien"
+          },
+          {
+            "answer": "Pirkanmaa"
+          }
+        ],
+        "answer": "Uusimaa (Nyland)",
+        "explanation": "Myrskylä liegt in der Region Uusimaa (schwedisch: Nyland) im Süden Finnlands, etwa 80 km nordöstlich von Helsinki. 'Myrskylä' bedeutet auf Deutsch übrigens 'Sturm-Dorf'!"
+      },
+      {
+        "question": "Welcher Knoten wird zum Verbinden zweier gleich dicker Seile verwendet?",
+        "answers": [
+          {
+            "answer": "Kreuzknoten (auch: Weberknoten)"
+          },
+          {
+            "answer": "Mastwurf"
+          },
+          {
+            "answer": "Palstek"
+          },
+          {
+            "answer": "Achterknoten"
+          }
+        ],
+        "answer": "Kreuzknoten (auch: Weberknoten)",
+        "explanation": "Der Kreuzknoten verbindet zwei gleich dicke Seile. Merkspruch: 'Rechts über links, links über rechts'. ABER Vorsicht: Der Kreuzknoten ist NUR zum Verbinden, nicht zum Sichern von Personen geeignet!"
+      },
+      {
+        "question": "Welcher Knoten bildet eine feste Schlaufe, die sich nicht zuzieht?",
+        "answers": [
+          {
+            "answer": "Palstek (auch: Bulin)"
+          },
+          {
+            "answer": "Achterknoten"
+          },
+          {
+            "answer": "Mastwurf"
+          },
+          {
+            "answer": "Schotstek"
+          }
+        ],
+        "answer": "Palstek (auch: Bulin)",
+        "explanation": "Der Palstek ist DER Rettungsknoten! Er bildet eine Schlaufe, die sich nicht zuzieht und leicht wieder zu lösen ist. Er wird zum Anseilen, Retten und Festmachen verwendet. Merkspruch: 'Eine Schlange taucht aus dem See, schlängelt um den Baum und taucht zurück in den See.'"
+      },
+      {
+        "question": "Aus welchen drei Teilen besteht der Pfadfindergruß?",
+        "answers": [
+          {
+            "answer": "Drei ausgestreckte Finger, Daumen auf dem kleinen Finger, Hand auf Herzhöhe"
+          },
+          {
+            "answer": "Zwei Finger zum V, Handfläche nach innen"
+          },
+          {
+            "answer": "Fünf gespreizte Finger an der Stirn"
+          },
+          {
+            "answer": "Ganze Hand erhoben, Finger geschlossen"
+          }
+        ],
+        "answer": "Drei ausgestreckte Finger, Daumen auf dem kleinen Finger, Hand auf Herzhöhe",
+        "explanation": "Der Pfadfindergruß: (1) Daumen hält den kleinen Finger = die Großen beschützen die Kleinen, (2) Drei Finger gestreckt = die drei Pfadfinderversprechen (Gott/die Gemeinschaft, die Mitmenschen, das Pfadfindergesetz), (3) Hand auf Herzhöhe = das Versprechen kommt von Herzen."
+      },
+      {
+        "question": "Was bedeuten die drei Finger beim Pfadfindergruß?",
+        "answers": [
+          {
+            "answer": "Die drei Teile des Pfadfinderversprechens"
+          },
+          {
+            "answer": "Vergangenheit, Gegenwart, Zukunft"
+          },
+          {
+            "answer": "Morgen, Mittag, Abend"
+          },
+          {
+            "answer": "Wandern, Singen, Helfen"
+          }
+        ],
+        "answer": "Die drei Teile des Pfadfinderversprechens",
+        "explanation": "Die drei Finger stehen für: (1) Pflicht gegenüber Gott/der eigenen Überzeugung, (2) Pflicht gegenüber den Mitmenschen, (3) Pflicht gegenüber dem Pfadfindergesetz. In Finnland lautet das Versprechen: 'Lupaan parhaani mukaan...' (Ich verspreche nach bestem Vermögen...)"
+      },
+      {
+        "question": "Was ist das oberste Gesetz beim Zelten in der Wildnis?",
+        "answers": [
+          {
+            "answer": "Hinterlasse den Platz sauberer, als du ihn vorgefunden hast"
+          },
+          {
+            "answer": "Zelte immer am höchsten Punkt"
+          },
+          {
+            "answer": "Feuer nur bei Tageslicht machen"
+          },
+          {
+            "answer": "Niemals alleine ins Zelt gehen"
+          }
+        ],
+        "answer": "Hinterlasse den Platz sauberer, als du ihn vorgefunden hast",
+        "explanation": "Dies ist das 'Leave No Trace'-Prinzip. Pfadfinder nehmen ALLEN Müll wieder mit, hinterlassen keine Spuren und respektieren die Natur. In Finnland gilt zudem das 'Jokamiehenoikeus' (Jedermannsrecht) — man darf überall zelten, muss aber die Natur respektieren."
+      },
+      {
+        "question": "In welche Himmelsrichtung geht die Sonne auf?",
+        "answers": [
+          {
+            "answer": "Osten"
+          },
+          {
+            "answer": "Westen"
+          },
+          {
+            "answer": "Süden"
+          },
+          {
+            "answer": "Norden"
+          }
+        ],
+        "answer": "Osten",
+        "explanation": "Die Sonne geht im Osten auf und im Westen unter. Im Sommer in Finnland geht sie im Nordosten auf und im Nordwesten unter — und im Norden Finnlands geht sie wochenlang gar nicht unter (Mitternachtssonne)! Zur Orientierung: Moos wächst meist auf der Nordseite von Bäumen."
+      },
+      {
+        "question": "Welches ist das Nationaltier Finnlands und woran erkennst du seine Spuren?",
+        "answers": [
+          {
+            "answer": "Der Braunbär — große Tatzenabdrücke mit 5 Zehen und Krallen"
+          },
+          {
+            "answer": "Der Elch — hufeisenförmige Abdrücke mit zwei Schalen"
+          },
+          {
+            "answer": "Der Wolf — ähnlich wie ein großer Hundepfotenabdruck"
+          },
+          {
+            "answer": "Der Vielfraß — kleine runde Abdrücke mit Fellspuren"
+          }
+        ],
+        "answer": "Der Braunbär — große Tatzenabdrücke mit 5 Zehen und Krallen",
+        "explanation": "Der Braunbär (Ursus arctos) ist Finnlands Nationaltier. Seine Spuren zeigen 5 Zehen mit deutlichen Krallenabdrücken. Vorderpfoten sind etwa 15 cm breit. In Myrskylä und Uusimaa gibt es allerdings eher selten Bären — häufiger siehst du Elch-, Fuchs- und Hasenspuren!"
+      },
+      {
+        "question": "Welche Beerensorte wächst wild in finnischen Wäldern und ist reich an Vitamin C?",
+        "answers": [
+          {
+            "answer": "Blaubeeren (Heidelbeeren) und Preiselbeeren"
+          },
+          {
+            "answer": "Erdbeeren und Himbeeren"
+          },
+          {
+            "answer": "Stachelbeeren und Johannisbeeren"
+          },
+          {
+            "answer": "Weintrauben und Brombeeren"
+          }
+        ],
+        "answer": "Blaubeeren (Heidelbeeren) und Preiselbeeren",
+        "explanation": "In finnischen Wäldern wachsen wild: Blaubeeren (mustikka), Preiselbeeren (puolukka), Moltebeeren (lakka/hilla) und Moosbeeren (karpalo). Blaubeeren sind echte Vitamin-C-Bomben! Dank des Jedermannsrechts darf jeder in Finnland Beeren sammeln — auch in Myrskyläs Wäldern!"
+      },
+      {
+        "question": "Welches ist das wichtigste Erste-Hilfe-Utensil, das jeder Pfadfinder auf Wanderung dabei haben muss?",
+        "answers": [
+          {
+            "answer": "Ein Erste-Hilfe-Set mit Pflastern, Verband, Desinfektion und Rettungsdecke"
+          },
+          {
+            "answer": "Ein Taschenmesser"
+          },
+          {
+            "answer": "Eine Taschenlampe"
+          },
+          {
+            "answer": "Eine Trillerpfeife"
+          }
+        ],
+        "answer": "Ein Erste-Hilfe-Set mit Pflastern, Verband, Desinfektion und Rettungsdecke",
+        "explanation": "Jeder Pfadfinder trägt ein kleines Erste-Hilfe-Set bei sich. Wichtigster Inhalt: Pflaster, Mullbinde, Desinfektionstücher, Rettungsdecke (gegen Unterkühlung), Einmalhandschuhe und eine kleine Schere. In Finnland ist die Rettungsdecke besonders wichtig — sie schützt vor Kälte und Nässe!"
+      },
+      {
+        "question": "Wie lautet die finnische Notrufnummer?",
+        "answers": [
+          {
+            "answer": "112"
+          },
+          {
+            "answer": "911"
+          },
+          {
+            "answer": "110"
+          },
+          {
+            "answer": "999"
+          }
+        ],
+        "answer": "112",
+        "explanation": "In Finnland und der gesamten EU ist 112 die einheitliche Notrufnummer. Sie funktioniert auch ohne Guthaben und ohne SIM-Karte! Bei einem Notruf immer nennen: (1) Wer ruft an? (2) Was ist passiert? (3) Wo ist es passiert? (4) Auf Rückfragen warten — nie zuerst auflegen!"
+      },
+      {
+        "question": "Was ist die richtige Lagerfeuer-Reihenfolge?",
+        "answers": [
+          {
+            "answer": "Zuerst Zunder (trockenes Gras/Birkenrinde), dann kleine Äste, dann größere Holzscheite"
+          },
+          {
+            "answer": "Zuerst große Scheite, dann kleine Äste"
+          },
+          {
+            "answer": "Nur Papier und dann sofort große Scheite"
+          },
+          {
+            "answer": "Egal, Hauptsache es brennt"
+          }
+        ],
+        "answer": "Zuerst Zunder (trockenes Gras/Birkenrinde), dann kleine Äste, dann größere Holzscheite",
+        "explanation": "Die Feuerpyramide: (1) Zunder — leicht entflammbar (trockenes Gras, Birkenrinde, kleine Späne), (2) Anzündholz — dünne trockene Zweige (bleistiftdick), (3) Brennholz — fingerdicke Äste, (4) Hauptbrennholz — armdicke Scheite. In Finnland ist Birkenrinde (tuohi) DER beste natürliche Zunder!"
+      },
+      {
+        "question": "Welcher Baum ist in Finnland besonders häufig und liefert gutes Feuerholz?",
+        "answers": [
+          {
+            "answer": "Die Birke (koivu)"
+          },
+          {
+            "answer": "Die Eiche (tammi)"
+          },
+          {
+            "answer": "Die Palme"
+          },
+          {
+            "answer": "Der Olivenbaum"
+          }
+        ],
+        "answer": "Die Birke (koivu)",
+        "explanation": "Die Birke ist Finnlands Nationalbaum! Sie liefert ausgezeichnetes Feuerholz, ihre Rinde ist perfekter Zunder, und aus den Zweigen macht man den traditionellen 'Vasta' (Birkenzweigbündel für die Sauna). In Myrskylä siehst du überall Birken!"
+      },
+      {
+        "question": "Welches Wetterzeichen deutet auf baldigen Regen hin?",
+        "answers": [
+          {
+            "answer": "Schwalben fliegen tief; Wolken werden dunkler und tiefer (Quellwolken türmen sich auf)"
+          },
+          {
+            "answer": "Die Sonne scheint besonders hell"
+          },
+          {
+            "answer": "Der Wind kommt genau aus Osten"
+          },
+          {
+            "answer": "Es ist besonders still und neblig"
+          }
+        ],
+        "answer": "Schwalben fliegen tief; Wolken werden dunkler und tiefer (Quellwolken türmen sich auf)",
+        "explanation": "Wetterzeichen für Regen: (1) Schwalben fliegen tief (Insekten fliegen bei niedrigem Luftdruck tiefer), (2) Cumulus-Wolken türmen sich zu Cumulonimbus auf, (3) der Wind dreht und wird stärker, (4) Blätter zeigen ihre Unterseite. Alte Pfadfinderregel: 'Abendrot — Gutwetterbot, Morgenrot — Schlechtwetter droht.'"
+      },
+      {
+        "question": "Was gehört NICHT in einen gut gepackten Tagesrucksack für eine Pfadfinderwanderung?",
+        "answers": [
+          {
+            "answer": "Eine Spielekonsole oder ein Tablet"
+          },
+          {
+            "answer": "Eine Wasserflasche"
+          },
+          {
+            "answer": "Eine Regenjacke"
+          },
+          {
+            "answer": "Ein kleines Taschenmesser"
+          }
+        ],
+        "answer": "Eine Spielekonsole oder ein Tablet",
+        "explanation": "In den Wanderrucksack gehören: Wasserflasche, kleiner Snack, Regenjacke, Sitzunterlage, Taschenmesser, Erste-Hilfe-Set, Taschenlampe, Kompass und Karte, Müllbeutel. Elektronische Geräte wie Konsolen bleiben zuhause — in der Natur gibt es genug zu entdecken!"
+      },
+      {
+        "question": "Welche Fußbekleidung ist die beste für eine Wanderung im finnischen Wald?",
+        "answers": [
+          {
+            "answer": "Wasserdichte Wanderstiefel oder feste Turnschuhe, je nach Wetter"
+          },
+          {
+            "answer": "Sandalen — die Füße müssen atmen"
+          },
+          {
+            "answer": "Gummistiefel bei jedem Wetter"
+          },
+          {
+            "answer": "Barfuß — das ist am natürlichsten"
+          }
+        ],
+        "answer": "Wasserdichte Wanderstiefel oder feste Turnschuhe, je nach Wetter",
+        "explanation": "Im finnischen Wald sind feste, wasserdichte Schuhe wichtig — der Boden kann matschig und nass sein. Gummistiefel sind bei Nässe gut, aber auf langen Strecken unbequem. Wichtig: Immer zwei Paar Socken tragen (dünne innen, dicke außen) — das verhindert Blasen!"
+      },
+      {
+        "question": "Was bedeutet das 'Jokamiehenoikeus' (Jedermannsrecht) in Finnland?",
+        "answers": [
+          {
+            "answer": "Jeder darf die Natur frei genießen: wandern, Beeren und Pilze sammeln, zelten — solange man die Natur respektiert"
+          },
+          {
+            "answer": "Jeder darf überall bauen und Bäume fällen"
+          },
+          {
+            "answer": "Nur finnische Staatsbürger dürfen die Wälder betreten"
+          },
+          {
+            "answer": "Man muss für jeden Waldbesuch eine Erlaubnis kaufen"
+          }
+        ],
+        "answer": "Jeder darf die Natur frei genießen: wandern, Beeren und Pilze sammeln, zelten — solange man die Natur respektiert",
+        "explanation": "Das Jedermannsrecht (jokamiehenoikeus) ist einzigartig in den nordischen Ländern! Es erlaubt: Beeren und Pilze sammeln, wandern und Ski fahren, zeitweiliges Zelten (nicht in Hausnähe). Nicht erlaubt: Bäume beschädigen, Müll hinterlassen, offenes Feuer ohne Erlaubnis, motorisierte Fahrzeuge abseits von Wegen."
+      },
+      {
+        "question": "Wie entzündet man ein Feuer sicher?",
+        "answers": [
+          {
+            "answer": "Feuerstelle mit Steinen umranden, brennbares Material entfernen und einen Eimer Wasser oder Sand bereithalten"
+          },
+          {
+            "answer": "Einfach Benzin auf das Holz gießen und anzünden"
+          },
+          {
+            "answer": "Direkt unter einem Baum, damit es vor Regen geschützt ist"
+          },
+          {
+            "answer": "Nur mit Streichhölzern, niemals mit Feuerzeug"
+          }
+        ],
+        "answer": "Feuerstelle mit Steinen umranden, brennbares Material entfernen und einen Eimer Wasser oder Sand bereithalten",
+        "explanation": "Sicheres Feuermachen: (1) Vorhandene Feuerstelle nutzen oder neue mit Steinring bauen, (2) 3 Meter um die Feuerstelle von brennbarem Material befreien, (3) Immer Löschmittel bereithalten (Wasser, Sand), (4) Feuer NIE unbeaufsichtigt lassen, (5) Vor dem Verlassen KOMPLETT löschen — jedes Glutstück mit Wasser übergießen und mit Sand abdecken. Bei Waldbrandwarnung (metsäpalovaroitus) ist offenes Feuer VERBOTEN!"
+      }
+    ]
   }
 ]
