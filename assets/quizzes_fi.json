@@ -44,7 +44,7 @@
         "question": "Mikä on yleisin perinteinen ulkomaali suomalaisissa puutaloissa, joka tunnetaan punaisesta väristään ja himmeästä pinnastaan?",
         "answers": [
           {
-            "answer": "Lateksimaali — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Lateksimaali"
           },
           {
             "answer": "Akrylaattimaali"
@@ -101,7 +101,7 @@
         "question": "Mitä materiaalia perinteisesti käytettiin hirsiseinän tilkkeenä eli hirsien välisenä eristeenä?",
         "answers": [
           {
-            "answer": "Lasivillaa — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Lasivillaa"
           },
           {
             "answer": "Polyuretaanivaahtoa"
@@ -110,7 +110,7 @@
             "answer": "Sammalta, pellavarivettä tai hamppua"
           },
           {
-            "answer": "Sementtilaastia — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Sementtilaastia"
           }
         ],
         "answer": "Sammalta, pellavarivettä tai hamppua",
@@ -177,16 +177,16 @@
         "question": "Mikä on punamultamaalin perinteinen sideaine?",
         "answers": [
           {
-            "answer": "Pellavaöljy — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Pellavaöljy"
           },
           {
-            "answer": "Lateksi — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Lateksi"
           },
           {
             "answer": "Ruis- tai vehnäjauhoista keitetty tärkkelysliisteri"
           },
           {
-            "answer": "Munanvalkuainen — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Munanvalkuainen"
           }
         ],
         "answer": "Ruis- tai vehnäjauhoista keitetty tärkkelysliisteri",
@@ -332,7 +332,7 @@
             "answer": "Syvälle maahan paalutettu teräsperustus."
           },
           {
-            "answer": "Yhtenäinen betonilaatta. — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Yhtenäinen betonilaatta."
           },
           {
             "answer": "Nurkkakivet, joiden varaan alimmat hirret laskettiin."
@@ -553,7 +553,7 @@
             "answer": "Myöhään syksyllä ennen maan."
           },
           {
-            "answer": "Jouluaattona. — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Jouluaattona."
           }
         ],
         "answer": "Myöhään syksyllä ennen maan.",
@@ -563,7 +563,7 @@
         "question": "Mikä on yleisin ja haitallisin tuholainen suomalaisissa kotipuutarhoissa, joka syö lähes kaikkea lehtevää ja on erityisen aktiivinen kostealla säällä?",
         "answers": [
           {
-            "answer": "Kirva — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Kirva"
           },
           {
             "answer": "Leppäkerttu"
@@ -816,7 +816,7 @@
             "answer": "Syyslannoitetta, joka on."
           },
           {
-            "answer": "Kalkkia. — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Kalkkia."
           },
           {
             "answer": "Ei mitään lannoitetta."
@@ -1016,7 +1016,7 @@
             "answer": "Jotta suosituimmat kirjat olisivat helpoimmin saatavilla."
           },
           {
-            "answer": "Koska laki vaatii sitä. — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Koska laki vaatii sitä."
           }
         ],
         "answer": "Jotta samaa aihetta käsittelevät kirjat löytyisivät läheltä toisiaan.",
@@ -1368,7 +1368,7 @@
         "question": "Mitä kirjastossa tarkoitetaan 'aineistolla'?",
         "answers": [
           {
-            "answer": "Vain kirjoja. — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Vain kirjoja."
           },
           {
             "answer": "Kaikkea, mitä kirjasto tarjoaa asiakkaiden."
@@ -1653,7 +1653,7 @@
         "question": "Mikä on 'digitoiminen'?",
         "answers": [
           {
-            "answer": "Aineiston hävittäminen. — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Aineiston hävittäminen."
           },
           {
             "answer": "Fyysisen aineiston, kuten kuvan, asiakirjan."
@@ -3324,7 +3324,7 @@
             "answer": "Nimellisjännite on akun jännite 50 % varaustasolla, kun."
           },
           {
-            "answer": "Ne ovat sama asia. — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Ne ovat sama asia."
           },
           {
             "answer": "Maksimijännite on jännite, jonka akku kestää ennen räjähtämistä."
@@ -4103,13 +4103,13 @@
         "question": "Korvasienen (Gyromitra esculenta) sisältämä gyromitriini hydrolysoituu elimistössä erääksi erittäin reaktiiviseksi yhdisteeksi, joka aiheuttaa myrkytyksen. Mikä tämä yhdiste on?",
         "answers": [
           {
-            "answer": "Amatoksiini — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Amatoksiini"
           },
           {
-            "answer": "Orellaniini — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Orellaniini"
           },
           {
-            "answer": "Muskariini — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Muskariini"
           },
           {
             "answer": "Monometyylihydratsiini (MMH)"
@@ -4122,16 +4122,16 @@
         "question": "Kansanperinteessä kuukkeli (Perisoreus infaustus) tunnetaan 'sielulintuna'. Tämä uskomus liittyy usein sen opportunistiseen suhteeseen minkä toisen metsän asukkaan kanssa?",
         "answers": [
           {
-            "answer": "Karhu — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Karhu"
           },
           {
-            "answer": "Ahma — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Ahma"
           },
           {
             "answer": "Susilaumat ja muut suurpedot"
           },
           {
-            "answer": "Metso — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Metso"
           }
         ],
         "answer": "Susilaumat ja muut suurpedot",
@@ -4236,16 +4236,16 @@
         "question": "Poronjäkälä (Cladonia rangiferina) on porojen elintärkeä talviravinto. Mikä on tämän jäkälän ensisijainen varastohiilihydraatti, jota poro pystyy hyödyntämään erityisten entsyymiensä avulla?",
         "answers": [
           {
-            "answer": "Tärkkelys — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Tärkkelys"
           },
           {
-            "answer": "Selluloosa — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Selluloosa"
           },
           {
             "answer": "Likeniini (lisenaani)"
           },
           {
-            "answer": "Fruktoosi — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Fruktoosi"
           }
         ],
         "answer": "Likeniini (lisenaani)",
@@ -4331,7 +4331,7 @@
         "question": "Suomalaista maisemaa leimaa jälkijääkautinen maankohoaminen. Millaiseen ekosysteemiin tämä prosessi vaikuttaa kaikkein suorimmin?",
         "answers": [
           {
-            "answer": "Lapin tunturipaljakoihin — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Lapin tunturipaljakoihin"
           },
           {
             "answer": "Rannikon ekosysteemeihin ja uuden maan muodostumiseen"
@@ -4733,7 +4733,7 @@
             "answer": "Pahansuopa metsänhenki, joka eksyttää matkailijoita."
           },
           {
-            "answer": "Karhujen suojelushenki. — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Karhujen suojelushenki."
           },
           {
             "answer": "Valtava, tulinen käärme, joka vartioi piilotettua aarretta."
@@ -4831,7 +4831,7 @@
             "answer": "Hektaari"
           },
           {
-            "answer": "Motti — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Motti"
           },
           {
             "answer": "Pannunalusta"
@@ -5120,7 +5120,7 @@
             "answer": "Hiilihydraatit"
           },
           {
-            "answer": "Rasvat — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Rasvat"
           },
           {
             "answer": "Proteiinit"
@@ -5256,10 +5256,10 @@
             "answer": "B-vitamiini, tärkeä."
           },
           {
-            "answer": "Rasva aivoille — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Rasva aivoille"
           },
           {
-            "answer": "Sokeri energiaksi — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Sokeri energiaksi"
           }
         ],
         "answer": "B-vitamiini, tärkeä.",
@@ -5275,10 +5275,10 @@
             "answer": "Täysjyvätuotteet."
           },
           {
-            "answer": "Voi ja öljy — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Voi ja öljy"
           },
           {
-            "answer": "Liha ja kala — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Liha ja kala"
           }
         ],
         "answer": "Täysjyvätuotteet.",
@@ -5288,16 +5288,16 @@
         "question": "Mikä on kolesteroli?",
         "answers": [
           {
-            "answer": "Vitamiini — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Vitamiini"
           },
           {
             "answer": "Rasvankaltainen aine, tärkeä solukalvoille"
           },
           {
-            "answer": "Kivennäisaine — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Kivennäisaine"
           },
           {
-            "answer": "Proteiini — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Proteiini"
           }
         ],
         "answer": "Rasvankaltainen aine, tärkeä solukalvoille",
@@ -5402,7 +5402,7 @@
         "question": "Mikä on ero nälän ja ruokahalun välillä?",
         "answers": [
           {
-            "answer": "Ei ole eroa — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Ei ole eroa"
           },
           {
             "answer": "Nälkä on fyysinen tarve, ruokahalu."
@@ -5449,7 +5449,7 @@
             "answer": "Vain täysjyvätuotteiden syöminen"
           },
           {
-            "answer": "Paljon syöminen — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Paljon syöminen"
           }
         ],
         "answer": "Monipuolinen, tarpeenmukainen.",
@@ -5487,7 +5487,7 @@
             "answer": "Haitallisia aineita kasveissa"
           },
           {
-            "answer": "Keinotekoisia väriäin — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Keinotekoisia väriäin"
           }
         ],
         "answer": "Bioaktiivisia aineita kasveissa.",
@@ -5544,7 +5544,7 @@
             "answer": "Hiilihydraatit ja ravintokuidut"
           },
           {
-            "answer": "A- ja E-vitamiini — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "A- ja E-vitamiini"
           }
         ],
         "answer": "B12-vitamiini, rauta, kalsium, omega-3",
@@ -5652,10 +5652,10 @@
             "answer": "Ikä, sukupuoli."
           },
           {
-            "answer": "Vain ikä — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Vain ikä"
           },
           {
-            "answer": "Vain paino — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Vain paino"
           },
           {
             "answer": "Vain fyysinen aktiivisuus"
@@ -5674,7 +5674,7 @@
             "answer": "Rasvoissa liukenevat varastoituvat kehoon."
           },
           {
-            "answer": "Ei ole eroa — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Ei ole eroa"
           },
           {
             "answer": "Vesiliukoiset ovat vaarallisempia"
@@ -5696,7 +5696,7 @@
             "answer": "Vain terveellisten elintarvikkeiden syöminen"
           },
           {
-            "answer": "Hyvin vähän syöminen — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Hyvin vähän syöminen"
           }
         ],
         "answer": "Kehon omien nälkä- ja.",
@@ -5763,7 +5763,7 @@
         "question": "Mikä on ero nälän ja himo ruoan suhteen?",
         "answers": [
           {
-            "answer": "Ei ole eroa — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Ei ole eroa"
           },
           {
             "answer": "Nälkä kehittyy hitaasti."
@@ -5801,13 +5801,13 @@
         "question": "Mikä on metabolinen oireyhtymä?",
         "answers": [
           {
-            "answer": "Yksittäinen sairaus — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Yksittäinen sairaus"
           },
           {
             "answer": "Yhdistelmä ylipainoa."
           },
           {
-            "answer": "Vitamiinin puutos — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Vitamiinin puutos"
           },
           {
             "answer": "Allergia tiettyjä elintarvikkeita kohtaan"
@@ -5886,7 +5886,7 @@
             "answer": "Vain valkoisten elintarvikkeiden syöminen"
           },
           {
-            "answer": "Hyvin vähän syöminen — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Hyvin vähän syöminen"
           }
         ],
         "answer": "Keskittyminen käsittelemättömiin.",
@@ -5947,7 +5947,7 @@
             "answer": "Augustus"
           },
           {
-            "answer": "Nero — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Nero"
           },
           {
             "answer": "Marcus Aurelius"
@@ -5960,7 +5960,7 @@
         "question": "Mikä kaupunki oli Bysantin valtakunnan pääkaupunki?",
         "answers": [
           {
-            "answer": "Ateena — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Ateena"
           },
           {
             "answer": "Konstantinopoli"
@@ -6004,7 +6004,7 @@
             "answer": "Aleksanteri Suuri"
           },
           {
-            "answer": "Hannibal — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Hannibal"
           },
           {
             "answer": "Scipio Africanus"
@@ -6115,7 +6115,7 @@
             "answer": "Ranska"
           },
           {
-            "answer": "Saksa — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Saksa"
           },
           {
             "answer": "Englanti"
@@ -6191,13 +6191,13 @@
             "answer": "Karl Marx ja Friedrich Engels"
           },
           {
-            "answer": "Vladimir Lenin — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Vladimir Lenin"
           },
           {
-            "answer": "Leon Trotsky — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Leon Trotsky"
           },
           {
-            "answer": "Joseph Stalin — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Joseph Stalin"
           }
         ],
         "answer": "Karl Marx ja Friedrich Engels",
@@ -6235,7 +6235,7 @@
             "answer": "Sotaskandaali Vietnamissa"
           },
           {
-            "answer": "Ympäristökatastrofi — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Ympäristökatastrofi"
           }
         ],
         "answer": "Poliittinen vakoiluskandaali 1970-luvulla",
@@ -6273,7 +6273,7 @@
             "answer": "Toinen maailmansota"
           },
           {
-            "answer": "Kylmä sota — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Kylmä sota"
           }
         ],
         "answer": "Krimin sota 1853-1856",
@@ -6365,10 +6365,10 @@
             "answer": "Ideologinen raja Itä."
           },
           {
-            "answer": "Sotilasliitto — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Sotilasliitto"
           },
           {
-            "answer": "Kauppasopimus — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Kauppasopimus"
           }
         ],
         "answer": "Ideologinen raja Itä.",
@@ -6435,13 +6435,13 @@
         "question": "Kuka teki kuuluisan 'Minulla on unelma' -puheen?",
         "answers": [
           {
-            "answer": "Malcolm X — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Malcolm X"
           },
           {
             "answer": "Martin Luther King Jr."
           },
           {
-            "answer": "Rosa Parks — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Rosa Parks"
           },
           {
             "answer": "Jesse Jackson"
@@ -6524,7 +6524,7 @@
             "answer": "H₂O₂"
           },
           {
-            "answer": "HO — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "HO"
           },
           {
             "answer": "H₃O"
@@ -6584,7 +6584,7 @@
             "answer": "Lämpötila"
           },
           {
-            "answer": "Paine — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Paine"
           }
         ],
         "answer": "pH-arvo",
@@ -6752,10 +6752,10 @@
             "answer": "Kovalenttinen sidos"
           },
           {
-            "answer": "Ionisidos — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Ionisidos"
           },
           {
-            "answer": "Metallisidos — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Metallisidos"
           }
         ],
         "answer": "Heikko intermolekulaarinen voima",
@@ -6885,7 +6885,7 @@
             "answer": "Järjestelmän epäjärjestyksen mitta"
           },
           {
-            "answer": "Reaktin nopeus — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Reaktin nopeus"
           },
           {
             "answer": "Molekyylien lukumäärä"
@@ -6999,10 +6999,10 @@
             "answer": "Orbitaalien päällekkäisyys atomien välisstä akselin sivussa"
           },
           {
-            "answer": "Ionisidos — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Ionisidos"
           },
           {
-            "answer": "Van der Waalsin voima — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Van der Waalsin voima"
           }
         ],
         "answer": "Orbitaalien päällekkäisyys atomien.",
@@ -7057,7 +7057,7 @@
         "question": "Mikä on solun pienin toiminnallinen yksikkö?",
         "answers": [
           {
-            "answer": "Tuma — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Tuma"
           },
           {
             "answer": "Mitokondriot"
@@ -7066,7 +7066,7 @@
             "answer": "Solu"
           },
           {
-            "answer": "Kudos — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Kudos"
           }
         ],
         "answer": "Solu",
@@ -7104,7 +7104,7 @@
             "answer": "RNA-polymeraasi"
           },
           {
-            "answer": "Likaasi — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Likaasi"
           }
         ],
         "answer": "DNA-helikaasi",
@@ -7120,10 +7120,10 @@
             "answer": "Proteiinisynteesiä"
           },
           {
-            "answer": "Hengitystä — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Hengitystä"
           },
           {
-            "answer": "Fotosynteeisia — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Fotosynteeisia"
           }
         ],
         "answer": "Solun kasvua ja jakautumista",
@@ -7209,7 +7209,7 @@
         "question": "Mikä on Mendelin ensimmäinen laki?",
         "answers": [
           {
-            "answer": "Dominanssilaki — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Dominanssilaki"
           },
           {
             "answer": "Segregaatiolaki"
@@ -7218,7 +7218,7 @@
             "answer": "Riippumattoman lajittelun laki"
           },
           {
-            "answer": "Yhdistelmälaki — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Yhdistelmälaki"
           }
         ],
         "answer": "Segregaatiolaki",
@@ -7234,7 +7234,7 @@
             "answer": "Kaksi erilaista alleelia"
           },
           {
-            "answer": "Yksi alleeli — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Yksi alleeli"
           },
           {
             "answer": "Kolme alleelia"
@@ -7304,7 +7304,7 @@
         "question": "Missä tapahtuu proteiinien translaatio?",
         "answers": [
           {
-            "answer": "Tumassa — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Tumassa"
           },
           {
             "answer": "Ribosomeissa"
@@ -7329,10 +7329,10 @@
             "answer": "Aineiden aktiivinen kuljetus"
           },
           {
-            "answer": "Proteiinien synteesi — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Proteiinien synteesi"
           },
           {
-            "answer": "Solujen jakautuminen — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Solujen jakautuminen"
           }
         ],
         "answer": "Veden liike semipermeabelin kalvon läpi",
@@ -7361,7 +7361,7 @@
         "question": "Mikä on glykolyysin lopputuote?",
         "answers": [
           {
-            "answer": "Glukoosi — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Glukoosi"
           },
           {
             "answer": "Pyruvaatti"
@@ -7389,7 +7389,7 @@
             "answer": "Kromosomien rakenne"
           },
           {
-            "answer": "Geemin koko — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Geemin koko"
           }
         ],
         "answer": "Genotyypin ilmeneminen",
@@ -7399,13 +7399,13 @@
         "question": "Missä tapahtuu Krebs-sykli?",
         "answers": [
           {
-            "answer": "Sytoplasmassa — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Sytoplasmassa"
           },
           {
             "answer": "Mitokondrion matriksissa"
           },
           {
-            "answer": "Tumassa — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Tumassa"
           },
           {
             "answer": "Endoplasmasessa verkostossa"
@@ -7462,10 +7462,10 @@
             "answer": "Somaattisten solujen jakautuminen"
           },
           {
-            "answer": "DNA:n korjaus — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "DNA:n korjaus"
           },
           {
-            "answer": "Proteiinisynteesi — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Proteiinisynteesi"
           }
         ],
         "answer": "Somaattisten solujen jakautuminen",
@@ -7475,7 +7475,7 @@
         "question": "Mikä on entsyymin substraatti?",
         "answers": [
           {
-            "answer": "Entsyymin tuote — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Entsyymin tuote"
           },
           {
             "answer": "Aine, johon entsyymi vaikuttaa"
@@ -7570,7 +7570,7 @@
         "question": "Mikä on prokaryootin ja eukaryootin tärkein ero?",
         "answers": [
           {
-            "answer": "Solukoko — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Solukoko"
           },
           {
             "answer": "Tuman olemassaolo"
@@ -7653,7 +7653,7 @@
         "question": "Mikä on Newtonin ensimmäinen laki?",
         "answers": [
           {
-            "answer": "F = ma — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "F = ma"
           },
           {
             "answer": "Hitauslaki"
@@ -7691,7 +7691,7 @@
         "question": "Mikä on absoluuttinen nollapiste?",
         "answers": [
           {
-            "answer": "0°C — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "0°C"
           },
           {
             "answer": "-273,15°C"
@@ -7789,10 +7789,10 @@
             "answer": "J/K"
           },
           {
-            "answer": "J — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "J"
           },
           {
-            "answer": "K — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "K"
           },
           {
             "answer": "J·K"
@@ -7808,7 +7808,7 @@
             "answer": "Aallon taajuuden muutos liikkeen vuoksi"
           },
           {
-            "answer": "Valon taipuminen — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Valon taipuminen"
           },
           {
             "answer": "Äänenvoimakkuuden muutos"
@@ -7941,13 +7941,13 @@
             "answer": "Aineen aggregaattitila hyvin matalassa lämpötilassa"
           },
           {
-            "answer": "Kaasumainen tila — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Kaasumainen tila"
           },
           {
-            "answer": "Nestemäinen tila — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Nestemäinen tila"
           },
           {
-            "answer": "Kiinteä tila — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Kiinteä tila"
           }
         ],
         "answer": "Aineen aggregaattitila hyvin matalassa lämpötilassa",
@@ -7960,13 +7960,13 @@
             "answer": "F = k(q₁q₂)/r²"
           },
           {
-            "answer": "F = ma — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "F = ma"
           },
           {
-            "answer": "V = IR — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "V = IR"
           },
           {
-            "answer": "E = mc² — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "E = mc²"
           }
         ],
         "answer": "F = k(q₁q₂)/r²",
@@ -8004,7 +8004,7 @@
             "answer": "Sähköresistanssin riippuvuus lämpötilasta"
           },
           {
-            "answer": "Magneettivuon laki — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Magneettivuon laki"
           }
         ],
         "answer": "Mustan kappaleen säteilyteho",
@@ -8042,7 +8042,7 @@
             "answer": "Voima on kiihtyvyyden ja massan tulo"
           },
           {
-            "answer": "Energia säilyy — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Energia säilyy"
           }
         ],
         "answer": "Induktiovirta vastustaa muutosta",
@@ -8058,7 +8058,7 @@
             "answer": "3,14159"
           },
           {
-            "answer": "2,718 — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "2,718"
           },
           {
             "answer": "1,602 × 10⁻¹⁹"
@@ -8153,7 +8153,7 @@
             "answer": "Resistanssin muutos lämpötilan mukaan"
           },
           {
-            "answer": "Fotosähköinen ilmiö — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Fotosähköinen ilmiö"
           },
           {
             "answer": "Termosähköinen ilmiö"
@@ -8172,10 +8172,10 @@
             "answer": "Sähkömagneettinen induktio"
           },
           {
-            "answer": "Gravitaatiovoima — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Gravitaatiovoima"
           },
           {
-            "answer": "Viskositeetti — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Viskositeetti"
           }
         ],
         "answer": "Tyhjiön kvanttivärähtelyjen aiheuttama voima",
@@ -8220,7 +8220,7 @@
             "answer": "Kaskelotti"
           },
           {
-            "answer": "Kirahvi — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Kirahvi"
           }
         ],
         "answer": "Sinivalas",
@@ -8306,7 +8306,7 @@
         "question": "Mikä eläin nukkuu eniten päivässä?",
         "answers": [
           {
-            "answer": "Kissa — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Kissa"
           },
           {
             "answer": "Laiskiainen"
@@ -8315,7 +8315,7 @@
             "answer": "Koala"
           },
           {
-            "answer": "Karhu — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Karhu"
           }
         ],
         "answer": "Koala",
@@ -8353,7 +8353,7 @@
             "answer": "Grönlanninhai"
           },
           {
-            "answer": "Valas — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Valas"
           }
         ],
         "answer": "Grönlanninhai",
@@ -8363,7 +8363,7 @@
         "question": "Mitä pandat pääasiassa syövät?",
         "answers": [
           {
-            "answer": "Kalaa — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Kalaa"
           },
           {
             "answer": "Bambua"
@@ -8404,13 +8404,13 @@
             "answer": "Päästäinen"
           },
           {
-            "answer": "Hiiri — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Hiiri"
           },
           {
             "answer": "Kimalainen lepakko"
           },
           {
-            "answer": "Hamsteri — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Hamsteri"
           }
         ],
         "answer": "Kimalainen lepakko",
@@ -8420,7 +8420,7 @@
         "question": "Mikä eläin voi muuttaa väriään?",
         "answers": [
           {
-            "answer": "Lisko — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Lisko"
           },
           {
             "answer": "Kameleontti"
@@ -8496,7 +8496,7 @@
         "question": "Mikä eläin voi elää pisimpään ilman vettä?",
         "answers": [
           {
-            "answer": "Kameli — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Kameli"
           },
           {
             "answer": "Kengururata"
@@ -8521,7 +8521,7 @@
             "answer": "Strutsi"
           },
           {
-            "answer": "Emu — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Emu"
           },
           {
             "answer": "Kondori"
@@ -8534,7 +8534,7 @@
         "question": "Millä eläimellä on eniten hampaita?",
         "answers": [
           {
-            "answer": "Hai — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Hai"
           },
           {
             "answer": "Krokotiili"
@@ -8648,10 +8648,10 @@
         "question": "Mikä eläin voi kasvattaa menetetyt ruumiinosat uudelleen?",
         "answers": [
           {
-            "answer": "Lisko — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Lisko"
           },
           {
-            "answer": "Meritähti — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Meritähti"
           },
           {
             "answer": "Salamanteri"
@@ -8686,7 +8686,7 @@
         "question": "Millä eläimellä on voimakkain näkö?",
         "answers": [
           {
-            "answer": "Kotka — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Kotka"
           },
           {
             "answer": "Haukka"
@@ -8695,7 +8695,7 @@
             "answer": "Mantiskatka"
           },
           {
-            "answer": "Pöllö — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Pöllö"
           }
         ],
         "answer": "Mantiskatka",
@@ -8708,13 +8708,13 @@
             "answer": "Peukaloinen"
           },
           {
-            "answer": "Kolibri — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Kolibri"
           },
           {
             "answer": "Mehiläiskolibri"
           },
           {
-            "answer": "Peippo — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Peippo"
           }
         ],
         "answer": "Mehiläiskolibri",
@@ -8733,7 +8733,7 @@
             "answer": "Napakirri"
           },
           {
-            "answer": "Karibu — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Karibu"
           }
         ],
         "answer": "Napakirri",
@@ -8746,13 +8746,13 @@
             "answer": "Vesinokkaeläin"
           },
           {
-            "answer": "Siili — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Siili"
           },
           {
             "answer": "Molemmat A ja B"
           },
           {
-            "answer": "Kenguru — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Kenguru"
           }
         ],
         "answer": "Molemmat A ja B",
@@ -8846,13 +8846,13 @@
         "question": "Ketä vastaan Suomi taisteli Talvisodassa vuosina 1939–1940?",
         "answers": [
           {
-            "answer": "Ruotsia — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Ruotsia"
           },
           {
-            "answer": "Saksaa — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Saksaa"
           },
           {
-            "answer": "Viroa — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Viroa"
           },
           {
             "answer": "Neuvostoliittoa"
@@ -8928,7 +8928,7 @@
             "answer": "Punaiset ja valkoiset"
           },
           {
-            "answer": "Häme ja Savo — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Häme ja Savo"
           },
           {
             "answer": "Monarkistit ja tasavaltalaiset"
@@ -8960,16 +8960,16 @@
         "question": "Mikä oli C. G. E. Mannerheimin sotilaallinen rooli Talvisodan aikana?",
         "answers": [
           {
-            "answer": "Presidentti — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Presidentti"
           },
           {
-            "answer": "Pääministeri — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Pääministeri"
           },
           {
             "answer": "Puolustusvoimain ylipäällikkö"
           },
           {
-            "answer": "Ulkoministeri — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Ulkoministeri"
           }
         ],
         "answer": "Puolustusvoimain ylipäällikkö",
@@ -9017,7 +9017,7 @@
         "question": "Missä yhteiskunnallisessa asiassa Suomi oli edelläkävijä myöntäessään sen ensimmäisenä maana Euroopassa naisille vuonna 1906?",
         "answers": [
           {
-            "answer": "Oikeus avioeroon — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Oikeus avioeroon"
           },
           {
             "answer": "Yleinen oppivelvollisuus"
@@ -9080,7 +9080,7 @@
             "answer": "Natsi-Saksan"
           },
           {
-            "answer": "Viron — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Viron"
           },
           {
             "answer": "Yhdysvaltojen"
@@ -9195,16 +9195,16 @@
         "question": "Kuka on Muumipeikon paras ystävä, joka soittaa huuliharppua ja vaeltaa joka talveksi etelään?",
         "answers": [
           {
-            "answer": "Nipsu — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Nipsu"
           },
           {
             "answer": "Nuuskamuikkunen"
           },
           {
-            "answer": "Hemuli — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Hemuli"
           },
           {
-            "answer": "Haisuli — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Haisuli"
           }
         ],
         "answer": "Nuuskamuikkunen",
@@ -9236,13 +9236,13 @@
             "answer": "Mörkö"
           },
           {
-            "answer": "Haisuli — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Haisuli"
           },
           {
             "answer": "Drontti Edvard"
           },
           {
-            "answer": "Taikuri — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Taikuri"
           }
         ],
         "answer": "Mörkö",
@@ -9255,7 +9255,7 @@
             "answer": "Yksinäiset Vuoret"
           },
           {
-            "answer": "Majakka — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Majakka"
           },
           {
             "answer": "Muumitalo"
@@ -9293,7 +9293,7 @@
             "answer": "Hemulit"
           },
           {
-            "answer": "Nipsut — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Nipsut"
           },
           {
             "answer": "Hattivatit"
@@ -9331,7 +9331,7 @@
             "answer": "Kuunpimennystä"
           },
           {
-            "answer": "Tähdenlentoa — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Tähdenlentoa"
           },
           {
             "answer": "Pyrstötähteä (komeettaa)"
@@ -9350,7 +9350,7 @@
             "answer": "Muumipappa"
           },
           {
-            "answer": "Nipsu — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Nipsu"
           },
           {
             "answer": "Piisamirotta"
@@ -9385,7 +9385,7 @@
         "question": "Mikä on Nipsun suurin heikkous ja intohimo?",
         "answers": [
           {
-            "answer": "Herkkusienet — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Herkkusienet"
           },
           {
             "answer": "Kaikki kiiltävä ja arvokas"
@@ -9407,7 +9407,7 @@
             "answer": "Ne muuttuvat kultakolikoiksi."
           },
           {
-            "answer": "Ne katoavat kokonaan. — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Ne katoavat kokonaan."
           },
           {
             "answer": "Ne muuttuvat pieniksi pilviksi, joilla voi lentää."
@@ -9423,7 +9423,7 @@
         "question": "Kuka on pieni, karvainen ja pahankurinen hahmo, joka tekee mielellään kepposia Muumilaakson asukkaille?",
         "answers": [
           {
-            "answer": "Mörkö — relevantti konteksteissa, joissa standardiratkaisut eivät ole sovellettavissa."
+            "answer": "Mörkö"
           },
           {
             "answer": "Esi-isä"
@@ -9451,7 +9451,7 @@
             "answer": "Muumilaakson marraskuu"
           },
           {
-            "answer": "Taikatalvi — menettely, jolla on erityisiä etuja ja haittoja käytännössä."
+            "answer": "Taikatalvi"
           }
         ],
         "answer": "Muumilaakson marraskuu",
@@ -9499,7 +9499,7 @@
         "question": "Kirjassa 'Muumipapan urotyöt', mitä Muumipappa tekee?",
         "answers": [
           {
-            "answer": "Hän rakentaa uuden talon — vaihtoehtoinen lähestymistapa tietyissä toteutusskenaarioissa."
+            "answer": "Hän rakentaa uuden talon"
           },
           {
             "answer": "Hän lähtee etsimään aarretta"
@@ -9524,7 +9524,7 @@
             "answer": "Kuningasrubiinia"
           },
           {
-            "answer": "Taikurin hattua — menetelmä, jota käytetään erityisissä arkkitehtonisissa olosuhteissa."
+            "answer": "Taikurin hattua"
           },
           {
             "answer": "Hattivattien sähköä"
