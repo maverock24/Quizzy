@@ -40,6 +40,8 @@ export default function SettingsScreen() {
     setTimerEnabled,
     timerDuration,
     setTimerDuration,
+    kidsMode,
+    setKidsMode,
   } = useQuiz();
 
   const { t, i18n } = useTranslation();
@@ -239,6 +241,23 @@ export default function SettingsScreen() {
               ios_backgroundColor="gray"
               onValueChange={setTextInputAnswerMode}
               value={textInputAnswerMode}
+            />
+          </View>
+
+          {/* Kids Mode */}
+          <View style={styles.settingItem}>
+            <View style={styles.settingName}>
+              <Text style={styles.settingText}>🎨 Kids Mode</Text>
+              <Text style={styles.settingDescription}>
+                Größere Feiern, Streak-Haustier und buntere Animationen für Kinder
+              </Text>
+            </View>
+            <Switch
+              trackColor={{ false: 'gray', true: '#FF6B6B' }}
+              thumbColor={kidsMode ? '#FFD93D' : 'rgb(63, 65, 66)'}
+              ios_backgroundColor="gray"
+              onValueChange={setKidsMode}
+              value={kidsMode}
             />
           </View>
 

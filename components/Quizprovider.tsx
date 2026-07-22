@@ -191,6 +191,15 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     }
   }, []);
 
+  const setKidsMode = useCallback(async (enabled: boolean) => {
+    setKidsModeState(enabled);
+    try {
+      await AsyncStorage.setItem('kidsMode', String(enabled));
+    } catch (error) {
+      console.error('Failed to save kids mode setting', error);
+    }
+  }, []);
+
   const setUserQuizLoadEnabled = useCallback((enabled: boolean) => {
     setUserQuizLoadEnabledState(enabled);
     // Save the user quiz load setting
@@ -616,6 +625,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const musicSetting = await AsyncStorage.getItem('musicEnabled');
       const readerModeSetting = await AsyncStorage.getItem('readerModeEnabled');
       const textInputAnswerModeSetting = await AsyncStorage.getItem('textInputAnswerMode');
+      const kidsModeSetting = await AsyncStorage.getItem('kidsMode');
 
       // Update all state values
       setNotificationsEnabledState(notificationsSetting === 'true');
@@ -633,6 +643,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
       // Default to false if not set
       setTextInputAnswerModeState(textInputAnswerModeSetting === 'true');
+      setKidsModeState(kidsModeSetting === 'true');
 
       // Load timer settings
       const timerEnabledSetting = await AsyncStorage.getItem('timerEnabled');
@@ -780,6 +791,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         setTimerEnabled,
         timerDuration,
         setTimerDuration,
+        // Kids mode
+        kidsMode,
+        setKidsMode,
         // Essays
         essays,
         getEssayByCategory,

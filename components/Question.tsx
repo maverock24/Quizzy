@@ -22,6 +22,7 @@ import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
 import { useGlossary } from './GlossaryProvider';
 import { ClickableTerms } from './ClickableTerms';
+import { CelebrationOverload } from './kids/CelebrationOverload';
 import { SettingsHeader } from './SettingsHeader';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -271,6 +272,7 @@ export const Question: React.FC<QuestionProps> = ({
     userQuizLoadEnabled,
     setUserQuizLoadEnabled,
     textInputAnswerMode,
+    kidsMode,
   } = useQuiz();
   const { t, i18n } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
@@ -985,6 +987,15 @@ export const Question: React.FC<QuestionProps> = ({
                   </React.Fragment>
                 ))}
               </View>
+            )}
+
+            {/* Kids Mode: Extra celebration overload */}
+            {kidsMode && showConfetti && (
+              <CelebrationOverload
+                visible={showConfetti}
+                x={confettiPosition.x}
+                y={confettiPosition.y}
+              />
             )}
 
             {/* Floating score indicator */}
