@@ -10,12 +10,9 @@ import {
   SectionList,
   Easing,
   Platform,
-
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import * as Haptics from 'expo-haptics';
-
-
 
 type QuizSelectionProps = {
   quizzes: any[];
@@ -118,7 +115,10 @@ const CategoryHeader: React.FC<{
       >
         <View style={styles.categoryHeaderContent}>
           <Animated.Text
-            style={[styles.categoryArrow, { transform: [{ rotate: rotation }] }]}
+            style={[
+              styles.categoryArrow,
+              { transform: [{ rotate: rotation }] },
+            ]}
           >
             ▶
           </Animated.Text>
@@ -135,7 +135,12 @@ const CategoryHeader: React.FC<{
               <Text style={styles.readEssayText}>📖 Read</Text>
             </TouchableOpacity>
           )}
-          <View style={[styles.categoryCountBadge, isExpanded && styles.categoryCountBadgeActive]}>
+          <View
+            style={[
+              styles.categoryCountBadge,
+              isExpanded && styles.categoryCountBadgeActive,
+            ]}
+          >
             <Text style={styles.categoryCountText}>{count}</Text>
           </View>
         </View>
@@ -152,7 +157,9 @@ const QuizButton: React.FC<{
 }> = ({ item, onPress, index, isNewlyVisible }) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(isNewlyVisible ? 30 : 0)).current;
-  const opacityAnim = useRef(new Animated.Value(isNewlyVisible ? 0 : 1)).current;
+  const opacityAnim = useRef(
+    new Animated.Value(isNewlyVisible ? 0 : 1),
+  ).current;
   const glowAnim = useRef(new Animated.Value(0)).current;
   const [pressed, setPressed] = useState(false);
   const [selecting, setSelecting] = useState(false);
@@ -255,10 +262,7 @@ const QuizButton: React.FC<{
     <Animated.View
       style={{
         opacity: opacityAnim,
-        transform: [
-          { translateY: slideAnim },
-          { scale: scaleAnim },
-        ],
+        transform: [{ translateY: slideAnim }, { scale: scaleAnim }],
       }}
     >
       <Pressable
@@ -276,8 +280,8 @@ const QuizButton: React.FC<{
               backgroundColor: pressed
                 ? 'rgb(30, 110, 145)'
                 : selecting
-                  ? 'rgb(60, 170, 210)'
-                  : 'rgb(46, 150, 194)',
+                ? 'rgb(60, 170, 210)'
+                : 'rgb(46, 150, 194)',
               shadowColor: '#000',
               shadowOffset: { width: 0, height: pressed ? 2 : 4 },
               shadowOpacity,
@@ -288,10 +292,7 @@ const QuizButton: React.FC<{
         >
           {/* Glow overlay */}
           <Animated.View
-            style={[
-              styles.glowOverlay,
-              { backgroundColor: glowColor },
-            ]}
+            style={[styles.glowOverlay, { backgroundColor: glowColor }]}
           />
           <View style={styles.buttonContent}>
             <View style={{ flex: 1 }}>
@@ -348,8 +349,12 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
 
     const sections = Object.keys(groups)
       .sort((a, b) => {
-        const textA = a.replace(/^[\p{Emoji}\u{FE0E}\u{FE0F}\u{200D}\s]+/u, '').toLowerCase();
-        const textB = b.replace(/^[\p{Emoji}\u{FE0E}\u{FE0F}\u{200D}\s]+/u, '').toLowerCase();
+        const textA = a
+          .replace(/^[\p{Emoji}\u{FE0E}\u{FE0F}\u{200D}\s]+/u, '')
+          .toLowerCase();
+        const textB = b
+          .replace(/^[\p{Emoji}\u{FE0E}\u{FE0F}\u{200D}\s]+/u, '')
+          .toLowerCase();
         return textA.localeCompare(textB);
       })
       .map((category) => ({
@@ -384,7 +389,15 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
     });
   };
 
-  const renderItem = ({ item, index, section }: { item: any; index: number; section: any }) => (
+  const renderItem = ({
+    item,
+    index,
+    section,
+  }: {
+    item: any;
+    index: number;
+    section: any;
+  }) => (
     <QuizButton
       item={item}
       onPress={handleQuizSelection}
@@ -415,15 +428,21 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         style={({ pressed }) => [
           styles.answerButton,
           {
-            backgroundColor: pressed ? 'rgb(40, 180, 140)' : 'rgb(52, 211, 153)', // Greenish for distinction
+            backgroundColor: pressed
+              ? 'rgb(40, 180, 140)'
+              : 'rgb(52, 211, 153)', // Greenish for distinction
             marginBottom: 10,
             borderWidth: 1,
-            borderColor: 'rgba(255,255,255,0.3)'
-          }
+            borderColor: 'rgba(255,255,255,0.3)',
+          },
         ]}
       >
         <View style={styles.buttonContent}>
-          <Text style={[styles.buttonText, { textAlign: 'center', fontSize: 18 }]}>⚔️ Multiplayer Mode</Text>
+          <Text
+            style={[styles.buttonText, { textAlign: 'center', fontSize: 18 }]}
+          >
+            ⚔️ Multiplayer Mode
+          </Text>
         </View>
       </Pressable>
     </View>
@@ -436,7 +455,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   ) {
     return (
       <View style={styles.quizSelectionContainer}>
-
         <FlatList
           style={{ paddingVertical: 10 }}
           data={quizzes}
@@ -585,5 +603,4 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
   },
-
 });

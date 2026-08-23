@@ -19,6 +19,8 @@ type QuizContextType = {
   setUserName: (name: string) => void;
   onboardingCompleted: boolean;
   completeOnboarding: (name: string, language: string) => void;
+  kidsMode: boolean;
+  setKidsMode: (enabled: boolean) => void;
   // User quiz settings
   userQuizLoadEnabled: boolean;
   setUserQuizLoadEnabled: (enabled: boolean) => void;
@@ -101,52 +103,53 @@ const getLocalEssays = (): CategoryEssay[] => {
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const GOOGLE_DRIVE_DIRECT_LINK = 'https://drive.google.com/uc?export=download&id=1Nr-9H-3z_8O0IafoUTjC9iJI9aZJQ_SH';
+  const GOOGLE_DRIVE_DIRECT_LINK =
+    'https://drive.google.com/uc?export=download&id=1Nr-9H-3z_8O0IafoUTjC9iJI9aZJQ_SH';
   const [data, setData] = useState(null);
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [isLanguageReady, setIsLanguageReady] = useState(false);
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
-  const [flashcardsEnabled, setFlashcardsEnabledState] = useState<boolean>(
-    false,
-  );
-  const [notificationsEnabled, setNotificationsEnabledState] = useState<
-    boolean
-  >(true);
+  const [flashcardsEnabled, setFlashcardsEnabledState] =
+    useState<boolean>(false);
+  const [notificationsEnabled, setNotificationsEnabledState] =
+    useState<boolean>(true);
   const [showExplanation, setShowExplanationState] = useState<boolean>(false);
   const [quizzes, setQuizzes] = useState<Quiz[]>(getLocalQuizzes());
   const [essays] = useState<CategoryEssay[]>(getLocalEssays());
-  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] = useState<
-    number
-  >(0);
-  const [totalCorrectAnswers, setTotalCorrectAnswersState] = useState<number>(
-    0,
-  );
+  const [totalQuestionsAnswered, setTotalQuestionsAnsweredState] =
+    useState<number>(0);
+  const [totalCorrectAnswers, setTotalCorrectAnswersState] =
+    useState<number>(0);
   const [totalWrongAnswers, setTotalWrongAnswersState] = useState<number>(0);
   const [totalWonGames, setTotalWonGamesState] = useState<number>(0);
   const [totalLostGames, setTotalLostGamesState] = useState<number>(0);
   const [audioEnabled, setAudioEnabledState] = useState<boolean>(true);
-  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] = useState<boolean>(
-    false,
-  );
+  const [remoteUpdateEnabled, setRemoteUpdateEnabledState] =
+    useState<boolean>(false);
   const [remoteAddress, setRemoteAddressState] = useState<string>('');
   const [lastUpdateDate, setLastUpdateDateState] = useState<string | null>(
     null,
   );
-  const [userQuizLoadEnabled, setUserQuizLoadEnabledState] = useState<boolean>(
-    false,
-  );
+  const [userQuizLoadEnabled, setUserQuizLoadEnabledState] =
+    useState<boolean>(false);
   const [musicEnabled, setMusicEnabledState] = useState<boolean>(false);
-  const [readerModeEnabled, setReaderModeEnabledState] = useState<boolean>(false);
-  const [availableVoices, setAvailableVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [selectedVoice, setSelectedVoiceState] = useState<SpeechSynthesisVoice | null>(null);
-  const [textInputAnswerMode, setTextInputAnswerModeState] = useState<boolean>(false);
+  const [readerModeEnabled, setReaderModeEnabledState] =
+    useState<boolean>(false);
+  const [availableVoices, setAvailableVoices] = useState<
+    SpeechSynthesisVoice[]
+  >([]);
+  const [selectedVoice, setSelectedVoiceState] =
+    useState<SpeechSynthesisVoice | null>(null);
+  const [textInputAnswerMode, setTextInputAnswerModeState] =
+    useState<boolean>(false);
   const [timerEnabled, setTimerEnabledState] = useState<boolean>(false);
   const [timerDuration, setTimerDurationState] = useState<number>(5); // Default 5 minutes
   const [kidsMode, setKidsModeState] = useState<boolean>(false);
 
   // User personalization
   const [userName, setUserNameState] = useState<string>('');
-  const [onboardingCompleted, setOnboardingCompletedState] = useState<boolean>(false);
+  const [onboardingCompleted, setOnboardingCompletedState] =
+    useState<boolean>(false);
   const setMusicEnabled = useCallback(async (enabled: boolean) => {
     setMusicEnabledState(enabled);
     try {
@@ -236,27 +239,37 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   }, []);
 
   // Voice management functions
-  const setSelectedVoice = useCallback(async (voice: SpeechSynthesisVoice | null) => {
-    setSelectedVoiceState(voice);
-    try {
-      if (voice) {
-        await AsyncStorage.setItem('selectedVoiceName', voice.name);
-        await AsyncStorage.setItem('selectedVoiceLang', voice.lang);
-      } else {
-        await AsyncStorage.removeItem('selectedVoiceName');
-        await AsyncStorage.removeItem('selectedVoiceLang');
+  const setSelectedVoice = useCallback(
+    async (voice: SpeechSynthesisVoice | null) => {
+      setSelectedVoiceState(voice);
+      try {
+        if (voice) {
+          await AsyncStorage.setItem('selectedVoiceName', voice.name);
+          await AsyncStorage.setItem('selectedVoiceLang', voice.lang);
+        } else {
+          await AsyncStorage.removeItem('selectedVoiceName');
+          await AsyncStorage.removeItem('selectedVoiceLang');
+        }
+      } catch (error) {
+        console.error('Failed to save selected voice', error);
       }
-    } catch (error) {
-      console.error('Failed to save selected voice', error);
-    }
-  }, []);
+    },
+    [],
+  );
 
   // Load available voices and restore selected voice
   useEffect(() => {
-    if (Platform.OS === 'web' && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    if (
+      Platform.OS === 'web' &&
+      typeof window !== 'undefined' &&
+      'speechSynthesis' in window
+    ) {
       let voicesLoadAttempts = 0;
       const maxAttempts = 20;
-      const isMobile = /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isMobile =
+        /Mobile|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent,
+        );
 
       const loadVoices = () => {
         const voices = window.speechSynthesis.getVoices();
@@ -265,11 +278,17 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         // Restore selected voice from storage
         const restoreSelectedVoice = async () => {
           try {
-            const savedVoiceName = await AsyncStorage.getItem('selectedVoiceName');
-            const savedVoiceLang = await AsyncStorage.getItem('selectedVoiceLang');
+            const savedVoiceName = await AsyncStorage.getItem(
+              'selectedVoiceName',
+            );
+            const savedVoiceLang = await AsyncStorage.getItem(
+              'selectedVoiceLang',
+            );
 
             if (savedVoiceName && savedVoiceLang) {
-              const matchingVoice = voices.find(v => v.name === savedVoiceName && v.lang === savedVoiceLang);
+              const matchingVoice = voices.find(
+                (v) => v.name === savedVoiceName && v.lang === savedVoiceLang,
+              );
               if (matchingVoice) {
                 setSelectedVoiceState(matchingVoice);
               } else {
@@ -290,7 +309,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         } else if (voicesLoadAttempts < maxAttempts) {
           // Retry with longer delays for mobile
           voicesLoadAttempts++;
-          const delay = isMobile ? voicesLoadAttempts * 200 : voicesLoadAttempts * 100;
+          const delay = isMobile
+            ? voicesLoadAttempts * 200
+            : voicesLoadAttempts * 100;
           setTimeout(loadVoices, delay);
         }
       };
@@ -303,10 +324,16 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         loadVoices();
       };
 
-      window.speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged);
+      window.speechSynthesis.addEventListener(
+        'voiceschanged',
+        handleVoicesChanged,
+      );
 
       return () => {
-        window.speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged);
+        window.speechSynthesis.removeEventListener(
+          'voiceschanged',
+          handleVoicesChanged,
+        );
       };
     }
   }, []);
@@ -393,9 +420,12 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     setTimerDurationState(5);
   }, []);
 
-  const getEssayByCategory = useCallback((category: string) => {
-    return essays.find(e => e.category === category);
-  }, [essays]);
+  const getEssayByCategory = useCallback(
+    (category: string) => {
+      return essays.find((e) => e.category === category);
+    },
+    [essays],
+  );
 
   // Function to check for and download updated quizzes
   const checkForQuizzesUpdate = async (): Promise<boolean> => {
@@ -625,7 +655,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       const savedLanguage = await AsyncStorage.getItem('language');
       const musicSetting = await AsyncStorage.getItem('musicEnabled');
       const readerModeSetting = await AsyncStorage.getItem('readerModeEnabled');
-      const textInputAnswerModeSetting = await AsyncStorage.getItem('textInputAnswerMode');
+      const textInputAnswerModeSetting = await AsyncStorage.getItem(
+        'textInputAnswerMode',
+      );
       const kidsModeSetting = await AsyncStorage.getItem('kidsMode');
 
       // Update all state values
@@ -659,7 +691,9 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
       // Load user personalization
       const savedUserName = await AsyncStorage.getItem('userName');
-      const savedOnboardingCompleted = await AsyncStorage.getItem('onboardingCompleted');
+      const savedOnboardingCompleted = await AsyncStorage.getItem(
+        'onboardingCompleted',
+      );
       setUserNameState(savedUserName || '');
       setOnboardingCompletedState(savedOnboardingCompleted === 'true');
 
@@ -695,10 +729,14 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const updateDataFromGoogleDrive = async () => {
     try {
       // The fetch call targets the internal route.
-      const response = await fetch('https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json');
+      const response = await fetch(
+        'https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json',
+      );
 
       if (!response.ok) {
-        throw new Error(`API route responded with an error: ${response.statusText}`);
+        throw new Error(
+          `API route responded with an error: ${response.statusText}`,
+        );
       }
 
       const jsonData = await response.json();

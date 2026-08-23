@@ -8,20 +8,72 @@ type StreakPetProps = {
 };
 
 const PET_STAGES = [
-  { minStreak: 0, emoji: '🥚', name: 'Ei', color: '#FFEAA7', message: 'Spiele täglich, um mich schlüpfen zu sehen!' },
-  { minStreak: 1, emoji: '🐣', name: 'Küken', color: '#FFD93D', message: 'Ich bin geschlüpft! Spiel weiter!' },
-  { minStreak: 3, emoji: '🐥', name: 'Jungvogel', color: '#FFC107', message: 'Ich wachse! Noch 4 Tage bis zum nächsten Level!' },
-  { minStreak: 7, emoji: '🦉', name: 'Weise Eule', color: '#8D6E63', message: 'Du bist toll! Ich bin jetzt eine weise Eule!' },
-  { minStreak: 14, emoji: '🦄', name: 'Einhorn', color: '#E1BEE7', message: 'Magisch! Du hast 14 Tage geschafft!' },
-  { minStreak: 30, emoji: '🐉', name: 'Drache', color: '#4CAF50', message: 'FEUER! 30 Tage — ich bin jetzt ein Drache! 🐉🔥' },
-  { minStreak: 60, emoji: '🌟', name: 'Sternenwesen', color: '#FFD700', message: 'Legendär! 60 Tage in Folge!' },
-  { minStreak: 100, emoji: '👑', name: 'König', color: '#FF4081', message: 'Der Quiz-König! 100 Tage! 👑' },
+  {
+    minStreak: 0,
+    emoji: '🥚',
+    name: 'Ei',
+    color: '#FFEAA7',
+    message: 'Spiele täglich, um mich schlüpfen zu sehen!',
+  },
+  {
+    minStreak: 1,
+    emoji: '🐣',
+    name: 'Küken',
+    color: '#FFD93D',
+    message: 'Ich bin geschlüpft! Spiel weiter!',
+  },
+  {
+    minStreak: 3,
+    emoji: '🐥',
+    name: 'Jungvogel',
+    color: '#FFC107',
+    message: 'Ich wachse! Noch 4 Tage bis zum nächsten Level!',
+  },
+  {
+    minStreak: 7,
+    emoji: '🦉',
+    name: 'Weise Eule',
+    color: '#8D6E63',
+    message: 'Du bist toll! Ich bin jetzt eine weise Eule!',
+  },
+  {
+    minStreak: 14,
+    emoji: '🦄',
+    name: 'Einhorn',
+    color: '#E1BEE7',
+    message: 'Magisch! Du hast 14 Tage geschafft!',
+  },
+  {
+    minStreak: 30,
+    emoji: '🐉',
+    name: 'Drache',
+    color: '#4CAF50',
+    message: 'FEUER! 30 Tage — ich bin jetzt ein Drache! 🐉🔥',
+  },
+  {
+    minStreak: 60,
+    emoji: '🌟',
+    name: 'Sternenwesen',
+    color: '#FFD700',
+    message: 'Legendär! 60 Tage in Folge!',
+  },
+  {
+    minStreak: 100,
+    emoji: '👑',
+    name: 'König',
+    color: '#FF4081',
+    message: 'Der Quiz-König! 100 Tage! 👑',
+  },
 ];
 
-export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel = true }) => {
+export const StreakPet: React.FC<StreakPetProps> = ({
+  size = 'medium',
+  showLabel = true,
+}) => {
   const { streak } = useGamification();
   const currentStreak = streak.currentStreak;
-  const hasPlayedToday = streak.lastQuizDate === new Date().toISOString().split('T')[0];
+  const hasPlayedToday =
+    streak.lastQuizDate === new Date().toISOString().split('T')[0];
 
   const bounceAnim = useRef(new Animated.Value(1)).current;
   const floatAnim = useRef(new Animated.Value(0)).current;
@@ -47,9 +99,19 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
   useEffect(() => {
     const bounce = Animated.loop(
       Animated.sequence([
-        Animated.timing(bounceAnim, { toValue: 1.15, duration: 600, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(bounceAnim, { toValue: 1, duration: 600, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
-      ])
+        Animated.timing(bounceAnim, {
+          toValue: 1.15,
+          duration: 600,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bounceAnim, {
+          toValue: 1,
+          duration: 600,
+          easing: Easing.in(Easing.cubic),
+          useNativeDriver: true,
+        }),
+      ]),
     );
     bounce.start();
     return () => bounce.stop();
@@ -59,9 +121,19 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
   useEffect(() => {
     const float = Animated.loop(
       Animated.sequence([
-        Animated.timing(floatAnim, { toValue: -6, duration: 1500, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-        Animated.timing(floatAnim, { toValue: 6, duration: 1500, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-      ])
+        Animated.timing(floatAnim, {
+          toValue: -6,
+          duration: 1500,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+        Animated.timing(floatAnim, {
+          toValue: 6,
+          duration: 1500,
+          easing: Easing.inOut(Easing.sin),
+          useNativeDriver: true,
+        }),
+      ]),
     );
     float.start();
     return () => float.stop();
@@ -71,9 +143,17 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
   useEffect(() => {
     const sparkle = Animated.loop(
       Animated.sequence([
-        Animated.timing(sparkleAnim, { toValue: 1, duration: 800, useNativeDriver: true }),
-        Animated.timing(sparkleAnim, { toValue: 0, duration: 800, useNativeDriver: true }),
-      ])
+        Animated.timing(sparkleAnim, {
+          toValue: 1,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+        Animated.timing(sparkleAnim, {
+          toValue: 0,
+          duration: 800,
+          useNativeDriver: true,
+        }),
+      ]),
     );
     sparkle.start();
     return () => sparkle.stop();
@@ -83,8 +163,16 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
   useEffect(() => {
     if (hasPlayedToday) {
       Animated.sequence([
-        Animated.timing(happyAnim, { toValue: 1, duration: 300, useNativeDriver: true }),
-        Animated.timing(happyAnim, { toValue: 0, duration: 300, useNativeDriver: true }),
+        Animated.timing(happyAnim, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(happyAnim, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
       ]).start();
     }
   }, [hasPlayedToday]);
@@ -94,8 +182,14 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
   const petSize = sizeMap[size];
   const fontSize = fontSizeMap[size];
 
-  const sparkleOpacity = sparkleAnim.interpolate({ inputRange: [0, 1], outputRange: [0.3, 1] });
-  const sparkleScale = sparkleAnim.interpolate({ inputRange: [0, 1], outputRange: [0.8, 1.2] });
+  const sparkleOpacity = sparkleAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.3, 1],
+  });
+  const sparkleScale = sparkleAnim.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0.8, 1.2],
+  });
 
   return (
     <View style={styles.container}>
@@ -105,10 +199,7 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
           {
             width: petSize + 20,
             height: petSize + 20,
-            transform: [
-              { translateY: floatAnim },
-              { scale: bounceAnim },
-            ],
+            transform: [{ translateY: floatAnim }, { scale: bounceAnim }],
           },
         ]}
       >
@@ -124,7 +215,13 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
         <Animated.Text
           style={[
             styles.sparkleRight,
-            { opacity: sparkleAnim.interpolate({ inputRange: [0, 1], outputRange: [0.6, 1] }), transform: [{ scale: sparkleScale }] },
+            {
+              opacity: sparkleAnim.interpolate({
+                inputRange: [0, 1],
+                outputRange: [0.6, 1],
+              }),
+              transform: [{ scale: sparkleScale }],
+            },
           ]}
         >
           ⭐
@@ -136,7 +233,16 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
             styles.petEmoji,
             {
               fontSize,
-              transform: [{ scale: hasPlayedToday ? happyAnim.interpolate({ inputRange: [0, 0.5, 1], outputRange: [1, 1.3, 1] }) : 1 }],
+              transform: [
+                {
+                  scale: hasPlayedToday
+                    ? happyAnim.interpolate({
+                        inputRange: [0, 0.5, 1],
+                        outputRange: [1, 1.3, 1],
+                      })
+                    : 1,
+                },
+              ],
             },
           ]}
         >
@@ -154,12 +260,14 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
           </Text>
           {!hasPlayedToday && currentStreak > 0 && (
             <Text style={styles.warningText}>
-              ⚠️ Heute noch nicht gespielt! Spiel jetzt, damit deine Serie nicht abbricht!
+              ⚠️ Heute noch nicht gespielt! Spiel jetzt, damit deine Serie nicht
+              abbricht!
             </Text>
           )}
           {hasPlayedToday && nextStage && daysToNext > 0 && (
             <Text style={styles.nextStageText}>
-              Noch {daysToNext} Tag{daysToNext !== 1 ? 'e' : ''} bis zum {nextStage.emoji} {nextStage.name}!
+              Noch {daysToNext} Tag{daysToNext !== 1 ? 'e' : ''} bis zum{' '}
+              {nextStage.emoji} {nextStage.name}!
             </Text>
           )}
           {hasPlayedToday && stage.emoji === '👑' && (
@@ -167,7 +275,11 @@ export const StreakPet: React.FC<StreakPetProps> = ({ size = 'medium', showLabel
               👑 Du hast alle Level erreicht! Legendär!
             </Text>
           )}
-          <Text style={styles.messageText}>{hasPlayedToday ? stage.message : 'Dein Haustier schläft... Spiel ein Quiz zum Aufwecken!'}</Text>
+          <Text style={styles.messageText}>
+            {hasPlayedToday
+              ? stage.message
+              : 'Dein Haustier schläft... Spiel ein Quiz zum Aufwecken!'}
+          </Text>
         </View>
       )}
     </View>

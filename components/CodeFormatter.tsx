@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { Text, View, StyleSheet, Platform, ScrollView, TextStyle, StyleProp, ViewStyle } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Platform,
+  ScrollView,
+  TextStyle,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { decode } from 'html-entities'; // Ensure this is installed (npm install html-entities)
 
 /**
@@ -36,7 +45,7 @@ const defaultMathRenderStyles = StyleSheet.create({
 export function renderMathInText(
   text: string,
   baseTextStyle?: StyleProp<TextStyle>,
-  customMathTextStyle?: StyleProp<TextStyle>
+  customMathTextStyle?: StyleProp<TextStyle>,
 ): React.ReactNode[] {
   if (text === null || text === undefined) {
     return [<Text key="empty-text" style={baseTextStyle}></Text>];
@@ -44,10 +53,25 @@ export function renderMathInText(
   const decoded = decode(String(text)); // Ensure text is a string
 
   const latexToUnicode: { [key: string]: string } = {
-    '\\times': '×', '\\sqrt': '√', '\\leq': '≤', '\\geq': '≥', '\\neq': '≠',
-    '\\pm': '±', '\\div': '÷', '\\cdot': '·', '\\infty': '∞', '\\rightarrow': '→',
-    '\\leftarrow': '←', '\\degree': '°', '\\%': '%',
-    '\\alpha': 'α', '\\beta': 'β', '\\gamma': 'γ', '\\delta': 'δ', '\\pi': 'π', '\\theta': 'θ',
+    '\\times': '×',
+    '\\sqrt': '√',
+    '\\leq': '≤',
+    '\\geq': '≥',
+    '\\neq': '≠',
+    '\\pm': '±',
+    '\\div': '÷',
+    '\\cdot': '·',
+    '\\infty': '∞',
+    '\\rightarrow': '→',
+    '\\leftarrow': '←',
+    '\\degree': '°',
+    '\\%': '%',
+    '\\alpha': 'α',
+    '\\beta': 'β',
+    '\\gamma': 'γ',
+    '\\delta': 'δ',
+    '\\pi': 'π',
+    '\\theta': 'θ',
     // Add more simple Unicode mappings as needed
   };
 
@@ -62,7 +86,7 @@ export function renderMathInText(
       parts.push(
         <Text key={`text-${lastIndex}`} style={baseTextStyle}>
           {decoded.substring(lastIndex, match.index)}
-        </Text>
+        </Text>,
       );
     }
 
@@ -71,7 +95,10 @@ export function renderMathInText(
     // Replace \text{...} with just the content inside
     mathContent = mathContent.replace(/\\text\s*{([^}]*)}/g, '$1');
 
-    mathContent = mathContent.replace(/\\frac\s*{([^}]*)}\s*{([^}]*)}/g, '$1/$2');
+    mathContent = mathContent.replace(
+      /\\frac\s*{([^}]*)}\s*{([^}]*)}/g,
+      '$1/$2',
+    );
 
     for (const [latex, uni] of Object.entries(latexToUnicode)) {
       const escapedLatex = latex.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // Escape for RegExp
@@ -88,7 +115,7 @@ export function renderMathInText(
         ])}
       >
         {mathContent}
-      </Text>
+      </Text>,
     );
     lastIndex = mathRegex.lastIndex;
   }
@@ -98,14 +125,18 @@ export function renderMathInText(
     parts.push(
       <Text key={`text-${lastIndex}-end`} style={baseTextStyle}>
         {decoded.substring(lastIndex)}
-      </Text>
+      </Text>,
     );
   }
-  
+
   // If no math blocks were found, and the input text itself is not empty,
   // return the original text wrapped in a single Text component with base style.
   if (parts.length === 0 && decoded.length > 0) {
-     return [<Text key="full-text-segment" style={baseTextStyle}>{decoded}</Text>];
+    return [
+      <Text key="full-text-segment" style={baseTextStyle}>
+        {decoded}
+      </Text>,
+    ];
   }
 
   return parts;
@@ -125,7 +156,10 @@ const parseTextAndCode = (text: string): FormattedSegment[] => {
 
   while ((match = codeBlockRegex.exec(text)) !== null) {
     if (match.index > lastIndex) {
-      segments.push({ type: 'text', content: text.substring(lastIndex, match.index) });
+      segments.push({
+        type: 'text',
+        content: text.substring(lastIndex, match.index),
+      });
     }
     const language = match[1] || undefined;
     const codeContent = match[2];
@@ -167,32 +201,40 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
   const handleContentSizeChange = (
     index: number,
     contentWidth: number,
-    containerWidth: number
+    containerWidth: number,
   ) => {
     // This logic is for code blocks; math text is handled differently
-    if (contentWidth > containerWidth && containerWidth > 0) { // ensure containerWidth is positive
+    if (contentWidth > containerWidth && containerWidth > 0) {
+      // ensure containerWidth is positive
       setFontSizes((prev) => ({
         ...prev,
-        [index]: Math.max(8, (prev[index] || 14) * 0.95 ), // Example adjustment
+        [index]: Math.max(8, (prev[index] || 14) * 0.95), // Example adjustment
       }));
-    } else if (fontSizes[index] && fontSizes[index]! < 14 && containerWidth > contentWidth){
-       setFontSizes((prev) => ({
+    } else if (
+      fontSizes[index] &&
+      fontSizes[index]! < 14 &&
+      containerWidth > contentWidth
+    ) {
+      setFontSizes((prev) => ({
         ...prev,
-        [index]: 14, 
+        [index]: 14,
       }));
     }
   };
-  
+
   // Base style for regular text parts (non-code, non-math)
-  const combinedBaseTextStyle = StyleSheet.flatten([styles.regularText, textStyle]);
+  const combinedBaseTextStyle = StyleSheet.flatten([
+    styles.regularText,
+    textStyle,
+  ]);
 
   // If no code blocks are found, process the entire text for math formulas
   if (segments.length === 0 && text && text.trim()) {
-     return (
-        <View style={[styles.defaultContainerStyle]}>
-            {renderMathInText(text, combinedBaseTextStyle, mathTextStyle)}
-        </View>
-     );
+    return (
+      <View style={[styles.defaultContainerStyle]}>
+        {renderMathInText(text, combinedBaseTextStyle, mathTextStyle)}
+      </View>
+    );
   }
 
   return (
@@ -203,7 +245,7 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
             <View
               key={`code-${index}`}
               style={[styles.codeBlockContainer, codeBlockContainerStyle]}
-              onLayout={event => {
+              onLayout={(event) => {
                 const { width } = event.nativeEvent.layout;
                 setFontSizes((prev) => ({
                   ...prev,
@@ -215,11 +257,16 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
                 style={{ flex: 1, width: '100%' }} // Ensure ScrollView takes full width
                 horizontal
                 showsHorizontalScrollIndicator={true} // Often useful for code
-                onContentSizeChange={(contentWidth, contentHeight) => { // contentHeight also available
+                onContentSizeChange={(contentWidth, contentHeight) => {
+                  // contentHeight also available
                   const containerWidth = fontSizes[`container-${index}`] || 0;
                   // Consider triggering handleContentSizeChange only if containerWidth is known
                   if (containerWidth > 0) {
-                    handleContentSizeChange(index, contentWidth, containerWidth);
+                    handleContentSizeChange(
+                      index,
+                      contentWidth,
+                      containerWidth,
+                    );
                   }
                 }}
               >
@@ -235,13 +282,18 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
               </ScrollView>
             </View>
           );
-        } else { // segment.type === 'text'
+        } else {
+          // segment.type === 'text'
           // renderMathInText returns an array of <Text> nodes.
           // React can render an array of elements.
           // Provide a key for the React.Fragment that groups these text parts for this segment.
           return (
             <React.Fragment key={`text-segment-${index}`}>
-              {renderMathInText(segment.content, combinedBaseTextStyle, mathTextStyle)}
+              {renderMathInText(
+                segment.content,
+                combinedBaseTextStyle,
+                mathTextStyle,
+              )}
             </React.Fragment>
           );
         }
@@ -259,20 +311,20 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: '#333333', // Default dark grey for text
-    marginVertical: 2, 
+    marginVertical: 2,
   },
   codeBlockContainer: {
     backgroundColor: '#f0f0f0', // Slightly different shade for distinction
     padding: 15, // Uniform padding
     borderRadius: 6,
-    marginVertical: 8,      
+    marginVertical: 8,
     borderWidth: 1,
-    borderColor: '#d1d1d1', 
+    borderColor: '#d1d1d1',
   },
   codeBlockText: {
-    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace', 
+    fontFamily: Platform.OS === 'ios' ? 'Menlo' : 'monospace',
     color: '#2d3748', // Darker text for code
     fontSize: 14, // Default code font size
-    lineHeight: 21,     
+    lineHeight: 21,
   },
 });

@@ -12,12 +12,29 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
   currentQuestionIndex,
   selectedQuizAnswersAmount,
 }) => {
-  const { flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled, musicEnabled, setMusicEnabled } = useQuiz();
+  const {
+    flashcardsEnabled,
+    setFlashcardsEnabled,
+    showExplanation,
+    setShowExplanation,
+    audioEnabled,
+    setAudioEnabled,
+    musicEnabled,
+    setMusicEnabled,
+  } = useQuiz();
   const { t } = useTranslation();
 
   return (
     <View style={styles.header}>
-      <View style={{ marginBottom: 10, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', height: 40 }}>
+      <View
+        style={{
+          marginBottom: 10,
+          flexDirection: 'row',
+          alignItems: 'flex-end',
+          justifyContent: 'space-between',
+          height: 40,
+        }}
+      >
         <View style={styles.settingItem}>
           <Text style={styles.settingText}>{t('enable_music')}</Text>
           <Switch
@@ -56,7 +73,9 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
           <Switch
             style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
             trackColor={{ false: 'gray', true: 'white' }}
-            thumbColor={flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'}
+            thumbColor={
+              flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+            }
             ios_backgroundColor="gray"
             onValueChange={setFlashcardsEnabled}
             value={flashcardsEnabled}

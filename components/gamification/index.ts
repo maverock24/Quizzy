@@ -7,9 +7,9 @@ export * from './types';
 
 // Provider
 export {
-    GamificationProvider,
-    useGamification,
-    type NewlyUnlockedAchievement,
+  GamificationProvider,
+  useGamification,
+  type NewlyUnlockedAchievement,
 } from './GamificationProvider';
 
 // Components

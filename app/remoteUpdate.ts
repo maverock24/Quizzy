@@ -15,7 +15,7 @@ export async function GET(request: Request) {
       {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
-      }
+      },
     );
   }
 
@@ -48,27 +48,30 @@ export async function GET(request: Request) {
     if (!externalResponse.ok) {
       // Log the specific error from the external fetch
       console.error(
-        `Failed to fetch remote resource at ${remoteAddress}: ${externalResponse.status} ${externalResponse.statusText}`
+        `Failed to fetch remote resource at ${remoteAddress}: ${externalResponse.status} ${externalResponse.statusText}`,
       );
       // Try to read potential error body from the external source if possible
       let errorBody = `Failed to fetch remote resource: ${externalResponse.status} ${externalResponse.statusText}`;
       try {
-          const externalErrorText = await externalResponse.text();
-          errorBody = `Failed to fetch remote resource (${externalResponse.status}): ${externalErrorText.substring(0, 200)}`; // Limit error length
-      } catch (_) { /* Ignore if reading body fails */ }
+        const externalErrorText = await externalResponse.text();
+        errorBody = `Failed to fetch remote resource (${
+          externalResponse.status
+        }): ${externalErrorText.substring(0, 200)}`; // Limit error length
+      } catch (_) {
+        /* Ignore if reading body fails */
+      }
 
-      return new Response(
-        JSON.stringify({ error: errorBody }),
-        {
-          // Use the status from the failed external response
-          status: externalResponse.status < 500 ? 400 : 502, // Map client errors to 400, server errors to 502 (Bad Gateway)
-          headers: { 'Content-Type': 'application/json' },
-        }
-      );
+      return new Response(JSON.stringify({ error: errorBody }), {
+        // Use the status from the failed external response
+        status: externalResponse.status < 500 ? 400 : 502, // Map client errors to 400, server errors to 502 (Bad Gateway)
+        headers: { 'Content-Type': 'application/json' },
+      });
     }
 
     // Get the original Content-Type, default to application/octet-stream
-    const contentType = externalResponse.headers.get('content-type') || 'application/octet-stream';
+    const contentType =
+      externalResponse.headers.get('content-type') ||
+      'application/octet-stream';
 
     // Get the original Content-Length if available
     const contentLength = externalResponse.headers.get('content-length');
@@ -77,7 +80,7 @@ export async function GET(request: Request) {
     const body = externalResponse.body; // ReadableStream
 
     if (!body) {
-       throw new Error("Response body from remote address is null");
+      throw new Error('Response body from remote address is null');
     }
 
     // Prepare response headers, passing through content type and length
@@ -91,23 +94,22 @@ export async function GET(request: Request) {
     // const filename = remoteAddress.split('/').pop()?.split('?')[0] || 'downloaded-file';
     // responseHeaders.set('Content-Disposition', `attachment; filename="${filename}"`);
 
-
     // Stream the response body directly back to the client
     return new Response(body, {
       status: 200,
       headers: responseHeaders,
     });
-
   } catch (error) {
     // Handle network errors during the fetch itself or other unexpected errors
     console.error('Error fetching or processing remote resource:', error);
-    const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+    const errorMessage =
+      error instanceof Error ? error.message : 'An unknown error occurred';
     return new Response(
       JSON.stringify({ error: `Internal server error: ${errorMessage}` }),
       {
         status: 500,
         headers: { 'Content-Type': 'application/json' },
-      }
+      },
     );
   }
 }

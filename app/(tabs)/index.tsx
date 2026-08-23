@@ -54,7 +54,11 @@ export default function TabOneScreen() {
   const [scoreVisible, setScoreVisible] = useState<boolean>(false);
 
   const { stopTTS } = useReadAloud();
-  const { setModalVisible: setGlossaryVisible, setSelectedTerm, setSearchQuery } = useGlossary();
+  const {
+    setModalVisible: setGlossaryVisible,
+    setSelectedTerm,
+    setSearchQuery,
+  } = useGlossary();
 
   // Get quizzes from context
   const {
@@ -90,23 +94,31 @@ export default function TabOneScreen() {
   const [showReader, setShowReader] = useState<boolean>(false);
 
   // Gamification integration
-  const { onQuizComplete, onCorrectAnswer, completeDailyQuiz } = useGamification();
-  const { addWrongAnswer, recordCorrectAnswer, getTodoByQuestion } = useLearningTodos();
+  const { onQuizComplete, onCorrectAnswer, completeDailyQuiz } =
+    useGamification();
+  const { addWrongAnswer, recordCorrectAnswer, getTodoByQuestion } =
+    useLearningTodos();
   const quizStartTime = useRef<number>(Date.now());
   const [isDailyQuiz, setIsDailyQuiz] = useState<boolean>(false);
 
   // Track wrong answers during this quiz session
-  const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<WrongAnswerRecord[]>([]);
+  const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<
+    WrongAnswerRecord[]
+  >([]);
   const [isRetryMode, setIsRetryMode] = useState<boolean>(false);
   // Track the last quiz name for retry functionality (persists after quiz ends)
-  const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(null);
+  const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(
+    null,
+  );
 
   // Essay state
-  const [selectedEssay, setSelectedEssay] = useState<CategoryEssay | null>(null);
+  const [selectedEssay, setSelectedEssay] = useState<CategoryEssay | null>(
+    null,
+  );
 
   // Derive which categories have essays (for showing the Read button)
   const categoriesWithEssays = useMemo(
-    () => new Set(essays.map(e => e.category)),
+    () => new Set(essays.map((e) => e.category)),
     [essays],
   );
 
@@ -185,12 +197,15 @@ export default function TabOneScreen() {
         setAnswerIsCorrect(false);
 
         // Track wrong answer for this session
-        setWrongAnswersThisQuiz(prev => [...prev, {
-          question: question.question,
-          correctAnswer: question.answer,
-          userAnswer: answer,
-          explanation: question.explanation,
-        }]);
+        setWrongAnswersThisQuiz((prev) => [
+          ...prev,
+          {
+            question: question.question,
+            correctAnswer: question.answer,
+            userAnswer: answer,
+            explanation: question.explanation,
+          },
+        ]);
 
         // Add to learning todos (persistent)
         addWrongAnswer(
@@ -198,7 +213,7 @@ export default function TabOneScreen() {
           question.answer,
           answer,
           selectedQuiz.name,
-          question.explanation
+          question.explanation,
         );
       }
       if (!showExplanation) {
@@ -246,7 +261,15 @@ export default function TabOneScreen() {
     setSelectedQuizName(null);
     setCurrentQuestionIndex(0);
     setExplanationMode(false);
-  }, [totalLostGames, setTotalLostGames, setSelectedQuizName, isDailyQuiz, score, selectedQuizAnswersAmount, completeDailyQuiz]);
+  }, [
+    totalLostGames,
+    setTotalLostGames,
+    setSelectedQuizName,
+    isDailyQuiz,
+    score,
+    selectedQuizAnswersAmount,
+    completeDailyQuiz,
+  ]);
 
   const handleNext = () => {
     setAnswerIsCorrect(false);
@@ -258,7 +281,9 @@ export default function TabOneScreen() {
       setTimerActive(false);
       const finalScore = score + (answerIsCorrect ? 1 : 0); // Include current answer
       const totalQuestions = selectedQuiz?.questions.length || 0;
-      const timeElapsed = Math.round((Date.now() - quizStartTime.current) / 1000);
+      const timeElapsed = Math.round(
+        (Date.now() - quizStartTime.current) / 1000,
+      );
 
       // Track gamification
       onQuizComplete(finalScore, totalQuestions, timeElapsed);
@@ -295,7 +320,7 @@ export default function TabOneScreen() {
     if (wrongAnswersThisQuiz.length === 0) return;
 
     // Create new questions from wrong answers
-    const retryQuestions: QuizQuestion[] = wrongAnswersThisQuiz.map(wa => ({
+    const retryQuestions: QuizQuestion[] = wrongAnswersThisQuiz.map((wa) => ({
       question: wa.question,
       answer: wa.correctAnswer,
       answers: [], // Will be filled with actual answers below
@@ -312,11 +337,15 @@ export default function TabOneScreen() {
 
     // Find the original quiz to get full answer options
     // Use lastPlayedQuizName since selectedQuizName is null after quiz ends
-    const originalQuiz = quizzes.find((q: Quiz) => q.name === lastPlayedQuizName);
+    const originalQuiz = quizzes.find(
+      (q: Quiz) => q.name === lastPlayedQuizName,
+    );
 
     if (originalQuiz) {
-      const questionsWithAnswers = retryQuestions.map(rq => {
-        const originalQ = originalQuiz.questions.find(oq => oq.question === rq.question);
+      const questionsWithAnswers = retryQuestions.map((rq) => {
+        const originalQ = originalQuiz.questions.find(
+          (oq) => oq.question === rq.question,
+        );
         return originalQ || rq;
       });
 
@@ -344,12 +373,15 @@ export default function TabOneScreen() {
   });
 
   // Open glossary with a specific term
-  const openGlossaryTerm = useCallback((term: string) => {
-    setSearchQuery('');
-    const entry = { term, definition: '' };
-    // Use the glossary context to find and show the term
-    setGlossaryVisible(true);
-  }, [setGlossaryVisible, setSearchQuery]);
+  const openGlossaryTerm = useCallback(
+    (term: string) => {
+      setSearchQuery('');
+      const entry = { term, definition: '' };
+      // Use the glossary context to find and show the term
+      setGlossaryVisible(true);
+    },
+    [setGlossaryVisible, setSearchQuery],
+  );
 
   return (
     <View style={styles.outerContainer}>
@@ -367,9 +399,7 @@ export default function TabOneScreen() {
               </View>
 
               {/* Kids Mode: Streak Pet */}
-              {kidsMode && (
-                <StreakPet size="medium" showLabel />
-              )}
+              {kidsMode && <StreakPet size="medium" showLabel />}
 
               {/* Daily Challenge + Glossary Button */}
               <View style={styles.topRow}>
@@ -412,7 +442,7 @@ export default function TabOneScreen() {
               onStartQuiz={() => {
                 // Find the first quiz in this category and start it
                 const firstQuiz = quizzes.find(
-                  (q: Quiz) => q.category === selectedEssay.category
+                  (q: Quiz) => q.category === selectedEssay.category,
                 );
                 setSelectedEssay(null);
                 if (firstQuiz) handleQuizSelection(firstQuiz);
@@ -480,16 +510,17 @@ export default function TabOneScreen() {
               selectedQuizAnswersAmount={selectedQuizAnswersAmount}
               timeExpired={timeExpired}
               wrongAnswerCount={wrongAnswersThisQuiz.length}
-              onRetryWrongAnswers={wrongAnswersThisQuiz.length > 0 ? handleRetryWrongAnswers : undefined}
+              onRetryWrongAnswers={
+                wrongAnswersThisQuiz.length > 0
+                  ? handleRetryWrongAnswers
+                  : undefined
+              }
             />
           )}
         </View>
         {(selectedQuiz || scoreVisible) && !showReader && (
           <View style={styles.bottomBar}>
-            <TouchableOpacity
-              onPress={handleBack}
-              style={{ marginLeft: 18 }}
-            >
+            <TouchableOpacity onPress={handleBack} style={{ marginLeft: 18 }}>
               <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                 <Ionicons
                   name="arrow-back"

@@ -24,7 +24,9 @@ type GlossaryContextType = {
   setSearchQuery: (query: string) => void;
 };
 
-const GlossaryContext = createContext<GlossaryContextType | undefined>(undefined);
+const GlossaryContext = createContext<GlossaryContextType | undefined>(
+  undefined,
+);
 
 export const GlossaryProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -58,9 +60,7 @@ export const GlossaryProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const getTerm = useCallback(
     (term: string): GlossaryEntry | undefined => {
-      return terms.find(
-        (t) => t.term.toLowerCase() === term.toLowerCase(),
-      );
+      return terms.find((t) => t.term.toLowerCase() === term.toLowerCase());
     },
     [terms],
   );

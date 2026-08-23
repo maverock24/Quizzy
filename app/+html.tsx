@@ -20,7 +20,10 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Quizzy" />
-        <meta name="description" content="Educational quiz application with offline support" />
+        <meta
+          name="description"
+          content="Educational quiz application with offline support"
+        />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#3f526c" />
@@ -29,12 +32,35 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <link rel="manifest" href="/manifest.json" />
 
         {/* App Icons */}
-        <link rel="icon" type="image/png" sizes="48x48" href="/icons/icon-48x48.png" />
-        <link rel="icon" type="image/png" sizes="96x96" href="/icons/icon-96x96.png" />
-        <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192x192.png" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="48x48"
+          href="/icons/icon-48x48.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href="/icons/icon-96x96.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+          href="/icons/icon-192x192.png"
+        />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="/icons/icon-152x152.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+        <link
+          rel="apple-touch-icon"
+          sizes="152x152"
+          href="/icons/icon-152x152.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/icons/apple-touch-icon.png"
+        />
 
         {/*
           Disable body scrolling on web. This makes ScrollView components work closer to how they do on native.
@@ -70,4 +96,3 @@ const responsiveBackground = `
     background-color: #000;
   }
 }`;
-
