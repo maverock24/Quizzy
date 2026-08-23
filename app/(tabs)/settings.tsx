@@ -5,6 +5,7 @@ import { Picker } from '@react-native-picker/picker';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import {
+  ActivityIndicator,
   Alert,
   Modal,
   ScrollView,
@@ -14,6 +15,14 @@ import {
   TextInput,
   View,
 } from 'react-native';
+import {
+  AndroidReleaseInfo,
+  fetchLatestRelease,
+  getInstalledVersionCode,
+  installAndroidRelease,
+  isAndroidNative,
+  isNewerRelease,
+} from '@/services/androidUpdate';
 
 export default function SettingsScreen() {
   const {
@@ -49,6 +58,14 @@ export default function SettingsScreen() {
   const [userQuizModalVisible, setUserQuizModalVisible] = React.useState(false);
   const [userQuizJson, setUserQuizJson] = React.useState('');
 
+  // Android APK update state
+  const [androidRelease, setAndroidRelease] =
+    React.useState<AndroidReleaseInfo | null>(null);
+  const [installedVersionCode, setInstalledVersionCode] = React.useState(0);
+  const [isCheckingUpdate, setIsCheckingUpdate] = React.useState(false);
+  const [isInstallingUpdate, setIsInstallingUpdate] = React.useState(false);
+  const [updateError, setUpdateError] = React.useState('');
+
   // Load userQuizLoadEnabled from AsyncStorage on mount
   React.useEffect(() => {
     (async () => {
@@ -62,6 +79,46 @@ export default function SettingsScreen() {
     setUserQuizLoadEnabled(val);
     await AsyncStorage.setItem('userQuizLoadEnabled', String(val));
   };
+
+  // --- Android APK update handlers ---
+  const loadAndroidRelease = async () => {
+    setIsCheckingUpdate(true);
+    setUpdateError('');
+    try {
+      const release = await fetchLatestRelease();
+      setAndroidRelease(release);
+      if (!release) {
+        setUpdateError('No published Android build found.');
+      }
+    } catch {
+      setUpdateError('Unable to check for updates.');
+    } finally {
+      setIsCheckingUpdate(false);
+    }
+  };
+
+  const handleInstallUpdate = async () => {
+    if (!androidRelease) return;
+    setIsInstallingUpdate(true);
+    setUpdateError('');
+    try {
+      await installAndroidRelease(androidRelease);
+    } catch (err) {
+      const msg =
+        err instanceof Error ? err.message : 'Failed to install update.';
+      setUpdateError(msg);
+      Alert.alert('Update failed', msg);
+    } finally {
+      setIsInstallingUpdate(false);
+    }
+  };
+
+  React.useEffect(() => {
+    if (isAndroidNative()) {
+      setInstalledVersionCode(getInstalledVersionCode());
+      void loadAndroidRelease();
+    }
+  }, []);
 
   // Open modal and load or create user quizzes from AsyncStorage
   const handleOpenUserQuizModal = async () => {
@@ -417,6 +474,53 @@ export default function SettingsScreen() {
               <Text style={styles.buttonText}>Edit</Text>
             </Button>
           </View>
+
+          {/* Android APK Updates (native Android only) */}
+          {isAndroidNative() && (
+            <View style={[styles.settingItem, { borderBottomWidth: 0 }]}>
+              <View style={styles.settingName}>
+                <Text style={styles.settingText}>App Updates</Text>
+                <Text style={styles.settingDescription}>
+                  {androidRelease
+                    ? `Latest build: ${androidRelease.versionName} (build #${androidRelease.versionCode})`
+                    : updateError || 'Checking for updates…'}
+                  {'\n'}Installed build:{' '}
+                  {installedVersionCode > 0
+                    ? `#${installedVersionCode}`
+                    : 'unknown'}
+                </Text>
+                {isCheckingUpdate && (
+                  <ActivityIndicator size="small" color="#4FC3F7" />
+                )}
+              </View>
+              {!isCheckingUpdate &&
+                androidRelease &&
+                (isNewerRelease(androidRelease) ? (
+                  <Button
+                    onPress={handleInstallUpdate}
+                    style={[styles.button, { alignSelf: 'flex-end' }]}
+                  >
+                    {isInstallingUpdate ? (
+                      <ActivityIndicator size="small" color="#fff" />
+                    ) : (
+                      <Text style={styles.buttonText}>Download & Install</Text>
+                    )}
+                  </Button>
+                ) : (
+                  <Text style={[styles.buttonText, { alignSelf: 'center' }]}>
+                    Up to date
+                  </Text>
+                ))}
+              {!isCheckingUpdate && !androidRelease && (
+                <Button
+                  onPress={loadAndroidRelease}
+                  style={[styles.button, { alignSelf: 'flex-end' }]}
+                >
+                  <Text style={styles.buttonText}>Check</Text>
+                </Button>
+              )}
+            </View>
+          )}
 
           <View style={[styles.settingItem, { borderBottomWidth: 0 }]}>
             <View style={styles.settingName}>
