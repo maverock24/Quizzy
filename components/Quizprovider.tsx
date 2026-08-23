@@ -76,7 +76,8 @@ const QuizContext = createContext<QuizContextType | undefined>(undefined);
 // Updated getLocalQuizzes to accept userQuizzes
 const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
   const lang = i18n.language || 'en';
-  const getQuizName = (quiz: any) => quiz.name || quiz.nimi || '';
+  const getQuizName = (quiz: { name?: string; nimi?: string }) =>
+    quiz.name || quiz.nimi || '';
   let quizzes;
   if (lang.startsWith('fi')) {
     quizzes = require('../assets/quizzes_fi.json');
@@ -89,8 +90,11 @@ const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
   if (userQuizzes && userQuizzes.length > 0) {
     all = quizzes.concat(userQuizzes);
   }
-  return all.sort((a: any, b: any) =>
-    getQuizName(a).localeCompare(getQuizName(b)),
+  return all.sort(
+    (
+      a: { name?: string; nimi?: string },
+      b: { name?: string; nimi?: string },
+    ) => getQuizName(a).localeCompare(getQuizName(b)),
   );
 };
 
@@ -103,9 +107,7 @@ const getLocalEssays = (): CategoryEssay[] => {
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const GOOGLE_DRIVE_DIRECT_LINK =
-    'https://drive.google.com/uc?export=download&id=1Nr-9H-3z_8O0IafoUTjC9iJI9aZJQ_SH';
-  const [data, setData] = useState(null);
+  const [, setData] = useState(null);
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [isLanguageReady, setIsLanguageReady] = useState(false);
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
@@ -627,15 +629,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     }
   }, []);
 
-  const setLastUpdated = useCallback(async (date: string) => {
-    setLastUpdateDateState(date);
-    try {
-      await AsyncStorage.setItem('lastUpdateDate', date);
-    } catch (error) {
-      console.error('Failed to save last update date', error);
-    }
-  }, []);
-
   // In your loadSettings function:
   const loadSettings = async () => {
     try {
@@ -720,10 +713,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   }, [remoteUpdateEnabled]); // This effect runs when remoteUpdateEnabled changes
 
   // --- Configuration ---
-  // 1. This points to the local API route at app/remoteUpdate.ts
-  const API_ENDPOINT_URL = '/api/remoteUpdate';
-  const absoluteApiEndpointUrl = `${origin}${API_ENDPOINT_URL}`;
-  // 2. Using the storage key from your provided snippet.
+  // Using the storage key from your provided snippet.
   const STORAGE_KEY = 'quizzes_de';
 
   const updateDataFromGoogleDrive = async () => {

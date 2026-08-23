@@ -170,7 +170,6 @@ export const Score: React.FC<ScoreProps> = ({
 
   // Animation refs
   const scaleAnim = useRef(new Animated.Value(0)).current;
-  const bounceAnim = useRef(new Animated.Value(0)).current;
   const scoreCountAnim = useRef(new Animated.Value(0)).current;
   const headingOpacity = useRef(new Animated.Value(0)).current;
   const headingScale = useRef(new Animated.Value(0.5)).current;

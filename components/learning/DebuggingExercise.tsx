@@ -8,7 +8,7 @@ import {
   Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Quiz } from '../types';
+import { Quiz, QuizQuestion, Answer } from '../types';
 
 interface DebuggingExerciseType {
   id: string;
@@ -28,7 +28,6 @@ interface DebuggingExerciseProps {
 
 export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
   onBack,
-  category,
   quizzes = [],
 }) => {
   // State and ref hooks must come first
@@ -54,13 +53,13 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
   const exercises = useMemo(() => {
     const debugExercises: DebuggingExerciseType[] = [];
 
-    quizzes.forEach((quiz: any) => {
+    quizzes.forEach((quiz: Quiz) => {
       if (quiz.questions) {
-        quiz.questions.forEach((q: any, idx: number) => {
+        quiz.questions.forEach((q: QuizQuestion, idx: number) => {
           if (q.answers && q.answers.length >= 2 && q.explanation) {
             // Create a "buggy" scenario using wrong answers
             const wrongAnswers = q.answers.filter(
-              (a: any) => a.answer !== q.answer,
+              (a: Answer) => a.answer !== q.answer,
             );
             if (wrongAnswers.length >= 1) {
               const explanationLines = q.explanation

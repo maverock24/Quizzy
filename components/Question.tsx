@@ -12,7 +12,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-  Dimensions,
+  GestureResponderEvent,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
@@ -20,12 +20,9 @@ import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
-import { useGlossary } from './GlossaryProvider';
 import { ClickableTerms } from './ClickableTerms';
 import { CelebrationOverload } from './kids/CelebrationOverload';
 import { SettingsHeader } from './SettingsHeader';
-
-const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
 type Answer = {
   answer: string;
@@ -255,26 +252,9 @@ export const Question: React.FC<QuestionProps> = ({
   handleAnswerSelection,
   correctAnswer,
 }) => {
-  const {
-    resetState,
-    flashcardsEnabled,
-    setFlashcardsEnabled,
-    notificationsEnabled,
-    setNotificationsEnabled,
-    showExplanation,
-    setShowExplanation,
-    audioEnabled,
-    setAudioEnabled,
-    setLanguage,
-    userQuizLoadEnabled,
-    setUserQuizLoadEnabled,
-    textInputAnswerMode,
-    kidsMode,
-  } = useQuiz();
-  const { t, i18n } = useTranslation();
+  const { audioEnabled, textInputAnswerMode, kidsMode } = useQuiz();
+  const { t } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
-  const { setSelectedTerm, setModalVisible: setGlossaryVisible } =
-    useGlossary();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
 
   // Animation refs
@@ -504,7 +484,7 @@ export const Question: React.FC<QuestionProps> = ({
   };
 
   // Correct answer celebration animation
-  const playCorrectAnimation = (buttonIndex: number) => {
+  const playCorrectAnimation = (_index: number) => {
     // Haptic feedback
     triggerHaptic('success');
 
@@ -644,7 +624,11 @@ export const Question: React.FC<QuestionProps> = ({
     };
   }, [answerSelected]);
 
-  const handleAnswer = (answer: string, index: number, event?: any) => {
+  const handleAnswer = (
+    answer: string,
+    index: number,
+    event?: GestureResponderEvent,
+  ) => {
     stopTTS(); // Stop TTS when moving to next question
     playSoundAnswerSelected();
     setSelectedAnswerIndex(index); // Highlight the selected button

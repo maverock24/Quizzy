@@ -261,7 +261,7 @@ class MultiplayerService {
   private handleHostConnection(conn: DataConnection) {
     this.connections.push(conn);
 
-    conn.on('data', (data: any) => {
+    conn.on('data', (data: unknown) => {
       const msg = data as Message;
       if (msg.type === 'JOIN') {
         const newPlayer = { ...msg.player, isHost: false };
@@ -445,7 +445,6 @@ class MultiplayerService {
   }
 
   updateProgress(progress: number, totalQuestions: number) {
-    const playerId = this.isHost ? 'host' : this.playerId!;
     if (this.isHost) {
       this.players = this.players.map((p) =>
         p.isHost ? { ...p, progress, totalQuestions } : p,
@@ -470,7 +469,6 @@ class MultiplayerService {
   }
 
   finishGame(score: number) {
-    const playerId = this.isHost ? 'host' : this.playerId!;
     const finishTime = this.gameState.startTime
       ? Date.now() - this.gameState.startTime
       : 0;

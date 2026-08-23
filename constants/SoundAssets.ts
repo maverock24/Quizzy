@@ -1,4 +1,4 @@
-export const SOUNDS: { [key: string]: any } = {
+export const SOUNDS: { [key: string]: number } = {
   correct_answer: require('../assets/sounds/correct_answer.mp3'),
   wrong_answer: require('../assets/sounds/wrong_answer.mp3'),
   answer_selected: require('../assets/sounds/answer_selected.mp3'),

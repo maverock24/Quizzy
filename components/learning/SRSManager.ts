@@ -179,7 +179,6 @@ export const getDueQuestions = async (
 
   // If we don't have enough due questions, add some new ones
   if (dueQuestions.length < maxQuestions) {
-    const needed = maxQuestions - dueQuestions.length;
     const existingIds = new Set(dueQuestions.map((q) => q.questionId));
 
     // Add questions that haven't been seen yet
@@ -252,7 +251,6 @@ export const getSRSStats = async (): Promise<{
   dueToday: number;
   masteredCount: number;
 }> => {
-  const now = Date.now();
   const endOfDay = new Date();
   endOfDay.setHours(23, 59, 59, 999);
 

@@ -6,6 +6,11 @@ import { useQuiz } from './Quizprovider';
 
 type TTSState = 'idle' | 'playing';
 
+type PauseAwareUtterance = SpeechSynthesisUtterance & {
+  isPause?: boolean;
+  pauseDuration?: number;
+};
+
 export function useReadAloud() {
   const { i18n } = useTranslation();
   const { selectedVoice } = useQuiz();
@@ -169,8 +174,8 @@ export function useReadAloud() {
       if (!utterance) return;
 
       // Check if this is a pause utterance
-      if ((utterance as any).isPause) {
-        const pauseDuration = (utterance as any).pauseDuration;
+      if ((utterance as PauseAwareUtterance).isPause) {
+        const pauseDuration = (utterance as PauseAwareUtterance).pauseDuration;
         setTimeout(() => {
           speakNextInQueue();
         }, pauseDuration);
@@ -534,8 +539,9 @@ export function useReadAloud() {
             } else if (segment.type === 'pause') {
               // Create a special "pause utterance" with metadata
               const pauseUtterance = new window.SpeechSynthesisUtterance('');
-              (pauseUtterance as any).isPause = true;
-              (pauseUtterance as any).pauseDuration = segment.content;
+              (pauseUtterance as PauseAwareUtterance).isPause = true;
+              (pauseUtterance as PauseAwareUtterance).pauseDuration =
+                segment.content as number;
               utteranceQueue.current.push(pauseUtterance);
             }
           });

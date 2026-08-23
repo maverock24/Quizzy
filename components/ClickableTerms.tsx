@@ -1,10 +1,10 @@
 import React, { useMemo } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, StyleProp, TextStyle } from 'react-native';
 import { useGlossary } from './GlossaryProvider';
 
 type ClickableTermsProps = {
   text: string;
-  style?: any;
+  style?: StyleProp<TextStyle>;
   onTermPress?: (term: string) => void;
 };
 

@@ -1,10 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useReadAloud } from './useReadAloud';
-import { useTranslation } from 'react-i18next';
-
 export const TtsTestComponent: React.FC = () => {
-  const { t } = useTranslation();
   const { readAloud, stopTTS, ttsState } = useReadAloud();
 
   const testBasicTts = () => {

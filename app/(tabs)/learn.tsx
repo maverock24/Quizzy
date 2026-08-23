@@ -11,9 +11,9 @@ import {
   MaterialCommunityIcons,
   FontAwesome5,
 } from '@expo/vector-icons';
-import { useTranslation } from 'react-i18next';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { useQuiz } from '@/components/Quizprovider';
+import { Quiz } from '@/components/types';
 
 // Import learning components
 import SRSDailyWarmup from '@/components/learning/SRSDailyWarmup';
@@ -40,7 +40,6 @@ interface LearningOption {
 }
 
 export default function LearnScreen() {
-  const { t } = useTranslation();
   const { quizzes } = useQuiz();
   const [currentMode, setCurrentMode] = useState<LearningMode>('menu');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -48,7 +47,7 @@ export default function LearnScreen() {
   // Extract unique categories from quizzes
   const categories = useMemo(() => {
     const cats = new Set<string>();
-    quizzes.forEach((quiz: any) => {
+    quizzes.forEach((quiz: Quiz) => {
       if (quiz.category) {
         cats.add(quiz.category);
       }
@@ -61,7 +60,7 @@ export default function LearnScreen() {
     if (selectedCategory === 'all') {
       return quizzes;
     }
-    return quizzes.filter((quiz: any) => quiz.category === selectedCategory);
+    return quizzes.filter((quiz: Quiz) => quiz.category === selectedCategory);
   }, [quizzes, selectedCategory]);
 
   const learningOptions: LearningOption[] = [
@@ -221,7 +220,7 @@ export default function LearnScreen() {
             <Text style={styles.categoryCount}>
               {filteredQuizzes.length} quizzes •{' '}
               {filteredQuizzes.reduce(
-                (acc: number, q: any) => acc + (q.questions?.length || 0),
+                (acc: number, q: Quiz) => acc + (q.questions?.length || 0),
                 0,
               )}{' '}
               questions

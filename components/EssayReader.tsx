@@ -17,7 +17,7 @@ type EssayReaderProps = {
 };
 
 // Static image registry — React Native requires compile-time paths for require()
-const essayImages: Record<string, any> = {
+const essayImages: Record<string, number> = {
   'cloud_pizza_model.png': require('../assets/essay_images/cloud_pizza_model.png'),
   'aws_regions_azs.png': require('../assets/essay_images/aws_regions_azs.png'),
   'compute_ec2_lambda.png': require('../assets/essay_images/compute_ec2_lambda.png'),

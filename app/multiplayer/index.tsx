@@ -6,7 +6,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Text,
-  Pressable,
   ActivityIndicator,
   TouchableOpacity,
   AppState,
@@ -20,7 +19,6 @@ import {
   PresenceUser,
   IncomingInvite,
 } from '../../services/PresenceService';
-import { useTranslation } from 'react-i18next';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
 const showAlert = (title: string, message: string) => {
@@ -34,7 +32,6 @@ const showAlert = (title: string, message: string) => {
 
 export default function MultiplayerHome() {
   const router = useRouter();
-  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [isJoining, setIsJoining] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
@@ -132,7 +129,6 @@ export default function MultiplayerHome() {
       setIsCreating(true);
       const code = await multiplayerService.createRoom(name);
       if (code) {
-        // @ts-ignore: router.push type mismatch
         router.push(
           `/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`,
         );
@@ -159,7 +155,6 @@ export default function MultiplayerHome() {
       if (response.success) {
         // Need to stop presence polling when jumping into game
         presenceService.disconnect();
-        // @ts-ignore: router.push type mismatch
         router.push(
           `/multiplayer/${codeToJoin}?name=${encodeURIComponent(
             name,
@@ -190,7 +185,6 @@ export default function MultiplayerHome() {
 
         // 3. Jump to waiting room
         presenceService.disconnect();
-        // @ts-ignore
         router.push(
           `/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`,
         );

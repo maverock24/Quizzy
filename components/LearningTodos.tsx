@@ -21,7 +21,7 @@ interface LearningTodosProps {
 
 export const LearningTodos: React.FC<LearningTodosProps> = ({ onPractice }) => {
   const { t } = useTranslation();
-  const { todos, clearTodo } = useLearningTodos();
+  const { todos } = useLearningTodos();
   const [selectedTodo, setSelectedTodo] = useState<LearningTodoItem | null>(
     null,
   );

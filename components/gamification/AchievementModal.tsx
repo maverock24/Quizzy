@@ -13,10 +13,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import {
-  useGamification,
-  NewlyUnlockedAchievement,
-} from './GamificationProvider';
+import { useGamification } from './GamificationProvider';
 import { useTranslation } from 'react-i18next';
 
 const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import {
   View,
   StyleSheet,
@@ -20,11 +20,11 @@ import { presenceService } from '../../services/PresenceService';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useQuiz } from '../../components/Quizprovider';
 import { Question } from '../../components/Question';
-import { Answer, QuizQuestion } from '../../components/types';
+import { Answer, Quiz, QuizQuestion } from '../../components/types';
 import { QuizSelection } from '../../components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
-const shuffleArray = (array: any[]) => {
+const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -63,11 +63,11 @@ const showAlert = (
 };
 
 export default function MultiplayerRoom() {
-  const {
-    code,
-    name,
-    isHost: isHostParam,
-  } = useLocalSearchParams<{ code: string; name: string; isHost: string }>();
+  const { code, isHost: isHostParam } = useLocalSearchParams<{
+    code: string;
+    name: string;
+    isHost: string;
+  }>();
   const router = useRouter();
   const { quizzes } = useQuiz();
   const isHost = isHostParam === 'true';
@@ -77,7 +77,7 @@ export default function MultiplayerRoom() {
     status: 'waiting',
     currentQuestionIndex: 0,
   });
-  const [selectedQuiz, setSelectedQuiz] = useState<any>(null);
+  const [selectedQuiz, setSelectedQuiz] = useState<Quiz | null>(null);
 
   // Quiz State
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -89,7 +89,7 @@ export default function MultiplayerRoom() {
   const [myFinished, setMyFinished] = useState(false);
 
   // Results State
-  const [results, setResults] = useState<
+  const [, setResults] = useState<
     {
       playerId: string;
       name: string;
@@ -241,7 +241,7 @@ export default function MultiplayerRoom() {
     multiplayerService.startGame(selectedQuiz.name);
   };
 
-  const handleQuizSelection = (quiz: any) => {
+  const handleQuizSelection = (quiz: Quiz) => {
     const fullQuiz = quizzes.find((q) => q.name === quiz.name);
     if (fullQuiz) {
       setSelectedQuiz(fullQuiz);
@@ -552,7 +552,7 @@ export default function MultiplayerRoom() {
 
                 {players.length < 2 && (
                   <Text style={styles.hintText}>
-                    Share code "{code}" with your opponent to join
+                    Share code &quot;{code}&quot; with your opponent to join
                   </Text>
                 )}
               </View>

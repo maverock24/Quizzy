@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-  Animated,
-  StyleSheet,
-  Switch,
-  Text,
-  TouchableOpacity,
-  View,
-  Platform,
-} from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
-import { t } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { useQuiz } from './Quizprovider';
 import { useReadAloud } from './useReadAloud';
 import { ClickableTerms } from './ClickableTerms';
 import { SettingsHeader } from './SettingsHeader';
@@ -34,15 +24,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
   selectedQuizAnswersAmount,
   handleNext,
 }) => {
-  const {
-    flashcardsEnabled,
-    setFlashcardsEnabled,
-    showExplanation,
-    setShowExplanation,
-    audioEnabled,
-    setAudioEnabled,
-  } = useQuiz();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
 
   const righOrWrong = answerIsCorrect ? t('correct') : t('wrong');

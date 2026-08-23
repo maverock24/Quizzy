@@ -2,7 +2,7 @@
 const CACHE_NAME = 'quizzy-v4';
 
 // Install event - take control immediately
-self.addEventListener('install', (event) => {
+self.addEventListener('install', () => {
   console.log('[SW] Installing service worker v4...');
   self.skipWaiting();
 });

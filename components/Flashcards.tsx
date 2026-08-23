@@ -41,7 +41,6 @@ const Flashcard: React.FC<FlashcardProps> = ({
   cardIsFlipped,
   question,
   selectedQuizAnswersAmount,
-  keepCardAndGoToNext,
   correctAnswer,
   explanation,
   cardWidth = FALLBACK_CARD_WIDTH,
@@ -250,14 +249,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [deckSize, setDeckSize] = useState(0);
 
-  const {
-    audioEnabled,
-    setAudioEnabled,
-    flashcardsEnabled,
-    setFlashcardsEnabled,
-    showExplanation,
-    setShowExplanation,
-  } = useQuiz();
+  const { flashcardsEnabled, setFlashcardsEnabled } = useQuiz();
 
   const pan = useRef(new Animated.ValueXY()).current;
   const topCardRotate = pan.x.interpolate({

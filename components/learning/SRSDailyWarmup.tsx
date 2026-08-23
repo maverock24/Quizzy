@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -9,7 +9,6 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useTranslation } from 'react-i18next';
 import { useQuiz } from '../Quizprovider';
 import {
   getDueQuestions,
@@ -32,7 +31,6 @@ interface SRSDailyWarmupProps {
 }
 
 export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
-  const { t } = useTranslation();
   const { quizzes } = useQuiz();
 
   const [loading, setLoading] = useState(true);

@@ -3,7 +3,14 @@
  * Displays full stats dashboard for profile/settings screen
  */
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { useGamification } from './GamificationProvider';
 import { useQuiz } from '../Quizprovider';
 import { useTranslation } from 'react-i18next';
@@ -13,27 +20,17 @@ import { AchievementBadge } from './AchievementBadge';
 import { DEFAULT_ACHIEVEMENTS } from './types';
 
 interface GamificationStatsProps {
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 export const GamificationStats: React.FC<GamificationStatsProps> = ({
   style,
 }) => {
   const { t } = useTranslation();
-  const {
-    stats,
-    streak,
-    xp,
-    achievements,
-    unlockedAchievements,
-    lockedAchievements,
-  } = useGamification();
-  const {
-    totalQuestionsAnswered,
-    totalCorrectAnswers,
-    totalWonGames,
-    totalLostGames,
-  } = useQuiz();
+  const { stats, streak, achievements, unlockedAchievements } =
+    useGamification();
+  const { totalQuestionsAnswered, totalCorrectAnswers, totalWonGames } =
+    useQuiz();
 
   // Calculate accuracy
   const accuracy =

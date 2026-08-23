@@ -3,13 +3,7 @@
  * Shows user's gamification stats, achievements, progress, and learning to-dos
  */
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { GamificationStats } from '@/components/gamification';
 import { LearningTodos } from '@/components/LearningTodos';

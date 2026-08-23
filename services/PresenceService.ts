@@ -1,5 +1,4 @@
 import { Platform } from 'react-native';
-import { Player } from './MultiplayerService';
 
 let LOBBY_API_URL = '/.netlify/functions/lobby';
 
@@ -186,7 +185,9 @@ class PresenceService {
           peerId: this.myPeerId,
         }),
       }).catch(() => {});
-    } catch (e) {}
+    } catch (e) {
+      // ignore disconnect errors
+    }
   }
 
   private processIncomingData(data: {
