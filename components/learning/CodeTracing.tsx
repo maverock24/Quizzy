@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
     View,
     Text,
@@ -8,27 +8,74 @@ import {
     Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { CodeTracingQuestion } from '../types';
+import { Quiz } from '../types';
 
-// Import code tracing data
-import codeTracingData from '../../code_tracing.json';
+interface CodeTracingQuestion {
+    id: string;
+    code: string;
+    question: string;
+    options: string[];
+    correctAnswer: string;
+    explanation: string;
+    category?: string;
+}
 
 interface CodeTracingProps {
     onBack: () => void;
+    category?: string;
+    quizzes?: Quiz[];
 }
 
-export const CodeTracing: React.FC<CodeTracingProps> = ({ onBack }) => {
-    const [questions] = useState<CodeTracingQuestion[]>(codeTracingData as CodeTracingQuestion[]);
+export const CodeTracing: React.FC<CodeTracingProps> = ({ onBack, category, quizzes = [] }) => {
+    // State hooks must come first
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
     const [showResult, setShowResult] = useState(false);
     const [correctCount, setCorrectCount] = useState(0);
     const [completed, setCompleted] = useState(false);
-
     const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    // Helper function defined before useMemo
+    const shuffleArray = <T,>(array: T[]): T[] => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
+    // Convert quiz questions to code tracing format
+    const questions = useMemo(() => {
+        const tracingQuestions: CodeTracingQuestion[] = [];
+
+        quizzes.forEach((quiz: any) => {
+            if (quiz.questions) {
+                quiz.questions.forEach((q: any, idx: number) => {
+                    // Use the question and answers to create a code tracing exercise
+                    const options = q.answers?.map((a: any) => a.answer) || [];
+                    if (options.length >= 2) {
+                        tracingQuestions.push({
+                            id: `${quiz.name}-${idx}`,
+                            code: q.explanation || q.question, // Use explanation as "code" context
+                            question: q.question,
+                            options: options.slice(0, 4), // Limit to 4 options
+                            correctAnswer: q.answer,
+                            explanation: q.explanation || 'This is the correct answer.',
+                            category: quiz.category,
+                        });
+                    }
+                });
+            }
+        });
+
+        // Shuffle and limit
+        return shuffleArray(tracingQuestions).slice(0, 10);
+    }, [quizzes]);
 
     useEffect(() => {
         fadeAnim.setValue(0);
+
         Animated.timing(fadeAnim, {
             toValue: 1,
             duration: 300,
@@ -136,12 +183,17 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({ onBack }) => {
                     </View>
                     <ScrollView
                         style={styles.codeContent}
-                        horizontal
-                        showsHorizontalScrollIndicator={false}
+                        nestedScrollEnabled={true}
+                        showsVerticalScrollIndicator={true}
                     >
-                        <Text style={styles.codeText}>
-                            {currentQuestion.code}
-                        </Text>
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={true}
+                        >
+                            <Text style={styles.codeText}>
+                                {currentQuestion.code}
+                            </Text>
+                        </ScrollView>
                     </ScrollView>
                 </Animated.View>
 
@@ -282,7 +334,7 @@ const styles = StyleSheet.create({
     },
     codeContent: {
         padding: 16,
-        maxHeight: 200,
+        maxHeight: 300,
     },
     codeText: {
         fontFamily: 'monospace',

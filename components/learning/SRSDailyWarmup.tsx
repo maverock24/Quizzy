@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
     View,
     Text,
@@ -149,6 +149,7 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
             </View>
         );
     }
+
 
     if (completed) {
         const percentage = Math.round((correctCount / questions.length) * 100);
