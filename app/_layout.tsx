@@ -11,7 +11,10 @@ import { Platform } from 'react-native';
 
 import { QuizProvider } from '@/components/Quizprovider';
 import { GlossaryProvider } from '@/components/GlossaryProvider';
-import { GamificationProvider, AchievementModal } from '@/components/gamification';
+import {
+  GamificationProvider,
+  AchievementModal,
+} from '@/components/gamification';
 import { Music } from '@/components/Music';
 import i18n from '@/components/i18n';
 
@@ -51,17 +54,26 @@ export default function RootLayout() {
       // Wait for window to fully load before registering SW
       const registerSW = async () => {
         try {
-          const registration = await navigator.serviceWorker.register('/sw.js', {
-            scope: '/',
-          });
-          console.log('[App] Service Worker registered with scope:', registration.scope);
+          const registration = await navigator.serviceWorker.register(
+            '/sw.js',
+            {
+              scope: '/',
+            },
+          );
+          console.log(
+            '[App] Service Worker registered with scope:',
+            registration.scope,
+          );
 
           // Check for updates
           registration.addEventListener('updatefound', () => {
             const newWorker = registration.installing;
             if (newWorker) {
               newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                if (
+                  newWorker.state === 'installed' &&
+                  navigator.serviceWorker.controller
+                ) {
                   console.log('[App] New content available, please refresh.');
                 }
               });
@@ -99,7 +111,8 @@ function MusicFromContext() {
 }
 
 function OnboardingWrapper({ children }: { children: React.ReactNode }) {
-  const { onboardingCompleted, completeOnboarding } = require('@/components/Quizprovider').useQuiz();
+  const { onboardingCompleted, completeOnboarding } =
+    require('@/components/Quizprovider').useQuiz();
   const { Onboarding } = require('@/components/Onboarding');
 
   if (!onboardingCompleted) {
@@ -118,7 +131,9 @@ function RootLayoutNav() {
     },
   };
 
-  const { LearningTodosProvider } = require('@/components/LearningTodosProvider');
+  const {
+    LearningTodosProvider,
+  } = require('@/components/LearningTodosProvider');
 
   return (
     <ThemeProvider value={CustomDarkTheme}>
@@ -130,8 +145,14 @@ function RootLayoutNav() {
                 <MusicFromContext />
                 <AchievementModal />
                 <Stack>
-                  <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-                  <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+                  <Stack.Screen
+                    name="(tabs)"
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="modal"
+                    options={{ presentation: 'modal' }}
+                  />
                 </Stack>
               </OnboardingWrapper>
             </GamificationProvider>
@@ -141,4 +162,3 @@ function RootLayoutNav() {
     </ThemeProvider>
   );
 }
-

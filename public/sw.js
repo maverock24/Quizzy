@@ -11,37 +11,60 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   console.log('[SW] Activating service worker v4...');
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((cacheName) => cacheName !== CACHE_NAME)
-          .map((cacheName) => {
-            console.log('[SW] Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          })
-      );
-    }).then(() => {
-      console.log('[SW] Claiming clients...');
-      return self.clients.claim();
-    })
+    caches
+      .keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames
+            .filter((cacheName) => cacheName !== CACHE_NAME)
+            .map((cacheName) => {
+              console.log('[SW] Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }),
+        );
+      })
+      .then(() => {
+        console.log('[SW] Claiming clients...');
+        return self.clients.claim();
+      }),
   );
 });
 
 // Helper: Check if request is for a static asset
 const isStaticAsset = (url) => {
   const staticExtensions = [
-    '.js', '.css', '.html', '.json',
-    '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico',
-    '.woff', '.woff2', '.ttf', '.otf', '.eot',
-    '.mp3', '.wav', '.ogg', '.mp4', '.webm'
+    '.js',
+    '.css',
+    '.html',
+    '.json',
+    '.png',
+    '.jpg',
+    '.jpeg',
+    '.gif',
+    '.svg',
+    '.webp',
+    '.ico',
+    '.woff',
+    '.woff2',
+    '.ttf',
+    '.otf',
+    '.eot',
+    '.mp3',
+    '.wav',
+    '.ogg',
+    '.mp4',
+    '.webm',
   ];
-  return staticExtensions.some(ext => url.pathname.endsWith(ext));
+  return staticExtensions.some((ext) => url.pathname.endsWith(ext));
 };
 
 // Helper: Check if request is a navigation request
 const isNavigationRequest = (request) => {
-  return request.mode === 'navigate' ||
-    (request.method === 'GET' && request.headers.get('accept')?.includes('text/html'));
+  return (
+    request.mode === 'navigate' ||
+    (request.method === 'GET' &&
+      request.headers.get('accept')?.includes('text/html'))
+  );
 };
 
 // Fetch event - Cache-first for assets, Network-first for navigation
@@ -84,11 +107,11 @@ self.addEventListener('fetch', (event) => {
               // Last resort: return an offline page
               return new Response(
                 '<!DOCTYPE html><html><head><meta charset="utf-8"><title>Quizzy - Offline</title></head><body style="font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0;background:#1d2836;color:#fff;"><div style="text-align:center;"><h1>📚 Quizzy</h1><p>You are offline. Please check your internet connection.</p><button onclick="location.reload()" style="padding:10px 20px;font-size:16px;cursor:pointer;">Retry</button></div></body></html>',
-                { headers: { 'Content-Type': 'text/html' } }
+                { headers: { 'Content-Type': 'text/html' } },
               );
             });
           });
-        })
+        }),
     );
     return;
   }
@@ -116,7 +139,7 @@ self.addEventListener('fetch', (event) => {
 
         // Return cached response immediately if available, otherwise wait for network
         return cachedResponse || fetchPromise;
-      })
+      }),
     );
     return;
   }
@@ -135,7 +158,7 @@ self.addEventListener('fetch', (event) => {
       })
       .catch(() => {
         return caches.match(event.request);
-      })
+      }),
   );
 });
 

@@ -44,7 +44,7 @@ export default function TabLayout() {
         easing: ReanimatedEasing.inOut(ReanimatedEasing.ease),
       }),
       -1,
-      true
+      true,
     );
   }, []);
 
@@ -57,10 +57,7 @@ export default function TabLayout() {
       <Animated.Image
         source={image}
         resizeMode="cover"
-        style={[
-          styles.backgroundImage,
-          animatedStyle,
-        ]}
+        style={[styles.backgroundImage, animatedStyle]}
       />
       <Tabs
         initialRouteName="index"
@@ -116,14 +113,18 @@ export default function TabLayout() {
           name="learn"
           options={{
             title: 'Learn',
-            tabBarIcon: ({ color }) => <TabBarIcon name="graduation-cap" color={color} />,
+            tabBarIcon: ({ color }) => (
+              <TabBarIcon name="graduation-cap" color={color} />
+            ),
           }}
         />
         <Tabs.Screen
           name="profile"
           options={{
             title: 'Profile',
-            tabBarIcon: ({ color }) => <TabBarIcon name="trophy" color={color} />,
+            tabBarIcon: ({ color }) => (
+              <TabBarIcon name="trophy" color={color} />
+            ),
           }}
         />
         <Tabs.Screen

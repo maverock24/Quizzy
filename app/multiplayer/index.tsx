@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Text, Pressable, ActivityIndicator, TouchableOpacity, AppState, ScrollView } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  TextInput,
+  KeyboardAvoidingView,
+  Platform,
+  Text,
+  Pressable,
+  ActivityIndicator,
+  TouchableOpacity,
+  AppState,
+  ScrollView,
+} from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { multiplayerService } from '../../services/MultiplayerService';
-import { presenceService, PresenceUser, IncomingInvite } from '../../services/PresenceService';
+import {
+  presenceService,
+  PresenceUser,
+  IncomingInvite,
+} from '../../services/PresenceService';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
@@ -28,7 +44,9 @@ export default function MultiplayerHome() {
   const [isConnectedToLobby, setIsConnectedToLobby] = useState(false);
 
   // Generate a random PeerJS ID for the lobby if we don't have one
-  const [myLobbyId] = useState(() => Math.random().toString(36).substring(2, 10));
+  const [myLobbyId] = useState(() =>
+    Math.random().toString(36).substring(2, 10),
+  );
 
   // Clean up any stale connections on mount
   useEffect(() => {
@@ -36,7 +54,8 @@ export default function MultiplayerHome() {
 
     // Subscribe to presence
     const onUsers = (users: PresenceUser[]) => setActiveUsers(users);
-    const onInvite = (invite: IncomingInvite) => setIncomingInvites(prev => [...prev, invite]);
+    const onInvite = (invite: IncomingInvite) =>
+      setIncomingInvites((prev) => [...prev, invite]);
 
     presenceService.onUsersChange(onUsers);
     presenceService.onInviteReceived(onInvite);
@@ -69,13 +88,19 @@ export default function MultiplayerHome() {
       if (nextAppState === 'active' && isConnectedToLobby) {
         // Resume heavy polling
         presenceService.startPolling();
-      } else if (nextAppState.match(/inactive|background/) && isConnectedToLobby) {
+      } else if (
+        nextAppState.match(/inactive|background/) &&
+        isConnectedToLobby
+      ) {
         // Stop polling to save Serverless bandwidth
         presenceService.stopPolling();
       }
     };
 
-    const subscription = AppState.addEventListener('change', handleAppStateChange);
+    const subscription = AppState.addEventListener(
+      'change',
+      handleAppStateChange,
+    );
 
     // Web fallback
     const handleVisibility = () => {
@@ -108,7 +133,9 @@ export default function MultiplayerHome() {
       const code = await multiplayerService.createRoom(name);
       if (code) {
         // @ts-ignore: router.push type mismatch
-        router.push(`/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`);
+        router.push(
+          `/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`,
+        );
       } else {
         showAlert('Error', 'Failed to create room. Please try again.');
       }
@@ -133,9 +160,16 @@ export default function MultiplayerHome() {
         // Need to stop presence polling when jumping into game
         presenceService.disconnect();
         // @ts-ignore: router.push type mismatch
-        router.push(`/multiplayer/${codeToJoin}?name=${encodeURIComponent(name)}&isHost=false`);
+        router.push(
+          `/multiplayer/${codeToJoin}?name=${encodeURIComponent(
+            name,
+          )}&isHost=false`,
+        );
       } else {
-        showAlert('Error', 'Failed to join room. Check the code and try again.');
+        showAlert(
+          'Error',
+          'Failed to join room. Check the code and try again.',
+        );
       }
     } catch (error) {
       console.error(error);
@@ -157,7 +191,9 @@ export default function MultiplayerHome() {
         // 3. Jump to waiting room
         presenceService.disconnect();
         // @ts-ignore
-        router.push(`/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`);
+        router.push(
+          `/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`,
+        );
       } else {
         showAlert('Error', 'Failed to start game for invite.');
       }
@@ -176,7 +212,9 @@ export default function MultiplayerHome() {
 
   const handleRejectInvite = async (invite: IncomingInvite) => {
     await presenceService.removeInvite(invite.roomId);
-    setIncomingInvites(prev => prev.filter(i => i.roomId !== invite.roomId));
+    setIncomingInvites((prev) =>
+      prev.filter((i) => i.roomId !== invite.roomId),
+    );
   };
 
   return (
@@ -207,7 +245,11 @@ export default function MultiplayerHome() {
               <TouchableOpacity
                 onPress={handleCreateRoom}
                 disabled={isJoining || isCreating}
-                style={[styles.button, styles.createBtn, (isJoining || isCreating) && styles.disabledBtn]}
+                style={[
+                  styles.button,
+                  styles.createBtn,
+                  (isJoining || isCreating) && styles.disabledBtn,
+                ]}
               >
                 {isCreating ? (
                   <ActivityIndicator color="white" />
@@ -217,19 +259,33 @@ export default function MultiplayerHome() {
               </TouchableOpacity>
             </View>
 
-
             {/* INCOMING INVITES SECTION */}
             {incomingInvites.length > 0 && (
-              <View style={[styles.card, { borderColor: 'rgb(52, 211, 153)', borderWidth: 2 }]}>
-                <Text style={[styles.label, { color: 'rgb(52, 211, 153)' }]}>📬 Incoming Invites</Text>
-                {incomingInvites.map(invite => (
+              <View
+                style={[
+                  styles.card,
+                  { borderColor: 'rgb(52, 211, 153)', borderWidth: 2 },
+                ]}
+              >
+                <Text style={[styles.label, { color: 'rgb(52, 211, 153)' }]}>
+                  📬 Incoming Invites
+                </Text>
+                {incomingInvites.map((invite) => (
                   <View key={invite.roomId} style={styles.inviteRow}>
-                    <Text style={styles.inviteText}>{invite.fromName} invited you!</Text>
+                    <Text style={styles.inviteText}>
+                      {invite.fromName} invited you!
+                    </Text>
                     <View style={styles.inviteActions}>
-                      <TouchableOpacity onPress={() => handleAcceptInvite(invite)} style={[styles.actionBtn, styles.acceptBtn]}>
+                      <TouchableOpacity
+                        onPress={() => handleAcceptInvite(invite)}
+                        style={[styles.actionBtn, styles.acceptBtn]}
+                      >
                         <Text style={styles.actionBtnText}>Accept</Text>
                       </TouchableOpacity>
-                      <TouchableOpacity onPress={() => handleRejectInvite(invite)} style={[styles.actionBtn, styles.rejectBtn]}>
+                      <TouchableOpacity
+                        onPress={() => handleRejectInvite(invite)}
+                        style={[styles.actionBtn, styles.rejectBtn]}
+                      >
                         <Text style={styles.actionBtnText}>Decline</Text>
                       </TouchableOpacity>
                     </View>
@@ -242,24 +298,45 @@ export default function MultiplayerHome() {
             <View style={styles.card}>
               <View style={styles.headerRow}>
                 <Text style={styles.label}>🟢 Active Players in Lobby</Text>
-                {isConnectedToLobby && <ActivityIndicator size="small" color="rgba(255,255,255,0.5)" />}
+                {isConnectedToLobby && (
+                  <ActivityIndicator
+                    size="small"
+                    color="rgba(255,255,255,0.5)"
+                  />
+                )}
               </View>
 
               {!isConnectedToLobby ? (
-                <Text style={styles.emptyText}>Enter your name above to enter the lobby and see who is online.</Text>
+                <Text style={styles.emptyText}>
+                  Enter your name above to enter the lobby and see who is
+                  online.
+                </Text>
               ) : activeUsers.length === 0 ? (
-                <Text style={styles.emptyText}>No one else is online right now. Waiting for players...</Text>
+                <Text style={styles.emptyText}>
+                  No one else is online right now. Waiting for players...
+                </Text>
               ) : (
                 <ScrollView style={{ maxHeight: 200 }}>
-                  {activeUsers.map(user => (
+                  {activeUsers.map((user) => (
                     <View key={user.peerId} style={styles.userRow}>
                       <Text style={styles.userName}>{user.name}</Text>
                       <TouchableOpacity
-                        style={[styles.inviteSmallBtn, user.roomCode ? { backgroundColor: 'rgb(46, 150, 194)' } : undefined]}
-                        onPress={() => user.roomCode ? handleJoinRoom(user.roomCode) : handleInvitePlayer(user.peerId)}
+                        style={[
+                          styles.inviteSmallBtn,
+                          user.roomCode
+                            ? { backgroundColor: 'rgb(46, 150, 194)' }
+                            : undefined,
+                        ]}
+                        onPress={() =>
+                          user.roomCode
+                            ? handleJoinRoom(user.roomCode)
+                            : handleInvitePlayer(user.peerId)
+                        }
                         disabled={isCreating}
                       >
-                        <Text style={styles.inviteSmallBtnText}>{user.roomCode ? 'Join' : 'Invite'}</Text>
+                        <Text style={styles.inviteSmallBtnText}>
+                          {user.roomCode ? 'Join' : 'Invite'}
+                        </Text>
                       </TouchableOpacity>
                     </View>
                   ))}
@@ -277,7 +354,7 @@ export default function MultiplayerHome() {
           </View>
         </TouchableOpacity>
       </SafeAreaLinearGradient>
-    </View >
+    </View>
   );
 }
 

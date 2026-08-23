@@ -48,9 +48,8 @@ export default function SettingsScreen() {
 
   const [userQuizModalVisible, setUserQuizModalVisible] = React.useState(false);
   const [userQuizJson, setUserQuizJson] = React.useState('');
-  const [isUserQuizLoadEnabled, setIsUserQuizLoadEnabled] = React.useState(
-    false,
-  );
+  const [isUserQuizLoadEnabled, setIsUserQuizLoadEnabled] =
+    React.useState(false);
 
   // Load userQuizLoadEnabled from AsyncStorage on mount
   React.useEffect(() => {
@@ -249,7 +248,8 @@ export default function SettingsScreen() {
             <View style={styles.settingName}>
               <Text style={styles.settingText}>🎨 Kids Mode</Text>
               <Text style={styles.settingDescription}>
-                Größere Feiern, Streak-Haustier und buntere Animationen für Kinder
+                Größere Feiern, Streak-Haustier und buntere Animationen für
+                Kinder
               </Text>
             </View>
             <Switch
@@ -281,7 +281,9 @@ export default function SettingsScreen() {
           {/* Timer Duration - only show when timer is enabled */}
           {timerEnabled && (
             <View style={styles.settingItem}>
-              <Text style={[styles.label, { flex: 1 }]}>{t('timer_duration')}</Text>
+              <Text style={[styles.label, { flex: 1 }]}>
+                {t('timer_duration')}
+              </Text>
               <View
                 style={{
                   flex: 1,
@@ -326,7 +328,9 @@ export default function SettingsScreen() {
                 <Picker
                   selectedValue={selectedVoice?.name || ''}
                   onValueChange={(voiceName: string) => {
-                    const voice = availableVoices.find(v => v.name === voiceName);
+                    const voice = availableVoices.find(
+                      (v) => v.name === voiceName,
+                    );
                     setSelectedVoice(voice || null);
                   }}
                   style={{ height: 30, color: 'black' }}
@@ -351,14 +355,19 @@ export default function SettingsScreen() {
               <View style={styles.settingName}>
                 <Text style={styles.settingText}>Test Voice</Text>
                 <Text style={styles.settingDescription}>
-                  Test the selected voice. On mobile devices, this also enables TTS functionality.
+                  Test the selected voice. On mobile devices, this also enables
+                  TTS functionality.
                 </Text>
               </View>
               <Button
                 onPress={() => {
-                  const testText = "Hello! This is a test of the text-to-speech voice.";
+                  const testText =
+                    'Hello! This is a test of the text-to-speech voice.';
                   // Use the TTS directly with the Web Speech API
-                  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+                  if (
+                    typeof window !== 'undefined' &&
+                    'speechSynthesis' in window
+                  ) {
                     window.speechSynthesis.cancel(); // Stop any current speech
                     const utterance = new SpeechSynthesisUtterance(testText);
                     if (selectedVoice) {

@@ -250,7 +250,14 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [deckSize, setDeckSize] = useState(0);
 
-  const { audioEnabled, setAudioEnabled, flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation } = useQuiz();
+  const {
+    audioEnabled,
+    setAudioEnabled,
+    flashcardsEnabled,
+    setFlashcardsEnabled,
+    showExplanation,
+    setShowExplanation,
+  } = useQuiz();
 
   const pan = useRef(new Animated.ValueXY()).current;
   const topCardRotate = pan.x.interpolate({
@@ -340,7 +347,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
       handlerOnfinish();
       return;
     }
-    let newQuestionsArray = [...quizQuestions];
+    const newQuestionsArray = [...quizQuestions];
     let newDeckSize = deckSize;
     let newCurrentIndex = currentIndex;
 
@@ -467,25 +474,33 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   return (
     <GestureHandlerRootView>
       <View style={carouselStyles.header}>
-                  <View style={{ marginBottom: 10,flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'flex-end', height: 20 }}>
-                    <View style={carouselStyles.settingItem}>
-                                  <Text style={carouselStyles.settingText}>{t('use_flashcards')}</Text>
-                                  
-                                
-                    
-                                <Switch
-                                style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
-                                  trackColor={{ false: 'gray', true: 'white' }}
-                                  thumbColor={
-                                    flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
-                                  }
-                                  ios_backgroundColor="gray"
-                                  onValueChange={setFlashcardsEnabled}
-                                  value={flashcardsEnabled}
-                                />
-                    </View>
-                  </View>
-                </View>
+        <View
+          style={{
+            marginBottom: 10,
+            flexDirection: 'row',
+            alignItems: 'flex-end',
+            justifyContent: 'flex-end',
+            height: 20,
+          }}
+        >
+          <View style={carouselStyles.settingItem}>
+            <Text style={carouselStyles.settingText}>
+              {t('use_flashcards')}
+            </Text>
+
+            <Switch
+              style={{ transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] }}
+              trackColor={{ false: 'gray', true: 'white' }}
+              thumbColor={
+                flashcardsEnabled ? 'rgb(85, 101, 107)' : 'rgb(63, 65, 66)'
+              }
+              ios_backgroundColor="gray"
+              onValueChange={setFlashcardsEnabled}
+              value={flashcardsEnabled}
+            />
+          </View>
+        </View>
+      </View>
       <View style={carouselStyles.dumpButton}>
         <FontAwesome name="arrow-left" size={24} color="gray" />
         <Text style={carouselStyles.keepButtonText}>dump</Text>

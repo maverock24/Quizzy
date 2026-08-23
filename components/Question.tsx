@@ -223,10 +223,7 @@ export function renderRichText(text: string): React.ReactNode[] {
     }
 
     parts.push(
-      <Text
-        key={`math-${match.index}`}
-        style={styles.mathText}
-      >
+      <Text key={`math-${match.index}`} style={styles.mathText}>
         {mathContent}
       </Text>,
     );
@@ -276,7 +273,8 @@ export const Question: React.FC<QuestionProps> = ({
   } = useQuiz();
   const { t, i18n } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
-  const { setSelectedTerm, setModalVisible: setGlossaryVisible } = useGlossary();
+  const { setSelectedTerm, setModalVisible: setGlossaryVisible } =
+    useGlossary();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
 
   // Animation refs
@@ -297,14 +295,24 @@ export const Question: React.FC<QuestionProps> = ({
 
   // Use useState for animation arrays that need to update with answers
   const [fadeOutAnim, setFadeOutAnim] = useState<Animated.Value[]>([]);
-  const [buttonSlideAnims, setButtonSlideAnims] = useState<Animated.Value[]>([]);
-  const [buttonOpacityAnims, setButtonOpacityAnims] = useState<Animated.Value[]>([]);
-  const [buttonScaleAnims, setButtonScaleAnims] = useState<Animated.Value[]>([]);
+  const [buttonSlideAnims, setButtonSlideAnims] = useState<Animated.Value[]>(
+    [],
+  );
+  const [buttonOpacityAnims, setButtonOpacityAnims] = useState<
+    Animated.Value[]
+  >([]);
+  const [buttonScaleAnims, setButtonScaleAnims] = useState<Animated.Value[]>(
+    [],
+  );
   const [answerSelected, setAnswerSelected] = useState(false);
-  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
+  const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
+    null,
+  );
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
   const [answerIsWrong, setAnswerIsWrong] = useState(false);
-  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number | null>(null);
+  const [correctAnswerIndex, setCorrectAnswerIndex] = useState<number | null>(
+    null,
+  );
   const soundRef = useRef<Audio.Sound | null>(null);
   const [textInputValue, setTextInputValue] = useState('');
   const [textInputSubmitted, setTextInputSubmitted] = useState(false);
@@ -315,11 +323,14 @@ export const Question: React.FC<QuestionProps> = ({
 
   // Floating score state
   const [showFloatingScore, setShowFloatingScore] = useState(false);
-  const [floatingScorePosition, setFloatingScorePosition] = useState({ x: 0, y: 0 });
+  const [floatingScorePosition, setFloatingScorePosition] = useState({
+    x: 0,
+    y: 0,
+  });
 
   // Find correct answer index
   useEffect(() => {
-    const correctIdx = answers.findIndex(a => a.answer === correctAnswer);
+    const correctIdx = answers.findIndex((a) => a.answer === correctAnswer);
     setCorrectAnswerIndex(correctIdx);
   }, [answers, correctAnswer]);
 
@@ -344,7 +355,8 @@ export const Question: React.FC<QuestionProps> = ({
 
   // Question entrance animation - run after animation arrays are created
   useEffect(() => {
-    if (buttonSlideAnims.length === 0 || buttonOpacityAnims.length === 0) return;
+    if (buttonSlideAnims.length === 0 || buttonOpacityAnims.length === 0)
+      return;
 
     // Reset question animations
     questionSlideAnim.setValue(-30);
@@ -396,7 +408,6 @@ export const Question: React.FC<QuestionProps> = ({
   }, [buttonSlideAnims, buttonOpacityAnims]);
 
   // Clean up sound when component unmounts
-
 
   // Function to play sound
   const playSound = async (isCorrect: boolean) => {
@@ -548,12 +559,36 @@ export const Question: React.FC<QuestionProps> = ({
 
     // Shake animation
     Animated.sequence([
-      Animated.timing(shakeAnim, { toValue: 10, duration: 50, useNativeDriver: true }),
-      Animated.timing(shakeAnim, { toValue: -10, duration: 50, useNativeDriver: true }),
-      Animated.timing(shakeAnim, { toValue: 8, duration: 50, useNativeDriver: true }),
-      Animated.timing(shakeAnim, { toValue: -8, duration: 50, useNativeDriver: true }),
-      Animated.timing(shakeAnim, { toValue: 5, duration: 50, useNativeDriver: true }),
-      Animated.timing(shakeAnim, { toValue: 0, duration: 50, useNativeDriver: true }),
+      Animated.timing(shakeAnim, {
+        toValue: 10,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(shakeAnim, {
+        toValue: -10,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(shakeAnim, {
+        toValue: 8,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(shakeAnim, {
+        toValue: -8,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(shakeAnim, {
+        toValue: 5,
+        duration: 50,
+        useNativeDriver: true,
+      }),
+      Animated.timing(shakeAnim, {
+        toValue: 0,
+        duration: 50,
+        useNativeDriver: true,
+      }),
     ]).start();
 
     // Highlight correct answer with pulsing glow
@@ -570,7 +605,7 @@ export const Question: React.FC<QuestionProps> = ({
           useNativeDriver: false,
         }),
       ]),
-      { iterations: 2 }
+      { iterations: 2 },
     ).start();
   };
 
@@ -717,7 +752,14 @@ export const Question: React.FC<QuestionProps> = ({
   };
 
   // Confetti colors
-  const confettiColors = ['#FFD700', '#4ECDC4', '#FF6B6B', '#95E1D3', '#AA96DA', '#45B7D1'];
+  const confettiColors = [
+    '#FFD700',
+    '#4ECDC4',
+    '#FF6B6B',
+    '#95E1D3',
+    '#AA96DA',
+    '#45B7D1',
+  ];
 
   // Interpolate glow color for correct answer
   const correctGlowColor = correctGlowAnim.interpolate({
@@ -740,10 +782,7 @@ export const Question: React.FC<QuestionProps> = ({
     >
       {/* Screen flash overlay for correct answer */}
       <Animated.View
-        style={[
-          styles.screenFlash,
-          { opacity: screenFlashAnim },
-        ]}
+        style={[styles.screenFlash, { opacity: screenFlashAnim }]}
         pointerEvents="none"
       />
 
@@ -779,10 +818,7 @@ export const Question: React.FC<QuestionProps> = ({
               justifyContent: 'space-between',
             }}
           >
-            <ClickableTerms
-              text={question}
-              style={styles.questionText}
-            />
+            <ClickableTerms text={question} style={styles.questionText} />
             <TouchableOpacity
               onPress={handleReadAloud}
               style={{
@@ -811,7 +847,9 @@ export const Question: React.FC<QuestionProps> = ({
             <TextInput
               style={[
                 styles.textInput,
-                textInputSubmitted && answerIsCorrect && styles.textInputCorrect,
+                textInputSubmitted &&
+                  answerIsCorrect &&
+                  styles.textInputCorrect,
                 textInputSubmitted && answerIsWrong && styles.textInputWrong,
               ]}
               value={textInputValue}
@@ -860,10 +898,12 @@ export const Question: React.FC<QuestionProps> = ({
             )}
           </View>
         ) : (
-          <View style={{
-            overflow: 'visible',
-            marginTop: 10,
-          }}>
+          <View
+            style={{
+              overflow: 'visible',
+              marginTop: 10,
+            }}
+          >
             {answers.map((answer, index) => {
               const isSelected = selectedAnswerIndex === index;
               const isCorrectAnswer = index === correctAnswerIndex;
@@ -884,7 +924,10 @@ export const Question: React.FC<QuestionProps> = ({
                       // Apply shake only to the wrong selected button
                       { translateX: showWrongShake ? shakeAnim : 0 },
                       // Apply pulse only to correct answer
-                      { scale: isSelected && answerIsCorrect ? correctPulseAnim : 1 },
+                      {
+                        scale:
+                          isSelected && answerIsCorrect ? correctPulseAnim : 1,
+                      },
                     ],
                   }}
                 >
@@ -898,7 +941,9 @@ export const Question: React.FC<QuestionProps> = ({
                       style={[
                         styles.answerButton,
                         isSelected && styles.selectedAnswerButton,
-                        isSelected && answerIsCorrect && styles.correctAnswerButton,
+                        isSelected &&
+                          answerIsCorrect &&
+                          styles.correctAnswerButton,
                         showWrongShake && styles.wrongAnswerButton,
                         showCorrectHighlight && styles.highlightCorrectButton,
                       ]}
@@ -929,7 +974,9 @@ export const Question: React.FC<QuestionProps> = ({
                       )}
 
                       <View style={styles.labelContainer}>
-                        <Text style={styles.labelText}>{answerLabels[index]}</Text>
+                        <Text style={styles.labelText}>
+                          {answerLabels[index]}
+                        </Text>
                       </View>
                       <Text style={styles.answerButtonText} numberOfLines={4}>
                         {renderRichText(answer.answer)}
@@ -944,26 +991,21 @@ export const Question: React.FC<QuestionProps> = ({
                             { transform: [{ scale: correctPulseAnim }] },
                           ]}
                         >
-                          <FontAwesome
-                            name="check"
-                            size={18}
-                            color="white"
-                          />
+                          <FontAwesome name="check" size={18} color="white" />
                         </Animated.View>
                       )}
 
                       {/* Wrong icon */}
                       {answerIsWrong && isSelected && (
-                        <View style={[styles.iconContainer, styles.wrongIconContainer]}>
-                          <FontAwesome
-                            name="times"
-                            size={18}
-                            color="white"
-                          />
+                        <View
+                          style={[
+                            styles.iconContainer,
+                            styles.wrongIconContainer,
+                          ]}
+                        >
+                          <FontAwesome name="times" size={18} color="white" />
                         </View>
                       )}
-
-
                     </TouchableOpacity>
                   </Animated.View>
                 </Animated.View>
@@ -1003,7 +1045,10 @@ export const Question: React.FC<QuestionProps> = ({
 
             {/* Floating score indicator */}
             {showFloatingScore && (
-              <FloatingScore x={floatingScorePosition.x} y={floatingScorePosition.y} />
+              <FloatingScore
+                x={floatingScorePosition.x}
+                y={floatingScorePosition.y}
+              />
             )}
           </View>
         )}

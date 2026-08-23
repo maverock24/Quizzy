@@ -1,5 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Text, Animated, Easing, Dimensions, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  Animated,
+  Easing,
+  Dimensions,
+  StyleSheet,
+} from 'react-native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
@@ -12,7 +19,9 @@ const GallopingUnicorn: React.FC<{
   size: number;
   row: number;
 }> = ({ fromLeft, delay, size, row }) => {
-  const x = useRef(new Animated.Value(fromLeft ? -100 : SCREEN_WIDTH + 100)).current;
+  const x = useRef(
+    new Animated.Value(fromLeft ? -100 : SCREEN_WIDTH + 100),
+  ).current;
   const bounce = useRef(new Animated.Value(0)).current;
   const sparkle = useRef(new Animated.Value(0)).current;
 
@@ -31,23 +40,61 @@ const GallopingUnicorn: React.FC<{
     // Bouncy gallop — up and down rhythmically
     Animated.loop(
       Animated.sequence([
-        Animated.timing(bounce, { toValue: -15, duration: 150, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(bounce, { toValue: 0, duration: 150, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(bounce, { toValue: -12, duration: 130, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(bounce, { toValue: 0, duration: 130, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(bounce, { toValue: -10, duration: 200, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(bounce, { toValue: 0, duration: 200, easing: Easing.in(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(bounce, {
+          toValue: -15,
+          duration: 150,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bounce, {
+          toValue: 0,
+          duration: 150,
+          easing: Easing.in(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bounce, {
+          toValue: -12,
+          duration: 130,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bounce, {
+          toValue: 0,
+          duration: 130,
+          easing: Easing.in(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bounce, {
+          toValue: -10,
+          duration: 200,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(bounce, {
+          toValue: 0,
+          duration: 200,
+          easing: Easing.in(Easing.cubic),
+          useNativeDriver: true,
+        }),
       ]),
-      { iterations: 4 }
+      { iterations: 4 },
     ).start();
 
     // Sparkle trail
     Animated.loop(
       Animated.sequence([
-        Animated.timing(sparkle, { toValue: 1, duration: 300, useNativeDriver: true }),
-        Animated.timing(sparkle, { toValue: 0, duration: 300, useNativeDriver: true }),
+        Animated.timing(sparkle, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(sparkle, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
       ]),
-      { iterations: 8 }
+      { iterations: 8 },
     ).start();
   }, []);
 
@@ -98,32 +145,79 @@ const DancingUnicorn: React.FC = () => {
     // Entrance: pop in with spring
     Animated.sequence([
       Animated.delay(400),
-      Animated.spring(scale, { toValue: 1, friction: 3, tension: 80, useNativeDriver: true }),
+      Animated.spring(scale, {
+        toValue: 1,
+        friction: 3,
+        tension: 80,
+        useNativeDriver: true,
+      }),
     ]).start();
 
     // Happy hops
     Animated.loop(
       Animated.sequence([
-        Animated.timing(hop, { toValue: -25, duration: 200, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(hop, { toValue: 0, duration: 200, easing: Easing.bounce, useNativeDriver: true }),
+        Animated.timing(hop, {
+          toValue: -25,
+          duration: 200,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(hop, {
+          toValue: 0,
+          duration: 200,
+          easing: Easing.bounce,
+          useNativeDriver: true,
+        }),
         Animated.delay(100),
-        Animated.timing(hop, { toValue: -20, duration: 180, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(hop, { toValue: 0, duration: 180, easing: Easing.bounce, useNativeDriver: true }),
+        Animated.timing(hop, {
+          toValue: -20,
+          duration: 180,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(hop, {
+          toValue: 0,
+          duration: 180,
+          easing: Easing.bounce,
+          useNativeDriver: true,
+        }),
         Animated.delay(150),
-        Animated.timing(hop, { toValue: -35, duration: 250, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
-        Animated.timing(hop, { toValue: 0, duration: 250, easing: Easing.bounce, useNativeDriver: true }),
+        Animated.timing(hop, {
+          toValue: -35,
+          duration: 250,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
+        Animated.timing(hop, {
+          toValue: 0,
+          duration: 250,
+          easing: Easing.bounce,
+          useNativeDriver: true,
+        }),
       ]),
-      { iterations: 3 }
+      { iterations: 3 },
     ).start();
 
     // Little wiggle
     Animated.loop(
       Animated.sequence([
-        Animated.timing(spin, { toValue: 1, duration: 300, useNativeDriver: true }),
-        Animated.timing(spin, { toValue: -1, duration: 600, useNativeDriver: true }),
-        Animated.timing(spin, { toValue: 0, duration: 300, useNativeDriver: true }),
+        Animated.timing(spin, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(spin, {
+          toValue: -1,
+          duration: 600,
+          useNativeDriver: true,
+        }),
+        Animated.timing(spin, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
       ]),
-      { iterations: 3 }
+      { iterations: 3 },
     ).start();
   }, []);
 
@@ -158,11 +252,23 @@ const RainbowSweep: React.FC = () => {
   useEffect(() => {
     Animated.sequence([
       Animated.delay(300),
-      Animated.timing(progress, { toValue: 1, duration: 1800, easing: Easing.inOut(Easing.cubic), useNativeDriver: false }),
+      Animated.timing(progress, {
+        toValue: 1,
+        duration: 1800,
+        easing: Easing.inOut(Easing.cubic),
+        useNativeDriver: false,
+      }),
     ]).start();
   }, []);
 
-  const colors = ['#FF6B6B', '#FF922B', '#FFD93D', '#6BCB77', '#4D96FF', '#845EF7'];
+  const colors = [
+    '#FF6B6B',
+    '#FF922B',
+    '#FFD93D',
+    '#6BCB77',
+    '#4D96FF',
+    '#845EF7',
+  ];
 
   return (
     <View style={styles.rainbowContainer} pointerEvents="none">
@@ -218,7 +324,10 @@ const FloatingHearts: React.FC = () => {
   );
 };
 
-const FloatingHeart: React.FC<{ emoji: string; index: number }> = ({ emoji, index }) => {
+const FloatingHeart: React.FC<{ emoji: string; index: number }> = ({
+  emoji,
+  index,
+}) => {
   const y = useRef(new Animated.Value(0)).current;
   const opacity = useRef(new Animated.Value(0)).current;
   const xOffset = (index - 3.5) * 45 + (Math.random() - 0.5) * 30;
@@ -227,12 +336,30 @@ const FloatingHeart: React.FC<{ emoji: string; index: number }> = ({ emoji, inde
     Animated.sequence([
       Animated.delay(600 + index * 120),
       Animated.parallel([
-        Animated.timing(opacity, { toValue: 1, duration: 300, useNativeDriver: true }),
-        Animated.timing(y, { toValue: 0, duration: 300, useNativeDriver: true }),
+        Animated.timing(opacity, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(y, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }),
       ]),
       Animated.parallel([
-        Animated.timing(opacity, { toValue: 0, duration: 1500, delay: 800, useNativeDriver: true }),
-        Animated.timing(y, { toValue: -250, duration: 2000, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+        Animated.timing(opacity, {
+          toValue: 0,
+          duration: 1500,
+          delay: 800,
+          useNativeDriver: true,
+        }),
+        Animated.timing(y, {
+          toValue: -250,
+          duration: 2000,
+          easing: Easing.out(Easing.cubic),
+          useNativeDriver: true,
+        }),
       ]),
     ]).start();
   }, []);
@@ -291,16 +418,31 @@ const WooHooText: React.FC = () => {
   const scale = useRef(new Animated.Value(0.2)).current;
   const opacity = useRef(new Animated.Value(1)).current;
   const [text] = useState(() => {
-    const texts = ['SUPER! 🦄', 'WOOOHOO! 🌈', 'TOLL! 🦄', 'GENIAL! 🌈', 'KLASSE! 🦄'];
+    const texts = [
+      'SUPER! 🦄',
+      'WOOOHOO! 🌈',
+      'TOLL! 🦄',
+      'GENIAL! 🌈',
+      'KLASSE! 🦄',
+    ];
     return texts[Math.floor(Math.random() * texts.length)];
   });
 
   useEffect(() => {
     Animated.sequence([
       Animated.delay(500),
-      Animated.spring(scale, { toValue: 1.2, friction: 3, tension: 100, useNativeDriver: true }),
+      Animated.spring(scale, {
+        toValue: 1.2,
+        friction: 3,
+        tension: 100,
+        useNativeDriver: true,
+      }),
       Animated.delay(1200),
-      Animated.timing(opacity, { toValue: 0, duration: 400, useNativeDriver: true }),
+      Animated.timing(opacity, {
+        toValue: 0,
+        duration: 400,
+        useNativeDriver: true,
+      }),
     ]).start();
   }, []);
 

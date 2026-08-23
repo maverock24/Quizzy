@@ -39,7 +39,11 @@ export const GlossaryModal: React.FC = () => {
   useEffect(() => {
     if (Platform.OS === 'web' && isModalVisible) {
       // Push a history state so browser back closes the modal
-      window.history.pushState({ glossaryModal: true }, '', window.location.href);
+      window.history.pushState(
+        { glossaryModal: true },
+        '',
+        window.location.href,
+      );
       const handlePopState = (e: PopStateEvent) => {
         if (e.state?.glossaryModal) {
           // Going back from glossary state
@@ -57,10 +61,13 @@ export const GlossaryModal: React.FC = () => {
       };
     }
     if (Platform.OS !== 'web' && isModalVisible) {
-      const backHandler = BackHandler.addEventListener('hardwareBackPress', () => {
-        handleClose();
-        return true; // Prevent default behavior
-      });
+      const backHandler = BackHandler.addEventListener(
+        'hardwareBackPress',
+        () => {
+          handleClose();
+          return true; // Prevent default behavior
+        },
+      );
       return () => backHandler.remove();
     }
   }, [isModalVisible, selectedTerm]);
@@ -130,7 +137,11 @@ export const GlossaryModal: React.FC = () => {
           {item.definition}
         </Text>
       </View>
-      <Ionicons name="chevron-forward" size={18} color="rgba(255,255,255,0.4)" />
+      <Ionicons
+        name="chevron-forward"
+        size={18}
+        color="rgba(255,255,255,0.4)"
+      />
     </TouchableOpacity>
   );
 
@@ -143,7 +154,9 @@ export const GlossaryModal: React.FC = () => {
           <Text style={styles.selectedTermTitle}>{selectedTerm.term}</Text>
         </View>
         <View style={styles.selectedTermDivider} />
-        <Text style={styles.selectedTermDefinition}>{selectedTerm.definition}</Text>
+        <Text style={styles.selectedTermDefinition}>
+          {selectedTerm.definition}
+        </Text>
       </View>
     );
   };
@@ -158,10 +171,7 @@ export const GlossaryModal: React.FC = () => {
     >
       <View style={styles.modalContainer}>
         {/* Backdrop — closes modal when tapped */}
-        <Pressable
-          style={styles.backdrop}
-          onPress={handleClose}
-        />
+        <Pressable style={styles.backdrop} onPress={handleClose} />
         {/* Content — doesn't propagate to backdrop */}
         <Animated.View
           style={[
@@ -174,96 +184,103 @@ export const GlossaryModal: React.FC = () => {
         >
           {/* Content wrapper to prevent backdrop tap-through */}
           <Pressable onPress={() => {}} style={{ flex: 1 }}>
-          {/* Header */}
-          <View style={styles.header}>
-            <View style={styles.headerHandle} />
-            <View style={styles.headerRow}>
-              <TouchableOpacity onPress={handleClose} style={styles.headerButton}>
-                <Ionicons
-                  name={selectedTerm ? 'arrow-back' : 'close'}
-                  size={24}
-                  color="white"
-                />
-              </TouchableOpacity>
-              <Text style={styles.headerTitle}>
-                {selectedTerm ? 'Definition' : 'AI/ML Glossary'}
-              </Text>
-              <View style={styles.headerButton} />
+            {/* Header */}
+            <View style={styles.header}>
+              <View style={styles.headerHandle} />
+              <View style={styles.headerRow}>
+                <TouchableOpacity
+                  onPress={handleClose}
+                  style={styles.headerButton}
+                >
+                  <Ionicons
+                    name={selectedTerm ? 'arrow-back' : 'close'}
+                    size={24}
+                    color="white"
+                  />
+                </TouchableOpacity>
+                <Text style={styles.headerTitle}>
+                  {selectedTerm ? 'Definition' : 'AI/ML Glossary'}
+                </Text>
+                <View style={styles.headerButton} />
+              </View>
+
+              {/* Search Bar */}
+              {!selectedTerm && (
+                <View style={styles.searchContainer}>
+                  <Ionicons
+                    name="search"
+                    size={18}
+                    color="rgba(255,255,255,0.5)"
+                    style={styles.searchIcon}
+                  />
+                  <TextInput
+                    ref={inputRef}
+                    style={styles.searchInput}
+                    placeholder="Search terms..."
+                    placeholderTextColor="rgba(255,255,255,0.4)"
+                    value={searchQuery}
+                    onChangeText={handleSearchChange}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    returnKeyType="search"
+                  />
+                  {searchQuery.length > 0 && (
+                    <TouchableOpacity
+                      onPress={() => setSearchQuery('')}
+                      style={styles.clearButton}
+                    >
+                      <Ionicons
+                        name="close-circle"
+                        size={18}
+                        color="rgba(255,255,255,0.5)"
+                      />
+                    </TouchableOpacity>
+                  )}
+                </View>
+              )}
             </View>
 
-            {/* Search Bar */}
-            {!selectedTerm && (
-              <View style={styles.searchContainer}>
-                <Ionicons
-                  name="search"
-                  size={18}
-                  color="rgba(255,255,255,0.5)"
-                  style={styles.searchIcon}
-                />
-                <TextInput
-                  ref={inputRef}
-                  style={styles.searchInput}
-                  placeholder="Search terms..."
-                  placeholderTextColor="rgba(255,255,255,0.4)"
-                  value={searchQuery}
-                  onChangeText={handleSearchChange}
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  returnKeyType="search"
-                />
-                {searchQuery.length > 0 && (
-                  <TouchableOpacity
-                    onPress={() => setSearchQuery('')}
-                    style={styles.clearButton}
-                  >
-                    <Ionicons name="close-circle" size={18} color="rgba(255,255,255,0.5)" />
-                  </TouchableOpacity>
-                )}
-              </View>
+            {/* Content */}
+            {selectedTerm ? (
+              renderSelectedTerm()
+            ) : (
+              <FlatList
+                data={filteredTerms}
+                keyExtractor={(item) => item.term}
+                renderItem={renderTermItem}
+                style={styles.termList}
+                contentContainerStyle={styles.termListContent}
+                showsVerticalScrollIndicator={false}
+                keyboardShouldPersistTaps="handled"
+                ListEmptyComponent={
+                  <View style={styles.emptyState}>
+                    <Ionicons
+                      name="search-outline"
+                      size={48}
+                      color="rgba(255,255,255,0.3)"
+                    />
+                    <Text style={styles.emptyText}>
+                      {searchQuery
+                        ? 'No matching terms found'
+                        : `${filteredTerms.length} terms available`}
+                    </Text>
+                  </View>
+                }
+              />
             )}
-          </View>
 
-          {/* Content */}
-          {selectedTerm ? (
-            renderSelectedTerm()
-          ) : (
-            <FlatList
-              data={filteredTerms}
-              keyExtractor={(item) => item.term}
-              renderItem={renderTermItem}
-              style={styles.termList}
-              contentContainerStyle={styles.termListContent}
-              showsVerticalScrollIndicator={false}
-              keyboardShouldPersistTaps="handled"
-              ListEmptyComponent={
-                <View style={styles.emptyState}>
-                  <Ionicons
-                    name="search-outline"
-                    size={48}
-                    color="rgba(255,255,255,0.3)"
-                  />
-                  <Text style={styles.emptyText}>
-                    {searchQuery
-                      ? 'No matching terms found'
-                      : `${filteredTerms.length} terms available`}
-                  </Text>
-                </View>
-              }
-            />
-          )}
-
-          {/* Floating search button when viewing a term */}
-          {selectedTerm && (
-            <TouchableOpacity
-              style={styles.floatingSearchButton}
-              onPress={() => {
-                setSelectedTerm(null);
-                setTimeout(() => inputRef.current?.focus(), 100);
-              }}
-            >
-              <Ionicons name="search" size={22} color="white" />
-            </TouchableOpacity>
-          )}
+            {/* Floating search button when viewing a term */}
+            {selectedTerm && (
+              <TouchableOpacity
+                style={styles.floatingSearchButton}
+                onPress={() => {
+                  setSelectedTerm(null);
+                  setTimeout(() => inputRef.current?.focus(), 100);
+                }}
+              >
+                <Ionicons name="search" size={22} color="white" />
+              </TouchableOpacity>
+            )}
           </Pressable>
         </Animated.View>
       </View>

@@ -194,14 +194,14 @@ export const Score: React.FC<ScoreProps> = ({
   ];
   const confettiPieces = isWinner
     ? Array.from({ length: 50 }, (_, i) => ({
-      id: i,
-      delay: Math.random() * 1000,
-      startX: Math.random() * SCREEN_WIDTH,
-      color:
-        confettiColors[Math.floor(Math.random() * confettiColors.length)],
-      size: 8 + Math.random() * 8,
-      rotation: Math.random() * 360,
-    }))
+        id: i,
+        delay: Math.random() * 1000,
+        startX: Math.random() * SCREEN_WIDTH,
+        color:
+          confettiColors[Math.floor(Math.random() * confettiColors.length)],
+        size: 8 + Math.random() * 8,
+        rotation: Math.random() * 360,
+      }))
     : [];
 
   useEffect(() => {
@@ -332,7 +332,11 @@ export const Score: React.FC<ScoreProps> = ({
             }}
           >
             <Text style={[styles.heading, isWinner && styles.winnerHeading]}>
-              {timeExpired ? `⏰ ${t('time_up')} ⏰` : isWinner ? '🎉 Well Done! 🎉' : '💪 Try again!'}
+              {timeExpired
+                ? `⏰ ${t('time_up')} ⏰`
+                : isWinner
+                ? '🎉 Well Done! 🎉'
+                : '💪 Try again!'}
             </Text>
             {isWinner && (
               <Text style={styles.subHeading}>
@@ -392,7 +396,8 @@ export const Score: React.FC<ScoreProps> = ({
                 activeOpacity={0.8}
               >
                 <Text style={styles.retryButtonText}>
-                  🔄 {t('retry_wrong', 'Retry Wrong Answers')} ({wrongAnswerCount})
+                  🔄 {t('retry_wrong', 'Retry Wrong Answers')} (
+                  {wrongAnswerCount})
                 </Text>
               </TouchableOpacity>
             )}

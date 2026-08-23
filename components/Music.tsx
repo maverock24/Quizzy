@@ -12,7 +12,7 @@ export const Music: React.FC<{ enabled: boolean }> = ({ enabled }) => {
       }
       const { sound } = await Audio.Sound.createAsync(
         require('../assets/sounds/elevator_music.mp3'),
-        { shouldPlay: true, isLooping: true }
+        { shouldPlay: true, isLooping: true },
       );
       soundRef.current = sound;
       await sound.setVolumeAsync(0.2); // Lower volume

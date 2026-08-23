@@ -1,5 +1,13 @@
 import React from 'react';
-import { Animated, StyleSheet, Switch, Text, TouchableOpacity, View, Platform } from 'react-native';
+import {
+  Animated,
+  StyleSheet,
+  Switch,
+  Text,
+  TouchableOpacity,
+  View,
+  Platform,
+} from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Dimensions } from 'react-native';
@@ -26,7 +34,14 @@ export const Explanation: React.FC<ExplanationProps> = ({
   selectedQuizAnswersAmount,
   handleNext,
 }) => {
-  const { flashcardsEnabled, setFlashcardsEnabled, showExplanation, setShowExplanation, audioEnabled, setAudioEnabled } = useQuiz();
+  const {
+    flashcardsEnabled,
+    setFlashcardsEnabled,
+    showExplanation,
+    setShowExplanation,
+    audioEnabled,
+    setAudioEnabled,
+  } = useQuiz();
   const { t, i18n } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
 
@@ -66,10 +81,19 @@ export const Explanation: React.FC<ExplanationProps> = ({
         >
           <TouchableOpacity
             onPress={handleReadAloud}
-            style={{ right: 0, top: 0, position: 'absolute', zIndex: 9999, borderRadius: 8, padding: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}
+            style={{
+              right: 0,
+              top: 0,
+              position: 'absolute',
+              zIndex: 9999,
+              borderRadius: 8,
+              padding: 8,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
             accessibilityLabel="Read explanation aloud"
           >
-
             <FontAwesome
               name="comment"
               size={30}
@@ -77,33 +101,45 @@ export const Explanation: React.FC<ExplanationProps> = ({
               style={{ marginLeft: 8, marginTop: -5 }}
             />
           </TouchableOpacity>
-          <Text style={styles.questionHeading}>
-            {righOrWrong}
-          </Text>
+          <Text style={styles.questionHeading}>{righOrWrong}</Text>
           <View style={{ marginTop: 8 }}>
-            <ClickableTerms
-              text={explanation}
-              style={styles.normalText}
-            />
+            <ClickableTerms text={explanation} style={styles.normalText} />
           </View>
           <View style={styles.glossaryHint}>
-            <Ionicons name="bulb-outline" size={14} color="rgba(255,255,255,0.6)" />
+            <Ionicons
+              name="bulb-outline"
+              size={14}
+              color="rgba(255,255,255,0.6)"
+            />
             <Text style={styles.glossaryHintText}>
               Tap highlighted terms for definitions
             </Text>
           </View>
         </View>
-
       </ScrollView>
-      <TouchableOpacity onPress={handlerNextQuestion} style={{ marginBottom: 20, paddingBottom: 10 }}>
-        <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+      <TouchableOpacity
+        onPress={handlerNextQuestion}
+        style={{ marginBottom: 20, paddingBottom: 10 }}
+      >
+        <View
+          style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
           {/* <Text style={styles.buttonText}>Next </Text> */}
-          <FontAwesome name="forward" size={35} color="white" style={{ marginRight: 6 }} />
+          <FontAwesome
+            name="forward"
+            size={35}
+            color="white"
+            style={{ marginRight: 6 }}
+          />
         </View>
       </TouchableOpacity>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -135,8 +171,7 @@ const styles = StyleSheet.create({
     maxHeight: height * 0.7,
     marginBottom: 5,
   },
-  contentContainer: {
-  },
+  contentContainer: {},
   card: {
     padding: 20,
     borderRadius: 8,

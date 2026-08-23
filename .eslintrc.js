@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   env: {
     browser: true,
     es2021: true,
@@ -16,7 +16,6 @@ export default {
     },
     ecmaVersion: 12,
     sourceType: 'module',
-    project: ['./tsconfig.json', './.eslintrc.js'],
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
