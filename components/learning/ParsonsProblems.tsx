@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
     View,
     Text,
@@ -10,15 +10,28 @@ import {
     Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { ParsonsProblem, ParsonsLine } from '../types';
-
-// Import Parsons problems data
-import parsonsData from '../../parsons_data.json';
+import { Quiz } from '../types';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
+interface ParsonsLine {
+    id: string;
+    code: string;
+    indent: number;
+}
+
+interface ParsonsProblem {
+    id: string;
+    title: string;
+    description: string;
+    scrambledLines: ParsonsLine[];
+    correctOrder: string[];
+}
+
 interface ParsonsProblemsProps {
     onBack: () => void;
+    category?: string;
+    quizzes?: Quiz[];
 }
 
 interface DraggableLine extends ParsonsLine {
@@ -26,8 +39,8 @@ interface DraggableLine extends ParsonsLine {
     position: number;
 }
 
-export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({ onBack }) => {
-    const [problems] = useState<ParsonsProblem[]>(parsonsData as ParsonsProblem[]);
+export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({ onBack, category, quizzes = [] }) => {
+    // State and ref hooks must come first
     const [currentIndex, setCurrentIndex] = useState(0);
     const [availableLines, setAvailableLines] = useState<DraggableLine[]>([]);
     const [placedLines, setPlacedLines] = useState<DraggableLine[]>([]);
@@ -35,8 +48,56 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({ onBack }) => {
     const [isCorrect, setIsCorrect] = useState(false);
     const [correctCount, setCorrectCount] = useState(0);
     const [completed, setCompleted] = useState(false);
-
     const fadeAnim = useRef(new Animated.Value(0)).current;
+
+    // Helper function before useMemo
+    const shuffleArray = <T,>(array: T[]): T[] => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
+    // Convert quiz questions to Parsons problems format
+    const problems = useMemo(() => {
+        const parsonsProblems: ParsonsProblem[] = [];
+
+        quizzes.forEach((quiz: any) => {
+            if (quiz.questions) {
+                quiz.questions.forEach((q: any, idx: number) => {
+                    if (q.explanation && q.explanation.length > 50) {
+                        // Split explanation into sentences for reordering
+                        const sentences = q.explanation
+                            .split(/[.!?]+/)
+                            .filter((s: string) => s.trim().length > 10)
+                            .slice(0, 5);
+
+                        if (sentences.length >= 3) {
+                            const lines: ParsonsLine[] = sentences.map((s: string, i: number) => ({
+                                id: `line-${i}`,
+                                code: s.trim() + '.',
+                                indent: 0,
+                            }));
+
+                            parsonsProblems.push({
+                                id: `${quiz.name}-${idx}`,
+                                title: quiz.name,
+                                description: q.question,
+                                scrambledLines: lines,
+                                correctOrder: lines.map(l => l.id),
+                            });
+                        }
+                    }
+                });
+            }
+        });
+
+        // Shuffle and limit
+        return shuffleArray(parsonsProblems).slice(0, 5);
+    }, [quizzes]);
+
 
     useEffect(() => {
         initializeProblem();

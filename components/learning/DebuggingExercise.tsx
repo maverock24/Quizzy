@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
     View,
     Text,
@@ -8,27 +8,86 @@ import {
     Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { DebuggingExercise as DebuggingExerciseType } from '../types';
+import { Quiz } from '../types';
 
-// Import debugging exercises data
-import debuggingData from '../../debugging_exercises.json';
+interface DebuggingExerciseType {
+    id: string;
+    title: string;
+    description: string;
+    code: string;
+    buggyLineIndex: number;
+    explanation: string;
+    fixedCode: string;
+}
 
 interface DebuggingExerciseProps {
     onBack: () => void;
+    category?: string;
+    quizzes?: Quiz[];
 }
 
-export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({ onBack }) => {
-    const [exercises] = useState<DebuggingExerciseType[]>(debuggingData as DebuggingExerciseType[]);
+export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({ onBack, category, quizzes = [] }) => {
+    // State and ref hooks must come first
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedLine, setSelectedLine] = useState<number | null>(null);
     const [showResult, setShowResult] = useState(false);
     const [showFix, setShowFix] = useState(false);
     const [correctCount, setCorrectCount] = useState(0);
     const [completed, setCompleted] = useState(false);
-
     const fadeAnim = useRef(new Animated.Value(0)).current;
 
+    // Helper function before useMemo
+    const shuffleArray = <T,>(array: T[]): T[] => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
+    // Convert quiz questions to debugging exercises
+    const exercises = useMemo(() => {
+        const debugExercises: DebuggingExerciseType[] = [];
+
+        quizzes.forEach((quiz: any) => {
+            if (quiz.questions) {
+                quiz.questions.forEach((q: any, idx: number) => {
+                    if (q.answers && q.answers.length >= 2 && q.explanation) {
+                        // Create a "buggy" scenario using wrong answers
+                        const wrongAnswers = q.answers.filter((a: any) => a.answer !== q.answer);
+                        if (wrongAnswers.length >= 1) {
+                            const explanationLines = q.explanation.split('. ').filter((s: string) => s.length > 5);
+                            if (explanationLines.length >= 2) {
+                                // Create code-like lines from explanation
+                                const codeLines = explanationLines.map((line: string, i: number) =>
+                                    i === 0 ? `// Concept: ${line}` : `// ${line}`
+                                );
+                                // Insert a "buggy" wrong answer line
+                                const buggyLineIndex = Math.min(1, codeLines.length - 1);
+                                codeLines.splice(buggyLineIndex, 0, `// ❌ Wrong: ${wrongAnswers[0].answer}`);
+
+                                debugExercises.push({
+                                    id: `${quiz.name}-${idx}`,
+                                    title: quiz.name,
+                                    description: q.question,
+                                    code: codeLines.join('\n'),
+                                    buggyLineIndex: buggyLineIndex,
+                                    explanation: `The correct answer is: ${q.answer}. ${q.explanation}`,
+                                    fixedCode: `// ✅ Correct: ${q.answer}\n${q.explanation}`,
+                                });
+                            }
+                        }
+                    }
+                });
+            }
+        });
+
+        return shuffleArray(debugExercises).slice(0, 6);
+    }, [quizzes]);
+
     useEffect(() => {
+
         fadeAnim.setValue(0);
         Animated.timing(fadeAnim, {
             toValue: 1,

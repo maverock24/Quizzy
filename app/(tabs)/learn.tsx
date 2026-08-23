@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
     View,
     Text,
@@ -9,6 +9,7 @@ import {
 import { Ionicons, MaterialCommunityIcons, FontAwesome5 } from '@expo/vector-icons';
 import { useTranslation } from 'react-i18next';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
+import { useQuiz } from '@/components/Quizprovider';
 
 // Import learning components
 import SRSDailyWarmup from '@/components/learning/SRSDailyWarmup';
@@ -36,7 +37,28 @@ interface LearningOption {
 
 export default function LearnScreen() {
     const { t } = useTranslation();
+    const { quizzes } = useQuiz();
     const [currentMode, setCurrentMode] = useState<LearningMode>('menu');
+    const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
+    // Extract unique categories from quizzes
+    const categories = useMemo(() => {
+        const cats = new Set<string>();
+        quizzes.forEach((quiz: any) => {
+            if (quiz.category) {
+                cats.add(quiz.category);
+            }
+        });
+        return ['all', ...Array.from(cats).sort()];
+    }, [quizzes]);
+
+    // Filter quizzes by selected category
+    const filteredQuizzes = useMemo(() => {
+        if (selectedCategory === 'all') {
+            return quizzes;
+        }
+        return quizzes.filter((quiz: any) => quiz.category === selectedCategory);
+    }, [quizzes, selectedCategory]);
 
     const learningOptions: LearningOption[] = [
         {
@@ -88,6 +110,17 @@ export default function LearnScreen() {
         setCurrentMode('menu');
     };
 
+    // Get short category name (remove emoji prefix)
+    const getCategoryDisplayName = (cat: string) => {
+        if (cat === 'all') return 'All Categories';
+        // Remove emoji prefix if present
+        const parts = cat.split(' ');
+        if (parts.length > 1 && /\p{Emoji}/u.test(parts[0])) {
+            return parts.slice(1).join(' ');
+        }
+        return cat;
+    };
+
     // Render learning mode component
     if (currentMode !== 'menu') {
         return (
@@ -97,10 +130,10 @@ export default function LearnScreen() {
                     style={styles.safeArea}
                 >
                     {currentMode === 'daily-warmup' && <SRSDailyWarmup onBack={handleBack} />}
-                    {currentMode === 'code-tracing' && <CodeTracing onBack={handleBack} />}
-                    {currentMode === 'parsons' && <ParsonsProblems onBack={handleBack} />}
-                    {currentMode === 'faded-examples' && <FadedExamples onBack={handleBack} />}
-                    {currentMode === 'debugging' && <DebuggingExercise onBack={handleBack} />}
+                    {currentMode === 'code-tracing' && <CodeTracing onBack={handleBack} category={selectedCategory} quizzes={filteredQuizzes} />}
+                    {currentMode === 'parsons' && <ParsonsProblems onBack={handleBack} category={selectedCategory} quizzes={filteredQuizzes} />}
+                    {currentMode === 'faded-examples' && <FadedExamples onBack={handleBack} category={selectedCategory} quizzes={filteredQuizzes} />}
+                    {currentMode === 'debugging' && <DebuggingExercise onBack={handleBack} category={selectedCategory} quizzes={filteredQuizzes} />}
                 </SafeAreaLinearGradient>
             </View>
         );
@@ -118,6 +151,37 @@ export default function LearnScreen() {
                         <Text style={styles.headerTitle}>🧠 Enhanced Learning</Text>
                         <Text style={styles.headerSubtitle}>
                             Science-backed methods for maximum retention
+                        </Text>
+                    </View>
+
+                    {/* Category Filter */}
+                    <View style={styles.categorySection}>
+                        <Text style={styles.categoryLabel}>📚 Category Filter</Text>
+                        <ScrollView
+                            horizontal
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={styles.categoryList}
+                        >
+                            {categories.map((cat) => (
+                                <TouchableOpacity
+                                    key={cat}
+                                    style={[
+                                        styles.categoryChip,
+                                        selectedCategory === cat && styles.categoryChipSelected
+                                    ]}
+                                    onPress={() => setSelectedCategory(cat)}
+                                >
+                                    <Text style={[
+                                        styles.categoryChipText,
+                                        selectedCategory === cat && styles.categoryChipTextSelected
+                                    ]}>
+                                        {getCategoryDisplayName(cat)}
+                                    </Text>
+                                </TouchableOpacity>
+                            ))}
+                        </ScrollView>
+                        <Text style={styles.categoryCount}>
+                            {filteredQuizzes.length} quizzes • {filteredQuizzes.reduce((acc: number, q: any) => acc + (q.questions?.length || 0), 0)} questions
                         </Text>
                     </View>
 
@@ -305,5 +369,44 @@ const styles = StyleSheet.create({
         fontSize: 13,
         color: 'rgba(255,255,255,0.5)',
         lineHeight: 19,
+    },
+    categorySection: {
+        marginBottom: 24,
+    },
+    categoryLabel: {
+        fontSize: 14,
+        fontWeight: '600',
+        color: 'rgba(255,255,255,0.7)',
+        marginBottom: 10,
+    },
+    categoryList: {
+        paddingVertical: 4,
+        gap: 8,
+    },
+    categoryChip: {
+        backgroundColor: 'rgba(255,255,255,0.08)',
+        paddingHorizontal: 14,
+        paddingVertical: 8,
+        borderRadius: 20,
+        borderWidth: 1,
+        borderColor: 'rgba(255,255,255,0.1)',
+    },
+    categoryChipSelected: {
+        backgroundColor: 'rgba(79, 195, 247, 0.25)',
+        borderColor: '#4FC3F7',
+    },
+    categoryChipText: {
+        color: 'rgba(255,255,255,0.7)',
+        fontSize: 13,
+        fontWeight: '500',
+    },
+    categoryChipTextSelected: {
+        color: '#4FC3F7',
+        fontWeight: '600',
+    },
+    categoryCount: {
+        fontSize: 12,
+        color: 'rgba(255,255,255,0.4)',
+        marginTop: 10,
     },
 });

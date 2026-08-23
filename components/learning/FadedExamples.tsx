@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import {
     View,
     Text,
@@ -11,17 +11,34 @@ import {
     Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { FadedExample, FadedExampleStage } from '../types';
+import { Quiz } from '../types';
 
-// Import faded examples data
-import fadedExamplesData from '../../faded_examples.json';
+interface Blank {
+    answer: string;
+    hint?: string;
+}
+
+interface FadedExampleStage {
+    description: string;
+    code: string;
+    blanks: Blank[];
+}
+
+interface FadedExample {
+    id: string;
+    title: string;
+    concept: string;
+    stages: FadedExampleStage[];
+}
 
 interface FadedExamplesProps {
     onBack: () => void;
+    category?: string;
+    quizzes?: Quiz[];
 }
 
-export const FadedExamples: React.FC<FadedExamplesProps> = ({ onBack }) => {
-    const [examples] = useState<FadedExample[]>(fadedExamplesData as FadedExample[]);
+export const FadedExamples: React.FC<FadedExamplesProps> = ({ onBack, category, quizzes = [] }) => {
+    // State and ref hooks must come first
     const [currentExampleIndex, setCurrentExampleIndex] = useState(0);
     const [currentStageIndex, setCurrentStageIndex] = useState(0);
     const [userInputs, setUserInputs] = useState<Record<number, string>>({});
@@ -29,10 +46,68 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({ onBack }) => {
     const [allCorrect, setAllCorrect] = useState(false);
     const [completed, setCompleted] = useState(false);
     const [correctCount, setCorrectCount] = useState(0);
-
     const fadeAnim = useRef(new Animated.Value(0)).current;
 
+    // Helper function before useMemo
+    const shuffleArray = <T,>(array: T[]): T[] => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        return shuffled;
+    };
+
+    // Convert quiz questions to faded examples format
+    const examples = useMemo(() => {
+        const fadedExamples: FadedExample[] = [];
+
+        quizzes.forEach((quiz: any) => {
+            if (quiz.questions && quiz.questions.length >= 2) {
+                // Group every 2-3 questions into one example with stages
+                for (let i = 0; i < Math.min(quiz.questions.length, 6); i += 2) {
+                    const q1 = quiz.questions[i];
+                    const q2 = quiz.questions[i + 1];
+
+                    if (q1 && q1.explanation && q1.answer) {
+                        const stages: FadedExampleStage[] = [];
+
+                        // Stage 1: Read only (show full explanation)
+                        stages.push({
+                            description: 'Read and understand the concept.',
+                            code: q1.explanation,
+                            blanks: [],
+                        });
+
+                        // Stage 2: Fill in key term from the answer
+                        const keyTerm = q1.answer.split(' ').slice(0, 3).join(' ');
+                        const codeWithBlank = q1.explanation.replace(keyTerm, '___BLANK___');
+                        if (codeWithBlank !== q1.explanation) {
+                            stages.push({
+                                description: 'Fill in the key term.',
+                                code: codeWithBlank,
+                                blanks: [{ answer: keyTerm }],
+                            });
+                        }
+
+                        if (stages.length >= 1) {
+                            fadedExamples.push({
+                                id: `${quiz.name}-${i}`,
+                                title: quiz.name,
+                                concept: q1.question,
+                                stages,
+                            });
+                        }
+                    }
+                }
+            }
+        });
+
+        return shuffleArray(fadedExamples).slice(0, 3);
+    }, [quizzes]);
+
     useEffect(() => {
+
         fadeAnim.setValue(0);
         Animated.timing(fadeAnim, {
             toValue: 1,
