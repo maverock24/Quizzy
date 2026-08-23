@@ -3,14 +3,22 @@
  * Shows current streak with flame indicators and animation
  */
 import React, { useEffect, useRef } from 'react';
-import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
+import {
+  Animated,
+  Easing,
+  StyleSheet,
+  Text,
+  View,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { useGamification } from './GamificationProvider';
 import { useTranslation } from 'react-i18next';
 
 interface StreakDisplayProps {
   size?: 'small' | 'medium' | 'large';
   showLabel?: boolean;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 export const StreakDisplay: React.FC<StreakDisplayProps> = ({
@@ -114,7 +122,6 @@ export const StreakDisplay: React.FC<StreakDisplayProps> = ({
 
     for (let i = 0; i < flameCount; i++) {
       const isCenter = i === Math.floor(flameCount / 2);
-      const delay = i * 100;
 
       flames.push(
         <Animated.Text

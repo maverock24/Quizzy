@@ -26,7 +26,10 @@ const TIMEOUT_MS = 20000; // Drop users hasn't pinged in 20s
 // Fallback for local testing without `netlify link`
 let localDevState: LobbyState | null = null;
 
-export const handler = async (event: any, context: any) => {
+export const handler = async (event: {
+  httpMethod?: string;
+  body?: string | null;
+}) => {
   // CORS Headers for local dev and Netlify
   const headers = {
     'Access-Control-Allow-Origin': '*',
@@ -43,13 +46,13 @@ export const handler = async (event: any, context: any) => {
   }
 
   try {
-    let store: any = null;
+    let store: ReturnType<typeof getStore> | null = null;
     let isLocalConfigured = false;
 
     try {
       store = getStore('quizzy-multiplayer');
       isLocalConfigured = true;
-    } catch (e: any) {
+    } catch {
       console.warn('Using local in-memory fallback for Netlify Blobs.');
     }
 
@@ -60,7 +63,7 @@ export const handler = async (event: any, context: any) => {
     let state: LobbyState;
 
     if (isLocalConfigured) {
-      const stateRaw = await store.get(LOBBY_BLOB_KEY);
+      const stateRaw = await store!.get(LOBBY_BLOB_KEY);
       let stateString: string | null = null;
 
       if (stateRaw) {
@@ -164,7 +167,7 @@ export const handler = async (event: any, context: any) => {
     // 3. Save state back if changed
     if (stateChanged) {
       if (isLocalConfigured) {
-        await store.setJSON(LOBBY_BLOB_KEY, state);
+        await store!.setJSON(LOBBY_BLOB_KEY, state);
       } else {
         localDevState = state;
       }
@@ -185,7 +188,7 @@ export const handler = async (event: any, context: any) => {
         invites: myInvites,
       }),
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Lobby API Error:', error);
     return {
       statusCode: 500,

@@ -39,7 +39,6 @@ interface FadedExamplesProps {
 
 export const FadedExamples: React.FC<FadedExamplesProps> = ({
   onBack,
-  category,
   quizzes = [],
 }) => {
   // State and ref hooks must come first
@@ -66,12 +65,11 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
   const examples = useMemo(() => {
     const fadedExamples: FadedExample[] = [];
 
-    quizzes.forEach((quiz: any) => {
+    quizzes.forEach((quiz: Quiz) => {
       if (quiz.questions && quiz.questions.length >= 2) {
         // Group every 2-3 questions into one example with stages
         for (let i = 0; i < Math.min(quiz.questions.length, 6); i += 2) {
           const q1 = quiz.questions[i];
-          const q2 = quiz.questions[i + 1];
 
           if (q1 && q1.explanation && q1.answer) {
             const stages: FadedExampleStage[] = [];

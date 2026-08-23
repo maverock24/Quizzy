@@ -13,10 +13,11 @@ import {
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import * as Haptics from 'expo-haptics';
+import { Quiz } from './types';
 
 type QuizSelectionProps = {
-  quizzes: any[];
-  handleQuizSelection: (quiz: any) => void;
+  quizzes: Quiz[];
+  handleQuizSelection: (quiz: Quiz) => void;
   onReadEssay?: (category: string) => void;
   categoriesWithEssays?: Set<string>;
 };
@@ -150,8 +151,8 @@ const CategoryHeader: React.FC<{
 };
 
 const QuizButton: React.FC<{
-  item: any;
-  onPress: (quiz: any) => void;
+  item: Quiz;
+  onPress: (quiz: Quiz) => void;
   index: number;
   isNewlyVisible: boolean;
 }> = ({ item, onPress, index, isNewlyVisible }) => {
@@ -333,8 +334,8 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   // Group quizzes by category
   const groupedQuizzes = useMemo(() => {
     // ... (grouping logic remains same)
-    const groups: { [key: string]: any[] } = {};
-    const uncategorized: any[] = [];
+    const groups: { [key: string]: Quiz[] } = {};
+    const uncategorized: Quiz[] = [];
 
     quizzes.forEach((quiz) => {
       if (quiz.category) {
@@ -394,9 +395,9 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
     index,
     section,
   }: {
-    item: any;
+    item: Quiz;
     index: number;
-    section: any;
+    section: { title: string; data: Quiz[]; count: number };
   }) => (
     <QuizButton
       item={item}
@@ -409,7 +410,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   const renderSectionHeader = ({
     section,
   }: {
-    section: { title: string; data: any[]; count: number };
+    section: { title: string; data: Quiz[]; count: number };
   }) => (
     <CategoryHeader
       title={section.title}

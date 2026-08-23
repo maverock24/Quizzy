@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { View, Text, StyleSheet, Animated } from 'react-native';
-import { useTranslation } from 'react-i18next';
+import { Text, StyleSheet, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 type QuizTimerProps = {
@@ -14,7 +13,6 @@ export const QuizTimer: React.FC<QuizTimerProps> = ({
   onTimeUp,
   isActive,
 }) => {
-  const { t } = useTranslation();
   const [timeRemaining, setTimeRemaining] = useState(durationMinutes * 60); // Convert to seconds
   const pulseAnim = useRef(new Animated.Value(1)).current;
   const isWarning = timeRemaining <= 30; // Last 30 seconds warning

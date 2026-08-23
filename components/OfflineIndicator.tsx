@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Animated, Platform } from 'react-native';
+import { StyleSheet, Text, Animated, Platform } from 'react-native';
 import { useOfflineDetection } from '../hooks/useOfflineDetection';
 
 export const OfflineIndicator: React.FC = () => {

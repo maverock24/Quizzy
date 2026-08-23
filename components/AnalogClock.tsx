@@ -1,7 +1,7 @@
 // components/AnalogClock.tsx
 import React from 'react';
 import { View } from 'react-native';
-import Svg, { Circle, Line, G, Text as SvgText } from 'react-native-svg';
+import Svg, { Circle, Line, Text as SvgText } from 'react-native-svg';
 
 interface AnalogClockProps {
   size?: number;

@@ -1,6 +1,5 @@
 import { Explanation } from '@/components/Explanation';
 import FlashcardCarousel from '@/components/Flashcards';
-import Flashcards from '@/components/Flashcards';
 import { Question } from '@/components/Question';
 import { Reader } from '@/components/Reader';
 import { EssayReader } from '@/components/EssayReader';
@@ -11,7 +10,6 @@ import { Score } from '@/components/Score';
 import { QuizTimer } from '@/components/QuizTimer';
 import { useGlossary } from '@/components/GlossaryProvider';
 import { Answer, CategoryEssay, Quiz, QuizQuestion } from '@/components/types';
-import { t } from 'i18next';
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
@@ -34,7 +32,7 @@ interface WrongAnswerRecord {
 }
 
 // Function to shuffle array (Fi
-const shuffleArray = (array: any[]) => {
+const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -62,13 +60,11 @@ export default function TabOneScreen() {
 
   // Get quizzes from context
   const {
-    selectedQuizName,
     setSelectedQuizName,
     showExplanation,
     flashcardsEnabled,
     readerModeEnabled,
     quizzes,
-    checkForQuizzesUpdate,
     totalCorrectAnswers,
     setTotalCorrectAnswers,
     totalWrongAnswers,
@@ -105,7 +101,7 @@ export default function TabOneScreen() {
   const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<
     WrongAnswerRecord[]
   >([]);
-  const [isRetryMode, setIsRetryMode] = useState<boolean>(false);
+  const [, setIsRetryMode] = useState<boolean>(false);
   // Track the last quiz name for retry functionality (persists after quiz ends)
   const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(
     null,
@@ -152,14 +148,14 @@ export default function TabOneScreen() {
     }
   }, [currentQuestionIndex, randomizedQuestions]);
 
-  const handleQuizSelection = (quiz: any) => {
+  const handleQuizSelection = (quiz: Quiz) => {
     const selectedQuiz = quizzes.find((q: Quiz) => q.name === quiz.name);
     setSelectedQuiz(selectedQuiz);
-    setSelectedQuizAnswersAmount(selectedQuiz?.questions.length!);
+    setSelectedQuizAnswersAmount(selectedQuiz?.questions.length ?? 0);
     setScore(0);
     setScoreVisible(false);
-    setSelectedQuizName(quiz.name || quiz.nimi);
-    setLastPlayedQuizName(quiz.name || quiz.nimi);
+    setSelectedQuizName(quiz.name);
+    setLastPlayedQuizName(quiz.name);
     setExplanationMode(false);
     setTimeExpired(false);
 
@@ -274,7 +270,7 @@ export default function TabOneScreen() {
   const handleNext = () => {
     setAnswerIsCorrect(false);
     setExplanationMode(false);
-    if (currentQuestionIndex < selectedQuiz?.questions.length! - 1) {
+    if (currentQuestionIndex < (selectedQuiz?.questions.length ?? 0) - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       // Quiz completed - stop timer
@@ -371,17 +367,6 @@ export default function TabOneScreen() {
       explanation: value.explanation || '',
     };
   });
-
-  // Open glossary with a specific term
-  const openGlossaryTerm = useCallback(
-    (term: string) => {
-      setSearchQuery('');
-      const entry = { term, definition: '' };
-      // Use the glossary context to find and show the term
-      setGlossaryVisible(true);
-    },
-    [setGlossaryVisible, setSearchQuery],
-  );
 
   return (
     <View style={styles.outerContainer}>

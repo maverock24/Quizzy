@@ -1,5 +1,5 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Link, Tabs, usePathname } from 'expo-router';
+import { Link, Tabs } from 'expo-router';
 import React, { useEffect } from 'react';
 import { Easing, Pressable, StyleSheet, View } from 'react-native';
 import Animated, {
@@ -31,9 +31,6 @@ function TabBarIcon(props: {
 export default function TabLayout() {
   const image = require('../../assets/images/stars.jpeg');
   const colorScheme = useColorScheme();
-
-  const pathName = usePathname();
-  const isSettings = pathName === '/';
 
   const scale = useSharedValue(1);
 

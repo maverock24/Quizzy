@@ -6,13 +6,9 @@ import {
   TouchableOpacity,
   ScrollView,
   Animated,
-  PanResponder,
-  Dimensions,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Quiz } from '../types';
-
-const SCREEN_WIDTH = Dimensions.get('window').width;
+import { Quiz, QuizQuestion } from '../types';
 
 interface ParsonsLine {
   id: string;
@@ -41,7 +37,6 @@ interface DraggableLine extends ParsonsLine {
 
 export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
   onBack,
-  category,
   quizzes = [],
 }) => {
   // State and ref hooks must come first
@@ -68,9 +63,9 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
   const problems = useMemo(() => {
     const parsonsProblems: ParsonsProblem[] = [];
 
-    quizzes.forEach((quiz: any) => {
+    quizzes.forEach((quiz: Quiz) => {
       if (quiz.questions) {
-        quiz.questions.forEach((q: any, idx: number) => {
+        quiz.questions.forEach((q: QuizQuestion, idx: number) => {
           if (q.explanation && q.explanation.length > 50) {
             // Split explanation into sentences for reordering
             const sentences = q.explanation

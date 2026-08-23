@@ -4,7 +4,14 @@
  * Hidden after completion (only one daily challenge per day)
  */
 import React, { useMemo } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { useGamification } from './GamificationProvider';
 import { useQuiz } from '../Quizprovider';
 import { useTranslation } from 'react-i18next';
@@ -12,7 +19,7 @@ import { getTodayDateString, isSameDay, XP_REWARDS } from './types';
 
 interface DailyQuizProps {
   onStartDailyQuiz: (quizName: string) => void;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 export const DailyQuiz: React.FC<DailyQuizProps> = ({

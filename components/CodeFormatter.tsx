@@ -184,7 +184,6 @@ interface CodeFormatterProps {
 
 export const CodeFormatter: React.FC<CodeFormatterProps> = ({
   text,
-  containerStyle,
   textStyle,
   codeBlockContainerStyle,
   codeBlockTextStyle,
@@ -257,7 +256,7 @@ export const CodeFormatter: React.FC<CodeFormatterProps> = ({
                 style={{ flex: 1, width: '100%' }} // Ensure ScrollView takes full width
                 horizontal
                 showsHorizontalScrollIndicator={true} // Often useful for code
-                onContentSizeChange={(contentWidth, contentHeight) => {
+                onContentSizeChange={(contentWidth) => {
                   // contentHeight also available
                   const containerWidth = fontSizes[`container-${index}`] || 0;
                   // Consider triggering handleContentSizeChange only if containerWidth is known

@@ -48,8 +48,6 @@ export default function SettingsScreen() {
 
   const [userQuizModalVisible, setUserQuizModalVisible] = React.useState(false);
   const [userQuizJson, setUserQuizJson] = React.useState('');
-  const [isUserQuizLoadEnabled, setIsUserQuizLoadEnabled] =
-    React.useState(false);
 
   // Load userQuizLoadEnabled from AsyncStorage on mount
   React.useEffect(() => {

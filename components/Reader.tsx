@@ -3,7 +3,6 @@ import { Picker } from '@react-native-picker/picker';
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-  Dimensions,
   ScrollView,
   StyleSheet,
   Text,
@@ -19,8 +18,6 @@ type ReaderProps = {
   onBack: () => void;
 };
 
-const { height } = Dimensions.get('window');
-
 export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
   const { t } = useTranslation();
   const { readAloud, stopTTS, ttsState } = useReadAloud();
@@ -33,9 +30,6 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
   const currentQuestionRef = useRef(0);
   const startFromQuestionRef = useRef(0);
   const questionRefs = useRef<(View | null)[]>([]);
-  const questionProgressRef = useRef<
-    { questionIndex: number; startTime: number }[]
-  >([]);
 
   // Generate the full text content for reading starting from a specific question
   const generateReadingContent = (startIndex: number = 0) => {
@@ -92,7 +86,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
     if (questionRef) {
       questionRef.measureLayout(
         scrollViewRef.current.getInnerViewNode(),
-        (x, y, width, height) => {
+        (x, y) => {
           // Scroll to the question with a small offset to position it near the top
           const offsetY = Math.max(0, y - 100); // 100px from top of viewport
           scrollViewRef.current?.scrollTo({

@@ -3,14 +3,22 @@
  * Shows XP bar, current level, and level title
  */
 import React, { useEffect, useRef, useState } from 'react';
-import { Animated, Easing, StyleSheet, Text, View } from 'react-native';
+import {
+  Animated,
+  Easing,
+  StyleSheet,
+  Text,
+  View,
+  StyleProp,
+  ViewStyle,
+} from 'react-native';
 import { useGamification } from './GamificationProvider';
 import { useTranslation } from 'react-i18next';
 
 interface XPProgressProps {
   size?: 'compact' | 'full';
   showTitle?: boolean;
-  style?: any;
+  style?: StyleProp<ViewStyle>;
 }
 
 export const XPProgress: React.FC<XPProgressProps> = ({

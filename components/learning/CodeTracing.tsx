@@ -8,7 +8,7 @@ import {
   Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { Quiz } from '../types';
+import { Quiz, QuizQuestion, Answer } from '../types';
 
 interface CodeTracingQuestion {
   id: string;
@@ -28,7 +28,6 @@ interface CodeTracingProps {
 
 export const CodeTracing: React.FC<CodeTracingProps> = ({
   onBack,
-  category,
   quizzes = [],
 }) => {
   // State hooks must come first
@@ -53,11 +52,11 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({
   const questions = useMemo(() => {
     const tracingQuestions: CodeTracingQuestion[] = [];
 
-    quizzes.forEach((quiz: any) => {
+    quizzes.forEach((quiz: Quiz) => {
       if (quiz.questions) {
-        quiz.questions.forEach((q: any, idx: number) => {
+        quiz.questions.forEach((q: QuizQuestion, idx: number) => {
           // Use the question and answers to create a code tracing exercise
-          const options = q.answers?.map((a: any) => a.answer) || [];
+          const options = q.answers?.map((a: Answer) => a.answer) || [];
           if (options.length >= 2) {
             tracingQuestions.push({
               id: `${quiz.name}-${idx}`,

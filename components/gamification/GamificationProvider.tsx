@@ -357,12 +357,13 @@ export const GamificationProvider: React.FC<{ children: ReactNode }> = ({
             }
             break;
 
-          case 'weekend_warrior':
+          case 'weekend_warrior': {
             const dayOfWeek = new Date().getDay();
             if (dayOfWeek === 0 || dayOfWeek === 6) {
               // Track weekend quizzes - would need separate counter
             }
             break;
+          }
 
           case 'first_try_legend':
             // Would need to track if quiz was played before
@@ -513,11 +514,6 @@ export const GamificationProvider: React.FC<{ children: ReactNode }> = ({
       const today = getTodayDateString();
 
       setStats((prev) => {
-        // Count completed daily quizzes
-        const dailyQuizCount =
-          prev.achievements.find((a) => a.achievementId === 'daily_quiz_7')
-            ?.currentProgress || 0;
-
         return {
           ...prev,
           dailyQuiz: {
