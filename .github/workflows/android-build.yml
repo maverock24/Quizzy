@@ -1,0 +1,132 @@
+name: Android APK Build & Publish
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: android-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build-debug-apk:
+    runs-on: ubuntu-latest
+    env:
+      ANDROID_VERSION_CODE: ${{ github.run_number }}
+      # Netlify site that hosts the APK + manifest (see constants/ReleaseConfig.ts)
+      NETLIFY_SITE_ID: c8d765e9-85b8-464a-aae7-35bd973ecfad
+      NETLIFY_SITE_URL: https://quizzy-2504.netlify.app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: gradle
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Android project
+        run: npx expo prebuild --platform android --no-install
+
+      - name: Set versionCode from CI build number
+        run: |
+          sed -i "s/versionCode [0-9]*/versionCode ${ANDROID_VERSION_CODE}/" android/app/build.gradle
+
+      - name: Build debug APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Export web build
+        run: npx expo export --platform web
+
+      - name: Publish APK + release manifest
+        run: |
+          PACKAGE_VERSION="$(node -p "require('./package.json').version")"
+          VERSION_NAME="${PACKAGE_VERSION} (build ${ANDROID_VERSION_CODE})"
+          APK_NAME="quizzy-${PACKAGE_VERSION}-build-${ANDROID_VERSION_CODE}.apk"
+
+          mkdir -p dist/releases/android
+          # Clear any previous release assets
+          find dist/releases/android -maxdepth 1 -type f \( -name '*.apk' -o -name '*.json' \) -delete
+
+          cp android/app/build/outputs/apk/debug/app-debug.apk "dist/releases/android/latest.apk"
+
+          APK_SIZE=$(stat -c%s "dist/releases/android/latest.apk")
+          APK_SHA256=$(sha256sum "dist/releases/android/latest.apk" | cut -d ' ' -f1)
+          PUBLISHED_AT=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+
+          cat <<EOF > dist/releases/android/latest.json
+          {
+            "version": "${PACKAGE_VERSION}",
+            "versionCode": ${ANDROID_VERSION_CODE},
+            "versionName": "${VERSION_NAME}",
+            "buildType": "debug",
+            "fileName": "${APK_NAME}",
+            "url": "${NETLIFY_SITE_URL}/releases/android/latest.apk",
+            "sizeBytes": ${APK_SIZE},
+            "sha256": "${APK_SHA256}",
+            "publishedAt": "${PUBLISHED_AT}",
+            "commitSha": "${GITHUB_SHA}",
+            "commitUrl": "https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA}"
+          }
+          EOF
+
+          echo "Published latest.json:"
+          cat dist/releases/android/latest.json
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quizzy-android-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+
+      - name: Deploy site to Netlify
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          if [[ -z "$NETLIFY_AUTH_TOKEN" ]]; then
+            echo "NETLIFY_AUTH_TOKEN secret is not set. Skipping Netlify deploy (APK artifact is still uploaded)."
+            exit 0
+          fi
+          npx --yes netlify-cli deploy \
+            --dir dist \
+            --prod \
+            --site "$NETLIFY_SITE_ID" \
+            --auth "$NETLIFY_AUTH_TOKEN" \
+            --message "Publish Android debug APK (build ${ANDROID_VERSION_CODE})"
+
+      - name: Verify deployed manifest
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          if [[ -z "$NETLIFY_AUTH_TOKEN" ]]; then exit 0; fi
+          LIVE_MANIFEST=$(curl -sf "${NETLIFY_SITE_URL}/releases/android/latest.json")
+          LIVE_VERSION_CODE=$(echo "$LIVE_MANIFEST" | jq -r '.versionCode // empty')
+          if [[ "$LIVE_VERSION_CODE" != "$ANDROID_VERSION_CODE" ]]; then
+            echo "Live manifest versionCode ${LIVE_VERSION_CODE:-unknown} did not match expected ${ANDROID_VERSION_CODE}." >&2
+            echo "$LIVE_MANIFEST" | jq .
+            exit 1
+          fi
+          echo "Verified ${NETLIFY_SITE_URL}/releases/android/latest.json (versionCode ${LIVE_VERSION_CODE})"
