@@ -26,7 +26,7 @@
         "question": "Where should the check 'is the caller allowed to act on this resource' live in a request pipeline?",
         "answers": [
           {
-            "answer": "In a middleware that runs before the handler, so a rejected request never reaches business logic or the database."
+            "answer": "In a middleware that runs before the handler"
           },
           {
             "answer": "Inside the repository, next to the SQL that reads the row."
@@ -38,14 +38,14 @@
             "answer": "In the response serializer, by blanking fields the caller may not see."
           }
         ],
-        "answer": "In a middleware that runs before the handler, so a rejected request never reaches business logic or the database.",
+        "answer": "In a middleware that runs before the handler",
         "explanation": "Authorization is a cross-cutting concern. Putting it in front of the handler keeps every handler behind the same rule, makes the rule testable once, and stops a rejected request before it can touch data. Checks buried in repositories are easy to bypass from a second caller and hard to audit."
       },
       {
         "question": "Why is 'authenticated' not the same as 'authorized' for a given request?",
         "answers": [
           {
-            "answer": "Authentication proves who the caller is; authorization checks whether that caller may act on this specific resource. Both must pass."
+            "answer": "Identity is not permission to this resource."
           },
           {
             "answer": "They are the same thing once the token signature is valid."
@@ -57,14 +57,14 @@
             "answer": "Authentication is done by the gateway, so services never need it."
           }
         ],
-        "answer": "Authentication proves who the caller is; authorization checks whether that caller may act on this specific resource. Both must pass.",
+        "answer": "Identity is not permission to this resource.",
         "explanation": "A valid token tells you the request comes from a real user. It says nothing about whether that user owns the record in the URL. The principle of least privilege means verifying per resource, not per login."
       },
       {
         "question": "A shared static secret in an Authorization header is applied globally to every route of an internal service. What does it prove about a given request?",
         "answers": [
           {
-            "answer": "Only that the caller knows the secret; it identifies neither the calling service nor the end user."
+            "answer": "Only that the caller knows the secret."
           },
           {
             "answer": "The identity of the calling service."
@@ -76,14 +76,14 @@
             "answer": "That the request came through the API gateway."
           }
         ],
-        "answer": "Only that the caller knows the secret; it identifies neither the calling service nor the end user.",
+        "answer": "Only that the caller knows the secret.",
         "explanation": "A static secret is a perimeter check. Every service and every gateway-forwarded user request carries the same value, so it cannot distinguish 'internal call' from 'end-user call', and it cannot be used as evidence that a route is internal-only. Per-caller identity needs something the caller alone holds, such as a signed token or an mTLS client certificate that the server actually inspects."
       },
       {
         "question": "Under a Zero Trust model, how should an edge service call an internal service on behalf of a user?",
         "answers": [
           {
-            "answer": "Forward the user's context in a signed header and have the internal service verify the signature again."
+            "answer": "Forward signed user context on every hop."
           },
           {
             "answer": "Call with the service's own credentials; the internal service trusts any authenticated service."
@@ -95,14 +95,14 @@
             "answer": "Skip authentication for calls inside the cluster."
           }
         ],
-        "answer": "Forward the user's context in a signed header and have the internal service verify the signature again.",
+        "answer": "Forward signed user context on every hop.",
         "explanation": "No service trusts its caller. The user context travels with the request and each hop verifies it independently. A service that has no user token at hand (for example during login or token refresh) can mint a short-lived, narrowly scoped token for the user it is acting for rather than asking the downstream to trust the path."
       },
       {
         "question": "Which claims must a service verify when it accepts a JWT, beyond the signature?",
         "answers": [
           {
-            "answer": "Expiry, audience, issuer, and an allowlist of accepted algorithms."
+            "answer": "Expiry, audience, issuer, and allowed algorithms."
           },
           {
             "answer": "Only expiry; the signature covers everything else."
@@ -114,14 +114,14 @@
             "answer": "None; a valid signature is sufficient."
           }
         ],
-        "answer": "Expiry, audience, issuer, and an allowlist of accepted algorithms.",
+        "answer": "Expiry, audience, issuer, and allowed algorithms.",
         "explanation": "A signature proves the token was not altered, not that it was meant for this service or is still valid. Audience stops replay to another service on the same key, issuer stops tokens from an unexpected issuer, expiry bounds the damage of a leak, and an algorithm allowlist blocks downgrade tricks such as 'alg: none'."
       },
       {
         "question": "What does the aud (audience) claim buy you when several services share one signing secret?",
         "answers": [
           {
-            "answer": "A token minted for one service is rejected by the others, so a leaked or replayed token has a smaller blast radius."
+            "answer": "A token for one service is rejected by the rest."
           },
           {
             "answer": "It makes the token shorter."
@@ -133,14 +133,14 @@
             "answer": "Nothing, because the secret is the same everywhere."
           }
         ],
-        "answer": "A token minted for one service is rejected by the others, so a leaked or replayed token has a smaller blast radius.",
+        "answer": "A token for one service is rejected by the rest.",
         "explanation": "With a shared secret, any service can verify any token. Audience is how you say 'this one is only for service X'. Many libraries enforce it only when both the token carries aud and the verifier asks for one, so adding aud to internal tokens is usually safe to roll out first, and services can start requiring it later. The common naming convention is the receiving service's own name."
       },
       {
         "question": "Why should a token used for a single server-to-server call have a lifetime measured in seconds rather than hours?",
         "answers": [
           {
-            "answer": "A stateless token cannot be revoked once issued; a short lifetime is the only bound on how long a leaked one is useful."
+            "answer": "It cannot be revoked, so keep its life short."
           },
           {
             "answer": "Long tokens are slower to verify."
@@ -152,14 +152,14 @@
             "answer": "Libraries reject tokens older than one minute."
           }
         ],
-        "answer": "A stateless token cannot be revoked once issued; a short lifetime is the only bound on how long a leaked one is useful.",
+        "answer": "It cannot be revoked, so keep its life short.",
         "explanation": "Revocation of a JWT needs server-side state such as a blacklist or refresh-token rotation. For a token that exists only to make one internal call, the cheapest control is to make it expire almost immediately. If it needs to live longer, it needs a revocation path."
       },
       {
         "question": "A token carries a list of related ids (for example the dependants a guardian may act for) and a service authorizes access from that list. What is the risk?",
         "answers": [
           {
-            "answer": "The list is a snapshot at issuance; if the relationship is revoked, the token still grants access until it expires."
+            "answer": "The list is stale once a relationship is revoked."
           },
           {
             "answer": "Lists in tokens are not signed."
@@ -171,14 +171,14 @@
             "answer": "There is no risk if the token is encrypted."
           }
         ],
-        "answer": "The list is a snapshot at issuance; if the relationship is revoked, the token still grants access until it expires.",
+        "answer": "The list is stale once a relationship is revoked.",
         "explanation": "A claim about your own identity is only as stale as the token. A claim about a relationship to another person can be revoked out of band while the token is still valid. Platforms that state 'authorization is evaluated from current membership state, never from token claims' are drawing exactly this line. Either keep such tokens very short-lived or re-check the relationship against live data before granting access to another person's record."
       },
       {
         "question": "Which statement about route parameters follows the platform input-validation rule?",
         "answers": [
           {
-            "answer": "Route parameters stay within the RFC 3986 unreserved character set; anything needing other characters goes in the body."
+            "answer": "Route parameters allow only unreserved characters."
           },
           {
             "answer": "Route parameters may contain any URL-encoded text."
@@ -190,14 +190,14 @@
             "answer": "Only query parameters need validation."
           }
         ],
-        "answer": "Route parameters stay within the RFC 3986 unreserved character set; anything needing other characters goes in the body.",
+        "answer": "Route parameters allow only unreserved characters.",
         "explanation": "Never trust the client. Validate shape and type of every input, including URL parameters. Coercing a path id to a number and rejecting with 400 when it is not one is part of the same rule, and it must happen before the id is used for anything."
       },
       {
         "question": "Two requests both check 'no row with this email exists' and then insert, with no unique constraint on the column. What happens?",
         "answers": [
           {
-            "answer": "Both checks can pass before either insert commits, and both rows are written. Only a database constraint or a lock closes the race."
+            "answer": "Both checks pass before either insert commits."
           },
           {
             "answer": "The database serialises the two inserts automatically."
@@ -209,14 +209,14 @@
             "answer": "The application framework retries the loser."
           }
         ],
-        "answer": "Both checks can pass before either insert commits, and both rows are written. Only a database constraint or a lock closes the race.",
+        "answer": "Both checks pass before either insert commits.",
         "explanation": "Check-then-act in application code is a time-of-check to time-of-use race. It closes the common case and should still be done for a clear error message, but it is not a uniqueness guarantee. Say so in the design so nobody reads the check as a constraint."
       },
       {
         "question": "Why can a case-insensitive lookup in the database (citext, ILIKE, LOWER()) disagree with value.toLowerCase() in application code?",
         "answers": [
           {
-            "answer": "Database and language runtimes fold non-ASCII characters differently, so a string can compare equal in SQL and unequal in code, or the reverse."
+            "answer": "Database and runtime fold characters differently."
           },
           {
             "answer": "toLowerCase() only works on ASCII."
@@ -228,14 +228,14 @@
             "answer": "They never disagree; both follow Unicode."
           }
         ],
-        "answer": "Database and language runtimes fold non-ASCII characters differently, so a string can compare equal in SQL and unequal in code, or the reverse.",
+        "answer": "Database and runtime fold characters differently.",
         "explanation": "A classic example is the Turkish dotted capital İ, which Postgres citext folds to i and JavaScript's toLowerCase() folds to i plus a combining dot. If the database decides which rows match and the code re-decides with its own folding, an attacker picks the character on which they disagree. Rule: one component decides equality. If the database found the row, ask the database which column matched, and do not re-check in code."
       },
       {
         "question": "A multi-column lookup needs to know which of several columns matched. What is the robust way to get that from SQL?",
         "answers": [
           {
-            "answer": "Select a boolean per column in the same query (column IN (...) AS column_hit) so the database reports the match, and select no identifier values at all."
+            "answer": "Select a per-column boolean in the same query."
           },
           {
             "answer": "Fetch the full rows and compare strings in application code."
@@ -247,14 +247,14 @@
             "answer": "Use SELECT * and inspect the returned values."
           }
         ],
-        "answer": "Select a boolean per column in the same query (column IN (...) AS column_hit) so the database reports the match, and select no identifier values at all.",
+        "answer": "Select a per-column boolean in the same query.",
         "explanation": "Per-column flags keep a single source of truth for equality and avoid pulling other people's identifiers into application memory or logs. Returning only ids and flags is also the least-privilege shape for the data."
       },
       {
         "question": "Why does a partial index (CREATE INDEX ... WHERE column IS NOT NULL) fit a column that is looked up on every write but populated on few rows?",
         "answers": [
           {
-            "answer": "The index covers only rows that can ever match, so it is smaller and cheaper to maintain while still turning the lookup from a table scan into an index probe."
+            "answer": "It indexes only matching rows, so it stays small."
           },
           {
             "answer": "Partial indexes are the only kind that support citext."
@@ -266,14 +266,14 @@
             "answer": "It avoids the need for CONCURRENTLY."
           }
         ],
-        "answer": "The index covers only rows that can ever match, so it is smaller and cheaper to maintain while still turning the lookup from a table scan into an index probe.",
+        "answer": "It indexes only matching rows, so it stays small.",
         "explanation": "Rows without a value are never queried for that value, so indexing them is pure cost. Partial indexes carry a review duty: widening the column's value set later can break assumptions baked into the predicate."
       },
       {
         "question": "When adding an index to a large, live table, why use CREATE INDEX CONCURRENTLY outside a transaction, and why check for an invalid leftover index first?",
         "answers": [
           {
-            "answer": "A plain CREATE INDEX blocks writes for the whole build; CONCURRENTLY cannot run inside a transaction; and a cancelled concurrent build leaves an invalid index that IF NOT EXISTS would treat as finished."
+            "answer": "It blocks writes and can leave an invalid index."
           },
           {
             "answer": "CONCURRENTLY makes the index build faster."
@@ -285,14 +285,14 @@
             "answer": "Invalid indexes are dropped automatically on restart."
           }
         ],
-        "answer": "A plain CREATE INDEX blocks writes for the whole build; CONCURRENTLY cannot run inside a transaction; and a cancelled concurrent build leaves an invalid index that IF NOT EXISTS would treat as finished.",
+        "answer": "It blocks writes and can leave an invalid index.",
         "explanation": "The failure mode is silent: a retry sees the index name, skips creation, and the query planner ignores the invalid index forever. Dropping an invalid leftover before creating makes the migration safe to re-run."
       },
       {
         "question": "Which rule applies to a database migration that has already run in any shared environment?",
         "answers": [
           {
-            "answer": "It is immutable. Fix or evolve the schema with a new migration; never edit the applied one."
+            "answer": "It is immutable; use a new migration instead."
           },
           {
             "answer": "It may be edited as long as the change is backwards compatible."
@@ -304,14 +304,14 @@
             "answer": "It may be deleted once the schema is stable."
           }
         ],
-        "answer": "It is immutable. Fix or evolve the schema with a new migration; never edit the applied one.",
+        "answer": "It is immutable; use a new migration instead.",
         "explanation": "Migration tools record which files ran. Editing a file that already ran means environments that applied the old version and environments that apply the new one end up with different schemas under the same migration name."
       },
       {
         "question": "A validation function builds a candidate, queries the database, applies a business rule, writes a warning log and throws an HTTP error. A reviewer says it does too much. What split respects single responsibility?",
         "answers": [
           {
-            "answer": "A pure function that returns the decision (what collided, with whom) and a thin caller that logs and throws."
+            "answer": "A pure decision function plus a thin caller."
           },
           {
             "answer": "One function per database column."
@@ -323,14 +323,14 @@
             "answer": "Return an error code instead of throwing."
           }
         ],
-        "answer": "A pure function that returns the decision (what collided, with whom) and a thin caller that logs and throws.",
+        "answer": "A pure decision function plus a thin caller.",
         "explanation": "Separating a decision from its side effects makes the decision testable with a mocked repository and no logger spying, and makes the side-effecting wrapper almost impossible to get wrong. The name of each function then says exactly what it does."
       },
       {
         "question": "In a layered service (routes, use cases, repositories), which import direction is a design error?",
         "answers": [
           {
-            "answer": "A repository importing from the domain or use-case layer."
+            "answer": "A repository importing from the domain layer."
           },
           {
             "answer": "A use case importing a repository interface."
@@ -342,14 +342,14 @@
             "answer": "A use case importing a domain helper."
           }
         ],
-        "answer": "A repository importing from the domain or use-case layer.",
+        "answer": "A repository importing from the domain layer.",
         "explanation": "Dependencies point inward: infrastructure depends on the domain, never the reverse. A repository that imports a domain validator is making business decisions inside data access, which means every other caller of that query inherits a decision it may not want, and the domain rule cannot be tested without a database."
       },
       {
         "question": "Relocating a function's body to another file while leaving the call site where it was. Has the responsibility moved?",
         "answers": [
           {
-            "answer": "No. Responsibility is where the decision is made and invoked; the call site determines that, not the file the body lives in."
+            "answer": "No, the call site defines the responsibility."
           },
           {
             "answer": "Yes, the layer is defined by the file path."
@@ -361,14 +361,14 @@
             "answer": "It depends on the language."
           }
         ],
-        "answer": "No. Responsibility is where the decision is made and invoked; the call site determines that, not the file the body lives in.",
+        "answer": "No, the call site defines the responsibility.",
         "explanation": "Moving code is not the same as moving a concern. If the repository still calls the validator, the repository still owns the decision and now also depends on the layer above it. The real move puts the call in the use case, right before the write."
       },
       {
         "question": "In Express, where must an authorization middleware appear in router.post(path, ...handlers) to be effective?",
         "answers": [
           {
-            "answer": "Before the body parser and the business handler, since handlers run in argument order and the first one to respond or reject ends the chain."
+            "answer": "Before the body parser and the business handler."
           },
           {
             "answer": "After the handler, so it can inspect the response."
@@ -380,14 +380,14 @@
             "answer": "It must be registered on app, not on the router."
           }
         ],
-        "answer": "Before the body parser and the business handler, since handlers run in argument order and the first one to respond or reject ends the chain.",
+        "answer": "Before the body parser and the business handler.",
         "explanation": "Order is the contract. An async middleware should be wrapped so a thrown error becomes next(err), and it should reject by calling next(error) rather than writing the response itself, so the shared error handler formats every failure the same way."
       },
       {
         "question": "Why make an authorization middleware a factory that takes the path parameter name (requireCallerIs('ownerId')) rather than hardcoding one name?",
         "answers": [
           {
-            "answer": "The same controller can be mounted under paths that name the id differently; a hardcoded name reads undefined on the other path and fails every request."
+            "answer": "The id parameter name differs per path."
           },
           {
             "answer": "Factories are faster than plain functions."
@@ -399,14 +399,14 @@
             "answer": "To make the middleware synchronous."
           }
         ],
-        "answer": "The same controller can be mounted under paths that name the id differently; a hardcoded name reads undefined on the other path and fails every request.",
+        "answer": "The id parameter name differs per path.",
         "explanation": "The failure is not a security hole but an outage: coercing undefined to a number throws, and every call to that route returns 400. Reviewers should check each wiring for the correct parameter name, because copy-paste is the usual way this goes wrong."
       },
       {
         "question": "Which HTTP status distinction is worth preserving deliberately, and why might a team keep 401 for 'wrong user' instead of 403?",
         "answers": [
           {
-            "answer": "401 means unauthenticated and 403 means authenticated but not permitted; some teams keep one status for both to avoid giving a caller an oracle that a valid token exists but a specific record is someone else's."
+            "answer": "401 is unauthenticated; 403 is not permitted."
           },
           {
             "answer": "401 and 403 are interchangeable."
@@ -418,14 +418,14 @@
             "answer": "401 must always be used when a header is present."
           }
         ],
-        "answer": "401 means unauthenticated and 403 means authenticated but not permitted; some teams keep one status for both to avoid giving a caller an oracle that a valid token exists but a specific record is someone else's.",
+        "answer": "401 is unauthenticated; 403 is not permitted.",
         "explanation": "Strict semantics say 403. The trade is information leakage: distinct codes let a probe confirm which ids belong to other people. The more debated leak for IDOR defences is 403 versus 404, where 404 hides whether the resource exists at all. Whatever you choose, changing it later is a client-visible change that deserves its own release."
       },
       {
         "question": "A rate limit allows 10 attempts per user id, where the user id comes from the URL with no identity check. Why is the limit ineffective?",
         "answers": [
           {
-            "answer": "The attacker controls the key, so each new id is a fresh budget; a limit keyed on unauthenticated input is a limit the attacker sets."
+            "answer": "The attacker picks the key, resetting the limit."
           },
           {
             "answer": "10 attempts is too many."
@@ -437,14 +437,14 @@
             "answer": "Redis counters are not atomic."
           }
         ],
-        "answer": "The attacker controls the key, so each new id is a fresh budget; a limit keyed on unauthenticated input is a limit the attacker sets.",
+        "answer": "The attacker picks the key, resetting the limit.",
         "explanation": "Rate-limit keys must come from something the caller cannot freely rotate: a verified identity, a real account, or a network address with its own controls. A six-digit code space is 900,000 values; with a rotatable key it is brute-forceable in minutes."
       },
       {
         "question": "What belongs in a warning log for a rejected request that involved another person's identifier?",
         "answers": [
           {
-            "answer": "Ids and field names (which attributes collided, whose ids), never the identifier values themselves."
+            "answer": "Ids and field names, never the values themselves."
           },
           {
             "answer": "The full request body for reproducibility."
@@ -456,14 +456,14 @@
             "answer": "Nothing; security rejections should be silent."
           }
         ],
-        "answer": "Ids and field names (which attributes collided, whose ids), never the identifier values themselves.",
+        "answer": "Ids and field names, never the values themselves.",
         "explanation": "Logs are read by more people and systems than the database is. An email or national ID in a log is a data exposure. Ids and attribute names are enough to investigate. Also check the logging library's field whitelist: a key that is not whitelisted may be silently dropped in production, and unit tests that spy on the logger before formatting cannot see that."
       },
       {
         "question": "A test asserts that logger.warn was called with a certain payload, and it passes. What can it still miss?",
         "answers": [
           {
-            "answer": "Whether the logging pipeline keeps those fields in production; a formatter that redacts non-whitelisted keys runs after the spy."
+            "answer": "Whether production keeps those log fields."
           },
           {
             "answer": "Nothing; the spy sees the real call."
@@ -475,14 +475,14 @@
             "answer": "Whether the log level is enabled."
           }
         ],
-        "answer": "Whether the logging pipeline keeps those fields in production; a formatter that redacts non-whitelisted keys runs after the spy.",
+        "answer": "Whether production keeps those log fields.",
         "explanation": "Spying at the call site tests intent, not output. If the operational question is 'will operators see this field', the test has to run the real formatter with production-like configuration, or the whitelist has to be reviewed by hand."
       },
       {
         "question": "Making an optional request header required is a breaking change. What is the safe route?",
         "answers": [
           {
-            "answer": "Expand and contract: accept the header optionally, migrate every client to send it, deploy them, then require it."
+            "answer": "Expand and contract: accept, migrate, require."
           },
           {
             "answer": "Require it and hotfix clients that break."
@@ -494,14 +494,14 @@
             "answer": "Require it only for external clients."
           }
         ],
-        "answer": "Expand and contract: accept the header optionally, migrate every client to send it, deploy them, then require it.",
+        "answer": "Expand and contract: accept, migrate, require.",
         "explanation": "Every breaking interface change has a phased safe route. Internal service-to-service interfaces can move faster because both ends are yours, but the order is the same: producers and consumers change first, the requirement lands last. 'Every client' includes test harnesses and internal tools, which are the ones people forget."
       },
       {
         "question": "Per Postel's law applied to APIs, which changes are non-breaking?",
         "answers": [
           {
-            "answer": "Adding a response field, adding an optional request parameter, narrowing a response type, widening a request type."
+            "answer": "Adding an optional request or response field."
           },
           {
             "answer": "Removing a response field if no one complains."
@@ -513,14 +513,14 @@
             "answer": "Changing a field's type from string to number."
           }
         ],
-        "answer": "Adding a response field, adding an optional request parameter, narrowing a response type, widening a request type.",
+        "answer": "Adding an optional request or response field.",
         "explanation": "Be conservative in what you send and liberal in what you accept. Responses may get narrower, requests may get wider; the reverse breaks. Clients must ignore unknown response fields for the first rule to hold, which you can enforce for your own clients but should verify for partners with strict schema validators."
       },
       {
         "question": "What should accompany every deprecation when it is introduced?",
         "answers": [
           {
-            "answer": "A removal task with a deadline, and for edge interfaces a hard sunset date, since old consumers rarely reach zero on their own."
+            "answer": "A removal task with an owner and a deadline."
           },
           {
             "answer": "A comment in the code."
@@ -532,14 +532,14 @@
             "answer": "A feature flag."
           }
         ],
-        "answer": "A removal task with a deadline, and for edge interfaces a hard sunset date, since old consumers rarely reach zero on their own.",
+        "answer": "A removal task with an owner and a deadline.",
         "explanation": "The contract phase of expand-and-contract is the part that gets forgotten, and every forgotten one is permanent double maintenance. Mobile users update slowly and browser tabs keep old bundles alive; without a date, 'when no consumers remain' never arrives."
       },
       {
         "question": "A test starts failing while you refactor code you believe has unchanged behaviour. What is the correct first assumption?",
         "answers": [
           {
-            "answer": "You made a breaking change; investigate before touching the test."
+            "answer": "Assume your change broke it; investigate first."
           },
           {
             "answer": "The test is flaky; re-run it."
@@ -551,14 +551,14 @@
             "answer": "The CI runner is slow."
           }
         ],
-        "answer": "You made a breaking change; investigate before touching the test.",
+        "answer": "Assume your change broke it; investigate first.",
         "explanation": "With good coverage, a breaking change should fail a test. A red test during a refactor is the system working. 'Fixing the test' first destroys the only evidence you had. Only after tracing the failure to a genuinely obsolete assertion is updating it justified."
       },
       {
         "question": "How do you tell a flaky test from a real regression before reporting it as pre-existing?",
         "answers": [
           {
-            "answer": "It fails identically on a clean checkout of the target branch, or passes in isolation and fails only in a specific suite order."
+            "answer": "It also fails on a clean target-branch checkout."
           },
           {
             "answer": "It has a timestamp in its name."
@@ -570,14 +570,14 @@
             "answer": "It passed on the previous commit."
           }
         ],
-        "answer": "It fails identically on a clean checkout of the target branch, or passes in isolation and fails only in a specific suite order.",
+        "answer": "It also fails on a clean target-branch checkout.",
         "explanation": "Attribution needs a control. A clean worktree of the target branch is the control for 'did my change cause this'; running the file alone is the control for 'is this an ordering or shared-state problem'. Without one of those, 'flaky' is a guess."
       },
       {
         "question": "For a bug fix, at which level should the regression test be written, and what must be true of it?",
         "answers": [
           {
-            "answer": "At the lowest level that reproduces the defect, and it must fail without the fix and pass with it."
+            "answer": "Lowest reproducing level; fails before the fix."
           },
           {
             "answer": "Always as an end-to-end test, to be safe."
@@ -589,14 +589,14 @@
             "answer": "Wherever coverage is lowest."
           }
         ],
-        "answer": "At the lowest level that reproduces the defect, and it must fail without the fix and pass with it.",
+        "answer": "Lowest reproducing level; fails before the fix.",
         "explanation": "A test that passes before the fix proves nothing about the fix. Writing it first and watching it fail is the red step; the lowest level that can reproduce the bug is the cheapest place to keep it forever. Some defects, such as a database collation disagreeing with application code, only reproduce with a real database, so 'lowest' is not always 'unit'."
       },
       {
         "question": "In a backend unit test, what should be replaced with a test double and what should not?",
         "answers": [
           {
-            "answer": "Replace infrastructure and nondeterminism (repositories, clients, time, randomness); keep validators, transformers, middleware under test and pure helpers real."
+            "answer": "Replace infrastructure, not the logic under test."
           },
           {
             "answer": "Mock everything except the function under test."
@@ -608,14 +608,14 @@
             "answer": "Mock only what is slow."
           }
         ],
-        "answer": "Replace infrastructure and nondeterminism (repositories, clients, time, randomness); keep validators, transformers, middleware under test and pure helpers real.",
+        "answer": "Replace infrastructure, not the logic under test.",
         "explanation": "The point of a unit test is to exercise the real code inside the unit with explicit, mocked boundaries. Mocking the pure logic you are testing yields a test that can only confirm the mock. Check the visible result: a returned value, a thrown domain error, a next() call, an outbound payload."
       },
       {
         "question": "Who is accountable for the tests an MR needs, and what happens when a required test is deliberately left out?",
         "answers": [
           {
-            "answer": "Author and reviewer jointly; an omission must be justified in the MR description, and an unjustified gap blocks review."
+            "answer": "Author and reviewer jointly; a gap blocks review."
           },
           {
             "answer": "The author alone; reviewers only read code."
@@ -627,14 +627,14 @@
             "answer": "Nobody, if CI is green."
           }
         ],
-        "answer": "Author and reviewer jointly; an omission must be justified in the MR description, and an unjustified gap blocks review.",
+        "answer": "Author and reviewer jointly; a gap blocks review.",
         "explanation": "There is no manual safety net for what can be tested automatically. The author writes and runs the tests before requesting review; the reviewer checks them against the change type. Deleting a test also needs a justification the deleter can stand behind."
       },
       {
         "question": "Why can a design be described as 'email-only' and still reject other identifiers in production?",
         "answers": [
           {
-            "answer": "When behaviour is driven by per-environment configuration, the code path is generic; the effective scope is whatever the config lists, not what the MR title says."
+            "answer": "Per-environment config widens the effective scope."
           },
           {
             "answer": "Because email addresses often contain other identifiers."
@@ -646,14 +646,14 @@
             "answer": "It cannot; the title is authoritative."
           }
         ],
-        "answer": "When behaviour is driven by per-environment configuration, the code path is generic; the effective scope is whatever the config lists, not what the MR title says.",
+        "answer": "Per-environment config widens the effective scope.",
         "explanation": "Before splitting work 'by scope', measure what the split actually changes. A config-driven guard can make a proposed two-MR split a nine-line code difference while leaving a real operational gap, such as a lookup running without its index between the two merges. Split by concern (schema change, middleware, business rule, client changes) when scope splits turn out to be cosmetic."
       },
       {
         "question": "Which of these is a sound way to reduce the size of a change under review?",
         "answers": [
           {
-            "answer": "Separate independent concerns into their own MRs: a standalone migration, a cross-cutting middleware, the business rule, and client-side changes in other services."
+            "answer": "Independent concerns split into their own MRs."
           },
           {
             "answer": "Move tests to a later MR."
@@ -665,14 +665,14 @@
             "answer": "Remove the parts the reviewer questioned."
           }
         ],
-        "answer": "Separate independent concerns into their own MRs: a standalone migration, a cross-cutting middleware, the business rule, and client-side changes in other services.",
+        "answer": "Independent concerns split into their own MRs.",
         "explanation": "A reviewer's 'this does a lot of things' is about concerns, not line counts. Each MR should be mergeable on its own or have an explicit dependency, and each should carry its own tests. A split that leaves the first MR unusable or the second one trivial has not helped."
       },
       {
         "question": "Your CI runs an unused-export detector (such as knip) before tests. What does that imply for shipping a helper module ahead of the code that uses it?",
         "answers": [
           {
-            "answer": "It fails CI, because an exported symbol with no importer is dead code; the helper and its first caller land together."
+            "answer": "CI fails: an unimported export is dead code."
           },
           {
             "answer": "Nothing; the detector ignores new files."
@@ -684,14 +684,14 @@
             "answer": "It only runs on the default branch."
           }
         ],
-        "answer": "It fails CI, because an exported symbol with no importer is dead code; the helper and its first caller land together.",
+        "answer": "CI fails: an unimported export is dead code.",
         "explanation": "Dead-code gates enforce a healthy rule: nothing ships without a consumer. They also shape how you split work. If you truly need a module before its caller, keep the export test-only or land them in one MR."
       },
       {
         "question": "What is the purpose of stacking one MR on another MR's branch instead of on the default branch?",
         "answers": [
           {
-            "answer": "The stacked MR's diff shows only its own commits, so reviewers see the change without the dependency it builds on; retarget to the default branch once the base merges."
+            "answer": "The diff shows only the commits on top."
           },
           {
             "answer": "Both MRs merge atomically."
@@ -703,14 +703,14 @@
             "answer": "It hides the dependency from reviewers."
           }
         ],
-        "answer": "The stacked MR's diff shows only its own commits, so reviewers see the change without the dependency it builds on; retarget to the default branch once the base merges.",
+        "answer": "The diff shows only the commits on top.",
         "explanation": "Stacking lets review proceed in parallel instead of serially. The costs are a manual retarget later and, if history was rewritten, a force-push. Use --force-with-lease against the known remote tip so a concurrent push is never silently overwritten."
       },
       {
         "question": "When is force-pushing an already-published branch acceptable, and what guard should you use?",
         "answers": [
           {
-            "answer": "When the owner has explicitly agreed to rewrite history (for example to replace a branch with a rebuilt series), using --force-with-lease against the expected remote tip."
+            "answer": "Owner agreement, via --force-with-lease."
           },
           {
             "answer": "Whenever the branch is yours."
@@ -722,14 +722,14 @@
             "answer": "Only on the default branch."
           }
         ],
-        "answer": "When the owner has explicitly agreed to rewrite history (for example to replace a branch with a rebuilt series), using --force-with-lease against the expected remote tip.",
+        "answer": "Owner agreement, via --force-with-lease.",
         "explanation": "Rewriting shared history is visible to everyone who pulled the branch and can destroy work pushed in between. --force-with-lease refuses the push if the remote moved since you last looked. A plain merge of the target branch, by contrast, needs no force and is the default for keeping an MR current."
       },
       {
         "question": "Under conventional commits with semantic-release, what does choosing feat: instead of fix: for a commit actually change?",
         "answers": [
           {
-            "answer": "The next version number (minor versus patch) and the changelog section the change appears in."
+            "answer": "The next version number and changelog entry."
           },
           {
             "answer": "Nothing; it is a style preference."
@@ -741,14 +741,14 @@
             "answer": "Which reviewers are assigned."
           }
         ],
-        "answer": "The next version number (minor versus patch) and the changelog section the change appears in.",
+        "answer": "The next version number and changelog entry.",
         "explanation": "Commit types are release metadata. A helper added as part of a security fix is part of the fix; typing it feat: announces a new feature and bumps the minor version. Operators reading the changelog will be misled about what changed."
       },
       {
         "question": "Dependency and container scans go red on an MR that changes three source files and no lock file. What is the right first move?",
         "answers": [
           {
-            "answer": "Check whether the flagged package versions are identical on the target branch and whether its last pipeline predates the advisories; if so, the failure belongs to the target branch, not the MR."
+            "answer": "Check whether the target branch already fails."
           },
           {
             "answer": "Bump the flagged packages inside the MR so it goes green."
@@ -760,14 +760,14 @@
             "answer": "Re-run the pipeline until it passes."
           }
         ],
-        "answer": "Check whether the flagged package versions are identical on the target branch and whether its last pipeline predates the advisories; if so, the failure belongs to the target branch, not the MR.",
+        "answer": "Check whether the target branch already fails.",
         "explanation": "Only fix a failure the MR's own diff caused. Bumping dependencies inside an unrelated feature MR hides a problem on the default branch and widens the review. Report it to the repository owners and keep the MR focused."
       },
       {
         "question": "What does the platform require before a new third-party dependency is added to a service?",
         "answers": [
           {
-            "answer": "Approval from the team architect or, without one, the repository CODEOWNER, weighing maintenance health, licensing and security."
+            "answer": "Team architect or repository CODEOWNER approval."
           },
           {
             "answer": "A passing npm audit."
@@ -779,14 +779,14 @@
             "answer": "A note in the commit message."
           }
         ],
-        "answer": "Approval from the team architect or, without one, the repository CODEOWNER, weighing maintenance health, licensing and security.",
+        "answer": "Team architect or repository CODEOWNER approval.",
         "explanation": "Every dependency is code you now maintain and a supply-chain surface you now trust. If the dependency or vendor processes data outside the platform, the decision escalates further to engineering leadership and the CTO."
       },
       {
         "question": "A service needs a secret that another service already uses. How should it get it?",
         "answers": [
           {
-            "answer": "Map the existing entry from the shared secret store into the service's deployment (a secretKeyRef to the same Kubernetes Secret); never copy the value into the repository or a .env file."
+            "answer": "Map the existing secret into the deployment."
           },
           {
             "answer": "Paste the value into the service's config file."
@@ -798,14 +798,14 @@
             "answer": "Read it from the other service over HTTP at startup."
           }
         ],
-        "answer": "Map the existing entry from the shared secret store into the service's deployment (a secretKeyRef to the same Kubernetes Secret); never copy the value into the repository or a .env file.",
+        "answer": "Map the existing secret into the deployment.",
         "explanation": "Secrets live in the secret manager and reach pods through the External Secrets flow. A committed secret is treated as compromised. Two services that must verify the same token need the same key, so they share the entry rather than minting a second one."
       },
       {
         "question": "A feature's required configuration is missing in one environment. What should the service do?",
         "answers": [
           {
-            "answer": "Disable the feature there rather than run it half-configured."
+            "answer": "Disable the feature rather than half-run it."
           },
           {
             "answer": "Fall back to a built-in default secret."
@@ -817,14 +817,14 @@
             "answer": "Prompt an operator at startup."
           }
         ],
-        "answer": "Disable the feature there rather than run it half-configured.",
+        "answer": "Disable the feature rather than half-run it.",
         "explanation": "A half-configured feature widens the attack surface without delivering value. Fail closed at configuration time: the service refuses to enable the path until its inputs exist."
       },
       {
         "question": "A reviewer wants a check added 'to be safe' on a route that a code comment calls internal-only; another reviewer traces every caller and finds only server-to-server calls that could never satisfy the check. How should the disagreement be settled?",
         "answers": [
           {
-            "answer": "By the evidence: a caller trace beats both the comment and the fail-closed heuristic; adding the check would break legitimate callers without closing a real gap."
+            "answer": "The caller trace outweighs the comment."
           },
           {
             "answer": "Always add the check; security wins ties."
@@ -836,14 +836,14 @@
             "answer": "Add the check in log-only mode."
           }
         ],
-        "answer": "By the evidence: a caller trace beats both the comment and the fail-closed heuristic; adding the check would break legitimate callers without closing a real gap.",
+        "answer": "The caller trace outweighs the comment.",
         "explanation": "Fail closed is a good default when you do not know. The point of review is to replace not knowing with knowing. Comments are not evidence; a static shared secret is not evidence; the list of actual callers is. Record the trace in the MR so the next reader does not have to redo it."
       },
       {
         "question": "A requirement names a specific token field ('the path id may be the target or one of the dependants'). The implementation compares a different field, and two review rounds pass. What two things let that through?",
         "answers": [
           {
-            "answer": "The spec paraphrased the requirement and lost the field name, and every test used data where the two fields were equal, so no test could distinguish them."
+            "answer": "A lost field name and tests with equal values."
           },
           {
             "answer": "The reviewers did not read the code."
@@ -855,14 +855,14 @@
             "answer": "Token fields cannot be tested."
           }
         ],
-        "answer": "The spec paraphrased the requirement and lost the field name, and every test used data where the two fields were equal, so no test could distinguish them.",
+        "answer": "A lost field name and tests with equal values.",
         "explanation": "Two habits prevent this. Carry named identifiers verbatim from the requirement into the spec and code. And for any comparison, write at least one test where the plausible wrong operand would fail. Tests that pass with either field prove nothing about which one is checked."
       },
       {
         "question": "What is the risk of describing remaining, unfixed security gaps in a public-facing merge request comment?",
         "answers": [
           {
-            "answer": "It publishes a map of exploitable routes to everyone with read access before they are fixed; keep the enumeration in a tracked, access-controlled ticket and link to it."
+            "answer": "It exposes unfixed routes to every reader."
           },
           {
             "answer": "None; MRs are internal."
@@ -874,14 +874,14 @@
             "answer": "Reviewers may resolve the thread by mistake."
           }
         ],
-        "answer": "It publishes a map of exploitable routes to everyone with read access before they are fixed; keep the enumeration in a tracked, access-controlled ticket and link to it.",
+        "answer": "It exposes unfixed routes to every reader.",
         "explanation": "Repository read access in a large organisation includes contractors, auditors and cross-team reviewers. A dated list of 'not yet fixed' routes is useful to exactly the wrong reader. Track follow-ups where access is deliberate, and give each one an owner and a deadline."
       },
       {
         "question": "Why should a decision to defer a known gap be recorded with a severity, an owner and a ticket rather than as a bullet in a report?",
         "answers": [
           {
-            "answer": "Deferred items without an owner age silently; a destructive, unauthenticated endpoint deferred next to a low-severity read leak gets the same non-urgency unless the record says otherwise."
+            "answer": "Without an owner, deferred items age silently."
           },
           {
             "answer": "Reports are deleted after release."
@@ -893,14 +893,14 @@
             "answer": "Bullets cannot be linked from code."
           }
         ],
-        "answer": "Deferred items without an owner age silently; a destructive, unauthenticated endpoint deferred next to a low-severity read leak gets the same non-urgency unless the record says otherwise.",
+        "answer": "Without an owner, deferred items age silently.",
         "explanation": "Deferral is a decision, and decisions need the same rigor as fixes. Rank what you defer, name who picks it up, and set when. 'Known risk' repeated across several findings is how known risks stay unresolved."
       },
       {
         "question": "What does an append-only audit log with a single writer give a governed process that a freely edited document does not?",
         "answers": [
           {
-            "answer": "A record of decisions that cannot be back-edited to match the outcome; analysis goes in derived documents, never into the log."
+            "answer": "A record of decisions that cannot be edited."
           },
           {
             "answer": "Smaller files."
@@ -912,14 +912,14 @@
             "answer": "Nothing; both record the same facts."
           }
         ],
-        "answer": "A record of decisions that cannot be back-edited to match the outcome; analysis goes in derived documents, never into the log.",
+        "answer": "A record of decisions that cannot be edited.",
         "explanation": "If the process makes a mistake, such as closing a phase twice, the correction is a new entry that says so, not a rewrite. A verifier can then check invariants over the sequence, and the mistakes stay visible, which is the point."
       },
       {
         "question": "When a task is scoped from a paraphrase of a colleague's review comment, what should happen before the scope is locked?",
         "answers": [
           {
-            "answer": "Fetch the original comment and diff it against the paraphrase; paraphrases drop sentences and change field names."
+            "answer": "Fetch the original comment and diff it."
           },
           {
             "answer": "Proceed; the paraphrase came from the person who read it."
@@ -931,14 +931,14 @@
             "answer": "Scope to the paraphrase and adjust later."
           }
         ],
-        "answer": "Fetch the original comment and diff it against the paraphrase; paraphrases drop sentences and change field names.",
+        "answer": "Fetch the original comment and diff it.",
         "explanation": "A requirement that lives in a review thread is a primary source. Working from a summary of it means every downstream artifact inherits the summary's omissions, and reviewers of those artifacts never see the original. One fetch at the start is cheaper than a rework at the end."
       },
       {
         "question": "How does the microservices.io pattern language define the microservice architecture?",
         "answers": [
           {
-            "answer": "A set of two or more independently deployable, loosely coupled services, each owning one or more subdomains with its own repository and deployment pipeline."
+            "answer": "Deployable and loosely coupled services."
           },
           {
             "answer": "Any application that runs in Docker containers."
@@ -950,14 +950,14 @@
             "answer": "A REST API with more than ten endpoints."
           }
         ],
-        "answer": "A set of two or more independently deployable, loosely coupled services, each owning one or more subdomains with its own repository and deployment pipeline.",
+        "answer": "Deployable and loosely coupled services.",
         "explanation": "Two words carry the definition: independently deployable and loosely coupled. A system of many small components that must be released together is not a microservice architecture, however small the pieces are. Containers, REST and size are implementation details, not the definition."
       },
       {
         "question": "What is the main problem the microservice architecture is meant to solve, according to the pattern language?",
         "answers": [
           {
-            "answer": "Letting an organisation deliver changes rapidly, frequently and reliably with small, autonomous teams."
+            "answer": "Small autonomous teams shipping independently."
           },
           {
             "answer": "Making applications run faster."
@@ -969,14 +969,14 @@
             "answer": "Replacing relational databases with NoSQL."
           }
         ],
-        "answer": "Letting an organisation deliver changes rapidly, frequently and reliably with small, autonomous teams.",
+        "answer": "Small autonomous teams shipping independently.",
         "explanation": "The architecture is an answer to an organisational question, how to organise subdomains into deployable components so teams can ship independently, not a performance technique. If your team is small and ships fine from one codebase, the problem it solves may not exist for you yet."
       },
       {
         "question": "Which of these is a listed drawback of the microservice architecture?",
         "answers": [
           {
-            "answer": "Transaction management becomes eventually consistent rather than ACID across services."
+            "answer": "Transactions are eventually consistent, not ACID."
           },
           {
             "answer": "Services cannot use different programming languages."
@@ -988,14 +988,14 @@
             "answer": "Deployments must happen for all services at once."
           }
         ],
-        "answer": "Transaction management becomes eventually consistent rather than ACID across services.",
+        "answer": "Transactions are eventually consistent, not ACID.",
         "explanation": "The pattern language lists distributed operations being harder to understand, inefficiency of distributed interactions, non-ACID transaction management, runtime coupling that reduces availability, and design-time coupling that forces lockstep changes. The other three options are the opposite of what the architecture gives you."
       },
       {
         "question": "When is a monolithic architecture the right choice?",
         "answers": [
           {
-            "answer": "When the team is small and tightly coordinated, complexity is manageable, one technology stack is acceptable, and local ACID transactions matter."
+            "answer": "A small team needing local ACID transactions."
           },
           {
             "answer": "Never; monoliths are a legacy pattern."
@@ -1007,14 +1007,14 @@
             "answer": "When the application has more than one database."
           }
         ],
-        "answer": "When the team is small and tightly coordinated, complexity is manageable, one technology stack is acceptable, and local ACID transactions matter.",
+        "answer": "A small team needing local ACID transactions.",
         "explanation": "A monolith is simple to understand, its calls are local and efficient, and it gets ACID transactions for free. Its drawbacks (a large codebase, reduced team autonomy, slow pipelines, one stack) grow with size. The pattern language treats it as a legitimate architecture, not a mistake."
       },
       {
         "question": "What is the 'Database per Service' pattern?",
         "answers": [
           {
-            "answer": "Each service keeps its persistent data private and reachable only through its API; other services never read its tables directly."
+            "answer": "Private data per service, reachable via its API."
           },
           {
             "answer": "Every service must run its own database server."
@@ -1026,14 +1026,14 @@
             "answer": "Services share a database but use different logins."
           }
         ],
-        "answer": "Each service keeps its persistent data private and reachable only through its API; other services never read its tables directly.",
+        "answer": "Private data per service, reachable via its API.",
         "explanation": "Private data is the point; the mechanism can be private tables, a schema per service, or a separate database server. The first two keep overhead low; a dedicated server suits high-throughput services. Enforce the boundary with credentials, not with good intentions."
       },
       {
         "question": "Which is the strongest argument against the 'Shared Database' pattern?",
         "answers": [
           {
-            "answer": "A developer changing a table must coordinate schema changes with every other team that reads it, and long transactions in one service can block another."
+            "answer": "Cross-team schema coordination and lock coupling."
           },
           {
             "answer": "Shared databases cannot use ACID transactions."
@@ -1045,14 +1045,14 @@
             "answer": "Shared databases do not support joins."
           }
         ],
-        "answer": "A developer changing a table must coordinate schema changes with every other team that reads it, and long transactions in one service can block another.",
+        "answer": "Cross-team schema coordination and lock coupling.",
         "explanation": "The shared database keeps ACID transactions and easy joins, which is why teams reach for it. The cost is development-time coupling (schema changes need cross-team coordination) and runtime coupling (locks). It trades away the independence that was the reason to have services."
       },
       {
         "question": "Once each service has its own database, how do you run a query that needs data from several of them?",
         "answers": [
           {
-            "answer": "API Composition (call each owning service and join in memory) or CQRS (keep a read-only view updated from events)."
+            "answer": "API Composition, or CQRS with an event view."
           },
           {
             "answer": "Give the query service read access to every database."
@@ -1064,14 +1064,14 @@
             "answer": "Copy all tables into a data warehouse and query that in the request path."
           }
         ],
-        "answer": "API Composition (call each owning service and join in memory) or CQRS (keep a read-only view updated from events).",
+        "answer": "API Composition, or CQRS with an event view.",
         "explanation": "API Composition is simple but joins large datasets in memory and depends on every service being up. CQRS moves the work to write time: a view database subscribes to domain events and serves the query directly, at the price of replication lag and more moving parts."
       },
       {
         "question": "What is the main drawback of the API Composition pattern?",
         "answers": [
           {
-            "answer": "Some queries turn into inefficient in-memory joins of large datasets."
+            "answer": "It joins large result sets in memory."
           },
           {
             "answer": "It requires a message broker."
@@ -1083,14 +1083,14 @@
             "answer": "It cannot return nested data."
           }
         ],
-        "answer": "Some queries turn into inefficient in-memory joins of large datasets.",
+        "answer": "It joins large result sets in memory.",
         "explanation": "An API composer fetches from each owning service and joins the results itself. That works for small result sets. For large ones you are re-implementing a database join over the network. When that happens, CQRS is the usual next step."
       },
       {
         "question": "In CQRS as described in the pattern language, how is the query-side view kept up to date?",
         "answers": [
           {
-            "answer": "It subscribes to domain events published by the services that own the data and updates a denormalised read-only replica."
+            "answer": "It updates the view from domain events."
           },
           {
             "answer": "It polls each service's database every few seconds."
@@ -1102,14 +1102,14 @@
             "answer": "A nightly batch job rebuilds it."
           }
         ],
-        "answer": "It subscribes to domain events published by the services that own the data and updates a denormalised read-only replica.",
+        "answer": "It updates the view from domain events.",
         "explanation": "The view is a projection of events, often in a store suited to the queries it serves. Queries become fast and the command and query models stay simple on their own. The costs are complexity, some duplication, and the fact that the view lags the source: readers may see data that is a moment old."
       },
       {
         "question": "Why can a business transaction that spans two services not be a normal ACID transaction?",
         "answers": [
           {
-            "answer": "Each service owns its own database; there is no single transaction manager across them, and two-phase commit is avoided because it couples availability and scales poorly."
+            "answer": "No shared transaction manager across services."
           },
           {
             "answer": "HTTP does not support transactions."
@@ -1121,14 +1121,14 @@
             "answer": "It can; ACID works across any number of databases."
           }
         ],
-        "answer": "Each service owns its own database; there is no single transaction manager across them, and two-phase commit is avoided because it couples availability and scales poorly.",
+        "answer": "No shared transaction manager across services.",
         "explanation": "Database per Service gives you independence and takes away cross-service ACID. The pattern language's answer is the Saga: a sequence of local transactions, each committed on its own, with compensating transactions to undo earlier steps when a later step fails."
       },
       {
         "question": "What is a compensating transaction in a saga?",
         "answers": [
           {
-            "answer": "A local transaction that undoes the effect of an earlier completed step when a later step fails, because there is no automatic rollback across services."
+            "answer": "A local transaction that undoes an earlier step."
           },
           {
             "answer": "A retry of the failed step with a longer timeout."
@@ -1140,14 +1140,14 @@
             "answer": "A database-level ROLLBACK issued by the orchestrator."
           }
         ],
-        "answer": "A local transaction that undoes the effect of an earlier completed step when a later step fails, because there is no automatic rollback across services.",
+        "answer": "A local transaction that undoes an earlier step.",
         "explanation": "Sagas do not get rollback for free. Developers must design explicit undo operations (cancel the reservation, refund the charge). Those must be safe to retry. And because steps commit independently, other transactions can observe intermediate states, which the pattern language calls a lack of isolation."
       },
       {
         "question": "What is the difference between choreography and orchestration in a saga?",
         "answers": [
           {
-            "answer": "In choreography each service reacts to events others publish; in orchestration a central coordinator tells each participant which local transaction to run."
+            "answer": "Events versus a central coordinator."
           },
           {
             "answer": "Choreography is synchronous, orchestration is asynchronous."
@@ -1159,14 +1159,14 @@
             "answer": "They are two names for the same thing."
           }
         ],
-        "answer": "In choreography each service reacts to events others publish; in orchestration a central coordinator tells each participant which local transaction to run.",
+        "answer": "Events versus a central coordinator.",
         "explanation": "Choreography has no central brain, which keeps services decoupled but makes the overall flow hard to see. Orchestration puts the flow in one place, which is easier to follow and test but adds a component that knows about every participant."
       },
       {
         "question": "A service updates its database and then publishes an event to a broker in two separate steps. What can go wrong?",
         "answers": [
           {
-            "answer": "The service can crash between the two steps, so the data changes but the event is never sent, or the event is sent but the transaction rolls back."
+            "answer": "A crash between the two steps loses consistency."
           },
           {
             "answer": "Nothing, as long as the publish happens after the commit."
@@ -1178,14 +1178,14 @@
             "answer": "The database will refuse to commit until the broker acknowledges."
           }
         ],
-        "answer": "The service can crash between the two steps, so the data changes but the event is never sent, or the event is sent but the transaction rolls back.",
+        "answer": "A crash between the two steps loses consistency.",
         "explanation": "This is the dual-write problem. The Transactional Outbox pattern solves it: write the message into an outbox table in the same database transaction as the business change, and let a separate relay publish it. Messages are then sent if and only if the transaction committed."
       },
       {
         "question": "In the Transactional Outbox pattern, what are the two ways the message relay can pick up messages?",
         "answers": [
           {
-            "answer": "A polling publisher that queries the outbox table periodically, or transaction log tailing that reads the database's commit log."
+            "answer": "Polling the outbox, or tailing the commit log."
           },
           {
             "answer": "A cron job and a webhook."
@@ -1197,14 +1197,14 @@
             "answer": "Two-phase commit or a distributed lock."
           }
         ],
-        "answer": "A polling publisher that queries the outbox table periodically, or transaction log tailing that reads the database's commit log.",
+        "answer": "Polling the outbox, or tailing the commit log.",
         "explanation": "Polling is simple and portable but adds latency and load. Log tailing is near real time but needs deep integration with the specific database. Either way the relay may crash after publishing and before marking the row as sent, so delivery is at-least-once."
       },
       {
         "question": "Why must a message consumer be idempotent in an event-driven system?",
         "answers": [
           {
-            "answer": "Brokers guarantee at-least-once delivery, so the same message can arrive more than once; processing it twice must have the same effect as once."
+            "answer": "At-least-once delivery means duplicates happen."
           },
           {
             "answer": "Because messages are always delivered in order."
@@ -1216,14 +1216,14 @@
             "answer": "It is optional; brokers deduplicate for you."
           }
         ],
-        "answer": "Brokers guarantee at-least-once delivery, so the same message can arrive more than once; processing it twice must have the same effect as once.",
+        "answer": "At-least-once delivery means duplicates happen.",
         "explanation": "A consumer can crash after doing the work and before acknowledging, and the outbox relay adds its own duplicates. The Idempotent Consumer pattern records processed message ids, for example in a PROCESSED_MESSAGES table written in the same transaction as the business change, so a duplicate insert fails and the message is discarded."
       },
       {
         "question": "What is a domain event?",
         "answers": [
           {
-            "answer": "A message a service publishes whenever its data changes, named in the past tense (OrderCreated), so other services can react without being called directly."
+            "answer": "A past-tense message about a data change."
           },
           {
             "answer": "A scheduled job that runs in the business domain."
@@ -1235,14 +1235,14 @@
             "answer": "A log line written at INFO level."
           }
         ],
-        "answer": "A message a service publishes whenever its data changes, named in the past tense (OrderCreated), so other services can react without being called directly.",
+        "answer": "A past-tense message about a data change.",
         "explanation": "Domain events are what CQRS views and choreography-based sagas consume. The past-tense name matters: it states a fact that already happened, not a command to someone else. Publishing them reliably is what the Transactional Outbox is for."
       },
       {
         "question": "Which statement about messaging versus synchronous remote calls (RPI) is correct?",
         "answers": [
           {
-            "answer": "Messaging decouples sender from consumer at runtime and the broker buffers messages while the consumer is down; RPI is simpler but couples availability, since the caller waits on the callee."
+            "answer": "Messaging decouples; RPI couples both ends."
           },
           {
             "answer": "RPI is always more reliable because errors are returned immediately."
@@ -1254,14 +1254,14 @@
             "answer": "Both require a service registry to work."
           }
         ],
-        "answer": "Messaging decouples sender from consumer at runtime and the broker buffers messages while the consumer is down; RPI is simpler but couples availability, since the caller waits on the callee.",
+        "answer": "Messaging decouples; RPI couples both ends.",
         "explanation": "The price of messaging is a broker that must itself be highly available and request/reply flows that are more work to build. The price of RPI is that every synchronous hop multiplies your chance of being down. Neither is free; pick per interaction, not per system."
       },
       {
         "question": "A request handler calls three other services synchronously, each 99.9% available. Roughly how available is the operation?",
         "answers": [
           {
-            "answer": "About 99.7%: the availability of the operation is the product of the availabilities of the services it waits on."
+            "answer": "About 99.7% (the product of the three)."
           },
           {
             "answer": "99.9%: availability is determined by the weakest link only."
@@ -1273,14 +1273,14 @@
             "answer": "It cannot be estimated without load figures."
           }
         ],
-        "answer": "About 99.7%: the availability of the operation is the product of the availabilities of the services it waits on.",
+        "answer": "About 99.7% (the product of the three).",
         "explanation": "0.999 to the third power, times the handler's own availability. The Self-contained Service pattern exists for this reason: design a service so it can answer a synchronous request without waiting on others, by keeping local replicas (CQRS) and finishing the rest asynchronously (saga)."
       },
       {
         "question": "What problem does the Circuit Breaker pattern solve?",
         "answers": [
           {
-            "answer": "A slow or failing downstream service ties up callers waiting on it until they run out of resources and fail too; the breaker fails fast instead."
+            "answer": "A failing downstream is cut off to fail fast."
           },
           {
             "answer": "It prevents services from being deployed with failing tests."
@@ -1292,14 +1292,14 @@
             "answer": "It stops a database from accepting too many connections."
           }
         ],
-        "answer": "A slow or failing downstream service ties up callers waiting on it until they run out of resources and fail too; the breaker fails fast instead.",
+        "answer": "A failing downstream is cut off to fail fast.",
         "explanation": "A proxy counts failures; when they exceed a threshold it trips and rejects calls immediately for a timeout period, then lets a few trial requests through. If they succeed it closes again. The hard part is choosing the timeout: too short gives false trips, too long keeps callers hanging."
       },
       {
         "question": "Why do clients usually talk to an API Gateway instead of calling services directly?",
         "answers": [
           {
-            "answer": "One entry point hides how the system is partitioned, routes and aggregates calls, translates protocols, and can expose a client-specific API."
+            "answer": "One entry point that hides service partitioning."
           },
           {
             "answer": "Services cannot accept HTTP from outside the cluster."
@@ -1311,14 +1311,14 @@
             "answer": "To avoid needing authentication on the services."
           }
         ],
-        "answer": "One entry point hides how the system is partitioned, routes and aggregates calls, translates protocols, and can expose a client-specific API.",
+        "answer": "One entry point that hides service partitioning.",
         "explanation": "Without a gateway a mobile client would make many round trips, speak whatever protocols each service uses, and break whenever services are split or moved. The gateway is also another component to build and run, and a potential bottleneck; the Backend for Frontend variant gives each client type its own."
       },
       {
         "question": "How does a service find another service's instances when their hosts and ports change all the time?",
         "answers": [
           {
-            "answer": "Through a service registry: instances register on startup and are health-checked; either the client queries the registry (client-side discovery) or a router does (server-side discovery)."
+            "answer": "Through a health-checked service registry."
           },
           {
             "answer": "Hostnames are hardcoded in each service's configuration."
@@ -1330,14 +1330,14 @@
             "answer": "The database stores the current addresses."
           }
         ],
-        "answer": "Through a service registry: instances register on startup and are health-checked; either the client queries the registry (client-side discovery) or a router does (server-side discovery).",
+        "answer": "Through a health-checked service registry.",
         "explanation": "In a cloud environment instances come and go. The registry is the source of truth, which also makes it critical infrastructure that must itself be highly available. Registration can be done by the instance (self-registration) or by the platform (third-party registration)."
       },
       {
         "question": "What should a Health Check endpoint check, and why is 'the process is running' not enough?",
         "answers": [
           {
-            "answer": "Connections to the infrastructure it depends on (database, broker) and host state (disk space); a process can be up while unable to serve a single request."
+            "answer": "Its dependencies, not just that it is running."
           },
           {
             "answer": "Only that the HTTP server responds with 200."
@@ -1349,14 +1349,14 @@
             "answer": "Nothing; health is measured from outside by the load balancer."
           }
         ],
-        "answer": "Connections to the infrastructure it depends on (database, broker) and host state (disk space); a process can be up while unable to serve a single request.",
+        "answer": "Its dependencies, not just that it is running.",
         "explanation": "An instance that has exhausted its database connections looks alive to a port check. Registries, load balancers and monitors call the health endpoint to decide whether to send traffic. The check can still miss things, and an instance can fail between two checks, so it complements other observability rather than replacing it."
       },
       {
         "question": "A request touches five services and something is slow. What does Distributed Tracing add that ordinary logs do not?",
         "answers": [
           {
-            "answer": "A single request id passed through every hop and written into every log line, plus timed spans sent to a central collector, so you see where the latency is."
+            "answer": "A traced request id and per-hop spans."
           },
           {
             "answer": "It makes the services faster."
@@ -1368,14 +1368,14 @@
             "answer": "It stores every request body."
           }
         ],
-        "answer": "A single request id passed through every hop and written into every log line, plus timed spans sent to a central collector, so you see where the latency is.",
+        "answer": "A traced request id and per-hop spans.",
         "explanation": "External monitoring only shows total response time. Log entries for one request are scattered across many services. The trace id lets you correlate them, and the spans show which hop took the time. The cost is infrastructure to collect and store traces."
       },
       {
         "question": "Which practice does the Externalized Configuration pattern describe?",
         "answers": [
           {
-            "answer": "Read database credentials and service locations from the environment or a config server at startup, so one build runs unchanged in dev, test, staging and production."
+            "answer": "Read config from the environment at startup."
           },
           {
             "answer": "Keep a configuration file per environment committed in the repository."
@@ -1387,14 +1387,14 @@
             "answer": "Recompile the service for each environment."
           }
         ],
-        "answer": "Read database credentials and service locations from the environment or a config server at startup, so one build runs unchanged in dev, test, staging and production.",
+        "answer": "Read config from the environment at startup.",
         "explanation": "The same artifact must run everywhere without modification or recompilation. The remaining challenge is making sure the configuration an environment provides matches what the service expects, which is why services should validate required settings at startup and refuse to start half-configured."
       },
       {
         "question": "How do services learn who the user is when the API Gateway did the authentication?",
         "answers": [
           {
-            "answer": "The gateway passes an access token (such as a JWT) that securely carries the requestor's identity on every request; services verify it and can forward it downstream."
+            "answer": "The gateway passes a verifiable identity token."
           },
           {
             "answer": "Each service re-prompts for credentials."
@@ -1406,14 +1406,14 @@
             "answer": "Services look the session up in the gateway's memory."
           }
         ],
-        "answer": "The gateway passes an access token (such as a JWT) that securely carries the requestor's identity on every request; services verify it and can forward it downstream.",
+        "answer": "The gateway passes a verifiable identity token.",
         "explanation": "The Access Token pattern centralises authentication at the edge while letting every service check authorization itself, because the identity travels with the request in a form each service can verify. A plain header with a username can be forged by anyone who can reach the service."
       },
       {
         "question": "What is a consumer-driven contract test?",
         "answers": [
           {
-            "answer": "A test suite written by the developers of a consuming service that the providing service runs in its own pipeline, so a breaking API change fails fast without an end-to-end environment."
+            "answer": "Consumer-written tests run by the provider."
           },
           {
             "answer": "A test the provider writes to check its consumers' code."
@@ -1425,14 +1425,14 @@
             "answer": "A manual checklist reviewed before release."
           }
         ],
-        "answer": "A test suite written by the developers of a consuming service that the providing service runs in its own pipeline, so a breaking API change fails fast without an end-to-end environment.",
+        "answer": "Consumer-written tests run by the provider.",
         "explanation": "Testing a service in isolation is faster and more reliable than spinning up everything. The contract encodes what consumers rely on. The weak spot is that contracts can drift from real consumer needs, so a passing contract is not proof the system works; it is proof you did not break what someone told you they depend on."
       },
       {
         "question": "What is a Service Component Test?",
         "answers": [
           {
-            "answer": "A test of one service in isolation, with its dependencies replaced by test doubles, exercising it through its API."
+            "answer": "One service, through its API, with fakes."
           },
           {
             "answer": "A unit test of a single class."
@@ -1444,14 +1444,14 @@
             "answer": "A test that checks CPU and memory usage."
           }
         ],
-        "answer": "A test of one service in isolation, with its dependencies replaced by test doubles, exercising it through its API.",
+        "answer": "One service, through its API, with fakes.",
         "explanation": "It sits between unit tests and end-to-end tests: real service code, real HTTP or messaging boundary, faked neighbours. Combined with contract tests it lets a team ship a service with confidence without waiting for every other team's environment to be up."
       },
       {
         "question": "How should a team migrate a large monolith to services without a big-bang rewrite?",
         "answers": [
           {
-            "answer": "Strangler Application: build new functionality and extract existing pieces as services around the monolith, shrinking it over time until it can be retired."
+            "answer": "Strangler: grow services around the monolith."
           },
           {
             "answer": "Freeze the monolith, rewrite everything as services, then switch over in one release."
@@ -1463,14 +1463,14 @@
             "answer": "Run the monolith in a container and call it a service."
           }
         ],
-        "answer": "Strangler Application: build new functionality and extract existing pieces as services around the monolith, shrinking it over time until it can be retired.",
+        "answer": "Strangler: grow services around the monolith.",
         "explanation": "Incremental extraction delivers value continuously and lets the team learn as it goes. New features built as services are also the quickest way to show the architecture's benefits. A big-bang rewrite has no intermediate state that works."
       },
       {
         "question": "During a Strangler migration, what is an Anti-corruption Layer for?",
         "answers": [
           {
-            "answer": "A translation layer between the new service and the legacy monolith so the monolith's domain model does not leak into and distort the new service's model."
+            "answer": "A layer that keeps the legacy model out."
           },
           {
             "answer": "A firewall between the monolith and the internet."
@@ -1482,14 +1482,14 @@
             "answer": "A code linter for the old codebase."
           }
         ],
-        "answer": "A translation layer between the new service and the legacy monolith so the monolith's domain model does not leak into and distort the new service's model.",
+        "answer": "A layer that keeps the legacy model out.",
         "explanation": "Old systems carry old concepts and old names. If the new service adopts them to make integration easy, it inherits the design it was meant to escape. The layer maps between the two models so each can stay clean."
       },
       {
         "question": "Which force behind 'Decompose by Business Capability' explains why service boundaries should follow the business rather than the technology?",
         "answers": [
           {
-            "answer": "Business capabilities are relatively stable, so services aligned to them stay stable too, and each can be owned by one small team."
+            "answer": "Business capabilities are stable over time."
           },
           {
             "answer": "Business people write the code."
@@ -1501,14 +1501,14 @@
             "answer": "It produces the largest possible number of services."
           }
         ],
-        "answer": "Business capabilities are relatively stable, so services aligned to them stay stable too, and each can be owned by one small team.",
+        "answer": "Business capabilities are stable over time.",
         "explanation": "The pattern language lists the forces: a stable architecture, cohesive and loosely coupled services, the Common Closure Principle (things that change together live together), independent testability, and teams small enough to own a service, around six to ten people. Decompose by Subdomain is the DDD-flavoured alternative that reaches similar boundaries."
       },
       {
         "question": "What is the Common Closure Principle, as used when drawing service boundaries?",
         "answers": [
           {
-            "answer": "Things that change for the same reason should be packaged together, so a business change touches one service rather than many."
+            "answer": "Things that change together belong together."
           },
           {
             "answer": "Every service must close its database connections."
@@ -1520,14 +1520,14 @@
             "answer": "All services must share common libraries."
           }
         ],
-        "answer": "Things that change for the same reason should be packaged together, so a business change touches one service rather than many.",
+        "answer": "Things that change together belong together.",
         "explanation": "If one requirement change forces edits in five services and a coordinated release, the boundaries are wrong: that is design-time coupling, one of the listed drawbacks of the architecture. Good boundaries keep each change inside one team's service."
       },
       {
         "question": "What does a Microservice Chassis (or service template) provide?",
         "answers": [
           {
-            "answer": "A shared framework or starter that handles cross-cutting concerns such as externalized configuration, logging, health checks, tracing and circuit breaking, so each new service does not reimplement them."
+            "answer": "A starter handling cross-cutting concerns."
           },
           {
             "answer": "A hardware appliance to run services on."
@@ -1539,7 +1539,7 @@
             "answer": "A shared database schema."
           }
         ],
-        "answer": "A shared framework or starter that handles cross-cutting concerns such as externalized configuration, logging, health checks, tracing and circuit breaking, so each new service does not reimplement them.",
+        "answer": "A starter handling cross-cutting concerns.",
         "explanation": "Every service needs the same operational plumbing. Solving it once in a chassis or template keeps services consistent and lets a new one start with the concerns already handled. Internal shared packages for logging, tracing and feature flags are exactly this pattern."
       },
       {
@@ -1565,7 +1565,7 @@
         "question": "Why is 'runtime coupling' called out as a cost of synchronous service-to-service calls?",
         "answers": [
           {
-            "answer": "If a callee is slow or down, the caller is slow or down too; availability and latency become shared across the chain."
+            "answer": "A slow callee makes the caller slow too."
           },
           {
             "answer": "Because the services must be written in the same language."
@@ -1577,14 +1577,14 @@
             "answer": "Because synchronous calls cannot carry a token."
           }
         ],
-        "answer": "If a callee is slow or down, the caller is slow or down too; availability and latency become shared across the chain.",
+        "answer": "A slow callee makes the caller slow too.",
         "explanation": "Design-time coupling is about having to change code together; runtime coupling is about having to be up together. Messaging, circuit breakers and self-contained services all exist to reduce the second kind."
       },
       {
         "question": "A team splits a monolith into twelve services that all read each other's tables and must be released together. What have they built?",
         "answers": [
           {
-            "answer": "A distributed monolith: the deployment and data coupling of a monolith with the operational cost of a distributed system."
+            "answer": "A distributed monolith."
           },
           {
             "answer": "A correct microservice architecture, because there are many services."
@@ -1596,7 +1596,7 @@
             "answer": "An event-driven architecture."
           }
         ],
-        "answer": "A distributed monolith: the deployment and data coupling of a monolith with the operational cost of a distributed system.",
+        "answer": "A distributed monolith.",
         "explanation": "The definition requires independently deployable and loosely coupled. Shared tables (the Shared Database pattern's coupling) and lockstep releases fail both tests. Counting services says nothing about the architecture; the coupling does."
       }
     ]
