@@ -36795,5 +36795,771 @@
         "explanation": "CT scanners differ in resolution, contrast, and artifact patterns. A model trained primarily on high-end scanner images learns features that don't exist on older equipment. This is a form of representation bias: the training data doesn't represent the deployment population. Fixes: (1) Include data from diverse equipment in training, (2) Domain generalization techniques, (3) Per-site calibration, (4) Test-time adaptation. Never deploy to sites not represented in training."
       }
     ]
+  },
+  {
+    "name": "Microservices: Basics & Best Practices",
+    "category": "🛠 Backend & Microservices",
+    "questions": [
+      {
+        "question": "What is the defining property of a microservice?",
+        "answers": [
+          {
+            "answer": "It deploys independently of the other services."
+          },
+          {
+            "answer": "It runs in its own container on a dedicated host."
+          },
+          {
+            "answer": "It stays small, under a few hundred lines of code."
+          },
+          {
+            "answer": "It talks to the others over HTTP and JSON."
+          }
+        ],
+        "answer": "It deploys independently of the other services.",
+        "explanation": "Containers, size and HTTP are common choices, not the definition. Independent deployability is the test: you can change and ship this service without releasing anything else. A system of small components that must ship together is not microservices, however small the pieces are."
+      },
+      {
+        "question": "What does Conway's law say about system design?",
+        "answers": [
+          {
+            "answer": "A system's structure mirrors the organisation that built it."
+          },
+          {
+            "answer": "Systems grow more complex until they collapse under their weight."
+          },
+          {
+            "answer": "Every service accumulates complexity in proportion to its age."
+          },
+          {
+            "answer": "Network latency grows with the number of services in a system."
+          }
+        ],
+        "answer": "A system's structure mirrors the organisation that built it.",
+        "explanation": "Teams ship designs that fit how they talk to each other. If three teams must coordinate every change, the architecture will show it. Use this deliberately: draw the boundaries you want teams to have, or watch the organisation redraw them for you."
+      },
+      {
+        "question": "Who should own a microservice in production?",
+        "answers": [
+          {
+            "answer": "One team, end to end, including its on-call and its deployments."
+          },
+          {
+            "answer": "A central platform team that runs every service for the product teams."
+          },
+          {
+            "answer": "The architects who designed the service boundaries originally."
+          },
+          {
+            "answer": "A rotating group drawn from all the teams that call the service."
+          }
+        ],
+        "answer": "One team, end to end, including its on-call and its deployments.",
+        "explanation": "Ownership is the point of the boundary: the team that changes the service also carries its pager, its pipeline and its data. Shared ownership across many teams is how services drift back into a distributed monolith."
+      },
+      {
+        "question": "Why use a bounded context rather than a technical layer as a service boundary?",
+        "answers": [
+          {
+            "answer": "A bounded context groups the things that change together around one capability."
+          },
+          {
+            "answer": "It keeps every service on exactly the same technology stack and runtime."
+          },
+          {
+            "answer": "It makes each service smaller so it compiles and tests more quickly."
+          },
+          {
+            "answer": "It guarantees that no two services ever share a table or a queue."
+          }
+        ],
+        "answer": "A bounded context groups the things that change together around one capability.",
+        "explanation": "Boundaries drawn around business capabilities are stable because the business changes slowly. Boundaries drawn around technical layers (controllers, services, data access) force every feature change to touch every service, which is the coupling you were trying to remove."
+      },
+      {
+        "question": "What problem do nano-services, services that are too fine-grained, create?",
+        "answers": [
+          {
+            "answer": "Operations turn into long chains of network calls."
+          },
+          {
+            "answer": "They cannot be deployed independently of one another."
+          },
+          {
+            "answer": "Their codebases become too large for one team to hold in mind."
+          },
+          {
+            "answer": "They force every team onto a single shared database."
+          }
+        ],
+        "answer": "Operations turn into long chains of network calls.",
+        "explanation": "Splitting past the point where a service owns a real capability buys you network hops, latency and more failure points, and each hop needs a fallback. Granularity should follow a capability, not a line count."
+      },
+      {
+        "question": "Why is chatty communication between services a problem?",
+        "answers": [
+          {
+            "answer": "Many small round trips add latency and failure risk."
+          },
+          {
+            "answer": "It forces the services to share a database schema."
+          },
+          {
+            "answer": "It makes the API impossible to version safely."
+          },
+          {
+            "answer": "It requires every service to use the same language."
+          }
+        ],
+        "answer": "Many small round trips add latency and failure risk.",
+        "explanation": "Each hop has its own latency and its own chance of failing, so a request fanned out over many calls is slower and less reliable than the sum of its parts. Fix it by coarsening the API (one call that returns what the client needs) or moving the data closer."
+      },
+      {
+        "question": "Two services need the same helper code. Why is a shared library often the wrong answer?",
+        "answers": [
+          {
+            "answer": "A change for one service forces a redeploy of the other."
+          },
+          {
+            "answer": "Shared libraries cannot be versioned or published."
+          },
+          {
+            "answer": "It duplicates logic in a way that is hard to test."
+          },
+          {
+            "answer": "It prevents either service from using another language."
+          }
+        ],
+        "answer": "A change for one service forces a redeploy of the other.",
+        "explanation": "A shared library is shared release coupling. Every consumer must redeploy to pick up a change, which is exactly the lockstep you avoided. Duplicating a small helper is often cheaper; share a library only for genuinely stable contracts."
+      },
+      {
+        "question": "A service keeps user sessions in memory on each instance. Why does that break under scaling?",
+        "answers": [
+          {
+            "answer": "The next request may hit an instance with no session."
+          },
+          {
+            "answer": "In-memory data is slower to read than a shared cache."
+          },
+          {
+            "answer": "Memory costs more than disk once the service scales out."
+          },
+          {
+            "answer": "The load balancer cannot route traffic to a full instance."
+          }
+        ],
+        "answer": "The next request may hit an instance with no session.",
+        "explanation": "With more than one instance, requests are spread across all of them, so a session held in one instance's memory is invisible to the others. Keep sessions in a shared store or make the service stateless with a signed token."
+      },
+      {
+        "question": "Why should service instances be treated as disposable?",
+        "answers": [
+          {
+            "answer": "Any instance can be killed and replaced without losing state."
+          },
+          {
+            "answer": "Disposable instances cost less to run than long-lived ones."
+          },
+          {
+            "answer": "It removes the need for health checks and monitoring."
+          },
+          {
+            "answer": "It lets the service skip a graceful shutdown sequence."
+          }
+        ],
+        "answer": "Any instance can be killed and replaced without losing state.",
+        "explanation": "Pets are hand-tended and irreplaceable; cattle are replaced by the platform without ceremony. If an instance holds unique state, you cannot scale, deploy or recover freely, so treat the instance as ephemeral and keep state in an external store."
+      },
+      {
+        "question": "Where should a service get its secrets?",
+        "answers": [
+          {
+            "answer": "From a secret manager at runtime, injected by the platform."
+          },
+          {
+            "answer": "From a config file committed alongside the service code."
+          },
+          {
+            "answer": "From environment variables baked into the container image."
+          },
+          {
+            "answer": "From a shared document the team keeps up to date."
+          }
+        ],
+        "answer": "From a secret manager at runtime, injected by the platform.",
+        "explanation": "A secret in a repository, an image or a document is a secret you cannot rotate and must treat as leaked. Pull it from a managed store at runtime, keep it in memory, and give each service access to only the secrets it needs."
+      },
+      {
+        "question": "What is the difference between a liveness and a readiness probe?",
+        "answers": [
+          {
+            "answer": "Liveness means restart me; readiness means send me traffic."
+          },
+          {
+            "answer": "Liveness means send me traffic; readiness means restart me."
+          },
+          {
+            "answer": "Liveness checks the database; readiness checks the process."
+          },
+          {
+            "answer": "They are two names for the same health check endpoint."
+          }
+        ],
+        "answer": "Liveness means restart me; readiness means send me traffic.",
+        "explanation": "Liveness answers whether the process needs restarting; readiness answers whether it can serve a request right now. A failing readiness probe removes the instance from the load balancer without killing it, which is what lets an instance warm up or back off without a restart loop."
+      },
+      {
+        "question": "Why does a service need a readiness probe during a rolling deployment?",
+        "answers": [
+          {
+            "answer": "It keeps traffic off an instance until it can serve requests."
+          },
+          {
+            "answer": "It restarts the instance when memory usage grows too high."
+          },
+          {
+            "answer": "It reports the deployed version to the load balancer."
+          },
+          {
+            "answer": "It drains in-flight connections before the instance stops."
+          }
+        ],
+        "answer": "It keeps traffic off an instance until it can serve requests.",
+        "explanation": "A fresh instance needs time to load, connect and warm caches. Without a readiness gate the load balancer sends it real traffic during that window and users see errors; the gate holds traffic until the instance reports ready."
+      },
+      {
+        "question": "What should a service do on shutdown when it receives SIGTERM?",
+        "answers": [
+          {
+            "answer": "Stop accepting traffic, finish in-flight requests, then exit."
+          },
+          {
+            "answer": "Exit immediately so the replacement instance can start sooner."
+          },
+          {
+            "answer": "Flush its in-memory cache out to a shared database first."
+          },
+          {
+            "answer": "Broadcast a message so other services stop calling it."
+          }
+        ],
+        "answer": "Stop accepting traffic, finish in-flight requests, then exit.",
+        "explanation": "An abrupt exit drops the requests already in flight and any write halfway through. The usual sequence is: fail the readiness probe so traffic stops, drain in-flight work for a bounded time, close connections, then exit."
+      },
+      {
+        "question": "Why put a correlation id in every log line?",
+        "answers": [
+          {
+            "answer": "It follows one request across every service it touches."
+          },
+          {
+            "answer": "It makes the log lines smaller and cheaper to store."
+          },
+          {
+            "answer": "It encrypts sensitive fields before they are written."
+          },
+          {
+            "answer": "It guarantees the log lines arrive in the right order."
+          }
+        ],
+        "answer": "It follows one request across every service it touches.",
+        "explanation": "A single request crosses many services and each writes its own logs. A shared id, propagated on the call and written on every line, is what turns scattered lines into one story you can read when something breaks."
+      },
+      {
+        "question": "What does the RED method ask you to measure for a service?",
+        "answers": [
+          {
+            "answer": "Request rate, error rate and request duration."
+          },
+          {
+            "answer": "CPU, memory and disk usage on each host."
+          },
+          {
+            "answer": "Revenue, engagement and customer churn."
+          },
+          {
+            "answer": "Restarts, exceptions and dropped network packets."
+          }
+        ],
+        "answer": "Request rate, error rate and request duration.",
+        "explanation": "RED is the request-facing view: how many requests, how many failed, how long they took. It maps closely to what users experience, which makes it a good basis for alerts. USE is the complementary view of the resources underneath."
+      },
+      {
+        "question": "When is the USE method the better fit than RED?",
+        "answers": [
+          {
+            "answer": "For resources such as CPU, memory and connection pools."
+          },
+          {
+            "answer": "For user-facing request handling such as latency and errors."
+          },
+          {
+            "answer": "For tracking how often each service is deployed to production."
+          },
+          {
+            "answer": "For measuring business outcomes such as conversion and revenue."
+          }
+        ],
+        "answer": "For resources such as CPU, memory and connection pools.",
+        "explanation": "USE looks at utilisation, saturation and errors on a resource. When requests are slow but the error rate is flat, USE tells you whether a resource is saturated. RED and USE answer different questions, so mature teams watch both."
+      },
+      {
+        "question": "What is an error budget?",
+        "answers": [
+          {
+            "answer": "How much unreliability the SLO allows before you pause."
+          },
+          {
+            "answer": "The money set aside in the budget to pay for cloud outages."
+          },
+          {
+            "answer": "The number of error lines a service may write per day."
+          },
+          {
+            "answer": "The share of failed requests a load balancer tolerates."
+          }
+        ],
+        "answer": "How much unreliability the SLO allows before you pause.",
+        "explanation": "If the SLO is 99.9 percent, the remaining 0.1 percent is the budget. Spend it on releases and experiments; when it runs out, ship reliability work instead. It turns a vague argument about speed versus stability into a number both sides can see."
+      },
+      {
+        "question": "What should production alerts fire on?",
+        "answers": [
+          {
+            "answer": "Symptoms users feel, such as a rising error rate."
+          },
+          {
+            "answer": "Causes, such as high CPU or a full disk on one host."
+          },
+          {
+            "answer": "Every exception written to the application log."
+          },
+          {
+            "answer": "Each deployment, once it finishes rolling out."
+          }
+        ],
+        "answer": "Symptoms users feel, such as a rising error rate.",
+        "explanation": "Cause-based alerts page you for things that may not matter (busy CPU is often fine) while missing real failures. Alert on what users experience, then use dashboards and dashboards-derived cause metrics to work out why."
+      },
+      {
+        "question": "Why put a timeout on every outbound call?",
+        "answers": [
+          {
+            "answer": "Without one, a stuck call ties up the caller."
+          },
+          {
+            "answer": "Timeouts reduce the cost of network egress."
+          },
+          {
+            "answer": "They make retries unnecessary on every path."
+          },
+          {
+            "answer": "They let the callee know the caller is still waiting."
+          }
+        ],
+        "answer": "Without one, a stuck call ties up the caller.",
+        "explanation": "With no timeout, a slow or hung dependency holds a thread, socket or connection until the caller runs out. Set a budget per call, ideally smaller than the caller's own deadline, so the failure surfaces where you can handle it."
+      },
+      {
+        "question": "How should a service retry a failed transient call?",
+        "answers": [
+          {
+            "answer": "With backoff, jitter and a cap on attempts."
+          },
+          {
+            "answer": "Immediately and repeatedly until the call succeeds."
+          },
+          {
+            "answer": "After a fixed one-second delay on every failure."
+          },
+          {
+            "answer": "Never; retries belong in the load balancer only."
+          }
+        ],
+        "answer": "With backoff, jitter and a cap on attempts.",
+        "explanation": "Backoff gives the dependency room to recover; jitter stops every client retrying in lockstep; the cap stops a hopeless call from running forever. Retrying without any of these turns a brief blip into a stampede."
+      },
+      {
+        "question": "Why add a retry budget rather than retry every failure?",
+        "answers": [
+          {
+            "answer": "Retries multiply under load and can cause an outage."
+          },
+          {
+            "answer": "Retries make the application logs too noisy to read."
+          },
+          {
+            "answer": "Most dependencies charge for every retried request."
+          },
+          {
+            "answer": "It keeps retry logic out of the shared client libraries."
+          }
+        ],
+        "answer": "Retries multiply under load and can cause an outage.",
+        "explanation": "Each retry is extra load on a dependency that is already struggling. A budget caps retries as a share of traffic, so the system backs off as a whole instead of amplifying the problem that caused the retries."
+      },
+      {
+        "question": "A client retries a POST that creates an order. What prevents a duplicate order?",
+        "answers": [
+          {
+            "answer": "The client sends an idempotency key the server checks."
+          },
+          {
+            "answer": "The client checks the order list again before each retry."
+          },
+          {
+            "answer": "The server returns a 409 on every second attempt."
+          },
+          {
+            "answer": "The client waits for the first request to time out first."
+          }
+        ],
+        "answer": "The client sends an idempotency key the server checks.",
+        "explanation": "The client cannot tell a lost response from a failed request, so a retried POST can create two orders. The server needs something stable to recognise the retry by, and an idempotency key on the request is the standard answer. A check-then-create in the client races and does not close the gap."
+      },
+      {
+        "question": "What does the bulkhead pattern protect against?",
+        "answers": [
+          {
+            "answer": "One slow dependency hogging the caller's resources."
+          },
+          {
+            "answer": "Two services sharing the same database schema."
+          },
+          {
+            "answer": "An attacker flooding a public endpoint with requests."
+          },
+          {
+            "answer": "A slow deployment rolling out to every instance."
+          }
+        ],
+        "answer": "One slow dependency hogging the caller's resources.",
+        "explanation": "Name it after the watertight compartments in a ship. Give each dependency its own pool of threads or connections, so when one is slow only that pool fills up and the rest of the service keeps serving."
+      },
+      {
+        "question": "What is the purpose of load shedding?",
+        "answers": [
+          {
+            "answer": "Rejecting excess work early so the rest survives."
+          },
+          {
+            "answer": "Moving traffic to another data centre automatically."
+          },
+          {
+            "answer": "Reducing the number of replicas when traffic drops."
+          },
+          {
+            "answer": "Caching responses so fewer requests reach the backend."
+          }
+        ],
+        "answer": "Rejecting excess work early so the rest survives.",
+        "explanation": "When capacity is exhausted, accepting everything means failing everything slowly. Shedding the excess quickly (a 503, an admission check, a priority queue) keeps the service healthy for the traffic it can serve."
+      },
+      {
+        "question": "How does a rolling deployment replace instances?",
+        "answers": [
+          {
+            "answer": "It replaces a few instances at a time while the rest serve traffic."
+          },
+          {
+            "answer": "It stops the whole service, deploys, and starts it again."
+          },
+          {
+            "answer": "It sends a small share of live traffic to the new version first."
+          },
+          {
+            "answer": "It runs the old and new versions side by side, then switches."
+          }
+        ],
+        "answer": "It replaces a few instances at a time while the rest serve traffic.",
+        "explanation": "A rolling update keeps the service available by only ever taking part of it down at a time. The cost is that two versions run side by side for a while, so the API and the data store must tolerate both at once."
+      },
+      {
+        "question": "What distinguishes a blue-green deployment?",
+        "answers": [
+          {
+            "answer": "Two full environments exist; traffic switches to the new one once ready."
+          },
+          {
+            "answer": "Instances are replaced a few at a time while the rest keep serving."
+          },
+          {
+            "answer": "A small percentage of users get the new version first."
+          },
+          {
+            "answer": "The new version runs in a separate environment with no traffic."
+          }
+        ],
+        "answer": "Two full environments exist; traffic switches to the new one once ready.",
+        "explanation": "Blue-green keeps the old version fully running until the new one is verified, then flips traffic over. Rollback is just switching back, at the cost of running two environments and handling in-flight sessions during the switch."
+      },
+      {
+        "question": "What is a canary release?",
+        "answers": [
+          {
+            "answer": "Sending a small slice of live traffic and comparing metrics."
+          },
+          {
+            "answer": "Releasing only to internal users before the public gets it."
+          },
+          {
+            "answer": "Running the new version with no traffic to check it starts."
+          },
+          {
+            "answer": "Deploying during a low-traffic window such as a weekend."
+          }
+        ],
+        "answer": "Sending a small slice of live traffic and comparing metrics.",
+        "explanation": "The canary takes a small share of real traffic and compares the new version's error and latency numbers against the old before widening the rollout. Roll it back if the metrics differ; a deployment window is a different idea entirely."
+      },
+      {
+        "question": "What does a feature flag let you separate?",
+        "answers": [
+          {
+            "answer": "Deploy from release: ship dark, enable later."
+          },
+          {
+            "answer": "Code review from testing, so reviews can happen after merge."
+          },
+          {
+            "answer": "The database schema from the application code."
+          },
+          {
+            "answer": "One service's build from the rest of the pipeline."
+          }
+        ],
+        "answer": "Deploy from release: ship dark, enable later.",
+        "explanation": "The flag lets the code be merged and deployed without being live for users, so releasing becomes a configuration change rather than a deploy. Flags pile up, so delete each one once it has served its purpose."
+      },
+      {
+        "question": "What does treating servers as immutable infrastructure mean?",
+        "answers": [
+          {
+            "answer": "Replace an instance instead of patching it in place."
+          },
+          {
+            "answer": "Instances may not write to their own local disk at all."
+          },
+          {
+            "answer": "Every instance runs the same container image forever."
+          },
+          {
+            "answer": "Configuration is compiled into the binary at build time."
+          }
+        ],
+        "answer": "Replace an instance instead of patching it in place.",
+        "explanation": "Hand-patched hosts drift apart until no one can reproduce production. Build a new image and roll it out, so every instance is identical and the image is the record of what is running."
+      },
+      {
+        "question": "Why build the artifact once and promote the same one through environments?",
+        "answers": [
+          {
+            "answer": "The artifact you tested is the one that reaches production."
+          },
+          {
+            "answer": "It uses less storage than rebuilding for each environment."
+          },
+          {
+            "answer": "It lets each environment compile with its own settings."
+          },
+          {
+            "answer": "It removes the need for a staging environment entirely."
+          }
+        ],
+        "answer": "The artifact you tested is the one that reaches production.",
+        "explanation": "If each environment rebuilds, the thing you tested is not the thing you ship and the difference is invisible. Build once, tag it, promote it, and inject environment-specific configuration at deploy time."
+      },
+      {
+        "question": "For an event schema, which change is safe to make?",
+        "answers": [
+          {
+            "answer": "Adding a new optional field that consumers can ignore."
+          },
+          {
+            "answer": "Renaming a field to a clearer, more descriptive name."
+          },
+          {
+            "answer": "Removing a field that looks unused in the logs."
+          },
+          {
+            "answer": "Changing a field's type from integer to string."
+          }
+        ],
+        "answer": "Adding a new optional field that consumers can ignore.",
+        "explanation": "Additive changes with a default are compatible with consumers that ignore unknown fields. Renaming, removing and retyping all break existing readers, so they need the expand-and-contract route: support both shapes, migrate consumers, then drop the old one."
+      },
+      {
+        "question": "Why run integration tests against real dependencies in containers?",
+        "answers": [
+          {
+            "answer": "Doubles hide behaviour only the real dependency has."
+          },
+          {
+            "answer": "Containers make the tests run faster than unit tests."
+          },
+          {
+            "answer": "It removes the need for unit tests entirely."
+          },
+          {
+            "answer": "It lets the tests run without a CI pipeline at all."
+          }
+        ],
+        "answer": "Doubles hide behaviour only the real dependency has.",
+        "explanation": "An in-memory fake will not reproduce collation rules, transaction isolation or broker delivery semantics. A throwaway container running the real database or broker catches the class of bug that fakes quietly pass."
+      },
+      {
+        "question": "What is the point of chaos engineering in a microservice system?",
+        "answers": [
+          {
+            "answer": "To find how the system fails by injecting faults."
+          },
+          {
+            "answer": "To prove that no service can ever fail in production."
+          },
+          {
+            "answer": "To stress-test a single service until it crashes."
+          },
+          {
+            "answer": "To replace monitoring with automated fault injection."
+          }
+        ],
+        "answer": "To find how the system fails by injecting faults.",
+        "explanation": "Every distributed system fails in ways its designers did not predict. Injecting a killed instance or a slow dependency in controlled conditions finds the bad failure mode on your terms, when the blast radius is small and the team is watching."
+      },
+      {
+        "question": "What should autoscaling scale on?",
+        "answers": [
+          {
+            "answer": "A signal that moves before the service is overloaded."
+          },
+          {
+            "answer": "CPU usage alone, because it is available on every host."
+          },
+          {
+            "answer": "The number of deployments that happened in the last hour."
+          },
+          {
+            "answer": "The total number of user accounts in the database."
+          }
+        ],
+        "answer": "A signal that moves before the service is overloaded.",
+        "explanation": "Scaling on CPU often reacts after latency has already risen, because CPU is a lagging symptom. A leading signal, such as queue depth or request concurrency, lets capacity arrive before users feel the wait."
+      },
+      {
+        "question": "A non-critical dependency is down. What is graceful degradation?",
+        "answers": [
+          {
+            "answer": "The service keeps working with reduced features."
+          },
+          {
+            "answer": "The service returns a cached response for every single request."
+          },
+          {
+            "answer": "The service restarts itself until the dependency recovers."
+          },
+          {
+            "answer": "The service blocks every request until the dependency returns."
+          }
+        ],
+        "answer": "The service keeps working with reduced features.",
+        "explanation": "Decide in advance which features depend on which service, and what the product should do without each one. A recommendations panel can disappear; checkout usually cannot. Degrading on purpose beats a full outage for a peripheral failure."
+      },
+      {
+        "question": "Why does every service need a runbook?",
+        "answers": [
+          {
+            "answer": "So whoever is paged can act instead of rediscovering the system."
+          },
+          {
+            "answer": "Runbooks are required by most container platforms."
+          },
+          {
+            "answer": "They replace the need for dashboards and alerts entirely."
+          },
+          {
+            "answer": "They document the code for future developers to read."
+          }
+        ],
+        "answer": "So whoever is paged can act instead of rediscovering the system.",
+        "explanation": "Under pressure at 3am is the wrong time to work out how a service is wired. A short runbook with the common failure modes, the first checks and the escalation path turns a scramble into a procedure, and it lets anyone on the rota take the page."
+      },
+      {
+        "question": "Why keep an OpenAPI description for a service API?",
+        "answers": [
+          {
+            "answer": "It gives clients, tests and docs one contract."
+          },
+          {
+            "answer": "It removes the need for any contract tests."
+          },
+          {
+            "answer": "It makes the API respond faster through the gateway."
+          },
+          {
+            "answer": "It is a requirement for HTTP/2 support at the gateway."
+          }
+        ],
+        "answer": "It gives clients, tests and docs one contract.",
+        "explanation": "One description can generate typed clients, request validation, and documentation, and it gives reviewers something concrete to diff when the API changes. It documents the contract; it does not verify behaviour, which is what contract tests are for."
+      },
+      {
+        "question": "What does a service mesh do for the services in it?",
+        "answers": [
+          {
+            "answer": "It moves retries, mTLS and telemetry out of the app."
+          },
+          {
+            "answer": "It stores all the service data in one shared mesh database."
+          },
+          {
+            "answer": "It generates the business logic from the API description."
+          },
+          {
+            "answer": "It replaces the need for a deployment pipeline."
+          }
+        ],
+        "answer": "It moves retries, mTLS and telemetry out of the app.",
+        "explanation": "The mesh puts a sidecar proxy next to each service so the network concerns are handled once, uniformly, and in a language-independent way. The price is another layer to run, tune and reason about, so it earns its place when you have many services and teams."
+      },
+      {
+        "question": "Two services always change and deploy together. What is the sensible next step?",
+        "answers": [
+          {
+            "answer": "Merge them, or redraw the boundary into two."
+          },
+          {
+            "answer": "Add a message broker between them to decouple them."
+          },
+          {
+            "answer": "Split each of them into two smaller services each."
+          },
+          {
+            "answer": "Move both of them into the same database schema."
+          }
+        ],
+        "answer": "Merge them, or redraw the boundary into two.",
+        "explanation": "Services that must ship together are one unit with a network hop in the middle. Either the boundary sits in the wrong place, in which case redraw it, or the two pieces belong together, in which case merging them removes real operational cost."
+      },
+      {
+        "question": "Why keep base images and dependencies patched on a schedule?",
+        "answers": [
+          {
+            "answer": "Stale dependencies build up risk over time."
+          },
+          {
+            "answer": "Old dependencies run more slowly than new ones do."
+          },
+          {
+            "answer": "It reduces the number of containers the service needs."
+          },
+          {
+            "answer": "It keeps the service's API backward compatible."
+          }
+        ],
+        "answer": "Stale dependencies build up risk over time.",
+        "explanation": "Skipping upgrades for a year turns a small, routine bump into a migration with breaking changes and no time budget for it, and the known vulnerabilities stay open the whole time. Small, frequent updates keep the cost and the risk low."
+      }
+    ]
   }
 ]
