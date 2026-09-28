@@ -19,7 +19,6 @@ import {
   useGamification,
   StreakDisplay,
   XPProgress,
-  DailyQuiz,
 } from '@/components/gamification';
 import { useLearningTodos } from '@/components/LearningTodosProvider';
 import {
@@ -94,12 +93,10 @@ export default function TabOneScreen() {
   const [showReader, setShowReader] = useState<boolean>(false);
 
   // Gamification integration
-  const { onQuizComplete, onCorrectAnswer, completeDailyQuiz } =
-    useGamification();
+  const { onQuizComplete, onCorrectAnswer } = useGamification();
   const { addWrongAnswer, recordCorrectAnswer, getTodoByQuestion } =
     useLearningTodos();
   const quizStartTime = useRef<number>(Date.now());
-  const [isDailyQuiz, setIsDailyQuiz] = useState<boolean>(false);
 
   // Track wrong answers during this quiz session
   const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<
@@ -233,12 +230,6 @@ export default function TabOneScreen() {
   const handleBack = () => {
     stopTTS();
 
-    // If abandoning a daily quiz, mark it as completed (can't retry)
-    if (isDailyQuiz && selectedQuiz) {
-      completeDailyQuiz(score, selectedQuiz.questions.length);
-      setIsDailyQuiz(false);
-    }
-
     setSelectedQuiz(undefined);
     setSelectedQuizName(null);
     setCurrentQuestionIndex(0);
@@ -258,12 +249,6 @@ export default function TabOneScreen() {
     setTimeExpired(true);
     setTotalLostGames(totalLostGames + 1);
 
-    // If time expires during daily quiz, mark it as completed (can't retry)
-    if (isDailyQuiz) {
-      completeDailyQuiz(score, selectedQuizAnswersAmount);
-      setIsDailyQuiz(false);
-    }
-
     setScoreVisible(true);
     setSelectedQuiz(undefined);
     setSelectedQuizName(null);
@@ -273,10 +258,8 @@ export default function TabOneScreen() {
     totalLostGames,
     setTotalLostGames,
     setSelectedQuizName,
-    isDailyQuiz,
     score,
     selectedQuizAnswersAmount,
-    completeDailyQuiz,
   ]);
 
   const handleNext = () => {
@@ -296,12 +279,6 @@ export default function TabOneScreen() {
       // Track gamification
       onQuizComplete(finalScore, totalQuestions, timeElapsed);
 
-      // Complete daily quiz if it was a daily challenge
-      if (isDailyQuiz) {
-        completeDailyQuiz(finalScore, totalQuestions);
-        setIsDailyQuiz(false);
-      }
-
       if (score === selectedQuiz?.questions.length) {
         setTotalWonGames(totalWonGames + 1);
       } else {
@@ -311,15 +288,6 @@ export default function TabOneScreen() {
       setSelectedQuiz(undefined);
       setSelectedQuizName(null);
       setCurrentQuestionIndex(0);
-    }
-  };
-
-  // Handle daily quiz selection
-  const handleDailyQuizStart = (quizName: string) => {
-    const quiz = quizzes.find((q: Quiz) => q.name === quizName);
-    if (quiz) {
-      setIsDailyQuiz(true); // Mark this as a daily quiz
-      handleQuizSelection(quiz);
     }
   };
 
@@ -400,12 +368,8 @@ export default function TabOneScreen() {
               {/* Kids Mode: Streak Pet */}
               {kidsMode && <StreakPet size="medium" showLabel />}
 
-              {/* Daily Challenge + Glossary Button */}
+              {/* Glossary Button */}
               <View style={styles.topRow}>
-                <DailyQuiz
-                  onStartDailyQuiz={handleDailyQuizStart}
-                  style={styles.dailyQuiz}
-                />
                 <TouchableOpacity
                   style={styles.glossaryButton}
                   onPress={() => {
@@ -618,14 +582,10 @@ const styles = StyleSheet.create({
   xpProgressCompact: {
     flex: 1,
   },
-  dailyQuiz: {
-    marginBottom: 20,
-    marginHorizontal: 8,
-    flex: 1,
-  },
   topRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+    justifyContent: 'flex-end',
     marginBottom: 4,
   },
   glossaryButton: {
