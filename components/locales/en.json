@@ -52,6 +52,8 @@
   "timer_duration": "Timer Duration",
   "timer_duration_desc": "Duration in minutes",
   "minutes": "minutes",
+  "multiplication_quiz_name": "Multiplication Tables (1–10)",
+  "multiplication_quiz_category": "📐 Mathematics",
   "time_up": "Time's Up!",
   "time_remaining": "Time Remaining",
   "streak": "Streak",
