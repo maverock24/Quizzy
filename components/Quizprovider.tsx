@@ -91,8 +91,10 @@ const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
   if (userQuizzes && userQuizzes.length > 0) {
     all = quizzes.concat(userQuizzes);
   }
-  // Generated quiz, always available and regenerated on every play.
-  all = all.concat(createMultiplicationQuiz());
+  // Generated Einmaleins practice round. German-only for now.
+  if (lang.startsWith('de')) {
+    all = all.concat(createMultiplicationQuiz());
+  }
   return all.sort(
     (
       a: { name?: string; nimi?: string },
