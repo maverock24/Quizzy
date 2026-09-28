@@ -22388,7 +22388,7 @@
         "explanation": "Problem: Vereinfache $\\sqrt{48}$.\n\nLösung: Um die Quadratwurzel einer nicht-perfekten Quadratzahl zu vereinfachen, suchen wir nach der größten Quadratzahl, die ein Faktor der Zahl unter der Wurzel (dem Radikanden) ist. Eine perfekte Quadratzahl ist eine Zahl wie $4 (2^2), 9 (3^2), 16 (4^2), 25 (5^2)$, etc.\n\n1. **Finde die Faktoren des Radikanden (48):**\n * $48 = 1 \\mal 48$\n * $48 = 2 \\mal 24$\n * $48 = 3 \\mal 16$\n * $48 = 4 \\mal 12$\n * $48 = 6 \\mal 8$\n\n2. **Identifiziere die Faktoren der perfekten Quadratzahl:** Aus der Liste sind die Faktoren der perfekten Quadratzahl $1, 4, 16$.\n\n3. **Wähle den größten Faktor der Quadratzahl:** Der größte Faktor der Quadratzahl von $48$ ist $16$.\n\n4. **Schreibe den Radikanden mit diesem Faktor neu:**\n * $48 = 16 \\mal 3$.\n\n5. **Verwende die Eigenschaft $\\sqrt{a \\mal b} = \\sqrt{a} \\mal \\sqrt{b}$:**\n * $\\sqrt{48} = \\sqrt{16 \\mal 3} = \\sqrt{16} \\mal \\sqrt{3}$.\n\n6. **Vereinfache die Quadratwurzel der Quadratzahl:**\n * $\\sqrt{16} = 4$.\n\n7. **Schreibe den vereinfachten Ausdruck:**\n * $\\sqrt{48} = 4 \\mal \\sqrt{3} = 4\\sqrt{3}$.\n\nLösung: Die vereinfachte Form von $\\sqrt{48}$ ist $4\\sqrt{3}$."
       }
     ],
-    "category": "📐 Mathematik"
+    "category": "🔢 Mathematik"
   },
   {
     "name": "🔬 Experiment: Vulkan aus der Küche",
