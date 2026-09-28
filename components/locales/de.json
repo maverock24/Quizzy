@@ -52,6 +52,8 @@
   "timer_duration": "Timer-Dauer",
   "timer_duration_desc": "Dauer in Minuten",
   "minutes": "Minuten",
+  "multiplication_quiz_name": "Einmaleins (1×1 bis 10×10)",
+  "multiplication_quiz_category": "🔢 Mathematik",
   "time_up": "Zeit abgelaufen!",
   "time_remaining": "Verbleibende Zeit",
   "streak": "Serie",

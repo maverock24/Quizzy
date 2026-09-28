@@ -35,6 +35,9 @@ type QuestionProps = {
   selectedQuizAnswersAmount: number;
   handleAnswerSelection: (answer: string) => void;
   correctAnswer: string;
+  // Some quizzes (e.g. multiplication tables) always expect a typed answer,
+  // regardless of the global "Type Answer Mode" setting.
+  forceTextInput?: boolean;
 };
 
 // Mini confetti particle for correct answer celebration
@@ -251,8 +254,13 @@ export const Question: React.FC<QuestionProps> = ({
   selectedQuizAnswersAmount,
   handleAnswerSelection,
   correctAnswer,
+  forceTextInput = false,
 }) => {
   const { audioEnabled, textInputAnswerMode, kidsMode } = useQuiz();
+  const useTextInput = textInputAnswerMode || forceTextInput;
+  const correctAnswerIsNumeric = /^-?\d+(?:[.,]\d+)?$/.test(
+    correctAnswer.trim(),
+  );
   const { t } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
@@ -826,7 +834,7 @@ export const Question: React.FC<QuestionProps> = ({
         </Animated.View>
 
         {/* Conditionally render text input mode or multiple choice */}
-        {textInputAnswerMode ? (
+        {useTextInput ? (
           <View style={styles.textInputContainer}>
             <TextInput
               style={[
@@ -843,6 +851,7 @@ export const Question: React.FC<QuestionProps> = ({
               editable={!textInputSubmitted}
               onSubmitEditing={handleTextInputSubmit}
               returnKeyType="done"
+              keyboardType={correctAnswerIsNumeric ? 'numeric' : 'default'}
               autoCapitalize="none"
               autoCorrect={false}
             />

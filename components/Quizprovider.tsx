@@ -1,5 +1,6 @@
 import i18n from '@/components/i18n';
 import { REMOTE_QUIZ } from '@/constants/Urls';
+import { createMultiplicationQuiz } from '@/services/MultiplicationQuiz';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as FileSystem from 'expo-file-system';
 import React, {
@@ -90,6 +91,8 @@ const getLocalQuizzes = (userQuizzes?: Quiz[]) => {
   if (userQuizzes && userQuizzes.length > 0) {
     all = quizzes.concat(userQuizzes);
   }
+  // Generated quiz, always available and regenerated on every play.
+  all = all.concat(createMultiplicationQuiz());
   return all.sort(
     (
       a: { name?: string; nimi?: string },

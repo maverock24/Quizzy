@@ -4,6 +4,10 @@ export type Quiz = {
   image?: string;
   questions: QuizQuestion[];
   noShuffle?: boolean; // If true, questions will be shown in order (useful for tutorials/experiments)
+  // When set, the quiz's questions are generated fresh every time it starts.
+  generator?: 'multiplication';
+  // Force typed answers instead of the multiple-choice buttons.
+  inputMode?: 'choice' | 'text';
 };
 
 export type Answer = {

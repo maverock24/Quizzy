@@ -22,6 +22,10 @@ import {
   DailyQuiz,
 } from '@/components/gamification';
 import { useLearningTodos } from '@/components/LearningTodosProvider';
+import {
+  generateMultiplicationQuestions,
+  MULTIPLICATION_GENERATOR,
+} from '@/services/multiplicationProblems';
 
 // Type for tracking wrong answers during a quiz session
 interface WrongAnswerRecord {
@@ -149,9 +153,17 @@ export default function TabOneScreen() {
   }, [currentQuestionIndex, randomizedQuestions]);
 
   const handleQuizSelection = (quiz: Quiz) => {
-    const selectedQuiz = quizzes.find((q: Quiz) => q.name === quiz.name);
+    const match = quizzes.find((q: Quiz) => q.name === quiz.name);
+    // Generated quizzes (e.g. multiplication tables) get a fresh set of
+    // problems on every play instead of reusing the list's placeholder set.
+    const selectedQuiz =
+      match && match.generator === MULTIPLICATION_GENERATOR
+        ? { ...match, questions: generateMultiplicationQuestions() }
+        : match;
+
     setSelectedQuiz(selectedQuiz);
     setSelectedQuizAnswersAmount(selectedQuiz?.questions.length ?? 0);
+    setCurrentQuestionIndex(0);
     setScore(0);
     setScoreVisible(false);
     setSelectedQuizName(quiz.name);
@@ -349,6 +361,8 @@ export default function TabOneScreen() {
       const retryQuiz: Quiz = {
         name: `${lastPlayedQuizName} (Retry)`,
         questions: questionsWithAnswers,
+        // Keep typed-answer quizzes (e.g. multiplication tables) in input mode.
+        inputMode: originalQuiz.inputMode,
       };
 
       setSelectedQuiz(retryQuiz);
@@ -465,27 +479,31 @@ export default function TabOneScreen() {
                   isActive={timerActive}
                 />
               )}
-              {flashcardsEnabled && !scoreVisible && (
-                <FlashcardCarousel
-                  questions={quizQuestions}
-                  handlerOnfinish={() => setScoreVisible(true)}
-                  itemWidth={400}
-                />
-              )}
-              {!flashcardsEnabled && !scoreVisible && (
-                <Question
-                  question={
-                    randomizedQuestions[currentQuestionIndex]?.question || ''
-                  }
-                  correctAnswer={
-                    randomizedQuestions[currentQuestionIndex]?.answer || ''
-                  }
-                  answers={randomizedAnswers}
-                  currentQuestionIndex={currentQuestionIndex}
-                  selectedQuizAnswersAmount={selectedQuizAnswersAmount}
-                  handleAnswerSelection={handleAnswerSelection}
-                />
-              )}
+              {flashcardsEnabled &&
+                selectedQuiz.inputMode !== 'text' &&
+                !scoreVisible && (
+                  <FlashcardCarousel
+                    questions={quizQuestions}
+                    handlerOnfinish={() => setScoreVisible(true)}
+                    itemWidth={400}
+                  />
+                )}
+              {(!flashcardsEnabled || selectedQuiz.inputMode === 'text') &&
+                !scoreVisible && (
+                  <Question
+                    question={
+                      randomizedQuestions[currentQuestionIndex]?.question || ''
+                    }
+                    correctAnswer={
+                      randomizedQuestions[currentQuestionIndex]?.answer || ''
+                    }
+                    answers={randomizedAnswers}
+                    currentQuestionIndex={currentQuestionIndex}
+                    selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+                    handleAnswerSelection={handleAnswerSelection}
+                    forceTextInput={selectedQuiz.inputMode === 'text'}
+                  />
+                )}
             </>
           )}
 
