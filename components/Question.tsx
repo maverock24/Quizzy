@@ -343,9 +343,6 @@ export const Question: React.FC<QuestionProps> = ({
 
   // Question entrance animation - run after animation arrays are created
   useEffect(() => {
-    if (buttonSlideAnims.length === 0 || buttonOpacityAnims.length === 0)
-      return;
-
     // Reset question animations
     questionSlideAnim.setValue(-30);
     questionOpacity.setValue(0);
@@ -355,7 +352,8 @@ export const Question: React.FC<QuestionProps> = ({
     shakeAnim.setValue(0);
     correctHighlightAnim.setValue(0);
 
-    // Question slide in
+    // Question slide in. This must run even when there are no answer buttons
+    // (typed-answer mode), otherwise the card stays at opacity 0.
     Animated.parallel([
       Animated.timing(questionSlideAnim, {
         toValue: 0,
