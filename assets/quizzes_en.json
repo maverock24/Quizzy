@@ -38327,5 +38327,1018 @@
         "explanation": "Wayfinder charts a shared map of decision tickets on the issue tracker for work too big for one session. The pull to just do the work is usually the signal that you have reached the edge of the map and should hand off to the main flow."
       }
     ]
+  },
+  {
+    "name": "Building Software with AI Agents (Dex Horthy)",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "Dex's central observation in 12-Factor Agents is that most products billing themselves as 'AI Agents' are actually what?",
+        "answers": [
+          {
+            "answer": "Fully autonomous loops that set their own goals and never call deterministic code"
+          },
+          {
+            "answer": "Multi-agent swarms that replace the need for application code"
+          },
+          {
+            "answer": "Thin wrappers around a single foundation model with no software of their own"
+          },
+          {
+            "answer": "Mostly deterministic code, with LLM steps sprinkled in at the right points to make the experience magical"
+          }
+        ],
+        "answer": "Mostly deterministic code, with LLM steps sprinkled in at the right points to make the experience magical",
+        "explanation": "The README argues the good agents do not follow the 'here is your prompt, here is a bag of tools, loop until you hit the goal' pattern. Rather, they are comprised of mostly just software."
+      },
+      {
+        "question": "The guide is written 'in the spirit of' 12 Factor Apps and set out to answer which question?",
+        "answers": [
+          {
+            "answer": "How many tools can one agent hold before it breaks?"
+          },
+          {
+            "answer": "What principles can we use to build LLM-powered software that is actually good enough to put in the hands of production customers?"
+          },
+          {
+            "answer": "Which agent framework has the best benchmarks?"
+          },
+          {
+            "answer": "How do we fine-tune our own models most cheaply?"
+          }
+        ],
+        "answer": "What principles can we use to build LLM-powered software that is actually good enough to put in the hands of production customers?",
+        "explanation": "That is the explicit framing of 12-Factor Agents, modelled after the 12 Factor Apps methodology for reliable, scalable, maintainable software."
+      },
+      {
+        "question": "What are the steps of the naive 'agent loop' as Dex describes it?",
+        "answers": [
+          {
+            "answer": "Retrieve, rank, generate, verify"
+          },
+          {
+            "answer": "Plan, build, test, deploy"
+          },
+          {
+            "answer": "The model writes code, the code runs itself, and the model patches its own errors forever"
+          },
+          {
+            "answer": "The LLM determines the next step as structured JSON, deterministic code executes it, the result is appended to the context window, and it repeats until the next step is 'done'"
+          }
+        ],
+        "answer": "The LLM determines the next step as structured JSON, deterministic code executes it, the result is appended to the context window, and it repeats until the next step is 'done'",
+        "explanation": "This is the loop the guide walks through before showing why it 'doesn't quite work' on its own, and how to break it into controllable pieces."
+      },
+      {
+        "question": "What does Dex give as the core reason the 'loop until you solve it' pattern fails?",
+        "answers": [
+          {
+            "answer": "Agents get lost when the context window gets too long and spin out trying the same broken approach over and over"
+          },
+          {
+            "answer": "Models cannot output valid JSON for more than three turns"
+          },
+          {
+            "answer": "Tool calling is too slow for production workloads"
+          },
+          {
+            "answer": "The pattern always costs more than writing the code by hand"
+          }
+        ],
+        "answer": "Agents get lost when the context window gets too long and spin out trying the same broken approach over and over",
+        "explanation": "Dex calls this the biggest problem, and says it is 'literally that, but that's enough to kneecap the approach'. Anything past 10 to 20 turns becomes a big mess the LLM cannot recover from."
+      },
+      {
+        "question": "Factor 1, 'Natural Language to Tool Calls', is best described as what?",
+        "answers": [
+          {
+            "answer": "Building a chatbot that answers questions in prose"
+          },
+          {
+            "answer": "Converting a natural-language request into a structured object that describes an action, which deterministic code then executes"
+          },
+          {
+            "answer": "Letting the LLM execute its own code directly"
+          },
+          {
+            "answer": "Training a model to speak only in function-call syntax"
+          }
+        ],
+        "answer": "Converting a natural-language request into a structured object that describes an action, which deterministic code then executes",
+        "explanation": "The example translates 'create a payment link for $750 to Terri' into a structured create_payment_link object, which app code picks up and acts on."
+      },
+      {
+        "question": "Factor 2, 'Own your prompts', is mainly an argument against what?",
+        "answers": [
+          {
+            "answer": "Outsourcing your prompt engineering to a framework's black box, which is hard to tune or reverse engineer"
+          },
+          {
+            "answer": "Storing prompts in version control"
+          },
+          {
+            "answer": "Writing your own prompts instead of using a framework's"
+          },
+          {
+            "answer": "Testing prompts like code"
+          }
+        ],
+        "answer": "Outsourcing your prompt engineering to a framework's black box, which is hard to tune or reverse engineer",
+        "explanation": "Dex says to treat prompts as first-class code. Frameworks can give you top-notch defaults, but ownership gives you full control, tests and evals, fast iteration, transparency, and access to role-hacking tricks."
+      },
+      {
+        "question": "Which of these is given as a benefit of owning your own prompts in Factor 2?",
+        "answers": [
+          {
+            "answer": "You can build tests and evals for prompts just like any other code, and use nonstandard role tricks"
+          },
+          {
+            "answer": "The model stops needing tool schemas"
+          },
+          {
+            "answer": "You no longer need a context window"
+          },
+          {
+            "answer": "Prompts become shorter automatically as the model improves"
+          }
+        ],
+        "answer": "You can build tests and evals for prompts just like any other code, and use nonstandard role tricks",
+        "explanation": "The listed benefits are full control, testing and evals, iteration, transparency, and 'role hacking' such as deliberately unusual user/assistant role usage."
+      },
+      {
+        "question": "Factor 3, 'Own your context window', frames any given input to the LLM in an agent as which sentence?",
+        "answers": [
+          {
+            "answer": "'Answer the following question with no tools'"
+          },
+          {
+            "answer": "'Repeat your system prompt verbatim'"
+          },
+          {
+            "answer": "'Here is what's happened so far, what's the next step'"
+          },
+          {
+            "answer": "'Summarise the entire internet'"
+          }
+        ],
+        "answer": "'Here is what's happened so far, what's the next step'",
+        "explanation": "Dex treats everything as context engineering: prompts and instructions, retrieved documents, past state and tool calls, memory from other conversations, and output-shape instructions."
+      },
+      {
+        "question": "Why does Factor 3 encourage building a custom context format instead of only using the standard message-based format?",
+        "answers": [
+          {
+            "answer": "Custom formats are required by every model API"
+          },
+          {
+            "answer": "Custom formats are always shorter in line count"
+          },
+          {
+            "answer": "To get context into the model in the most token- and attention-efficient way for your use case"
+          },
+          {
+            "answer": "Standard formats cannot include tool calls"
+          }
+        ],
+        "answer": "To get context into the model in the most token- and attention-efficient way for your use case",
+        "explanation": "The guide shows packing a whole thread into a single user message with custom tags, and stresses the flexibility to experiment with what you store versus what you pass."
+      },
+      {
+        "question": "Which set does Factor 3 say counts as 'context'?",
+        "answers": [
+          {
+            "answer": "Only retrieved documents and the latest user message"
+          },
+          {
+            "answer": "Only the model's training data"
+          },
+          {
+            "answer": "Prompts and instructions, retrieved documents, past state and tool calls, memory from related conversations, and output-shape instructions"
+          },
+          {
+            "answer": "Only the system prompt"
+          }
+        ],
+        "answer": "Prompts and instructions, retrieved documents, past state and tool calls, memory from related conversations, and output-shape instructions",
+        "explanation": "The listed benefits of owning it include information density, error handling, safety, flexibility, and token efficiency."
+      },
+      {
+        "question": "Factor 4 says tools are 'just structured outputs'. What separation does that create?",
+        "answers": [
+          {
+            "answer": "Tools and prompts become the same artifact"
+          },
+          {
+            "answer": "The framework decides what to do, the LLM controls how"
+          },
+          {
+            "answer": "The LLM executes tools, your code only logs them"
+          },
+          {
+            "answer": "The LLM decides what to do, your code controls how it is done"
+          }
+        ],
+        "answer": "The LLM decides what to do, your code controls how it is done",
+        "explanation": "Just because an LLM 'called a tool' does not mean you must execute a specific function the same way every time. The tool call is JSON describing what deterministic code should do."
+      },
+      {
+        "question": "Factor 5, 'Unify execution state and business state', recommends what?",
+        "answers": [
+          {
+            "answer": "Inferring as much execution state as possible from the accumulated context, so there is one source of truth"
+          },
+          {
+            "answer": "Storing retry counts in the model weights"
+          },
+          {
+            "answer": "Keeping execution state in a separate database from the message history"
+          },
+          {
+            "answer": "Deleting the context window after every step"
+          }
+        ],
+        "answer": "Inferring as much execution state as possible from the accumulated context, so there is one source of truth",
+        "explanation": "Execution state like current step and waiting status is often just metadata about what has happened so far. Minimise what cannot go in the context window, such as session ids or password contexts."
+      },
+      {
+        "question": "Which is listed as a benefit of unifying execution and business state in Factor 5?",
+        "answers": [
+          {
+            "answer": "The context window becomes infinite"
+          },
+          {
+            "answer": "The model no longer needs tools"
+          },
+          {
+            "answer": "Prompts become unnecessary"
+          },
+          {
+            "answer": "The thread becomes trivially serializable, debuggable, recoverable, forkable, and human-readable"
+          }
+        ],
+        "answer": "The thread becomes trivially serializable, debuggable, recoverable, forkable, and human-readable",
+        "explanation": "One source of truth also makes it easy to add new state by adding new event types, and to resume or fork from any point."
+      },
+      {
+        "question": "Factor 6, 'Launch/Pause/Resume with simple APIs', expects an agent to do what?",
+        "answers": [
+          {
+            "answer": "Run to completion in one process with no external triggers"
+          },
+          {
+            "answer": "Restart from scratch every time it is interrupted"
+          },
+          {
+            "answer": "Be launched by a simple API, pause when a long-running operation is needed, and resume from where it left off via something like a webhook"
+          },
+          {
+            "answer": "Only be started by a human in a chat window"
+          }
+        ],
+        "answer": "Be launched by a simple API, pause when a long-running operation is needed, and resume from where it left off via something like a webhook",
+        "explanation": "Dex notes that orchestrators often allow pause and resume, but not between the moment of tool selection and tool execution, which is exactly where it matters most."
+      },
+      {
+        "question": "What 'HIGH-STAKES token choice' does Factor 7, 'Contact humans with tool calls', describe?",
+        "answers": [
+          {
+            "answer": "Choosing which human to notify first"
+          },
+          {
+            "answer": "Choosing between streaming and non-streaming"
+          },
+          {
+            "answer": "Choosing between temperature and top_p"
+          },
+          {
+            "answer": "Whether the first output token starts plaintext content or a structured JSON object"
+          }
+        ],
+        "answer": "Whether the first output token starts plaintext content or a structured JSON object",
+        "explanation": "Dex suggests always having the LLM output JSON and declaring intent with natural-language tokens like request_human_input or done_for_now, so you are free to try unusual approaches."
+      },
+      {
+        "question": "In Factor 7, a request_human_input intent lets the agent do what?",
+        "answers": [
+          {
+            "answer": "Break the loop, save the thread, notify a human on some channel, and resume when a response arrives"
+          },
+          {
+            "answer": "Silently guess the human's answer and continue"
+          },
+          {
+            "answer": "Ask the model to approve its own action"
+          },
+          {
+            "answer": "Skip the tool call entirely"
+          }
+        ],
+        "answer": "Break the loop, save the thread, notify a human on some channel, and resume when a response arrives",
+        "explanation": "This enables outer-loop workflows where the flow is Agent to Human, rather than Human to Agent, and makes for durable, introspectable multiplayer workflows."
+      },
+      {
+        "question": "Factor 8, 'Own your control flow', means you should do what?",
+        "answers": [
+          {
+            "answer": "Build your own control structures so certain tool calls break the loop to wait for a human or a long-running task"
+          },
+          {
+            "answer": "Let the framework's loop decide when to stop"
+          },
+          {
+            "answer": "Move all control flow into the prompt"
+          },
+          {
+            "answer": "Never break out of the loop"
+          }
+        ],
+        "answer": "Build your own control structures so certain tool calls break the loop to wait for a human or a long-running task",
+        "explanation": "Owning control flow allows custom summarisation or caching of results, LLM-as-judge checks, memory management, logging, rate limiting, and durable sleep or wait-for-event."
+      },
+      {
+        "question": "Dex calls the number one feature request he has for every AI framework: the ability to do what?",
+        "answers": [
+          {
+            "answer": "Interrupt a working agent and resume later, especially between tool selection and tool invocation"
+          },
+          {
+            "answer": "Auto-generate unit tests"
+          },
+          {
+            "answer": "Switch models mid-conversation"
+          },
+          {
+            "answer": "Run without a context window"
+          }
+        ],
+        "answer": "Interrupt a working agent and resume later, especially between tool selection and tool invocation",
+        "explanation": "Without that granularity there is no way to review or approve a tool call before it runs, forcing teams to either block in memory, restrict the agent to low-stakes work, or 'just yolo hope it doesn't screw up'."
+      },
+      {
+        "question": "Factor 9, 'Compact Errors into Context Window', is built on which idea?",
+        "answers": [
+          {
+            "answer": "Feeding a compacted error back into the context lets a good model self-heal by adjusting its next tool call"
+          },
+          {
+            "answer": "Errors should be stored only in logs, never in context"
+          },
+          {
+            "answer": "Errors should be hidden from the model permanently"
+          },
+          {
+            "answer": "Errors should always crash the agent so a human can restart it"
+          }
+        ],
+        "answer": "Feeding a compacted error back into the context lets a good model self-heal by adjusting its next tool call",
+        "explanation": "Dex suggests a consecutive-error counter, around three attempts for a single tool, before escalating to a human or breaking the loop."
+      },
+      {
+        "question": "According to Factor 9, what is the number one way to prevent error spin-outs?",
+        "answers": [
+          {
+            "answer": "Embrace Factor 10: small, focused agents"
+          },
+          {
+            "answer": "Remove all errors from the context"
+          },
+          {
+            "answer": "Retry forever"
+          },
+          {
+            "answer": "Increase the temperature"
+          }
+        ],
+        "answer": "Embrace Factor 10: small, focused agents",
+        "explanation": "If you feed errors back too much the agent will spin out repeating itself. Owning control flow and context lets you restructure or remove events, but small focused agents prevent the problem."
+      },
+      {
+        "question": "Factor 10, 'Small, Focused Agents', recommends keeping an agent's workflow to roughly how many steps?",
+        "answers": [
+          {
+            "answer": "No limit, as long as the model is large"
+          },
+          {
+            "answer": "50 to 100"
+          },
+          {
+            "answer": "3 to 10, maybe 20 at most"
+          },
+          {
+            "answer": "Exactly 1"
+          }
+        ],
+        "answer": "3 to 10, maybe 20 at most",
+        "explanation": "The key insight is about LLM limitations: the bigger and more complex the task, the more steps and the longer the context, and as context grows LLMs are more likely to get lost or lose focus."
+      },
+      {
+        "question": "What is the stated reason to keep agents small and focused?",
+        "answers": [
+          {
+            "answer": "Small agents cost nothing to run"
+          },
+          {
+            "answer": "Small agents cannot be evaluated"
+          },
+          {
+            "answer": "Small agents never need tools"
+          },
+          {
+            "answer": "Smaller context windows mean better LLM performance and reliability"
+          }
+        ],
+        "answer": "Smaller context windows mean better LLM performance and reliability",
+        "explanation": "Benefits include manageable context, clear responsibilities, better reliability, easier testing, and improved debugging. Dex also argues this still pays off even as models get smarter."
+      },
+      {
+        "question": "Factor 11, 'Trigger from anywhere, meet users where they are', is closely tied to which idea?",
+        "answers": [
+          {
+            "answer": "Making the agent run only on a laptop"
+          },
+          {
+            "answer": "Restricting agents to a single web chat widget"
+          },
+          {
+            "answer": "Removing all human contact to maximise autonomy"
+          },
+          {
+            "answer": "Outer-loop agents that are triggered by events, crons, or outages and contact humans for help or approval"
+          }
+        ],
+        "answer": "Outer-loop agents that are triggered by events, crons, or outages and contact humans for help or approval",
+        "explanation": "Letting users trigger and receive agent messages on Slack, email, or SMS makes agents feel like digital coworkers, and lets you give them access to higher-stakes operations."
+      },
+      {
+        "question": "Factor 12, 'Make your agent a stateless reducer', describes the agent as which functional shape?",
+        "answers": [
+          {
+            "answer": "A recursive neural network"
+          },
+          {
+            "answer": "A mutable global singleton"
+          },
+          {
+            "answer": "A reducer or fold that accumulates over the thread of events"
+          },
+          {
+            "answer": "A stateless HTTP server with no history"
+          }
+        ],
+        "answer": "A reducer or fold that accumulates over the thread of events",
+        "explanation": "Dex introduces this one as 'mostly just for fun', illustrating the agent as a fold over the accumulated context."
+      },
+      {
+        "question": "Factor 13 (the appendix), 'pre-fetch all the context you might need', advises what?",
+        "answers": [
+          {
+            "answer": "If you already know the model will need certain context, fetch it deterministically and include it, rather than spending token round trips on a tool call"
+          },
+          {
+            "answer": "Always make the model call a tool, even when you know the answer"
+          },
+          {
+            "answer": "Delete context the model has not used recently"
+          },
+          {
+            "answer": "Pre-fetch only the system prompt"
+          }
+        ],
+        "answer": "If you already know the model will need certain context, fetch it deterministically and include it, rather than spending token round trips on a tool call",
+        "explanation": "The summary: if you already know what tools you will want the model to call, just call them deterministically and let the model do the hard part of figuring out how to use their outputs."
+      },
+      {
+        "question": "In 'A Brief History of Software', Dex argues that software is a directed graph. What is the 'promise of agents' he describes?",
+        "answers": [
+          {
+            "answer": "You write more deterministic code so the model can do less"
+          },
+          {
+            "answer": "You give the LLM the edges of the graph and let it figure out the nodes, so you write less software and let the model pick the path"
+          },
+          {
+            "answer": "You replace every function with an LLM call"
+          },
+          {
+            "answer": "You delete all orchestration and monitoring"
+          }
+        ],
+        "answer": "You give the LLM the edges of the graph and let it figure out the nodes, so you write less software and let the model pick the path",
+        "explanation": "Dex then explains why this does not quite work, and lands on micro agents: sprinkling the agent pattern into a broader, more deterministic DAG."
+      },
+      {
+        "question": "What is the '70 to 80 percent trap' Dex describes with agent frameworks?",
+        "answers": [
+          {
+            "answer": "Frameworks only work for 70 to 80 percent of programming languages"
+          },
+          {
+            "answer": "Frameworks get you to 70 to 80 percent quality, and getting past it requires reverse-engineering the framework, prompts, and flow, so builders start over"
+          },
+          {
+            "answer": "Frameworks fail after 70 to 80 requests"
+          },
+          {
+            "answer": "Frameworks save 70 to 80 percent of token cost"
+          }
+        ],
+        "answer": "Frameworks get you to 70 to 80 percent quality, and getting past it requires reverse-engineering the framework, prompts, and flow, so builders start over",
+        "explanation": "The recommended path is not a greenfield rewrite, but taking small, modular concepts from agent building and incorporating them into your existing product."
+      },
+      {
+        "question": "What are the four components Dex says make up 'what an agent really is'?",
+        "answers": [
+          {
+            "answer": "Model, GPU, tokenizer, and dataset"
+          },
+          {
+            "answer": "Planner, executor, critic, and memory"
+          },
+          {
+            "answer": "Embeddings, vector store, retriever, and reranker"
+          },
+          {
+            "answer": "Prompt, switch statement, accumulated context, and a for loop"
+          }
+        ],
+        "answer": "Prompt, switch statement, accumulated context, and a for loop",
+        "explanation": "The prompt tells the LLM how to behave and what tools exist, the switch statement decides what to do with the JSON it returns, context stores what has happened, and the loop repeats until a terminal step."
+      },
+      {
+        "question": "In 'Getting AI to Work in Complex Codebases', why does Dex say you should obsess over the context window?",
+        "answers": [
+          {
+            "answer": "Because larger context windows are always cheaper"
+          },
+          {
+            "answer": "Because context is only used for retrieval-augmented generation"
+          },
+          {
+            "answer": "Because the context window is stored in the model weights"
+          },
+          {
+            "answer": "Because a turn is a stateless function call, so the contents of the context window are the only lever you have on output quality without training or tuning the model"
+          }
+        ],
+        "answer": "Because a turn is a stateless function call, so the contents of the context window are the only lever you have on output quality without training or tuning the model",
+        "explanation": "Dex calls this the same principle as 12-Factor Agents: LLMs are stateless functions, so the quality of the inputs is what determines the quality of the outputs."
+      },
+      {
+        "question": "What is 'frequent intentional compaction'?",
+        "answers": [
+          {
+            "answer": "Deleting your git history to save space"
+          },
+          {
+            "answer": "Designing the entire development workflow around context management, keeping context utilization in roughly the 40 to 60 percent range"
+          },
+          {
+            "answer": "Compressing the model's weights after every request"
+          },
+          {
+            "answer": "Running every task in a single continuous chat"
+          }
+        ],
+        "answer": "Designing the entire development workflow around context management, keeping context utilization in roughly the 40 to 60 percent range",
+        "explanation": "It is built on a research, plan, implement workflow, with high-leverage human review at exactly the right points."
+      },
+      {
+        "question": "What does 'intentional compaction' mean in practice?",
+        "answers": [
+          {
+            "answer": "Shrinking the model to fit the context"
+          },
+          {
+            "answer": "Removing all tool results from the context permanently"
+          },
+          {
+            "answer": "Waiting until the context window is completely full and then crashing"
+          },
+          {
+            "answer": "Pausing as context fills to distill progress into a structured artifact, then restarting from a fresh context window"
+          }
+        ],
+        "answer": "Pausing as context fills to distill progress into a structured artifact, then restarting from a fresh context window",
+        "explanation": "A typical prompt is to write everything done so far to a file, noting the end goal, the approach, the steps done, and the current failure. Commit messages can also be used for compaction."
+      },
+      {
+        "question": "According to the ACE write-up, what is the worst thing that can happen to your context window, in order of severity?",
+        "answers": [
+          {
+            "answer": "Too long, then too short, then too formatted"
+          },
+          {
+            "answer": "Incorrect information, then missing information, then too much noise"
+          },
+          {
+            "answer": "Too much noise, then missing information, then incorrect information"
+          },
+          {
+            "answer": "Too many tools, then too few tools, then no tools"
+          }
+        ],
+        "answer": "Incorrect information, then missing information, then too much noise",
+        "explanation": "Dex says you should optimize the context window for correctness, completeness, size, and trajectory."
+      },
+      {
+        "question": "In the ACE write-up, what are subagents primarily about?",
+        "answers": [
+          {
+            "answer": "Saving money by using smaller models"
+          },
+          {
+            "answer": "Replacing the need for tools entirely"
+          },
+          {
+            "answer": "Context control, using a fresh window for finding, searching, or summarising so the parent agent's context stays clean"
+          },
+          {
+            "answer": "Anthropomorphising roles like researcher, writer, and critic"
+          }
+        ],
+        "answer": "Context control, using a fresh window for finding, searching, or summarising so the parent agent's context stays clean",
+        "explanation": "Dex is explicit that subagents are 'not about playing house and anthropomorphizing roles'. They keep Glob, Grep, and Read calls out of the parent context."
+      },
+      {
+        "question": "What is the core three-step workflow Dex lands on for coding agents?",
+        "answers": [
+          {
+            "answer": "Explore, Refactor, Document"
+          },
+          {
+            "answer": "Research, Plan, Implement"
+          },
+          {
+            "answer": "Prompt, Evaluate, Retrain"
+          },
+          {
+            "answer": "Write, Test, Deploy"
+          }
+        ],
+        "answer": "Research, Plan, Implement",
+        "explanation": "He sometimes skips research and goes straight to planning, and sometimes does multiple passes of compacted research before implementing. This is the RPI workflow HumanLayer is built around."
+      },
+      {
+        "question": "What is the 'program design' phase in the workflow Dex describes?",
+        "answers": [
+          {
+            "answer": "Setting up CI and deployment"
+          },
+          {
+            "answer": "Going one level below architecture into the shape of the code: types, method signatures, program layout, and call stacks"
+          },
+          {
+            "answer": "Choosing a programming language"
+          },
+          {
+            "answer": "Writing the full implementation before planning"
+          }
+        ],
+        "answer": "Going one level below architecture into the shape of the code: types, method signatures, program layout, and call stacks",
+        "explanation": "Dex calls program design 'criminally underemphasized' in agentic coding, and favours light visualisations such as call-stack trees and file-tree diffs."
+      },
+      {
+        "question": "Why does Dex prefer 'vertical slices' over the 'horizontal plans' that models tend to produce?",
+        "answers": [
+          {
+            "answer": "Horizontal plans in stack order (database, service, API, frontend) cannot be touched or tested until the end, while a vertical slice lets you integrate and iterate as you go"
+          },
+          {
+            "answer": "Horizontal plans are not supported by agents"
+          },
+          {
+            "answer": "Vertical slices are always fewer lines of code"
+          },
+          {
+            "answer": "Vertical slices avoid the need for tests"
+          }
+        ],
+        "answer": "Horizontal plans in stack order (database, service, API, frontend) cannot be touched or tested until the end, while a vertical slice lets you integrate and iterate as you go",
+        "explanation": "He compares it to tracer bullets, and says checking 100 to 200 lines and re-steering is a lot cheaper than reviewing 2,000 lines with no idea what broke."
+      },
+      {
+        "question": "What is the 'human leverage' argument about where to spend human attention?",
+        "answers": [
+          {
+            "answer": "Review every generated line of code with equal attention"
+          },
+          {
+            "answer": "Humans should not review anything and trust the model"
+          },
+          {
+            "answer": "Humans should only review the tests"
+          },
+          {
+            "answer": "A bad line of research can lead to thousands of bad lines of code, so focus human effort on the highest-leverage artifacts, the research and the plans"
+          }
+        ],
+        "answer": "A bad line of research can lead to thousands of bad lines of code, so focus human effort on the highest-leverage artifacts, the research and the plans",
+        "explanation": "Dex puts it as: a bad line of code is a bad line of code, but a bad line of a plan could lead to hundreds of bad lines, and a bad line of research to thousands."
+      },
+      {
+        "question": "Dex quotes Blake Smith for the idea that the most important purpose of code review is what?",
+        "answers": [
+          {
+            "answer": "Mental alignment, keeping team members on the same page about how the code is changing and why"
+          },
+          {
+            "answer": "Reducing the number of pull requests"
+          },
+          {
+            "answer": "Catching syntax errors"
+          },
+          {
+            "answer": "Enforcing a 100 percent test coverage target"
+          }
+        ],
+        "answer": "Mental alignment, keeping team members on the same page about how the code is changing and why",
+        "explanation": "He says this is the most important part of research, plan, implement for his team, because shipping far more code means a larger share of the codebase is unfamiliar to any given engineer."
+      },
+      {
+        "question": "What does Dex mean when he says 'this is not magic' about the research, plan, implement workflow?",
+        "answers": [
+          {
+            "answer": "There is a single magic prompt that makes it work"
+          },
+          {
+            "answer": "It works automatically with no human involvement"
+          },
+          {
+            "answer": "It requires a specific model version"
+          },
+          {
+            "answer": "It only works if you stay deeply engaged and build high-leverage human review into the pipeline; there is no magic prompt that solves everything"
+          }
+        ],
+        "answer": "It only works if you stay deeply engaged and build high-leverage human review into the pipeline; there is no magic prompt that solves everything",
+        "explanation": "He recalls reading research and throwing it out because it was wrong, and says what makes the workflow good enough for hard problems is human review, not automation alone."
+      },
+      {
+        "question": "What is the central thesis of 'Why Software Factories Fail'?",
+        "answers": [
+          {
+            "answer": "Software factories should never use agents"
+          },
+          {
+            "answer": "Harness engineering and writing more loops can fully replace human code review"
+          },
+          {
+            "answer": "Models are now good enough that code quality no longer matters"
+          },
+          {
+            "answer": "No amount of harness engineering or loops can solve what is fundamentally a model-training issue, so the lights-off software factory does not work and you need to put code review back"
+          }
+        ],
+        "answer": "No amount of harness engineering or loops can solve what is fundamentally a model-training issue, so the lights-off software factory does not work and you need to put code review back",
+        "explanation": "The subtitle is 'harness engineering is not enough'. Dex argues you can still move 2 to 3 times faster safely, rather than chasing 10 to 100 times and setting the codebase on fire."
+      },
+      {
+        "question": "What does Dex say about models and maintaining codebase quality over time?",
+        "answers": [
+          {
+            "answer": "Models improve maintainability but hurt correctness"
+          },
+          {
+            "answer": "Models cannot maintain or improve codebase quality over time without significant human steering, and they tend toward shotgun surgery"
+          },
+          {
+            "answer": "Models only affect performance, never maintainability"
+          },
+          {
+            "answer": "Models now maintain quality automatically and need no steering"
+          }
+        ],
+        "answer": "Models cannot maintain or improve codebase quality over time without significant human steering, and they tend toward shotgun surgery",
+        "explanation": "Dex says solving one-off problems has improved a lot, but improving codebase quality over time has barely moved, and there are no good benchmarks for it."
+      },
+      {
+        "question": "Why does Dex argue RL cannot currently reward codebase maintainability?",
+        "answers": [
+          {
+            "answer": "Maintainability is already solved by linters"
+          },
+          {
+            "answer": "RL only works for image models"
+          },
+          {
+            "answer": "There is no fast, reliable oracle: tests give feedback in seconds, but the cost of bad architecture shows up in weeks, months, or years"
+          },
+          {
+            "answer": "Maintainability is too easy to measure"
+          }
+        ],
+        "answer": "There is no fast, reliable oracle: tests give feedback in seconds, but the cost of bad architecture shows up in weeks, months, or years",
+        "explanation": "He adds that if a model could reliably tell good code from bad, it might have written the good version to begin with, but maintainability has no fast oracle to reward during RL."
+      },
+      {
+        "question": "In the SWE-bench style evaluation Dex describes, what is the reward and what does it fail to capture?",
+        "answers": [
+          {
+            "answer": "A human review score only"
+          },
+          {
+            "answer": "One or zero based on FAIL_TO_PASS and PASS_TO_PASS tests, with no penalty for eroding codebase maintainability"
+          },
+          {
+            "answer": "The number of tokens used, with no correctness check"
+          },
+          {
+            "answer": "A quality score out of 100 that fully captures maintainability"
+          }
+        ],
+        "answer": "One or zero based on FAIL_TO_PASS and PASS_TO_PASS tests, with no penalty for eroding codebase maintainability",
+        "explanation": "Dex's point is that how the model reached a correct answer does not matter to the grader, so lazy type casts and try/catch around everything are not penalised."
+      },
+      {
+        "question": "Dex argues Claude Code won the coding-agent race primarily because of what?",
+        "answers": [
+          {
+            "answer": "It supported the most programming languages"
+          },
+          {
+            "answer": "Anthropic RL'd the model inside the harness, training it against the exact tools they were going to ship"
+          },
+          {
+            "answer": "It was the first CLI agent to exist"
+          },
+          {
+            "answer": "It had the best distribution and marketing"
+          }
+        ],
+        "answer": "Anthropic RL'd the model inside the harness, training it against the exact tools they were going to ship",
+        "explanation": "Aider, cline, and codebuff predated Claude Code with great context engineering, but the OpenAI team's point is that if you build a harness without owning the weights, you are always at a disadvantage."
+      },
+      {
+        "question": "What are the four phases in Dex's planning approach where human leverage matters most?",
+        "answers": [
+          {
+            "answer": "Prompting, evaluating, fine-tuning, and serving"
+          },
+          {
+            "answer": "Standup, sprint planning, retrospective, and demo"
+          },
+          {
+            "answer": "Coding, testing, deployment, monitoring"
+          },
+          {
+            "answer": "Product requirements, system architecture, program design, and vertical slices"
+          }
+        ],
+        "answer": "Product requirements, system architecture, program design, and vertical slices",
+        "explanation": "Dex estimates roughly 40 percent of tasks are oneshot or get one or two rounds of light feedback, while large tasks go through all the phases."
+      },
+      {
+        "question": "What does the product review phase pin down, and how does Dex prefer to express it?",
+        "answers": [
+          {
+            "answer": "The problem to solve and what success looks like, grounded in user outcomes, expressed with rough mockups rather than paragraphs"
+          },
+          {
+            "answer": "The full implementation plan, line by line"
+          },
+          {
+            "answer": "The database schema, expressed as SQL migrations"
+          },
+          {
+            "answer": "The exact model and temperature to use"
+          }
+        ],
+        "answer": "The problem to solve and what success looks like, grounded in user outcomes, expressed with rough mockups rather than paragraphs",
+        "explanation": "Dex says he does not describe the UI, he mocks it up, because a rough HTML mockup settles an argument that three paragraphs would only prolong."
+      },
+      {
+        "question": "In the agentic software factory, where does the bottleneck move once an agent can build the thing in minutes?",
+        "answers": [
+          {
+            "answer": "Choosing a programming language"
+          },
+          {
+            "answer": "Review, because a human still has to read and test the change"
+          },
+          {
+            "answer": "Installing dependencies"
+          },
+          {
+            "answer": "Writing the code"
+          }
+        ],
+        "answer": "Review, because a human still has to read and test the change",
+        "explanation": "This is why Dex argues for front-loading alignment and doing a little planning up front to reduce rework and shorten review."
+      },
+      {
+        "question": "What is Dex's closing advice in 'Why Software Factories Fail'?",
+        "answers": [
+          {
+            "answer": "Wait for the next model before doing anything"
+          },
+          {
+            "answer": "Learn the constraints, optimise within them, seek leverage, and read the dang code"
+          },
+          {
+            "answer": "Move 10 to 100 times faster and stop reading code"
+          },
+          {
+            "answer": "Replace all human review with adversarial review bots"
+          }
+        ],
+        "answer": "Learn the constraints, optimise within them, seek leverage, and read the dang code",
+        "explanation": "He suggests you may be too busy chasing 10 to 100 times faster when you could embrace the constraints and move 2 to 3 times faster, safely."
+      },
+      {
+        "question": "What is HumanLayer's core argument about high-stakes tool calls?",
+        "answers": [
+          {
+            "answer": "High-stakes functions are fine as long as the model is above 90 percent accurate"
+          },
+          {
+            "answer": "Even with state-of-the-art reasoning, LLMs are not reliable enough to be given high-stakes functions without deterministic human oversight"
+          },
+          {
+            "answer": "Only read access ever needs approval"
+          },
+          {
+            "answer": "Humans should approve nothing and let the agent self-certify"
+          }
+        ],
+        "answer": "Even with state-of-the-art reasoning, LLMs are not reliable enough to be given high-stakes functions without deterministic human oversight",
+        "explanation": "HumanLayer uses a require_approval decorator baked into the tool itself, so even a hallucinating model cannot skip the human in the loop. Send email, post to Slack, or write private data are high stakes; 90 percent accuracy is not acceptable."
+      },
+      {
+        "question": "How does HumanLayer describe the shift from Gen 2 to Gen 3 agents?",
+        "answers": [
+          {
+            "answer": "From multi-agent to single-agent"
+          },
+          {
+            "answer": "From text to voice only"
+          },
+          {
+            "answer": "From cloud to local models"
+          },
+          {
+            "answer": "From human-initiated agentic assistants to autonomous outer-loop agents where communication is agent-initiated"
+          }
+        ],
+        "answer": "From human-initiated agentic assistants to autonomous outer-loop agents where communication is agent-initiated",
+        "explanation": "Gen 1 was chat, Gen 2 was agentic assistants, and Gen 3 is autonomous agents that live in the outer loop, may be kicked off by a cron or event, and contact humans for help, feedback, or approval."
+      },
+      {
+        "question": "In the research, plan, implement workflow, what does the implement phase do about verification?",
+        "answers": [
+          {
+            "answer": "It implements each phase, runs the automated success criteria, then pauses for human manual verification before moving to the next phase"
+          },
+          {
+            "answer": "It asks the model to approve its own work"
+          },
+          {
+            "answer": "It skips verification and commits immediately"
+          },
+          {
+            "answer": "It runs all phases and reports once at the end with no pauses"
+          }
+        ],
+        "answer": "It implements each phase, runs the automated success criteria, then pauses for human manual verification before moving to the next phase",
+        "explanation": "The implement prompt says to stop and present a mismatch clearly if reality diverges from the plan, and not to check off manual testing steps until the user confirms them."
+      },
+      {
+        "question": "The improve-claude-md skill rewrites CLAUDE.md using `<important if>` blocks. Why?",
+        "answers": [
+          {
+            "answer": "To make the file render as HTML in the browser"
+          },
+          {
+            "answer": "Because Claude is told injected CLAUDE.md content may or may not be relevant and ignores parts it deems irrelevant, so scoping instructions with conditions improves adherence"
+          },
+          {
+            "answer": "Because JSON is not allowed in CLAUDE.md"
+          },
+          {
+            "answer": "To reduce the number of files in the repo"
+          }
+        ],
+        "answer": "Because Claude is told injected CLAUDE.md content may or may not be relevant and ignores parts it deems irrelevant, so scoping instructions with conditions improves adherence",
+        "explanation": "The more content that is not applicable to the current task, the more likely Claude is to ignore everything, including the parts that matter."
+      },
+      {
+        "question": "The show-me skill from HumanLayer's repo is designed to do what?",
+        "answers": [
+          {
+            "answer": "Generate a full written report with no visuals"
+          },
+          {
+            "answer": "Help the user understand the current topic visually, with concise diagrams, code-shape sketches, and focused HTML artifacts"
+          },
+          {
+            "answer": "Deploy the application to production"
+          },
+          {
+            "answer": "Rewrite the user's prompts automatically"
+          }
+        ],
+        "answer": "Help the user understand the current topic visually, with concise diagrams, code-shape sketches, and focused HTML artifacts",
+        "explanation": "The same visual-first philosophy shows up in the visual-pr skill and in Dex's advice to mock up product screens and sketch call-stack trees."
+      }
+    ]
   }
 ]
