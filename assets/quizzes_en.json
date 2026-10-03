@@ -37561,5 +37561,771 @@
         "explanation": "Skipping upgrades for a year turns a small, routine bump into a migration with breaking changes and no time budget for it, and the known vulnerabilities stay open the whole time. Small, frequent updates keep the cost and the risk low."
       }
     ]
+  },
+  {
+    "name": "Building Agent Skills (mattpocock/skills)",
+    "category": "🤖 AI & Machine Learning",
+    "questions": [
+      {
+        "question": "The mattpocock/skills repo positions its skills against 'vibe coding'. Which design goal best captures that stance?",
+        "answers": [
+          {
+            "answer": "Small, adaptable, composable skills that work with any model"
+          },
+          {
+            "answer": "A single opinionated framework that owns the whole development process"
+          },
+          {
+            "answer": "Skills that run only inside Claude Code and no other agent"
+          },
+          {
+            "answer": "Fully autonomous code generation with no human decisions"
+          }
+        ],
+        "answer": "Small, adaptable, composable skills that work with any model",
+        "explanation": "The README says the skills are 'designed to be small, easy to adapt, and composable. They work with any model.' It contrasts this with process-owning approaches such as GSD, BMAD, and Spec-Kit."
+      },
+      {
+        "question": "The repo's 'Why These Skills Exist' section maps four failure modes to four fixes. Which mapping is correct?",
+        "answers": [
+          {
+            "answer": "Agent did not do what I want -> grilling; too verbose -> a shared language; code does not work -> feedback loops such as TDD; ball of mud -> caring about codebase design"
+          },
+          {
+            "answer": "Agent did not do what I want -> TDD; too verbose -> codebase design; code does not work -> grilling; ball of mud -> a shared language"
+          },
+          {
+            "answer": "Agent did not do what I want -> a shared language; too verbose -> grilling; code does not work -> codebase design; ball of mud -> TDD"
+          },
+          {
+            "answer": "All four failure modes are fixed by writing a longer system prompt"
+          }
+        ],
+        "answer": "Agent did not do what I want -> grilling; too verbose -> a shared language; code does not work -> feedback loops such as TDD; ball of mud -> caring about codebase design",
+        "explanation": "Misalignment is fixed by a grilling session, verbosity by a glossary that gives the agent a shared language, bad code by feedback loops (static types, tests, red-green-refactor), and software entropy by treating codebase design as a first-class activity."
+      },
+      {
+        "question": "Why does the repo argue that a shared language, captured in GLOSSARY.md, saves tokens as well as words?",
+        "answers": [
+          {
+            "answer": "It deletes older messages from the context window automatically"
+          },
+          {
+            "answer": "A concise domain vocabulary lets the agent say in one word what it previously needed twenty for"
+          },
+          {
+            "answer": "It prevents the agent from reading the codebase at all"
+          },
+          {
+            "answer": "It permanently caches the model weights"
+          }
+        ],
+        "answer": "A concise domain vocabulary lets the agent say in one word what it previously needed twenty for",
+        "explanation": "Agents dropped into a project guess at jargon and over-explain. A glossary gives them the project's own vocabulary, which shortens reasoning, and it keeps variables, functions, and files named consistently, which also makes the codebase easier to navigate."
+      },
+      {
+        "question": "What problem does the README say is created by frameworks that 'own the process'?",
+        "answers": [
+          {
+            "answer": "They are too small to cover real work"
+          },
+          {
+            "answer": "They only support a single model provider"
+          },
+          {
+            "answer": "They take away your control and make bugs in the process hard to resolve"
+          },
+          {
+            "answer": "They cannot be installed with npx"
+          }
+        ],
+        "answer": "They take away your control and make bugs in the process hard to resolve",
+        "explanation": "The README's opening criticism of approaches like GSD, BMAD, and Spec-Kit is that owning the process takes control away from the developer and makes process bugs hard to fix. The skills are the small, hackable alternative."
+      },
+      {
+        "question": "There are two install routes: the Claude Code plugin and skills.sh. What is the essential difference, and what does the README tell you to do?",
+        "answers": [
+          {
+            "answer": "The plugin is a managed, read-only bundle that updates for you; skills.sh copies editable files you own, and you should pick one because installing both duplicates every skill"
+          },
+          {
+            "answer": "The plugin is paid, skills.sh is free, and installing both unlocks every skill"
+          },
+          {
+            "answer": "skills.sh installs only one skill while the plugin installs the whole repo, so install both"
+          },
+          {
+            "answer": "The two routes are identical, so installing both is harmless"
+          }
+        ],
+        "answer": "The plugin is a managed, read-only bundle that updates for you; skills.sh copies editable files you own, and you should pick one because installing both duplicates every skill",
+        "explanation": "The README frames the choice as two philosophies: subscribe to a managed bundle that updates when the author ships, or fork editable files into your project. Installing both leaves you with every skill twice, so the route is exclusive."
+      },
+      {
+        "question": "What does /setup-matt-pocock-skills configure, and how often should it run?",
+        "answers": [
+          {
+            "answer": "The issue tracker, the triage label vocabulary, and the domain doc layout; once per repo before the first engineering flow"
+          },
+          {
+            "answer": "The model temperature and context window; once per session"
+          },
+          {
+            "answer": "Git remotes and CI secrets; on every commit"
+          },
+          {
+            "answer": "It is documentation only and configures nothing"
+          }
+        ],
+        "answer": "The issue tracker, the triage label vocabulary, and the domain doc layout; once per repo before the first engineering flow",
+        "explanation": "The skill scaffolds docs/agents/issue-tracker.md, docs/agents/triage-labels.md, and docs/agents/domain.md, and writes an 'Agent skills' block into CLAUDE.md or AGENTS.md. The engineering skills read that config, so it runs once per repo."
+      },
+      {
+        "question": "ADR 0001 splits engineering skills into hard-dependency and soft-dependency on the setup config. What separates them?",
+        "answers": [
+          {
+            "answer": "Hard-dependency skills are model-invoked; soft-dependency skills are user-invoked"
+          },
+          {
+            "answer": "Hard-dependency skills produce wrong output without the config and get an explicit setup pointer; soft-dependency skills degrade gracefully and use vague prose"
+          },
+          {
+            "answer": "Hard-dependency skills live in engineering/; soft-dependency skills live in productivity/"
+          },
+          {
+            "answer": "Hard-dependency skills require a paid issue tracker"
+          }
+        ],
+        "answer": "Hard-dependency skills produce wrong output without the config and get an explicit setup pointer; soft-dependency skills degrade gracefully and use vague prose",
+        "explanation": "to-spec, to-tickets, and triage must publish to a specific tracker or apply a specific label, so they name the setup skill in one line. diagnose, tdd, and improve-codebase-architecture only lose sharpness without it, so they stay token-light."
+      },
+      {
+        "question": "Which pair of YAML frontmatter fields does a SKILL.md need for the agent to discover and trigger it?",
+        "answers": [
+          {
+            "answer": "name and description"
+          },
+          {
+            "answer": "version and author"
+          },
+          {
+            "answer": "model and temperature"
+          },
+          {
+            "answer": "path and entrypoint"
+          }
+        ],
+        "answer": "name and description",
+        "explanation": "A skill is discovered by its name, and a model-invoked skill is triggered by its description, which acts as the skill's always-loaded context pointer."
+      },
+      {
+        "question": "For a user-invoked skill, what is the frontmatter description for?",
+        "answers": [
+          {
+            "answer": "It is a rich model-facing trigger list so the agent fires the skill automatically"
+          },
+          {
+            "answer": "It records the skill's changelog"
+          },
+          {
+            "answer": "It is human-facing: a one-line summary read by a person browsing slash commands, with trigger lists stripped"
+          },
+          {
+            "answer": "It is ignored and can be any string"
+          }
+        ],
+        "answer": "It is human-facing: a one-line summary read by a person browsing slash commands, with trigger lists stripped",
+        "explanation": "Stripping the description from the model's reach is what makes a skill user-invoked. The description still helps the human choose the right command, so it summarizes the skill rather than listing trigger phrases."
+      },
+      {
+        "question": "What does disable-model-invocation: true do to a skill?",
+        "answers": [
+          {
+            "answer": "Makes it reachable only by the human typing its name; no model and no other skill can fire it"
+          },
+          {
+            "answer": "Prevents the skill from being installed"
+          },
+          {
+            "answer": "Hides the skill from the human in the slash-command list"
+          },
+          {
+            "answer": "Disables the Skill tool globally for the repo"
+          }
+        ],
+        "answer": "Makes it reachable only by the human typing its name; no model and no other skill can fire it",
+        "explanation": "The flag is the Claude Code half of the user-invoked contract. In Codex the matching half is policy.allow_implicit_invocation: false in agents/openai.yaml, and the two must stay in sync so the skill is user-invoked in both harnesses or neither."
+      },
+      {
+        "question": "Skills live in bucket folders. Which buckets are 'promoted', meaning they ship in the plugin and get docs pages?",
+        "answers": [
+          {
+            "answer": "misc/ and in-progress/"
+          },
+          {
+            "answer": "deprecated/ and misc/"
+          },
+          {
+            "answer": "All buckets are promoted equally"
+          },
+          {
+            "answer": "engineering/ and productivity/"
+          }
+        ],
+        "answer": "engineering/ and productivity/",
+        "explanation": "CLAUDE.md treats engineering/ and productivity/ as the promoted buckets. misc/, in-progress/, and deprecated/ are deliberately kept out of the plugin, the README lists, and the published docs pages."
+      },
+      {
+        "question": "The repo splits document cost into two loads. Which description is correct?",
+        "answers": [
+          {
+            "answer": "Model-invoked skills pay context load (an always-loaded description); user-invoked skills pay cognitive load because you must remember they exist"
+          },
+          {
+            "answer": "Model-invoked skills pay cognitive load; user-invoked skills pay context load"
+          },
+          {
+            "answer": "Both kinds of skill pay only context load"
+          },
+          {
+            "answer": "Neither kind has any cost because skills are lazy-loaded"
+          }
+        ],
+        "answer": "Model-invoked skills pay context load (an always-loaded description); user-invoked skills pay cognitive load because you must remember they exist",
+        "explanation": "A description is forced to stay in context every turn, buying discoverability with context load. A user-invoked skill has no description, so it costs no context but spends the human's memory: the human is the index."
+      },
+      {
+        "question": "Can a user-invoked skill invoke another user-invoked skill?",
+        "answers": [
+          {
+            "answer": "Yes, by calling the Skill tool with the other skill's name"
+          },
+          {
+            "answer": "Yes, but only in Codex, not Claude Code"
+          },
+          {
+            "answer": "No. A user-invoked skill has no description, so nothing but the human can reach it"
+          },
+          {
+            "answer": "Only if both skills live in the engineering/ bucket"
+          }
+        ],
+        "answer": "No. A user-invoked skill has no description, so nothing but the human can reach it",
+        "explanation": "This is an invariant in .agents/invocation.md. A user-invoked skill may call model-invoked skills, but it can never reach another user-invoked one. When a step needs one, the skill tells the human to run it instead."
+      },
+      {
+        "question": "How does a skill in this repo invoke another skill, and why that way?",
+        "answers": [
+          {
+            "answer": "A deep relative link such as ../grilling/SKILL.md"
+          },
+          {
+            "answer": "An explicit instruction to call the Skill tool with the named skill, for example: Call the Skill tool with \"grilling\""
+          },
+          {
+            "answer": "A bare /grilling mention left for the model to interpret"
+          },
+          {
+            "answer": "An HTTP request to the skills.sh registry"
+          }
+        ],
+        "answer": "An explicit instruction to call the Skill tool with the named skill, for example: Call the Skill tool with \"grilling\"",
+        "explanation": "Naming the tool gets a higher hit rate than dropping a /name into prose and hoping it is read as a command. The convention is also harness-neutral: a skill name on its own carries no assumption about a specific harness's trigger syntax."
+      },
+      {
+        "question": "What problem does a router skill such as ask-matt solve?",
+        "answers": [
+          {
+            "answer": "It automatically fires every other skill in sequence"
+          },
+          {
+            "answer": "It replaces the agent's context window with a smaller model"
+          },
+          {
+            "answer": "It installs missing skills on demand"
+          },
+          {
+            "answer": "Cognitive load: it gives the human one skill to remember that maps the others and when to reach for each"
+          }
+        ],
+        "answer": "Cognitive load: it gives the human one skill to remember that maps the others and when to reach for each",
+        "explanation": "A router is a user-invoked skill that can only hint, never fire, the others, because user-invoked skills have no descriptions. It cures the pile-up of cognitive load as user-invoked skills multiply past what a person can remember."
+      },
+      {
+        "question": "In ask-matt's main flow from idea to ship, which order is correct?",
+        "answers": [
+          {
+            "answer": "to-tickets -> grill-with-docs -> implement -> to-spec -> code-review"
+          },
+          {
+            "answer": "grill-with-docs -> to-spec -> to-tickets -> implement -> code-review"
+          },
+          {
+            "answer": "implement -> code-review -> grill-with-docs -> to-spec -> to-tickets"
+          },
+          {
+            "answer": "code-review -> implement -> to-tickets -> to-spec -> grill-with-docs"
+          }
+        ],
+        "answer": "grill-with-docs -> to-spec -> to-tickets -> implement -> code-review",
+        "explanation": "The idea is sharpened by grilling, turned into a spec, split into tracer-bullet tickets, built by driving TDD, and closed out with a two-axis code review. A retro can then improve the agent's environment for the next build."
+      },
+      {
+        "question": "What is a 'context pointer' in the writing-for-agents vocabulary?",
+        "answers": [
+          {
+            "answer": "A reference held in the agent's context that names out-of-context material and encodes the condition for reaching it"
+          },
+          {
+            "answer": "A cursor position in the editor"
+          },
+          {
+            "answer": "A hyperlink that opens in a new browser tab"
+          },
+          {
+            "answer": "A Git submodule reference"
+          }
+        ],
+        "answer": "A reference held in the agent's context that names out-of-context material and encodes the condition for reaching it",
+        "explanation": "A skill's description is one kind of context pointer; a line in AGENTS.md naming a doc is the same object. It names what the material is and lists the branches that should trigger reaching for it."
+      },
+      {
+        "question": "What decides how reliably a context pointer fires?",
+        "answers": [
+          {
+            "answer": "The size of the target file"
+          },
+          {
+            "answer": "Its wording, not its target"
+          },
+          {
+            "answer": "The number of files it points to"
+          },
+          {
+            "answer": "The model's context window size"
+          }
+        ],
+        "answer": "Its wording, not its target",
+        "explanation": "The repo calls a must-have target behind a weakly worded pointer a variance bug. The first fix is always to sharpen the wording, and only inline the material if sharpening fails."
+      },
+      {
+        "question": "What is 'context load'?",
+        "answers": [
+          {
+            "answer": "The time it takes the model to boot"
+          },
+          {
+            "answer": "The number of editor tabs a developer has open"
+          },
+          {
+            "answer": "The cost of always-loaded material on the agent's window, spending tokens and attention every turn whether or not it fires"
+          },
+          {
+            "answer": "The one-off cost of reading a file on demand"
+          }
+        ],
+        "answer": "The cost of always-loaded material on the agent's window, spending tokens and attention every turn whether or not it fires",
+        "explanation": "Anything sitting in context every turn pays context load: an AGENTS.md line, a skill description. It is the load a context pointer trades against reaching material only when it is needed."
+      },
+      {
+        "question": "What does the repo mean by 'cognitive load'?",
+        "answers": [
+          {
+            "answer": "The model's GPU memory usage during inference"
+          },
+          {
+            "answer": "The difficulty of the coding task itself"
+          },
+          {
+            "answer": "The total number of tokens in a prompt"
+          },
+          {
+            "answer": "The cost on the human of knowing which documents exist and when to reach for each"
+          }
+        ],
+        "answer": "The cost on the human of knowing which documents exist and when to reach for each",
+        "explanation": "The human is the index for material with no pointer. The repo says cognitive load is not simply a cost to minimize: it is the price of human agency, so spend it where human judgement matters and remove it where it does not."
+      },
+      {
+        "question": "Rank the information hierarchy from most immediate to most disclosed.",
+        "answers": [
+          {
+            "answer": "In-file step -> in-file reference -> disclosed reference"
+          },
+          {
+            "answer": "Disclosed reference -> in-file step -> in-file reference"
+          },
+          {
+            "answer": "In-file reference -> disclosed reference -> in-file step"
+          },
+          {
+            "answer": "All three tiers rank equally"
+          }
+        ],
+        "answer": "In-file step -> in-file reference -> disclosed reference",
+        "explanation": "Steps are the primary tier of what the agent does in order. In-file reference is consulted on demand and is often a flat peer-set, such as every rule of a review. Disclosed reference is pushed into a separate file behind a context pointer and loaded only when the pointer fires."
+      },
+      {
+        "question": "What is progressive disclosure primarily for?",
+        "answers": [
+          {
+            "answer": "Moving material down the hierarchy, out of the main file and behind a pointer, so the top stays legible"
+          },
+          {
+            "answer": "Hiding information from the human reviewer"
+          },
+          {
+            "answer": "Reducing the total number of skills in the repo"
+          },
+          {
+            "answer": "Compressing large binary assets"
+          }
+        ],
+        "answer": "Moving material down the hierarchy, out of the main file and behind a pointer, so the top stays legible",
+        "explanation": "The repo stresses that progressive disclosure is not primarily a token optimization. It protects the hierarchy, so the steps every run needs are not buried under reference that only some branches reach."
+      },
+      {
+        "question": "What is the 'co-location' rule that accompanies the information hierarchy?",
+        "answers": [
+          {
+            "answer": "Put every skill in a single folder"
+          },
+          {
+            "answer": "Store all documents in the repository root"
+          },
+          {
+            "answer": "Keep a concept's definition, rules, and caveats under one heading rather than scattered across the document"
+          },
+          {
+            "answer": "Repeat each meaning in two places so it is not missed"
+          }
+        ],
+        "answer": "Keep a concept's definition, rules, and caveats under one heading rather than scattered across the document",
+        "explanation": "Co-location decides what sits beside what once a piece is on the right rung. Grouped material reads like documentation written for the agent; scattered material fragments one meaning across many places, which is distinct from duplication."
+      },
+      {
+        "question": "What failure mode is 'sprawl'?",
+        "answers": [
+          {
+            "answer": "A document that duplicates the same meaning twice"
+          },
+          {
+            "answer": "A document whose lines have gone stale"
+          },
+          {
+            "answer": "A skill that has no description"
+          },
+          {
+            "answer": "A document simply too long, even when every line is live and unique, thinning attention across the excess"
+          }
+        ],
+        "answer": "A document simply too long, even when every line is live and unique, thinning attention across the excess",
+        "explanation": "Sprawl is length itself, not duplication or staleness. The cure is the information hierarchy: disclose reference behind pointers, and split by branch or sequence so each path carries only what it needs."
+      },
+      {
+        "question": "Every step should end on a completion criterion. Which two properties make it a lever?",
+        "answers": [
+          {
+            "answer": "Clarity and demand"
+          },
+          {
+            "answer": "Length and formatting"
+          },
+          {
+            "answer": "Ambiguity and randomness"
+          },
+          {
+            "answer": "Word count and heading level"
+          }
+        ],
+        "answer": "Clarity and demand",
+        "explanation": "Clarity lets the agent tell done from not-done, which resists premature completion. Demand sets how much the step requires, driving legwork. The strongest criteria are both checkable and exhaustive."
+      },
+      {
+        "question": "What is 'premature completion', and what is the first defense against it?",
+        "answers": [
+          {
+            "answer": "Finishing every step at once; split the document into many files immediately"
+          },
+          {
+            "answer": "Ending a step before it is genuinely done, pulled by visible later steps; sharpen the bound first, and only hide later steps if that fails"
+          },
+          {
+            "answer": "Skipping the tests; write more tests first"
+          },
+          {
+            "answer": "Committing too early; squash the commits"
+          }
+        ],
+        "answer": "Ending a step before it is genuinely done, pulled by visible later steps; sharpen the bound first, and only hide later steps if that fails",
+        "explanation": "Defend in order: sharpening the completion criterion is local and cheap. Hiding later steps is only the fallback, and it only works across a real context boundary such as a hand-off or subagent dispatch, because an inline call leaves the later steps in context and clears nothing."
+      },
+      {
+        "question": "What is a 'leading word'?",
+        "answers": [
+          {
+            "answer": "The first word of every heading in a skill"
+          },
+          {
+            "answer": "A keyword the model is forbidden to use"
+          },
+          {
+            "answer": "A compact concept already in the model's pretraining that the agent thinks with, repeated as a token to anchor a region of behaviour in the fewest tokens"
+          },
+          {
+            "answer": "A prefix applied to variable names"
+          }
+        ],
+        "answer": "A compact concept already in the model's pretraining that the agent thinks with, repeated as a token to anchor a region of behaviour in the fewest tokens",
+        "explanation": "A leading word recruits priors the model already holds, so it is cheaper than coining a new term. It anchors both execution in the body and invocation in a pointer, because the same word appears in the user's prompts, the docs, and the codebase."
+      },
+      {
+        "question": "Why does the repo warn that negation, such as 'don't do X', is a weak lever?",
+        "answers": [
+          {
+            "answer": "The model cannot parse the word 'don't'"
+          },
+          {
+            "answer": "It costs too many tokens to write"
+          },
+          {
+            "answer": "It breaks YAML frontmatter parsing"
+          },
+          {
+            "answer": "Steering by prohibition drags the forbidden behaviour into context and makes it more available, not less"
+          }
+        ],
+        "answer": "Steering by prohibition drags the forbidden behaviour into context and makes it more available, not less",
+        "explanation": "The fix is to prompt the positive target, so the banned behaviour is never spoken. A prohibition earns a place only as a hard guardrail that cannot be phrased positively, and even then it should be paired with the positive target."
+      },
+      {
+        "question": "A document states the same meaning in two places. What is the fix, and why?",
+        "answers": [
+          {
+            "answer": "Keep a single source of truth: duplication costs maintenance and tokens and inflates the meaning's prominence past its real rank"
+          },
+          {
+            "answer": "Keep both copies so the agent sees the meaning twice"
+          },
+          {
+            "answer": "Delete the shorter copy and keep the longer one"
+          },
+          {
+            "answer": "Convert both copies into leading words"
+          }
+        ],
+        "answer": "Keep a single source of truth: duplication costs maintenance and tokens and inflates the meaning's prominence past its real rank",
+        "explanation": "One authoritative place makes changing the behaviour a one-place edit. Duplication is the accidental inverse of a leading word: a leading word repeats a token on purpose, never the meaning."
+      },
+      {
+        "question": "What test decides whether a sentence is a no-op?",
+        "answers": [
+          {
+            "answer": "Is the sentence grammatically correct?"
+          },
+          {
+            "answer": "Is it longer than ten words?"
+          },
+          {
+            "answer": "Does it change the model's behaviour versus the default? If not, delete the whole sentence rather than trimming words"
+          },
+          {
+            "answer": "Does the author find it interesting?"
+          }
+        ],
+        "answer": "Does it change the model's behaviour versus the default? If not, delete the whole sentence rather than trimming words",
+        "explanation": "The test is model-relative, not reader-relative. Two people disagreeing about a no-op disagree about the default, and settle it by running the document rather than by debate."
+      },
+      {
+        "question": "What is 'sediment' in this vocabulary?",
+        "answers": [
+          {
+            "answer": "A type of integration test"
+          },
+          {
+            "answer": "A strategy for squashing git commits"
+          },
+          {
+            "answer": "Stale layers that settle because adding feels safe and removing feels risky, until you must core down through them to find what is still live"
+          },
+          {
+            "answer": "A model failure mode caused by low temperature"
+          }
+        ],
+        "answer": "Stale layers that settle because adding feels safe and removing feels risky, until you must core down through them to find what is still live",
+        "explanation": "Sediment is the default fate of a document without a pruning discipline. The cure is to check each line for relevance and delete sentences that no longer bear on the document's job."
+      },
+      {
+        "question": "In the grilling skill, what is the 'frontier'?",
+        "answers": [
+          {
+            "answer": "The single hardest question in the session"
+          },
+          {
+            "answer": "Every decision whose prerequisites are already settled: the questions that can be asked now without guessing"
+          },
+          {
+            "answer": "The list of facts the user must supply"
+          },
+          {
+            "answer": "The model's maximum context length"
+          }
+        ],
+        "answer": "Every decision whose prerequisites are already settled: the questions that can be asked now without guessing",
+        "explanation": "The design tree is worked in rounds. Each round asks the whole frontier, numbering each question and giving a recommended answer, then waits for the user's answers, which displace the frontier outward and unblock the next round."
+      },
+      {
+        "question": "In a grilling session, who owns facts and who owns decisions?",
+        "answers": [
+          {
+            "answer": "Both facts and decisions belong to the agent"
+          },
+          {
+            "answer": "Both facts and decisions belong to the user"
+          },
+          {
+            "answer": "Facts belong to the user; decisions belong to the agent"
+          },
+          {
+            "answer": "Finding facts is the agent's job; the decisions are the user's"
+          }
+        ],
+        "answer": "Finding facts is the agent's job; the decisions are the user's",
+        "explanation": "When a frontier question needs a fact from the environment, the agent dispatches a subagent rather than asking the user for anything it could look up. It puts each decision to the user and waits. A session is done when the frontier is empty."
+      },
+      {
+        "question": "What is the defining constraint of the to-spec skill?",
+        "answers": [
+          {
+            "answer": "It does not interview the user again; it synthesizes what is already known into a spec"
+          },
+          {
+            "answer": "It always runs a fresh hour-long interview first"
+          },
+          {
+            "answer": "It writes the implementation directly instead of a spec"
+          },
+          {
+            "answer": "It only works with the Linear issue tracker"
+          }
+        ],
+        "answer": "It does not interview the user again; it synthesizes what is already known into a spec",
+        "explanation": "to-spec takes the current conversation and codebase understanding and produces a published spec. Grilling is the interview step; to-spec is pure synthesis, and it checks the proposed test seams with the user before publishing."
+      },
+      {
+        "question": "What is a 'tracer-bullet ticket' in the to-tickets skill?",
+        "answers": [
+          {
+            "answer": "A horizontal slice that completes one layer at a time"
+          },
+          {
+            "answer": "A ticket with no acceptance criteria"
+          },
+          {
+            "answer": "A one-line bug report with no parent"
+          },
+          {
+            "answer": "A narrow but complete vertical slice through every layer, declaring its blocking edges and sized to fit one fresh context window"
+          }
+        ],
+        "answer": "A narrow but complete vertical slice through every layer, declaring its blocking edges and sized to fit one fresh context window",
+        "explanation": "Each ticket cuts a complete path through schema, API, UI, and tests, is demoable or verifiable on its own, and lists the tickets that block it. Wide refactors are the exception and are sequenced as expand-contract instead."
+      },
+      {
+        "question": "In the TDD skill, what is a 'seam', and what is the rule about them?",
+        "answers": [
+          {
+            "answer": "The public boundary you test at; test only at pre-agreed seams confirmed with the user"
+          },
+          {
+            "answer": "A private method that must be tested directly"
+          },
+          {
+            "answer": "A database table used by the tests"
+          },
+          {
+            "answer": "A Git commit boundary between slices"
+          }
+        ],
+        "answer": "The public boundary you test at; test only at pre-agreed seams confirmed with the user",
+        "explanation": "A seam is where you observe behaviour without reaching inside. Agreeing the seams up front is how testing effort lands on critical paths and complex logic instead of every edge case, and no test is written at an unconfirmed seam."
+      },
+      {
+        "question": "Why does code-review run its two axes as separate parallel sub-agents?",
+        "answers": [
+          {
+            "answer": "To save money on model calls"
+          },
+          {
+            "answer": "So neither axis pollutes the other's context, and one axis cannot mask the other in the report"
+          },
+          {
+            "answer": "Because a single agent cannot read a diff"
+          },
+          {
+            "answer": "To avoid using the Skill tool more than once"
+          }
+        ],
+        "answer": "So neither axis pollutes the other's context, and one axis cannot mask the other in the report",
+        "explanation": "Standards (does it follow the repo's documented standards plus a Fowler smell baseline) and Spec (does it match the originating issue) are reported side by side. The skill explicitly refuses to merge or rerank findings across the two axes."
+      },
+      {
+        "question": "In diagnosing-bugs, what is Phase 1, and when is it complete?",
+        "answers": [
+          {
+            "answer": "Read the surrounding code until a plausible theory forms"
+          },
+          {
+            "answer": "Write the fix and then look for a test"
+          },
+          {
+            "answer": "Ask the user to reproduce the bug for you"
+          },
+          {
+            "answer": "Build a tight feedback loop that is red-capable, deterministic, fast, and agent-runnable, asserting the user's exact symptom"
+          }
+        ],
+        "answer": "Build a tight feedback loop that is red-capable, deterministic, fast, and agent-runnable, asserting the user's exact symptom",
+        "explanation": "The skill says Phase 1 is the skill. Without one command that already goes red on this specific bug, no amount of staring at code will save you, so it refuses to move on to hypotheses until that command exists."
+      },
+      {
+        "question": "What does the codebase-design skill mean by a 'deep module'?",
+        "answers": [
+          {
+            "answer": "A lot of behaviour behind a small interface, placed at a clean seam and testable through that interface"
+          },
+          {
+            "answer": "A module with many methods and very little logic"
+          },
+          {
+            "answer": "A module with no tests because it is internal"
+          },
+          {
+            "answer": "A single large file that contains the whole feature"
+          }
+        ],
+        "answer": "A lot of behaviour behind a small interface, placed at a clean seam and testable through that interface",
+        "explanation": "Depth is leverage at the interface: a large amount of behaviour per unit of interface the caller must learn. A shallow module has an interface nearly as complex as its implementation and should be avoided."
+      },
+      {
+        "question": "What is the central rule of the wayfinder skill about doing work?",
+        "answers": [
+          {
+            "answer": "Always implement each ticket as you resolve it"
+          },
+          {
+            "answer": "Never use an issue tracker"
+          },
+          {
+            "answer": "Plan, don't do: each ticket resolves a decision, and the map is done when the way is clear"
+          },
+          {
+            "answer": "Only produce runnable code, never decisions"
+          }
+        ],
+        "answer": "Plan, don't do: each ticket resolves a decision, and the map is done when the way is clear",
+        "explanation": "Wayfinder charts a shared map of decision tickets on the issue tracker for work too big for one session. The pull to just do the work is usually the signal that you have reached the edge of the map and should hand off to the main flow."
+      }
+    ]
   }
 ]
