@@ -6,11 +6,13 @@ import { useTranslation } from 'react-i18next';
 type SettingsHeaderProps = {
   currentQuestionIndex: number;
   selectedQuizAnswersAmount: number;
+  showTotal?: boolean;
 };
 
 export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
   currentQuestionIndex,
   selectedQuizAnswersAmount,
+  showTotal = true,
 }) => {
   const {
     flashcardsEnabled,
@@ -83,7 +85,8 @@ export const SettingsHeader: React.FC<SettingsHeaderProps> = ({
         </View>
       </View>
       <Text style={styles.questionHeading}>
-        {t('question')} {currentQuestionIndex + 1} / {selectedQuizAnswersAmount}
+        {t('question')} {currentQuestionIndex + 1}
+        {showTotal ? ` / ${selectedQuizAnswersAmount}` : null}
       </Text>
     </View>
   );
