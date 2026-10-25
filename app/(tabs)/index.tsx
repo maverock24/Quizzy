@@ -28,6 +28,13 @@ import {
   MULTIPLICATION_GENERATOR,
   MultiplicationRange,
 } from '@/services/multiplicationProblems';
+import {
+  answeredCount,
+  DEFAULT_ROUND_MINUTES,
+  remainingSeconds,
+  roundDeadline as computeDeadline,
+} from '@/services/timedRound';
+import type { RoundMode } from '@/services/timedRound';
 
 // Type for tracking wrong answers during a quiz session
 interface WrongAnswerRecord {
@@ -87,6 +94,11 @@ export default function TabOneScreen() {
   } = useQuiz();
   const { t } = useTranslation();
   const [timerActive, setTimerActive] = useState<boolean>(false);
+  const [roundMode, setRoundMode] = useState<RoundMode>('count');
+  const [roundMinutes, setRoundMinutes] = useState<number>(
+    DEFAULT_ROUND_MINUTES,
+  );
+  const [roundDeadline, setRoundDeadline] = useState<number | null>(null);
   const [timeExpired, setTimeExpired] = useState<boolean>(false);
   const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
   const [randomizedAnswers, setRandomizedAnswers] = useState<Answer[]>([]);
@@ -161,6 +173,10 @@ export default function TabOneScreen() {
   const startQuiz = (
     quiz: Quiz,
     range: MultiplicationRange = multiplicationRange,
+    round: { mode: RoundMode; minutes: number } = {
+      mode: 'count',
+      minutes: DEFAULT_ROUND_MINUTES,
+    },
   ) => {
     const match = quizzes.find((q: Quiz) => q.name === quiz.name);
     // Generated quizzes (e.g. multiplication tables) get a fresh set of
@@ -185,11 +201,17 @@ export default function TabOneScreen() {
     setLastPlayedQuizName(quiz.name);
     setExplanationMode(false);
     setTimeExpired(false);
+    setRoundMode(round.mode);
+    setRoundMinutes(round.minutes);
+    setRoundDeadline(
+      round.mode === 'timed'
+        ? computeDeadline(round.minutes, Date.now())
+        : null,
+    );
 
-    // Start timer if enabled
-    if (timerEnabled) {
-      setTimerActive(true);
-    }
+    // The count-mode timer only runs in count mode; a timed round owns its own
+    // deadline and must not start the global countdown.
+    setTimerActive(round.mode === 'count' && timerEnabled);
 
     // If reader mode is enabled, show the reader instead of the quiz
     if (readerModeEnabled) {
@@ -265,6 +287,8 @@ export default function TabOneScreen() {
     setAnswerIsCorrect(false);
     setShowReader(false);
     setTimerActive(false);
+    setRoundMode('count');
+    setRoundDeadline(null);
     setTimeExpired(false);
     setWrongAnswersThisQuiz([]);
     setIsRetryMode(false);
@@ -290,9 +314,63 @@ export default function TabOneScreen() {
     selectedQuizAnswersAmount,
   ]);
 
+  // End a timed round: a finished round, not a loss (D1). Reachable only from
+  // the deadline interval below and the deadline QuizTimer.
+  const handleTimedRoundEnd = useCallback(() => {
+    setRoundDeadline(null);
+    setTotalWonGames(totalWonGames + 1);
+    onQuizComplete(
+      score,
+      answeredCount(score, wrongAnswersThisQuiz.length),
+      roundMinutes * 60,
+    );
+    setTimeExpired(true);
+    setScoreVisible(true);
+    setSelectedQuiz(undefined);
+    setSelectedQuizName(null);
+    setCurrentQuestionIndex(0);
+    setExplanationMode(false);
+  }, [
+    score,
+    wrongAnswersThisQuiz,
+    roundMinutes,
+    onQuizComplete,
+    setSelectedQuizName,
+    setTotalWonGames,
+    totalWonGames,
+  ]);
+
+  // A timed round ends when its deadline passes. QuizTimer re-renders itself
+  // once a second in deadline mode, so the screen only has to watch for the
+  // end. Skipped while the reader is open: nobody played for that score screen.
+  useEffect(() => {
+    if (roundDeadline === null || showReader) return;
+    const interval = setInterval(() => {
+      if (remainingSeconds(roundDeadline, Date.now()) === 0) {
+        handleTimedRoundEnd();
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [roundDeadline, showReader, handleTimedRoundEnd]);
+
   const handleNext = () => {
     setAnswerIsCorrect(false);
     setExplanationMode(false);
+    if (roundMode === 'timed') {
+      // Rolling append (D7): a timed round has no end-of-list branch, and the
+      // appended batch goes in before the index advances.
+      if (currentQuestionIndex >= randomizedQuestions.length - 1) {
+        setRandomizedQuestions([
+          ...randomizedQuestions,
+          ...generateMultiplicationQuestions({
+            minFactor: multiplicationRange.from,
+            maxFactor: multiplicationRange.to,
+          }),
+        ]);
+      }
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      return;
+    }
     if (currentQuestionIndex < (selectedQuiz?.questions.length ?? 0) - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
@@ -335,6 +413,9 @@ export default function TabOneScreen() {
     // For now, we'll create a simple retry quiz
     setIsRetryMode(true);
     setWrongAnswersThisQuiz([]);
+    // A retry is a fixed list of missed sums: always a count-mode round (D12).
+    setRoundMode('count');
+    setRoundDeadline(null);
     setScore(0);
     setScoreVisible(false);
     setCurrentQuestionIndex(0);
@@ -466,13 +547,23 @@ export default function TabOneScreen() {
                 currentQuestionIndex={currentQuestionIndex}
                 selectedQuizAnswersAmount={selectedQuizAnswersAmount}
                 handleNext={handleNext}
+                showTotal={roundMode !== 'timed'}
               />
             )}
 
           {selectedQuiz && !explanationMode && !showReader && (
             <>
-              {/* Quiz Timer */}
-              {timerEnabled && (
+              {/* Quiz Timer: a timed round owns the clock, count mode keeps the
+                  global timer. */}
+              {roundMode === 'timed' && roundDeadline !== null && (
+                <QuizTimer
+                  durationMinutes={roundMinutes}
+                  onTimeUp={handleTimedRoundEnd}
+                  isActive
+                  deadline={roundDeadline}
+                />
+              )}
+              {timerEnabled && roundMode === 'count' && (
                 <QuizTimer
                   durationMinutes={timerDuration}
                   onTimeUp={handleTimeUp}
@@ -502,6 +593,7 @@ export default function TabOneScreen() {
                     selectedQuizAnswersAmount={selectedQuizAnswersAmount}
                     handleAnswerSelection={handleAnswerSelection}
                     forceTextInput={selectedQuiz.inputMode === 'text'}
+                    showTotal={roundMode !== 'timed'}
                   />
                 )}
             </>
@@ -510,7 +602,11 @@ export default function TabOneScreen() {
           {scoreVisible && (
             <Score
               score={score}
-              selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+              selectedQuizAnswersAmount={
+                roundMode === 'timed'
+                  ? answeredCount(score, wrongAnswersThisQuiz.length)
+                  : selectedQuizAnswersAmount
+              }
               timeExpired={timeExpired}
               wrongAnswerCount={wrongAnswersThisQuiz.length}
               onRetryWrongAnswers={
@@ -553,11 +649,11 @@ export default function TabOneScreen() {
           initialFrom={multiplicationRange.from}
           initialTo={multiplicationRange.to}
           onCancel={() => setRangeSheetQuiz(null)}
-          onConfirm={({ from, to }) => {
+          onConfirm={({ from, to, mode, minutes }) => {
             const quiz = rangeSheetQuiz;
             setMultiplicationRange({ from, to });
             setRangeSheetQuiz(null);
-            if (quiz) startQuiz(quiz, { from, to });
+            if (quiz) startQuiz(quiz, { from, to }, { mode, minutes });
           }}
         />
       )}
