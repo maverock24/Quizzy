@@ -17,6 +17,10 @@ import {
   GameState,
 } from '../../services/MultiplayerService';
 import { presenceService } from '../../services/PresenceService';
+import {
+  allFinished as allFinishedIn,
+  winnerOf,
+} from '../../services/multiplayerRules';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useQuiz } from '../../components/Quizprovider';
 import { Question } from '../../components/Question';
@@ -219,9 +223,7 @@ export default function MultiplayerRoom() {
 
     multiplayerService.onPlayerLeft((playerId) => {
       setPlayers((prev) =>
-        prev.map((p) =>
-          p.id === playerId ? { ...p, name: p.name + ' (left)' } : p,
-        ),
+        prev.map((p) => (p.id === playerId ? { ...p, left: true } : p)),
       );
     });
 
@@ -307,23 +309,7 @@ export default function MultiplayerRoom() {
   }, [currentQuestionIndex, randomizedQuestions]);
 
   // Check if all players finished
-  const allFinished =
-    players.length > 1 &&
-    players.every((p) => p.finished || p.name.includes('(left)'));
-
-  // Determine winner
-  const getWinner = () => {
-    const activePlayers = players.filter(
-      (p) => p.finished && !p.name.includes('(left)'),
-    );
-    if (activePlayers.length === 0) return null;
-    // Sort by score DESC, then by finish time ASC
-    const sorted = [...activePlayers].sort((a, b) => {
-      if (b.score !== a.score) return b.score - a.score;
-      return (a.finishTime || Infinity) - (b.finishTime || Infinity);
-    });
-    return sorted[0];
-  };
+  const allFinished = allFinishedIn(players);
 
   const handlePlayAgain = () => {
     setCurrentQuestionIndex(0);
@@ -343,7 +329,7 @@ export default function MultiplayerRoom() {
 
   // RENDER: RESULTS
   if ((allFinished || myFinished) && gameState.status === 'playing') {
-    const winner = getWinner();
+    const winner = winnerOf(players);
     const myId = multiplayerService.getPlayerId();
     const iAmWinner = winner?.id === myId;
 
@@ -372,7 +358,7 @@ export default function MultiplayerRoom() {
             <View style={styles.card}>
               <Text style={styles.subtitle}>Final Scores</Text>
               {[...players]
-                .filter((p) => !p.name.includes('(left)'))
+                .filter((p) => !p.left)
                 .sort((a, b) => b.score - a.score)
                 .map((p, i) => (
                   <View
