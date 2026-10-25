@@ -12,6 +12,7 @@ import { useGlossary } from '@/components/GlossaryProvider';
 import { Answer, CategoryEssay, Quiz, QuizQuestion } from '@/components/types';
 import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 import { useReadAloud } from '@/components/useReadAloud';
 import { StreakPet } from '@/components/kids/StreakPet';
@@ -83,6 +84,7 @@ export default function TabOneScreen() {
     essays,
     getEssayByCategory,
   } = useQuiz();
+  const { t } = useTranslation();
   const [timerActive, setTimerActive] = useState<boolean>(false);
   const [timeExpired, setTimeExpired] = useState<boolean>(false);
   const [answerIsCorrect, setAnswerIsCorrect] = useState<boolean>(false);
@@ -421,6 +423,14 @@ export default function TabOneScreen() {
                 if (essay) setSelectedEssay(essay);
               }}
               categoriesWithEssays={categoriesWithEssays}
+              labelFor={(quiz) =>
+                quiz.generator === MULTIPLICATION_GENERATOR
+                  ? t('multiplication_quiz_label_range', {
+                      from: multiplicationRange.from,
+                      to: multiplicationRange.to,
+                    })
+                  : quiz.name
+              }
             />
           )}
 
