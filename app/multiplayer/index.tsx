@@ -133,13 +133,15 @@ export default function MultiplayerHome() {
 
     try {
       setIsCreating(true);
-      const code = await multiplayerService.createRoom(name);
-      if (code) {
+      const result = await multiplayerService.createRoom(name);
+      if (result.ok) {
         router.push(
-          `/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`,
+          `/multiplayer/${result.code}?name=${encodeURIComponent(
+            name,
+          )}&isHost=true`,
         );
       } else {
-        showAlert('Error', 'Failed to create room. Please try again.');
+        showAlert('Cannot create a room', failureMessage(result.failure));
       }
     } catch (error) {
       console.error(error);
@@ -183,18 +185,20 @@ export default function MultiplayerHome() {
     try {
       // 1. Host creates a room implicitly behind the scenes
       setIsCreating(true);
-      const code = await multiplayerService.createRoom(name);
-      if (code) {
+      const result = await multiplayerService.createRoom(name);
+      if (result.ok) {
         // 2. Send the invite via Serverless Presence
-        await presenceService.sendInvite(targetPeerId, code);
+        await presenceService.sendInvite(targetPeerId, result.code);
 
         // 3. Jump to waiting room
         presenceService.disconnect();
         router.push(
-          `/multiplayer/${code}?name=${encodeURIComponent(name)}&isHost=true`,
+          `/multiplayer/${result.code}?name=${encodeURIComponent(
+            name,
+          )}&isHost=true`,
         );
       } else {
-        showAlert('Error', 'Failed to start game for invite.');
+        showAlert('Cannot create a room', failureMessage(result.failure));
       }
     } catch (e) {
       console.error(e);

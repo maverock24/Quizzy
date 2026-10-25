@@ -1,11 +1,13 @@
 import Peer, { DataConnection } from 'peerjs';
-import { isRoomCode, normalizeRoomCode } from './roomCode';
+import { generateRoomCode, isRoomCode, normalizeRoomCode } from './roomCode';
 import {
   MultiplayerFailure,
   failureFromPeerError,
 } from './multiplayerFailures';
 
 const JOIN_TIMEOUT_MS = 8000;
+const CREATE_TIMEOUT_MS = 10000;
+const MAX_ROOM_CODE_ATTEMPTS = 3;
 
 export interface Player {
   id: string;
@@ -28,6 +30,10 @@ export interface GameState {
 
 type JoinResult =
   | { ok: true; players: Player[]; gameState: GameState; quizId?: string }
+  | { ok: false; failure: MultiplayerFailure };
+
+type CreateResult =
+  | { ok: true; code: string }
   | { ok: false; failure: MultiplayerFailure };
 
 // Message Types
@@ -129,51 +135,83 @@ class MultiplayerService {
     this.onPlayerLeftCallbacks = [];
   }
 
-  private generateRoomId(): string {
-    return Math.random().toString(36).substring(2, 8).toUpperCase();
-  }
-
-  // HOST: Create a room
-  createRoom(name: string): Promise<string | null> {
+  // HOST: Create a room — retries a code that is already taken
+  createRoom(name: string): Promise<CreateResult> {
     return new Promise((resolve) => {
-      // Clean up any previous session
-      this.destroy();
+      const attempt = (attemptsLeft: number) => {
+        // Clean up any previous session
+        this.destroy();
 
-      this.isHost = true;
-      this.playerName = name;
-      this.roomId = this.generateRoomId();
-      const peerId = `quizzy-${this.roomId}`;
+        this.isHost = true;
+        this.playerName = name;
 
-      this.peer = new Peer(peerId);
+        const code = generateRoomCode();
+        this.roomId = code;
 
-      this.peer.on('open', (id) => {
-        console.log('Host initialized with ID:', id);
-        this.playerId = id;
+        let settled = false;
+        let timer: ReturnType<typeof setTimeout> | null = null;
 
-        this.players = [
-          {
-            id: 'host',
-            name: name,
-            score: 0,
-            isHost: true,
-            joinedAt: new Date().toISOString(),
-            progress: 0,
-            totalQuestions: 0,
-            finished: false,
-          },
-        ];
+        const settle = (result: CreateResult) => {
+          if (settled) {
+            return;
+          }
+          settled = true;
+          if (timer) {
+            clearTimeout(timer);
+            timer = null;
+          }
+          resolve(result);
+        };
 
-        resolve(this.roomId);
-      });
+        // Armed before the peer exists, so each attempt is bounded.
+        timer = setTimeout(
+          () => settle({ ok: false, failure: 'timeout' }),
+          CREATE_TIMEOUT_MS,
+        );
+        const peerId = `quizzy-${code}`;
 
-      this.peer.on('error', (err) => {
-        console.error('Peer error:', err);
-        resolve(null);
-      });
+        this.peer = new Peer(peerId);
 
-      this.peer.on('connection', (conn) => {
-        this.handleHostConnection(conn);
-      });
+        this.peer.on('open', (id) => {
+          console.log('Host initialized with ID:', id);
+          this.playerId = id;
+
+          this.players = [
+            {
+              id: 'host',
+              name: name,
+              score: 0,
+              isHost: true,
+              joinedAt: new Date().toISOString(),
+              progress: 0,
+              totalQuestions: 0,
+              finished: false,
+            },
+          ];
+
+          settle({ ok: true, code });
+        });
+
+        this.peer.on('error', (err) => {
+          console.error('Peer error:', err);
+          if (err.type === 'unavailable-id' && attemptsLeft > 1) {
+            if (timer) {
+              clearTimeout(timer);
+              timer = null;
+            }
+            this.peer?.destroy();
+            attempt(attemptsLeft - 1);
+            return;
+          }
+          settle({ ok: false, failure: failureFromPeerError(err.type) });
+        });
+
+        this.peer.on('connection', (conn) => {
+          this.handleHostConnection(conn);
+        });
+      };
+
+      attempt(MAX_ROOM_CODE_ATTEMPTS);
     });
   }
 
