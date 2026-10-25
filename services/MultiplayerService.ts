@@ -4,6 +4,7 @@ import {
   MultiplayerFailure,
   failureFromPeerError,
 } from './multiplayerFailures';
+import { isSenderAllowed } from './multiplayerRules';
 
 const JOIN_TIMEOUT_MS = 8000;
 const CREATE_TIMEOUT_MS = 10000;
@@ -330,6 +331,10 @@ class MultiplayerService {
           this.broadcast({ type: 'JOIN', player: newPlayer }, conn.peer);
         }
       } else if (msg.type === 'SCORE_UPDATE') {
+        if (!isSenderAllowed(msg.playerId, conn.peer)) {
+          this.dropForeignUpdate(msg, conn);
+          return;
+        }
         this.players = this.players.map((p) =>
           p.id === msg.playerId ? { ...p, score: msg.score } : p,
         );
@@ -340,6 +345,10 @@ class MultiplayerService {
           score: msg.score,
         });
       } else if (msg.type === 'PLAYER_PROGRESS') {
+        if (!isSenderAllowed(msg.playerId, conn.peer)) {
+          this.dropForeignUpdate(msg, conn);
+          return;
+        }
         this.players = this.players.map((p) =>
           p.id === msg.playerId
             ? {
@@ -354,6 +363,10 @@ class MultiplayerService {
         );
         this.broadcast(msg, conn.peer);
       } else if (msg.type === 'PLAYER_FINISH') {
+        if (!isSenderAllowed(msg.playerId, conn.peer)) {
+          this.dropForeignUpdate(msg, conn);
+          return;
+        }
         this.players = this.players.map((p) =>
           p.id === msg.playerId
             ? {
@@ -382,6 +395,16 @@ class MultiplayerService {
         this.onPlayerLeftCallbacks.forEach((cb) => cb(leftPlayer.id));
       }
     });
+  }
+
+  /** A message may only act on the sender's own slot (D5). */
+  private dropForeignUpdate(
+    msg: { type: string; playerId: string },
+    conn: DataConnection,
+  ) {
+    console.warn(
+      'Dropped ' + msg.type + ' from ' + conn.peer + ' naming ' + msg.playerId,
+    );
   }
 
   private broadcast(msg: Message, excludePeerId?: string) {
