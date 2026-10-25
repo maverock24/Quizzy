@@ -21,6 +21,7 @@ import {
   IncomingInvite,
 } from '../../services/PresenceService';
 import { isRoomCode, normalizeRoomCode } from '../../services/roomCode';
+import { failureMessage } from '../../services/multiplayerFailures';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
 const showAlert = (title: string, message: string) => {
@@ -158,8 +159,8 @@ export default function MultiplayerHome() {
 
     try {
       setIsJoining(true);
-      const response = await multiplayerService.joinRoom(target, name);
-      if (response.success) {
+      const result = await multiplayerService.joinRoom(target, name);
+      if (result.ok) {
         // Need to stop presence polling when jumping into game
         presenceService.disconnect();
         router.push(
@@ -168,10 +169,7 @@ export default function MultiplayerHome() {
           )}&isHost=false`,
         );
       } else {
-        showAlert(
-          'Error',
-          'Failed to join room. Check the code and try again.',
-        );
+        showAlert('Cannot join', failureMessage(result.failure));
       }
     } catch (error) {
       console.error(error);

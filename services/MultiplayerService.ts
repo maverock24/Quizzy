@@ -1,4 +1,11 @@
 import Peer, { DataConnection } from 'peerjs';
+import { isRoomCode, normalizeRoomCode } from './roomCode';
+import {
+  MultiplayerFailure,
+  failureFromPeerError,
+} from './multiplayerFailures';
+
+const JOIN_TIMEOUT_MS = 8000;
 
 export interface Player {
   id: string;
@@ -18,6 +25,10 @@ export interface GameState {
   quizId?: string;
   startTime?: number; // timestamp when game started
 }
+
+type JoinResult =
+  | { ok: true; players: Player[]; gameState: GameState; quizId?: string }
+  | { ok: false; failure: MultiplayerFailure };
 
 // Message Types
 type Message =
@@ -167,30 +178,45 @@ class MultiplayerService {
   }
 
   // CLIENT: Join a room — waits for actual WELCOME message
-  joinRoom(
-    roomId: string,
-    name: string,
-  ): Promise<{
-    success: boolean;
-    players?: Player[];
-    gameState?: GameState;
-    quizId?: string;
-  }> {
+  joinRoom(roomId: string, name: string): Promise<JoinResult> {
+    const code = normalizeRoomCode(roomId);
+    if (!isRoomCode(code)) {
+      return Promise.resolve({ ok: false, failure: 'bad-code' });
+    }
+
     return new Promise((resolve) => {
+      let resolved = false;
+      let timer: ReturnType<typeof setTimeout> | null = null;
+
+      const settle = (result: JoinResult) => {
+        if (resolved) {
+          return;
+        }
+        resolved = true;
+        if (timer) {
+          clearTimeout(timer);
+          timer = null;
+        }
+        resolve(result);
+      };
+
       // Clean up any previous session
       this.destroy();
 
       this.isHost = false;
       this.playerName = name;
-      this.roomId = roomId;
+      this.roomId = code;
+      // Armed before the peer exists, so the wait is bounded by the call.
+      timer = setTimeout(
+        () => settle({ ok: false, failure: 'timeout' }),
+        JOIN_TIMEOUT_MS,
+      );
       this.peer = new Peer();
-
-      let resolved = false;
 
       this.peer.on('open', (id) => {
         this.playerId = id;
-        const hostPeerId = `quizzy-${roomId}`;
-        const conn = this.peer!.connect(hostPeerId);
+        const hostPeerId = `quizzy-${code}`;
+        const conn = this.peer!.connect(hostPeerId, { reliable: true });
 
         conn.on('open', () => {
           this.hostConnection = conn;
@@ -210,12 +236,11 @@ class MultiplayerService {
           // Handle incoming data — resolve on WELCOME
           conn.on('data', (data) => {
             const msg = data as Message;
-            if (msg.type === 'WELCOME' && !resolved) {
-              resolved = true;
+            if (msg.type === 'WELCOME') {
               this.players = msg.players;
               this.gameState = msg.state;
-              resolve({
-                success: true,
+              settle({
+                ok: true,
                 players: msg.players,
                 gameState: msg.state,
                 quizId: msg.quizId,
@@ -232,27 +257,13 @@ class MultiplayerService {
 
         conn.on('error', (err) => {
           console.error('Connection error:', err);
-          if (!resolved) {
-            resolved = true;
-            resolve({ success: false });
-          }
+          settle({ ok: false, failure: 'connect-failed' });
         });
-
-        // Timeout fallback
-        setTimeout(() => {
-          if (!resolved) {
-            resolved = true;
-            resolve({ success: false });
-          }
-        }, 8000);
       });
 
       this.peer.on('error', (err) => {
         console.error('Join error:', err);
-        if (!resolved) {
-          resolved = true;
-          resolve({ success: false });
-        }
+        settle({ ok: false, failure: failureFromPeerError(err.type) });
       });
     });
   }
