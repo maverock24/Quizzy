@@ -546,6 +546,9 @@ export default function MultiplayerRoom() {
   }
 
   // RENDER: LOBBY (waiting)
+  // A departed player keeps its slot for a minute, so every start or full
+  // decision counts only the players who are still here.
+  const presentCount = players.filter((p) => !p.left).length;
   return (
     <View style={styles.outerContainer}>
       <SafeAreaLinearGradient
@@ -608,7 +611,7 @@ export default function MultiplayerRoom() {
                     </Text>
                   </View>
                 ))}
-                {players.length < 2 && (
+                {presentCount < 2 && (
                   <View style={styles.playerRow}>
                     <Text style={[styles.playerText, { opacity: 0.4 }]}>
                       Waiting for opponent...
@@ -636,17 +639,17 @@ export default function MultiplayerRoom() {
 
                 <TouchableOpacity
                   onPress={handleStartGame}
-                  disabled={!selectedQuiz || players.length < 2}
+                  disabled={!selectedQuiz || presentCount < 2}
                   style={[
                     styles.button,
                     styles.primaryBtn,
-                    (!selectedQuiz || players.length < 2) && styles.disabledBtn,
+                    (!selectedQuiz || presentCount < 2) && styles.disabledBtn,
                   ]}
                 >
                   <Text style={styles.buttonText}>🎮 Start Game</Text>
                 </TouchableOpacity>
 
-                {players.length < 2 && (
+                {presentCount < 2 && (
                   <Text style={styles.hintText}>
                     Share code &quot;{code}&quot; with your opponent to join
                   </Text>
