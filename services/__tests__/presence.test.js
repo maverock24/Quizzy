@@ -1,0 +1,122 @@
+// The lobby heartbeat is the one thing that talks to the network on its own, so
+// every case here drives `PresenceService` through a mocked `fetch` and never
+// touches the wire.
+
+const lobbyResponse = (payload = {}) => ({
+  ok: true,
+  json: async () => ({ users: [], invites: [], ...payload }),
+});
+
+// `poll()` awaits `fetch` and then `response.json()`, so finishing one poll
+// takes more than a single microtask turn.
+const flush = async () => {
+  for (let i = 0; i < 5; i += 1) {
+    await Promise.resolve();
+  }
+};
+
+const sentBodies = (fetchMock) =>
+  fetchMock.mock.calls.map(([, init]) => JSON.parse(init.body));
+
+describe('presence', () => {
+  let presenceService;
+  let fetchMock;
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.resetModules();
+    jest.spyOn(console, 'log').mockImplementation(() => {});
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    fetchMock = jest.fn(async () => lobbyResponse());
+    global.fetch = fetchMock;
+
+    presenceService = require('../PresenceService').presenceService;
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    jest.restoreAllMocks();
+    delete global.fetch;
+  });
+
+  test('a heartbeat posts the peer id, name and room code', async () => {
+    presenceService.setRoomCode('ABC234');
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const [, init] = fetchMock.mock.calls[0];
+    expect(init.method).toBe('POST');
+    expect(JSON.parse(init.body)).toEqual({
+      action: 'heartbeat',
+      peerId: 'peer-1',
+      name: 'Alice',
+      roomCode: 'ABC234',
+    });
+  });
+
+  test('a rejected poll keeps the interval running and throws nothing', async () => {
+    fetchMock.mockRejectedValueOnce(new Error('network down'));
+
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(console.warn).toHaveBeenCalledWith(
+      'Lobby poll failed:',
+      expect.any(Error),
+    );
+
+    jest.advanceTimersByTime(10000);
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
+  test('disconnect posts one leave and stops the interval', async () => {
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+
+    presenceService.disconnect();
+    await flush();
+
+    expect(sentBodies(fetchMock).filter((b) => b.action === 'leave')).toEqual([
+      { action: 'leave', peerId: 'peer-1' },
+    ]);
+
+    const callsAfterDisconnect = fetchMock.mock.calls.length;
+    jest.advanceTimersByTime(30000);
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(callsAfterDisconnect);
+  });
+
+  test('the same invite arriving twice fires one callback', async () => {
+    const invite = {
+      fromPeerId: 'peer-2',
+      fromName: 'Bob',
+      roomId: 'XYZ789',
+      timestamp: 1,
+    };
+    fetchMock.mockImplementation(async () =>
+      lobbyResponse({ invites: [invite] }),
+    );
+
+    const onInvite = jest.fn();
+    presenceService.onInviteReceived(onInvite);
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+
+    expect(onInvite).toHaveBeenCalledTimes(1);
+    expect(onInvite).toHaveBeenCalledWith(invite);
+
+    jest.advanceTimersByTime(10000);
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(onInvite).toHaveBeenCalledTimes(1);
+  });
+});
