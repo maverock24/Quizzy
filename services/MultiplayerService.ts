@@ -10,6 +10,7 @@ import {
   findJoinTarget,
 } from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
+import type { QuizQuestion } from '../components/types';
 
 const JOIN_TIMEOUT_MS = 8000;
 const CREATE_TIMEOUT_MS = 10000;
@@ -35,6 +36,8 @@ export interface GameState {
   currentQuestionIndex: number;
   quizId?: string;
   startTime?: number; // timestamp when game started
+  // The host's copy of the quiz, so a joiner renders it without its own (D7)
+  quiz?: { name: string; questions: QuizQuestion[] };
 }
 
 type JoinResult =
@@ -564,13 +567,14 @@ class MultiplayerService {
 
   // PUBLIC METHODS
 
-  startGame(quizId?: string) {
+  startGame(quiz?: { name: string; questions: QuizQuestion[] }) {
     if (this.isHost) {
       const startTime = Date.now();
       this.gameState = {
         ...this.gameState,
         status: 'playing',
-        quizId,
+        quizId: quiz?.name,
+        quiz,
         startTime,
       };
       this.notifyGameStateChange(this.gameState);

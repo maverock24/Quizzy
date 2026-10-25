@@ -286,7 +286,10 @@ export default function MultiplayerRoom() {
       setIsQuizSelectorVisible(true);
       return;
     }
-    multiplayerService.startGame(selectedQuiz.name);
+    multiplayerService.startGame({
+      name: selectedQuiz.name,
+      questions: selectedQuiz.questions,
+    });
   };
 
   const handleQuizSelection = (quiz: Quiz) => {
