@@ -132,7 +132,9 @@ export default function MultiplayerRoom() {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      await navigator.clipboard.writeText(
+        `${window.location.origin}/multiplayer/${code}`,
+      );
       setCopied(true);
     } catch (e) {
       // An insecure origin or a denied permission leaves the code visible.
