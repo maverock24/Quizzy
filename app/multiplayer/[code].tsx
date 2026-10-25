@@ -102,6 +102,22 @@ export default function MultiplayerRoom() {
   // Host-only state
   const [isQuizSelectorVisible, setIsQuizSelectorVisible] = useState(false);
 
+  // Copy and share state
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+  };
+
+  const handleShare = async () => {
+    if (typeof navigator !== 'undefined' && navigator.share) {
+      await navigator.share({
+        url: `${window.location.origin}/multiplayer/${code}`,
+      });
+    }
+  };
+
   const handleLeave = useCallback(() => {
     showAlert('Leave Game?', 'Are you sure you want to leave?', [
       { text: 'Cancel', style: 'cancel' },
@@ -501,6 +517,31 @@ export default function MultiplayerRoom() {
           <View style={styles.lobby}>
             <Text style={styles.title}>Room: {code}</Text>
 
+            {Platform.OS === 'web' && (
+              <View style={styles.roomCodeRow}>
+                <Text selectable style={styles.roomCode}>
+                  {code}
+                </Text>
+                <TouchableOpacity
+                  onPress={handleCopy}
+                  style={[styles.smallBtn, styles.secondaryBtn]}
+                >
+                  <Text style={styles.buttonText}>
+                    {copied ? 'Copied' : 'Copy'}
+                  </Text>
+                </TouchableOpacity>
+                {typeof navigator !== 'undefined' &&
+                  typeof navigator.share === 'function' && (
+                    <TouchableOpacity
+                      onPress={handleShare}
+                      style={[styles.smallBtn, styles.secondaryBtn]}
+                    >
+                      <Text style={styles.buttonText}>Share</Text>
+                    </TouchableOpacity>
+                  )}
+              </View>
+            )}
+
             <View style={styles.card}>
               <Text style={styles.subtitle}>Players:</Text>
               <View style={styles.playerList}>
@@ -667,6 +708,24 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 30,
     fontWeight: '700',
+  },
+  roomCodeRow: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 12,
+    marginBottom: 20,
+  },
+  roomCode: {
+    color: 'white',
+    fontSize: 28,
+    fontWeight: '800',
+    letterSpacing: 4,
+  },
+  smallBtn: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
   },
   subtitle: {
     color: 'white',
