@@ -20,6 +20,7 @@ export interface Player {
   totalQuestions: number; // total questions in quiz
   finished: boolean;
   finishTime?: number; // ms elapsed from game start
+  left: boolean; // departed; skipped by results and counted out of the room
 }
 
 export interface GameState {
@@ -188,6 +189,7 @@ class MultiplayerService {
               progress: 0,
               totalQuestions: 0,
               finished: false,
+              left: false,
             },
           ];
 
@@ -270,6 +272,7 @@ class MultiplayerService {
             progress: 0,
             totalQuestions: 0,
             finished: false,
+            left: false,
           };
           conn.send({ type: 'JOIN', player: myPlayer });
 
@@ -295,6 +298,9 @@ class MultiplayerService {
 
           conn.on('close', () => {
             console.log('Connection to host lost');
+            this.players = this.players.map((p) =>
+              p.isHost ? { ...p, left: true } : p,
+            );
             this.onPlayerLeftCallbacks.forEach((cb) => cb('host'));
           });
         });
@@ -397,14 +403,16 @@ class MultiplayerService {
 
     conn.on('close', () => {
       this.connections = this.connections.filter((c) => c.peer !== conn.peer);
-      const leftPlayer = this.players.find(
-        (p) =>
-          p.id === conn.peer ||
-          (!p.isHost && this.connections.every((c) => c.peer !== p.id)),
-      );
-      if (leftPlayer) {
-        this.onPlayerLeftCallbacks.forEach((cb) => cb(leftPlayer.id));
+      const index = this.players.findIndex((p) => p.id === conn.peer);
+      if (index === -1) {
+        // A connection that never got a slot (a refused third player) leaves
+        // without anybody having departed.
+        return;
       }
+      this.players[index] = { ...this.players[index], left: true };
+      const playerId = conn.peer;
+      this.onPlayerLeftCallbacks.forEach((cb) => cb(playerId));
+      this.broadcast({ type: 'PLAYER_LEFT', playerId });
     });
   }
 
@@ -485,6 +493,9 @@ class MultiplayerService {
         );
         break;
       case 'PLAYER_LEFT':
+        this.players = this.players.map((p) =>
+          p.id === msg.playerId ? { ...p, left: true } : p,
+        );
         this.onPlayerLeftCallbacks.forEach((cb) => cb(msg.playerId));
         break;
       case 'ROOM_FULL':
