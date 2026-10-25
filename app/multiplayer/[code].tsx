@@ -594,7 +594,14 @@ export default function MultiplayerRoom() {
                     <Text style={styles.playerText}>
                       {p.name} {p.isHost ? '👑' : ''}
                     </Text>
-                    <Text style={styles.readyText}>✅ Ready</Text>
+                    <Text
+                      style={[
+                        styles.readyText,
+                        p.left ? styles.leftText : null,
+                      ]}
+                    >
+                      {p.left ? 'Left' : '✅ Ready'}
+                    </Text>
                   </View>
                 ))}
                 {players.length < 2 && (
@@ -803,6 +810,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: 12,
     fontSize: 14,
+  },
+  leftText: {
+    color: 'rgba(255, 255, 255, 0.5)',
   },
   label: {
     color: 'rgba(255, 255, 255, 0.6)',
