@@ -74,4 +74,5 @@ const toQuizQuestion = ({
 /** Turn freshly generated problems into quiz questions with typed answers. */
 export const generateMultiplicationQuestions = (
   options: MultiplicationProblemOptions = {},
-): QuizQuestion[] => generateMultiplicationProblems(options).map(toQuizQuestion);
+): QuizQuestion[] =>
+  generateMultiplicationProblems(options).map(toQuizQuestion);
