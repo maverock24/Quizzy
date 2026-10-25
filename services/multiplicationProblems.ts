@@ -15,35 +15,46 @@ export type MultiplicationProblem = {
   product: number;
 };
 
+export type MultiplicationProblemOptions = {
+  count?: number;
+  minFactor?: number;
+  maxFactor?: number;
+  rng?: () => number;
+};
+
 /**
- * Build up to `count` distinct multiplication problems with factors in
- * `1..maxFactor`.
+ * Build `count` multiplication problems with both factors inside
+ * `minFactor..maxFactor`.
  *
- * Pure: pass a seeded `rng` to get a deterministic result (used by tests).
- * Ordered pairs are unique within a round, so a×b and b×a both count as
- * separate practice problems.
+ * Every ordered pair in the range is enumerated and shuffled with `rng`, so
+ * a×b and b×a both count as separate practice problems. Once the pair list is
+ * exhausted the problems repeat from the top of the shuffle. Pure: pass a
+ * seeded `rng` to get a deterministic result (used by tests).
  */
-export const generateMultiplicationProblems = (
-  count: number = MULTIPLICATION_QUESTION_COUNT,
-  maxFactor: number = MAX_MULTIPLICATION_FACTOR,
-  rng: () => number = Math.random,
-): MultiplicationProblem[] => {
-  const target = Math.min(count, maxFactor * maxFactor);
-  const seen = new Set<string>();
+export const generateMultiplicationProblems = ({
+  count = MULTIPLICATION_QUESTION_COUNT,
+  minFactor = 1,
+  maxFactor = MAX_MULTIPLICATION_FACTOR,
+  rng = Math.random,
+}: MultiplicationProblemOptions = {}): MultiplicationProblem[] => {
+  const lo = Math.min(minFactor, maxFactor);
+  const hi = Math.max(minFactor, maxFactor);
+
+  const pairs: MultiplicationProblem[] = [];
+  for (let a = lo; a <= hi; a++) {
+    for (let b = lo; b <= hi; b++) {
+      pairs.push({ a, b, product: a * b });
+    }
+  }
+
+  for (let i = pairs.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [pairs[i], pairs[j]] = [pairs[j], pairs[i]];
+  }
+
   const problems: MultiplicationProblem[] = [];
-  // Guards against a degenerate rng that keeps producing the same pair.
-  const maxAttempts = target * 50;
-
-  for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    if (problems.length >= target) break;
-
-    const a = Math.floor(rng() * maxFactor) + 1;
-    const b = Math.floor(rng() * maxFactor) + 1;
-    const key = `${a}x${b}`;
-    if (seen.has(key)) continue;
-
-    seen.add(key);
-    problems.push({ a, b, product: a * b });
+  for (let i = 0; i < count; i++) {
+    problems.push(pairs[i % pairs.length]);
   }
 
   return problems;
@@ -62,7 +73,5 @@ const toQuizQuestion = ({
 
 /** Turn freshly generated problems into quiz questions with typed answers. */
 export const generateMultiplicationQuestions = (
-  count?: number,
-  maxFactor?: number,
-): QuizQuestion[] =>
-  generateMultiplicationProblems(count, maxFactor).map(toQuizQuestion);
+  options: MultiplicationProblemOptions = {},
+): QuizQuestion[] => generateMultiplicationProblems(options).map(toQuizQuestion);
