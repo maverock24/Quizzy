@@ -57,6 +57,36 @@ describe('presence', () => {
     });
   });
 
+  test('a second poll while the first is unresolved is skipped', async () => {
+    let resolveFetch;
+    fetchMock.mockImplementation(
+      () =>
+        new Promise((resolve) => {
+          resolveFetch = resolve;
+        }),
+    );
+
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+
+    // The ten second tick lands while the first heartbeat is still unresolved.
+    jest.advanceTimersByTime(10000);
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+
+    resolveFetch(lobbyResponse());
+    await flush();
+
+    // Once the first poll settles, the next tick is free to poll again.
+    jest.advanceTimersByTime(10000);
+    await flush();
+
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+  });
+
   test('a rejected poll keeps the interval running and throws nothing', async () => {
     fetchMock.mockRejectedValueOnce(new Error('network down'));
 

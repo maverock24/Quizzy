@@ -41,6 +41,7 @@ class PresenceService {
 
   private pollInterval: NodeJS.Timeout | null = null;
   private isPolling = false;
+  private pollInFlight = false;
 
   connect(peerId: string, name: string) {
     this.myPeerId = peerId;
@@ -101,6 +102,8 @@ class PresenceService {
 
   private async poll() {
     if (!this.myPeerId || !this.myName) return;
+    if (this.pollInFlight) return;
+    this.pollInFlight = true;
 
     try {
       const response = await fetch(LOBBY_API_URL, {
@@ -122,6 +125,8 @@ class PresenceService {
       this.processIncomingData(data);
     } catch (error) {
       console.warn('Lobby poll failed:', error);
+    } finally {
+      this.pollInFlight = false;
     }
   }
 
