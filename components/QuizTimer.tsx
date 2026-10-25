@@ -1,22 +1,32 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Text, StyleSheet, Animated } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { remainingSeconds } from '@/services/timedRound';
 
 type QuizTimerProps = {
   durationMinutes: number;
   onTimeUp: () => void;
   isActive: boolean;
+  /** Absolute deadline in ms. When set, this component is a pure display. */
+  deadline?: number;
 };
 
 export const QuizTimer: React.FC<QuizTimerProps> = ({
   durationMinutes,
   onTimeUp,
   isActive,
+  deadline,
 }) => {
   const [timeRemaining, setTimeRemaining] = useState(durationMinutes * 60); // Convert to seconds
+  // Bumped once a second in deadline mode to force a re-render; the value is unused.
+  const [, setClockTick] = useState(0);
   const pulseAnim = useRef(new Animated.Value(1)).current;
-  const isWarning = timeRemaining <= 30; // Last 30 seconds warning
-  const isCritical = timeRemaining <= 10; // Last 10 seconds critical
+  const secondsLeft =
+    deadline === undefined
+      ? timeRemaining
+      : remainingSeconds(deadline, Date.now());
+  const isWarning = secondsLeft <= 30; // Last 30 seconds warning
+  const isCritical = secondsLeft <= 10; // Last 10 seconds critical
 
   // Reset timer when duration changes or becomes active
   useEffect(() => {
@@ -25,8 +35,9 @@ export const QuizTimer: React.FC<QuizTimerProps> = ({
     }
   }, [durationMinutes, isActive]);
 
-  // Countdown timer
+  // Countdown timer (count mode only; a deadline means the parent owns the clock)
   useEffect(() => {
+    if (deadline !== undefined) return;
     if (!isActive || timeRemaining <= 0) return;
 
     const interval = setInterval(() => {
@@ -41,7 +52,19 @@ export const QuizTimer: React.FC<QuizTimerProps> = ({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [isActive, timeRemaining, onTimeUp]);
+  }, [deadline, isActive, timeRemaining, onTimeUp]);
+
+  // Deadline mode is display only: tick to re-render, never count down, never
+  // call onTimeUp.
+  useEffect(() => {
+    if (deadline === undefined) return;
+
+    const interval = setInterval(() => {
+      setClockTick((tick) => tick + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [deadline]);
 
   // Pulse animation for warning state
   useEffect(() => {
@@ -100,7 +123,7 @@ export const QuizTimer: React.FC<QuizTimerProps> = ({
           isWarning && !isCritical && styles.timerTextWarning,
         ]}
       >
-        {formatTime(timeRemaining)}
+        {formatTime(secondsLeft)}
       </Text>
     </Animated.View>
   );
