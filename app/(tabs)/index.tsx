@@ -553,7 +553,7 @@ export default function TabOneScreen() {
           initialFrom={multiplicationRange.from}
           initialTo={multiplicationRange.to}
           onCancel={() => setRangeSheetQuiz(null)}
-          onConfirm={(from, to) => {
+          onConfirm={({ from, to }) => {
             const quiz = rangeSheetQuiz;
             setMultiplicationRange({ from, to });
             setRangeSheetQuiz(null);

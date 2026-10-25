@@ -4,15 +4,23 @@ import { Picker } from '@react-native-picker/picker';
 import { useTranslation } from 'react-i18next';
 import {
   MAX_MULTIPLICATION_FACTOR,
-  MultiplicationRange,
   setRangeBound,
 } from '@/services/multiplicationProblems';
+import { DEFAULT_ROUND_MINUTES } from '@/services/timedRound';
+import type { RoundMode } from '@/services/timedRound';
+
+export type MultiplicationRoundSelection = {
+  from: number;
+  to: number;
+  mode: RoundMode;
+  minutes: number;
+};
 
 type MultiplicationRangeSheetProps = {
   initialFrom: number;
   initialTo: number;
   onCancel: () => void;
-  onConfirm: (from: number, to: number) => void;
+  onConfirm: (selection: MultiplicationRoundSelection) => void;
 };
 
 const FACTOR_ITEMS = Array.from(
@@ -22,29 +30,52 @@ const FACTOR_ITEMS = Array.from(
   ),
 );
 
+const DURATION_MINUTES = [1, 2, 3, 5, 10];
+
+const MODE_OPTIONS: { mode: RoundMode; labelKey: string }[] = [
+  { mode: 'count', labelKey: 'multiplication_mode_count' },
+  { mode: 'timed', labelKey: 'multiplication_mode_timed' },
+];
+
 export const MultiplicationRangeSheet: React.FC<
   MultiplicationRangeSheetProps
 > = ({ initialFrom, initialTo, onCancel, onConfirm }) => {
   const { t } = useTranslation();
   // The sheet is mounted per open, so the draft starts from the committed range.
-  const [draft, setDraft] = useState<MultiplicationRange>({
+  const [draft, setDraft] = useState<MultiplicationRoundSelection>({
     from: initialFrom,
     to: initialTo,
+    mode: 'count',
+    minutes: DEFAULT_ROUND_MINUTES,
   });
 
   // The web picker emits strings (e.target.value), so both handlers accept
-  // number | string and let setRangeBound do the coercion.
+  // number | string and let setRangeBound do the coercion. setRangeBound returns
+  // a fresh { from, to }, so the spread keeps mode and minutes alive.
   const handleFromChange = (value: number | string) => {
-    setDraft((prev) => setRangeBound(prev, 'from', value));
+    setDraft((prev) => ({ ...prev, ...setRangeBound(prev, 'from', value) }));
   };
 
   const handleToChange = (value: number | string) => {
-    setDraft((prev) => setRangeBound(prev, 'to', value));
+    setDraft((prev) => ({ ...prev, ...setRangeBound(prev, 'to', value) }));
   };
+
+  const handleMinutesChange = (value: number | string) => {
+    setDraft((prev) => ({ ...prev, minutes: Number(value) }));
+  };
+
+  const durationItems = DURATION_MINUTES.map((minutes) => (
+    <Picker.Item
+      key={minutes}
+      label={`${minutes} ${t('minutes')}`}
+      value={minutes}
+    />
+  ));
 
   const renderPicker = (
     value: number,
     onChange: (next: number | string) => void,
+    items = FACTOR_ITEMS,
   ) => (
     <View style={styles.pickerWrapper}>
       <Picker
@@ -53,7 +84,7 @@ export const MultiplicationRangeSheet: React.FC<
         style={styles.picker}
         dropdownIconColor="black"
       >
-        {FACTOR_ITEMS}
+        {items}
       </Picker>
     </View>
   );
@@ -63,6 +94,42 @@ export const MultiplicationRangeSheet: React.FC<
       <View style={styles.overlay}>
         <View style={styles.card}>
           <Text style={styles.title}>{t('multiplication_quiz_name')}</Text>
+          <View style={styles.row}>
+            <Text style={styles.label}>{t('multiplication_mode')}</Text>
+            <View style={styles.modeOptions}>
+              {MODE_OPTIONS.map(({ mode, labelKey }) => {
+                const selected = draft.mode === mode;
+                return (
+                  <Pressable
+                    key={mode}
+                    onPress={() => setDraft((prev) => ({ ...prev, mode }))}
+                    style={[
+                      styles.button,
+                      styles.modeOption,
+                      !selected && styles.modeOptionInactive,
+                    ]}
+                    accessibilityRole="button"
+                    accessibilityState={{ selected }}
+                  >
+                    <Text
+                      style={[
+                        styles.buttonText,
+                        !selected && styles.modeTextInactive,
+                      ]}
+                    >
+                      {t(labelKey)}
+                    </Text>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </View>
+          {draft.mode === 'timed' && (
+            <View style={styles.row}>
+              <Text style={styles.label}>{t('multiplication_duration')}</Text>
+              {renderPicker(draft.minutes, handleMinutesChange, durationItems)}
+            </View>
+          )}
           <View style={styles.row}>
             <Text style={styles.label}>{t('multiplication_range_from')}</Text>
             {renderPicker(draft.from, handleFromChange)}
@@ -80,7 +147,7 @@ export const MultiplicationRangeSheet: React.FC<
               <Text style={styles.buttonText}>{t('cancel', 'Abbrechen')}</Text>
             </Pressable>
             <Pressable
-              onPress={() => onConfirm(draft.from, draft.to)}
+              onPress={() => onConfirm({ ...draft })}
               style={styles.button}
               accessibilityRole="button"
             >
@@ -123,6 +190,23 @@ const styles = StyleSheet.create({
     flex: 1,
     color: 'black',
     fontSize: 16,
+  },
+  modeOptions: {
+    flex: 1,
+    flexDirection: 'row',
+    gap: 8,
+  },
+  modeOption: {
+    flex: 1,
+    marginVertical: 0,
+    borderWidth: 2,
+    borderColor: 'rgb(86, 92, 99)',
+  },
+  modeOptionInactive: {
+    backgroundColor: 'white',
+  },
+  modeTextInactive: {
+    color: 'rgb(86, 92, 99)',
   },
   pickerWrapper: {
     flex: 1,
