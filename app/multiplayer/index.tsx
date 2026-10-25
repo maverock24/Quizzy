@@ -145,7 +145,7 @@ export default function MultiplayerHome() {
       }
     } catch (error) {
       console.error(error);
-      showAlert('Error', 'Something went wrong');
+      showAlert('Cannot create a room', failureMessage('could-not-create'));
     } finally {
       setIsCreating(false);
     }
@@ -154,8 +154,13 @@ export default function MultiplayerHome() {
   const handleJoinRoom = async (codeToJoin: string) => {
     const target = normalizeRoomCode(codeToJoin);
 
-    if (!name.trim() || !target) {
+    if (!name.trim()) {
       showAlert('Required', 'Please enter your name');
+      return;
+    }
+
+    if (!target) {
+      showAlert('Required', 'Enter the room code');
       return;
     }
 
@@ -175,7 +180,7 @@ export default function MultiplayerHome() {
       }
     } catch (error) {
       console.error(error);
-      showAlert('Error', 'Could not join room');
+      showAlert('Cannot join', failureMessage('connect-failed'));
     } finally {
       setIsJoining(false);
     }
@@ -202,7 +207,7 @@ export default function MultiplayerHome() {
       }
     } catch (e) {
       console.error(e);
-      showAlert('Error', 'Failed to send invite');
+      showAlert('Cannot send invite', failureMessage('network'));
     } finally {
       setIsCreating(false);
     }
