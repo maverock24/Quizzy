@@ -90,6 +90,48 @@ describe('rejoin', () => {
     return { peer, connection, join };
   };
 
+  // The host plus one joined client, which has already departed. The slot it
+  // left behind holds a score and a progress, which a rejoin has to keep.
+  const startHostWithDepartedClient = async () => {
+    const peer = makePeer();
+    Peer.mockReturnValue(peer);
+    const promise = multiplayerService.createRoom('Ada');
+    peer.handlers.open('quizzy-ABC234');
+    await promise;
+
+    const sender = makeConnection('peer-a');
+    peer.handlers.connection(sender);
+    sender.handlers.data({
+      type: 'JOIN',
+      player: player('peer-a', {
+        name: 'Ana',
+        token: 'token-ana',
+        score: 3,
+        progress: 4,
+        totalQuestions: 10,
+      }),
+    });
+    sender.send.mockClear();
+    sender.handlers.close();
+
+    return { peer, sender };
+  };
+
+  // A new connection sending one JOIN, as a client does on open.
+  const joinAs = (peer, peerId, overrides = {}) => {
+    const conn = makeConnection(peerId);
+    peer.handlers.connection(conn);
+    conn.handlers.data({
+      type: 'JOIN',
+      player: player(peerId, {
+        name: 'Ana',
+        token: 'token-ana',
+        ...overrides,
+      }),
+    });
+    return conn;
+  };
+
   it('sends a non-empty token in the JOIN', async () => {
     const { join } = await joinOnce('Ana');
 
@@ -104,6 +146,82 @@ describe('rejoin', () => {
 
     expect(first.join.player.token).toMatch(/^token-/);
     expect(second.join.player.token).toBe(first.join.player.token);
+  });
+
+  it('revives the entry on a rejoin with a known token', async () => {
+    const { peer } = await startHostWithDepartedClient();
+
+    joinAs(peer, 'peer-a2');
+
+    const ana = multiplayerService
+      .getPlayers()
+      .find((p) => p.token === 'token-ana');
+    expect(ana).toBeDefined();
+    expect(ana.id).toBe('peer-a2');
+    expect(ana.name).toBe('Ana');
+    expect(ana.left).toBe(false);
+    expect(ana.isHost).toBe(false);
+    // The stats the slot held survive the rejoin.
+    expect(ana.score).toBe(3);
+    expect(ana.progress).toBe(4);
+    expect(ana.totalQuestions).toBe(10);
+  });
+
+  it('keeps the player count at two after a rejoin', async () => {
+    const { peer } = await startHostWithDepartedClient();
+
+    const rejoiner = joinAs(peer, 'peer-a2');
+
+    expect(multiplayerService.getPlayers()).toHaveLength(2);
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
+      'host',
+      'peer-a2',
+    ]);
+
+    const welcome = rejoiner.send.mock.calls
+      .map(([msg]) => msg)
+      .find((msg) => msg.type === 'WELCOME');
+    expect(welcome.players).toHaveLength(2);
+    expect(welcome.players.find((p) => p.id === 'peer-a2').score).toBe(3);
+  });
+
+  it('treats a rejoin after the grace as a new player and refuses it', async () => {
+    const { peer } = await startHostWithDepartedClient();
+
+    jest.advanceTimersByTime(60000);
+    // The slot is final: its token is gone.
+    expect(
+      multiplayerService.getPlayers().find((p) => p.id === 'peer-a').token,
+    ).toBe('');
+
+    // Somebody else takes the free place, so the room holds two connected.
+    joinAs(peer, 'peer-c', { name: 'Cal', token: 'token-cal' });
+
+    const late = joinAs(peer, 'peer-a2');
+
+    expect(late.send).toHaveBeenCalledWith({ type: 'ROOM_FULL' });
+    expect(late.close).toHaveBeenCalledTimes(1);
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
+      'host',
+      'peer-a',
+      'peer-c',
+    ]);
+  });
+
+  it('clears the grace timer when the slot is revived', async () => {
+    const { peer } = await startHostWithDepartedClient();
+    expect(jest.getTimerCount()).toBe(1);
+
+    joinAs(peer, 'peer-a2');
+    expect(jest.getTimerCount()).toBe(0);
+
+    // Nothing is left to fire, so the revived slot keeps its token and score.
+    jest.advanceTimersByTime(60000);
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a2');
+    expect(ana.token).toBe('token-ana');
+    expect(ana.left).toBe(false);
+    expect(ana.score).toBe(3);
   });
 
   it('reads a token already in sessionStorage', () => {

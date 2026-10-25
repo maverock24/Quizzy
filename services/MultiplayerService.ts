@@ -4,12 +4,17 @@ import {
   MultiplayerFailure,
   failureFromPeerError,
 } from './multiplayerFailures';
-import { isSenderAllowed, connectedCount } from './multiplayerRules';
+import {
+  isSenderAllowed,
+  connectedCount,
+  findJoinTarget,
+} from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
 
 const JOIN_TIMEOUT_MS = 8000;
 const CREATE_TIMEOUT_MS = 10000;
 const MAX_ROOM_CODE_ATTEMPTS = 3;
+const REJOIN_GRACE_MS = 60000;
 
 export interface Player {
   id: string;
@@ -72,6 +77,9 @@ class MultiplayerService {
   private playerName: string | null = null;
   private roomId: string | null = null;
 
+  // A departed slot is held open for a rejoin until its grace timer fires.
+  private graceTimers = new Map<string, ReturnType<typeof setTimeout>>();
+
   // Game State (Host Authority)
   private players: Player[] = [];
   private gameState: GameState = { status: 'waiting', currentQuestionIndex: 0 };
@@ -112,6 +120,8 @@ class MultiplayerService {
       }
     });
     this.connections = [];
+    this.graceTimers.forEach((timer) => clearTimeout(timer));
+    this.graceTimers.clear();
     if (this.peer) {
       try {
         this.peer.destroy();
@@ -329,28 +339,55 @@ class MultiplayerService {
     conn.on('data', (data: unknown) => {
       const msg = data as Message;
       if (msg.type === 'JOIN') {
-        const existing = this.players.find((p) => p.id === msg.player.id);
-        if (!existing && connectedCount(this.players) >= 2) {
+        // The token is matched before the peer id, so a rejoin revives the
+        // departed entry instead of adding a third player (D18).
+        const incoming = msg.player;
+        const target = findJoinTarget(
+          this.players,
+          incoming.token ?? '',
+          incoming.id,
+        );
+        if (target === -1 && connectedCount(this.players) >= 2) {
           conn.send({ type: 'ROOM_FULL' });
           conn.close();
           return;
         }
-        const newPlayer = { ...msg.player, isHost: false };
-        if (!this.players.find((p) => p.id === newPlayer.id)) {
-          this.players.push(newPlayer);
-          this.notifyPlayerJoin(newPlayer);
 
-          // Send WELCOME to new player
-          conn.send({
-            type: 'WELCOME',
-            players: this.players,
-            state: this.gameState,
-            quizId: this.gameState.quizId,
-          });
-
-          // Broadcast new player to others
-          this.broadcast({ type: 'JOIN', player: newPlayer }, conn.peer);
+        let joined: Player;
+        if (target === -1) {
+          joined = { ...incoming, isHost: false, left: false };
+          this.players.push(joined);
+        } else {
+          // Revive the old entry, so score, progress, totalQuestions,
+          // finished and finishTime survive the rejoin.
+          const previous = this.players[target];
+          const timer = this.graceTimers.get(previous.id);
+          if (timer) {
+            clearTimeout(timer);
+            this.graceTimers.delete(previous.id);
+          }
+          joined = {
+            ...previous,
+            id: incoming.id,
+            name: incoming.name,
+            token: incoming.token ?? '',
+            left: false,
+          };
+          this.players[target] = joined;
         }
+
+        this.notifyPlayerJoin(joined);
+
+        // Send WELCOME to the joining player
+        conn.send({
+          type: 'WELCOME',
+          players: this.players,
+          state: this.gameState,
+          quizId: this.gameState.quizId,
+        });
+
+        // Broadcast the player to others
+        this.broadcast({ type: 'JOIN', player: joined }, conn.peer);
       } else if (msg.type === 'SCORE_UPDATE') {
         if (!isSenderAllowed(msg.playerId, conn.peer)) {
           this.dropForeignUpdate(msg, conn);
@@ -417,6 +454,23 @@ class MultiplayerService {
       const playerId = conn.peer;
       this.onPlayerLeftCallbacks.forEach((cb) => cb(playerId));
       this.broadcast({ type: 'PLAYER_LEFT', playerId });
+
+      // Hold the slot for a minute so a rejoin with the same token revives it.
+      // At expiry the slot is final: the token is cleared and nothing is
+      // broadcast, because the others already marked the player gone.
+      const previousTimer = this.graceTimers.get(playerId);
+      if (previousTimer) {
+        clearTimeout(previousTimer);
+      }
+      this.graceTimers.set(
+        playerId,
+        setTimeout(() => {
+          this.graceTimers.delete(playerId);
+          this.players = this.players.map((p) =>
+            p.id === playerId && p.left ? { ...p, token: '' } : p,
+          );
+        }, REJOIN_GRACE_MS),
+      );
     });
   }
 
