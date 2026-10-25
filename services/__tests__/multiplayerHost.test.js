@@ -177,4 +177,40 @@ describe('host authority', () => {
       'Dropped PLAYER_FINISH from peer-a naming peer-b',
     );
   });
+
+  it('answers a third JOIN with ROOM_FULL and closes the connection', async () => {
+    await startHostWithAJoinedClient();
+    const third = connect('peer-c');
+
+    third.handlers.data({
+      type: 'JOIN',
+      player: player('peer-c', { name: 'Cal' }),
+    });
+
+    expect(third.send).toHaveBeenCalledTimes(1);
+    expect(third.send).toHaveBeenCalledWith({ type: 'ROOM_FULL' });
+    expect(third.close).toHaveBeenCalledTimes(1);
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
+      'host',
+      'peer-a',
+    ]);
+  });
+
+  it('resolves room-full on the joiner that receives ROOM_FULL', async () => {
+    const client = makePeer();
+    const connection = makeConnection('quizzy-ABC234');
+    client.connect = jest.fn(() => connection);
+    Peer.mockReturnValue(client);
+
+    const promise = multiplayerService.joinRoom('ABC234', 'Ana');
+    client.handlers.open('peer-me');
+    connection.handlers.open();
+    connection.handlers.data({ type: 'ROOM_FULL' });
+
+    await expect(promise).resolves.toEqual({
+      ok: false,
+      failure: 'room-full',
+    });
+    expect(jest.getTimerCount()).toBe(0);
+  });
 });

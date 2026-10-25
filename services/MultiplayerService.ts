@@ -4,7 +4,7 @@ import {
   MultiplayerFailure,
   failureFromPeerError,
 } from './multiplayerFailures';
-import { isSenderAllowed } from './multiplayerRules';
+import { isSenderAllowed, connectedCount } from './multiplayerRules';
 
 const JOIN_TIMEOUT_MS = 8000;
 const CREATE_TIMEOUT_MS = 10000;
@@ -56,7 +56,8 @@ type Message =
       score: number;
       finishTime: number;
     }
-  | { type: 'PLAYER_LEFT'; playerId: string };
+  | { type: 'PLAYER_LEFT'; playerId: string }
+  | { type: 'ROOM_FULL' };
 
 class MultiplayerService {
   private peer: Peer | null = null;
@@ -275,6 +276,10 @@ class MultiplayerService {
           // Handle incoming data — resolve on WELCOME
           conn.on('data', (data) => {
             const msg = data as Message;
+            if (msg.type === 'ROOM_FULL') {
+              // Refused by the host: the room already holds two players.
+              settle({ ok: false, failure: 'room-full' });
+            }
             if (msg.type === 'WELCOME') {
               this.players = msg.players;
               this.gameState = msg.state;
@@ -314,6 +319,12 @@ class MultiplayerService {
     conn.on('data', (data: unknown) => {
       const msg = data as Message;
       if (msg.type === 'JOIN') {
+        const existing = this.players.find((p) => p.id === msg.player.id);
+        if (!existing && connectedCount(this.players) >= 2) {
+          conn.send({ type: 'ROOM_FULL' });
+          conn.close();
+          return;
+        }
         const newPlayer = { ...msg.player, isHost: false };
         if (!this.players.find((p) => p.id === newPlayer.id)) {
           this.players.push(newPlayer);
@@ -475,6 +486,9 @@ class MultiplayerService {
         break;
       case 'PLAYER_LEFT':
         this.onPlayerLeftCallbacks.forEach((cb) => cb(msg.playerId));
+        break;
+      case 'ROOM_FULL':
+        // Settled in joinRoom's data handler; nothing to apply here.
         break;
     }
   }
