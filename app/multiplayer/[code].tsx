@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import {
   View,
   StyleSheet,
   Text,
+  TextInput,
   ScrollView,
   BackHandler,
   ActivityIndicator,
@@ -119,6 +120,12 @@ export default function MultiplayerRoom() {
   const [rejoinError, setRejoinError] = useState('');
   // Bumped after a join, because joinRoom destroys the old listeners
   const [sessionEpoch, setSessionEpoch] = useState(0);
+
+  // Deep-link state: a room link without a name asks for one before joining
+  const [needsName, setNeedsName] = useState(false);
+  const [typedName, setTypedName] = useState('');
+  // A link joins once on mount, not on every render this effect re-runs on
+  const joinedOnMount = useRef(false);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
@@ -283,11 +290,27 @@ export default function MultiplayerRoom() {
       setPlayers(result.players);
       setGameState(result.gameState);
       setHostGone(false);
+      setNeedsName(false);
       setSessionEpoch((epoch) => epoch + 1);
     } else {
       setRejoinError(failureMessage(result.failure));
     }
   };
+
+  // A room link is a session start, so it joins once on mount. The players
+  // guard keeps the create-then-push and join-then-push flows from joining a
+  // second time (D8).
+  useEffect(() => {
+    if (isHost || joinedOnMount.current) return;
+    if (multiplayerService.getPlayers().length > 0) return;
+    joinedOnMount.current = true;
+    const queryName = typeof nameParam === 'string' ? nameParam.trim() : '';
+    if (!queryName) {
+      setNeedsName(true);
+      return;
+    }
+    void handleEnterRoom(queryName);
+  }, [isHost, nameParam, handleEnterRoom]);
 
   const handleStartGame = () => {
     if (!selectedQuiz) {
@@ -553,6 +576,57 @@ export default function MultiplayerRoom() {
     );
   }
 
+  // RENDER: NAME (a room link that arrived without one)
+  if (needsName) {
+    return (
+      <View style={styles.outerContainer}>
+        <SafeAreaLinearGradient
+          colors={['rgb(63, 82, 108)', 'rgb(29, 40, 54)']}
+          style={styles.safeArea}
+        >
+          <View style={styles.container}>
+            <View style={styles.lobby}>
+              <View style={styles.card}>
+                <Text style={styles.subtitle}>Enter your name to join</Text>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Enter your name"
+                  value={typedName}
+                  onChangeText={setTypedName}
+                  placeholderTextColor="rgba(255,255,255,0.4)"
+                  returnKeyType="go"
+                  onSubmitEditing={() => handleEnterRoom(typedName)}
+                />
+                <TouchableOpacity
+                  onPress={() => handleEnterRoom(typedName)}
+                  disabled={typedName.trim().length === 0}
+                  style={[
+                    styles.button,
+                    styles.primaryBtn,
+                    typedName.trim().length === 0 && styles.disabledBtn,
+                  ]}
+                >
+                  <Text style={styles.buttonText}>Join</Text>
+                </TouchableOpacity>
+                {rejoinError !== '' && (
+                  <>
+                    <Text style={styles.rejoinError}>{rejoinError}</Text>
+                    <TouchableOpacity
+                      onPress={() => handleEnterRoom(typedName)}
+                      style={[styles.button, styles.secondaryBtn]}
+                    >
+                      <Text style={styles.buttonText}>Try again</Text>
+                    </TouchableOpacity>
+                  </>
+                )}
+              </View>
+            </View>
+          </View>
+        </SafeAreaLinearGradient>
+      </View>
+    );
+  }
+
   // RENDER: LOBBY (waiting)
   // A departed player keeps its slot for a minute, so every start or full
   // decision counts only the players who are still here.
@@ -787,6 +861,16 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '800',
     letterSpacing: 4,
+  },
+  input: {
+    borderColor: 'rgba(255, 255, 255, 0.15)',
+    borderWidth: 1,
+    borderRadius: 12,
+    padding: 16,
+    color: 'white',
+    fontSize: 16,
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    width: '100%',
   },
   smallBtn: {
     paddingHorizontal: 16,
