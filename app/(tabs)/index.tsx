@@ -113,6 +113,10 @@ export default function TabOneScreen() {
   const { addWrongAnswer, recordCorrectAnswer, getTodoByQuestion } =
     useLearningTodos();
   const quizStartTime = useRef<number>(Date.now());
+  // One-shot latch: the deadline interval ticks every second, so two ticks can
+  // both observe zero before the state commit tears the interval down. The
+  // round must be reported exactly once.
+  const timedRoundEnded = useRef<boolean>(false);
 
   // Track wrong answers during this quiz session
   const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<
@@ -203,6 +207,7 @@ export default function TabOneScreen() {
     setTimeExpired(false);
     setRoundMode(round.mode);
     setRoundMinutes(round.minutes);
+    timedRoundEnded.current = false;
     setRoundDeadline(
       round.mode === 'timed'
         ? computeDeadline(round.minutes, Date.now())
@@ -317,6 +322,8 @@ export default function TabOneScreen() {
   // End a timed round: a finished round, not a loss (D1). Reachable only from
   // the deadline interval below and the deadline QuizTimer.
   const handleTimedRoundEnd = useCallback(() => {
+    if (timedRoundEnded.current) return;
+    timedRoundEnded.current = true;
     setRoundDeadline(null);
     setTotalWonGames(totalWonGames + 1);
     onQuizComplete(
