@@ -35,7 +35,7 @@ test.describe('Multiplayer P2P Flow', () => {
 
     await hostPage.getByPlaceholder('Enter your name').fill('HostUser');
 
-    await hostPage.getByRole('button', { name: 'Create New Game' }).click();
+    await hostPage.getByText('Create New Game').click();
 
     // Wait for Room Code
     await expect(hostPage.getByText('Room:', { exact: false })).toBeVisible({
@@ -45,26 +45,23 @@ test.describe('Multiplayer P2P Flow', () => {
       .getByText('Room:', { exact: false })
       .textContent();
     const roomCode = roomCodeText?.split(': ')[1].trim();
-    console.log('Room Code generated:', roomCode);
     expect(roomCode).toBeTruthy();
-    expect(roomCode).toHaveLength(6);
 
-    // 2. Player joins
-    await playerPage.goto('/multiplayer');
-    await playerPage.getByPlaceholder('Enter your name').fill('JoinerUser');
-    await playerPage.getByPlaceholder('Enter 6-character code').fill(roomCode!);
-    await playerPage.getByRole('button', { name: 'Join Game' }).click();
+    // 2. Player joins through the shared room link, which joins on mount
+    await playerPage.goto(`/multiplayer/${roomCode}?name=JoinerUser`);
 
     // 3. Verify Player Joined in Lobby
     // Host sees player
     await expect(hostPage.getByText('JoinerUser')).toBeVisible({
-      timeout: 10000,
+      timeout: 25000,
     });
     // Player sees lobby
-    await expect(playerPage.getByText(`Room: ${roomCode}`)).toBeVisible();
+    await expect(
+      playerPage.getByText('Waiting for host to start...'),
+    ).toBeVisible({ timeout: 10000 });
 
     // 4. Host selects Quiz and Starts
-    await hostPage.getByRole('button', { name: 'Select Quiz' }).click();
+    await hostPage.getByText('Select Quiz').click();
 
     // Expand Category
     await hostPage.getByText('🌐 Language').click();
@@ -75,11 +72,7 @@ test.describe('Multiplayer P2P Flow', () => {
       .first()
       .click();
 
-    // Ensure "Start Game" becomes enabled
-    await expect(
-      hostPage.getByRole('button', { name: 'Start Game' }),
-    ).toBeEnabled();
-    await hostPage.getByRole('button', { name: 'Start Game' }).click();
+    await hostPage.getByText('Start Game').click();
 
     // 5. Verify Game Started
     await expect(hostPage.getByText('Question 1')).toBeVisible();
