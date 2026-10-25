@@ -124,19 +124,32 @@ export default function MultiplayerRoom() {
   // Deep-link state: a room link without a name asks for one before joining
   const [needsName, setNeedsName] = useState(false);
   const [typedName, setTypedName] = useState('');
+  // The name this session actually joined with, so a rejoin carries it even
+  // when the link had none
+  const [joinedName, setJoinedName] = useState('');
   // A link joins once on mount, not on every render this effect re-runs on
   const joinedOnMount = useRef(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(code);
-    setCopied(true);
+    try {
+      await navigator.clipboard.writeText(code);
+      setCopied(true);
+    } catch (e) {
+      // An insecure origin or a denied permission leaves the code visible.
+      console.error(e);
+    }
   };
 
   const handleShare = async () => {
     if (typeof navigator !== 'undefined' && navigator.share) {
-      await navigator.share({
-        url: `${window.location.origin}/multiplayer/${code}`,
-      });
+      try {
+        await navigator.share({
+          url: `${window.location.origin}/multiplayer/${code}`,
+        });
+      } catch (e) {
+        // A cancelled or unsupported share leaves the lobby as it was.
+        console.error(e);
+      }
     }
   };
 
@@ -287,6 +300,17 @@ export default function MultiplayerRoom() {
     setRejoinError('');
     const result = await multiplayerService.joinRoom(code, enteringName);
     if (result.ok) {
+      // A rejoin has to resume from the entry the host kept, or the next
+      // answer would overwrite the score it holds with a lower one (D18).
+      const mine = result.players.find(
+        (p) => p.id === multiplayerService.getPlayerId(),
+      );
+      if (mine) {
+        setScore(mine.score);
+        setCurrentQuestionIndex(mine.progress);
+        setMyFinished(mine.finished);
+      }
+      setJoinedName(enteringName);
       setPlayers(result.players);
       setGameState(result.gameState);
       setHostGone(false);
@@ -491,7 +515,7 @@ export default function MultiplayerRoom() {
                   The host connection dropped.
                 </Text>
                 <TouchableOpacity
-                  onPress={() => handleEnterRoom(nameParam)}
+                  onPress={() => handleEnterRoom(joinedName)}
                   style={[styles.button, styles.primaryBtn]}
                 >
                   <Text style={styles.buttonText}>Rejoin</Text>
@@ -529,32 +553,40 @@ export default function MultiplayerRoom() {
             {/* Opponent Progress Bar */}
             {opponent && (
               <View style={styles.opponentTracker}>
-                <View style={styles.opponentInfo}>
-                  <Text style={styles.opponentName}>⚔️ {opponent.name}</Text>
-                  <Text style={styles.opponentScore}>
-                    {opponent.score} correct • Q
-                    {Math.min(
-                      opponent.progress + 1,
-                      opponent.totalQuestions || randomizedQuestions.length,
-                    )}
-                    /{opponent.totalQuestions || randomizedQuestions.length}
-                  </Text>
-                </View>
-                <View style={styles.progressBarBg}>
-                  <View
-                    style={[
-                      styles.progressBarFill,
-                      {
-                        width: `${
-                          (opponent.progress /
-                            (opponent.totalQuestions ||
-                              randomizedQuestions.length)) *
-                          100
-                        }%`,
-                      },
-                    ]}
-                  />
-                </View>
+                {opponent.left ? (
+                  <Text style={styles.opponentName}>Opponent left</Text>
+                ) : (
+                  <>
+                    <View style={styles.opponentInfo}>
+                      <Text style={styles.opponentName}>
+                        ⚔️ {opponent.name}
+                      </Text>
+                      <Text style={styles.opponentScore}>
+                        {opponent.score} correct • Q
+                        {Math.min(
+                          opponent.progress + 1,
+                          opponent.totalQuestions || randomizedQuestions.length,
+                        )}
+                        /{opponent.totalQuestions || randomizedQuestions.length}
+                      </Text>
+                    </View>
+                    <View style={styles.progressBarBg}>
+                      <View
+                        style={[
+                          styles.progressBarFill,
+                          {
+                            width: `${
+                              (opponent.progress /
+                                (opponent.totalQuestions ||
+                                  randomizedQuestions.length)) *
+                              100
+                            }%`,
+                          },
+                        ]}
+                      />
+                    </View>
+                  </>
+                )}
               </View>
             )}
 
