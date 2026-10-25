@@ -20,7 +20,7 @@ import {
   PresenceUser,
   IncomingInvite,
 } from '../../services/PresenceService';
-import { isRoomCode, normalizeRoomCode } from '../../services/roomCode';
+import { normalizeRoomCode } from '../../services/roomCode';
 import { failureMessage } from '../../services/multiplayerFailures';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
@@ -36,11 +36,8 @@ const showAlert = (title: string, message: string) => {
 export default function MultiplayerHome() {
   const router = useRouter();
   const [name, setName] = useState('');
-  const [code, setCode] = useState('');
   const [isJoining, setIsJoining] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
-
-  const canJoin = isRoomCode(code) && name.trim().length > 0;
 
   const [activeUsers, setActiveUsers] = useState<PresenceUser[]>([]);
   const [incomingInvites, setIncomingInvites] = useState<IncomingInvite[]>([]);
@@ -159,11 +156,6 @@ export default function MultiplayerHome() {
       return;
     }
 
-    if (!target) {
-      showAlert('Required', 'Enter the room code');
-      return;
-    }
-
     try {
       setIsJoining(true);
       const result = await multiplayerService.joinRoom(target, name);
@@ -278,22 +270,7 @@ export default function MultiplayerHome() {
                   value={name}
                   onChangeText={setName}
                   placeholderTextColor="rgba(255,255,255,0.4)"
-                  returnKeyType="next"
-                />
-              </View>
-
-              <View style={styles.formGroup}>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Enter 6-character code"
-                  value={code}
-                  onChangeText={(text) => setCode(normalizeRoomCode(text))}
-                  autoCapitalize="characters"
-                  placeholderTextColor="rgba(255,255,255,0.4)"
-                  returnKeyType="go"
-                  onSubmitEditing={() => {
-                    if (canJoin) handleJoinRoom(code);
-                  }}
+                  returnKeyType="done"
                 />
               </View>
 
@@ -310,22 +287,6 @@ export default function MultiplayerHome() {
                   <ActivityIndicator color="white" />
                 ) : (
                   <Text style={styles.buttonText}>🚀 Create New Game</Text>
-                )}
-              </TouchableOpacity>
-
-              <TouchableOpacity
-                onPress={() => handleJoinRoom(code)}
-                disabled={!canJoin || isJoining}
-                style={[
-                  styles.button,
-                  styles.joinBtn,
-                  (!canJoin || isJoining) && styles.disabledBtn,
-                ]}
-              >
-                {isJoining ? (
-                  <ActivityIndicator color="white" />
-                ) : (
-                  <Text style={styles.buttonText}>Join Game</Text>
                 )}
               </TouchableOpacity>
             </View>
