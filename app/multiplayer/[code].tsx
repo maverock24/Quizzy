@@ -164,6 +164,14 @@ export default function MultiplayerRoom() {
     };
   }, [isHost, gameState.status, code]);
 
+  // A refreshed host tab has no peer: the page load reset the module
+  // singleton, so the lobby would render but nobody could ever join it (D8).
+  useEffect(() => {
+    if (isHost && !multiplayerService.getIsHost()) {
+      router.replace('/multiplayer');
+    }
+  }, [isHost, router]);
+
   useEffect(() => {
     // Clear any stale listeners from previous renders
     multiplayerService.removeAllListeners();
