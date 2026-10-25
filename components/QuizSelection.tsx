@@ -20,6 +20,7 @@ type QuizSelectionProps = {
   handleQuizSelection: (quiz: Quiz) => void;
   onReadEssay?: (category: string) => void;
   categoriesWithEssays?: Set<string>;
+  labelFor?: (quiz: Quiz) => string;
 };
 
 // Trigger haptic feedback (only on native platforms)
@@ -155,7 +156,8 @@ const QuizButton: React.FC<{
   onPress: (quiz: Quiz) => void;
   index: number;
   isNewlyVisible: boolean;
-}> = ({ item, onPress, index, isNewlyVisible }) => {
+  label: string;
+}> = ({ item, onPress, index, isNewlyVisible, label }) => {
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const slideAnim = useRef(new Animated.Value(isNewlyVisible ? 30 : 0)).current;
   const opacityAnim = useRef(
@@ -298,7 +300,7 @@ const QuizButton: React.FC<{
           <View style={styles.buttonContent}>
             <View style={{ flex: 1 }}>
               <Text style={styles.buttonText} numberOfLines={1}>
-                {item.name}
+                {label}
               </Text>
             </View>
             <View style={styles.questionCountBadge}>
@@ -323,6 +325,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   handleQuizSelection,
   onReadEssay,
   categoriesWithEssays,
+  labelFor = (q) => q.name,
 }) => {
   const { t } = useTranslation();
   const router = useRouter();
@@ -404,6 +407,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
       onPress={handleQuizSelection}
       index={index}
       isNewlyVisible={recentlyExpanded === section.title}
+      label={labelFor(item)}
     />
   );
 
@@ -470,6 +474,7 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
               onPress={handleQuizSelection}
               index={index}
               isNewlyVisible={true}
+              label={labelFor(item)}
             />
           )}
         />
