@@ -5,6 +5,7 @@ import {
   failureFromPeerError,
 } from './multiplayerFailures';
 import { isSenderAllowed, connectedCount } from './multiplayerRules';
+import { getSessionToken } from './sessionToken';
 
 const JOIN_TIMEOUT_MS = 8000;
 const CREATE_TIMEOUT_MS = 10000;
@@ -21,6 +22,7 @@ export interface Player {
   finished: boolean;
   finishTime?: number; // ms elapsed from game start
   left: boolean; // departed; skipped by results and counted out of the room
+  token: string; // stable per session; the host matches it before the peer id
 }
 
 export interface GameState {
@@ -190,6 +192,7 @@ class MultiplayerService {
               totalQuestions: 0,
               finished: false,
               left: false,
+              token: '',
             },
           ];
 
@@ -273,6 +276,7 @@ class MultiplayerService {
             totalQuestions: 0,
             finished: false,
             left: false,
+            token: getSessionToken(),
           };
           conn.send({ type: 'JOIN', player: myPlayer });
 
