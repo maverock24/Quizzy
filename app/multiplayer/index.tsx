@@ -10,6 +10,7 @@ import {
   TouchableOpacity,
   AppState,
   ScrollView,
+  Linking,
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -19,6 +20,7 @@ import {
   PresenceUser,
   IncomingInvite,
 } from '../../services/PresenceService';
+import { isRoomCode, normalizeRoomCode } from '../../services/roomCode';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
 const showAlert = (title: string, message: string) => {
@@ -33,8 +35,11 @@ const showAlert = (title: string, message: string) => {
 export default function MultiplayerHome() {
   const router = useRouter();
   const [name, setName] = useState('');
+  const [code, setCode] = useState('');
   const [isJoining, setIsJoining] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
+
+  const canJoin = isRoomCode(code) && name.trim().length > 0;
 
   const [activeUsers, setActiveUsers] = useState<PresenceUser[]>([]);
   const [incomingInvites, setIncomingInvites] = useState<IncomingInvite[]>([]);
@@ -144,19 +149,21 @@ export default function MultiplayerHome() {
   };
 
   const handleJoinRoom = async (codeToJoin: string) => {
-    if (!name.trim() || !codeToJoin.trim()) {
+    const target = normalizeRoomCode(codeToJoin);
+
+    if (!name.trim() || !target) {
       showAlert('Required', 'Please enter your name');
       return;
     }
 
     try {
       setIsJoining(true);
-      const response = await multiplayerService.joinRoom(codeToJoin, name);
+      const response = await multiplayerService.joinRoom(target, name);
       if (response.success) {
         // Need to stop presence polling when jumping into game
         presenceService.disconnect();
         router.push(
-          `/multiplayer/${codeToJoin}?name=${encodeURIComponent(
+          `/multiplayer/${target}?name=${encodeURIComponent(
             name,
           )}&isHost=false`,
         );
@@ -211,6 +218,37 @@ export default function MultiplayerHome() {
     );
   };
 
+  const keyboardBehavior = Platform.OS === 'ios' ? 'padding' : 'height';
+
+  if (Platform.OS !== 'web') {
+    return (
+      <View style={styles.outerContainer}>
+        <SafeAreaLinearGradient
+          colors={['rgb(63, 82, 108)', 'rgb(29, 40, 54)']}
+          style={styles.safeArea}
+        >
+          <View style={styles.contentContainer}>
+            <View style={styles.card}>
+              <Text style={styles.title}>Multiplayer Quiz</Text>
+              <Text style={styles.emptyText}>
+                Multiplayer needs a browser. Open the web version to play with a
+                friend.
+              </Text>
+              <TouchableOpacity
+                style={[styles.button, styles.joinBtn]}
+                onPress={() =>
+                  Linking.openURL('https://quizzy-2504.netlify.app/multiplayer')
+                }
+              >
+                <Text style={styles.buttonText}>Open the web version</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </SafeAreaLinearGradient>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.outerContainer}>
       <SafeAreaLinearGradient
@@ -218,7 +256,7 @@ export default function MultiplayerHome() {
         style={styles.safeArea}
       >
         <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+          behavior={keyboardBehavior}
           style={styles.container}
         >
           <View style={styles.contentContainer}>
@@ -233,6 +271,22 @@ export default function MultiplayerHome() {
                   value={name}
                   onChangeText={setName}
                   placeholderTextColor="rgba(255,255,255,0.4)"
+                  returnKeyType="next"
+                />
+              </View>
+
+              <View style={styles.formGroup}>
+                <TextInput
+                  style={styles.input}
+                  placeholder="Enter 6-character code"
+                  value={code}
+                  onChangeText={(text) => setCode(normalizeRoomCode(text))}
+                  autoCapitalize="characters"
+                  placeholderTextColor="rgba(255,255,255,0.4)"
+                  returnKeyType="go"
+                  onSubmitEditing={() => {
+                    if (canJoin) handleJoinRoom(code);
+                  }}
                 />
               </View>
 
@@ -249,6 +303,22 @@ export default function MultiplayerHome() {
                   <ActivityIndicator color="white" />
                 ) : (
                   <Text style={styles.buttonText}>🚀 Create New Game</Text>
+                )}
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                onPress={() => handleJoinRoom(code)}
+                disabled={!canJoin || isJoining}
+                style={[
+                  styles.button,
+                  styles.joinBtn,
+                  (!canJoin || isJoining) && styles.disabledBtn,
+                ]}
+              >
+                {isJoining ? (
+                  <ActivityIndicator color="white" />
+                ) : (
+                  <Text style={styles.buttonText}>Join Game</Text>
                 )}
               </TouchableOpacity>
             </View>
