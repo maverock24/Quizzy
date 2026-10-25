@@ -117,11 +117,23 @@ export default function TabOneScreen() {
   // both observe zero before the state commit tears the interval down. The
   // round must be reported exactly once.
   const timedRoundEnded = useRef<boolean>(false);
+  const scoreRef = useRef<number>(score);
+  const wrongCountRef = useRef<number>(0);
+  const roundMinutesRef = useRef<number>(roundMinutes);
+  const onQuizCompleteRef = useRef(onQuizComplete);
+  const totalWonGamesRef = useRef<number>(totalWonGames);
 
   // Track wrong answers during this quiz session
   const [wrongAnswersThisQuiz, setWrongAnswersThisQuiz] = useState<
     WrongAnswerRecord[]
   >([]);
+  // Latest-value refs: the deadline interval must stay mount-stable, so
+  // handleTimedRoundEnd reads these instead of closing over per-answer values.
+  scoreRef.current = score;
+  wrongCountRef.current = wrongAnswersThisQuiz.length;
+  roundMinutesRef.current = roundMinutes;
+  onQuizCompleteRef.current = onQuizComplete;
+  totalWonGamesRef.current = totalWonGames;
   const [, setIsRetryMode] = useState<boolean>(false);
   // Track the last quiz name for retry functionality (persists after quiz ends)
   const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(
@@ -325,27 +337,23 @@ export default function TabOneScreen() {
     if (timedRoundEnded.current) return;
     timedRoundEnded.current = true;
     setRoundDeadline(null);
-    setTotalWonGames(totalWonGames + 1);
-    onQuizComplete(
-      score,
-      answeredCount(score, wrongAnswersThisQuiz.length),
-      roundMinutes * 60,
-    );
+    // An empty round is not a finished round: no XP, no streak, no win, so a
+    // child who starts a timer and walks away gains nothing.
+    if (scoreRef.current + wrongCountRef.current > 0) {
+      setTotalWonGames(totalWonGamesRef.current + 1);
+      onQuizCompleteRef.current(
+        scoreRef.current,
+        answeredCount(scoreRef.current, wrongCountRef.current),
+        roundMinutesRef.current * 60,
+      );
+    }
     setTimeExpired(true);
     setScoreVisible(true);
     setSelectedQuiz(undefined);
     setSelectedQuizName(null);
     setCurrentQuestionIndex(0);
     setExplanationMode(false);
-  }, [
-    score,
-    wrongAnswersThisQuiz,
-    roundMinutes,
-    onQuizComplete,
-    setSelectedQuizName,
-    setTotalWonGames,
-    totalWonGames,
-  ]);
+  }, [setSelectedQuizName]);
 
   // A timed round ends when its deadline passes. QuizTimer re-renders itself
   // once a second in deadline mode, so the screen only has to watch for the
@@ -367,15 +375,15 @@ export default function TabOneScreen() {
       // Rolling append (D7): a timed round has no end-of-list branch, and the
       // appended batch goes in before the index advances.
       if (currentQuestionIndex >= randomizedQuestions.length - 1) {
-        setRandomizedQuestions([
-          ...randomizedQuestions,
+        setRandomizedQuestions((prev) => [
+          ...prev,
           ...generateMultiplicationQuestions({
             minFactor: multiplicationRange.from,
             maxFactor: multiplicationRange.to,
           }),
         ]);
       }
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex((prev) => prev + 1);
       return;
     }
     if (currentQuestionIndex < (selectedQuiz?.questions.length ?? 0) - 1) {
@@ -423,6 +431,7 @@ export default function TabOneScreen() {
     // A retry is a fixed list of missed sums: always a count-mode round (D12).
     setRoundMode('count');
     setRoundDeadline(null);
+    setTimeExpired(false);
     setScore(0);
     setScoreVisible(false);
     setCurrentQuestionIndex(0);
