@@ -185,27 +185,70 @@ describe('rejoin', () => {
     expect(welcome.players.find((p) => p.id === 'peer-a2').score).toBe(3);
   });
 
-  it('treats a rejoin after the grace as a new player and refuses it', async () => {
+  it('treats a rejoin after the grace as a new player', async () => {
     const { peer } = await startHostWithDepartedClient();
 
     jest.advanceTimersByTime(60000);
-    // The slot is final: its token is gone.
-    expect(
-      multiplayerService.getPlayers().find((p) => p.id === 'peer-a').token,
-    ).toBe('');
-
-    // Somebody else takes the free place, so the room holds two connected.
-    joinAs(peer, 'peer-c', { name: 'Cal', token: 'token-cal' });
+    // The slot is final: it is removed, not held open.
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual(['host']);
 
     const late = joinAs(peer, 'peer-a2');
 
-    expect(late.send).toHaveBeenCalledWith({ type: 'ROOM_FULL' });
-    expect(late.close).toHaveBeenCalledTimes(1);
+    // A new player, so the stats the slot held do not come back with it.
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a2');
+    expect(ana).toBeDefined();
+    expect(ana.left).toBe(false);
+    expect(ana.score).toBe(0);
+    expect(ana.progress).toBe(0);
+    expect(late.send).not.toHaveBeenCalledWith({ type: 'ROOM_FULL' });
+  });
+
+  it('refuses a stranger while the departed slot holds its place', async () => {
+    const { peer } = await startHostWithDepartedClient();
+
+    const stranger = joinAs(peer, 'peer-c', {
+      name: 'Cal',
+      token: 'token-cal',
+    });
+
+    expect(stranger.send).toHaveBeenCalledWith({ type: 'ROOM_FULL' });
+    expect(stranger.close).toHaveBeenCalledTimes(1);
     expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
       'host',
       'peer-a',
-      'peer-c',
     ]);
+  });
+
+  it('keeps the place for a rejoin that arrives after a refused stranger', async () => {
+    const { peer } = await startHostWithDepartedClient();
+
+    joinAs(peer, 'peer-c', { name: 'Cal', token: 'token-cal' });
+    joinAs(peer, 'peer-a2');
+
+    // The old token still revives the slot, and only two are connected.
+    const players = multiplayerService.getPlayers();
+    expect(players.map((p) => p.id)).toEqual(['host', 'peer-a2']);
+    expect(players.filter((p) => !p.left)).toHaveLength(2);
+    expect(players.find((p) => p.id === 'peer-a2').score).toBe(3);
+  });
+
+  it('refuses a stranger after a rejoin has taken the place', async () => {
+    const { peer } = await startHostWithDepartedClient();
+
+    joinAs(peer, 'peer-a2');
+    const stranger = joinAs(peer, 'peer-c', {
+      name: 'Cal',
+      token: 'token-cal',
+    });
+
+    expect(stranger.send).toHaveBeenCalledWith({ type: 'ROOM_FULL' });
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
+      'host',
+      'peer-a2',
+    ]);
+    expect(multiplayerService.getPlayers().filter((p) => !p.left)).toHaveLength(
+      2,
+    );
   });
 
   it('clears the grace timer when the slot is revived', async () => {

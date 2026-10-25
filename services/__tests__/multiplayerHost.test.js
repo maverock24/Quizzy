@@ -178,6 +178,28 @@ describe('host authority', () => {
     );
   });
 
+  it('drops a JOIN that claims the host id', async () => {
+    await startHostWithAJoinedClient();
+    const impostor = connect('peer-c');
+
+    impostor.handlers.data({
+      type: 'JOIN',
+      player: player('host', {
+        name: 'Mallory',
+        isHost: true,
+        token: 'token-mallory',
+      }),
+    });
+
+    const hostEntry = multiplayerService.getPlayers().find((p) => p.isHost);
+    expect(hostEntry.id).toBe('host');
+    expect(hostEntry.name).toBe('Ada');
+    expect(hostEntry.token).toBe('');
+    expect(multiplayerService.getPlayers()).toHaveLength(2);
+    expect(impostor.send).not.toHaveBeenCalled();
+    expect(other.send).not.toHaveBeenCalled();
+  });
+
   it('answers a third JOIN with ROOM_FULL and closes the connection', async () => {
     await startHostWithAJoinedClient();
     const third = connect('peer-c');
@@ -212,5 +234,7 @@ describe('host authority', () => {
       failure: 'room-full',
     });
     expect(jest.getTimerCount()).toBe(0);
+    // The refused joiner does not stay registered on the signalling server.
+    expect(client.destroy).toHaveBeenCalledTimes(1);
   });
 });

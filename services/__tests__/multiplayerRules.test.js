@@ -3,6 +3,7 @@ import {
   connectedCount,
   findJoinTarget,
   isSenderAllowed,
+  occupiedCount,
   winnerOf,
 } from '../multiplayerRules';
 
@@ -59,6 +60,15 @@ describe('findJoinTarget', () => {
   it('returns -1 for an empty token and an unknown id', () => {
     const players = [player('peer-a', { token: 'tok-a' })];
     expect(findJoinTarget(players, '', 'peer-b')).toBe(-1);
+  });
+
+  it('never matches the host entry, by token or by id', () => {
+    const players = [
+      player('host', { isHost: true, token: '' }),
+      player('peer-a', { token: 'tok-a' }),
+    ];
+    expect(findJoinTarget(players, '', 'host')).toBe(-1);
+    expect(findJoinTarget(players, 'tok-host', 'host')).toBe(-1);
   });
 });
 
@@ -127,5 +137,23 @@ describe('connectedCount', () => {
 
   it('counts everyone when nobody left', () => {
     expect(connectedCount([player('peer-a'), player('peer-b')])).toBe(2);
+  });
+});
+
+describe('occupiedCount', () => {
+  it('counts a departed slot that still holds its token', () => {
+    const players = [
+      player('host', { isHost: true }),
+      player('peer-a', { left: true, token: 'tok-a' }),
+    ];
+    expect(occupiedCount(players)).toBe(2);
+  });
+
+  it('does not count a departed slot whose token is gone', () => {
+    const players = [
+      player('host', { isHost: true }),
+      player('peer-a', { left: true, token: '' }),
+    ];
+    expect(occupiedCount(players)).toBe(1);
   });
 });

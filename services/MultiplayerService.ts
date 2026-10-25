@@ -6,7 +6,7 @@ import {
 } from './multiplayerFailures';
 import {
   isSenderAllowed,
-  connectedCount,
+  occupiedCount,
   findJoinTarget,
 } from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
@@ -245,6 +245,9 @@ class MultiplayerService {
     return new Promise((resolve) => {
       let resolved = false;
       let timer: ReturnType<typeof setTimeout> | null = null;
+      // The peer this call opens, so a late failure cannot destroy a newer
+      // session's peer.
+      let sessionPeer: Peer | null = null;
 
       const settle = (result: JoinResult) => {
         if (resolved) {
@@ -254,6 +257,18 @@ class MultiplayerService {
         if (timer) {
           clearTimeout(timer);
           timer = null;
+        }
+        if (!result.ok) {
+          // A refused or unanswered join leaves no session behind: drop the
+          // peer so it does not stay registered on the signalling server.
+          try {
+            sessionPeer?.destroy();
+          } catch (e) {
+            /* ignore */
+          }
+          if (this.peer === sessionPeer) {
+            this.peer = null;
+          }
         }
         resolve(result);
       };
@@ -270,6 +285,7 @@ class MultiplayerService {
         JOIN_TIMEOUT_MS,
       );
       this.peer = new Peer();
+      sessionPeer = this.peer;
 
       this.peer.on('open', (id) => {
         this.playerId = id;
@@ -342,15 +358,31 @@ class MultiplayerService {
     conn.on('data', (data: unknown) => {
       const msg = data as Message;
       if (msg.type === 'JOIN') {
+        const incoming = msg.player;
+        // A message may only act on the sender's own slot (D5), so a join that
+        // names any other id is dropped. The host's id is 'host', which no
+        // connection can hold, so a client cannot claim the host's entry.
+        if (!isSenderAllowed(incoming?.id, conn.peer)) {
+          console.warn(
+            'Dropped JOIN from ' + conn.peer + ' naming ' + incoming?.id,
+          );
+          return;
+        }
         // The token is matched before the peer id, so a rejoin revives the
         // departed entry instead of adding a third player (D18).
-        const incoming = msg.player;
         const target = findJoinTarget(
           this.players,
           incoming.token ?? '',
           incoming.id,
         );
-        if (target === -1 && connectedCount(this.players) >= 2) {
+        const previous = target === -1 ? null : this.players[target];
+        // A departed slot that still holds its token occupies its place until
+        // the grace runs out, so only a new entry or a slot that lost its
+        // token has to be checked against the limit (D18).
+        const needsSlot =
+          previous === null ||
+          (previous.left === true && (previous.token ?? '') === '');
+        if (needsSlot && occupiedCount(this.players) >= 2) {
           conn.send({ type: 'ROOM_FULL' });
           conn.close();
           return;
@@ -363,14 +395,14 @@ class MultiplayerService {
         } else {
           // Revive the old entry, so score, progress, totalQuestions,
           // finished and finishTime survive the rejoin.
-          const previous = this.players[target];
-          const timer = this.graceTimers.get(previous.id);
+          const departed = this.players[target];
+          const timer = this.graceTimers.get(departed.id);
           if (timer) {
             clearTimeout(timer);
-            this.graceTimers.delete(previous.id);
+            this.graceTimers.delete(departed.id);
           }
           joined = {
-            ...previous,
+            ...departed,
             id: incoming.id,
             name: incoming.name,
             token: incoming.token ?? '',
@@ -459,8 +491,9 @@ class MultiplayerService {
       this.broadcast({ type: 'PLAYER_LEFT', playerId });
 
       // Hold the slot for a minute so a rejoin with the same token revives it.
-      // At expiry the slot is final: the token is cleared and nothing is
-      // broadcast, because the others already marked the player gone.
+      // At expiry the slot is final and it is removed, so the lobby does not
+      // keep a permanent departed row. Nothing is broadcast, because the
+      // others already marked the player gone.
       const previousTimer = this.graceTimers.get(playerId);
       if (previousTimer) {
         clearTimeout(previousTimer);
@@ -469,8 +502,8 @@ class MultiplayerService {
         playerId,
         setTimeout(() => {
           this.graceTimers.delete(playerId);
-          this.players = this.players.map((p) =>
-            p.id === playerId && p.left ? { ...p, token: '' } : p,
+          this.players = this.players.filter(
+            (p) => !(p.id === playerId && p.left),
           );
         }, REJOIN_GRACE_MS),
       );

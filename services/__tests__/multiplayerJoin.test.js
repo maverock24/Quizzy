@@ -107,6 +107,8 @@ describe('joinRoom', () => {
 
     jest.advanceTimersByTime(1);
     await expect(promise).resolves.toEqual({ ok: false, failure: 'timeout' });
+    // An unanswered join leaves no peer registered.
+    expect(peer.destroy).toHaveBeenCalledTimes(1);
   });
 
   it('reads an unavailable peer as room-not-found', async () => {

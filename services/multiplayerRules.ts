@@ -11,6 +11,7 @@ export interface RulePlayer {
   finishTime?: number;
   left?: boolean;
   token?: string;
+  isHost?: boolean;
 }
 
 export const HOST_SENTINEL = 'host';
@@ -30,9 +31,15 @@ export function isSenderAllowed(
   return playerId === senderPeerId;
 }
 
+/** The host's own entry, which no join may ever claim. */
+function isHostEntry(p: RulePlayer): boolean {
+  return p.isHost === true || p.id === HOST_SENTINEL;
+}
+
 /**
  * A rejoin replaces the old entry, so the token is looked at before the id.
- * Returns -1 when the sender is new.
+ * Returns -1 when the sender is new. The host's entry is never a target: a
+ * join that claims it would overwrite the host's own slot.
  */
 export function findJoinTarget(
   players: RulePlayer[],
@@ -40,12 +47,14 @@ export function findJoinTarget(
   id: string,
 ): number {
   if (token) {
-    const byToken = players.findIndex((p) => p.token === token);
+    const byToken = players.findIndex(
+      (p) => p.token === token && !isHostEntry(p),
+    );
     if (byToken !== -1) {
       return byToken;
     }
   }
-  return players.findIndex((p) => p.id === id);
+  return players.findIndex((p) => p.id === id && !isHostEntry(p));
 }
 
 /** A room is done when nobody is still playing, and an empty room is not done. */
@@ -71,4 +80,12 @@ export function winnerOf(players: RulePlayer[]): RulePlayer | null {
 
 export function connectedCount(players: RulePlayer[]): number {
   return players.filter((p) => p.left !== true).length;
+}
+
+/**
+ * A departed slot that still holds its token keeps its place for a rejoin, so
+ * it counts against the two-player limit even while nobody is connected on it.
+ */
+export function occupiedCount(players: RulePlayer[]): number {
+  return players.filter((p) => p.left !== true || !!p.token).length;
 }

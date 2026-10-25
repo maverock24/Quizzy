@@ -139,6 +139,21 @@ describe('departure', () => {
     expect(onLeft).toHaveBeenCalledWith('peer-a');
   });
 
+  it('removes a departed slot when the grace expires', async () => {
+    const { sender } = await startHost();
+
+    sender.handlers.close();
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
+      'host',
+      'peer-a',
+    ]);
+
+    jest.advanceTimersByTime(60000);
+
+    // No permanent departed row, so the lobby cannot grow per departure.
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual(['host']);
+  });
+
   it('marks a player left on PLAYER_LEFT and calls its listener once', async () => {
     const { connection } = await startClient();
     const onLeft = jest.fn();
