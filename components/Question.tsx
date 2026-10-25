@@ -38,6 +38,7 @@ type QuestionProps = {
   // Some quizzes (e.g. multiplication tables) always expect a typed answer,
   // regardless of the global "Type Answer Mode" setting.
   forceTextInput?: boolean;
+  showTotal?: boolean;
 };
 
 // Mini confetti particle for correct answer celebration
@@ -255,6 +256,7 @@ export const Question: React.FC<QuestionProps> = ({
   handleAnswerSelection,
   correctAnswer,
   forceTextInput = false,
+  showTotal,
 }) => {
   const { audioEnabled, textInputAnswerMode, kidsMode } = useQuiz();
   const useTextInput = textInputAnswerMode || forceTextInput;
@@ -799,6 +801,7 @@ export const Question: React.FC<QuestionProps> = ({
             <SettingsHeader
               currentQuestionIndex={currentQuestionIndex}
               selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+              showTotal={showTotal}
             />
           </View>
           <View
