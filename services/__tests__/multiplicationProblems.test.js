@@ -3,6 +3,7 @@ import {
   generateMultiplicationQuestions,
   MAX_MULTIPLICATION_FACTOR,
   MULTIPLICATION_QUESTION_COUNT,
+  setRangeBound,
 } from '../multiplicationProblems';
 
 // Deterministic linear-congruential rng so the tests are reproducible.
@@ -123,6 +124,53 @@ describe('generateMultiplicationProblems', () => {
       expect(b).toBeGreaterThanOrEqual(1);
       expect(b).toBeLessThanOrEqual(MAX_MULTIPLICATION_FACTOR);
     }
+  });
+});
+
+describe('setRangeBound', () => {
+  it('raises to up to a numeric from that is above it', () => {
+    expect(setRangeBound({ from: 1, to: 5 }, 'from', 8)).toEqual({
+      from: 8,
+      to: 8,
+    });
+  });
+
+  it('lowers from down to a numeric to that is below it', () => {
+    expect(setRangeBound({ from: 10, to: 10 }, 'to', 4)).toEqual({
+      from: 4,
+      to: 4,
+    });
+  });
+
+  it('reads string values from the web picker numerically', () => {
+    // "10" > "9" is false, so a lexicographic comparison would keep to at 9.
+    expect(setRangeBound({ from: 1, to: 9 }, 'from', '10')).toEqual({
+      from: 10,
+      to: 10,
+    });
+    expect(setRangeBound({ from: 10, to: 10 }, 'to', '9')).toEqual({
+      from: 9,
+      to: 9,
+    });
+  });
+
+  it('clamps an out-of-range value into 1..10', () => {
+    expect(setRangeBound({ from: 1, to: 2 }, 'from', 42)).toEqual({
+      from: MAX_MULTIPLICATION_FACTOR,
+      to: MAX_MULTIPLICATION_FACTOR,
+    });
+    expect(setRangeBound({ from: 9, to: 10 }, 'to', -3)).toEqual({
+      from: 1,
+      to: 1,
+    });
+  });
+
+  it('leaves the range unchanged for a non-finite value', () => {
+    const range = { from: 3, to: 7 };
+    expect(setRangeBound(range, 'from', NaN)).toBe(range);
+    expect(setRangeBound(range, 'to', NaN)).toBe(range);
+    expect(setRangeBound(range, 'from', '')).toBe(range);
+    expect(setRangeBound(range, 'to', '')).toBe(range);
   });
 });
 

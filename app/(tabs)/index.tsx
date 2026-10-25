@@ -26,6 +26,7 @@ import { useLearningTodos } from '@/components/LearningTodosProvider';
 import {
   generateMultiplicationQuestions,
   MULTIPLICATION_GENERATOR,
+  MultiplicationRange,
 } from '@/services/multiplicationProblems';
 
 // Type for tracking wrong answers during a quiz session
@@ -112,10 +113,8 @@ export default function TabOneScreen() {
   );
   // Factors used to regenerate the multiplication quiz, and the list entry
   // whose play is waiting on the range sheet.
-  const [multiplicationRange, setMultiplicationRange] = useState<{
-    from: number;
-    to: number;
-  }>({ from: 1, to: 10 });
+  const [multiplicationRange, setMultiplicationRange] =
+    useState<MultiplicationRange>({ from: 1, to: 10 });
   const [rangeSheetQuiz, setRangeSheetQuiz] = useState<Quiz | null>(null);
 
   // Essay state
@@ -161,7 +160,7 @@ export default function TabOneScreen() {
 
   const startQuiz = (
     quiz: Quiz,
-    range: { from: number; to: number } = multiplicationRange,
+    range: MultiplicationRange = multiplicationRange,
   ) => {
     const match = quizzes.find((q: Quiz) => q.name === quiz.name);
     // Generated quizzes (e.g. multiplication tables) get a fresh set of
@@ -549,18 +548,19 @@ export default function TabOneScreen() {
           </View>
         )}
       </SafeAreaLinearGradient>
-      <MultiplicationRangeSheet
-        visible={rangeSheetQuiz !== null}
-        initialFrom={multiplicationRange.from}
-        initialTo={multiplicationRange.to}
-        onCancel={() => setRangeSheetQuiz(null)}
-        onConfirm={(from, to) => {
-          const quiz = rangeSheetQuiz;
-          setMultiplicationRange({ from, to });
-          setRangeSheetQuiz(null);
-          if (quiz) startQuiz(quiz, { from, to });
-        }}
-      />
+      {rangeSheetQuiz !== null && (
+        <MultiplicationRangeSheet
+          initialFrom={multiplicationRange.from}
+          initialTo={multiplicationRange.to}
+          onCancel={() => setRangeSheetQuiz(null)}
+          onConfirm={(from, to) => {
+            const quiz = rangeSheetQuiz;
+            setMultiplicationRange({ from, to });
+            setRangeSheetQuiz(null);
+            if (quiz) startQuiz(quiz, { from, to });
+          }}
+        />
+      )}
     </View>
   );
 }

@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { useTranslation } from 'react-i18next';
-import { MAX_MULTIPLICATION_FACTOR } from '@/services/multiplicationProblems';
+import {
+  MAX_MULTIPLICATION_FACTOR,
+  MultiplicationRange,
+  setRangeBound,
+} from '@/services/multiplicationProblems';
 
 type MultiplicationRangeSheetProps = {
-  visible: boolean;
   initialFrom: number;
   initialTo: number;
   onCancel: () => void;
@@ -14,35 +17,35 @@ type MultiplicationRangeSheetProps = {
 
 const FACTOR_ITEMS = Array.from(
   { length: MAX_MULTIPLICATION_FACTOR },
-  (_, index) => index + 1,
-).map((factor) => (
-  <Picker.Item key={factor} label={String(factor)} value={factor} />
-));
+  (_, index) => (
+    <Picker.Item key={index + 1} label={String(index + 1)} value={index + 1} />
+  ),
+);
 
 export const MultiplicationRangeSheet: React.FC<
   MultiplicationRangeSheetProps
-> = ({ visible, initialFrom, initialTo, onCancel, onConfirm }) => {
+> = ({ initialFrom, initialTo, onCancel, onConfirm }) => {
   const { t } = useTranslation();
-  const [draft, setDraft] = useState({ from: initialFrom, to: initialTo });
+  // The sheet is mounted per open, so the draft starts from the committed range.
+  const [draft, setDraft] = useState<MultiplicationRange>({
+    from: initialFrom,
+    to: initialTo,
+  });
 
-  // Reseed on open so a cancelled pick never rewrites the committed range.
-  useEffect(() => {
-    if (visible) {
-      setDraft({ from: initialFrom, to: initialTo });
-    }
-  }, [visible, initialFrom, initialTo]);
-
-  const handleFromChange = (from: number) => {
-    setDraft((prev) =>
-      from > prev.to ? { from, to: from } : { ...prev, from },
-    );
+  // The web picker emits strings (e.target.value), so both handlers accept
+  // number | string and let setRangeBound do the coercion.
+  const handleFromChange = (value: number | string) => {
+    setDraft((prev) => setRangeBound(prev, 'from', value));
   };
 
-  const handleToChange = (to: number) => {
-    setDraft((prev) => (to < prev.from ? { from: to, to } : { ...prev, to }));
+  const handleToChange = (value: number | string) => {
+    setDraft((prev) => setRangeBound(prev, 'to', value));
   };
 
-  const renderPicker = (value: number, onChange: (next: number) => void) => (
+  const renderPicker = (
+    value: number,
+    onChange: (next: number | string) => void,
+  ) => (
     <View style={styles.pickerWrapper}>
       <Picker
         selectedValue={value}
@@ -56,12 +59,7 @@ export const MultiplicationRangeSheet: React.FC<
   );
 
   return (
-    <Modal
-      visible={visible}
-      transparent
-      animationType="slide"
-      onRequestClose={onCancel}
-    >
+    <Modal transparent animationType="slide" onRequestClose={onCancel}>
       <View style={styles.overlay}>
         <View style={styles.card}>
           <Text style={styles.title}>{t('multiplication_quiz_name')}</Text>
@@ -74,12 +72,17 @@ export const MultiplicationRangeSheet: React.FC<
             {renderPicker(draft.to, handleToChange)}
           </View>
           <View style={styles.actions}>
-            <Pressable onPress={onCancel} style={styles.button}>
+            <Pressable
+              onPress={onCancel}
+              style={styles.button}
+              accessibilityRole="button"
+            >
               <Text style={styles.buttonText}>{t('cancel', 'Abbrechen')}</Text>
             </Pressable>
             <Pressable
               onPress={() => onConfirm(draft.from, draft.to)}
               style={styles.button}
+              accessibilityRole="button"
             >
               <Text style={styles.buttonText}>
                 {t('multiplication_range_start')}
