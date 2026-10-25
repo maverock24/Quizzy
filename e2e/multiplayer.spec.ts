@@ -41,11 +41,9 @@ test.describe('Multiplayer P2P Flow', () => {
     await expect(hostPage.getByText('Room:', { exact: false })).toBeVisible({
       timeout: 10000,
     });
-    const roomCodeText = await hostPage
-      .getByText('Room:', { exact: false })
-      .textContent();
-    const roomCode = roomCodeText?.split(': ')[1].trim();
+    const roomCode = new URL(hostPage.url()).pathname.split('/').pop();
     expect(roomCode).toBeTruthy();
+    expect(roomCode).toHaveLength(6);
 
     // 2. Player joins through the shared room link, which joins on mount
     await playerPage.goto(`/multiplayer/${roomCode}?name=JoinerUser`);
@@ -55,10 +53,13 @@ test.describe('Multiplayer P2P Flow', () => {
     await expect(hostPage.getByText('JoinerUser')).toBeVisible({
       timeout: 25000,
     });
-    // Player sees lobby
+    // Player sees lobby, with the host roster entry proving the join
     await expect(
       playerPage.getByText('Waiting for host to start...'),
     ).toBeVisible({ timeout: 10000 });
+    await expect(playerPage.getByText('HostUser').first()).toBeVisible({
+      timeout: 10000,
+    });
 
     // 4. Host selects Quiz and Starts
     await hostPage.getByText('Select Quiz').click();

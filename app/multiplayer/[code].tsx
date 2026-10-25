@@ -665,6 +665,8 @@ export default function MultiplayerRoom() {
   // A departed player keeps its slot for a minute, so every start or full
   // decision counts only the players who are still here.
   const presentCount = players.filter((p) => !p.left).length;
+  // The name the link carried, so a failed mount join can be retried with it
+  const linkName = typeof nameParam === 'string' ? nameParam.trim() : '';
   return (
     <View style={styles.outerContainer}>
       <SafeAreaLinearGradient
@@ -694,7 +696,7 @@ export default function MultiplayerRoom() {
                   style={[styles.smallBtn, styles.secondaryBtn]}
                 >
                   <Text style={styles.buttonText}>
-                    {copied ? 'Copied' : 'Copy'}
+                    {copied ? 'Link copied' : 'Copy link'}
                   </Text>
                 </TouchableOpacity>
                 {typeof navigator !== 'undefined' &&
@@ -777,23 +779,47 @@ export default function MultiplayerRoom() {
               <View
                 style={[styles.card, { alignItems: 'center', marginTop: 20 }]}
               >
-                <ActivityIndicator size="large" color="rgb(52, 211, 153)" />
-                <Text
-                  style={{
-                    color: 'white',
-                    marginTop: 15,
-                    fontSize: 16,
-                    fontWeight: '600',
-                  }}
-                >
-                  Waiting for host to start...
-                </Text>
-                {selectedQuiz && (
-                  <Text
-                    style={{ color: 'rgba(255,255,255,0.6)', marginTop: 5 }}
-                  >
-                    Quiz: {selectedQuiz.name}
-                  </Text>
+                {rejoinError !== '' ? (
+                  // A link that failed to join must say so, or the spinner
+                  // leaves the joiner waiting on a room they never entered.
+                  <>
+                    <Text style={styles.rejoinError}>{rejoinError}</Text>
+                    <TouchableOpacity
+                      onPress={() => handleEnterRoom(linkName)}
+                      disabled={linkName.length === 0}
+                      style={[
+                        styles.button,
+                        styles.secondaryBtn,
+                        linkName.length === 0 && styles.disabledBtn,
+                      ]}
+                    >
+                      <Text style={styles.buttonText}>Try again</Text>
+                    </TouchableOpacity>
+                  </>
+                ) : (
+                  <>
+                    <ActivityIndicator size="large" color="rgb(52, 211, 153)" />
+                    <Text
+                      style={{
+                        color: 'white',
+                        marginTop: 15,
+                        fontSize: 16,
+                        fontWeight: '600',
+                      }}
+                    >
+                      Waiting for host to start...
+                    </Text>
+                    {selectedQuiz && (
+                      <Text
+                        style={{
+                          color: 'rgba(255,255,255,0.6)',
+                          marginTop: 5,
+                        }}
+                      >
+                        Quiz: {selectedQuiz.name}
+                      </Text>
+                    )}
+                  </>
                 )}
               </View>
             )}
