@@ -15,6 +15,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useReadAloud } from '@/components/useReadAloud';
 import { StreakPet } from '@/components/kids/StreakPet';
+import { MultiplicationRangeSheet } from '@/components/kids/MultiplicationRangeSheet';
 import {
   useGamification,
   StreakDisplay,
@@ -107,6 +108,13 @@ export default function TabOneScreen() {
   const [lastPlayedQuizName, setLastPlayedQuizName] = useState<string | null>(
     null,
   );
+  // Factors used to regenerate the multiplication quiz, and the list entry
+  // whose play is waiting on the range sheet.
+  const [multiplicationRange, setMultiplicationRange] = useState<{
+    from: number;
+    to: number;
+  }>({ from: 1, to: 10 });
+  const [rangeSheetQuiz, setRangeSheetQuiz] = useState<Quiz | null>(null);
 
   // Essay state
   const [selectedEssay, setSelectedEssay] = useState<CategoryEssay | null>(
@@ -149,13 +157,22 @@ export default function TabOneScreen() {
     }
   }, [currentQuestionIndex, randomizedQuestions]);
 
-  const handleQuizSelection = (quiz: Quiz) => {
+  const startQuiz = (
+    quiz: Quiz,
+    range: { from: number; to: number } = multiplicationRange,
+  ) => {
     const match = quizzes.find((q: Quiz) => q.name === quiz.name);
     // Generated quizzes (e.g. multiplication tables) get a fresh set of
     // problems on every play instead of reusing the list's placeholder set.
     const selectedQuiz =
       match && match.generator === MULTIPLICATION_GENERATOR
-        ? { ...match, questions: generateMultiplicationQuestions() }
+        ? {
+            ...match,
+            questions: generateMultiplicationQuestions({
+              minFactor: range.from,
+              maxFactor: range.to,
+            }),
+          }
         : match;
 
     setSelectedQuiz(selectedQuiz);
@@ -179,6 +196,16 @@ export default function TabOneScreen() {
     } else {
       setShowReader(false);
     }
+  };
+
+  const handleQuizSelection = (quiz: Quiz) => {
+    const match = quizzes.find((q: Quiz) => q.name === quiz.name);
+    // Multiplication tables ask for a factor range before generating problems.
+    if (match?.generator === MULTIPLICATION_GENERATOR) {
+      setRangeSheetQuiz(match);
+      return;
+    }
+    startQuiz(quiz);
   };
 
   const handleAnswerSelection = (answer: string) => {
@@ -512,6 +539,18 @@ export default function TabOneScreen() {
           </View>
         )}
       </SafeAreaLinearGradient>
+      <MultiplicationRangeSheet
+        visible={rangeSheetQuiz !== null}
+        initialFrom={multiplicationRange.from}
+        initialTo={multiplicationRange.to}
+        onCancel={() => setRangeSheetQuiz(null)}
+        onConfirm={(from, to) => {
+          const quiz = rangeSheetQuiz;
+          setMultiplicationRange({ from, to });
+          setRangeSheetQuiz(null);
+          if (quiz) startQuiz(quiz, { from, to });
+        }}
+      />
     </View>
   );
 }
