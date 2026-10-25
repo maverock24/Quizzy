@@ -13,6 +13,7 @@ type ExplanationProps = {
   currentQuestionIndex: number;
   selectedQuizAnswersAmount: number;
   handleNext: () => void;
+  showTotal?: boolean;
 };
 
 const { height } = Dimensions.get('window');
@@ -23,6 +24,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
   currentQuestionIndex,
   selectedQuizAnswersAmount,
   handleNext,
+  showTotal,
 }) => {
   const { t } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
@@ -49,6 +51,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
         <SettingsHeader
           currentQuestionIndex={currentQuestionIndex}
           selectedQuizAnswersAmount={selectedQuizAnswersAmount}
+          showTotal={showTotal}
         />
 
         <View
