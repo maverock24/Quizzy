@@ -178,16 +178,16 @@ export default function MultiplayerRoom() {
 
     multiplayerService.onGameStateChange((newState) => {
       setGameState(newState);
-      if (newState.quizId && newState.status === 'playing') {
-        const found = quizzes.find((q) => q.name === newState.quizId);
-        if (found) {
-          setSelectedQuiz(found);
-          setRandomizedQuestions(shuffleArray(found.questions));
-          setCurrentQuestionIndex(0);
-          setScore(0);
-          setMyFinished(false);
-          setResults([]);
-        }
+      // The quiz rides inside the state, so the joiner renders the host's
+      // questions instead of looking a quiz name up in its own list (D7).
+      const incoming = newState.quiz;
+      if (incoming && newState.status === 'playing') {
+        setSelectedQuiz({ name: incoming.name, questions: incoming.questions });
+        setRandomizedQuestions(shuffleArray(incoming.questions));
+        setCurrentQuestionIndex(0);
+        setScore(0);
+        setMyFinished(false);
+        setResults([]);
       }
     });
 
@@ -249,12 +249,13 @@ export default function MultiplayerRoom() {
     const currentState = multiplayerService.getGameState();
     setGameState(currentState);
 
-    if (currentState.quizId) {
-      const found = quizzes.find((q) => q.name === currentState.quizId);
-      if (found) {
-        setSelectedQuiz(found);
-        setRandomizedQuestions(shuffleArray(found.questions));
-      }
+    const currentQuiz = currentState.quiz;
+    if (currentQuiz && currentState.status === 'playing') {
+      setSelectedQuiz({
+        name: currentQuiz.name,
+        questions: currentQuiz.questions,
+      });
+      setRandomizedQuestions(shuffleArray(currentQuiz.questions));
     }
 
     const backHandler = BackHandler.addEventListener(
