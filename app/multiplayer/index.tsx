@@ -345,7 +345,8 @@ export default function MultiplayerHome() {
                 </Text>
               ) : activeUsers.length === 0 ? (
                 <Text style={styles.emptyText}>
-                  No one else is online right now. Waiting for players...
+                  No one else is online right now. Waiting for players... Ask
+                  the host for their invite link to join.
                 </Text>
               ) : (
                 <ScrollView style={{ maxHeight: 200 }}>

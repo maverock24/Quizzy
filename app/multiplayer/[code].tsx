@@ -765,7 +765,7 @@ export default function MultiplayerRoom() {
 
                 {presentCount < 2 && (
                   <Text style={styles.hintText}>
-                    Share code &quot;{code}&quot; with your opponent to join
+                    Send your opponent the room link to join
                   </Text>
                 )}
               </View>
