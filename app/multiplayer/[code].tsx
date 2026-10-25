@@ -17,6 +17,7 @@ import {
   GameState,
 } from '../../services/MultiplayerService';
 import { presenceService } from '../../services/PresenceService';
+import { failureMessage } from '../../services/multiplayerFailures';
 import {
   allFinished as allFinishedIn,
   winnerOf,
@@ -67,7 +68,11 @@ const showAlert = (
 };
 
 export default function MultiplayerRoom() {
-  const { code, isHost: isHostParam } = useLocalSearchParams<{
+  const {
+    code,
+    isHost: isHostParam,
+    name: nameParam,
+  } = useLocalSearchParams<{
     code: string;
     name: string;
     isHost: string;
@@ -108,6 +113,12 @@ export default function MultiplayerRoom() {
 
   // Copy and share state
   const [copied, setCopied] = useState(false);
+
+  // Rejoin state: the host dropped mid-game and one tap tries the slot again
+  const [hostGone, setHostGone] = useState(false);
+  const [rejoinError, setRejoinError] = useState('');
+  // Bumped after a join, because joinRoom destroys the old listeners
+  const [sessionEpoch, setSessionEpoch] = useState(0);
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(code);
@@ -225,6 +236,12 @@ export default function MultiplayerRoom() {
       setPlayers((prev) =>
         prev.map((p) => (p.id === playerId ? { ...p, left: true } : p)),
       );
+      if (
+        playerId === 'host' &&
+        multiplayerService.getGameState().status === 'playing'
+      ) {
+        setHostGone(true);
+      }
     });
 
     // Initial state from service
@@ -248,7 +265,20 @@ export default function MultiplayerRoom() {
       backHandler.remove();
       multiplayerService.removeAllListeners();
     };
-  }, [quizzes, handleLeave]);
+  }, [quizzes, handleLeave, sessionEpoch]);
+
+  const handleEnterRoom = async (enteringName: string) => {
+    setRejoinError('');
+    const result = await multiplayerService.joinRoom(code, enteringName);
+    if (result.ok) {
+      setPlayers(result.players);
+      setGameState(result.gameState);
+      setHostGone(false);
+      setSessionEpoch((epoch) => epoch + 1);
+    } else {
+      setRejoinError(failureMessage(result.failure));
+    }
+  };
 
   const handleStartGame = () => {
     if (!selectedQuiz) {
@@ -413,6 +443,34 @@ export default function MultiplayerRoom() {
     randomizedQuestions.length > 0 &&
     !myFinished
   ) {
+    if (hostGone) {
+      return (
+        <View style={styles.outerContainer}>
+          <SafeAreaLinearGradient
+            colors={['rgb(63, 82, 108)', 'rgb(29, 40, 54)']}
+            style={styles.safeArea}
+          >
+            <View style={styles.gameContainer}>
+              <View style={[styles.card, { marginTop: 80 }]}>
+                <Text style={styles.subtitle}>
+                  The host connection dropped.
+                </Text>
+                <TouchableOpacity
+                  onPress={() => handleEnterRoom(nameParam)}
+                  style={[styles.button, styles.primaryBtn]}
+                >
+                  <Text style={styles.buttonText}>Rejoin</Text>
+                </TouchableOpacity>
+                {rejoinError !== '' && (
+                  <Text style={styles.rejoinError}>{rejoinError}</Text>
+                )}
+              </View>
+            </View>
+          </SafeAreaLinearGradient>
+        </View>
+      );
+    }
+
     const opponent = players.find(
       (p) => p.id !== multiplayerService.getPlayerId(),
     );
@@ -739,6 +797,12 @@ const styles = StyleSheet.create({
     color: 'rgb(52, 211, 153)',
     fontSize: 14,
     fontWeight: '600',
+  },
+  rejoinError: {
+    color: '#fca5a5',
+    textAlign: 'center',
+    marginTop: 12,
+    fontSize: 14,
   },
   label: {
     color: 'rgba(255, 255, 255, 0.6)',
