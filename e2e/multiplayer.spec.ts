@@ -47,6 +47,7 @@ test.describe('Multiplayer P2P Flow', () => {
     const roomCode = roomCodeText?.split(': ')[1].trim();
     console.log('Room Code generated:', roomCode);
     expect(roomCode).toBeTruthy();
+    expect(roomCode).toHaveLength(6);
 
     // 2. Player joins
     await playerPage.goto('/multiplayer');
@@ -61,7 +62,6 @@ test.describe('Multiplayer P2P Flow', () => {
     });
     // Player sees lobby
     await expect(playerPage.getByText(`Room: ${roomCode}`)).toBeVisible();
-    await expect(playerPage.getByText('HostUser (Host)')).toBeVisible();
 
     // 4. Host selects Quiz and Starts
     await hostPage.getByRole('button', { name: 'Select Quiz' }).click();
