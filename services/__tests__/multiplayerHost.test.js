@@ -103,12 +103,33 @@ describe('host authority', () => {
       ],
     );
     expect(onScore).toHaveBeenCalledWith('peer-a', 4);
+    expect(sender.send).not.toHaveBeenCalled();
     expect(other.send).toHaveBeenCalledWith({
       type: 'SCORE_UPDATE',
       playerId: 'peer-a',
       score: 4,
     });
     expect(console.warn).not.toHaveBeenCalled();
+  });
+
+  it('does not echo a SCORE_UPDATE back to its sender', async () => {
+    await startHostWithAJoinedClient();
+
+    sender.handlers.data({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 4,
+    });
+
+    // The sender applied its own score before sending, so an echo would write
+    // the same value twice and could revert a newer one with an older one.
+    expect(sender.send).not.toHaveBeenCalled();
+    expect(other.send).toHaveBeenCalledTimes(1);
+    expect(other.send).toHaveBeenCalledWith({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 4,
+    });
   });
 
   it('drops a SCORE_UPDATE that names another player', async () => {

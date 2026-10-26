@@ -434,11 +434,14 @@ class MultiplayerService {
           p.id === msg.playerId ? { ...p, score: msg.score } : p,
         );
         this.notifyScoreUpdate(msg.playerId, msg.score);
-        this.broadcast({
-          type: 'SCORE_UPDATE',
-          playerId: msg.playerId,
-          score: msg.score,
-        });
+        this.broadcast(
+          {
+            type: 'SCORE_UPDATE',
+            playerId: msg.playerId,
+            score: msg.score,
+          },
+          conn.peer,
+        );
       } else if (msg.type === 'PLAYER_PROGRESS') {
         if (!isSenderAllowed(msg.playerId, conn.peer)) {
           this.dropForeignUpdate(msg, conn);
