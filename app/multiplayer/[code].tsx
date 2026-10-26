@@ -463,9 +463,9 @@ export default function MultiplayerRoom() {
                           {p.name} {p.isHost ? '👑' : ''}{' '}
                           {p.id === myId ? '(You)' : ''}
                         </Text>
-                        {p.finishTime ? (
+                        {p.finished ? (
                           <Text style={styles.resultTime}>
-                            Finished in {formatTime(p.finishTime)}
+                            Finished in {formatTime(p.finishTime ?? 0)}
                           </Text>
                         ) : (
                           <Text style={styles.resultTime}>
