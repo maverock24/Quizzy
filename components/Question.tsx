@@ -23,6 +23,7 @@ import { useReadAloud } from './useReadAloud';
 import { ClickableTerms } from './ClickableTerms';
 import { CelebrationOverload } from './kids/CelebrationOverload';
 import { SettingsHeader } from './SettingsHeader';
+import { isTypedAnswer } from '@/services/answerMode';
 
 type Answer = {
   answer: string;
@@ -259,10 +260,8 @@ export const Question: React.FC<QuestionProps> = ({
   showTotal,
 }) => {
   const { audioEnabled, textInputAnswerMode, kidsMode } = useQuiz();
-  const useTextInput = textInputAnswerMode || forceTextInput;
-  const correctAnswerIsNumeric = /^-?\d+(?:[.,]\d+)?$/.test(
-    correctAnswer.trim(),
-  );
+  const typedAnswer = isTypedAnswer(correctAnswer);
+  const useTextInput = textInputAnswerMode || forceTextInput || typedAnswer;
   const { t } = useTranslation();
   const { readAloud, stopTTS } = useReadAloud();
   const answerLabels = ['A:', 'B:', 'C:', 'D:'];
@@ -852,7 +851,7 @@ export const Question: React.FC<QuestionProps> = ({
               editable={!textInputSubmitted}
               onSubmitEditing={handleTextInputSubmit}
               returnKeyType="done"
-              keyboardType={correctAnswerIsNumeric ? 'numeric' : 'default'}
+              keyboardType={typedAnswer ? 'numeric' : 'default'}
               autoCapitalize="none"
               autoCorrect={false}
             />
