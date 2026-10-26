@@ -7,6 +7,7 @@ export interface RulePlayer {
   name: string;
   score: number;
   progress: number;
+  totalQuestions?: number;
   finished: boolean;
   finishTime?: number;
   left?: boolean;
@@ -89,6 +90,47 @@ export function winnerOf(players: RulePlayer[]): RulePlayer | null {
       return (a.finishTime ?? Infinity) - (b.finishTime ?? Infinity);
     });
   return ranked.length > 0 ? ranked[0] : null;
+}
+
+export type Ahead = 'you' | 'rival' | 'tied' | 'none';
+
+export interface Standing {
+  you?: RulePlayer;
+  rival?: RulePlayer;
+  lead: number;
+  ahead: Ahead;
+}
+
+/**
+ * The viewer is matched by id and nothing else, so a null id names nobody and
+ * the caller draws no viewer row. A present rival beats a departed slot left
+ * beside its own revive.
+ */
+export function standings(
+  players: RulePlayer[],
+  myId: string | null,
+): Standing {
+  const you = myId ? players.find((p) => p.id === myId) : undefined;
+  if (!you) return { lead: 0, ahead: 'none' };
+  const others = players.filter((p) => p.id !== you.id);
+  const rival = others.find((p) => p.left !== true) ?? others[0];
+  if (!rival) return { you, lead: 0, ahead: 'none' };
+  const lead = you.score - rival.score;
+  const ahead: Ahead = lead > 0 ? 'you' : lead < 0 ? 'rival' : 'tied';
+  return { you, rival, lead, ahead };
+}
+
+/** A missing total is 0%, not a division by zero, and a bar never leaves 0..100. */
+export function progressPercent(
+  player: RulePlayer,
+  fallbackTotal: number,
+): number {
+  const total = player.totalQuestions || fallbackTotal;
+  if (!total) return 0;
+  return Math.max(
+    0,
+    Math.min(100, Math.round((player.progress / total) * 100)),
+  );
 }
 
 export function connectedCount(players: RulePlayer[]): number {

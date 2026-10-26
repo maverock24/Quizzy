@@ -5,6 +5,8 @@ import {
   findJoinTarget,
   isSenderAllowed,
   occupiedCount,
+  progressPercent,
+  standings,
   winnerOf,
 } from '../multiplayerRules';
 
@@ -178,6 +180,93 @@ describe('winnerOf', () => {
 
   it('returns null when nobody finished', () => {
     expect(winnerOf([player('peer-a'), player('peer-b')])).toBeNull();
+  });
+});
+
+describe('standings', () => {
+  it('finds the viewer and the rival by id', () => {
+    const players = [
+      player('host', { score: 7, progress: 8, totalQuestions: 31 }),
+      player('peer-a'),
+    ];
+    const standing = standings(players, 'host');
+    expect(standing.you.id).toBe('host');
+    expect(standing.rival.id).toBe('peer-a');
+  });
+
+  it('reports the viewer ahead by the point gap', () => {
+    const players = [
+      player('host', { score: 7 }),
+      player('peer-a', { score: 5 }),
+    ];
+    const standing = standings(players, 'host');
+    expect(standing.ahead).toBe('you');
+    expect(standing.lead).toBe(2);
+  });
+
+  it('reports a negative lead when the rival leads', () => {
+    const players = [
+      player('host', { score: 5 }),
+      player('peer-a', { score: 7 }),
+    ];
+    const standing = standings(players, 'host');
+    expect(standing.ahead).toBe('rival');
+    expect(standing.lead).toBe(-2);
+  });
+
+  it('calls equal points a tie even when progress differs', () => {
+    const players = [
+      player('host', { score: 4, progress: 2 }),
+      player('peer-a', { score: 4, progress: 7 }),
+    ];
+    const standing = standings(players, 'host');
+    expect(standing.ahead).toBe('tied');
+    expect(standing.lead).toBe(0);
+  });
+
+  it('prefers the rival who has not left', () => {
+    const players = [
+      player('host'),
+      player('peer-old', { left: true }),
+      player('peer-new'),
+    ];
+    expect(standings(players, 'host').rival.id).toBe('peer-new');
+  });
+
+  it('finds no viewer for a null id', () => {
+    const players = [player('host'), player('peer-a')];
+    const standing = standings(players, null);
+    expect(standing.you).toBeUndefined();
+    expect(standing.rival).toBeUndefined();
+    expect(standing.ahead).toBe('none');
+  });
+
+  it('is none for a one-player roster', () => {
+    const standing = standings([player('host')], 'host');
+    expect(standing.you.id).toBe('host');
+    expect(standing.rival).toBeUndefined();
+  });
+});
+
+describe('progressPercent', () => {
+  it('is the rounded share of questions answered', () => {
+    const p = player('peer-a', { progress: 8, totalQuestions: 31 });
+    expect(progressPercent(p, 31)).toBe(26);
+  });
+
+  it('falls back to the given total before the first answer', () => {
+    const p = player('peer-a', { progress: 1, totalQuestions: 0 });
+    expect(progressPercent(p, 4)).toBe(25);
+  });
+
+  it('never divides by zero', () => {
+    const p = player('peer-a', { progress: 0, totalQuestions: 0 });
+    expect(progressPercent(p, 0)).toBe(0);
+  });
+
+  it('clamps above a hundred', () => {
+    const p = player('peer-a', { progress: 5, totalQuestions: 4 });
+    expect(progressPercent(p, 4)).toBe(100);
   });
 });
 
