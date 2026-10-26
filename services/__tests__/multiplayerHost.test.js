@@ -178,6 +178,39 @@ describe('host authority', () => {
     );
   });
 
+  it('tells an onPlayerJoin listener about a join a pre-join snapshot cannot see', async () => {
+    peer = makePeer();
+    Peer.mockReturnValue(peer);
+    const promise = multiplayerService.createRoom('Ada');
+    peer.handlers.open('quizzy-ABC234');
+    await promise;
+
+    // The room screen holds the array it read before the join, so a write in
+    // place would make the joiner look present to the screen's dedupe and no
+    // render would follow. The snapshot has to stay what it was.
+    const snapshot = multiplayerService.getPlayers();
+    const onJoin = jest.fn();
+    multiplayerService.onPlayerJoin(onJoin);
+
+    const sender = connect('peer-a');
+    sender.handlers.data({
+      type: 'JOIN',
+      player: player('peer-a', { name: 'Ana', token: 'tok-a' }),
+    });
+
+    expect(snapshot.map((p) => p.id)).toEqual(['host']);
+    expect(onJoin).toHaveBeenCalledWith(
+      expect.objectContaining({ id: 'peer-a' }),
+    );
+    expect(multiplayerService.getPlayers()).not.toBe(
+      multiplayerService.getPlayers(),
+    );
+    expect(multiplayerService.getPlayers().map((p) => p.id)).toEqual([
+      'host',
+      'peer-a',
+    ]);
+  });
+
   it('drops a JOIN that claims the host id', async () => {
     await startHostWithAJoinedClient();
     const impostor = connect('peer-c');

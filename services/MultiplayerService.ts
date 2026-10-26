@@ -391,7 +391,7 @@ class MultiplayerService {
         let joined: Player;
         if (target === -1) {
           joined = { ...incoming, isHost: false, left: false };
-          this.players.push(joined);
+          this.players = [...this.players, joined];
         } else {
           // Revive the old entry, so score, progress, totalQuestions,
           // finished and finishTime survive the rejoin.
@@ -408,7 +408,9 @@ class MultiplayerService {
             token: incoming.token ?? '',
             left: false,
           };
-          this.players[target] = joined;
+          this.players = this.players.map((p, i) =>
+            i === target ? joined : p,
+          );
         }
 
         this.notifyPlayerJoin(joined);
@@ -485,7 +487,9 @@ class MultiplayerService {
         // without anybody having departed.
         return;
       }
-      this.players[index] = { ...this.players[index], left: true };
+      this.players = this.players.map((p, i) =>
+        i === index ? { ...p, left: true } : p,
+      );
       const playerId = conn.peer;
       this.onPlayerLeftCallbacks.forEach((cb) => cb(playerId));
       this.broadcast({ type: 'PLAYER_LEFT', playerId });
@@ -540,7 +544,7 @@ class MultiplayerService {
         break;
       case 'JOIN':
         if (!this.players.find((p) => p.id === msg.player.id)) {
-          this.players.push(msg.player);
+          this.players = [...this.players, msg.player];
         }
         this.notifyPlayerJoin(msg.player);
         break;
@@ -690,7 +694,7 @@ class MultiplayerService {
 
   // State Getters
   getPlayers(): Player[] {
-    return this.players;
+    return [...this.players];
   }
   getGameState(): GameState {
     return this.gameState;
