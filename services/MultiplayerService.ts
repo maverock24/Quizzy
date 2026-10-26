@@ -631,12 +631,13 @@ class MultiplayerService {
       this.players = this.players.map((p) => (p.isHost ? { ...p, score } : p));
       this.notifyScoreUpdate('host', score);
       this.broadcast({ type: 'SCORE_UPDATE', playerId: 'host', score });
-    } else if (this.hostConnection?.open) {
-      this.hostConnection.send({
-        type: 'SCORE_UPDATE',
-        playerId: this.playerId!,
-        score,
-      });
+    } else if (this.hostConnection?.open && this.playerId) {
+      const me = this.playerId;
+      this.players = this.players.map((p) =>
+        p.id === me ? { ...p, score } : p,
+      );
+      this.notifyScoreUpdate(me, score);
+      this.hostConnection.send({ type: 'SCORE_UPDATE', playerId: me, score });
     }
   }
 
@@ -654,10 +655,17 @@ class MultiplayerService {
         progress,
         totalQuestions,
       });
-    } else if (this.hostConnection?.open) {
+    } else if (this.hostConnection?.open && this.playerId) {
+      const me = this.playerId;
+      this.players = this.players.map((p) =>
+        p.id === me ? { ...p, progress, totalQuestions } : p,
+      );
+      this.onPlayerProgressCallbacks.forEach((cb) =>
+        cb(me, progress, totalQuestions),
+      );
       this.hostConnection.send({
         type: 'PLAYER_PROGRESS',
-        playerId: this.playerId!,
+        playerId: me,
         progress,
         totalQuestions,
       });
@@ -682,10 +690,15 @@ class MultiplayerService {
         score,
         finishTime,
       });
-    } else if (this.hostConnection?.open) {
+    } else if (this.hostConnection?.open && this.playerId) {
+      const me = this.playerId;
+      this.players = this.players.map((p) =>
+        p.id === me ? { ...p, finished: true, score, finishTime } : p,
+      );
+      this.onPlayerFinishCallbacks.forEach((cb) => cb(me, score, finishTime));
       this.hostConnection.send({
         type: 'PLAYER_FINISH',
-        playerId: this.playerId!,
+        playerId: me,
         score,
         finishTime,
       });
