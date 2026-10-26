@@ -45,6 +45,14 @@ describe('isTypedAnswer', () => {
     expect(isTypedAnswer('dreißig')).toBe(false);
   });
 
+  it('rejects a trailing minus', () => {
+    expect(isTypedAnswer('5-')).toBe(false);
+  });
+
+  it('rejects a doubled minus', () => {
+    expect(isTypedAnswer('--5')).toBe(false);
+  });
+
   it('rejects a bare minus', () => {
     expect(isTypedAnswer('-')).toBe(false);
   });

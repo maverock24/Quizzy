@@ -702,9 +702,11 @@ export const Question: React.FC<QuestionProps> = ({
   // TTS: Read aloud question and answers
   const handleReadAloud = () => {
     const questionText = typeof question === 'string' ? question : '';
-    const answersText = answers
-      .map((a, i) => `${answerLabels[i]} ${a.answer}`)
-      .join('. ');
+    // Only read the options the player can see: a typed question hides the
+    // buttons, and one of them is the answer.
+    const answersText = useTextInput
+      ? ''
+      : answers.map((a, i) => `${answerLabels[i]} ${a.answer}`).join('. ');
     const fullText = `${questionText}.${answersText}`;
     readAloud(fullText);
   };
