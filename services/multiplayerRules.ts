@@ -120,6 +120,18 @@ export function standings(
   return { you, rival, lead, ahead };
 }
 
+/**
+ * The one line above the two rows. Points decide, so equal points read `Tied`
+ * however far apart the two are through the quiz.
+ */
+export function leadLabel(standing: Standing): string {
+  const { you, rival, lead, ahead } = standing;
+  if (!you || !rival) return 'Waiting for your rival';
+  if (rival.left) return 'Opponent left';
+  if (ahead === 'rival') return `${-lead} behind`;
+  return ahead === 'you' ? `You're ahead by ${lead}` : 'Tied';
+}
+
 /** A missing total is 0%, not a division by zero, and a bar never leaves 0..100. */
 export function progressPercent(
   player: RulePlayer,

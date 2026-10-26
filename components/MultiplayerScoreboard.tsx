@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {
-  type Ahead,
   type RulePlayer,
+  leadLabel,
   progressPercent,
   standings,
 } from '@/services/multiplayerRules';
@@ -19,18 +19,6 @@ interface RowProps {
   total: number;
   trailing: boolean;
 }
-
-const leadLabel = (
-  you?: RulePlayer,
-  rival?: RulePlayer,
-  lead = 0,
-  ahead: Ahead = 'none',
-) => {
-  if (!you || !rival) return 'Waiting for your rival';
-  if (rival.left) return 'Opponent left';
-  if (ahead === 'rival') return `${-lead} behind`;
-  return ahead === 'you' ? `You're ahead by ${lead}` : 'Tied';
-};
 
 const Row = ({ p, isYou, total, trailing }: RowProps) => {
   const q = p.totalQuestions || total;
@@ -72,11 +60,12 @@ export const MultiplayerScoreboard: React.FC<MultiplayerScoreboardProps> = ({
   myId,
   totalQuestions,
 }) => {
-  const { you, rival, lead, ahead } = standings(players, myId);
+  const standing = standings(players, myId);
+  const { you, rival, ahead } = standing;
   return (
     <View style={styles.container}>
       <Text style={[styles.lead, ahead === 'none' && styles.leadMuted]}>
-        {leadLabel(you, rival, lead, ahead)}
+        {leadLabel(standing)}
       </Text>
       {you && (
         <Row

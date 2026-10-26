@@ -4,6 +4,7 @@ import {
   connectedCount,
   findJoinTarget,
   isSenderAllowed,
+  leadLabel,
   occupiedCount,
   progressPercent,
   standings,
@@ -245,6 +246,39 @@ describe('standings', () => {
     const standing = standings([player('host')], 'host');
     expect(standing.you.id).toBe('host');
     expect(standing.rival).toBeUndefined();
+  });
+});
+
+describe('leadLabel', () => {
+  const you = (score) => player('host', { isHost: true, score, token: '' });
+  const rival = (score, overrides = {}) =>
+    player('peer-a', { score, token: 'tok-a', ...overrides });
+
+  it('says how far ahead the viewer is', () => {
+    expect(leadLabel(standings([you(7), rival(5)], 'host'))).toBe(
+      "You're ahead by 2",
+    );
+  });
+
+  it('says how far behind the viewer is', () => {
+    expect(leadLabel(standings([you(5), rival(7)], 'host'))).toBe('2 behind');
+  });
+
+  it('calls equal points tied even when the progress differs', () => {
+    const players = [you(4), rival(4, { progress: 7 })];
+    expect(leadLabel(standings(players, 'host'))).toBe('Tied');
+  });
+
+  it('reports a departed rival instead of a lead', () => {
+    expect(
+      leadLabel(standings([you(9), rival(0, { left: true })], 'host')),
+    ).toBe('Opponent left');
+  });
+
+  it('waits when there is nobody to compare with', () => {
+    expect(leadLabel(standings([you(3)], 'host'))).toBe(
+      'Waiting for your rival',
+    );
   });
 });
 
