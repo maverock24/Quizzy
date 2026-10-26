@@ -1,5 +1,6 @@
 import {
   allFinished,
+  applyJoin,
   connectedCount,
   findJoinTarget,
   isSenderAllowed,
@@ -69,6 +70,55 @@ describe('findJoinTarget', () => {
     ];
     expect(findJoinTarget(players, '', 'host')).toBe(-1);
     expect(findJoinTarget(players, 'tok-host', 'host')).toBe(-1);
+  });
+});
+
+describe('applyJoin', () => {
+  it('returns the same array when the id is already present', () => {
+    const players = [player('peer-a')];
+    expect(applyJoin(players, player('peer-a'))).toBe(players);
+  });
+
+  it('replaces the entry with the same token and keeps its index', () => {
+    const players = [
+      player('host', { isHost: true, token: '' }),
+      player('peer-old', { token: 'tok-a' }),
+      player('peer-b', { token: 'tok-b' }),
+    ];
+    const merged = applyJoin(players, player('peer-new', { token: 'tok-a' }));
+    expect(merged.map((p) => p.id)).toEqual(['host', 'peer-new', 'peer-b']);
+    expect(merged).not.toBe(players);
+  });
+
+  it('appends a player it has never seen', () => {
+    const players = [player('host', { isHost: true, token: '' })];
+    const merged = applyJoin(players, player('peer-a', { token: 'tok-a' }));
+    expect(merged).toHaveLength(2);
+    expect(merged.map((p) => p.id)).toEqual(['host', 'peer-a']);
+  });
+
+  it('keeps the host entry when a join carries the host token', () => {
+    const players = [
+      player('host', { name: 'Ada', isHost: true, token: 'tok-host' }),
+    ];
+    const merged = applyJoin(
+      players,
+      player('peer-a', { name: 'Mallory', token: 'tok-host' }),
+    );
+    expect(merged.find((p) => p.isHost).name).toBe('Ada');
+    expect(merged.find((p) => p.isHost).token).toBe('tok-host');
+  });
+
+  it('ignores an empty token on another entry', () => {
+    const players = [player('peer-a', { token: '' })];
+    const merged = applyJoin(players, player('peer-b', { token: '' }));
+    expect(merged.map((p) => p.id)).toEqual(['peer-a', 'peer-b']);
+  });
+
+  it('does not mutate the input array', () => {
+    const players = [player('peer-a', { token: 'tok-a' })];
+    applyJoin(players, player('peer-b', { token: 'tok-b' }));
+    expect(players).toHaveLength(1);
   });
 });
 
