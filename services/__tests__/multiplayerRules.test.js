@@ -74,9 +74,15 @@ describe('findJoinTarget', () => {
 });
 
 describe('applyJoin', () => {
-  it('returns the same array when the id is already present', () => {
-    const players = [player('peer-a')];
-    expect(applyJoin(players, player('peer-a'))).toBe(players);
+  it('replaces the entry when the same id arrives again', () => {
+    const players = [player('peer-a', { token: 'tok-a' })];
+    const merged = applyJoin(
+      players,
+      player('peer-a', { name: 'Ana', token: 'tok-a' }),
+    );
+    expect(merged).not.toBe(players);
+    expect(merged).toHaveLength(1);
+    expect(merged[0].name).toBe('Ana');
   });
 
   it('replaces the entry with the same token and keeps its index', () => {

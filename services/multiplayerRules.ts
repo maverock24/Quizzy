@@ -58,19 +58,16 @@ export function findJoinTarget(
 }
 
 /**
- * A join merges into the roster instead of appending to it. A rejoin rewrites
- * the entry's id to the new peer id, so the token identifies the human: an
- * entry that answers to the same token is replaced in its own place. The
- * input array is never written to, so a caller holding it sees no change.
+ * A join merges into the roster instead of appending to it, and it picks the
+ * same entry the host picks: the token identifies the human, because a rejoin
+ * rewrites the entry's id. Sharing `findJoinTarget` is what keeps the lobby
+ * and the host's roster from disagreeing about who a join is. The input array
+ * is never written to, so a caller holding it sees no change.
  */
 export function applyJoin<T extends RulePlayer>(players: T[], joined: T): T[] {
-  if (players.some((p) => p.id === joined.id)) return players;
-  const token = joined.token ?? '';
-  const at = token
-    ? players.findIndex((p) => p.token === token && !isHostEntry(p))
-    : -1;
-  if (at === -1) return [...players, joined];
-  return players.map((p, i) => (i === at ? joined : p));
+  const target = findJoinTarget(players, joined.token ?? '', joined.id);
+  if (target === -1) return [...players, joined];
+  return players.map((p, i) => (i === target ? joined : p));
 }
 
 /** A room is done when nobody is still playing, and an empty room is not done. */
