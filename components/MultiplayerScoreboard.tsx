@@ -64,7 +64,12 @@ export const MultiplayerScoreboard: React.FC<MultiplayerScoreboardProps> = ({
   const { you, rival, ahead } = standing;
   return (
     <View style={styles.container}>
-      <Text style={[styles.lead, ahead === 'none' && styles.leadMuted]}>
+      <Text
+        style={[
+          styles.lead,
+          (ahead === 'none' || rival?.left === true) && styles.leadMuted,
+        ]}
+      >
         {leadLabel(standing)}
       </Text>
       {you && (
@@ -72,7 +77,7 @@ export const MultiplayerScoreboard: React.FC<MultiplayerScoreboardProps> = ({
           p={you}
           isYou
           total={totalQuestions}
-          trailing={ahead === 'rival'}
+          trailing={ahead === 'rival' && rival?.left !== true}
         />
       )}
       {you && rival && <View style={styles.divider} />}

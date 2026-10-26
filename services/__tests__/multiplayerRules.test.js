@@ -185,6 +185,20 @@ describe('winnerOf', () => {
 });
 
 describe('standings', () => {
+  // The joiner is the second entry the host ever writes, so the viewer must be
+  // found by id and never by position.
+  it('finds the viewer when the host is first in the roster', () => {
+    const players = [
+      player('host', { isHost: true, score: 1, token: '' }),
+      player('peer-me', { score: 3, token: 'tok-me' }),
+    ];
+    const standing = standings(players, 'peer-me');
+    expect(standing.you.id).toBe('peer-me');
+    expect(standing.rival.id).toBe('host');
+    expect(standing.ahead).toBe('you');
+    expect(standing.lead).toBe(2);
+  });
+
   it('finds the viewer and the rival by id', () => {
     const players = [
       player('host', { score: 7, progress: 8, totalQuestions: 31 }),
