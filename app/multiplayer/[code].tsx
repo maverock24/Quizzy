@@ -30,6 +30,7 @@ import { Question } from '../../components/Question';
 import { Answer, Quiz, QuizQuestion } from '../../components/types';
 import { QuizSelection } from '../../components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
+import { MultiplayerScoreboard } from '@/components/MultiplayerScoreboard';
 
 const shuffleArray = <T,>(array: T[]): T[] => {
   const shuffled = [...array];
@@ -530,10 +531,6 @@ export default function MultiplayerRoom() {
       );
     }
 
-    const opponent = players.find(
-      (p) => p.id !== multiplayerService.getPlayerId(),
-    );
-
     return (
       <View style={styles.outerContainer}>
         <SafeAreaLinearGradient
@@ -550,45 +547,11 @@ export default function MultiplayerRoom() {
           </TouchableOpacity>
 
           <View style={styles.gameContainer}>
-            {/* Opponent Progress Bar */}
-            {opponent && (
-              <View style={styles.opponentTracker}>
-                {opponent.left ? (
-                  <Text style={styles.opponentName}>Opponent left</Text>
-                ) : (
-                  <>
-                    <View style={styles.opponentInfo}>
-                      <Text style={styles.opponentName}>
-                        ⚔️ {opponent.name}
-                      </Text>
-                      <Text style={styles.opponentScore}>
-                        {opponent.score} correct • Q
-                        {Math.min(
-                          opponent.progress + 1,
-                          opponent.totalQuestions || randomizedQuestions.length,
-                        )}
-                        /{opponent.totalQuestions || randomizedQuestions.length}
-                      </Text>
-                    </View>
-                    <View style={styles.progressBarBg}>
-                      <View
-                        style={[
-                          styles.progressBarFill,
-                          {
-                            width: `${
-                              (opponent.progress /
-                                (opponent.totalQuestions ||
-                                  randomizedQuestions.length)) *
-                              100
-                            }%`,
-                          },
-                        ]}
-                      />
-                    </View>
-                  </>
-                )}
-              </View>
-            )}
+            <MultiplayerScoreboard
+              players={players}
+              myId={multiplayerService.getPlayerId()}
+              totalQuestions={randomizedQuestions.length}
+            />
 
             <Question
               question={
@@ -1025,43 +988,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#1a1a1a',
     padding: 20,
     zIndex: 100,
-  },
-  // Opponent tracker
-  opponentTracker: {
-    backgroundColor: 'rgba(239, 68, 68, 0.15)',
-    borderWidth: 1,
-    borderColor: 'rgba(239, 68, 68, 0.3)',
-    borderRadius: 12,
-    padding: 12,
-    marginHorizontal: 16,
-    marginTop: 50,
-    marginBottom: 8,
-  },
-  opponentInfo: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 8,
-  },
-  opponentName: {
-    color: '#fca5a5',
-    fontSize: 14,
-    fontWeight: '700',
-  },
-  opponentScore: {
-    color: 'rgba(255, 255, 255, 0.6)',
-    fontSize: 12,
-  },
-  progressBarBg: {
-    height: 4,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    borderRadius: 2,
-    overflow: 'hidden',
-  },
-  progressBarFill: {
-    height: '100%',
-    backgroundColor: '#ef4444',
-    borderRadius: 2,
   },
   // Results screen
   resultsContainer: {
