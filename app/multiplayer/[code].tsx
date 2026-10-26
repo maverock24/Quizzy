@@ -21,6 +21,7 @@ import { presenceService } from '../../services/PresenceService';
 import { failureMessage } from '../../services/multiplayerFailures';
 import {
   allFinished as allFinishedIn,
+  applyJoin,
   winnerOf,
 } from '../../services/multiplayerRules';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -200,10 +201,7 @@ export default function MultiplayerRoom() {
 
     // Setup listeners
     multiplayerService.onPlayerJoin((player) => {
-      setPlayers((prev) => {
-        if (prev.find((p) => p.id === player.id)) return prev;
-        return [...prev, player];
-      });
+      setPlayers((prev) => applyJoin(prev, player));
     });
 
     multiplayerService.onGameStateChange((newState) => {
