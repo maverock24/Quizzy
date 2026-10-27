@@ -1,6 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Link, Tabs } from 'expo-router';
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Easing, Pressable, StyleSheet, View } from 'react-native';
 import Animated, {
   useSharedValue,
@@ -29,6 +30,7 @@ function TabBarIcon(props: {
 }
 
 export default function TabLayout() {
+  const { t } = useTranslation();
   const image = require('../../assets/images/stars.jpeg');
   const colorScheme = useColorScheme();
 
@@ -88,7 +90,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="index"
           options={{
-            title: 'Quiz',
+            title: t('tab_quiz'),
             tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
             headerRight: () => (
               <Link href="/modal" asChild>
@@ -109,7 +111,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="learn"
           options={{
-            title: 'Learn',
+            title: t('tab_learn'),
             tabBarIcon: ({ color }) => (
               <TabBarIcon name="graduation-cap" color={color} />
             ),
@@ -118,7 +120,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="profile"
           options={{
-            title: 'Profile',
+            title: t('tab_profile'),
             tabBarIcon: ({ color }) => (
               <TabBarIcon name="trophy" color={color} />
             ),
@@ -127,7 +129,7 @@ export default function TabLayout() {
         <Tabs.Screen
           name="settings"
           options={{
-            title: 'Settings',
+            title: t('tab_settings'),
             tabBarIcon: ({ color }) => <TabBarIcon name="gear" color={color} />,
           }}
         />

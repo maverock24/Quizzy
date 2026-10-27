@@ -54,7 +54,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
         {/* Logo / Icon */}
         <View style={styles.logoContainer}>
           <Text style={styles.logoEmoji}>📚</Text>
-          <Text style={styles.title}>Quizzy</Text>
+          <Text style={styles.title}>{t('quiz_title')}</Text>
           <Text style={styles.subtitle}>
             {step === 1
               ? t('welcome_message', "Welcome! Let's get started.")
@@ -71,9 +71,9 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
             <View style={styles.languageOptionsContainer}>
               {[
-                { label: 'English', value: 'en' },
-                { label: 'Deutsch', value: 'de' },
-                { label: 'Suomi', value: 'fi' },
+                { label: t('english'), value: 'en' },
+                { label: t('german'), value: 'de' },
+                { label: t('finnish'), value: 'fi' },
               ].map((option) => (
                 <TouchableOpacity
                   key={option.value}

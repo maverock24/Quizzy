@@ -353,5 +353,16 @@
   "kids_celebration_2": "WOOHOO!",
   "kids_celebration_3": "GREAT!",
   "kids_celebration_4": "BRILLIANT!",
-  "kids_celebration_5": "NICE!"
+  "kids_celebration_5": "NICE!",
+  "tab_quiz": "Quiz",
+  "tab_learn": "Learn",
+  "tab_profile": "Profile",
+  "tab_settings": "Settings",
+  "not_found_title": "Oops!",
+  "not_found_body": "This screen doesn't exist.",
+  "not_found_home": "Go to home screen!",
+  "modal_title": "Modal",
+  "edit_info_open_code": "Open up the code for this screen:",
+  "edit_info_change_text": "Change any of the text, save the file, and your app will automatically update.",
+  "edit_info_tap_here": "Tap here if your app doesn't automatically update after making changes"
 }

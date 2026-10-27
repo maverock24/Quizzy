@@ -18,14 +18,6 @@ const IDENTICAL_TO_ENGLISH_ALLOWED = {
   fi: ['quiz_title'],
 };
 
-// Entries of the allowlist above that are declared ahead of the slice that makes
-// them true, so they must *not* be identical yet: `tab_quiz` does not exist until
-// S10. Each entry has to leave this list once it becomes identical, so a stale
-// entry fails.
-const ALLOWED_NOT_YET_IDENTICAL = {
-  de: ['tab_quiz'],
-};
-
 const REPO_ROOT = path.resolve(__dirname, '../../..');
 const SCAN_ROOTS = ['app', 'components', 'services'];
 const SOURCE_EXTENSIONS = ['.ts', '.tsx', '.js', '.jsx'];
@@ -87,19 +79,12 @@ describe('locale parity', () => {
     for (const [language, names] of Object.entries(
       IDENTICAL_TO_ENGLISH_ALLOWED,
     )) {
-      const pending = ALLOWED_NOT_YET_IDENTICAL[language] || [];
       for (const name of names) {
         expect({
           language,
           name,
           identical: identicalToEnglish(language, name),
-        }).toEqual({ language, name, identical: !pending.includes(name) });
-      }
-    }
-
-    for (const [language, names] of Object.entries(ALLOWED_NOT_YET_IDENTICAL)) {
-      for (const name of names) {
-        expect(IDENTICAL_TO_ENGLISH_ALLOWED[language]).toContain(name);
+        }).toEqual({ language, name, identical: true });
       }
     }
   });

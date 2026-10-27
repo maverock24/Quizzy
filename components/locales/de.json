@@ -353,5 +353,16 @@
   "kids_celebration_2": "WOOOHOO!",
   "kids_celebration_3": "TOLL!",
   "kids_celebration_4": "GENIAL!",
-  "kids_celebration_5": "KLASSE!"
+  "kids_celebration_5": "KLASSE!",
+  "tab_quiz": "Quiz",
+  "tab_learn": "Lernen",
+  "tab_profile": "Profil",
+  "tab_settings": "Einstellungen",
+  "not_found_title": "Hoppla!",
+  "not_found_body": "Diese Seite gibt es nicht.",
+  "not_found_home": "Zur Startseite!",
+  "modal_title": "Dialog",
+  "edit_info_open_code": "Öffne den Code für diesen Bildschirm:",
+  "edit_info_change_text": "Ändere einen beliebigen Text, speichere die Datei, und deine App aktualisiert sich automatisch.",
+  "edit_info_tap_here": "Tippe hier, wenn deine App sich nach Änderungen nicht automatisch aktualisiert"
 }

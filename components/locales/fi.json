@@ -353,5 +353,16 @@
   "kids_celebration_2": "JIPPII!",
   "kids_celebration_3": "HYVÄ!",
   "kids_celebration_4": "LOISTAVAA!",
-  "kids_celebration_5": "HUIKEAA!"
+  "kids_celebration_5": "HUIKEAA!",
+  "tab_quiz": "Tietovisa",
+  "tab_learn": "Oppiminen",
+  "tab_profile": "Profiili",
+  "tab_settings": "Asetukset",
+  "not_found_title": "Hups!",
+  "not_found_body": "Tätä näkymää ei ole olemassa.",
+  "not_found_home": "Siirry etusivulle!",
+  "modal_title": "Modaali-ikkuna",
+  "edit_info_open_code": "Avaa tämän näkymän koodi:",
+  "edit_info_change_text": "Muuta mitä tahansa tekstiä, tallenna tiedosto, niin sovellus päivittyy automaattisesti.",
+  "edit_info_tap_here": "Napauta tästä, jos sovellus ei päivity automaattisesti muutosten jälkeen"
 }
