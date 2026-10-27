@@ -8,16 +8,18 @@ import {
   Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { Quiz, QuizQuestion, Answer } from '../types';
 
 interface DebuggingExerciseType {
   id: string;
   title: string;
   description: string;
-  code: string;
+  conceptLines: string[];
+  wrongAnswer: string;
   buggyLineIndex: number;
+  answer: string;
   explanation: string;
-  fixedCode: string;
 }
 
 interface DebuggingExerciseProps {
@@ -30,6 +32,8 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
   onBack,
   quizzes = [],
 }) => {
+  const { t } = useTranslation();
+
   // State and ref hooks must come first
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedLine, setSelectedLine] = useState<number | null>(null);
@@ -66,27 +70,20 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
                 .split('. ')
                 .filter((s: string) => s.length > 5);
               if (explanationLines.length >= 2) {
-                // Create code-like lines from explanation
-                const codeLines = explanationLines.map(
-                  (line: string, i: number) =>
-                    i === 0 ? `// Concept: ${line}` : `// ${line}`,
-                );
-                // Insert a "buggy" wrong answer line
-                const buggyLineIndex = Math.min(1, codeLines.length - 1);
-                codeLines.splice(
-                  buggyLineIndex,
-                  0,
-                  `// ❌ Wrong: ${wrongAnswers[0].answer}`,
-                );
+                // Keep the raw pieces here: the comment prefixes are translated
+                // at render time, because a `t()` in this memo would not re-run
+                // when the language changes.
+                const buggyLineIndex = Math.min(1, explanationLines.length - 1);
 
                 debugExercises.push({
                   id: `${quiz.name}-${idx}`,
                   title: quiz.name,
                   description: q.question,
-                  code: codeLines.join('\n'),
+                  conceptLines: explanationLines,
+                  wrongAnswer: wrongAnswers[0].answer,
                   buggyLineIndex: buggyLineIndex,
-                  explanation: `The correct answer is: ${q.answer}. ${q.explanation}`,
-                  fixedCode: `// ✅ Correct: ${q.answer}\n${q.explanation}`,
+                  answer: q.answer,
+                  explanation: q.explanation,
                 });
               }
             }
@@ -148,27 +145,31 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
             size={80}
             color={percentage >= 70 ? '#4CAF50' : '#f44336'}
           />
-          <Text style={styles.completedTitle}>Bug Hunt Complete!</Text>
+          <Text style={styles.completedTitle}>{t('debug_complete')}</Text>
           <Text style={styles.scoreText}>
-            {correctCount} / {exercises.length} bugs found ({percentage}%)
+            {t('debug_score_line', {
+              correct: correctCount,
+              total: exercises.length,
+              percent: percentage,
+            })}
           </Text>
           <Text style={styles.encouragementText}>
             {percentage >= 90
-              ? "You're a debugging master! 🐛🔍"
+              ? `${t('debug_praise_90')} 🐛🔍`
               : percentage >= 70
-              ? 'Great bug detection skills! 🎯'
+              ? `${t('debug_praise_70')} 🎯`
               : percentage >= 50
-              ? 'Keep hunting those bugs! 💪'
-              : 'Practice makes a better debugger! 🔧'}
+              ? `${t('debug_praise_50')} 💪`
+              : `${t('debug_praise_else')} 🔧`}
           </Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.secondaryButton} onPress={onBack}>
               <Ionicons name="arrow-back" size={20} color="white" />
-              <Text style={styles.buttonText}>Back</Text>
+              <Text style={styles.buttonText}>{t('learning_back')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.primaryButton} onPress={resetQuiz}>
               <Ionicons name="refresh" size={20} color="white" />
-              <Text style={styles.buttonText}>Try Again</Text>
+              <Text style={styles.buttonText}>{t('learning_try_again')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -177,7 +178,22 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
   }
 
   const currentExercise = exercises[currentIndex];
-  const codeLines = currentExercise.code.split('\n');
+  const codeLines = currentExercise.conceptLines.map((line, i) =>
+    i === 0 ? t('debug_concept_comment', { concept: line }) : `// ${line}`,
+  );
+  codeLines.splice(
+    currentExercise.buggyLineIndex,
+    0,
+    t('debug_wrong_comment', { answer: currentExercise.wrongAnswer }),
+  );
+  const explanationText = t('debug_result_body', {
+    answer: currentExercise.answer,
+    explanation: currentExercise.explanation,
+  });
+  const fixedCodeText = t('debug_fixed_body', {
+    answer: currentExercise.answer,
+    explanation: currentExercise.explanation,
+  });
   const isCorrect = selectedLine === currentExercise.buggyLineIndex;
 
   return (
@@ -186,7 +202,10 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
         <TouchableOpacity onPress={onBack} style={styles.headerBack}>
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>🐛 Bug Hunter</Text>
+        <Text style={styles.headerTitle}>
+          {`🐛 `}
+          {t('learn_mode_bughunter_title')}
+        </Text>
         <Text style={styles.progressText}>
           {currentIndex + 1} / {exercises.length}
         </Text>
@@ -212,7 +231,10 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
           </Text>
         </Animated.View>
 
-        <Text style={styles.instruction}>👆 Tap the line with the bug</Text>
+        <Text style={styles.instruction}>
+          {`👆 `}
+          {t('debug_instruction')}
+        </Text>
 
         <View style={styles.codeCard}>
           <View style={styles.codeHeader}>
@@ -278,11 +300,11 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
             ]}
           >
             <Text style={styles.resultTitle}>
-              {isCorrect ? '🎯 Bug Found!' : '❌ Wrong Line'}
+              {isCorrect
+                ? `🎯 ${t('debug_bug_found')}`
+                : `❌ ${t('debug_wrong_line')}`}
             </Text>
-            <Text style={styles.explanationText}>
-              {currentExercise.explanation}
-            </Text>
+            <Text style={styles.explanationText}>{explanationText}</Text>
 
             <TouchableOpacity
               style={styles.showFixButton}
@@ -294,17 +316,18 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
                 color="white"
               />
               <Text style={styles.showFixButtonText}>
-                {showFix ? 'Hide Fix' : 'Show Fixed Code'}
+                {showFix ? t('debug_hide_fix') : t('debug_show_fix')}
               </Text>
             </TouchableOpacity>
 
             {showFix && (
               <View style={styles.fixedCodeCard}>
-                <Text style={styles.fixedCodeTitle}>✅ Fixed Code:</Text>
+                <Text style={styles.fixedCodeTitle}>
+                  {`✅ `}
+                  {t('debug_fixed_code_title')}
+                </Text>
                 <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                  <Text style={styles.fixedCodeText}>
-                    {currentExercise.fixedCode}
-                  </Text>
+                  <Text style={styles.fixedCodeText}>{fixedCodeText}</Text>
                 </ScrollView>
               </View>
             )}
@@ -312,8 +335,8 @@ export const DebuggingExercise: React.FC<DebuggingExerciseProps> = ({
             <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
               <Text style={styles.nextButtonText}>
                 {currentIndex < exercises.length - 1
-                  ? 'Next Bug'
-                  : 'See Results'}
+                  ? t('debug_next')
+                  : t('learning_see_results')}
               </Text>
               <Ionicons name="arrow-forward" size={20} color="white" />
             </TouchableOpacity>

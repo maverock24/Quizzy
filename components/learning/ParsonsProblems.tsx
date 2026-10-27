@@ -8,6 +8,7 @@ import {
   Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { Quiz, QuizQuestion } from '../types';
 
 interface ParsonsLine {
@@ -39,6 +40,8 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
   onBack,
   quizzes = [],
 }) => {
+  const { t } = useTranslation();
+
   // State and ref hooks must come first
   const [currentIndex, setCurrentIndex] = useState(0);
   const [availableLines, setAvailableLines] = useState<DraggableLine[]>([]);
@@ -188,27 +191,31 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
             size={80}
             color={percentage >= 70 ? '#4CAF50' : '#4FC3F7'}
           />
-          <Text style={styles.completedTitle}>Parsons Complete!</Text>
+          <Text style={styles.completedTitle}>{t('parsons_complete')}</Text>
           <Text style={styles.scoreText}>
-            {correctCount} / {problems.length} correct ({percentage}%)
+            {t('learning_score_line', {
+              correct: correctCount,
+              total: problems.length,
+              percent: percentage,
+            })}
           </Text>
           <Text style={styles.encouragementText}>
             {percentage >= 90
-              ? 'Master code organizer! 🏆'
+              ? `${t('parsons_praise_90')} 🏆`
               : percentage >= 70
-              ? 'Great logical thinking! 🎯'
+              ? `${t('parsons_praise_70')} 🎯`
               : percentage >= 50
-              ? 'Good progress! Keep practicing 💪'
-              : 'Focus on the structure! 📚'}
+              ? `${t('parsons_praise_50')} 💪`
+              : `${t('parsons_praise_else')} 📚`}
           </Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.secondaryButton} onPress={onBack}>
               <Ionicons name="arrow-back" size={20} color="white" />
-              <Text style={styles.buttonText}>Back</Text>
+              <Text style={styles.buttonText}>{t('learning_back')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.primaryButton} onPress={resetQuiz}>
               <Ionicons name="refresh" size={20} color="white" />
-              <Text style={styles.buttonText}>Try Again</Text>
+              <Text style={styles.buttonText}>{t('learning_try_again')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -224,7 +231,10 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
         <TouchableOpacity onPress={onBack} style={styles.headerBack}>
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>📦 Parsons Problems</Text>
+        <Text style={styles.headerTitle}>
+          {`📦 `}
+          {t('learn_mode_parsons_title')}
+        </Text>
         <Text style={styles.progressText}>
           {currentIndex + 1} / {problems.length}
         </Text>
@@ -251,12 +261,13 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
         </Animated.View>
 
         <Text style={styles.sectionTitle}>
-          📝 Your Solution (tap to remove)
+          {`📝 `}
+          {t('parsons_solution_title')}
         </Text>
         <View style={styles.placedContainer}>
           {placedLines.length === 0 ? (
             <Text style={styles.placeholderText}>
-              Tap lines below to add them here...
+              {t('parsons_solution_empty')}
             </Text>
           ) : (
             placedLines.map((line, index) => (
@@ -296,7 +307,10 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
           )}
         </View>
 
-        <Text style={styles.sectionTitle}>🧩 Available Lines (tap to add)</Text>
+        <Text style={styles.sectionTitle}>
+          {`🧩 `}
+          {t('parsons_pool_title')}
+        </Text>
         <View style={styles.availableContainer}>
           {availableLines.map((line) => (
             <TouchableOpacity
@@ -309,9 +323,7 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
             </TouchableOpacity>
           ))}
           {availableLines.length === 0 && !showResult && (
-            <Text style={styles.allPlacedText}>
-              All lines placed! Check your answer.
-            </Text>
+            <Text style={styles.allPlacedText}>{t('parsons_pool_empty')}</Text>
           )}
         </View>
 
@@ -319,7 +331,7 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
           <View style={styles.actionButtons}>
             <TouchableOpacity style={styles.resetButton} onPress={resetProblem}>
               <Ionicons name="refresh" size={20} color="white" />
-              <Text style={styles.actionButtonText}>Reset</Text>
+              <Text style={styles.actionButtonText}>{t('parsons_reset')}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={[
@@ -330,7 +342,7 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
               disabled={availableLines.length > 0}
             >
               <Ionicons name="checkmark-circle" size={20} color="white" />
-              <Text style={styles.actionButtonText}>Check Answer</Text>
+              <Text style={styles.actionButtonText}>{t('parsons_check')}</Text>
             </TouchableOpacity>
           </View>
         )}
@@ -343,18 +355,18 @@ export const ParsonsProblems: React.FC<ParsonsProblemsProps> = ({
             ]}
           >
             <Text style={styles.resultTitle}>
-              {isCorrect ? '✅ Perfect Order!' : '❌ Not Quite Right'}
+              {isCorrect
+                ? `✅ ${t('parsons_correct')}`
+                : `❌ ${t('parsons_wrong')}`}
             </Text>
             <Text style={styles.resultText}>
-              {isCorrect
-                ? 'You arranged all the code lines correctly!'
-                : 'Some lines are in the wrong position. The correct positions are highlighted.'}
+              {isCorrect ? t('parsons_correct_body') : t('parsons_wrong_body')}
             </Text>
             <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
               <Text style={styles.nextButtonText}>
                 {currentIndex < problems.length - 1
-                  ? 'Next Problem'
-                  : 'See Results'}
+                  ? t('parsons_next')
+                  : t('learning_see_results')}
               </Text>
               <Ionicons name="arrow-forward" size={20} color="white" />
             </TouchableOpacity>
