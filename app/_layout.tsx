@@ -149,9 +149,21 @@ function RootLayoutNav() {
                     name="(tabs)"
                     options={{ headerShown: false }}
                   />
+                  {/* Without this the router registers the group with a default
+                      header whose title is the raw route name, so the lobby
+                      showed a bare "multiplayer" above its own title. The
+                      group's own layout hides the headers of its children, and
+                      the lobby draws its own back arrow. */}
+                  <Stack.Screen
+                    name="multiplayer"
+                    options={{ headerShown: false }}
+                  />
                   <Stack.Screen
                     name="modal"
-                    options={{ presentation: 'modal' }}
+                    // The route registered a default header titled "modal", so
+                    // a raw route name sat above the screen's own translated
+                    // title. The screen draws that title itself.
+                    options={{ presentation: 'modal', headerShown: false }}
                   />
                 </Stack>
               </OnboardingWrapper>
