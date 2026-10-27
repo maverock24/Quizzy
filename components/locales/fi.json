@@ -428,7 +428,7 @@
   "settings_update_no_storage": "Kirjoitettavaa tallennushakemistoa ei ole käytettävissä.",
   "settings_update_download_failed": "APK-lataus epäonnistui (HTTP {{status}}).",
   "settings_update_no_build": "Julkaistua Android-versiota ei löytynyt.",
-  "settings_update_check_failed": "Päivitysten tarkistus ei onnistu.",
+  "settings_update_check_failed": "Päivitysten tarkistus ei onnistunut.",
   "settings_update_install_failed": "Päivityksen asennus epäonnistui.",
   "settings_update_failed": "Päivitys epäonnistui",
   "settings_checking_updates": "Tarkistetaan päivityksiä…",
@@ -511,7 +511,7 @@
   "reader_start_from": "Aloita kysymyksestä:",
   "reader_currently_reading": "Luetaan parhaillaan: {{question}} {{current}} / {{total}}",
   "reader_reading_now": "LUETAAN NYT",
-  "reader_tts_unsupported": "Tekstistä puheeksi ei ole tuettu tässä selaimessa.",
+  "reader_tts_unsupported": "Tekstistä puheeksi -toimintoa ei tueta tässä selaimessa.",
   "essay_study_material": "Opiskelumateriaali",
   "essay_section_count": "{{count}} osio",
   "essay_sections_count": "{{count}} osiota",
@@ -524,6 +524,6 @@
   "glossary_term_count": "{{count}} termi saatavilla",
   "glossary_terms_count": "{{count}} termiä saatavilla",
   "flashcard_empty": "Ladataan tai ei enää kortteja...",
-  "flashcard_dump": "hylkää",
+  "flashcard_dump": "Hylkää",
   "flashcard_keep": "Pidä"
 }
