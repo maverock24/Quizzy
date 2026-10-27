@@ -26,6 +26,17 @@ const QUIZ_DATA: Record<string, unknown[]> = {
 /** Brand and bare units that read the same in every language. */
 const ALWAYS_ALLOWED = ['Quizzy'];
 
+/** Route names the router can leak as a default header title. */
+const ROUTE_NAMES = [
+  'multiplayer',
+  'modal',
+  'learn',
+  'settings',
+  'profile',
+  'index',
+  '(tabs)',
+];
+
 /** A raw `lower_snake` token on screen means a missing key, not a translation. */
 const RAW_KEY = /\b[a-z][a-z0-9]+(?:_[a-z0-9]+){1,}\b/g;
 /** Identifiers that are meant to be shown verbatim. */
@@ -95,6 +106,26 @@ function englishOnlyValues(language: 'de' | 'fi') {
     );
 }
 
+/**
+ * Clicks a label. Exact first, because Playwright's default is a
+ * case-insensitive substring match: "Bearbeiten" would otherwise hit the row
+ * label "Eigene Quizze bearbeiten" instead of the button beside it.
+ */
+async function clickLabel(page: Page, text: string) {
+  const exact = page.getByText(text, { exact: true });
+  const target =
+    (await exact.count()) > 0
+      ? exact.first()
+      : page.getByText(text, { exact: false }).first();
+  // Scroll first: rows inside the quiz selector are off-screen and Playwright
+  // refuses to click an invisible element even with force.
+  await target.scrollIntoViewIfNeeded({ timeout: 10000 }).catch(() => {});
+  // force: several of these sit in scroll views that never settle here.
+  await target.click({ force: true, timeout: 20000 });
+  // Modals mount late; too short a wait reads the screen before they exist.
+  await page.waitForTimeout(2600);
+}
+
 function wordPattern(value: string) {
   const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   return new RegExp(`(^|[^\\p{L}])${escaped}([^\\p{L}]|$)`, 'u');
@@ -120,21 +151,8 @@ type Screen = {
 
 function screensFor(language: 'de' | 'fi'): Screen[] {
   const translated = LOCALES[language];
-  const clickText = async (page: Page, text: string) => {
-    // Exact first: Playwright's default is a case-insensitive substring match,
-    // so "Bearbeiten" would otherwise hit the row label "Eigene Quizze
-    // bearbeiten" instead of the button that opens the editor.
-    const target = page.getByText(text, { exact: true });
-    const locator =
-      (await target.count()) > 0
-        ? target.first()
-        : page.getByText(text, { exact: false }).first();
-    // force: several of these sit in scroll views that never settle here.
-    await locator.click({ force: true, timeout: 15000 });
-    // Modals in this app mount late; too short a wait reads the screen before
-    // the dialog exists and silently passes.
-    await page.waitForTimeout(2600);
-  };
+  // One click helper, shared with the module-level flow.
+  const clickText = (page: Page, text: string) => clickLabel(page, text);
   const clickKey = (page: Page, key: string) =>
     clickText(page, translated[key]);
 
@@ -333,6 +351,14 @@ async function inspect(page: Page, language: 'de' | 'fi', screen: Screen) {
     }
   }
 
+  // A route name shown as its own line is the router's default header title,
+  // which is what leaked a bare "multiplayer" above the lobby.
+  for (const line of text.split('\n')) {
+    const trimmed = line.trim();
+    if (ROUTE_NAMES.includes(trimmed)) {
+      found.push({ kind: 'raw-route-name', text: trimmed });
+    }
+  }
   for (const match of text.matchAll(RAW_KEY)) {
     found.push({ kind: 'raw-key', text: match[0] });
   }
