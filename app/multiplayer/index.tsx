@@ -23,6 +23,7 @@ import {
 } from '../../services/PresenceService';
 import { normalizeRoomCode } from '../../services/roomCode';
 import { failureMessage } from '../../services/multiplayerFailures';
+import { isPlayableName } from '../../services/playerName';
 import { useQuiz } from '../../components/Quizprovider';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
@@ -137,7 +138,7 @@ export default function MultiplayerHome() {
   }, [isConnectedToLobby]);
 
   const handleCreateRoom = async () => {
-    if (!name.trim()) {
+    if (!isPlayableName(name)) {
       showAlert(t('multiplayer_required'), t('multiplayer_enter_name_body'));
       return;
     }
@@ -174,7 +175,7 @@ export default function MultiplayerHome() {
   const handleJoinRoom = async (codeToJoin: string) => {
     const target = normalizeRoomCode(codeToJoin);
 
-    if (!name.trim()) {
+    if (!isPlayableName(name)) {
       showAlert(t('multiplayer_required'), t('multiplayer_enter_name_body'));
       return;
     }

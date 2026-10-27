@@ -250,6 +250,11 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
   const completeOnboarding = useCallback(async (name: string, lang: string) => {
     setUserNameState(name);
+    // A fresh install has neither key, so the startup seed ran against two
+    // empty strings. Seed the multiplayer name here, or the first lobby after
+    // onboarding opens blank even though we just learned the player's name.
+    // Display only: D6 keeps the write for the first real game action.
+    setMultiplayerNameState((prev) => resolveInitialName(prev, name));
     setOnboardingCompletedState(true);
     setLanguageState(lang);
     i18n.changeLanguage(lang);
