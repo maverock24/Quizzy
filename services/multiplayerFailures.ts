@@ -1,3 +1,5 @@
+import i18n from '@/components/i18n';
+
 export type MultiplayerFailure =
   | 'bad-code'
   | 'room-not-found'
@@ -29,26 +31,27 @@ export function failureFromPeerError(type: string): MultiplayerFailure {
 }
 
 /**
- * One sentence per failure. Each literal stands alone: no shared string, so a
- * wrong sentence can only come from a wrong cause.
+ * One sentence per failure. Each branch stands alone: no shared string, so a
+ * wrong sentence can only come from a wrong cause. The translation is read per
+ * call, never at module scope, so it follows the current language.
  */
 export function failureMessage(failure: MultiplayerFailure): string {
   switch (failure) {
     case 'bad-code':
-      return 'A room code is six letters and numbers';
+      return i18n.t('multiplayer_failure_bad_code');
     case 'room-not-found':
-      return 'No room with that code';
+      return i18n.t('multiplayer_failure_room_not_found');
     case 'room-full':
-      return 'This room is already full';
+      return i18n.t('multiplayer_failure_room_full');
     case 'incompatible':
-      return 'This device cannot do multiplayer';
+      return i18n.t('multiplayer_failure_incompatible');
     case 'network':
-      return 'Cannot reach the server, check the connection';
+      return i18n.t('multiplayer_failure_network');
     case 'connect-failed':
-      return 'Could not connect, try again';
+      return i18n.t('multiplayer_failure_connect_failed');
     case 'timeout':
-      return 'The room did not answer';
+      return i18n.t('multiplayer_failure_timeout');
     case 'could-not-create':
-      return 'Could not create a room, try again';
+      return i18n.t('multiplayer_failure_could_not_create');
   }
 }

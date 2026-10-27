@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import {
   type RulePlayer,
   leadLabel,
@@ -21,17 +22,19 @@ interface RowProps {
 }
 
 const Row = ({ p, isYou, total, trailing }: RowProps) => {
+  const { t } = useTranslation();
   const q = p.totalQuestions || total;
+  const current = Math.min(p.progress + 1, q);
   const label = p.left
-    ? 'Left'
+    ? t('multiplayer_left')
     : p.finished
-    ? 'Finished'
-    : `Q${Math.min(p.progress + 1, q)}/${q}`;
+    ? t('multiplayer_status_finished')
+    : t('multiplayer_progress', { current, total: q });
   return (
     <View style={styles.row}>
       <View style={styles.rowInfo}>
         <Text style={[styles.name, (trailing || p.left) && styles.nameMuted]}>
-          {isYou ? 'You' : `⚔️ ${p.name}`}
+          {isYou ? t('multiplayer_you') : `⚔️ ${p.name}`}
         </Text>
         <Text
           style={[styles.score, isYou ? styles.scoreYou : styles.scoreRival]}

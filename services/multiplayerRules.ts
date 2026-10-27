@@ -1,3 +1,5 @@
+import i18n from '@/components/i18n';
+
 /**
  * The subset of a player the host's rules read. Declared here rather than
  * imported so the transport can use these functions without a cycle.
@@ -122,14 +124,18 @@ export function standings(
 
 /**
  * The one line above the two rows. Points decide, so equal points read `Tied`
- * however far apart the two are through the quiz.
+ * however far apart the two are through the quiz. The translation is read per
+ * call, never at module scope, so it follows the current language.
  */
 export function leadLabel(standing: Standing): string {
   const { you, rival, lead, ahead } = standing;
-  if (!you || !rival) return 'Waiting for your rival';
-  if (rival.left) return 'Opponent left';
-  if (ahead === 'rival') return `${-lead} behind`;
-  return ahead === 'you' ? `You're ahead by ${lead}` : 'Tied';
+  if (!you || !rival) return i18n.t('multiplayer_lead_waiting');
+  if (rival.left) return i18n.t('multiplayer_lead_opponent_left');
+  if (ahead === 'rival')
+    return i18n.t('multiplayer_lead_behind', { lead: -lead });
+  return ahead === 'you'
+    ? i18n.t('multiplayer_lead_ahead', { lead })
+    : i18n.t('multiplayer_lead_tied');
 }
 
 /** A missing total is 0%, not a division by zero, and a bar never leaves 0..100. */
