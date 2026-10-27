@@ -36,7 +36,10 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-          cache: gradle
+          # No `cache: gradle`. setup-java looks for gradle files to key the
+          # cache, and this repo has none: `expo prebuild` generates them later
+          # in this job. The step failed outright, which took down the whole
+          # workflow, so the Netlify deploy at the end never ran.
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
