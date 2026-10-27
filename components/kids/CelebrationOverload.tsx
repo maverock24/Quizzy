@@ -1,7 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, Animated, Easing, Dimensions, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
+
+// Module scope holds keys and emoji only, never a `t()` result: this array is
+// evaluated once at import time, a translated string here would freeze.
+const CELEBRATIONS = [
+  { key: 'kids_celebration_1', emoji: '🦄' },
+  { key: 'kids_celebration_2', emoji: '🌈' },
+  { key: 'kids_celebration_3', emoji: '🦄' },
+  { key: 'kids_celebration_4', emoji: '🌈' },
+  { key: 'kids_celebration_5', emoji: '🦄' },
+] as const;
 
 // ============================================================
 // Galloping Unicorn — runs across the screen with a bouncy gait
@@ -408,18 +419,12 @@ export const CelebrationOverload: React.FC<{
 // WooHoo Text
 // ============================================================
 const WooHooText: React.FC = () => {
+  const { t } = useTranslation();
   const scale = useRef(new Animated.Value(0.2)).current;
   const opacity = useRef(new Animated.Value(1)).current;
-  const [text] = useState(() => {
-    const texts = [
-      'SUPER! 🦄',
-      'WOOOHOO! 🌈',
-      'TOLL! 🦄',
-      'GENIAL! 🌈',
-      'KLASSE! 🦄',
-    ];
-    return texts[Math.floor(Math.random() * texts.length)];
-  });
+  const [celebration] = useState(
+    () => CELEBRATIONS[Math.floor(Math.random() * CELEBRATIONS.length)],
+  );
 
   useEffect(() => {
     Animated.sequence([
@@ -441,7 +446,7 @@ const WooHooText: React.FC = () => {
 
   return (
     <Animated.Text style={[styles.wooHoo, { opacity, transform: [{ scale }] }]}>
-      {text}
+      {`${t(celebration.key)} ${celebration.emoji}`}
     </Animated.Text>
   );
 };

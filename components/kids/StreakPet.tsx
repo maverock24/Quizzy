@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useMemo } from 'react';
 import { View, Text, Animated, Easing, StyleSheet } from 'react-native';
+import { useTranslation } from 'react-i18next';
 import { useGamification } from '@/components/gamification';
 
 type StreakPetProps = {
@@ -7,62 +8,72 @@ type StreakPetProps = {
   showLabel?: boolean;
 };
 
-const PET_STAGES = [
+// Module scope may only hold keys: a `t()` here would freeze the language at
+// import time. The words are resolved inside the component.
+type PetStage = {
+  minStreak: number;
+  emoji: string;
+  nameKey: `kids_pet_${number}_name`;
+  color: string;
+  messageKey: `kids_pet_${number}_message`;
+};
+
+const PET_STAGES: PetStage[] = [
   {
     minStreak: 0,
     emoji: '🥚',
-    name: 'Ei',
+    nameKey: 'kids_pet_0_name',
     color: '#FFEAA7',
-    message: 'Spiele täglich, um mich schlüpfen zu sehen!',
+    messageKey: 'kids_pet_0_message',
   },
   {
     minStreak: 1,
     emoji: '🐣',
-    name: 'Küken',
+    nameKey: 'kids_pet_1_name',
     color: '#FFD93D',
-    message: 'Ich bin geschlüpft! Spiel weiter!',
+    messageKey: 'kids_pet_1_message',
   },
   {
     minStreak: 3,
     emoji: '🐥',
-    name: 'Jungvogel',
+    nameKey: 'kids_pet_3_name',
     color: '#FFC107',
-    message: 'Ich wachse! Noch 4 Tage bis zum nächsten Level!',
+    messageKey: 'kids_pet_3_message',
   },
   {
     minStreak: 7,
     emoji: '🦉',
-    name: 'Weise Eule',
+    nameKey: 'kids_pet_7_name',
     color: '#8D6E63',
-    message: 'Du bist toll! Ich bin jetzt eine weise Eule!',
+    messageKey: 'kids_pet_7_message',
   },
   {
     minStreak: 14,
     emoji: '🦄',
-    name: 'Einhorn',
+    nameKey: 'kids_pet_14_name',
     color: '#E1BEE7',
-    message: 'Magisch! Du hast 14 Tage geschafft!',
+    messageKey: 'kids_pet_14_message',
   },
   {
     minStreak: 30,
     emoji: '🐉',
-    name: 'Drache',
+    nameKey: 'kids_pet_30_name',
     color: '#4CAF50',
-    message: 'FEUER! 30 Tage — ich bin jetzt ein Drache! 🐉🔥',
+    messageKey: 'kids_pet_30_message',
   },
   {
     minStreak: 60,
     emoji: '🌟',
-    name: 'Sternenwesen',
+    nameKey: 'kids_pet_60_name',
     color: '#FFD700',
-    message: 'Legendär! 60 Tage in Folge!',
+    messageKey: 'kids_pet_60_message',
   },
   {
     minStreak: 100,
     emoji: '👑',
-    name: 'König',
+    nameKey: 'kids_pet_100_name',
     color: '#FF4081',
-    message: 'Der Quiz-König! 100 Tage! 👑',
+    messageKey: 'kids_pet_100_message',
   },
 ];
 
@@ -70,6 +81,7 @@ export const StreakPet: React.FC<StreakPetProps> = ({
   size = 'medium',
   showLabel = true,
 }) => {
+  const { t } = useTranslation();
   const { streak } = useGamification();
   const currentStreak = streak.currentStreak;
   const hasPlayedToday =
@@ -253,32 +265,44 @@ export const StreakPet: React.FC<StreakPetProps> = ({
       {showLabel && (
         <View style={styles.labelContainer}>
           <Text style={[styles.petName, { color: stage.color }]}>
-            {hasPlayedToday ? stage.name : 'Schlafend...'}
+            {hasPlayedToday ? t(stage.nameKey) : t('kids_pet_sleeping')}
           </Text>
           <Text style={styles.streakText}>
-            🔥 {currentStreak} Tag{currentStreak !== 1 ? 'e' : ''} in Folge
+            {`🔥 `}
+            {currentStreak}{' '}
+            {currentStreak === 1
+              ? t('kids_pet_day_in_streak')
+              : t('kids_pet_days_in_streak')}
           </Text>
           {!hasPlayedToday && currentStreak > 0 && (
             <Text style={styles.warningText}>
-              ⚠️ Heute noch nicht gespielt! Spiel jetzt, damit deine Serie nicht
-              abbricht!
+              {`⚠️ `}
+              {t('kids_pet_not_played_today')}
             </Text>
           )}
           {hasPlayedToday && nextStage && daysToNext > 0 && (
             <Text style={styles.nextStageText}>
-              Noch {daysToNext} Tag{daysToNext !== 1 ? 'e' : ''} bis zum{' '}
-              {nextStage.emoji} {nextStage.name}!
+              {t(
+                daysToNext === 1
+                  ? 'kids_pet_next_stage_one'
+                  : 'kids_pet_next_stage_other',
+                {
+                  days: daysToNext,
+                  next: `${nextStage.emoji} ${t(nextStage.nameKey)}`,
+                },
+              )}
             </Text>
           )}
           {hasPlayedToday && stage.emoji === '👑' && (
             <Text style={[styles.nextStageText, { color: '#FFD700' }]}>
-              👑 Du hast alle Level erreicht! Legendär!
+              {`👑 `}
+              {t('kids_pet_all_levels')}
             </Text>
           )}
           <Text style={styles.messageText}>
             {hasPlayedToday
-              ? stage.message
-              : 'Dein Haustier schläft... Spiel ein Quiz zum Aufwecken!'}
+              ? t(stage.messageKey)
+              : t('kids_pet_sleeping_message')}
           </Text>
         </View>
       )}
