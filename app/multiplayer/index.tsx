@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   View,
   StyleSheet,
@@ -23,6 +23,7 @@ import {
 } from '../../services/PresenceService';
 import { normalizeRoomCode } from '../../services/roomCode';
 import { failureMessage } from '../../services/multiplayerFailures';
+import { useQuiz } from '../../components/Quizprovider';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 
 const showAlert = (title: string, message: string) => {
@@ -37,7 +38,12 @@ const showAlert = (title: string, message: string) => {
 export default function MultiplayerHome() {
   const { t } = useTranslation();
   const router = useRouter();
+  const { multiplayerName, setMultiplayerName } = useQuiz();
   const [name, setName] = useState('');
+  // The remembered name arrives from the provider asynchronously, so the field
+  // starts empty and fills from an effect. Typing flips this, so the fill can
+  // never overwrite a name the player is in the middle of entering.
+  const nameTouched = useRef(false);
   const [isJoining, setIsJoining] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
 
@@ -68,6 +74,12 @@ export default function MultiplayerHome() {
       presenceService.disconnect();
     };
   }, []);
+
+  // Pre-fill the name the player last played with
+  useEffect(() => {
+    if (nameTouched.current || multiplayerName === '') return;
+    setName(multiplayerName);
+  }, [multiplayerName]);
 
   // Connect to lobby when name is entered (debounced or on blur is better, but this is simple)
   useEffect(() => {
@@ -134,6 +146,9 @@ export default function MultiplayerHome() {
       setIsCreating(true);
       const result = await multiplayerService.createRoom(name);
       if (result.ok) {
+        // Only remember the name once the room exists, so a failed attempt
+        // leaves the previously remembered name alone.
+        setMultiplayerName(name);
         router.push(
           `/multiplayer/${result.code}?name=${encodeURIComponent(
             name,
@@ -168,6 +183,9 @@ export default function MultiplayerHome() {
       setIsJoining(true);
       const result = await multiplayerService.joinRoom(target, name);
       if (result.ok) {
+        // A join, including the one an accepted invite goes through, is a real
+        // game action, so this is the name to remember.
+        setMultiplayerName(name);
         // Need to stop presence polling when jumping into game
         presenceService.disconnect();
         router.push(
@@ -192,6 +210,7 @@ export default function MultiplayerHome() {
       setIsCreating(true);
       const result = await multiplayerService.createRoom(name);
       if (result.ok) {
+        setMultiplayerName(name);
         // 2. Send the invite via Serverless Presence
         await presenceService.sendInvite(targetPeerId, result.code);
 
@@ -283,7 +302,10 @@ export default function MultiplayerHome() {
                   style={styles.input}
                   placeholder={t('multiplayer_enter_name')}
                   value={name}
-                  onChangeText={setName}
+                  onChangeText={(text) => {
+                    nameTouched.current = true;
+                    setName(text);
+                  }}
                   placeholderTextColor="rgba(255,255,255,0.4)"
                   returnKeyType="done"
                 />
