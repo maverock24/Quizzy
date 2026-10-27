@@ -183,7 +183,11 @@ export const StreakDisplay: React.FC<StreakDisplayProps> = ({
       <Text style={[sizeStyles.count, { color: getFlameColor() }]}>
         {streak.currentStreak}
       </Text>
-      {showLabel && <Text style={sizeStyles.label}>{t('day_streak')}</Text>}
+      {showLabel && (
+        <Text style={sizeStyles.label}>
+          {t(streak.currentStreak === 1 ? 'day_streak' : 'days_streak')}
+        </Text>
+      )}
     </View>
   );
 };

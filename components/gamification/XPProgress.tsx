@@ -26,7 +26,7 @@ export const XPProgress: React.FC<XPProgressProps> = ({
   showTitle = true,
   style,
 }) => {
-  const { xp, levelTitle } = useGamification();
+  const { xp } = useGamification();
   const { t } = useTranslation();
   const progressAnim = useRef(new Animated.Value(0)).current;
   const pulseAnim = useRef(new Animated.Value(1)).current;
@@ -144,7 +144,7 @@ export const XPProgress: React.FC<XPProgressProps> = ({
         <View style={styles.headerText}>
           {showTitle && (
             <Text style={[styles.levelTitle, { color: getLevelColor() }]}>
-              {levelTitle}
+              {t(`level_${xp.currentLevel}_title`)}
             </Text>
           )}
           <Text style={styles.totalXP}>
