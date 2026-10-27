@@ -76,7 +76,7 @@ export default function MultiplayerRoom() {
   }>();
   const { t } = useTranslation();
   const router = useRouter();
-  const { quizzes } = useQuiz();
+  const { quizzes, multiplayerName, setMultiplayerName } = useQuiz();
   const isHost = isHostParam === 'true';
 
   const [players, setPlayers] = useState<Player[]>([]);
@@ -121,6 +121,10 @@ export default function MultiplayerRoom() {
   // Deep-link state: a room link without a name asks for one before joining
   const [needsName, setNeedsName] = useState(false);
   const [typedName, setTypedName] = useState('');
+  // The remembered name arrives from the provider, so the prompt starts empty
+  // and fills from an effect. Typing flips this, so the fill never overwrites
+  // a name the player is entering here.
+  const typedNameTouched = useRef(false);
   // The name this session actually joined with, so a rejoin carries it even
   // when the link had none
   const [joinedName, setJoinedName] = useState('');
@@ -311,6 +315,10 @@ export default function MultiplayerRoom() {
       setGameState(result.gameState);
       setHostGone(false);
       setNeedsName(false);
+      // A successful join is a real game action, so this is the name to
+      // remember. It covers the prompt, a link that carried a name, and a
+      // rejoin, since all three come through here.
+      setMultiplayerName(enteringName);
       setSessionEpoch((epoch) => epoch + 1);
     } else {
       setRejoinError(failureMessage(result.failure));
@@ -331,6 +339,12 @@ export default function MultiplayerRoom() {
     }
     void handleEnterRoom(queryName);
   }, [isHost, nameParam, handleEnterRoom]);
+
+  // Pre-fill the name prompt the link asked for, from the name last played with
+  useEffect(() => {
+    if (!needsName || typedNameTouched.current) return;
+    setTypedName((current) => (current === '' ? multiplayerName : current));
+  }, [needsName, multiplayerName]);
 
   const handleStartGame = () => {
     if (!selectedQuiz) {
@@ -612,7 +626,10 @@ export default function MultiplayerRoom() {
                   style={styles.input}
                   placeholder={t('multiplayer_enter_name')}
                   value={typedName}
-                  onChangeText={setTypedName}
+                  onChangeText={(text) => {
+                    typedNameTouched.current = true;
+                    setTypedName(text);
+                  }}
                   placeholderTextColor="rgba(255,255,255,0.4)"
                   returnKeyType="go"
                   onSubmitEditing={() => handleEnterRoom(typedName)}
