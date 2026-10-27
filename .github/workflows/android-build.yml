@@ -41,8 +41,11 @@ jobs:
           # in this job. The step failed outright, which took down the whole
           # workflow, so the Netlify deploy at the end never ran.
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      # No explicit Android SDK setup. `android-actions/setup-android` invokes
+      # sdkmanager, which now fails with "Failed to find package 'tools'", and
+      # the step aborted the job before the Netlify deploy at the end. GitHub's
+      # ubuntu-latest image already ships the SDK with ANDROID_HOME set, which
+      # is all `expo prebuild` and gradlew need.
 
       - name: Install dependencies
         run: npm ci
