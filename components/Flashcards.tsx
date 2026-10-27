@@ -16,8 +16,9 @@ import {
   PanGestureHandlerStateChangeEvent,
   State,
 } from 'react-native-gesture-handler';
+import { useTranslation } from 'react-i18next';
+
 import { useQuiz } from './Quizprovider';
-import { t } from 'i18next';
 
 type Answer = {
   answer: string;
@@ -249,6 +250,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [deckSize, setDeckSize] = useState(0);
 
+  const { t } = useTranslation();
   const { flashcardsEnabled, setFlashcardsEnabled } = useQuiz();
 
   const pan = useRef(new Animated.ValueXY()).current;
@@ -442,7 +444,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
     return (
       <GestureHandlerRootView style={{ flex: 1 }}>
         <View style={carouselStyles.emptyContainer}>
-          <Text>Loading or no more flashcards...</Text>
+          <Text>{t('flashcard_empty')}</Text>
         </View>
       </GestureHandlerRootView>
     );
@@ -495,7 +497,7 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
       </View>
       <View style={carouselStyles.dumpButton}>
         <FontAwesome name="arrow-left" size={24} color="gray" />
-        <Text style={carouselStyles.keepButtonText}>dump</Text>
+        <Text style={carouselStyles.keepButtonText}>{t('flashcard_dump')}</Text>
       </View>
       <View
         style={[
@@ -547,7 +549,9 @@ const FlashcardCarousel: React.FC<FlashcardCarouselProps> = ({
         {topCardData && (
           <View style={carouselStyles.keepButton}>
             <FontAwesome name="arrow-down" size={24} color="gray" />
-            <Text style={carouselStyles.keepButtonText}>Keep</Text>
+            <Text style={carouselStyles.keepButtonText}>
+              {t('flashcard_keep')}
+            </Text>
           </View>
         )}
       </View>

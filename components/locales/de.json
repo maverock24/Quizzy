@@ -380,5 +380,19 @@
   "reader_start_from": "Starte bei Frage:",
   "reader_currently_reading": "Liest gerade: {{question}} {{current}} von {{total}}",
   "reader_reading_now": "WIRD GELESEN",
-  "reader_tts_unsupported": "Text-zu-Sprache wird in diesem Browser nicht unterstützt."
+  "reader_tts_unsupported": "Text-zu-Sprache wird in diesem Browser nicht unterstützt.",
+  "essay_study_material": "Lernmaterial",
+  "essay_section_count": "{{count}} Abschnitt",
+  "essay_sections_count": "{{count}} Abschnitte",
+  "essay_cta": "Bereit, dein Wissen zu testen?",
+  "essay_start_quiz": "Quiz starten",
+  "glossary_title": "KI/ML-Glossar",
+  "glossary_definition": "Begriffserklärung",
+  "glossary_search_placeholder": "Begriffe suchen...",
+  "glossary_no_matches": "Keine passenden Begriffe gefunden",
+  "glossary_term_count": "{{count}} Begriff verfügbar",
+  "glossary_terms_count": "{{count}} Begriffe verfügbar",
+  "flashcard_empty": "Lädt oder keine weiteren Karteikarten...",
+  "flashcard_dump": "ablegen",
+  "flashcard_keep": "Behalten"
 }

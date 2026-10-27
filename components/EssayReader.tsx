@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Image,
   ScrollView,
@@ -33,6 +34,7 @@ export const EssayReader: React.FC<EssayReaderProps> = ({
   onBack,
   onStartQuiz,
 }) => {
+  const { t } = useTranslation();
   const scrollViewRef = useRef<ScrollView>(null);
 
   return (
@@ -41,12 +43,14 @@ export const EssayReader: React.FC<EssayReaderProps> = ({
       <View style={styles.header}>
         <TouchableOpacity onPress={onBack} style={styles.backButton}>
           <Ionicons name="arrow-back" size={22} color="white" />
-          <Text style={styles.backButtonText}>Back</Text>
+          <Text style={styles.backButtonText}>{t('learning_back')}</Text>
         </TouchableOpacity>
 
         <View style={styles.headerBadge}>
           <Ionicons name="book-outline" size={16} color="#4FC3F7" />
-          <Text style={styles.headerBadgeText}>Study Material</Text>
+          <Text style={styles.headerBadgeText}>
+            {t('essay_study_material')}
+          </Text>
         </View>
       </View>
 
@@ -55,7 +59,9 @@ export const EssayReader: React.FC<EssayReaderProps> = ({
         <Text style={styles.categoryLabel}>{essay.category}</Text>
         <Text style={styles.title}>{essay.title}</Text>
         <Text style={styles.sectionCount}>
-          {essay.sections.length} sections
+          {essay.sections.length === 1
+            ? t('essay_section_count', { count: essay.sections.length })
+            : t('essay_sections_count', { count: essay.sections.length })}
         </Text>
       </View>
 
@@ -88,13 +94,15 @@ export const EssayReader: React.FC<EssayReaderProps> = ({
         {/* Start Quiz CTA */}
         {onStartQuiz && (
           <View style={styles.ctaContainer}>
-            <Text style={styles.ctaText}>Ready to test your knowledge?</Text>
+            <Text style={styles.ctaText}>{t('essay_cta')}</Text>
             <TouchableOpacity
               style={styles.startQuizButton}
               onPress={onStartQuiz}
             >
               <Ionicons name="play-circle" size={22} color="white" />
-              <Text style={styles.startQuizButtonText}>Start Quiz</Text>
+              <Text style={styles.startQuizButtonText}>
+                {t('essay_start_quiz')}
+              </Text>
             </TouchableOpacity>
           </View>
         )}

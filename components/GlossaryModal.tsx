@@ -14,11 +14,13 @@ import {
   BackHandler,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { useGlossary, GlossaryEntry } from './GlossaryProvider';
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
 export const GlossaryModal: React.FC = () => {
+  const { t } = useTranslation();
   const {
     selectedTerm,
     setSelectedTerm,
@@ -199,7 +201,9 @@ export const GlossaryModal: React.FC = () => {
                   />
                 </TouchableOpacity>
                 <Text style={styles.headerTitle}>
-                  {selectedTerm ? 'Definition' : 'AI/ML Glossary'}
+                  {selectedTerm
+                    ? t('glossary_definition')
+                    : t('glossary_title')}
                 </Text>
                 <View style={styles.headerButton} />
               </View>
@@ -216,7 +220,7 @@ export const GlossaryModal: React.FC = () => {
                   <TextInput
                     ref={inputRef}
                     style={styles.searchInput}
-                    placeholder="Search terms..."
+                    placeholder={t('glossary_search_placeholder')}
                     placeholderTextColor="rgba(255,255,255,0.4)"
                     value={searchQuery}
                     onChangeText={handleSearchChange}
@@ -261,8 +265,14 @@ export const GlossaryModal: React.FC = () => {
                     />
                     <Text style={styles.emptyText}>
                       {searchQuery
-                        ? 'No matching terms found'
-                        : `${filteredTerms.length} terms available`}
+                        ? t('glossary_no_matches')
+                        : filteredTerms.length === 1
+                        ? t('glossary_term_count', {
+                            count: filteredTerms.length,
+                          })
+                        : t('glossary_terms_count', {
+                            count: filteredTerms.length,
+                          })}
                     </Text>
                   </View>
                 }

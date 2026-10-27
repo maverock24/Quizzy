@@ -380,5 +380,19 @@
   "reader_start_from": "Start from question:",
   "reader_currently_reading": "Currently reading: {{question}} {{current}} of {{total}}",
   "reader_reading_now": "READING NOW",
-  "reader_tts_unsupported": "Text-to-speech is not supported in this browser."
+  "reader_tts_unsupported": "Text-to-speech is not supported in this browser.",
+  "essay_study_material": "Study Material",
+  "essay_section_count": "{{count}} section",
+  "essay_sections_count": "{{count}} sections",
+  "essay_cta": "Ready to test your knowledge?",
+  "essay_start_quiz": "Start Quiz",
+  "glossary_title": "AI/ML Glossary",
+  "glossary_definition": "Definition",
+  "glossary_search_placeholder": "Search terms...",
+  "glossary_no_matches": "No matching terms found",
+  "glossary_term_count": "{{count}} term available",
+  "glossary_terms_count": "{{count}} terms available",
+  "flashcard_empty": "Loading or no more flashcards...",
+  "flashcard_dump": "dump",
+  "flashcard_keep": "Keep"
 }

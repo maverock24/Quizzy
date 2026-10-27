@@ -380,5 +380,19 @@
   "reader_start_from": "Aloita kysymyksestä:",
   "reader_currently_reading": "Luetaan parhaillaan: {{question}} {{current}} / {{total}}",
   "reader_reading_now": "LUETAAN NYT",
-  "reader_tts_unsupported": "Tekstistä puheeksi ei ole tuettu tässä selaimessa."
+  "reader_tts_unsupported": "Tekstistä puheeksi ei ole tuettu tässä selaimessa.",
+  "essay_study_material": "Opiskelumateriaali",
+  "essay_section_count": "{{count}} osio",
+  "essay_sections_count": "{{count}} osiota",
+  "essay_cta": "Valmis testaamaan tietosi?",
+  "essay_start_quiz": "Aloita tietovisa",
+  "glossary_title": "Tekoäly/ML-sanasto",
+  "glossary_definition": "Määritelmä",
+  "glossary_search_placeholder": "Hae termejä...",
+  "glossary_no_matches": "Vastaavia termejä ei löytynyt",
+  "glossary_term_count": "{{count}} termi saatavilla",
+  "glossary_terms_count": "{{count}} termiä saatavilla",
+  "flashcard_empty": "Ladataan tai ei enää kortteja...",
+  "flashcard_dump": "hylkää",
+  "flashcard_keep": "Pidä"
 }
