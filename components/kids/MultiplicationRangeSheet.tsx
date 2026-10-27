@@ -144,7 +144,7 @@ export const MultiplicationRangeSheet: React.FC<
               style={styles.button}
               accessibilityRole="button"
             >
-              <Text style={styles.buttonText}>{t('cancel', 'Abbrechen')}</Text>
+              <Text style={styles.buttonText}>{t('cancel')}</Text>
             </Pressable>
             <Pressable
               onPress={() => onConfirm({ ...draft })}

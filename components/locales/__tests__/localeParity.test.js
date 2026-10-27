@@ -8,36 +8,22 @@ const fi = require('../fi.json');
 const LOCALES = { en, de, fi };
 const TRANSLATED_LOCALES = ['de', 'fi'];
 
-// Keys whose absence is a known locale defect, fixed in S2. Must be empty from S2 on.
-const KNOWN_MISSING = [
-  // Missing from all three files; only a hardcoded German default covers it today.
-  'cancel',
-  // Present only in de.json; en and fi render the raw key for the other ten.
-  'multiplication_quiz_name',
-  'multiplication_quiz_category',
-  'multiplication_quiz_label_range',
-  'multiplication_range_from',
-  'multiplication_range_to',
-  'multiplication_range_start',
-  'multiplication_mode',
-  'multiplication_mode_count',
-  'multiplication_mode_timed',
-  'multiplication_duration',
-];
+// Keys whose absence is a known locale defect. Must be empty from S2 on.
+const KNOWN_MISSING = [];
 
 // Values that may legitimately equal the English value. The brand name, and
 // German for "quiz" is "Quiz".
 const IDENTICAL_TO_ENGLISH_ALLOWED = {
-  de: ['quiz_title', 'enable_sound', 'max_level', 'tab_quiz'],
+  de: ['quiz_title', 'tab_quiz'],
   fi: ['quiz_title'],
 };
 
 // Entries of the allowlist above that are declared ahead of the slice that makes
-// them true, so they must *not* be identical yet: German `quiz_title` is still
-// "Quizzy (DE)" until S2, and `tab_quiz` does not exist until S10. Each entry
-// has to leave this list once it becomes identical, so a stale entry fails.
+// them true, so they must *not* be identical yet: `tab_quiz` does not exist until
+// S10. Each entry has to leave this list once it becomes identical, so a stale
+// entry fails.
 const ALLOWED_NOT_YET_IDENTICAL = {
-  de: ['quiz_title', 'tab_quiz'],
+  de: ['tab_quiz'],
 };
 
 const REPO_ROOT = path.resolve(__dirname, '../../..');
