@@ -67,5 +67,13 @@ module.exports = {
         node: true,
       },
     },
+    {
+      // Jest setup file, executed before every suite
+      files: ['jest.setup.js'],
+      env: {
+        jest: true,
+        node: true,
+      },
+    },
   ],
 };
