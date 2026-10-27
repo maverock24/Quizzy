@@ -1,6 +1,7 @@
 import i18n from '@/components/i18n';
 import { REMOTE_QUIZ } from '@/constants/Urls';
 import { createMultiplicationQuiz } from '@/services/MultiplicationQuiz';
+import { nameToRemember, resolveInitialName } from '@/services/playerName';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as FileSystem from 'expo-file-system';
 import React, {
@@ -18,6 +19,8 @@ type QuizContextType = {
   // User personalization
   userName: string;
   setUserName: (name: string) => void;
+  multiplayerName: string;
+  setMultiplayerName: (name: string) => void;
   onboardingCompleted: boolean;
   completeOnboarding: (name: string, language: string) => void;
   kidsMode: boolean;
@@ -155,6 +158,7 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
   // User personalization
   const [userName, setUserNameState] = useState<string>('');
+  const [multiplayerName, setMultiplayerNameState] = useState<string>('');
   const [onboardingCompleted, setOnboardingCompletedState] =
     useState<boolean>(false);
   const setMusicEnabled = useCallback(async (enabled: boolean) => {
@@ -228,6 +232,19 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       await AsyncStorage.setItem('userName', name);
     } catch (error) {
       console.error('Failed to save user name', error);
+    }
+  }, []);
+
+  // The multiplayer name is separate from the profile name: changing it in a
+  // lobby must not rename the profile.
+  const setMultiplayerName = useCallback(async (name: string) => {
+    const remembered = nameToRemember(name);
+    if (remembered === null) return;
+    setMultiplayerNameState(remembered);
+    try {
+      await AsyncStorage.setItem('multiplayerName', remembered);
+    } catch (error) {
+      console.error('Failed to save multiplayer name', error);
     }
   }, []);
 
@@ -689,10 +706,18 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
 
       // Load user personalization
       const savedUserName = await AsyncStorage.getItem('userName');
+      const savedMultiplayerName = await AsyncStorage.getItem(
+        'multiplayerName',
+      );
       const savedOnboardingCompleted = await AsyncStorage.getItem(
         'onboardingCompleted',
       );
       setUserNameState(savedUserName || '');
+      // Nothing remembered yet falls back to the profile name, so the first
+      // lobby visit is already filled in.
+      setMultiplayerNameState(
+        resolveInitialName(savedMultiplayerName, savedUserName),
+      );
       setOnboardingCompletedState(savedOnboardingCompleted === 'true');
 
       // Create a separate effect to handle checking for updates
@@ -778,6 +803,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
         // User personalization
         userName,
         setUserName,
+        multiplayerName,
+        setMultiplayerName,
         onboardingCompleted,
         completeOnboarding,
         // Quiz settings
