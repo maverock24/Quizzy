@@ -12,7 +12,7 @@ type PauseAwareUtterance = SpeechSynthesisUtterance & {
 };
 
 export function useReadAloud() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { selectedVoice } = useQuiz();
   const [ttsState, setTtsState] = useState<TTSState>('idle');
   const utteranceQueue = useRef<SpeechSynthesisUtterance[]>([]);
@@ -573,7 +573,7 @@ export function useReadAloud() {
         });
         setTtsState('playing'); // Reflect native state
       } else {
-        alert('Text-to-speech is not supported in this browser.');
+        alert(t('reader_tts_unsupported'));
         setTtsState('idle');
       }
     },

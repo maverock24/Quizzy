@@ -364,5 +364,21 @@
   "modal_title": "Modal",
   "edit_info_open_code": "Open up the code for this screen:",
   "edit_info_change_text": "Change any of the text, save the file, and your app will automatically update.",
-  "edit_info_tap_here": "Tap here if your app doesn't automatically update after making changes"
+  "edit_info_tap_here": "Tap here if your app doesn't automatically update after making changes",
+  "quiz_open_glossary": "Open glossary",
+  "quiz_glossary": "Glossary",
+  "question_score_popup": "+1",
+  "question_read_aloud_label": "Read question and answers aloud",
+  "score_well_done": "Well Done!",
+  "score_try_again": "Try again!",
+  "score_perfect": "Perfect Score!",
+  "score_great_job": "Great job!",
+  "quiz_read_badge": "Read",
+  "quiz_multiplayer_mode": "Multiplayer Mode",
+  "explanation_read_aloud_label": "Read explanation aloud",
+  "explanation_glossary_hint": "Tap highlighted terms for definitions",
+  "reader_start_from": "Start from question:",
+  "reader_currently_reading": "Currently reading: {{question}} {{current}} of {{total}}",
+  "reader_reading_now": "READING NOW",
+  "reader_tts_unsupported": "Text-to-speech is not supported in this browser."
 }

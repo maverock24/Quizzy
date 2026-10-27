@@ -364,5 +364,21 @@
   "modal_title": "Dialog",
   "edit_info_open_code": "Öffne den Code für diesen Bildschirm:",
   "edit_info_change_text": "Ändere einen beliebigen Text, speichere die Datei, und deine App aktualisiert sich automatisch.",
-  "edit_info_tap_here": "Tippe hier, wenn deine App sich nach Änderungen nicht automatisch aktualisiert"
+  "edit_info_tap_here": "Tippe hier, wenn deine App sich nach Änderungen nicht automatisch aktualisiert",
+  "quiz_open_glossary": "Glossar öffnen",
+  "quiz_glossary": "Glossar",
+  "question_score_popup": "+1 Punkt",
+  "question_read_aloud_label": "Frage und Antworten vorlesen",
+  "score_well_done": "Gut gemacht!",
+  "score_try_again": "Versuch es noch einmal!",
+  "score_perfect": "Perfekte Punktzahl!",
+  "score_great_job": "Tolle Leistung!",
+  "quiz_read_badge": "Lesen",
+  "quiz_multiplayer_mode": "Mehrspieler-Modus",
+  "explanation_read_aloud_label": "Erklärung vorlesen",
+  "explanation_glossary_hint": "Tippe auf markierte Begriffe für Definitionen",
+  "reader_start_from": "Starte bei Frage:",
+  "reader_currently_reading": "Liest gerade: {{question}} {{current}} von {{total}}",
+  "reader_reading_now": "WIRD GELESEN",
+  "reader_tts_unsupported": "Text-zu-Sprache wird in diesem Browser nicht unterstützt."
 }

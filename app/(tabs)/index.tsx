@@ -502,10 +502,12 @@ export default function TabOneScreen() {
                     setSelectedTerm(null);
                     setGlossaryVisible(true);
                   }}
-                  accessibilityLabel="Open glossary"
+                  accessibilityLabel={t('quiz_open_glossary')}
                 >
                   <Ionicons name="book-outline" size={18} color="white" />
-                  <Text style={styles.glossaryButtonText}>Glossary</Text>
+                  <Text style={styles.glossaryButtonText}>
+                    {t('quiz_glossary')}
+                  </Text>
                 </TouchableOpacity>
               </View>
             </>
@@ -652,10 +654,12 @@ export default function TabOneScreen() {
                 setSelectedTerm(null);
                 setGlossaryVisible(true);
               }}
-              accessibilityLabel="Open glossary"
+              accessibilityLabel={t('quiz_open_glossary')}
             >
               <Ionicons name="book-outline" size={18} color="white" />
-              <Text style={styles.glossaryButtonSmallText}>Glossary</Text>
+              <Text style={styles.glossaryButtonSmallText}>
+                {t('quiz_glossary')}
+              </Text>
             </TouchableOpacity>
           </View>
         )}

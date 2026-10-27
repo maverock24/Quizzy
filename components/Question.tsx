@@ -111,6 +111,7 @@ const MiniConfetti: React.FC<{
 
 // Floating score indicator (+1, +XP, etc.)
 const FloatingScore: React.FC<{ x: number; y: number }> = ({ x, y }) => {
+  const { t } = useTranslation();
   const translateY = useRef(new Animated.Value(0)).current;
   const opacity = useRef(new Animated.Value(0)).current;
   const scale = useRef(new Animated.Value(0.5)).current;
@@ -155,7 +156,9 @@ const FloatingScore: React.FC<{ x: number; y: number }> = ({ x, y }) => {
         transform: [{ translateY }, { scale }],
       }}
     >
-      <Text style={styles.floatingScoreText}>+1 ✨</Text>
+      <Text style={styles.floatingScoreText}>
+        {t('question_score_popup')} ✨
+      </Text>
     </Animated.View>
   );
 };
@@ -823,7 +826,7 @@ export const Question: React.FC<QuestionProps> = ({
                 borderRadius: 8,
                 padding: 8,
               }}
-              accessibilityLabel="Read question and answers aloud"
+              accessibilityLabel={t('question_read_aloud_label')}
             >
               <FontAwesome
                 name="comment"

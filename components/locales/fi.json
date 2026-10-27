@@ -364,5 +364,21 @@
   "modal_title": "Modaali-ikkuna",
   "edit_info_open_code": "Avaa tämän näkymän koodi:",
   "edit_info_change_text": "Muuta mitä tahansa tekstiä, tallenna tiedosto, niin sovellus päivittyy automaattisesti.",
-  "edit_info_tap_here": "Napauta tästä, jos sovellus ei päivity automaattisesti muutosten jälkeen"
+  "edit_info_tap_here": "Napauta tästä, jos sovellus ei päivity automaattisesti muutosten jälkeen",
+  "quiz_open_glossary": "Avaa sanasto",
+  "quiz_glossary": "Sanasto",
+  "question_score_popup": "+1 piste",
+  "question_read_aloud_label": "Lue kysymys ja vastaukset ääneen",
+  "score_well_done": "Hyvin tehty!",
+  "score_try_again": "Yritä uudelleen!",
+  "score_perfect": "Täydellinen tulos!",
+  "score_great_job": "Hienoa työtä!",
+  "quiz_read_badge": "Lue",
+  "quiz_multiplayer_mode": "Moninpelitila",
+  "explanation_read_aloud_label": "Lue selitys ääneen",
+  "explanation_glossary_hint": "Napauta korostettuja termejä nähdäksesi määritelmät",
+  "reader_start_from": "Aloita kysymyksestä:",
+  "reader_currently_reading": "Luetaan parhaillaan: {{question}} {{current}} / {{total}}",
+  "reader_reading_now": "LUETAAN NYT",
+  "reader_tts_unsupported": "Tekstistä puheeksi ei ole tuettu tässä selaimessa."
 }

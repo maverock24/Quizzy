@@ -331,15 +331,32 @@ export const Score: React.FC<ScoreProps> = ({
             }}
           >
             <Text style={[styles.heading, isWinner && styles.winnerHeading]}>
-              {timeExpired
-                ? `⏰ ${t('time_up')} ⏰`
-                : isWinner
-                ? '🎉 Well Done! 🎉'
-                : '💪 Try again!'}
+              {timeExpired ? (
+                `⏰ ${t('time_up')} ⏰`
+              ) : isWinner ? (
+                <>
+                  {'🎉 '}
+                  {t('score_well_done')}
+                  {' 🎉'}
+                </>
+              ) : (
+                <>
+                  {'💪 '}
+                  {t('score_try_again')}
+                </>
+              )}
             </Text>
             {isWinner && (
               <Text style={styles.subHeading}>
-                {isPerfect ? '✨ Perfect Score! ✨' : 'Great job!'}
+                {isPerfect ? (
+                  <>
+                    {'✨ '}
+                    {t('score_perfect')}
+                    {' ✨'}
+                  </>
+                ) : (
+                  t('score_great_job')
+                )}
               </Text>
             )}
           </Animated.View>
@@ -413,7 +430,9 @@ export const Score: React.FC<ScoreProps> = ({
             }}
           >
             <Text style={[styles.heading, styles.winnerHeading]}>
-              🎉 Well Done! 🎉
+              {'🎉 '}
+              {t('score_well_done')}
+              {' 🎉'}
             </Text>
           </Animated.View>
           <Animated.View

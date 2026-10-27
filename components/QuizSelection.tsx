@@ -47,6 +47,7 @@ const CategoryHeader: React.FC<{
   hasEssay?: boolean;
   onReadEssay?: () => void;
 }> = ({ title, count, isExpanded, onToggle, hasEssay, onReadEssay }) => {
+  const { t } = useTranslation();
   const rotateAnim = useRef(new Animated.Value(isExpanded ? 1 : 0)).current;
   const scaleAnim = useRef(new Animated.Value(1)).current;
   const bgOpacity = useRef(new Animated.Value(isExpanded ? 0.15 : 0.1)).current;
@@ -134,7 +135,10 @@ const CategoryHeader: React.FC<{
               }}
               hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
             >
-              <Text style={styles.readEssayText}>📖 Read</Text>
+              <Text style={styles.readEssayText}>
+                {'📖 '}
+                {t('quiz_read_badge')}
+              </Text>
             </TouchableOpacity>
           )}
           <View
@@ -446,7 +450,8 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
           <Text
             style={[styles.buttonText, { textAlign: 'center', fontSize: 18 }]}
           >
-            ⚔️ Multiplayer Mode
+            {'⚔️ '}
+            {t('quiz_multiplayer_mode')}
           </Text>
         </View>
       </Pressable>

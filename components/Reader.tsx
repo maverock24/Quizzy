@@ -316,7 +316,7 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       {/* Start From Question Selector */}
       {!isReading && (
         <View style={styles.controlsContainer}>
-          <Text style={styles.controlLabel}>Start from question:</Text>
+          <Text style={styles.controlLabel}>{t('reader_start_from')}</Text>
           <View style={styles.pickerContainer}>
             <Picker
               selectedValue={startFromQuestion}
@@ -348,8 +348,11 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
       {isReading && (
         <View style={styles.progressContainer}>
           <Text style={styles.progressText}>
-            Currently reading: {t('question')} {currentQuestionIndex + 1} of{' '}
-            {quiz.questions.length}
+            {t('reader_currently_reading', {
+              question: t('question'),
+              current: currentQuestionIndex + 1,
+              total: quiz.questions.length,
+            })}
           </Text>
         </View>
       )}
@@ -380,7 +383,10 @@ export const Reader: React.FC<ReaderProps> = ({ quiz, onBack }) => {
                 <Text style={styles.questionNumber}>
                   {t('question')} {index + 1}
                   {isReading && currentQuestionIndex === index && (
-                    <Text style={styles.readingIndicator}> 🔊 READING NOW</Text>
+                    <Text style={styles.readingIndicator}>
+                      {' 🔊 '}
+                      {t('reader_reading_now')}
+                    </Text>
                   )}
                 </Text>
                 <TouchableOpacity

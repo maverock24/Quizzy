@@ -77,7 +77,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
               justifyContent: 'space-between',
               alignItems: 'center',
             }}
-            accessibilityLabel="Read explanation aloud"
+            accessibilityLabel={t('explanation_read_aloud_label')}
           >
             <FontAwesome
               name="comment"
@@ -97,7 +97,7 @@ export const Explanation: React.FC<ExplanationProps> = ({
               color="rgba(255,255,255,0.6)"
             />
             <Text style={styles.glossaryHintText}>
-              Tap highlighted terms for definitions
+              {t('explanation_glossary_hint')}
             </Text>
           </View>
         </View>
