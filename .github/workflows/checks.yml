@@ -19,7 +19,10 @@ permissions:
 
 jobs:
   gate:
-    runs-on: ubuntu-latest
+    # Pinned, not ubuntu-latest: `latest` moved to 26.04, which Playwright 1.58
+    # does not support, so the browser job broke on a runner image change with
+    # no commit involved. Keep both jobs on an image we have tested.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -39,7 +42,7 @@ jobs:
   i18n-sweep:
     # Separate from the gate on purpose: this one drives a real browser, so a
     # flake here must not mask whether the typecheck and unit tests passed.
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
