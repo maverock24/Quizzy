@@ -45,3 +45,7 @@ components/learning/.SRSDailyWarmup.tsx.swp
 !.env.example
 *.keystore
 *.jks
+
+# Playwright output
+test-results/
+playwright-report/

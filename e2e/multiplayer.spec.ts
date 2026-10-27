@@ -37,8 +37,9 @@ test.describe('Multiplayer P2P Flow', () => {
 
     await hostPage.getByText('Create New Game').click();
 
-    // Wait for Room Code
-    await expect(hostPage.getByText('Room:', { exact: false })).toBeVisible({
+    // Wait for the waiting room. The heading no longer shows the room code, so
+    // the roster is the marker that the room screen is up.
+    await expect(hostPage.getByText('Players:', { exact: false })).toBeVisible({
       timeout: 10000,
     });
     const roomCode = new URL(hostPage.url()).pathname.split('/').pop();

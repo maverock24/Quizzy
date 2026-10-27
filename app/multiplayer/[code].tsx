@@ -109,9 +109,6 @@ export default function MultiplayerRoom() {
   // Host-only state
   const [isQuizSelectorVisible, setIsQuizSelectorVisible] = useState(false);
 
-  // Copy and share state
-  const [copied, setCopied] = useState(false);
-
   // Rejoin state: the host dropped mid-game and one tap tries the slot again
   const [hostGone, setHostGone] = useState(false);
   const [rejoinError, setRejoinError] = useState('');
@@ -130,31 +127,6 @@ export default function MultiplayerRoom() {
   const [joinedName, setJoinedName] = useState('');
   // A link joins once on mount, not on every render this effect re-runs on
   const joinedOnMount = useRef(false);
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(
-        `${window.location.origin}/multiplayer/${code}`,
-      );
-      setCopied(true);
-    } catch (e) {
-      // An insecure origin or a denied permission leaves the code visible.
-      console.error(e);
-    }
-  };
-
-  const handleShare = async () => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
-      try {
-        await navigator.share({
-          url: `${window.location.origin}/multiplayer/${code}`,
-        });
-      } catch (e) {
-        // A cancelled or unsupported share leaves the lobby as it was.
-        console.error(e);
-      }
-    }
-  };
 
   const handleLeave = useCallback(() => {
     showAlert(t('multiplayer_leave_title'), t('multiplayer_leave_body'), [
@@ -689,38 +661,7 @@ export default function MultiplayerRoom() {
           </TouchableOpacity>
 
           <View style={styles.lobby}>
-            <Text style={styles.title}>
-              {t('multiplayer_room')} {code}
-            </Text>
-
-            {Platform.OS === 'web' && (
-              <View style={styles.roomCodeRow}>
-                <Text selectable style={styles.roomCode}>
-                  {code}
-                </Text>
-                <TouchableOpacity
-                  onPress={handleCopy}
-                  style={[styles.smallBtn, styles.secondaryBtn]}
-                >
-                  <Text style={styles.buttonText}>
-                    {copied
-                      ? t('multiplayer_link_copied')
-                      : t('multiplayer_copy_link')}
-                  </Text>
-                </TouchableOpacity>
-                {typeof navigator !== 'undefined' &&
-                  typeof navigator.share === 'function' && (
-                    <TouchableOpacity
-                      onPress={handleShare}
-                      style={[styles.smallBtn, styles.secondaryBtn]}
-                    >
-                      <Text style={styles.buttonText}>
-                        {t('multiplayer_share')}
-                      </Text>
-                    </TouchableOpacity>
-                  )}
-              </View>
-            )}
+            <Text style={styles.title}>{t('multiplayer_title')}</Text>
 
             <View style={styles.card}>
               <Text style={styles.subtitle}>{t('multiplayer_players')}</Text>
@@ -786,12 +727,6 @@ export default function MultiplayerRoom() {
                     {t('multiplayer_start_game')}
                   </Text>
                 </TouchableOpacity>
-
-                {presentCount < 2 && (
-                  <Text style={styles.hintText}>
-                    {t('multiplayer_share_hint')}
-                  </Text>
-                )}
               </View>
             )}
 
@@ -931,19 +866,6 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     fontWeight: '700',
   },
-  roomCodeRow: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 12,
-    marginBottom: 20,
-  },
-  roomCode: {
-    color: 'white',
-    fontSize: 28,
-    fontWeight: '800',
-    letterSpacing: 4,
-  },
   input: {
     borderColor: 'rgba(255, 255, 255, 0.15)',
     borderWidth: 1,
@@ -953,11 +875,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     backgroundColor: 'rgba(255, 255, 255, 0.05)',
     width: '100%',
-  },
-  smallBtn: {
-    paddingHorizontal: 16,
-    paddingVertical: 8,
-    borderRadius: 8,
   },
   subtitle: {
     color: 'white',
@@ -1000,13 +917,6 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: 'center',
     fontSize: 14,
-  },
-  hintText: {
-    color: 'rgba(255, 255, 255, 0.5)',
-    textAlign: 'center',
-    marginTop: 12,
-    fontSize: 13,
-    fontStyle: 'italic',
   },
   button: {
     backgroundColor: 'rgb(46, 150, 194)',
