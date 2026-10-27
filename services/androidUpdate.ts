@@ -10,6 +10,7 @@ import * as Application from 'expo-application';
 import * as FileSystem from 'expo-file-system';
 import * as IntentLauncher from 'expo-intent-launcher';
 import { Platform } from 'react-native';
+import i18n from '@/components/i18n';
 import {
   RELEASE_BASE_URL,
   RELEASE_MANIFEST_URL,
@@ -81,19 +82,21 @@ export async function installAndroidRelease(
   release: AndroidReleaseInfo,
 ): Promise<void> {
   if (!isAndroidNative()) {
-    throw new Error('APK install is only available on Android.');
+    throw new Error(i18n.t('settings_update_android_only'));
   }
 
   const cacheDir = FileSystem.cacheDirectory ?? FileSystem.documentDirectory;
   if (!cacheDir) {
-    throw new Error('No writable storage directory available.');
+    throw new Error(i18n.t('settings_update_no_storage'));
   }
 
   const localUri = `${cacheDir}update.apk`;
 
   const download = await FileSystem.downloadAsync(release.url, localUri);
   if (download.status !== 200) {
-    throw new Error(`APK download failed (HTTP ${download.status}).`);
+    throw new Error(
+      i18n.t('settings_update_download_failed', { status: download.status }),
+    );
   }
 
   // content:// URI that the package installer can read.

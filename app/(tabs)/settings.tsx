@@ -88,10 +88,10 @@ export default function SettingsScreen() {
       const release = await fetchLatestRelease();
       setAndroidRelease(release);
       if (!release) {
-        setUpdateError('No published Android build found.');
+        setUpdateError(t('settings_update_no_build'));
       }
     } catch {
-      setUpdateError('Unable to check for updates.');
+      setUpdateError(t('settings_update_check_failed'));
     } finally {
       setIsCheckingUpdate(false);
     }
@@ -105,9 +105,11 @@ export default function SettingsScreen() {
       await installAndroidRelease(androidRelease);
     } catch (err) {
       const msg =
-        err instanceof Error ? err.message : 'Failed to install update.';
+        err instanceof Error
+          ? err.message
+          : t('settings_update_install_failed');
       setUpdateError(msg);
-      Alert.alert('Update failed', msg);
+      Alert.alert(t('settings_update_failed'), msg);
     } finally {
       setIsInstallingUpdate(false);
     }
@@ -152,7 +154,7 @@ export default function SettingsScreen() {
       setUserQuizJson(content);
       setUserQuizModalVisible(true);
     } catch (e) {
-      Alert.alert('Error', 'Failed to load or create user quizzes');
+      Alert.alert(t('settings_error'), t('settings_user_quizzes_load_failed'));
     }
   };
 
@@ -164,7 +166,7 @@ export default function SettingsScreen() {
       setUserQuizLoadEnabled(!userQuizLoadEnabled);
       setUserQuizModalVisible(false);
     } catch (e) {
-      Alert.alert('Error', 'Failed to save user quizzes');
+      Alert.alert(t('settings_error'), t('settings_user_quizzes_save_failed'));
     }
   };
 
@@ -301,10 +303,12 @@ export default function SettingsScreen() {
           {/* Kids Mode */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>🎨 Kids Mode</Text>
+              <Text style={styles.settingText}>
+                {`🎨 `}
+                {t('settings_kids_mode')}
+              </Text>
               <Text style={styles.settingDescription}>
-                Größere Feiern, Streak-Haustier und buntere Animationen für
-                Kinder
+                {t('settings_kids_mode_desc')}
               </Text>
             </View>
             <Switch
@@ -370,7 +374,9 @@ export default function SettingsScreen() {
           {/* Voice Selection - only show when Reader mode is enabled */}
           {readerModeEnabled && availableVoices.length > 0 && (
             <View style={styles.settingItem}>
-              <Text style={[styles.label, { flex: 1 }]}>TTS Voice</Text>
+              <Text style={[styles.label, { flex: 1 }]}>
+                {t('settings_tts_voice')}
+              </Text>
               <View
                 style={{
                   flex: 1,
@@ -391,7 +397,7 @@ export default function SettingsScreen() {
                   style={{ height: 30, color: 'black' }}
                   dropdownIconColor="black"
                 >
-                  <Picker.Item label="Default Voice" value="" />
+                  <Picker.Item label={t('settings_default_voice')} value="" />
                   {availableVoices.map((voice, index) => (
                     <Picker.Item
                       key={`${voice.name}-${index}`}
@@ -408,16 +414,16 @@ export default function SettingsScreen() {
           {readerModeEnabled && (
             <View style={styles.settingItem}>
               <View style={styles.settingName}>
-                <Text style={styles.settingText}>Test Voice</Text>
+                <Text style={styles.settingText}>
+                  {t('settings_test_voice')}
+                </Text>
                 <Text style={styles.settingDescription}>
-                  Test the selected voice. On mobile devices, this also enables
-                  TTS functionality.
+                  {t('settings_test_voice_desc')}
                 </Text>
               </View>
               <Button
                 onPress={() => {
-                  const testText =
-                    'Hello! This is a test of the text-to-speech voice.';
+                  const testText = t('settings_test_voice_text');
                   // Use the TTS directly with the Web Speech API
                   if (
                     typeof window !== 'undefined' &&
@@ -436,7 +442,7 @@ export default function SettingsScreen() {
                 }}
                 style={[styles.button, { alignSelf: 'flex-end' }]}
               >
-                <Text style={styles.buttonText}>Test</Text>
+                <Text style={styles.buttonText}>{t('settings_test')}</Text>
               </Button>
             </View>
           )}
@@ -444,10 +450,11 @@ export default function SettingsScreen() {
           {/* User Quiz Load Switch */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Enable User Quizzes</Text>
+              <Text style={styles.settingText}>
+                {t('settings_enable_user_quizzes')}
+              </Text>
               <Text style={styles.settingDescription}>
-                Load quizzes from your own quizzes_user.json file in addition to
-                the language-specific quizzes.
+                {t('settings_enable_user_quizzes_desc')}
               </Text>
             </View>
             <Switch
@@ -462,16 +469,18 @@ export default function SettingsScreen() {
           {/* User Quiz Editor Button */}
           <View style={styles.settingItem}>
             <View style={styles.settingName}>
-              <Text style={styles.settingText}>Edit User Quizzes</Text>
+              <Text style={styles.settingText}>
+                {t('settings_edit_user_quizzes')}
+              </Text>
               <Text style={styles.settingDescription}>
-                Open a dialog to edit your quizzes_user.json file.
+                {t('settings_edit_user_quizzes_desc')}
               </Text>
             </View>
             <Button
               onPress={handleOpenUserQuizModal}
               style={[styles.button, { alignSelf: 'flex-end' }]}
             >
-              <Text style={styles.buttonText}>Edit</Text>
+              <Text style={styles.buttonText}>{t('settings_edit')}</Text>
             </Button>
           </View>
 
@@ -479,15 +488,21 @@ export default function SettingsScreen() {
           {isAndroidNative() && (
             <View style={[styles.settingItem, { borderBottomWidth: 0 }]}>
               <View style={styles.settingName}>
-                <Text style={styles.settingText}>App Updates</Text>
+                <Text style={styles.settingText}>
+                  {t('settings_app_updates')}
+                </Text>
                 <Text style={styles.settingDescription}>
                   {androidRelease
-                    ? `Latest build: ${androidRelease.versionName} (build #${androidRelease.versionCode})`
-                    : updateError || 'Checking for updates…'}
-                  {'\n'}Installed build:{' '}
+                    ? t('settings_latest_build', {
+                        version: androidRelease.versionName,
+                        code: androidRelease.versionCode,
+                      })
+                    : updateError || t('settings_checking_updates')}
+                  {'\n'}
+                  {t('settings_installed_build')}{' '}
                   {installedVersionCode > 0
                     ? `#${installedVersionCode}`
-                    : 'unknown'}
+                    : t('settings_unknown')}
                 </Text>
                 {isCheckingUpdate && (
                   <ActivityIndicator size="small" color="#4FC3F7" />
@@ -503,12 +518,14 @@ export default function SettingsScreen() {
                     {isInstallingUpdate ? (
                       <ActivityIndicator size="small" color="#fff" />
                     ) : (
-                      <Text style={styles.buttonText}>Download & Install</Text>
+                      <Text style={styles.buttonText}>
+                        {t('settings_download_install')}
+                      </Text>
                     )}
                   </Button>
                 ) : (
                   <Text style={[styles.buttonText, { alignSelf: 'center' }]}>
-                    Up to date
+                    {t('settings_up_to_date')}
                   </Text>
                 ))}
               {!isCheckingUpdate && !androidRelease && (
@@ -516,7 +533,7 @@ export default function SettingsScreen() {
                   onPress={loadAndroidRelease}
                   style={[styles.button, { alignSelf: 'flex-end' }]}
                 >
-                  <Text style={styles.buttonText}>Check</Text>
+                  <Text style={styles.buttonText}>{t('settings_check')}</Text>
                 </Button>
               )}
             </View>
@@ -567,7 +584,7 @@ export default function SettingsScreen() {
             <Text
               style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 10 }}
             >
-              Edit quizzes_user.json
+              {t('settings_edit_json_title')}
             </Text>
             <TextInput
               style={{
@@ -592,10 +609,10 @@ export default function SettingsScreen() {
                 onPress={() => setUserQuizModalVisible(false)}
                 style={[styles.button, { marginRight: 10 }]}
               >
-                <Text style={styles.buttonText}>Cancel</Text>
+                <Text style={styles.buttonText}>{t('cancel')}</Text>
               </Button>
               <Button onPress={handleSaveUserQuizJson} style={styles.button}>
-                <Text style={styles.buttonText}>Save</Text>
+                <Text style={styles.buttonText}>{t('save')}</Text>
               </Button>
             </View>
           </View>
