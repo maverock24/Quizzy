@@ -9,6 +9,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { useQuiz } from '../Quizprovider';
 import {
   getDueQuestions,
@@ -31,6 +32,7 @@ interface SRSDailyWarmupProps {
 }
 
 export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
+  const { t } = useTranslation();
   const { quizzes } = useQuiz();
 
   const [loading, setLoading] = useState(true);
@@ -126,7 +128,7 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
     return (
       <View style={styles.container}>
         <ActivityIndicator size="large" color="#4FC3F7" />
-        <Text style={styles.loadingText}>Loading your daily warmup...</Text>
+        <Text style={styles.loadingText}>{t('warmup_loading')}</Text>
       </View>
     );
   }
@@ -136,17 +138,18 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
       <View style={styles.container}>
         <View style={styles.emptyState}>
           <Ionicons name="checkmark-circle" size={80} color="#4CAF50" />
-          <Text style={styles.emptyTitle}>All caught up! 🎉</Text>
-          <Text style={styles.emptySubtitle}>
-            No questions due for review right now.
-          </Text>
+          <Text style={styles.emptyTitle}>{`${t('warmup_caught_up')} 🎉`}</Text>
+          <Text style={styles.emptySubtitle}>{t('warmup_nothing_due')}</Text>
           <Text style={styles.statsText}>
-            📊 {stats.totalTracked} questions tracked • {stats.masteredCount}{' '}
-            mastered
+            {`📊 `}
+            {t('warmup_stats', {
+              tracked: stats.totalTracked,
+              mastered: stats.masteredCount,
+            })}
           </Text>
           <TouchableOpacity style={styles.backButton} onPress={onBack}>
             <Ionicons name="arrow-back" size={20} color="white" />
-            <Text style={styles.backButtonText}>Back to Learn</Text>
+            <Text style={styles.backButtonText}>{t('warmup_back')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -163,22 +166,26 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
             size={80}
             color={percentage >= 70 ? '#FFD700' : '#4FC3F7'}
           />
-          <Text style={styles.completedTitle}>Warmup Complete!</Text>
+          <Text style={styles.completedTitle}>{t('warmup_complete')}</Text>
           <Text style={styles.scoreText}>
-            {correctCount} / {questions.length} correct ({percentage}%)
+            {t('learning_score_line', {
+              correct: correctCount,
+              total: questions.length,
+              percent: percentage,
+            })}
           </Text>
           <Text style={styles.encouragementText}>
             {percentage >= 90
-              ? 'Outstanding! 🌟'
+              ? `${t('warmup_praise_90')} 🌟`
               : percentage >= 70
-              ? 'Great job! 👏'
+              ? `${t('warmup_praise_70')} 👏`
               : percentage >= 50
-              ? 'Good effort! Keep practicing 💪'
-              : 'Keep at it! Practice makes perfect 📚'}
+              ? `${t('warmup_praise_50')} 💪`
+              : `${t('warmup_praise_else')} 📚`}
           </Text>
           <TouchableOpacity style={styles.backButton} onPress={onBack}>
             <Ionicons name="arrow-back" size={20} color="white" />
-            <Text style={styles.backButtonText}>Back to Learn</Text>
+            <Text style={styles.backButtonText}>{t('warmup_back')}</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -191,7 +198,7 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
         <TouchableOpacity onPress={onBack} style={styles.headerBack}>
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Daily Warmup</Text>
+        <Text style={styles.headerTitle}>{t('learn_mode_warmup_title')}</Text>
         <Text style={styles.progressText}>
           {currentIndex + 1} / {questions.length}
         </Text>
@@ -270,8 +277,8 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
           <View style={styles.explanationCard}>
             <Text style={styles.explanationTitle}>
               {selectedAnswer === currentQuestion.correctAnswer
-                ? '✅ Correct!'
-                : '❌ Incorrect'}
+                ? `✅ ${t('warmup_correct')}`
+                : `❌ ${t('warmup_wrong')}`}
             </Text>
             <Text style={styles.explanationText}>
               {currentQuestion.explanation}
@@ -279,8 +286,8 @@ export const SRSDailyWarmup: React.FC<SRSDailyWarmupProps> = ({ onBack }) => {
             <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
               <Text style={styles.nextButtonText}>
                 {currentIndex < questions.length - 1
-                  ? 'Next Question'
-                  : 'Finish'}
+                  ? t('warmup_next')
+                  : t('learning_finish')}
               </Text>
               <Ionicons name="arrow-forward" size={20} color="white" />
             </TouchableOpacity>

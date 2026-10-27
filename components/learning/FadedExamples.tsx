@@ -11,6 +11,7 @@ import {
   Platform,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { Quiz } from '../types';
 
 interface Blank {
@@ -19,7 +20,7 @@ interface Blank {
 }
 
 interface FadedExampleStage {
-  description: string;
+  descriptionKey: string;
   code: string;
   blanks: Blank[];
 }
@@ -41,6 +42,8 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
   onBack,
   quizzes = [],
 }) => {
+  const { t } = useTranslation();
+
   // State and ref hooks must come first
   const [currentExampleIndex, setCurrentExampleIndex] = useState(0);
   const [currentStageIndex, setCurrentStageIndex] = useState(0);
@@ -76,7 +79,7 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
 
             // Stage 1: Read only (show full explanation)
             stages.push({
-              description: 'Read and understand the concept.',
+              descriptionKey: 'faded_stage_1_desc',
               code: q1.explanation,
               blanks: [],
             });
@@ -89,7 +92,7 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
             );
             if (codeWithBlank !== q1.explanation) {
               stages.push({
-                description: 'Fill in the key term.',
+                descriptionKey: 'faded_stage_2_desc',
                 code: codeWithBlank,
                 blanks: [{ answer: keyTerm }],
               });
@@ -207,7 +210,7 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
                 onChangeText={(text) =>
                   handleInputChange(currentBlankIndex, text)
                 }
-                placeholder="fill in..."
+                placeholder={t('faded_blank_placeholder')}
                 placeholderTextColor="rgba(255,255,255,0.3)"
                 editable={!showResult}
                 autoCapitalize="none"
@@ -243,26 +246,29 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
             size={80}
             color={percentage >= 70 ? '#4CAF50' : '#4FC3F7'}
           />
-          <Text style={styles.completedTitle}>Scaffolding Complete!</Text>
+          <Text style={styles.completedTitle}>{t('faded_complete')}</Text>
           <Text style={styles.scoreText}>
-            {correctCount} / {totalStagesWithBlanks} stages correct (
-            {percentage}%)
+            {t('faded_score_line', {
+              correct: correctCount,
+              total: totalStagesWithBlanks,
+              percent: percentage,
+            })}
           </Text>
           <Text style={styles.encouragementText}>
             {percentage >= 90
-              ? "You've mastered these patterns! 🏆"
+              ? `${t('faded_praise_90')} 🏆`
               : percentage >= 70
-              ? 'Great understanding! 🎯'
-              : 'Keep practicing these patterns! 📚'}
+              ? `${t('faded_praise_70')} 🎯`
+              : `${t('faded_praise_else')} 📚`}
           </Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.secondaryButton} onPress={onBack}>
               <Ionicons name="arrow-back" size={20} color="white" />
-              <Text style={styles.buttonText}>Back</Text>
+              <Text style={styles.buttonText}>{t('learning_back')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.primaryButton} onPress={resetAll}>
               <Ionicons name="refresh" size={20} color="white" />
-              <Text style={styles.buttonText}>Start Over</Text>
+              <Text style={styles.buttonText}>{t('faded_start_over')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -279,7 +285,10 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
         <TouchableOpacity onPress={onBack} style={styles.headerBack}>
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>📖 Faded Examples</Text>
+        <Text style={styles.headerTitle}>
+          {`📖 `}
+          {t('faded_title')}
+        </Text>
         <Text style={styles.progressText}>
           {currentExampleIndex + 1}.{currentStageIndex + 1}
         </Text>
@@ -307,7 +316,7 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
         <Animated.View style={[styles.exampleCard, { opacity: fadeAnim }]}>
           <Text style={styles.exampleTitle}>{currentExample.title}</Text>
           <Text style={styles.stageDescription}>
-            {currentStage.description}
+            {t(currentStage.descriptionKey)}
           </Text>
         </Animated.View>
 
@@ -321,7 +330,10 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
               style={[styles.codeHeaderDot, { backgroundColor: '#27C93F' }]}
             />
             <Text style={styles.codeHeaderTitle}>
-              Stage {currentStageIndex + 1} of {currentExample.stages.length}
+              {t('faded_stage_progress', {
+                current: currentStageIndex + 1,
+                total: currentExample.stages.length,
+              })}
             </Text>
           </View>
           <ScrollView
@@ -341,11 +353,15 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
             ]}
           >
             <Text style={styles.resultTitle}>
-              {allCorrect ? '✅ Perfect!' : '❌ Not quite right'}
+              {allCorrect
+                ? `✅ ${t('faded_correct')}`
+                : `❌ ${t('faded_wrong')}`}
             </Text>
             {!allCorrect && (
               <View style={styles.correctAnswers}>
-                <Text style={styles.correctAnswersTitle}>Correct answers:</Text>
+                <Text style={styles.correctAnswersTitle}>
+                  {t('faded_correct_answers')}
+                </Text>
                 {currentStage.blanks.map((blank, idx) => (
                   <Text key={idx} style={styles.correctAnswerText}>
                     {idx + 1}.{' '}
@@ -360,7 +376,7 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
         {!showResult && !isReadOnlyStage && (
           <TouchableOpacity style={styles.checkButton} onPress={checkAnswers}>
             <Ionicons name="checkmark-circle" size={20} color="white" />
-            <Text style={styles.checkButtonText}>Check Answers</Text>
+            <Text style={styles.checkButtonText}>{t('faded_check')}</Text>
           </TouchableOpacity>
         )}
 
@@ -368,10 +384,10 @@ export const FadedExamples: React.FC<FadedExamplesProps> = ({
           <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
             <Text style={styles.nextButtonText}>
               {currentStageIndex < currentExample.stages.length - 1
-                ? 'Next Stage'
+                ? t('faded_next_stage')
                 : currentExampleIndex < examples.length - 1
-                ? 'Next Example'
-                : 'Finish'}
+                ? t('faded_next_example')
+                : t('learning_finish')}
             </Text>
             <Ionicons name="arrow-forward" size={20} color="white" />
           </TouchableOpacity>

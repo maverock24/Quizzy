@@ -8,6 +8,7 @@ import {
   Animated,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { useTranslation } from 'react-i18next';
 import { Quiz, QuizQuestion, Answer } from '../types';
 
 interface CodeTracingQuestion {
@@ -30,6 +31,8 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({
   onBack,
   quizzes = [],
 }) => {
+  const { t } = useTranslation();
+
   // State hooks must come first
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
@@ -64,7 +67,7 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({
               question: q.question,
               options: options.slice(0, 4), // Limit to 4 options
               correctAnswer: q.answer,
-              explanation: q.explanation || 'This is the correct answer.',
+              explanation: q.explanation,
               category: quiz.category,
             });
           }
@@ -125,27 +128,31 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({
             size={80}
             color={percentage >= 70 ? '#FFD700' : '#4FC3F7'}
           />
-          <Text style={styles.completedTitle}>Code Tracing Complete!</Text>
+          <Text style={styles.completedTitle}>{t('tracing_complete')}</Text>
           <Text style={styles.scoreText}>
-            {correctCount} / {questions.length} correct ({percentage}%)
+            {t('learning_score_line', {
+              correct: correctCount,
+              total: questions.length,
+              percent: percentage,
+            })}
           </Text>
           <Text style={styles.encouragementText}>
             {percentage >= 90
-              ? "You're a mental compiler! 🧠"
+              ? `${t('tracing_praise_90')} 🧠`
               : percentage >= 70
-              ? 'Great mental model! 🎯'
+              ? `${t('tracing_praise_70')} 🎯`
               : percentage >= 50
-              ? 'Keep building that mental model 💪'
-              : 'Practice makes the mental compiler stronger! 🔧'}
+              ? `${t('tracing_praise_50')} 💪`
+              : `${t('tracing_praise_else')} 🔧`}
           </Text>
           <View style={styles.buttonRow}>
             <TouchableOpacity style={styles.secondaryButton} onPress={onBack}>
               <Ionicons name="arrow-back" size={20} color="white" />
-              <Text style={styles.buttonText}>Back</Text>
+              <Text style={styles.buttonText}>{t('learning_back')}</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.primaryButton} onPress={resetQuiz}>
               <Ionicons name="refresh" size={20} color="white" />
-              <Text style={styles.buttonText}>Try Again</Text>
+              <Text style={styles.buttonText}>{t('learning_try_again')}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -161,7 +168,10 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({
         <TouchableOpacity onPress={onBack} style={styles.headerBack}>
           <Ionicons name="arrow-back" size={24} color="white" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>🧠 Mental Compiler</Text>
+        <Text style={styles.headerTitle}>
+          {`🧠 `}
+          {t('learn_mode_compiler_title')}
+        </Text>
         <Text style={styles.progressText}>
           {currentIndex + 1} / {questions.length}
         </Text>
@@ -262,17 +272,17 @@ export const CodeTracing: React.FC<CodeTracingProps> = ({
           <View style={styles.explanationCard}>
             <Text style={styles.explanationTitle}>
               {selectedAnswer === currentQuestion.correctAnswer
-                ? '✅ Correct! You traced it right.'
-                : "❌ Not quite. Here's the trace:"}
+                ? `✅ ${t('tracing_correct')}`
+                : `❌ ${t('tracing_wrong')}`}
             </Text>
             <Text style={styles.explanationText}>
-              {currentQuestion.explanation}
+              {currentQuestion.explanation || t('tracing_default_explanation')}
             </Text>
             <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
               <Text style={styles.nextButtonText}>
                 {currentIndex < questions.length - 1
-                  ? 'Next Challenge'
-                  : 'See Results'}
+                  ? t('tracing_next')
+                  : t('learning_see_results')}
               </Text>
               <Ionicons name="arrow-forward" size={20} color="white" />
             </TouchableOpacity>
