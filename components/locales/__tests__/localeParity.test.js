@@ -18,7 +18,7 @@ const KNOWN_MISSING = [];
 // Values that may legitimately equal the English value. The brand name, and
 // German for "quiz" is "Quiz".
 const IDENTICAL_TO_ENGLISH_ALLOWED = {
-  de: ['quiz_title', 'tab_quiz'],
+  de: ['quiz_title', 'tab_quiz', 'multiplayer_quiz_label'],
   fi: ['quiz_title'],
 };
 
@@ -62,6 +62,40 @@ function collectUsedKeys() {
     }
   }
   return [...keys].sort();
+}
+
+// Some components hold a key in data and pass it to `t` by variable, so the
+// literal-call scan cannot see it: `t(labelKey)`, `t(stage.nameKey)`,
+// `t(celebration.key)`. Module scope may hold keys but never a `t()` result, so
+// the convention is a `*Key` property, or a bare `key` in a keyed lookup list.
+const KEY_PROPERTY = /(?:\b[A-Za-z]*Key|\bkey)\s*:\s*'([a-z][a-z0-9_]*)'/g;
+
+function collectIndirectKeys() {
+  const keys = new Set();
+  for (const root of SCAN_ROOTS) {
+    for (const file of collectSourceFiles(path.join(REPO_ROOT, root))) {
+      const source = fs.readFileSync(file, 'utf8');
+      for (const match of source.matchAll(KEY_PROPERTY)) keys.add(match[1]);
+    }
+  }
+  return [...keys].sort();
+}
+
+// `t(`achievement_category_${category}`)` is built from the AchievementCategory
+// union, so expand the union rather than the call site.
+const CATEGORY_KEYS = ['streak', 'score', 'speed', 'volume', 'special'].map(
+  (category) => `achievement_category_${category}`,
+);
+
+// i18next substitutes `{{name}}`; a name that does not match the call site
+// renders the raw braces to the user, so every language must carry the same
+// placeholder set as English.
+const PLACEHOLDER = /\{\{\s*([A-Za-z0-9_]+)\s*\}\}/g;
+
+function placeholdersIn(value) {
+  return [...String(value).matchAll(PLACEHOLDER)]
+    .map((match) => match[1])
+    .sort();
 }
 
 const unionKeys = [
@@ -146,6 +180,40 @@ describe('locale parity', () => {
     for (const language of Object.keys(LOCALES)) {
       const missing = used.filter((name) => !hasKey(LOCALES[language], name));
       expect({ language, missing }).toEqual({ language, missing: [] });
+    }
+  });
+
+  // Keys reached through a variable resolution path, which the literal `t('x')`
+  // scan above cannot see. A typo here renders the raw key to the user.
+  it('has a value for every key held in data and passed to t by variable', () => {
+    const indirect = [...new Set([...collectIndirectKeys(), ...CATEGORY_KEYS])];
+
+    // Guard the scan itself: if the convention changes, this fails loudly
+    // rather than quietly covering nothing.
+    expect(indirect.length).toBeGreaterThanOrEqual(20);
+
+    for (const language of Object.keys(LOCALES)) {
+      const missing = indirect.filter(
+        (name) => !hasKey(LOCALES[language], name),
+      );
+      expect({ language, missing }).toEqual({ language, missing: [] });
+    }
+  });
+
+  it('uses the same interpolation placeholders in every language', () => {
+    for (const language of TRANSLATED_LOCALES) {
+      const mismatched = Object.keys(LOCALES[language])
+        .filter((name) => hasKey(en, name))
+        .map((name) => ({
+          name,
+          english: placeholdersIn(en[name]),
+          translated: placeholdersIn(LOCALES[language][name]),
+        }))
+        .filter(
+          ({ english, translated }) =>
+            english.join(',') !== translated.join(','),
+        );
+      expect({ language, mismatched }).toEqual({ language, mismatched: [] });
     }
   });
 });
