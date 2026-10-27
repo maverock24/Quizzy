@@ -14,6 +14,7 @@ import {
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
 import { useQuiz } from '@/components/Quizprovider';
 import { Quiz } from '@/components/types';
+import { useTranslation } from 'react-i18next';
 
 // Import learning components
 import SRSDailyWarmup from '@/components/learning/SRSDailyWarmup';
@@ -41,6 +42,7 @@ interface LearningOption {
 
 export default function LearnScreen() {
   const { quizzes } = useQuiz();
+  const { t } = useTranslation();
   const [currentMode, setCurrentMode] = useState<LearningMode>('menu');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
@@ -63,45 +65,45 @@ export default function LearnScreen() {
     return quizzes.filter((quiz: Quiz) => quiz.category === selectedCategory);
   }, [quizzes, selectedCategory]);
 
+  // Translations resolve here rather than at module scope, where a `t()` call
+  // would freeze the language at import time.
   const learningOptions: LearningOption[] = [
     {
       id: 'daily-warmup',
-      title: 'Daily Warmup',
-      description:
-        "Spaced repetition practice on questions you've answered before",
+      title: t('learn_mode_warmup_title'),
+      description: t('learn_mode_warmup_desc'),
       icon: <Ionicons name="flash" size={32} color="#4FC3F7" />,
       color: '#4FC3F7',
       tier: 1,
     },
     {
       id: 'code-tracing',
-      title: 'Mental Compiler',
-      description: 'Predict code output to build your mental execution model',
+      title: t('learn_mode_compiler_title'),
+      description: t('learn_mode_compiler_desc'),
       icon: <MaterialCommunityIcons name="brain" size={32} color="#9C27B0" />,
       color: '#9C27B0',
       tier: 1,
     },
     {
       id: 'parsons',
-      title: 'Parsons Problems',
-      description: 'Arrange scrambled code lines into the correct order',
+      title: t('learn_mode_parsons_title'),
+      description: t('learn_mode_parsons_desc'),
       icon: <MaterialCommunityIcons name="puzzle" size={32} color="#FF9800" />,
       color: '#FF9800',
       tier: 1,
     },
     {
       id: 'faded-examples',
-      title: 'Scaffolded Learning',
-      description:
-        'Study complete examples, then fill in progressively more blanks',
+      title: t('learn_mode_faded_title'),
+      description: t('learn_mode_faded_desc'),
       icon: <Ionicons name="school" size={32} color="#00BCD4" />,
       color: '#00BCD4',
       tier: 2,
     },
     {
       id: 'debugging',
-      title: 'Bug Hunter',
-      description: 'Find the bug in seemingly correct code',
+      title: t('learn_mode_bughunter_title'),
+      description: t('learn_mode_bughunter_desc'),
       icon: <FontAwesome5 name="bug" size={28} color="#f44336" />,
       color: '#f44336',
       tier: 2,
@@ -117,7 +119,7 @@ export default function LearnScreen() {
 
   // Get short category name (remove emoji prefix)
   const getCategoryDisplayName = (cat: string) => {
-    if (cat === 'all') return 'All Categories';
+    if (cat === 'all') return t('learn_category_all');
     // Remove emoji prefix if present
     const parts = cat.split(' ');
     if (parts.length > 1 && /\p{Emoji}/u.test(parts[0])) {
@@ -182,15 +184,19 @@ export default function LearnScreen() {
           contentContainerStyle={styles.scrollContent}
         >
           <View style={styles.header}>
-            <Text style={styles.headerTitle}>🧠 Enhanced Learning</Text>
-            <Text style={styles.headerSubtitle}>
-              Science-backed methods for maximum retention
+            <Text style={styles.headerTitle}>
+              {`🧠 `}
+              {t('learn_title')}
             </Text>
+            <Text style={styles.headerSubtitle}>{t('learn_subtitle')}</Text>
           </View>
 
           {/* Category Filter */}
           <View style={styles.categorySection}>
-            <Text style={styles.categoryLabel}>📚 Category Filter</Text>
+            <Text style={styles.categoryLabel}>
+              {`📚 `}
+              {t('learn_category_filter')}
+            </Text>
             <ScrollView
               horizontal
               showsHorizontalScrollIndicator={false}
@@ -218,12 +224,14 @@ export default function LearnScreen() {
               ))}
             </ScrollView>
             <Text style={styles.categoryCount}>
-              {filteredQuizzes.length} quizzes •{' '}
-              {filteredQuizzes.reduce(
-                (acc: number, q: Quiz) => acc + (q.questions?.length || 0),
-                0,
-              )}{' '}
-              questions
+              {t('learn_count_quizzes', { count: filteredQuizzes.length })}
+              {' • '}
+              {t('learn_count_questions', {
+                count: filteredQuizzes.reduce(
+                  (acc: number, q: Quiz) => acc + (q.questions?.length || 0),
+                  0,
+                ),
+              })}
             </Text>
           </View>
 
@@ -231,13 +239,13 @@ export default function LearnScreen() {
           <View style={styles.tierSection}>
             <View style={styles.tierHeader}>
               <View style={styles.tierBadge}>
-                <Text style={styles.tierBadgeText}>TIER 1</Text>
+                <Text style={styles.tierBadgeText}>
+                  {t('learn_tier_1_label')}
+                </Text>
               </View>
-              <Text style={styles.tierTitle}>High Efficiency</Text>
+              <Text style={styles.tierTitle}>{t('learn_tier_1_title')}</Text>
             </View>
-            <Text style={styles.tierDescription}>
-              Low cognitive load, high learning ROI
-            </Text>
+            <Text style={styles.tierDescription}>{t('learn_tier_1_desc')}</Text>
 
             <View style={styles.optionsGrid}>
               {tier1Options.map((option) => (
@@ -276,14 +284,12 @@ export default function LearnScreen() {
                 ]}
               >
                 <Text style={[styles.tierBadgeText, { color: '#CE93D8' }]}>
-                  TIER 2
+                  {t('learn_tier_2_label')}
                 </Text>
               </View>
-              <Text style={styles.tierTitle}>Deep Learning</Text>
+              <Text style={styles.tierTitle}>{t('learn_tier_2_title')}</Text>
             </View>
-            <Text style={styles.tierDescription}>
-              For mastering patterns after grasping basics
-            </Text>
+            <Text style={styles.tierDescription}>{t('learn_tier_2_desc')}</Text>
 
             <View style={styles.optionsGrid}>
               {tier2Options.map((option) => (
@@ -319,10 +325,7 @@ export default function LearnScreen() {
               size={20}
               color="rgba(255,255,255,0.5)"
             />
-            <Text style={styles.infoText}>
-              Daily Warmup adapts to your quiz performance using spaced
-              repetition. The more you practice, the smarter it gets!
-            </Text>
+            <Text style={styles.infoText}>{t('learn_footer')}</Text>
           </View>
         </ScrollView>
       </SafeAreaLinearGradient>
