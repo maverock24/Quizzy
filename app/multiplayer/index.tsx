@@ -13,6 +13,7 @@ import {
   Linking,
 } from 'react-native';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 import { multiplayerService } from '../../services/MultiplayerService';
 import {
@@ -34,6 +35,7 @@ const showAlert = (title: string, message: string) => {
 };
 
 export default function MultiplayerHome() {
+  const { t } = useTranslation();
   const router = useRouter();
   const [name, setName] = useState('');
   const [isJoining, setIsJoining] = useState(false);
@@ -124,7 +126,7 @@ export default function MultiplayerHome() {
 
   const handleCreateRoom = async () => {
     if (!name.trim()) {
-      showAlert('Required', 'Please enter your name');
+      showAlert(t('multiplayer_required'), t('multiplayer_enter_name_body'));
       return;
     }
 
@@ -138,11 +140,17 @@ export default function MultiplayerHome() {
           )}&isHost=true`,
         );
       } else {
-        showAlert('Cannot create a room', failureMessage(result.failure));
+        showAlert(
+          t('multiplayer_cannot_create'),
+          failureMessage(result.failure),
+        );
       }
     } catch (error) {
       console.error(error);
-      showAlert('Cannot create a room', failureMessage('could-not-create'));
+      showAlert(
+        t('multiplayer_cannot_create'),
+        failureMessage('could-not-create'),
+      );
     } finally {
       setIsCreating(false);
     }
@@ -152,7 +160,7 @@ export default function MultiplayerHome() {
     const target = normalizeRoomCode(codeToJoin);
 
     if (!name.trim()) {
-      showAlert('Required', 'Please enter your name');
+      showAlert(t('multiplayer_required'), t('multiplayer_enter_name_body'));
       return;
     }
 
@@ -168,11 +176,11 @@ export default function MultiplayerHome() {
           )}&isHost=false`,
         );
       } else {
-        showAlert('Cannot join', failureMessage(result.failure));
+        showAlert(t('multiplayer_cannot_join'), failureMessage(result.failure));
       }
     } catch (error) {
       console.error(error);
-      showAlert('Cannot join', failureMessage('connect-failed'));
+      showAlert(t('multiplayer_cannot_join'), failureMessage('connect-failed'));
     } finally {
       setIsJoining(false);
     }
@@ -195,11 +203,14 @@ export default function MultiplayerHome() {
           )}&isHost=true`,
         );
       } else {
-        showAlert('Cannot create a room', failureMessage(result.failure));
+        showAlert(
+          t('multiplayer_cannot_create'),
+          failureMessage(result.failure),
+        );
       }
     } catch (e) {
       console.error(e);
-      showAlert('Cannot send invite', failureMessage('network'));
+      showAlert(t('multiplayer_cannot_invite'), failureMessage('network'));
     } finally {
       setIsCreating(false);
     }
@@ -228,10 +239,9 @@ export default function MultiplayerHome() {
         >
           <View style={styles.contentContainer}>
             <View style={styles.card}>
-              <Text style={styles.title}>Multiplayer Quiz</Text>
+              <Text style={styles.title}>{t('multiplayer_title')}</Text>
               <Text style={styles.emptyText}>
-                Multiplayer needs a browser. Open the web version to play with a
-                friend.
+                {t('multiplayer_needs_browser')}
               </Text>
               <TouchableOpacity
                 style={[styles.button, styles.joinBtn]}
@@ -239,7 +249,9 @@ export default function MultiplayerHome() {
                   Linking.openURL('https://quizzy-2504.netlify.app/multiplayer')
                 }
               >
-                <Text style={styles.buttonText}>Open the web version</Text>
+                <Text style={styles.buttonText}>
+                  {t('multiplayer_open_web')}
+                </Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -259,14 +271,17 @@ export default function MultiplayerHome() {
           style={styles.container}
         >
           <View style={styles.contentContainer}>
-            <Text style={styles.title}>⚔️ Multiplayer Quiz</Text>
+            <Text style={styles.title}>
+              {'⚔️ '}
+              {t('multiplayer_title')}
+            </Text>
 
             <View style={styles.card}>
               <View style={styles.formGroup}>
-                <Text style={styles.label}>Your Name</Text>
+                <Text style={styles.label}>{t('multiplayer_your_name')}</Text>
                 <TextInput
                   style={styles.input}
-                  placeholder="Enter your name"
+                  placeholder={t('multiplayer_enter_name')}
                   value={name}
                   onChangeText={setName}
                   placeholderTextColor="rgba(255,255,255,0.4)"
@@ -286,7 +301,10 @@ export default function MultiplayerHome() {
                 {isCreating ? (
                   <ActivityIndicator color="white" />
                 ) : (
-                  <Text style={styles.buttonText}>🚀 Create New Game</Text>
+                  <Text style={styles.buttonText}>
+                    {'🚀 '}
+                    {t('multiplayer_create_game')}
+                  </Text>
                 )}
               </TouchableOpacity>
             </View>
@@ -300,25 +318,30 @@ export default function MultiplayerHome() {
                 ]}
               >
                 <Text style={[styles.label, { color: 'rgb(52, 211, 153)' }]}>
-                  📬 Incoming Invites
+                  {'📬 '}
+                  {t('multiplayer_incoming_invites')}
                 </Text>
                 {incomingInvites.map((invite) => (
                   <View key={invite.roomId} style={styles.inviteRow}>
                     <Text style={styles.inviteText}>
-                      {invite.fromName} invited you!
+                      {t('multiplayer_invited_you', { name: invite.fromName })}
                     </Text>
                     <View style={styles.inviteActions}>
                       <TouchableOpacity
                         onPress={() => handleAcceptInvite(invite)}
                         style={[styles.actionBtn, styles.acceptBtn]}
                       >
-                        <Text style={styles.actionBtnText}>Accept</Text>
+                        <Text style={styles.actionBtnText}>
+                          {t('multiplayer_accept')}
+                        </Text>
                       </TouchableOpacity>
                       <TouchableOpacity
                         onPress={() => handleRejectInvite(invite)}
                         style={[styles.actionBtn, styles.rejectBtn]}
                       >
-                        <Text style={styles.actionBtnText}>Decline</Text>
+                        <Text style={styles.actionBtnText}>
+                          {t('multiplayer_decline')}
+                        </Text>
                       </TouchableOpacity>
                     </View>
                   </View>
@@ -329,7 +352,10 @@ export default function MultiplayerHome() {
             {/* ACTIVE PLAYERS SECTION */}
             <View style={styles.card}>
               <View style={styles.headerRow}>
-                <Text style={styles.label}>🟢 Active Players in Lobby</Text>
+                <Text style={styles.label}>
+                  {'🟢 '}
+                  {t('multiplayer_active_players')}
+                </Text>
                 {isConnectedToLobby && (
                   <ActivityIndicator
                     size="small"
@@ -340,13 +366,11 @@ export default function MultiplayerHome() {
 
               {!isConnectedToLobby ? (
                 <Text style={styles.emptyText}>
-                  Enter your name above to enter the lobby and see who is
-                  online.
+                  {t('multiplayer_lobby_hint')}
                 </Text>
               ) : activeUsers.length === 0 ? (
                 <Text style={styles.emptyText}>
-                  No one else is online right now. Waiting for players... Ask
-                  the host for their invite link to join.
+                  {t('multiplayer_lobby_empty')}
                 </Text>
               ) : (
                 <ScrollView style={{ maxHeight: 200 }}>
@@ -368,7 +392,9 @@ export default function MultiplayerHome() {
                         disabled={isCreating}
                       >
                         <Text style={styles.inviteSmallBtnText}>
-                          {user.roomCode ? 'Join' : 'Invite'}
+                          {user.roomCode
+                            ? t('multiplayer_join')
+                            : t('multiplayer_invite')}
                         </Text>
                       </TouchableOpacity>
                     </View>

@@ -11,6 +11,7 @@ import {
   Platform,
 } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { Ionicons } from '@expo/vector-icons';
 import {
   multiplayerService,
@@ -39,13 +40,6 @@ const shuffleArray = <T,>(array: T[]): T[] => {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
-};
-
-const formatTime = (ms: number): string => {
-  const seconds = Math.floor(ms / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return minutes > 0 ? `${minutes}m ${secs}s` : `${secs}s`;
 };
 
 const showAlert = (
@@ -80,6 +74,7 @@ export default function MultiplayerRoom() {
     name: string;
     isHost: string;
   }>();
+  const { t } = useTranslation();
   const router = useRouter();
   const { quizzes } = useQuiz();
   const isHost = isHostParam === 'true';
@@ -158,10 +153,10 @@ export default function MultiplayerRoom() {
   };
 
   const handleLeave = useCallback(() => {
-    showAlert('Leave Game?', 'Are you sure you want to leave?', [
-      { text: 'Cancel', style: 'cancel' },
+    showAlert(t('multiplayer_leave_title'), t('multiplayer_leave_body'), [
+      { text: t('cancel'), style: 'cancel' },
       {
-        text: 'Leave',
+        text: t('multiplayer_leave'),
         onPress: () => {
           multiplayerService.destroy();
           if (isHost) presenceService.setRoomCode(null);
@@ -170,7 +165,7 @@ export default function MultiplayerRoom() {
       },
     ]);
     return true;
-  }, [router, isHost]);
+  }, [router, isHost, t]);
 
   useEffect(() => {
     if (isHost) {
@@ -339,7 +334,10 @@ export default function MultiplayerRoom() {
 
   const handleStartGame = () => {
     if (!selectedQuiz) {
-      showAlert('Select Quiz', 'Please select a quiz first');
+      showAlert(
+        t('multiplayer_select_quiz_title'),
+        t('multiplayer_select_quiz_first'),
+      );
       setIsQuizSelectorVisible(true);
       return;
     }
@@ -401,6 +399,17 @@ export default function MultiplayerRoom() {
   // Check if all players finished
   const allFinished = allFinishedIn(players);
 
+  // The duration keys carry the unit, so the format is per language. Defined
+  // inside the component, never at module scope, so it follows the language.
+  const durationLabel = (ms: number): string => {
+    const total = Math.floor(ms / 1000);
+    const minutes = Math.floor(total / 60);
+    const seconds = total % 60;
+    return minutes > 0
+      ? t('multiplayer_time_min_sec', { minutes, seconds })
+      : t('multiplayer_time_sec', { seconds });
+  };
+
   const handlePlayAgain = () => {
     setCurrentQuestionIndex(0);
     setScore(0);
@@ -431,7 +440,10 @@ export default function MultiplayerRoom() {
         >
           <ScrollView contentContainerStyle={styles.resultsContainer}>
             <Text style={styles.resultsTitle}>
-              {allFinished ? '🏆 Game Over!' : '⏳ Waiting for opponent...'}
+              {allFinished ? '🏆 ' : '⏳ '}
+              {allFinished
+                ? t('multiplayer_game_over')
+                : t('multiplayer_waiting_opponent')}
             </Text>
 
             {allFinished && winner && (
@@ -440,13 +452,17 @@ export default function MultiplayerRoom() {
                   {iAmWinner ? '🎉' : '💪'}
                 </Text>
                 <Text style={styles.winnerText}>
-                  {iAmWinner ? 'You Win!' : `${winner.name} Wins!`}
+                  {iAmWinner
+                    ? t('multiplayer_you_win')
+                    : t('multiplayer_player_wins', { name: winner.name })}
                 </Text>
               </View>
             )}
 
             <View style={styles.card}>
-              <Text style={styles.subtitle}>Final Scores</Text>
+              <Text style={styles.subtitle}>
+                {t('multiplayer_final_scores')}
+              </Text>
               {[...players]
                 .filter((p) => !p.left)
                 .sort((a, b) => b.score - a.score)
@@ -462,15 +478,17 @@ export default function MultiplayerRoom() {
                       <View>
                         <Text style={styles.resultName}>
                           {p.name} {p.isHost ? '👑' : ''}{' '}
-                          {p.id === myId ? '(You)' : ''}
+                          {p.id === myId ? t('multiplayer_you_suffix') : ''}
                         </Text>
                         {p.finished ? (
                           <Text style={styles.resultTime}>
-                            Finished in {formatTime(p.finishTime ?? 0)}
+                            {t('multiplayer_finished_in', {
+                              time: durationLabel(p.finishTime ?? 0),
+                            })}
                           </Text>
                         ) : (
                           <Text style={styles.resultTime}>
-                            Still playing...
+                            {t('multiplayer_still_playing')}
                           </Text>
                         )}
                       </View>
@@ -489,7 +507,10 @@ export default function MultiplayerRoom() {
               onPress={handlePlayAgain}
               style={[styles.button, styles.primaryBtn]}
             >
-              <Text style={styles.buttonText}>🏠 Back to Lobby</Text>
+              <Text style={styles.buttonText}>
+                {'🏠 '}
+                {t('multiplayer_back_to_lobby')}
+              </Text>
             </TouchableOpacity>
           </ScrollView>
         </SafeAreaLinearGradient>
@@ -513,13 +534,15 @@ export default function MultiplayerRoom() {
             <View style={styles.gameContainer}>
               <View style={[styles.card, { marginTop: 80 }]}>
                 <Text style={styles.subtitle}>
-                  The host connection dropped.
+                  {t('multiplayer_host_dropped')}
                 </Text>
                 <TouchableOpacity
                   onPress={() => handleEnterRoom(joinedName)}
                   style={[styles.button, styles.primaryBtn]}
                 >
-                  <Text style={styles.buttonText}>Rejoin</Text>
+                  <Text style={styles.buttonText}>
+                    {t('multiplayer_rejoin')}
+                  </Text>
                 </TouchableOpacity>
                 {rejoinError !== '' && (
                   <Text style={styles.rejoinError}>{rejoinError}</Text>
@@ -582,10 +605,12 @@ export default function MultiplayerRoom() {
           <View style={styles.container}>
             <View style={styles.lobby}>
               <View style={styles.card}>
-                <Text style={styles.subtitle}>Enter your name to join</Text>
+                <Text style={styles.subtitle}>
+                  {t('multiplayer_enter_name_join')}
+                </Text>
                 <TextInput
                   style={styles.input}
-                  placeholder="Enter your name"
+                  placeholder={t('multiplayer_enter_name')}
                   value={typedName}
                   onChangeText={setTypedName}
                   placeholderTextColor="rgba(255,255,255,0.4)"
@@ -601,7 +626,7 @@ export default function MultiplayerRoom() {
                     typedName.trim().length === 0 && styles.disabledBtn,
                   ]}
                 >
-                  <Text style={styles.buttonText}>Join</Text>
+                  <Text style={styles.buttonText}>{t('multiplayer_join')}</Text>
                 </TouchableOpacity>
                 {rejoinError !== '' && (
                   <>
@@ -610,7 +635,9 @@ export default function MultiplayerRoom() {
                       onPress={() => handleEnterRoom(typedName)}
                       style={[styles.button, styles.secondaryBtn]}
                     >
-                      <Text style={styles.buttonText}>Try again</Text>
+                      <Text style={styles.buttonText}>
+                        {t('multiplayer_retry')}
+                      </Text>
                     </TouchableOpacity>
                   </>
                 )}
@@ -645,7 +672,9 @@ export default function MultiplayerRoom() {
           </TouchableOpacity>
 
           <View style={styles.lobby}>
-            <Text style={styles.title}>Room: {code}</Text>
+            <Text style={styles.title}>
+              {t('multiplayer_room')} {code}
+            </Text>
 
             {Platform.OS === 'web' && (
               <View style={styles.roomCodeRow}>
@@ -657,7 +686,9 @@ export default function MultiplayerRoom() {
                   style={[styles.smallBtn, styles.secondaryBtn]}
                 >
                   <Text style={styles.buttonText}>
-                    {copied ? 'Link copied' : 'Copy link'}
+                    {copied
+                      ? t('multiplayer_link_copied')
+                      : t('multiplayer_copy_link')}
                   </Text>
                 </TouchableOpacity>
                 {typeof navigator !== 'undefined' &&
@@ -666,14 +697,16 @@ export default function MultiplayerRoom() {
                       onPress={handleShare}
                       style={[styles.smallBtn, styles.secondaryBtn]}
                     >
-                      <Text style={styles.buttonText}>Share</Text>
+                      <Text style={styles.buttonText}>
+                        {t('multiplayer_share')}
+                      </Text>
                     </TouchableOpacity>
                   )}
               </View>
             )}
 
             <View style={styles.card}>
-              <Text style={styles.subtitle}>Players:</Text>
+              <Text style={styles.subtitle}>{t('multiplayer_players')}</Text>
               <View style={styles.playerList}>
                 {players.map((p, i) => (
                   <View key={i} style={styles.playerRow}>
@@ -686,14 +719,16 @@ export default function MultiplayerRoom() {
                         p.left ? styles.leftText : null,
                       ]}
                     >
-                      {p.left ? 'Left' : '✅ Ready'}
+                      {p.left
+                        ? t('multiplayer_left')
+                        : `✅ ${t('multiplayer_ready')}`}
                     </Text>
                   </View>
                 ))}
                 {presentCount < 2 && (
                   <View style={styles.playerRow}>
                     <Text style={[styles.playerText, { opacity: 0.4 }]}>
-                      Waiting for opponent...
+                      {t('multiplayer_waiting_opponent')}
                     </Text>
                     <ActivityIndicator
                       size="small"
@@ -707,13 +742,17 @@ export default function MultiplayerRoom() {
             {isHost && (
               <View style={styles.card}>
                 <Text style={styles.label}>
-                  Selected Quiz: {selectedQuiz?.name || 'None selected'}
+                  {t('multiplayer_selected_quiz')}{' '}
+                  {selectedQuiz?.name || t('multiplayer_none_selected')}
                 </Text>
                 <TouchableOpacity
                   onPress={() => setIsQuizSelectorVisible(true)}
                   style={[styles.button, styles.secondaryBtn]}
                 >
-                  <Text style={styles.buttonText}>📚 Select Quiz</Text>
+                  <Text style={styles.buttonText}>
+                    {'📚 '}
+                    {t('multiplayer_select_quiz')}
+                  </Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
@@ -725,12 +764,15 @@ export default function MultiplayerRoom() {
                     (!selectedQuiz || presentCount < 2) && styles.disabledBtn,
                   ]}
                 >
-                  <Text style={styles.buttonText}>🎮 Start Game</Text>
+                  <Text style={styles.buttonText}>
+                    {'🎮 '}
+                    {t('multiplayer_start_game')}
+                  </Text>
                 </TouchableOpacity>
 
                 {presentCount < 2 && (
                   <Text style={styles.hintText}>
-                    Send your opponent the room link to join
+                    {t('multiplayer_share_hint')}
                   </Text>
                 )}
               </View>
@@ -754,7 +796,9 @@ export default function MultiplayerRoom() {
                         linkName.length === 0 && styles.disabledBtn,
                       ]}
                     >
-                      <Text style={styles.buttonText}>Try again</Text>
+                      <Text style={styles.buttonText}>
+                        {t('multiplayer_retry')}
+                      </Text>
                     </TouchableOpacity>
                   </>
                 ) : (
@@ -768,7 +812,7 @@ export default function MultiplayerRoom() {
                         fontWeight: '600',
                       }}
                     >
-                      Waiting for host to start...
+                      {t('multiplayer_waiting_host')}
                     </Text>
                     {selectedQuiz && (
                       <Text
@@ -777,7 +821,7 @@ export default function MultiplayerRoom() {
                           marginTop: 5,
                         }}
                       >
-                        Quiz: {selectedQuiz.name}
+                        {t('multiplayer_quiz_label')} {selectedQuiz.name}
                       </Text>
                     )}
                   </>
@@ -792,7 +836,7 @@ export default function MultiplayerRoom() {
                   <Text
                     style={[styles.title, { marginBottom: 10, marginTop: 10 }]}
                   >
-                    Select a Quiz
+                    {t('multiplayer_select_quiz_overlay')}
                   </Text>
                   <ScrollView>
                     <QuizSelection
@@ -804,7 +848,7 @@ export default function MultiplayerRoom() {
                     onPress={() => setIsQuizSelectorVisible(false)}
                     style={[styles.button, styles.cancelBtn]}
                   >
-                    <Text style={styles.buttonText}>Cancel</Text>
+                    <Text style={styles.buttonText}>{t('cancel')}</Text>
                   </TouchableOpacity>
                 </SafeAreaView>
               </View>
