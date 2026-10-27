@@ -1360,3 +1360,33 @@ slice; each is one line to change if the human disagrees.
    `english`/`german`/`finnish` keys, matching Settings and adding no keys. The
    alternative is three new endonym keys whose values are identical in all three
    files, which also means three more entries in the identical-value allowlist.
+
+---
+
+# Progress
+
+| slice | state | commit |
+|---|---|---|
+| S1 Prefactor | done | b5c3e27 |
+| S2 Locale files | done | 4a34087 |
+| S3 Multiplayer screens | done | 3f700f2 |
+| S4 Multiplayer services + scoreboard | done | f7e7728 |
+| S5 Settings + update path | done | ded8721 |
+| S6 Kids mode | done | 6cafe17 |
+| S7 Learn hub | done | 86546fc |
+| S8 Learning part 1 | done | 1896d49 |
+| S9 Learning part 2 | done | fbe159f |
+| S10 App shell | done | a387416 |
+| S11 Quiz chrome | done | 487fa85 |
+| S12 Content readers + flashcards | done | a194faf |
+| S13 Level titles | done | b811610 |
+| S14 Achievements | done | f31832f |
+
+Gate after S1, verified by the orchestrator: `npx tsc --noEmit` clean,
+`npx jest --ci` 16 suites / 159 tests green, `npx eslint` exactly 1 pre-existing
+error in `expo-env.d.ts:3:73`. Mutation-checked the locale parity test: deleting
+`save` from `fi.json` makes it fail.
+
+Post-slice fix, found in the orchestrator's acceptance audit: `en.json`
+`days_streak` carried the singular English value, so `StreakDisplay.tsx:188`
+rendered "7 day streak". Fixed in `7367ec4`.
