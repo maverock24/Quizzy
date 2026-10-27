@@ -4,6 +4,10 @@ const path = require('path');
 const en = require('../en.json');
 const de = require('../de.json');
 const fi = require('../fi.json');
+const {
+  DEFAULT_ACHIEVEMENTS,
+  LEVEL_CONFIGS,
+} = require('../../gamification/types');
 
 const LOCALES = { en, de, fi };
 const TRANSLATED_LOCALES = ['de', 'fi'];
@@ -109,6 +113,29 @@ describe('locale parity', () => {
           !allowed.includes(name),
       );
       expect({ language, identical }).toEqual({ language, identical: [] });
+    }
+  });
+
+  // The achievement and level names/descriptions are template keys
+  // (`achievement_<id>_name`, `level_<n>_title`), so the literal-call scan above
+  // cannot see them. Walk the data instead and check every derived key.
+  it('has a value for every key derived from the achievement and level data', () => {
+    const derived = [];
+    for (const achievement of DEFAULT_ACHIEVEMENTS) {
+      derived.push(`achievement_${achievement.id}_name`);
+      derived.push(`achievement_${achievement.id}_description`);
+    }
+    for (const level of LEVEL_CONFIGS) {
+      derived.push(`level_${level.level}_title`);
+    }
+
+    expect(derived.length).toBe(53 * 2 + 25);
+
+    for (const language of Object.keys(LOCALES)) {
+      const missing = derived.filter(
+        (name) => !hasKey(LOCALES[language], name),
+      );
+      expect({ language, missing }).toEqual({ language, missing: [] });
     }
   });
 

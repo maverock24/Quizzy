@@ -280,14 +280,14 @@ export const AchievementModal: React.FC = () => {
               { color: categoryColor, opacity: textOpacityAnim },
             ]}
           >
-            {currentAchievement.name}
+            {t(`achievement_${currentAchievement.id}_name`)}
           </Animated.Text>
 
           {/* Description */}
           <Animated.Text
             style={[styles.description, { opacity: textOpacityAnim }]}
           >
-            {currentAchievement.description}
+            {t(`achievement_${currentAchievement.id}_description`)}
           </Animated.Text>
 
           {/* XP Reward */}

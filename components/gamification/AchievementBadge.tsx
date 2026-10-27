@@ -136,13 +136,13 @@ export const AchievementBadge: React.FC<AchievementBadgeProps> = ({
           ]}
           numberOfLines={1}
         >
-          {achievement.name}
+          {t(`achievement_${achievement.id}_name`)}
         </Text>
         <Text
           style={[sizeStyles.description, !isUnlocked && styles.lockedText]}
           numberOfLines={2}
         >
-          {achievement.description}
+          {t(`achievement_${achievement.id}_description`)}
         </Text>
 
         {/* Progress Bar (for locked achievements) */}
