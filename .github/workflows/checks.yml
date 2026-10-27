@@ -1,0 +1,68 @@
+name: Checks
+
+# `android-build.yml` already deploys to Netlify on every push to master, and it
+# runs no lint, typecheck or tests. Without this workflow a type error or a
+# failing suite ships straight to production.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+
+concurrency:
+  group: checks-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck, lint and unit tests
+        run: npm run check
+
+  i18n-sweep:
+    # Separate from the gate on purpose: this one drives a real browser, so a
+    # flake here must not mask whether the typecheck and unit tests passed.
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Sweep every screen for untranslated text
+        run: npx playwright test e2e/i18n-coverage.spec.ts --project=chromium
+
+      - name: Upload the report when it fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: i18n-sweep-report
+          path: playwright-report/
+          retention-days: 7
