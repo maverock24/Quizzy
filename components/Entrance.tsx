@@ -13,8 +13,8 @@ const STAGGER_MS = 55;
 const MAX_STEPS = 8;
 const DURATION_MS = 340;
 const BASE_DELAY_MS = 60;
-/** How far off to the left a button starts. */
-const DISTANCE = 44;
+/** How far above its resting place a button starts. */
+const DISTANCE = 36;
 
 type EntranceProps = {
   /** Position in the sequence, top to bottom. */
@@ -24,7 +24,10 @@ type EntranceProps = {
 };
 
 /**
- * Slides its children in from the left, fading as it goes, once on mount.
+ * Drops its children in from above, fading as they descend, once on mount. Give
+ * each item a higher `index` than the one above it and the screen arrives top
+ * to bottom, one after another.
+ *
  * Honours the OS "reduce motion" setting, in which case content simply appears.
  */
 export function Entrance({ index = 0, children, style }: EntranceProps) {
@@ -61,7 +64,7 @@ export function Entrance({ index = 0, children, style }: EntranceProps) {
           opacity: progress,
           transform: [
             {
-              translateX: progress.interpolate({
+              translateY: progress.interpolate({
                 inputRange: [0, 1],
                 outputRange: [-DISTANCE, 0],
               }),
