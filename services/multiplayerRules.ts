@@ -107,6 +107,60 @@ export function winnerOf(players: RulePlayer[]): RulePlayer | null {
   return ranked.length > 0 ? ranked[0] : null;
 }
 
+/**
+ * An answer is compared the same way everywhere: trimmed, without case. The
+ * host scores with this and the room screen shows its instant feedback with
+ * this, so what the player is told and what the host records never disagree.
+ */
+export function normalizeAnswer(value: string): string {
+  return value.trim().toLowerCase();
+}
+
+/** What the host records for one submitted answer. */
+export interface ScoredAnswer {
+  correct: boolean;
+  progress: number;
+}
+
+/**
+ * The host is the scorer: a client submits the answer it picked and the host
+ * compares it against the quiz it already holds. `null` means "ignore this
+ * submission", which is how a replay, a double tap, an index past the end of
+ * the quiz and a quiz the host never started are all refused rather than
+ * counted.
+ */
+export function scoreAnswer(
+  quiz: unknown,
+  questionIndex: unknown,
+  answer: unknown,
+  currentProgress: number,
+): ScoredAnswer | null {
+  if (!isObject(quiz) || !isValidQuiz(quiz)) {
+    return null;
+  }
+  if (typeof questionIndex !== 'number' || !Number.isInteger(questionIndex)) {
+    return null;
+  }
+  if (typeof answer !== 'string') {
+    return null;
+  }
+  const questions = quiz.questions as { answer: string }[];
+  if (questionIndex < 0 || questionIndex >= questions.length) {
+    return null;
+  }
+  // A question the host already moved past is a replay, so it is not counted
+  // again: this is what keeps a double tap from scoring twice.
+  if (questionIndex < currentProgress) {
+    return null;
+  }
+  return {
+    correct:
+      normalizeAnswer(questions[questionIndex].answer) ===
+      normalizeAnswer(answer),
+    progress: questionIndex + 1,
+  };
+}
+
 export type Ahead = 'you' | 'rival' | 'tied' | 'none';
 
 export interface Standing {
@@ -366,6 +420,20 @@ export function isValidQuiz(value: unknown): boolean {
       (answer) => isObject(answer) && typeof answer.answer === 'string',
     );
   });
+}
+
+/**
+ * A user quiz list is what the app renders from storage, so every entry has to
+ * be a quiz: a hostile pasted or downloaded list must not reach the app.
+ */
+export function isValidQuizList(value: unknown): boolean {
+  if (!Array.isArray(value)) {
+    return false;
+  }
+  if (value.length === 0) {
+    return false;
+  }
+  return value.every((quiz) => isValidQuiz(quiz));
 }
 
 /** A room holds two players, so a roster anywhere near this size is hostile. */

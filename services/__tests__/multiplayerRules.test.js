@@ -6,13 +6,16 @@ import {
   findJoinTarget,
   isSenderAllowed,
   isValidQuiz,
+  isValidQuizList,
   leadLabel,
+  normalizeAnswer,
   occupiedCount,
   MAX_ROSTER,
   parseClientMessage,
   parseHostMessage,
   progressPercent,
   sanitizeJoin,
+  scoreAnswer,
   standings,
   winnerOf,
 } from '../multiplayerRules';
@@ -625,6 +628,131 @@ describe('parseClientMessage', () => {
         finishTime: 10,
       }),
     ).toBeNull();
+  });
+});
+
+describe('normalizeAnswer', () => {
+  it('ignores case and surrounding space', () => {
+    expect(normalizeAnswer('  Paris ')).toBe('paris');
+  });
+
+  it('leaves an answer that is already plain alone', () => {
+    expect(normalizeAnswer('Paris')).toBe('paris');
+  });
+});
+
+describe('scoreAnswer', () => {
+  // The quiz the host holds when it starts the game.
+  const quiz = {
+    name: 'Capitals',
+    questions: [
+      {
+        question: 'Capital of France?',
+        answers: [{ answer: 'Paris' }, { answer: 'Lyon' }],
+        answer: 'Paris',
+      },
+      {
+        question: 'Capital of Italy?',
+        answers: [{ answer: 'Rome' }, { answer: 'Milan' }],
+        answer: 'Rome',
+      },
+    ],
+  };
+
+  it('scores the answer the quiz holds and advances the progress', () => {
+    expect(scoreAnswer(quiz, 0, 'Paris', 0)).toEqual({
+      correct: true,
+      progress: 1,
+    });
+  });
+
+  it('records a wrong answer as wrong and still advances', () => {
+    expect(scoreAnswer(quiz, 1, 'Milan', 1)).toEqual({
+      correct: false,
+      progress: 2,
+    });
+  });
+
+  it('compares the way the room screen does, trimmed and without case', () => {
+    expect(scoreAnswer(quiz, 0, '  pARIS ', 0)).toEqual({
+      correct: true,
+      progress: 1,
+    });
+  });
+
+  it('ignores a replay of an index the host already moved past', () => {
+    // A double tap sends the same index twice; only the first may count.
+    expect(scoreAnswer(quiz, 0, 'Paris', 1)).toBeNull();
+  });
+
+  it('ignores an index at or past the end of the quiz', () => {
+    expect(scoreAnswer(quiz, 2, 'Paris', 2)).toBeNull();
+    expect(scoreAnswer(quiz, 99, 'Paris', 0)).toBeNull();
+  });
+
+  it('ignores a negative index', () => {
+    expect(scoreAnswer(quiz, -1, 'Paris', 0)).toBeNull();
+  });
+
+  it('ignores an index that is not an integer', () => {
+    for (const index of [0.5, '0', null, undefined, NaN, Infinity, {}]) {
+      expect(scoreAnswer(quiz, index, 'Paris', 0)).toBeNull();
+    }
+  });
+
+  it('ignores a submission when there is no quiz to score against', () => {
+    for (const missing of [undefined, null, {}, { name: 'q' }]) {
+      expect(scoreAnswer(missing, 0, 'Paris', 0)).toBeNull();
+    }
+  });
+
+  it('ignores a quiz that is not a quiz', () => {
+    expect(
+      scoreAnswer({ name: 'q', questions: [{ question: 'q' }] }, 0, 'A', 0),
+    ).toBeNull();
+  });
+
+  it('ignores an answer that is not a string', () => {
+    for (const answer of [undefined, null, 7, {}, ['Paris']]) {
+      expect(scoreAnswer(quiz, 0, answer, 0)).toBeNull();
+    }
+  });
+
+  it('accepts the current question, which is not a replay', () => {
+    expect(scoreAnswer(quiz, 1, 'Rome', 1)).not.toBeNull();
+  });
+});
+
+describe('isValidQuizList', () => {
+  const quiz = () => ({
+    name: 'Capitals',
+    questions: [
+      {
+        question: 'Capital of France?',
+        answers: [{ answer: 'Paris' }],
+        answer: 'Paris',
+      },
+    ],
+  });
+
+  it('accepts a list of complete quizzes', () => {
+    expect(isValidQuizList([quiz(), quiz()])).toBe(true);
+  });
+
+  it('refuses a value that is not an array', () => {
+    for (const value of [null, undefined, 7, 'quiz', {}, true]) {
+      expect(isValidQuizList(value)).toBe(false);
+    }
+  });
+
+  it('refuses an empty list, which has nothing to render', () => {
+    expect(isValidQuizList([])).toBe(false);
+  });
+
+  it('refuses a list holding one entry that is not a quiz', () => {
+    expect(isValidQuizList([quiz(), null])).toBe(false);
+    expect(isValidQuizList([quiz(), { name: 'no questions' }])).toBe(false);
+    expect(isValidQuizList(['quiz'])).toBe(false);
   });
 });
 
