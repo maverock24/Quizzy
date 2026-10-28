@@ -38,6 +38,10 @@ class PresenceService {
   private myPeerId: string | null = null;
   private myName: string | null = null;
   private myRoomCode: string | null = null;
+  // Minted by the lobby on the first heartbeat and returned once. It proves
+  // this tab owns its peer id, so it rides on every request and is kept in
+  // memory only: never logged, never written to storage.
+  private mySecret: string | null = null;
 
   private pollInterval: NodeJS.Timeout | null = null;
   private isPolling = false;
@@ -56,6 +60,7 @@ class PresenceService {
     this.myPeerId = null;
     this.myName = null;
     this.myRoomCode = null;
+    this.mySecret = null;
     this.currentUsers = [];
     this.currentInvites = [];
     this.notifyUsersChange();
@@ -116,12 +121,18 @@ class PresenceService {
           peerId: this.myPeerId,
           name: this.myName,
           roomCode: this.myRoomCode,
+          secret: this.mySecret ?? undefined,
         }),
       });
 
       if (!response.ok) throw new Error('Network response was not ok');
 
       const data = await response.json();
+      // The lobby mints the secret on the first heartbeat and returns it once,
+      // so the first answer is the only one that carries it.
+      if (data && typeof data.secret === 'string') {
+        this.mySecret = data.secret;
+      }
       this.processIncomingData(data);
     } catch (error) {
       console.warn('Lobby poll failed:', error);
@@ -143,6 +154,7 @@ class PresenceService {
           name: this.myName,
           targetPeerId,
           roomId,
+          secret: this.mySecret ?? undefined,
         }),
       });
       // Await success, optionally trigger local state
@@ -170,6 +182,7 @@ class PresenceService {
           action: 'remove_invite',
           peerId: this.myPeerId,
           roomId,
+          secret: this.mySecret ?? undefined,
         }),
       });
     } catch (error) {
@@ -179,6 +192,9 @@ class PresenceService {
 
   private async leaveLobby() {
     if (!this.myPeerId) return;
+    // Read before the caller clears them: the request body is built here.
+    const peerId = this.myPeerId;
+    const secret = this.mySecret;
     try {
       // Best effort fire-and-forget
       fetch(LOBBY_API_URL, {
@@ -187,7 +203,8 @@ class PresenceService {
         keepalive: true,
         body: JSON.stringify({
           action: 'leave',
-          peerId: this.myPeerId,
+          peerId,
+          secret: secret ?? undefined,
         }),
       }).catch(() => {});
     } catch (e) {

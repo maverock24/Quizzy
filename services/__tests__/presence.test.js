@@ -150,3 +150,109 @@ describe('presence', () => {
     expect(onInvite).toHaveBeenCalledTimes(1);
   });
 });
+
+describe('the lobby secret', () => {
+  let presenceService;
+  let fetchMock;
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.resetModules();
+    jest.spyOn(console, 'log').mockImplementation(() => {});
+    jest.spyOn(console, 'error').mockImplementation(() => {});
+    jest.spyOn(console, 'warn').mockImplementation(() => {});
+
+    fetchMock = jest.fn(async () => lobbyResponse());
+    global.fetch = fetchMock;
+
+    presenceService = require('../PresenceService').presenceService;
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
+    jest.restoreAllMocks();
+    delete global.fetch;
+  });
+
+  test('the first heartbeat carries none and every later one carries it', async () => {
+    fetchMock.mockResolvedValueOnce(lobbyResponse({ secret: 'a'.repeat(32) }));
+
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+    expect(sentBodies(fetchMock)[0].secret).toBeUndefined();
+
+    jest.advanceTimersByTime(10000);
+    await flush();
+    expect(sentBodies(fetchMock)[1].secret).toBe('a'.repeat(32));
+  });
+
+  test('an invite, a removed invite and a leave all present the secret', async () => {
+    fetchMock.mockResolvedValueOnce(lobbyResponse({ secret: 'b'.repeat(32) }));
+
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+
+    await presenceService.sendInvite('peer-2', 'ABC234');
+    await presenceService.removeInvite('ABC234');
+    presenceService.disconnect();
+    await flush();
+
+    const bodies = sentBodies(fetchMock);
+    expect(bodies.find((b) => b.action === 'invite').secret).toBe(
+      'b'.repeat(32),
+    );
+    expect(bodies.find((b) => b.action === 'remove_invite').secret).toBe(
+      'b'.repeat(32),
+    );
+    expect(bodies.find((b) => b.action === 'leave').secret).toBe(
+      'b'.repeat(32),
+    );
+  });
+
+  test('the secret is dropped on disconnect, so the next session starts over', async () => {
+    fetchMock.mockResolvedValueOnce(lobbyResponse({ secret: 'c'.repeat(32) }));
+
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+    presenceService.disconnect();
+    await flush();
+
+    presenceService.connect('peer-1', 'Alice');
+    await flush();
+
+    const heartbeats = sentBodies(fetchMock).filter(
+      (b) => b.action === 'heartbeat',
+    );
+    expect(heartbeats).toHaveLength(2);
+    expect(heartbeats[heartbeats.length - 1].secret).toBeUndefined();
+  });
+
+  test('no secret reaches the console or storage', async () => {
+    const setItem = jest.fn();
+    const getItem = jest.fn(() => null);
+    const originalWindow = global.window;
+    global.window = { sessionStorage: { getItem, setItem } };
+    fetchMock.mockResolvedValueOnce(lobbyResponse({ secret: 'd'.repeat(32) }));
+
+    try {
+      presenceService.connect('peer-1', 'Alice');
+      await flush();
+      jest.advanceTimersByTime(10000);
+      await flush();
+
+      expect(setItem).not.toHaveBeenCalled();
+      const logged = [
+        ...console.log.mock.calls,
+        ...console.warn.mock.calls,
+        ...console.error.mock.calls,
+      ].flat();
+      expect(JSON.stringify(logged)).not.toContain('d'.repeat(32));
+    } finally {
+      if (originalWindow === undefined) {
+        delete global.window;
+      } else {
+        global.window = originalWindow;
+      }
+    }
+  });
+});
