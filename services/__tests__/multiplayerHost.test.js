@@ -85,7 +85,28 @@ describe('host authority', () => {
     other.send.mockClear();
   };
 
-  it('applies a SCORE_UPDATE that names the sender', async () => {
+  // The host has a quiz, so it can score what a joiner submits.
+  const startQuiz = () => {
+    multiplayerService.startGame({
+      name: 'Capitals',
+      questions: [
+        {
+          question: 'Capital of France?',
+          answers: [{ answer: 'Paris' }, { answer: 'Lyon' }],
+          answer: 'Paris',
+        },
+        {
+          question: 'Capital of Italy?',
+          answers: [{ answer: 'Rome' }, { answer: 'Milan' }],
+          answer: 'Rome',
+        },
+      ],
+    });
+    sender.send.mockClear();
+    other.send.mockClear();
+  };
+
+  it('refuses a SCORE_UPDATE, so a joiner cannot claim a score', async () => {
     await startHostWithAJoinedClient();
     const onScore = jest.fn();
     multiplayerService.onScoreUpdate(onScore);
@@ -99,40 +120,18 @@ describe('host authority', () => {
     expect(multiplayerService.getPlayers().map((p) => [p.id, p.score])).toEqual(
       [
         ['host', 0],
-        ['peer-a', 4],
+        ['peer-a', 0],
       ],
     );
-    expect(onScore).toHaveBeenCalledWith('peer-a', 4);
+    expect(onScore).not.toHaveBeenCalled();
     expect(sender.send).not.toHaveBeenCalled();
-    expect(other.send).toHaveBeenCalledWith({
-      type: 'SCORE_UPDATE',
-      playerId: 'peer-a',
-      score: 4,
-    });
-    expect(console.warn).not.toHaveBeenCalled();
+    expect(other.send).not.toHaveBeenCalled();
+    expect(console.warn).toHaveBeenCalledWith(
+      'Dropped a malformed message from peer-a',
+    );
   });
 
-  it('does not echo a SCORE_UPDATE back to its sender', async () => {
-    await startHostWithAJoinedClient();
-
-    sender.handlers.data({
-      type: 'SCORE_UPDATE',
-      playerId: 'peer-a',
-      score: 4,
-    });
-
-    // The sender applied its own score before sending, so an echo would write
-    // the same value twice and could revert a newer one with an older one.
-    expect(sender.send).not.toHaveBeenCalled();
-    expect(other.send).toHaveBeenCalledTimes(1);
-    expect(other.send).toHaveBeenCalledWith({
-      type: 'SCORE_UPDATE',
-      playerId: 'peer-a',
-      score: 4,
-    });
-  });
-
-  it('drops a SCORE_UPDATE that names another player', async () => {
+  it('refuses a SCORE_UPDATE that names another player', async () => {
     await startHostWithAJoinedClient();
     const onScore = jest.fn();
     multiplayerService.onScoreUpdate(onScore);
@@ -149,8 +148,155 @@ describe('host authority', () => {
     expect(onScore).not.toHaveBeenCalled();
     expect(other.send).not.toHaveBeenCalled();
     expect(console.warn).toHaveBeenCalledWith(
-      'Dropped SCORE_UPDATE from peer-a naming peer-b',
+      'Dropped a malformed message from peer-a',
     );
+  });
+
+  it('scores the answer a joiner submits against the host quiz', async () => {
+    await startHostWithAJoinedClient();
+    startQuiz();
+    const onScore = jest.fn();
+    const onProgress = jest.fn();
+    multiplayerService.onScoreUpdate(onScore);
+    multiplayerService.onPlayerProgress(onProgress);
+
+    sender.handlers.data({
+      type: 'ANSWER',
+      playerId: 'peer-a',
+      questionIndex: 0,
+      answer: 'Paris',
+    });
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.score).toBe(1);
+    expect(ana.progress).toBe(1);
+    expect(ana.totalQuestions).toBe(2);
+    expect(onScore).toHaveBeenCalledWith('peer-a', 1);
+    expect(onProgress).toHaveBeenCalledWith('peer-a', 1, 2);
+    // The sender is told too, because it no longer applies a score of its own.
+    expect(sender.send).toHaveBeenCalledWith({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 1,
+    });
+    expect(other.send).toHaveBeenCalledWith({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 1,
+    });
+  });
+
+  it('advances past a wrong answer without scoring it', async () => {
+    await startHostWithAJoinedClient();
+    startQuiz();
+
+    sender.handlers.data({
+      type: 'ANSWER',
+      playerId: 'peer-a',
+      questionIndex: 0,
+      answer: 'Lyon',
+    });
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.score).toBe(0);
+    expect(ana.progress).toBe(1);
+  });
+
+  it('scores the same question only once when a double tap replays it', async () => {
+    await startHostWithAJoinedClient();
+    startQuiz();
+
+    const answer = {
+      type: 'ANSWER',
+      playerId: 'peer-a',
+      questionIndex: 0,
+      answer: 'Paris',
+    };
+    sender.handlers.data(answer);
+    sender.handlers.data(answer);
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.score).toBe(1);
+    expect(ana.progress).toBe(1);
+    expect(console.warn).not.toHaveBeenCalled();
+  });
+
+  it('ignores an answer past the end of the quiz', async () => {
+    await startHostWithAJoinedClient();
+    startQuiz();
+
+    sender.handlers.data({
+      type: 'ANSWER',
+      playerId: 'peer-a',
+      questionIndex: 7,
+      answer: 'Paris',
+    });
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.score).toBe(0);
+    expect(ana.progress).toBe(0);
+    expect(sender.send).not.toHaveBeenCalled();
+  });
+
+  it('ignores an answer when the host never started a quiz', async () => {
+    await startHostWithAJoinedClient();
+
+    sender.handlers.data({
+      type: 'ANSWER',
+      playerId: 'peer-a',
+      questionIndex: 0,
+      answer: 'Paris',
+    });
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.score).toBe(0);
+    expect(sender.send).not.toHaveBeenCalled();
+  });
+
+  it('drops an ANSWER that names another player', async () => {
+    await startHostWithAJoinedClient();
+    startQuiz();
+
+    sender.handlers.data({
+      type: 'ANSWER',
+      playerId: 'peer-b',
+      questionIndex: 0,
+      answer: 'Paris',
+    });
+
+    expect(multiplayerService.getPlayers().every((p) => p.score === 0)).toBe(
+      true,
+    );
+    expect(other.send).not.toHaveBeenCalled();
+    expect(console.warn).toHaveBeenCalledWith(
+      'Dropped ANSWER from peer-a naming peer-b',
+    );
+  });
+
+  it('keeps the roster score when a joiner finishes with a score of its own', async () => {
+    await startHostWithAJoinedClient();
+    startQuiz();
+    const onFinish = jest.fn();
+    multiplayerService.onPlayerFinish(onFinish);
+
+    sender.handlers.data({
+      type: 'PLAYER_FINISH',
+      playerId: 'peer-a',
+      score: 999,
+      finishTime: 1000,
+    });
+
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.finished).toBe(true);
+    expect(ana.finishTime).toBe(1000);
+    expect(ana.score).toBe(0);
+    expect(onFinish).toHaveBeenCalledWith('peer-a', 0, 1000);
+    expect(other.send).toHaveBeenCalledWith({
+      type: 'PLAYER_FINISH',
+      playerId: 'peer-a',
+      score: 0,
+      finishTime: 1000,
+    });
   });
 
   it('drops a PLAYER_PROGRESS that names another player', async () => {
@@ -301,21 +447,22 @@ describe('host authority', () => {
     // A peer that registers the PeerJS id 'host' used to pass an id-only
     // check and rewrite the host's own row.
     const impostor = connect('host');
-    const onScore = jest.fn();
-    multiplayerService.onScoreUpdate(onScore);
+    const onProgress = jest.fn();
+    multiplayerService.onPlayerProgress(onProgress);
 
     impostor.handlers.data({
-      type: 'SCORE_UPDATE',
+      type: 'PLAYER_PROGRESS',
       playerId: 'host',
-      score: 99,
+      progress: 9,
+      totalQuestions: 10,
     });
 
     const hostEntry = multiplayerService.getPlayers().find((p) => p.isHost);
-    expect(hostEntry.score).toBe(0);
-    expect(onScore).not.toHaveBeenCalled();
+    expect(hostEntry.progress).toBe(0);
+    expect(onProgress).not.toHaveBeenCalled();
     expect(other.send).not.toHaveBeenCalled();
     expect(console.warn).toHaveBeenCalledWith(
-      'Dropped SCORE_UPDATE from host naming host',
+      'Dropped PLAYER_PROGRESS from host naming host',
     );
   });
 
@@ -399,16 +546,9 @@ describe('host authority', () => {
     expect(other.send).not.toHaveBeenCalled();
   });
 
-  it('clamps a score and a progress that arrive out of range', async () => {
+  it('clamps a progress that arrives out of range', async () => {
     await startHostWithAJoinedClient();
-    const onScore = jest.fn();
-    multiplayerService.onScoreUpdate(onScore);
 
-    sender.handlers.data({
-      type: 'SCORE_UPDATE',
-      playerId: 'peer-a',
-      score: 1e9,
-    });
     sender.handlers.data({
       type: 'PLAYER_PROGRESS',
       playerId: 'peer-a',
@@ -416,9 +556,8 @@ describe('host authority', () => {
       totalQuestions: 10,
     });
 
-    expect(onScore).toHaveBeenCalledWith('peer-a', 1e6);
     const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
-    expect(ana.score).toBe(1e6);
+    expect(ana.score).toBe(0);
     expect(ana.progress).toBe(10);
     expect(ana.totalQuestions).toBe(10);
   });

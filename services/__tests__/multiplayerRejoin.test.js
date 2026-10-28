@@ -90,10 +90,20 @@ describe('rejoin', () => {
     return { peer, connection, join };
   };
 
+  // A ten-question quiz the host holds, so it can score what a client submits.
+  const HOST_QUIZ = {
+    name: 'Ten Questions',
+    questions: Array.from({ length: 10 }, (_, i) => ({
+      question: 'Question ' + i,
+      answers: [{ answer: 'A' + i }, { answer: 'B' + i }],
+      answer: 'A' + i,
+    })),
+  };
+
   // The host plus one joined client, which has already departed. The slot it
   // left behind holds a score and a progress, which a rejoin has to keep. A
-  // JOIN only claims a place now, so the stats are earned through the two
-  // updates a playing client sends while it is connected.
+  // JOIN only claims a place now and a client may not claim a score, so the
+  // stats are earned by answering three questions and reporting the fourth.
   const startHostWithDepartedClient = async () => {
     const peer = makePeer();
     Peer.mockReturnValue(peer);
@@ -107,11 +117,16 @@ describe('rejoin', () => {
       type: 'JOIN',
       player: player('peer-a', { name: 'Ana', token: 'token-ana' }),
     });
-    sender.handlers.data({
-      type: 'SCORE_UPDATE',
-      playerId: 'peer-a',
-      score: 3,
-    });
+    multiplayerService.startGame(HOST_QUIZ);
+    // The host scores these, so the slot ends up with three points.
+    for (const questionIndex of [0, 1, 2]) {
+      sender.handlers.data({
+        type: 'ANSWER',
+        playerId: 'peer-a',
+        questionIndex,
+        answer: 'A' + questionIndex,
+      });
+    }
     sender.handlers.data({
       type: 'PLAYER_PROGRESS',
       playerId: 'peer-a',

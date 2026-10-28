@@ -89,23 +89,21 @@ describe('client actions', () => {
   const me = () =>
     multiplayerService.getPlayers().find((p) => p.id === 'peer-me');
 
-  it('applies its own score and notifies its listener once before sending SCORE_UPDATE', async () => {
+  it('reports the answer it picked and sends no score', async () => {
     await startClient();
     const onScore = jest.fn();
     multiplayerService.onScoreUpdate(onScore);
 
-    multiplayerService.updateScore(4);
+    multiplayerService.submitAnswer(2, 'Paris');
 
-    expect(me().score).toBe(4);
-    expect(onScore).toHaveBeenCalledTimes(1);
-    expect(onScore).toHaveBeenCalledWith('peer-me', 4);
-    expect(onScore.mock.invocationCallOrder[0]).toBeLessThan(
-      connection.send.mock.invocationCallOrder[0],
-    );
+    // The host is the scorer, so the client only reports the choice.
+    expect(me().score).toBe(0);
+    expect(onScore).not.toHaveBeenCalled();
     expect(connection.send).toHaveBeenCalledWith({
-      type: 'SCORE_UPDATE',
+      type: 'ANSWER',
       playerId: 'peer-me',
-      score: 4,
+      questionIndex: 2,
+      answer: 'Paris',
     });
   });
 
@@ -128,37 +126,43 @@ describe('client actions', () => {
     });
   });
 
-  it('marks itself finished with a finishTime before sending PLAYER_FINISH', async () => {
+  it('marks itself finished with a finishTime and sends no score', async () => {
     await startClient();
     const onFinish = jest.fn();
     multiplayerService.onPlayerFinish(onFinish);
 
-    multiplayerService.finishGame(7);
+    multiplayerService.finishGame();
 
     // The host forwards PLAYER_FINISH to everyone but the sender, so nothing
-    // else will ever write the joiner's own entry.
+    // else will ever write the joiner's own entry. Its score is whatever the
+    // host scored, which is still nothing here.
     expect(me().finished).toBe(true);
-    expect(me().score).toBe(7);
+    expect(me().score).toBe(0);
     expect(me().finishTime).toBe(5000);
     expect(onFinish).toHaveBeenCalledTimes(1);
-    expect(onFinish).toHaveBeenCalledWith('peer-me', 7, 5000);
+    expect(onFinish).toHaveBeenCalledWith('peer-me', 0, 5000);
     expect(connection.send).toHaveBeenCalledWith({
       type: 'PLAYER_FINISH',
       playerId: 'peer-me',
-      score: 7,
       finishTime: 5000,
     });
+    expect(connection.send.mock.calls[0][0]).not.toHaveProperty('score');
   });
 
   it('still sends the message to the host unchanged', async () => {
     await startClient();
 
-    multiplayerService.updateScore(2);
+    multiplayerService.submitAnswer(1, 'Paris');
     multiplayerService.updateProgress(1, 10);
-    multiplayerService.finishGame(2);
+    multiplayerService.finishGame();
 
     expect(connection.send.mock.calls.map((call) => call[0])).toEqual([
-      { type: 'SCORE_UPDATE', playerId: 'peer-me', score: 2 },
+      {
+        type: 'ANSWER',
+        playerId: 'peer-me',
+        questionIndex: 1,
+        answer: 'Paris',
+      },
       {
         type: 'PLAYER_PROGRESS',
         playerId: 'peer-me',
@@ -168,7 +172,6 @@ describe('client actions', () => {
       {
         type: 'PLAYER_FINISH',
         playerId: 'peer-me',
-        score: 2,
         finishTime: 5000,
       },
     ]);
@@ -184,9 +187,9 @@ describe('client actions', () => {
     multiplayerService.onPlayerProgress(onProgress);
     multiplayerService.onPlayerFinish(onFinish);
 
-    multiplayerService.updateScore(4);
+    multiplayerService.submitAnswer(0, 'Paris');
     multiplayerService.updateProgress(3, 10);
-    multiplayerService.finishGame(4);
+    multiplayerService.finishGame();
 
     expect(me().score).toBe(0);
     expect(me().progress).toBe(0);

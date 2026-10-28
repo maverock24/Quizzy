@@ -24,6 +24,7 @@ import {
   allFinished as allFinishedIn,
   applyJoin,
   isValidQuiz,
+  normalizeAnswer,
   winnerOf,
 } from '../../services/multiplayerRules';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -360,13 +361,19 @@ export default function MultiplayerRoom() {
     if (myFinished) return;
 
     const question = randomizedQuestions[currentQuestionIndex];
-    const isCorrect = question.answer === answerText;
+    // The same comparison the host scores with, so the feedback shown here and
+    // the point the host records cannot disagree.
+    const isCorrect =
+      normalizeAnswer(question.answer) === normalizeAnswer(answerText);
     const newScore = isCorrect ? score + 1 : score;
 
     if (isCorrect) {
       setScore(newScore);
-      multiplayerService.updateScore(newScore);
     }
+
+    // The host is the scorer: this reports which option was picked, and the
+    // host compares it against the quiz it holds. A score is never sent.
+    multiplayerService.submitAnswer(currentQuestionIndex, answerText);
 
     const nextIndex = currentQuestionIndex + 1;
 
@@ -380,7 +387,7 @@ export default function MultiplayerRoom() {
         randomizedQuestions.length,
         randomizedQuestions.length,
       );
-      multiplayerService.finishGame(newScore);
+      multiplayerService.finishGame();
     }
   };
 

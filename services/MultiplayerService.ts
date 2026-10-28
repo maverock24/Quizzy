@@ -10,7 +10,9 @@ import {
   findJoinTarget,
   parseClientMessage,
   parseHostMessage,
+  scoreAnswer,
 } from './multiplayerRules';
+import type { ScoredAnswer } from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
 import type { QuizQuestion } from '../components/types';
 
@@ -454,23 +456,24 @@ class MultiplayerService {
           { type: 'JOIN', player: { ...joined, token: undefined } },
           conn.peer,
         );
-      } else if (msg.type === 'SCORE_UPDATE') {
+      } else if (msg.type === 'ANSWER') {
         if (!isSenderAllowed(msg.playerId, conn.peer)) {
           this.dropForeignUpdate(msg, conn);
           return;
         }
-        this.players = this.players.map((p) =>
-          p.id === msg.playerId ? { ...p, score: msg.score } : p,
+        // The host is the scorer: the answer is compared here, against the
+        // quiz the host already holds, and the score that follows is the
+        // host's. A submission the rules refuse is ignored, not thrown on.
+        const row = this.players.find((p) => p.id === msg.playerId);
+        const scored = scoreAnswer(
+          this.gameState.quiz,
+          msg.questionIndex,
+          msg.answer,
+          row ? row.progress : 0,
         );
-        this.notifyScoreUpdate(msg.playerId, msg.score);
-        this.broadcast(
-          {
-            type: 'SCORE_UPDATE',
-            playerId: msg.playerId,
-            score: msg.score,
-          },
-          conn.peer,
-        );
+        if (scored) {
+          this.applyScoredAnswer(msg.playerId, scored);
+        }
       } else if (msg.type === 'PLAYER_PROGRESS') {
         if (!isSenderAllowed(msg.playerId, conn.peer)) {
           this.dropForeignUpdate(msg, conn);
@@ -494,20 +497,28 @@ class MultiplayerService {
           this.dropForeignUpdate(msg, conn);
           return;
         }
+        // The score is the host's, so finishing only marks the row finished.
+        // The client cannot send a score to freeze, so the roster keeps the
+        // total the host scored for it.
         this.players = this.players.map((p) =>
           p.id === msg.playerId
-            ? {
-                ...p,
-                finished: true,
-                score: msg.score,
-                finishTime: msg.finishTime,
-              }
+            ? { ...p, finished: true, finishTime: msg.finishTime }
             : p,
         );
+        const finished = this.players.find((p) => p.id === msg.playerId);
+        const score = finished ? finished.score : 0;
         this.onPlayerFinishCallbacks.forEach((cb) =>
-          cb(msg.playerId, msg.score, msg.finishTime),
+          cb(msg.playerId, score, msg.finishTime),
         );
-        this.broadcast(msg, conn.peer);
+        this.broadcast(
+          {
+            type: 'PLAYER_FINISH',
+            playerId: msg.playerId,
+            score,
+            finishTime: msg.finishTime,
+          },
+          conn.peer,
+        );
       }
     });
 
@@ -554,6 +565,46 @@ class MultiplayerService {
     console.warn(
       'Dropped ' + msg.type + ' from ' + conn.peer + ' naming ' + msg.playerId,
     );
+  }
+
+  /**
+   * Writes one scored answer onto a roster row and tells everybody. The score
+   * is one point per correct answer, added here and nowhere else, and the
+   * progress moves past the question that was just answered, which is what
+   * makes the same index a replay the next time it arrives.
+   *
+   * The sender is included in both broadcasts: it no longer applies a score of
+   * its own, so the host's total is the only one it will ever have.
+   */
+  private applyScoredAnswer(playerId: string, scored: ScoredAnswer) {
+    const totalQuestions = this.gameState.quiz
+      ? this.gameState.quiz.questions.length
+      : 0;
+    this.players = this.players.map((p) =>
+      p.id === playerId
+        ? {
+            ...p,
+            score: p.score + (scored.correct ? 1 : 0),
+            progress: scored.progress,
+            totalQuestions,
+          }
+        : p,
+    );
+    const row = this.players.find((p) => p.id === playerId);
+    if (!row) {
+      return;
+    }
+    this.notifyScoreUpdate(playerId, row.score);
+    this.broadcast({ type: 'SCORE_UPDATE', playerId, score: row.score });
+    this.onPlayerProgressCallbacks.forEach((cb) =>
+      cb(playerId, row.progress, row.totalQuestions),
+    );
+    this.broadcast({
+      type: 'PLAYER_PROGRESS',
+      playerId,
+      progress: row.progress,
+      totalQuestions: row.totalQuestions,
+    });
   }
 
   private broadcast(msg: Message, excludePeerId?: string) {
@@ -658,18 +709,30 @@ class MultiplayerService {
     }
   }
 
-  updateScore(score: number) {
+  /**
+   * Submits the answer the player picked. The host scores it against its own
+   * quiz and the client only reports which option it chose: a client can no
+   * longer name a score, so the total on the roster is always the host's.
+   */
+  submitAnswer(questionIndex: number, answer: string) {
     if (this.isHost) {
-      this.players = this.players.map((p) => (p.isHost ? { ...p, score } : p));
-      this.notifyScoreUpdate('host', score);
-      this.broadcast({ type: 'SCORE_UPDATE', playerId: 'host', score });
-    } else if (this.hostConnection?.open && this.playerId) {
-      const me = this.playerId;
-      this.players = this.players.map((p) =>
-        p.id === me ? { ...p, score } : p,
+      const me = this.players.find((p) => p.id === 'host');
+      const scored = scoreAnswer(
+        this.gameState.quiz,
+        questionIndex,
+        answer,
+        me ? me.progress : 0,
       );
-      this.notifyScoreUpdate(me, score);
-      this.hostConnection.send({ type: 'SCORE_UPDATE', playerId: me, score });
+      if (scored) {
+        this.applyScoredAnswer('host', scored);
+      }
+    } else if (this.hostConnection?.open && this.playerId) {
+      this.hostConnection.send({
+        type: 'ANSWER',
+        playerId: this.playerId,
+        questionIndex,
+        answer,
+      });
     }
   }
 
@@ -704,15 +767,22 @@ class MultiplayerService {
     }
   }
 
-  finishGame(score: number) {
+  /**
+   * Marks this player finished. Finishing records a duration, never a score:
+   * the roster's total is whatever the host scored, so a client cannot freeze
+   * a forged one by finishing first.
+   */
+  finishGame() {
     const finishTime = this.gameState.startTime
       ? Date.now() - this.gameState.startTime
       : 0;
 
     if (this.isHost) {
       this.players = this.players.map((p) =>
-        p.isHost ? { ...p, finished: true, score, finishTime } : p,
+        p.isHost ? { ...p, finished: true, finishTime } : p,
       );
+      const me = this.players.find((p) => p.isHost);
+      const score = me ? me.score : 0;
       this.onPlayerFinishCallbacks.forEach((cb) =>
         cb('host', score, finishTime),
       );
@@ -725,13 +795,14 @@ class MultiplayerService {
     } else if (this.hostConnection?.open && this.playerId) {
       const me = this.playerId;
       this.players = this.players.map((p) =>
-        p.id === me ? { ...p, finished: true, score, finishTime } : p,
+        p.id === me ? { ...p, finished: true, finishTime } : p,
       );
+      const mine = this.players.find((p) => p.id === me);
+      const score = mine ? mine.score : 0;
       this.onPlayerFinishCallbacks.forEach((cb) => cb(me, score, finishTime));
       this.hostConnection.send({
         type: 'PLAYER_FINISH',
         playerId: me,
-        score,
         finishTime,
       });
     }

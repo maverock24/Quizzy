@@ -480,30 +480,83 @@ describe('parseClientMessage', () => {
     expect(parseClientMessage({ type: 'JOIN' })).toBeNull();
   });
 
-  it('accepts a finite SCORE_UPDATE', () => {
-    expect(
-      parseClientMessage({
-        type: 'SCORE_UPDATE',
-        playerId: 'peer-a',
-        score: 4,
-      }),
-    ).toEqual({ type: 'SCORE_UPDATE', playerId: 'peer-a', score: 4 });
+  it('refuses a SCORE_UPDATE, so a client can never claim a score', () => {
+    // The score is the host's, and the host computes it from the answer it
+    // scores. A legal-looking payload is refused exactly like a broken one.
+    for (const score of [4, 0, 1e9, -5]) {
+      expect(
+        parseClientMessage({ type: 'SCORE_UPDATE', playerId: 'peer-a', score }),
+      ).toBeNull();
+    }
   });
 
-  it('clamps a SCORE_UPDATE to the highest score a quiz can hold', () => {
-    const parsed = parseClientMessage({
-      type: 'SCORE_UPDATE',
+  it('accepts an ANSWER that names an integer question', () => {
+    expect(
+      parseClientMessage({
+        type: 'ANSWER',
+        playerId: 'peer-a',
+        questionIndex: 3,
+        answer: 'Paris',
+      }),
+    ).toEqual({
+      type: 'ANSWER',
       playerId: 'peer-a',
-      score: 1e9,
+      questionIndex: 3,
+      answer: 'Paris',
     });
-    expect(parsed.score).toBe(1e6);
+  });
 
-    const negative = parseClientMessage({
-      type: 'SCORE_UPDATE',
+  it('refuses an ANSWER whose question index is not an integer', () => {
+    for (const questionIndex of [0.5, '3', null, undefined, NaN, Infinity]) {
+      expect(
+        parseClientMessage({
+          type: 'ANSWER',
+          playerId: 'peer-a',
+          questionIndex,
+          answer: 'Paris',
+        }),
+      ).toBeNull();
+    }
+    expect(
+      parseClientMessage({ type: 'ANSWER', playerId: 'peer-a', answer: 'x' }),
+    ).toBeNull();
+  });
+
+  it('caps an ANSWER at 500 characters', () => {
+    const long = 'x'.repeat(501);
+    const parsed = parseClientMessage({
+      type: 'ANSWER',
       playerId: 'peer-a',
-      score: -5,
+      questionIndex: 0,
+      answer: long,
     });
-    expect(negative.score).toBe(0);
+    expect(parsed.answer).toHaveLength(500);
+  });
+
+  it('refuses an ANSWER whose answer is not a string', () => {
+    for (const answer of [7, null, undefined, {}, ['Paris']]) {
+      expect(
+        parseClientMessage({
+          type: 'ANSWER',
+          playerId: 'peer-a',
+          questionIndex: 0,
+          answer,
+        }),
+      ).toBeNull();
+    }
+  });
+
+  it('refuses an ANSWER with no player id string', () => {
+    for (const playerId of [undefined, null, 7, {}]) {
+      expect(
+        parseClientMessage({
+          type: 'ANSWER',
+          playerId,
+          questionIndex: 0,
+          answer: 'Paris',
+        }),
+      ).toBeNull();
+    }
   });
 
   it('returns null for a SCORE_UPDATE whose score is not a finite number', () => {
@@ -601,9 +654,20 @@ describe('parseClientMessage', () => {
     ).toEqual({
       type: 'PLAYER_FINISH',
       playerId: 'peer-a',
-      score: 5,
       finishTime: 0,
     });
+  });
+
+  it('drops the score a PLAYER_FINISH carries', () => {
+    // A finish may freeze nothing: the roster keeps the host's total.
+    const parsed = parseClientMessage({
+      type: 'PLAYER_FINISH',
+      playerId: 'peer-a',
+      score: 999,
+      finishTime: 10,
+    });
+    expect(parsed).not.toHaveProperty('score');
+    expect(parsed.finishTime).toBe(10);
   });
 
   it('returns null for a PLAYER_FINISH whose time is negative or absent', () => {

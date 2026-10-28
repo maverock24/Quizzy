@@ -239,6 +239,9 @@ export const MAX_SCORE = 1e6;
 /** A question index is bounded well above any real quiz. */
 export const MAX_QUESTION_INDEX = 1e5;
 
+/** An answer is one of a question's options, so anything longer is not one. */
+export const MAX_ANSWER_LENGTH = 500;
+
 /** The fields of a roster entry that a join owns, with every number reset. */
 export interface SanitisedJoin {
   id: string;
@@ -301,7 +304,12 @@ export function sanitizeJoin(incoming: unknown): SanitisedJoin {
 /** What a connection may say. Everything else is refused. */
 export type ClientMessage =
   | { type: 'JOIN'; player: SanitisedJoin }
-  | { type: 'SCORE_UPDATE'; playerId: string; score: number }
+  | {
+      type: 'ANSWER';
+      playerId: string;
+      questionIndex: number;
+      answer: string;
+    }
   | {
       type: 'PLAYER_PROGRESS';
       playerId: string;
@@ -311,7 +319,6 @@ export type ClientMessage =
   | {
       type: 'PLAYER_FINISH';
       playerId: string;
-      score: number;
       finishTime: number;
     };
 
@@ -320,6 +327,12 @@ export type ClientMessage =
  * is not an object, or whose fields are not of the right type, gives `null`
  * and is dropped: reading `msg.type` on `null` used to throw, and an
  * unclamped score used to reach the scoreboard's `{p.score}`.
+ *
+ * A client may not claim a score. `SCORE_UPDATE` is absent from this union on
+ * purpose, so a payload of that type is dropped here and never reaches the
+ * roster: the host scores from the answer a client submits, nothing else.
+ * `PLAYER_FINISH` carries no score for the same reason, so a client cannot
+ * freeze a forged total by finishing first.
  */
 export function parseClientMessage(raw: unknown): ClientMessage | null {
   if (!isObject(raw)) {
@@ -331,15 +344,26 @@ export function parseClientMessage(raw: unknown): ClientMessage | null {
         return null;
       }
       return { type: 'JOIN', player: sanitizeJoin(raw.player) };
-    case 'SCORE_UPDATE': {
+    case 'ANSWER': {
       if (typeof raw.playerId !== 'string') {
         return null;
       }
-      const score = clamped(raw.score, 0, MAX_SCORE);
-      if (score === null) {
+      if (
+        typeof raw.questionIndex !== 'number' ||
+        !Number.isInteger(raw.questionIndex)
+      ) {
         return null;
       }
-      return { type: 'SCORE_UPDATE', playerId: raw.playerId, score };
+      if (typeof raw.answer !== 'string') {
+        return null;
+      }
+      return {
+        type: 'ANSWER',
+        playerId: raw.playerId,
+        questionIndex: raw.questionIndex,
+        // A real answer is a few words, so anything past the cap is not one.
+        answer: raw.answer.slice(0, MAX_ANSWER_LENGTH),
+      };
     }
     case 'PLAYER_PROGRESS': {
       if (typeof raw.playerId !== 'string') {
@@ -365,11 +389,9 @@ export function parseClientMessage(raw: unknown): ClientMessage | null {
       if (typeof raw.playerId !== 'string') {
         return null;
       }
-      const score = clamped(raw.score, 0, MAX_SCORE);
       // A negative time is not a duration, so the message is refused rather
       // than clamped: it would otherwise win the earliest-finish tie-break.
       if (
-        score === null ||
         typeof raw.finishTime !== 'number' ||
         !Number.isFinite(raw.finishTime) ||
         raw.finishTime < 0
@@ -379,7 +401,6 @@ export function parseClientMessage(raw: unknown): ClientMessage | null {
       return {
         type: 'PLAYER_FINISH',
         playerId: raw.playerId,
-        score,
         finishTime: raw.finishTime,
       };
     }
