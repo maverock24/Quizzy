@@ -1,13 +1,17 @@
 import { getStore } from '@netlify/blobs';
+import {
+  MAX_USERS,
+  isAuthorised,
+  isPeerId,
+  isRoomCode,
+  mintSecret,
+  publicUsers,
+  resolveCors,
+  sanitiseName,
+  type LobbyUser,
+} from '../../services/lobbyRules';
 
 // Types
-interface PresenceUser {
-  peerId: string;
-  name: string;
-  lastSeen: number;
-  roomCode?: string;
-}
-
 interface IncomingInvite {
   fromPeerId: string;
   fromName: string;
@@ -16,7 +20,7 @@ interface IncomingInvite {
 }
 
 interface LobbyState {
-  users: Record<string, PresenceUser>;
+  users: Record<string, LobbyUser>;
   invites: Record<string, IncomingInvite[]>; // Target PeerId -> Array of invites
 }
 
@@ -26,16 +30,18 @@ const TIMEOUT_MS = 20000; // Drop users hasn't pinged in 20s
 // Fallback for local testing without `netlify link`
 let localDevState: LobbyState | null = null;
 
+/** A response body that the client reads, so it is always JSON. */
+type Json = Record<string, unknown>;
+
 export const handler = async (event: {
   httpMethod?: string;
   body?: string | null;
+  headers?: Record<string, string | undefined>;
 }) => {
-  // CORS Headers for local dev and Netlify
-  const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
-  };
+  // CORS: the allowed pages only, and no header at all for anybody else.
+  const headers = resolveCors(
+    event.headers?.origin ?? event.headers?.Origin ?? undefined,
+  );
 
   if (event.httpMethod === 'OPTIONS') {
     return { statusCode: 200, headers, body: '' };
@@ -44,6 +50,29 @@ export const handler = async (event: {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, headers, body: 'Method Not Allowed' };
   }
+
+  // A body that is not JSON is the caller's mistake, not the server's, so it
+  // is a 400 and never reaches the catch that answers 500.
+  let body: unknown;
+  try {
+    body = JSON.parse(event.body || '{}');
+  } catch {
+    return {
+      statusCode: 400,
+      headers,
+      body: JSON.stringify({ error: 'Invalid JSON' }),
+    };
+  }
+  if (typeof body !== 'object' || body === null || Array.isArray(body)) {
+    return {
+      statusCode: 400,
+      headers,
+      body: JSON.stringify({ error: 'Invalid body' }),
+    };
+  }
+
+  const { action, peerId, name, targetPeerId, roomId, roomCode, secret } =
+    body as Json;
 
   try {
     let store: ReturnType<typeof getStore> | null = null;
@@ -55,10 +84,6 @@ export const handler = async (event: {
     } catch {
       console.warn('Using local in-memory fallback for Netlify Blobs.');
     }
-
-    // Parse request
-    const body = JSON.parse(event.body || '{}');
-    const { action, peerId, name, targetPeerId, roomId, roomCode } = body;
 
     let state: LobbyState;
 
@@ -104,57 +129,129 @@ export const handler = async (event: {
       }
     }
 
+    if (!isPeerId(peerId)) {
+      return {
+        statusCode: 400,
+        headers,
+        body: JSON.stringify({ error: 'Missing peer id' }),
+      };
+    }
+
+    const stored = state.users[peerId];
+
+    // A heartbeat with no stored user is how a peer registers: the secret is
+    // minted now and returned only in this caller's response. Everything else
+    // has to prove it owns the peer id it names.
+    if (action !== 'heartbeat' && !isAuthorised(stored, secret)) {
+      return {
+        statusCode: 403,
+        headers,
+        body: JSON.stringify({ error: 'Not authorised' }),
+      };
+    }
+
+    let mintedSecret: string | undefined;
+
     // Process actions
     switch (action) {
-      case 'heartbeat':
-        if (peerId && name) {
-          state.users[peerId] = { peerId, name, lastSeen: now, roomCode };
+      case 'heartbeat': {
+        const cleanName = sanitiseName(name);
+        if (cleanName === null) {
+          return {
+            statusCode: 400,
+            headers,
+            body: JSON.stringify({ error: 'Invalid name' }),
+          };
+        }
+        if (stored) {
+          if (!isAuthorised(stored, secret)) {
+            return {
+              statusCode: 403,
+              headers,
+              body: JSON.stringify({ error: 'Not authorised' }),
+            };
+          }
+        } else if (Object.keys(state.users).length >= MAX_USERS) {
+          return {
+            statusCode: 403,
+            headers,
+            body: JSON.stringify({ error: 'Lobby is full' }),
+          };
+        } else {
+          mintedSecret = mintSecret();
+        }
+        state.users[peerId] = {
+          peerId,
+          name: cleanName,
+          lastSeen: now,
+          roomCode: isRoomCode(roomCode) ? roomCode : undefined,
+          secret: stored?.secret ?? mintedSecret ?? '',
+        };
+        stateChanged = true;
+        break;
+      }
+
+      case 'invite': {
+        const cleanName = sanitiseName(name);
+        if (cleanName === null || !isPeerId(targetPeerId)) {
+          return {
+            statusCode: 400,
+            headers,
+            body: JSON.stringify({ error: 'Invalid invite' }),
+          };
+        }
+        if (!isRoomCode(roomId)) {
+          return {
+            statusCode: 400,
+            headers,
+            body: JSON.stringify({ error: 'Invalid room code' }),
+          };
+        }
+        if (!state.invites[targetPeerId]) {
+          state.invites[targetPeerId] = [];
+        }
+        // Prevent duplicate invites from same person within short window
+        const existing = state.invites[targetPeerId].find(
+          (i) => i.fromPeerId === peerId,
+        );
+        if (!existing) {
+          state.invites[targetPeerId].push({
+            fromPeerId: peerId,
+            fromName: cleanName,
+            roomId,
+            timestamp: now,
+          });
           stateChanged = true;
         }
         break;
+      }
 
-      case 'invite':
-        if (peerId && name && targetPeerId && roomId) {
-          if (!state.invites[targetPeerId]) {
-            state.invites[targetPeerId] = [];
-          }
-          // Prevent duplicate invites from same person within short window
-          const existing = state.invites[targetPeerId].find(
-            (i) => i.fromPeerId === peerId,
+      case 'remove_invite': {
+        if (!isRoomCode(roomId)) {
+          return {
+            statusCode: 400,
+            headers,
+            body: JSON.stringify({ error: 'Invalid room code' }),
+          };
+        }
+        if (state.invites[peerId]) {
+          const oldLen = state.invites[peerId].length;
+          state.invites[peerId] = state.invites[peerId].filter(
+            (i) => i.roomId !== roomId,
           );
-          if (!existing) {
-            state.invites[targetPeerId].push({
-              fromPeerId: peerId,
-              fromName: name,
-              roomId,
-              timestamp: now,
-            });
+          if (state.invites[peerId].length !== oldLen) {
             stateChanged = true;
           }
         }
         break;
+      }
 
-      case 'remove_invite':
-        if (peerId && roomId) {
-          if (state.invites[peerId]) {
-            const oldLen = state.invites[peerId].length;
-            state.invites[peerId] = state.invites[peerId].filter(
-              (i) => i.roomId !== roomId,
-            );
-            if (state.invites[peerId].length !== oldLen) {
-              stateChanged = true;
-            }
-          }
-        }
+      case 'leave': {
+        delete state.users[peerId];
+        delete state.invites[peerId];
+        stateChanged = true;
         break;
-
-      case 'leave':
-        if (peerId) {
-          delete state.users[peerId];
-          delete state.invites[peerId];
-          stateChanged = true;
-        }
-        break;
+      }
 
       default:
         return {
@@ -173,19 +270,18 @@ export const handler = async (event: {
       }
     }
 
-    // 4. Return the data the client needs
-    // Client wants to know: 1) Who is online (except them), 2) Do they have invites
-    const activeUsers = Object.values(state.users).filter(
-      (u) => u.peerId !== peerId,
-    );
+    // 4. Return the data the client needs. The users list is public, so it
+    // carries no room code and no secret. The secret is only ever echoed to
+    // the caller that owns the peer id.
     const myInvites = state.invites[peerId] || [];
 
     return {
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        users: activeUsers,
+        users: publicUsers(state.users, peerId),
         invites: myInvites,
+        ...(mintedSecret ? { secret: mintedSecret } : {}),
       }),
     };
   } catch (error: unknown) {
