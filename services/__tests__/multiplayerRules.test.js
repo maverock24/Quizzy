@@ -8,7 +8,9 @@ import {
   isValidQuiz,
   leadLabel,
   occupiedCount,
+  MAX_ROSTER,
   parseClientMessage,
+  parseHostMessage,
   progressPercent,
   sanitizeJoin,
   standings,
@@ -703,5 +705,188 @@ describe('isValidQuiz', () => {
     expect(
       isValidQuiz({ name: 'q', questions: [{ ...question(), answers: [] }] }),
     ).toBe(true);
+  });
+});
+
+describe('parseHostMessage', () => {
+  const rosterEntry = (overrides = {}) => ({
+    id: 'peer-a',
+    name: 'Ada',
+    score: 3,
+    isHost: false,
+    joinedAt: '2024-01-01T00:00:00.000Z',
+    progress: 1,
+    totalQuestions: 5,
+    finished: false,
+    left: false,
+    ...overrides,
+  });
+
+  const state = (overrides = {}) => ({
+    status: 'waiting',
+    currentQuestionIndex: 0,
+    ...overrides,
+  });
+
+  it('drops a payload that is not an object, instead of throwing on msg.type', () => {
+    expect(parseHostMessage(null)).toBeNull();
+    expect(parseHostMessage(undefined)).toBeNull();
+    expect(parseHostMessage('WELCOME')).toBeNull();
+    expect(parseHostMessage(7)).toBeNull();
+    expect(parseHostMessage([])).toBeNull();
+  });
+
+  it('drops an unknown or missing type', () => {
+    expect(parseHostMessage({})).toBeNull();
+    expect(parseHostMessage({ type: 'DELETE_EVERYTHING' })).toBeNull();
+  });
+
+  it('accepts a well-formed WELCOME and normalises the roster', () => {
+    const parsed = parseHostMessage({
+      type: 'WELCOME',
+      players: [rosterEntry({ id: 'host', isHost: true })],
+      state: state(),
+      quizId: 'q1',
+    });
+    expect(parsed.type).toBe('WELCOME');
+    expect(parsed.players).toHaveLength(1);
+    expect(parsed.quizId).toBe('q1');
+  });
+
+  it('never carries a token off the wire, even if the host sends one', () => {
+    const parsed = parseHostMessage({
+      type: 'WELCOME',
+      players: [rosterEntry({ token: 'stolen-token' })],
+      state: state(),
+    });
+    expect(parsed.players[0].token).toBeUndefined();
+  });
+
+  it('drops a WELCOME whose players is not an array', () => {
+    expect(
+      parseHostMessage({ type: 'WELCOME', players: 'nope', state: state() }),
+    ).toBeNull();
+  });
+
+  it('drops a WELCOME whose roster exceeds the cap', () => {
+    const players = Array.from({ length: MAX_ROSTER + 1 }, (_, i) =>
+      rosterEntry({ id: 'peer-' + i }),
+    );
+    expect(
+      parseHostMessage({ type: 'WELCOME', players, state: state() }),
+    ).toBeNull();
+  });
+
+  it('drops a roster entry with a non-finite score', () => {
+    for (const score of [NaN, Infinity, {}, 'many', null]) {
+      expect(
+        parseHostMessage({
+          type: 'WELCOME',
+          players: [rosterEntry({ score })],
+          state: state(),
+        }),
+      ).toBeNull();
+    }
+  });
+
+  it('clamps a score and a progress it accepts', () => {
+    const parsed = parseHostMessage({
+      type: 'WELCOME',
+      players: [rosterEntry({ score: 1e12, progress: 9e9, totalQuestions: 5 })],
+      state: state(),
+    });
+    expect(parsed.players[0].score).toBe(1e6);
+    expect(parsed.players[0].progress).toBe(5);
+  });
+
+  it('drops a game state with an unknown status or a bad index', () => {
+    expect(
+      parseHostMessage({
+        type: 'WELCOME',
+        players: [],
+        state: state({ status: 'pwned' }),
+      }),
+    ).toBeNull();
+    expect(
+      parseHostMessage({
+        type: 'WELCOME',
+        players: [],
+        state: state({ currentQuestionIndex: NaN }),
+      }),
+    ).toBeNull();
+  });
+
+  it('drops a quiz the question view could not render', () => {
+    const parsed = parseHostMessage({
+      type: 'GAME_STATE',
+      state: state({
+        status: 'playing',
+        quiz: { name: 'bad', questions: [{ question: 'q', answers: [] }] },
+      }),
+    });
+    expect(parsed.state.quiz).toBeUndefined();
+  });
+
+  it('refuses a SCORE_UPDATE whose score is not a finite number', () => {
+    expect(
+      parseHostMessage({ type: 'SCORE_UPDATE', playerId: 'peer-a', score: {} }),
+    ).toBeNull();
+    expect(
+      parseHostMessage({
+        type: 'SCORE_UPDATE',
+        playerId: 'peer-a',
+        score: Infinity,
+      }),
+    ).toBeNull();
+    expect(parseHostMessage({ type: 'SCORE_UPDATE', score: 4 })).toBeNull();
+  });
+
+  it('accepts a bounded SCORE_UPDATE', () => {
+    expect(
+      parseHostMessage({ type: 'SCORE_UPDATE', playerId: 'peer-a', score: 4 }),
+    ).toEqual({ type: 'SCORE_UPDATE', playerId: 'peer-a', score: 4 });
+  });
+
+  it('refuses a negative finish time', () => {
+    expect(
+      parseHostMessage({
+        type: 'PLAYER_FINISH',
+        playerId: 'peer-a',
+        score: 1,
+        finishTime: -5,
+      }),
+    ).toBeNull();
+  });
+});
+
+describe('parseHostMessage and the binary serializer', () => {
+  // Regression: PeerJS's packer turns an absent `undefined` into `null` on the
+  // wire, so a roster entry with `finishTime: null` used to be refused as
+  // malformed and the whole WELCOME was dropped. The joiner then never saw the
+  // host in its roster.
+  it('treats null on an optional field as "not sent", not as malformed', () => {
+    const parsed = parseHostMessage({
+      type: 'WELCOME',
+      players: [
+        {
+          id: 'host',
+          name: 'HostUser',
+          score: 0,
+          isHost: true,
+          joinedAt: '2024-01-01T00:00:00.000Z',
+          progress: 0,
+          totalQuestions: 0,
+          finished: false,
+          left: false,
+          token: null,
+          finishTime: null,
+        },
+      ],
+      state: { status: 'waiting', currentQuestionIndex: 0, quizId: null },
+    });
+    expect(parsed).not.toBeNull();
+    expect(parsed.type).toBe('WELCOME');
+    expect(parsed.players[0].id).toBe('host');
+    expect(parsed.players[0].finishTime).toBeUndefined();
   });
 });

@@ -9,6 +9,7 @@ import {
   occupiedCount,
   findJoinTarget,
   parseClientMessage,
+  parseHostMessage,
 } from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
 import type { QuizQuestion } from '../components/types';
@@ -313,24 +314,32 @@ class MultiplayerService {
           };
           conn.send({ type: 'JOIN', player: myPlayer });
 
-          // Handle incoming data — resolve on WELCOME
-          conn.on('data', (data) => {
-            const msg = data as Message;
+          // Handle incoming data — resolve on WELCOME. The host is a peer too,
+          // so its messages go through the same kind of door the host uses for
+          // a client: a null payload used to throw here, and a non-array
+          // `players` used to land straight in React state.
+          conn.on('data', (data: unknown) => {
+            const msg = parseHostMessage(data);
+            if (!msg) {
+              console.warn('Dropped a malformed message from the host');
+              return;
+            }
             if (msg.type === 'ROOM_FULL') {
               // Refused by the host: the room already holds two players.
               settle({ ok: false, failure: 'room-full' });
+              return;
             }
             if (msg.type === 'WELCOME') {
-              this.players = msg.players;
-              this.gameState = msg.state;
+              this.players = msg.players as Player[];
+              this.gameState = msg.state as GameState;
               settle({
                 ok: true,
-                players: msg.players,
-                gameState: msg.state,
+                players: msg.players as Player[],
+                gameState: msg.state as GameState,
                 quizId: msg.quizId,
               });
             }
-            this.handleClientData(msg);
+            this.handleClientData(msg as Message);
           });
 
           conn.on('close', () => {

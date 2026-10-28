@@ -15,6 +15,8 @@ export interface RulePlayer {
   left?: boolean;
   token?: string;
   isHost?: boolean;
+  /** Only present on roster entries the host sends; clamped on the way in. */
+  joinedAt?: string;
 }
 
 export const HOST_SENTINEL = 'host';
@@ -364,4 +366,244 @@ export function isValidQuiz(value: unknown): boolean {
       (answer) => isObject(answer) && typeof answer.answer === 'string',
     );
   });
+}
+
+/** A room holds two players, so a roster anywhere near this size is hostile. */
+export const MAX_ROSTER = 8;
+
+/** A player id and a quiz id are short opaque strings. */
+const MAX_ID_LENGTH = 128;
+
+/** The game state a host may announce, as the joiner needs it. */
+export interface RuleGameState {
+  status: 'waiting' | 'playing' | 'finished';
+  currentQuestionIndex: number;
+  quizId?: string;
+  startTime?: number;
+  quiz?: { name: string; questions: unknown[] };
+}
+
+/** What a host may say to a joiner. Everything else is refused. */
+export type HostMessage =
+  | { type: 'ROOM_FULL' }
+  | {
+      type: 'WELCOME';
+      players: RulePlayer[];
+      state: RuleGameState;
+      quizId?: string;
+    }
+  | { type: 'JOIN'; player: RulePlayer }
+  | { type: 'GAME_STATE'; state: RuleGameState }
+  | { type: 'SCORE_UPDATE'; playerId: string; score: number }
+  | { type: 'QUIZ_SELECT'; quizId: string }
+  | {
+      type: 'PLAYER_PROGRESS';
+      playerId: string;
+      progress: number;
+      totalQuestions: number;
+    }
+  | {
+      type: 'PLAYER_FINISH';
+      playerId: string;
+      score: number;
+      finishTime: number;
+    }
+  | { type: 'PLAYER_LEFT'; playerId: string };
+
+const GAME_STATUSES = ['waiting', 'playing', 'finished'] as const;
+
+/**
+ * A roster entry as the host may send it. Every field is type-checked and every
+ * number clamped. A `token` is dropped even if the host includes one: a token is
+ * a session credential and must never cross the wire, so a peer cannot be handed
+ * one to replay.
+ */
+function parseRosterPlayer(value: unknown): RulePlayer | null {
+  if (!isObject(value)) {
+    return null;
+  }
+  if (typeof value.id !== 'string' || value.id === '') {
+    return null;
+  }
+  if (value.id.length > MAX_ID_LENGTH) {
+    return null;
+  }
+  const score = clamped(value.score, 0, MAX_SCORE);
+  const progress = clamped(value.progress, 0, MAX_QUESTION_INDEX);
+  const totalQuestions = clamped(value.totalQuestions, 0, MAX_QUESTION_INDEX);
+  if (score === null || progress === null || totalQuestions === null) {
+    return null;
+  }
+  // PeerJS's binary serializer turns an absent `undefined` into `null`, so an
+  // optional field arriving as null means "not sent", not "malformed".
+  const rawFinish = value.finishTime;
+  const finishTime =
+    rawFinish === undefined || rawFinish === null
+      ? undefined
+      : clamped(rawFinish, 0, Number.MAX_SAFE_INTEGER);
+  if (rawFinish !== undefined && rawFinish !== null && finishTime === null) {
+    return null;
+  }
+  const player: RulePlayer = {
+    id: value.id,
+    name: cappedName(value.name),
+    score,
+    progress:
+      totalQuestions > 0 ? Math.min(progress, totalQuestions) : progress,
+    totalQuestions,
+    finished: value.finished === true,
+  };
+  // Optional fields are only carried across when the host actually sent them,
+  // so a normalised entry keeps the shape it arrived in. `token` is never
+  // copied: a session credential must not travel to a peer.
+  if (typeof finishTime === 'number') player.finishTime = finishTime;
+  if (value.left !== undefined && value.left !== null) {
+    player.left = value.left === true;
+  }
+  if (value.isHost !== undefined && value.isHost !== null) {
+    player.isHost = value.isHost === true;
+  }
+  if (typeof value.joinedAt === 'string') {
+    player.joinedAt = value.joinedAt.slice(0, 40);
+  }
+  return player;
+}
+
+function parseGameState(value: unknown): RuleGameState | null {
+  if (!isObject(value)) {
+    return null;
+  }
+  const status = value.status;
+  if (typeof status !== 'string') {
+    return null;
+  }
+  if (!(GAME_STATUSES as readonly string[]).includes(status)) {
+    return null;
+  }
+  const index = clamped(value.currentQuestionIndex, 0, MAX_QUESTION_INDEX);
+  if (index === null) {
+    return null;
+  }
+  const state: RuleGameState = {
+    status: status as RuleGameState['status'],
+    currentQuestionIndex: index,
+  };
+  if (typeof value.quizId === 'string') {
+    state.quizId = value.quizId.slice(0, MAX_ID_LENGTH);
+  }
+  if (typeof value.startTime === 'number' && Number.isFinite(value.startTime)) {
+    state.startTime = value.startTime;
+  }
+  // A quiz the joiner cannot render is dropped rather than passed on, so the
+  // question view never receives a shape it would crash on.
+  if (
+    value.quiz !== undefined &&
+    value.quiz !== null &&
+    isValidQuiz(value.quiz)
+  ) {
+    state.quiz = value.quiz as RuleGameState['quiz'];
+  }
+  return state;
+}
+
+/**
+ * The one door a joiner's data channel reads a host's message through. The
+ * host is a peer too, so nothing it sends is trusted: reading `msg.type` on a
+ * `null` payload used to throw, and a non-array `players` used to be assigned
+ * straight into React state.
+ */
+export function parseHostMessage(raw: unknown): HostMessage | null {
+  if (!isObject(raw)) {
+    return null;
+  }
+  switch (raw.type) {
+    case 'ROOM_FULL':
+      return { type: 'ROOM_FULL' };
+    case 'WELCOME': {
+      if (!Array.isArray(raw.players) || raw.players.length > MAX_ROSTER) {
+        return null;
+      }
+      const players: RulePlayer[] = [];
+      for (const entry of raw.players) {
+        const player = parseRosterPlayer(entry);
+        if (!player) {
+          return null;
+        }
+        players.push(player);
+      }
+      const state = parseGameState(raw.state);
+      if (!state) {
+        return null;
+      }
+      const welcome: HostMessage = { type: 'WELCOME', players, state };
+      if (typeof raw.quizId === 'string') {
+        welcome.quizId = raw.quizId.slice(0, MAX_ID_LENGTH);
+      }
+      return welcome;
+    }
+    case 'JOIN': {
+      const player = parseRosterPlayer(raw.player);
+      return player ? { type: 'JOIN', player } : null;
+    }
+    case 'GAME_STATE': {
+      const state = parseGameState(raw.state);
+      return state ? { type: 'GAME_STATE', state } : null;
+    }
+    case 'SCORE_UPDATE': {
+      if (typeof raw.playerId !== 'string') {
+        return null;
+      }
+      const score = clamped(raw.score, 0, MAX_SCORE);
+      return score === null
+        ? null
+        : { type: 'SCORE_UPDATE', playerId: raw.playerId, score };
+    }
+    case 'QUIZ_SELECT':
+      return typeof raw.quizId === 'string'
+        ? { type: 'QUIZ_SELECT', quizId: raw.quizId.slice(0, MAX_ID_LENGTH) }
+        : null;
+    case 'PLAYER_PROGRESS': {
+      if (typeof raw.playerId !== 'string') {
+        return null;
+      }
+      const progress = clamped(raw.progress, 0, MAX_QUESTION_INDEX);
+      const totalQuestions = clamped(raw.totalQuestions, 0, MAX_QUESTION_INDEX);
+      if (progress === null || totalQuestions === null) {
+        return null;
+      }
+      return {
+        type: 'PLAYER_PROGRESS',
+        playerId: raw.playerId,
+        progress:
+          totalQuestions > 0 ? Math.min(progress, totalQuestions) : progress,
+        totalQuestions,
+      };
+    }
+    case 'PLAYER_FINISH': {
+      if (typeof raw.playerId !== 'string') {
+        return null;
+      }
+      const score = clamped(raw.score, 0, MAX_SCORE);
+      if (
+        score === null ||
+        typeof raw.finishTime !== 'number' ||
+        !Number.isFinite(raw.finishTime) ||
+        raw.finishTime < 0
+      ) {
+        return null;
+      }
+      return {
+        type: 'PLAYER_FINISH',
+        playerId: raw.playerId,
+        score,
+        finishTime: raw.finishTime,
+      };
+    }
+    case 'PLAYER_LEFT':
+      return typeof raw.playerId === 'string'
+        ? { type: 'PLAYER_LEFT', playerId: raw.playerId }
+        : null;
+    default:
+      return null;
+  }
 }
