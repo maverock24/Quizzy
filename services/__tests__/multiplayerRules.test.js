@@ -18,6 +18,7 @@ import {
   sanitizeJoin,
   scoreAnswer,
   shouldPublishRoomCode,
+  shuffleQuestions,
   standings,
   winnerOf,
 } from '../multiplayerRules';
@@ -694,6 +695,36 @@ describe('parseClientMessage', () => {
         finishTime: 10,
       }),
     ).toBeNull();
+  });
+});
+
+describe('shuffleQuestions', () => {
+  const questions = () =>
+    [0, 1, 2, 3, 4].map((i) => ({ question: 'Q' + i, answer: 'A' + i }));
+
+  it('keeps every question exactly once', () => {
+    const input = questions();
+    const shuffled = shuffleQuestions(input);
+
+    expect(shuffled).toHaveLength(input.length);
+    expect(
+      [...shuffled].sort((a, b) => a.question.localeCompare(b.question)),
+    ).toEqual(input);
+  });
+
+  it('returns a new list and leaves the input alone', () => {
+    const input = questions();
+    const untouched = [...input];
+
+    const shuffled = shuffleQuestions(input);
+
+    expect(shuffled).not.toBe(input);
+    expect(input).toEqual(untouched);
+  });
+
+  it('survives a list too short to shuffle', () => {
+    expect(shuffleQuestions([])).toEqual([]);
+    expect(shuffleQuestions([{ question: 'Q' }])).toEqual([{ question: 'Q' }]);
   });
 });
 

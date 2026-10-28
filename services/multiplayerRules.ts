@@ -108,6 +108,22 @@ export function winnerOf(players: RulePlayer[]): RulePlayer | null {
 }
 
 /**
+ * Shuffles a question list once, on the host. Every peer has to see the same
+ * order: a score is decided by the host from a question index, so if each peer
+ * shuffled for itself, index 3 on one screen would be a different question on
+ * the other and the host would score the wrong answer. The input array is
+ * never written to.
+ */
+export function shuffleQuestions<T>(questions: T[]): T[] {
+  const shuffled = [...questions];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+/**
  * An answer is compared the same way everywhere: trimmed, without case. The
  * host scores with this and the room screen shows its instant feedback with
  * this, so what the player is told and what the host records never disagree.

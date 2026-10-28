@@ -118,13 +118,15 @@ describe('rejoin', () => {
       player: player('peer-a', { name: 'Ana', token: 'token-ana' }),
     });
     multiplayerService.startGame(HOST_QUIZ);
-    // The host scores these, so the slot ends up with three points.
+    // The host scores these, so the slot ends up with three points. The order
+    // is the host's, so each answer is read from the state it fixed.
+    const questions = multiplayerService.getGameState().quiz.questions;
     for (const questionIndex of [0, 1, 2]) {
       sender.handlers.data({
         type: 'ANSWER',
         playerId: 'peer-a',
         questionIndex,
-        answer: 'A' + questionIndex,
+        answer: questions[questionIndex].answer,
       });
     }
     sender.handlers.data({

@@ -76,6 +76,11 @@ function bigQuiz() {
 const sentOfType = (conn, type) =>
   conn.send.mock.calls.map(([msg]) => msg).find((msg) => msg.type === type);
 
+// The host fixes the question order once, so a payload is compared as a set:
+// same questions, whatever order the shuffle produced.
+const byQuestion = (questions) =>
+  [...questions].sort((a, b) => a.question.localeCompare(b.question));
+
 describe('the quiz in the game state', () => {
   let Peer;
   let multiplayerService;
@@ -147,8 +152,33 @@ describe('the quiz in the game state', () => {
     const gameState = sentOfType(guest, 'GAME_STATE');
     expect(gameState.state.status).toBe('playing');
     expect(gameState.state.quizId).toBe('Capitals');
-    expect(gameState.state.quiz).toEqual(QUIZ);
-    expect(multiplayerService.getGameState().quiz).toEqual(QUIZ);
+    expect(byQuestion(gameState.state.quiz.questions)).toEqual(
+      byQuestion(QUIZ.questions),
+    );
+    expect(gameState.state.quiz.name).toBe('Capitals');
+  });
+
+  it('gives the host and a joining peer the same question order', async () => {
+    // A score is checked by question index, so every peer has to render the
+    // order the host fixed rather than shuffling for itself.
+    const peer = makePeer();
+    Peer.mockReturnValue(peer);
+    const promise = multiplayerService.createRoom('Ada');
+    peer.handlers.open('quizzy-ABC234');
+    await promise;
+    multiplayerService.startGame(QUIZ);
+
+    const guest = makeConnection('peer-a');
+    peer.handlers.connection(guest);
+    guest.handlers.data({
+      type: 'JOIN',
+      player: player('peer-a', { name: 'Ana' }),
+    });
+
+    const welcome = sentOfType(guest, 'WELCOME');
+    expect(welcome.state.quiz.questions).toEqual(
+      multiplayerService.getGameState().quiz.questions,
+    );
   });
 
   it('sends the quiz in WELCOME to a joining connection', async () => {
@@ -169,7 +199,9 @@ describe('the quiz in the game state', () => {
     const welcome = sentOfType(guest, 'WELCOME');
     expect(welcome.quizId).toBe('Capitals');
     expect(welcome.state.status).toBe('playing');
-    expect(welcome.state.quiz).toEqual(QUIZ);
+    expect(byQuestion(welcome.state.quiz.questions)).toEqual(
+      byQuestion(QUIZ.questions),
+    );
   });
 
   it('exposes the quiz a client receives through getGameState', async () => {
@@ -223,9 +255,12 @@ describe('the quiz in the game state', () => {
     });
     await pending;
 
-    expect(client.getGameState().quiz).toEqual({
-      name: 'Huge',
-      questions: quiz.questions,
-    });
+    expect(client.getGameState().quiz.name).toBe('Huge');
+    // Every question and every byte of it survives the trip; the order is the
+    // one the host fixed.
+    expect(client.getGameState().quiz.questions).toEqual(state.quiz.questions);
+    expect(byQuestion(client.getGameState().quiz.questions)).toEqual(
+      byQuestion(quiz.questions),
+    );
   });
 });

@@ -85,6 +85,9 @@ describe('host authority', () => {
     other.send.mockClear();
   };
 
+  // The questions the host actually holds, in the order it fixed at start.
+  const heldQuestions = () => multiplayerService.getGameState().quiz.questions;
+
   // The host has a quiz, so it can score what a joiner submits.
   const startQuiz = () => {
     multiplayerService.startGame({
@@ -164,7 +167,7 @@ describe('host authority', () => {
       type: 'ANSWER',
       playerId: 'peer-a',
       questionIndex: 0,
-      answer: 'Paris',
+      answer: heldQuestions()[0].answer,
     });
 
     const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
@@ -189,12 +192,16 @@ describe('host authority', () => {
   it('advances past a wrong answer without scoring it', async () => {
     await startHostWithAJoinedClient();
     startQuiz();
+    const question = heldQuestions()[0];
+    const wrong = question.answers
+      .map((option) => option.answer)
+      .find((option) => option !== question.answer);
 
     sender.handlers.data({
       type: 'ANSWER',
       playerId: 'peer-a',
       questionIndex: 0,
-      answer: 'Lyon',
+      answer: wrong,
     });
 
     const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
@@ -210,7 +217,7 @@ describe('host authority', () => {
       type: 'ANSWER',
       playerId: 'peer-a',
       questionIndex: 0,
-      answer: 'Paris',
+      answer: heldQuestions()[0].answer,
     };
     sender.handlers.data(answer);
     sender.handlers.data(answer);
@@ -229,7 +236,7 @@ describe('host authority', () => {
       type: 'ANSWER',
       playerId: 'peer-a',
       questionIndex: 7,
-      answer: 'Paris',
+      answer: heldQuestions()[0].answer,
     });
 
     const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
@@ -261,7 +268,7 @@ describe('host authority', () => {
       type: 'ANSWER',
       playerId: 'peer-b',
       questionIndex: 0,
-      answer: 'Paris',
+      answer: heldQuestions()[0].answer,
     });
 
     expect(multiplayerService.getPlayers().every((p) => p.score === 0)).toBe(

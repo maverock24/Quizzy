@@ -199,7 +199,9 @@ export default function MultiplayerRoom() {
           return;
         }
         setSelectedQuiz({ name: incoming.name, questions: incoming.questions });
-        setRandomizedQuestions(shuffleArray(incoming.questions));
+        // The host fixed the order, and a score is checked against it by
+        // index, so this list is rendered exactly as it arrived.
+        setRandomizedQuestions(incoming.questions);
         setCurrentQuestionIndex(0);
         setScore(0);
         setMyFinished(false);
@@ -217,7 +219,7 @@ export default function MultiplayerRoom() {
       const found = quizzes.find((q) => q.name === quizId);
       if (found) {
         setSelectedQuiz(found);
-        setRandomizedQuestions(shuffleArray(found.questions));
+        setRandomizedQuestions(found.questions);
       }
     });
 
@@ -274,7 +276,7 @@ export default function MultiplayerRoom() {
           name: currentQuiz.name,
           questions: currentQuiz.questions,
         });
-        setRandomizedQuestions(shuffleArray(currentQuiz.questions));
+        setRandomizedQuestions(currentQuiz.questions);
       } else {
         console.warn('Ignored a quiz payload that is not a quiz');
       }
@@ -358,7 +360,7 @@ export default function MultiplayerRoom() {
     const fullQuiz = quizzes.find((q) => q.name === quiz.name);
     if (fullQuiz) {
       setSelectedQuiz(fullQuiz);
-      setRandomizedQuestions(shuffleArray(fullQuiz.questions));
+      setRandomizedQuestions(fullQuiz.questions);
       setIsQuizSelectorVisible(false);
       multiplayerService.selectQuiz(fullQuiz.name);
     }

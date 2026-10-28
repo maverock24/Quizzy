@@ -11,6 +11,7 @@ import {
   parseClientMessage,
   parseHostMessage,
   scoreAnswer,
+  shuffleQuestions,
 } from './multiplayerRules';
 import type { ScoredAnswer } from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
@@ -694,7 +695,12 @@ class MultiplayerService {
         ...this.gameState,
         status: 'playing',
         quizId: quiz?.name,
-        quiz,
+        // The host fixes the order once and everybody renders this list, so a
+        // question index means the same question on every peer and the host
+        // can score an answer by the index it holds.
+        quiz: quiz
+          ? { name: quiz.name, questions: shuffleQuestions(quiz.questions) }
+          : undefined,
         startTime,
       };
       this.notifyGameStateChange(this.gameState);
