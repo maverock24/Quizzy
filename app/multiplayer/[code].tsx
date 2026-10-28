@@ -23,6 +23,7 @@ import { failureMessage } from '../../services/multiplayerFailures';
 import {
   allFinished as allFinishedIn,
   applyJoin,
+  isValidQuiz,
   winnerOf,
 } from '../../services/multiplayerRules';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -182,6 +183,12 @@ export default function MultiplayerRoom() {
       // questions instead of looking a quiz name up in its own list (D7).
       const incoming = newState.quiz;
       if (incoming && newState.status === 'playing') {
+        // The quiz comes off a data channel, so it is checked before it is
+        // rendered: a question the view cannot draw would wedge this screen.
+        if (!isValidQuiz(incoming)) {
+          console.warn('Ignored a quiz payload that is not a quiz');
+          return;
+        }
         setSelectedQuiz({ name: incoming.name, questions: incoming.questions });
         setRandomizedQuestions(shuffleArray(incoming.questions));
         setCurrentQuestionIndex(0);
@@ -251,11 +258,17 @@ export default function MultiplayerRoom() {
 
     const currentQuiz = currentState.quiz;
     if (currentQuiz && currentState.status === 'playing') {
-      setSelectedQuiz({
-        name: currentQuiz.name,
-        questions: currentQuiz.questions,
-      });
-      setRandomizedQuestions(shuffleArray(currentQuiz.questions));
+      // The same check as the message path: this is the state a WELCOME left
+      // behind, which is the other way a quiz reaches this screen.
+      if (isValidQuiz(currentQuiz)) {
+        setSelectedQuiz({
+          name: currentQuiz.name,
+          questions: currentQuiz.questions,
+        });
+        setRandomizedQuestions(shuffleArray(currentQuiz.questions));
+      } else {
+        console.warn('Ignored a quiz payload that is not a quiz');
+      }
     }
 
     const backHandler = BackHandler.addEventListener(

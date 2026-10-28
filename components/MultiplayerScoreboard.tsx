@@ -39,7 +39,9 @@ const Row = ({ p, isYou, total, trailing }: RowProps) => {
         <Text
           style={[styles.score, isYou ? styles.scoreYou : styles.scoreRival]}
         >
-          {p.score}
+          {/* A score off the wire is rendered even if it is not a number: an
+              object here used to throw and take the whole screen with it. */}
+          {Number.isFinite(p.score) ? p.score : 0}
         </Text>
       </View>
       <View style={styles.barRow}>
