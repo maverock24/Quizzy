@@ -6,6 +6,7 @@ import { EssayReader } from '@/components/EssayReader';
 import { useQuiz } from '@/components/Quizprovider';
 import { QuizSelection } from '@/components/QuizSelection';
 import { SafeAreaLinearGradient } from '@/components/SafeAreaGradient';
+import { Entrance } from '@/components/Entrance';
 import { Score } from '@/components/Score';
 import { QuizTimer } from '@/components/QuizTimer';
 import { useGlossary } from '@/components/GlossaryProvider';
@@ -494,7 +495,7 @@ export default function TabOneScreen() {
               {kidsMode && <StreakPet size="medium" showLabel />}
 
               {/* Glossary Button */}
-              <View style={styles.topRow}>
+              <Entrance index={0} style={styles.topRow}>
                 <TouchableOpacity
                   style={styles.glossaryButton}
                   onPress={() => {
@@ -509,13 +510,16 @@ export default function TabOneScreen() {
                     {t('quiz_glossary')}
                   </Text>
                 </TouchableOpacity>
-              </View>
+              </Entrance>
             </>
           )}
           {!selectedQuiz && !scoreVisible && !selectedEssay && (
             <QuizSelection
               quizzes={quizzes}
               handleQuizSelection={handleQuizSelection}
+              // Continues the sequence: the multiplayer button, then each
+              // category, slide in after the glossary button.
+              entranceIndex={1}
               onReadEssay={(category) => {
                 const essay = getEssayByCategory(category);
                 if (essay) setSelectedEssay(essay);
