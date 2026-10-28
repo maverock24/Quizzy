@@ -1,12 +1,16 @@
 import {
+  MAX_NAME_LENGTH,
   allFinished,
   applyJoin,
   connectedCount,
   findJoinTarget,
   isSenderAllowed,
+  isValidQuiz,
   leadLabel,
   occupiedCount,
+  parseClientMessage,
   progressPercent,
+  sanitizeJoin,
   standings,
   winnerOf,
 } from '../multiplayerRules';
@@ -25,8 +29,14 @@ describe('isSenderAllowed', () => {
     expect(isSenderAllowed('peer-a', 'peer-a')).toBe(true);
   });
 
-  it('accepts the host sentinel from the host', () => {
-    expect(isSenderAllowed('host', 'host')).toBe(true);
+  it('rejects the host sentinel even from the host sentinel', () => {
+    // The host row is written by the host directly, never over a channel, so
+    // a peer that registers the PeerJS id 'host' must not pass this gate.
+    expect(isSenderAllowed('host', 'host')).toBe(false);
+  });
+
+  it('rejects any message whose sender is the host sentinel', () => {
+    expect(isSenderAllowed('peer-b', 'host')).toBe(false);
   });
 
   it('rejects a message that names another player', () => {
@@ -45,10 +55,28 @@ describe('isSenderAllowed', () => {
 describe('findJoinTarget', () => {
   it('matches the token before the id', () => {
     const players = [
-      player('peer-old', { token: 'tok-a' }),
+      player('peer-old', { token: 'tok-a', left: true }),
       player('peer-new', { token: 'tok-b' }),
     ];
     expect(findJoinTarget(players, 'tok-a', 'peer-new')).toBe(0);
+  });
+
+  it('ignores a token that belongs to a slot which is still live', () => {
+    // A stolen token must not revive a slot that nobody left: the revive would
+    // rewrite the victim's id and their own updates would then be foreign.
+    const players = [
+      player('host', { isHost: true, token: '' }),
+      player('victim', { token: 'tok-stolen' }),
+    ];
+    expect(findJoinTarget(players, 'tok-stolen', 'peer-thief')).toBe(-1);
+  });
+
+  it('still matches a token on a slot that was left behind', () => {
+    const players = [
+      player('host', { isHost: true, token: '' }),
+      player('victim', { token: 'tok-a', left: true }),
+    ];
+    expect(findJoinTarget(players, 'tok-a', 'peer-back')).toBe(1);
   });
 
   it('falls back to the id when the token is unknown', () => {
@@ -91,7 +119,7 @@ describe('applyJoin', () => {
   it('replaces the entry with the same token and keeps its index', () => {
     const players = [
       player('host', { isHost: true, token: '' }),
-      player('peer-old', { token: 'tok-a' }),
+      player('peer-old', { token: 'tok-a', left: true }),
       player('peer-b', { token: 'tok-b' }),
     ];
     const merged = applyJoin(players, player('peer-new', { token: 'tok-a' }));
@@ -348,5 +376,332 @@ describe('occupiedCount', () => {
       player('peer-a', { left: true, token: '' }),
     ];
     expect(occupiedCount(players)).toBe(1);
+  });
+});
+
+describe('sanitizeJoin', () => {
+  it('wipes the result fields a joiner could win with', () => {
+    // The reported attack: a joiner claims the win in its JOIN.
+    const joined = sanitizeJoin({
+      id: 'peer-a',
+      name: 'Mallory',
+      score: 1e9,
+      progress: 99,
+      totalQuestions: 10,
+      finished: true,
+      finishTime: 1,
+      left: false,
+      token: 'tok-a',
+    });
+
+    expect(joined.score).toBe(0);
+    expect(joined.progress).toBe(0);
+    expect(joined.totalQuestions).toBe(0);
+    expect(joined.finished).toBe(false);
+    expect(joined.finishTime).toBeUndefined();
+    expect(joined.left).toBe(false);
+  });
+
+  it('keeps the identity the join carries', () => {
+    const joined = sanitizeJoin({
+      id: 'peer-a',
+      name: 'Ana',
+      token: 'tok-a',
+      joinedAt: '2024-01-01T00:00:00.000Z',
+    });
+
+    expect(joined.id).toBe('peer-a');
+    expect(joined.name).toBe('Ana');
+    expect(joined.token).toBe('tok-a');
+    expect(joined.joinedAt).toBe('2024-01-01T00:00:00.000Z');
+  });
+
+  it('caps the name at the shared limit', () => {
+    const joined = sanitizeJoin({ id: 'peer-a', name: 'a'.repeat(50) });
+    expect(joined.name).toHaveLength(MAX_NAME_LENGTH);
+    expect(MAX_NAME_LENGTH).toBe(24);
+  });
+
+  it('coerces a name that is not a string to an empty one', () => {
+    expect(sanitizeJoin({ id: 'peer-a', name: { text: 'Ana' } }).name).toBe('');
+    expect(sanitizeJoin({ id: 'peer-a', name: 42 }).name).toBe('');
+  });
+
+  it('survives a payload that is not an object at all', () => {
+    for (const value of [null, undefined, 7, 'JOIN', [], true]) {
+      const joined = sanitizeJoin(value);
+      expect(joined.id).toBe('');
+      expect(joined.name).toBe('');
+      expect(joined.score).toBe(0);
+    }
+  });
+});
+
+describe('parseClientMessage', () => {
+  it('returns null for a null or non-object payload', () => {
+    // Before this, `msg.type` on a null payload threw inside the host.
+    for (const value of [null, undefined, 7, 'SCORE_UPDATE', true]) {
+      expect(parseClientMessage(value)).toBeNull();
+    }
+  });
+
+  it('returns null for a message type it does not know', () => {
+    expect(parseClientMessage({ type: 'WELCOME' })).toBeNull();
+    expect(parseClientMessage({ type: 'PLAYER_LEFT', playerId: 'host' })).toBe(
+      null,
+    );
+    expect(parseClientMessage({})).toBeNull();
+  });
+
+  it('keeps a JOIN, with its result fields wiped', () => {
+    const parsed = parseClientMessage({
+      type: 'JOIN',
+      player: { id: 'peer-a', name: 'Ana', token: 'tok-a', score: 1e9 },
+    });
+    expect(parsed).toEqual({
+      type: 'JOIN',
+      player: expect.objectContaining({
+        id: 'peer-a',
+        name: 'Ana',
+        token: 'tok-a',
+        score: 0,
+        finished: false,
+      }),
+    });
+  });
+
+  it('returns null for a JOIN with no player object', () => {
+    expect(parseClientMessage({ type: 'JOIN', player: null })).toBeNull();
+    expect(parseClientMessage({ type: 'JOIN' })).toBeNull();
+  });
+
+  it('accepts a finite SCORE_UPDATE', () => {
+    expect(
+      parseClientMessage({
+        type: 'SCORE_UPDATE',
+        playerId: 'peer-a',
+        score: 4,
+      }),
+    ).toEqual({ type: 'SCORE_UPDATE', playerId: 'peer-a', score: 4 });
+  });
+
+  it('clamps a SCORE_UPDATE to the highest score a quiz can hold', () => {
+    const parsed = parseClientMessage({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 1e9,
+    });
+    expect(parsed.score).toBe(1e6);
+
+    const negative = parseClientMessage({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: -5,
+    });
+    expect(negative.score).toBe(0);
+  });
+
+  it('returns null for a SCORE_UPDATE whose score is not a finite number', () => {
+    // `score: {}` used to reach the scoreboard and throw on render.
+    for (const score of [{}, '4', null, NaN, Infinity, undefined]) {
+      expect(
+        parseClientMessage({ type: 'SCORE_UPDATE', playerId: 'peer-a', score }),
+      ).toBeNull();
+    }
+  });
+
+  it('returns null for a SCORE_UPDATE with no player id string', () => {
+    for (const playerId of [undefined, null, 7, {}]) {
+      expect(
+        parseClientMessage({ type: 'SCORE_UPDATE', playerId, score: 1 }),
+      ).toBeNull();
+    }
+  });
+
+  it('accepts a bounded PLAYER_PROGRESS', () => {
+    expect(
+      parseClientMessage({
+        type: 'PLAYER_PROGRESS',
+        playerId: 'peer-a',
+        progress: 3,
+        totalQuestions: 10,
+      }),
+    ).toEqual({
+      type: 'PLAYER_PROGRESS',
+      playerId: 'peer-a',
+      progress: 3,
+      totalQuestions: 10,
+    });
+  });
+
+  it('never lets the progress pass a known total', () => {
+    const parsed = parseClientMessage({
+      type: 'PLAYER_PROGRESS',
+      playerId: 'peer-a',
+      progress: 99,
+      totalQuestions: 10,
+    });
+    expect(parsed.progress).toBe(10);
+  });
+
+  it('leaves the progress alone when the total is not known', () => {
+    const parsed = parseClientMessage({
+      type: 'PLAYER_PROGRESS',
+      playerId: 'peer-a',
+      progress: 5,
+      totalQuestions: 0,
+    });
+    expect(parsed.progress).toBe(5);
+  });
+
+  it('clamps a PLAYER_PROGRESS beyond the question cap', () => {
+    const parsed = parseClientMessage({
+      type: 'PLAYER_PROGRESS',
+      playerId: 'peer-a',
+      progress: 1e9,
+      totalQuestions: 1e9,
+    });
+    expect(parsed.progress).toBe(1e5);
+    expect(parsed.totalQuestions).toBe(1e5);
+  });
+
+  it('returns null for a PLAYER_PROGRESS whose numbers are missing or not finite', () => {
+    for (const progress of [undefined, {}, NaN, Infinity, '3']) {
+      expect(
+        parseClientMessage({
+          type: 'PLAYER_PROGRESS',
+          playerId: 'peer-a',
+          progress,
+          totalQuestions: 10,
+        }),
+      ).toBeNull();
+    }
+    expect(
+      parseClientMessage({
+        type: 'PLAYER_PROGRESS',
+        playerId: 'peer-a',
+        progress: 3,
+      }),
+    ).toBeNull();
+  });
+
+  it('accepts a PLAYER_FINISH with a time of zero or more', () => {
+    expect(
+      parseClientMessage({
+        type: 'PLAYER_FINISH',
+        playerId: 'peer-a',
+        score: 5,
+        finishTime: 0,
+      }),
+    ).toEqual({
+      type: 'PLAYER_FINISH',
+      playerId: 'peer-a',
+      score: 5,
+      finishTime: 0,
+    });
+  });
+
+  it('returns null for a PLAYER_FINISH whose time is negative or absent', () => {
+    for (const finishTime of [-1, undefined, {}, NaN, Infinity, '1000']) {
+      expect(
+        parseClientMessage({
+          type: 'PLAYER_FINISH',
+          playerId: 'peer-a',
+          score: 5,
+          finishTime,
+        }),
+      ).toBeNull();
+    }
+  });
+
+  it('returns null for a PLAYER_FINISH with no player id string', () => {
+    expect(
+      parseClientMessage({
+        type: 'PLAYER_FINISH',
+        playerId: null,
+        score: 5,
+        finishTime: 10,
+      }),
+    ).toBeNull();
+  });
+});
+
+describe('isValidQuiz', () => {
+  const question = () => ({
+    question: 'What is the capital of France?',
+    answers: [{ answer: 'Paris' }, { answer: 'Lyon' }],
+    answer: 'Paris',
+    explanation: 'Paris has been the capital since 987.',
+  });
+
+  it('accepts a quiz with one complete question', () => {
+    expect(isValidQuiz({ name: 'Capitals', questions: [question()] })).toBe(
+      true,
+    );
+  });
+
+  it('accepts a question whose answers are only answer strings', () => {
+    expect(
+      isValidQuiz({
+        name: 'Capitals',
+        questions: [{ question: 'Q', answers: [{ answer: 'A' }], answer: 'A' }],
+      }),
+    ).toBe(true);
+  });
+
+  it('rejects anything that is not a quiz object', () => {
+    for (const value of [null, undefined, 7, 'quiz', [], true]) {
+      expect(isValidQuiz(value)).toBe(false);
+    }
+  });
+
+  it('rejects a quiz with no questions', () => {
+    expect(isValidQuiz({ name: 'Capitals', questions: [] })).toBe(false);
+    expect(isValidQuiz({ name: 'Capitals' })).toBe(false);
+    expect(isValidQuiz({ name: 'Capitals', questions: {} })).toBe(false);
+  });
+
+  it('rejects a question that is missing its fields', () => {
+    const missingQuestion = { ...question() };
+    delete missingQuestion.question;
+    expect(isValidQuiz({ name: 'q', questions: [missingQuestion] })).toBe(
+      false,
+    );
+
+    const missingAnswer = { ...question() };
+    delete missingAnswer.answer;
+    expect(isValidQuiz({ name: 'q', questions: [missingAnswer] })).toBe(false);
+
+    expect(
+      isValidQuiz({ name: 'q', questions: [{ ...question(), question: 7 }] }),
+    ).toBe(false);
+    expect(
+      isValidQuiz({ name: 'q', questions: [{ ...question(), answer: null }] }),
+    ).toBe(false);
+    expect(isValidQuiz({ name: 'q', questions: [null] })).toBe(false);
+  });
+
+  it('rejects answers that are not objects with an answer string', () => {
+    expect(
+      isValidQuiz({
+        name: 'q',
+        questions: [{ ...question(), answers: ['Paris', 'Lyon'] }],
+      }),
+    ).toBe(false);
+    expect(
+      isValidQuiz({
+        name: 'q',
+        questions: [{ ...question(), answers: [{ answer: 7 }] }],
+      }),
+    ).toBe(false);
+    expect(
+      isValidQuiz({
+        name: 'q',
+        questions: [{ ...question(), answers: [null] }],
+      }),
+    ).toBe(false);
+    expect(
+      isValidQuiz({ name: 'q', questions: [{ ...question(), answers: [] }] }),
+    ).toBe(true);
   });
 });
