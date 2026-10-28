@@ -327,6 +327,48 @@ import { useRouter } from 'expo-router';
 
 // ... (previous helper components remain)
 
+/**
+ * Lives at module scope on purpose. Declared inside QuizSelection it would be a
+ * new function on every render, so the list would unmount and remount it each
+ * time and the entrance animation would replay over and over.
+ */
+const MultiplayerHeader: React.FC<{ entranceIndex: number }> = ({
+  entranceIndex,
+}) => {
+  const { t } = useTranslation();
+  const router = useRouter();
+
+  return (
+    <Entrance index={entranceIndex}>
+      <View style={{ marginBottom: 10, paddingHorizontal: 8 }}>
+        <Pressable
+          onPress={() => router.push('/multiplayer')}
+          style={({ pressed }) => [
+            styles.answerButton,
+            {
+              backgroundColor: pressed
+                ? 'rgb(40, 180, 140)'
+                : 'rgb(52, 211, 153)', // Greenish for distinction
+              marginBottom: 10,
+              borderWidth: 1,
+              borderColor: 'rgba(255,255,255,0.3)',
+            },
+          ]}
+        >
+          <View style={styles.buttonContent}>
+            <Text
+              style={[styles.buttonText, { textAlign: 'center', fontSize: 18 }]}
+            >
+              {'⚔️ '}
+              {t('quiz_multiplayer_mode')}
+            </Text>
+          </View>
+        </Pressable>
+      </View>
+    </Entrance>
+  );
+};
+
 export const QuizSelection: React.FC<QuizSelectionProps> = ({
   quizzes,
   handleQuizSelection,
@@ -336,7 +378,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
   entranceIndex = 0,
 }) => {
   const { t } = useTranslation();
-  const router = useRouter();
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set(['all']),
   );
@@ -436,36 +477,6 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
     </Entrance>
   );
 
-  const MultiplayerHeader = () => (
-    <Entrance index={entranceIndex}>
-      <View style={{ marginBottom: 10, paddingHorizontal: 8 }}>
-        <Pressable
-          onPress={() => router.push('/multiplayer')}
-          style={({ pressed }) => [
-            styles.answerButton,
-            {
-              backgroundColor: pressed
-                ? 'rgb(40, 180, 140)'
-                : 'rgb(52, 211, 153)', // Greenish for distinction
-              marginBottom: 10,
-              borderWidth: 1,
-              borderColor: 'rgba(255,255,255,0.3)',
-            },
-          ]}
-        >
-          <View style={styles.buttonContent}>
-            <Text
-              style={[styles.buttonText, { textAlign: 'center', fontSize: 18 }]}
-            >
-              {'⚔️ '}
-              {t('quiz_multiplayer_mode')}
-            </Text>
-          </View>
-        </Pressable>
-      </View>
-    </Entrance>
-  );
-
   // If no categories exist, use simple FlatList
   if (
     groupedQuizzes.length <= 1 &&
@@ -476,7 +487,9 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
         <FlatList
           style={{ paddingVertical: 10 }}
           data={quizzes}
-          ListHeaderComponent={MultiplayerHeader}
+          ListHeaderComponent={
+            <MultiplayerHeader entranceIndex={entranceIndex} />
+          }
           keyExtractor={(item) => item.name}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
@@ -503,7 +516,9 @@ export const QuizSelection: React.FC<QuizSelectionProps> = ({
           ...section,
           data: expandedCategories.has(section.title) ? section.data : [],
         }))}
-        ListHeaderComponent={MultiplayerHeader}
+        ListHeaderComponent={
+          <MultiplayerHeader entranceIndex={entranceIndex} />
+        }
         keyExtractor={(item) => item.name}
         renderItem={renderItem}
         renderSectionHeader={renderSectionHeader}
