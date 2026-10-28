@@ -233,6 +233,31 @@ export function occupiedCount(players: RulePlayer[]): number {
 /** A name is capped wherever it enters the roster, so no row can be spoofed. */
 export const MAX_NAME_LENGTH = 24;
 
+/**
+ * A room link is untrusted input like any other, so the name it carries is
+ * trimmed and capped before a join uses it or remembers it: a link must not be
+ * able to pin an absurd name into the next game.
+ */
+export function cappedLinkName(value: unknown): string {
+  if (typeof value !== 'string') {
+    return '';
+  }
+  return value.trim().slice(0, MAX_NAME_LENGTH);
+}
+
+/**
+ * Only the tab that really owns the room publishes its code to the lobby. A
+ * link carrying `isHost=true` used to publish the code before the redirect
+ * undid the claim, which put a room this tab does not own into the shared
+ * lobby list.
+ */
+export function shouldPublishRoomCode(
+  isHostLink: boolean,
+  isHostSession: boolean,
+): boolean {
+  return isHostLink === true && isHostSession === true;
+}
+
 /** A score is one point per question, so a reported score is clamped here. */
 export const MAX_SCORE = 1e6;
 

@@ -23,8 +23,10 @@ import { failureMessage } from '../../services/multiplayerFailures';
 import {
   allFinished as allFinishedIn,
   applyJoin,
+  cappedLinkName,
   isValidQuiz,
   normalizeAnswer,
+  shouldPublishRoomCode,
   winnerOf,
 } from '../../services/multiplayerRules';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -80,6 +82,9 @@ export default function MultiplayerRoom() {
   const router = useRouter();
   const { quizzes, multiplayerName, setMultiplayerName } = useQuiz();
   const isHost = isHostParam === 'true';
+  // The name the link carried, capped once here so every use of it, the join
+  // and the remembered name and the retry button, sees the same value.
+  const linkName = cappedLinkName(nameParam);
 
   const [players, setPlayers] = useState<Player[]>([]);
   const [gameState, setGameState] = useState<GameState>({
@@ -146,7 +151,10 @@ export default function MultiplayerRoom() {
   }, [router, isHost, t]);
 
   useEffect(() => {
-    if (isHost) {
+    // The lobby is a shared list, so only the tab that really owns the room
+    // publishes the code: a link carrying ?isHost=true must not put a room
+    // this tab does not hold into it before the redirect undoes the claim.
+    if (shouldPublishRoomCode(isHost, multiplayerService.getIsHost())) {
       if (gameState.status === 'waiting') {
         presenceService.setRoomCode(code);
       } else if (gameState.status === 'playing') {
@@ -318,13 +326,12 @@ export default function MultiplayerRoom() {
     if (isHost || joinedOnMount.current) return;
     if (multiplayerService.getPlayers().length > 0) return;
     joinedOnMount.current = true;
-    const queryName = typeof nameParam === 'string' ? nameParam.trim() : '';
-    if (!queryName) {
+    if (!linkName) {
       setNeedsName(true);
       return;
     }
-    void handleEnterRoom(queryName);
-  }, [isHost, nameParam, handleEnterRoom]);
+    void handleEnterRoom(linkName);
+  }, [isHost, linkName, handleEnterRoom]);
 
   // Pre-fill the name prompt the link asked for, from the name last played with
   useEffect(() => {
@@ -662,8 +669,6 @@ export default function MultiplayerRoom() {
   // A departed player keeps its slot for a minute, so every start or full
   // decision counts only the players who are still here.
   const presentCount = players.filter((p) => !p.left).length;
-  // The name the link carried, so a failed mount join can be retried with it
-  const linkName = typeof nameParam === 'string' ? nameParam.trim() : '';
   return (
     <View style={styles.outerContainer}>
       <SafeAreaLinearGradient

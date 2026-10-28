@@ -2,6 +2,7 @@ import {
   MAX_NAME_LENGTH,
   allFinished,
   applyJoin,
+  cappedLinkName,
   connectedCount,
   findJoinTarget,
   isSenderAllowed,
@@ -16,6 +17,7 @@ import {
   progressPercent,
   sanitizeJoin,
   scoreAnswer,
+  shouldPublishRoomCode,
   standings,
   winnerOf,
 } from '../multiplayerRules';
@@ -817,6 +819,43 @@ describe('isValidQuizList', () => {
     expect(isValidQuizList([quiz(), null])).toBe(false);
     expect(isValidQuizList([quiz(), { name: 'no questions' }])).toBe(false);
     expect(isValidQuizList(['quiz'])).toBe(false);
+  });
+});
+
+describe('cappedLinkName', () => {
+  it('trims the name a link carried', () => {
+    expect(cappedLinkName('  Ana  ')).toBe('Ana');
+  });
+
+  it('caps a name that is longer than a roster row may hold', () => {
+    expect(cappedLinkName('x'.repeat(100))).toHaveLength(MAX_NAME_LENGTH);
+  });
+
+  it('treats a missing name as no name at all', () => {
+    for (const value of [undefined, null, 7, {}, ['Ana']]) {
+      expect(cappedLinkName(value)).toBe('');
+    }
+  });
+
+  it('keeps a name that is already short', () => {
+    expect(cappedLinkName('Ana')).toBe('Ana');
+  });
+});
+
+describe('shouldPublishRoomCode', () => {
+  it('publishes when the link and the session both say host', () => {
+    expect(shouldPublishRoomCode(true, true)).toBe(true);
+  });
+
+  it('refuses a link that claims host while the session is not the host', () => {
+    // A refreshed or forged host tab has no room, so the code must not reach
+    // the shared lobby list.
+    expect(shouldPublishRoomCode(true, false)).toBe(false);
+  });
+
+  it('publishes nothing for a joiner', () => {
+    expect(shouldPublishRoomCode(false, false)).toBe(false);
+    expect(shouldPublishRoomCode(false, true)).toBe(false);
   });
 });
 
