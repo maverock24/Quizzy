@@ -23,6 +23,7 @@ import {
   isAndroidNative,
   isNewerRelease,
 } from '@/services/androidUpdate';
+import { isValidQuizList } from '@/services/multiplayerRules';
 
 export default function SettingsScreen() {
   const {
@@ -161,6 +162,17 @@ export default function SettingsScreen() {
   // Save user quiz JSON to AsyncStorage
   const handleSaveUserQuizJson = async () => {
     try {
+      // The pasted text is JSON the user is handing the app to render, so it
+      // is checked before it is stored. A parse failure lands in the same
+      // catch and shows the same message.
+      const parsed: unknown = JSON.parse(userQuizJson);
+      if (!isValidQuizList(parsed)) {
+        Alert.alert(
+          t('settings_error'),
+          t('settings_user_quizzes_save_failed'),
+        );
+        return;
+      }
       await AsyncStorage.setItem('userQuizzes', userQuizJson);
       setUserQuizLoadEnabled(!userQuizLoadEnabled);
       setUserQuizLoadEnabled(!userQuizLoadEnabled);
