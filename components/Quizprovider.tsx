@@ -2,6 +2,7 @@ import i18n from '@/components/i18n';
 import { REMOTE_QUIZ } from '@/constants/Urls';
 import { createMultiplicationQuiz } from '@/services/MultiplicationQuiz';
 import { nameToRemember, resolveInitialName } from '@/services/playerName';
+import { AppSplash } from '@/components/AppSplash';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as FileSystem from 'expo-file-system';
 import React, {
@@ -118,6 +119,8 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   const [, setData] = useState(null);
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [isLanguageReady, setIsLanguageReady] = useState(false);
+  // The opening splash stays mounted until it has finished fading out.
+  const [splashDone, setSplashDone] = useState(false);
   const [selectedQuizName, setSelectedQuizName] = useState<string | null>(null);
   const [flashcardsEnabled, setFlashcardsEnabledState] =
     useState<boolean>(false);
@@ -797,9 +800,12 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     })();
   }, [i18n.language, userQuizLoadEnabled]);
 
-  if (!isLanguageReady) {
-    // Optionally, show a splash/loading screen or null
-    return null;
+  if (!splashDone) {
+    // The splash owns its own timing: it sits until settings are loaded and it
+    // has been readable for long enough, then fades away and hands over.
+    return (
+      <AppSplash ready={isLanguageReady} onDone={() => setSplashDone(true)} />
+    );
   }
 
   return (
