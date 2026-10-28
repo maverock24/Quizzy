@@ -2,6 +2,7 @@ import i18n from '@/components/i18n';
 import { REMOTE_QUIZ } from '@/constants/Urls';
 import { createMultiplicationQuiz } from '@/services/MultiplicationQuiz';
 import { nameToRemember, resolveInitialName } from '@/services/playerName';
+import { isValidQuizList } from '@/services/multiplayerRules';
 import { AppSplash } from '@/components/AppSplash';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as FileSystem from 'expo-file-system';
@@ -116,7 +117,6 @@ const getLocalEssays = (): CategoryEssay[] => {
 export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [, setData] = useState(null);
   const [language, setLanguageState] = useState<string>(i18n.language || 'en');
   const [isLanguageReady, setIsLanguageReady] = useState(false);
   // The opening splash stays mounted until it has finished fading out.
@@ -375,7 +375,14 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
     try {
       const stored = await AsyncStorage.getItem('userQuizzes');
       if (stored) {
-        return JSON.parse(stored);
+        const parsed: unknown = JSON.parse(stored);
+        // The stored list is JSON the user pastes in, so it is checked before
+        // anything renders it: a hostile entry must not reach the app.
+        if (!isValidQuizList(parsed)) {
+          console.warn('Ignored a stored quiz list that is not a quiz list');
+          return [];
+        }
+        return parsed as Quiz[];
       }
       return [];
     } catch (e) {
@@ -751,32 +758,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
   }, [remoteUpdateEnabled]); // This effect runs when remoteUpdateEnabled changes
 
   // --- Configuration ---
-  // Using the storage key from your provided snippet.
-  const STORAGE_KEY = 'quizzes_de';
-
-  const updateDataFromGoogleDrive = async () => {
-    try {
-      // The fetch call targets the internal route.
-      const response = await fetch(
-        'https://raw.githubusercontent.com/maverock24/data/refs/heads/main/quizzes_de.json',
-      );
-
-      if (!response.ok) {
-        throw new Error(
-          `API route responded with an error: ${response.statusText}`,
-        );
-      }
-
-      const jsonData = await response.json();
-      // Save the fetched data to AsyncStorage for persistence.
-      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(jsonData));
-
-      // Update the component's state to reflect the new data.
-      setData(jsonData);
-    } catch (error) {
-      console.error('Error updating data:', error);
-    }
-  };
 
   // Load settings from AsyncStorage on component mount
   useEffect(() => {
@@ -784,7 +765,6 @@ export const QuizProvider: React.FC<{ children: ReactNode }> = ({
       await loadSettings();
       setIsLanguageReady(true);
     })();
-    updateDataFromGoogleDrive();
   }, []);
 
   // Listen for i18n.language or userQuizLoadEnabled changes and update quizzes accordingly
