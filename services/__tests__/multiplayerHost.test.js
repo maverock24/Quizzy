@@ -254,6 +254,175 @@ describe('host authority', () => {
     expect(other.send).not.toHaveBeenCalled();
   });
 
+  it('writes a new joiner with zero score, no progress and no finish', async () => {
+    peer = makePeer();
+    Peer.mockReturnValue(peer);
+    const promise = multiplayerService.createRoom('Ada');
+    peer.handlers.open('quizzy-ABC234');
+    await promise;
+
+    const cheater = connect('peer-c');
+    // The reported attack: arrive having already won the room.
+    cheater.handlers.data({
+      type: 'JOIN',
+      player: player('peer-c', {
+        name: 'Mallory',
+        token: 'tok-c',
+        score: 1e9,
+        progress: 99,
+        totalQuestions: 100,
+        finished: true,
+        finishTime: 1,
+      }),
+    });
+
+    const entry = multiplayerService
+      .getPlayers()
+      .find((p) => p.id === 'peer-c');
+    expect(entry).toBeDefined();
+    expect(entry.score).toBe(0);
+    expect(entry.progress).toBe(0);
+    expect(entry.totalQuestions).toBe(0);
+    expect(entry.finished).toBe(false);
+    expect(entry.finishTime).toBeUndefined();
+    expect(entry.name).toBe('Mallory');
+
+    const welcome = cheater.send.mock.calls
+      .map(([msg]) => msg)
+      .find((msg) => msg.type === 'WELCOME');
+    const inWelcome = welcome.players.find((p) => p.id === 'peer-c');
+    expect(inWelcome.score).toBe(0);
+    expect(inWelcome.finished).toBe(false);
+    expect(inWelcome.finishTime).toBeUndefined();
+  });
+
+  it('drops an update from a connection that holds the host peer id', async () => {
+    await startHostWithAJoinedClient();
+    // A peer that registers the PeerJS id 'host' used to pass an id-only
+    // check and rewrite the host's own row.
+    const impostor = connect('host');
+    const onScore = jest.fn();
+    multiplayerService.onScoreUpdate(onScore);
+
+    impostor.handlers.data({
+      type: 'SCORE_UPDATE',
+      playerId: 'host',
+      score: 99,
+    });
+
+    const hostEntry = multiplayerService.getPlayers().find((p) => p.isHost);
+    expect(hostEntry.score).toBe(0);
+    expect(onScore).not.toHaveBeenCalled();
+    expect(other.send).not.toHaveBeenCalled();
+    expect(console.warn).toHaveBeenCalledWith(
+      'Dropped SCORE_UPDATE from host naming host',
+    );
+  });
+
+  it('sends the joiner its own token and nobody else one', async () => {
+    peer = makePeer();
+    Peer.mockReturnValue(peer);
+    const promise = multiplayerService.createRoom('Ada');
+    peer.handlers.open('quizzy-ABC234');
+    await promise;
+
+    const joiner = connect('peer-a');
+    joiner.handlers.data({
+      type: 'JOIN',
+      player: player('peer-a', { name: 'Ana', token: 'tok-a' }),
+    });
+
+    const welcome = joiner.send.mock.calls
+      .map(([msg]) => msg)
+      .find((msg) => msg.type === 'WELCOME');
+    const own = welcome.players.find((p) => p.id === 'peer-a');
+    const host = welcome.players.find((p) => p.id === 'host');
+    // The joiner needs its own token back to be recognisable on a rejoin.
+    expect(own.token).toBe('tok-a');
+    // The host's row carries no token over the wire.
+    expect(host.token).toBeUndefined();
+  });
+
+  it('broadcasts a JOIN with no token at all', async () => {
+    await startHostWithAJoinedClient();
+    // The joiner departs and comes back with the token it kept, which is the
+    // JOIN that carries a real token. `other` never got a slot and is still
+    // in the host's connections, so it receives every broadcast.
+    sender.handlers.close();
+    const rejoiner = connect('peer-a2');
+
+    rejoiner.handlers.data({
+      type: 'JOIN',
+      player: player('peer-a2', { name: 'Ana', token: 'tok-a' }),
+    });
+
+    const broadcast = other.send.mock.calls
+      .map(([msg]) => msg)
+      .find((msg) => msg.type === 'JOIN');
+    expect(broadcast).toBeDefined();
+    expect(broadcast.player.token).toBeUndefined();
+    expect(JSON.stringify(broadcast)).not.toContain('tok-a');
+  });
+
+  it('drops a message that is not an object without throwing', async () => {
+    await startHostWithAJoinedClient();
+    const onScore = jest.fn();
+    multiplayerService.onScoreUpdate(onScore);
+
+    for (const payload of [null, undefined, 42, 'SCORE_UPDATE']) {
+      expect(() => sender.handlers.data(payload)).not.toThrow();
+    }
+
+    expect(onScore).not.toHaveBeenCalled();
+    expect(multiplayerService.getPlayers().every((p) => p.score === 0)).toBe(
+      true,
+    );
+  });
+
+  it('drops a SCORE_UPDATE whose score would crash the scoreboard', async () => {
+    await startHostWithAJoinedClient();
+    const onScore = jest.fn();
+    multiplayerService.onScoreUpdate(onScore);
+
+    for (const score of [{}, '4', null, NaN, Infinity]) {
+      sender.handlers.data({
+        type: 'SCORE_UPDATE',
+        playerId: 'peer-a',
+        score,
+      });
+    }
+
+    expect(onScore).not.toHaveBeenCalled();
+    expect(
+      multiplayerService.getPlayers().find((p) => p.id === 'peer-a').score,
+    ).toBe(0);
+    expect(other.send).not.toHaveBeenCalled();
+  });
+
+  it('clamps a score and a progress that arrive out of range', async () => {
+    await startHostWithAJoinedClient();
+    const onScore = jest.fn();
+    multiplayerService.onScoreUpdate(onScore);
+
+    sender.handlers.data({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 1e9,
+    });
+    sender.handlers.data({
+      type: 'PLAYER_PROGRESS',
+      playerId: 'peer-a',
+      progress: 99,
+      totalQuestions: 10,
+    });
+
+    expect(onScore).toHaveBeenCalledWith('peer-a', 1e6);
+    const ana = multiplayerService.getPlayers().find((p) => p.id === 'peer-a');
+    expect(ana.score).toBe(1e6);
+    expect(ana.progress).toBe(10);
+    expect(ana.totalQuestions).toBe(10);
+  });
+
   it('answers a third JOIN with ROOM_FULL and closes the connection', async () => {
     await startHostWithAJoinedClient();
     const third = connect('peer-c');

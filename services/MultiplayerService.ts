@@ -8,6 +8,7 @@ import {
   isSenderAllowed,
   occupiedCount,
   findJoinTarget,
+  parseClientMessage,
 } from './multiplayerRules';
 import { getSessionToken } from './sessionToken';
 import type { QuizQuestion } from '../components/types';
@@ -28,7 +29,10 @@ export interface Player {
   finished: boolean;
   finishTime?: number; // ms elapsed from game start
   left: boolean; // departed; skipped by results and counted out of the room
-  token: string; // stable per session; the host matches it before the peer id
+  // Stable per session; the host matches it before the peer id. Present on
+  // the host's roster, absent on everybody else's copy of another player:
+  // a token is a session credential and is never echoed to a peer.
+  token?: string;
 }
 
 export interface GameState {
@@ -356,15 +360,21 @@ class MultiplayerService {
     this.connections.push(conn);
 
     conn.on('data', (data: unknown) => {
-      const msg = data as Message;
+      // Nothing off the wire is trusted: an unparsable message used to throw
+      // here, and an unclamped score used to reach the scoreboard.
+      const msg = parseClientMessage(data);
+      if (!msg) {
+        console.warn('Dropped a malformed message from ' + conn.peer);
+        return;
+      }
       if (msg.type === 'JOIN') {
         const incoming = msg.player;
         // A message may only act on the sender's own slot (D5), so a join that
         // names any other id is dropped. The host's id is 'host', which no
         // connection can hold, so a client cannot claim the host's entry.
-        if (!isSenderAllowed(incoming?.id, conn.peer)) {
+        if (!isSenderAllowed(incoming.id, conn.peer)) {
           console.warn(
-            'Dropped JOIN from ' + conn.peer + ' naming ' + incoming?.id,
+            'Dropped JOIN from ' + conn.peer + ' naming ' + incoming.id,
           );
           return;
         }
@@ -390,7 +400,9 @@ class MultiplayerService {
 
         let joined: Player;
         if (target === -1) {
-          joined = { ...incoming, isHost: false, left: false };
+          // A join claims a place, not a result: the result fields are reset
+          // to zero, so a joiner cannot arrive having already won.
+          joined = { ...incoming, isHost: false };
           this.players = [...this.players, joined];
         } else {
           // Revive the old entry, so score, progress, totalQuestions,
@@ -405,7 +417,7 @@ class MultiplayerService {
             ...departed,
             id: incoming.id,
             name: incoming.name,
-            token: incoming.token ?? '',
+            token: incoming.token,
             left: false,
           };
           this.players = this.players.map((p, i) =>
@@ -415,16 +427,24 @@ class MultiplayerService {
 
         this.notifyPlayerJoin(joined);
 
-        // Send WELCOME to the joining player
+        // Send WELCOME to the joining player. Everybody else's token is left
+        // out: a token is a session credential, and a peer holding one can
+        // revive that slot as itself once it is left.
         conn.send({
           type: 'WELCOME',
-          players: this.players,
+          players: this.players.map((p) => ({
+            ...p,
+            token: p.id === joined.id ? p.token : undefined,
+          })),
           state: this.gameState,
           quizId: this.gameState.quizId,
         });
 
-        // Broadcast the player to others
-        this.broadcast({ type: 'JOIN', player: joined }, conn.peer);
+        // Broadcast the player to others, with no token at all
+        this.broadcast(
+          { type: 'JOIN', player: { ...joined, token: undefined } },
+          conn.peer,
+        );
       } else if (msg.type === 'SCORE_UPDATE') {
         if (!isSenderAllowed(msg.playerId, conn.peer)) {
           this.dropForeignUpdate(msg, conn);

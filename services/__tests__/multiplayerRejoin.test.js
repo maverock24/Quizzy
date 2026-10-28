@@ -91,7 +91,9 @@ describe('rejoin', () => {
   };
 
   // The host plus one joined client, which has already departed. The slot it
-  // left behind holds a score and a progress, which a rejoin has to keep.
+  // left behind holds a score and a progress, which a rejoin has to keep. A
+  // JOIN only claims a place now, so the stats are earned through the two
+  // updates a playing client sends while it is connected.
   const startHostWithDepartedClient = async () => {
     const peer = makePeer();
     Peer.mockReturnValue(peer);
@@ -103,13 +105,18 @@ describe('rejoin', () => {
     peer.handlers.connection(sender);
     sender.handlers.data({
       type: 'JOIN',
-      player: player('peer-a', {
-        name: 'Ana',
-        token: 'token-ana',
-        score: 3,
-        progress: 4,
-        totalQuestions: 10,
-      }),
+      player: player('peer-a', { name: 'Ana', token: 'token-ana' }),
+    });
+    sender.handlers.data({
+      type: 'SCORE_UPDATE',
+      playerId: 'peer-a',
+      score: 3,
+    });
+    sender.handlers.data({
+      type: 'PLAYER_PROGRESS',
+      playerId: 'peer-a',
+      progress: 4,
+      totalQuestions: 10,
     });
     sender.send.mockClear();
     sender.handlers.close();
